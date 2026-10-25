@@ -10,6 +10,7 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -70,6 +71,9 @@ def scrape_item(fetcher, store, item, products, now):
         currency = result["currency"] or store.get("currency_default")
         rec.update(price=result["price"], currency=currency, in_stock=result["in_stock"],
                    method=method, note=result["note"])
+        image = result.get("image") or _og_image(soup, resp.url)
+        if image:
+            rec["image"] = image
         if result["identifiers"]:
             rec["identifiers"] = result["identifiers"]
             # La página declara un EAN distinto al del producto => URL mal asignada.
@@ -89,6 +93,12 @@ def scrape_item(fetcher, store, item, products, now):
     except Exception as exc:  # nunca romper el job por una tienda
         rec["note"] = f"{type(exc).__name__}: {exc}"[:300]
     return rec
+
+
+def _og_image(soup, base_url):
+    tag = soup.find("meta", attrs={"property": "og:image"}) or soup.find("meta", attrs={"name": "og:image"})
+    url = tag.get("content") if tag else None
+    return urljoin(base_url, url) if url else None
 
 
 def _digits(value):
@@ -127,6 +137,8 @@ def update_latest(history, products, stores):
         if rec.get("method") != "manual":
             entry.update(last_run=rec["date"], status=rec["status"], url=rec["url"])
         if rec["status"] == "ok":
+            if rec.get("image"):
+                entry["image"] = rec["image"]
             entry.update(price=rec["price"], currency=rec["currency"], in_stock=rec["in_stock"],
                          price_date=rec["date"], price_method=rec["method"])
             if entry.get("min_price") is None or rec["price"] < entry["min_price"]:
@@ -149,6 +161,10 @@ def with_live_pvp(products, latest, stores):
             if entry["store"] in refs and entry["sku"] == p["sku"] and entry.get("price") is not None:
                 p.update(pvp=entry["price"], pvp_source=entry["store"], pvp_date=entry["price_date"])
                 break
+        images = sorted((e["store"] not in refs, e["store"], e["image"]) for e in latest.values()
+                        if e["sku"] == p["sku"] and e.get("image"))
+        if images:
+            p["image"] = images[0][2]
         out.append(p)
     return out
 

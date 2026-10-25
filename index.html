@@ -75,8 +75,15 @@
   details.card > summary:hover h2 { text-decoration: underline; }
   details.card[open] > summary { border-bottom: 1px solid var(--grid); }
   .detail { padding: 12px 16px 16px; }
+  .title { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .thumb, .photo { background: #fff; border-radius: 8px; object-fit: contain; flex: none; }
+  .thumb { width: 56px; height: 56px; border: 1px solid var(--border); }
+  .detail-top { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-bottom: 8px; }
+  .photo { width: 220px; max-width: 100%; height: 220px; border: 1px solid var(--border); }
+  .detail-top .table-wrap { flex: 1 1 420px; min-width: 0; }
   .best-line { color: var(--text-secondary); }
   .best-line strong { color: var(--text-primary); font-size: 1.05rem; }
+  .pack { margin: 12px 0 0; color: var(--text-secondary); }
   .count { color: var(--text-muted); font-size: .9rem; margin: 0 0 12px; }
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
@@ -136,6 +143,22 @@ function storeColors(stores) {
   return map;
 }
 
+// Guitarra + estuche recomendado (o aviso de que ya lo incluye).
+function packLine(p, best, bestBySku, productBySku, storeName, short) {
+  if (p.case_included) {
+    return short ? ` · <span class="muted">incluye ${esc(p.case_included)}</span>`
+      : `<p class="pack">Incluye ${esc(p.case_included)} de serie.${p.case ? " Estuche opcional abajo." : ""}</p>`
+        + (p.case ? packLine({ ...p, case_included: null }, best, bestBySku, productBySku, storeName, false) : "");
+  }
+  const c = p.case && bestBySku[p.case];
+  if (!c) return "";
+  const caseName = productBySku[p.case]?.name || p.case;
+  if (short) return best ? ` · con estuche <strong>${eur(best.price + c.price)}</strong>` : "";
+  return `<p class="pack">Estuche recomendado: <a href="${esc(c.url)}" rel="noopener" target="_blank">${esc(caseName)}</a>
+    — ${eur(c.price)} en ${esc(storeName[c.store] || c.store)}${best ? ` · <strong>Pack: ${eur(best.price + c.price)}</strong>
+    (guitarra en ${esc(storeName[best.store] || best.store)} + estuche)` : ""}</p>`;
+}
+
 function pvpSource(p, storeName) {
   if (p.pvp_source && p.pvp_source !== "products.json") {
     return ` <span class="muted">(${esc(storeName[p.pvp_source] || p.pvp_source)}, ${day(p.pvp_date)})</span>`;
@@ -155,6 +178,14 @@ function render(latest, history) {
   const colorVar = storeColors(stores);
   document.getElementById("updated").textContent =
     `Última ejecución: ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
+
+  // Mejor precio actual por SKU (fuera de la tienda de referencia), para los packs con estuche.
+  const bestBySku = {};
+  for (const i of latest.items) {
+    if (i.price == null || isRef[i.store]) continue;
+    if (!bestBySku[i.sku] || i.price < bestBySku[i.sku].price) bestBySku[i.sku] = i;
+  }
+  const productBySku = Object.fromEntries(latest.products.map(p => [p.sku, p]));
 
   const container = document.getElementById("products");
   for (const p of latest.products) {
@@ -189,17 +220,21 @@ function render(latest, history) {
     card.dataset.category = p.category || "";
     card.innerHTML = `
       <summary>
-        <h2>${esc(p.name)}</h2>
+        <span class="title">${p.image ? `<img class="thumb" src="${esc(p.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}<h2>${esc(p.name)}</h2></span>
         <span class="best-line">${best
           ? `desde <strong>${eur(best.price)}</strong> en ${esc(storeName[best.store] || best.store)}${bestPct == null ? "" : ` · <span class="${bestPct < 0 ? "neg" : bestPct > 0 ? "pos" : ""}">${(bestPct > 0 ? "+" : "") + bestPct.toFixed(1).replace(".", ",")} % vs PVP</span>`}`
-          : "sin precio todavía"}</span>
+          : "sin precio todavía"}${packLine(p, best, bestBySku, productBySku, storeName, true)}</span>
       </summary>
       <div class="detail">
       <p class="muted" style="margin:0 0 8px">${esc(p.brand || "")} · ${esc(p.category || "")} · SKU ${esc(p.sku)} · PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSource(p, storeName)}</p>
+      <div class="detail-top">
+      ${p.image ? `<img class="photo" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" referrerpolicy="no-referrer">` : ""}
       <div class="table-wrap"><table>
         <thead><tr><th>Tienda</th><th class="num">Precio actual</th><th class="num">vs PVP</th><th class="num">Mínimo histórico</th><th>Stock</th><th>Estado</th></tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
+      </div>
+      ${packLine(p, best, bestBySku, productBySku, storeName, false)}
       <div class="chart-box"><canvas aria-label="Evolución del precio de ${esc(p.name)} por tienda"></canvas></div>
       </div>`;
     container.appendChild(card);
@@ -261,7 +296,7 @@ function setupFilters(products) {
     if (words.length && visible.length === 1) visible[0].open = true;  // un único resultado: se abre solo
     document.getElementById("count").textContent = words.length
       ? (shown ? `${shown} resultado${shown === 1 ? "" : "s"}` : "No está en el catálogo todavía. Pídemela y la añado.")
-      : `${shown} guitarras en seguimiento`;
+      : `${shown} productos en seguimiento`;
     const url = new URL(location);
     words.length ? url.searchParams.set("q", input.value) : url.searchParams.delete("q");
     window.history.replaceState(null, "", url);

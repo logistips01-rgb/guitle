@@ -49,6 +49,15 @@ def _offers(product):
     return out
 
 
+def _image(value):
+    """schema.org image puede ser URL, lista de URLs u ImageObject."""
+    if isinstance(value, list):
+        value = value[0] if value else None
+    if isinstance(value, dict):
+        value = value.get("url") or value.get("contentUrl")
+    return value if isinstance(value, str) and value.startswith("http") else None
+
+
 def load_blocks(soup):
     blocks = []
     for tag in soup.find_all("script", type=lambda t: t and "ld+json" in t.lower()):
@@ -96,5 +105,6 @@ def extract(soup, product_ids, store):
         "currency": normalize_currency(offer.get("priceCurrency")),
         "in_stock": parse_availability(offer.get("availability")),
         "identifiers": sorted({str(i) for i in _ids(offer) + _ids(product) if i}),
+        "image": _image(product.get("image") or offer.get("image")),
         "note": note,
     }
