@@ -29,6 +29,15 @@
   {"id": "kirstein", "name": "Kirstein", "domain": "www.kirstein.de",
    "method": "jsonld", "selector": null,
    "items": [{"sku": "0140552506", "url": "https://www.kirstein.de/es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"}]},
+  {"id": "madridhifi", "name": "Madrid HiFi", "domain": "www.madridhifi.com",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-mn-bk/"},
+     {"sku": "0266020560", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mn-amm/"},
+     {"sku": "0266020550", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mf-btb/"},
+     {"sku": "0266040505", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-lf-owh/"},
+     {"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/"}
+   ]},
   {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
