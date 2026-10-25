@@ -12,7 +12,7 @@
    "pvp_fallback": 799,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920"
+   "image": "https://musicopolix.com/272274-large_default/fender-player-ii-telecaster-mn-blk.jpg"
   },
   {
    "sku": "0140550518",
@@ -38,7 +38,7 @@
    "pvp_fallback": 589,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920"
+   "image": "https://detalhes.egitana.es/fender-std-tele-mn-wpg-amm_67926e18ad0ca.jpg"
   },
   {
    "sku": "0266040505",
@@ -51,7 +51,7 @@
    "pvp_fallback": 589,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920"
+   "image": "https://alfasoni.com/609102-home_default/fender-standard-tele-lrl-wpg-owt.jpg"
   },
   {
    "sku": "0266020550",
@@ -64,7 +64,7 @@
    "pvp_fallback": 589,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920"
+   "image": "https://alfasoni.com/609112-home_default/fender-standard-tele-mn-bpg-btb.jpg"
   },
   {
    "sku": "0140570506",
@@ -74,10 +74,10 @@
    "name": "Fender Player II Telecaster HH RW Black",
    "pvp": 889.0,
    "case": "0996106306",
-   "pvp_fallback": null,
+   "pvp_fallback": 889,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0140570530_fen_ins_frt_1_rr.png?v=1774475963&width=1920"
+   "image": "https://detalhes.egitana.es/fender-player-ii-mod-telecaster-sh-rw-dsk_6a3111da327c9.jpg"
   },
   {
    "sku": "0140512518",
@@ -90,7 +90,7 @@
    "pvp_fallback": 799,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920"
+   "image": "https://detalhes.egitana.es/fender-player-ii-stratocaster-maple-fingerboard-aquatone-blue_668ea7aed573f.jpg"
   },
   {
    "sku": "0140510515",
@@ -103,7 +103,7 @@
    "pvp_fallback": 799,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920"
+   "image": "https://detalhes.egitana.es/fender-player-ii-stratocaster-rosewood-fingerboard-polar-white_668ea1477eca2.jpg"
   },
   {
    "sku": "0266220505",
@@ -116,7 +116,7 @@
    "pvp_fallback": 579,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
+   "image": "https://alfasoni.com/609097-home_default/fender-standard-strat-mn-wpg-owt.jpg"
   },
   {
    "sku": "0266240500",
@@ -129,7 +129,7 @@
    "pvp_fallback": 579,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T23:02:34+00:00",
-   "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
+   "image": "https://alfasoni.com/609087-home_default/fender-standard-strat-lrl-wpg-3ts.jpg"
   },
   {
    "sku": "EIES335VSNH1",

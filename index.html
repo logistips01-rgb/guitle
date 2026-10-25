@@ -80,10 +80,11 @@
   .thumb { width: 56px; height: 56px; border: 1px solid var(--border); }
   .detail-top { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; margin-bottom: 8px; }
   .photo { width: 220px; max-width: 100%; height: 220px; border: 1px solid var(--border); }
-  .detail-top .table-wrap { flex: 1 1 420px; min-width: 0; }
+  .detail-top .table-wrap { flex: 1 1 640px; min-width: 0; }
   .best-line { color: var(--text-secondary); }
   .best-line strong { color: var(--text-primary); font-size: 1.05rem; }
   .pack { margin: 12px 0 0; color: var(--text-secondary); }
+  .tag.coupon { color: var(--good); border-color: currentColor; }
   .count { color: var(--text-muted); font-size: .9rem; margin: 0 0 12px; }
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
@@ -153,10 +154,26 @@ function packLine(p, best, bestBySku, productBySku, storeName, short) {
   const c = p.case && bestBySku[p.case];
   if (!c) return "";
   const caseName = productBySku[p.case]?.name || p.case;
-  if (short) return best ? ` · con estuche <strong>${eur(best.price + c.price)}</strong>` : "";
+  if (short) return best ? ` · con estuche <strong>${eur(best.final + c.final)}</strong>` : "";
   return `<p class="pack">Estuche recomendado: <a href="${esc(c.url)}" rel="noopener" target="_blank">${esc(caseName)}</a>
-    — ${eur(c.price)} en ${esc(storeName[c.store] || c.store)}${best ? ` · <strong>Pack: ${eur(best.price + c.price)}</strong>
+    — ${eur(c.final)} en ${esc(storeName[c.store] || c.store)}${c.coupon ? ` (cupón ${esc(c.coupon.code)})` : ""}${best ? ` · <strong>Pack: ${eur(best.final + c.final)}</strong>
     (guitarra en ${esc(storeName[best.store] || best.store)} + estuche)` : ""}</p>`;
+}
+
+// Cupones de data/coupons.json: {store, code, percent | amount, min_purchase?, brands?, categories?, valid_until?}
+function applyCoupon(item, product, coupons, isRef) {
+  item.final = item.price;
+  item.coupon = null;
+  if (item.price == null || isRef[item.store]) return;
+  const today = new Date().toISOString().slice(0, 10);
+  for (const c of coupons) {
+    if (c.store !== item.store || (c.valid_until && c.valid_until < today)) continue;
+    if (c.brands && !c.brands.includes(product.brand)) continue;
+    if (c.categories && !c.categories.includes(product.category)) continue;
+    if (c.min_purchase && item.price < c.min_purchase) continue;
+    const final = Math.round((c.percent ? item.price * (1 - c.percent / 100) : item.price - (c.amount || 0)) * 100) / 100;
+    if (final < item.final) { item.final = final; item.coupon = c; }
+  }
 }
 
 function pvpSource(p, storeName) {
@@ -171,7 +188,7 @@ function pctVsPvp(price, pvp) {
   return (price - pvp) / pvp * 100;
 }
 
-function render(latest, history) {
+function render(latest, history, coupons) {
   const stores = latest.stores;
   const storeName = Object.fromEntries(stores.map(s => [s.id, s.name]));
   const isRef = Object.fromEntries(stores.map(s => [s.id, !!s.reference]));
@@ -179,31 +196,36 @@ function render(latest, history) {
   document.getElementById("updated").textContent =
     `Última ejecución: ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
 
-  // Mejor precio actual por SKU (fuera de la tienda de referencia), para los packs con estuche.
+  const productBySku = Object.fromEntries(latest.products.map(p => [p.sku, p]));
+  // Precio final = precio con el mejor cupón vigente de esa tienda (si lo hay).
+  for (const i of latest.items) applyCoupon(i, productBySku[i.sku] || {}, coupons, isRef);
+
+  // Mejor precio final por SKU (fuera de la tienda de referencia), para los packs con estuche.
   const bestBySku = {};
   for (const i of latest.items) {
-    if (i.price == null || isRef[i.store]) continue;
-    if (!bestBySku[i.sku] || i.price < bestBySku[i.sku].price) bestBySku[i.sku] = i;
+    if (i.final == null || isRef[i.store]) continue;
+    if (!bestBySku[i.sku] || i.final < bestBySku[i.sku].final) bestBySku[i.sku] = i;
   }
-  const productBySku = Object.fromEntries(latest.products.map(p => [p.sku, p]));
 
   const container = document.getElementById("products");
   for (const p of latest.products) {
     const items = latest.items.filter(i => i.sku === p.sku);
     if (!items.length) continue;
-    const priced = items.filter(i => i.price != null && !isRef[i.store]);
-    const bestPrice = priced.length ? Math.min(...priced.map(i => i.price)) : null;
-    items.sort((a, b) => (isRef[a.store] - isRef[b.store]) || ((a.price ?? 1e9) - (b.price ?? 1e9)));
+    const priced = items.filter(i => i.final != null && !isRef[i.store]);
+    const bestPrice = priced.length ? Math.min(...priced.map(i => i.final)) : null;
+    items.sort((a, b) => (isRef[a.store] - isRef[b.store]) || ((a.final ?? 1e9) - (b.final ?? 1e9)));
 
     const rows = items.map(i => {
-      const pct = isRef[i.store] ? null : pctVsPvp(i.price, p.pvp);
+      const pct = isRef[i.store] ? null : pctVsPvp(i.final, p.pvp);
       const stock = i.in_stock === true ? "sí" : i.in_stock === false ? "no" : "?";
       const statusCls = i.status === "ok" ? "" : (i.status === "blocked_403" ? "bad" : "warn");
       const stale = i.price != null && i.status !== "ok" ? ` <span class="muted">(${day(i.price_date)})</span>` : "";
       const manual = i.price_method === "manual" ? ` <span class="tag">manual</span>` : "";
       return `<tr>
         <td><span class="swatch" style="background:var(${colorVar[i.store]})"></span>${i.url ? `<a href="${esc(i.url)}" rel="noopener" target="_blank">${esc(storeName[i.store] || i.store)}</a>` : esc(storeName[i.store] || i.store)}${isRef[i.store] ? ' <span class="tag">referencia</span>' : ""}</td>
-        <td class="num ${i.price === bestPrice ? "best" : ""}">${eur(i.price)}${stale}${manual}</td>
+        <td class="num ${i.final != null && i.final === bestPrice ? "best" : ""}">${i.coupon
+          ? `<s class="muted">${eur(i.price)}</s> ${eur(i.final)}<br><span class="tag coupon">cupón ${esc(i.coupon.code)}</span>`
+          : eur(i.price)}${stale}${manual}</td>
         <td class="num ${pct == null ? "" : pct < 0 ? "neg" : pct > 0 ? "pos" : ""}">${pct == null ? "–" : (pct > 0 ? "+" : "") + pct.toFixed(1).replace(".", ",") + " %"}</td>
         <td class="num">${eur(i.min_price)} <span class="muted">${day(i.min_price_date)}</span></td>
         <td>${stock}</td>
@@ -211,8 +233,8 @@ function render(latest, history) {
       </tr>`;
     }).join("");
 
-    const best = priced.find(i => i.price === bestPrice);
-    const bestPct = best ? pctVsPvp(best.price, p.pvp) : null;
+    const best = priced.find(i => i.final === bestPrice);
+    const bestPct = best ? pctVsPvp(best.final, p.pvp) : null;
     const card = document.createElement("details");
     card.className = "card";
     card.dataset.search = norm([p.name, p.brand, p.category, p.sku, ...aliases(p.name)].join(" "));
@@ -222,7 +244,7 @@ function render(latest, history) {
       <summary>
         <span class="title">${p.image ? `<img class="thumb" src="${esc(p.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}<h2>${esc(p.name)}</h2></span>
         <span class="best-line">${best
-          ? `desde <strong>${eur(best.price)}</strong> en ${esc(storeName[best.store] || best.store)}${bestPct == null ? "" : ` · <span class="${bestPct < 0 ? "neg" : bestPct > 0 ? "pos" : ""}">${(bestPct > 0 ? "+" : "") + bestPct.toFixed(1).replace(".", ",")} % vs PVP</span>`}`
+          ? `desde <strong>${eur(best.final)}</strong> en ${esc(storeName[best.store] || best.store)}${best.coupon ? ` <span class="tag coupon">cupón ${esc(best.coupon.code)}</span>` : ""}${bestPct == null ? "" : ` · <span class="${bestPct < 0 ? "neg" : bestPct > 0 ? "pos" : ""}">${(bestPct > 0 ? "+" : "") + bestPct.toFixed(1).replace(".", ",")} % vs PVP</span>`}`
           : "sin precio todavía"}${packLine(p, best, bestBySku, productBySku, storeName, true)}</span>
       </summary>
       <div class="detail">
@@ -372,8 +394,8 @@ function buildChart(canvas, product, history, storeName, colorVar, isRef) {
   });
 }
 
-Promise.all([load("data/latest.json"), load("data/history.json")])
-  .then(([latest, history]) => render(latest, history))
+Promise.all([load("data/latest.json"), load("data/history.json"), load("data/coupons.json").catch(() => [])])
+  .then(([latest, history, coupons]) => render(latest, history, coupons))
   .catch(err => {
     document.getElementById("updated").textContent =
       `No se pudieron cargar los datos (${err.message}). Si abres el fichero en local, sírvelo con: python -m http.server`;

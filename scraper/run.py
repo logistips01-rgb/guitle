@@ -161,7 +161,8 @@ def with_live_pvp(products, latest, stores):
             if entry["store"] in refs and entry["sku"] == p["sku"] and entry.get("price") is not None:
                 p.update(pvp=entry["price"], pvp_source=entry["store"], pvp_date=entry["price_date"])
                 break
-        images = sorted((e["store"] not in refs, e["store"], e["image"]) for e in latest.values()
+        # Foto de una tienda (es la del acabado exacto); la web de la marca comparte foto entre colores.
+        images = sorted((e["store"] in refs, e["store"], e["image"]) for e in latest.values()
                         if e["sku"] == p["sku"] and e.get("image"))
         if images:
             p["image"] = images[0][2]

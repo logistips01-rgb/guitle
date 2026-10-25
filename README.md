@@ -8,6 +8,9 @@
 - `data/manual.json`: precios apuntados a mano para tiendas bloqueadas, p. ej.
   `[{"date": "2026-10-26", "store": "kirstein", "sku": "0140552506", "price": 799, "in_stock": true}]`.
   Se incorporan al histórico en la siguiente ejecución, marcados como `manual`.
+- `data/coupons.json`: cupones de descuento por tienda; la página los aplica al precio, al mejor precio y al pack. Ejemplo:
+  `[{"store": "thomann", "code": "OTONO10", "percent": 10, "brands": ["Fender"], "categories": ["guitarra"], "min_purchase": 300, "valid_until": "2026-11-30"}]`
+  (`percent` o `amount` en euros; `brands`, `categories`, `min_purchase` y `valid_until` son opcionales; caducados se ignoran).
 - `index.html`: página para GitHub Pages (Chart.js desde CDN).
 
 Status posibles: `ok`, `no_price`, `blocked_403`, `error`, `wrong_currency`, `robots_disallowed`, `sku_mismatch`.
