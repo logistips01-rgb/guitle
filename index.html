@@ -60,6 +60,24 @@
     padding: 16px; margin-bottom: 20px;
   }
   .card-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-bottom: 12px; }
+  .search {
+    width: 100%; font: inherit; font-size: 1.1rem; padding: 12px 16px; margin-bottom: 12px;
+    color: var(--text-primary); background: var(--surface-1);
+    border: 1px solid var(--border); border-radius: 999px; outline: none;
+  }
+  .search:focus { border-color: var(--s1); box-shadow: 0 0 0 3px color-mix(in srgb, var(--s1) 25%, transparent); }
+  details.card { padding: 0; }
+  details.card > summary {
+    list-style: none; cursor: pointer; padding: 14px 16px;
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 16px;
+  }
+  details.card > summary::-webkit-details-marker { display: none; }
+  details.card > summary:hover h2 { text-decoration: underline; }
+  details.card[open] > summary { border-bottom: 1px solid var(--grid); }
+  .detail { padding: 12px 16px 16px; }
+  .best-line { color: var(--text-secondary); }
+  .best-line strong { color: var(--text-primary); font-size: 1.05rem; }
+  .count { color: var(--text-muted); font-size: .9rem; margin: 0 0 12px; }
   .table-wrap { overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
   th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
@@ -80,10 +98,12 @@
 <main>
   <h1>Precios guitle</h1>
   <p class="sub" id="updated">Cargando…</p>
+  <input class="search" id="q" type="search" placeholder="Busca una guitarra: casino, strat blanca, les paul…" autocomplete="off" aria-label="Buscar guitarra" autofocus>
   <div class="filters" id="filters" hidden>
     <label>Categoría <select id="f-category"><option value="">Todas</option></select></label>
     <label>Marca <select id="f-brand"><option value="">Todas</option></select></label>
   </div>
+  <p class="count" id="count"></p>
   <div id="products"></div>
   <section class="card">
     <h2>Estado de las tiendas (última ejecución)</h2>
@@ -137,7 +157,6 @@ function render(latest, history) {
     `Última ejecución: ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
 
   const container = document.getElementById("products");
-  const charts = [];
   for (const p of latest.products) {
     const items = latest.items.filter(i => i.sku === p.sku);
     if (!items.length) continue;
@@ -161,22 +180,36 @@ function render(latest, history) {
       </tr>`;
     }).join("");
 
-    const card = document.createElement("section");
+    const best = priced.find(i => i.price === bestPrice);
+    const bestPct = best ? pctVsPvp(best.price, p.pvp) : null;
+    const card = document.createElement("details");
     card.className = "card";
+    card.dataset.search = norm([p.name, p.brand, p.category, p.sku, ...aliases(p.name)].join(" "));
     card.dataset.brand = p.brand || "";
     card.dataset.category = p.category || "";
     card.innerHTML = `
-      <div class="card-head">
-        <h2>${esc(p.name)} <span class="tag">${esc(p.category || "")}</span></h2>
-        <span class="muted">SKU ${esc(p.sku)} · PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSource(p, storeName)}</span>
-      </div>
+      <summary>
+        <h2>${esc(p.name)}</h2>
+        <span class="best-line">${best
+          ? `desde <strong>${eur(best.price)}</strong> en ${esc(storeName[best.store] || best.store)}${bestPct == null ? "" : ` · <span class="${bestPct < 0 ? "neg" : bestPct > 0 ? "pos" : ""}">${(bestPct > 0 ? "+" : "") + bestPct.toFixed(1).replace(".", ",")} % vs PVP</span>`}`
+          : "sin precio todavía"}</span>
+      </summary>
+      <div class="detail">
+      <p class="muted" style="margin:0 0 8px">${esc(p.brand || "")} · ${esc(p.category || "")} · SKU ${esc(p.sku)} · PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSource(p, storeName)}</p>
       <div class="table-wrap"><table>
         <thead><tr><th>Tienda</th><th class="num">Precio actual</th><th class="num">vs PVP</th><th class="num">Mínimo histórico</th><th>Stock</th><th>Estado</th></tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
-      <div class="chart-box"><canvas aria-label="Evolución del precio de ${esc(p.name)} por tienda"></canvas></div>`;
+      <div class="chart-box"><canvas aria-label="Evolución del precio de ${esc(p.name)} por tienda"></canvas></div>
+      </div>`;
     container.appendChild(card);
-    charts.push(buildChart(card.querySelector("canvas"), p, history, storeName, colorVar, isRef));
+    // La gráfica se crea al abrir la ficha (en un <details> cerrado mediría 0 px).
+    card.addEventListener("toggle", () => {
+      if (card.open && !card.dataset.chart) {
+        card.dataset.chart = "1";
+        buildChart(card.querySelector("canvas"), p, history, storeName, colorVar, isRef);
+      }
+    });
   }
 
   setupFilters(latest.products);
@@ -208,11 +241,53 @@ function setupFilters(products) {
     sel.addEventListener("change", apply);
   }
   document.getElementById("filters").hidden = !useful;
+
+  const input = document.getElementById("q");
+  const params = new URLSearchParams(location.search);
+  input.value = params.get("q") || "";
+  input.addEventListener("input", apply);
+  apply();
+
   function apply() {
-    for (const card of document.querySelectorAll("#products .card")) {
-      card.hidden = Object.entries(selects).some(([key, sel]) => sel.value && card.dataset[key] !== sel.value);
+    const words = norm(input.value).split(" ").filter(Boolean);
+    const cards = [...document.querySelectorAll("#products .card")];
+    let shown = 0;
+    for (const card of cards) {
+      card.hidden = Object.entries(selects).some(([key, sel]) => sel.value && card.dataset[key] !== sel.value)
+        || !words.every(w => card.dataset.search.includes(w));
+      if (!card.hidden) shown++;
     }
+    const visible = cards.filter(c => !c.hidden);
+    if (words.length && visible.length === 1) visible[0].open = true;  // un único resultado: se abre solo
+    document.getElementById("count").textContent = words.length
+      ? (shown ? `${shown} resultado${shown === 1 ? "" : "s"}` : "No está en el catálogo todavía. Pídemela y la añado.")
+      : `${shown} guitarras en seguimiento`;
+    const url = new URL(location);
+    words.length ? url.searchParams.set("q", input.value) : url.searchParams.delete("q");
+    window.history.replaceState(null, "", url);
   }
+}
+
+// Minúsculas y sin tildes, para que "telecáster" encuentre "Telecaster".
+function norm(s) {
+  return String(s).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+// Abreviaturas y traducciones habituales al buscar.
+function aliases(name) {
+  const n = norm(name), out = [];
+  const add = (cond, ...words) => { if (cond) out.push(...words); };
+  add(n.includes("stratocaster"), "strat", "st");
+  add(n.includes("telecaster"), "tele", "tl");
+  add(n.includes("les paul"), "lp", "lespaul");
+  add(n.includes("black") || n.includes("ebony"), "negra", "negro");
+  add(n.includes("white"), "blanca", "blanco");
+  add(n.includes("blue") || n.includes("turquoise"), "azul");
+  add(n.includes("red") || n.includes("cherry"), "roja", "rojo", "cereza");
+  add(n.includes("sunburst") || n.includes("burst"), "sunburst", "burst");
+  add(/\bmn\b/.test(n), "arce", "maple");
+  add(/\b(rw|lrl)\b/.test(n), "palisandro", "laurel", "rosewood");
+  return out;
 }
 
 function buildChart(canvas, product, history, storeName, colorVar, isRef) {
