@@ -1,5 +1,6 @@
 [
   {"sku": "0140552506", "brand": "Fender", "category": "guitarra", "ean": "885978110698", "name": "Fender Player II Telecaster MN Black", "pvp": 799, "case": "0996106306"},
+  {"sku": "0140552500", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Player II Telecaster MN 3-Color Sunburst", "pvp": null, "case": "0996106306"},
   {"sku": "0140550518", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Player II Telecaster RW Aquatone Blue", "pvp": 799, "case": "0996106306"},
   {"sku": "0266020560", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Standard Telecaster MN Aqua Marine Metallic", "pvp": 589, "case": "0996106306"},
   {"sku": "0266040505", "brand": "Fender", "category": "guitarra", "ean": "885978118212", "name": "Fender Standard Telecaster LRL Olympic White", "pvp": 589, "case": "0996106306"},

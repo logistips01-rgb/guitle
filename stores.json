@@ -11,7 +11,8 @@
      {"sku": "0140510515", "url": "https://es.fender.com/products/player-ii-stratocaster"},
      {"sku": "0266220505", "url": "https://es.fender.com/products/standard-stratocaster"},
      {"sku": "0266240500", "url": "https://es.fender.com/products/standard-stratocaster"},
-     {"sku": "0140570506", "url": "https://es.fender.com/products/player-ii-telecaster-hh"}
+     {"sku": "0140570506", "url": "https://es.fender.com/products/player-ii-telecaster-hh"},
+     {"sku": "0140552500", "url": "https://es.fender.com/products/player-ii-telecaster"}
    ]},
   {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es",
    "method": "jsonld", "selector": null,
@@ -86,7 +87,8 @@
      {"sku": "RG550-RF", "url": "https://www.egitana.es/ibanez-rg550-rf/p/38991"},
      {"sku": "0996106306", "url": "https://www.egitana.es/fender-deluxe-molded-strat-tele-case/p/18528"},
      {"sku": "M300C", "url": "https://www.egitana.es/ibanez-m300c/p/42832"},
-     {"sku": "MS100C", "url": "https://www.egitana.es/ibanez-ms100c/p/28254"}
+     {"sku": "MS100C", "url": "https://www.egitana.es/ibanez-ms100c/p/28254"},
+     {"sku": "0140552500", "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-3-color-sunburst/p/36780"}
    ]},
   {"id": "musicstore_ebay", "name": "Music Store (eBay)", "domain": "www.ebay.de",
    "method": "ebay", "ebay": {"marketplace": "EBAY_DE", "seller": "musicstoreprofessionalgmbh"},
@@ -120,6 +122,25 @@
    "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.woodbrass.com/forme-t-fender-telecaster-player-ii-mn-black-p395782.html"}
+   ]},
+  {"id": "multiocio", "name": "Multiocio", "domain": "www.multiocio.com",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552500", "url": "https://www.multiocio.com/fender-player-ii-telecaster-mn-3ts"},
+     {"sku": "0140552506", "url": "https://www.multiocio.com/fender-player-ii-telecaster-mn-blk"},
+     {"sku": "0140550518", "url": "https://www.multiocio.com/fender-player-ii-telecaster-rw-aqb"},
+     {"sku": "0140570506", "url": "https://www.multiocio.com/fender-player-ii-telecaster-hh-rw-blk"},
+     {"sku": "0140512518", "url": "https://www.multiocio.com/fender-player-ii-stratocaster-mn-aqb"},
+     {"sku": "0140510515", "url": "https://www.multiocio.com/fender-player-ii-stratocaster-rw-pwt"},
+     {"sku": "0266220505", "url": "https://www.multiocio.com/fender-standard-stratocaster-mn-owt"},
+     {"sku": "0266240500", "url": "https://www.multiocio.com/fender-standard-stratocaster-lrl-3ts"},
+     {"sku": "0266040505", "url": "https://www.multiocio.com/fender-standard-telecaster-lrl-owt"},
+     {"sku": "0266020560", "url": "https://www.multiocio.com/fender-standard-telecaster-mn-amm"},
+     {"sku": "EOCAVSNH1", "url": "https://www.multiocio.com/epiphone-casino-vintage-sunburst"},
+     {"sku": "EIES335VSNH1", "url": "https://www.multiocio.com/epiphone-es-335-vintage-sunburst"},
+     {"sku": "AS73-TBC", "url": "https://www.multiocio.com/ibanez-as73-tbc"},
+     {"sku": "RG550-RF", "url": "https://www.multiocio.com/ibanez-rg550-rf"},
+     {"sku": "AZ24S1F-TKS", "url": "https://www.multiocio.com/ibanez-az24s1f-tks"}
    ]},
   {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
