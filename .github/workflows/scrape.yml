@@ -7,6 +7,12 @@ on:
     - cron: "0 7 * * *"
     - cron: "0 8 * * *"
   workflow_dispatch:
+  # Al cambiar el workflow o el scraper se ejecuta una vez para validarlo.
+  push:
+    paths:
+      - ".github/workflows/scrape.yml"
+      - "scraper/**"
+      - "stores.json"
 
 permissions:
   contents: write
