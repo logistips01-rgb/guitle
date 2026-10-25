@@ -79,6 +79,18 @@ class Fetcher:
     def get(self, url):
         """Una sola petición por URL y ejecución (fender_es repite URL para varios SKUs)."""
         if url not in self._pages:
-            self._wait()
-            self._pages[url] = self.session.get(url, timeout=TIMEOUT, allow_redirects=True)
+            self._pages[url] = self._get_with_retry(url)
         return self._pages[url]
+
+    def _get_with_retry(self, url):
+        """Un reintento ante cortes de red o 5xx; los 403 no se reintentan."""
+        for attempt in (1, 2):
+            self._wait()
+            try:
+                resp = self.session.get(url, timeout=TIMEOUT, allow_redirects=True)
+            except (requests.ConnectionError, requests.Timeout):
+                if attempt == 2:
+                    raise
+                continue
+            if resp.status_code < 500 or attempt == 2:
+                return resp
