@@ -98,8 +98,9 @@ def scrape_item(fetcher, store, item, products, now):
         if result["identifiers"]:
             rec["identifiers"] = result["identifiers"]
             # La página declara un EAN distinto al del producto => URL mal asignada.
-            page_eans = {d for d in map(_digits, result["identifiers"]) if len(d) in (12, 13)}
-            if product.get("ean") and page_eans and product["ean"] not in page_eans:
+            # GTIN-12/13/14: se comparan sin ceros a la izquierda (0885978110698 == 885978110698).
+            page_eans = {d.lstrip("0") for d in map(_digits, result["identifiers"]) if len(d) in (12, 13, 14)}
+            if product.get("ean") and page_eans and product["ean"].lstrip("0") not in page_eans:
                 rec["status"] = "sku_mismatch"
                 rec["note"] = f"EAN página {sorted(page_eans)} != {product['ean']}"
                 return rec
