@@ -105,19 +105,34 @@ def _block_hint(resp, soup):
     return f"title={text!r}"
 
 
+def manual_records(history):
+    """Precios apuntados a mano en data/manual.json (tiendas bloqueadas). Se ingieren una sola vez."""
+    seen = {(r["date"], r["store"], r["sku"]) for r in history if r.get("method") == "manual"}
+    out = []
+    for m in load(DATA / "manual.json", []):
+        date = str(m["date"])
+        if (date, m["store"], m["sku"]) in seen:
+            continue
+        out.append({"date": date, "store": m["store"], "sku": m["sku"], "url": m.get("url"),
+                    "price": float(m["price"]), "currency": "EUR", "in_stock": m.get("in_stock"),
+                    "status": "ok", "method": "manual", "http_status": None, "note": m.get("note")})
+    return out
+
+
 def update_latest(history, products, stores):
     latest = {}
-    for rec in history:
+    for rec in sorted(history, key=lambda r: r["date"]):
         key = f"{rec['store']}|{rec['sku']}"
         entry = latest.setdefault(key, {"store": rec["store"], "sku": rec["sku"]})
-        entry.update(last_run=rec["date"], status=rec["status"], url=rec["url"])
+        if rec.get("method") != "manual":
+            entry.update(last_run=rec["date"], status=rec["status"], url=rec["url"])
         if rec["status"] == "ok":
             entry.update(price=rec["price"], currency=rec["currency"], in_stock=rec["in_stock"],
-                         price_date=rec["date"])
+                         price_date=rec["date"], price_method=rec["method"])
             if entry.get("min_price") is None or rec["price"] < entry["min_price"]:
                 entry.update(min_price=rec["price"], min_price_date=rec["date"])
     return {
-        "updated": history[-1]["date"] if history else None,
+        "updated": max((r["date"] for r in history), default=None),
         "products": products,
         "stores": [{k: s.get(k) for k in ("id", "name", "domain", "reference")} for s in stores],
         "items": sorted(latest.values(), key=lambda e: (e["sku"], e["store"])),
@@ -167,7 +182,8 @@ def main(argv=None):
         return 0
 
     DATA.mkdir(exist_ok=True)
-    history = load(DATA / "history.json", []) + records
+    history = load(DATA / "history.json", [])
+    history += manual_records(history) + records
     (DATA / "history.json").write_text(json.dumps(history, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     latest = update_latest(history, products, stores)
     (DATA / "latest.json").write_text(json.dumps(latest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")

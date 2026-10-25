@@ -1,0 +1,63 @@
+name: scrape-prices
+
+on:
+  schedule:
+    # GitHub cron va en UTC: 07:00 UTC = 09:00 en verano (CEST), 08:00 UTC = 09:00 en invierno (CET).
+    # Se disparan ambas y el primer paso deja pasar solo la que cae a las 09 en Madrid.
+    - cron: "0 7 * * *"
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape-prices
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: ¿Son las 09 en Madrid?
+        id: gate
+        run: |
+          hour=$(TZ=Europe/Madrid date +%H)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$hour" != "09" ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Hora Madrid $hour, se omite."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.run == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        if: steps.gate.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Scraper
+        if: steps.gate.outputs.run == 'true'
+        # Las tiendas que fallan quedan registradas con su status; el job no debe romperse por ellas.
+        run: python -m scraper.run || echo "::warning::scraper terminó con error; se commitea lo que haya"
+
+      - name: Commit de datos
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Sin cambios en data/"
+          else
+            git commit -m "data: precios $(TZ=Europe/Madrid date +%F)"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

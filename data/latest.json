@@ -1,0 +1,218 @@
+{
+ "updated": "2026-10-25T19:07:15+00:00",
+ "products": [
+  {
+   "sku": "0140552506",
+   "ean": "885978110698",
+   "name": "Fender Player II Telecaster MN Black",
+   "pvp": 929
+  },
+  {
+   "sku": "0140550518",
+   "ean": null,
+   "name": "Fender Player II Telecaster RW Aquatone Blue",
+   "pvp": 869
+  },
+  {
+   "sku": "0266020560",
+   "ean": null,
+   "name": "Fender Standard Telecaster MN Aqua Marine Metallic",
+   "pvp": 589
+  },
+  {
+   "sku": "0266040505",
+   "ean": "885978118212",
+   "name": "Fender Standard Telecaster LRL Olympic White",
+   "pvp": 589
+  },
+  {
+   "sku": "0266020550",
+   "ean": "885978118137",
+   "name": "Fender Standard Telecaster MN BPG Butterscotch Blonde",
+   "pvp": null,
+   "todo": "SKU deducido (código de color 550 = Butterscotch Blonde) y PVP sin confirmar"
+  },
+  {
+   "sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK",
+   "ean": null,
+   "name": "Fender Player II Telecaster HH RW Black",
+   "pvp": null,
+   "todo": "SKU Fender y PVP pendientes"
+  }
+ ],
+ "stores": [
+  {
+   "id": "fender_es",
+   "name": "Fender España",
+   "domain": "es.fender.com",
+   "reference": true
+  },
+  {
+   "id": "thomann",
+   "name": "Thomann",
+   "domain": "www.thomann.es",
+   "reference": null
+  },
+  {
+   "id": "musicstore",
+   "name": "Music Store",
+   "domain": "musicstore.de",
+   "reference": null
+  },
+  {
+   "id": "musicopolix",
+   "name": "Musicopolix",
+   "domain": "musicopolix.com",
+   "reference": null
+  },
+  {
+   "id": "alfasoni",
+   "name": "Alfasoni",
+   "domain": "alfasoni.com",
+   "reference": null
+  },
+  {
+   "id": "unionmusical",
+   "name": "Unión Musical",
+   "domain": "www.unionmusical.es",
+   "reference": null
+  },
+  {
+   "id": "kirstein",
+   "name": "Kirstein",
+   "domain": "www.kirstein.de",
+   "reference": null
+  },
+  {
+   "id": "matguitars",
+   "name": "Mat Guitars",
+   "domain": null,
+   "reference": null
+  },
+  {
+   "id": "auvisa",
+   "name": "Auvisa",
+   "domain": null,
+   "reference": null
+  },
+  {
+   "id": "gear4music",
+   "name": "Gear4music",
+   "domain": null,
+   "reference": null
+  },
+  {
+   "id": "drunkat",
+   "name": "Drunkat",
+   "domain": null,
+   "reference": null
+  }
+ ],
+ "items": [
+  {
+   "store": "fender_es",
+   "sku": "0140550518",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "blocked_403",
+   "url": "https://es.fender.com/products/player-ii-telecaster"
+  },
+  {
+   "store": "fender_es",
+   "sku": "0140552506",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "blocked_403",
+   "url": "https://es.fender.com/products/player-ii-telecaster"
+  },
+  {
+   "store": "kirstein",
+   "sku": "0140552506",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "blocked_403",
+   "url": "https://www.kirstein.de/es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"
+  },
+  {
+   "store": "musicopolix",
+   "sku": "0140552506",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "ok",
+   "url": "https://musicopolix.com/cat/guitarras/electricas/Fender/202259-fender-player-ii-telecaster-mn-blk.html",
+   "price": 849.66,
+   "currency": "EUR",
+   "in_stock": false,
+   "price_date": "2026-10-25T19:07:15+00:00",
+   "price_method": "jsonld",
+   "min_price": 849.66,
+   "min_price_date": "2026-10-25T19:07:15+00:00"
+  },
+  {
+   "store": "musicstore",
+   "sku": "0140552506",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "blocked_403",
+   "url": "https://musicstore.de/en_DE/EUR/Fender-Player-II-Telecaster-MN-Black/art-GIT0061904-008"
+  },
+  {
+   "store": "thomann",
+   "sku": "0140552506",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "ok",
+   "url": "https://www.thomann.es/fender_player_ii_tele_mn_blk.htm",
+   "price": 777.0,
+   "currency": "EUR",
+   "in_stock": false,
+   "price_date": "2026-10-25T19:07:15+00:00",
+   "price_method": "meta",
+   "min_price": 777.0,
+   "min_price_date": "2026-10-25T19:07:15+00:00"
+  },
+  {
+   "store": "alfasoni",
+   "sku": "0266020550",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "ok",
+   "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-mn-bpg-btb-124899.html",
+   "price": 514.1,
+   "currency": "EUR",
+   "in_stock": true,
+   "price_date": "2026-10-25T19:07:15+00:00",
+   "price_method": "jsonld",
+   "min_price": 514.1,
+   "min_price_date": "2026-10-25T19:07:15+00:00"
+  },
+  {
+   "store": "fender_es",
+   "sku": "0266020560",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "blocked_403",
+   "url": "https://es.fender.com/products/standard-telecaster"
+  },
+  {
+   "store": "alfasoni",
+   "sku": "0266040505",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "ok",
+   "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-lrl-wpg-owt-124901.html",
+   "price": 529.0,
+   "currency": "EUR",
+   "in_stock": true,
+   "price_date": "2026-10-25T19:07:15+00:00",
+   "price_method": "jsonld",
+   "min_price": 529.0,
+   "min_price_date": "2026-10-25T19:07:15+00:00"
+  },
+  {
+   "store": "fender_es",
+   "sku": "0266040505",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "blocked_403",
+   "url": "https://es.fender.com/products/standard-telecaster"
+  },
+  {
+   "store": "unionmusical",
+   "sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK",
+   "last_run": "2026-10-25T19:07:15+00:00",
+   "status": "blocked_403",
+   "url": "https://www.unionmusical.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"
+  }
+ ]
+}

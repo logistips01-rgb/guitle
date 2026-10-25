@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Precios Fender</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-0: #f4f4f2;
+    --surface-1: #fcfcfb;
+    --border: #e2e1dc;
+    --grid: #ecebe7;
+    --text-primary: #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted: #7a7974;
+    --good: #00750a;
+    --critical: #c62828;
+    --warning: #9a6400;
+    --reference: #8a8984;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+    --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface-0: #111110; --surface-1: #1a1a19; --border: #2e2e2c; --grid: #262624;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e88;
+      --good: #4cc261; --critical: #f07070; --warning: #e0a63a; --reference: #9a9993;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+      --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-0: #111110; --surface-1: #1a1a19; --border: #2e2e2c; --grid: #262624;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e88;
+    --good: #4cc261; --critical: #f07070; --warning: #e0a63a; --reference: #9a9993;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--surface-0); color: var(--text-primary);
+    font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; }
+  h2 { font-size: 1.1rem; margin: 0; }
+  .muted { color: var(--text-muted); }
+  .sub { color: var(--text-secondary); margin: 0 0 24px; }
+  .card {
+    background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px; margin-bottom: 20px;
+  }
+  .card-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; margin-bottom: 12px; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+  th { color: var(--text-secondary); font-weight: 600; font-size: .85rem; }
+  td.num, th.num { text-align: right; }
+  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .best { font-weight: 700; }
+  .neg { color: var(--good); }
+  .pos { color: var(--critical); }
+  .tag { font-size: .78rem; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--border); color: var(--text-secondary); }
+  .tag.bad { color: var(--critical); border-color: currentColor; }
+  .tag.warn { color: var(--warning); border-color: currentColor; }
+  .chart-box { position: relative; height: 260px; margin-top: 14px; }
+  .empty { color: var(--text-muted); padding: 12px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Precios Fender</h1>
+  <p class="sub" id="updated">Cargando…</p>
+  <div id="products"></div>
+  <section class="card">
+    <h2>Estado de las tiendas (última ejecución)</h2>
+    <div class="table-wrap"><table id="status"></table></div>
+  </section>
+</main>
+<script>
+const STATUS_LABEL = {
+  ok: "ok", no_price: "sin precio", blocked_403: "bloqueada (403)", error: "error",
+  wrong_currency: "moneda distinta", robots_disallowed: "robots.txt", sku_mismatch: "SKU no coincide",
+};
+const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR" });
+const day = iso => iso ? iso.slice(0, 10) : "";
+const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+async function load(path) {
+  const r = await fetch(path, { cache: "no-store" });
+  if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+  return r.json();
+}
+
+// El color sigue a la tienda (orden de stores.json), nunca a su posición en cada gráfica.
+function storeColors(stores) {
+  const map = {};
+  let slot = 0;
+  for (const s of stores) {
+    map[s.id] = s.reference ? "--reference" : (slot < 8 ? `--s${++slot}` : "--reference");
+  }
+  return map;
+}
+
+function pctVsPvp(price, pvp) {
+  if (price == null || !pvp) return null;
+  return (price - pvp) / pvp * 100;
+}
+
+function render(latest, history) {
+  const stores = latest.stores;
+  const storeName = Object.fromEntries(stores.map(s => [s.id, s.name]));
+  const isRef = Object.fromEntries(stores.map(s => [s.id, !!s.reference]));
+  const colorVar = storeColors(stores);
+  document.getElementById("updated").textContent =
+    `Última ejecución: ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
+
+  const container = document.getElementById("products");
+  const charts = [];
+  for (const p of latest.products) {
+    const items = latest.items.filter(i => i.sku === p.sku);
+    if (!items.length) continue;
+    const priced = items.filter(i => i.price != null && !isRef[i.store]);
+    const bestPrice = priced.length ? Math.min(...priced.map(i => i.price)) : null;
+    items.sort((a, b) => (isRef[a.store] - isRef[b.store]) || ((a.price ?? 1e9) - (b.price ?? 1e9)));
+
+    const rows = items.map(i => {
+      const pct = pctVsPvp(i.price, p.pvp);
+      const stock = i.in_stock === true ? "sí" : i.in_stock === false ? "no" : "?";
+      const statusCls = i.status === "ok" ? "" : (i.status === "blocked_403" ? "bad" : "warn");
+      const stale = i.price != null && i.status !== "ok" ? ` <span class="muted">(${day(i.price_date)})</span>` : "";
+      const manual = i.price_method === "manual" ? ` <span class="tag">manual</span>` : "";
+      return `<tr>
+        <td><span class="swatch" style="background:var(${colorVar[i.store]})"></span>${i.url ? `<a href="${esc(i.url)}" rel="noopener" target="_blank">${esc(storeName[i.store] || i.store)}</a>` : esc(storeName[i.store] || i.store)}${isRef[i.store] ? ' <span class="tag">referencia</span>' : ""}</td>
+        <td class="num ${i.price === bestPrice ? "best" : ""}">${eur(i.price)}${stale}${manual}</td>
+        <td class="num ${pct == null ? "" : pct < 0 ? "neg" : pct > 0 ? "pos" : ""}">${pct == null ? "–" : (pct > 0 ? "+" : "") + pct.toFixed(1).replace(".", ",") + " %"}</td>
+        <td class="num">${eur(i.min_price)} <span class="muted">${day(i.min_price_date)}</span></td>
+        <td>${stock}</td>
+        <td><span class="tag ${statusCls}">${esc(STATUS_LABEL[i.status] || i.status)}</span></td>
+      </tr>`;
+    }).join("");
+
+    const card = document.createElement("section");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-head">
+        <h2>${esc(p.name)}</h2>
+        <span class="muted">SKU ${esc(p.sku)} · PVP ${p.pvp ? eur(p.pvp) : "pendiente"}</span>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Tienda</th><th class="num">Precio actual</th><th class="num">vs PVP</th><th class="num">Mínimo histórico</th><th>Stock</th><th>Estado</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table></div>
+      <div class="chart-box"><canvas aria-label="Evolución del precio de ${esc(p.name)} por tienda"></canvas></div>`;
+    container.appendChild(card);
+    charts.push(buildChart(card.querySelector("canvas"), p, history, storeName, colorVar, isRef));
+  }
+
+  // Estado por tienda: peor status de la última ejecución, para ver quién bloquea.
+  const lastByStore = {};
+  for (const i of latest.items) {
+    const cur = lastByStore[i.store];
+    if (!cur || (cur.status === "ok" && i.status !== "ok")) lastByStore[i.store] = i;
+  }
+  document.getElementById("status").innerHTML =
+    `<thead><tr><th>Tienda</th><th>Estado</th><th>Última ejecución</th></tr></thead><tbody>` +
+    stores.filter(s => lastByStore[s.id]).map(s => {
+      const i = lastByStore[s.id];
+      const cls = i.status === "ok" ? "" : (i.status === "blocked_403" ? "bad" : "warn");
+      return `<tr><td>${esc(s.name)}</td><td><span class="tag ${cls}">${esc(STATUS_LABEL[i.status] || i.status)}</span></td><td>${day(i.last_run)}</td></tr>`;
+    }).join("") + `</tbody>`;
+}
+
+function buildChart(canvas, product, history, storeName, colorVar, isRef) {
+  const recs = history.filter(r => r.sku === product.sku && r.status === "ok" && r.price != null);
+  const dates = [...new Set(recs.map(r => day(r.date)))].sort();
+  if (!dates.length) {
+    canvas.parentElement.outerHTML = '<p class="empty">Aún no hay precios para este producto.</p>';
+    return null;
+  }
+  const byStore = {};
+  for (const r of recs) (byStore[r.store] ??= {})[day(r.date)] = r.price;  // último del día gana
+
+  const datasets = Object.entries(byStore).map(([store, prices]) => {
+    const color = css(colorVar[store] || "--reference");
+    return {
+      label: storeName[store] || store,
+      data: dates.map(d => prices[d] ?? null),
+      borderColor: color, backgroundColor: color,
+      borderWidth: 2, pointRadius: dates.length > 30 ? 0 : 4, pointHoverRadius: 5,
+      borderDash: isRef[store] ? [6, 4] : [], spanGaps: true, tension: 0,
+    };
+  });
+  if (product.pvp) {
+    datasets.push({
+      label: "PVP Fender", data: dates.map(() => product.pvp),
+      borderColor: css("--reference"), borderWidth: 1.5, borderDash: [2, 4],
+      pointRadius: 0, pointHoverRadius: 0,
+    });
+  }
+  const text = css("--text-secondary"), grid = css("--grid");
+  return new Chart(canvas, {
+    type: "line",
+    data: { labels: dates, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { position: "bottom", labels: { color: text, boxWidth: 12, boxHeight: 12, usePointStyle: false } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${eur(c.parsed.y)}` } },
+      },
+      scales: {
+        x: { ticks: { color: text, maxRotation: 0, autoSkip: true }, grid: { display: false } },
+        y: { ticks: { color: text, callback: v => eur(v) }, grid: { color: grid } },
+      },
+    },
+  });
+}
+
+Promise.all([load("data/latest.json"), load("data/history.json")])
+  .then(([latest, history]) => render(latest, history))
+  .catch(err => {
+    document.getElementById("updated").textContent =
+      `No se pudieron cargar los datos (${err.message}). Si abres el fichero en local, sírvelo con: python -m http.server`;
+  });
+</script>
+</body>
+</html>
