@@ -10,7 +10,8 @@
      {"sku": "0140512518", "url": "https://es.fender.com/products/player-ii-stratocaster"},
      {"sku": "0140510515", "url": "https://es.fender.com/products/player-ii-stratocaster"},
      {"sku": "0266220505", "url": "https://es.fender.com/products/standard-stratocaster"},
-     {"sku": "0266240500", "url": "https://es.fender.com/products/standard-stratocaster"}
+     {"sku": "0266240500", "url": "https://es.fender.com/products/standard-stratocaster"},
+     {"sku": "0140570506", "url": "https://es.fender.com/products/player-ii-telecaster-hh"}
    ]},
   {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es",
    "method": "jsonld", "selector": null,
@@ -54,7 +55,7 @@
    ]},
   {"id": "unionmusical", "name": "Unión Musical", "domain": "www.unionmusical.es",
    "method": "jsonld", "selector": null,
-   "items": [{"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "url": "https://www.unionmusical.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"}]},
+   "items": [{"sku": "0140570506", "url": "https://www.unionmusical.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"}]},
   {"id": "kirstein", "name": "Kirstein", "domain": "www.kirstein.de",
    "method": "jsonld", "selector": null,
    "items": [{"sku": "0140552506", "url": "https://www.kirstein.de/es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"}]},
@@ -65,7 +66,27 @@
      {"sku": "0266020560", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mn-amm/"},
      {"sku": "0266020550", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mf-btb/"},
      {"sku": "0266040505", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-lf-owh/"},
-     {"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/"}
+     {"sku": "0140570506", "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/"}
+   ]},
+  {"id": "egitana", "name": "Egitana", "domain": "www.egitana.es",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-black/p/36781"},
+     {"sku": "0140550518", "url": "https://www.egitana.es/fender-player-ii-telecaster-rosewood-fingerboard-aquatone-blue/p/36778"},
+     {"sku": "0140570506", "url": "https://www.egitana.es/fender-player-ii-telecaster-hh-rw-blk/p/44477"},
+     {"sku": "0266020560", "url": "https://www.egitana.es/fender-std-tele-mn-wpg-amm/p/38812"},
+     {"sku": "0266040505", "url": "https://www.egitana.es/fender-std-tele-lrl-wpg-owt/p/38818"},
+     {"sku": "0266020550", "url": "https://www.egitana.es/fender-std-tele-mn-bpg-btb/p/38813"},
+     {"sku": "0140512518", "url": "https://www.egitana.es/fender-player-ii-stratocaster-maple-fingerboard-aquatone-blue/p/36772"},
+     {"sku": "0140510515", "url": "https://www.egitana.es/fender-player-ii-stratocaster-rosewood-fingerboard-polar-white/p/36767"},
+     {"sku": "0266220505", "url": "https://www.egitana.es/fender-standard-strat-mn-wpg-owt/p/38819"},
+     {"sku": "0266240500", "url": "https://www.egitana.es/fender-standard-strat-lrl-wpg-3ts/p/38821"},
+     {"sku": "AS73-TBC", "url": "https://www.egitana.es/ibanez-as73-tbc-tobacco-brown/p/14909"},
+     {"sku": "AZ24S1F-TKS", "url": "https://www.egitana.es/ibanez-az24s1f-tks/p/38840"},
+     {"sku": "RG550-RF", "url": "https://www.egitana.es/ibanez-rg550-rf/p/38991"},
+     {"sku": "0996106306", "url": "https://www.egitana.es/fender-deluxe-molded-strat-tele-case/p/18528"},
+     {"sku": "M300C", "url": "https://www.egitana.es/ibanez-m300c/p/42832"},
+     {"sku": "MS100C", "url": "https://www.egitana.es/ibanez-ms100c/p/28254"}
    ]},
   {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
