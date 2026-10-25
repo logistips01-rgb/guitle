@@ -1,0 +1,29 @@
+# Ideas de futuro
+
+Fase actual: rastreador personal (catálogo a mano, cron diario, página con buscador).
+
+## Comparador web (cuando deje de ser solo para uso propio)
+
+- **Catálogo grande automático.** Recorrer cada día los listados por marca de las tiendas que no bloquean
+  (Thomann, Musicopolix, Alfasoni) y guardar todas las guitarras con su precio: una página de listado
+  trae decenas de productos por petición. Pasar de ~20 productos a cientos o miles.
+  - Reto principal: emparejar el mismo producto entre tiendas (EAN cuando lo haya; si no, marca + modelo + acabado normalizados).
+- **Búsqueda tipo Google** sobre ese catálogo (la página actual ya filtra en el navegador; con miles de
+  productos convendría un índice precalculado o un backend).
+- **Backend / base de datos** (p. ej. Firebase) cuando el JSON en el repo se quede corto.
+
+## Fuentes de datos
+
+- **Feeds de afiliados:** Thomann (programa propio), Music Store y Kirstein (redes tipo Awin), Amazon (API de afiliados).
+  Método `"feed"` en `stores.json`, cruzando por EAN.
+- **Tiendas bloqueadas por anti-bot** (Kirstein, Music Store, Unión Musical, Madrid HiFi): pedir acceso para
+  un bot identificado (`guitle-pricebot/1.0`). Mientras tanto, `data/manual.json`.
+- **PVP oficial automático** de Gibson y Epiphone desde sus webs, como ya se hace con Fender. Ibanez: PVP manual.
+
+## Catálogo
+
+- Más tiendas para Epiphone, Ibanez y Gibson (ahora solo Thomann).
+- Verificar SKUs de Gibson (marcados "sin verificar" en `products.json`).
+- SKU y PVP de la Fender Player II Telecaster HH RW Black.
+- Altavoces: decidir tipo (monitores de estudio, PA, pantallas de guitarra) y tiendas.
+- Pendiente: `matguitars`, `auvisa`, `gear4music`, `drunkat` (URLs a null en `stores.json`).
