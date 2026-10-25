@@ -1,6 +1,6 @@
-# guitle — rastreador de precios Fender
+# guitle — rastreador de precios de guitarras y audio
 
-- `products.json`: productos por SKU Fender (EAN para verificar que la URL es el producto correcto, PVP oficial).
+- `products.json`: productos por SKU del fabricante, con `brand`, `category`, EAN (verifica que la URL es el producto correcto) y PVP de respaldo.
 - `stores.json`: tiendas, método preferido (`jsonld` | `meta` | `css`), selector CSS opcional y `{sku, url}`.
 - `scraper/`: un módulo por método de extracción; `run.py` prueba primero el método declarado y luego el resto.
 - `data/history.json`: todas las ejecuciones (precio, moneda, stock, status, método…).
@@ -11,6 +11,15 @@
 - `index.html`: página para GitHub Pages (Chart.js desde CDN).
 
 Status posibles: `ok`, `no_price`, `blocked_403`, `error`, `wrong_currency`, `robots_disallowed`, `sku_mismatch`.
+
+## Añadir productos, marcas o tiendas
+
+1. Producto: añade una línea a `products.json` con `sku` (referencia del fabricante, numérica o alfanumérica),
+   `brand`, `category` (p. ej. `guitarra`, `altavoz`), `name`, `ean` si lo sabes y `pvp` de respaldo.
+2. Tienda nueva: añádela a `stores.json`; si existe, solo añade `{sku, url}` en su `items`.
+3. PVP automático: la web oficial de la marca se declara como tienda con `"reference": true`;
+   su precio diario pasa a ser el PVP del producto (si falla, se usa el de `products.json`).
+4. Prueba antes de dejarlo en el cron: `python -m scraper.run --dry-run --only <tienda>`.
 
 ## Uso local
 

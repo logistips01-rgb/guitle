@@ -1,9 +1,8 @@
 [
-  {"sku": "0140552506", "ean": "885978110698", "name": "Fender Player II Telecaster MN Black", "pvp": 799},
-  {"sku": "0140550518", "ean": null, "name": "Fender Player II Telecaster RW Aquatone Blue", "pvp": 799},
-  {"sku": "0266020560", "ean": null, "name": "Fender Standard Telecaster MN Aqua Marine Metallic", "pvp": 589},
-  {"sku": "0266040505", "ean": "885978118212", "name": "Fender Standard Telecaster LRL Olympic White", "pvp": 589},
-  {"sku": "0266020550", "ean": "885978118137", "name": "Fender Standard Telecaster MN BPG Butterscotch Blonde", "pvp": 589},
-  {"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "ean": null, "name": "Fender Player II Telecaster HH RW Black", "pvp": null,
-   "todo": "SKU Fender y PVP pendientes"}
+  {"sku": "0140552506", "brand": "Fender", "category": "guitarra", "ean": "885978110698", "name": "Fender Player II Telecaster MN Black", "pvp": 799},
+  {"sku": "0140550518", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Player II Telecaster RW Aquatone Blue", "pvp": 799},
+  {"sku": "0266020560", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Standard Telecaster MN Aqua Marine Metallic", "pvp": 589},
+  {"sku": "0266040505", "brand": "Fender", "category": "guitarra", "ean": "885978118212", "name": "Fender Standard Telecaster LRL Olympic White", "pvp": 589},
+  {"sku": "0266020550", "brand": "Fender", "category": "guitarra", "ean": "885978118137", "name": "Fender Standard Telecaster MN BPG Butterscotch Blonde", "pvp": 589},
+  {"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Player II Telecaster HH RW Black", "pvp": null, "todo": "SKU Fender y PVP pendientes"}
 ]

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Precios Fender</title>
+<title>Precios guitle</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
@@ -49,7 +49,12 @@
   h1 { font-size: 1.5rem; margin: 0 0 4px; }
   h2 { font-size: 1.1rem; margin: 0; }
   .muted { color: var(--text-muted); }
-  .sub { color: var(--text-secondary); margin: 0 0 24px; }
+  .sub { color: var(--text-secondary); margin: 0 0 16px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 20px; color: var(--text-secondary); font-size: .9rem; }
+  .filters select {
+    margin-left: 6px; font: inherit; color: var(--text-primary); background: var(--surface-1);
+    border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px;
+  }
   .card {
     background: var(--surface-1); border: 1px solid var(--border); border-radius: 10px;
     padding: 16px; margin-bottom: 20px;
@@ -73,8 +78,12 @@
 </head>
 <body>
 <main>
-  <h1>Precios Fender</h1>
+  <h1>Precios guitle</h1>
   <p class="sub" id="updated">Cargando…</p>
+  <div class="filters" id="filters" hidden>
+    <label>Categoría <select id="f-category"><option value="">Todas</option></select></label>
+    <label>Marca <select id="f-brand"><option value="">Todas</option></select></label>
+  </div>
   <div id="products"></div>
   <section class="card">
     <h2>Estado de las tiendas (última ejecución)</h2>
@@ -154,9 +163,11 @@ function render(latest, history) {
 
     const card = document.createElement("section");
     card.className = "card";
+    card.dataset.brand = p.brand || "";
+    card.dataset.category = p.category || "";
     card.innerHTML = `
       <div class="card-head">
-        <h2>${esc(p.name)}</h2>
+        <h2>${esc(p.name)} <span class="tag">${esc(p.category || "")}</span></h2>
         <span class="muted">SKU ${esc(p.sku)} · PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSource(p, storeName)}</span>
       </div>
       <div class="table-wrap"><table>
@@ -167,6 +178,8 @@ function render(latest, history) {
     container.appendChild(card);
     charts.push(buildChart(card.querySelector("canvas"), p, history, storeName, colorVar, isRef));
   }
+
+  setupFilters(latest.products);
 
   // Estado por tienda: peor status de la última ejecución, para ver quién bloquea.
   const lastByStore = {};
@@ -181,6 +194,25 @@ function render(latest, history) {
       const cls = i.status === "ok" ? "" : (i.status === "blocked_403" ? "bad" : "warn");
       return `<tr><td>${esc(s.name)}</td><td><span class="tag ${cls}">${esc(STATUS_LABEL[i.status] || i.status)}</span></td><td>${day(i.last_run)}</td></tr>`;
     }).join("") + `</tbody>`;
+}
+
+// Filtros por categoría y marca; solo se muestran si hay más de una opción.
+function setupFilters(products) {
+  const selects = { category: document.getElementById("f-category"), brand: document.getElementById("f-brand") };
+  let useful = false;
+  for (const [key, sel] of Object.entries(selects)) {
+    const values = [...new Set(products.map(p => p[key]).filter(Boolean))].sort((a, b) => a.localeCompare(b, "es"));
+    for (const v of values) sel.add(new Option(v, v));
+    sel.parentElement.hidden = values.length < 2;
+    useful ||= values.length > 1;
+    sel.addEventListener("change", apply);
+  }
+  document.getElementById("filters").hidden = !useful;
+  function apply() {
+    for (const card of document.querySelectorAll("#products .card")) {
+      card.hidden = Object.entries(selects).some(([key, sel]) => sel.value && card.dataset[key] !== sel.value);
+    }
+  }
 }
 
 function buildChart(canvas, product, history, storeName, colorVar, isRef) {

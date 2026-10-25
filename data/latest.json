@@ -3,24 +3,30 @@
  "products": [
   {
    "sku": "0140552506",
+   "brand": "Fender",
+   "category": "guitarra",
    "ean": "885978110698",
    "name": "Fender Player II Telecaster MN Black",
    "pvp": 799.0,
-   "pvp_fallback": 929,
+   "pvp_fallback": 799,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T19:25:54+00:00"
   },
   {
    "sku": "0140550518",
+   "brand": "Fender",
+   "category": "guitarra",
    "ean": null,
    "name": "Fender Player II Telecaster RW Aquatone Blue",
    "pvp": 799.0,
-   "pvp_fallback": 869,
+   "pvp_fallback": 799,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T19:25:54+00:00"
   },
   {
    "sku": "0266020560",
+   "brand": "Fender",
+   "category": "guitarra",
    "ean": null,
    "name": "Fender Standard Telecaster MN Aqua Marine Metallic",
    "pvp": 589.0,
@@ -30,6 +36,8 @@
   },
   {
    "sku": "0266040505",
+   "brand": "Fender",
+   "category": "guitarra",
    "ean": "885978118212",
    "name": "Fender Standard Telecaster LRL Olympic White",
    "pvp": 589.0,
@@ -39,16 +47,19 @@
   },
   {
    "sku": "0266020550",
+   "brand": "Fender",
+   "category": "guitarra",
    "ean": "885978118137",
    "name": "Fender Standard Telecaster MN BPG Butterscotch Blonde",
    "pvp": 589.0,
-   "todo": "SKU deducido (código de color 550 = Butterscotch Blonde) y PVP sin confirmar",
-   "pvp_fallback": null,
+   "pvp_fallback": 589,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-25T19:25:54+00:00"
   },
   {
    "sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK",
+   "brand": "Fender",
+   "category": "guitarra",
    "ean": null,
    "name": "Fender Player II Telecaster HH RW Black",
    "pvp": null,

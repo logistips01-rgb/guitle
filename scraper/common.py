@@ -58,8 +58,15 @@ def digits(value):
     return re.sub(r"\D", "", str(value or ""))
 
 
+def normalize_id(value):
+    return re.sub(r"[^0-9A-Z]", "", str(value or "").upper())
+
+
 def matches_sku(identifiers, product_ids):
-    """¿Algún identificador de la página (sku/mpn/gtin) contiene el SKU Fender o el EAN del producto?"""
-    targets = [digits(t) for t in product_ids if len(digits(t)) >= 8]
-    page = [digits(i) for i in identifiers if i]
+    """¿Algún identificador de la página (sku/mpn/gtin) contiene el SKU del fabricante o el EAN?
+
+    Vale para SKUs numéricos (Fender 0140552506) y alfanuméricos (Gibson LPS5P00EBNH1).
+    """
+    targets = [normalize_id(t) for t in product_ids if len(normalize_id(t)) >= 6]
+    page = [normalize_id(i) for i in identifiers if i]
     return any(t in p for t in targets for p in page)
