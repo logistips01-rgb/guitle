@@ -107,6 +107,13 @@ function storeColors(stores) {
   return map;
 }
 
+function pvpSource(p, storeName) {
+  if (p.pvp_source && p.pvp_source !== "products.json") {
+    return ` <span class="muted">(${esc(storeName[p.pvp_source] || p.pvp_source)}, ${day(p.pvp_date)})</span>`;
+  }
+  return p.pvp ? ' <span class="muted">(manual)</span>' : "";
+}
+
 function pctVsPvp(price, pvp) {
   if (price == null || !pvp) return null;
   return (price - pvp) / pvp * 100;
@@ -130,7 +137,7 @@ function render(latest, history) {
     items.sort((a, b) => (isRef[a.store] - isRef[b.store]) || ((a.price ?? 1e9) - (b.price ?? 1e9)));
 
     const rows = items.map(i => {
-      const pct = pctVsPvp(i.price, p.pvp);
+      const pct = isRef[i.store] ? null : pctVsPvp(i.price, p.pvp);
       const stock = i.in_stock === true ? "sí" : i.in_stock === false ? "no" : "?";
       const statusCls = i.status === "ok" ? "" : (i.status === "blocked_403" ? "bad" : "warn");
       const stale = i.price != null && i.status !== "ok" ? ` <span class="muted">(${day(i.price_date)})</span>` : "";
@@ -150,7 +157,7 @@ function render(latest, history) {
     card.innerHTML = `
       <div class="card-head">
         <h2>${esc(p.name)}</h2>
-        <span class="muted">SKU ${esc(p.sku)} · PVP ${p.pvp ? eur(p.pvp) : "pendiente"}</span>
+        <span class="muted">SKU ${esc(p.sku)} · PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSource(p, storeName)}</span>
       </div>
       <div class="table-wrap"><table>
         <thead><tr><th>Tienda</th><th class="num">Precio actual</th><th class="num">vs PVP</th><th class="num">Mínimo histórico</th><th>Stock</th><th>Estado</th></tr></thead>
@@ -189,14 +196,15 @@ function buildChart(canvas, product, history, storeName, colorVar, isRef) {
   const datasets = Object.entries(byStore).map(([store, prices]) => {
     const color = css(colorVar[store] || "--reference");
     return {
-      label: storeName[store] || store,
+      label: isRef[store] ? "PVP Fender" : (storeName[store] || store),
       data: dates.map(d => prices[d] ?? null),
       borderColor: color, backgroundColor: color,
       borderWidth: 2, pointRadius: dates.length > 30 ? 0 : 4, pointHoverRadius: 5,
       borderDash: isRef[store] ? [6, 4] : [], spanGaps: true, tension: 0,
     };
   });
-  if (product.pvp) {
+  const hasRef = Object.keys(byStore).some(s => isRef[s]);
+  if (product.pvp && !hasRef) {
     datasets.push({
       label: "PVP Fender", data: dates.map(() => product.pvp),
       borderColor: css("--reference"), borderWidth: 1.5, borderDash: [2, 4],

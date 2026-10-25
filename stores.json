@@ -5,7 +5,8 @@
      {"sku": "0140552506", "url": "https://es.fender.com/products/player-ii-telecaster"},
      {"sku": "0140550518", "url": "https://es.fender.com/products/player-ii-telecaster"},
      {"sku": "0266020560", "url": "https://es.fender.com/products/standard-telecaster"},
-     {"sku": "0266040505", "url": "https://es.fender.com/products/standard-telecaster"}
+     {"sku": "0266040505", "url": "https://es.fender.com/products/standard-telecaster"},
+     {"sku": "0266020550", "url": "https://es.fender.com/products/standard-telecaster"}
    ]},
   {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es",
    "method": "jsonld", "selector": null,

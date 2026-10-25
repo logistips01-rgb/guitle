@@ -133,10 +133,24 @@ def update_latest(history, products, stores):
                 entry.update(min_price=rec["price"], min_price_date=rec["date"])
     return {
         "updated": max((r["date"] for r in history), default=None),
-        "products": products,
+        "products": with_live_pvp(products, latest, stores),
         "stores": [{k: s.get(k) for k in ("id", "name", "domain", "reference")} for s in stores],
         "items": sorted(latest.values(), key=lambda e: (e["sku"], e["store"])),
     }
+
+
+def with_live_pvp(products, latest, stores):
+    """PVP = último precio ok de la tienda de referencia (Fender); products.json queda como respaldo."""
+    refs = {s["id"] for s in stores if s.get("reference")}
+    out = []
+    for p in products:
+        p = {**p, "pvp_fallback": p.get("pvp"), "pvp_source": "products.json" if p.get("pvp") else None}
+        for entry in latest.values():
+            if entry["store"] in refs and entry["sku"] == p["sku"] and entry.get("price") is not None:
+                p.update(pvp=entry["price"], pvp_source=entry["store"], pvp_date=entry["price_date"])
+                break
+        out.append(p)
+    return out
 
 
 def print_report(records):

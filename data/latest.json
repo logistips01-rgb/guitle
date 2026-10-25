@@ -5,39 +5,55 @@
    "sku": "0140552506",
    "ean": "885978110698",
    "name": "Fender Player II Telecaster MN Black",
-   "pvp": 929
+   "pvp": 799.0,
+   "pvp_fallback": 929,
+   "pvp_source": "fender_es",
+   "pvp_date": "2026-10-25T19:19:48+00:00"
   },
   {
    "sku": "0140550518",
    "ean": null,
    "name": "Fender Player II Telecaster RW Aquatone Blue",
-   "pvp": 869
+   "pvp": 799.0,
+   "pvp_fallback": 869,
+   "pvp_source": "fender_es",
+   "pvp_date": "2026-10-25T19:19:48+00:00"
   },
   {
    "sku": "0266020560",
    "ean": null,
    "name": "Fender Standard Telecaster MN Aqua Marine Metallic",
-   "pvp": 589
+   "pvp": 589.0,
+   "pvp_fallback": 589,
+   "pvp_source": "fender_es",
+   "pvp_date": "2026-10-25T19:19:48+00:00"
   },
   {
    "sku": "0266040505",
    "ean": "885978118212",
    "name": "Fender Standard Telecaster LRL Olympic White",
-   "pvp": 589
+   "pvp": 589.0,
+   "pvp_fallback": 589,
+   "pvp_source": "fender_es",
+   "pvp_date": "2026-10-25T19:19:48+00:00"
   },
   {
    "sku": "0266020550",
    "ean": "885978118137",
    "name": "Fender Standard Telecaster MN BPG Butterscotch Blonde",
    "pvp": null,
-   "todo": "SKU deducido (código de color 550 = Butterscotch Blonde) y PVP sin confirmar"
+   "todo": "SKU deducido (código de color 550 = Butterscotch Blonde) y PVP sin confirmar",
+   "pvp_fallback": null,
+   "pvp_source": null
   },
   {
    "sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK",
    "ean": null,
    "name": "Fender Player II Telecaster HH RW Black",
    "pvp": null,
-   "todo": "SKU Fender y PVP pendientes"
+   "todo": "SKU Fender y PVP pendientes",
+   "pvp_fallback": null,
+   "pvp_source": null
   }
  ],
  "stores": [
