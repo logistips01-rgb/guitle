@@ -116,6 +116,11 @@
      {"sku": "M300C", "url": null},
      {"sku": "MS100C", "url": null}
    ]},
+  {"id": "woodbrass", "name": "Woodbrass", "domain": "www.woodbrass.com",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://www.woodbrass.com/forme-t-fender-telecaster-player-ii-mn-black-p395782.html"}
+   ]},
   {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
