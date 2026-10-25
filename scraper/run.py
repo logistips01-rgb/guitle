@@ -15,7 +15,7 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-from . import css, jsonld, meta
+from . import css, ebay, jsonld, meta
 from .fetch import Fetcher, is_challenge
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -30,6 +30,27 @@ def load(path, default):
         return json.loads(path.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return default
+
+
+def scrape_ebay(store, item, products, now):
+    """Tiendas consultadas por la API oficial de eBay en lugar de su web."""
+    rec = {"date": now, "store": store["id"], "sku": item["sku"], "url": item.get("url"),
+           "price": None, "currency": None, "in_stock": None, "status": "error",
+           "method": "ebay", "http_status": None, "note": None}
+    try:
+        status, data = ebay.search(store, products.get(item["sku"], {"name": item["sku"]}))
+        rec["status"] = status
+        if data:
+            rec.update(price=data["price"], currency=data["currency"], url=data["url"] or rec["url"],
+                       in_stock=True, note=data["title"])
+            if data["image"]:
+                rec["image"] = data["image"]
+            if data["currency"] != EXPECTED_CURRENCY:
+                rec["status"] = "wrong_currency"
+    except requests.RequestException as exc:
+        rec["http_status"] = getattr(exc.response, "status_code", None)
+        rec["note"] = f"{type(exc).__name__}: {exc}"[:300]
+    return rec
 
 
 def scrape_item(fetcher, store, item, products, now):
@@ -202,6 +223,14 @@ def main(argv=None):
         if only and store["id"] not in only:
             continue
         for item in store.get("items", []):
+            if store.get("method") == "ebay":
+                if not ebay.has_credentials():  # sin claves no se registra nada (evita ruido en la página)
+                    print(f"[skip] {store['id']}: faltan EBAY_CLIENT_ID / EBAY_CLIENT_SECRET", flush=True)
+                    break
+                rec = scrape_ebay(store, item, by_sku, now)
+                records.append(rec)
+                print(f"[{rec['status']}] {store['id']} {item['sku']} {rec['price']}", flush=True)
+                continue
             if not item.get("url"):
                 continue
             rec = scrape_item(fetcher, store, item, by_sku, now)

@@ -122,6 +122,7 @@
 const STATUS_LABEL = {
   ok: "ok", no_price: "sin precio", blocked_403: "bloqueada (403)", error: "error",
   wrong_currency: "moneda distinta", robots_disallowed: "robots.txt", sku_mismatch: "SKU no coincide",
+  no_credentials: "pendiente de claves eBay", not_found: "no lo vende",
 };
 const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR" });
 const day = iso => iso ? iso.slice(0, 10) : "";

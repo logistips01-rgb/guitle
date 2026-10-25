@@ -52,6 +52,9 @@ jobs:
       - name: Scraper
         if: steps.gate.outputs.run == 'true'
         # Las tiendas que fallan quedan registradas con su status; el job no debe romperse por ellas.
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python -m scraper.run || echo "::warning::scraper terminó con error; se commitea lo que haya"
 
       - name: Commit de datos
