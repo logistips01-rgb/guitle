@@ -1,0 +1,35 @@
+[
+  {"id": "fender_es", "name": "Fender España", "domain": "es.fender.com", "reference": true,
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://es.fender.com/products/player-ii-telecaster"},
+     {"sku": "0140550518", "url": "https://es.fender.com/products/player-ii-telecaster"},
+     {"sku": "0266020560", "url": "https://es.fender.com/products/standard-telecaster"},
+     {"sku": "0266040505", "url": "https://es.fender.com/products/standard-telecaster"}
+   ]},
+  {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es",
+   "method": "jsonld", "selector": null,
+   "items": [{"sku": "0140552506", "url": "https://www.thomann.es/fender_player_ii_tele_mn_blk.htm"}]},
+  {"id": "musicstore", "name": "Music Store", "domain": "musicstore.de",
+   "method": "jsonld", "selector": null,
+   "items": [{"sku": "0140552506", "url": "https://musicstore.de/en_DE/EUR/Fender-Player-II-Telecaster-MN-Black/art-GIT0061904-008"}]},
+  {"id": "musicopolix", "name": "Musicopolix", "domain": "musicopolix.com",
+   "method": "jsonld", "selector": null,
+   "items": [{"sku": "0140552506", "url": "https://musicopolix.com/cat/guitarras/electricas/Fender/202259-fender-player-ii-telecaster-mn-blk.html"}]},
+  {"id": "alfasoni", "name": "Alfasoni", "domain": "alfasoni.com",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0266040505", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-lrl-wpg-owt-124901.html"},
+     {"sku": "0266020550", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-mn-bpg-btb-124899.html"}
+   ]},
+  {"id": "unionmusical", "name": "Unión Musical", "domain": "www.unionmusical.es",
+   "method": "jsonld", "selector": null,
+   "items": [{"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "url": "https://www.unionmusical.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"}]},
+  {"id": "kirstein", "name": "Kirstein", "domain": "www.kirstein.de",
+   "method": "jsonld", "selector": null,
+   "items": [{"sku": "0140552506", "url": "https://www.kirstein.de/es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"}]},
+  {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
+  {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
+  {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
+  {"id": "drunkat", "name": "Drunkat", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]}
+]
