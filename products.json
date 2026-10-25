@@ -4,5 +4,9 @@
   {"sku": "0266020560", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Standard Telecaster MN Aqua Marine Metallic", "pvp": 589},
   {"sku": "0266040505", "brand": "Fender", "category": "guitarra", "ean": "885978118212", "name": "Fender Standard Telecaster LRL Olympic White", "pvp": 589},
   {"sku": "0266020550", "brand": "Fender", "category": "guitarra", "ean": "885978118137", "name": "Fender Standard Telecaster MN BPG Butterscotch Blonde", "pvp": 589},
-  {"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Player II Telecaster HH RW Black", "pvp": null, "todo": "SKU Fender y PVP pendientes"}
+  {"sku": "PENDIENTE-PLAYER2-TELE-HH-RW-BLK", "brand": "Fender", "category": "guitarra", "ean": null, "name": "Fender Player II Telecaster HH RW Black", "pvp": null, "todo": "SKU Fender y PVP pendientes"},
+  {"sku": "0140512518", "brand": "Fender", "category": "guitarra", "ean": "885978109319", "name": "Fender Player II Stratocaster MN Aquatone Blue", "pvp": null},
+  {"sku": "0140510515", "brand": "Fender", "category": "guitarra", "ean": "885978109302", "name": "Fender Player II Stratocaster RW Polar White", "pvp": null},
+  {"sku": "0266220505", "brand": "Fender", "category": "guitarra", "ean": "885978117857", "name": "Fender Standard Stratocaster MN Olympic White", "pvp": null},
+  {"sku": "0266240500", "brand": "Fender", "category": "guitarra", "ean": "885978117901", "name": "Fender Standard Stratocaster LRL 3-Color Sunburst", "pvp": null}
 ]
