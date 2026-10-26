@@ -17,8 +17,9 @@ TIMEOUT = 25
 DELAY = (3.0, 6.0)
 
 
+# Marcas de páginas anti-bot. "captcha" a secas no vale: muchas tiendas tienen reCAPTCHA en formularios.
 CHALLENGE_MARKERS = ("just a moment", "cf-challenge", "challenge-platform", "verifying your connection",
-                     "captcha", "datadome", "perimeterx", "access denied")
+                     "captcha-delivery", "datadome", "perimeterx", "access denied", "attention required")
 
 
 def is_challenge(resp):

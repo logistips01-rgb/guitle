@@ -87,7 +87,7 @@ def scrape_item(fetcher, store, item, products, now):
                 break
         else:
             rec["status"] = "no_price"
-            rec["note"] = _block_hint(resp, soup)
+            rec["note"] = _block_hint(resp, soup, url)
             return rec
         currency = result["currency"] or store.get("currency_default")
         rec.update(price=result["price"], currency=currency, in_stock=result["in_stock"],
@@ -127,14 +127,14 @@ def _digits(value):
     return "".join(c for c in str(value) if c.isdigit())
 
 
-def _block_hint(resp, soup):
-    """Pista cuando no hay precio: páginas de challenge (Cloudflare, captcha...) devuelven 200."""
-    text = (soup.title.get_text(strip=True) if soup.title else "")[:120]
-    body = resp.text[:20000].lower()
-    for marker in ("captcha", "cf-challenge", "just a moment", "access denied", "datadome", "perimeterx"):
-        if marker in body:
-            return f"posible bloqueo ({marker}); title={text!r}"
-    return f"title={text!r}"
+def _block_hint(resp, soup, url):
+    """Pista cuando no hay precio: challenge anti-bot, redirección (producto inexistente) o el título."""
+    title = (soup.title.get_text(strip=True) if soup.title else "")[:120]
+    if is_challenge(resp):
+        return f"posible bloqueo anti-bot; title={title!r}"
+    if resp.url.rstrip("/") != url.rstrip("/"):
+        return f"redirige a {resp.url} (¿la ficha ya no existe?)"
+    return f"title={title!r}"
 
 
 def manual_records(history):
