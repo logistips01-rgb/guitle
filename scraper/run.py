@@ -161,6 +161,9 @@ def update_latest(history, products, stores):
         if rec["status"] == "ok":
             if rec.get("image"):
                 entry["image"] = rec["image"]
+            # Precio del día anterior con dato: para marcar bajadas sin cargar todo el histórico.
+            if entry.get("price_date") and entry["price_date"][:10] != rec["date"][:10]:
+                entry["prev_price"], entry["prev_price_date"] = entry["price"], entry["price_date"]
             entry.update(price=rec["price"], currency=rec["currency"], in_stock=rec["in_stock"],
                          price_date=rec["date"], price_method=rec["method"])
             if entry.get("min_price") is None or rec["price"] < entry["min_price"]:
@@ -264,11 +267,21 @@ def save(records):
     stores = load(ROOT / "stores.json", [])
     DATA.mkdir(exist_ok=True)
     history = load(DATA / "history.json", [])
-    seen = {(r["date"], r["store"], r["sku"]) for r in history}
-    history += manual_records(history) + [r for r in records if (r["date"], r["store"], r["sku"]) not in seen]
-    (DATA / "history.json").write_text(json.dumps(history, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    history += manual_records(history) + records
+    history = one_per_day(history)
+    (DATA / "history.json").write_text(json.dumps(history, ensure_ascii=False, separators=(",", ":")) + "\n",
+                                       encoding="utf-8")
     latest = update_latest(history, products, stores)
-    (DATA / "latest.json").write_text(json.dumps(latest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (DATA / "latest.json").write_text(json.dumps(latest, ensure_ascii=False, separators=(",", ":")) + "\n",
+                                      encoding="utf-8")
+
+
+def one_per_day(history):
+    """Un registro por tienda, producto y día (el último): las ejecuciones repetidas no inflan el histórico."""
+    last = {}
+    for rec in sorted(history, key=lambda r: r["date"]):
+        last[(rec["date"][:10], rec["store"], rec["sku"])] = rec
+    return sorted(last.values(), key=lambda r: (r["date"], r["store"], r["sku"]))
 
 
 if __name__ == "__main__":

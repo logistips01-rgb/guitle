@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="guitle">
+<meta name="theme-color" content="#2a78d6">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Guitarras · guitle</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-0: #f4f4f2; --surface-1: #fcfcfb; --border: #e2e1dc; --grid: #ecebe7;
+    --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #7a7974;
+    --good: #00750a; --good-bg: #e6f4e8; --critical: #c62828; --warning: #9a6400; --warn-bg: #fff1e0;
+    --accent: #2a78d6; --accent-bg: #e8f1fc; --reference: #8a8984;
+    --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+    --s5: #e87ba4; --s6: #008300; --s7: #6250d6; --s8: #e34948;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface-0: #111110; --surface-1: #1a1a19; --border: #2e2e2c; --grid: #262624;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e88;
+      --good: #4cc261; --good-bg: #16301b; --critical: #f07070; --warning: #e0a63a; --warn-bg: #3a2a12;
+      --accent: #3987e5; --accent-bg: #172a40; --reference: #9a9993;
+      --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+      --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-0: #111110; --surface-1: #1a1a19; --border: #2e2e2c; --grid: #262624;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e88;
+    --good: #4cc261; --good-bg: #16301b; --critical: #f07070; --warning: #e0a63a; --warn-bg: #3a2a12;
+    --accent: #3987e5; --accent-bg: #172a40; --reference: #9a9993;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+    --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface-0); color: var(--text-primary); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: inherit; }
+  main { max-width: 1120px; margin: 0 auto; padding: 0 16px 48px; }
+  .muted { color: var(--text-muted); }
+  .neg { color: var(--good); font-weight: 600; }
+  .pos { color: var(--critical); }
+
+  /* Cabecera fija con buscador y filtros */
+  .topbar { position: sticky; top: 0; z-index: 5; background: var(--surface-0); padding: 14px 0 10px; border-bottom: 1px solid var(--border); margin-bottom: 14px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  h1 { font-size: 1.3rem; margin: 0; flex: 1; white-space: nowrap; }
+  .navlink { font-size: .9rem; color: var(--text-secondary); text-decoration: none; }
+  .switch { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+  .switch button { font: inherit; font-size: .9rem; border: 0; background: var(--surface-1); color: var(--text-secondary); padding: 6px 14px; cursor: pointer; }
+  .switch button.on { background: var(--accent); color: #fff; }
+  @media (max-width: 520px) { .switch button { padding: 6px 10px; font-size: .82rem; } h1 { font-size: 1.15rem; } }
+  .search { width: 100%; font: inherit; font-size: 1.05rem; padding: 11px 16px; margin: 10px 0 8px; border-radius: 999px;
+            border: 1px solid var(--border); background: var(--surface-1); color: var(--text-primary); outline: none; }
+  .search:focus { border-color: var(--accent); }
+  .chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+  .chip { flex: none; font: inherit; font-size: .88rem; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border);
+          background: var(--surface-1); color: var(--text-secondary); cursor: pointer; }
+  .chip.on { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+  .meta { color: var(--text-muted); font-size: .88rem; margin: 0 0 12px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .meta select { font: inherit; font-size: .88rem; color: var(--text-primary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; }
+  .badge { display: inline-block; font-size: .74rem; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: var(--good-bg); color: var(--good); }
+  .badge.low { background: var(--warn-bg); color: var(--warning); }
+  .badge.coupon { background: var(--accent-bg); color: var(--accent); }
+  .fav { border: 0; background: none; cursor: pointer; font-size: 1.15rem; line-height: 1; padding: 2px; color: var(--text-muted); font-family: inherit; }
+  .fav.on { color: #e5a400; }
+  .empty { color: var(--text-muted); padding: 24px 0; text-align: center; grid-column: 1 / -1; }
+
+  /* Escaparate */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+  @media (max-width: 520px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
+  .tile { position: relative; background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; cursor: pointer;
+          display: flex; flex-direction: column; transition: transform .12s, box-shadow .12s; }
+  .tile:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+  .tile .img { aspect-ratio: 4 / 3; background: #fff; display: flex; align-items: center; justify-content: center; }
+  .tile img { max-width: 90%; max-height: 90%; object-fit: contain; }
+  .tile .body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
+  .tile .brand { font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); }
+  .tile .name { font-weight: 600; line-height: 1.25; font-size: .95rem; }
+  .tile .price { display: flex; align-items: baseline; gap: 8px; margin-top: auto; padding-top: 4px; flex-wrap: wrap; }
+  .tile .price strong { font-size: 1.25rem; }
+  .tile .foot { display: flex; justify-content: space-between; align-items: center; color: var(--text-muted); font-size: .8rem; gap: 6px; }
+  .tile > .fav { position: absolute; top: 8px; right: 8px; background: var(--surface-1); border-radius: 999px; width: 30px; height: 30px; }
+  .tile .badges { position: absolute; top: 8px; left: 8px; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+  svg.spark { width: 64px; height: 20px; flex: none; }
+
+  /* Panel de detalle */
+  .sheet-bg { position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 20; display: none; }
+  .sheet { position: fixed; z-index: 21; background: var(--surface-1); display: none; overflow-y: auto;
+           inset: auto 0 0 0; max-height: 92vh; border-radius: 18px 18px 0 0; padding: 18px 18px 28px; }
+  @media (min-width: 760px) { .sheet { inset: 4vh auto auto 50%; transform: translateX(-50%); width: 760px; border-radius: 18px; max-height: 92vh; } }
+  .sheet.open, .sheet-bg.open { display: block; }
+  .sheet .close { float: right; border: 0; background: var(--surface-0); border-radius: 999px; width: 34px; height: 34px; font-size: 1.1rem; cursor: pointer; color: var(--text-primary); }
+  .sheet .hero { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin: 6px 0 12px; }
+  .sheet .hero img { width: 210px; max-width: 100%; height: 170px; object-fit: contain; background: #fff; border-radius: 12px; border: 1px solid var(--border); }
+  .sheet h2 { margin: 0 0 4px; font-size: 1.2rem; }
+  .sheet .big { font-size: 1.6rem; font-weight: 700; }
+  .sheet .pack { background: var(--surface-0); border-radius: 10px; padding: 10px 12px; margin: 12px 0 0; color: var(--text-secondary); }
+  .sheet h3 { font-size: .95rem; margin: 18px 0 0; }
+  .chart-box { position: relative; height: 240px; margin-top: 8px; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 8px; border-bottom: 1px solid var(--grid); text-align: left; white-space: nowrap; }
+  th { font-size: .82rem; color: var(--text-secondary); }
+  td.num, th.num { text-align: right; }
+  .best-row td { background: var(--good-bg); }
+  .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+  .tag { font-size: .76rem; padding: 1px 6px; border-radius: 4px; border: 1px solid var(--border); color: var(--text-secondary); }
+  .tag.bad { color: var(--critical); border-color: currentColor; }
+  .tag.warn { color: var(--warning); border-color: currentColor; }
+
+  /* Comparador */
+  .matrix-wrap { overflow-x: auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; }
+  .matrix th, .matrix td { padding: 8px 10px; }
+  .matrix thead th { background: var(--surface-1); font-size: .8rem; text-align: right; }
+  .matrix thead th:first-child { text-align: left; position: sticky; left: 0; z-index: 1; }
+  .matrix td.prod { position: sticky; left: 0; background: var(--surface-1); min-width: 220px; white-space: normal; cursor: pointer; }
+  .matrix td.prod .pn { display: flex; align-items: center; gap: 8px; }
+  .matrix td.prod img { width: 36px; height: 36px; object-fit: contain; background: #fff; border-radius: 6px; border: 1px solid var(--border); flex: none; }
+  .matrix td.cell { text-align: right; color: var(--text-secondary); }
+  .matrix td.cell.win { background: var(--good-bg); color: var(--good); font-weight: 700; }
+  .matrix td.cell.none { color: var(--border); }
+  .matrix tr.sum td { font-weight: 600; color: var(--text-secondary); border-top: 2px solid var(--border); }
+  .hidden { display: none !important; }
+  details.status { margin-top: 28px; background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; }
+  details.status summary { cursor: pointer; color: var(--text-secondary); }
+
+  .logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); }
+  .logo img { width: 30px; height: 30px; }
+  .logo .word { font-weight: 800; font-size: 1.45rem; letter-spacing: -.03em; line-height: 1; }
+  /* La "i" usa una ı sin punto con una púa encima (funciona con cualquier fuente) */
+  .logo .i { position: relative; }
+  .logo .i::before { content: ""; position: absolute; left: 50%; top: -.06em; width: .36em; height: .36em; transform: translateX(-50%);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -80 80 82'%3E%3Cpath fill='%232a78d6' d='M0 0C-12-10-38-30-38-52C-38-70-20-78 0-78C20-78 38-70 38-52C38-30 12-10 0 0Z'/%3E%3C/svg%3E") no-repeat center / contain; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="word">gu<span class="i">ı</span>tle</span></a></h1>
+      <a class="navlink" href="sneakers.html">👟 Jordan</a>
+      <div class="switch"><button id="vA" class="on">Escaparate</button><button id="vB">Comparador</button></div>
+    </div>
+    <input class="search" id="q" type="search" placeholder="Busca: tele negra, strat, les paul, casino…" autocomplete="off" aria-label="Buscar">
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="meta"><span id="meta">Cargando…</span>
+    <label>Orden <select id="sort"><option value="price">Precio</option><option value="pvp">Mayor descuento vs PVP</option><option value="drop">Bajadas recientes</option><option value="name">Nombre</option></select></label>
+  </div>
+  <div id="A" class="grid"></div>
+  <div id="B" class="matrix-wrap hidden"><table class="matrix" id="matrix"></table></div>
+  <details class="status" id="coupons-box"><summary>🏷️ Cupones</summary><div id="coupons"></div></details>
+  <details class="status"><summary>Estado de las tiendas (última ejecución)</summary><div class="table-wrap"><table id="status"></table></div></details>
+</main>
+<div class="sheet-bg" id="bg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+<script>
+const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const day = iso => iso ? iso.slice(0, 10) : "";
+const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+const pct = v => (v > 0 ? "+" : "") + v.toFixed(1).replace(".", ",") + " %";
+const STATUS_LABEL = {
+  ok: "ok", no_price: "sin precio", blocked_403: "bloqueada (403)", error: "error", wrong_currency: "moneda distinta",
+  robots_disallowed: "robots.txt", sku_mismatch: "SKU no coincide", no_credentials: "pendiente de claves", not_found: "no lo vende",
+};
+
+// Preferencias del visitante (solo en este navegador)
+const prefs = {
+  get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+};
+const favs = new Set(prefs.get("guitle.favs", []));
+
+async function load(path) {
+  const r = await fetch(path, { cache: "no-store" });
+  if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
+  return r.json();
+}
+
+// Cupones de data/coupons.json: {store, code, percent | amount, min_purchase?, brands?, categories?, valid_until?}
+function applyCoupon(item, product, coupons, isRef) {
+  item.final = item.price;
+  item.coupon = null;
+  if (item.price == null || isRef[item.store]) return;
+  const today = new Date().toISOString().slice(0, 10);
+  for (const c of coupons) {
+    if (c.store !== item.store || (c.valid_until && c.valid_until < today)) continue;
+    if (c.brands && !c.brands.includes(product.brand)) continue;
+    if (c.categories && !c.categories.includes(product.category)) continue;
+    if (c.min_purchase && item.price < c.min_purchase) continue;
+    const final = Math.round((c.percent ? item.price * (1 - c.percent / 100) : item.price - (c.amount || 0)) * 100) / 100;
+    if (final < item.final) { item.final = final; item.coupon = c; }
+  }
+}
+
+// Cupones activos (data/coupons.json) y detectados automáticamente en las portadas (pendientes de revisar).
+function renderCoupons(coupons, candidates, latest) {
+  const storeName = Object.fromEntries(latest.stores.map(s => [s.id, s.name]));
+  const today = new Date().toISOString().slice(0, 10);
+  const activeCoupons = coupons.filter(c => !c.valid_until || c.valid_until >= today);
+  const activeCodes = new Set(activeCoupons.map(c => `${c.store}|${c.code}`));
+  const pending = candidates.filter(c => !activeCodes.has(`${c.store}|${c.code}`))
+    .sort((a, b) => b.first_seen.localeCompare(a.first_seen));
+  const box = document.getElementById("coupons-box");
+  box.querySelector("summary").textContent = `🏷️ Cupones · ${activeCoupons.length} activos, ${pending.length} detectados`;
+  if (pending.some(c => day(c.first_seen) === day(latest.updated))) box.open = true;
+  const rowsActive = activeCoupons.map(c => `<tr><td>${esc(storeName[c.store] || c.store)}</td><td><span class="badge coupon">${esc(c.code)}</span></td>
+    <td>${c.percent ? c.percent + " %" : eur(c.amount)}</td><td class="muted">${[c.brands?.join(", "), c.categories?.join(", "), c.min_purchase ? "desde " + eur(c.min_purchase) : "", c.valid_until ? "hasta " + c.valid_until : ""].filter(Boolean).join(" · ")}</td></tr>`).join("");
+  const rowsPending = pending.map(c => `<tr><td><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.store_name)}</a></td><td><span class="tag">${esc(c.code)}</span></td>
+    <td>${esc(c.discount || "?")}</td><td class="muted" style="white-space:normal">${esc(c.context)}<br><small>visto desde ${day(c.first_seen)}</small></td></tr>`).join("");
+  document.getElementById("coupons").innerHTML =
+    `<h3 style="font-size:.95rem">Activos (se aplican a los precios)</h3>` +
+    (rowsActive ? `<div class="table-wrap"><table><tbody>${rowsActive}</tbody></table></div>` : `<p class="muted">Ninguno ahora mismo.</p>`) +
+    `<h3 style="font-size:.95rem">Detectados en las webs (revisar condiciones)</h3>` +
+    (rowsPending ? `<div class="table-wrap"><table><tbody>${rowsPending}</tbody></table></div>` : `<p class="muted">Ninguno detectado en los últimos 30 días.</p>`);
+}
+
+// Abreviaturas y colores en español para el buscador.
+function aliases(name) {
+  const n = norm(name), out = [];
+  const add = (cond, ...words) => { if (cond) out.push(...words); };
+  add(n.includes("stratocaster"), "strat", "st");
+  add(n.includes("telecaster"), "tele", "tl");
+  add(n.includes("les paul"), "lp", "lespaul");
+  add(/black|ebony/.test(n), "negra", "negro");
+  add(n.includes("white"), "blanca", "blanco");
+  add(/blue|turquoise/.test(n), "azul");
+  add(/red|cherry/.test(n), "roja", "rojo", "cereza");
+  add(/sunburst|burst/.test(n), "sunburst", "burst");
+  add(/\bmn\b/.test(n), "arce", "maple");
+  add(/\b(rw|lrl)\b/.test(n), "palisandro", "laurel", "rosewood");
+  return out;
+}
+
+function sparkline(points) {
+  if (points.length < 2 || Math.min(...points) === Math.max(...points)) return "";
+  const min = Math.min(...points), max = Math.max(...points), w = 64, h = 20;
+  const xy = points.map((v, i) => `${(i / (points.length - 1)) * w},${h - 2 - ((v - min) / (max - min)) * (h - 4)}`);
+  const down = points.at(-1) < points[0];
+  return `<svg class="spark" viewBox="0 0 ${w} ${h}" aria-hidden="true"><polyline fill="none" stroke="${down ? "var(--good)" : "var(--text-muted)"}" stroke-width="2" points="${xy.join(" ")}"/></svg>`;
+}
+
+function render(latest, history, coupons) {
+  const storeName = Object.fromEntries(latest.stores.map(s => [s.id, s.name]));
+  const isRef = Object.fromEntries(latest.stores.map(s => [s.id, !!s.reference]));
+  // Colores por producto: las tiendas que tienen esa guitarra reciben colores distintos, siempre en el mismo orden.
+  const storeOrder = latest.stores.map(s => s.id);
+  const colorsFor = storeIds => {
+    const map = {}; let slot = 0;
+    for (const id of storeOrder) if (storeIds.has(id)) map[id] = isRef[id] ? "--reference" : `--s${(slot++ % 8) + 1}`;
+    return map;
+  };
+  const productBySku = Object.fromEntries(latest.products.map(p => [p.sku, p]));
+  for (const i of latest.items) applyCoupon(i, productBySku[i.sku] || {}, coupons, isRef);
+
+  const products = latest.products.map(p => {
+    const all = latest.items.filter(i => i.sku === p.sku);
+    const items = all.filter(i => !isRef[i.store] && i.final != null).sort((a, b) => a.final - b.final);
+    const best = items[0] || null;
+    // Mejor precio por día: minigráfica y etiquetas "Han bajado" / "Mínimo histórico".
+    const byDay = {};
+    for (const r of history) if (r.sku === p.sku && r.status === "ok" && !isRef[r.store] && r.price) {
+      const d = day(r.date); byDay[d] = Math.min(byDay[d] ?? Infinity, r.price);
+    }
+    const series = Object.keys(byDay).sort().map(d => byDay[d]);
+    const drop = series.length > 1 ? Math.max(0, series.at(-2) - series.at(-1)) : 0;
+    const prevMin = series.length > 2 ? Math.min(...series.slice(0, -1)) : null;
+    return { ...p, all, items, best, series, drop,
+             atLow: !!best && prevMin != null && best.price < prevMin,
+             vsPvp: best && p.pvp ? (best.final - p.pvp) / p.pvp * 100 : null,
+             search: norm([p.name, p.brand, p.category, p.sku, ...aliases(p.name)].join(" ")) };
+  });
+  const bestBySku = Object.fromEntries(products.filter(p => p.best).map(p => [p.sku, p.best]));
+
+  const CHIPS = [
+    ["fav", "⭐ Favoritas", p => favs.has(p.sku)],
+    ["Fender", "Fender", p => p.brand === "Fender"], ["Epiphone", "Epiphone", p => p.brand === "Epiphone"],
+    ["Gibson", "Gibson", p => p.brand === "Gibson"], ["Ibanez", "Ibanez", p => p.brand === "Ibanez"],
+    ["tele", "Tele", p => /telecaster/i.test(p.name)], ["strat", "Strat", p => /stratocaster/i.test(p.name)],
+    ["lp", "Les Paul", p => /les paul/i.test(p.name)], ["semi", "Semihuecas", p => /es-335|casino|as73/i.test(p.name)],
+    ["600", "< 600 €", p => p.best && p.best.final < 600], ["stock", "En stock", p => p.items.some(i => i.in_stock === true)],
+    ["drop", "⬇️ Han bajado", p => p.drop > 0], ["low", "🔥 Mínimo histórico", p => p.atLow],
+    ["cases", "🧳 Estuches", p => p.category === "estuche"],
+  ];
+  const active = new Set(prefs.get("guitle.chips", []).filter(id => CHIPS.some(c => c[0] === id)));
+  const chipsEl = document.getElementById("chips");
+  chipsEl.innerHTML = CHIPS.map(([id, label]) => `<button class="chip ${active.has(id) ? "on" : ""}" data-chip="${id}">${label}</button>`).join("");
+  chipsEl.onclick = e => {
+    const id = e.target.dataset.chip; if (!id) return;
+    active.has(id) ? active.delete(id) : active.add(id);
+    e.target.classList.toggle("on"); prefs.set("guitle.chips", [...active]); draw();
+  };
+
+  const q = document.getElementById("q"), sortEl = document.getElementById("sort");
+  const params = new URLSearchParams(location.search);
+  q.value = params.get("q") || "";
+  sortEl.value = prefs.get("guitle.sort", "price");
+  q.oninput = draw;
+  sortEl.onchange = () => { prefs.set("guitle.sort", sortEl.value); draw(); };
+
+  const setView = v => {
+    prefs.set("guitle.view", v);
+    document.getElementById("vA").classList.toggle("on", v === "A");
+    document.getElementById("vB").classList.toggle("on", v === "B");
+    document.getElementById("A").classList.toggle("hidden", v !== "A");
+    document.getElementById("B").classList.toggle("hidden", v !== "B");
+  };
+  document.getElementById("vA").onclick = () => setView("A");
+  document.getElementById("vB").onclick = () => setView("B");
+  setView(params.get("v") === "B" ? "B" : prefs.get("guitle.view", "A"));
+
+  const toggleFav = sku => { favs.has(sku) ? favs.delete(sku) : favs.add(sku); prefs.set("guitle.favs", [...favs]); draw(); };
+
+  function draw() {
+    const words = norm(q.value).split(" ").filter(Boolean);
+    const showCases = active.has("cases");
+    const sorters = {
+      price: (a, b) => a.best.final - b.best.final,
+      pvp: (a, b) => (a.vsPvp ?? 0) - (b.vsPvp ?? 0),
+      drop: (a, b) => b.drop - a.drop || a.best.final - b.best.final,
+      name: (a, b) => a.name.localeCompare(b.name, "es"),
+    };
+    const list = products.filter(p => p.best && (showCases || p.category !== "estuche") &&
+        words.every(w => /^\d+$/.test(w) ? ` ${p.search} `.includes(` ${w} `) : p.search.includes(w)) &&
+        [...active].every(id => CHIPS.find(c => c[0] === id)[2](p)))
+      .sort((a, b) => (favs.has(b.sku) - favs.has(a.sku)) || sorters[sortEl.value](a, b));
+    document.getElementById("meta").textContent =
+      `${list.length} resultado${list.length === 1 ? "" : "s"} · actualizado ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
+    const url = new URL(location);
+    q.value ? url.searchParams.set("q", q.value) : url.searchParams.delete("q");
+    window.history.replaceState(null, "", url);
+
+    // Escaparate
+    const A = document.getElementById("A");
+    A.innerHTML = list.length ? list.map(tile).join("") : `<p class="empty">No hay resultados con esa búsqueda o filtros.</p>`;
+    A.onclick = e => {
+      const fav = e.target.closest("[data-fav]");
+      if (fav) { toggleFav(fav.dataset.fav); return; }
+      const t = e.target.closest(".tile"); if (t) openSheet(products.find(p => p.sku === t.dataset.sku));
+    };
+
+    // Comparador: columnas = tiendas con algún precio en la lista
+    const cols = latest.stores.filter(s => !s.reference && list.some(p => p.items.some(i => i.store === s.id)));
+    const wins = Object.fromEntries(cols.map(s => [s.id, 0]));
+    const rows = list.map(p => {
+      const by = Object.fromEntries(p.items.map(i => [i.store, i]));
+      for (const i of p.items) if (i.final === p.best.final && wins[i.store] !== undefined) wins[i.store]++;
+      return `<tr><td class="prod" data-sku="${esc(p.sku)}"><span class="pn">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}
+          <span><button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}" aria-label="Favorita">${favs.has(p.sku) ? "★" : "☆"}</button> ${esc(p.name)}</span></span></td>
+        ${cols.map(s => {
+          const i = by[s.id];
+          if (!i) return '<td class="cell none">·</td>';
+          return `<td class="cell ${i.final === p.best.final ? "win" : ""}" title="${esc(storeName[s.id])}${i.coupon ? " · cupón " + esc(i.coupon.code) : ""}">${eur(i.final)}${i.coupon ? " 🏷️" : ""}</td>`;
+        }).join("")}</tr>`;
+    }).join("");
+    document.getElementById("matrix").innerHTML = list.length ?
+      `<thead><tr><th>Producto</th>${cols.map(s => `<th>${esc(s.name)}</th>`).join("")}</tr></thead>
+       <tbody>${rows}<tr class="sum"><td class="prod">Veces más barata</td>${cols.map(s => `<td class="cell">${wins[s.id] || ""}</td>`).join("")}</tr></tbody>` : "";
+    document.getElementById("matrix").onclick = e => {
+      const fav = e.target.closest("[data-fav]");
+      if (fav) { toggleFav(fav.dataset.fav); return; }
+      const td = e.target.closest("td.prod[data-sku]"); if (td) openSheet(products.find(p => p.sku === td.dataset.sku));
+    };
+  }
+
+  function tile(p) {
+    const badges = [p.atLow ? '<span class="badge low">🔥 Mínimo</span>' : "",
+                    p.drop > 0 ? `<span class="badge">⬇️ −${eur(p.drop)}</span>` : "",
+                    p.best.coupon ? '<span class="badge coupon">🏷️ Cupón</span>' : ""].join("");
+    const shortName = p.name.startsWith(p.brand + " ") ? p.name.slice(p.brand.length + 1) : p.name;
+    return `<div class="tile" data-sku="${esc(p.sku)}">
+      <div class="img">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}</div>
+      <div class="badges">${badges}</div>
+      <button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}" aria-label="Favorita">${favs.has(p.sku) ? "★" : "☆"}</button>
+      <div class="body">
+        <span class="brand">${esc(p.brand)}</span>
+        <span class="name">${esc(shortName)}</span>
+        <span class="price"><strong>${eur(p.best.final)}</strong>${p.vsPvp != null && p.vsPvp < -0.5 ? `<span class="neg">${p.vsPvp.toFixed(0)} %</span>` : ""}</span>
+        <span class="foot"><span>${esc(storeName[p.best.store])} · ${p.items.length} tienda${p.items.length > 1 ? "s" : ""}</span>${sparkline(p.series)}</span>
+      </div></div>`;
+  }
+
+  function packHTML(p) {
+    const parts = [];
+    if (p.case_included) parts.push(`Incluye <strong>${esc(p.case_included)}</strong> de serie.`);
+    const c = p.case && bestBySku[p.case];
+    if (c) {
+      parts.push(`🧳 Estuche recomendado: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(productBySku[p.case]?.name || p.case)}</a>
+        — ${eur(c.final)} en ${esc(storeName[c.store])}${c.coupon ? ` (cupón ${esc(c.coupon.code)})` : ""}.
+        <strong>Pack guitarra + estuche: ${eur(p.best.final + c.final)}</strong>`);
+    }
+    return parts.length ? `<p class="pack">${parts.join("<br>")}</p>` : "";
+  }
+
+  let chart = null;
+  function openSheet(p) {
+    const s = document.getElementById("sheet"), bg = document.getElementById("bg");
+    const pvpSrc = p.pvp_source && p.pvp_source !== "products.json"
+      ? ` <span class="muted">(${esc(storeName[p.pvp_source] || p.pvp_source)}, ${day(p.pvp_date)})</span>` : "";
+    const colorVar = colorsFor(new Set([...p.all.filter(i => i.price != null).map(i => i.store),
+                                        ...history.filter(r => r.sku === p.sku && r.price != null).map(r => r.store)]));
+    const rows = p.all.filter(i => i.status !== "not_found").sort((a, b) => (isRef[a.store] - isRef[b.store]) || ((a.final ?? 1e9) - (b.final ?? 1e9))).map(i => {
+      const isBest = i === p.best;
+      const statusCls = i.status === "ok" ? "" : (i.status === "blocked_403" ? "bad" : "warn");
+      const priceCell = i.final == null ? "–" : i.coupon
+        ? `<s class="muted">${eur(i.price)}</s> ${eur(i.final)} <span class="badge coupon">${esc(i.coupon.code)}</span>` : eur(i.final);
+      return `<tr class="${isBest ? "best-row" : ""}">
+        <td><span class="swatch" style="background:var(${colorVar[i.store] || "--border"})"></span>${i.url ? `<a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(storeName[i.store])}</a>` : esc(storeName[i.store])}${isRef[i.store] ? ' <span class="tag">PVP</span>' : ""}</td>
+        <td class="num">${priceCell}${i.price_method === "manual" ? ' <span class="tag">manual</span>' : ""}</td>
+        <td class="num muted">${isRef[i.store] || i.final == null ? "" : isBest ? "✓ mejor" : "+" + eur(i.final - p.best.final)}</td>
+        <td>${i.in_stock === true ? "sí" : i.in_stock === false ? "no" : "?"}</td>
+        <td class="num muted">${i.min_price != null ? eur(i.min_price) : "–"}</td>
+        <td>${i.status === "ok" ? "" : `<span class="tag ${statusCls}">${esc(STATUS_LABEL[i.status] || i.status)}</span>`}</td></tr>`;
+    }).join("");
+    s.innerHTML = `<button class="close" aria-label="Cerrar">✕</button>
+      <div class="hero">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" referrerpolicy="no-referrer">` : ""}
+        <div><h2>${esc(p.name)}</h2>
+          <div class="big">${eur(p.best.final)} <span class="muted" style="font-size:.95rem;font-weight:400">en ${esc(storeName[p.best.store])}</span></div>
+          <div class="muted">PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSrc}${p.vsPvp != null ? ` · <span class="${p.vsPvp < 0 ? "neg" : "pos"}">${pct(p.vsPvp)}</span>` : ""}</div>
+          <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center">${p.atLow ? '<span class="badge low">🔥 Mínimo histórico</span>' : ""}${p.drop > 0 ? `<span class="badge">⬇️ Ha bajado ${eur(p.drop)}</span>` : ""}
+            <button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}">${favs.has(p.sku) ? "★ Favorita" : "☆ Añadir a favoritas"}</button></div>
+          <div class="muted" style="font-size:.82rem;margin-top:4px">${esc(p.brand)} · SKU ${esc(p.sku)}</div>
+        </div></div>
+      <div class="table-wrap"><table><thead><tr><th>Tienda</th><th class="num">Precio</th><th class="num">vs mejor</th><th>Stock</th><th class="num">Mínimo</th><th></th></tr></thead><tbody>${rows}</tbody></table></div>
+      ${packHTML(p)}
+      <h3>Histórico de precios</h3>
+      <div class="chart-box"><canvas aria-label="Evolución del precio por tienda"></canvas></div>`;
+    s.classList.add("open"); bg.classList.add("open");
+    document.body.style.overflow = "hidden";
+    const close = () => { s.classList.remove("open"); bg.classList.remove("open"); document.body.style.overflow = ""; if (chart) { chart.destroy(); chart = null; } };
+    s.querySelector(".close").onclick = close; bg.onclick = close;
+    document.onkeydown = e => { if (e.key === "Escape") close(); };
+    s.querySelector("[data-fav]").onclick = e => {
+      toggleFav(p.sku);
+      e.target.classList.toggle("on", favs.has(p.sku));
+      e.target.textContent = favs.has(p.sku) ? "★ Favorita" : "☆ Añadir a favoritas";
+    };
+    chart = buildChart(s.querySelector("canvas"), p, colorVar);
+  }
+
+  function buildChart(canvas, p, colorVar) {
+    const recs = history.filter(r => r.sku === p.sku && r.status === "ok" && r.price != null);
+    const dates = [...new Set(recs.map(r => day(r.date)))].sort();
+    if (dates.length < 2) { canvas.parentElement.outerHTML = '<p class="muted">La gráfica aparece cuando hay más de un día de datos.</p>'; return null; }
+    const byStore = {};
+    for (const r of recs) (byStore[r.store] ??= {})[day(r.date)] = r.price;  // último del día
+    const datasets = Object.entries(byStore).map(([st, prices]) => {
+      const color = css(colorVar[st] || "--reference");
+      return { label: isRef[st] ? "PVP" : (storeName[st] || st), data: dates.map(d => prices[d] ?? null),
+               borderColor: color, backgroundColor: color, borderWidth: 2, pointRadius: dates.length > 30 ? 0 : 3,
+               borderDash: isRef[st] ? [6, 4] : [], spanGaps: true, tension: 0 };
+    });
+    const text = css("--text-secondary"), grid = css("--grid");
+    return new Chart(canvas, {
+      type: "line", data: { labels: dates, datasets },
+      options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+        plugins: { legend: { position: "bottom", labels: { color: text, boxWidth: 12, boxHeight: 12 } },
+                   tooltip: { callbacks: { label: c => `${c.dataset.label}: ${eur(c.parsed.y)}` } } },
+        scales: { x: { ticks: { color: text, maxRotation: 0, autoSkip: true }, grid: { display: false } },
+                  y: { ticks: { color: text, callback: v => eur(v) }, grid: { color: grid } } } },
+    });
+  }
+
+  // Estado de las tiendas: peor estado de la última ejecución
+  const last = {};
+  for (const i of latest.items) if (!last[i.store] || (last[i.store].status === "ok" && i.status !== "ok")) last[i.store] = i;
+  document.getElementById("status").innerHTML = `<thead><tr><th>Tienda</th><th>Estado</th><th>Última ejecución</th></tr></thead><tbody>` +
+    latest.stores.filter(s => last[s.id]).map(s => {
+      const i = last[s.id], cls = i.status === "ok" ? "" : (i.status === "blocked_403" ? "bad" : "warn");
+      return `<tr><td>${esc(s.name)}</td><td><span class="tag ${cls}">${esc(STATUS_LABEL[i.status] || i.status)}</span></td><td>${day(i.last_run)}</td></tr>`;
+    }).join("") + "</tbody>";
+
+  draw();
+}
+
+Promise.all([load("data/latest.json"), load("data/history.json"), load("data/coupons.json").catch(() => []),
+             load("data/coupon_candidates.json").catch(() => [])])
+  .then(([latest, history, coupons, candidates]) => { render(latest, history, coupons); renderCoupons(coupons, candidates, latest); })
+  .catch(err => { document.getElementById("meta").textContent = `No se pudieron cargar los datos (${err.message}). En local, sírvelo con: python -m http.server`; });
+</script>
+</body>
+</html>
