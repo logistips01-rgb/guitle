@@ -70,3 +70,30 @@ def search(store, product):
         "image": (best.get("image") or {}).get("imageUrl"),
         "title": best.get("title"),
     }
+
+
+def discover(queries=("Fender Player II Telecaster", "Fender Player II Stratocaster", "Epiphone ES-335")):
+    """Diagnóstico: lista los vendedores de eBay.de que venden estos productos nuevos (para encontrar el usuario
+    exacto de cada tienda). Se ejecuta con: python -m scraper.ebay"""
+    if not has_credentials():
+        print("ebay: faltan EBAY_CLIENT_ID / EBAY_CLIENT_SECRET")
+        return
+    sellers = {}
+    for q in queries:
+        resp = requests.get(SEARCH_URL, timeout=TIMEOUT,
+                            params={"q": q, "limit": "200",
+                                    "filter": f"conditionIds:{{{NEW_CONDITION}}},buyingOptions:{{FIXED_PRICE}}"},
+                            headers={"Authorization": f"Bearer {_get_token()}", "X-EBAY-C-MARKETPLACE-ID": "EBAY_DE"})
+        print(f"ebay: '{q}' -> HTTP {resp.status_code}")
+        resp.raise_for_status()
+        for item in resp.json().get("itemSummaries", []):
+            s = item.get("seller", {})
+            name = s.get("username")
+            if name:
+                sellers.setdefault(name, [s.get("feedbackScore"), 0])[1] += 1
+    for name, (feedback, n) in sorted(sellers.items(), key=lambda x: -(x[1][0] or 0)):
+        print(f"ebay vendedor: {name:<40} valoraciones={feedback} anuncios={n}")
+
+
+if __name__ == "__main__":
+    discover()

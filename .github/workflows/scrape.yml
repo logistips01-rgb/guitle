@@ -58,6 +58,13 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python -m scraper.run --records-out "$RUNNER_TEMP/records.json" || echo "::warning::scraper terminó con error; se commitea lo que haya"
 
+      - name: Diagnóstico eBay (vendedores)
+        if: steps.gate.outputs.run == 'true'
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python -m scraper.ebay || echo "::warning::diagnóstico eBay con error"
+
       - name: Scraper Jordan
         if: steps.gate.outputs.run == 'true'
         run: python -m scraper.sneakers --records-out "$RUNNER_TEMP/sneakers.json" || echo "::warning::scraper de Jordan terminó con error"
