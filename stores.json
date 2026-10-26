@@ -155,6 +155,11 @@
      {"sku": "RG550-RF", "url": "https://www.session.de/products/ibanez-rg550-rf/"},
      {"sku": "0996106306", "url": "https://www.session.de/products/fender-gitarrenkoffer-deluxe-molded-strat-tele-black/"}
    ]},
+  {"id": "promusica", "name": "Promusica", "domain": "promusica.es",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140550518", "url": "https://promusica.es/tipo-tele/1147865-fender-player-ii-telecaster-rw-aqb-guitarra-electrica-885978110742.html"}
+   ]},
   {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
