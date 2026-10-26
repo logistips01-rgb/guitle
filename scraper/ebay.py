@@ -73,7 +73,7 @@ def search(store, product):
 
 
 def discover(queries=("Fender Player II Telecaster", "Fender Player II Stratocaster", "Epiphone ES-335")):
-    """Diagnóstico: lista los vendedores de eBay.de que venden estos productos nuevos (para encontrar el usuario
+    """Diagnóstico (temporal): lista los vendedores de eBay.de que venden estos productos nuevos (para encontrar el usuario
     exacto de cada tienda). Se ejecuta con: python -m scraper.ebay"""
     if not has_credentials():
         print("ebay: faltan EBAY_CLIENT_ID / EBAY_CLIENT_SECRET")
