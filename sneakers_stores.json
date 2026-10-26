@@ -1,0 +1,6 @@
+[
+  {"id": "footdistrict", "name": "Footdistrict", "base": "https://footdistrict.com", "collection": "jordan", "currency": "EUR", "sizes": "eu"},
+  {"id": "sneakersnstuff", "name": "Sneakersnstuff", "base": "https://www.sneakersnstuff.com", "collection": "jordan", "currency": "EUR", "sizes": "us"},
+  {"id": "overkill", "name": "Overkill", "base": "https://www.overkillshop.com", "collection": "jordan", "currency": "EUR", "sizes": "eu"},
+  {"id": "urbanstar", "name": "Urbanstar", "base": "https://www.urbanstaroma.com", "collection": "jordan", "currency": "EUR", "sizes": "eu"}
+]

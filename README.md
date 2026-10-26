@@ -15,6 +15,13 @@
 
 Status posibles: `ok`, `no_price`, `blocked_403`, `error`, `wrong_currency`, `robots_disallowed`, `sku_mismatch`.
 
+## Jordan (sneakers.html)
+
+- `sneakers_stores.json`: tiendas Shopify con colección Jordan (catálogo JSON público, permitido por robots.txt).
+- `scraper/sneakers.py`: lee toda la colección, empareja tiendas por código de estilo Nike y guarda
+  `data/sneakers_latest.json` y `data/sneakers_history.json` (solo cambios de precio o de stock en tallas 43/44).
+- La página filtra por defecto hasta 150 € y zapatillas con talla 43 o 44 disponible.
+
 ## Añadir productos, marcas o tiendas
 
 1. Producto: añade una línea a `products.json` con `sku` (referencia del fabricante, numérica o alfanumérica),

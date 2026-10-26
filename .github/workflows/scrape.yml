@@ -13,6 +13,7 @@ on:
       - ".github/workflows/scrape.yml"
       - "scraper/**"
       - "stores.json"
+      - "sneakers_stores.json"
 
 permissions:
   contents: write
@@ -57,6 +58,10 @@ jobs:
           EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
         run: python -m scraper.run --records-out "$RUNNER_TEMP/records.json" || echo "::warning::scraper terminó con error; se commitea lo que haya"
 
+      - name: Scraper Jordan
+        if: steps.gate.outputs.run == 'true'
+        run: python -m scraper.sneakers --records-out "$RUNNER_TEMP/sneakers.json" || echo "::warning::scraper de Jordan terminó con error"
+
       - name: Commit de datos
         if: steps.gate.outputs.run == 'true'
         # Se fusiona sobre la última versión de la rama (otra ejecución o un push pueden haber llegado antes).
@@ -68,6 +73,7 @@ jobs:
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             python -m scraper.run --merge "$RUNNER_TEMP/records.json"
+            [ -f "$RUNNER_TEMP/sneakers.json" ] && python -m scraper.sneakers --merge "$RUNNER_TEMP/sneakers.json"
             git add data/
             if git diff --cached --quiet; then echo "Sin cambios en data/"; exit 0; fi
             git commit -q -m "data: precios $(TZ=Europe/Madrid date +%F)"
