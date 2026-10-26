@@ -17,7 +17,7 @@ import requests
 
 TOKEN_URL = "https://api.ebay.com/identity/v1/oauth2/token"
 SEARCH_URL = "https://api.ebay.com/buy/browse/v1/item_summary/search"
-SCOPE = "https://api.ebay.com/oauth/api_scope"
+SCOPE = "https://api.ebay.com/oauth/api_scope"  # token de aplicación (client credentials)
 TIMEOUT = 25
 NEW_CONDITION = "1000"
 
