@@ -10,7 +10,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>Comparador · guitle, precios de guitarras</title>
+<title>Comparador · guitle, guitarras al mejor precio</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
@@ -66,6 +66,8 @@
   .chip { flex: none; font: inherit; font-size: .88rem; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border);
           background: var(--surface-1); color: var(--text-secondary); cursor: pointer; }
   .chip.on { background: var(--accent-bg); border-color: var(--accent); color: var(--accent); }
+  .chip.cat { font-weight: 600; }
+  .chip.cat.on { background: var(--accent); border-color: var(--accent); color: #fff; }
   .meta { color: var(--text-muted); font-size: .88rem; margin: 0 0 12px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
   .meta select { font: inherit; font-size: .88rem; color: var(--text-primary); background: var(--surface-1); border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; }
   .badge { display: inline-block; font-size: .74rem; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: var(--good-bg); color: var(--good); }
@@ -149,10 +151,11 @@
 <main>
   <div class="topbar">
     <div class="row">
-      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">precios de guitarras</span></span></a></h1>
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a></h1>
       <div class="switch"><button id="vA" class="on">Escaparate</button><button id="vB">Comparador</button></div>
     </div>
     <input class="search" id="q" type="search" placeholder="Busca: tele negra, strat, les paul, casino…" autocomplete="off" aria-label="Buscar">
+    <div class="chips" id="cats" style="margin-bottom:6px"></div>
     <div class="chips" id="chips"></div>
   </div>
   <div class="meta"><span id="meta">Cargando…</span>
@@ -293,8 +296,20 @@ function render(latest, history, coupons) {
     ["lp", "Les Paul", p => /les paul/i.test(p.name)], ["semi", "Semihuecas", p => /es-335|casino|as73/i.test(p.name)],
     ["600", "< 600 €", p => p.best && p.best.final < 600], ["stock", "En stock", p => p.items.some(i => i.in_stock === true)],
     ["drop", "⬇️ Han bajado", p => p.drop > 0], ["low", "🔥 Mínimo histórico", p => p.atLow],
-    ["cases", "🧳 Estuches", p => p.category === "estuche"],
   ];
+  // Categorías (una a la vez). Solo se muestran las que ya tienen productos.
+  const CATS = [["guitarra", "🎸 Guitarras"], ["bajo", "Bajos"], ["ampli", "🔊 Amplis"], ["pedal", "🎛️ Pedales"],
+                ["teclado", "🎹 Teclados"], ["micro", "🎤 Micros"], ["estuche", "🧳 Estuches"]]
+    .filter(([id]) => products.some(p => p.category === id && p.best));
+  let cat = new URLSearchParams(location.search).get("cat") || prefs.get("guitle.cat", "guitarra");
+  if (!CATS.some(c => c[0] === cat)) cat = "guitarra";
+  const catsEl = document.getElementById("cats");
+  const drawCats = () => catsEl.innerHTML = CATS.map(([id, label]) => `<button class="chip cat ${id === cat ? "on" : ""}" data-cat="${id}">${label}</button>`).join("");
+  drawCats();
+  catsEl.onclick = e => {
+    const id = e.target.dataset.cat; if (!id) return;
+    cat = id; prefs.set("guitle.cat", cat); drawCats(); draw();
+  };
   const active = new Set(prefs.get("guitle.chips", []).filter(id => CHIPS.some(c => c[0] === id)));
   const chipsEl = document.getElementById("chips");
   chipsEl.innerHTML = CHIPS.map(([id, label]) => `<button class="chip ${active.has(id) ? "on" : ""}" data-chip="${id}">${label}</button>`).join("");
@@ -326,14 +341,13 @@ function render(latest, history, coupons) {
 
   function draw() {
     const words = norm(q.value).split(" ").filter(Boolean);
-    const showCases = active.has("cases");
     const sorters = {
       price: (a, b) => a.best.final - b.best.final,
       pvp: (a, b) => (a.vsPvp ?? 0) - (b.vsPvp ?? 0),
       drop: (a, b) => b.drop - a.drop || a.best.final - b.best.final,
       name: (a, b) => a.name.localeCompare(b.name, "es"),
     };
-    const list = products.filter(p => p.best && (showCases || p.category !== "estuche") &&
+    const list = products.filter(p => p.best && p.category === cat &&
         words.every(w => /^\d+$/.test(w) ? ` ${p.search} `.includes(` ${w} `) : p.search.includes(w)) &&
         [...active].every(id => CHIPS.find(c => c[0] === id)[2](p)))
       .sort((a, b) => (favs.has(b.sku) - favs.has(a.sku)) || sorters[sortEl.value](a, b));
@@ -341,6 +355,7 @@ function render(latest, history, coupons) {
       `${list.length} resultado${list.length === 1 ? "" : "s"} · actualizado ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
     const url = new URL(location);
     q.value ? url.searchParams.set("q", q.value) : url.searchParams.delete("q");
+    cat !== "guitarra" ? url.searchParams.set("cat", cat) : url.searchParams.delete("cat");
     window.history.replaceState(null, "", url);
 
     // Escaparate

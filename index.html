@@ -11,7 +11,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>guitle · precios de guitarras</title>
+<title>guitle · guitarras al mejor precio</title>
 <style>
   :root {
     color-scheme: light;
@@ -86,6 +86,15 @@
   .card .where { color: var(--text-muted); font-size: .8rem; }
   .badge { position: absolute; top: 8px; left: 8px; font-size: .74rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--good-bg); color: var(--good); }
   .badge.low { background: var(--warn-bg); color: var(--warning); }
+  .cats { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  @media (max-width: 860px) { .cats { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 520px) { .cats { grid-template-columns: repeat(3, 1fr); } }
+  .catcard { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 14px 8px; text-align: center; text-decoration: none; }
+  .catcard b { display: block; font-size: 1.7rem; line-height: 1.2; }
+  .catcard span { display: block; font-weight: 600; font-size: .92rem; }
+  .catcard small { color: var(--text-muted); font-size: .78rem; }
+  .catcard.soon { opacity: .55; pointer-events: none; }
+  a.catcard:hover { border-color: var(--accent); }
   .placeholder { color: var(--text-muted); grid-column: 1 / -1; padding: 10px 0; }
 
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
@@ -107,13 +116,13 @@
 <body>
 <main>
   <header class="top">
-    <a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">precios de guitarras</span></span></a>
+    <a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a>
     <nav><a href="guitarras.html">🎸 Guitarras</a><a href="guitarras.html?v=B">Comparador</a></nav>
   </header>
 
   <div class="hero">
     <h1>Tu guitarra, <span>al mejor precio</span></h1>
-    <p>Comparamos cada mañana las principales tiendas de Europa y te enseñamos dónde está más barata, cómo ha cambiado su precio y qué cupones hay activos.</p>
+    <p>Comparamos cada mañana las principales tiendas de Europa y te enseñamos dónde está más barata, cómo ha cambiado su precio y qué cupones hay activos. Guitarras ahora; bajos, amplis, pedales, teclados y micros, muy pronto.</p>
     <form class="search" action="guitarras.html" method="get" role="search">
       <input name="q" type="search" placeholder="Busca: tele negra, strat, les paul, casino…" aria-label="Buscar guitarra" autocomplete="off">
       <button type="submit">Buscar</button>
@@ -126,6 +135,11 @@
     </div>
     <div class="stats" id="stats"></div>
   </div>
+
+  <section>
+    <div class="sec-head"><h2>Explora por categoría</h2></div>
+    <div class="cats" id="cats"></div>
+  </section>
 
   <section>
     <div class="sec-head"><h2>🔥 Chollos de hoy</h2><a href="guitarras.html">Ver todas →</a></div>
@@ -192,6 +206,15 @@ load("data/latest.json").then(latest => {
   document.getElementById("updated").textContent =
     `Datos actualizados el ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
   document.getElementById("stores").innerHTML = activeStores.map(s => `<span>${esc(s.name)}</span>`).join("");
+
+  // Categorías: las que tienen productos enlazan al comparador; el resto, "próximamente".
+  const CATS = [["guitarra", "🎸", "Guitarras"], ["bajo", "🎸", "Bajos"], ["ampli", "🔊", "Amplis"], ["pedal", "🎛️", "Pedales"],
+                ["teclado", "🎹", "Teclados"], ["micro", "🎤", "Micros"], ["estuche", "🧳", "Estuches"]];
+  document.getElementById("cats").innerHTML = CATS.map(([id, icon, label]) => {
+    const n = latest.products.filter(p => p.category === id && latest.items.some(i => i.sku === p.sku && i.price != null && !isRef[i.store])).length;
+    return n ? `<a class="catcard" href="guitarras.html?cat=${id}"><b>${icon}</b><span>${label}</span><small>${n} productos</small></a>`
+             : `<div class="catcard soon"><b>${icon}</b><span>${label}</span><small>próximamente</small></div>`;
+  }).join("");
 
   const link = p => `guitarras.html?q=${encodeURIComponent(p.name.replace(/^(Fender|Epiphone|Gibson|Ibanez) /, ""))}`;
   // Chollos: mayor descuento frente al PVP (o, sin PVP, frente a la tienda más cara)
