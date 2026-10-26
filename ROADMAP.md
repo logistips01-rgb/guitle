@@ -45,7 +45,7 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
   - Redirección: reenvío 301 en el registrador del dominio hacia `https://guitle.com/vende/`
     (GitHub Pages admite un solo dominio propio por web, por eso se redirige en el registrador).
   - Pendiente legal: registro/libro de compra-venta de objetos usados (en España suele exigirse
-    comunicación a la policía o a la comunidad autónoma) y normativa equivalente en Andorra.
+    comunicación a la policía o a la comunidad autónoma; depende de la comunidad donde se dé de alta).
 
 ## Orden de trabajo acordado
 
@@ -54,7 +54,11 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 3. Acústicas y españolas (clásicas).
 4. Bajos, amplis, pedales, teclados y micros.
 
-## Proyecto aparte: tienda en Andorra (en estudio)
+## Arranque del negocio: España
+
+Decisión: se empieza en España (online). La tienda física en Andorra queda aparcada para más adelante.
+
+## Proyecto aparte: tienda en Andorra (aparcado, se valorará más adelante)
 
 Idea: tienda física en Andorra con escaparate online y "reserva y recoge". Para quien compra o recoge allí,
 con el mismo margen que la tienda más barata de la UE se podría vender un ~13-14 % más barato (IGI 4,5 % frente a IVA 21 %).
