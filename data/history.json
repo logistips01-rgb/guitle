@@ -7916,5 +7916,1334 @@
   "method": null,
   "http_status": 200,
   "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0140552506",
+  "url": "https://es.fender.com/products/player-ii-telecaster",
+  "price": 799.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920",
+  "identifiers": [
+   "0140552506",
+   "0140552550",
+   "885978110698"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0140550518",
+  "url": "https://es.fender.com/products/player-ii-telecaster",
+  "price": 799.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920",
+  "identifiers": [
+   "0140550518",
+   "0140552550",
+   "885978110742"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0266020560",
+  "url": "https://es.fender.com/products/standard-telecaster",
+  "price": 589.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920",
+  "identifiers": [
+   "0266020560",
+   "0266021550",
+   "885978118113"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0266040505",
+  "url": "https://es.fender.com/products/standard-telecaster",
+  "price": 589.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920",
+  "identifiers": [
+   "0266021550",
+   "0266040505",
+   "885978118212"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0266020550",
+  "url": "https://es.fender.com/products/standard-telecaster",
+  "price": 589.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920",
+  "identifiers": [
+   "0266021550",
+   "885978118137"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0140512518",
+  "url": "https://es.fender.com/products/player-ii-stratocaster",
+  "price": 799.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920",
+  "identifiers": [
+   "0140512518",
+   "0140512530",
+   "885978109319"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0140510515",
+  "url": "https://es.fender.com/products/player-ii-stratocaster",
+  "price": 799.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920",
+  "identifiers": [
+   "0140510515",
+   "0140512530",
+   "885978109302"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0266220505",
+  "url": "https://es.fender.com/products/standard-stratocaster",
+  "price": 579.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920",
+  "identifiers": [
+   "0266220505",
+   "0266220571",
+   "885978117857"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0266240500",
+  "url": "https://es.fender.com/products/standard-stratocaster",
+  "price": 579.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920",
+  "identifiers": [
+   "0266220571",
+   "0266240500",
+   "885978117901"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0140570506",
+  "url": "https://es.fender.com/products/player-ii-telecaster-hh",
+  "price": 889.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0140570530_fen_ins_frt_1_rr.png?v=1774475963&width=1920",
+  "identifiers": [
+   "0140570506",
+   "0140570530",
+   "885978113927"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "fender_es",
+  "sku": "0140552500",
+  "url": "https://es.fender.com/products/player-ii-telecaster",
+  "price": 799.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920",
+  "identifiers": [
+   "0140552500",
+   "0140552550",
+   "885978110667"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "0140552506",
+  "url": "https://www.thomann.es/fender_player_ii_tele_mn_blk.htm",
+  "price": 777.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/595338.jpg",
+  "identifiers": [
+   "595338"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "0140512518",
+  "url": "https://www.thomann.es/fender_player_ii_strat_mn_aqb.htm",
+  "price": 777.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/595251.jpg",
+  "identifiers": [
+   "595251"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "0140510515",
+  "url": "https://www.thomann.es/fender_player_ii_strat_rw_pwt.htm",
+  "price": 777.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/595239.jpg",
+  "identifiers": [
+   "595239"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "0266220505",
+  "url": "https://www.thomann.es/fender_standard_strat_mn_wpg_owt.htm",
+  "price": 577.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/608521.jpg",
+  "identifiers": [
+   "608521"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "0266240500",
+  "url": "https://www.thomann.es/fender_standard_strat_lrl_wpg_3ts.htm",
+  "price": 577.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/608524.jpg",
+  "identifiers": [
+   "608524"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "EIES335VSNH1",
+  "url": "https://www.thomann.es/epiphone_es_335_vintage_sunburst.htm",
+  "price": 529.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/501059.jpg",
+  "identifiers": [
+   "501059"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "EOCAVSNH1",
+  "url": "https://www.thomann.es/epiphone_casino_vintage_sunburst_568059.htm",
+  "price": 598.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/568059.jpg",
+  "identifiers": [
+   "568059"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "EISSBCHNH1",
+  "url": "https://www.thomann.es/epiphone_sg_standard_cherry_ibg.htm",
+  "price": 569.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/634462.jpg",
+  "identifiers": [
+   "634462"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "EILS6EBNH1",
+  "url": "https://www.thomann.es/epiphone_les_paul_standard_60s_ebony_634376.htm",
+  "price": 577.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/634376.jpg",
+  "identifiers": [
+   "634376"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "AS73-TBC",
+  "url": "https://www.thomann.es/ibanez_as73_tbc.htm",
+  "price": 466.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/325892.jpg",
+  "identifiers": [
+   "325892"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "AZ24S1F-TKS",
+  "url": "https://www.thomann.es/ibanez_az24s1f_tks.htm",
+  "price": 464.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/606763.jpg",
+  "identifiers": [
+   "606763"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "RG550-RF",
+  "url": "https://www.thomann.es/ibanez_rg550_rf.htm",
+  "price": 899.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/429084.jpg",
+  "identifiers": [
+   "429084"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "LPS500HSNH1",
+  "url": "https://www.thomann.es/gibson_les_paul_standard_50s_hcs.htm",
+  "price": 2333.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/462505.jpg",
+  "identifiers": [
+   "462505"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "SGS00HCCH1",
+  "url": "https://www.thomann.es/gibson_sg_standard_hc.htm",
+  "price": 1469.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/462538.jpg",
+  "identifiers": [
+   "462538"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "LPST00TBCH1",
+  "url": "https://www.thomann.es/gibson_les_paul_studio_tobacco_burst.htm",
+  "price": 1539.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/610359.jpg",
+  "identifiers": [
+   "610359"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "0996106306",
+  "url": "https://www.thomann.es/fender_deluxe_molded_strat_tele_case.htm",
+  "price": 179.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/405526.jpg",
+  "identifiers": [
+   "405526"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "940-E519",
+  "url": "https://www.thomann.es/epiphone_koffer_sheraton.htm",
+  "price": 129.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/162163.jpg",
+  "identifiers": [
+   "162163"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "GIBSON-SG-CASE",
+  "url": "https://www.thomann.es/gibson_sg_case.htm",
+  "price": 198.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/172853.jpg",
+  "identifiers": [
+   "172853"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "THOMANN-ABS-SC",
+  "url": "https://www.thomann.es/thomann_eguitarcase_lpstyle.htm",
+  "price": 69.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/193412.jpg",
+  "identifiers": [
+   "193412"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "THOMANN-ABS-ST",
+  "url": "https://www.thomann.es/thomann_egitarrencase.htm",
+  "price": 79.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/177636.jpg",
+  "identifiers": [
+   "177636"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "M300C",
+  "url": "https://www.thomann.es/ibanez_m300c.htm",
+  "price": 179.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/406330.jpg",
+  "identifiers": [
+   "406330"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "thomann",
+  "sku": "MS100C",
+  "url": "https://www.thomann.es/ibanez_ms100c.htm",
+  "price": 188.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://www.thomann.de/thumb/opengraph/pics/prod/465767.jpg",
+  "identifiers": [
+   "465767"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "musicstore",
+  "sku": "0140552506",
+  "url": "https://musicstore.de/en_DE/EUR/Fender-Player-II-Telecaster-MN-Black/art-GIT0061904-008",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": null,
+  "note": "robots.txt 403 (challenge anti-bot); URL no solicitada"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "musicopolix",
+  "sku": "0140552506",
+  "url": "https://musicopolix.com/cat/guitarras/electricas/Fender/202259-fender-player-ii-telecaster-mn-blk.html",
+  "price": 849.66,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://musicopolix.com/272274-large_default/fender-player-ii-telecaster-mn-blk.jpg",
+  "identifiers": [
+   "0140552506",
+   "202259",
+   "885978110698"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "musicopolix",
+  "sku": "0140512518",
+  "url": "https://musicopolix.com/cat/guitarras/electricas/198695-fender-player-ii-stratocaster-mn-aqb-guitarra-electrica.html",
+  "price": 775.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://musicopolix.com/278629-large_default/fender-player-ii-stratocaster-mn-aqb-guitarra-electrica.jpg",
+  "identifiers": [
+   "0140512518",
+   "198695",
+   "885978109319"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "musicopolix",
+  "sku": "0140510515",
+  "url": "https://musicopolix.com/cat/guitarras/electricas/198991-fender-player-ii-stratocaster-rw-polar-white-guitarra-electrica.html",
+  "price": 798.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://musicopolix.com/236659-large_default/fender-player-ii-stratocaster-rw-polar-white-guitarra-electrica.jpg",
+  "identifiers": [
+   "0140510515",
+   "198991",
+   "885978109302"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "alfasoni",
+  "sku": "0266040505",
+  "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-lrl-wpg-owt-124901.html",
+  "price": 529.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://alfasoni.com/609102-home_default/fender-standard-tele-lrl-wpg-owt.jpg",
+  "identifiers": [
+   "10234795",
+   "124901",
+   "885978118212"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "alfasoni",
+  "sku": "0266020550",
+  "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-mn-bpg-btb-124899.html",
+  "price": 514.1,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://alfasoni.com/609112-home_default/fender-standard-tele-mn-bpg-btb.jpg",
+  "identifiers": [
+   "10234793",
+   "124899",
+   "885978118137"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "alfasoni",
+  "sku": "0266220505",
+  "url": "https://alfasoni.com/guitarras-electricas-modelos-st/fender-standard-strat-mn-wpg-owt-124902.html",
+  "price": 505.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://alfasoni.com/609097-home_default/fender-standard-strat-mn-wpg-owt.jpg",
+  "identifiers": [
+   "10204811",
+   "124902",
+   "885978117857"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "alfasoni",
+  "sku": "0266240500",
+  "url": "https://alfasoni.com/guitarras-electricas-modelos-st/fender-standard-strat-lrl-wpg-3ts-124904.html",
+  "price": 526.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://alfasoni.com/609087-home_default/fender-standard-strat-lrl-wpg-3ts.jpg",
+  "identifiers": [
+   "10204813",
+   "124904",
+   "885978117901"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "unionmusical",
+  "sku": "0140570506",
+  "url": "https://www.unionmusical.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": null,
+  "note": "robots.txt 403 (challenge anti-bot); URL no solicitada"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "kirstein",
+  "sku": "0140552506",
+  "url": "https://www.kirstein.de/es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": 403,
+  "note": "challenge anti-bot"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "madridhifi",
+  "sku": "0140552506",
+  "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-mn-bk/",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": 403,
+  "note": "challenge anti-bot"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "madridhifi",
+  "sku": "0266020560",
+  "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mn-amm/",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": 403,
+  "note": "challenge anti-bot"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "madridhifi",
+  "sku": "0266020550",
+  "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mf-btb/",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": 403,
+  "note": "challenge anti-bot"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "madridhifi",
+  "sku": "0266040505",
+  "url": "https://www.madridhifi.com/p/fender-standard-telecaster-lf-owh/",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": 403,
+  "note": "challenge anti-bot"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "madridhifi",
+  "sku": "0140570506",
+  "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "blocked_403",
+  "method": null,
+  "http_status": 403,
+  "note": "challenge anti-bot"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0140552506",
+  "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-black/p/36781",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "title='Fender  Player II Telecaster Maple Fingerboard Black - indisponível'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0140550518",
+  "url": "https://www.egitana.es/fender-player-ii-telecaster-rosewood-fingerboard-aquatone-blue/p/36778",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "title='Fender  Player II Telecaster Rosewood Fingerboard Aquatone Blue - indisponível'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0140570506",
+  "url": "https://www.egitana.es/fender-player-ii-telecaster-hh-rw-blk/p/44477",
+  "price": 990.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-player-ii-mod-telecaster-sh-rw-dsk_6a3111da327c9.jpg",
+  "identifiers": [
+   "0140570506",
+   "885978113927"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0266020560",
+  "url": "https://www.egitana.es/fender-std-tele-mn-wpg-amm/p/38812",
+  "price": 496.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-std-tele-mn-wpg-amm_67926e18ad0ca.jpg",
+  "identifiers": [
+   "0266020560",
+   "885978118113"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0266040505",
+  "url": "https://www.egitana.es/fender-std-tele-lrl-wpg-owt/p/38818",
+  "price": 512.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-std-tele-lrl-wpg-owt_67927b9c5c93c.jpg",
+  "identifiers": [
+   "0266040505",
+   "885978118212"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0266020550",
+  "url": "https://www.egitana.es/fender-std-tele-mn-bpg-btb/p/38813",
+  "price": 508.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-std-tele-mn-bpg-btb_67926eeac97a4.jpg",
+  "identifiers": [
+   "0266021550",
+   "885978118137"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0140512518",
+  "url": "https://www.egitana.es/fender-player-ii-stratocaster-maple-fingerboard-aquatone-blue/p/36772",
+  "price": 815.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-player-ii-stratocaster-maple-fingerboard-aquatone-blue_668ea7aed573f.jpg",
+  "identifiers": [
+   "0140512518",
+   "885978109319"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0140510515",
+  "url": "https://www.egitana.es/fender-player-ii-stratocaster-rosewood-fingerboard-polar-white/p/36767",
+  "price": 800.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-player-ii-stratocaster-rosewood-fingerboard-polar-white_668ea1477eca2.jpg",
+  "identifiers": [
+   "0140510515",
+   "885978109302"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0266220505",
+  "url": "https://www.egitana.es/fender-standard-strat-mn-wpg-owt/p/38819",
+  "price": 495.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-standard-strat-mn-wpg-owt_67927eef6b4d8.jpg",
+  "identifiers": [
+   "0266220505",
+   "885978117857"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0266240500",
+  "url": "https://www.egitana.es/fender-standard-strat-lrl-wpg-3ts/p/38821",
+  "price": 520.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-standard-strat-lrl-wpg-3ts_67928248f12fe.jpg",
+  "identifiers": [
+   "0266240500",
+   "885978117901"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "AS73-TBC",
+  "url": "https://www.egitana.es/ibanez-as73-tbc-tobacco-brown/p/14909",
+  "price": 466.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/ibanez-as73-tbc-tobacco-brown_6070197dd8358.jpg",
+  "identifiers": [
+   "AS73TBC",
+   "4515110828162"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "AZ24S1F-TKS",
+  "url": "https://www.egitana.es/ibanez-az24s1f-tks/p/38840",
+  "price": 436.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/ibanez-az24s1f-tks_67975bfa69f48.jpg",
+  "identifiers": [
+   "AZ24S1FTKS",
+   "4549763363527"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "RG550-RF",
+  "url": "https://www.egitana.es/ibanez-rg550-rf/p/38991",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "title='Ibanez  RG550-RF - indisponível'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0996106306",
+  "url": "https://www.egitana.es/fender-deluxe-molded-strat-tele-case/p/18528",
+  "price": 165.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-deluxe-molded-strat-tele-case_5f0d7bc2e19cf.jpg",
+  "identifiers": [
+   "0996102306",
+   "885978753253"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "M300C",
+  "url": "https://www.egitana.es/ibanez-m300c/p/42832",
+  "price": 175.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/ibanez-m300c_697a28427b2bc.jpg",
+  "identifiers": [
+   "M300C",
+   "4515276966838"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "MS100C",
+  "url": "https://www.egitana.es/ibanez-ms100c/p/28254",
+  "price": 188.0,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/ibanez-ms100c_62c3f55c588ea.jpg",
+  "identifiers": [
+   "MS100C",
+   "4549763192431"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "egitana",
+  "sku": "0140552500",
+  "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-3-color-sunburst/p/36780",
+  "price": 769.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "meta",
+  "http_status": 200,
+  "note": null,
+  "image": "https://detalhes.egitana.es/fender-player-ii-telecaster-maple-fingerboard-3-color-sunburst_668eb576002d3.jpg",
+  "identifiers": [
+   "0140552500",
+   "885978110667"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "woodbrass",
+  "sku": "0140552506",
+  "url": "https://www.woodbrass.com/forme-t-fender-telecaster-player-ii-mn-black-p395782.html",
+  "price": 769.0,
+  "currency": "EUR",
+  "in_stock": true,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://woodbrass.com/cdn/shop/files/d345d246ec2af5cc2d89e8fa3dce7d2bb9a10890_FMIC_0140552506.jpg?height=1200&pad_color=ffffff&v=1792578221&width=1200",
+  "identifiers": [
+   "0885978110698",
+   "395782"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0140552500",
+  "url": "https://www.multiocio.com/fender-player-ii-telecaster-mn-3ts",
+  "price": 763.56,
+  "currency": "EUR",
+  "in_stock": false,
+  "status": "ok",
+  "method": "jsonld",
+  "http_status": 200,
+  "note": "variant_matched",
+  "image": "https://www.multiocio.com/21168-home_default/fender-player-ii-telecaster-mn-3ts.jpg",
+  "identifiers": [
+   "0140552500",
+   "0885978110667",
+   "885978110667"
+  ]
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0140552506",
+  "url": "https://www.multiocio.com/fender-player-ii-telecaster-mn-blk",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0140550518",
+  "url": "https://www.multiocio.com/fender-player-ii-telecaster-rw-aqb",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0140570506",
+  "url": "https://www.multiocio.com/fender-player-ii-telecaster-hh-rw-blk",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0140512518",
+  "url": "https://www.multiocio.com/fender-player-ii-stratocaster-mn-aqb",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0140510515",
+  "url": "https://www.multiocio.com/fender-player-ii-stratocaster-rw-pwt",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0266220505",
+  "url": "https://www.multiocio.com/fender-standard-stratocaster-mn-owt",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0266240500",
+  "url": "https://www.multiocio.com/fender-standard-stratocaster-lrl-3ts",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0266040505",
+  "url": "https://www.multiocio.com/fender-standard-telecaster-lrl-owt",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "0266020560",
+  "url": "https://www.multiocio.com/fender-standard-telecaster-mn-amm",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "EOCAVSNH1",
+  "url": "https://www.multiocio.com/epiphone-casino-vintage-sunburst",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "EIES335VSNH1",
+  "url": "https://www.multiocio.com/epiphone-es-335-vintage-sunburst",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "AS73-TBC",
+  "url": "https://www.multiocio.com/ibanez-as73-tbc",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "RG550-RF",
+  "url": "https://www.multiocio.com/ibanez-rg550-rf",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
+ },
+ {
+  "date": "2026-10-26T00:02:23+00:00",
+  "store": "multiocio",
+  "sku": "AZ24S1F-TKS",
+  "url": "https://www.multiocio.com/ibanez-az24s1f-tks",
+  "price": null,
+  "currency": null,
+  "in_stock": null,
+  "status": "no_price",
+  "method": null,
+  "http_status": 200,
+  "note": "posible bloqueo (captcha); title='Multiocio.com - Tienda de Música'"
  }
 ]
