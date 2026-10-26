@@ -9,9 +9,7 @@
 <meta name="theme-color" content="#2a78d6">
 <meta name="description" content="guitle compara cada día el precio de guitarras en las principales tiendas de Europa: mejor precio, histórico, cupones y alertas.">
 <link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/inter.css">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <title>guitle · guitarras al mejor precio</title>
@@ -118,6 +116,7 @@
   @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
   .step { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
   .step b { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font-size: .95rem; margin-bottom: 8px; }
+  footer a { color: var(--text-muted); }
   footer { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 </style>
 </head>
@@ -180,7 +179,8 @@
     </div>
   </section>
 
-  <footer><span id="updated"></span><span>guitle · proyecto personal</span></footer>
+  <footer><span id="updated"></span><span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+    <span style="flex-basis:100%">Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span></footer>
 </main>
 <script>
 const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
@@ -246,7 +246,7 @@ load("data/latest.json").then(latest => {
   const score = p => p.vsPvp ?? (p.items.length > 2 ? (p.best.price - p.items.at(-1).price) / p.items.at(-1).price * 50 : 0);
   const deals = guitars.slice().sort((a, b) => score(a) - score(b)).slice(0, 4);
   document.getElementById("deals").innerHTML = deals.map(p => card({
-    href: link(p), img: p.thumb ? "img/p/" + p.thumb : p.image, name: p.name, price: p.best.price,
+    href: link(p), img: p.thumb ? "img/p/" + p.thumb : null, name: p.name, price: p.best.price,
     extra: score(p) < -0.5 ? `<span class="neg">${score(p).toFixed(0)} %</span>` : "",
     where: `en ${storeName[p.best.store]} · ${p.items.length} tiendas`,
   })).join("");
@@ -255,7 +255,7 @@ load("data/latest.json").then(latest => {
   if (drops.length) {
     document.getElementById("drops-sec").hidden = false;
     document.getElementById("drops").innerHTML = drops.map(p => card({
-      href: link(p), img: p.thumb ? "img/p/" + p.thumb : p.image, name: p.name, price: p.best.price,
+      href: link(p), img: p.thumb ? "img/p/" + p.thumb : null, name: p.name, price: p.best.price,
       badge: `−${eur(p.drop)}`, where: `en ${storeName[p.best.store]}`,
     })).join("");
   }

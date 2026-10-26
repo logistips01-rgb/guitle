@@ -8,13 +8,11 @@
 <meta name="apple-mobile-web-app-title" content="guitle">
 <meta name="theme-color" content="#2a78d6">
 <link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/inter.css">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <title>Catálogo de guitarras · guitle</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="vendor/chart.umd.min.js"></script>
 <style>
   :root {
     color-scheme: light;
@@ -158,6 +156,8 @@
   .more:hover { border-color: var(--accent); }
   .stores-n { font-weight: 600; color: var(--text-secondary); }
   .shop { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .site-foot { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
+  .site-foot a { color: var(--text-muted); }
 </style>
 </head>
 <body>
@@ -185,12 +185,16 @@
   </div>
   <div id="grid" class="grid"></div>
   <button class="more hidden" id="more">Ver más</button>
+  <footer class="site-foot">
+    <span>Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span>
+    <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+  </footer>
 </main>
 <div class="sheet-bg" id="bg"></div>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
 <script>
-// Miniatura uniforme si existe; si no, la foto de la tienda.
-const pic = p => p.th ? "img/p/" + p.th : p.img;
+// Solo miniaturas propias (img/p/): la web no carga nada de terceros. Sin miniatura todavía, sin foto.
+const pic = p => p.th ? "img/p/" + p.th : null;
 const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -266,7 +270,7 @@ function tile(p) {
                   p.save >= 1 ? `<span class="badge">Ahorra ${eur(Math.round(p.save))}</span>` : ""].join("");
   return `<div class="tile" data-id="${esc(p.id)}">
     <div class="badges">${badges}</div>
-    <div class="img">${p.img ? `<img loading="lazy" src="${esc(pic(p))}" alt="">` : ""}</div>
+    <div class="img">${pic(p) ? `<img loading="lazy" src="${esc(pic(p))}" alt="">` : ""}</div>
     <div class="body"><span class="brand">${esc(p.brand || "")}${p.type && p.type !== "Otras" ? " · " + esc(p.type) : ""}</span>
       <span class="name">${esc(p.name.replace(new RegExp("^" + (p.brand || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " ", "i"), ""))}</span>
       <span class="price"><strong>${eur(p.best.p)}</strong></span>
@@ -317,9 +321,9 @@ function openSheet(p) {
       <td class="num muted">${n === 0 ? "mejor precio" : "+" + eur(Math.round((i.p - p.best.p) * 100) / 100)}</td>
       <td>${i.st === true ? '<span class="tag">en stock</span>' : i.st === false ? '<span class="tag warn">sin stock</span>' : ""}</td>
       <td class="muted">${fmtDay(i.d)}</td>
-      <td>${i.u ? `<a class="shop" href="${esc(i.u)}" target="_blank" rel="noopener">Ver en tienda</a>` : ""}</td></tr>`).join("");
+      <td>${i.u ? `<a class="shop" href="${esc(i.u)}" target="_blank" rel="sponsored noopener">Ver en tienda</a>` : ""}</td></tr>`).join("");
   s.innerHTML = `<button class="close" aria-label="Cerrar">✕</button>
-    <div class="hero">${p.img ? `<img src="${esc(pic(p))}" alt="">` : ""}
+    <div class="hero">${pic(p) ? `<img src="${esc(pic(p))}" alt="">` : ""}
       <div><div class="muted">${esc(p.brand || "")}${p.type ? " · " + esc(p.type) : ""}</div><h2>${esc(p.name)}</h2>
         <div class="big">${eur(p.best.p)}</div><div class="muted">en ${esc(storeName[p.best.s] || p.best.s)}${p.save >= 1 ? ` · hasta ${eur(Math.round(p.save))} menos que en la más cara` : ""}</div>
         <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">${p.atLow ? '<span class="badge low">En su mínimo registrado</span>' : ""}
