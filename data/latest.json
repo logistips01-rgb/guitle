@@ -38,7 +38,7 @@
    "pvp_fallback": 799,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-26T15:22:57+00:00",
-   "image": "https://pt.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920"
+   "image": "https://i.ebayimg.com/images/g/ji8AAeSw~CZq2hHY/s-l225.jpg"
   },
   {
    "sku": "0266020560",
@@ -355,18 +355,6 @@
    "reference": true
   },
   {
-   "id": "fender_pt",
-   "name": "Fender Portugal",
-   "domain": "pt.fender.com",
-   "reference": null
-  },
-  {
-   "id": "fender_ad",
-   "name": "Fender Andorra (prueba)",
-   "domain": "es.fender.com",
-   "reference": null
-  },
-  {
    "id": "thomann",
    "name": "Thomann",
    "domain": "www.thomann.es",
@@ -528,21 +516,6 @@
    "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920"
   },
   {
-   "store": "fender_pt",
-   "sku": "0140510515",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/player-ii-stratocaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920",
-   "price": 799.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 799.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
-  },
-  {
    "store": "kirstein_ebay",
    "sku": "0140510515",
    "last_run": "2026-10-26T15:22:57+00:00",
@@ -670,21 +643,6 @@
    "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920"
   },
   {
-   "store": "fender_pt",
-   "sku": "0140512518",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/player-ii-stratocaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920",
-   "price": 799.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 799.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
-  },
-  {
    "store": "kirstein_ebay",
    "sku": "0140512518",
    "last_run": "2026-10-26T15:22:57+00:00",
@@ -787,21 +745,6 @@
    "min_price": 799.0,
    "min_price_date": "2026-10-25T19:18:10+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920"
-  },
-  {
-   "store": "fender_pt",
-   "sku": "0140550518",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/player-ii-telecaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920",
-   "price": 799.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 799.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
   },
   {
    "store": "kirstein_ebay",
@@ -908,21 +851,6 @@
    "min_price_date": "2026-10-25T23:56:05+00:00"
   },
   {
-   "store": "fender_pt",
-   "sku": "0140552500",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/player-ii-telecaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920",
-   "price": 799.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 799.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
-  },
-  {
    "store": "multiocio",
    "sku": "0140552500",
    "last_run": "2026-10-26T15:22:57+00:00",
@@ -990,13 +918,6 @@
    "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-black/p/36781"
   },
   {
-   "store": "fender_ad",
-   "sku": "0140552506",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "error",
-   "url": "https://es.fender.com/es-ad/products/player-ii-telecaster"
-  },
-  {
    "store": "fender_es",
    "sku": "0140552506",
    "last_run": "2026-10-26T15:22:57+00:00",
@@ -1010,21 +931,6 @@
    "min_price": 799.0,
    "min_price_date": "2026-10-25T19:18:10+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920"
-  },
-  {
-   "store": "fender_pt",
-   "sku": "0140552506",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/player-ii-telecaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920",
-   "price": 799.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 799.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
   },
   {
    "store": "kirstein",
@@ -1175,21 +1081,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "fender_pt",
-   "sku": "0140570506",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/player-ii-telecaster-hh",
-   "image": "https://pt.fender.com/cdn/shop/files/0140570530_fen_ins_frt_1_rr.png?v=1774475963&width=1920",
-   "price": 899.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 899.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
-  },
-  {
    "store": "kirstein_ebay",
    "sku": "0140570506",
    "last_run": "2026-10-26T15:22:57+00:00",
@@ -1293,21 +1184,6 @@
    "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920"
   },
   {
-   "store": "fender_pt",
-   "sku": "0266020550",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/standard-telecaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920",
-   "price": 579.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 579.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
-  },
-  {
    "store": "kirstein_ebay",
    "sku": "0266020550",
    "last_run": "2026-10-26T15:22:57+00:00",
@@ -1387,21 +1263,6 @@
    "min_price": 589.0,
    "min_price_date": "2026-10-25T19:18:10+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920"
-  },
-  {
-   "store": "fender_pt",
-   "sku": "0266020560",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/standard-telecaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920",
-   "price": 579.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 579.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
   },
   {
    "store": "kirstein_ebay",
@@ -1493,13 +1354,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "fender_ad",
-   "sku": "0266040505",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "error",
-   "url": "https://www.fender.com/es-AD/electric-guitars/telecaster/standard-telecaster/0266040505.html"
-  },
-  {
    "store": "fender_es",
    "sku": "0266040505",
    "last_run": "2026-10-26T15:22:57+00:00",
@@ -1513,21 +1367,6 @@
    "min_price": 589.0,
    "min_price_date": "2026-10-25T19:18:10+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920"
-  },
-  {
-   "store": "fender_pt",
-   "sku": "0266040505",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/standard-telecaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0266021550_fen_ins_frt_1_rr.png?v=1739875264&width=1920",
-   "price": 579.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 579.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
   },
   {
    "store": "kirstein_ebay",
@@ -1632,21 +1471,6 @@
    "min_price": 579.0,
    "min_price_date": "2026-10-25T22:37:50+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
-  },
-  {
-   "store": "fender_pt",
-   "sku": "0266220505",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/standard-stratocaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920",
-   "price": 579.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 579.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
   },
   {
    "store": "kirstein_ebay",
@@ -1759,21 +1583,6 @@
    "min_price": 579.0,
    "min_price_date": "2026-10-25T22:37:50+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
-  },
-  {
-   "store": "fender_pt",
-   "sku": "0266240500",
-   "last_run": "2026-10-26T15:22:57+00:00",
-   "status": "ok",
-   "url": "https://pt.fender.com/products/standard-stratocaster",
-   "image": "https://pt.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920",
-   "price": 579.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T15:22:57+00:00",
-   "price_method": "jsonld",
-   "min_price": 579.0,
-   "min_price_date": "2026-10-26T15:08:33+00:00"
   },
   {
    "store": "kirstein_ebay",
