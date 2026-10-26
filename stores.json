@@ -52,7 +52,14 @@
      {"sku": "0266040505", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-lrl-wpg-owt-124901.html"},
      {"sku": "0266020550", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-mn-bpg-btb-124899.html"},
      {"sku": "0266220505", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/fender-standard-strat-mn-wpg-owt-124902.html"},
-     {"sku": "0266240500", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/fender-standard-strat-lrl-wpg-3ts-124904.html"}
+     {"sku": "0266240500", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/fender-standard-strat-lrl-wpg-3ts-124904.html"},
+     {"sku": "0140552506", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-player-ii-telecaster-mn-blk-117698.html"},
+     {"sku": "0140552500", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-player-ii-telecaster-mn-3ts-117697.html"},
+     {"sku": "0140512518", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/fender-player-ii-stratocaster-mn-aqb-117673.html"},
+     {"sku": "0140510515", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/fender-player-ii-stratocaster-rw-pwt-117667.html"},
+     {"sku": "EIES335VSNH1", "url": "https://alfasoni.com/guitarras-electricas-modelos-es/epiphone-es-335-ig-original-es-vintage-sunburst-69164.html"},
+     {"sku": "AZ24S1F-TKS", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/ibanez-az24s1f-tks-124358.html"},
+     {"sku": "RG550-RF", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/ibanez-rg550-rf-57508.html"}
    ]},
   {"id": "unionmusical", "name": "Unión Musical", "domain": "www.unionmusical.es",
    "method": "jsonld", "selector": null,
