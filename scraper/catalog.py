@@ -36,7 +36,7 @@ DIR = ROOT / "data" / "catalog"
 RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir en este tiempo
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 
-NOT_PRODUCT = re.compile(r"b-stock|bstock|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|demo|vorfuehr|gutschein", re.I)
+NOT_PRODUCT = re.compile(r"b-stock|bstock|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein", re.I)
 
 # Session no dice en la URL qué es una guitarra: se preseleccionan marcas de guitarra eléctrica sin
 # palabras de accesorio, y la ficha (breadcrumb "E-Gitarren") confirma.
@@ -80,9 +80,21 @@ TYPES = [("ST", r"\bst\b|st-gitarren|strat"), ("T", r"modelos t\b|\bt-gitarren|t
          ("Single cut", r"single.?cut"), ("Double cut", r"double.?cut"),
          ("Semihueca", r"hollow|semi|jazz|resonanz|archtop"),
          ("Moderna / Metal", r"heavy|metal|superstrat|moderne|[78] cuerdas|[78]-saiter"),
-         ("Offset", r"offset|retro|jazzmaster|jaguar|mustang")]
+         ("Offset / Retro", r"offset|retro|jazzmaster|jaguar|mustang")]
+
+# Si la categoría de la tienda no dice la forma, se deduce del nombre o de la URL (Numemusic: "guitarra-electrica-st-…").
+NAME_TYPES = [("T", r"tele(caster)?\b|\btl\b"),
+              ("ST", r"strat(ocaster)?\b|\bst\b|pacifica|soloist|san dimas|so-cal|super.?st"),
+              ("Offset / Retro", r"jazzmaster|jaguar|mustang|duo-?sonic|surfcaster|meteora|offset|retro"),
+              ("Semihueca", r"\bes-?\d{3}|casino|hollow|archtop|artcore|streamliner|\bcuerpo.hueco"),
+              ("Single cut", r"les paul|\blp\b|\bec-?\d|single.?cut|eclipse|nighthawk|\bjet\b"),
+              ("Double cut", r"\bsg\b|custom ?2[24]|\bce ?2[24]|double.?cut"),
+              ("Moderna / Metal", r"explorer|flying ?v|firebird|thunderbird|phoenix|headless|warrior|ravendark|"
+                                  r"\bmetal\b|[78].?(cuerdas|string)|baritone")]
+LEFT = re.compile(r"\b(lh|left[- ]?hand(ed)?|lefthand|left|zurd[oa]s?)\b|\d+lh\b", re.I)
 
 # Marcas en mayúsculas o con variantes → nombre canónico.
+BRAND_SUFFIX = re.compile(r"\s+(guitars?|españa|spain|europe)$", re.I)
 BRANDS = {"squier by fender": "Squier", "squier": "Squier", "prs": "PRS", "esp": "ESP", "ltd": "LTD", "evh": "EVH",
           "esp ltd": "LTD", "ltd guitars": "LTD", "esp guitars": "ESP", "ernie ball music man": "Music Man", "music man": "Music Man", "d'angelico": "D'Angelico",
           "sterling by music man": "Sterling", "prs se": "PRS"}
@@ -106,7 +118,8 @@ def write(path, data, compact=True):
 
 
 def canonical_brand(raw):
-    raw = (raw or "").strip()
+    """'PRS GUITARS', 'Prs Guitars', 'D’Angelico Guitars', 'Guild España' → 'PRS', 'D'Angelico', 'Guild'."""
+    raw = BRAND_SUFFIX.sub("", re.sub(r"\s+", " ", (raw or "").replace("\u2019", "'")).strip())
     if raw.lower() in BRANDS:
         return BRANDS[raw.lower()]
     return raw.title() if raw.isupper() and len(raw) > 3 else raw
@@ -120,6 +133,48 @@ def clean_name(name, brand_raw, brand):
     elif brand and not name.lower().startswith(brand.lower()):
         name = f"{brand} {name}"
     return name
+
+
+def type_from_name(name, url=""):
+    text = name.lower() + " " + url.rsplit("/", 1)[-1].replace("-", " ")
+    for label, pat in NAME_TYPES:
+        if re.search(pat, text):
+            return label
+    return "Otras"
+
+
+# Códigos de modelo con acabado (Ibanez RG450QMB-SPB): si dos fichas con el mismo EAN traen códigos distintos,
+# una tienda tiene el EAN mal y no son el mismo producto.
+MODEL_CODE = re.compile(r"\b[a-z]{1,6}\d+[a-z0-9]*-[a-z]{2,4}\b")
+NAME_SYNONYMS = {"strat": "stratocaster", "tele": "telecaster", "am": "american", "pro": "professional", "lp": "les paul",
+                 "std": "standard", "rw": "rosewood", "mn": "maple", "lr": "laurel", "lrl": "laurel", "eb": "ebony",
+                 "bk": "black", "blk": "black", "wh": "white", "wht": "white"}
+
+
+def _tokens(o):
+    name = o["name"].lower().replace((o.get("brand") or "").lower(), "")
+    return {t for w in re.findall(r"[a-z0-9]+", name) for t in NAME_SYNONYMS.get(w, w).split()}
+
+
+def same_product(a, b):
+    ca, cb = set(MODEL_CODE.findall(a["name"].lower())), set(MODEL_CODE.findall(b["name"].lower()))
+    if ca and cb and not ca & cb:
+        return False
+    ta, tb = _tokens(a), _tokens(b)
+    return len(ta & tb) / max(1, len(ta | tb)) >= 0.1
+
+
+def tidy(o):
+    """Normalización al construir (se aplica también a fichas ya leídas): marca, nombre, tipo y zurdas."""
+    o = dict(o)
+    brand = canonical_brand(o.get("brand"))
+    if o.get("brand") and brand != o["brand"] and o["name"].startswith(o["brand"]):
+        o["name"] = brand + o["name"][len(o["brand"]):]
+    o["brand"] = brand
+    if not o.get("type") or o["type"] in ("Otras", "Offset"):
+        o["type"] = "Offset / Retro" if o.get("type") == "Offset" else type_from_name(o["name"], o["url"])
+    o["lh"] = bool(LEFT.search(o["name"]) or LEFT.search(o["url"].rsplit("/", 1)[-1].replace("-", " ")))
+    return o
 
 
 def guitar_type(crumbs):
@@ -321,16 +376,42 @@ def build(offers=None, history=None):
     curated, store_names, sku_by_ean = _curated_offers()
     groups = {}
     for o in offers.values():
-        if o.get("status") != "ok" or o.get("price") is None:
+        if o.get("status") != "ok" or o.get("price") is None or NOT_PRODUCT.search(o["name"]):
             continue
-        key = o.get("ean") or "url:" + o["url"]
-        groups.setdefault(key, []).append(o)
-    products = []
+        groups.setdefault(o.get("ean") or "url:" + o["url"], []).append(tidy(o))
+    # Mismo EAN pero producto distinto (EAN mal puesto en una tienda) → se separan. Solo el primer grupo,
+    # el de Numemusic si está, conserva el EAN (histórico y cruce con las tiendas de seguimiento).
+    clusters = []
     for key, group in groups.items():
         # Nombre y foto preferidos: Numemusic (tienda española, nombres completos).
         group.sort(key=lambda o: (o["store"] != "numemusic", o["price"]))
+        parts = []
+        for o in group:
+            target = next((p for p in parts if same_product(p[0], o)), None)
+            if target is None:
+                parts.append([o])
+            else:
+                target.append(o)
+        clusters += [(i == 0, part) for i, part in enumerate(parts)]
+    # Las fichas separadas (EAN mal puesto) se unen a otro producto con su mismo código de modelo y marca.
+    by_code = {}
+    for keeps_ean, part in clusters:
+        codes = MODEL_CODE.findall(part[0]["name"].lower())
+        if keeps_ean and len(codes) == 1:
+            by_code.setdefault((part[0]["brand"], codes[0]), part)
+    kept = []
+    for keeps_ean, part in clusters:
+        codes = MODEL_CODE.findall(part[0]["name"].lower())
+        home = by_code.get((part[0]["brand"], codes[0])) if not keeps_ean and len(codes) == 1 else None
+        if home is not None and not {o["store"] for o in home} & {o["store"] for o in part}:
+            home += part
+        else:
+            kept.append((keeps_ean, part))
+    clusters = kept
+    products = []
+    for keeps_ean, group in clusters:
         main = group[0]
-        ean = main.get("ean")
+        ean = main.get("ean") if keeps_ean else None
         items = [{"s": o["store"], "p": o["price"], "u": o["url"], "st": o.get("in_stock"), "d": o["checked"][:10]}
                  for o in group]
         items += curated.get(ean, []) if ean else []
@@ -338,9 +419,13 @@ def build(offers=None, history=None):
         series = history.get(ean, {}) if ean else {}
         days = {d for s in series.values() for d, _ in s}
         low = min((p for s in series.values() for _, p in s), default=None) if len(days) > 1 else None
+        # Tipo: el más concreto entre las tiendas.
+        types = [o["type"] for o in group if o.get("type") and o["type"] != "Otras"]
         prod = {"id": ean or main["url"], "ean": ean, "name": main["name"], "brand": main.get("brand"),
-                "type": main.get("type"), "img": next((o["image"] for o in group if o.get("image")), None),
+                "type": types[0] if types else "Otras", "img": next((o["image"] for o in group if o.get("image")), None),
                 "items": items, "low": low}
+        if any(o["lh"] for o in group):
+            prod["lh"] = True
         # Miniatura: entre las fotos de todas las tiendas, la que muestra la guitarra entera (la más esbelta).
         thumbs = [t for t in (existing(o.get("image")) for o in group) if t]
         if thumbs:

@@ -176,7 +176,7 @@
         <option value="600-1000">600 – 1.000 €</option><option value="1000-2000">1.000 – 2.000 €</option><option value="2000-">Más de 2.000 €</option>
       </select>
       <select id="show" aria-label="Mostrar">
-        <option value="">Todas</option><option value="multi">En varias tiendas</option><option value="stock">En stock</option><option value="low">En su precio mínimo</option>
+        <option value="">Todas</option><option value="multi">En varias tiendas</option><option value="stock">En stock</option><option value="low">En su precio mínimo</option><option value="lh">Solo zurdas</option>
       </select>
     </div>
   </div>
@@ -203,7 +203,7 @@ const fmtDay = d => d ? new Date(d + "T12:00:00").toLocaleDateString("es-ES", { 
 // Sinónimos habituales en las búsquedas
 const ALIASES = { tele: "telecaster", strat: "stratocaster", lp: "les paul", negra: "black", blanca: "white", roja: "red", azul: "blue" };
 const PAGE = 48;
-const TYPE_ORDER = ["ST", "T", "Single cut", "Double cut", "Semihueca", "Offset", "Moderna / Metal", "Otras"];
+const TYPE_ORDER = ["ST", "T", "Single cut", "Double cut", "Semihueca", "Offset / Retro", "Moderna / Metal", "Otras"];
 
 async function load(path) {
   const r = await fetch(path, { cache: "no-store" });
@@ -253,6 +253,7 @@ function matches(p) {
   if (state.show === "multi" && p.nStores < 2) return false;
   if (state.show === "stock" && !p.items.some(i => i.st)) return false;
   if (state.show === "low" && !p.atLow) return false;
+  if (state.show === "lh" && !p.lh) return false;
   const words = norm(state.q).split(" ").filter(Boolean).map(w => ALIASES[w] || w);
   return words.every(w => p.text.includes(w));
 }
@@ -271,7 +272,7 @@ function tile(p) {
   return `<div class="tile" data-id="${esc(p.id)}">
     <div class="badges">${badges}</div>
     <div class="img">${pic(p) ? `<img loading="lazy" src="${esc(pic(p))}" alt="">` : ""}</div>
-    <div class="body"><span class="brand">${esc(p.brand || "")}${p.type && p.type !== "Otras" ? " · " + esc(p.type) : ""}</span>
+    <div class="body"><span class="brand">${esc(p.brand || "")}${p.type && p.type !== "Otras" ? " · " + esc(p.type) : ""}${p.lh ? " · zurda" : ""}</span>
       <span class="name">${esc(p.name.replace(new RegExp("^" + (p.brand || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " ", "i"), ""))}</span>
       <span class="price"><strong>${eur(p.best.p)}</strong></span>
       <span class="foot"><span>${esc(storeName[p.best.s] || p.best.s)}</span><span class="stores-n">${p.nStores} ${p.nStores === 1 ? "tienda" : "tiendas"}</span></span>
