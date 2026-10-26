@@ -168,6 +168,11 @@
      {"sku": "0140510515", "url": "https://www.numemusic.es/716367-guitarra-elctrica-st-fender-player-ii-stratocaster-rw-polar-white"},
      {"sku": "0140550518", "url": "https://www.numemusic.es/716394-guitarra-elctrica-tl-fender-player-ii-telecaster-rw-aquatone-blue"}
    ]},
+  {"id": "kirstein_es", "name": "Kirstein (.es)", "domain": "www.kirstein.es",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://www.kirstein.es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"}
+   ]},
   {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
