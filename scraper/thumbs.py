@@ -72,7 +72,7 @@ def _ink(mask, box):
     return mask.crop(box).histogram()[255]
 
 
-def normalize(data, rotate=True):
+def normalize(data, rotate=True, height=HEIGHT):
     im = ImageOps.exif_transpose(Image.open(BytesIO(data)))
     im = im.convert("RGBA")
     bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
@@ -104,7 +104,7 @@ def normalize(data, rotate=True):
     pad = max(2, h // 40)
     canvas = Image.new("RGB", (w + 2 * pad, h + 2 * pad), "white")
     canvas.paste(rgb, (pad, pad))
-    canvas = canvas.resize((max(1, round(canvas.width * HEIGHT / canvas.height)), HEIGHT), Image.LANCZOS)
+    canvas = canvas.resize((max(1, round(canvas.width * height / canvas.height)), height), Image.LANCZOS)
     out = BytesIO()
     canvas.save(out, "WEBP", quality=78, method=6)
     return out.getvalue()

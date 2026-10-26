@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="../icons/icon.svg">
+<title>Kit de marca · guitle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --surface-0: #f4f4f2; --surface-1: #fcfcfb; --border: #e2e1dc;
+    --text-primary: #0b0b0b; --text-secondary: #52514e; --text-muted: #7a7974;
+    --accent: #2a78d6; --accent-bg: #e8f1fc; --good: #00750a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface-0: #111110; --surface-1: #1a1a19; --border: #2e2e2c;
+      --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e88;
+      --accent: #3987e5; --accent-bg: #172a40; --good: #4cc261;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-0: #111110; --surface-1: #1a1a19; --border: #2e2e2c;
+    --text-primary: #f0efec; --text-secondary: #c3c2b7; --text-muted: #8f8e88;
+    --accent: #3987e5; --accent-bg: #172a40; --good: #4cc261;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface-0); color: var(--text-primary); font: 16px/1.55 Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; margin: 18px 0 4px; }
+  h2 { font-size: 1.25rem; font-weight: 800; letter-spacing: -.02em; margin: 44px 0 6px; }
+  p.lead { color: var(--text-secondary); margin: 0; max-width: 680px; }
+  .muted { color: var(--text-muted); font-size: .9rem; }
+  a { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; }
+  .card .show { aspect-ratio: 16 / 9; display: flex; align-items: center; justify-content: center; padding: 22px; }
+  .card .show img { max-width: 100%; max-height: 100%; }
+  .card .show.light { background: #fff; } .card .show.blue { background: #2a78d6; } .card .show.dark { background: #0b0b0b; }
+  .card .show.check { background: repeating-conic-gradient(#e9e8e4 0 25%, #fff 0 50%) 0 0 / 20px 20px; }
+  .card .info { padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card .info b { font-weight: 600; }
+  .dl { display: flex; gap: 6px; }
+  .dl a { font-size: .82rem; font-weight: 600; text-decoration: none; padding: 4px 10px; border-radius: 999px; background: var(--accent-bg); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 14px; }
+  .sw { border-radius: 14px; overflow: hidden; border: 1px solid var(--border); background: var(--surface-1); }
+  .sw div { height: 86px; }
+  .sw p { margin: 0; padding: 10px 12px; font-size: .9rem; }
+  .sw code { display: block; color: var(--text-muted); font-size: .85rem; }
+  .type { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; padding: 22px; margin-top: 14px; }
+  .type .big { font-size: 3rem; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+  .rules { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; }
+  .rule { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; }
+  .rule h3 { margin: 0 0 6px; font-size: 1rem; }
+  .rule ul { margin: 0; padding-left: 18px; color: var(--text-secondary); }
+  .rule.no h3 { color: #c62828; } .rule.yes h3 { color: var(--good); }
+  .bio { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; padding: 16px 18px; margin-top: 12px; white-space: pre-line; }
+  .bio + .muted { margin-top: 4px; }
+  .social { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  @media (max-width: 640px) { .social { grid-template-columns: 1fr; } }
+  .social img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; }
+  .wide { grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+<main>
+  <a href="../"><img src="logo.svg" alt="guitle" style="height:64px"></a>
+  <h1>Kit de marca</h1>
+  <p class="lead">Logos, colores, tipografía y piezas para redes de guitle. Usa siempre estos archivos: no redibujes el logo ni cambies sus colores.</p>
+
+  <h2>Logo</h2>
+  <p class="muted">SVG para web e imprenta (escala sin perder calidad); PNG con fondo transparente para todo lo demás.</p>
+  <div class="grid">
+    <div class="card"><div class="show light"><img src="logo.svg" alt=""></div>
+      <div class="info"><b>Principal</b><span class="dl"><a href="logo.svg" download>SVG</a><a href="png/logo.png" download>PNG</a></span></div></div>
+    <div class="card"><div class="show light"><img src="logo-sin-lema.svg" alt=""></div>
+      <div class="info"><b>Sin lema</b> <span class="dl"><a href="logo-sin-lema.svg" download>SVG</a><a href="png/logo-sin-lema.png" download>PNG</a></span></div></div>
+    <div class="card"><div class="show blue"><img src="logo-blanco.svg" alt=""></div>
+      <div class="info"><b>Blanco</b> <span class="muted">sobre azul o foto</span><span class="dl"><a href="logo-blanco.svg" download>SVG</a><a href="png/logo-blanco.png" download>PNG</a></span></div></div>
+    <div class="card"><div class="show check"><img src="logo-negro.svg" alt=""></div>
+      <div class="info"><b>Negro</b> <span class="muted">una tinta</span><span class="dl"><a href="logo-negro.svg" download>SVG</a><a href="png/logo-negro.png" download>PNG</a></span></div></div>
+    <div class="card"><div class="show light"><img src="nombre.svg" alt="" style="max-height:70%"></div>
+      <div class="info"><b>Solo nombre</b><span class="dl"><a href="nombre.svg" download>SVG</a></span></div></div>
+  </div>
+
+  <h2>Icono</h2>
+  <p class="muted">La "g" con la púa. Para la app, el favicon y las fotos de perfil.</p>
+  <div class="grid">
+    <div class="card"><div class="show light"><img src="icono.svg" alt="" style="height:100%"></div>
+      <div class="info"><b>Azul</b><span class="dl"><a href="icono.svg" download>SVG</a><a href="png/icono.png" download>PNG</a></span></div></div>
+    <div class="card"><div class="show blue"><img src="icono-blanco.svg" alt="" style="height:100%"></div>
+      <div class="info"><b>Blanco</b><span class="dl"><a href="icono-blanco.svg" download>SVG</a><a href="png/icono-blanco.png" download>PNG</a></span></div></div>
+    <div class="card"><div class="show light"><img src="png/instagram-perfil.png" alt="" style="height:100%;border-radius:50%"></div>
+      <div class="info"><b>Foto de perfil</b> <span class="muted">1080 × 1080</span><span class="dl"><a href="png/instagram-perfil.png" download>PNG</a></span></div></div>
+  </div>
+
+  <h2>Colores</h2>
+  <div class="swatches">
+    <div class="sw"><div style="background:#2a78d6"></div><p><b>Azul guitle</b><code>#2A78D6 · RGB 42 120 214</code></p></div>
+    <div class="sw"><div style="background:#0b0b0b"></div><p><b>Tinta</b><code>#0B0B0B</code></p></div>
+    <div class="sw"><div style="background:#f4f4f2"></div><p><b>Fondo</b><code>#F4F4F2</code></p></div>
+    <div class="sw"><div style="background:#ffffff"></div><p><b>Blanco</b><code>#FFFFFF</code></p></div>
+    <div class="sw"><div style="background:#00750a"></div><p><b>Verde ahorro</b><code>#00750A</code> <span class="muted">solo para descuentos</span></p></div>
+  </div>
+
+  <h2>Tipografía</h2>
+  <div class="type">
+    <div class="big">Inter Display ExtraBold</div>
+    <p class="muted">Logo, titulares y precios. Interletrado ajustado (−3 %).</p>
+    <p style="font-weight:600;font-size:1.2rem;margin:18px 0 0">Inter SemiBold / Regular</p>
+    <p class="muted">Textos, botones y descripciones. Gratuita y de uso libre (licencia OFL): <a href="https://rsms.me/inter/">rsms.me/inter</a> · Google Fonts.</p>
+  </div>
+
+  <h2>Uso del logo</h2>
+  <div class="rules">
+    <div class="rule yes"><h3>Sí</h3><ul>
+      <li>Deja alrededor un margen libre de, al menos, la altura de la púa.</li>
+      <li>Logo en color sobre blanco o fondo claro; versión blanca sobre azul o fotos.</li>
+      <li>Tamaño mínimo: 120 px de ancho con lema, 80 px sin lema, 24 px el icono.</li>
+      <li>Escribe la marca siempre en minúsculas: <b>guitle</b>.</li>
+    </ul></div>
+    <div class="rule no"><h3>No</h3><ul>
+      <li>No estires, gires ni cambies los colores del logo.</li>
+      <li>No pongas el logo en color sobre fondos azules o con poco contraste.</li>
+      <li>No uses emojis junto a la marca ni en la web: tono limpio y profesional.</li>
+      <li>No escribas "Guitle", "GUITLE" ni "guittle".</li>
+    </ul></div>
+    <div class="rule"><h3>Tono</h3><ul>
+      <li>Cercano y directo, de tú. Frases cortas.</li>
+      <li>Datos por delante: precio, tienda, cuánto ahorras.</li>
+      <li>Honesto: si un precio no es bueno, se dice.</li>
+    </ul></div>
+  </div>
+
+  <h2>Redes sociales</h2>
+  <div class="social">
+    <div class="wide"><img src="png/portada-redes.png" alt="Portada"><p class="muted">Portada 1500 × 500 (X, LinkedIn, Facebook) · <a href="png/portada-redes.png" download>descargar</a></p></div>
+    <div><img src="png/post-plantilla.png" alt="Post"><p class="muted">Post 1080 × 1350 "Chollo de hoy" · <a href="png/post-plantilla.png" download>descargar</a></p></div>
+    <div><img src="png/story-plantilla.png" alt="Historia"><p class="muted">Historia 1080 × 1920 · <a href="png/story-plantilla.png" download>descargar</a></p></div>
+  </div>
+
+  <h2>Instagram · @guitle.es</h2>
+  <p class="muted">Nombre visible: <b>guitle · guitarras al mejor precio</b> (aparece en negrita y es por lo que se busca). Bio (máx. 150 caracteres):</p>
+  <div class="bio">Comparamos cada día el precio de tu guitarra en las tiendas de Europa.
+Chollos, bajadas de precio y cupones.
+guitle.com</div>
+  <p class="muted">Alternativa más corta:</p>
+  <div class="bio">Tu guitarra, al mejor precio.
+Comparamos las tiendas de Europa cada día.
+guitle.com</div>
+  <p class="muted">Hashtags: #guitarra #guitarraelectrica #fender #gibson #epiphone #ibanez #guitarristas #chollos #guitle</p>
+</main>
+</body>
+</html>

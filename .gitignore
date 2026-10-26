@@ -1,2 +1,4 @@
 __pycache__/
 *.pyc
+brand/.cache/
+brand/__pycache__/
