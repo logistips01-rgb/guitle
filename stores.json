@@ -13,6 +13,20 @@
      {"sku": "0140570506", "url": "https://es.fender.com/products/player-ii-telecaster-hh"},
      {"sku": "0140552500", "url": "https://es.fender.com/products/player-ii-telecaster"}
    ]},
+  {"id": "fender_pt", "name": "Fender Portugal", "domain": "pt.fender.com", "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://pt.fender.com/products/player-ii-telecaster"},
+     {"sku": "0140550518", "url": "https://pt.fender.com/products/player-ii-telecaster"},
+     {"sku": "0266020560", "url": "https://pt.fender.com/products/standard-telecaster"},
+     {"sku": "0266040505", "url": "https://pt.fender.com/products/standard-telecaster"},
+     {"sku": "0266020550", "url": "https://pt.fender.com/products/standard-telecaster"},
+     {"sku": "0140512518", "url": "https://pt.fender.com/products/player-ii-stratocaster"},
+     {"sku": "0140510515", "url": "https://pt.fender.com/products/player-ii-stratocaster"},
+     {"sku": "0266220505", "url": "https://pt.fender.com/products/standard-stratocaster"},
+     {"sku": "0266240500", "url": "https://pt.fender.com/products/standard-stratocaster"},
+     {"sku": "0140570506", "url": "https://pt.fender.com/products/player-ii-telecaster-hh"},
+     {"sku": "0140552500", "url": "https://pt.fender.com/products/player-ii-telecaster"}
+   ]},
   {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.thomann.es/fender_player_ii_tele_mn_blk.htm"},
