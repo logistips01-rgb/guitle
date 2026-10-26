@@ -210,7 +210,12 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true", help="no escribe data/")
     parser.add_argument("--only", help="ids de tienda separados por coma")
+    parser.add_argument("--records-out", help="guarda los resultados en este fichero en vez de en data/")
+    parser.add_argument("--merge", help="fusiona en data/ los resultados de un --records-out previo")
     args = parser.parse_args(argv)
+    if args.merge:
+        save(json.loads(Path(args.merge).read_text(encoding="utf-8")))
+        return 0
 
     products = load(ROOT / "products.json", [])
     stores = load(ROOT / "stores.json", [])
@@ -241,14 +246,25 @@ def main(argv=None):
     print_report(records)
     if args.dry_run:
         return 0
+    if args.records_out:
+        # En CI: los resultados se guardan aparte y se fusionan después sobre la última versión del repo.
+        Path(args.records_out).write_text(json.dumps(records, ensure_ascii=False), encoding="utf-8")
+        return 0
+    save(records)
+    return 0
 
+
+def save(records):
+    """Añade los registros al histórico (sin duplicar) y regenera latest.json."""
+    products = load(ROOT / "products.json", [])
+    stores = load(ROOT / "stores.json", [])
     DATA.mkdir(exist_ok=True)
     history = load(DATA / "history.json", [])
-    history += manual_records(history) + records
+    seen = {(r["date"], r["store"], r["sku"]) for r in history}
+    history += manual_records(history) + [r for r in records if (r["date"], r["store"], r["sku"]) not in seen]
     (DATA / "history.json").write_text(json.dumps(history, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     latest = update_latest(history, products, stores)
     (DATA / "latest.json").write_text(json.dumps(latest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    return 0
 
 
 if __name__ == "__main__":
