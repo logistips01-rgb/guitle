@@ -14,7 +14,7 @@ const dataUri = file => "data:image/webp;base64," + fs.readFileSync(file).toStri
 const fontFace = (name, file) => file && fs.existsSync(file)
   ? `@font-face { font-family: "${name}"; src: url("data:font/ttf;base64,${fs.readFileSync(file).toString("base64")}"); }` : "";
 const CSS = `${fontFace("InterDisplay", process.env.FONT)}${fontFace("InterText", process.env.FONT_TEXT)}
-  * { margin: 0; box-sizing: border-box; } body { font-family: InterText, InterDisplay, system-ui, sans-serif; }
+  * { margin: 0; box-sizing: border-box; } p { text-wrap: balance; } body { font-family: InterText, InterDisplay, system-ui, sans-serif; }
   .d { font-family: InterDisplay, system-ui, sans-serif; font-weight: 800; letter-spacing: -.03em; }`;
 
 // Datos reales: tiendas con precio, guitarras con foto y la guitarra con más tiendas para el ejemplo.
@@ -104,6 +104,16 @@ const pages = {
         ${guitarRow(600, 135)}</div>
       <!-- Hueco para el sticker de enlace a guitle.com (se pone en la app) -->
       <p class="d" style="font-size:44px;margin-top:auto;letter-spacing:-.01em">guitle.com</p></div>`],
+
+  // Primera story del destacado de chollos: explica qué hay dentro y que los precios son del día.
+  "5-cartel-chollos.png": [1080, 1920, `<div style="width:1080px;height:1920px;background:${BLUE};color:#fff;padding:150px 80px;display:flex;flex-direction:column;align-items:center;text-align:center">
+      ${sized("logo-blanco.svg", "width:520px;height:auto")}
+      <div style="margin-top:150px">${icon("chollos", 300)}</div>
+      <div style="margin-top:60px">${h1("Chollos", 170, "#fff")}
+        ${lead("Las mejores bajadas de precio en guitarras, cada día.", "rgba(255,255,255,.92)")}</div>
+      <div style="background:#fff;color:${INK};border-radius:40px;width:100%;margin-top:auto;padding:44px 50px;text-align:left">
+        <p class="d" style="font-size:44px;line-height:1.1">Ojo: cada precio es del día de su story.</p>
+        <p style="font-size:34px;line-height:1.3;color:${MUTED};margin-top:14px">Los precios cambian a diario. Consulta el precio actual en <b style="color:${BLUE}">guitle.com</b>.</p></div></div>`],
 };
 // Portadas de destacadas: se suben como story; Instagram muestra el círculo central.
 for (const name of Object.keys(ICONS)) {
@@ -112,7 +122,7 @@ for (const name of Object.keys(ICONS)) {
 }
 
 (async () => {
-  fs.mkdirSync(OUT, { recursive: true });
+  fs.mkdirSync(path.join(OUT, "jpg"), { recursive: true });
   const browser = await chromium.launch();
   const page = await browser.newPage();
   for (const [out, [w, h, html]] of Object.entries(pages)) {
@@ -120,7 +130,9 @@ for (const name of Object.keys(ICONS)) {
     await page.setContent(`<style>${CSS}</style>${html}`);
     await page.evaluate(() => document.fonts.ready);
     await page.screenshot({ path: path.join(OUT, out) });
+    // Instagram solo publica JPEG por la API
+    await page.screenshot({ path: path.join(OUT, "jpg", out.replace(".png", ".jpg")), type: "jpeg", quality: 92 });
   }
   await browser.close();
-  console.log(`${Object.keys(pages).length} PNG generados en brand/png/arranque/`);
+  console.log(`${Object.keys(pages).length} imágenes generadas en brand/png/arranque/ (PNG) y jpg/`);
 })();

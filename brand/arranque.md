@@ -40,3 +40,7 @@ Añadir en la app el sticker de **Enlace** a `https://guitle.com` en el hueco ba
 
 Crear tres destacadas ("Chollos", "Cómo funciona", "Tiendas") y usar estas imágenes como portada.
 Para "Cómo funciona" se pueden subir las diapositivas del carrusel como stories.
+
+## Cartel del destacado "Chollos" — `5-cartel-chollos.png`
+
+Primera story del destacado: explica qué hay dentro y que cada precio es del día de su story.
