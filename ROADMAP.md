@@ -30,6 +30,21 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 - Altavoces: decidir tipo (monitores de estudio, PA, pantallas de guitarra) y tiendas.
 - Pendiente: `matguitars`, `auvisa`, `gear4music`, `drunkat` (URLs a null en `stores.json`).
 
+## Líneas de negocio (ideas apuntadas)
+
+- **Renting musical.** Alquiler de instrumentos con cuota mensual (guitarras, bajos, amplis, teclados), con
+  opción de compra descontando lo pagado. Encaja con quien empieza y no sabe si seguirá, y con colegios y
+  escuelas. guitle aporta el precio de mercado para calcular cuotas y valor residual.
+- **Cursos de guitarra.** Online y/o presenciales (en la tienda). Se cruzan con el resto: alumno que empieza
+  → renting o primera guitarra recomendada en guitle → accesorios.
+
+## Orden de trabajo acordado
+
+1. Revisar la carga completa de guitarras eléctricas en el catálogo.
+2. Sumar Egitana, Thomann y el resto de tiendas al catálogo.
+3. Acústicas y españolas (clásicas).
+4. Bajos, amplis, pedales, teclados y micros.
+
 ## Proyecto aparte: tienda en Andorra (en estudio)
 
 Idea: tienda física en Andorra con escaparate online y "reserva y recoge". Para quien compra o recoge allí,
