@@ -73,6 +73,7 @@
   .badge { display: inline-block; font-size: .74rem; font-weight: 600; padding: 2px 7px; border-radius: 999px; background: var(--good-bg); color: var(--good); }
   .badge.low { background: var(--warn-bg); color: var(--warning); }
   .badge.coupon { background: var(--accent-bg); color: var(--accent); }
+  .ctag { font-size: .68rem; font-weight: 600; color: var(--accent); background: var(--accent-bg); border-radius: 4px; padding: 0 4px; vertical-align: middle; }
   .fav { border: 0; background: none; cursor: pointer; font-size: 1.15rem; line-height: 1; padding: 2px; color: var(--text-muted); font-family: inherit; }
   .fav.on { color: #e5a400; }
   .empty { color: var(--text-muted); padding: 24px 0; text-align: center; grid-column: 1 / -1; }
@@ -163,7 +164,7 @@
   </div>
   <div id="A" class="grid"></div>
   <div id="B" class="matrix-wrap hidden"><table class="matrix" id="matrix"></table></div>
-  <details class="status" id="coupons-box"><summary>🏷️ Cupones</summary><div id="coupons"></div></details>
+  <details class="status" id="coupons-box"><summary>Cupones</summary><div id="coupons"></div></details>
   <details class="status"><summary>Estado de las tiendas (última ejecución)</summary><div class="table-wrap"><table id="status"></table></div></details>
 </main>
 <div class="sheet-bg" id="bg"></div>
@@ -218,7 +219,7 @@ function renderCoupons(coupons, candidates, latest) {
   const pending = candidates.filter(c => !activeCodes.has(`${c.store}|${c.code}`))
     .sort((a, b) => b.first_seen.localeCompare(a.first_seen));
   const box = document.getElementById("coupons-box");
-  box.querySelector("summary").textContent = `🏷️ Cupones · ${activeCoupons.length} activos, ${pending.length} detectados`;
+  box.querySelector("summary").textContent = `Cupones · ${activeCoupons.length} activos, ${pending.length} detectados`;
   if (pending.some(c => day(c.first_seen) === day(latest.updated))) box.open = true;
   const rowsActive = activeCoupons.map(c => `<tr><td>${esc(storeName[c.store] || c.store)}</td><td><span class="badge coupon">${esc(c.code)}</span></td>
     <td>${c.percent ? c.percent + " %" : eur(c.amount)}</td><td class="muted">${[c.brands?.join(", "), c.categories?.join(", "), c.min_purchase ? "desde " + eur(c.min_purchase) : "", c.valid_until ? "hasta " + c.valid_until : ""].filter(Boolean).join(" · ")}</td></tr>`).join("");
@@ -289,17 +290,17 @@ function render(latest, history, coupons) {
   const bestBySku = Object.fromEntries(products.filter(p => p.best).map(p => [p.sku, p.best]));
 
   const CHIPS = [
-    ["fav", "⭐ Favoritas", p => favs.has(p.sku)],
+    ["fav", "★ Favoritas", p => favs.has(p.sku)],
     ["Fender", "Fender", p => p.brand === "Fender"], ["Epiphone", "Epiphone", p => p.brand === "Epiphone"],
     ["Gibson", "Gibson", p => p.brand === "Gibson"], ["Ibanez", "Ibanez", p => p.brand === "Ibanez"],
     ["tele", "Tele", p => /telecaster/i.test(p.name)], ["strat", "Strat", p => /stratocaster/i.test(p.name)],
     ["lp", "Les Paul", p => /les paul/i.test(p.name)], ["semi", "Semihuecas", p => /es-335|casino|as73/i.test(p.name)],
     ["600", "< 600 €", p => p.best && p.best.final < 600], ["stock", "En stock", p => p.items.some(i => i.in_stock === true)],
-    ["drop", "⬇️ Han bajado", p => p.drop > 0], ["low", "🔥 Mínimo histórico", p => p.atLow],
+    ["drop", "Han bajado", p => p.drop > 0], ["low", "Mínimo histórico", p => p.atLow],
   ];
   // Categorías (una a la vez). Solo se muestran las que ya tienen productos.
-  const CATS = [["guitarra", "🎸 Guitarras"], ["bajo", "Bajos"], ["ampli", "🔊 Amplis"], ["pedal", "🎛️ Pedales"],
-                ["teclado", "🎹 Teclados"], ["micro", "🎤 Micros"], ["estuche", "🧳 Estuches"]]
+  const CATS = [["guitarra", "Guitarras"], ["bajo", "Bajos"], ["ampli", "Amplis"], ["pedal", "Pedales"],
+                ["teclado", "Teclados"], ["micro", "Micros"], ["estuche", "Estuches"]]
     .filter(([id]) => products.some(p => p.category === id && p.best));
   let cat = new URLSearchParams(location.search).get("cat") || prefs.get("guitle.cat", "guitarra");
   if (!CATS.some(c => c[0] === cat)) cat = "guitarra";
@@ -378,7 +379,7 @@ function render(latest, history, coupons) {
         ${cols.map(s => {
           const i = by[s.id];
           if (!i) return '<td class="cell none">·</td>';
-          return `<td class="cell ${i.final === p.best.final ? "win" : ""}" title="${esc(storeName[s.id])}${i.coupon ? " · cupón " + esc(i.coupon.code) : ""}">${eur(i.final)}${i.coupon ? " 🏷️" : ""}</td>`;
+          return `<td class="cell ${i.final === p.best.final ? "win" : ""}" title="${esc(storeName[s.id])}${i.coupon ? " · cupón " + esc(i.coupon.code) : ""}">${eur(i.final)}${i.coupon ? ' <span class="ctag">cupón</span>' : ""}</td>`;
         }).join("")}</tr>`;
     }).join("");
     document.getElementById("matrix").innerHTML = list.length ?
@@ -392,9 +393,9 @@ function render(latest, history, coupons) {
   }
 
   function tile(p) {
-    const badges = [p.atLow ? '<span class="badge low">🔥 Mínimo</span>' : "",
-                    p.drop > 0 ? `<span class="badge">⬇️ −${eur(p.drop)}</span>` : "",
-                    p.best.coupon ? '<span class="badge coupon">🏷️ Cupón</span>' : ""].join("");
+    const badges = [p.atLow ? '<span class="badge low">Mínimo</span>' : "",
+                    p.drop > 0 ? `<span class="badge">−${eur(p.drop)}</span>` : "",
+                    p.best.coupon ? '<span class="badge coupon">Cupón</span>' : ""].join("");
     const shortName = p.name.startsWith(p.brand + " ") ? p.name.slice(p.brand.length + 1) : p.name;
     return `<div class="tile" data-sku="${esc(p.sku)}">
       <div class="img">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}</div>
@@ -413,7 +414,7 @@ function render(latest, history, coupons) {
     if (p.case_included) parts.push(`Incluye <strong>${esc(p.case_included)}</strong> de serie.`);
     const c = p.case && bestBySku[p.case];
     if (c) {
-      parts.push(`🧳 Estuche recomendado: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(productBySku[p.case]?.name || p.case)}</a>
+      parts.push(`Estuche recomendado: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(productBySku[p.case]?.name || p.case)}</a>
         — ${eur(c.final)} en ${esc(storeName[c.store])}${c.coupon ? ` (cupón ${esc(c.coupon.code)})` : ""}.
         <strong>Pack guitarra + estuche: ${eur(p.best.final + c.final)}</strong>`);
     }
@@ -445,7 +446,7 @@ function render(latest, history, coupons) {
         <div><h2>${esc(p.name)}</h2>
           <div class="big">${eur(p.best.final)} <span class="muted" style="font-size:.95rem;font-weight:400">en ${esc(storeName[p.best.store])}</span></div>
           <div class="muted">PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSrc}${p.vsPvp != null ? ` · <span class="${p.vsPvp < 0 ? "neg" : "pos"}">${pct(p.vsPvp)}</span>` : ""}</div>
-          <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center">${p.atLow ? '<span class="badge low">🔥 Mínimo histórico</span>' : ""}${p.drop > 0 ? `<span class="badge">⬇️ Ha bajado ${eur(p.drop)}</span>` : ""}
+          <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center">${p.atLow ? '<span class="badge low">Mínimo histórico</span>' : ""}${p.drop > 0 ? `<span class="badge">Ha bajado ${eur(p.drop)}</span>` : ""}
             <button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}">${favs.has(p.sku) ? "★ Favorita" : "☆ Añadir a favoritas"}</button></div>
           <div class="muted" style="font-size:.82rem;margin-top:4px">${esc(p.brand)} · SKU ${esc(p.sku)}</div>
         </div></div>
