@@ -1,6 +1,5 @@
 [
-  {"id": "fender_es", "name": "Fender España", "domain": "es.fender.com", "reference": true,
-   "method": "jsonld", "selector": null,
+  {"id": "fender_es", "name": "Fender España", "domain": "es.fender.com", "reference": true, "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://es.fender.com/products/player-ii-telecaster"},
      {"sku": "0140550518", "url": "https://es.fender.com/products/player-ii-telecaster"},
@@ -14,9 +13,9 @@
      {"sku": "0140570506", "url": "https://es.fender.com/products/player-ii-telecaster-hh"},
      {"sku": "0140552500", "url": "https://es.fender.com/products/player-ii-telecaster"}
    ]},
-  {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es",
-   "method": "jsonld", "selector": null,
-   "items": [{"sku": "0140552506", "url": "https://www.thomann.es/fender_player_ii_tele_mn_blk.htm"},
+  {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es", "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://www.thomann.es/fender_player_ii_tele_mn_blk.htm"},
      {"sku": "0140512518", "url": "https://www.thomann.es/fender_player_ii_strat_mn_aqb.htm"},
      {"sku": "0140510515", "url": "https://www.thomann.es/fender_player_ii_strat_rw_pwt.htm"},
      {"sku": "0266220505", "url": "https://www.thomann.es/fender_standard_strat_mn_wpg_owt.htm"},
@@ -37,17 +36,19 @@
      {"sku": "THOMANN-ABS-SC", "url": "https://www.thomann.es/thomann_eguitarcase_lpstyle.htm"},
      {"sku": "THOMANN-ABS-ST", "url": "https://www.thomann.es/thomann_egitarrencase.htm"},
      {"sku": "M300C", "url": "https://www.thomann.es/ibanez_m300c.htm"},
-     {"sku": "MS100C", "url": "https://www.thomann.es/ibanez_ms100c.htm"}]},
-  {"id": "musicstore", "name": "Music Store", "domain": "musicstore.de",
-   "method": "jsonld", "selector": null,
-   "items": [{"sku": "0140552506", "url": "https://musicstore.de/en_DE/EUR/Fender-Player-II-Telecaster-MN-Black/art-GIT0061904-008"}]},
-  {"id": "musicopolix", "name": "Musicopolix", "domain": "musicopolix.com",
-   "method": "jsonld", "selector": null,
-   "items": [{"sku": "0140552506", "url": "https://musicopolix.com/cat/guitarras/electricas/Fender/202259-fender-player-ii-telecaster-mn-blk.html"},
+     {"sku": "MS100C", "url": "https://www.thomann.es/ibanez_ms100c.htm"}
+   ]},
+  {"id": "musicstore", "name": "Music Store", "domain": "musicstore.de", "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://musicstore.de/en_DE/EUR/Fender-Player-II-Telecaster-MN-Black/art-GIT0061904-008"}
+   ]},
+  {"id": "musicopolix", "name": "Musicopolix", "domain": "musicopolix.com", "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://musicopolix.com/cat/guitarras/electricas/Fender/202259-fender-player-ii-telecaster-mn-blk.html"},
      {"sku": "0140512518", "url": "https://musicopolix.com/cat/guitarras/electricas/198695-fender-player-ii-stratocaster-mn-aqb-guitarra-electrica.html"},
-     {"sku": "0140510515", "url": "https://musicopolix.com/cat/guitarras/electricas/198991-fender-player-ii-stratocaster-rw-polar-white-guitarra-electrica.html"}]},
-  {"id": "alfasoni", "name": "Alfasoni", "domain": "alfasoni.com",
-   "method": "jsonld", "selector": null,
+     {"sku": "0140510515", "url": "https://musicopolix.com/cat/guitarras/electricas/198991-fender-player-ii-stratocaster-rw-polar-white-guitarra-electrica.html"}
+   ]},
+  {"id": "alfasoni", "name": "Alfasoni", "domain": "alfasoni.com", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0266040505", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-lrl-wpg-owt-124901.html"},
      {"sku": "0266020550", "url": "https://alfasoni.com/guitarras-electricas-modelos-t/fender-standard-tele-mn-bpg-btb-124899.html"},
@@ -61,14 +62,15 @@
      {"sku": "AZ24S1F-TKS", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/ibanez-az24s1f-tks-124358.html"},
      {"sku": "RG550-RF", "url": "https://alfasoni.com/guitarras-electricas-modelos-st/ibanez-rg550-rf-57508.html"}
    ]},
-  {"id": "unionmusical", "name": "Unión Musical", "domain": "www.unionmusical.es",
-   "method": "jsonld", "selector": null,
-   "items": [{"sku": "0140570506", "url": "https://www.unionmusical.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"}]},
-  {"id": "kirstein", "name": "Kirstein", "domain": "www.kirstein.de",
-   "method": "jsonld", "selector": null,
-   "items": [{"sku": "0140552506", "url": "https://www.kirstein.de/es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"}]},
-  {"id": "madridhifi", "name": "Madrid HiFi", "domain": "www.madridhifi.com",
-   "method": "jsonld", "selector": null,
+  {"id": "unionmusical", "name": "Unión Musical", "domain": "www.unionmusical.es", "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140570506", "url": "https://www.unionmusical.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"}
+   ]},
+  {"id": "kirstein", "name": "Kirstein", "domain": "www.kirstein.es", "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://www.kirstein.es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"}
+   ]},
+  {"id": "madridhifi", "name": "Madrid HiFi", "domain": "www.madridhifi.com", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-mn-bk/"},
      {"sku": "0266020560", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mn-amm/"},
@@ -76,8 +78,7 @@
      {"sku": "0266040505", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-lf-owh/"},
      {"sku": "0140570506", "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/"}
    ]},
-  {"id": "egitana", "name": "Egitana", "domain": "www.egitana.es",
-   "method": "jsonld", "selector": null,
+  {"id": "egitana", "name": "Egitana", "domain": "www.egitana.es", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-black/p/36781"},
      {"sku": "0140550518", "url": "https://www.egitana.es/fender-player-ii-telecaster-rosewood-fingerboard-aquatone-blue/p/36778"},
@@ -97,8 +98,7 @@
      {"sku": "MS100C", "url": "https://www.egitana.es/ibanez-ms100c/p/28254"},
      {"sku": "0140552500", "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-3-color-sunburst/p/36780"}
    ]},
-  {"id": "musicstore_ebay", "name": "Music Store (eBay)", "domain": "www.ebay.de",
-   "method": "ebay", "ebay": {"marketplace": "EBAY_DE", "seller": "musicstoreprofessionalgmbh"},
+  {"id": "musicstore_ebay", "name": "Music Store (eBay)", "domain": "www.ebay.de", "method": "ebay", "ebay": {"marketplace": "EBAY_DE", "seller": "musicstoreprofessionalgmbh"},
    "items": [
      {"sku": "0140552506", "url": null},
      {"sku": "0140550518", "url": null},
@@ -125,18 +125,15 @@
      {"sku": "M300C", "url": null},
      {"sku": "MS100C", "url": null}
    ]},
-  {"id": "woodbrass", "name": "Woodbrass", "domain": "www.woodbrass.com",
-   "method": "jsonld", "selector": null,
+  {"id": "woodbrass", "name": "Woodbrass", "domain": "www.woodbrass.com", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.woodbrass.com/forme-t-fender-telecaster-player-ii-mn-black-p395782.html"}
    ]},
-  {"id": "multiocio", "name": "Multiocio", "domain": "www.multiocio.com",
-   "method": "jsonld", "selector": null,
+  {"id": "multiocio", "name": "Multiocio", "domain": "www.multiocio.com", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552500", "url": "https://www.multiocio.com/fender-player-ii-telecaster-mn-3ts"}
    ]},
-  {"id": "session", "name": "Session", "domain": "www.session.de",
-   "method": "jsonld", "selector": null,
+  {"id": "session", "name": "Session", "domain": "www.session.de", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.session.de/products/fender-player-ii-telecaster-mn-black/"},
      {"sku": "0140552500", "url": "https://www.session.de/products/fender-player-ii-telecaster-mn-3ts/"},
@@ -155,26 +152,31 @@
      {"sku": "RG550-RF", "url": "https://www.session.de/products/ibanez-rg550-rf/"},
      {"sku": "0996106306", "url": "https://www.session.de/products/fender-gitarrenkoffer-deluxe-molded-strat-tele-black/"}
    ]},
-  {"id": "promusica", "name": "Promusica", "domain": "promusica.es",
-   "method": "jsonld", "selector": null,
+  {"id": "promusica", "name": "Promusica", "domain": "promusica.es", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140550518", "url": "https://promusica.es/tipo-tele/1147865-fender-player-ii-telecaster-rw-aqb-guitarra-electrica-885978110742.html"}
    ]},
-  {"id": "numemusic", "name": "Nume Music", "domain": "www.numemusic.es",
-   "method": "jsonld", "selector": null,
+  {"id": "numemusic", "name": "Nume Music", "domain": "www.numemusic.es", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.numemusic.es/716398-guitarra-elctrica-tl-fender-player-ii-telecaster-mn-black"},
      {"sku": "0140570506", "url": "https://www.numemusic.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"},
      {"sku": "0140510515", "url": "https://www.numemusic.es/716367-guitarra-elctrica-st-fender-player-ii-stratocaster-rw-polar-white"},
      {"sku": "0140550518", "url": "https://www.numemusic.es/716394-guitarra-elctrica-tl-fender-player-ii-telecaster-rw-aquatone-blue"}
    ]},
-  {"id": "kirstein_es", "name": "Kirstein (.es)", "domain": "www.kirstein.es",
-   "method": "jsonld", "selector": null,
+  {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null,
    "items": [
-     {"sku": "0140552506", "url": "https://www.kirstein.es/Guitarra-Bajo/Guitarra-electrica/Modelos-TL/Fender-Player-II-Telecaster-MN-Black.html"}
+     {"sku": "0140552506", "url": null}
    ]},
-  {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
-  {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
-  {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
-  {"id": "drunkat", "name": "Drunkat", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]}
+  {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": null}
+   ]},
+  {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": null}
+   ]},
+  {"id": "drunkat", "name": "Drunkat", "domain": null, "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": null}
+   ]}
 ]
