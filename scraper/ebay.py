@@ -28,16 +28,32 @@ def has_credentials():
     return bool(os.environ.get("EBAY_CLIENT_ID") and os.environ.get("EBAY_CLIENT_SECRET"))
 
 
+class TokenError(requests.RequestException):
+    pass
+
+
+_token_error = None
+
+
 def _get_token():
-    global _token
+    global _token, _token_error
+    if _token_error:  # no repetir la misma petición fallida para cada producto
+        raise TokenError(_token_error)
     if _token is None:
-        auth = base64.b64encode(
-            f"{os.environ['EBAY_CLIENT_ID']}:{os.environ['EBAY_CLIENT_SECRET']}".encode()).decode()
+        # strip(): al pegar las claves en GitHub es fácil que se cuele un espacio o salto de línea.
+        client_id = os.environ["EBAY_CLIENT_ID"].strip()
+        secret = os.environ["EBAY_CLIENT_SECRET"].strip()
+        auth = base64.b64encode(f"{client_id}:{secret}".encode()).decode()
         resp = requests.post(TOKEN_URL, timeout=TIMEOUT,
                              headers={"Authorization": f"Basic {auth}",
                                       "Content-Type": "application/x-www-form-urlencoded"},
                              data={"grant_type": "client_credentials", "scope": SCOPE})
-        resp.raise_for_status()
+        if resp.status_code != 200:
+            # El cuerpo de error de eBay (p. ej. invalid_client) no contiene las claves.
+            _token_error = f"token HTTP {resp.status_code}: {resp.text[:200]}"
+            print(f"ebay: {_token_error} (client_id termina en ...{client_id[-4:]}, "
+                  f"lleva PRD: {'-PRD-' in client_id}, secret empieza por PRD-: {secret.startswith('PRD-')})")
+            raise TokenError(_token_error)
         _token = resp.json()["access_token"]
     return _token
 
