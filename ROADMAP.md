@@ -57,6 +57,8 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 ## Arranque del negocio: España
 
 Decisión: se empieza en España (online). La tienda física en Andorra queda aparcada para más adelante.
+Forma jurídica: se arranca como **autónomo** (solo comisiones de afiliación, sin stock ni ventas). La SL se
+constituirá cuando empiecen la compra-venta de segunda mano y el renting (stock, contratos, responsabilidad).
 
 ## Proyecto aparte: tienda en Andorra (aparcado, se valorará más adelante)
 
