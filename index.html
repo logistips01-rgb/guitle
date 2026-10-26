@@ -45,7 +45,7 @@
   header.top nav a { text-decoration: none; padding: 6px 12px; border-radius: 999px; color: var(--text-secondary); font-size: .95rem; }
   header.top nav a:hover { background: var(--surface-1); }
   header.top nav a { white-space: nowrap; }
-  @media (max-width: 520px) { header.top nav a:first-child { display: none; } header.top nav a { border: 1px solid var(--border); background: var(--surface-1); } }
+  @media (max-width: 520px) { header.top nav a:last-child { display: none; } header.top nav a { border: 1px solid var(--border); background: var(--surface-1); } }
   .logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); }
   .logo img { width: 34px; height: 34px; }
   .logo .word { font-weight: 800; font-size: 1.6rem; letter-spacing: -.03em; line-height: 1; }
@@ -79,6 +79,9 @@
   .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
   .card .img { aspect-ratio: 4 / 3; background: #fff; display: flex; align-items: center; justify-content: center; }
   .card img { max-width: 88%; max-height: 88%; object-fit: contain; }
+  /* Fotos uniformes: las miniaturas (img/p/, scraper.thumbs) ya vienen en vertical y recortadas; todas al mismo alto. */
+  .img { overflow: hidden; }
+  .img img { height: 92%; width: auto; max-width: 90%; object-fit: contain; }
   .card .body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 2px; flex: 1; }
   .card .name { font-weight: 600; font-size: .93rem; line-height: 1.25; }
   .card .price { margin-top: auto; padding-top: 4px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
@@ -119,20 +122,20 @@
 <main>
   <header class="top">
     <a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a>
-    <nav><a href="guitarras.html">Guitarras</a><a href="guitarras.html?v=B">Comparador</a></nav>
+    <nav><a href="catalogo.html">Catálogo</a><a href="guitarras.html">Seguimiento</a></nav>
   </header>
 
   <div class="hero">
     <h1>Tu guitarra, <span>al mejor precio</span></h1>
     <p>Comparamos cada mañana las principales tiendas de Europa y te enseñamos dónde está más barata, cómo ha cambiado su precio y qué cupones hay activos. Guitarras ahora; bajos, amplis, pedales, teclados y micros, muy pronto.</p>
-    <form class="search" action="guitarras.html" method="get" role="search">
+    <form class="search" action="catalogo.html" method="get" role="search">
       <input name="q" type="search" placeholder="Busca: tele negra, strat, les paul, casino…" aria-label="Buscar guitarra" autocomplete="off">
       <button type="submit">Buscar</button>
     </form>
     <div class="quick">
-      <a href="guitarras.html?q=telecaster">Telecaster</a><a href="guitarras.html?q=stratocaster">Stratocaster</a>
-      <a href="guitarras.html?q=les%20paul">Les Paul</a><a href="guitarras.html?q=epiphone">Epiphone</a>
-      <a href="guitarras.html?q=ibanez">Ibanez</a><a href="guitarras.html?q=gibson">Gibson</a>
+      <a href="catalogo.html?q=telecaster">Telecaster</a><a href="catalogo.html?q=stratocaster">Stratocaster</a>
+      <a href="catalogo.html?q=les%20paul">Les Paul</a><a href="catalogo.html?brand=Epiphone">Epiphone</a>
+      <a href="catalogo.html?brand=Ibanez">Ibanez</a><a href="catalogo.html?brand=Gibson">Gibson</a>
       <a href="guitarras.html?v=B">Ver comparador</a>
     </div>
     <div class="stats" id="stats"></div>
@@ -203,7 +206,7 @@ load("data/latest.json").then(latest => {
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
 
   document.getElementById("stats").innerHTML =
-    `<span><strong>${guitars.length}</strong>guitarras</span><span><strong>${activeStores.length}</strong>tiendas</span>` +
+    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong>${activeStores.length}</strong>tiendas</span>` +
     `<span><strong>${new Date(latest.updated).toLocaleDateString("es-ES", { day: "numeric", month: "short", timeZone: "Europe/Madrid" })}</strong>última revisión</span>`;
   document.getElementById("updated").textContent =
     `Datos actualizados el ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
@@ -224,16 +227,23 @@ load("data/latest.json").then(latest => {
   document.getElementById("cats").innerHTML = CATS.map(([id, label]) => {
     const icon = `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[id]}</svg>`;
     const n = latest.products.filter(p => p.category === id && latest.items.some(i => i.sku === p.sku && i.price != null && !isRef[i.store])).length;
-    return n ? `<a class="catcard" href="guitarras.html?cat=${id}"><b>${icon}</b><span>${label}</span><small>${n} productos</small></a>`
+    return n ? `<a class="catcard" id="cat-${id}" href="${id === "guitarra" ? "catalogo.html" : "guitarras.html?cat=" + id}"><b>${icon}</b><span>${label}</span><small>${n} productos</small></a>`
              : `<div class="catcard soon"><b>${icon}</b><span>${label}</span><small>próximamente</small></div>`;
   }).join("");
+
+  load("data/catalog/products.json").then(cat => {
+    const n = cat.products.length.toLocaleString("es-ES");
+    document.getElementById("n-guitars").textContent = n;
+    const card = document.querySelector("#cat-guitarra small");
+    if (card) card.textContent = `${n} productos`;
+  }).catch(() => {});
 
   const link = p => `guitarras.html?q=${encodeURIComponent(p.name.replace(/^(Fender|Epiphone|Gibson|Ibanez) /, ""))}`;
   // Chollos: mayor descuento frente al PVP (o, sin PVP, frente a la tienda más cara)
   const score = p => p.vsPvp ?? (p.items.length > 2 ? (p.best.price - p.items.at(-1).price) / p.items.at(-1).price * 50 : 0);
   const deals = guitars.slice().sort((a, b) => score(a) - score(b)).slice(0, 4);
   document.getElementById("deals").innerHTML = deals.map(p => card({
-    href: link(p), img: p.image, name: p.name, price: p.best.price,
+    href: link(p), img: p.thumb ? "img/p/" + p.thumb : p.image, name: p.name, price: p.best.price,
     extra: score(p) < -0.5 ? `<span class="neg">${score(p).toFixed(0)} %</span>` : "",
     where: `en ${storeName[p.best.store]} · ${p.items.length} tiendas`,
   })).join("");
@@ -242,7 +252,7 @@ load("data/latest.json").then(latest => {
   if (drops.length) {
     document.getElementById("drops-sec").hidden = false;
     document.getElementById("drops").innerHTML = drops.map(p => card({
-      href: link(p), img: p.image, name: p.name, price: p.best.price,
+      href: link(p), img: p.thumb ? "img/p/" + p.thumb : p.image, name: p.name, price: p.best.price,
       badge: `−${eur(p.drop)}`, where: `en ${storeName[p.best.store]}`,
     })).join("");
   }

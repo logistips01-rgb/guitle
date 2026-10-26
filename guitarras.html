@@ -86,6 +86,9 @@
   .tile:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
   .tile .img { aspect-ratio: 4 / 3; background: #fff; display: flex; align-items: center; justify-content: center; }
   .tile img { max-width: 90%; max-height: 90%; object-fit: contain; }
+  /* Fotos uniformes: las miniaturas (img/p/, scraper.thumbs) ya vienen en vertical y recortadas; todas al mismo alto. */
+  .img { overflow: hidden; }
+  .img img { height: 92%; width: auto; max-width: 90%; object-fit: contain; }
   .tile .body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 3px; flex: 1; }
   .tile .brand { font-size: .74rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); }
   .tile .name { font-weight: 600; line-height: 1.25; font-size: .95rem; }
@@ -170,6 +173,8 @@
 <div class="sheet-bg" id="bg"></div>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
 <script>
+// Miniatura uniforme si existe; si no, la foto de la tienda.
+const pic = p => p.thumb ? "img/p/" + p.thumb : p.image;
 const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const day = iso => iso ? iso.slice(0, 10) : "";
@@ -374,7 +379,7 @@ function render(latest, history, coupons) {
     const rows = list.map(p => {
       const by = Object.fromEntries(p.items.map(i => [i.store, i]));
       for (const i of p.items) if (i.final === p.best.final && wins[i.store] !== undefined) wins[i.store]++;
-      return `<tr><td class="prod" data-sku="${esc(p.sku)}"><span class="pn">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}
+      return `<tr><td class="prod" data-sku="${esc(p.sku)}"><span class="pn">${p.image ? `<img src="${esc(pic(p))}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}
           <span><button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}" aria-label="Favorita">${favs.has(p.sku) ? "★" : "☆"}</button> ${esc(p.name)}</span></span></td>
         ${cols.map(s => {
           const i = by[s.id];
@@ -398,7 +403,7 @@ function render(latest, history, coupons) {
                     p.best.coupon ? '<span class="badge coupon">Cupón</span>' : ""].join("");
     const shortName = p.name.startsWith(p.brand + " ") ? p.name.slice(p.brand.length + 1) : p.name;
     return `<div class="tile" data-sku="${esc(p.sku)}">
-      <div class="img">${p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}</div>
+      <div class="img">${p.image ? `<img src="${esc(pic(p))}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}</div>
       <div class="badges">${badges}</div>
       <button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}" aria-label="Favorita">${favs.has(p.sku) ? "★" : "☆"}</button>
       <div class="body">
@@ -442,7 +447,7 @@ function render(latest, history, coupons) {
         <td>${i.status === "ok" ? "" : `<span class="tag ${statusCls}">${esc(STATUS_LABEL[i.status] || i.status)}</span>`}</td></tr>`;
     }).join("");
     s.innerHTML = `<button class="close" aria-label="Cerrar">✕</button>
-      <div class="hero">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" referrerpolicy="no-referrer">` : ""}
+      <div class="hero">${p.image ? `<img src="${esc(pic(p))}" alt="${esc(p.name)}" referrerpolicy="no-referrer">` : ""}
         <div><h2>${esc(p.name)}</h2>
           <div class="big">${eur(p.best.final)} <span class="muted" style="font-size:.95rem;font-weight:400">en ${esc(storeName[p.best.store])}</span></div>
           <div class="muted">PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSrc}${p.vsPvp != null ? ` · <span class="${p.vsPvp < 0 ? "neg" : "pos"}">${pct(p.vsPvp)}</span>` : ""}</div>

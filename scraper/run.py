@@ -16,6 +16,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import css, ebay, jsonld, meta
+from . import thumbs as thumbs_mod
 from .fetch import Fetcher, is_challenge
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -195,6 +196,11 @@ def with_live_pvp(products, latest, stores):
                         if e["sku"] == p["sku"] and e.get("image"))
         if images:
             p["image"] = images[0][2]
+            # Miniatura uniforme (scraper.thumbs); entre las ya generadas, la que muestra la guitarra entera
+            # (la más esbelta: alto/ancho mayor), no un primer plano.
+            thumbs = [t for t in (thumbs_mod.existing(i[2]) for i in images) if t]
+            if thumbs:
+                p["thumb"] = max(thumbs, key=thumbs_mod.slenderness) if p.get("category", "guitarra") in thumbs_mod.ROTATE_CATEGORIES else thumbs[0]
         out.append(p)
     return out
 

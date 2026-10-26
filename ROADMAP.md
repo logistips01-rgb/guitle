@@ -4,10 +4,12 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 
 ## Comparador web (cuando deje de ser solo para uso propio)
 
-- **Catálogo grande automático.** Recorrer cada día los listados por marca de las tiendas que no bloquean
-  (Thomann, Musicopolix, Alfasoni) y guardar todas las guitarras con su precio: una página de listado
-  trae decenas de productos por petición. Pasar de ~20 productos a cientos o miles.
-  - Reto principal: emparejar el mismo producto entre tiendas (EAN cuando lo haya; si no, marca + modelo + acabado normalizados).
+- **Catálogo grande automático (piloto en marcha: guitarras eléctricas, `scraper/catalog.py`, `catalogo.html`).**
+  Sitemaps de Numemusic (~2.000 eléctricas) y Session (~3.100 candidatas), fichas leídas por lotes cada noche
+  (workflow `catalog`, ~50 min por tienda) y emparejadas por EAN, cruzando también con las tiendas de seguimiento.
+  - Siguiente: Egitana (no publica EAN: emparejar por marca + modelo + acabado), Thomann/Alfasoni/Musicopolix,
+    y después bajos, amplis, pedales, teclados y micros con el mismo sistema.
+  - Miniaturas uniformes en `img/p/` (`scraper/thumbs.py`): recorte, guitarra en vertical, sin logos de tienda.
 - **Búsqueda tipo Google** sobre ese catálogo (la página actual ya filtra en el navegador; con miles de
   productos convendría un índice precalculado o un backend).
 - **Backend / base de datos** (p. ej. Firebase) cuando el JSON en el repo se quede corto.

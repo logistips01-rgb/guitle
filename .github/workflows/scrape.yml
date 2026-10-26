@@ -63,6 +63,11 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: python -m scraper.coupons --records-out "$RUNNER_TEMP/coupons.json" || echo "::warning::detector de cupones con error"
 
+      - name: Miniaturas de fotos
+        if: steps.gate.outputs.run == 'true'
+        # Fotos nuevas → img/p/ (recortadas, en vertical, mismo alto). Quedan sin seguimiento hasta el commit.
+        run: python -m scraper.thumbs --limit 150 --minutes 10 || echo "::warning::miniaturas con error"
+
       - name: Commit de datos
         if: steps.gate.outputs.run == 'true'
         # Se fusiona sobre la última versión de la rama (otra ejecución o un push pueden haber llegado antes).
@@ -75,7 +80,8 @@ jobs:
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             python -m scraper.run --merge "$RUNNER_TEMP/records.json"
             [ -f "$RUNNER_TEMP/coupons.json" ] && python -m scraper.coupons --merge "$RUNNER_TEMP/coupons.json" --new-out "$RUNNER_TEMP/new_coupons.md"
-            git add data/
+            [ -f data/catalog/offers.json ] && python -m scraper.catalog --build
+            git add data/ img/p/
             if git diff --cached --quiet; then echo "Sin cambios en data/"; exit 0; fi
             git commit -q -m "data: precios $(TZ=Europe/Madrid date +%F)"
             if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
