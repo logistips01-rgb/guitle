@@ -13,6 +13,7 @@ Busca por EAN (gtin) si el producto lo tiene; si no, por nombre. Solo anuncios n
 import base64
 import os
 import re
+import unicodedata
 
 import requests
 
@@ -67,14 +68,21 @@ SYNONYMS = {"tele": "telecaster", "strat": "stratocaster", "blk": "black", "bk":
 
 
 def _tokens(text):
-    words = re.sub(r"[^0-9a-z]+", " ", (text or "").lower()).split()
+    text = unicodedata.normalize("NFKD", (text or "").lower()).encode("ascii", "ignore").decode()
+    words = re.sub(r"[^0-9a-z]+", " ", text).split()
     return {SYNONYMS.get(w, w) for w in words}
 
 
+# Variantes que no son el mismo producto (zurdas, B-stock, packs, usadas…) salvo que el nombre las incluya.
+EXCLUDED_TOKENS = {"lefthand", "lh", "left", "linkshander", "linkshaender", "zurdo", "zurda", "bstock", "b", "stock",
+                   "gebraucht", "used", "set", "bundle", "pack", "versandrucklaufer", "versandruecklaeufer"}
+
+
 def title_matches(product_name, title):
-    """Todas las palabras importantes del producto (modelo y color) deben estar en el título del anuncio."""
-    needed = _tokens(product_name) - OPTIONAL_TOKENS
-    return needed <= _tokens(title)
+    """Todas las palabras importantes del producto (modelo y color) deben estar en el título del anuncio,
+    y el título no puede ser de otra variante (zurda, B-stock, pack…)."""
+    name, found = _tokens(product_name), _tokens(title)
+    return (name - OPTIONAL_TOKENS) <= found and not ((found & EXCLUDED_TOKENS) - name)
 
 
 def search(store, product):

@@ -32026,20 +32026,6 @@
  {
   "date": "2026-10-26T14:17:13+00:00",
   "store": "musicstore_ebay",
-  "sku": "LPS500HSNH1",
-  "url": "https://www.ebay.de/itm/198690076343?_skw=Gibson+Les+Paul+Standard+50s+Heritage+Cherry+Sunburst&hash=item2e42d9f6b7:g:0MwAAeSwADBqxK47",
-  "price": 2699.0,
-  "currency": "EUR",
-  "in_stock": true,
-  "status": "ok",
-  "method": "ebay",
-  "http_status": null,
-  "note": "Gibson Les Paul Standard '50s Heritage Cherry Sunburst Lefthand - E-Gitarre für",
-  "image": "https://i.ebayimg.com/images/g/0MwAAeSwADBqxK47/s-l225.jpg"
- },
- {
-  "date": "2026-10-26T14:17:13+00:00",
-  "store": "musicstore_ebay",
   "sku": "SGS00HCCH1",
   "url": "https://www.ebay.de/itm/407259501840?_skw=Gibson+SG+Standard+Heritage+Cherry&hash=item5ed28ed510:g:WeMAAeSwsQBqvxTX",
   "price": 1479.0,
