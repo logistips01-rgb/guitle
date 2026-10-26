@@ -38,6 +38,15 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 - **Cursos de guitarra.** Online y/o presenciales (en la tienda). Se cruzan con el resto: alumno que empieza
   → renting o primera guitarra recomendada en guitle → accesorios.
 
+- **Segunda mano: "Compramos tu guitarra"** (dominio `compramostuguitarra.es`, redirigido a una sección de
+  guitle). Compra de instrumentos usados a particulares → stock para el renting y para la compra-venta.
+  - Tasador en la web: el precio nuevo de calle que ya calcula guitle × % según estado (p. ej. 40-60 %),
+    y formulario con fotos para recibir ofertas.
+  - Redirección: reenvío 301 en el registrador del dominio hacia `https://guitle.com/vende/`
+    (GitHub Pages admite un solo dominio propio por web, por eso se redirige en el registrador).
+  - Pendiente legal: registro/libro de compra-venta de objetos usados (en España suele exigirse
+    comunicación a la policía o a la comunidad autónoma) y normativa equivalente en Andorra.
+
 ## Orden de trabajo acordado
 
 1. Revisar la carga completa de guitarras eléctricas en el catálogo.
