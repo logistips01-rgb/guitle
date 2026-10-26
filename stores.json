@@ -27,6 +27,11 @@
      {"sku": "0140570506", "url": "https://pt.fender.com/products/player-ii-telecaster-hh"},
      {"sku": "0140552500", "url": "https://pt.fender.com/products/player-ii-telecaster"}
    ]},
+  {"id": "fender_ad", "name": "Fender Andorra (prueba)", "domain": "es.fender.com", "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://es.fender.com/es-ad/products/player-ii-telecaster"},
+     {"sku": "0266040505", "url": "https://www.fender.com/es-AD/electric-guitars/telecaster/standard-telecaster/0266040505.html"}
+   ]},
   {"id": "thomann", "name": "Thomann", "domain": "www.thomann.es", "method": "jsonld", "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.thomann.es/fender_player_ii_tele_mn_blk.htm"},
