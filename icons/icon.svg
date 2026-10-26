@@ -1,4 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#2a78d6"/><g transform="translate(250 258) rotate(-35)" fill="#fff">
-    <rect x="-13" y="-232" width="26" height="250" rx="8"/><rect x="-26" y="-262" width="52" height="56" rx="14"/>
-    <circle cx="0" cy="18" r="66"/><circle cx="0" cy="118" r="88"/><rect x="-52" y="30" width="104" height="80"/>
-    <circle cx="0" cy="58" r="22" fill="#2a78d6"/><rect x="-34" y="138" width="68" height="14" rx="7" fill="#2a78d6"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#2a78d6"/><text x="236" y="352" text-anchor="middle" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif" font-size="380" font-weight="800" fill="#fff">g</text>
+    <path transform="translate(388 196) scale(0.95)" fill="#fff" d="M0 0C-12-10-38-30-38-52C-38-70-20-78 0-78C20-78 38-70 38-52C38-30 12-10 0 0Z"/></svg>

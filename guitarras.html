@@ -10,7 +10,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>Guitarras · guitle</title>
+<title>Comparador · guitle, precios de guitarras</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   :root {
@@ -138,6 +138,8 @@
   .logo img { width: 30px; height: 30px; }
   .logo .word { font-weight: 800; font-size: 1.45rem; letter-spacing: -.03em; line-height: 1; }
   /* La "i" usa una ı sin punto con una púa encima (funciona con cualquier fuente) */
+  .logo .stack { display: flex; flex-direction: column; line-height: 1; }
+  .logo .tag { font-size: .78rem; font-weight: 600; color: var(--accent); margin-top: 4px; letter-spacing: .01em; white-space: nowrap; }
   .logo .i { position: relative; }
   .logo .i::before { content: ""; position: absolute; left: 50%; top: -.06em; width: .36em; height: .36em; transform: translateX(-50%);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -80 80 82'%3E%3Cpath fill='%232a78d6' d='M0 0C-12-10-38-30-38-52C-38-70-20-78 0-78C20-78 38-70 38-52C38-30 12-10 0 0Z'/%3E%3C/svg%3E") no-repeat center / contain; }
@@ -147,7 +149,7 @@
 <main>
   <div class="topbar">
     <div class="row">
-      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="word">gu<span class="i">ı</span>tle</span></a></h1>
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">precios de guitarras</span></span></a></h1>
       <div class="switch"><button id="vA" class="on">Escaparate</button><button id="vB">Comparador</button></div>
     </div>
     <input class="search" id="q" type="search" placeholder="Busca: tele negra, strat, les paul, casino…" autocomplete="off" aria-label="Buscar">
