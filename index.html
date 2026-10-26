@@ -104,7 +104,7 @@
 <main>
   <header class="top">
     <a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="word">gu<span class="i">ı</span>tle</span></a>
-    <nav><a href="guitarras.html">🎸 Guitarras</a><a href="sneakers.html">👟 Jordan</a></nav>
+    <nav><a href="guitarras.html">🎸 Guitarras</a><a href="guitarras.html?v=B">Comparador</a></nav>
   </header>
 
   <div class="hero">
@@ -133,10 +133,6 @@
     <div class="row" id="drops"></div>
   </section>
 
-  <section>
-    <div class="sec-head"><h2>👟 Jordan hasta 150 € en tu talla</h2><a href="sneakers.html">Ver todas →</a></div>
-    <div class="row" id="jordan"><p class="placeholder">Cargando…</p></div>
-  </section>
 
   <section class="split">
     <div class="panel">
@@ -212,23 +208,6 @@ load("data/latest.json").then(latest => {
     })).join("");
   }
 }).catch(() => { document.getElementById("deals").innerHTML = '<p class="placeholder">No se pudieron cargar los precios.</p>'; });
-
-load("data/sneakers_latest.json").then(s => {
-  const cutoff = new Date(new Date(s.updated).getTime() - 7 * 864e5).toISOString();
-  const list = Object.values(s.products).map(p => {
-    const offers = Object.entries(p.offers).filter(([, o]) => o.available && o.last_seen >= cutoff && (o.s43 || o.s44))
-      .map(([store, o]) => ({ store, ...o })).sort((a, b) => a.price - b.price);
-    return p.category === "zapatillas" && offers[0] && offers[0].price <= 150 && { ...p, best: offers[0] };
-  }).filter(Boolean);
-  // Las de mayor descuento sobre su precio anterior primero
-  const disc = p => p.best.compare_at ? (p.best.compare_at - p.best.price) / p.best.compare_at : 0;
-  const top = list.sort((a, b) => disc(b) - disc(a) || a.best.price - b.best.price).slice(0, 4);
-  document.getElementById("jordan").innerHTML = top.length ? top.map(p => card({
-    href: `sneakers.html?q=${encodeURIComponent(p.code || p.title)}`, img: p.image, name: p.title, price: p.best.price,
-    extra: disc(p) > 0.01 ? `<span class="neg">−${(disc(p) * 100).toFixed(0)} %</span>` : "",
-    where: `en ${s.stores[p.best.store]?.name || p.best.store} · tallas ${[p.best.s43 && "43", p.best.s44 && "44"].filter(Boolean).join(" y ")}`,
-  })).join("") : '<p class="placeholder">Ahora mismo no hay Jordan por debajo de 150 € en tu talla.</p>';
-}).catch(() => { document.getElementById("jordan").innerHTML = '<p class="placeholder">No se pudieron cargar las Jordan.</p>'; });
 
 Promise.all([load("data/coupons.json").catch(() => []), load("data/coupon_candidates.json").catch(() => [])]).then(([active, cands]) => {
   const today = new Date().toISOString().slice(0, 10);

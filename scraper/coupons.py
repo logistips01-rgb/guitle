@@ -34,7 +34,7 @@ DISCOUNT_RE = re.compile(r"(-?\d{1,2}\s?%|\d{1,3}\s?€|€\s?\d{1,3})")
 
 
 def stores_to_check():
-    """Tiendas con web accesible (las de guitarras y las de Jordan), sin repetir dominio."""
+    """Tiendas con web accesible, sin repetir dominio."""
     seen, out = set(), []
     for s in json.loads((ROOT / "stores.json").read_text(encoding="utf-8")):
         if s.get("method") == "ebay" or not s.get("domain") or not any(i.get("url") for i in s.get("items", [])):
@@ -42,11 +42,6 @@ def stores_to_check():
         if s["domain"] not in seen:
             seen.add(s["domain"])
             out.append({"id": s["id"], "name": s["name"], "url": f"https://{s['domain']}/"})
-    for s in json.loads((ROOT / "sneakers_stores.json").read_text(encoding="utf-8")):
-        domain = re.sub(r"^https?://", "", s["base"]).rstrip("/")
-        if domain not in seen:
-            seen.add(domain)
-            out.append({"id": s["id"], "name": s["name"], "url": s["base"] + "/"})
     return out
 
 
