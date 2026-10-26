@@ -44,7 +44,7 @@
    "sku": "0266020560",
    "brand": "Fender",
    "category": "guitarra",
-   "ean": null,
+   "ean": "885978118113",
    "name": "Fender Standard Telecaster MN Aqua Marine Metallic",
    "pvp": 589.0,
    "case": "0996106306",
@@ -148,7 +148,7 @@
    "sku": "EIES335VSNH1",
    "brand": "Epiphone",
    "category": "guitarra",
-   "ean": null,
+   "ean": "711106044019",
    "name": "Epiphone ES-335 Vintage Sunburst",
    "pvp": null,
    "case": "940-E519",
@@ -172,13 +172,13 @@
    "sku": "EISSBCHNH1",
    "brand": "Epiphone",
    "category": "guitarra",
-   "ean": null,
+   "ean": "711106225326",
    "name": "Epiphone SG Standard Cherry",
    "pvp": null,
    "case": "GIBSON-SG-CASE",
    "pvp_fallback": null,
    "pvp_source": null,
-   "image": "https://i.ebayimg.com/images/g/4UAAAeSwArVooZpK/s-l225.jpg"
+   "image": "https://www.session.de/media/25/35/07/1770377325/epiphone-sg-standard-cherry-v2.webp?ts=1770377325"
   },
   {
    "sku": "EILS6EBNH1",
@@ -190,13 +190,13 @@
    "case": "THOMANN-ABS-SC",
    "pvp_fallback": null,
    "pvp_source": null,
-   "image": "https://i.ebayimg.com/images/g/3IkAAeSwOa9qjuNK/s-l225.jpg"
+   "image": "https://www.thomann.de/thumb/opengraph/pics/prod/634376.jpg"
   },
   {
    "sku": "AS73-TBC",
    "brand": "Ibanez",
    "category": "guitarra",
-   "ean": null,
+   "ean": "4515110828162",
    "name": "Ibanez Artcore AS73-TBC Tobacco Brown",
    "pvp": null,
    "case": "MS100C",
@@ -208,7 +208,7 @@
    "sku": "AZ24S1F-TKS",
    "brand": "Ibanez",
    "category": "guitarra",
-   "ean": null,
+   "ean": "4549763363527",
    "name": "Ibanez AZ24S1F-TKS Transparent Turquoise Burst",
    "pvp": null,
    "case": "THOMANN-ABS-ST",
@@ -220,7 +220,7 @@
    "sku": "RG550-RF",
    "brand": "Ibanez",
    "category": "guitarra",
-   "ean": null,
+   "ean": "4515276628538",
    "name": "Ibanez Genesis RG550-RF Road Flare Red",
    "pvp": null,
    "case": "M300C",
@@ -239,7 +239,7 @@
    "case_included": "estuche rígido",
    "pvp_fallback": null,
    "pvp_source": null,
-   "image": "https://i.ebayimg.com/images/g/gt8AAeSw7-ZpUhpZ/s-l225.jpg"
+   "image": "https://www.thomann.de/thumb/opengraph/pics/prod/462505.jpg"
   },
   {
    "sku": "SGS00HCCH1",
@@ -253,7 +253,7 @@
    "case_included": "funda blanda",
    "pvp_fallback": null,
    "pvp_source": null,
-   "image": "https://i.ebayimg.com/images/g/Vi4AAOSw8e9ls-PI/s-l225.jpg"
+   "image": "https://www.thomann.de/thumb/opengraph/pics/prod/462538.jpg"
   },
   {
    "sku": "LPST00TBCH1",
@@ -267,13 +267,13 @@
    "case_included": "funda",
    "pvp_fallback": null,
    "pvp_source": null,
-   "image": "https://i.ebayimg.com/images/g/bDQAAeSwfMlq1X-N/s-l225.jpg"
+   "image": "https://www.thomann.de/thumb/opengraph/pics/prod/610359.jpg"
   },
   {
    "sku": "0996106306",
    "brand": "Fender",
    "category": "estuche",
-   "ean": null,
+   "ean": "885978753253",
    "name": "Estuche Fender Deluxe Molded Strat/Tele",
    "pvp": null,
    "pvp_fallback": null,
@@ -328,7 +328,7 @@
    "sku": "M300C",
    "brand": "Ibanez",
    "category": "estuche",
-   "ean": null,
+   "ean": "4515276966838",
    "name": "Estuche Ibanez M300C (RG)",
    "pvp": null,
    "pvp_fallback": null,
@@ -339,7 +339,7 @@
    "sku": "MS100C",
    "brand": "Ibanez",
    "category": "estuche",
-   "ean": null,
+   "ean": "4549763192431",
    "name": "Estuche Ibanez MS100C (Artcore AS)",
    "pvp": null,
    "pvp_fallback": null,
@@ -405,6 +405,12 @@
   {
    "id": "musicstore_ebay",
    "name": "Music Store (eBay)",
+   "domain": "www.ebay.de",
+   "reference": null
+  },
+  {
+   "id": "kirstein_ebay",
+   "name": "Kirstein (eBay)",
    "domain": "www.ebay.de",
    "reference": null
   },
@@ -525,13 +531,6 @@
    "image": "https://musicopolix.com/236659-large_default/fender-player-ii-stratocaster-rw-polar-white-guitarra-electrica.jpg"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0140510515",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "numemusic",
    "sku": "0140510515",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -637,21 +636,6 @@
    "image": "https://musicopolix.com/278629-large_default/fender-player-ii-stratocaster-mn-aqb-guitarra-electrica.jpg"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0140512518",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/127823773767?hash=item1dc2e40047:g:qDIAAeSwKnpp6LuD",
-   "image": "https://i.ebayimg.com/images/g/qDIAAeSwKnpp6LuD/s-l225.jpg",
-   "price": 804.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 804.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "session",
    "sku": "0140512518",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -702,13 +686,6 @@
    "min_price": 799.0,
    "min_price_date": "2026-10-25T19:18:10+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "0140550518",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
   },
   {
    "store": "numemusic",
@@ -896,13 +873,6 @@
    "url": "https://musicstore.de/en_DE/EUR/Fender-Player-II-Telecaster-MN-Black/art-GIT0061904-008"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0140552506",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "numemusic",
    "sku": "0140552506",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1000,13 +970,6 @@
    "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0140570506",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "numemusic",
    "sku": "0140570506",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1096,13 +1059,6 @@
    "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mf-btb/"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0266020550",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "session",
    "sku": "0266020550",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1153,21 +1109,6 @@
    "last_run": "2026-10-26T14:07:00+00:00",
    "status": "blocked_403",
    "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mn-amm/"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "0266020560",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/198738599402?_skw=Fender+Standard+Telecaster+MN+Aqua+Marine+Metallic&hash=item2e45be5dea:g:bwwAAeSwr0dq24Y-",
-   "image": "https://i.ebayimg.com/images/g/bwwAAeSwr0dq24Y-/s-l225.jpg",
-   "price": 599.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 599.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
   },
   {
    "store": "session",
@@ -1237,13 +1178,6 @@
    "url": "https://www.madridhifi.com/p/fender-standard-telecaster-lf-owh/"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0266040505",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "session",
    "sku": "0266040505",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1302,13 +1236,6 @@
    "min_price": 579.0,
    "min_price_date": "2026-10-25T22:37:50+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "0266220505",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
   },
   {
    "store": "session",
@@ -1386,13 +1313,6 @@
    "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0266240500",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "session",
    "sku": "0266240500",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1438,21 +1358,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "0996106306",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/168482621977?_skw=Estuche+Fender+Deluxe+Molded+Strat%2FTele&hash=item273a58ca19:g:UisAAeSwQX1q25Gi&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7nbLzFFb4VbAI%2FoF5JKqy%2FGUuCJiXGuT64UOYMBgjTO0wHjspCKgzM9COrv%2FJEnzcvjP9fL4nq44zWd8kLdOSgYqwDzdrTeIVdKuXHelIFpX3DoG%2B75XLCQr4DEcWD223CF9wYRQuEUF12og4lMTksL2uJTU0DBpnuqz8je6SD1P%2FwSnwvkQjg3U%2Fk%2FCtiY9CyJqnApvbgL1QW9g%2B5GGwAyA4KCe9ZMJbwirisoed%2BFE0QxyFF5pdZ0FQ%2F%2BT3nTh0Z34VVxv6LVAWLOhy6P1eo%2BOILUcC2OnCfw80Xi15Y6lpYPO4RpHfznEabKE9pIu6k%3D",
-   "image": "https://i.ebayimg.com/images/g/UisAAeSwQX1q25Gi/s-l225.jpg",
-   "price": 229.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 229.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "session",
    "sku": "0996106306",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1483,13 +1388,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "940-E519",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "thomann",
    "sku": "940-E519",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1518,21 +1416,6 @@
    "price_method": "meta",
    "min_price": 466.0,
    "min_price_date": "2026-10-25T23:02:34+00:00"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "AS73-TBC",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/198723835747?_skw=Ibanez+Artcore+AS73-TBC+Tobacco+Brown&hash=item2e44dd1763:g:170AAeSwyQBq113C&amdata=enc%3AAQALAAABAOf5zIIojhOf%2BkQK%2Bxzjn7kKc8yJkYA1TjcFTyqmdIasapfR8Fwf2Iui0LXk1cdODzTFlr0zN60N3lgQiDG2EBQRvc%2BoT%2FOoU7fCk%2BDRxrozqt1kaK%2F8xNmgJY23bjESJVg4cnGC0S10rRafaYgsRJjO51M0s%2BeTJtx%2FMMjlYsKN%2FuM7cAH7rw6w812nSrAFVA4SgGCmOJxKrwxGLdBSyB%2FpXdZmeQmNIWs7zswk1KENpYEFUBhDR%2FwUZngKLOcDfbjh3ifNO9SqBJvOu9gXZnSuH1SonYmUWvypvGDQxK%2FZVGsCEuClDSMSZNk7dDO4lyN19grlHja6e1SWsl6PfCM%3D",
-   "image": "https://i.ebayimg.com/images/g/170AAeSwyQBq113C/s-l225.jpg",
-   "price": 403.92,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 403.92,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
   },
   {
    "store": "thomann",
@@ -1580,21 +1463,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "AZ24S1F-TKS",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/198733637256?_skw=Ibanez+AZ24S1F-TKS+Transparent+Turquoise+Burst&hash=item2e4572a688:g:mo4AAeSwDMNq2XdH&amdata=enc%3AAQALAAABEOf5zIIojhOf%2BkQK%2Bxzjn7m7dwWLYsls4YpJROsVtil9BVmK9MiVDFC%2FGlIIHqcvYprmbEURdO0bGgmPJmSCa3Z%2B6ceGp4Py0OAEm6E6uxl--40YYnhDWFWGchMPFrZp2nwyamX%2Bf%2F%2Bwyj5smfy0OOdHitF42qZ5Oi0lDf%2Fe%2FIyoQ0sd9S84W%2FEwASpOSXb6Dr3PrVZDNGqIEZRsUiJpSFJ3oSkkBjkBdBvgeTejSxHBEVZkDJLW5KzsB68S7%2B9MSgrRX8VeLnjNys0Sc40AyNod7dgr00rjAidl4hwfbNs3wdPNPm%2FlpC8iw%2BVzDtTFI4blOU6gja%2BhvlS4NsDA3fFsgPzkxGLr%2FoVYt65gAeKp",
-   "image": "https://i.ebayimg.com/images/g/mo4AAeSwDMNq2XdH/s-l225.jpg",
-   "price": 466.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 466.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "session",
    "sku": "AZ24S1F-TKS",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1640,21 +1508,6 @@
    "min_price_date": "2026-10-26T00:16:11+00:00"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "EIES335VSNH1",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/205908868164?_skw=Epiphone+ES-335+Vintage+Sunburst&hash=item2ff11ffc44:g:akAAAeSwIwJq2Kmb",
-   "image": "https://i.ebayimg.com/images/g/akAAAeSwIwJq2Kmb/s-l225.jpg",
-   "price": 529.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 529.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "session",
    "sku": "EIES335VSNH1",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1685,21 +1538,6 @@
    "image": "https://www.thomann.de/thumb/opengraph/pics/prod/501059.jpg"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "EILS6EBNH1",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/158225848442?_skw=Epiphone+Les+Paul+Standard+60s+Ebony&hash=item24d6fed87a:g:3IkAAeSwOa9qjuNK",
-   "image": "https://i.ebayimg.com/images/g/3IkAAeSwOa9qjuNK/s-l225.jpg",
-   "price": 498.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 498.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "thomann",
    "sku": "EILS6EBNH1",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1713,21 +1551,6 @@
    "min_price": 577.0,
    "min_price_date": "2026-10-25T22:45:02+00:00",
    "image": "https://www.thomann.de/thumb/opengraph/pics/prod/634376.jpg"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "EISSBCHNH1",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/406139509768?_skw=Epiphone+SG+Standard+Cherry&hash=item5e8fcd1c08:g:4UAAAeSwArVooZpK",
-   "image": "https://i.ebayimg.com/images/g/4UAAAeSwArVooZpK/s-l225.jpg",
-   "price": 410.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 410.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
   },
   {
    "store": "session",
@@ -1760,20 +1583,6 @@
    "image": "https://www.thomann.de/thumb/opengraph/pics/prod/634462.jpg"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "EOCAVSNH1",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/257677803933?_skw=Epiphone+Casino+Vintage+Sunburst&hash=item3bfecb419d:i:257677803933",
-   "price": 627.9,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 627.9,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "thomann",
    "sku": "EOCAVSNH1",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1804,21 +1613,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "LPS500HSNH1",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/147060458657?_skw=Gibson+Les+Paul+Standard+50s+Heritage+Cherry+Sunburst&hash=item223d7c84a1:g:gt8AAeSw7-ZpUhpZ",
-   "image": "https://i.ebayimg.com/images/g/gt8AAeSw7-ZpUhpZ/s-l225.jpg",
-   "price": 2638.29,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 2638.29,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "thomann",
    "sku": "LPS500HSNH1",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1832,21 +1626,6 @@
    "min_price": 2333.0,
    "min_price_date": "2026-10-25T22:45:02+00:00",
    "image": "https://www.thomann.de/thumb/opengraph/pics/prod/462505.jpg"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "LPST00TBCH1",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/147354819368?_skw=Gibson+Les+Paul+Studio+Tobacco+Burst&hash=item224f081b28:g:bDQAAeSwfMlq1X-N",
-   "image": "https://i.ebayimg.com/images/g/bDQAAeSwfMlq1X-N/s-l225.jpg",
-   "price": 1549.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 1549.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
   },
   {
    "store": "thomann",
@@ -1879,13 +1658,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "M300C",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
-  },
-  {
    "store": "thomann",
    "sku": "M300C",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -1914,13 +1686,6 @@
    "price_method": "meta",
    "min_price": 188.0,
    "min_price_date": "2026-10-25T23:02:34+00:00"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "MS100C",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "not_found",
-   "url": null
   },
   {
    "store": "thomann",
@@ -1960,21 +1725,6 @@
    "url": "https://www.egitana.es/ibanez-rg550-rf/p/38991"
   },
   {
-   "store": "musicstore_ebay",
-   "sku": "RG550-RF",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/198680160701?_skw=Ibanez+Genesis+RG550-RF+Road+Flare+Red&hash=item2e4242a9bd:g:H5sAAeSw271qvzKU",
-   "image": "https://i.ebayimg.com/images/g/H5sAAeSw271qvzKU/s-l225.jpg",
-   "price": 903.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 903.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
-  },
-  {
    "store": "session",
    "sku": "RG550-RF",
    "last_run": "2026-10-26T14:07:00+00:00",
@@ -2003,21 +1753,6 @@
    "min_price": 899.0,
    "min_price_date": "2026-10-25T22:45:02+00:00",
    "image": "https://www.thomann.de/thumb/opengraph/pics/prod/429084.jpg"
-  },
-  {
-   "store": "musicstore_ebay",
-   "sku": "SGS00HCCH1",
-   "last_run": "2026-10-26T14:07:00+00:00",
-   "status": "ok",
-   "url": "https://www.ebay.de/itm/325982974245?_skw=Gibson+SG+Standard+Heritage+Cherry&hash=item4be6197125:g:Vi4AAOSw8e9ls-PI",
-   "image": "https://i.ebayimg.com/images/g/Vi4AAOSw8e9ls-PI/s-l225.jpg",
-   "price": 1439.0,
-   "currency": "EUR",
-   "in_stock": true,
-   "price_date": "2026-10-26T14:07:00+00:00",
-   "price_method": "ebay",
-   "min_price": 1439.0,
-   "min_price_date": "2026-10-26T14:07:00+00:00"
   },
   {
    "store": "thomann",

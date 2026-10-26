@@ -12,6 +12,7 @@ Busca por EAN (gtin) si el producto lo tiene; si no, por nombre. Solo anuncios n
 """
 import base64
 import os
+import re
 
 import requests
 
@@ -58,34 +59,56 @@ def _get_token():
     return _token
 
 
+# Abreviaturas que las tiendas omiten o escriben distinto en los títulos de eBay.
+OPTIONAL_TOKENS = {"mn", "rw", "lrl", "bpg", "wpg", "sss", "hh", "inspired", "by", "gibson", "artcore", "genesis",
+                   "estuche", "case"}
+SYNONYMS = {"tele": "telecaster", "strat": "stratocaster", "blk": "black", "bk": "black", "pwt": "polar",
+            "aqb": "aquatone"}
+
+
+def _tokens(text):
+    words = re.sub(r"[^0-9a-z]+", " ", (text or "").lower()).split()
+    return {SYNONYMS.get(w, w) for w in words}
+
+
+def title_matches(product_name, title):
+    """Todas las palabras importantes del producto (modelo y color) deben estar en el título del anuncio."""
+    needed = _tokens(product_name) - OPTIONAL_TOKENS
+    return needed <= _tokens(title)
+
+
 def search(store, product):
-    """Devuelve (status, datos). status: ok | not_found | no_credentials. Lanza RequestException en errores HTTP."""
+    """Devuelve (status, datos). status: ok | not_found | no_credentials. Lanza RequestException en errores HTTP.
+
+    Busca por EAN si lo hay y, si no, por nombre. Solo acepta anuncios nuevos, a precio fijo, del vendedor
+    configurado y, en búsquedas por nombre, cuyo título contenga el modelo y el color.
+    """
     if not has_credentials():
         return "no_credentials", None
     cfg = store["ebay"]
-    params = {
-        "filter": f"sellers:{{{cfg['seller']}}},conditionIds:{{{NEW_CONDITION}}},buyingOptions:{{FIXED_PRICE}}",
-        "limit": "20",
-    }
-    if product.get("ean"):
-        params["gtin"] = product["ean"]
-    else:
-        params["q"] = product["name"]
-    resp = requests.get(SEARCH_URL, params=params, timeout=TIMEOUT,
-                        headers={"Authorization": f"Bearer {_get_token()}",
-                                 "X-EBAY-C-MARKETPLACE-ID": cfg.get("marketplace", "EBAY_DE")})
-    resp.raise_for_status()
-    items = [i for i in resp.json().get("itemSummaries", []) if i.get("price", {}).get("value")]
-    if not items:
-        return "not_found", None
-    best = min(items, key=lambda i: float(i["price"]["value"]))
-    return "ok", {
-        "price": float(best["price"]["value"]),
-        "currency": best["price"].get("currency"),
-        "url": best.get("itemWebUrl"),
-        "image": (best.get("image") or {}).get("imageUrl"),
-        "title": best.get("title"),
-    }
+    seller = cfg["seller"].lower()
+    headers = {"Authorization": f"Bearer {_get_token()}",
+               "X-EBAY-C-MARKETPLACE-ID": cfg.get("marketplace", "EBAY_DE")}
+    base = {"filter": f"sellers:{{{cfg['seller']}}},conditionIds:{{{NEW_CONDITION}}},buyingOptions:{{FIXED_PRICE}}",
+            "limit": "50"}
+    attempts = ([("gtin", {"gtin": product["ean"]})] if product.get("ean") else []) + [("q", {"q": product["name"]})]
+    for kind, extra in attempts:
+        resp = requests.get(SEARCH_URL, params={**base, **extra}, timeout=TIMEOUT, headers=headers)
+        resp.raise_for_status()
+        items = [i for i in resp.json().get("itemSummaries", [])
+                 if i.get("price", {}).get("value")
+                 and (i.get("seller", {}).get("username") or "").lower() == seller
+                 and (kind == "gtin" or title_matches(product["name"], i.get("title")))]
+        if items:
+            best = min(items, key=lambda i: float(i["price"]["value"]))
+            return "ok", {
+                "price": float(best["price"]["value"]),
+                "currency": best["price"].get("currency"),
+                "url": best.get("itemWebUrl"),
+                "image": (best.get("image") or {}).get("imageUrl"),
+                "title": best.get("title"),
+            }
+    return "not_found", None
 
 
 def discover(queries=("Fender Player II Telecaster", "Fender Player II Stratocaster", "Epiphone ES-335")):
