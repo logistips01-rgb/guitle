@@ -160,6 +160,12 @@
    "items": [
      {"sku": "0140550518", "url": "https://promusica.es/tipo-tele/1147865-fender-player-ii-telecaster-rw-aqb-guitarra-electrica-885978110742.html"}
    ]},
+  {"id": "numemusic", "name": "Nume Music", "domain": "www.numemusic.es",
+   "method": "jsonld", "selector": null,
+   "items": [
+     {"sku": "0140552506", "url": "https://www.numemusic.es/716398-guitarra-elctrica-tl-fender-player-ii-telecaster-mn-black"},
+     {"sku": "0140570506", "url": "https://www.numemusic.es/716407-guitarra-elctrica-tl-fender-player-ii-telecaster-hh-rw-black"}
+   ]},
   {"id": "matguitars", "name": "Mat Guitars", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "auvisa", "name": "Auvisa", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
   {"id": "gear4music", "name": "Gear4music", "domain": null, "method": "jsonld", "selector": null, "items": [{"sku": "0140552506", "url": null}]},
