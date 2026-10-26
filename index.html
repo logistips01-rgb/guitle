@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="guitle">
+<meta name="theme-color" content="#f4f4f2">
 <title>Precios guitle</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
@@ -144,6 +148,7 @@
   </div>
   <div id="A" class="grid"></div>
   <div id="B" class="matrix-wrap hidden"><table class="matrix" id="matrix"></table></div>
+  <details class="status" id="coupons-box"><summary>🏷️ Cupones</summary><div id="coupons"></div></details>
   <details class="status"><summary>Estado de las tiendas (última ejecución)</summary><div class="table-wrap"><table id="status"></table></div></details>
 </main>
 <div class="sheet-bg" id="bg"></div>
@@ -187,6 +192,28 @@ function applyCoupon(item, product, coupons, isRef) {
     const final = Math.round((c.percent ? item.price * (1 - c.percent / 100) : item.price - (c.amount || 0)) * 100) / 100;
     if (final < item.final) { item.final = final; item.coupon = c; }
   }
+}
+
+// Cupones activos (data/coupons.json) y detectados automáticamente en las portadas (pendientes de revisar).
+function renderCoupons(coupons, candidates, latest) {
+  const storeName = Object.fromEntries(latest.stores.map(s => [s.id, s.name]));
+  const today = new Date().toISOString().slice(0, 10);
+  const activeCoupons = coupons.filter(c => !c.valid_until || c.valid_until >= today);
+  const activeCodes = new Set(activeCoupons.map(c => `${c.store}|${c.code}`));
+  const pending = candidates.filter(c => !activeCodes.has(`${c.store}|${c.code}`))
+    .sort((a, b) => b.first_seen.localeCompare(a.first_seen));
+  const box = document.getElementById("coupons-box");
+  box.querySelector("summary").textContent = `🏷️ Cupones · ${activeCoupons.length} activos, ${pending.length} detectados`;
+  if (pending.some(c => day(c.first_seen) === day(latest.updated))) box.open = true;
+  const rowsActive = activeCoupons.map(c => `<tr><td>${esc(storeName[c.store] || c.store)}</td><td><span class="badge coupon">${esc(c.code)}</span></td>
+    <td>${c.percent ? c.percent + " %" : eur(c.amount)}</td><td class="muted">${[c.brands?.join(", "), c.categories?.join(", "), c.min_purchase ? "desde " + eur(c.min_purchase) : "", c.valid_until ? "hasta " + c.valid_until : ""].filter(Boolean).join(" · ")}</td></tr>`).join("");
+  const rowsPending = pending.map(c => `<tr><td><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.store_name)}</a></td><td><span class="tag">${esc(c.code)}</span></td>
+    <td>${esc(c.discount || "?")}</td><td class="muted" style="white-space:normal">${esc(c.context)}<br><small>visto desde ${day(c.first_seen)}</small></td></tr>`).join("");
+  document.getElementById("coupons").innerHTML =
+    `<h3 style="font-size:.95rem">Activos (se aplican a los precios)</h3>` +
+    (rowsActive ? `<div class="table-wrap"><table><tbody>${rowsActive}</tbody></table></div>` : `<p class="muted">Ninguno ahora mismo.</p>`) +
+    `<h3 style="font-size:.95rem">Detectados en las webs (revisar condiciones)</h3>` +
+    (rowsPending ? `<div class="table-wrap"><table><tbody>${rowsPending}</tbody></table></div>` : `<p class="muted">Ninguno detectado en los últimos 30 días.</p>`);
 }
 
 // Abreviaturas y colores en español para el buscador.
@@ -447,8 +474,9 @@ function render(latest, history, coupons) {
   draw();
 }
 
-Promise.all([load("data/latest.json"), load("data/history.json"), load("data/coupons.json").catch(() => [])])
-  .then(([latest, history, coupons]) => render(latest, history, coupons))
+Promise.all([load("data/latest.json"), load("data/history.json"), load("data/coupons.json").catch(() => []),
+             load("data/coupon_candidates.json").catch(() => [])])
+  .then(([latest, history, coupons, candidates]) => { render(latest, history, coupons); renderCoupons(coupons, candidates, latest); })
   .catch(err => { document.getElementById("meta").textContent = `No se pudieron cargar los datos (${err.message}). En local, sírvelo con: python -m http.server`; });
 </script>
 </body>

@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: scrape-prices
@@ -62,6 +63,10 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         run: python -m scraper.sneakers --records-out "$RUNNER_TEMP/sneakers.json" || echo "::warning::scraper de Jordan terminó con error"
 
+      - name: Detector de cupones
+        if: steps.gate.outputs.run == 'true'
+        run: python -m scraper.coupons --records-out "$RUNNER_TEMP/coupons.json" || echo "::warning::detector de cupones con error"
+
       - name: Commit de datos
         if: steps.gate.outputs.run == 'true'
         # Se fusiona sobre la última versión de la rama (otra ejecución o un push pueden haber llegado antes).
@@ -74,6 +79,7 @@ jobs:
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             python -m scraper.run --merge "$RUNNER_TEMP/records.json"
             [ -f "$RUNNER_TEMP/sneakers.json" ] && python -m scraper.sneakers --merge "$RUNNER_TEMP/sneakers.json"
+            [ -f "$RUNNER_TEMP/coupons.json" ] && python -m scraper.coupons --merge "$RUNNER_TEMP/coupons.json" --new-out "$RUNNER_TEMP/new_coupons.md"
             git add data/
             if git diff --cached --quiet; then echo "Sin cambios en data/"; exit 0; fi
             git commit -q -m "data: precios $(TZ=Europe/Madrid date +%F)"
@@ -81,3 +87,11 @@ jobs:
             echo "push rechazado, reintento $attempt"; sleep $((attempt * 5))
           done
           exit 1
+
+      - name: Aviso de cupones nuevos
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f "$RUNNER_TEMP/new_coupons.md" ] || exit 0
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "🏷️ Cupones nuevos $(TZ=Europe/Madrid date +%F)" --body-file "$RUNNER_TEMP/new_coupons.md"

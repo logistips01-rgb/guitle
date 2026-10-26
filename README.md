@@ -13,6 +13,9 @@
   (`percent` o `amount` en euros; `brands`, `categories`, `min_purchase` y `valid_until` son opcionales; caducados se ignoran).
 - `index.html`: página para GitHub Pages (Chart.js desde CDN).
 
+- `data/coupon_candidates.json`: códigos detectados cada día en la portada de las tiendas (`scraper/coupons.py`).
+  Si aparece uno nuevo, el workflow abre un issue "🏷️ Cupones nuevos" para revisarlo y, si vale, pasarlo a `coupons.json`.
+
 Status posibles: `ok`, `no_price`, `blocked_403`, `error`, `wrong_currency`, `robots_disallowed`, `sku_mismatch`.
 
 ## Jordan (sneakers.html)
