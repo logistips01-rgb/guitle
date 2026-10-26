@@ -165,6 +165,10 @@ def update_latest(history, products, stores):
                          price_date=rec["date"], price_method=rec["method"])
             if entry.get("min_price") is None or rec["price"] < entry["min_price"]:
                 entry.update(min_price=rec["price"], min_price_date=rec["date"])
+    # Solo lo que sigue configurado (una URL quitada de stores.json deja de mostrarse; el histórico se conserva).
+    active = {(s["id"], i["sku"]) for s in stores for i in s.get("items", []) if i.get("url") or s.get("method") == "ebay"}
+    manual = {(r["store"], r["sku"]) for r in history if r.get("method") == "manual"}
+    latest = {k: v for k, v in latest.items() if (v["store"], v["sku"]) in active | manual}
     return {
         "updated": max((r["date"] for r in history), default=None),
         "products": with_live_pvp(products, latest, stores),

@@ -18,11 +18,11 @@
    "sku": "0140552500",
    "brand": "Fender",
    "category": "guitarra",
-   "ean": null,
+   "ean": "885978110667",
    "name": "Fender Player II Telecaster MN 3-Color Sunburst",
    "pvp": 799.0,
    "case": "0996106306",
-   "pvp_fallback": null,
+   "pvp_fallback": 799,
    "pvp_source": "fender_es",
    "pvp_date": "2026-10-26T00:02:23+00:00",
    "image": "https://detalhes.egitana.es/fender-player-ii-telecaster-maple-fingerboard-3-color-sunburst_668eb576002d3.jpg"
@@ -421,6 +421,12 @@
    "reference": null
   },
   {
+   "id": "session",
+   "name": "Session",
+   "domain": "www.session.de",
+   "reference": null
+  },
+  {
    "id": "matguitars",
    "name": "Mat Guitars",
    "domain": null,
@@ -475,13 +481,6 @@
    "min_price": 799.0,
    "min_price_date": "2026-10-25T22:37:50+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920"
-  },
-  {
-   "store": "multiocio",
-   "sku": "0140510515",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-player-ii-stratocaster-rw-pwt"
   },
   {
    "store": "musicopolix",
@@ -544,13 +543,6 @@
    "image": "https://es.fender.com/cdn/shop/files/0140512530_fen_ins_frt_1_rr.png?v=1774475994&width=1920"
   },
   {
-   "store": "multiocio",
-   "sku": "0140512518",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-player-ii-stratocaster-mn-aqb"
-  },
-  {
    "store": "musicopolix",
    "sku": "0140512518",
    "last_run": "2026-10-26T00:02:23+00:00",
@@ -601,13 +593,6 @@
    "min_price": 799.0,
    "min_price_date": "2026-10-25T19:18:10+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0140552550_fen_ins_frt_1_rr.png?v=1728470194&width=1920"
-  },
-  {
-   "store": "multiocio",
-   "sku": "0140550518",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-player-ii-telecaster-rw-aqb"
   },
   {
    "store": "egitana",
@@ -689,13 +674,6 @@
    "last_run": "2026-10-26T00:02:23+00:00",
    "status": "blocked_403",
    "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-mn-bk/"
-  },
-  {
-   "store": "multiocio",
-   "sku": "0140552506",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-player-ii-telecaster-mn-blk"
   },
   {
    "store": "musicopolix",
@@ -785,13 +763,6 @@
    "last_run": "2026-10-26T00:02:23+00:00",
    "status": "blocked_403",
    "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/"
-  },
-  {
-   "store": "multiocio",
-   "sku": "0140570506",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-player-ii-telecaster-hh-rw-blk"
   },
   {
    "store": "unionmusical",
@@ -890,13 +861,6 @@
    "url": "https://www.madridhifi.com/p/fender-standard-telecaster-mn-amm/"
   },
   {
-   "store": "multiocio",
-   "sku": "0266020560",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-standard-telecaster-mn-amm"
-  },
-  {
    "store": "alfasoni",
    "sku": "0266040505",
    "last_run": "2026-10-26T00:02:23+00:00",
@@ -949,13 +913,6 @@
    "url": "https://www.madridhifi.com/p/fender-standard-telecaster-lf-owh/"
   },
   {
-   "store": "multiocio",
-   "sku": "0266040505",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-standard-telecaster-lrl-owt"
-  },
-  {
    "store": "alfasoni",
    "sku": "0266220505",
    "last_run": "2026-10-26T00:02:23+00:00",
@@ -999,13 +956,6 @@
    "min_price": 579.0,
    "min_price_date": "2026-10-25T22:37:50+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
-  },
-  {
-   "store": "multiocio",
-   "sku": "0266220505",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-standard-stratocaster-mn-owt"
   },
   {
    "store": "thomann",
@@ -1066,13 +1016,6 @@
    "min_price": 579.0,
    "min_price_date": "2026-10-25T22:37:50+00:00",
    "image": "https://es.fender.com/cdn/shop/files/0266220571_fen_ins_frt_1_rr_adaae6d1-e8f3-4fd4-ba8f-c6c8cf018795.png?v=1740047872&width=1920"
-  },
-  {
-   "store": "multiocio",
-   "sku": "0266240500",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/fender-standard-stratocaster-lrl-3ts"
   },
   {
    "store": "thomann",
@@ -1150,13 +1093,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "multiocio",
-   "sku": "AS73-TBC",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/ibanez-as73-tbc"
-  },
-  {
    "store": "thomann",
    "sku": "AS73-TBC",
    "last_run": "2026-10-26T00:02:23+00:00",
@@ -1187,13 +1123,6 @@
    "min_price_date": "2026-10-25T23:02:34+00:00"
   },
   {
-   "store": "multiocio",
-   "sku": "AZ24S1F-TKS",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/ibanez-az24s1f-tks"
-  },
-  {
    "store": "thomann",
    "sku": "AZ24S1F-TKS",
    "last_run": "2026-10-26T00:02:23+00:00",
@@ -1207,13 +1136,6 @@
    "min_price": 464.0,
    "min_price_date": "2026-10-25T22:45:02+00:00",
    "image": "https://www.thomann.de/thumb/opengraph/pics/prod/606763.jpg"
-  },
-  {
-   "store": "multiocio",
-   "sku": "EIES335VSNH1",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/epiphone-es-335-vintage-sunburst"
   },
   {
    "store": "thomann",
@@ -1259,13 +1181,6 @@
    "min_price": 569.0,
    "min_price_date": "2026-10-25T22:45:02+00:00",
    "image": "https://www.thomann.de/thumb/opengraph/pics/prod/634462.jpg"
-  },
-  {
-   "store": "multiocio",
-   "sku": "EOCAVSNH1",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/epiphone-casino-vintage-sunburst"
   },
   {
    "store": "thomann",
@@ -1393,13 +1308,6 @@
    "last_run": "2026-10-26T00:02:23+00:00",
    "status": "no_price",
    "url": "https://www.egitana.es/ibanez-rg550-rf/p/38991"
-  },
-  {
-   "store": "multiocio",
-   "sku": "RG550-RF",
-   "last_run": "2026-10-26T00:02:23+00:00",
-   "status": "no_price",
-   "url": "https://www.multiocio.com/ibanez-rg550-rf"
   },
   {
    "store": "thomann",
