@@ -41,7 +41,10 @@ jobs:
         # Los ficheros nuevos de img/p/ no están en git y sobreviven al reset del paso siguiente.
         run: |
           [ -f "$RUNNER_TEMP/catalog.json" ] && python -m scraper.catalog --merge "$RUNNER_TEMP/catalog.json"
-          python -m scraper.thumbs --limit 4000 --minutes 40 || echo "::warning::miniaturas con error"
+          # El tiempo que deje la lectura, sin pasar de 150 min (el job tiene 355 en total).
+          read_min=${{ inputs.minutes || '50' }}
+          thumb_min=$(( 320 - read_min )); [ $thumb_min -gt 150 ] && thumb_min=150; [ $thumb_min -lt 10 ] && thumb_min=10
+          python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" || echo "::warning::miniaturas con error"
 
       - name: Commit de datos
         run: |

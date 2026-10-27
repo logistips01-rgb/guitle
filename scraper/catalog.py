@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "data" / "catalog"
 RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir en este tiempo
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
+MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
 NOT_PRODUCT = re.compile(r"b-stock|bstock|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein", re.I)
 
@@ -427,9 +428,11 @@ def build(offers=None, history=None):
         if any(o["lh"] for o in group):
             prod["lh"] = True
         # Miniatura: entre las fotos de todas las tiendas, la que muestra la guitarra entera (la más esbelta).
+        # Un primer plano del cuerpo (poco esbelto) no se usa: mejor sin foto que una que rompe la cuadrícula.
         thumbs = [t for t in (existing(o.get("image")) for o in group) if t]
-        if thumbs:
-            prod["th"] = max(thumbs, key=slenderness)
+        best = max(thumbs, key=slenderness) if thumbs else None
+        if best and slenderness(best) >= MIN_SLENDERNESS:
+            prod["th"] = best
         if ean in sku_by_ean:
             prod["sku"] = sku_by_ean[ean]
         products.append(prod)
