@@ -13,6 +13,7 @@ Uso:
 """
 import argparse
 import json
+import re
 import sys
 import time
 from datetime import datetime, timezone
@@ -30,6 +31,9 @@ CATALOG = ROOT / "data" / "catalog"
 PVP = CATALOG / "pvp.json"
 SITEMAP = "https://es.fender.com/sitemap.xml"
 STORE = "fender_es"
+ACCESSORY = re.compile(r"cable|footswitch|wrench|strap|string|pick|case|bag|stand|hanger|pedal|amp|cabinet|speaker"
+                       r"|cover|shirt|hoodie|tee|hat|mug|poster|polish|cloth|tuner|knob|pickguard|bridge|saddle|nut|screw"
+                       r"|neck|body|pickup|capo|slide|gift|card|wallet|keychain|bass", re.I)
 
 
 def now_iso():
@@ -68,7 +72,9 @@ def scan(minutes):
     urls = sitemap_urls(fetcher, SITEMAP, lambda loc: "sitemap_products" in loc and "/en/" not in loc)
     urls = sorted({u for u in urls if "/products/" in u})
     pages = data["pages"]
-    queue = [u for u in urls if u not in pages] + sorted((u for u in urls if u in pages), key=lambda u: pages[u]["checked"])
+    # Primero las guitarras: los accesorios (cables, pedales, cuerdas…) no los cruza el catálogo de guitarras.
+    queue = sorted(urls, key=lambda u: (bool(ACCESSORY.search(u.rsplit("/", 1)[-1])), u in pages,
+                                        pages.get(u, {}).get("checked", "")))
     print(f"[pvp] {len(urls)} productos en el sitemap, {sum(u not in pages for u in urls)} sin leer", flush=True)
     out, deadline = {"urls": urls, "records": []}, time.monotonic() + minutes * 60
     for url in queue:
