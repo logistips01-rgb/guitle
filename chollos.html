@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2a78d6">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="fonts/inter.css">
+<link rel="stylesheet" href="catalogo.css">
+<title>Chollos de guitarras con descuentos reales · guitle</title>
+<meta name="description" content="Chollos de guitarras verificados con el histórico de precios: mínimos históricos, bajadas reales y los descuentos inflados que conviene evitar.">
+<link rel="canonical" href="https://guitle.com/chollos.html">
+<style>
+  .intro { color: var(--text-secondary); max-width: 760px; margin: 4px 0 6px; }
+  .deals-sec { margin-top: 30px; }
+  .deals-sec h2 { font-size: 1.2rem; margin: 0 0 4px; letter-spacing: -.02em; }
+  .deals-sec > p { color: var(--text-muted); font-size: .9rem; margin: 0 0 12px; }
+  .waiting { background: var(--surface-1); border: 1px dashed var(--border); border-radius: 14px; padding: 16px 18px; color: var(--text-secondary); }
+  .badge.bad { background: var(--warn-bg); color: var(--warning); }
+  .fake { font-size: .82rem; color: var(--text-secondary); line-height: 1.35; }
+  .fake s { color: var(--text-muted); }
+  .kind { font-size: .72rem; color: var(--text-muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a></h1>
+      <a class="navlink" href="catalogo.html">Catálogo</a>
+    </div>
+  </div>
+  <h2 style="font-size:1.6rem;margin:18px 0 4px;letter-spacing:-.03em">Chollos de guitarras, solo los de verdad</h2>
+  <p class="intro">Cada día comparamos el precio de cada guitarra con su propio histórico. Aquí solo salen los descuentos reales,
+    y te avisamos de las tiendas que suben el precio para luego "rebajarlo".</p>
+  <p class="muted small" id="status"></p>
+
+  <section class="deals-sec"><h2>Mínimos históricos</h2><p>Hoy están más baratas que nunca desde que las seguimos.</p><div id="records"></div></section>
+  <section class="deals-sec"><h2>Bajadas reales</h2><p>Por debajo de su precio medio de los últimos 30 días.</p><div id="real_drops"></div></section>
+  <section class="deals-sec"><h2>Han bajado hoy</h2><p>La tienda más barata ha rebajado su precio desde ayer.</p><div id="today"></div></section>
+  <section class="deals-sec"><h2>Ojo: descuentos inflados</h2><p>La tienda subió el precio y ahora lo "rebaja"… al mismo precio que tenía antes.</p><div id="inflated"></div></section>
+
+  <footer class="site-foot">
+    <span>Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span>
+    <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+  </footer>
+</main>
+<script>
+const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const NOPHOTO = '<svg class="nophoto" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/><path d="M14.5 9.5c-1.6-1.6-3.9-1.3-5 .2-1 .4-2.6.1-4 1.5-2.1 2.1-1.7 5.4.6 7.7s5.6 2.7 7.7.6c1.4-1.4 1.1-3 1.5-4 1.5-1.1 1.8-3.4.2-5z"/><circle cx="9.6" cy="14.4" r="1.4"/></svg>';
+const KINDS = { electrica: "Eléctrica", acustica: "Acústica", clasica: "Clásica" };
+const MIN_DAYS = 7;
+
+async function load(path) {
+  const r = await fetch(path, { cache: "no-store" });
+  if (!r.ok) throw new Error(path);
+  return r.json();
+}
+
+function tile(r, badge, extra = "") {
+  return `<a class="tile" href="g/${esc(r.slug)}.html">
+    <div class="badges">${badge}</div>
+    <div class="img">${r.th ? `<img loading="lazy" src="img/p/${esc(r.th)}" alt="">` : NOPHOTO}</div>
+    <div class="body"><span class="brand">${esc(r.brand || "")} <span class="kind">· ${KINDS[r.kind]}</span></span>
+      <span class="name">${esc(r.name)}</span>${extra}
+      <span class="price"><strong>${eur(r.price)}</strong></span>
+      <span class="foot"><span>${esc(r.storeName)}</span><span class="stores-n">${r.stores} ${r.stores === 1 ? "tienda" : "tiendas"}</span></span>
+    </div></a>`;
+}
+
+Promise.all(Object.keys(KINDS).map(k => load(`data/deals-${k}.json`).then(d => ({ k, d })).catch(() => null))).then(all => {
+  all = all.filter(Boolean);
+  const days = Math.max(0, ...all.map(x => x.d.history_days));
+  const pick = key => all.flatMap(({ k, d }) => d[key].map(r => ({ ...r, kind: k, storeName: d.stores[r.store] || r.store,
+    fakeStore: r.inflated ? d.stores[r.inflated.store] || r.inflated.store : "" })));
+  const render = (id, list, badge, extra, emptyText) => {
+    document.getElementById(id).innerHTML = list.length
+      ? `<div class="grid">${list.map(r => tile(r, badge(r), extra ? extra(r) : "")).join("")}</div>`
+      : `<div class="waiting">${emptyText}</div>`;
+  };
+  const nDays = n => `${n} ${n === 1 ? "día" : "días"}`;
+  const wait = days < MIN_DAYS
+    ? `Esta sección se activa con ${MIN_DAYS} días de histórico: llevamos ${nDays(days)}. Vuelve en unos días.`
+    : "Hoy no hay ninguna. Las revisamos cada día.";
+  render("records", pick("records").sort((a, b) => a.vs_avg - b.vs_avg),
+         r => `<span class="badge low">Mínimo</span><span class="badge">${r.vs_avg.toFixed(0)} % vs media</span>`, null, wait);
+  render("real_drops", pick("real_drops").sort((a, b) => a.vs_avg - b.vs_avg),
+         r => `<span class="badge">${r.vs_avg.toFixed(0)} % vs media</span>`, null, wait);
+  render("today", pick("today").sort((a, b) => a.vs_yesterday - b.vs_yesterday),
+         r => `<span class="badge">−${eur(Math.abs(r.vs_yesterday))} hoy</span>`, null, "Hoy ninguna tienda ha rebajado sus guitarras. Lo revisamos cada día.");
+  render("inflated", pick("inflated"), () => '<span class="badge bad">Inflado</span>',
+         r => `<span class="fake">${esc(r.fakeStore)}: antes <b>${eur(r.inflated.before)}</b>, subió a <s>${eur(r.inflated.raised)}</s> y ahora "rebajada" a <b>${eur(r.inflated.now)}</b>.</span>`,
+         days < 14 ? `Para detectarlos necesitamos unas semanas de histórico: llevamos ${nDays(days)}. Estará listo para el Black Friday.` : "Hoy no hemos detectado ninguno.");
+  document.getElementById("status").textContent = `Precios revisados cada día · ${nDays(days)} de histórico.`;
+});
+</script>
+</body>
+</html>

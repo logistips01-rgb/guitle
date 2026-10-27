@@ -163,7 +163,7 @@ def write_pages(kind, products, store_names):
 
 def write_sitemap():
     """sitemap.xml con las páginas principales y las de todas las guitarras (listas g/_<categoría>.txt)."""
-    urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "guitarras.html"]
+    urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "chollos.html", "guitarras.html"]
     for lst in sorted(PAGES.glob("_*.txt")):
         urls += [f"g/{s}.html" for s in lst.read_text(encoding="utf-8").split()]
     body = "\n".join(f"  <url><loc>{SITE}/{u}</loc></url>" for u in urls)

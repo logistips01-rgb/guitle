@@ -29,7 +29,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from . import affiliates, analytics, jsonld, pages
+from . import affiliates, analytics, deals, jsonld, pages
 from .common import normalize_id
 from .fetch import Fetcher, is_challenge
 
@@ -729,6 +729,8 @@ def build(offers=None, history=None):
         multi = sum(len({i["s"] for i in p["items"]}) > 1 for p in products)
         print(f"catálogo {kind}: {len(products)} guitarras, {multi} en más de una tienda", flush=True)
         pages.write_pages(kind, products, names)
+        curated_records = load(ROOT / "data" / "history.json", []) if kind == "electrica" else []
+        deals.build(kind, products, history, curated_records, names)
 
 
 def main(argv=None):
