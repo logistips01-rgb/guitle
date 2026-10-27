@@ -3,9 +3,12 @@ name: scrape-prices
 on:
   schedule:
     # GitHub cron va en UTC: 07:00 UTC = 09:00 en verano (CEST), 08:00 UTC = 09:00 en invierno (CET).
-    # Se disparan ambas y el primer paso deja pasar solo la que cae a las 09 en Madrid.
+    # El paso "¿Toca revisar precios?" deja pasar la primera que llegue desde las 09 de Madrid.
     - cron: "0 7 * * *"
     - cron: "0 8 * * *"
+    # Respaldo por si GitHub retrasa o pierde los anteriores.
+    - cron: "0 10 * * *"
+    - cron: "0 13 * * *"
   workflow_dispatch:
   # Al cambiar el workflow o el scraper se ejecuta una vez para validarlo.
   push:
@@ -27,18 +30,24 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: ¿Son las 09 en Madrid?
+      - uses: actions/checkout@v4
+
+      - name: ¿Toca revisar precios?
         id: gate
+        # GitHub retrasa a veces los cron horas: la ejecución programada vale desde las 09 de Madrid
+        # mientras los precios no se hayan revisado ya hoy a partir de esa hora (los cron de después
+        # son de respaldo y se saltan si ya está hecho).
         run: |
-          hour=$(TZ=Europe/Madrid date +%H)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$hour" != "09" ]; then
-            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Hora Madrid $hour, se omite."
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          hour=$(TZ=Europe/Madrid date +%-H); today=$(TZ=Europe/Madrid date +%F)
+          last=$(python3 -c "import json, datetime, zoneinfo; u = json.load(open('data/latest.json'))['updated']; print(datetime.datetime.fromisoformat(u).astimezone(zoneinfo.ZoneInfo('Europe/Madrid')).strftime('%F %-H'))" 2>/dev/null || echo "- 0")
+          if [ "$hour" -lt 9 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Hora Madrid $hour: antes de las 09, se omite."
+          elif [ "${last% *}" = "$today" ] && [ "${last#* }" -ge 9 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Ya revisado hoy ($last), se omite."
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
           fi
-
-      - uses: actions/checkout@v4
-        if: steps.gate.outputs.run == 'true'
 
       - uses: actions/setup-python@v5
         if: steps.gate.outputs.run == 'true'
