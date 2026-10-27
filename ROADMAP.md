@@ -70,7 +70,11 @@ precios, no solo la web traducida.
 1. **Más tiendas europeas que envían a España:** Bax-shop, Muziker, Star's Music (primero); después Musik Produktiv,
    Just Music, Hieber Lindberg, Musikhaus Korn, Station Music, Michenaud, Univers Sons, Max Music, Strumenti Musicali,
    Mogar, Scavino, Salão Musical.
-2. **Idiomas:** guitle.com/es, /en, /fr, /de, /it, /pt (textos en un fichero por idioma).
+2. **Idiomas y países** (decidido el 27/10/2026): hasta el Black Friday, todo en España. Después, por este orden:
+   **Portugal** (Egitana es portuguesa; Numemusic y Thomann envían; sirve para montar el sistema de países),
+   **Francia e Italia**, y luego **Alemania** (el mayor mercado y el más competido). Cada país: web traducida
+   (guitle.com/pt, /fr…), precios de sus tiendas o de su versión local, afiliados de ese país (en Awin cada país es
+   un programa) y páginas propias para Google. Antes se prepara la estructura (textos en un fichero por idioma).
 3. **Selector de país en Europa:** tiendas, precios con el IVA del país y portes de cada país. Reino Unido aparte
    (fuera de la UE: aduanas): Gear4music, Andertons, PMT, Guitar Guitar, Dawsons.
 4. **Fase final: Estados Unidos y Latinoamérica.**
