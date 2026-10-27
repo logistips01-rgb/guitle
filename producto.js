@@ -47,13 +47,17 @@ function verdict(current, best) {
 
 (async () => {
   // Precio, tiendas y oferta van ya en el HTML (scraper/pages.py); aquí solo el veredicto y el histórico.
-  const { names, colors: color } = JSON.parse(document.getElementById("stores-data").textContent);
+  const { names, colors: color, hk } = JSON.parse(document.getElementById("stores-data").textContent);
   const best = { p: Number(CFG.best) };
   const p = { ean: CFG.ean };
 
   // Histórico: catálogo (+ seguimiento si es una guitarra seguida)
   const series = {};
-  try { Object.assign(series, (await load(CFG.history))[p.ean] || {}); } catch (e) {}
+  // Claves del histórico: el EAN y, para las tiendas sin EAN (Egitana, Thomann), la URL de su ficha.
+  try {
+    const h = await load(CFG.history);
+    for (const k of hk || [p.ean]) for (const [s, pts] of Object.entries(h[k] || {})) series[s] = series[s] || pts;
+  } catch (e) {}
   if (CFG.sku) {
     try {
       const recs = (await load("/data/history.json")).filter(r => r.sku === CFG.sku && r.status === "ok" && r.price != null);

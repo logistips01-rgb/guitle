@@ -168,9 +168,10 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet()
 
 async function drawChart(p) {
   const note = document.getElementById("chart-note");
-  if (!p.ean) { note.textContent = "Sin EAN: no hay histórico entre tiendas."; return; }
   try { priceHistory = priceHistory || await load(CFG.history); } catch (e) { note.textContent = "No se pudo cargar el histórico."; return; }
-  const series = priceHistory[p.ean] || {};
+  // Claves del histórico: el EAN y, para las tiendas sin EAN (Egitana, Thomann), la URL de su ficha.
+  const series = {};
+  for (const k of p.hk || (p.ean ? [p.ean] : [])) for (const [s, pts] of Object.entries(priceHistory[k] || {})) series[s] = series[s] || pts;
   const today = new Date().toISOString().slice(0, 10);
   const datasets = Object.entries(series).map(([store, pts]) => ({
     label: storeName[store] || store, stepped: true, borderWidth: 2, pointRadius: 2, borderColor: css(storeColor[store] || "--reference"),

@@ -60,7 +60,10 @@ def build(kind, products, history, curated_records=(), names=None, today=None):
     for p in products:
         if not p.get("slug") or not p.get("items"):
             continue
-        series = dict(history.get(p.get("ean"), {})) if p.get("ean") else {}
+        series = {}
+        for k in p.get("hk") or [p.get("ean")]:
+            for store, pts in history.get(k, {}).items() if k else ():
+                series.setdefault(store, pts)
         if p.get("sku"):
             for store, pts in _curated_series(p["sku"], curated_records).items():
                 series.setdefault(store, pts)

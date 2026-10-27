@@ -31,7 +31,7 @@ from bs4 import BeautifulSoup
 
 from . import affiliates, analytics, deals, jsonld, pages
 from .common import normalize_id
-from .fetch import Fetcher, is_challenge
+from .fetch import DELAY, Fetcher, is_challenge
 
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "data" / "catalog"
@@ -103,6 +103,54 @@ def _parse_egitana(soup, text):
             "currency": "EUR", "in_stock": None, "image": image.get("content") if image else None, "ean": None}
 
 
+# Thomann no tiene sitemap en español ni EAN en la ficha: las fichas salen de sus listados por forma
+# (?pg= lo permite su robots.txt) y se leen con microdatos de schema.org.
+THOMANN = "https://www.thomann.es/"
+THOMANN_ELECTRIC = ("giegst", "giegte", "gieglp", "giegsg", "gieges", "gieghe", "giegja", "giegba", "gieg7s",
+                    "gieg8s", "gieg12", "giegmm", "gieglh", "giegsc", "giegsa")
+THOMANN_MAX_PAGES = 40
+
+
+def _discover_thomann(fetcher, codes):
+    urls = set()
+    for code in codes:
+        for pg in range(1, THOMANN_MAX_PAGES + 1):
+            url = f"{THOMANN}cat_GK_{code}.html?ls=100&pg={pg}"
+            if not fetcher.allowed(url)[0]:
+                break
+            resp = fetcher.get(url)
+            if resp.status_code == 429:
+                raise RuntimeError("HTTP 429")
+            if resp.status_code != 200:
+                break
+            found = {THOMANN + h.split("?")[0] for h in re.findall(r'class="product__content[^"]*"\s+href="([^"]+\.htm)[?"]', resp.text)}
+            if not found - urls:
+                break
+            urls |= found
+    return sorted(urls)
+
+
+def _parse_thomann(soup, text):
+    crumbs = [li.get_text(" ", strip=True) for li in soup.select('[itemtype="https://schema.org/BreadcrumbList"] [itemprop=itemListElement]')]
+    crumbs = [c for c in crumbs if c]
+    brand = soup.select_one('[itemprop=brand] [itemprop=name]')
+    brand = brand.get("content") if brand else None
+    if crumbs and brand and crumbs[-1].lower() == brand.lower():
+        crumbs = crumbs[:-1]  # el último elemento es la marca, no la forma
+    offer = soup.select_one('[itemprop=offers]')
+    price = offer.select_one('[itemprop=price]') if offer else None
+    h1 = soup.find("h1")
+    if not price or not price.get("content") or not h1:
+        return {"crumbs": crumbs}
+    currency = offer.select_one('[itemprop=priceCurrency]')
+    avail = offer.select_one('[itemprop=availability]')
+    image = soup.find("meta", attrs={"property": "og:image"})
+    return {"crumbs": crumbs, "name": h1.get_text(" ", strip=True), "brand_raw": brand, "price": float(price["content"]),
+            "currency": currency.get("content") if currency else "EUR",
+            "in_stock": ("instock" in avail.get("href", avail.get("content", "")).lower()) if avail else None,
+            "image": image.get("content") if image else None, "ean": None}
+
+
 def _only(kind, pred):
     return lambda crumbs: kind if pred(crumbs) else None
 
@@ -131,6 +179,10 @@ SOURCES = {
     "egitana": {"name": "Egitana", "sitemap": "https://www.egitana.es/sitemaps/es/products_sitemap.xml",
                 "pick": _pick_egitana, "parse": _parse_egitana, "ok_status": (200, 500),
                 "kind": _only("electrica", _is_electric)},
+    # Ya nos frenó una vez (429): más despacio que las demás, y si vuelve a pasar se para hasta el día siguiente.
+    "thomann": {"name": "Thomann", "discover": lambda f: _discover_thomann(f, THOMANN_ELECTRIC), "delay": (8.0, 14.0),
+                "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u),
+                "parse": _parse_thomann, "kind": _only("electrica", _is_electric)},
 }
 
 # --- Acústicas y clásicas -------------------------------------------------------------------------
@@ -328,8 +380,15 @@ COLOR_ES = {"negro": "black", "negra": "black", "blanco": "white", "blanca": "wh
             "nogal": "walnut", "cereza": "cherry", "vino": "wine", "oscuro": "dark", "oscura": "dark", "claro": "light",
             "perla": "pearl", "noche": "night", "medianoche": "midnight", "escarlata": "scarlet", "bosque": "forest",
             "profundo": "deep", "natural": "natural"}
+# Acabados abreviados (Thomann: "Player II Strat MN AQB") → nombre completo, como Numemusic.
+COLOR_CODES = {"3ts": "3 color sunburst", "3cs": "3 color sunburst", "3 tone sunburst": "3 color sunburst",
+               "2ts": "2 color sunburst", "2cs": "2 color sunburst", "owt": "olympic white", "pwt": "polar white",
+               "aqb": "aquatone blue", "car": "candy apple red", "lpb": "lake placid blue", "sfg": "sea foam green",
+               "frd": "fiesta red", "aw": "arctic white", "vw": "vintage white", "hcs": "heritage cherry sunburst",
+               "hc": "heritage cherry", "vs": "vintage sunburst", "ebo": "ebony", "tbs": "tobacco burst",
+               "wr": "wine red", "nat": "natural", "sb": "sunburst", "csb": "cherry sunburst", "bkm": "black metallic"}
 NAME_STOPWORDS = {"fingerboard", "fretboard", "guitar", "guitarra", "electrica", "eléctrica", "electric", "with", "con",
-                  "w", "and", "y", "the", "series", "guitars"}
+                  "w", "and", "y", "the", "series", "guitars", "wpg", "bpg", "tpg", "mpg"}
 
 
 def name_tokens(name, brand):
@@ -338,6 +397,9 @@ def name_tokens(name, brand):
         n = n.replace(b, " ")
     for pat, short in FINGERBOARDS:
         n = re.sub(pat, " " + short + " ", n)
+    n = re.sub(r"(\d)-(color|tone)\b", r"\1 \2", n)
+    for code, full in COLOR_CODES.items():
+        n = re.sub(rf"\b{code}\b", full, n)
     words = re.findall(r"[a-záéíóúñ0-9]+", n)
     return {NAME_SYNONYMS.get(COLOR_ES.get(w, w), COLOR_ES.get(w, w)) for w in words if w not in NAME_STOPWORDS}
 
@@ -528,11 +590,11 @@ def due_urls(store_id, urls, offers, now):
 
 def scan_store(store_id, offers, minutes, limit):
     src = SOURCES[store_id]
-    fetcher = Fetcher()
+    fetcher = Fetcher(src.get("delay", DELAY))
     now = now_iso()
     out = {"store": store_id, "sitemap": None, "records": []}
     try:
-        urls = sitemap_urls(fetcher, src["sitemap"], src.get("sub"))
+        urls = src["discover"](fetcher) if "discover" in src else sitemap_urls(fetcher, src["sitemap"], src.get("sub"))
         picked = sorted({u for u in urls if src["pick"](u)})
         out["sitemap"] = picked
         print(f"[{store_id}] sitemap: {len(urls)} URLs, {len(picked)} candidatas", flush=True)
@@ -546,6 +608,9 @@ def scan_store(store_id, offers, minutes, limit):
             break
         rec = read_page(fetcher, store_id, url, now_iso())
         out["records"].append(rec)
+        if rec.get("http_status") == 429:
+            print(f"[{store_id}] 429: la tienda pide parar; se sigue mañana", flush=True)
+            break
         if n % 50 == 0:
             ok = sum(r["status"] == "ok" for r in out["records"])
             print(f"[{store_id}] {n}/{len(queue)} leídas, {ok} guitarras", flush=True)
@@ -575,8 +640,9 @@ def merge(batches):
                 prev.update(checked=rec["checked"], last_error=rec["status"])  # se conserva el último precio bueno
                 continue
             offers[rec["url"]] = rec
-            if rec["status"] == "ok" and rec.get("ean") and rec.get("price") is not None:
-                series = history.setdefault(rec["ean"], {}).setdefault(rec["store"], [])
+            if rec["status"] == "ok" and rec.get("price") is not None:
+                # Sin EAN (Egitana, Thomann) el histórico va por URL; al construir se junta con el de su producto.
+                series = history.setdefault(rec.get("ean") or "url:" + rec["url"], {}).setdefault(rec["store"], [])
                 day = rec["checked"][:10]
                 if series and series[-1][0] == day:
                     series[-1][1] = rec["price"]
@@ -592,6 +658,15 @@ def merge(batches):
     write(DIR / "offers.json", offers)
     write(DIR / "history.json", history)
     build(offers, history)
+
+
+def series_for(keys, history):
+    """{tienda: [[día, precio], ...]} de un producto juntando sus claves de histórico (EAN y URLs sin EAN)."""
+    out = {}
+    for k in keys:
+        for store, pts in history.get(k, {}).items():
+            out.setdefault(store, pts)
+    return out
 
 
 def _curated_offers():
@@ -676,7 +751,9 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
         seen = {o["store"] for o in group}
         items += [c for c in curated.get(ean, []) if c["s"] not in seen] if ean else []
         items.sort(key=lambda i: i["p"])
-        series = history.get(ean, {}) if ean else {}
+        # Claves de histórico del producto: su EAN y la URL de cada ficha sin EAN.
+        hk = ([ean] if ean else []) + ["url:" + o["url"] for o in group if not o.get("ean")]
+        series = series_for(hk, history)
         days = {d for s in series.values() for d, _ in s}
         low = min((p for s in series.values() for _, p in s), default=None) if len(days) > 1 else None
         # Tipo: el más concreto entre las tiendas.
@@ -684,6 +761,8 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
         prod = {"id": ean or main["url"], "ean": ean, "name": main["name"], "brand": main.get("brand"),
                 "type": types[0] if types else "Otras", "img": next((o["image"] for o in group if o.get("image")), None),
                 "items": items, "low": low}
+        if hk != [ean]:
+            prod["hk"] = hk
         if any(o["lh"] for o in group):
             prod["lh"] = True
         # Miniatura: entre las fotos de todas las tiendas, la que muestra la guitarra entera (la más esbelta).
@@ -716,8 +795,10 @@ def build(offers=None, history=None):
     history = history if history is not None else load(DIR / "history.json", {})
     curated, store_names, sku_by_ean, curated_info = _curated_offers()
     names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names
+    # Fichas que ya están en seguimiento (con su EAN): no se duplican desde el catálogo.
+    followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
-        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind]
+        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind and o["url"] not in followed]
         # Las tiendas de seguimiento (products.json) son de eléctricas.
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" else ({}, {}, {})
         products = _products(kind, mine, history, *extra)

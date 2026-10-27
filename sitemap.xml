@@ -11,6 +11,7 @@
   <url><loc>https://guitle.com/marca/art-and-lutherie.html</loc></url>
   <url><loc>https://guitle.com/marca/austin.html</loc></url>
   <url><loc>https://guitle.com/marca/camps.html</loc></url>
+  <url><loc>https://guitle.com/marca/chapman.html</loc></url>
   <url><loc>https://guitle.com/marca/charvel.html</loc></url>
   <url><loc>https://guitle.com/marca/cordoba.html</loc></url>
   <url><loc>https://guitle.com/marca/cort.html</loc></url>
@@ -23,8 +24,10 @@
   <url><loc>https://guitle.com/marca/epiphone.html</loc></url>
   <url><loc>https://guitle.com/marca/esp.html</loc></url>
   <url><loc>https://guitle.com/marca/evh.html</loc></url>
+  <url><loc>https://guitle.com/marca/fender-custom-shop.html</loc></url>
   <url><loc>https://guitle.com/marca/fender.html</loc></url>
   <url><loc>https://guitle.com/marca/fujigen.html</loc></url>
+  <url><loc>https://guitle.com/marca/g-l.html</loc></url>
   <url><loc>https://guitle.com/marca/gibson.html</loc></url>
   <url><loc>https://guitle.com/marca/godin.html</loc></url>
   <url><loc>https://guitle.com/marca/gretsch.html</loc></url>
@@ -33,13 +36,17 @@
   <url><loc>https://guitle.com/marca/heritage.html</loc></url>
   <url><loc>https://guitle.com/marca/ibanez.html</loc></url>
   <url><loc>https://guitle.com/marca/jackson.html</loc></url>
+  <url><loc>https://guitle.com/marca/kramer.html</loc></url>
+  <url><loc>https://guitle.com/marca/larry-carlton-sire.html</loc></url>
   <url><loc>https://guitle.com/marca/ltd.html</loc></url>
   <url><loc>https://guitle.com/marca/martin.html</loc></url>
   <url><loc>https://guitle.com/marca/maybach.html</loc></url>
+  <url><loc>https://guitle.com/marca/michael-kelly.html</loc></url>
   <url><loc>https://guitle.com/marca/mooer.html</loc></url>
   <url><loc>https://guitle.com/marca/music-man.html</loc></url>
   <url><loc>https://guitle.com/marca/norman.html</loc></url>
   <url><loc>https://guitle.com/marca/oqan.html</loc></url>
+  <url><loc>https://guitle.com/marca/prs-paul-reed-smith.html</loc></url>
   <url><loc>https://guitle.com/marca/prs.html</loc></url>
   <url><loc>https://guitle.com/marca/schecter.html</loc></url>
   <url><loc>https://guitle.com/marca/simon-patrick.html</loc></url>
@@ -49,6 +56,7 @@
   <url><loc>https://guitle.com/marca/suhr.html</loc></url>
   <url><loc>https://guitle.com/marca/sx.html</loc></url>
   <url><loc>https://guitle.com/marca/vintage.html</loc></url>
+  <url><loc>https://guitle.com/marca/vox.html</loc></url>
   <url><loc>https://guitle.com/marca/vox.html</loc></url>
   <url><loc>https://guitle.com/marca/yamaha.html</loc></url>
   <url><loc>https://guitle.com/tipo/acustica-auditorio-concierto.html</loc></url>
@@ -155,6 +163,15 @@
   <url><loc>https://guitle.com/g/austin-atc200bk-814295014815.html</loc></url>
   <url><loc>https://guitle.com/g/austin-atc250-bc-812309025505.html</loc></url>
   <url><loc>https://guitle.com/g/austin-atc250wh-812309025512.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-chris-robertson-signature-sar63-semi-hollow-slate-black-lackp43489.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-guardian-cyber-silverburst-metallic-llicp41387.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-law-maker-legacy-azure-blue-bluep43697.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-law-maker-legacy-blackberry-storm-tormp45158.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-law-maker-legacy-forest-moss-green-reenp42030.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-law-maker-legacy-tiger-eye-burst-urstp43758.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-scout-legacy-shadow-burst-urstp45159.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-scout-traditional-tiger-eye-burst-urstp43757.html</loc></url>
+  <url><loc>https://guitle.com/g/chapman-stix-starrs-signature-pegasus-guitar-rosewood-fretboard-paradise-purple-rplep41358.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-am-neo-classic-san-dimas-sd1-hh-fr-mn-ferrari-red-885978917440.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-am-neo-classic-san-dimas-sd1-hh-fr-mn-gloss-black-885978917532.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-am-neo-classic-san-dimas-sd1-hh-fr-mn-ivory-blitz-885978917518.html</loc></url>
@@ -162,11 +179,21 @@
   <url><loc>https://guitle.com/g/charvel-american-neo-classic-style-1-sd-1-ht-velvet-midnig-885978917426.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-guthrie-govan-mj-san-dimas-sd24-cm-3t-brst-885978753918.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-jake-e-lee-signature-pro-mod-san-dimas-style-1-hss-ht-rw-blue-burst-885978912391.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-ltd-sc-1-henrik-danhage-relic-elicp29064.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-mj-san-dimas-style-1-hss-fr-metallic-red-885978208708.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-mj-sc1-24-hss-fr-sn-wht-mpl-885978208777.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-mj-sd1-24-hss-fr-stn-blk-ebny-885978208685.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-phil-sgrosso-pro-mod-so-cal-style-1-h-fr-eb-svb-717669550813.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-dk-wdm-sig-snake-885978593392.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-dk24-hh-2pt-cm-bbg-pink-pinkp36084.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-plus-srs-sc1-hh-fr-eb-car-bcarp40858.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-plus-srs-sc1-hh-fr-eb-sw-ebswp41463.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-sc1-srs-hh-fr-mn-nat-ash-tashp40823.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-sc2-24-2pt-hh-blk-ash-885978427185.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-sc2-24-2pt-hh-natural-885978427215.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pm-sc2-24-ht-hh-satin-black-885978427222.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-dk-satchel-signatur-satin-wht-885978782185.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-dk24-hh-ht-e-ds-tedsp28069.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-dk24-rick-graham-worn-shell-pink-885978435807.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-dinky-dk24-hh-fr-eb-eb-crimson-eclipse-197955144276.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-dinky-dk24-hh-fr-eb-negro-satinado-nadop44989.html</loc></url>
@@ -187,19 +214,26 @@
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-san-dimas-style-1-hh-fr-e-ebony-fingerboard-blanco-nieve-ievep44111.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-san-dimas-style-1-hh-fr-eb-scorched-earth-885978430598.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-san-dimas-style-1-hh-ht-eb-scorched-earth-885978430536.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-plus-sandimas-ht-eb-pp-ebppp40234.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-plus-sandimas-ht-eb-se-ebsep40411.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-evtn6-eb-midnight-blue-885978430529.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-fr-cm-blue-burst-885978436576.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-fr-cm-frcmp41065.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-fr-eb-candy-apple-red-885978436514.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-fr-eb-snow-white-885978436521.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-ht-e-hhtep41066.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-ht-e-hhtep41067.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-plus-so-cal-style-1-hh-ht-eb-ferrari-red-885978436613.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-rel-srs-sd1-hh-fr-pf-weatherd-black-717669967024.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-rel-srs-sd1-hh-fr-pf-weatherd-orange-717669967062.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-rel-srs-sd1-hh-fr-pf-weatherd-white-717669967048.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-rel-srs-sd1-hh-wor-hworp35478.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-san-dimas-style-1-hh-fr-mpl-gloss-black-885978429691.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-san-dimas-style-1-hh-fr-rw-satin-ferrari-red-885978429769.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-sc1-hh-fr-eb-3ts-717669869779.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-sc1-hss-fr-eb-ferrari-red-717669869847.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-sd1-sean-long-signatur-blk-717669550790.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-signature-rick-graham-dk24-2pt-cm-worn-shell-pink-pinkp41136.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-hh-fr-3tsb-3tsbp43347.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-hh-fr-eb-primer-gray-717669550660.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-hh-fr-mn-gloss-black-885978434039.html</loc></url>
@@ -208,24 +242,39 @@
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-hh-fr-rw-snow-white-885978435593.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-hh-ht-e-primer-gray-grayp41730.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-hh-ht-rw-pelham-blue-885978430611.html</loc></url>
+  <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-hsh-fr-m-maple-fingerboard-cherry-kiss-burst-urstp30594.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-hss-fr-e-rojo-ferrari-rarip44107.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-pro-mod-so-cal-style-1-ht-mpl-natural-ash-885978434015.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-san-dimas-style-2-sd2-hh-ht-satin-gray-grayp43372.html</loc></url>
   <url><loc>https://guitle.com/g/charvel-usa-select-dk24-hh-2pt-cm-oxblood-885978051762.html</loc></url>
-  <url><loc>https://guitle.com/g/charvel-warren-demartini-signature-pro-mod-snake-885978593392.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr-100-bk-100bkp2432.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr100-bk-k59604html.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr100-crs-s59605html.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr100bk-8809383837560.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr100crs-8809383837577.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr200-bk-8809292925013.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr200-gt-t59607html.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr200bk-8809625361884.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr200gt-8809292925020.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr250-antique-amber-8809625365141.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr250-dark-blue-burst-8809625365158.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr250-tbk-8809625361877.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr250-vb-b59609html.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr250ata-D18809625365141.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr250dbb-880962536515.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr250tbk-rtcr250tbk.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr250vb-8809625361860.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr270-bk-8809817986383.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr300-deluxe-explosion-llameante-antep45140.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr300-deluxe-fb-8809817986369.html</loc></url>
   <url><loc>https://guitle.com/g/cort-cr300-deluxe-lvb-8809817987533.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-cr300-tobacco-sunburst-8809625361853.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g110-opbc-8809625369613.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g110-opbk-8809625369606.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-g110-open-pore-black-cherry-erryp27975.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-g110-open-pore-black-cherry-erryp32836.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-g110-open-pore-black-lackp27976.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-g110-open-pore-sunburst-urstp27974.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g110-opsb-8809625369620.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g200-blk-8809817980992.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g200-ppk-8809817980978.html</loc></url>
@@ -240,18 +289,26 @@
   <url><loc>https://guitle.com/g/cort-g250se-obg-8809817982439.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g250se-odg-8809817982415.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g250se-vvb-8809817082405.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-g290fat-ii-avb-8809625369569.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-g290fat-ii-tbb-8809625369545.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g300-glam-pimb-8809817080913.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g300-pro-bk-8809625368036.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g300-pro-mgd-8809817980930.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-g300-pro-mgd-8809817981029.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g300-pro-vvb-8809625368012.html</loc></url>
   <url><loc>https://guitle.com/g/cort-g300-raw-ns-8809817980923.html</loc></url>
   <url><loc>https://guitle.com/g/cort-guit-elect-g290-modern-mbg-8809817987021.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx100-bkm-8809625361990.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-kx100-io-8809383832039.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx100-io-8809625361983.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-kx100-ma-8809383832022.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx100-ma-8809625361976.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-kx300-natural-8809383831995.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx307ms-opbk-8809625369507.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx307ms-opm-8809625369514.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx500-pale-moon-nbb-8809817986567.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-kx507-multi-scale-star-dust-black-lackp40555.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-kx507ms-pale-moon-ebony-bonyp41574.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx507ms-pm-nbb-8809817985447.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx508ms-ii-mbb-8809817980015.html</loc></url>
   <url><loc>https://guitle.com/g/cort-kx600-infinite-bks-w-bag-8809817986550.html</loc></url>
@@ -272,6 +329,7 @@
   <url><loc>https://guitle.com/g/cort-space-g6tr-sglv-w-bag-8809817986963.html</loc></url>
   <url><loc>https://guitle.com/g/cort-x100-opbb-8809625362171.html</loc></url>
   <url><loc>https://guitle.com/g/cort-x100-opbc-8809625368166.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-x100-opbk-8809383832305.html</loc></url>
   <url><loc>https://guitle.com/g/cort-x100-opbk-8809625362157.html</loc></url>
   <url><loc>https://guitle.com/g/cort-x200-bk-8809817984648.html</loc></url>
   <url><loc>https://guitle.com/g/cort-x200-cbl-8809817984679.html</loc></url>
@@ -285,17 +343,114 @@
   <url><loc>https://guitle.com/g/cort-x700-mutility-ii-ttg-8809817984570.html</loc></url>
   <url><loc>https://guitle.com/g/cort-x700-triality-opbb-w-bag-8809817983573.html</loc></url>
   <url><loc>https://guitle.com/g/cort-x700-triality-opvb-w-bag-8809817983580.html</loc></url>
+  <url><loc>https://guitle.com/g/cort-yorktown-tab-8809383831728.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-brandon-niederauer-atlantic-sonic-blue-680196089968.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-d-angelico-premier-atlantic-black-flake-684753088593.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-d-angelico-premier-atlantic-sky-blue-684753088609.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-d-angelico-premier-brighton-black-flake-684753088623.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-d-angelico-premier-brighton-oxblood-684753088647.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-d-angelico-premier-brighton-sky-blue-684753088630.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-d-angelico-premier-mini-dc-black-flake-684753088579.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-d-angelico-premier-ss-black-flake-684753088586.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-59-satin-brown-burst-687700224631.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-59-satin-honey-687700224648.html</loc></url>
   <url><loc>https://guitle.com/g/d-angelico-deluxe-59-stw-687700224624.html</loc></url>
-  <url><loc>https://guitle.com/g/d-angelico-deluxe-atlantic-vs-684753088838.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-atlantic-baritone-sb-lsbkgshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-atlantic-baritone-sw-lmwlnshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-atlantic-desert-gold-684753088814.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-atlantic-matte-walnut-684753088821.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-atlantic-solid-black-sbk2gshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-atlantic-vintage-sunburst-lvsbnshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-bedford-sh-desert-gold-hdsgnshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-bedford-sh-matte-walnut-mwlntrhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-bedford-sh-negra-hsbkgshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-bedford-tremolo-dg-687700223955.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-bedford-tremolo-mw-mwlntrhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-bedford-tremolo-sb-sbkgtrhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-brighton-desert-gold-684753088876.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-brighton-matte-walnut-684753088883.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-brighton-solid-black-687700223962.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-brighton-vintage-sunburst-684753088890.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-dc-satin-honey-stopbar-cshngshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-dc-sbb-stopbar-csbbgshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-dc-trans-wine-stopbar-cstwgshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-mini-dc-sbb-stopbar-687700224693.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-mini-dc-sh-stopbar-687700224686.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-mini-dc-tw-stopbar-cstwgshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-ss-baritone-sh-687700223979.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-ss-baritone-stw-687700223986.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-ss-satin-brown-burst-ssbbgthtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-ss-satin-honey-687700224723.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-deluxe-ss-trans-wine-687700224730.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-59-black-dog-684753088807.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-59-solid-black-sbk2gthtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-59-trans-cherry-9tchgthtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-59-vintage-natural-684753088784.html</loc></url>
   <url><loc>https://guitle.com/g/d-angelico-excel-59-vio-684753088791.html</loc></url>
   <url><loc>https://guitle.com/g/d-angelico-excel-dc-amber-810114583371.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-black-dog-6877002224877.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-tour-collect-sb-810114580363.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-tour-collect-ssb-slbsnshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-tour-collect-sw-810114580387.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-trans-cherry-687700224037.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-vintage-natural-684753088708.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-viola-cviogshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-xt-itb-quilt-687700224044.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-dc-xt-vintage-natural-quilt-687700224013.html</loc></url>
   <url><loc>https://guitle.com/g/d-angelico-excel-exl-1-amber-810114582909.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-gramercy-autumn-burst-atbgp2html.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-black-dog-684753088746.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-negra-680196090735.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-tour-collect-sb-810114580394.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-tour-collect-ssb-810114580417.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-tour-collect-sw-810114580400.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-trans-cherry-680196090742.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-vintage-natural-vnatgshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-mini-dc-viola-684753088739.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-black-dog-684753088777.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-semi-hollow-vintage-natural-vnatgthtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-solid-black-687700224068.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-tour-collect-sb-sbksnshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-tour-collect-ssb-810114580431.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-tour-collect-sw-swnsnshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-trans-cherry-687700224075.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-viola-sviogthtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-xt-itb-quilt-qitbgshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-ss-xt-vn-quilt-687700224051.html</loc></url>
   <url><loc>https://guitle.com/g/d-angelico-excel-style-b-amber-tylebamber.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-excel-style-b-viola-red-680196090728.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-atlantic-oxblood-684753088616.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-bedford-black-flake-687700224099.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-bedford-oxblood-687700224112.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-bedford-sh-black-flake-684753088654.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-bedford-sh-navy-blue-nvbctrhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-bedford-sh-oxblood-hoxbcshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-bedford-sh-sky-blue-684753088661.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-bedford-sky-blue-sbmctrhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-brandon-niederauer-atlantic-sonic-blue-684753088685.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-brighton-ice-blue-metallic-iibmcshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-dc-black-flake-4913400153046.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-dc-boardwalk-ibm-680196090148.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-dc-boardwalk-p90-ice-blue-metal-680196090179.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-dc-double-cut-fi-red-680196089692.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-dc-sky-blue-687700224136.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-exl1-archtop-fiesta-red-680196089722.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-exl1-archtop-ocean-turq-680196086424.html</loc></url>
   <url><loc>https://guitle.com/g/d-angelico-premier-exl1-honey-blonde-oneyblonde.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-exl1-satin-honey-blonde-l1shbthtml.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-exl1-satin-walnut-852675171437.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-mini-dc-champagne-680196090674.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-mini-dc-ocean-turqois-680196090667.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-mini-dc-sky-blue-687700224174.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-ss-fabrizio-sotti-fb-680196090056.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-ss-sky-blue-687700224181.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-ss-stop-bar-fiesta-red-680196089708.html</loc></url>
+  <url><loc>https://guitle.com/g/d-angelico-premier-ss-stop-bar-ocean-turqoise-680196087049.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-12s-blk-611820024000.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-56-vintage-baritone-red-metallic-611820022426.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-57-blk-611820027995.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-57-jade-611820027988.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-59-divine-flame-maple-e78234html.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59-divine-walnut-611820026561.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59-triple-divine-black-611820026615.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59-triple-divine-blue-metallic-611820026639.html</loc></url>
@@ -310,6 +465,7 @@
   <url><loc>https://guitle.com/g/danelectro-59m-nos-deep-blue-metalflake-611820027285.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59m-nos-go-go-blue-611820027315.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59m-nos-keen-green-611820027254.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-59m-nos-left-black-611820027391.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59m-nos-left-black-611820028756.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59m-nos-orange-metalflake-611820027247.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-59m-nos-red-metalflake-611820027230.html</loc></url>
@@ -323,8 +479,11 @@
   <url><loc>https://guitle.com/g/danelectro-64xt-blk-611820022501.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-64xt-daqu-611820022549.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-64xt-vcrm-611820022525.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-66t-3-tone-sunburst-t78270html.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-66t-black-k78271html.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-66t3ts-611820022730.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-66tblk-611820022709.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-67-dano-yellow-w78273html.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-67dano-red-611820022815.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-67dano-yw-611820022822.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-baby-sitar-611820028718.html</loc></url>
@@ -332,6 +491,8 @@
   <url><loc>https://guitle.com/g/danelectro-bar-bkmf-611820523107.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-bar-left-blk-611820027964.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-bar-smf-611820523114.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-baritone-dolphin-headstock-black-metalflake-e78276html.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-baritone-dolphin-headstock-silver-metalflake-e78278html.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-blackout-59-black-metalflake-611820021818.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-blackout-59-green-envy-611820021825.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-blackout-59-purple-metalflake-611820021801.html</loc></url>
@@ -362,6 +523,9 @@
   <url><loc>https://guitle.com/g/danelectro-vintage-12str-gloss-black-611820022082.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-vintage-12str-guitar-red-metallic-611820022075.html</loc></url>
   <url><loc>https://guitle.com/g/danelectro-vintage-12str-vintage-white-611820022068.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-vintage-baritone-dark-aqua-a78289html.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-vintage-baritone-gloss-black-k78290html.html</loc></url>
+  <url><loc>https://guitle.com/g/danelectro-vintage-baritone-vintage-white-e78292html.html</loc></url>
   <url><loc>https://guitle.com/g/daytona-st-309bk-negro-8436032359842.html</loc></url>
   <url><loc>https://guitle.com/g/daytona-st-309bl-azul-8436032359859.html</loc></url>
   <url><loc>https://guitle.com/g/daytona-st-309lh-zurdos-8436032359866.html</loc></url>
@@ -376,7 +540,6 @@
   <url><loc>https://guitle.com/g/duesenberg-fantom-a-aged-white-737713518767.html</loc></url>
   <url><loc>https://guitle.com/g/duesenberg-fantom-a-black-737713518774.html</loc></url>
   <url><loc>https://guitle.com/g/duesenberg-fantom-s-lumina-green-737713520340.html</loc></url>
-  <url><loc>https://guitle.com/g/duesenberg-julietta-catalina-black-737713520371.html</loc></url>
   <url><loc>https://guitle.com/g/duesenberg-julietta-catalina-blue-737713518699.html</loc></url>
   <url><loc>https://guitle.com/g/duesenberg-lapsteel-fairytale-harbor-green-white-737713518866.html</loc></url>
   <url><loc>https://guitle.com/g/duesenberg-lapsteel-kalico-tobacco-burst-737713520777.html</loc></url>
@@ -404,6 +567,7 @@
   <url><loc>https://guitle.com/g/eastman-sb59-v-antique-classic-queclassic.html</loc></url>
   <url><loc>https://guitle.com/g/eastman-sb59-v-rb-846940000256.html</loc></url>
   <url><loc>https://guitle.com/g/eastman-t486-gb-846940000225.html</loc></url>
+  <url><loc>https://guitle.com/g/eko-aire-relic-sb-8056734493757.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-1959-es-355-classic-white-711106150413.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-1959-les-paul-standard-reissue-dark-burst-711106165837.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-1959-les-paul-standard-reissue-deep-cherry-sunburst-711106165806.html</loc></url>
@@ -423,6 +587,7 @@
   <url><loc>https://guitle.com/g/epiphone-1963-les-paul-sg-custom-with-maestro-vibrola-classic-white-711106146454.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-1964-sg-standard-with-maestro-vibrola-reissue-cherry-red-711106165929.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-alex-lifeson-1976-es-355-reissue-alpine-white-711106237336.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-alex-lifeson-les-paul-custom-axcess-711106103778.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-b-b-king-lucille-eb-711106060675.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-broadway-vs-711106128924.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-casino-an-711106097350.html</loc></url>
@@ -430,17 +595,21 @@
   <url><loc>https://guitle.com/g/epiphone-casino-vintage-sunburst-711106097367.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-coronet-cherry-711106045672.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-coronet-ebony-711106045733.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-crestwood-custom-cherry-711106046068.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-emperor-swingster-delta-blue-metallic-711106045214.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-emperor-swingster-fgm-711106045238.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-335-block-cb-711106159850.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-335-block-cr-711106159867.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-335-figured-blueberry-burst-711106045108.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-335-figured-blueberry-burst-inspired-by-gibson-444412003742.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-335-figured-raspberry-tea-burst-711106045122.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-es-335-ig-original-es-cherry-711106043999.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-335-olive-drab-711106144702.html</loc></url>
-  <url><loc>https://guitle.com/g/epiphone-es-335-vintage-sunburst-711106044019.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-es-339-ig-original-es-cherry-711106042305.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-339-vintage-sunburst-711106042367.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-345-varitone-stop-tail-eb-711106150826.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-es-355-dragonfly-shift-711106235974.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-es335-vintage-sunburst-711106044019.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-explorer-80s-emg-cw-711106166360.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-explorer-80s-emg-eb-711106166377.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-explorer-ruby-red-metallic-711106145594.html</loc></url>
@@ -506,7 +675,12 @@
   <url><loc>https://guitle.com/g/epiphone-masterbilt-gem-archer-sheraton-cherry-red-711106178325.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-matt-heafy-les-paul-custom-origins-eb-711106060767.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-noel-gallagher-riviera-dark-red-wine-711106088969.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-power-player-les-paul-ice-blue-711106086323.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-power-player-les-paul-lava-red-711106086316.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-power-player-sg-dme-711106090719.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-power-player-sg-ice-blue-711106086347.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-riviera-royal-tan-711106043203.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-riviera-sparkling-burgundy-711106043227.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-sg-custom-alpine-white-711106156828.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-sg-custom-alpine-white-711106156835.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-sg-custom-futura-midnight-ember-shift-711106236056.html</loc></url>
@@ -534,13 +708,28 @@
   <url><loc>https://guitle.com/g/epiphone-usa-coronet-ebony-711106143187.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-usa-coronet-vintage-cherry-711106143194.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-waxx-nighthawk-studio-pelham-blue-711106137650.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-wilshire-p-90-cherry-711106045597.html</loc></url>
+  <url><loc>https://guitle.com/g/epiphone-wilshire-p-90-ebony-711106045849.html</loc></url>
   <url><loc>https://guitle.com/g/epiphone-yungblud-sg-junior-classic-white-711106146546.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-arrow-black-799493248371.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-arrow-snow-white-799493265040.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-eclipse-bb-black-satin-799493254839.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-black-natural-burst-799493265118.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-bm-blue-nat-fade-fadep24737.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-burl-maple-blue-natural-fade-fadep44609.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-eclipse-db-vintage-black-840248009157.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-full-thickness-blknb-799493265118.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-evertune-black-satin-799493259070.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-evertune-blks-blksp29627.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-ft-fm-sd-vhb-dvhbp25771.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-full-thickness-vintage-honey-burst-799493275049.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-ojo-de-tigre-resplandor-solar-olarp44611.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-qm-rdb-mrdbp29013.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-eclipse-reindeer-blue-799493275056.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-eclipse-snow-white-satin-799493265095.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-eclipse-tiger-eye-sunburst-719710616721.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-ex-nt-black-799493275063.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-ex-nt-snow-white-799493275070.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-frx-rdb-840248007054.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-fr-7-blk-black-840248010610.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-fr-7-qm-btb-onfr7qmbtb.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-fr-black-natural-burst-799493265156.html</loc></url>
@@ -548,67 +737,125 @@
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-fr-ii-emg-see-thru-black-cherry-sunburst-799493275087.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-fr-ii-emg-tiger-eye-sunburst-799493254778.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-fr-reindeer-blue-840248007184.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-iii-azul-reno-con-estuche-uchep44667.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-iii-fm-fr-see-thru-black-sunburst-799493275025.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-iii-reindeer-blue-840248008907.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-bpg-799493262551.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-bpg-ibpgp23911.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-emg-see-thru-black-cherry-sunburst-799493275094.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-emg-stbcsb-bcsbp26442.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-gradacion-azul-purpura-purap44610.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-see-thru-black-sunburst-799493254785.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-stblksb-lksbp11581.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-tiger-eye-amber-fade-799493265149.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-nt-ii-tiger-eye-sunburst-451530325391.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-horizon-qm-fr-rdb-rrdbp23915.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-m-i-thru-nt-bks-840248010597.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-m-i-thru-nt-qm-stblksb-719710620865.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-m-ii-nt-black-natural-fade-799493265163.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-m-ii-see-thru-black-840248008976.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-maverick-andromeda-ii-satin-719710629851.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-sn-2-bm-nblkb-blkbp41083.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-sn-2-bnf-799493265927.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-e-ii-sn-2-nebula-black-burst-799493275117.html</loc></url>
   <url><loc>https://guitle.com/g/esp-e-ii-viper-stbch-719710616790.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-eclipse-custom-40th-anniversary-see-thru-black-sunburst-urstp42215.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-eclipse-custom-slmb-slmbp41781.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-eclipse-custom-st-black-sb-cksbp41780.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-eclipse-custom-tiger-eye-sb-yesbp44613.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-horizon-fr-ctm-see-thru-black-burst-urstp42212.html</loc></url>
   <url><loc>https://guitle.com/g/esp-horizon-i-andromeda-ii-799493267211.html</loc></url>
   <url><loc>https://guitle.com/g/esp-horizon-nt-7-et-blk-799493259056.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-horizon-nt-ii-bgp-799493262551.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-horizon-nt-cmt-indigo-purple-rplep42210.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-horizon-nt-ctm-antique-brown-sunburst-original-series-riesp42079.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-iron-cross-james-hetfield-840248006811.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-iron-cross-sw-signature-james-hetfield-ssswp39551.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-james-hetfield-signature-vulture-olympic-white-hitep44612.html</loc></url>
   <url><loc>https://guitle.com/g/esp-kh-3-spider-30th-anniversary-c-estuche-840248002080.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-kh-3-spider-30th-anniversary-saryp42085.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-alexi-laiho-arrowhead-headp44470.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-alexi-ripped-sawtooth-purple-fade-satin-799493273328.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-alr-ii-qm-stp-andy-laroque-oquep41480.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-andy-larocque-alr-ii-see-thru-purple-719710627468.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-arrow-1000-candy-apple-red-eredp39642.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-arrow-1000-pw-00pwp44332.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-arrow-200-mgs-lh-gslhp40507.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-arrow-400-charcoal-metallic-719710629028.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-arrow-400-cm-00cmp44333.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-arrow-400-sm-00smp44334.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-arrow-qm-dark-brown-burst-urstp38461.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-as-1-fr-alex-skolnick-lb-cklbp41716.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-bb-200-baritone-qm-see-thru-black-sunburst-satin-719710629387.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-cs-ii-caleb-shomo-signature-vintage-natural-uralp41717.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-10-blk-0blkp14517.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-baritone-charcoal-metallic-satin-719710614437.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-ec-1000-blk-fluence-719710620247.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1000-black-lackp11584.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-cars-719710629080.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-evertune-bb-blks-blksp41710.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1000-ft-black-fluence-encep38083.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-granite-sparkle-719710629097.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-granito-brillante-antep44335.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-pearl-white-719710629103.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-pw-00pwp44336.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-qm-stbc-fluence-719710620230.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-vb-lh-vintage-black-840248016292.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1000fm-amber-sunburst-urstp14786.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1000qm-stbc-stbcp23923.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000t-ctm-evertune-black-719710614475.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000t-fm-hbs-f-honey-burst-satin-799493264777.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1000t-honey-burst-satin-atinp15561.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000t-qm-charcoal-burst-719710614420.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1000vb-duncan-ncanp14518.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-200dx-blb-xblbp37667.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-200dx-chb-xchbp37668.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-201-black-lackp40275.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-2025-50th-anniv-mg-ltd-gltdp40924.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-2025-mgo-719710628274.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256-black-satin-atinp14516.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256-candy-apple-red-st-edstp36416.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-qm-car-s-719710620162.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-qm-stbc-sb-719710620179.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-silver-sunburst-teardrop-719710627642.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-vintage-gs-719710620155.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256-vn-56vnp17398.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256fm-cobalt-blue-bluep11586.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256fm-dbsb-dbsbp12702.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256fm-stpsb-tpsbp11543.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-400-qm-stbs-719710629066.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-400-qm-transparente-negro-sunburst-urstp44337.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-400-qm-vb-719710629073.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-400-qm-vintage-burst-urstp44338.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-401-black-lackp15070.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-401qm-see-thru-black-satin-atinp35126.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-black-metal-black-satin-atinp34855.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ex-200-owt-840248028745.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ex-201-black-719710627659.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-exl-200-black-lackp45236.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-exl-black-metal-ii-black-redburst-satin-719710629127.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gh-200-blk-gary-holt-signature-799493249040.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gh-600-blk-gary-holt-signature-799493249057.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-gh-sv-200-blk-0blkp36415.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gh-sv-blk-gary-holt-signature-719710619876.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-gl-desert-eagle-aglep38460.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-h-1001-violet-andromeda-satin-atinp39693.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-h-1001fr-blknb-799493268065.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-h-200fm-dark-brown-sb-wnsbp11585.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-h3-1000-qm-stbc-stbcp31679.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-iron-cross-sw-ssswp11573.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-jm-i-qm-deep-blood-moon-moonp39649.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-kh-202-blk-kirk-hammett-mettp15838.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-kh-3-spider-iderp36151.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-kh-v-black-sparkle-rklep35788.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-kh-v-bsp-kirk-hammett-signature-719710616813.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-kh-v-mgo-kirk-hammett-signature-719710616820.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-m-1000-ht-bp-blkfd-799493268096.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-kh-v-red-sparkle-rklep40535.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-kh-wz-khwzp40592.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-1000-maple-black-719710627833.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-1000-snow-white-719710614581.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-m-1000ht-bp-black-fade-fadep35787.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-1001-cms-719710620278.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-m-200dx-nt-blb-tblbp37669.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-m-200dx-nt-pb-ntpbp37671.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-200fr-blk-719710629417.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-201-baritone-ht-black-719710627673.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-207b-dx-crimson-satin-719710630222.html</loc></url>
@@ -626,12 +873,16 @@
   <url><loc>https://guitle.com/g/esp-ltd-mh-400-emg-snow-white-719710629202.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mh-400-ht-qm-transparente-negro-sunburst-urstp44341.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mh-400ht-qm-stbs-719710629196.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mh1000-nt-fm-charcoal-coalp38084.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mirage-deluxe-87-turq-turquoise-799493270549.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-mt-130-black-840248029339.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-mt-130-blue-799493263305.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-msv-1-blk-mike-schleibaum-baump39648.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-azul-cielo-ielop44439.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-blk-0blkp40084.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-blue-bluep40086.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mt-130-grey-greyp41803.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-mt-130-red-840248014304.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-mt-130-snow-white-840248029346.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-neon-green-reenp40085.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-red-0redp40087.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-snow-white-hitep40088.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mt-i-mick-thomson-signature-black-satin-719710628151.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-phoenix-1000-stbs-lh-719710616479.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-phoenix-201-black-719710627680.html</loc></url>
@@ -642,28 +893,57 @@
   <url><loc>https://guitle.com/g/esp-ltd-signature-iron-cross-j-hetfield-lefthand-799493247688.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-signature-jh-600-jeff-hanneman-blk-719710620018.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-signature-joe-duplantier-jd-i-719710629424.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-signature-kh-v-mgo-vmgop35130.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-signature-kh602-blk-lh-840248001854.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-sn-1000-ht-silver-blast-lastp39645.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-sn-1ht-blkblst-719710627765.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-snakebyte-blks-blksp11582.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-snakebyte-blks-james-hetfield-799493255027.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-snakebyte-sw-james-hetfield-840248016063.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-snakebyte-sw-teswp25727.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-te-1000-silver-blast-lastp39646.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-te-200-tsb-0tsbp35128.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-te-200r-sw-799493254662.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-th-400-charcoal-metallic-719710629288.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-viper-10-blk-0blkp23924.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-viper-1000-black-cherry-erryp31682.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-vulture-bks-hetfield-ieldp11594.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-vulture-ow-james-hetfield-signature-719710616806.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-wa-warbird-will-adler-bk-erbkp41192.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-xj-2ht-snow-white-719710629332.html</loc></url>
   <url><loc>https://guitle.com/g/esp-m-ii-7b-baritone-evertune-gnsp-ertunegnsp.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-m-ii-dx-see-thru-black-sunburst-urstp42174.html</loc></url>
   <url><loc>https://guitle.com/g/esp-mh-200ht-qm-dbs-719710629189.html</loc></url>
   <url><loc>https://guitle.com/g/esp-original-eclipse-ctm-stblksb-ctmstblksb.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-original-horizon-fr-ctm-faded-sky-blue-bluep42077.html</loc></url>
   <url><loc>https://guitle.com/g/esp-original-horizon-ii-nt-blk-e2421252-4515303256154.html</loc></url>
   <url><loc>https://guitle.com/g/esp-original-horizon-nt-ctm-see-thru-black-burst-e2010252-444410041022.html</loc></url>
   <url><loc>https://guitle.com/g/esp-original-m-ii-ctm-nt-eb-black-e9510262-444410041021.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-sn-201-ht-bk-htbkp39554.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-snakebyte-camo-camop44395.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-snakebyte-james-hetfield-840248016087.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-usa-eclipse-qm-teasb-sd-nh-gloss-lossp42172.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-usa-eclipse-teal-marble-satin-emg-bh-mgbhp41949.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-usa-horizon-ii-fm-emg-bh-lynchburst-urstp42211.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-usa-horizon-ii-fm-fsh-bh-blood-moon-moonp41948.html</loc></url>
   <url><loc>https://guitle.com/g/esp-usa-horizon-ii-ii-qm-stblksb-fl-bh-us25606-444410041024.html</loc></url>
   <url><loc>https://guitle.com/g/esp-usa-m-ii-dx-qm-stblksb-fl-ch-us25601-444410041026.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-vulture-black-satin-atinp42082.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-5150-deluxe-burl-aqua-burst-urstp28067.html</loc></url>
   <url><loc>https://guitle.com/g/evh-5150-guitars-std-series-ebny-fb-stea-885978725328.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-5150-series-deluxe-baked-maple-black-lackp43339.html</loc></url>
   <url><loc>https://guitle.com/g/evh-5150-series-deluxe-candy-apple-red-metallic-197955146225.html</loc></url>
   <url><loc>https://guitle.com/g/evh-5150-series-deluxe-qm-limeade-zest-197955146249.html</loc></url>
   <url><loc>https://guitle.com/g/evh-5150-series-deluxe-qm-pacific-drift-197955146232.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-b-frankenstein-relic-series-b-guitarra-eletrica-ricap33105.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-b-frankenstein-relic-series-b-guitarra-eletrica-ricap33106.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-b-frankenstein-relic-series-b-guitarra-eletrica-ricap33107.html</loc></url>
   <url><loc>https://guitle.com/g/evh-frankenstein-series-relic-red-717669905378.html</loc></url>
   <url><loc>https://guitle.com/g/evh-frankenstein-series-relic-white-717669905385.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-limited-edition-frankenstein-relic-series-maple-fingerboard-blueburst-urstp36834.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-limited-edition-frankenstein-relic-series-maple-fingerboard-silverburst-urstp36833.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-limited-edition-frankenstein-relic-series-maple-fingerboard-vintage-sunburst-urstp36832.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-limited-edition-wolfgang-special-striped-series-eb-marfil-envejecido-cidop45312.html</loc></url>
   <url><loc>https://guitle.com/g/evh-ltd-edition-wolfgang-special-striped-series-eb-distressed-ivory-197955146584.html</loc></url>
   <url><loc>https://guitle.com/g/evh-ltd-frankenstein-relic-series-mn-blb-717669905422.html</loc></url>
   <url><loc>https://guitle.com/g/evh-ltd-frankenstein-relic-series-mn-svb-717669905415.html</loc></url>
@@ -673,7 +953,13 @@
   <url><loc>https://guitle.com/g/evh-mij-srs-wolfgang-stealth-wc-885978786688.html</loc></url>
   <url><loc>https://guitle.com/g/evh-sa-126-special-platinum-pearl-metallic-197955145884.html</loc></url>
   <url><loc>https://guitle.com/g/evh-sa-126-special-stealth-matte-army-drab-717669968854.html</loc></url>
-  <url><loc>https://guitle.com/g/evh-striped-frankie-relic-885978438426.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-stripe-black-with-yellow-stripes-885978341900.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-stripe-red-with-black-stripes-885978341894.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-stripe-white-with-black-stripes-885978341917.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-striped-5150-red-885978773442.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-striped-frankie-red-white-black-885978438426.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-striped-frankie-red-white-black-lackp15730.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-striped-lh-rbws-885978899241.html</loc></url>
   <url><loc>https://guitle.com/g/evh-striped-series-circles-satin-w-885978084449.html</loc></url>
   <url><loc>https://guitle.com/g/evh-striped-series-shapes-maple-white-and-black-197955162850.html</loc></url>
   <url><loc>https://guitle.com/g/evh-wolfgang-special-b-y-satin-885978085002.html</loc></url>
@@ -683,14 +969,22 @@
   <url><loc>https://guitle.com/g/evh-wolfgang-special-caution-yellow-197955146508.html</loc></url>
   <url><loc>https://guitle.com/g/evh-wolfgang-special-qm-bkd-mpl-fb-indigo-burst-885978085019.html</loc></url>
   <url><loc>https://guitle.com/g/evh-wolfgang-special-r-b-w-satin-885978084982.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-wolfgang-special-stealth-althp43976.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-wolfgang-special-t-o-m-oxb-moxbp40267.html</loc></url>
   <url><loc>https://guitle.com/g/evh-wolfgang-special-tom-baked-maple-gloss-black-885978462926.html</loc></url>
   <url><loc>https://guitle.com/g/evh-wolfgang-special-tom-baked-maple-husk-white-885978453429.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-wolfgang-std-t-o-m-cream-white-hitep40425.html</loc></url>
   <url><loc>https://guitle.com/g/fender-2024-japan-hybrid-ii-stratocaster-hss-forest-blue-ltd-ed-885978053759.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-60s-jazzmaster-rosewood-fingerboard-black-3-color-sunburst-urstp40346.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-60s-stratocaster-rosewood-fingerboard-black-3-color-sunburst-urstp40341.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-61-strat-sfa3cs-heavy-relic-elicp29142.html</loc></url>
   <url><loc>https://guitle.com/g/fender-70th-anniversary-player-stratocaster-pf-2ts-885978037056.html</loc></url>
   <url><loc>https://guitle.com/g/fender-70th-vintera-ii-antigua-stratocaster-717669564544.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-75-o-aniversario-edicion-limitada-av-ii-51-nocaster-bl-erblp44799.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-american-professional-classic-cabronita-telecaster-mn-ca-885978680252.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-american-professional-classic-cabronita-telecaster-mn-ic-885978680276.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-american-professional-custom-telecaster-mn-2-color-sunbu-885978680221.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-75th-anniversary-american-ultra-ii-telecaster-diapason-de-ebano-oro-liqui-uidop44156.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-american-ultra-ii-telecaster-eb-liquid-gold-885978680214.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-american-vintage-ii-1951-nocaster-mn-blonde-197955197180.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-player-ii-baritone-telecaster-mn-butterscotch-blonde-197955244969.html</loc></url>
@@ -702,17 +996,31 @@
   <url><loc>https://guitle.com/g/fender-75th-anniversary-player-ii-telecaster-rw-diamond-dust-sparkle-885978845071.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-player-ii-telecaster-rw-seafoam-green-197955229386.html</loc></url>
   <url><loc>https://guitle.com/g/fender-75th-anniversary-vintera-road-worn-1951-telecaster-mn-butterscotch-blonde-885978983018.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-affinity-series-lrl-wpg-3-color-sunburst-urstp25438.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-affinity-series-olympic-white-hitep25659.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-affinity-series-stratocaster-mustang-micro-pack-laurel-fingerboard-black-lackp36972.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-affinity-starcaster-dlx-owt-xowtp37478.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-am-pro-clsc-tele-rw-fblk-fblkp44673.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-am-pro-ii-strat-hss-mn-rst-pin-tpinp39357.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-am-ultra-strat-rw-arctic-pearl-885978194766.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-custom-stratocaster-nos-xn18481-444410040344.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-perf-telecaster-rw-satin-sonic-blue-bluep18320.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-performer-mustang-rw-vwt-885978952809.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-performer-stratocaster-mn-satin-lpb-nlpbp15323.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-performer-telecaster-maple-fingerboard-honey-burst-urstp36763.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-hot-shot-telecaster-mn-aged-cherry-burst-885978990559.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-hot-shot-telecaster-mn-butterscotch-blonde-885978990566.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-hot-shot-telecaster-rw-3cs-885978990535.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-hot-shot-telecaster-rw-dark-night-885978990528.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-hot-shot-telecaster-rw-oxblood-197955168739.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-pro-ii-stratocaster-hss-3ts-885978436125.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-stratocaster-mn-miami-blue-885978578665.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-pro-ii-stratocaster-mn-mystic-surf-green-885978578672.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-stratocaster-rw-3-color-sunburst-885978436118.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-stratocaster-rw-dark-night-885978577644.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-stratocaster-rw-mbl-885978657612.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-stratocaster-rw-rst-pin-885978577569.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-pro-ii-telecaster-mb-885978657667.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-telecaster-mn-blk-885978577361.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-telecaster-mn-sienna-sunburst-885978577309.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-pro-ii-telecaster-rw-3tsb-885978436156.html</loc></url>
@@ -784,8 +1092,10 @@
   <url><loc>https://guitle.com/g/fender-american-professional-classic-telecaster-sss-mn-faded-lake-placid-blue-885978388172.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-classic-telecaster-sss-rw-butterscotch-blonde-885978638840.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-classic-telecaster-sss-rw-faded-sherwood-green-meta-885978388165.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-professional-ii-hss-maple-fingerboard-olympic-white-hitep25758.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-jazzmaster-rw-3-color-sunburst-885978436187.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-jazzmaster-rw-dark-night-885978579631.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-professional-ii-stratocaster-hss-rw-dark-night-ightp20261.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-stratocaster-hss-rw-olympic-white-885978578788.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-stratocaster-mn-3-color-suburst-885978598755.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-stratocaster-mn-black-885978578702.html</loc></url>
@@ -795,6 +1105,7 @@
   <url><loc>https://guitle.com/g/fender-american-professional-ii-tele-mn-roasted-pine-885978577316.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-telecaster-mn-3-color-sunburst-885978577347.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-telecaster-mn-butterscotch-blonde-885978603152.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-professional-ii-telecaster-mn-sienna-sunburst-urstp20267.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-telecaster-rw-dark-night-885978577293.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-ii-telecaster-rw-myst-sfg-885978657698.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-professional-stratocaster-black-lackp45619.html</loc></url>
@@ -845,7 +1156,7 @@
   <url><loc>https://guitle.com/g/fender-american-vintage-ii-1963-telecaster-rw-3-color-sunburst-885978840854.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-vintage-ii-1963-telecaster-rw-crimson-red-transparent-885978840861.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-vintage-ii-1963-telecaster-rw-sea-foam-green-885978840878.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-american-vintage-ii-1963-telecaster-rw-vbl-197955136752.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-american-vintage-ii-1963-telecaster-rw-vintage-blonde-197955136752.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-vintage-ii-1966-jazzmaster-rw-3-color-sunburst-885978734382.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-vintage-ii-1973-stratocaster-mn-mocha-885978840830.html</loc></url>
   <url><loc>https://guitle.com/g/fender-american-vintage-ii-1973-stratocaster-rw-aged-natural-885978840847.html</loc></url>
@@ -865,6 +1176,10 @@
   <url><loc>https://guitle.com/g/fender-artist-richie-kotzen-telecaster-mn-brown-sunburst-255202532.html</loc></url>
   <url><loc>https://guitle.com/g/fender-ben-gibbard-mustang-mn-natural-885978484058.html</loc></url>
   <url><loc>https://guitle.com/g/fender-brad-paisley-road-worn-tele-mn-black-sparkle-885978777266.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-brent-mason-tele-mn-primer-gray-885978732302.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-buddy-guy-polka-st-mn-bk-717669171346.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-chris-shiflett-tl-dlx-rw-shg-885978612345.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-chrissie-hynde-telecaster-blue-me-885978436309.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1952-telecaster-hvrel-cop-mbah-heavy-relic-masterbuilt-andy-h-444410007077.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1952-telecaster-shrel-dwbl-r151015-885978866229.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1952-telecaster-sort-heavy-relic-btb-r128645-444410016366.html</loc></url>
@@ -920,9 +1235,11 @@
   <url><loc>https://guitle.com/g/fender-custom-shop-1959-stratocaster-rw-roasted-heavy-relic-aged-sherwood-green-444410027369.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1959-stratocaster-rw-roasted-heavy-relic-aged-sherwood-green-444410034456.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1959-stratocaster-super-heavy-relic-2-cs-cz581185-444410040341.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-custom-shop-1960-stratocaster-heavy-relic-rosewood-fingerboard-aged-black-urstp38502.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1960-stratocaster-jrn-3tsb-mbah-masterbuilt-andy-hicks-2-444410037192.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1960-stratocaster-nos-3ts-r145341-444410029083.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1960-stratocaster-relic-rw-hss-fr-olw-r145267-444410032961.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-custom-shop-1961-stratocaster-super-heavy-relic-3a-rosewood-fingerboard-a-urstp44108.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1961-telecaster-hevrel-faded-aged-car-885978453726.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1961-telecaster-hvrl-aged-sonic-blue-197955224329.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1963-stratocaster-owt-mbah-heavy-relic-masterbuilt-andy-hicks-444410004112.html</loc></url>
@@ -940,18 +1257,20 @@
   <url><loc>https://guitle.com/g/fender-custom-shop-1963-stratocaster-relic-aged-lake-placid-blue-metallic-cz5627-444410034454.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1963-stratocaster-relic-aged-shoreline-gold-metallic-cz562357-444410027303.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1963-telecaster-jrn-vwt-cz590473-885978987146.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-custom-shop-1967-relic-strat-444412000736.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-custom-shop-1967-stratocaster-heavy-relic-aged-seafoam-green-885978877584.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-1969-stratocaster-relic-car-mbgf-masterbuilt-greg-fessler-r11-444410007335.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-custom-shop-50-rownp38115.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-50-s-stratocaster-hvyrel-blk-over-vb-masterbuilt-andy-hicks-r-444410027370.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-50-s-stratocaster-hvyrel-blk-over-vb-masterbuilt-andy-hicks-r-444410039299.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-51-nocaster-relic-fbk-mbtk-masterbuilt-todd-krause-r140652-444410028806.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-51-nocaster-super-heavy-relic-444412000721.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-53-telecaster-super-heavy-relic-444412000722.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-54-stratocaster-relic-aged-black-717669959494.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-custom-shop-57-telecaster-journeyman-relic-mn-aged-candy-apple-red-885978498758.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-59-strat-journeyman-relic-444412000726.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-59-super-heavy-relic-telecaster-444412000729.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-60-telecaster-custom-heavy-relic-444412000730.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-custom-shop-62-stratocaster-heavy-relic-444412000713.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-custom-shop-62-stratocaster-heavy-relic-717669801786.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-63-strat-super-heavy-relic-717669952686.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-67-hss-stratocaster-heavy-relic-444412000735.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-70th-anniversary-444412000724.html</loc></url>
@@ -966,27 +1285,42 @@
   <url><loc>https://guitle.com/g/fender-custom-shop-john-5-phantom-telecaster-blk-885978795031.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-limited-edition-1964-heavy-relic-aowt-717669950927.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-mischief-maker-heavy-relic-444412000739.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-custom-shop-postmodern-stratocaster-journeyman-relic-cc-hw-aged-vintage-w-885978877782.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-stratocaster-mbd-stars-surf-pearl-green-r124109-refurbished-444460000053.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-tomatillo-strat-special-super-faded-aged-sherwood-green-metal-444412000742.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop-yngwie-malmsteen-signatur-stratocaster-nos-vwt-r140429-885978208210.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shop1968-telecaster-jrn-3ts-cz582710-444410040343.html</loc></url>
   <url><loc>https://guitle.com/g/fender-custom-shopt-59-heavy-relic-stratocaster-444412000727.html</loc></url>
   <url><loc>https://guitle.com/g/fender-customshop-2007-ltd-edition-57-relic-stratocaster-444412000725.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-dave-murray-strat-rw-2tsb-885978613229.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-eric-clapton-st-pw-717669132934.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-eric-clapton-st-tr-717669132941.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-eric-johnson-st-mn-2sb-717669315948.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-eric-johnson-st-rw-tt-717669743833.html</loc></url>
   <url><loc>https://guitle.com/g/fender-eric-johnson-stratocaster-wbl-717669318987.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-ja-90-jim-adkins-il-crt-885978894178.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-ja-90-jim-adkins-telecaster-lrl-swt-885978333431.html</loc></url>
   <url><loc>https://guitle.com/g/fender-ja90-jim-adkins-telecaster-thinline-natural-885978894161.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-james-burton-tl-mn-bpf-717669502218.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-james-burton-tl-mn-rpf-717669502225.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jeff-beck-stratocaster-rw-olympic-white-717669140748.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jeff-beck-stratocaster-rw-surf-green-717669140755.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-jim-root-jazzmaster-eby-wht-885978511433.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jim-root-jazzmaster-flat-black-885978399314.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jim-root-stratocaster-eb-flat-black-717669867812.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jim-root-telecaster-eb-shoreline-gold-197955229324.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jim-root-telecaster-flat-wh-717669610555.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-jimi-hendrix-strat-mn-3ts-885978030422.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jimi-hendrix-stratocaster-mn-olympic-white-885978648870.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-jimmie-vaughan-tex-mex-st-mn-ow-717669017552.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638.html</loc></url>
   <url><loc>https://guitle.com/g/fender-jimmy-page-telecaster-rw-natural-885978075645.html</loc></url>
   <url><loc>https://guitle.com/g/fender-john-5-ghost-telecaster-white-197955143569.html</loc></url>
   <url><loc>https://guitle.com/g/fender-john-5-phantom-telecaster-black-197955143545.html</loc></url>
   <url><loc>https://guitle.com/g/fender-john-osborne-telecaster-nm-olympic-white-197955226118.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-johnny-marr-jaguar-ow-885978141913.html</loc></url>
   <url><loc>https://guitle.com/g/fender-johnny-marr-jaguar-rw-metallic-ko-885978155361.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-kenny-wayne-shepherd-strat-rw-trans-faded-sonic-blue-885978311699.html</loc></url>
   <url><loc>https://guitle.com/g/fender-limited-edition-50th-anniversary-dave-murray-stratocaster-rw-black-885978975662.html</loc></url>
   <url><loc>https://guitle.com/g/fender-limited-edition-american-professional-classic-stratocaster-rw-olympic-pea-885978947171.html</loc></url>
   <url><loc>https://guitle.com/g/fender-limited-edition-american-professional-classic-telecaster-rw-olympic-pearl-885978947195.html</loc></url>
@@ -1064,13 +1398,16 @@
   <url><loc>https://guitle.com/g/fender-mike-mccready-stratocaster-rw-3-color-sunburst-717669748777.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jaguar-rw-3-color-sunburst-885978098675.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jaguar-rw-aquatone-blue-885978114535.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-ii-jaguar-rw-birch-green-885978997053.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jaguar-rw-coral-red-885978114542.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jaguar-rw-polar-white-885978114528.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-ii-jaguar-rw-rallye-orange-885978996940.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jazzmaster-ltd-rw-rallye-naranja-anjap44530.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jazzmaster-rw-3-color-sunburst-885978098682.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jazzmaster-rw-aquatone-blue-885978114580.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jazzmaster-rw-birch-green-885978114702.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-jazzmaster-rw-black-885978114573.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-ii-jazzmaster-rw-rallye-orange-885978996933.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-mod-tele-rw-dsk-wdskp44674.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-mod-tele-sh-mn-olp-nolpp45173.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-modified-stratocaster-diapason-de-palisandro-olympic-pearl-earlp44985.html</loc></url>
@@ -1144,7 +1481,6 @@
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-mn-black-885978110698.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-mn-butterscotch-blonde-885978112005.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-mn-mocha-885978112449.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-player-ii-telecaster-modificada-rw-3ts-w3tsp45276.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-rw-aged-cherry-burst-885978112425.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-rw-aquatone-blue-885978110742.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-rw-birch-green-885978111992.html</loc></url>
@@ -1152,13 +1488,22 @@
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-rw-rallye-orange-885978996872.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-rw-transparent-cherry-885978112432.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-ii-telecaster-rw-white-blonde-885978112029.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-plus-stratocaster-os-885978742295.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-plus-stratocaster-tqs-885978742325.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-plus-telecaster-717669576745.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-stratocaster-hsh-pf-tbs-885978909810.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-stratocaster-hss-mn-bcr-885978909735.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-stratocaster-hss-mn-blk-885978909728.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-stratocaster-hss-pf-capri-885978256259.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-stratocaster-lh-mn-tpl-885978909704.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-stratocaster-ltd-black-gold-hardware-885978927845.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-stratocaster-mn-3ts-885978910908.html</loc></url>
   <url><loc>https://guitle.com/g/fender-player-stratocaster-mn-tpl-885978911349.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-player-stratocaster-sfmg-717669636821.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-richie-kotze-tele-mn-bsb-885978322428.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-ritchie-blackmore-rw-ow-717669639877.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-robert-cray-st-rw-3sb-717669212971.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-robert-cray-st-rw-is-717669212988.html</loc></url>
   <url><loc>https://guitle.com/g/fender-signature-kurt-cobain-jaguar-lh-3tsb-885978414437.html</loc></url>
   <url><loc>https://guitle.com/g/fender-special-edition-custom-telecaster-fmt-hh-crt-885978894147.html</loc></url>
   <url><loc>https://guitle.com/g/fender-squier-cv-50s-strat-mn-fr-mnfrp44671.html</loc></url>
@@ -1185,24 +1530,27 @@
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-hss-lr-black-885978118090.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-hss-lr-candy-cola-885978118076.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-hss-mn-aqua-marine-metallic-885978118052.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-standard-stratocaster-lr-3-color-sunburst-885978117901.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-lr-aqua-marine-metallic-885978117925.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-standard-stratocaster-lrl-3-color-sunburst-885978117901.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-lrl-fiesta-red-197955199894.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-mn-black-197955199863.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-mn-candy-cola-885978117871.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-stratocaster-mn-olympic-white-885978117857.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-telecaster-lr-3-color-sunburst-885978118151.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-standard-telecaster-lr-olympic-white-885978118212.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-standard-telecaster-lrl-olympic-white-885978118212.html</loc></url>
   <url><loc>https://guitle.com/g/fender-standard-telecaster-mn-aqua-marine-metallic-885978118113.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-standard-telecaster-mn-butterscotch-blonde-885978118137.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-standard-telecaster-mn-bpg-butterscotch-blonde-885978118137.html</loc></url>
   <url><loc>https://guitle.com/g/fender-steve-lacy-people-pleaser-stratocaster-mn-chaos-burst-717669748784.html</loc></url>
   <url><loc>https://guitle.com/g/fender-stevie-ray-vaughan-stratocaster-pf-3-color-sunburst-717669010195.html</loc></url>
   <url><loc>https://guitle.com/g/fender-stories-collection-eric-johnson-1954-virginia-stratocaster-mn-2-color-sun-885978311675.html</loc></url>
   <url><loc>https://guitle.com/g/fender-susan-tedeschi-telecaster-rw-aged-caribbean-mist-717669632168.html</loc></url>
   <url><loc>https://guitle.com/g/fender-tash-sultana-strat-mn-trnsp-ch-885978603657.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-tom-delonge-starcaster-ssfg-717669950446.html</loc></url>
   <url><loc>https://guitle.com/g/fender-tom-morello-arm-the-homeless-stratocaster-rw-blue-ice-metallic-885978529865.html</loc></url>
   <url><loc>https://guitle.com/g/fender-tom-morello-stratocaster-rw-black-885978511402.html</loc></url>
   <url><loc>https://guitle.com/g/fender-traditional-50s-telecaster-mn-white-blonde-hiteblonde.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-troy-van-leeuwen-jazzmaster-mn-copper-age-885978437245.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-troy-van-leeuwen-jazzmaster-oxblood-885978472253.html</loc></url>
   <url><loc>https://guitle.com/g/fender-vintage-custom-59-hardtail-stratocaster-fasb-r144127-717669711344.html</loc></url>
   <url><loc>https://guitle.com/g/fender-vintera-60s-jazzmaster-pf-mhc-olw-885978077885.html</loc></url>
   <url><loc>https://guitle.com/g/fender-vintera-ii-50s-nocaster-mn-2-color-sunburst-717669920210.html</loc></url>
@@ -1241,8 +1589,14 @@
   <url><loc>https://guitle.com/g/fender-vintera-iii-mid-60s-telecaster-rw-firemist-gold-885978959655.html</loc></url>
   <url><loc>https://guitle.com/g/fender-vintera-iii-mid-60s-telecaster-rw-vintage-blonde-885978959631.html</loc></url>
   <url><loc>https://guitle.com/g/fender-yngwie-malmsteen-signature-stratocaster-mn-vwt-885978159536.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-yngwie-malmsteen-st-mn-vw-717669536275.html</loc></url>
+  <url><loc>https://guitle.com/g/fender-yngwie-malmsteen-st-rw-vw-717669536244.html</loc></url>
+  <url><loc>https://guitle.com/g/fujigen-bos2rhhcc-odyssey-cc-4537239897331.html</loc></url>
   <url><loc>https://guitle.com/g/fujigen-fgn-serie-iliad-j-standard-owb-4537239896327.html</loc></url>
   <url><loc>https://guitle.com/g/fujigen-iliad-boundary-3-tones-sunburst-4537239896471.html</loc></url>
+  <url><loc>https://guitle.com/g/fujigen-nlc10rmawh-tipo-lp-custom-white-4537239106358.html</loc></url>
+  <url><loc>https://guitle.com/g/fujigen-nls11rmpag-les-paul-ag-4537239106396.html</loc></url>
+  <url><loc>https://guitle.com/g/g-l-tribute-asat-cl-bluesboy-s-h-blue-791018369394.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1954-les-paul-reissue-heavy-aged-double-gold-murphy-lab-46017-711106050300.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1954-les-paul-reissue-vos-double-gold-711106926445.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1956-les-paul-goldtop-reissue-vos-double-gold-711106926452.html</loc></url>
@@ -1256,7 +1610,9 @@
   <url><loc>https://guitle.com/g/gibson-1957-les-pual-custom-lefthand-vos-ebony-731687-711106916095.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1958-flying-v-reissue-korina-vos-84950-711106062341.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1958-les-paul-standard-reissue-ultra-light-aged-washed-cherry-sunburst-711106050386.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-1958-les-paul-standard-reissue-vos-washed-cherry-sunburst-711106926599.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1959-es-330-reissue-vintage-burst-a960077-711106024479.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-1959-les-paul-standard-reissue-vos-dirty-lemon-711106024882.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1959-les-paul-standard-reissue-vos-iced-tea-burst-711106024875.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1960-les-paul-junior-doublecut-murphy-lab-ultra-heavy-aged-eb-04788-gedeb04788.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1960-les-paul-special-double-cut-reissue-vos-cherry-red-711106927718.html</loc></url>
@@ -1268,7 +1624,7 @@
   <url><loc>https://guitle.com/g/gibson-1964-es-335-reissue-vos-60s-cherry-150723-711106024585.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-1968-les-paul-custom-vos-ebony-600008-bony600008.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-70s-explorer-antique-natural-711106141916.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-70s-explorer-cw-711106024684.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-70s-explorer-classic-white-711106024684.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-70s-explorer-dark-walnut-711106176130.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-70s-flying-v-antique-natural-711106136899.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-70s-flying-v-classic-white-711106024653.html</loc></url>
@@ -1293,16 +1649,18 @@
   <url><loc>https://guitle.com/g/gibson-es-335-figured-antique-natural-711106034133.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-335-figured-blood-moon-burst-711106153612.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-335-figured-honey-amber-711106153629.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-es-335-figured-iced-tea-711106031002.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-es-335-figured-sixties-cherry-711106025551.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-es-335-figured-original-iced-tea-711106031002.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-es-335-figured-original-sixties-cherry-711106025551.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-335-ocean-blue-711106153599.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-es-335-satin-modern-satin-cherry-711106024981.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-335-satin-vintage-burst-711106025063.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-335-smokehouse-satin-711106223001.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-335-vintage-burst-ntageburst.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-es-339-cherry-711106024745.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-339-figured-blueberry-burst-berryburst.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-339-figured-sixties-cherry-711106025513.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-es-339-trans-ebony-711106024752.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-es-339-modern-cherry-711106024745.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-es-339-modern-trans-ebony-711106024752.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-es-345-original-vintage-burst-711106025544.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-345-sc-60-cherry-711106025537.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-es-supreme-bourbon-burst-711106146652.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-firebird-platypus-ebony-711106155470.html</loc></url>
@@ -1329,6 +1687,8 @@
   <url><loc>https://guitle.com/g/gibson-les-paul-junior-double-cutaway-vintage-cherry-711106531229.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-junior-ebony-711106024639.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-junior-tv-yellow-711106165622.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-les-paul-junior-vintage-tobacco-burst-711106035598.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-les-paul-modern-faded-pelham-blue-top-711106035796.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-modern-figured-cherry-burst-711106137001.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-modern-figured-cobalt-burst-711106136998.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-modern-figured-seafoam-green-711106137018.html</loc></url>
@@ -1344,11 +1704,11 @@
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-faded-vintage-honey-burst-711106158280.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-faded-vintage-tobacco-burst-711106158037.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-figured-top-blueberry-burst-711106139098.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-figured-top-heritage-cherry-sunburst-711106035536.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-figured-top-honey-amber-711106139050.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-figured-top-ocean-blue-711106139074.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-figured-top-tobacco-burst-711106035529.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-goldtop-711106035543.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-heritage-cherry-sunburst-711106035536.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-p-90-goldtop-711106035581.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-50s-plain-top-ebony-711106138930.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-60s-double-trouble-vintage-cherry-sunburst-711106168883.html</loc></url>
@@ -1363,6 +1723,7 @@
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-60s-plain-top-classic-white-711106139012.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-60s-plain-top-ebony-711106138992.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-standard-60s-plain-top-pelham-blue-711106139029.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-les-paul-standard-lh-60s-iced-tea-711106036038.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-studio-blueberry-burst-711106158457.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-studio-dark-711106163192.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-les-paul-studio-dark-ebony-711106163161.html</loc></url>
@@ -1395,7 +1756,7 @@
   <url><loc>https://guitle.com/g/gibson-les-paul-supreme-wine-red-711106118222.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-ltd-1964-es-345-ice-tea-burst-150200-urst150200.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-sg-61-aged-cherry-gh-711106093253.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-sg-modern-trans-black-fade-24f-711106024523.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-sg-modern-trans-black-fade-711106024523.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-sg-modern-trans-black-fade-D1711106024523.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-sg-special-ebony-711106069289.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-sg-special-vintage-cherry-711106069272.html</loc></url>
@@ -1409,17 +1770,21 @@
   <url><loc>https://guitle.com/g/gibson-sg-standard-pelham-blue-burst-711106139173.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-sg-standard-translucent-teal-711106139210.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-sg-standard-tv-yellow-711106139203.html</loc></url>
-  <url><loc>https://guitle.com/g/gibson-slash-les-paul-november-burst-711106036618.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-slash-les-paul-november-burst-lh-711106046150.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-slash-les-paul-standard-appetite-amber-711106036625.html</loc></url>
+  <url><loc>https://guitle.com/g/gibson-slash-les-paul-standard-november-burst-711106036618.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-slash-les-paul-victoria-gt-711106048086.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-theodore-standard-antique-natural-711106129617.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-theodore-standard-vintage-cherry-711106129624.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-victory-figured-top-711106169163.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-victory-tv-yellow-satin-711106169156.html</loc></url>
   <url><loc>https://guitle.com/g/gibson-warren-haynes-les-paul-standard-60s-cherry-711106153582.html</loc></url>
+  <url><loc>https://guitle.com/g/godin-5th-avenue-kingpin-p90-cognac-burst-623501031986.html</loc></url>
   <url><loc>https://guitle.com/g/godin-session-ht-bourbon-burst-rn-623501048427.html</loc></url>
   <url><loc>https://guitle.com/g/godin-session-ht-trans-cream-rn-623501048434.html</loc></url>
   <url><loc>https://guitle.com/g/godin-stadium-ht-havana-brown-mn-with-bag-623501049325.html</loc></url>
+  <url><loc>https://guitle.com/g/godin-stadium-ht-mn-matte-black-623501049332.html</loc></url>
+  <url><loc>https://guitle.com/g/godin-stadium-ht-rn-trans-white-623501049349.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-broadcaster-jr-lx-tropic-aura-885978047994.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-broadkaster-jr-lx-cb-gh-blackberry-885978047963.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-broadkaster-lx-cb-gh-eb-black-885978302925.html</loc></url>
@@ -1439,6 +1804,7 @@
   <url><loc>https://guitle.com/g/gretsch-electromatic-premier-jet-eb-vintage-pearl-885978997978.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g2420-streamliner-hb-chromatic-ii-cd-grn-717669924645.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g2420-streamliner-hlw-sc-vlamb-885978036981.html</loc></url>
+  <url><loc>https://guitle.com/g/gretsch-g2622-p90-streamliner-havana-bur-885978823765.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g2622-streamliner-cb-dc-cdg-885978036561.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g2622-streamliner-cb-dc-gnmtl-717669924287.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g2622-streamliner-center-block-dc-v-stoptail-lrl-copper-metallic-885978680399.html</loc></url>
@@ -1469,14 +1835,19 @@
   <url><loc>https://guitle.com/g/gretsch-g5232t-electromatic-dc-jet-ft-with-bigsby-midnight-sapphire-885978271535.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g5232t-electromatic-double-jet-ft-with-bigsby-lrl-caicos-green-717669886646.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g5232t-electromatic-double-jet-ft-with-bigsby-lrl-kailani-blue-717669886790.html</loc></url>
+  <url><loc>https://guitle.com/g/gretsch-g5655tg-electromatic-cb-jr-cdg-885978152728.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g5655tg-electromatic-center-block-r-qlt-swttea-green-717669878467.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g5700-electromatic-lapsteel-vwt-717669554484.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g5700-lap-steel-tobacco-717669259204.html</loc></url>
+  <url><loc>https://guitle.com/g/gretsch-g6119t-62-vs-tennessean-dark-cherry-stain-885978662326.html</loc></url>
+  <url><loc>https://guitle.com/g/gretsch-g6120t-55-vs-chet-atkins-vos-orange-stain-885978662531.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g6128t-57-vintage-select-duo-jet-cg-885978771547.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g6128t-89-vintage-select-89s-duo-jet-with-bigsby-rw-black-885978746385.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g6129tg-59vs-ltd-rd-sprkl-jet-wc-885978872596.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g6131-my-malcolm-young-signature-jet-eb-nat-885978797295.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-g6134t-58-vintage-select-58s-penguin-with-bigsby-eb-vintage-white-885978771554.html</loc></url>
+  <url><loc>https://guitle.com/g/gretsch-g6136t-55-vs-falcon-vintage-white-885978662814.html</loc></url>
+  <url><loc>https://guitle.com/g/gretsch-g6136t-59vs-falcon-vintage-white-885978663651.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-ltd-edition-electromatic-black-limba-cvt-rw-sunburst-197955147864.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-ltd-edition-electromatic-black-limba-jet-eb-sunburst-197955147888.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-ltd-falcon-center-block-bigsby-gh-eb-vintage-white-885978528684.html</loc></url>
@@ -1497,8 +1868,43 @@
   <url><loc>https://guitle.com/g/gretsch-streamliner-jet-lrl-gunmetal-885978721757.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-streamliner-jet-lrl-jet-black-885978721771.html</loc></url>
   <url><loc>https://guitle.com/g/gretsch-streamliner-jet-lrl-nightshade-purple-885978721795.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-a150-savoy-blonde-614252349123.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-aristocrat-p90-vintage-sunburst-614252349321.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-f240e-natural-614252347761.html</loc></url>
   <url><loc>https://guitle.com/g/guild-guild-surfliner-hh-shoreline-mist-809870309905.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-polara-blue-steel-614252349246.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-polara-deluxe-canyon-dusk-614252350198.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-polara-deluxe-cherry-red-614252349284.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-polara-deluxe-vintage-sunburst-614252349253.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-polara-kim-thayil-vintage-white-614252349291.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-polara-phantom-green-614252349192.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-polara-voltage-yellow-614252349215.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-12-dc-cherry-red-12s-614252350143.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-antique-burst-614252348683.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-dc-california-burts-614252348744.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-dc-cherry-red-614252348713.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-dc-emerald-green-614252350136.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-dc-pelham-blue-614252348751.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-jet-90-satin-black-614252348775.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-i-jet-90-satin-gold-top-614252348782.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-iii-bigsby-cherry-red-614252348805.html</loc></url>
   <url><loc>https://guitle.com/g/guild-starfire-iv-st-nt-614252348874.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-starfire-vi-snowcrest-white-614252348959.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-catalina-blue-614252349376.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-deluxe-black-metallic-614252349444.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-deluxe-evergreen-metallic-614252349451.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-deluxe-rose-quartz-metallic-614252350211.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-hh-canyon-dusk-614252349406.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-hh-soreline-mist-614252350204.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-sunset-orange-614252349345.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-surfliner-sunset-white-sage-614252349369.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-x175-manhattan-sp-gld-614252349055.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-x175-manhattan-special-blue-614252349109.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-x175b-manhattan-blonde-614252349048.html</loc></url>
+  <url><loc>https://guitle.com/g/guild-x350-stratford-scarlet-red-614252349116.html</loc></url>
+  <url><loc>https://guitle.com/g/hagstrom-fantomen-special-cbb-7340071904085.html</loc></url>
+  <url><loc>https://guitle.com/g/hagstrom-swede-crimson-flame-7340071903606.html</loc></url>
+  <url><loc>https://guitle.com/g/hagstrom-swede-gold-7340071903620.html</loc></url>
   <url><loc>https://guitle.com/g/hagstrom-ultra-max-milky-mandarin-satin-7340071903439.html</loc></url>
   <url><loc>https://guitle.com/g/hagstrom-ultra-swede-burgundy-burst-8809179803816.html</loc></url>
   <url><loc>https://guitle.com/g/heritage-custom-shop-1124-h-150-midnight-blue-8885015408063.html</loc></url>
@@ -1507,38 +1913,57 @@
   <url><loc>https://guitle.com/g/ibanez-540piii-bk-4549763368461.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-540piiihh-bk-4549763397935.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-a527-ipt-4549763374844.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-af55-tf-4515110777088.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-af55l-tf-artcore-tobacco-flat-4549763022240.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-af75-bs-4515110215276.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-af75bs-brown-sunburst-af75bshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-af75g-bkf-4515276919919.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-af95-bs-4549763280367.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-af95-da-4549763335692.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-af95fm-ays-4549763061850.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-ag75g-brown-sunburst-4549763307828.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-ag95k-nt-4549763348944.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ag95mg-da-4549763375957.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ag95qa-dbs-4549763061867.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-alpha-a527-nsh-4549763374868.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-alpha-a528-ipt-4549763374837.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-am153fm-att-4549763375896.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-am153qa-dbs-4549763061973.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-am53-tf-4515276764564.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-am73g-bk-4549763375902.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-am93me-nt-4549763165848.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-am93qa-vvh-4549763375926.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-am93qm-jbb-4549763375919.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-amh100fm-dvs-4549763359681.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-amh90-bk-k72157html.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-amh90-iv-4549763335708.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-amh90bk-negra-4549763280374.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ar320-mbm-4549763376404.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ar420-tbg-transparent-blue-gradation-4515110821309.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ar420-vls-violin-sunburst-4515110794146.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-artcore-af75g-bkf-4515276919919.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-artcore-as53-tkf-4515110740402.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-artcore-as73-tbc-tobacco-brown-4515110828162.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-as113-bs-4549763307842.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-ar725-vls-725vlshtml.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as113-bs-artstar-4549763307842.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as53-negro-trans-mate-4515110740402.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as53-tobacco-flat-4515110921818.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as53l-tf-artcore-tobacco-flat-4515110786783.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as63-twilight-orange-454976316588.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as73-tobacco-marron-4515110828162.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as73-trans-cherry-red-4515276919940.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as73-ttf-4549763365729.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-as7312-tcd-4515276919988.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as7312-12-cuerdas-tcd-4515276919988.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as73g-bkf-4515276919957.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as73g-msf-4549763365736.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as73gbkf-negra-73gbkfhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as93bc-bk-4549763348951.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as93fm-tcd-4549763061942.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as93fm-tmg-4549763364357.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-as93fm-vls-4549763061959.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as93fm-vls-s57931html.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as93fml-vls-artcore-expressionist-violin-sunburst-4549763061966.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-as93fmvls-vs-4549763061959.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as93qmsp-dbs-4549763364364.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-as93sp-bk-4549763364371.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ash300-tbc-4549763375933.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-at100cl-sb-606559534661.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-at100cl-sb-andy-timmons-sunburst-4515110534667.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-atz10p-stm-andy-timmons-sunburst-matte-4549763308924.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-atz300-bk-andy-timmons-black-4549763359421.html</loc></url>
@@ -1569,11 +1994,13 @@
   <url><loc>https://guitle.com/g/ibanez-az2402-pkf-pink-flat-4549763059741.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az2402-pwf-pearl-white-flat-4549763194176.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az2402-tff-tri-fade-burst-flat-4549763059734.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-az2402-zurdos-ltff-selefthtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az24027-tff-tri-fade-burst-flat-4549763280091.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az2402l-tff-tri-fade-burst-flat-4549763227775.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az24047-bk-black-4549763280084.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az2407f-bsr-brownish-sphalerite-4549763335050.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az2407f-sde-sodalite-4549763335067.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-az24p1qm-dob-4549763352941.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az24s1f-tks-transparent-black-sunburst-4549763363527.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az24s1f-txb-transparent-turquoise-burst-4549763363534.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-az24s1f-vls-violin-sunburst-4549763363541.html</loc></url>
@@ -1598,22 +2025,33 @@
   <url><loc>https://guitle.com/g/ibanez-azes40b-rom-4549763381606.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-azes40b-tsn-btsnp44760.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-azes40l-prb-purist-blue-4549763344830.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-azez31-aoc-z31aochtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-azs2200-mgr-mint-green-4549763334992.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-azs2209-atq-antique-turquoise-4549763335005.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ber10-bernth-signature-4549763379337.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-e-gitarre-ibanez-signature-atz100-signed-by-andy-t-sunburst-flat-signed-b-arsummit25.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-flatv1-bk-josh-smith-black-4549763288950.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-flatv2-msn-mint-sand-4549763369055.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-frm300-paul-gilbert-pr-4549763269461.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-frm300-pr-4549763269454.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-frm350-bk-paul-gilbert-black-4549763359155.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ftm33-wk-fredrik-thordendal-weathered-black-4515276983989.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-gb10em-aa-george-benson-4549763231185.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-gio-grx70qa-tbb-4515110752399.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10-bs-606559001712.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10-george-benson-bs-4515110001718.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10-george-benson-nt-4515110001725.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10-nt-606559001729.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10em-aa-4549763231185.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10em-george-benson-blue-burst-4549763231192.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10emaa-guitarra-electrica-george-benson-s-10emaahtml.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10se-george-benson-bs-4515276880042.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-gb10sefm-george-benson-sapphire-red-4549763310781.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg120qasp-bgd-blue-gradation-4549763280886.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg120qaspbkg-4549763376855.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg121dx-bkf-black-flat-4515276693444.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg121dx-mgs-metallic-gray-sunburst-4549763229960.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg121dx-wnf-walnut-flat-4515276760139.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg121dxl-wnf-walnut-flat-4549763280893.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-grg121dxlwnf-zurdos-wf-dxlwnfhtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg121par-kbf-deep-dusk-burst-flat-4549763335722.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg121sp-black-night-4549763322210.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grg121sp-bmc-blue-metal-chameleon-4549763305626.html</loc></url>
@@ -1638,6 +2076,7 @@
   <url><loc>https://guitle.com/g/ibanez-grgm21m-ca-candy-apple-4515276891512.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grgm21m-jb-jewel-blue-4515276638575.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grgm21m-mpl-metallic-purple-4549763175076.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-grgm21mjb-jb-rmikrohtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grgr131ex-bkf-black-flat-4549763280862.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grgr221fa-tdk-4549763376862.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grgr221pa-aqb-aqua-burst-4549763280879.html</loc></url>
@@ -1654,10 +2093,14 @@
   <url><loc>https://guitle.com/g/ibanez-grx40-mlb-metallic-light-blue-4515276836544.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grx40-tfb-tri-fade-burst-4515276686231.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grx70qa-sb-sunburst-4549763175106.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-grx70qa-tbb-b54158html.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grx70qa-teb-transparent-emerald-burst-4515276693260.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-grx70qa-tks-4515110752382.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grx70qa-trb-4515110752405.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grx70qa-tvt-transparent-violet-sunburst-4549763175090.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-grx70qal-tbb-transparent-blue-burst-4549763175113.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-grx70qatbb-gio-trans-blue-burst-4515110752399.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-grx70qatks-transparent-black-sb-0qatkshtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-gsa60-bkn-black-night-4515110324039.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-gsa60-bs-brown-sunburst-4515110324046.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-gsa60-wnf-walnut-flat-4515276693468.html</loc></url>
@@ -1677,6 +2120,9 @@
   <url><loc>https://guitle.com/g/ibanez-jem7vp-wh-steve-vai-white-4549763184313.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-jemjr-bk-steve-vai-black-4549763308948.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-jemjr-wh-steve-vai-white-4515276757894.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-jemjrbk-negra-trsvaihtml.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-jemjrl-wh-4515276893653.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-jemjrs-rosa-jrsppkhtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-jemjrsp-pk-steve-vai-pink-4549763029690.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-jiva10-dsb-nita-strauss-deep-space-blonde-4549763111821.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-jiva10l-dsb-nita-strauss-deep-space-blonde-4549763325150.html</loc></url>
@@ -1686,11 +2132,15 @@
   <url><loc>https://guitle.com/g/ibanez-js140m-sdl-joe-satriani-soda-blue-4549763250902.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-js1gd-joe-satriani-4549763364340.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-js240ps-ca-joe-satriani-candy-apple-red-4549763250919.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-js2450-mcp-887802051863.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-js2450-mcp-joe-satriani-muscle-car-purple-4515276688778.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-js2480-mcr-joe-satriani-muscle-car-red-4549763011343.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-js2480-wh-white-4549763368034.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-js3cr-joe-satriani-4549763349514.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-jsm10-john-scofield-vys-4515276686194.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-jsm100-john-scofield-vt-4515110185142.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-jsm10em-ttb-4549763359360.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-jsm20-john-scofield-bkl-4549763061980.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-kiko100-trr-kiko-loureiro-transparent-ruby-red-4515276638537.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-kiko10bp-tgb-kiko-loureiro-transparent-gray-burst-4549763006066.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-kiko300-trr-kiko-loureiro-4549763376565.html</loc></url>
@@ -1699,7 +2149,10 @@
   <url><loc>https://guitle.com/g/ibanez-lb1-bk-black-4549763368041.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-lb1-vl-lari-basilio-violet-4549763288974.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-lb1-wh-lari-basilio-white-4549763344960.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-lgb30-vys-george-benson-4515276599494.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-lgb30-george-benson-nt-4515276765493.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-lgb30-vys-4515276599494.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-lgb300-george-benson-vys-4515110781634.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-lgb300-vys-606559749874.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-lm1-lwh-luca-mantovanelli-luna-white-4549763344687.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ltd-rgdr61g-wh-4549763399809.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ltd-rgr621g-wh-4549763399816.html</loc></url>
@@ -1712,13 +2165,18 @@
   <url><loc>https://guitle.com/g/ibanez-ndm5-sb-noodles-sunburst-4549763253156.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-pgm50-bk-paul-gilbert-black-4549763349897.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-pgmm11-jb-paul-gilbert-jewel-blue-4549763255549.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-pgmm21-mgn-4549763175120.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-pgmm31-wh-paul-gilbert-white-4515276967378.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-pia3761-slw-steve-vai-stallion-white-4549763250926.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-pia3761-xb-steve-vai-onyx-black-4549763288981.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-pia3761c-blp-steve-vai-blue-powder-4549763331045.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-pm200-nt-606559870905.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-pm200-pat-metheny-nt-4515110916050.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-pm3c-nal-pat-metheny-signature-4549763358363.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-ps10-bk-887802124574.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ps10-bk-paul-stanley-black-4515276761006.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ps120-bk-paul-stanley-black-4515276757863.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-ps1cm-887802124581.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ps1cm-paul-stanley-4515276761013.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ps3cm-paul-stanley-signature-black-cracked-mirror-4549763345585.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-ps60-bk-paul-stanley-black-4549763070081.html</loc></url>
@@ -1727,6 +2185,7 @@
   <url><loc>https://guitle.com/g/ibanez-pwm20-paul-waggoner-4549763280930.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-q52pb-abs-antique-brown-stained-4549763336903.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-q52pb-col-cosmic-blue-low-gloss-4549763359100.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-q52pbabs-trwbaghtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-q54-bkf-black-flat-4549763292544.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-q547-bmm-4549763336910.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-q547pb-col-cosmic-blue-low-gloss-4549763359124.html</loc></url>
@@ -1734,6 +2193,7 @@
   <url><loc>https://guitle.com/g/ibanez-qx52-mgm-4549763359094.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-qx527pb-abs-antique-brown-stained-4549763292506.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-qx54qm-bsm-blue-sphere-burst-matte-4549763292513.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rbr752ahbf-wk-ahbfwkhtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg2027rxl-dtb-4549763375636.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg420ex-bkf-black-flat-4549763353009.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg421-mol-mahogany-oil-4515110836723.html</loc></url>
@@ -1760,19 +2220,24 @@
   <url><loc>https://guitle.com/g/ibanez-rg5120m-fcn-frozen-ocean-4549763165251.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5120m-prt-polar-lights-4549763306289.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5120ml-fcn-frozen-ocean-4549763359438.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rg5121-bcf-4549763280114.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rg5121etprt-prestige-polar-lights-4549763344854.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5121r-dbf-4549763375643.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5121ret-prt-4549763375650.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5121rl-dbf-4549763375667.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rg5170b-negra-4549763280121.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rg5320-csw-4549763227829.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5320r-csw-rcswp43844.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5320rc-dfm-4549763375681.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg5320rc-prestige-bosque-profundo-metalico-licop44982.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rg5440cdfm-prestige-deep-forest-green-metallic-4549763335081.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550-bk-genesis-black-4515110016071.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550-bkf-4549763380104.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550-dy-genesis-desert-sun-yellow-4515110016125.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550-eb-genesis-electric-blue-4515110016149.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550-grf-4549763380111.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550-pn-genesis-purple-neon-4515110016187.html</loc></url>
-  <url><loc>https://guitle.com/g/ibanez-rg550-rf-genesis-road-flare-red-4515276628538.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rg550-road-flare-red-4515276628538.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550-whf-4549763380128.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550l-dy-genesis-desert-sun-yellow-4549763072276.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg550l-rf-road-flare-red-4549763367891.html</loc></url>
@@ -1781,6 +2246,7 @@
   <url><loc>https://guitle.com/g/ibanez-rg565r-pn-4549763381637.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg631alf-bcm-axion-label-blue-chameleon-4549763281012.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg652ahm-awd-antique-white-blonde-4549763366788.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rg652ahm-ngb-887802057681.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg652ahm-ngb-nebula-green-burst-4515276694243.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg652ahmfx-ngb-nebula-green-burst-4515276882480.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rg652ahmfx-rpb-royal-plum-burst-4549763280145.html</loc></url>
@@ -1804,6 +2270,7 @@
   <url><loc>https://guitle.com/g/ibanez-rga42fm-blf-blue-lagoon-burst-flat-4515276967552.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rga42fm-def-dragon-eye-burst-flat-4515276967569.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rga42fm-tgf-transparent-gray-flat-4549763229557.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rga42fmblf-sunburst-azul-2fmblfhtml.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rga42fml-blf-blue-lagoon-burst-flat-4549763229564.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rga742ex-bam-4549763376572.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rga742fm-tgf-transparent-gray-flat-4549763280947.html</loc></url>
@@ -1828,6 +2295,7 @@
   <url><loc>https://guitle.com/g/ibanez-rgr5130r-grm-4549763375582.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rgr5221-tfr-4549763375605.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rgr52et-bk-black-4549763363831.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-rgr652ahbf-wk-4549763024312.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rgr662ahbf-wk-4549763375612.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rgr762ahbf-wk-4549763375629.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-rgrb620-bkf-iron-label-black-flat-4549763360267.html</loc></url>
@@ -1852,6 +2320,7 @@
   <url><loc>https://guitle.com/g/ibanez-s621qm-deb-dragon-eye-burst-4515276893875.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-s6521q-slg-surreal-blue-burst-gloss-4549763367969.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-s6570bwe-nt-natural-4549763365712.html</loc></url>
+  <url><loc>https://guitle.com/g/ibanez-s6570q-nbl-4515276925170.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-s6570q-nbl-natural-blue-4515276925156.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-s6670sk-dub-4549763375735.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-s6670sk-stb-4549763375742.html</loc></url>
@@ -1874,7 +2343,10 @@
   <url><loc>https://guitle.com/g/ibanez-xptb720-bkf-iron-label-black-flat-4549763287465.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-yy10-sgs-yvette-young-slime-green-sparkle-4549763253149.html</loc></url>
   <url><loc>https://guitle.com/g/ibanez-yy20-ocs-yvette-young-orange-cream-sparkle-4549763308931.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-adrian-smith-signature-sdx-mn-sw-885978110049.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-adrian-smith-sdx-mn-sw-885978110049.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-adrian-smith-sdx-mn-trans-green-885978776542.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-adrian-smith-usa-sig-sd-eb-snow-white-885978486991.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-adrian-smith-usa-sig-sdm-snow-white-885978486953.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-american-series-rhoads-rr24-ht-eb-satin-black-885978726486.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-american-series-rhodes-rr24-eb-matte-army-drab-885978936373.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-american-series-soloist-sl2-dx-eb-satin-black-885978692200.html</loc></url>
@@ -1884,8 +2356,7 @@
   <url><loc>https://guitle.com/g/jackson-american-series-soloist-sl2-ht-mg-satin-blk-717669813345.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-american-series-soloist-sl2-mg-satin-blk-885978935376.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-american-series-virtuoso-eb-mystic-blue-717669680589.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-dinky-arch-top-js32-dka-sbk-885978986675.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-js-32-king-vwht-w-blk-bvl-885978976935.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-dk3xr-hss-cobalt-blue-885978752522.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js-series-dinky-minion-js1x-pavo-purple-885978919666.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js-series-dinky-minion-js1xm-mn-bubble-gum-pink-885978919642.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js-series-js20-dkq-2pt-tr-blu-885978000333.html</loc></url>
@@ -1897,20 +2368,74 @@
   <url><loc>https://guitle.com/g/jackson-js-series-surfcaster-js22-ht-metallic-red-885978857203.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js-series-surfcaster-js22-ht-purple-metallic-885978860753.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js11-dinky-ah-mbl-885978976744.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js11-dinky-blk-885978976737.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js11-dinky-met-red-885978976751.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js11-dinky-wht-885978976768.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js12-dinky-blk-885978976775.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js12-dinky-met-blue-885978976782.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js12-dinky-met-red-885978976799.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js12-dinky-wht-885978976805.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js1x-dinky-minion-blk-885978956692.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js1x-rhoads-minion-bks-885978956777.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-7-dinky-sbk-885978986651.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-js22-7-kv-satin-black-717669999209.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-king-v-js32-bk-sw-885978976928.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-dinky-dka-mbl-885978977925.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-dinky-dka-sbk-885978986644.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-dinky-dka-sw-885978976874.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-dka-dinky-ah-natural-oil-885978976881.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-sc-monarkh-satin-black-885978977239.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-sc-monarkh-snow-white-885978977246.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-sc-monarkh-tobacco-burst-885978904341.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22-sc-monarkh-trans-purple-burst-885978904358.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js22l-dinky-dka-bk-885978977208.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js24-dkam-black-stain-885978752300.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js24-dkam-dinky-red-stain-885978752331.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-7-dinky-dka-snow-white-885978976829.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-8-dinky-dka-satin-black-885978976850.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-dinky-dka-davo-purple-885978977147.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-dinky-dka-m-bk-885978474516.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-dinky-dka-m-sw-885978474523.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-dinky-dka-sbk-885978986675.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-kelly-ferrari-red-885978977055.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-kelly-snow-white-885978977062.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-king-v-black-white-bevels-885978976928.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-king-v-gloss-black-885978976898.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-king-v-matte-army-drab-885978976904.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-king-v-white-black-bevels-885978976935.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-rhoads-black-white-bevels-885978977123.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-rhoads-mah-natural-885978752256.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32-warrior-black-white-bevels-885978977079.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32l-dinky-dka-bb-885978977222.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32l-rhoads-satin-grey-885978977215.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32q-dka-ht-dinky-transparent-black-burst-885978762439.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32q-dka-ht-dinky-transparent-green-burst-885978762415.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32q-dka-ht-dinky-transparent-purple-burst-885978762422.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32q-dka-trs-grn-brst-885978425150.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32q-dka-trs-purp-brst-885978425044.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32t-kelly-satin-black-885978976911.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32t-kelly-viola-burst-885978976942.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32t-king-v-ferrari-red-885978976966.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32t-king-v-gloss-black-885978976959.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32t-rhoads-satin-black-885978977000.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32t-rhoads-white-black-bevels-885978976997.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-js32t-warrior-natural-oil-885978976973.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-king-v-x-series-kvxmg-stn-blk-885978427789.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-ltd-adrian-smith-pro-signature-scs1-snow-white-885978951222.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-ltd-js-series-dinky-minion-js1x-safety-orange-885978919277.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-ltd-legend-series-signature-scott-ian-rhoads-rr22-not-885978527106.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-ltd-pro-plus-pure-metal-soloist-sl1a-eb-satin-blk-885978979271.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-mj-dinky-dkr-black-885978615605.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-mj-dinky-dkra-mah-black-ash-885978615315.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-mj-rrt5-black-885978615667.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-mj-series-rhoads-rr24mg-wht-blk-885978785452.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-mj-series-rhoads-rrt-snow-white-885978785490.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-mj-series-soloist-sl2-snow-white-885978784196.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-pro-kelly-jeff-loomis-signature-black-ash-885978387779.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-mj-sl2-black-885978615650.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-pro-dk-modern-evertune-7-primer-gray-885978538652.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-pro-ke-jeff-loomis-blk-ash-885978387779.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-king-v-kvtmg-snow-white-885978752928.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-pro-kv-king-v-deep-black-885978898299.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-pro-marty-friedman-mf-1-eb-purple-mirror-885978427499.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-origins-1985-san-dimas-sd1-hh-fr-mn-gloss-black-885978447275.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-origins-1985-san-dimas-sd1a-h-fr-rw-gloss-black-885978447237.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-plus-dinky-mdk-ht6-ms-gloss-bl-717669902513.html</loc></url>
@@ -1927,7 +2452,6 @@
   <url><loc>https://guitle.com/g/jackson-pro-plus-series-soloist-sla3q-abb-717669561185.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-plus-soloist-sla2-ht-toxic-apple-885978976041.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-rhoads-rr24-7-mark-heylmun-lux-717669902094.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-pro-rhoads-rr3-885978676699.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-series-jeff-loomis-soloist-sl7-bk-885978752935.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-series-phil-demmel-signature-demmelition-fury-pd-red-tide-fade-885978056903.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-series-phil-demmel-signature-demmelition-fury-pdt-sn-wht-885978056897.html</loc></url>
@@ -1939,10 +2463,17 @@
   <url><loc>https://guitle.com/g/jackson-pro-series-signature-phil-collen-pc1-e-eb-worn-black-885978983094.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-series-signature-roman-ibramkhalilov-mdk-ht6-baritone-eb-emerald-gre-885978052363.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-pro-series-signature-wes-borland-king-v-kv-black-with-white-bevels-885978977819.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-pro-shadowcaster-rc-prpl-met-885978387786.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-rob-cavestany-death-angel-snow-white-885978982240.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-rr3-pro-rhoads-ivory-bk-ps-885978676699.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-rrt-3-pro-rhoads-ivory-bk-ps-885978491674.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-rrt-5-pro-rhoads-bk-885978491803.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-rrx24-black-camo-885978762392.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-rrx24m-rhoads-white-wblack-pinstripe-885978776337.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-slxm-dx-soloist-mn-snow-white-885978733736.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-usa-select-soloist-hss-eb-gloss-black-717669184360.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-usa-signature-adrian-smith-mn-san-dimas-885978486953.html</loc></url>
-  <url><loc>https://guitle.com/g/jackson-x-series-js32t-king-v-gloss-black-885978976959.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-usa-sign-corey-beaulieu-king-v-kv7-eb-gloss-black-885978126576.html</loc></url>
+  <url><loc>https://guitle.com/g/jackson-x-series-rhoads-rrx2-black-yellow-885978140336.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-x-series-scott-ian-king-v-rw-baldini-717669902100.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-x-series-signature-scott-ian-king-v-kvxt-gloss-black-885978523207.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-x-series-soloist-slx-dx-bloodshot-crackle-717669998974.html</loc></url>
@@ -1952,7 +2483,10 @@
   <url><loc>https://guitle.com/g/jackson-x-series-soloist-slx-dx-lrl-gloss-black-885978052240.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-x-series-soloist-slx-dx-lrl-gold-bullion-885978052189.html</loc></url>
   <url><loc>https://guitle.com/g/jackson-x-series-wrx24-satin-black-717669560805.html</loc></url>
+  <url><loc>https://guitle.com/g/kramer-baretta-hot-rod-blue-sparkle-with-flames-711106051833.html</loc></url>
+  <url><loc>https://guitle.com/g/larry-carlton-sire-h7-white-810046133453.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-as-1fr-black-aqua-sunburst-c-estuche-799493255188.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-ec-10-kit-blk-840248027977.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-amber-sunburst-840248009539.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-black-840248007597.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-duncan-vintage-black-799493261837.html</loc></url>
@@ -1968,6 +2502,8 @@
   <url><loc>https://guitle.com/g/ltd-ec-256-vintage-natural-799493262360.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-256fm-dark-brown-sunburst-799493256321.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-401-olympic-white-840248021906.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-ec1000-vb-seymour-duncan-840248029735.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-ec1000et-evertune-bb-black-satin-799493273298.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec1000t-fm-black-natural-burst-888365266657.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec400-black-pearl-fade-metallic-910807082522.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-eclipse-87-black-910807082531.html</loc></url>
@@ -1979,8 +2515,12 @@
   <url><loc>https://guitle.com/g/ltd-kh-202-black-840248009829.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-kh-602-black-c-estuche-840248009843.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-kh-602-purple-sparkle-c-estuche-799493261547.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-m-10-kit-black-910807063228.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-m-1000ht-black-fade-799493268096.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-m-200dx-nt-blue-burst-limited-edition-719710627222.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-m-200dx-nt-purple-burst-limited-edition-719710627215.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-mh-10-kit-blk-799493261882.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-mh-200-blk-799493260908.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-phoenix-1000-see-thru-black-cherry-799493268140.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-phoenix-1000-vintage-white-799493268157.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-phoenix-black-metal-black-satin-799493270341.html</loc></url>
@@ -1991,32 +2531,57 @@
   <url><loc>https://guitle.com/g/ltd-te-200dx-blue-burst-limited-edition-719710627246.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-te-200dx-purple-burst-limited-edition-719710627239.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-viper-10-black-c-funda-840248028516.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-viper-1000-mahogany-see-thru-black-cherry-719710614734.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-viper-1000qm-stbc-799493268133.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-viper-256-dark-brown-sunburst-799493274172.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-viper-256-see-thru-black-cherry-840248027045.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-volsung-distressed-black-satin-c-estuche-799493260663.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-vulture-black-satin-799493256420.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-albatroz-65-2-p90-tv-yellow-aged-d68715html.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-albatroz-65-2-tv-yellow-aged-yellowaged.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-albatroz-65-guitarra-electrica-dark-winered-ineredhtml.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-albatroz-65-guitarra-electrica-vintage-cream-ecreamhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-albatroz-65-vintage-cream-aged-d68714html.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-albatroz-masterbuilt-special-green-metallic-aged-caddy-3-444410037079.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-capitol-59-antique-burst-000066html.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-capitol-59-black-aged-444410029125.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-capitol-59-natural-vintage-intagehtml.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-jazzpole-bigsby-black-aged-910807083922.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-jetwing-m-black-velvet-444410033178.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-jetwing-m-vintage-white-444410033177.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-54-p90-bigsby-negra-000173html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-54-p90-black-velvet-conp90html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-59-dirty-lemon-59agedhtml.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-60-guitarra-electrica-midnight-sunset-dard60html.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-black-velvet-57-custom-60s-slim-taper-aged-2610302-444410039310.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-cherry-lane-58-aged-d68716html.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-cherry-lane-58-aged-lane58aged.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-custom-72-white-aged-910807083904.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-earl-grey-60-slim-taper-aged-259756-444410037342.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-edelweiss-72-custom-60s-slim-taper-aged-259979-444410037624.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-honey-pie-59-aged-2610417-444410038855.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-ice-tea-59-aged-d68717html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-jr-double-cut-special-antique-walnut-aged-d68718html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-junior-single-p90-2-tone-sunburst-000139html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-lester-p90-midnight-sunset-000308html.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-true-spec-masterbuilt-cherry-sunburst-aged-kf-cb-7-444410028792.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-true-spec-masterbuilt-ice-tea-faded-aged-kf-it-5-dagedkfit5.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-lester-wild-cherry-59-aged-444410028561.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-stradovari-s61-masterbuilt-vintage-white-heavy-relic-444410029572.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-stradovari-s61-olympic-white-heavy-relic-heavyrelic.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-teleman-t54-butterscotch-blackguard-aged-d68719html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-teleman-t54-nicotine-000303html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-teleman-t54-winered-metallic-aged-000016html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-teleman-t61-lake-placid-blue-custom-m68721html.html</loc></url>
+  <url><loc>https://guitle.com/g/maybach-teleman-t68-thinline-teal-green-custom-shop-p68720html.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-x-wing-76-k-vintage-honey-444410038030.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-x-wing-76-m-black-velvet-444410038029.html</loc></url>
   <url><loc>https://guitle.com/g/maybach-x-wing-76-m-vintage-white-444410038028.html</loc></url>
+  <url><loc>https://guitle.com/g/michael-kelly-1953-caramel-burst-809164021858.html</loc></url>
+  <url><loc>https://guitle.com/g/michael-kelly-54op-faded-black-809164025733.html</loc></url>
+  <url><loc>https://guitle.com/g/michael-kelly-hybrid-special-spalted-burst-809164021728.html</loc></url>
+  <url><loc>https://guitle.com/g/michael-kelly-mod-shop-patriot-instinct-duncan-sorched-809164022688.html</loc></url>
+  <url><loc>https://guitle.com/g/michael-kelly-patriot-decree-caramel-burst-809164022299.html</loc></url>
   <url><loc>https://guitle.com/g/mooer-gtrs-m800-blue-chameleon-6971889222224.html</loc></url>
   <url><loc>https://guitle.com/g/mooer-gtrs-m800-dark-night-6971889222231.html</loc></url>
   <url><loc>https://guitle.com/g/mooer-gtrs-m800-dark-red-6971889222200.html</loc></url>
@@ -2230,6 +2795,7 @@
   <url><loc>https://guitle.com/g/prs-fiore-hibiscus-satin-825362242185.html</loc></url>
   <url><loc>https://guitle.com/g/prs-fiore-larkspur-825362124641.html</loc></url>
   <url><loc>https://guitle.com/g/prs-fiore-lilac-satin-825362242192.html</loc></url>
+  <url><loc>https://guitle.com/g/prs-fiore-sugar-moon-825362089834.html</loc></url>
   <url><loc>https://guitle.com/g/prs-fiore-sugar-moon-825362169512.html</loc></url>
   <url><loc>https://guitle.com/g/prs-fiore-sunflower-825362169543.html</loc></url>
   <url><loc>https://guitle.com/g/prs-jm-silver-sky-frost-825362944577.html</loc></url>
@@ -2286,6 +2852,9 @@
   <url><loc>https://guitle.com/g/prs-nf53-satin-red-apple-metallic-825362295266.html</loc></url>
   <url><loc>https://guitle.com/g/prs-nf53-satin-vintage-natural-825362292067.html</loc></url>
   <url><loc>https://guitle.com/g/prs-nf53-white-doghair-825362155980.html</loc></url>
+  <url><loc>https://guitle.com/g/prs-paul-reed-smith-prs-se-custom-24-quilt-black-gold-sb-825362160878.html</loc></url>
+  <url><loc>https://guitle.com/g/prs-paul-reed-smith-prs-se-custom0-24-08-turqoise-825362164593.html</loc></url>
+  <url><loc>https://guitle.com/g/prs-paul-reed-smith-prs-se-dgt-mccarty-tobacco-sunburst-825362135388.html</loc></url>
   <url><loc>https://guitle.com/g/prs-paul-s-guitar-dark-cherry-burst-825362081432.html</loc></url>
   <url><loc>https://guitle.com/g/prs-paul-s-guitar-faded-blue-jean-edbluejean.html</loc></url>
   <url><loc>https://guitle.com/g/prs-paul-s-guitar-mango-top-ltd-charcoal-825362311041.html</loc></url>
@@ -2622,6 +3191,12 @@
   <url><loc>https://guitle.com/g/schecter-c-7-ms-silver-m-xv-815447029794.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-c-8-deluxe-sbk-81544708799.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-c-8-ms-silver-m-svm-l-h-815447028421.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-c6-deluxe-satin-purple-815447028049.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-corsair-2020-gold-top-815447028254.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-corsair-gloss-black-815447028278.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-corsair-gloss-natural-815447028261.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-coupe-bloss-black-815447024782.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-coupe-dark-emerald-green-815447024799.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-damien-6-fr-satin-black-810051470215.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-damien-6-satin-black-810051470208.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-damien-7-satin-black-810051470222.html</loc></url>
@@ -2634,6 +3209,8 @@
   <url><loc>https://guitle.com/g/schecter-e-1-sls-elite-atqfb-815447026700.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-e-1-sls-elite-bfb-815447026670.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-e-1-sls-elite-et-sbk-815447026717.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-e1-frs-trans-purple-burst-frstpbhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-hellcat-vi-ivory-pearl-815447024539.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-hellraiser-c-1-bch-839212006599.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-hellraiser-c-1-fr-tpb-81544705484.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-hellraiser-c-7-fr-s-bch-81544705712.html</loc></url>
@@ -2647,11 +3224,13 @@
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-hss-a-green-815447028513.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-hss-a-orange-810051470321.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-hss-a-snow-815447028520.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-hss-ai-810051471410.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-sss-a-coral-815447027127.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-sss-a-frost-815447028308.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-sss-a-green-815447026229.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-sss-a-orange-815447029541.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-sss-a-snow-815447028568.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-sss-ai-810051471403.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-trad-usa-sss-a-snow-815447025529.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-usa-wembley-hss-a-tmg-815447029343.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-nick-johnston-usa-wembley-sss-a-frost-815447026526.html</loc></url>
@@ -2713,6 +3292,7 @@
   <url><loc>https://guitle.com/g/schecter-sun-valley-ss-fr-s-r-blue-815447024461.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-sun-valley-ss-fr-s-sbk-815447023259.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-sun-valley-ss-fr-s-wht-815447023242.html</loc></url>
+  <url><loc>https://guitle.com/g/schecter-sun-valley-ss-fr-sbk-815447023235.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-sun-valley-ss-fr-sfg-815447023204.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-sun-valley-super-shredder-pt-fr-s-815447028841.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-synyster-custom-blk-silv-815447024195.html</loc></url>
@@ -2722,7 +3302,11 @@
   <url><loc>https://guitle.com/g/schecter-trad-van-nuys-g-nat-ash-gna-810051470871.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-ultra-iii-ivyp-815447024546.html</loc></url>
   <url><loc>https://guitle.com/g/schecter-ultra-iii-v-blue-81544700908.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-guitarras-h7-stratocaster-larry-carlton-855159008946.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-guitarras-h7-vs-larry-carlton-vin-sun-855159008939.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-h7-cherry-sunburst-810046132975.html</loc></url>
   <url><loc>https://guitle.com/g/sire-h7-cs-cherry-sunburst-lefthand-810046135327.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-h7-negra-810046133446.html</loc></url>
   <url><loc>https://guitle.com/g/sire-i5h-i-silver-810187571084.html</loc></url>
   <url><loc>https://guitle.com/g/sire-i5s-tobacco-sunburst-810187571077.html</loc></url>
   <url><loc>https://guitle.com/g/sire-i5t-butterscotch-810187571053.html</loc></url>
@@ -2766,6 +3350,9 @@
   <url><loc>https://guitle.com/g/sire-l7v-new-gen-black-810187572203.html</loc></url>
   <url><loc>https://guitle.com/g/sire-l7v-new-gen-car-candy-apple-red-810187572197.html</loc></url>
   <url><loc>https://guitle.com/g/sire-l7v-new-gen-tobacco-sunburst-810187572180.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-larry-carlton-h7v-blk-810046134764.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-larry-carlton-h7v-cs-810046134740.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-larry-carlton-h7v-vs-810046134757.html</loc></url>
   <url><loc>https://guitle.com/g/sire-q3-awh-antique-white-810187571008.html</loc></url>
   <url><loc>https://guitle.com/g/sire-q3-black-810187571015.html</loc></url>
   <url><loc>https://guitle.com/g/sire-q3-m-blue-810187571046.html</loc></url>
@@ -2797,6 +3384,8 @@
   <url><loc>https://guitle.com/g/sire-s3-new-gen-car-candy-apple-red-810187571657.html</loc></url>
   <url><loc>https://guitle.com/g/sire-s3-new-gen-dark-navy-810187571626.html</loc></url>
   <url><loc>https://guitle.com/g/sire-s3-new-gen-mgo-metallic-gold-810187571633.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-s3-sss-mlg-mild-green-810046137987.html</loc></url>
+  <url><loc>https://guitle.com/g/sire-s3-sss-ts-tobacco-sunburst-810046137963.html</loc></url>
   <url><loc>https://guitle.com/g/sire-s5-3tone-sunburst-810046138519.html</loc></url>
   <url><loc>https://guitle.com/g/sire-s5-black-810046138496.html</loc></url>
   <url><loc>https://guitle.com/g/sire-s5-hss-3ts-810187570803.html</loc></url>
@@ -2928,6 +3517,7 @@
   <url><loc>https://guitle.com/g/squier-classic-vibe-jazzmaster-60s-il-snb-885978064601.html</loc></url>
   <url><loc>https://guitle.com/g/squier-classic-vibe-starcaster-mn-natural-885978067817.html</loc></url>
   <url><loc>https://guitle.com/g/squier-classic-vibe-stratocaster-60s-lrl-car-885978064267.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-contemporary-strato-special-negra-885978722242.html</loc></url>
   <url><loc>https://guitle.com/g/squier-fsr-affinity-strat-hh-mh-mbk-885978883424.html</loc></url>
   <url><loc>https://guitle.com/g/squier-fsr-classic-vibe-50s-telecaster-mn-bpg-blk-197955182940.html</loc></url>
   <url><loc>https://guitle.com/g/squier-fsr-classic-vibe-60s-jazzmaster-lrl-ppg-mh-blk-197955183008.html</loc></url>
@@ -2962,32 +3552,68 @@
   <url><loc>https://guitle.com/g/squier-paranormal-troy-van-leeuwen-telecaster-xii-lrl-tortoiseshell-pg-copper-197955143521.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-esquire-h-lrl-olive-197955143200.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-esquire-h-mn-bpg-awt-717669815950.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-mustang-hh-flp-717669816346.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-mustang-hh-lrl-black-197955144924.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-mustang-hh-lrl-bpg-cab-717669816292.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-mustang-mn-daphne-blue-197955143224.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-squier-h-telecaster-uvt-717669815967.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-stratocaster-cab-717669815660.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-hss-mn-midnight-blue-197955143125.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-stratocaster-hss-negra-717669815691.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-stratocaster-hss-tco-717669815707.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-stratocaster-ht-flp-717669815905.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-ht-h-lrl-bpg-blk-717669815882.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-ht-h-mn-sonic-blue-197955143163.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-ht-lrl-wpg-tor-717669815851.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-ht-mn-sea-foam-green-197955143149.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-ht-mn-wpg-awt-717669815738.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-left-handed-mn-black-717669815684.html</loc></url>
-  <url><loc>https://guitle.com/g/squier-sonic-stratocaster-lrl-bpg-cab-717669815660.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-lrl-sienna-sunburst-197955143101.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-lrl-wpg-uvt-717669815677.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-mn-2-color-sunburst-717669815653.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-stratocaster-mn-black-717669815646.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-telecaster-cab-717669815929.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-telecaster-lrl-bpg-tor-717669815943.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-telecaster-lrl-canary-yellow-197955143187.html</loc></url>
   <url><loc>https://guitle.com/g/squier-sonic-telecaster-mn-bpg-btb-717669815936.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sonic-telecaster-negra-717669815912.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sq-cv-70s-jaguar-lrl-blk-885978064861.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sq-cv-70s-tele-thinline-mn-nat-885978064540.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sq-cv-bass-vi-lrl-3ts-885978064823.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sq-cv-bass-vi-lrl-blk-885978064830.html</loc></url>
+  <url><loc>https://guitle.com/g/squier-sq-cv-starcaster-mn-3ts-885978067800.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-albert-lee-signature-daphne-blue-852956007288.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-ct50-cutlass-hss-mm-daphne-blue-satin-810002951756.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-ctss30hs-cutlass-short-scale-mint-green-810002950865.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-ctss30hs-cutlass-short-scale-shell-pink-810002950872.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-cutlass-ct30sss-fiesta-red-810002951312.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-cutlass-ct50hss-firemist-silver-810002951114.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-cutlass-ct50sss-toluca-lake-blue-810002951138.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-cutlass-ct50sss-vintage-sunburst-810002951251.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-cutlass-hss-vc-m1-810002950261.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-jared-dines-stingray-olympic-white-810002952166.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-john-petrucci-jp7-mystic-dream-852956007202.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-jp60-john-petrucci-mystic-dream-810002953200.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-jp70-john-petrucci-mystic-dream-810002953217.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-jv60-valentine-trans-buttermilk-852956007042.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-maj170-majesty-artic-dream-810002953231.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-maj200x-qme-cerulean-paradise-810002951190.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-majesty-100-chalk-grey-810002952739.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-man-axis-qm-spb-810002952012.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-man-axis-qm-spr-810002952029.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-mariposa-daphne-blue-810002952074.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-mariposa-dorado-green-810002951169.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-mariposa-imperial-white-810002951176.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-mariposa-pueblo-pink-810002951855.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-petrucci-jp60-mdr-810002950551.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-petrucci-majesty-maj100-adr-852956007295.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-petrucci-majesty-maj170-artic-dream-810002950131.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-petrucci-majesty-maj270xfm-royal-red-810002950797.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-s-u-b-stingray-sr30-guitar-daphne-blue-810002951329.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-sabre-deep-blue-burst-810002951985.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-sr50-fsv-810002952005.html</loc></url>
   <url><loc>https://guitle.com/g/sterling-stingray-guitar-sr50-buttermilk-810002951992.html</loc></url>
+  <url><loc>https://guitle.com/g/sterling-stingray-sr30-sbk-r1-810002950292.html</loc></url>
   <url><loc>https://guitle.com/g/suhr-alt-t-3-tone-burst-mp-hh-819438020227.html</loc></url>
   <url><loc>https://guitle.com/g/suhr-alt-t-3-tone-burst-rw-hh-819438020210.html</loc></url>
   <url><loc>https://guitle.com/g/suhr-alt-t-black-mp-hh-819438020241.html</loc></url>
@@ -3178,7 +3804,21 @@
   <url><loc>https://guitle.com/g/suhr-standard-thin-burst-hh-fr-trans-red-ltd-D1811392035729.html</loc></url>
   <url><loc>https://guitle.com/g/suhr-standard-thin-burst-hh-trans-purple-ltd-819438029824.html</loc></url>
   <url><loc>https://guitle.com/g/suhr-standard-thin-burst-hh-trans-teal-ltd-811392035736.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-ed23ts-3-tone-sunburst-con-funda-6971047510972.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-hawk-semini-blanca-6940651408784.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem13ts-3-tone-sb-6940651407671.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem1bf-burning-fire-6940651407077.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem1bg-blue-glow-6940651407060.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem1pt-pink-twilight-6940651407084.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem23ts-3-tone-sb-6940651406803.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem2bf-burning-fire-6940651406780.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem2bg-blue-glow-6940651406773.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sem2pt-pink-twilight-6940651406797.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-sst-alder-h-vintage-white-6940651408777.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-ssth-alder-3-tone-sunburst-6940651408760.html</loc></url>
+  <url><loc>https://guitle.com/g/sx-ssth-alder-natural-6940651408753.html</loc></url>
   <url><loc>https://guitle.com/g/vintage-icon-v120mrbk-5051548035912.html</loc></url>
+  <url><loc>https://guitle.com/g/vintage-reissued-v6-firenza-red-5051548034427.html</loc></url>
   <url><loc>https://guitle.com/g/vintage-v6mrhdx-thomas-blug-summer-of-love-5051548023063.html</loc></url>
   <url><loc>https://guitle.com/g/vox-apc-1-blue-metallic-4959112227644.html</loc></url>
   <url><loc>https://guitle.com/g/vox-apc-1-orange-metallic-4959112227651.html</loc></url>
@@ -3186,6 +3826,13 @@
   <url><loc>https://guitle.com/g/vox-apc-2-ag-aqua-green-4959112247949.html</loc></url>
   <url><loc>https://guitle.com/g/vox-apc-2-bl-black-4959112247932.html</loc></url>
   <url><loc>https://guitle.com/g/vox-apc-2-wh-white-4959112247925.html</loc></url>
+  <url><loc>https://guitle.com/g/vox-bobcat-s66-bigsby-blue-burst-4959112227590.html</loc></url>
+  <url><loc>https://guitle.com/g/vox-bobcat-s66-bigsby-negra-4959112227606.html</loc></url>
+  <url><loc>https://guitle.com/g/vox-bobcat-s66-negra-4959112198029.html</loc></url>
+  <url><loc>https://guitle.com/g/vox-bobcat-v90-bigsby-blue-burst-4959112227576.html</loc></url>
+  <url><loc>https://guitle.com/g/vox-bobcat-v90-bigsby-negra-4959112227583.html</loc></url>
+  <url><loc>https://guitle.com/g/vox-bobcat-v90-cherry-red-4959112197985.html</loc></url>
+  <url><loc>https://guitle.com/g/vox-bobcat-v90-sunburst-4959112197978.html</loc></url>
   <url><loc>https://guitle.com/g/vox-mk3-mini-aqua-green-4959112233621.html</loc></url>
   <url><loc>https://guitle.com/g/vox-mk3-mini-loud-red-4959112233638.html</loc></url>
   <url><loc>https://guitle.com/g/vox-mk3-mini-marble-4959112230866.html</loc></url>
@@ -3196,39 +3843,75 @@
   <url><loc>https://guitle.com/g/vox-sdc-1-mini-white-4959112192102.html</loc></url>
   <url><loc>https://guitle.com/g/vox-vga-3d-sb-4959112185852.html</loc></url>
   <url><loc>https://guitle.com/g/vox-vga-3d-tb-4959112185845.html</loc></url>
-  <url><loc>https://guitle.com/g/yamaha-pacifica-012-black-4957812667166.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-gpa612viixtgm-pacifica-tgm-guitarhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pa612viixmsb-pacifica-msb-guitarhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac012-bl-l15339html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac012-dbm-m15340html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac012-rm-m15341html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac112jl-bk-4957812288965.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac112jl-yns-4957812288972.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac120h-bl-l33094html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac120h-tbs-s33095html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac120h-vw-w33093html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac120h-yns-s33096html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac212vfm-cbr-r29183html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac212vfm-tbl-l29184html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac212vfm-tbs-s29185html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac212vqm-cbr-r29187html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac212vqm-tbl-l29188html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac212vqm-tbs-s29189html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac311h-bl-l15365html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac311h-rm-m15366html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac311h-vw-w15364html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac311h-yns-s33306html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac611hfm-rb-b15371html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac611hfm-tbl-4957812500135.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pac611hfm-tp-p15373html.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-012-dark-blue-metallic-4957812667180.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-012-ii-negra-4957812667166.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-012-red-metallic-4957812667173.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-012-white-4957812667197.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112-metallic-red-vmrmrlhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112j-bl-4960693208960.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112j-black-4957812688147.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112j-lake-placid-blue-4957812688154.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112j-lpb-4960693208977.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112j-old-violin-sunburst-4957812688161.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112j-ovs-4960693208984.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112j-red-metallic-4957812688178.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112j-rm-4960693208991.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112j-yellow-natural-satin-4957812688185.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112j-yns-4960693209004.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112jl-yellow-natural-satin-4957812688239.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112jl-zurda-4957812688222.html</loc></url>
-  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-black-4957812369343.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-bl-4957812369343.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-black-rl-4013175230086.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-gris-vmgrrlhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-old-violin-sun-4957812369350.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-old-violin-sunburst-4013175230093.html</loc></url>
-  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-old-violin-sunburst-4957812369350.html</loc></url>
-  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-sonic-blue-4957812369381.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-sb-4957812369381.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-sonic-blue-rl-4013175230116.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112v-ubl-4957812660082.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-united-blue-rl-4013175230109.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-vintage-white-rl-4013175230123.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-vw-4957812660099.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-yellow-natural-satin-rl-4013175230130.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112v-yns-4957812369329.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-gr-4957812660105.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-gray-rl-4013175230154.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-ib-4957812660129.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-ice-blue-rl-4013175230178.html</loc></url>
-  <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-red-metallic-4957812464963.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-red-metallic-rl-4013175230147.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-rm-4957812464963.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-sonic-pink-rl-4013175230161.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112vm-sp-4957812660112.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-112vmx-yellow-natural-satin-rl-4013175230185.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-112vmx-yns-4957812464987.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-120h-black-4957812491648.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-120h-tobacco-brown-sunburst-4957812491679.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-120h-vintage-white-4957812491655.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-120h-yellow-natural-satin-4957812491662.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-1611ms-4957812517331.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-212-vfm-caramel-brown-4957812473569.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-212vfm-tobacco-brown-sunburst-4957812473576.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-212vfm-translucent-black-4957812473583.html</loc></url>
@@ -3239,6 +3922,8 @@
   <url><loc>https://guitle.com/g/yamaha-pacifica-311h-red-metallic-4957812500111.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-311h-vintage-white-4957812500104.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-311h-yellow-natural-satin-4957812500128.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-611-vfm-tbl-4957812537810.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-pacifica-611-vfm-tbs-4957812534376.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-611hfm-root-beer-4957812500159.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-611hfm-translucent-purple-4957812500142.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-pacifica-611vfm-root-beer-4957812537827.html</loc></url>
@@ -3298,5 +3983,22 @@
   <url><loc>https://guitle.com/g/yamaha-revstar-standard-rss20-swift-blue-4957812675031.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-revstar-standard-rss20-vintage-white-4957812675062.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-rs20mm-vsb-4957812719971.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rse20-revstar-element-guit-elec-zurdos-swb-4957812675208.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rse20lbl-revstar-element-zurdos-negra-4957812675215.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rsp20-revstar-profesional-swb-guit-elec-20tswbhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rsp20-revstar-profesional-tcrg-guit-elec-20tcrghtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rsp20-revstar-profesional-tssb-guit-elec-20tssbhtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rsp20-revstar-profesional-xrbc-guit-elec-20xrbchtml.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rss20-revstar-standard-lh-bl-guit-elec-4957812675109.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-rss20-revstar-standard-lh-swb-guit-elec-4957812675093.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sa2200-bs-86792523095.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sa2200-vs-86792523101.html</loc></url>
   <url><loc>https://guitle.com/g/yamaha-sg-1802-gt-4957812479042.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sg1802-black-4957812479035.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sg1802-gold-top-p29988html.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sg1820-black-4957812478984.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sg1820-brown-sunburst-4957812478991.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sg1820-vintage-white-4957812479004.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sg1820a-black-4957812479011.html</loc></url>
+  <url><loc>https://guitle.com/g/yamaha-sg1820a-silver-burst-4957812479028.html</loc></url>
 </urlset>

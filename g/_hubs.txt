@@ -3,6 +3,7 @@ marca/admira.html
 marca/art-and-lutherie.html
 marca/austin.html
 marca/camps.html
+marca/chapman.html
 marca/charvel.html
 marca/cordoba.html
 marca/cort.html
@@ -15,8 +16,10 @@ marca/eko.html
 marca/epiphone.html
 marca/esp.html
 marca/evh.html
+marca/fender-custom-shop.html
 marca/fender.html
 marca/fujigen.html
+marca/g-l.html
 marca/gibson.html
 marca/godin.html
 marca/gretsch.html
@@ -25,13 +28,17 @@ marca/hagstrom.html
 marca/heritage.html
 marca/ibanez.html
 marca/jackson.html
+marca/kramer.html
+marca/larry-carlton-sire.html
 marca/ltd.html
 marca/martin.html
 marca/maybach.html
+marca/michael-kelly.html
 marca/mooer.html
 marca/music-man.html
 marca/norman.html
 marca/oqan.html
+marca/prs-paul-reed-smith.html
 marca/prs.html
 marca/schecter.html
 marca/simon-patrick.html
@@ -41,6 +48,7 @@ marca/sterling.html
 marca/suhr.html
 marca/sx.html
 marca/vintage.html
+marca/vox.html
 marca/vox.html
 marca/yamaha.html
 tipo/acustica-auditorio-concierto.html

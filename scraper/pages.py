@@ -104,7 +104,7 @@ def _render(product, kind, store_names, colors):
 <script src="/vendor/chart.umd.min.js"></script>
 </head>
 <body data-ean="{esc(product.get('ean') or '')}" data-best="{best['p']}" data-history="/{k['history']}"{f' data-sku="{esc(product["sku"])}"' if product.get('sku') else ''}>
-<script type="application/json" id="stores-data">{json.dumps({"names": {i["s"]: store_names.get(i["s"], i["s"]) for i in product["items"]}, "colors": colors}, ensure_ascii=False)}</script>
+<script type="application/json" id="stores-data">{json.dumps({"names": {i["s"]: store_names.get(i["s"], i["s"]) for i in product["items"]}, "colors": colors} | ({"hk": product["hk"]} if product.get("hk") else {}), ensure_ascii=False)}</script>
 <main>
   <div class="topbar">
     <div class="row">
