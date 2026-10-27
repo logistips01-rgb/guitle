@@ -49,6 +49,16 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
   guitle). Compra de instrumentos usados a particulares → stock para el renting y para la compra-venta.
   - Tasador en la web: el precio nuevo de calle que ya calcula guitle × % según estado (p. ej. 40-60 %),
     y formulario con fotos para recibir ofertas.
+  - **Guitarra como parte del pago** (decidido el 28/10/2026), como en coches y motos: en cualquier compra en la tienda
+    de guitle (segunda mano, nueva cuando seamos tienda oficial, renting con opción de compra). Se tasa un 20-25 %
+    por debajo del precio entre particulares y se revende revisada y con garantía (1 año) a precio de mercado:
+    p. ej. guitarra de 500 € → se toma por 375-400 €, revisión ~30 €, venta a 500-550 € → ~70-145 € de margen.
+    Lo que no se venda en 1-2 meses pasa al renting. Requisitos: DNI y propiedad del vendedor, libro registro de
+    compraventa de usados si lo exige la comunidad, IVA de bienes usados (REBU) con el gestor.
+  - **Tienda oficial y distribución (con volumen):** ser dealer oficial de alguna marca (Fender, Yamaha y Gibson venden
+    directo a tiendas, no dan distribución) y distribuidor de alguna marca mediana sin distribuidor fuerte en España.
+    Precio competitivo pero nunca a pérdida (prohibido; y la marca puede cortar el suministro). La tienda, separada
+    del comparador y marcada como "tienda de guitle", con el orden siempre por precio real.
   - Redirección: reenvío 301 en el registrador del dominio hacia `https://guitle.com/vende/`
     (GitHub Pages admite un solo dominio propio por web, por eso se redirige en el registrador).
   - Pendiente legal: registro/libro de compra-venta de objetos usados (en España suele exigirse
