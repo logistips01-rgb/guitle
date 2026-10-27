@@ -55,7 +55,8 @@ load(CFG.src).then(data => {
   for (const id of ["q", "brand", "range", "show", "sort"]) document.getElementById(id).value = state[id];
   render();
   const open = params.get("p");
-  if (open) { const p = data.products.find(x => x.id === open); if (p) openSheet(p); }
+  // Enlaces antiguos (?p=EAN) → página propia de la guitarra.
+  if (open) { const p = data.products.find(x => x.id === open); if (p) { if (p.slug) location.replace("g/" + p.slug + ".html"); else openSheet(p); } }
 }).catch(() => { document.getElementById("meta").textContent = "No se pudo cargar el catálogo."; });
 
 function matches(p) {
@@ -84,14 +85,15 @@ const SORTS = {
 function tile(p) {
   const badges = [p.atLow && p.nStores ? '<span class="badge low">Mínimo</span>' : "",
                   p.save >= 1 ? `<span class="badge">Ahorra ${eur(Math.round(p.save))}</span>` : ""].join("");
-  return `<div class="tile" data-id="${esc(p.id)}">
+  // Cada guitarra enlaza a su página (g/…html): histórico completo y veredicto; sin página, la ficha emergente.
+  return `<${p.slug ? "a" : "div"} class="tile" data-id="${esc(p.id)}"${p.slug ? ` href="g/${esc(p.slug)}.html"` : ""}>
     <div class="badges">${badges}</div>
     <div class="img">${pic(p) ? `<img loading="lazy" src="${esc(pic(p))}" alt="">` : NOPHOTO}</div>
     <div class="body"><span class="brand">${esc(p.brand || "")}${p.type && p.type !== "Otras" ? " · " + esc(p.type) : ""}${p.lh ? " · zurda" : ""}</span>
       <span class="name">${esc(p.name.replace(new RegExp("^" + (p.brand || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " ", "i"), ""))}</span>
       <span class="price"><strong>${eur(p.best.p)}</strong></span>
       <span class="foot"><span>${esc(storeName[p.best.s] || p.best.s)}</span><span class="stores-n">${p.nStores} ${p.nStores === 1 ? "tienda" : "tiendas"}</span></span>
-    </div></div>`;
+    </div></${p.slug ? "a" : "div"}>`;
 }
 
 function render() {
@@ -124,7 +126,7 @@ document.getElementById("types").addEventListener("click", e => {
 });
 document.getElementById("more").addEventListener("click", () => { state.shown += PAGE; render(); });
 document.getElementById("grid").addEventListener("click", e => {
-  const t = e.target.closest(".tile"); if (!t) return;
+  const t = e.target.closest(".tile"); if (!t || t.tagName === "A") return;
   openSheet(catalog.products.find(p => p.id === t.dataset.id));
 });
 

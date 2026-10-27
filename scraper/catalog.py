@@ -29,7 +29,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from . import analytics, jsonld
+from . import analytics, jsonld, pages
 from .common import normalize_id
 from .fetch import Fetcher, is_challenge
 
@@ -720,11 +720,14 @@ def build(offers=None, history=None):
         # Las tiendas de seguimiento (products.json) son de eléctricas.
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" else ({}, {}, {})
         products = _products(kind, mine, history, *extra)
+        for p in products:
+            p["slug"] = pages.slug_for(p)
         used = {i["s"] for p in products for i in p["items"]}
         write(DIR / fname, {"updated": now_iso(), "kind": kind, "stores": {s: names.get(s, s) for s in sorted(used)},
                             "products": products})
         multi = sum(len({i["s"] for i in p["items"]}) > 1 for p in products)
         print(f"catálogo {kind}: {len(products)} guitarras, {multi} en más de una tienda", flush=True)
+        pages.write_pages(kind, products, names)
 
 
 def main(argv=None):
