@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2a78d6">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="fonts/inter.css">
+<link rel="stylesheet" href="catalogo.css">
+<title>Black Friday 2026 en guitarras: solo descuentos reales · guitle</title>
+<meta name="description" content="Black Friday de guitarras con el histórico de precios de cada modelo: qué rebajas son reales, cuáles están en su mínimo y qué tiendas subieron el precio antes de rebajarlo.">
+<link rel="canonical" href="https://guitle.com/black-friday.html">
+<style>
+  .intro { color: var(--text-secondary); max-width: 760px; margin: 4px 0 6px; }
+  .deals-sec { margin-top: 30px; }
+  .deals-sec h2 { font-size: 1.2rem; margin: 0 0 4px; letter-spacing: -.02em; }
+  .deals-sec > p { color: var(--text-muted); font-size: .9rem; margin: 0 0 12px; }
+  .waiting { background: var(--surface-1); border: 1px dashed var(--border); border-radius: 14px; padding: 16px 18px; color: var(--text-secondary); }
+  .badge.bad { background: var(--warn-bg); color: var(--warning); }
+  .fake { font-size: .82rem; color: var(--text-secondary); line-height: 1.35; }
+  .fake s { color: var(--text-muted); }
+  .kind { font-size: .72rem; color: var(--text-muted); }
+  .howto { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 14px 0 4px; }
+  .howto div { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; }
+  .howto b { display: block; margin-bottom: 2px; }
+  .howto span { color: var(--text-secondary); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a></h1>
+      <a class="navlink" href="chollos.html">Chollos</a> <a class="navlink" href="catalogo.html">Catálogo</a>
+    </div>
+  </div>
+  <h2 style="font-size:1.6rem;margin:18px 0 4px;letter-spacing:-.03em">Black Friday de guitarras: ¿rebaja de verdad?</h2>
+  <p class="intro">El Black Friday es el viernes 27 de noviembre de 2026. Seguimos el precio de cada guitarra todos los días desde
+    semanas antes, así que podemos decirte qué descuentos son reales y qué tiendas subieron el precio para luego "rebajarlo".</p>
+  <div class="howto">
+    <div><b>Mínimo histórico</b><span>Más barata que nunca desde que la seguimos.</span></div>
+    <div><b>Bajada real</b><span>Por debajo de su precio medio del último mes, no de un precio inventado.</span></div>
+    <div><b>Descuento inflado</b><span>La tienda subió el precio y ahora lo "rebaja" a lo que ya costaba antes.</span></div>
+  </div>
+  <p class="muted small" id="status"></p>
+
+  <section class="deals-sec"><h2>Mínimos históricos</h2><p>Hoy están más baratas que nunca desde que las seguimos.</p><div id="records"></div></section>
+  <section class="deals-sec"><h2>Bajadas reales</h2><p>Por debajo de su precio medio de los últimos 30 días.</p><div id="real_drops"></div></section>
+  <section class="deals-sec"><h2>Han bajado hoy</h2><p>La tienda más barata ha rebajado su precio desde ayer.</p><div id="today"></div></section>
+  <section class="deals-sec"><h2>Ojo: descuentos inflados</h2><p>La tienda subió el precio y ahora lo "rebaja"… al mismo precio que tenía antes.</p><div id="inflated"></div></section>
+
+  <footer class="site-foot">
+    <span>Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span>
+    <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+  </footer>
+</main>
+<script src="chollos.js"></script>
+</body>
+</html>
