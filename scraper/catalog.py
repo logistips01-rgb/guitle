@@ -50,7 +50,7 @@ SESSION_BRANDS = ("fender", "squier", "gibson", "epiphone", "ibanez", "prs", "gr
                   "chapman", "reverend", "vintage", "framus", "warwick", "hagstrom", "eastman", "maybach")
 SESSION_SKIP = re.compile(
     r"saite|string|gurt|strap|koffer|case|gig-?bag|tasche|bag|pickup|tonabnehmer|humbucker|schlagbrett|pickguard"
-    r"|kit|staender|stand|amp|verstaerker|combo|head|topteil|cabinet|box|bass|akusti|acoustic|western|konzert"
+    r"|kit|staender|stand(?!ard)|(?<![a-z])amp|verstaerker|combo|head(?!less)|topteil|cabinet|box|bass|akusti|acoustic|western|konzert"
     r"|klassik|ukulele|mandolin|banjo|pedal|effekt|kabel|cable|plektr|pick|hals|neck|body|korpus|mechanik|tuner"
     r"|stimm|bruecke|bridge|sattel|knopf|knob|schalter|switch|poti|buchse|tremolo|vibrato|shirt|hoodie|cap-|tasse"
     r"|buch|book|poster|sticker|halter|hanger|tuch|cloth|polish|pflege|clean|ersatz|schraube|feder|spring|saddle"
@@ -151,6 +151,56 @@ def _parse_thomann(soup, text):
             "image": image.get("content") if image else None, "ean": None}
 
 
+# MAT Guitars (PrestaShop): la categoría va en la URL (/es/<categoría>/<id>-<nombre>-<EAN>.html) y la ficha trae
+# JSON-LD con EAN pero sin breadcrumb: la categoría de la URL hace de breadcrumb.
+MAT_ELECTRIC = {"guitarras-tipo-stratocaster", "guitarras-tipo-superstrat", "guitarras-double-cut", "guitarras-tipo-telecaster",
+                "guitarras-jaguar-jazzmaster-mustang-offset", "guitarras-de-caja-o-semicaja", "guitarras-les-paul",
+                "guitarras-modelos-signature", "guitarras-de-7-y-8-cuerdas", "guitarras-electricas-para-zurdos",
+                "guitarras-single-cut", "guitarras-tipo-v-y-explorer", "guitarras-electricas-para-principiantes",
+                "guitarras-de-rock", "guitarras-electricas", "guitarras-tipo-sg", "otras-guitarras-electricas",
+                "guitarras-multiescala", "guitarras-escala-corta", "guitarras-electricas-baratas", "guitarras-de-jazz",
+                "guitarras-heavy"}
+_MAT_ACOUSTIC = re.compile(r"^(guitarras-(electro)?acusticas|guitarras-(clasicas|flamencas)|otras-guitarras-(electroacusticas|clasicas)"
+                           r"|guitarras-(dreadnought|jumbo)$|guitarras-con-cuerdas-de-nylon)")
+
+
+def _mat_category(url):
+    parts = url.split("/")
+    return parts[4] if len(parts) > 5 else ""
+
+
+def _mat_crumbs(url):
+    cat = _mat_category(url)
+    return (["Guitarras eléctricas"] if cat in MAT_ELECTRIC else []) + [cat.replace("-", " ")]
+
+
+# Pronorte publica el producto en microdatos de schema.org (con gtin13) y el breadcrumb en la página.
+def _parse_microdata(soup, text):
+    crumbs = [li.get_text(" ", strip=True) for li in soup.select("ul.breadcrumbs li")][1:]
+    meta = {}
+    for m in soup.find_all("meta", attrs={"itemprop": True}):
+        if not m.find_parent(attrs={"itemtype": re.compile("BreadcrumbList")}):
+            meta.setdefault(m["itemprop"], m.get("content"))
+    if crumbs and meta.get("name") and crumbs[-1].strip().lower() == meta["name"].strip().lower():
+        crumbs = crumbs[:-1]
+    if not meta.get("price") or not meta.get("name"):
+        return {"crumbs": crumbs}
+    ean = normalize_id(meta.get("gtin13") or meta.get("gtin") or "")
+    return {"crumbs": crumbs, "name": meta["name"], "brand_raw": meta.get("brand"), "price": float(meta["price"]),
+            "currency": meta.get("priceCurrency") or "EUR", "in_stock": "instock" in (meta.get("availability") or "").lower(),
+            "image": meta.get("image"), "ean": ean if len(ean) in (12, 13, 14) else None}
+
+
+PRONORTE_SKIP = re.compile(SESSION_SKIP.pattern + r"|funda|estuche|correa|cuerda|pastilla|soporte|cable|ampli|bajo|ukelele"
+                           r"|pedal|afinador|cejilla|pua|clavija|repuesto", re.I)
+
+
+def _pick_pronorte(url, brands):
+    slug = url.split("/p/")[-1]
+    return "/p/" in url and slug.startswith(tuple(b + "-" for b in brands)) and not PRONORTE_SKIP.search(slug) \
+        and not NOT_PRODUCT.search(slug)
+
+
 def _only(kind, pred):
     return lambda crumbs: kind if pred(crumbs) else None
 
@@ -183,6 +233,14 @@ SOURCES = {
     "thomann": {"name": "Thomann", "discover": lambda f: _discover_thomann(f, THOMANN_ELECTRIC), "delay": (8.0, 14.0),
                 "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u),
                 "parse": _parse_thomann, "kind": _only("electrica", _is_electric)},
+    "mat": {"name": "MAT Guitars", "sitemap": "https://www.matguitars.com/1_es_0_sitemap.xml",
+            "pick": lambda u: _mat_category(u) in MAT_ELECTRIC and not NOT_PRODUCT.search(u), "crumbs": _mat_crumbs,
+            "kind": _only("electrica", _is_electric)},
+    "pronorte": {"name": "Pronorte", "sitemap": "https://www.pronorte.es/sitemap.xml", "parse": _parse_microdata,
+                 # Yamaha vende también pianos, baterías y audio: solo sus eléctricas.
+                 "pick": lambda u: _pick_pronorte(u, SESSION_BRANDS + ("sire", "harley-benton", "vintage", "aria"))
+                 and (not u.split("/p/")[-1].startswith("yamaha-") or re.search(r"pacifica|revstar|-rs[ps]?\d|-sg\d", u)),
+                 "kind": _only("electrica", _is_electric)},
 }
 
 # --- Acústicas y clásicas -------------------------------------------------------------------------
@@ -239,6 +297,10 @@ ACOUSTIC_SOURCES = {
                                              r"|electroclasicas)", u) and u.endswith(".html") and not NOT_PRODUCT.search(u)},
     "egitana": {**SOURCES["egitana"], "kind": acoustic_kind,
                 "pick": lambda u: _pick_acoustic_brand(u.split("egitana.es/")[-1].split("/p/")[0])},
+    "mat": {**SOURCES["mat"], "kind": acoustic_kind,
+            "pick": lambda u: bool(_MAT_ACOUSTIC.search(_mat_category(u))) and not NOT_PRODUCT.search(u)},
+    "pronorte": {**SOURCES["pronorte"], "kind": acoustic_kind,
+                 "pick": lambda u: "/p/" in u and _pick_acoustic_brand(u.split("/p/")[-1])},
 }
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -555,6 +617,8 @@ def read_page(fetcher, store_id, url, now):
             return rec
         soup = BeautifulSoup(resp.text, "html.parser")
         data = src["parse"](soup, resp.text) if "parse" in src else _parse_jsonld(soup, store_id)
+        if not data["crumbs"] and "crumbs" in src:
+            data["crumbs"] = src["crumbs"](url)  # tiendas sin breadcrumb: la categoría de la URL (MAT)
         kind = src["kind"](data["crumbs"])
         if not kind:
             rec["status"] = "not_guitar"
