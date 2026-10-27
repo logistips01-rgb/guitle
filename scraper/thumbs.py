@@ -151,9 +151,11 @@ def wanted():
     for i in latest.get("items", []):  # todas las fotos de cada producto, para poder elegir la mejor
         if i.get("image"):
             out[i["image"]] = category.get(i["sku"], "guitarra") in ROTATE_CATEGORIES
-    for o in load(ROOT / "data" / "catalog" / "offers.json", {}).values():  # todas las tiendas, para elegir la mejor
-        if o.get("status") == "ok" and o.get("image"):
-            out.setdefault(o["image"], True)
+    # Todas las tiendas de todos los catálogos (eléctricas, acústicas y clásicas), para elegir la mejor foto.
+    for path in sorted((ROOT / "data" / "catalog").rglob("offers.json")):
+        for o in load(path, {}).values():
+            if o.get("status") == "ok" and o.get("image"):
+                out.setdefault(o["image"], True)
     return out
 
 

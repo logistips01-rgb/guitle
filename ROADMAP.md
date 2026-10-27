@@ -51,7 +51,8 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 
 1. Revisar la carga completa de guitarras eléctricas en el catálogo.
 2. Sumar Egitana, Thomann y el resto de tiendas al catálogo.
-3. Acústicas y españolas (clásicas).
+3. Acústicas y españolas (clásicas). **En marcha:** `acusticas.html` y `clasicas.html`, catálogo `--cat acustica`
+   (data/catalog/acusticas/), mismas tiendas y una sola lectura para las dos secciones.
 4. Bajos, amplis, pedales, teclados y micros, y accesorios/consumibles: cables, púas, cuerdas, correas,
    pies de guitarra y de micro, fundas, afinadores, cejillas… (el margen de afiliación y de tienda está aquí).
 

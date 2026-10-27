@@ -1,18 +1,20 @@
-"""Catálogo amplio de guitarras eléctricas.
+"""Catálogo amplio de guitarras: eléctricas por un lado; acústicas y clásicas por otro.
 
 Descubre las fichas en los sitemaps de las tiendas, lee cada día un lote (las nunca leídas y las más
-antiguas, con un tope de tiempo por tienda) y agrupa los productos entre tiendas por EAN.
+antiguas, con un tope de tiempo por tienda) y agrupa los productos entre tiendas por EAN (o por nombre,
+en tiendas sin EAN).
 
-Ficheros en data/catalog/:
-    offers.json    última lectura de cada ficha {url: {...}}
-    history.json   cambios de precio {ean: {tienda: [[fecha, precio], ...]}}
-    products.json  catálogo para la web, agrupado por EAN
+Cada catálogo (--cat) tiene su carpeta:
+    electrica → data/catalog/            products.json
+    acustica  → data/catalog/acusticas/  acusticas.json y clasicas.json (una sola lectura de las tiendas;
+                                         la categoría de la tienda decide en qué página va cada guitarra)
+con offers.json (última lectura de cada ficha) e history.json (cambios de precio).
 
 Uso:
-    python -m scraper.catalog [--minutes 50] [--limit N] [--only numemusic]
+    python -m scraper.catalog [--cat acustica] [--minutes 50] [--limit N] [--only numemusic]
     python -m scraper.catalog --records-out F      # CI: lee y guarda el lote en F
-    python -m scraper.catalog --merge F            # CI: fusiona el lote en data/catalog/
-    python -m scraper.catalog --build              # regenera products.json
+    python -m scraper.catalog --merge F            # CI: fusiona el lote
+    python -m scraper.catalog --build              # regenera los JSON de la web
 """
 import argparse
 import gzip
@@ -101,27 +103,102 @@ def _parse_egitana(soup, text):
             "currency": "EUR", "in_stock": None, "image": image.get("content") if image else None, "ean": None}
 
 
+def _only(kind, pred):
+    return lambda crumbs: kind if pred(crumbs) else None
+
+
+def _is_electric(crumbs):
+    return any(x.strip().lower() == "guitarras eléctricas" for x in crumbs)
+
+
 SOURCES = {
     "numemusic": {"name": "Nume Music", "sitemap": "https://www.numemusic.com/media/sitemap/es_ES.xml",
-                  "pick": _pick_numemusic, "guitar": lambda c: any(re.search(r"guitarras el[eé]ctricas", x, re.I) for x in c)},
+                  "pick": _pick_numemusic, "kind": _only("electrica", lambda c: any(re.search(r"guitarras el[eé]ctricas", x, re.I) for x in c))},
     "session": {"name": "Session", "sitemap": "https://www.session.de/sitemap.xml",
                 # "E-Gitarren & Zubehör" también agrupa accesorios: manda la última categoría.
                 "pick": _pick_session,
-                "guitar": lambda c: len(c) > 1 and c[-2].lower().startswith("e-gitarren")
-                and re.search(r"gitarre", c[-1], re.I) and not re.search(r"zubeh|saite|koffer|tasche", c[-1], re.I),
+                "kind": _only("electrica", lambda c: len(c) > 1 and c[-2].lower().startswith("e-gitarren")
+                and re.search(r"gitarre", c[-1], re.I) and not re.search(r"zubeh|saite|koffer|tasche", c[-1], re.I)),
                 "sub": lambda u: "-product-" in u},
     # Egitana responde a veces con estado 500 pero con la ficha completa: vale si trae los datos.
     "musicopolix": {"name": "Musicopolix", "sitemap": "https://musicopolix.com/1_es_0_sitemap.xml",
                     "pick": lambda u: "/guitarras/electricas/" in u and re.search(r"/\d+-[^/]+\.html$", u)
                     and not NOT_PRODUCT.search(u),
-                    "guitar": lambda c: any(x.strip().lower() == "guitarras eléctricas" for x in c)},
+                    "kind": _only("electrica", _is_electric)},
     "alfasoni": {"name": "Alfasoni", "sitemap": "https://alfasoni.com/1_index_sitemap.xml",
                  "pick": lambda u: "/guitarras-electricas-" in u and u.endswith(".html") and not NOT_PRODUCT.search(u),
-                 "guitar": lambda c: any(x.strip().lower() == "guitarras eléctricas" for x in c)},
+                 "kind": _only("electrica", _is_electric)},
     "egitana": {"name": "Egitana", "sitemap": "https://www.egitana.es/sitemaps/es/products_sitemap.xml",
                 "pick": _pick_egitana, "parse": _parse_egitana, "ok_status": (200, 500),
-                "guitar": lambda c: any(x.strip().lower() == "guitarras eléctricas" for x in c)},
+                "kind": _only("electrica", _is_electric)},
 }
+
+# --- Acústicas y clásicas -------------------------------------------------------------------------
+ACOUSTIC_BRANDS = ("taylor", "martin", "yamaha", "ortega", "lag", "cort", "takamine", "gibson", "epiphone", "fender",
+                   "guild", "furch", "eastman", "alhambra", "cordoba", "ibanez", "seagull", "larrivee", "lakewood",
+                   "hanika", "hoefner", "hofner", "washburn", "breedlove", "maton", "sigma", "cole-clark", "godin",
+                   "norman", "art-lutherie", "simon-patrick", "la-patrie", "ramirez", "raimundo", "admira", "camps",
+                   "alvarez", "ovation", "gretsch", "lowden", "collings", "santa-cruz", "boucher", "prodipe",
+                   "valencia", "esteve", "manuel-rodriguez", "jose-torres", "rafael-martin", "paco-castillo",
+                   "martinez", "salvador-cortez", "kremona", "tanglewood", "faith", "recording-king", "harmony",
+                   "framus", "squier", "gewa", "pro-arte", "ashton", "fender-cd", "sire", "enya", "lava")
+ACOUSTIC_SKIP = re.compile(
+    r"saite|string|cuerda|corda|gurt|strap|correa|correia|koffer|case|estojo|estuche|gig-?bag|tasche|bag|funda|saco"
+    r"|pickup|tonabnehmer|pastilla|captador|stand|staender|suporte|soporte|amp|verstaerker|amplificador|combo|bass"
+    r"|baixo|bajo|ukulele|ukelele|mandolin|bandolim|banjo|cavaquinho|pedal|kabel|cable|cabo|plektr|pick|palheta|pua"
+    r"|capo|cejilla|kapodaster|tuner|afinador|stimmger|mechanik|tarraxa|clavijero|bridge|ponte|steg|sattel|cover|capa"
+    r"|shirt|hoodie|tasse|caneca|book|buch|livro|poster|halter|hanger|tuch|cloth|polish|pflege|clean|limpeza|humidif"
+    r"|e-gitarre|electric|electrica|eletrica|single-string|bundle|pack|b-ware|ersatz|repuesto", re.I)
+_ACOUSTIC_URL = re.compile(r"/\d+-guitarra-(electro)?(ac[uú]?stica|cl[aá]?sica|flamenca|espa[nñ]ola)-")
+
+
+def _pick_acoustic_brand(slug):
+    return (slug.startswith(tuple(b + "-" for b in ACOUSTIC_BRANDS)) and not ACOUSTIC_SKIP.search(slug)
+            and not NOT_PRODUCT.search(slug))
+
+
+def acoustic_kind(crumbs):
+    """'clasica', 'acustica' o None según las categorías de la tienda (ES y DE)."""
+    leaf = " / ".join(crumbs[-2:]).lower()
+    if re.search(r"\bbajos? (ac|el)|\bbass|bässe|ukelele|ukulele|accesori|zubehör$|fundas?\b|cuerdas|saiten|estuches"
+                 r"|koffer|taschen|pastillas|amplific|cejillas|correas|ständer|soportes|repuestos", leaf):
+        return None
+    text = " / ".join(crumbs).lower()
+    if re.search(r"konzertgitarren|klassikgitarren|flamenco|guitarras? (el[eé]ctricas )?(cl[aá]sicas?|espa[nñ]olas?|flamencas?)"
+                 r"|guitarra cl[aá]sica|electrocl[aá]sicas|flamencas|cuerdas? de nylon", text):
+        return "clasica"
+    if re.search(r"westerngitarren|guitarras? (el[eé]ctricas |electro)?ac[uú]sticas?|electroac[uú]sticas|\bac[uú]sticas\b"
+                 r"|guitarras de viaje", text):
+        return "acustica"
+    return None
+
+
+ACOUSTIC_SOURCES = {
+    "numemusic": {**SOURCES["numemusic"], "pick": lambda u: bool(_ACOUSTIC_URL.search(u)) and not NOT_PRODUCT.search(u),
+                  "kind": acoustic_kind},
+    "session": {**SOURCES["session"], "pick": lambda u: _pick_acoustic_brand(u.split("/products/")[-1].strip("/")),
+                "kind": acoustic_kind},
+    "musicopolix": {**SOURCES["musicopolix"], "kind": acoustic_kind,
+                    "pick": lambda u: re.search(r"/cat/guitarras/(acusticas|electroacusticas|guitarra-clasica-guitarra-espanola"
+                                                r"|electroclasicas|guitarras-flamencas)/", u)
+                    and re.search(r"/\d+-[^/]+\.html$", u) and not NOT_PRODUCT.search(u)},
+    "alfasoni": {**SOURCES["alfasoni"], "kind": acoustic_kind,
+                 "pick": lambda u: re.search(r"alfasoni\.com/guitarras-(acusticas|clasicas|flamencas|electroacusticas"
+                                             r"|electroclasicas)", u) and u.endswith(".html") and not NOT_PRODUCT.search(u)},
+    "egitana": {**SOURCES["egitana"], "kind": acoustic_kind,
+                "pick": lambda u: _pick_acoustic_brand(u.split("egitana.es/")[-1].split("/p/")[0])},
+}
+
+ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
+                  ("Tamaño reducido", r"reducid|travel|viaje|reise|\bmini\b|3/4|1/2|baby|little|junior|\bgs mini|\bjr\d?\b"),
+                  ("Parlor", r"parlou?r"), ("Jumbo", r"jumbo|\bsj-?200|\bj-?45|\bj-?200"),
+                  ("Dreadnought", r"dreadnought|\bd-?\d{1,2}\b|\bdread|\bhd-?\d"),
+                  ("Auditorio / Concierto", r"auditori|concierto|concert|\bom\b|\b000|grand|folk|korpusgr|\bga\b|\bgs\b|orchestra"),
+                  ("Roundback", r"roundback|ovation")]
+CLASSICAL_TYPES = [("Flamenca", r"flamenc"),
+                   ("Tamaño reducido", r"\b[137]/[248]\b|reducid|junior|cadete|se[nñ]orita|requinto|kinder"),
+                   ("Electroclásica", r"electro|el[eé]ctricas? cl|tonabnehmer|\bce\b|\bcw\b|\bcx\b|ncx|cutaway|\bcwe\b"),
+                   ("Clásica", r".")]
 
 # Tipos comunes a partir del breadcrumb (Numemusic: "Modelos ST"; Session: "ST-Gitarren").
 TYPES = [("ST", r"\bst\b|st-gitarren|strat"), ("T", r"modelos t\b|formato t\b|\bt-gitarren|tele"),
@@ -139,6 +216,25 @@ NAME_TYPES = [("T", r"tele(caster)?\b|\btl\b"),
               ("Double cut", r"\bsg\b|custom ?2[24]|\bce ?2[24]|double.?cut"),
               ("Moderna / Metal", r"explorer|flying ?v|firebird|thunderbird|phoenix|headless|warrior|ravendark|"
                                   r"\bmetal\b|[78].?(cuerdas|string)|baritone")]
+TYPES_BY_KIND = {"electrica": TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES}
+NAME_TYPES_BY_KIND = {"electrica": NAME_TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES}
+
+# Catálogos: carpeta, fuentes y fichero de la web por categoría.
+CATALOGS = {
+    "electrica": {"dir": DIR, "sources": SOURCES, "files": {"electrica": "products.json"}},
+    "acustica": {"dir": DIR / "acusticas", "sources": ACOUSTIC_SOURCES,
+                 "files": {"acustica": "acusticas.json", "clasica": "clasicas.json"}},
+}
+CATALOG = CATALOGS["electrica"]
+
+
+def use(cat):
+    """Elige el catálogo con el que trabajan el resto de funciones."""
+    global DIR, SOURCES, CATALOG
+    CATALOG = CATALOGS[cat]
+    DIR, SOURCES = CATALOG["dir"], CATALOG["sources"]
+
+
 LEFT = re.compile(r"\b(lh|left[- ]?hand(ed)?|lefthand|left|zurd[oa]s?)\b|\d+lh\b", re.I)
 
 # Marcas en mayúsculas o con variantes → nombre canónico.
@@ -184,7 +280,8 @@ def _smart_case(name):
 def clean_name(name, brand_raw, brand):
     """'SQUIER BY FENDER Classic Vibe…' → 'Squier Classic Vibe…'."""
     name = re.sub(r"\s+", " ", name or "").strip()
-    name = re.sub(r"\s+guitarra el[eé]ctrica$", "", name, flags=re.I)
+    name = re.sub(r"\s+guitarra (el[eé]ctrica|electroac[uú]stica|ac[uú]stica|cl[aá]sica|electrocl[aá]sica|flamenca)(?=\s|$)", "",
+                  name, flags=re.I)
     name = _smart_case(name)
     if brand_raw:  # "PRS PRS SE Custom 24" → "PRS SE Custom 24"
         name = re.sub(rf"^({re.escape(brand_raw)}\s+)+", brand_raw + " ", name, flags=re.I)
@@ -195,9 +292,9 @@ def clean_name(name, brand_raw, brand):
     return name
 
 
-def type_from_name(name, url=""):
+def type_from_name(name, url="", kind="electrica"):
     text = name.lower() + " " + url.rsplit("/", 1)[-1].replace("-", " ")
-    for label, pat in NAME_TYPES:
+    for label, pat in NAME_TYPES_BY_KIND[kind]:
         if re.search(pat, text):
             return label
     return "Otras"
@@ -290,15 +387,20 @@ def tidy(o):
         brand = "LTD"  # Egitana pone las LTD bajo ESP; Numemusic y Session, como LTD
     o["name"] = re.sub(rf"^({re.escape(o.get('brand') or brand)}\s+)+", (o.get("brand") or brand) + " ", o["name"], flags=re.I)
     o["brand"] = brand
+    o["kind"] = o.get("kind") or "electrica"
     if not o.get("type") or o["type"] in ("Otras", "Offset"):
-        o["type"] = "Offset / Retro" if o.get("type") == "Offset" else type_from_name(o["name"], o["url"])
+        o["type"] = "Offset / Retro" if o.get("type") == "Offset" else type_from_name(o["name"], o["url"], o["kind"])
+    elif o["type"] == "Clásica":  # tipo genérico: el nombre puede concretarlo (flamenca, electroclásica, 3/4…)
+        o["type"] = type_from_name(o["name"], o["url"], "clasica")
     o["lh"] = bool(LEFT.search(o["name"]) or LEFT.search(o["url"].rsplit("/", 1)[-1].replace("-", " ")))
     return o
 
 
-def guitar_type(crumbs):
-    leaf = crumbs[-1].lower() if crumbs else ""
-    for label, pat in TYPES:
+def guitar_type(crumbs, kind="electrica"):
+    # Eléctricas: la última categoría ("Modelos ST"); acústicas y clásicas: las dos últimas ("Westerngitarren / Dreadnought").
+    leaf = (crumbs[-1] if kind == "electrica" else " / ".join(crumbs[-2:])).lower() if crumbs else ""
+    leaf = re.sub(r"cl[aá]sicas y flamencas", "", leaf)  # categoría mixta de Numemusic: no dice si es flamenca
+    for label, pat in TYPES_BY_KIND[kind]:
         if re.search(pat, leaf):
             return label
     return "Otras"
@@ -387,7 +489,8 @@ def read_page(fetcher, store_id, url, now):
             return rec
         soup = BeautifulSoup(resp.text, "html.parser")
         data = src["parse"](soup, resp.text) if "parse" in src else _parse_jsonld(soup, store_id)
-        if not src["guitar"](data["crumbs"]):
+        kind = src["kind"](data["crumbs"])
+        if not kind:
             rec["status"] = "not_guitar"
             return rec
         if data.get("price") is None:
@@ -396,7 +499,7 @@ def read_page(fetcher, store_id, url, now):
         brand = canonical_brand(data["brand_raw"])
         rec.update(status="ok" if data["currency"] == "EUR" else "wrong_currency",
                    ean=data["ean"].lstrip("0") if data.get("ean") else None, brand=brand,
-                   name=clean_name(data["name"], data["brand_raw"], brand), type=guitar_type(data["crumbs"]),
+                   name=clean_name(data["name"], data["brand_raw"], brand), kind=kind, type=guitar_type(data["crumbs"], kind),
                    price=data["price"], currency=data["currency"], in_stock=data["in_stock"], image=data.get("image"))
     except requests.RequestException as exc:
         rec["note"] = type(exc).__name__
@@ -510,13 +613,11 @@ def _curated_offers():
     return out, {s: stores[s]["name"] for s in stores}, {v: k for k, v in by_sku.items()}, info
 
 
-def build(offers=None, history=None):
-    offers = offers if offers is not None else load(DIR / "offers.json", {})
-    history = history if history is not None else load(DIR / "history.json", {})
+def _products(kind, offers, history, curated, sku_by_ean, curated_info):
+    """Productos de una categoría: agrupa las fichas por EAN (o nombre) y les añade tiendas de seguimiento."""
     from .thumbs import existing, slenderness  # import aquí: thumbs importa este módulo
-    curated, store_names, sku_by_ean, curated_info = _curated_offers()
     groups = {}
-    for o in offers.values():
+    for o in offers:
         if o.get("status") != "ok" or o.get("price") is None or NOT_PRODUCT.search(o["name"]):
             continue
         groups.setdefault(o.get("ean") or "url:" + o["url"], []).append(tidy(o))
@@ -600,29 +701,43 @@ def build(offers=None, history=None):
             continue
         items = sorted(curated[ean], key=lambda i: i["p"])
         prod = {"id": ean, "ean": ean, "name": p["name"], "brand": p.get("brand"),
-                "type": type_from_name(p["name"]), "img": p.get("image"), "items": items, "low": None,
+                "type": type_from_name(p["name"], kind=kind), "img": p.get("image"), "items": items, "low": None,
                 "sku": p["sku"]}
         if p.get("thumb"):
             prod["th"] = p["thumb"]
         products.append(prod)
     products.sort(key=lambda p: (-len(p["items"]), p["name"]))
+    return products
+
+
+def build(offers=None, history=None):
+    offers = offers if offers is not None else load(DIR / "offers.json", {})
+    history = history if history is not None else load(DIR / "history.json", {})
+    curated, store_names, sku_by_ean, curated_info = _curated_offers()
     names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names
-    used = {i["s"] for p in products for i in p["items"]}
-    write(DIR / "products.json", {"updated": now_iso(), "stores": {s: names.get(s, s) for s in sorted(used)},
-                                  "products": products})
-    multi = sum(len({i["s"] for i in p["items"]}) > 1 for p in products)
-    print(f"catálogo: {len(products)} guitarras, {multi} en más de una tienda", flush=True)
+    for kind, fname in CATALOG["files"].items():
+        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind]
+        # Las tiendas de seguimiento (products.json) son de eléctricas.
+        extra = (curated, sku_by_ean, curated_info) if kind == "electrica" else ({}, {}, {})
+        products = _products(kind, mine, history, *extra)
+        used = {i["s"] for p in products for i in p["items"]}
+        write(DIR / fname, {"updated": now_iso(), "kind": kind, "stores": {s: names.get(s, s) for s in sorted(used)},
+                            "products": products})
+        multi = sum(len({i["s"] for i in p["items"]}) > 1 for p in products)
+        print(f"catálogo {kind}: {len(products)} guitarras, {multi} en más de una tienda", flush=True)
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser()
+    parser.add_argument("--cat", choices=sorted(CATALOGS), default="electrica", help="catálogo (carpeta y tiendas)")
     parser.add_argument("--only", help="tiendas separadas por comas")
     parser.add_argument("--minutes", type=float, default=50, help="tope de tiempo por tienda")
     parser.add_argument("--limit", type=int, help="máximo de fichas por tienda")
     parser.add_argument("--records-out", help="guarda el lote en este fichero (CI)")
-    parser.add_argument("--merge", help="fusiona en data/catalog/ un lote de --records-out")
-    parser.add_argument("--build", action="store_true", help="solo regenera products.json")
+    parser.add_argument("--merge", help="fusiona en la carpeta del catálogo un lote de --records-out")
+    parser.add_argument("--build", action="store_true", help="solo regenera los JSON de la web")
     args = parser.parse_args(argv)
+    use(args.cat)
     if args.build:
         build()
         return 0

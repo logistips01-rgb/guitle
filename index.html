@@ -90,8 +90,8 @@
   .card .where { color: var(--text-muted); font-size: .8rem; }
   .badge { position: absolute; top: 8px; left: 8px; font-size: .74rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--good-bg); color: var(--good); }
   .badge.low { background: var(--warn-bg); color: var(--warning); }
-  .cats { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
-  @media (max-width: 860px) { .cats { grid-template-columns: repeat(4, 1fr); } }
+  .cats { display: grid; grid-template-columns: repeat(9, 1fr); gap: 10px; }
+  @media (max-width: 1000px) { .cats { grid-template-columns: repeat(5, 1fr); } }
   @media (max-width: 520px) { .cats { grid-template-columns: repeat(3, 1fr); } }
   .catcard { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 14px 8px; text-align: center; text-decoration: none; }
   .catcard b { display: block; height: 32px; margin-bottom: 4px; }
@@ -218,6 +218,9 @@ load("data/latest.json").then(latest => {
   // Categorías: las que tienen productos enlazan al comparador; el resto, "próximamente". Iconos de línea (SVG, color del texto).
   const ICONS = {
     guitarra: '<path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/><path d="M14.5 9.5c-1.6-1.6-3.9-1.3-5 .2-1 .4-2.6.1-4 1.5-2.1 2.1-1.7 5.4.6 7.7s5.6 2.7 7.7.6c1.4-1.4 1.1-3 1.5-4 1.5-1.1 1.8-3.4.2-5z"/><circle cx="9.6" cy="14.4" r="1.4"/><path d="M6.8 15.8l1.6 1.6"/>',
+    // Acústica: cuerpo en ocho con boca; clásica: igual con pala calada.
+    acustica: '<path d="M12 2.5v8"/><rect x="10.6" y="1" width="2.8" height="3" rx=".6"/><path d="M12 10.2c-2.4 0-3.9 1.5-3.9 3.4 0 .9.4 1.7 1 2.2-1.5.7-2.4 2-2.4 3.4 0 2.1 2.3 3.6 5.3 3.6s5.3-1.5 5.3-3.6c0-1.4-.9-2.7-2.4-3.4.6-.5 1-1.3 1-2.2 0-1.9-1.5-3.4-3.9-3.4z"/><circle cx="12" cy="16.4" r="1.3"/>',
+    clasica: '<path d="M12 4v6.5"/><rect x="10.3" y=".8" width="3.4" height="3.6" rx=".5"/><path d="M11.3 1.8v1.6M12.7 1.8v1.6"/><path d="M12 10.2c-2.4 0-3.9 1.5-3.9 3.4 0 .9.4 1.7 1 2.2-1.5.7-2.4 2-2.4 3.4 0 2.1 2.3 3.6 5.3 3.6s5.3-1.5 5.3-3.6c0-1.4-.9-2.7-2.4-3.4.6-.5 1-1.3 1-2.2 0-1.9-1.5-3.4-3.9-3.4z"/><circle cx="12" cy="16.4" r="1.3"/>',
     bajo: '<path d="M22 2l-8 8"/><path d="M20.5.8l2.7 2.7"/><path d="M14 10c-1.4-1.4-3.4-1.1-4.4.2-.9.4-2.3.1-3.5 1.3-1.9 1.9-1.5 4.8.5 6.9s5 2.4 6.9.5c1.2-1.2.9-2.6 1.3-3.5 1.3-1 1.6-3 .2-4.4z"/><circle cx="9.8" cy="14.2" r="1.2"/>',
     ampli: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18"/><circle cx="12" cy="14.2" r="3.6"/><circle cx="12" cy="14.2" r=".8"/><path d="M6 6.2h.01M8.5 6.2h.01M11 6.2h.01"/>',
     pedal: '<rect x="5" y="2" width="14" height="20" rx="2.5"/><circle cx="9" cy="6.5" r="1.6"/><circle cx="15" cy="6.5" r="1.6"/><path d="M5 11h14"/><circle cx="12" cy="16.5" r="2.4"/>',
@@ -225,21 +228,27 @@ load("data/latest.json").then(latest => {
     micro: '<rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4M8.5 21h7"/>',
     estuche: '<path d="M8.5 21.5c-3 0-5.5-2.4-5.5-5.3 0-1.8.9-3.2 2-4.1.6-.5.7-1.4.3-2.1-.3-.6-.4-1.2-.4-1.8C4.9 5.6 6.7 4 9 4c1.4 0 2.6.6 3.3 1.6l7.2-3.1a1.6 1.6 0 0 1 1.3 2.9l-6.7 4c.4 1 .4 2.1-.1 3 .9.9 1.5 2.2 1.5 3.6 0 3-2.6 5.5-7 5.5z"/><path d="M8 13.5l3 3"/>',
   };
-  const CATS = [["guitarra", "Guitarras"], ["bajo", "Bajos"], ["ampli", "Amplis"], ["pedal", "Pedales"],
-                ["teclado", "Teclados"], ["micro", "Micros"], ["estuche", "Estuches"]];
+  const CATS = [["guitarra", "Eléctricas"], ["acustica", "Acústicas"], ["clasica", "Clásicas"], ["bajo", "Bajos"],
+                ["ampli", "Amplis"], ["pedal", "Pedales"], ["teclado", "Teclados"], ["micro", "Micros"], ["estuche", "Estuches"]];
+  // Secciones del catálogo amplio: página y datos propios (el recuento llega al cargar cada JSON).
+  const CATALOG_PAGES = { guitarra: ["catalogo.html", "data/catalog/products.json"],
+                          acustica: ["acusticas.html", "data/catalog/acusticas/acusticas.json"],
+                          clasica: ["clasicas.html", "data/catalog/acusticas/clasicas.json"] };
   document.getElementById("cats").innerHTML = CATS.map(([id, label]) => {
     const icon = `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[id]}</svg>`;
+    if (CATALOG_PAGES[id]) return `<a class="catcard" id="cat-${id}" href="${CATALOG_PAGES[id][0]}"><b>${icon}</b><span>${label}</span><small>…</small></a>`;
     const n = latest.products.filter(p => p.category === id && latest.items.some(i => i.sku === p.sku && i.price != null && !isRef[i.store])).length;
-    return n ? `<a class="catcard" id="cat-${id}" href="${id === "guitarra" ? "catalogo.html" : "guitarras.html?cat=" + id}"><b>${icon}</b><span>${label}</span><small>${n} productos</small></a>`
+    return n ? `<a class="catcard" id="cat-${id}" href="guitarras.html?cat=${id}"><b>${icon}</b><span>${label}</span><small>${n} productos</small></a>`
              : `<div class="catcard soon"><b>${icon}</b><span>${label}</span><small>próximamente</small></div>`;
   }).join("");
 
-  load("data/catalog/products.json").then(cat => {
-    const n = cat.products.length.toLocaleString("es-ES");
-    document.getElementById("n-guitars").textContent = n;
-    const card = document.querySelector("#cat-guitarra small");
-    if (card) card.textContent = `${n} productos`;
-  }).catch(() => {});
+  // Recuento de cada sección; las guitarras de las tres suman en las estadísticas de arriba.
+  Promise.all(Object.entries(CATALOG_PAGES).map(([id, [, src]]) => load(src).then(cat => {
+    const n = cat.products.length;
+    document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES")} productos` : "próximamente";
+    return n;
+  }).catch(() => { document.querySelector(`#cat-${id} small`).textContent = "próximamente"; return 0; })))
+    .then(ns => { document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES"); });
 
   // La tarjeta abre directamente la ficha de la guitarra en el catálogo (por EAN); sin EAN, la búsqueda en seguimiento.
   const link = p => p.ean ? `catalogo.html?p=${encodeURIComponent(String(p.ean).replace(/^0+/, ""))}`
