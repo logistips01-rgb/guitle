@@ -1,11 +1,10 @@
-// Página de una guitarra: tiendas, veredicto ("¿es buen momento?") e histórico de precios.
+// Página de una guitarra: veredicto ("¿es buen momento?") e histórico de precios.
 // Junta el histórico del catálogo (cambios de precio por tienda) con el de seguimiento (data/history.json).
 const CFG = document.body.dataset;
 const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const fmtDay = d => d ? new Date(d + "T12:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "short" }) : "";
-const PALETTE = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6", "--s7", "--s8"];
 const today = new Date().toISOString().slice(0, 10);
 
 async function load(path) {
@@ -47,30 +46,10 @@ function verdict(current, best) {
 }
 
 (async () => {
-  let cat;
-  try { cat = await load(CFG.src); } catch (e) { document.getElementById("price").textContent = "No se pudo cargar el precio."; return; }
-  const p = cat.products.find(x => String(x.id) === CFG.id);
-  if (!p) { document.getElementById("price").textContent = "Ya no la encontramos en ninguna tienda."; return; }
-  const names = cat.stores;
-  const color = Object.fromEntries(Object.keys(names).map((s, i) => [s, PALETTE[i % PALETTE.length]]));
-  const best = p.items[0];
-  document.getElementById("price").textContent = eur(best.p);
-  const save = Math.max(...p.items.map(i => i.p)) - best.p;
-  document.getElementById("where").textContent = `en ${names[best.s] || best.s}` +
-    (p.items.length > 1 ? ` · ${p.items.length} tiendas${save >= 1 ? `, hasta ${eur(Math.round(save))} de diferencia` : ""}` : "");
-
-  // Tiendas
-  document.getElementById("stores").innerHTML = p.items.map((i, n) => {
-    const go = i.u ? `href="${esc(i.u)}" target="_blank" rel="sponsored noopener"` : "";
-    const store = esc(names[i.s] || i.s);
-    return `<tr class="${n === 0 ? "best-row" : ""}">
-      <td><span class="swatch" style="background:var(${color[i.s] || "--reference"})"></span>${i.u ? `<a class="store-link" ${go}>${store}</a>` : store}</td>
-      <td class="num"><strong>${eur(i.p)}</strong></td>
-      <td class="num muted col-diff">${n === 0 ? "mejor precio" : "+" + eur(Math.round((i.p - best.p) * 100) / 100)}</td>
-      <td>${i.st === true ? '<span class="tag">en stock</span>' : i.st === false ? '<span class="tag warn">sin stock</span>' : ""}</td>
-      <td class="muted col-date">${fmtDay(i.d)}</td>
-      <td class="num">${i.u ? `<a class="go" ${go}><span class="go-long">Ir a la tienda</span><span class="go-short">Ir</span></a>` : ""}</td></tr>`;
-  }).join("");
+  // Precio, tiendas y oferta van ya en el HTML (scraper/pages.py); aquí solo el veredicto y el histórico.
+  const { names, colors: color } = JSON.parse(document.getElementById("stores-data").textContent);
+  const best = { p: Number(CFG.best) };
+  const p = { ean: CFG.ean };
 
   // Histórico: catálogo (+ seguimiento si es una guitarra seguida)
   const series = {};

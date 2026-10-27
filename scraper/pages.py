@@ -32,18 +32,55 @@ def slug_for(product):
     return f"{text}-{suffix}"
 
 
-def _render(product, kind, store_names):
+PALETTE = ["--s1", "--s2", "--s3", "--s4", "--s5", "--s6", "--s7", "--s8"]
+
+
+def eur(v):
+    """721.41 → '721,41 €'; 1299 → '1.299 €' (formato español)."""
+    whole = int(round(v * 100)) // 100
+    cents = int(round(v * 100)) % 100
+    txt = f"{whole:,}".replace(",", ".")
+    return f"{txt},{cents:02d} €" if cents else f"{txt} €"
+
+
+def _rows(product, store_names, colors):
+    esc = lambda v: html.escape(str(v or ""), quote=True)
+    best = product["items"][0]["p"]
+    out = []
+    for n, i in enumerate(product["items"]):
+        store = esc(store_names.get(i["s"], i["s"]))
+        go = f'href="{esc(i["u"])}" target="_blank" rel="sponsored noopener"' if i.get("u") else ""
+        name = f'<a class="store-link" {go}>{store}</a>' if go else store
+        stock = '<span class="tag">en stock</span>' if i.get("st") is True else '<span class="tag warn">sin stock</span>' if i.get("st") is False else ""
+        diff = "mejor precio" if n == 0 else "+" + eur(round(i["p"] - best, 2))
+        button = f'<a class="go" {go}><span class="go-long">Ir a la tienda</span><span class="go-short">Ir</span></a>' if go else ""
+        out.append(f'<tr class="{"best-row" if n == 0 else ""}"><td><span class="swatch" style="background:var({colors.get(i["s"], "--reference")})"></span>{name}</td>'
+                   f'<td class="num"><strong>{eur(i["p"])}</strong></td><td class="num muted col-diff">{diff}</td><td>{stock}</td>'
+                   f'<td class="num">{button}</td></tr>')
+    return "\n".join(out)
+
+
+def _render(product, kind, store_names, colors):
     k = KINDS[kind]
     esc = lambda v: html.escape(str(v or ""), quote=True)
     name, brand, slug = product["name"], product.get("brand") or "", product["slug"]
     stores = sorted({store_names.get(i["s"], i["s"]) for i in product["items"]})
     n = len(stores)
-    desc = (f"Precio de la {name}: compáralo en {n} {'tienda' if n == 1 else 'tiendas'} "
+    prices = [i["p"] for i in product["items"]]
+    best = product["items"][0]
+    best_store = store_names.get(best["s"], best["s"])
+    where = f"en {best_store}" + (f" · {n} tiendas" + (f", hasta {eur(round(max(prices) - min(prices)))} de diferencia"
+                                                        if max(prices) - min(prices) >= 1 else "") if n > 1 else "")
+    title = f"{name}: precio desde {eur(best['p'])} " + (f"en {n} tiendas" if n > 1 else f"en {best_store}")
+    desc = (f"{name} desde {eur(best['p'])} en {best_store}. Compara su precio en {n} {'tienda' if n == 1 else 'tiendas'} "
             f"({', '.join(stores[:4])}{'…' if n > 4 else ''}) y mira su histórico para saber si es buen momento para comprar.")
     img = f"/img/p/{product['th']}" if product.get("th") else None
     ld = {"@context": "https://schema.org", "@type": "Product", "name": name,
           "brand": {"@type": "Brand", "name": brand} if brand else None, "category": k["label"],
-          "image": SITE + img if img else None, "gtin13": product.get("ean"), "url": f"{SITE}/g/{slug}.html"}
+          "image": SITE + img if img else None, "gtin13": product.get("ean"), "url": f"{SITE}/g/{slug}.html",
+          # Precio para los resultados de Google ("desde 721 € · 7 ofertas").
+          "offers": {"@type": "AggregateOffer", "priceCurrency": "EUR", "lowPrice": min(prices), "highPrice": max(prices),
+                     "offerCount": len(product["items"])}}
     ld = {key: v for key, v in ld.items() if v}
     return f"""<!doctype html>
 <html lang="es">
@@ -51,10 +88,10 @@ def _render(product, kind, store_names):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#2a78d6">
-<title>{esc(name)}: precio e histórico · guitle</title>
+<title>{esc(title)} · guitle</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{SITE}/g/{slug}.html">
-<meta property="og:title" content="{esc(name)}: precio e histórico">
+<meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 {f'<meta property="og:image" content="{SITE}{img}">' if img else ''}
 <link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
@@ -64,7 +101,8 @@ def _render(product, kind, store_names):
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <script src="/vendor/chart.umd.min.js"></script>
 </head>
-<body data-id="{esc(product['id'])}" data-kind="{kind}" data-src="/{k['src']}" data-history="/{k['history']}"{f' data-sku="{esc(product["sku"])}"' if product.get('sku') else ''}>
+<body data-ean="{esc(product.get('ean') or '')}" data-best="{best['p']}" data-history="/{k['history']}"{f' data-sku="{esc(product["sku"])}"' if product.get('sku') else ''}>
+<script type="application/json" id="stores-data">{json.dumps({"names": {i["s"]: store_names.get(i["s"], i["s"]) for i in product["items"]}, "colors": colors}, ensure_ascii=False)}</script>
 <main>
   <div class="topbar">
     <div class="row">
@@ -78,13 +116,13 @@ def _render(product, kind, store_names):
     <div class="pinfo">
       <div class="muted">{esc(brand)}{' · ' + esc(product.get('type')) if product.get('type') and product.get('type') != 'Otras' else ''}{' · zurda' if product.get('lh') else ''}</div>
       <h2 class="pname">{esc(name)}</h2>
-      <div id="price" class="big">&nbsp;</div>
-      <div id="where" class="muted">Comparamos su precio en {n} {'tienda' if n == 1 else 'tiendas'}: {esc(', '.join(stores))}.</div>
+      <div id="price" class="big">{eur(best['p'])}</div>
+      <div id="where" class="muted">{esc(where)}</div>
       <div id="verdict" class="verdict hidden"></div>
       {f'<div class="muted small">EAN {esc(product["ean"])}</div>' if product.get('ean') else ''}
     </div>
   </article>
-  <section><h3>Tiendas</h3><div class="table-wrap"><table id="stores"></table></div></section>
+  <section><h3>Tiendas</h3><div class="table-wrap"><table id="stores">{_rows(product, store_names, colors)}</table></div></section>
   <section><h3>Histórico de precios</h3>
     <div class="stats" id="stats"></div>
     <div class="chart-box"><canvas id="chart"></canvas></div>
@@ -107,7 +145,9 @@ def write_pages(kind, products, store_names):
     slugs, written = [], 0
     for p in products:
         page = PAGES / f"{p['slug']}.html"
-        text = _render(p, kind, store_names)
+        # Colores por guitarra (nunca pasa de 8 tiendas): distintos entre sí en la tabla y en la gráfica.
+        colors = {s: PALETTE[i % len(PALETTE)] for i, s in enumerate(sorted({i["s"] for i in p["items"]}))}
+        text = _render(p, kind, store_names, colors)
         if not page.exists() or page.read_text(encoding="utf-8") != text:
             page.write_text(text, encoding="utf-8")
             written += 1
