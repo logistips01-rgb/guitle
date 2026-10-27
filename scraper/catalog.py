@@ -731,6 +731,7 @@ def build(offers=None, history=None):
         pages.write_pages(kind, products, names)
         curated_records = load(ROOT / "data" / "history.json", []) if kind == "electrica" else []
         deals.build(kind, products, history, curated_records, names)
+    pages.write_hubs()
 
 
 def main(argv=None):

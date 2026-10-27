@@ -62,7 +62,7 @@ jobs:
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             python -m scraper.catalog --cat ${{ matrix.cat }} --merge "$RUNNER_TEMP/catalog.json"  # también reconstruye los JSON de la web
-            git add data/catalog/ data/deals-*.json img/p/ g/ sitemap.xml
+            git add data/catalog/ data/deals-*.json img/p/ g/ marca/ tipo/ marcas.html sitemap.xml
             if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
             git commit -q -m "data: catálogo ${{ matrix.cat }} $(TZ=Europe/Madrid date +%F)"
             if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi

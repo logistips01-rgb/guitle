@@ -112,7 +112,7 @@ def _render(product, kind, store_names, colors):
       <a class="navlink" href="/{k['list']}">{esc(k['label'])}</a>
     </div>
   </div>
-  <nav class="crumbs"><a href="/">Inicio</a> › <a href="/{k['list']}">{esc(k['label'])}</a> › <a href="/{k['list']}?brand={esc(brand)}">{esc(brand)}</a></nav>
+  <nav class="crumbs"><a href="/">Inicio</a> › <a href="/{k['list']}">{esc(k['label'])}</a> › <a href="/marca/{plain_slug(brand)}.html">{esc(brand)}</a></nav>
   <article class="product">
     <div class="pimg">{f'<img src="{img}" alt="{esc(name)}">' if img else ''}</div>
     <div class="pinfo">
@@ -164,10 +164,154 @@ def write_pages(kind, products, store_names):
 def write_sitemap():
     """sitemap.xml con las páginas principales y las de todas las guitarras (listas g/_<categoría>.txt)."""
     urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "chollos.html", "guitarras.html"]
-    for lst in sorted(PAGES.glob("_*.txt")):
+    hubs = PAGES / "_hubs.txt"
+    if hubs.exists():
+        urls += hubs.read_text(encoding="utf-8").split()
+    for lst in sorted(p for p in PAGES.glob("_*.txt") if p.name != "_hubs.txt"):
         urls += [f"g/{s}.html" for s in lst.read_text(encoding="utf-8").split()]
     body = "\n".join(f"  <url><loc>{SITE}/{u}</loc></url>" for u in urls)
     text = f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
     path = ROOT / "sitemap.xml"
     if not path.exists() or path.read_text(encoding="utf-8") != text:
         path.write_text(text, encoding="utf-8")
+
+
+# --- Páginas por marca (marca/<marca>.html) y por tipo (tipo/<categoría>-<tipo>.html) ----------------------
+
+TYPE_TITLES = {"ST": "tipo Stratocaster (ST)", "T": "tipo Telecaster (T)", "Single cut": "single cut (tipo Les Paul)",
+               "Double cut": "double cut (tipo SG y PRS)", "Semihueca": "semihuecas y de caja",
+               "Offset / Retro": "offset y retro (Jazzmaster, Jaguar, Mustang…)", "Moderna / Metal": "modernas y de metal",
+               "Dreadnought": "dreadnought", "Auditorio / Concierto": "de auditorio y concierto", "Jumbo": "jumbo",
+               "Parlor": "parlor", "12 cuerdas": "de 12 cuerdas", "Tamaño reducido": "de tamaño reducido",
+               "Roundback": "roundback", "Clásica": "clásicas de concierto", "Flamenca": "flamencas",
+               "Electroclásica": "electroclásicas"}
+NOUN = {"electrica": "Guitarras eléctricas", "acustica": "Guitarras acústicas", "clasica": "Guitarras clásicas"}
+NOPHOTO = ('<svg class="nophoto" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/>'
+           '<path d="M14.5 9.5c-1.6-1.6-3.9-1.3-5 .2-1 .4-2.6.1-4 1.5-2.1 2.1-1.7 5.4.6 7.7s5.6 2.7 7.7.6c1.4-1.4 1.1-3 1.5-4 '
+           '1.5-1.1 1.8-3.4.2-5z"/><circle cx="9.6" cy="14.4" r="1.4"/></svg>')
+
+
+def plain_slug(text):
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", text).strip("-")
+
+
+def _write(path, text):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if not path.exists() or path.read_text(encoding="utf-8") != text:
+        path.write_text(text, encoding="utf-8")
+        return 1
+    return 0
+
+
+def _tile(p, store_names):
+    esc = lambda v: html.escape(str(v or ""), quote=True)
+    best = p["items"][0]
+    n = len({i["s"] for i in p["items"]})
+    img = f'<img loading="lazy" src="/img/p/{esc(p["th"])}" alt="">' if p.get("th") else NOPHOTO
+    sub = esc(p.get("type")) if p.get("type") and p.get("type") != "Otras" else ""
+    return (f'<a class="tile" href="/g/{esc(p["slug"])}.html"><div class="img">{img}</div><div class="body">'
+            f'<span class="brand">{esc(p.get("brand"))}{" · " + sub if sub else ""}</span><span class="name">{esc(p["name"])}</span>'
+            f'<span class="price"><strong>{eur(best["p"])}</strong></span><span class="foot"><span>{esc(store_names.get(best["s"], best["s"]))}</span>'
+            f'<span class="stores-n">{n} {"tienda" if n == 1 else "tiendas"}</span></span></div></a>')
+
+
+def _hub(path, title, h1, intro, sections, store_names, canonical):
+    esc = lambda v: html.escape(str(v or ""), quote=True)
+    body = "".join(f'<section class="hub-sec">{f"<h2>{esc(h)}</h2>" if h else ""}<div class="grid">'
+                   + "".join(_tile(p, store_names) for p in prods) + "</div></section>" for h, prods in sections)
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2a78d6">
+<title>{esc(title)} · guitle</title>
+<meta name="description" content="{esc(intro)}">
+<link rel="canonical" href="{SITE}/{canonical}">
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+<link rel="stylesheet" href="/fonts/inter.css">
+<link rel="stylesheet" href="/catalogo.css">
+<style>.hub-sec {{ margin-top: 26px; }} .hub-sec h2 {{ font-size: 1.15rem; margin: 0 0 10px; }}
+.hub-intro {{ color: var(--text-secondary); max-width: 780px; }} .links {{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }}</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="/" aria-label="guitle, inicio"><img src="/icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a></h1>
+      <a class="navlink" href="/marcas.html">Marcas</a>
+    </div>
+  </div>
+  <h2 style="font-size:1.6rem;margin:18px 0 6px;letter-spacing:-.03em">{esc(h1)}</h2>
+  <p class="hub-intro">{esc(intro)}</p>
+  {body}
+  <footer class="site-foot">
+    <span>Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span>
+    <span><a href="/legal.html#aviso">Aviso legal</a> · <a href="/legal.html#privacidad">Privacidad</a> · <a href="/legal.html#cookies">Cookies</a></span>
+  </footer>
+</main>
+</body>
+</html>
+"""
+
+
+def _summary(prods, store_names):
+    prices = [p["items"][0]["p"] for p in prods]
+    cheapest = min(prods, key=lambda p: p["items"][0]["p"])
+    multi = sum(len({i["s"] for i in p["items"]}) > 1 for p in prods)
+    return (f"{len(prods)} modelos desde {eur(min(prices))} hasta {eur(max(prices))}. El más barato hoy: {cheapest['name']}, "
+            f"a {eur(cheapest['items'][0]['p'])} en {store_names.get(cheapest['items'][0]['s'], cheapest['items'][0]['s'])}. "
+            f"{multi} se pueden comparar en varias tiendas; en cada una verás su histórico de precios.")
+
+
+def write_hubs():
+    """Páginas de marca y de tipo con todas las guitarras (las tres categorías), e índice marcas.html."""
+    catalogs = {}
+    for kind, k in KINDS.items():
+        try:
+            data = json.loads((ROOT / k["src"]).read_text(encoding="utf-8"))
+        except (FileNotFoundError, json.JSONDecodeError):
+            continue
+        catalogs[kind] = data
+    names = {s: n for d in catalogs.values() for s, n in d["stores"].items()}
+    order = lambda p: (-len({i["s"] for i in p["items"]}), p["items"][0]["p"])
+    pages, written = [], 0
+    by_brand = {}
+    for kind, d in catalogs.items():
+        for p in d["products"]:
+            if p.get("brand") and p.get("slug"):
+                by_brand.setdefault(p["brand"], {}).setdefault(kind, []).append(p)
+    brands = []
+    for brand, kinds in by_brand.items():
+        allp = [p for ps in kinds.values() for p in ps]
+        url = f"marca/{plain_slug(brand)}.html"
+        sections = [(NOUN[k] if len(kinds) > 1 else None, sorted(ps, key=order)) for k, ps in kinds.items()]
+        written += _write(ROOT / url, _hub(url, f"Guitarras {brand}: precios y comparativa", f"Guitarras {brand}",
+                                           _summary(allp, names), sections, names, url))
+        pages.append(url)
+        brands.append((brand, url, len(allp)))
+    for kind, d in catalogs.items():
+        types = {}
+        for p in d["products"]:
+            if p.get("type") and p["type"] != "Otras" and p.get("slug"):
+                types.setdefault(p["type"], []).append(p)
+        for t, ps in types.items():
+            if len(ps) < 3:
+                continue
+            url = f"tipo/{kind}-{plain_slug(t)}.html"
+            label = f"{NOUN[kind]} {TYPE_TITLES.get(t, t)}"
+            written += _write(ROOT / url, _hub(url, f"{label}: precios y comparativa", label, _summary(ps, names),
+                                               [(None, sorted(ps, key=order))], names, url))
+            pages.append(url)
+    # Índice de marcas
+    esc = lambda v: html.escape(str(v or ""), quote=True)
+    links = "".join(f'<a class="chip" href="/{u}">{esc(b)} <span class="muted">({n})</span></a>'
+                    for b, u, n in sorted(brands, key=lambda x: (-x[2], x[0])))
+    index = _hub("marcas.html", "Marcas de guitarras: precios por marca", "Marcas de guitarras",
+                 f"Compara precios de {len(brands)} marcas de guitarras eléctricas, acústicas y clásicas en las tiendas de Europa.",
+                 [], names, "marcas.html").replace('<p class="hub-intro">', f'<div class="links">{links}</div><p class="hub-intro">', 1)
+    written += _write(ROOT / "marcas.html", index)
+    (PAGES / "_hubs.txt").write_text("\n".join(["marcas.html"] + sorted(pages)) + "\n", encoding="utf-8")
+    print(f"páginas de marca y tipo: {len(pages)} ({written} nuevas o cambiadas)", flush=True)
+    write_sitemap()
