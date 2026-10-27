@@ -38,7 +38,7 @@ RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
-NOT_PRODUCT = re.compile(r"b-stock|bstock|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein", re.I)
+NOT_PRODUCT = re.compile(r"b-stock|bstock|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein|stock[ -]b\b", re.I)
 
 # Session no dice en la URL qué es una guitarra: se preseleccionan marcas de guitarra eléctrica sin
 # palabras de accesorio, y la ficha (breadcrumb "E-Gitarren") confirma.
@@ -96,8 +96,8 @@ def _parse_egitana(soup, text):
     if not d:
         return {"crumbs": crumbs}
     image = soup.find("meta", attrs={"property": "og:image"})
-    # Para el tipo: categoría general + formato ("guitarras formato ST").
-    return {"crumbs": crumbs[:1] + [d["category"]], "name": d["name"], "brand_raw": d["brand"], "price": d["price"],
+    # El formato ("guitarras formato ST") va al final: de ahí sale el tipo.
+    return {"crumbs": crumbs + [d["category"]], "name": d["name"], "brand_raw": d["brand"], "price": d["price"],
             "currency": "EUR", "in_stock": None, "image": image.get("content") if image else None, "ean": None}
 
 
@@ -169,6 +169,8 @@ def canonical_brand(raw):
 def clean_name(name, brand_raw, brand):
     """'SQUIER BY FENDER Classic Vibe…' → 'Squier Classic Vibe…'."""
     name = re.sub(r"\s+", " ", name or "").strip()
+    if brand_raw:  # "PRS PRS SE Custom 24" → "PRS SE Custom 24"
+        name = re.sub(rf"^({re.escape(brand_raw)}\s+)+", brand_raw + " ", name, flags=re.I)
     if brand_raw and name.lower().startswith(brand_raw.lower()):
         name = brand + name[len(brand_raw):]
     elif brand and not name.lower().startswith(brand.lower()):
@@ -202,6 +204,16 @@ def _tokens(o):
 FINGERBOARDS = [(r"rosewood( fingerboard| fretboard)?", "rw"), (r"maple( fingerboard| fretboard)", "mn"),
                 (r"laurel( fingerboard| fretboard)?|\blr\b", "lrl"), (r"ebony( fingerboard| fretboard)", "eb"),
                 (r"pau ferro( fingerboard| fretboard)?", "pf")]
+# Colores y acabados en español (Egitana) → inglés, como los nombran Numemusic y Session.
+COLOR_ES = {"negro": "black", "negra": "black", "blanco": "white", "blanca": "white", "rojo": "red", "roja": "red",
+            "azul": "blue", "verde": "green", "gris": "gray", "grey": "gray", "naranja": "orange", "amarillo": "yellow",
+            "morado": "purple", "violeta": "violet", "rosa": "pink", "plateado": "silver", "plata": "silver",
+            "dorado": "gold", "oro": "gold", "marron": "brown", "marrón": "brown", "transparente": "transparent",
+            "satinado": "satin", "satinada": "satin", "metalico": "metallic", "metálico": "metallic", "nieve": "snow",
+            "crema": "cream", "cielo": "sky", "brillante": "gloss", "mate": "matte", "fresno": "ash", "caoba": "mahogany",
+            "nogal": "walnut", "cereza": "cherry", "vino": "wine", "oscuro": "dark", "oscura": "dark", "claro": "light",
+            "perla": "pearl", "noche": "night", "medianoche": "midnight", "escarlata": "scarlet", "bosque": "forest",
+            "profundo": "deep", "natural": "natural"}
 NAME_STOPWORDS = {"fingerboard", "fretboard", "guitar", "guitarra", "electrica", "eléctrica", "electric", "with", "con",
                   "w", "and", "y", "the", "series", "guitars"}
 
@@ -212,8 +224,8 @@ def name_tokens(name, brand):
         n = n.replace(b, " ")
     for pat, short in FINGERBOARDS:
         n = re.sub(pat, " " + short + " ", n)
-    words = re.findall(r"[a-z0-9]+", n)
-    return {NAME_SYNONYMS.get(w, w) for w in words if w not in NAME_STOPWORDS}
+    words = re.findall(r"[a-záéíóúñ0-9]+", n)
+    return {NAME_SYNONYMS.get(COLOR_ES.get(w, w), COLOR_ES.get(w, w)) for w in words if w not in NAME_STOPWORDS}
 
 
 # Palabras que cambian de modelo: si una ficha las tiene y la otra no, no son la misma guitarra.
@@ -233,8 +245,9 @@ def name_match_score(a_name, b_name, brand):
     if _numbers(ta) != _numbers(tb):
         return 0.0
     ca, cb = set(MODEL_CODE.findall(a_name.lower())), set(MODEL_CODE.findall(b_name.lower()))
-    if ca and cb and not ca & cb:
-        return 0.0
+    if ca and cb:
+        # Mismo código de modelo y acabado (Ibanez AZ24S2-BK): misma guitarra; distinto: otra.
+        return 1.0 if ca & cb else 0.0
     return len(ta & tb) / max(1, len(ta | tb))
 
 
@@ -256,6 +269,9 @@ def tidy(o):
     brand = canonical_brand(o.get("brand"))
     if o.get("brand") and brand != o["brand"] and o["name"].startswith(o["brand"]):
         o["name"] = brand + o["name"][len(o["brand"]):]
+    if brand == "ESP" and re.search(r"\bltd\b", o["name"], re.I):
+        brand = "LTD"  # Egitana pone las LTD bajo ESP; Numemusic y Session, como LTD
+    o["name"] = re.sub(rf"^({re.escape(o.get('brand') or brand)}\s+)+", (o.get("brand") or brand) + " ", o["name"], flags=re.I)
     o["brand"] = brand
     if not o.get("type") or o["type"] in ("Otras", "Offset"):
         o["type"] = "Offset / Retro" if o.get("type") == "Offset" else type_from_name(o["name"], o["url"])
