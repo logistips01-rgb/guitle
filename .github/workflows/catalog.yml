@@ -43,6 +43,11 @@ jobs:
         # Cada tienda va en paralelo y a su ritmo (3-6 s entre peticiones, robots.txt respetado).
         run: python -m scraper.catalog --cat ${{ matrix.cat }} --minutes "${{ inputs.minutes || '50' }}" --records-out "$RUNNER_TEMP/catalog.json" || echo "::warning::catálogo con error; se commitea lo que haya"
 
+      - name: PVP oficial de Fender
+        # es.fender.com solo responde desde aquí (runner de GitHub); robots.txt respetado, 3-6 s entre peticiones.
+        if: matrix.cat == 'electrica'
+        run: python -m scraper.pvp --minutes 40 --out "$RUNNER_TEMP/pvp.json" || echo "::warning::PVP de Fender con error"
+
       - name: Miniaturas de fotos
         # Primero se fusiona el lote (para conocer las fotos nuevas) y luego se generan sus miniaturas.
         # Los ficheros nuevos de img/p/ no están en git y sobreviven al reset del paso siguiente.
@@ -61,6 +66,7 @@ jobs:
           for attempt in 1 2 3 4 5; do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            [ -f "$RUNNER_TEMP/pvp.json" ] && python -m scraper.pvp --merge "$RUNNER_TEMP/pvp.json"  # PVP al histórico, antes de construir
             python -m scraper.catalog --cat ${{ matrix.cat }} --merge "$RUNNER_TEMP/catalog.json"  # también reconstruye los JSON de la web
             git add data/catalog/ data/deals-*.json img/p/ g/ marca/ tipo/ marcas.html sitemap.xml
             if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi

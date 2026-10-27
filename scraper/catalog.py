@@ -18,6 +18,7 @@ Uso:
 """
 import argparse
 import gzip
+import html
 import json
 import re
 import sys
@@ -548,7 +549,7 @@ def sitemap_urls(fetcher, url, sub=None, depth=0):
     if data[:2] == b"\x1f\x8b":
         data = gzip.decompress(data)
     text = data.decode("utf-8", "ignore")
-    locs = [re.sub(r"^<!\[CDATA\[|\]\]>$", "", l.strip()) for l in re.findall(r"<loc>\s*(.*?)\s*</loc>", text)]
+    locs = [html.unescape(re.sub(r"^<!\[CDATA\[|\]\]>$", "", l.strip())) for l in re.findall(r"<loc>\s*(.*?)\s*</loc>", text)]
     if "<sitemapindex" in text and depth < 2:
         out, failed = [], 0
         for loc in locs:
@@ -595,8 +596,12 @@ def _parse_jsonld(soup, store_id):
         ean = mpn  # Alfasoni publica el EAN como mpn
     if crumbs and product.get("name") and crumbs[-1].strip().lower() in product["name"].lower():
         crumbs = crumbs[:-1]  # el último elemento es el propio producto, no una categoría
+    # Referencia de fábrica de Fender (y Squier, Gretsch, Jackson, Charvel, EVH): 10 cifras empezando por 0
+    # (Session la pone en mpn; Musicopolix, en sku). Une el PVP de es.fender.com (scraper.pvp) con el EAN.
+    ref = next((r for r in (normalize_id(product.get("mpn")), normalize_id(product.get("sku"))) if re.fullmatch(r"0\d{9}", r)), None)
     return {"crumbs": crumbs, "name": product.get("name"), "brand_raw": brand_raw, "price": offer["price"],
-            "currency": offer["currency"], "in_stock": offer["in_stock"], "image": offer.get("image"), "ean": ean}
+            "currency": offer["currency"], "in_stock": offer["in_stock"], "image": offer.get("image"), "ean": ean,
+            "ref": ref}
 
 
 def read_page(fetcher, store_id, url, now):
@@ -631,6 +636,8 @@ def read_page(fetcher, store_id, url, now):
                    ean=data["ean"].lstrip("0") if data.get("ean") else None, brand=brand,
                    name=clean_name(data["name"], data["brand_raw"], brand), kind=kind, type=guitar_type(data["crumbs"], kind),
                    price=data["price"], currency=data["currency"], in_stock=data["in_stock"], image=data.get("image"))
+        if data.get("ref"):
+            rec["ref"] = data["ref"]
     except requests.RequestException as exc:
         rec["note"] = type(exc).__name__
     except Exception as exc:  # noqa: BLE001 - una ficha rara no para el lote

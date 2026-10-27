@@ -18,32 +18,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Productos y JSON-LD de una ficha de Fender
+      - name: Prueba de scraper.pvp (2 minutos, sin guardar)
         run: |
-          python - <<'PY'
-          import json, re
-          from bs4 import BeautifulSoup
-          from scraper.fetch import Fetcher
-          from scraper import jsonld
-          f = Fetcher()
-          total = 0
-          for n in (1, 2, 3):
-              r = f.get(f"https://es.fender.com/sitemap_products_{n}.xml")
-              locs = re.findall(r"<loc>(https://es.fender.com/products/[^<]+)</loc>", r.text)
-              total += len(locs)
-              print("sitemap", n, r.status_code, len(locs), locs[:3])
-          print("productos:", total)
-          r = f.get("https://es.fender.com/products/player-ii-telecaster")
-          soup = BeautifulSoup(r.text, "html.parser")
-          for block in jsonld.load_blocks(soup):
-              for node in jsonld._iter_nodes(block):
-                  types = jsonld._types(node)
-                  if "product" in types or "productgroup" in types:
-                      print("TYPES", types, {k: str(v)[:80] for k, v in node.items() if k not in ("offers", "hasVariant", "description")})
-                      for v in (node.get("hasVariant") or [])[:4]:
-                          print("  VARIANT", {k: str(v.get(k))[:90] for k in ("name", "sku", "gtin", "gtin13", "mpn", "offers")})
-                      offers = node.get("offers")
-                      offers = offers if isinstance(offers, list) else [offers] if offers else []
-                      for o in offers[:4]:
-                          print("  OFFER", {k: str(o.get(k))[:90] for k in ("price", "priceCurrency", "sku", "gtin", "gtin13", "availability")})
-          PY
+          python -m scraper.pvp --minutes 2 --out /tmp/pvp.json
+          python -c "import json; b=json.load(open('/tmp/pvp.json')); r=[x for x in b['records'] if x['offers']]; print(len(b['urls']), 'URLs;', [(x['url'][-40:], list(x['offers'].items())[:3]) for x in r[:6]])"
