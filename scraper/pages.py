@@ -9,10 +9,12 @@ import json
 import re
 import unicodedata
 from pathlib import Path
+from urllib.parse import quote_plus
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / "g"
 SITE = "https://guitle.com"
+AMAZON_TAG = "guitle-21"  # Afiliados de Amazon (ID de tienda)
 # Por categoría: título de la sección, página del catálogo y JSON (relativos a la raíz del sitio).
 KINDS = {
     "electrica": {"label": "Guitarras eléctricas", "list": "catalogo.html",
@@ -122,7 +124,8 @@ def _render(product, kind, store_names, colors):
       {f'<div class="muted small">EAN {esc(product["ean"])}</div>' if product.get('ean') else ''}
     </div>
   </article>
-  <section><h3>Tiendas</h3><div class="table-wrap"><table id="stores">{_rows(product, store_names, colors)}</table></div></section>
+  <section><h3>Tiendas</h3><div class="table-wrap"><table id="stores">{_rows(product, store_names, colors)}</table></div>
+    <p class="muted small amazon">¿Prefieres comprar en Amazon? <a href="https://www.amazon.es/s?k={quote_plus(name)}&amp;tag={AMAZON_TAG}" target="_blank" rel="sponsored noopener">Buscar este modelo en Amazon</a></p></section>
   <section><h3>Histórico de precios</h3>
     <div class="stats" id="stats"></div>
     <div class="chart-box"><canvas id="chart"></canvas></div>
