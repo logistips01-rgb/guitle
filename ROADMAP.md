@@ -53,6 +53,11 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
     frecuentes): compramos al momento con tasación transparente (los datos de guitle) y vendemos revisada, con
     factura y 1 año de garantía. Sin estafas ni quedar con desconocidos. Antes de lanzar, revisar si alguna
     tienda española ya lo hace en serio.
+  - **Visión: portal europeo de guitarras reacondicionadas** (modelo Back Market): 1) España con stock propio;
+    2) abrir la plataforma a talleres y luthiers certificados con normas de guitle (escala de estado, revisión
+    obligatoria, fotos reales, garantía mínima), comisión por venta (~10-15 %), sin stock; 3) Europa país a país con
+    talleres locales. Por resolver: envíos asegurados en estuche (~30-60 € en la UE), devoluciones de 14 días y
+    garantía de usados según país, IVA de bienes usados entre países, idiomas.
   - **Guitarra como parte del pago** (decidido el 28/10/2026), como en coches y motos: en cualquier compra en la tienda
     de guitle (segunda mano, nueva cuando seamos tienda oficial, renting con opción de compra). Se tasa un 20-25 %
     por debajo del precio entre particulares y se revende revisada y con garantía (1 año) a precio de mercado:
