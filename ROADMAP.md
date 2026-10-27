@@ -69,6 +69,24 @@ Decisión: se empieza en España (online). La tienda física en Andorra queda ap
 Forma jurídica: se arranca como **autónomo** (solo comisiones de afiliación, sin stock ni ventas). La SL se
 constituirá cuando empiecen la compra-venta de segunda mano y el renting (stock, contratos, responsabilidad).
 
+### Ayudas y financiación (revisado el 27/10/2026; promotor en Zaragoza capital, por cuenta ajena)
+
+- **Ahora:** entrar en un programa de Zaragoza Activa (no exige alta). Dossier del proyecto en Claude Docs
+  ("guitle · Dossier del proyecto"); actualizar sus cifras antes de la cita.
+- **Ayuda municipal a emprendedores** (Zaragoza, hasta 6.000 €, 80 % de gastos corrientes justificados: cuotas de
+  autónomo, gestoría, servicios, publicidad a confirmar): exige alta (≤ 3 años), domicilio fiscal en Zaragoza y
+  haber pasado por un programa municipal. Solo cuentan los gastos del periodo del proyecto, ya de alta: la
+  publicidad de antes del alta sale del bolsillo (prueba pequeña en Black Friday).
+- **Ayuda municipal al nuevo autónomo** (3.000–10.000 € según inversión): exige local independiente en Zaragoza
+  (ni vivienda ni coworking) y 2 años de actividad; plazo de alta de 2026 cerrado. Encaja en 2027 con el local de
+  segunda mano y renting. También cubre el relevo de un negocio existente.
+- **INAEM (Aragón):** solo para desempleados; no aplica.
+- **Con la SL:** certificado de empresa emergente (ENISA), préstamos ENISA (mínimo 25.000 €, fondos propios 1:1),
+  SODIAR (microcréditos 2.500–10.000 €) y NEOTEC. Los plazos de "startup" cuentan desde la constitución: no
+  constituirla antes de tener tracción.
+- **Garaje** (casa de Villanueva de Gállego, acceso propio a la calle): almacén y taller del stock; afectarlo como
+  autónomo o alquilarlo a la SL; licencia en el Ayuntamiento de Villanueva; mirar su referencia catastral.
+
 ## Expansión internacional (guitle.com)
 
 El precio depende del país del comprador (IVA del país de destino y portes): cada país necesita sus tiendas y sus
