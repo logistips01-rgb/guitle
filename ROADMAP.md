@@ -78,6 +78,8 @@ precios, no solo la web traducida.
      Musician's Friend, zZounds, Reverb (también usado), Amazon US. Afiliación: programas propios y Impact/CJ.
    - Latinoamérica: Mercado Libre (tiene API pública y programa de afiliados) y Amazon MX/BR, más las tiendas
      locales de cada país (México, Argentina, Chile, Colombia…); moneda e impuestos de cada país.
+5. **Después: Asia** (Japón, Corea, sudeste asiático…): mercados con mucha guitarra y tiendas y marketplaces
+   propios (p. ej. Rakuten y Amazon JP en Japón); idioma, moneda e impuestos de cada país.
 
 ## Proyecto aparte: tienda en Andorra (aparcado, se valorará más adelante)
 
