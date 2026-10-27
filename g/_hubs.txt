@@ -38,7 +38,6 @@ marca/mooer.html
 marca/music-man.html
 marca/norman.html
 marca/oqan.html
-marca/prs-paul-reed-smith.html
 marca/prs.html
 marca/schecter.html
 marca/simon-patrick.html

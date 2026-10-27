@@ -293,7 +293,7 @@ LEFT = re.compile(r"\b(lh|left[- ]?hand(ed)?|lefthand|left|zurd[oa]s?)\b|\d+lh\b
 BRAND_SUFFIX = re.compile(r"\s+(guitars?|españa|spain|europe)$", re.I)
 BRANDS = {"squier by fender": "Squier", "squier": "Squier", "prs": "PRS", "esp": "ESP", "ltd": "LTD", "evh": "EVH",
           "esp ltd": "LTD", "ltd guitars": "LTD", "esp guitars": "ESP", "ernie ball music man": "Music Man", "music man": "Music Man", "d'angelico": "D'Angelico",
-          "sterling by music man": "Sterling", "prs se": "PRS"}
+          "sterling by music man": "Sterling", "prs se": "PRS", "prs (paul reed smith)": "PRS", "paul reed smith": "PRS"}
 
 
 def now_iso():

@@ -312,6 +312,11 @@ def write_hubs():
                  f"Compara precios de {len(brands)} marcas de guitarras eléctricas, acústicas y clásicas en las tiendas de Europa.",
                  [], names, "marcas.html").replace('<p class="hub-intro">', f'<div class="links">{links}</div><p class="hub-intro">', 1)
     written += _write(ROOT / "marcas.html", index)
+    # Marcas o tipos que ya no existen (p. ej. una marca renombrada) se borran.
+    for folder in ("marca", "tipo"):
+        for f in (ROOT / folder).glob("*.html"):
+            if f"{folder}/{f.name}" not in pages:
+                f.unlink()
     (PAGES / "_hubs.txt").write_text("\n".join(["marcas.html"] + sorted(pages)) + "\n", encoding="utf-8")
     print(f"páginas de marca y tipo: {len(pages)} ({written} nuevas o cambiadas)", flush=True)
     write_sitemap()

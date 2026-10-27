@@ -2702,14 +2702,14 @@ prs-nf53-satin-pearl-white-825362295273
 prs-nf53-satin-red-apple-metallic-825362295266
 prs-nf53-satin-vintage-natural-825362292067
 prs-nf53-white-doghair-825362155980
-prs-paul-reed-smith-prs-se-custom-24-quilt-black-gold-sb-825362160878
-prs-paul-reed-smith-prs-se-custom0-24-08-turqoise-825362164593
-prs-paul-reed-smith-prs-se-dgt-mccarty-tobacco-sunburst-825362135388
 prs-paul-s-guitar-dark-cherry-burst-825362081432
 prs-paul-s-guitar-faded-blue-jean-edbluejean
 prs-paul-s-guitar-mango-top-ltd-charcoal-825362311041
 prs-paul-s-guitar-mango-top-ltd-tiger-eye-825362311058
 prs-pauls-guitar-wood-library-qm-yellow-tiger-0383699-444410040579
+prs-prs-se-custom-24-quilt-black-gold-sb-825362160878
+prs-prs-se-custom0-24-08-turqoise-825362164593
+prs-prs-se-dgt-mccarty-tobacco-sunburst-825362135388
 prs-ps-10350-modern-eagle-v-luminlay-ltd-laguna-dragons-breath-gonsbreath
 prs-ps-11366-custom-24-08-faded-indigo-adedindigo
 prs-ps-11380-modern-eagle-v-frosbite-fade-osbitefade
@@ -2877,6 +2877,7 @@ prs-se-dgt-gold-top-825362244233
 prs-se-dgt-mccarty-tobacco-sunburst-825362244226
 prs-se-dgt-standard-moons-mccarty-tobacco-sunburst-825362244257
 prs-se-dgt-standard-moons-vintage-cherry-825362244240
+prs-se-dgt-tobacco-sunburst-urstp43572
 prs-se-floyd-custom-24-charcoal-cherry-burst-825362244028
 prs-se-mark-holcomb-hbb-holcomb-blue-burst-825362144250
 prs-se-mark-holcomb-hbb-holcomb-blue-burst-825362244530
