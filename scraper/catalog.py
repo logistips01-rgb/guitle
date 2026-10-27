@@ -111,6 +111,13 @@ SOURCES = {
                 and re.search(r"gitarre", c[-1], re.I) and not re.search(r"zubeh|saite|koffer|tasche", c[-1], re.I),
                 "sub": lambda u: "-product-" in u},
     # Egitana responde a veces con estado 500 pero con la ficha completa: vale si trae los datos.
+    "musicopolix": {"name": "Musicopolix", "sitemap": "https://musicopolix.com/1_es_0_sitemap.xml",
+                    "pick": lambda u: "/guitarras/electricas/" in u and re.search(r"/\d+-[^/]+\.html$", u)
+                    and not NOT_PRODUCT.search(u),
+                    "guitar": lambda c: any(x.strip().lower() == "guitarras eléctricas" for x in c)},
+    "alfasoni": {"name": "Alfasoni", "sitemap": "https://alfasoni.com/1_index_sitemap.xml",
+                 "pick": lambda u: "/guitarras-electricas-" in u and u.endswith(".html") and not NOT_PRODUCT.search(u),
+                 "guitar": lambda c: any(x.strip().lower() == "guitarras eléctricas" for x in c)},
     "egitana": {"name": "Egitana", "sitemap": "https://www.egitana.es/sitemaps/es/products_sitemap.xml",
                 "pick": _pick_egitana, "parse": _parse_egitana, "ok_status": (200, 500),
                 "guitar": lambda c: any(x.strip().lower() == "guitarras eléctricas" for x in c)},
@@ -119,7 +126,7 @@ SOURCES = {
 # Tipos comunes a partir del breadcrumb (Numemusic: "Modelos ST"; Session: "ST-Gitarren").
 TYPES = [("ST", r"\bst\b|st-gitarren|strat"), ("T", r"modelos t\b|formato t\b|\bt-gitarren|tele"),
          ("Single cut", r"single.?cut"), ("Double cut", r"double.?cut"),
-         ("Semihueca", r"hollow|semi|jazz|resonanz|archtop"),
+         ("Double cut", r"modelos sg\b"), ("Semihueca", r"hollow|semi|jazz|resonanz|archtop|modelos es\b"),
          ("Moderna / Metal", r"heavy|metal|superstrat|moderne|[78] cuerdas|[78]-saiter"),
          ("Offset / Retro", r"offset|retro|jazzmaster|jaguar|mustang")]
 
@@ -166,9 +173,19 @@ def canonical_brand(raw):
     return raw.title() if raw.isupper() and len(raw) > 3 else raw
 
 
+def _smart_case(name):
+    """'HELLCAT VI IVORY PEARL' → 'Hellcat VI Ivory Pearl' (códigos con números y siglas cortas se quedan)."""
+    if not name.isupper():
+        return name
+    keep = re.compile(r"\d|-|^(?:[A-Z]{1,2}|I{1,3}|IV|VI{0,3}|HSS|HSH|SSS|SSH|QMT?|FMT|NOS|EMG|LTD|PRS|ESP|EVH|USA)$")
+    return " ".join(w if keep.search(w) else w.capitalize() for w in name.split())
+
+
 def clean_name(name, brand_raw, brand):
     """'SQUIER BY FENDER Classic Vibe…' → 'Squier Classic Vibe…'."""
     name = re.sub(r"\s+", " ", name or "").strip()
+    name = re.sub(r"\s+guitarra el[eé]ctrica$", "", name, flags=re.I)
+    name = _smart_case(name)
     if brand_raw:  # "PRS PRS SE Custom 24" → "PRS SE Custom 24"
         name = re.sub(rf"^({re.escape(brand_raw)}\s+)+", brand_raw + " ", name, flags=re.I)
     if brand_raw and name.lower().startswith(brand_raw.lower()):
@@ -301,12 +318,18 @@ def sitemap_urls(fetcher, url, sub=None, depth=0):
     if data[:2] == b"\x1f\x8b":
         data = gzip.decompress(data)
     text = data.decode("utf-8", "ignore")
-    locs = [l.strip() for l in re.findall(r"<loc>\s*(.*?)\s*</loc>", text)]
+    locs = [re.sub(r"^<!\[CDATA\[|\]\]>$", "", l.strip()) for l in re.findall(r"<loc>\s*(.*?)\s*</loc>", text)]
     if "<sitemapindex" in text and depth < 2:
-        out = []
+        out, failed = [], 0
         for loc in locs:
             if sub is None or sub(loc):
-                out += sitemap_urls(fetcher, loc, None, depth + 1)
+                try:
+                    out += sitemap_urls(fetcher, loc, None, depth + 1)
+                except Exception as exc:  # noqa: BLE001 - un sitemap parcial caído no tumba el resto
+                    failed += 1
+                    print(f"[sitemap] {loc}: {exc}", flush=True)
+        if failed and not out:
+            raise RuntimeError(f"sitemap {url}: todos los parciales fallan")
         return out
     return locs
 
@@ -337,6 +360,11 @@ def _parse_jsonld(soup, store_id):
     brand_raw = product.get("brand")
     brand_raw = brand_raw.get("name") if isinstance(brand_raw, dict) else brand_raw
     ean = next((normalize_id(product.get(k)) for k in ("gtin13", "gtin", "gtin12", "gtin14") if product.get(k)), None)
+    mpn = normalize_id(product.get("mpn"))
+    if not ean and mpn.isdigit() and len(mpn) in (12, 13, 14):
+        ean = mpn  # Alfasoni publica el EAN como mpn
+    if crumbs and product.get("name") and crumbs[-1].strip().lower() in product["name"].lower():
+        crumbs = crumbs[:-1]  # el último elemento es el propio producto, no una categoría
     return {"crumbs": crumbs, "name": product.get("name"), "brand_raw": brand_raw, "price": offer["price"],
             "currency": offer["currency"], "in_stock": offer["in_stock"], "image": offer.get("image"), "ean": ean}
 
@@ -473,7 +501,7 @@ def _curated_offers():
     for i in latest.get("items", []):
         ean = by_sku.get(i["sku"])
         store = stores.get(i["store"], {})
-        if not ean or i.get("price") is None or i["store"] in SOURCES or store.get("reference"):
+        if not ean or i.get("price") is None or store.get("reference"):
             continue
         out.setdefault(ean, []).append({"s": i["store"], "p": i["price"], "u": i.get("url"),
                                         "st": i.get("in_stock"), "d": (i.get("price_date") or "")[:10]})
@@ -542,7 +570,9 @@ def build(offers=None, history=None):
         ean = main.get("ean") if keeps_ean else None
         items = [{"s": o["store"], "p": o["price"], "u": o["url"], "st": o.get("in_stock"), "d": o["checked"][:10]}
                  for o in group]
-        items += curated.get(ean, []) if ean else []
+        # Tiendas de seguimiento que el catálogo aún no ha leído para este producto.
+        seen = {o["store"] for o in group}
+        items += [c for c in curated.get(ean, []) if c["s"] not in seen] if ean else []
         items.sort(key=lambda i: i["p"])
         series = history.get(ean, {}) if ean else {}
         days = {d for s in series.values() for d, _ in s}
