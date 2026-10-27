@@ -7,6 +7,7 @@ Camiseta BLANCA
   - Pecho izquierdo (8-9 cm):           icono.pdf
   - Espalda o centro (22-28 cm ancho):  logo-color.pdf
   - Versión sin lema:                   logo-sin-lema.pdf
+  - Solo la palabra (sin cuadrado azul): nombre.pdf
 Camiseta NEGRA u oscura
   - logo-blanco.pdf (letras blancas)
 Pegatinas (troqueladas, con borde blanco)
