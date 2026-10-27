@@ -35,6 +35,13 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 - **Renting musical.** Alquiler de instrumentos con cuota mensual (guitarras, bajos, amplis, teclados), con
   opción de compra descontando lo pagado. Encaja con quien empieza y no sabe si seguirá, y con colegios y
   escuelas. guitle aporta el precio de mercado para calcular cuotas y valor residual.
+  - Stock (decidido el 27/10/2026): al arrancar, 80-90 % guitarras **reacondicionadas** de "Compramos tu guitarra"
+    (casi no pierden valor: ~60 % de margen anual frente a ~21 % con una nueva). Nuevas solo para el plan con
+    opción de compra, una gama "estreno" con cuota algo mayor y modelos muy pedidos. Con precio de distribuidor
+    (SL), revisar la proporción.
+  - Ejemplo de cuotas (Fender Standard Stratocaster, 517 €): flexible 39 €/mes (mínimo 3 meses), anual 29 €/mes,
+    con opción de compra 35 €/mes; fianza 100 €. Antes de arrancar: contrato, seguro de instrumentos y cobro
+    domiciliado; revisar el IVA de bienes usados (REBU) con un gestor.
 - **Cursos de guitarra.** Online y/o presenciales (en la tienda). Se cruzan con el resto: alumno que empieza
   → renting o primera guitarra recomendada en guitle → accesorios.
 
