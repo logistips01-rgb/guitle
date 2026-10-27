@@ -137,6 +137,7 @@ def _render(product, kind, store_names, colors):
   </footer>
 </main>
 <script src="/producto.js"></script>
+<script src="/c.js" defer></script>
 </body>
 </html>
 """
@@ -251,6 +252,7 @@ def _hub(path, title, h1, intro, sections, store_names, canonical):
     <span><a href="/legal.html#aviso">Aviso legal</a> · <a href="/legal.html#privacidad">Privacidad</a> · <a href="/legal.html#cookies">Cookies</a></span>
   </footer>
 </main>
+<script src="/c.js" defer></script>
 </body>
 </html>
 """

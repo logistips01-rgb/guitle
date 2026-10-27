@@ -519,5 +519,6 @@ Promise.all([load("data/latest.json"), load("data/history.json"), load("data/cou
   .then(([latest, history, coupons, candidates]) => { render(latest, history, coupons); renderCoupons(coupons, candidates, latest); })
   .catch(err => { document.getElementById("meta").textContent = `No se pudieron cargar los datos (${err.message}). En local, sírvelo con: python -m http.server`; });
 </script>
+<script src="/c.js" defer></script>
 </body>
 </html>
