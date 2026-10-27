@@ -193,6 +193,39 @@ def _parse_microdata(soup, text):
             "image": meta.get("image"), "ean": ean if len(ean) in (12, 13, 14) else None}
 
 
+def _parse_drunkat(soup, text):
+    """Drunkat (drunkat.es): microdatos de schema.org con gtin13 y breadcrumb; la moneda va en "pricecurrency"."""
+    crumbs = [li.get_text(" ", strip=True) for li in soup.select('[itemtype$="BreadcrumbList"] [itemprop=itemListElement]')]
+    product = soup.find(attrs={"itemtype": re.compile(r"schema\.org/Product$")})
+    if not product:
+        return {"crumbs": crumbs}
+    name = product.find(attrs={"itemprop": "name"}, recursive=True)
+    while name is not None and name.find_parent(attrs={"itemtype": re.compile("Brand$")}):
+        name = name.find_next(attrs={"itemprop": "name"})
+    name = name.get_text(" ", strip=True) if name else None
+    if crumbs and name and crumbs[-1].lower().startswith(name.lower()):
+        crumbs = crumbs[:-1]
+    meta = lambda prop: (product.find(attrs={"itemprop": prop}) or {}).get("content") if product.find(attrs={"itemprop": prop}) else None
+    brand = product.select_one('[itemprop=brand] [itemprop=name]')
+    price, avail = meta("price"), product.find(attrs={"itemprop": "availability"})
+    if not price or not name:
+        return {"crumbs": crumbs}
+    image = product.find("link", attrs={"itemprop": "image"}) or soup.find("meta", attrs={"property": "og:image"})
+    ean = normalize_id(meta("gtin13") or "")
+    brand = (brand.get("content") or "").strip() if brand else None
+    if crumbs and brand and crumbs[-1].strip().lower() == brand.lower():
+        crumbs = crumbs[:-1]  # el último nivel es la marca ("Guitarra eléctrica tipo Heavy" › "Ibanez")
+    return {"crumbs": crumbs, "name": " ".join(name.split()), "brand_raw": brand, "price": float(price),
+            "currency": (meta("pricecurrency") or meta("priceCurrency") or "EUR").upper(),
+            "in_stock": "instock" in (avail.get("href", "") if avail else "").lower(),
+            "image": image.get("href") or image.get("content") if image else None, "ean": ean if len(ean) in (12, 13, 14) else None}
+
+
+_DRUNKAT_ELECTRIC = re.compile(r"-guitarra-electrica(-|$)")
+_DRUNKAT_ACOUSTIC = re.compile(r"-guitarra-(electro)?(acustica|clasica|flamenca|espanola)(-|$)")
+_DRUNKAT_SKIP = re.compile(r"para-guitarra|para-bajo|juego-de-cuerdas|-bajo-|kit-|pack-|-set-", re.I)
+
+
 PRONORTE_SKIP = re.compile(SESSION_SKIP.pattern + r"|funda|estuche|correa|cuerda|pastilla|soporte|cable|ampli|bajo|ukelele"
                            r"|pedal|afinador|cejilla|pua|clavija|repuesto", re.I)
 
@@ -238,6 +271,10 @@ SOURCES = {
     "mat": {"name": "MAT Guitars", "sitemap": "https://www.matguitars.com/1_es_0_sitemap.xml",
             "pick": lambda u: _mat_category(u) in MAT_ELECTRIC and not NOT_PRODUCT.search(u), "crumbs": _mat_crumbs,
             "kind": _only("electrica", _is_electric)},
+    "drunkat": {"name": "Drunkat", "sitemap": "https://drunkat.es/var/sitemap.xml", "parse": _parse_drunkat,
+                "sub": lambda u: "sitemap-productos" in u,
+                "pick": lambda u: bool(_DRUNKAT_ELECTRIC.search(u)) and not _DRUNKAT_SKIP.search(u) and not NOT_PRODUCT.search(u),
+                "kind": _only("electrica", _is_electric)},
     "pronorte": {"name": "Pronorte", "sitemap": "https://www.pronorte.es/sitemap.xml", "parse": _parse_microdata,
                  # Yamaha vende también pianos, baterías y audio: solo sus eléctricas.
                  "pick": lambda u: _pick_pronorte(u, SESSION_BRANDS + ("sire", "harley-benton", "vintage", "aria"))
@@ -301,6 +338,8 @@ ACOUSTIC_SOURCES = {
                 "pick": lambda u: _pick_acoustic_brand(u.split("egitana.es/")[-1].split("/p/")[0])},
     "mat": {**SOURCES["mat"], "kind": acoustic_kind,
             "pick": lambda u: bool(_MAT_ACOUSTIC.search(_mat_category(u))) and not NOT_PRODUCT.search(u)},
+    "drunkat": {**SOURCES["drunkat"], "kind": acoustic_kind,
+                "pick": lambda u: bool(_DRUNKAT_ACOUSTIC.search(u)) and not _DRUNKAT_SKIP.search(u) and not NOT_PRODUCT.search(u)},
     "pronorte": {**SOURCES["pronorte"], "kind": acoustic_kind,
                  "pick": lambda u: "/p/" in u and _pick_acoustic_brand(u.split("/p/")[-1])},
 }
