@@ -62,6 +62,23 @@ Decisión: se empieza en España (online). La tienda física en Andorra queda ap
 Forma jurídica: se arranca como **autónomo** (solo comisiones de afiliación, sin stock ni ventas). La SL se
 constituirá cuando empiecen la compra-venta de segunda mano y el renting (stock, contratos, responsabilidad).
 
+## Expansión internacional (guitle.com)
+
+El precio depende del país del comprador (IVA del país de destino y portes): cada país necesita sus tiendas y sus
+precios, no solo la web traducida.
+
+1. **Más tiendas europeas que envían a España:** Bax-shop, Muziker, Star's Music (primero); después Musik Produktiv,
+   Just Music, Hieber Lindberg, Musikhaus Korn, Station Music, Michenaud, Univers Sons, Max Music, Strumenti Musicali,
+   Mogar, Scavino, Salão Musical.
+2. **Idiomas:** guitle.com/es, /en, /fr, /de, /it, /pt (textos en un fichero por idioma).
+3. **Selector de país en Europa:** tiendas, precios con el IVA del país y portes de cada país. Reino Unido aparte
+   (fuera de la UE: aduanas): Gear4music, Andertons, PMT, Guitar Guitar, Dawsons.
+4. **Fase final: Estados Unidos y Latinoamérica.**
+   - EE. UU.: precios en USD sin impuestos (el sales tax depende del estado). Sweetwater, Guitar Center,
+     Musician's Friend, zZounds, Reverb (también usado), Amazon US. Afiliación: programas propios y Impact/CJ.
+   - Latinoamérica: Mercado Libre (tiene API pública y programa de afiliados) y Amazon MX/BR, más las tiendas
+     locales de cada país (México, Argentina, Chile, Colombia…); moneda e impuestos de cada país.
+
 ## Proyecto aparte: tienda en Andorra (aparcado, se valorará más adelante)
 
 Idea: tienda física en Andorra con escaparate online y "reserva y recoge". Para quien compra o recoge allí,
