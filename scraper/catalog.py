@@ -39,6 +39,7 @@ DIR = ROOT / "data" / "catalog"
 RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir en este tiempo
 RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se miran cada dos semanas
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
+MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35}  # por debajo no es una guitarra (ni infantil)
 MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
 NOT_PRODUCT = re.compile(r"b-stock|bstock|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein|stock[ -]b\b", re.I)
@@ -770,6 +771,8 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
     for o in offers:
         if o.get("status") != "ok" or o.get("price") is None or NOT_PRODUCT.search(o["name"]):
             continue
+        if o["price"] < MIN_PRICE.get(kind, 0):
+            continue  # accesorio colado (cejillas, armónicas…) cuyo nombre no dice lo que es
         groups.setdefault(o.get("ean") or "url:" + o["url"], []).append(tidy(o))
     # Fichas sin EAN (Egitana): se unen al producto con EAN cuyo nombre coincide sin dudas.
     by_brand = {}

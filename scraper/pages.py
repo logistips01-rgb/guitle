@@ -187,6 +187,9 @@ TYPE_TITLES = {"ST": "tipo Stratocaster (ST)", "T": "tipo Telecaster (T)", "Sing
                "Roundback": "roundback", "Clásica": "clásicas de concierto", "Flamenca": "flamencas",
                "Electroclásica": "electroclásicas"}
 NOUN = {"electrica": "Guitarras eléctricas", "acustica": "Guitarras acústicas", "clasica": "Guitarras clásicas"}
+# Páginas por presupuesto (precio más bajo de hoy por debajo del límite) y guitarras que muestra cada una.
+BUDGETS = {"electrica": (150, 300, 500, 1000, 2000), "acustica": (150, 300, 500, 1000), "clasica": (100, 200, 400)}
+BUDGET_TILES = 120
 NOPHOTO = ('<svg class="nophoto" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/>'
            '<path d="M14.5 9.5c-1.6-1.6-3.9-1.3-5 .2-1 .4-2.6.1-4 1.5-2.1 2.1-1.7 5.4.6 7.7s5.6 2.7 7.7.6c1.4-1.4 1.1-3 1.5-4 '
            '1.5-1.1 1.8-3.4.2-5z"/><circle cx="9.6" cy="14.4" r="1.4"/></svg>')
@@ -306,6 +309,31 @@ def write_hubs():
             written += _write(ROOT / url, _hub(url, f"{label}: precios y comparativa", label, _summary(ps, names),
                                                [(None, sorted(ps, key=order))], names, url))
             pages.append(url)
+    # Por presupuesto ("guitarra eléctrica por menos de 300 €"): las que hoy cuestan menos, las comparables primero.
+    budget_links = []
+    for kind, d in catalogs.items():
+        prods = [p for p in d["products"] if p.get("slug") and p.get("items")]
+        limits = BUDGETS.get(kind, ())
+        links = []
+        for limit in limits:
+            ps = sorted((p for p in prods if p["items"][0]["p"] < limit), key=order)
+            if len(ps) < 6:
+                continue
+            url = f"presupuesto/{kind}-menos-de-{limit}.html"
+            links.append((f"Menos de {limit} €", url))
+        for label, url in links:
+            limit = int(url.rsplit("-", 1)[-1].split(".")[0])
+            ps = sorted((p for p in prods if p["items"][0]["p"] < limit), key=order)
+            noun = NOUN[kind]
+            title = f"{noun} por menos de {limit} €: precios comparados"
+            intro = (f"{noun} por menos de {limit} € en tiendas que venden en España, con el precio de cada tienda revisado "
+                     f"cada día; primero las que puedes comparar en más tiendas. " + _summary(ps, names))
+            chips = "".join(f'<a class="chip" href="/{u}">{html.escape(l)}</a>' for l, u in links if u != url)
+            page = _hub(url, title, f"{noun} por menos de {limit} €", intro, [(None, ps[:BUDGET_TILES])], names, url)
+            page = page.replace('<p class="hub-intro">', f'<div class="links">{chips}</div><p class="hub-intro">', 1)
+            written += _write(ROOT / url, page)
+            pages.append(url)
+        budget_links += [(f"{NOUN[kind]}: {l.lower()}", u) for l, u in links]
     # Índice de marcas
     esc = lambda v: html.escape(str(v or ""), quote=True)
     links = "".join(f'<a class="chip" href="/{u}">{esc(b)} <span class="muted">({n})</span></a>'
@@ -313,9 +341,11 @@ def write_hubs():
     index = _hub("marcas.html", "Marcas de guitarras: precios por marca", "Marcas de guitarras",
                  f"Compara precios de {len(brands)} marcas de guitarras eléctricas, acústicas y clásicas en las tiendas de Europa.",
                  [], names, "marcas.html").replace('<p class="hub-intro">', f'<div class="links">{links}</div><p class="hub-intro">', 1)
+    budgets = "".join(f'<a class="chip" href="/{u}">{esc(l)}</a>' for l, u in budget_links)
+    index = index.replace("  <footer", f'  <section class="hub-sec"><h2>Por presupuesto</h2><div class="links">{budgets}</div></section>\n  <footer', 1)
     written += _write(ROOT / "marcas.html", index)
     # Marcas o tipos que ya no existen (p. ej. una marca renombrada) se borran.
-    for folder in ("marca", "tipo"):
+    for folder in ("marca", "tipo", "presupuesto"):
         for f in (ROOT / folder).glob("*.html"):
             if f"{folder}/{f.name}" not in pages:
                 f.unlink()

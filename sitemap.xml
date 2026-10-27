@@ -102,6 +102,18 @@
   <url><loc>https://guitle.com/marca/vox.html</loc></url>
   <url><loc>https://guitle.com/marca/washburn.html</loc></url>
   <url><loc>https://guitle.com/marca/yamaha.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/acustica-menos-de-1000.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/acustica-menos-de-150.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/acustica-menos-de-300.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/acustica-menos-de-500.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/clasica-menos-de-100.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/clasica-menos-de-200.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/clasica-menos-de-400.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/electrica-menos-de-1000.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/electrica-menos-de-150.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/electrica-menos-de-2000.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/electrica-menos-de-300.html</loc></url>
+  <url><loc>https://guitle.com/presupuesto/electrica-menos-de-500.html</loc></url>
   <url><loc>https://guitle.com/tipo/acustica-12-cuerdas.html</loc></url>
   <url><loc>https://guitle.com/tipo/acustica-auditorio-concierto.html</loc></url>
   <url><loc>https://guitle.com/tipo/acustica-dreadnought.html</loc></url>
@@ -210,7 +222,6 @@
   <url><loc>https://guitle.com/g/art-luthier-art-luthier-roadhouse-havana-brown-q-discrete-623501047727.html</loc></url>
   <url><loc>https://guitle.com/g/art-luthier-art-luthier-roadhouse-natural-eq-623501050864.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-d20-12-cuerdas-nt-9356790025749.html</loc></url>
-  <url><loc>https://guitle.com/g/ashton-emh16-mh16p10092.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-tdr322-tdr322p468.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-tdr322wr-22wrp19218.html</loc></url>
   <url><loc>https://guitle.com/g/baton-rouge-randon-rgi-14vt-ce-caoba-5060495927126.html</loc></url>
@@ -1597,7 +1608,6 @@
   <url><loc>https://guitle.com/g/admira-virtuoso-electrificada-fishman-cutaway-8436032350264.html</loc></url>
   <url><loc>https://guitle.com/g/admira-virtuoso-electrificada-fishman-cutaway-estrecha-8436032350271.html</loc></url>
   <url><loc>https://guitle.com/g/alhambra-1-c-black-satin-wbag-8436623083359.html</loc></url>
-  <url><loc>https://guitle.com/g/alhambra-10-mm-9730-9730p20779.html</loc></url>
   <url><loc>https://guitle.com/g/alhambra-11-p-bra11pp430.html</loc></url>
   <url><loc>https://guitle.com/g/alhambra-1c-ht-1chtp40483.html</loc></url>
   <url><loc>https://guitle.com/g/alhambra-2-f-open-pore-wbag-8436623083076.html</loc></url>
@@ -1650,7 +1660,6 @@
   <url><loc>https://guitle.com/g/alvarez-rc26hce-6hcep11560.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-4-4-preta-spcg44bk-44bkp24080.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-cg44ceq-bk-black-blackp4085.html</loc></url>
-  <url><loc>https://guitle.com/g/ashton-cp3-oncp3p4128.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-spcg12pk-12pkp16545.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-spcg34pk-34pkp14695.html</loc></url>
   <url><loc>https://guitle.com/g/ashton-spcg34tbb-4tbbp14337.html</loc></url>
@@ -2591,9 +2600,7 @@
   <url><loc>https://guitle.com/g/esp-ltd-as-1-fr-alex-skolnick-lb-cklbp41716.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-bb-200-baritone-qm-see-thru-black-sunburst-satin-719710629387.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-cs-ii-caleb-shomo-signature-vintage-natural-uralp41717.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-ec-10-blk-0blkp14517.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-baritone-charcoal-metallic-satin-719710614437.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-ec-1000-black-lackp11584.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-cars-719710629080.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-evertune-bb-blks-blksp41710.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-ft-black-fluence-encep38083.html</loc></url>
@@ -2615,7 +2622,7 @@
   <url><loc>https://guitle.com/g/esp-ltd-ec-201-black-lackp40275.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-2025-50th-anniv-mg-ltd-gltdp40924.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-2025-mgo-719710628274.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-ec-256-black-satin-atinp14516.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256-blk-6blkp11588.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-candy-apple-red-st-edstp36416.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-qm-car-s-719710620162.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-qm-stbc-sb-719710620179.html</loc></url>
@@ -2641,7 +2648,6 @@
   <url><loc>https://guitle.com/g/esp-ltd-gh-sv-200-blk-0blkp36415.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gh-sv-blk-gary-holt-signature-719710619876.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gl-desert-eagle-aglep38460.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-h-1001-violet-andromeda-satin-atinp39693.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-h-1001fr-blknb-799493268065.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-h-200fm-dark-brown-sb-wnsbp11585.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-h3-1000-qm-stbc-stbcp31679.html</loc></url>
