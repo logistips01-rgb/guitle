@@ -49,6 +49,10 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
   guitle). Compra de instrumentos usados a particulares → stock para el renting y para la compra-venta.
   - Tasador en la web: el precio nuevo de calle que ya calcula guitle × % según estado (p. ej. 40-60 %),
     y formulario con fotos para recibir ofertas.
+  - **Propuesta de valor** frente a Wallapop, Milanuncios y Reverb (mercados entre particulares, con estafas
+    frecuentes): compramos al momento con tasación transparente (los datos de guitle) y vendemos revisada, con
+    factura y 1 año de garantía. Sin estafas ni quedar con desconocidos. Antes de lanzar, revisar si alguna
+    tienda española ya lo hace en serio.
   - **Guitarra como parte del pago** (decidido el 28/10/2026), como en coches y motos: en cualquier compra en la tienda
     de guitle (segunda mano, nueva cuando seamos tienda oficial, renting con opción de compra). Se tasa un 20-25 %
     por debajo del precio entre particulares y se revende revisada y con garantía (1 año) a precio de mercado:
