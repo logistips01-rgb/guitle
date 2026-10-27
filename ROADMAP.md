@@ -63,6 +63,15 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
 4. Bajos, amplis, pedales, teclados y micros, y accesorios/consumibles: cables, púas, cuerdas, correas,
    pies de guitarra y de micro, fundas, afinadores, cejillas… (el margen de afiliación y de tienda está aquí).
 
+## Mensajes de marca (solo lo que se pueda demostrar)
+
+- Nada de "el más grande" o "el número 1" sin pruebas (publicidad engañosa). Sí: "más de 7.000 guitarras
+  comparadas", "comparador especializado en guitarras con histórico de precios", "te decimos si un descuento es real".
+- Pendiente (hacia el 10/11/2026): muestreo a mano de 20-30 guitarras populares, guitle frente a idealo el mismo
+  día y con capturas. Si sale bien: "en X de cada 10 guitarras guitle encuentra un precio más bajo".
+- Más adelante: comprobar si guitle es "el mayor comparador especializado en guitarras de España", con pruebas
+  fechadas, antes de decirlo.
+
 ## Arranque del negocio: España
 
 Decisión: se empieza en España (online). La tienda física en Andorra queda aparcada para más adelante.
