@@ -1,0 +1,5 @@
+{
+  "_ayuda": "Enlaces de afiliado por tienda. 'template' convierte la URL de la ficha: {url} = URL codificada, {awin} = Publisher ID de Awin. Una tienda sin entrada (o con template null) enlaza tal cual. Awin: https://www.awin1.com/cread.php?awinmid=<ID del anunciante>&awinaffid={awin}&ued={url}",
+  "awin_publisher_id": null,
+  "stores": {}
+}

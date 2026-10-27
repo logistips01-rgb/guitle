@@ -446,7 +446,7 @@ function render(latest, history, coupons) {
       const priceCell = i.final == null ? "–" : i.coupon
         ? `<s class="muted">${eur(i.price)}</s> ${eur(i.final)} <span class="badge coupon">${esc(i.coupon.code)}</span>` : eur(i.final);
       return `<tr class="${isBest ? "best-row" : ""}">
-        <td><span class="swatch" style="background:var(${colorVar[i.store] || "--border"})"></span>${i.url ? `<a href="${esc(i.url)}" target="_blank" rel="sponsored noopener">${esc(storeName[i.store])}</a>` : esc(storeName[i.store])}${isRef[i.store] ? ' <span class="tag">PVP</span>' : ""}</td>
+        <td><span class="swatch" style="background:var(${colorVar[i.store] || "--border"})"></span>${i.url ? `<a href="${esc(i.aff || i.url)}" target="_blank" rel="sponsored noopener">${esc(storeName[i.store])}</a>` : esc(storeName[i.store])}${isRef[i.store] ? ' <span class="tag">PVP</span>' : ""}</td>
         <td class="num">${priceCell}${i.price_method === "manual" ? ' <span class="tag">manual</span>' : ""}</td>
         <td class="num muted">${isRef[i.store] || i.final == null ? "" : isBest ? "✓ mejor" : "+" + eur(i.final - p.best.final)}</td>
         <td>${i.in_stock === true ? "sí" : i.in_stock === false ? "no" : "?"}</td>

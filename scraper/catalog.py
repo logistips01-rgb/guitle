@@ -29,7 +29,7 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from . import analytics, jsonld, pages
+from . import affiliates, analytics, jsonld, pages
 from .common import normalize_id
 from .fetch import Fetcher, is_challenge
 
@@ -606,7 +606,7 @@ def _curated_offers():
         store = stores.get(i["store"], {})
         if not ean or i.get("price") is None or store.get("reference"):
             continue
-        out.setdefault(ean, []).append({"s": i["store"], "p": i["price"], "u": i.get("url"),
+        out.setdefault(ean, []).append({"s": i["store"], "p": i["price"], "u": affiliates.wrap(i["store"], i.get("url")),
                                         "st": i.get("in_stock"), "d": (i.get("price_date") or "")[:10]})
     # Ficha de las guitarras seguidas, para las que no aparecen en ninguna tienda del catálogo.
     info = {by_sku[p["sku"]]: p for p in latest.get("products", []) if p["sku"] in by_sku and p.get("category", "guitarra") == "guitarra"}
@@ -669,7 +669,8 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
     for keeps_ean, group in clusters:
         main = group[0]
         ean = main.get("ean") if keeps_ean else None
-        items = [{"s": o["store"], "p": o["price"], "u": o["url"], "st": o.get("in_stock"), "d": o["checked"][:10]}
+        items = [{"s": o["store"], "p": o["price"], "u": affiliates.wrap(o["store"], o["url"]), "st": o.get("in_stock"),
+                  "d": o["checked"][:10]}
                  for o in group]
         # Tiendas de seguimiento que el catálogo aún no ha leído para este producto.
         seen = {o["store"] for o in group}

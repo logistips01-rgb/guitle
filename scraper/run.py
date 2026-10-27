@@ -15,7 +15,7 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-from . import analytics, css, ebay, jsonld, meta
+from . import affiliates, analytics, css, ebay, jsonld, meta
 from . import thumbs as thumbs_mod
 from .fetch import Fetcher, is_challenge
 
@@ -159,7 +159,8 @@ def update_latest(history, products, stores):
         key = f"{rec['store']}|{rec['sku']}"
         entry = latest.setdefault(key, {"store": rec["store"], "sku": rec["sku"]})
         if rec.get("method") != "manual":
-            entry.update(last_run=rec["date"], status=rec["status"], url=rec["url"])
+            entry.update(last_run=rec["date"], status=rec["status"], url=rec["url"],
+                         aff=affiliates.wrap(rec["store"], rec["url"]))  # enlace para la web (afiliado si lo hay)
         if rec["status"] == "ok":
             if rec.get("image"):
                 entry["image"] = rec["image"]
