@@ -1,0 +1,37 @@
+name: probe-fender
+
+# Prueba puntual: ¿responde el sitemap de es.fender.com desde un runner de GitHub? (robots.txt respetado)
+on:
+  push:
+    paths: [".github/workflows/probe-fender.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Sitemap y una ficha de Fender
+        run: |
+          python - <<'PY'
+          import re
+          from scraper.fetch import Fetcher
+          f = Fetcher()
+          for url in ["https://es.fender.com/sitemap.xml", "https://es.fender.com/products/player-ii-telecaster"]:
+              ok, info = f.allowed(url)
+              print(url, "robots:", ok, info)
+              if not ok:
+                  continue
+              r = f.get(url)
+              locs = re.findall(r"<loc>([^<]+)</loc>", r.text)
+              print("  HTTP", r.status_code, len(r.content), "bytes,", len(locs), "loc")
+              for l in locs[:8]:
+                  print("   ", l)
+          PY
