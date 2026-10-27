@@ -1,0 +1,35 @@
+name: probe-store
+
+# Prueba puntual de acceso a una tienda desde un runner de GitHub (robots.txt respetado; nada se guarda).
+on:
+  push:
+    paths: [".github/workflows/probe-store.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Hifi Madrid
+        run: |
+          python - <<'PY'
+          import re
+          from scraper.fetch import Fetcher, is_challenge
+          f = Fetcher()
+          for url in ["https://www.hifimadrid.com/robots.txt", "https://www.hifimadrid.com/", "https://www.hifimadrid.com/sitemap.xml"]:
+              try:
+                  if not url.endswith("robots.txt"):
+                      print(url, "robots:", f.allowed(url))
+                  r = f.get(url)
+                  print(url, "HTTP", r.status_code, len(r.content), "challenge" if is_challenge(r) else "")
+                  print("  ", r.text[:600].replace("\n", " | "))
+              except Exception as e:
+                  print(url, "ERROR", type(e).__name__, e)
+          PY
