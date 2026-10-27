@@ -380,15 +380,19 @@ COLOR_ES = {"negro": "black", "negra": "black", "blanco": "white", "blanca": "wh
             "nogal": "walnut", "cereza": "cherry", "vino": "wine", "oscuro": "dark", "oscura": "dark", "claro": "light",
             "perla": "pearl", "noche": "night", "medianoche": "midnight", "escarlata": "scarlet", "bosque": "forest",
             "profundo": "deep", "natural": "natural"}
-# Acabados abreviados (Thomann: "Player II Strat MN AQB") → nombre completo, como Numemusic.
-COLOR_CODES = {"3ts": "3 color sunburst", "3cs": "3 color sunburst", "3 tone sunburst": "3 color sunburst",
-               "2ts": "2 color sunburst", "2cs": "2 color sunburst", "owt": "olympic white", "pwt": "polar white",
-               "aqb": "aquatone blue", "car": "candy apple red", "lpb": "lake placid blue", "sfg": "sea foam green",
-               "frd": "fiesta red", "aw": "arctic white", "vw": "vintage white", "hcs": "heritage cherry sunburst",
-               "hc": "heritage cherry", "vs": "vintage sunburst", "ebo": "ebony", "tbs": "tobacco burst",
-               "wr": "wine red", "nat": "natural", "sb": "sunburst", "csb": "cherry sunburst", "bkm": "black metallic"}
+# Modelos y acabados abreviados (Thomann: "Am Pro Clsc Tele", "Player II Strat MN AQB") → nombre completo, como Numemusic.
+NAME_CODES = {"am": "american", "clsc": "classic", "anniv": "anniversary", "av": "american vintage", "mod": "modified",
+              "cv": "classic vibe", "sat": "satin", "primergrey": "primer gray",
+              "3ts": "3 color sunburst", "3cs": "3 color sunburst", "3 tone sunburst": "3 color sunburst",
+              "2ts": "2 color sunburst", "2cs": "2 color sunburst", "owt": "olympic white", "owh": "olympic white",
+              "pwt": "polar white", "olp": "olympic pearl", "aqb": "aquatone blue", "car": "candy apple red",
+              "lpb": "lake placid blue", "sfg": "sea foam green", "frd": "fiesta red", "aw": "arctic white",
+              "vw": "vintage white", "hcs": "heritage cherry sunburst", "hc": "heritage cherry", "vs": "vintage sunburst",
+              "ebo": "ebony", "tbs": "tobacco burst", "wr": "wine red", "nat": "natural", "nt": "natural",
+              "sb": "sunburst", "csb": "cherry sunburst", "bkm": "black metallic", "pm": "pale moon", "lg": "liquid gold",
+              "btb": "butterscotch blonde", "elb": "electric blue", "ssy": "sunshine yellow", "dsk": "dusk"}
 NAME_STOPWORDS = {"fingerboard", "fretboard", "guitar", "guitarra", "electrica", "eléctrica", "electric", "with", "con",
-                  "w", "and", "y", "the", "series", "guitars", "wpg", "bpg", "tpg", "mpg"}
+                  "w", "and", "y", "the", "series", "guitars", "wpg", "bpg", "tpg", "mpg", "c", "estuche", "funda", "gigbag"}
 
 
 def name_tokens(name, brand):
@@ -398,7 +402,7 @@ def name_tokens(name, brand):
     for pat, short in FINGERBOARDS:
         n = re.sub(pat, " " + short + " ", n)
     n = re.sub(r"(\d)-(color|tone)\b", r"\1 \2", n)
-    for code, full in COLOR_CODES.items():
+    for code, full in NAME_CODES.items():
         n = re.sub(rf"\b{code}\b", full, n)
     words = re.findall(r"[a-záéíóúñ0-9]+", n)
     return {NAME_SYNONYMS.get(COLOR_ES.get(w, w), COLOR_ES.get(w, w)) for w in words if w not in NAME_STOPWORDS}

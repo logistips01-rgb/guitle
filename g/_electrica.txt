@@ -622,7 +622,6 @@ esp-iron-cross-james-hetfield-840248006811
 esp-iron-cross-sw-signature-james-hetfield-ssswp39551
 esp-james-hetfield-signature-vulture-olympic-white-hitep44612
 esp-kh-3-spider-30th-anniversary-c-estuche-840248002080
-esp-kh-3-spider-30th-anniversary-saryp42085
 esp-ltd-alexi-laiho-arrowhead-headp44470
 esp-ltd-alexi-ripped-sawtooth-purple-fade-satin-799493273328
 esp-ltd-alr-ii-qm-stp-andy-laroque-oquep41480
@@ -755,7 +754,6 @@ esp-ltd-te-1000-silver-blast-lastp39646
 esp-ltd-te-200-tsb-0tsbp35128
 esp-ltd-te-200r-sw-799493254662
 esp-ltd-th-400-charcoal-metallic-719710629288
-esp-ltd-viper-10-blk-0blkp23924
 esp-ltd-viper-1000-black-cherry-erryp31682
 esp-ltd-vulture-bks-hetfield-ieldp11594
 esp-ltd-vulture-ow-james-hetfield-signature-719710616806
@@ -1258,8 +1256,6 @@ fender-player-ii-jazzmaster-rw-aquatone-blue-885978114580
 fender-player-ii-jazzmaster-rw-birch-green-885978114702
 fender-player-ii-jazzmaster-rw-black-885978114573
 fender-player-ii-jazzmaster-rw-rallye-orange-885978996933
-fender-player-ii-mod-tele-rw-dsk-wdskp44674
-fender-player-ii-mod-tele-sh-mn-olp-nolpp45173
 fender-player-ii-modified-stratocaster-diapason-de-palisandro-olympic-pearl-earlp44985
 fender-player-ii-modified-stratocaster-fr-rw-3ts-885978398621
 fender-player-ii-modified-stratocaster-fr-rw-olp-kundenorder-885978777617
@@ -1276,7 +1272,6 @@ fender-player-ii-modified-stratocaster-rw-dusk-885978396771
 fender-player-ii-modified-stratocaster-rw-electric-blue-885978396948
 fender-player-ii-modified-stratocaster-rw-olympic-pearl-885978777556
 fender-player-ii-modified-telecaster-mn-electric-blue-885978398744
-fender-player-ii-modified-telecaster-mn-olp-nolpp44247
 fender-player-ii-modified-telecaster-mn-olympic-pearl-885978777631
 fender-player-ii-modified-telecaster-mn-sunshine-yellow-885978398799
 fender-player-ii-modified-telecaster-rw-3-tone-sunburst-885978398676
