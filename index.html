@@ -241,7 +241,9 @@ load("data/latest.json").then(latest => {
     if (card) card.textContent = `${n} productos`;
   }).catch(() => {});
 
-  const link = p => `guitarras.html?q=${encodeURIComponent(p.name.replace(/^(Fender|Epiphone|Gibson|Ibanez) /, ""))}`;
+  // La tarjeta abre directamente la ficha de la guitarra en el catálogo (por EAN); sin EAN, la búsqueda en seguimiento.
+  const link = p => p.ean ? `catalogo.html?p=${encodeURIComponent(String(p.ean).replace(/^0+/, ""))}`
+    : `guitarras.html?q=${encodeURIComponent(p.name.replace(/^(Fender|Epiphone|Gibson|Ibanez) /, ""))}`;
   // Chollos: mayor descuento frente al PVP (o, sin PVP, frente a la tienda más cara)
   const score = p => p.vsPvp ?? (p.items.length > 2 ? (p.best.price - p.items.at(-1).price) / p.items.at(-1).price * 50 : 0);
   const deals = guitars.slice().sort((a, b) => score(a) - score(b)).slice(0, 4);

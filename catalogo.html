@@ -156,6 +156,12 @@
   .more:hover { border-color: var(--accent); }
   .stores-n { font-weight: 600; color: var(--text-secondary); }
   .nophoto { width: 34%; height: auto; fill: none; stroke: #d6d5d0; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+  .store-link { color: inherit; text-decoration: none; }
+  .go { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: .85rem; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+  /* En el móvil la tabla de tiendas cabe entera: fuera la diferencia y la fecha; el botón siempre visible. */
+  .go-short { display: none; }
+  @media (max-width: 560px) { .col-diff, .col-date { display: none; } .sheet td, .sheet th { padding: 8px 4px; }
+    .go { padding: 6px 14px; } .go-long { display: none; } .go-short { display: inline; } }
   .shop { color: var(--accent); text-decoration: none; font-weight: 600; }
   .site-foot { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
   .site-foot a { color: var(--text-muted); }
@@ -319,13 +325,17 @@ document.getElementById("grid").addEventListener("click", e => {
 // Ficha: tiendas y evolución del precio
 function openSheet(p) {
   const s = document.getElementById("sheet");
-  const rows = p.items.map((i, n) => `<tr class="${n === 0 ? "best-row" : ""}">
-      <td><span class="swatch" style="background:var(${storeColor[i.s] || "--reference"})"></span>${esc(storeName[i.s] || i.s)}</td>
+  const rows = p.items.map((i, n) => {
+    const store = esc(storeName[i.s] || i.s);
+    const go = i.u ? `href="${esc(i.u)}" target="_blank" rel="sponsored noopener"` : "";
+    return `<tr class="${n === 0 ? "best-row" : ""}">
+      <td><span class="swatch" style="background:var(${storeColor[i.s] || "--reference"})"></span>${i.u ? `<a class="store-link" ${go}>${store}</a>` : store}</td>
       <td class="num"><strong>${eur(i.p)}</strong></td>
-      <td class="num muted">${n === 0 ? "mejor precio" : "+" + eur(Math.round((i.p - p.best.p) * 100) / 100)}</td>
-      <td>${i.st === true ? '<span class="tag">en stock</span>' : i.st === false ? '<span class="tag warn">sin stock</span>' : ""}</td>
-      <td class="muted">${fmtDay(i.d)}</td>
-      <td>${i.u ? `<a class="shop" href="${esc(i.u)}" target="_blank" rel="sponsored noopener">Ver en tienda</a>` : ""}</td></tr>`).join("");
+      <td class="num muted col-diff">${n === 0 ? "mejor precio" : "+" + eur(Math.round((i.p - p.best.p) * 100) / 100)}</td>
+      <td class="col-stock">${i.st === true ? '<span class="tag">en stock</span>' : i.st === false ? '<span class="tag warn">sin stock</span>' : ""}</td>
+      <td class="muted col-date">${fmtDay(i.d)}</td>
+      <td class="num">${i.u ? `<a class="go" ${go}><span class="go-long">Ir a la tienda</span><span class="go-short">Ir</span></a>` : ""}</td></tr>`;
+  }).join("");
   s.innerHTML = `<button class="close" aria-label="Cerrar">✕</button>
     <div class="hero">${pic(p) ? `<img src="${esc(pic(p))}" alt="">` : ""}
       <div><div class="muted">${esc(p.brand || "")}${p.type ? " · " + esc(p.type) : ""}</div><h2>${esc(p.name)}</h2>

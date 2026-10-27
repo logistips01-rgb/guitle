@@ -198,7 +198,8 @@ def with_live_pvp(products, latest, stores):
             p["image"] = images[0][2]
             # Miniatura uniforme (scraper.thumbs); entre las ya generadas, la que muestra la guitarra entera
             # (la más esbelta: alto/ancho mayor), no un primer plano.
-            thumbs = [t for t in (thumbs_mod.existing(i[2]) for i in images) if t]
+            # La web de la marca no cuenta: comparte foto entre colores.
+            thumbs = [t for t in (thumbs_mod.existing(img) for is_ref, _, img in images if not is_ref) if t]
             if thumbs:
                 p["thumb"] = max(thumbs, key=thumbs_mod.slenderness) if p.get("category", "guitarra") in thumbs_mod.ROTATE_CATEGORIES else thumbs[0]
         out.append(p)

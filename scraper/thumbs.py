@@ -14,7 +14,7 @@ import time
 from io import BytesIO
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageOps
 
 from .catalog import load
 from .fetch import Fetcher
@@ -22,7 +22,7 @@ from .fetch import Fetcher
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "img" / "p"
 HEIGHT = 360
-WHITE = 235  # más claro que esto se considera fondo
+WHITE = 244  # canal más oscuro por encima de esto = fondo blanco
 ROTATE_CATEGORIES = {"guitarra", "bajo"}
 
 
@@ -104,7 +104,11 @@ def normalize(data, rotate=True, height=HEIGHT):
     bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
     bg.alpha_composite(im)
     rgb = bg.convert("RGB")
-    mask = rgb.convert("L").point(lambda v: 255 if v < WHITE else 0)
+    # Fondo = blanco casi puro en los tres canales. Se mira el canal más oscuro, no el brillo: así un cuerpo
+    # blanco crema (Olympic White, Vintage White…) no se confunde con el fondo.
+    r, g, b = rgb.split()
+    darkest = ImageChops.darker(ImageChops.darker(r, g), b)
+    mask = darkest.point(lambda v: 255 if v < WHITE else 0)
     bbox = mask.getbbox()
     if not bbox:
         return None

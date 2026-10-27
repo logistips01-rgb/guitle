@@ -367,14 +367,16 @@ def _curated_offers():
             continue
         out.setdefault(ean, []).append({"s": i["store"], "p": i["price"], "u": i.get("url"),
                                         "st": i.get("in_stock"), "d": (i.get("price_date") or "")[:10]})
-    return out, {s: stores[s]["name"] for s in stores}, {v: k for k, v in by_sku.items()}
+    # Ficha de las guitarras seguidas, para las que no aparecen en ninguna tienda del catálogo.
+    info = {by_sku[p["sku"]]: p for p in latest.get("products", []) if p["sku"] in by_sku and p.get("category", "guitarra") == "guitarra"}
+    return out, {s: stores[s]["name"] for s in stores}, {v: k for k, v in by_sku.items()}, info
 
 
 def build(offers=None, history=None):
     offers = offers if offers is not None else load(DIR / "offers.json", {})
     history = history if history is not None else load(DIR / "history.json", {})
     from .thumbs import existing, slenderness  # import aquí: thumbs importa este módulo
-    curated, store_names, sku_by_ean = _curated_offers()
+    curated, store_names, sku_by_ean, curated_info = _curated_offers()
     groups = {}
     for o in offers.values():
         if o.get("status") != "ok" or o.get("price") is None or NOT_PRODUCT.search(o["name"]):
@@ -435,6 +437,18 @@ def build(offers=None, history=None):
             prod["th"] = best
         if ean in sku_by_ean:
             prod["sku"] = sku_by_ean[ean]
+        products.append(prod)
+    # Guitarras de seguimiento que no están en las tiendas del catálogo (p. ej. solo en Thomann).
+    present = {p["ean"] for p in products if p["ean"]}
+    for ean, p in curated_info.items():
+        if ean in present or not curated.get(ean):
+            continue
+        items = sorted(curated[ean], key=lambda i: i["p"])
+        prod = {"id": ean, "ean": ean, "name": p["name"], "brand": p.get("brand"),
+                "type": type_from_name(p["name"]), "img": p.get("image"), "items": items, "low": None,
+                "sku": p["sku"]}
+        if p.get("thumb"):
+            prod["th"] = p["thumb"]
         products.append(prod)
     products.sort(key=lambda p: (-len(p["items"]), p["name"]))
     names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names
