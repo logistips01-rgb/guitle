@@ -27,13 +27,14 @@ from pathlib import Path
 import requests
 from bs4 import BeautifulSoup
 
-from . import jsonld
+from . import analytics, jsonld
 from .common import normalize_id
 from .fetch import Fetcher, is_challenge
 
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "data" / "catalog"
 RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir en este tiempo
+RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se miran cada dos semanas
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
@@ -65,6 +66,41 @@ def _pick_session(url):
             and not SESSION_SKIP.search(slug) and not NOT_PRODUCT.search(slug))
 
 
+EGITANA_BRANDS = ("fender", "squier", "gibson", "epiphone", "ibanez", "prs", "gretsch", "esp", "ltd", "jackson",
+                  "charvel", "schecter", "evh", "music-man", "sterling", "cort", "godin", "duesenberg", "rickenbacker",
+                  "danelectro", "guild", "harley", "vintage", "solar", "chapman", "reverend", "framus", "hagstrom",
+                  "sire", "suhr", "mooer", "yamaha")
+EGITANA_SKIP = re.compile(
+    r"estojo|saco|correia|corda|captador|pickguard|escudo|kit|suporte|stand|amplificador|\bamp\b|combo|cabeca|coluna"
+    r"|cabo|palheta|\bpua|capo|afinador|pedal|baixo|bass|acust|acoustic|classic|ukulele|cavaquinho|bandolim|banjo"
+    r"|t-shirt|camisola|bone|caneca|livro|correa|funda|cuerda|pastilla|mastil|braco|corpo|tarraxa|ponte|cordal"
+    r"|parafuso|mola|botao|potenciometro|interruptor|jack|limpeza|polish|oleo|tremolo|strings|case|gig|bag|strap"
+    r"|pick|neck|body|tuner|bridge|knob|switch|cable|headphone|monitor|speaker|cover|capa|overdrive|boost|delay"
+    r"|reverb|fuzz|chorus|tone|wah|looper|trbx|\bgsr|\bsr\d|\bbtb|\bsrx", re.I)
+
+
+def _pick_egitana(url):
+    slug = url.split("egitana.es/")[-1].split("/p/")[0]
+    if not slug.startswith(tuple(b + "-" for b in EGITANA_BRANDS)) or EGITANA_SKIP.search(slug) or NOT_PRODUCT.search(slug):
+        return False
+    # Yamaha vende sobre todo pianos y audio: solo sus eléctricas.
+    return not slug.startswith("yamaha-") or re.search(r"pacifica|revstar|\brs[ps]?\d|\bsg\d", slug)
+
+
+def _parse_egitana(soup, text):
+    """Egitana no publica JSON-LD de producto ni EAN: datos de su analítica (scraper.analytics) y breadcrumb.
+    Sin bloque de analítica = producto no disponible (sin precio)."""
+    crumbs = [a.get_text(strip=True) for a in soup.find_all(attrs={"itemprop": "itemListElement"})]
+    crumbs = [c for c in crumbs if c] or analytics.crumbs(text)
+    d = analytics.detail(text)
+    if not d:
+        return {"crumbs": crumbs}
+    image = soup.find("meta", attrs={"property": "og:image"})
+    # Para el tipo: categoría general + formato ("guitarras formato ST").
+    return {"crumbs": crumbs[:1] + [d["category"]], "name": d["name"], "brand_raw": d["brand"], "price": d["price"],
+            "currency": "EUR", "in_stock": None, "image": image.get("content") if image else None, "ean": None}
+
+
 SOURCES = {
     "numemusic": {"name": "Nume Music", "sitemap": "https://www.numemusic.com/media/sitemap/es_ES.xml",
                   "pick": _pick_numemusic, "guitar": lambda c: any(re.search(r"guitarras el[eé]ctricas", x, re.I) for x in c)},
@@ -74,10 +110,14 @@ SOURCES = {
                 "guitar": lambda c: len(c) > 1 and c[-2].lower().startswith("e-gitarren")
                 and re.search(r"gitarre", c[-1], re.I) and not re.search(r"zubeh|saite|koffer|tasche", c[-1], re.I),
                 "sub": lambda u: "-product-" in u},
+    # Egitana responde a veces con estado 500 pero con la ficha completa: vale si trae los datos.
+    "egitana": {"name": "Egitana", "sitemap": "https://www.egitana.es/sitemaps/es/products_sitemap.xml",
+                "pick": _pick_egitana, "parse": _parse_egitana, "ok_status": (200, 500),
+                "guitar": lambda c: any(x.strip().lower() == "guitarras eléctricas" for x in c)},
 }
 
 # Tipos comunes a partir del breadcrumb (Numemusic: "Modelos ST"; Session: "ST-Gitarren").
-TYPES = [("ST", r"\bst\b|st-gitarren|strat"), ("T", r"modelos t\b|\bt-gitarren|tele"),
+TYPES = [("ST", r"\bst\b|st-gitarren|strat"), ("T", r"modelos t\b|formato t\b|\bt-gitarren|tele"),
          ("Single cut", r"single.?cut"), ("Double cut", r"double.?cut"),
          ("Semihueca", r"hollow|semi|jazz|resonanz|archtop"),
          ("Moderna / Metal", r"heavy|metal|superstrat|moderne|[78] cuerdas|[78]-saiter"),
@@ -157,6 +197,51 @@ def _tokens(o):
     return {t for w in re.findall(r"[a-z0-9]+", name) for t in NAME_SYNONYMS.get(w, w).split()}
 
 
+# Emparejado por nombre para tiendas sin EAN (Egitana). Los nombres largos ("Rosewood Fingerboard") se
+# reducen a la forma corta de Numemusic ("RW") y se comparan palabras.
+FINGERBOARDS = [(r"rosewood( fingerboard| fretboard)?", "rw"), (r"maple( fingerboard| fretboard)", "mn"),
+                (r"laurel( fingerboard| fretboard)?|\blr\b", "lrl"), (r"ebony( fingerboard| fretboard)", "eb"),
+                (r"pau ferro( fingerboard| fretboard)?", "pf")]
+NAME_STOPWORDS = {"fingerboard", "fretboard", "guitar", "guitarra", "electrica", "eléctrica", "electric", "with", "con",
+                  "w", "and", "y", "the", "series", "guitars"}
+
+
+def name_tokens(name, brand):
+    n = name.lower().replace("\u2019", "'")
+    for b in {brand.lower(), "squier by fender", "fender squier", "esp ltd"} if brand else ():
+        n = n.replace(b, " ")
+    for pat, short in FINGERBOARDS:
+        n = re.sub(pat, " " + short + " ", n)
+    words = re.findall(r"[a-z0-9]+", n)
+    return {NAME_SYNONYMS.get(w, w) for w in words if w not in NAME_STOPWORDS}
+
+
+# Palabras que cambian de modelo: si una ficha las tiene y la otra no, no son la misma guitarra.
+MODEL_WORDS = {"ii", "iii", "iv", "v", "vi", "hss", "hh", "sss", "hsh", "ssh", "h", "fr", "ht", "lh", "left", "lefthand",
+               "zurda", "zurdo", "thinline", "mini", "junior", "jr", "deluxe", "baritone", "custom", "special", "plus",
+               "pro", "professional", "elite", "ultra", "limited", "ltd", "relic", "closet", "nos", "journeyman",
+               "signature", "evertune", "multiscale", "headless", "hollow", "semi", "sh", "tremolo", "bigsby", "stoptail"}
+
+
+def _numbers(tokens):
+    return {t for t in tokens if re.search(r"\d", t) or t in MODEL_WORDS}
+
+
+def name_match_score(a_name, b_name, brand):
+    """0-1. Cero si no coinciden los números de modelo (60s/70s, II/III, 24/22…) o los códigos de acabado."""
+    ta, tb = name_tokens(a_name, brand), name_tokens(b_name, brand)
+    if _numbers(ta) != _numbers(tb):
+        return 0.0
+    ca, cb = set(MODEL_CODE.findall(a_name.lower())), set(MODEL_CODE.findall(b_name.lower()))
+    if ca and cb and not ca & cb:
+        return 0.0
+    return len(ta & tb) / max(1, len(ta | tb))
+
+
+NAME_MATCH_MIN = 0.75     # parecido mínimo para unir una ficha sin EAN a un producto
+NAME_MATCH_MARGIN = 0.1   # y con ventaja clara sobre el segundo candidato
+
+
 def same_product(a, b):
     ca, cb = set(MODEL_CODE.findall(a["name"].lower())), set(MODEL_CODE.findall(b["name"].lower()))
     if ca and cb and not ca & cb:
@@ -228,6 +313,18 @@ def _product_node(soup):
     return product, crumbs
 
 
+def _parse_jsonld(soup, store_id):
+    product, crumbs = _product_node(soup)
+    offer = jsonld.extract(soup, [], store_id)
+    if not product or not offer:
+        return {"crumbs": crumbs}
+    brand_raw = product.get("brand")
+    brand_raw = brand_raw.get("name") if isinstance(brand_raw, dict) else brand_raw
+    ean = next((normalize_id(product.get(k)) for k in ("gtin13", "gtin", "gtin12", "gtin14") if product.get(k)), None)
+    return {"crumbs": crumbs, "name": product.get("name"), "brand_raw": brand_raw, "price": offer["price"],
+            "currency": offer["currency"], "in_stock": offer["in_stock"], "image": offer.get("image"), "ean": ean}
+
+
 def read_page(fetcher, store_id, url, now):
     src = SOURCES[store_id]
     rec = {"store": store_id, "url": url, "checked": now, "status": "error"}
@@ -240,29 +337,23 @@ def read_page(fetcher, store_id, url, now):
         if resp.status_code in (404, 410):
             rec["status"] = "gone"
             return rec
-        if resp.status_code != 200 or is_challenge(resp):
+        if resp.status_code not in src.get("ok_status", (200,)) or is_challenge(resp):
             rec.update(status="blocked_403" if resp.status_code == 403 or is_challenge(resp) else "error",
                        http_status=resp.status_code)
             return rec
         soup = BeautifulSoup(resp.text, "html.parser")
-        product, crumbs = _product_node(soup)
-        if not src["guitar"](crumbs):
+        data = src["parse"](soup, resp.text) if "parse" in src else _parse_jsonld(soup, store_id)
+        if not src["guitar"](data["crumbs"]):
             rec["status"] = "not_guitar"
             return rec
-        offer = jsonld.extract(soup, [], store_id)
-        if not product or not offer:
+        if data.get("price") is None:
             rec["status"] = "no_price"
             return rec
-        ean = next((normalize_id(product.get(k)) for k in ("gtin13", "gtin", "gtin12", "gtin14")
-                    if product.get(k)), None)
-        brand_raw = product.get("brand")
-        brand_raw = brand_raw.get("name") if isinstance(brand_raw, dict) else brand_raw
-        brand = canonical_brand(brand_raw)
-        rec.update(status="ok" if offer["currency"] == "EUR" else "wrong_currency",
-                   ean=ean.lstrip("0") if ean else None, brand=brand,
-                   name=clean_name(product.get("name"), brand_raw, brand), type=guitar_type(crumbs),
-                   price=offer["price"], currency=offer["currency"], in_stock=offer["in_stock"],
-                   image=offer.get("image"))
+        brand = canonical_brand(data["brand_raw"])
+        rec.update(status="ok" if data["currency"] == "EUR" else "wrong_currency",
+                   ean=data["ean"].lstrip("0") if data.get("ean") else None, brand=brand,
+                   name=clean_name(data["name"], data["brand_raw"], brand), type=guitar_type(data["crumbs"]),
+                   price=data["price"], currency=data["currency"], in_stock=data["in_stock"], image=data.get("image"))
     except requests.RequestException as exc:
         rec["note"] = type(exc).__name__
     except Exception as exc:  # noqa: BLE001 - una ficha rara no para el lote
@@ -273,12 +364,15 @@ def read_page(fetcher, store_id, url, now):
 def due_urls(store_id, urls, offers, now):
     """Orden de visita: nunca leídas, luego las más antiguas. Las que no son guitarra esperan 60 días."""
     skip_before = (datetime.fromisoformat(now) - timedelta(days=RECHECK_SKIPPED_DAYS)).isoformat()
+    no_price_before = (datetime.fromisoformat(now) - timedelta(days=RECHECK_NO_PRICE_DAYS)).isoformat()
     fresh, old = [], []
     for url in urls:
         o = offers.get(url)
         if o is None:
             fresh.append(url)
         elif o.get("status") in ("not_guitar", "gone") and o["checked"] > skip_before:
+            continue
+        elif o.get("status") == "no_price" and o["checked"] > no_price_before:
             continue
         else:
             old.append((o["checked"], url))
@@ -382,6 +476,21 @@ def build(offers=None, history=None):
         if o.get("status") != "ok" or o.get("price") is None or NOT_PRODUCT.search(o["name"]):
             continue
         groups.setdefault(o.get("ean") or "url:" + o["url"], []).append(tidy(o))
+    # Fichas sin EAN (Egitana): se unen al producto con EAN cuyo nombre coincide sin dudas.
+    by_brand = {}
+    for key, group in groups.items():
+        if not key.startswith("url:"):
+            ref = next((o for o in group if o["store"] == "numemusic"), group[0])
+            by_brand.setdefault(ref["brand"], []).append((ref["name"], key))
+    for key in [k for k in groups if k.startswith("url:")]:
+        o = groups[key][0]
+        scored = sorted(((name_match_score(o["name"], name, o["brand"]), k) for name, k in by_brand.get(o["brand"], [])),
+                        reverse=True)
+        if scored and scored[0][0] >= NAME_MATCH_MIN and (len(scored) == 1 or scored[0][0] - scored[1][0] >= NAME_MATCH_MARGIN):
+            target = groups[scored[0][1]]
+            if o["store"] not in {x["store"] for x in target}:
+                target.append(o)
+                del groups[key]
     # Mismo EAN pero producto distinto (EAN mal puesto en una tienda) → se separan. Solo el primer grupo,
     # el de Numemusic si está, conserva el EAN (histórico y cruce con las tiendas de seguimiento).
     clusters = []

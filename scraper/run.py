@@ -15,13 +15,13 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-from . import css, ebay, jsonld, meta
+from . import analytics, css, ebay, jsonld, meta
 from . import thumbs as thumbs_mod
 from .fetch import Fetcher, is_challenge
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-EXTRACTORS = {"jsonld": jsonld.extract, "meta": meta.extract, "css": css.extract}
+EXTRACTORS = {"jsonld": jsonld.extract, "meta": meta.extract, "css": css.extract, "analytics": analytics.extract}
 CHAIN = ["jsonld", "meta", "css"]
 EXPECTED_CURRENCY = "EUR"
 
@@ -76,7 +76,8 @@ def scrape_item(fetcher, store, item, products, now):
             if is_challenge(resp):
                 rec["note"] = "challenge anti-bot"
             return rec
-        if resp.status_code != 200:
+        # Algunas tiendas (Egitana) responden 500 con la ficha completa: "ok_status" en stores.json.
+        if resp.status_code not in store.get("ok_status", [200]):
             rec["note"] = f"HTTP {resp.status_code}"
             return rec
         soup = BeautifulSoup(resp.content, "html.parser")

@@ -78,7 +78,7 @@
      {"sku": "0266040505", "url": "https://www.madridhifi.com/p/fender-standard-telecaster-lf-owh/"},
      {"sku": "0140570506", "url": "https://www.madridhifi.com/p/fender-player-ii-telecaster-hh-rw-bk/"}
    ]},
-  {"id": "egitana", "name": "Egitana", "domain": "www.egitana.es", "method": "jsonld", "selector": null,
+  {"id": "egitana", "name": "Egitana", "domain": "www.egitana.es", "method": "analytics", "ok_status": [200, 500], "selector": null,
    "items": [
      {"sku": "0140552506", "url": "https://www.egitana.es/fender-player-ii-telecaster-maple-fingerboard-black/p/36781"},
      {"sku": "0140550518", "url": "https://www.egitana.es/fender-player-ii-telecaster-rosewood-fingerboard-aquatone-blue/p/36778"},
