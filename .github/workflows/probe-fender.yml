@@ -18,20 +18,32 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Sitemap y una ficha de Fender
+      - name: Productos y JSON-LD de una ficha de Fender
         run: |
           python - <<'PY'
-          import re
+          import json, re
+          from bs4 import BeautifulSoup
           from scraper.fetch import Fetcher
+          from scraper import jsonld
           f = Fetcher()
-          for url in ["https://es.fender.com/sitemap.xml", "https://es.fender.com/products/player-ii-telecaster"]:
-              ok, info = f.allowed(url)
-              print(url, "robots:", ok, info)
-              if not ok:
-                  continue
-              r = f.get(url)
-              locs = re.findall(r"<loc>([^<]+)</loc>", r.text)
-              print("  HTTP", r.status_code, len(r.content), "bytes,", len(locs), "loc")
-              for l in locs[:8]:
-                  print("   ", l)
+          total = 0
+          for n in (1, 2, 3):
+              r = f.get(f"https://es.fender.com/sitemap_products_{n}.xml")
+              locs = re.findall(r"<loc>(https://es.fender.com/products/[^<]+)</loc>", r.text)
+              total += len(locs)
+              print("sitemap", n, r.status_code, len(locs), locs[:3])
+          print("productos:", total)
+          r = f.get("https://es.fender.com/products/player-ii-telecaster")
+          soup = BeautifulSoup(r.text, "html.parser")
+          for block in jsonld.load_blocks(soup):
+              for node in jsonld._iter_nodes(block):
+                  types = jsonld._types(node)
+                  if "product" in types or "productgroup" in types:
+                      print("TYPES", types, {k: str(v)[:80] for k, v in node.items() if k not in ("offers", "hasVariant", "description")})
+                      for v in (node.get("hasVariant") or [])[:4]:
+                          print("  VARIANT", {k: str(v.get(k))[:90] for k in ("name", "sku", "gtin", "gtin13", "mpn", "offers")})
+                      offers = node.get("offers")
+                      offers = offers if isinstance(offers, list) else [offers] if offers else []
+                      for o in offers[:4]:
+                          print("  OFFER", {k: str(o.get(k))[:90] for k in ("price", "priceCurrency", "sku", "gtin", "gtin13", "availability")})
           PY
