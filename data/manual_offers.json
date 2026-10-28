@@ -1,0 +1,5 @@
+{
+  "_ayuda": "Precios añadidos a mano a partir de capturas del titular (tiendas que no se pueden leer automáticamente). Cada oferta: store, ean (o name + brand), url, price, in_stock, date (AAAA-MM-DD). Caducan a los MANUAL_DAYS días de su fecha.",
+  "stores": {"madridhifi": "Madrid Hifi"},
+  "offers": []
+}

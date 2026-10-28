@@ -784,6 +784,33 @@ def series_for(keys, history):
     return out
 
 
+MANUAL_DAYS = 3  # un precio añadido a mano (captura) se muestra como mucho estos días
+
+
+def _manual_offers():
+    """Precios añadidos a mano (data/manual_offers.json), solo los de los últimos MANUAL_DAYS días."""
+    data = load(ROOT / "data" / "manual_offers.json", {})
+    since = (datetime.now(timezone.utc) - timedelta(days=MANUAL_DAYS)).date().isoformat()
+    return [o for o in data.get("offers", []) if o.get("price") and o.get("date", "") >= since], data.get("stores", {})
+
+
+def _attach_manual(products, manual):
+    """Añade cada precio a mano a su guitarra (por EAN, o por nombre y marca si no hay EAN)."""
+    for m in manual:
+        ean = normalize_id(m.get("ean") or "").lstrip("0")
+        target = next((p for p in products if ean and p.get("ean") == ean), None)
+        if target is None and m.get("name"):
+            scored = sorted(((name_match_score(m["name"], p["name"], p.get("brand") or ""), i) for i, p in enumerate(products)
+                             if (p.get("brand") or "").lower() == (m.get("brand") or "").lower()), reverse=True)
+            if scored and scored[0][0] >= NAME_MATCH_MIN:
+                target = products[scored[0][1]]
+        if target is None or any(i["s"] == m["store"] for i in target["items"]):
+            continue
+        target["items"].append({"s": m["store"], "p": float(m["price"]), "u": affiliates.wrap(m["store"], m["url"]),
+                                "st": m.get("in_stock"), "d": m["date"], "m": True})
+        target["items"].sort(key=lambda i: i["p"])
+
+
 def _curated_offers():
     """Tiendas que ya seguimos en products.json/latest.json (Thomann, Egitana, eBay…), cruzadas por EAN."""
     products = load(ROOT / "products.json", [])
@@ -911,7 +938,8 @@ def build(offers=None, history=None):
     offers = offers if offers is not None else load(DIR / "offers.json", {})
     history = history if history is not None else load(DIR / "history.json", {})
     curated, store_names, sku_by_ean, curated_info = _curated_offers()
-    names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names
+    manual, manual_names = _manual_offers()
+    names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names | manual_names
     # Fichas que ya están en seguimiento (con su EAN): no se duplican desde el catálogo.
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
@@ -919,6 +947,7 @@ def build(offers=None, history=None):
         # Las tiendas de seguimiento (products.json) son de eléctricas.
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" else ({}, {}, {})
         products = _products(kind, mine, history, *extra)
+        _attach_manual(products, manual)
         for p in products:
             p["slug"] = pages.slug_for(p)
         used = {i["s"] for p in products for i in p["items"]}

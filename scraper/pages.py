@@ -45,6 +45,14 @@ def eur(v):
     return f"{txt},{cents:02d} €" if cents else f"{txt} €"
 
 
+MONTHS = ("ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sep", "oct", "nov", "dic")
+
+
+def _day(iso):
+    y, m, d = iso[:10].split("-")
+    return f"{int(d)} {MONTHS[int(m) - 1]}"
+
+
 def _rows(product, store_names, colors):
     esc = lambda v: html.escape(str(v or ""), quote=True)
     best = product["items"][0]["p"]
@@ -54,6 +62,9 @@ def _rows(product, store_names, colors):
         go = f'href="{esc(i["u"])}" target="_blank" rel="sponsored noopener"' if i.get("u") else ""
         name = f'<a class="store-link" {go}>{store}</a>' if go else store
         stock = '<span class="tag">en stock</span>' if i.get("st") is True else '<span class="tag warn">sin stock</span>' if i.get("st") is False else ""
+        if i.get("m"):  # precio añadido a mano a partir de una captura: se dice cuándo se comprobó
+            stock += f' <span class="tag">comprobado a mano el {_day(i["d"])}</span>'
+
         diff = "mejor precio" if n == 0 else "+" + eur(round(i["p"] - best, 2))
         button = f'<a class="go" {go}><span class="go-long">Ir a la tienda</span><span class="go-short">Ir</span></a>' if go else ""
         out.append(f'<tr class="{"best-row" if n == 0 else ""}"><td><span class="swatch" style="background:var({colors.get(i["s"], "--reference")})"></span>{name}</td>'
