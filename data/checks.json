@@ -1,0 +1,119 @@
+[
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "LTD SN-200HT Charcoal Metallic Satin",
+  "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
+  "price": 349.0,
+  "median": 489.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Yamaha PACP12M Pacifica Professional Sparkle Blue",
+  "slug": "yamaha-pacp12m-pacifica-professional-sparkle-blue-4957812700887",
+  "price": 1269.0,
+  "median": 1961.125
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender American Vintage II 1977 Telecaster Custom RW 3-Color Sunburst",
+  "slug": "fender-american-vintage-ii-1977-telecaster-custom-rw-3-color-sunburst-197955136783",
+  "price": 1848.0,
+  "median": 2652.94
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
+  "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
+  "price": 2459.0,
+  "median": 3373.675
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
+  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
+  "price": 811.2,
+  "median": 1105.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicopolix",
+  "name": "Ibanez GRX40-TFB Tri Fade Burst",
+  "slug": "ibanez-grx40-tfb-tri-fade-burst-4515276686231",
+  "price": 185.95,
+  "median": 219.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE McCarty 594 Singlecut Vintage Sunburst",
+  "slug": "prs-se-mccarty-594-singlecut-vintage-sunburst-825362244301",
+  "price": 857.0,
+  "median": 1149.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE NF3 Ice Blue Metallic",
+  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
+  "price": 739.0,
+  "median": 990.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Cort Abstract Delta Nat W/case",
+  "slug": "cort-abstract-delta-nat-w-case-8809817981142",
+  "price": 1249.0,
+  "median": 1699.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Cort GA1E OP",
+  "slug": "cort-ga1e-op-8809817081125",
+  "price": 275.0,
+  "median": 375.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AAM370M1CE-TPA",
+  "slug": "ibanez-aam370m1ce-tpa-4549763374035",
+  "price": 492.0,
+  "median": 696.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AE3007FMH-TBH Tobacco Edge Burst High Gloss",
+  "slug": "ibanez-ae3007fmh-tbh-tobacco-edge-burst-high-gloss-4549763365378",
+  "price": 603.0,
+  "median": 837.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Yamaha FGX820C Natural",
+  "slug": "yamaha-fgx820c-natural-4957812668668",
+  "price": 485.0,
+  "median": 676.0
+ }
+]
