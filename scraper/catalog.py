@@ -649,6 +649,63 @@ FR_SOURCES = {
                   and not FR_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
 }
 
+
+# --- Italia ---------------------------------------------------------------------------------------------
+
+IT_SKIP = re.compile(r"\bbass[oi]\b|\bbass\b|ukulele|mandolin|banjo|amplificator|custodi|borse?\b|\bcorde?\b|accessori"
+                     r"|pedal|effett|tracoll|support|accordator|plettr|cav[oi]\b|pickup|microfon|tastier|pian[oi]|batteri"
+                     r"|ricambi|libr[oi]|metodo", re.I)
+IT_NAME_SKIP = re.compile(r"(?<!\d )\bcorde?\b|\bmuta\b|metodo|\blibro|^(?:custodia|borsa|tracolla)\b|accordatore"
+                          r"|plettr|\bsupporto\b|ukulele|\bbasso\b|\bbass\b", re.I)
+
+
+def it_kind(crumbs):
+    """'electrica', 'acustica', 'clasica' o None, por las categorías (en italiano) de la tienda."""
+    text = " / ".join(crumbs).lower()
+    # "Chitarre e bassi" arriba no la descarta; un "Bassi" al final, sí
+    leaf = re.sub(r"chitarre e bassi", "", " / ".join(crumbs[-2:]).lower())
+    if not re.search(r"chitarr", text) or IT_SKIP.search(leaf):
+        return None
+    if re.search(r"classic|nylon|flamenc", text):
+        return "clasica"
+    if re.search(r"acustic|western|folk|elettroacustic|viaggio|parlou?r", text):
+        return "acustica"
+    if re.search(r"elettric", text):
+        return "electrica"
+    return None
+
+
+# Marcas de dos palabras que Guitarshop.it no da aparte (el nombre empieza por la marca).
+_TWO_WORD_BRANDS = ("music man", "ernie ball", "harley benton", "d'angelico", "gibson custom", "fender custom")
+
+
+def _guitarshop_fix(data, text):
+    """Guitarshop.it (WooCommerce): sin marca aparte, va al principio del nombre ("Ibanez RGRT421 • Weathered black")."""
+    name = re.sub(r"\s*•\s*", " ", data.get("name") or "").strip()
+    # "Alysée A120-CE-N Chitarra elettroacustica": la descripción del final sobra.
+    name = re.sub(r"(?<=\S)\s+(?:-\s+)?chitarr[ae]\b.*$", "", name, flags=re.I) if len(name.split()) > 2 else name
+    data["name"] = name
+    if name and not data.get("brand_raw"):
+        low = name.lower()
+        two = next((b for b in _TWO_WORD_BRANDS if low.startswith(b + " ")), None)
+        data["brand_raw"] = name[:len(two)] if two else name.split()[0]
+    data["crumbs"] = [c for c in data.get("crumbs", []) if c.lower() != "home"]
+    return data
+
+
+THOMANN_IT = "https://www.thomann.it/"
+
+IT_SOURCES = {
+    "thomann": {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann, "kind": it_kind,
+                "discover": lambda f: _discover_thomann(f, ("cat_allProducts_GF_chitarre_elettriche.html",
+                                                            "cat_allProducts_GF_chitarre_western.html",
+                                                            "cat_allProducts_GF_chitarre_classiche.html"), THOMANN_IT),
+                "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)},
+    "guitarshop": {"name": "Guitar Shop", "sitemap": "https://guitarshop.it/wp-sitemap.xml", "kind": it_kind,
+                   "fix": _guitarshop_fix,
+                   "pick": lambda u: "/prodotto/" in u and not IT_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
+}
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -697,6 +754,8 @@ CATALOGS = {
     # Francia: igual, guitle.com/fr/ llegará después.
     "fr": {"dir": DIR / "fr", "sources": FR_SOURCES, "site": "fr",
            "files": {"electrica": "electriques.json", "acustica": "folk.json", "clasica": "classiques.json"}},
+    "it": {"dir": DIR / "it", "sources": IT_SOURCES, "site": "it",
+           "files": {"electrica": "elettriche.json", "acustica": "acustiche.json", "clasica": "classiche.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -1313,7 +1372,7 @@ def build(offers=None, history=None):
                 and (kind in GUITAR_KINDS or not EQUIPO_SKIP.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
         if not spain:
-            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP}[CATALOG["site"]]
+            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP}[CATALOG["site"]]
             mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})

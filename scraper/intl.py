@@ -32,6 +32,9 @@ SITES = {
     "fr": {"country": "France", "lang": "fr-FR", "t": "fr", "cur": "EUR", "catalog": "fr",
            "kinds": {"electrica": "electriques", "acustica": "folk", "clasica": "classiques"},
            "amazon": None},
+    "it": {"country": "Italia", "lang": "it-IT", "t": "it", "cur": "EUR", "catalog": "it",
+           "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche"},
+           "amazon": None},
 }
 # España, para los enlaces entre países (hreflang y el pie de página).
 SPAIN = {"country": "España", "lang": "es-ES", "path": "/"}
@@ -198,6 +201,86 @@ T = {
                  "check": "Les prix changent chaque jour : vérifiez-le sur le site du magasin avant d'acheter. Ça ne vous intéresse plus ?",
                  "stop": "Ne plus recevoir cette alerte"},
     },
+    "it": {
+        "tagline": "chitarre al miglior prezzo", "homeLabel": "guitle, home",
+        "homeTitle": "guitle · comparatore di prezzi di chitarre",
+        "homeDesc": "guitle è un comparatore di prezzi di chitarre: elettriche, acustiche e classiche nei negozi che vendono in "
+                    "Italia, con lo storico dei prezzi di ogni modello.",
+        "h1": "La tua chitarra, <span>al miglior prezzo</span><small>Comparatore di prezzi di chitarre</small>",
+        "searchPh": "Cerca: strat, les paul, yamaha, ibanez…", "searchBtn": "Cerca", "searchLabel": "Cerca una chitarra",
+        "guitars": "chitarre", "storesWord": "negozi", "catalog": "Catalogo",
+        "dealsH": "Le differenze più grandi tra negozi", "dealsBadge": "−{p} % vs. il più caro",
+        "catsH": "Esplora per categoria", "soon": "presto", "storesH": "Negozi che confrontiamo",
+        "howH": "Come funziona",
+        "steps": ["Ogni giorno controlliamo prezzo, disponibilità e foto di ogni chitarra nei negozi che vendono in Italia.",
+                  "Conserviamo lo storico, così sai se un prezzo è davvero buono o se di solito è più basso.",
+                  "Se vuoi, ti avvisiamo via e-mail quando il prezzo scende."],
+        "affiliate": "Alcuni link ai negozi sono link di affiliazione: se acquisti, guitle può ricevere una commissione, senza costi per te.",
+        "legal": "Note legali", "privacy": "Privacy", "cookies": "Cookie", "otherCountries": "guitle in altri paesi:",
+        "updated": "Dati aggiornati al {d}", "home": "Home",
+        "kinds": {"electrica": ("Chitarre elettriche", "Elettriche", "Cerca tra le elettriche: modello, marca, colore…"),
+                  "acustica": ("Chitarre acustiche", "Acustiche", "Cerca tra le acustiche: modello, marca, legno…"),
+                  "clasica": ("Chitarre classiche", "Classiche", "Cerca tra le classiche: modello, marca, flamenco…")},
+        "anyPrice": "Qualsiasi prezzo", "upTo": "Fino a {v}", "over": "Oltre {v}", "brandLabel": "Marca", "priceLabel": "Prezzo",
+        "showLabel": "Mostra", "showAll": "Tutte", "showMulti": "In più negozi", "showStock": "Disponibili",
+        "showLow": "Al prezzo minimo", "showLh": "Solo mancine", "loading": "Caricamento del catalogo…", "sortLabel": "Ordina",
+        "sorts": ["Più negozi", "Prezzo più basso", "Prezzo più alto", "Maggior risparmio tra negozi", "Nome"], "moreBtn": "Mostra altre",
+        "sections": "Sezioni", "searchAria": "Cerca",
+        "bestPrice": "miglior prezzo", "inStock": "disponibile", "noStock": "non disponibile", "goLong": "Vai al negozio", "goShort": "Vai",
+        "store": "negozio", "stores": "negozi", "lh": "mancina", "storesH3": "Negozi", "historyH3": "Storico dei prezzi",
+        "amazon": "", "titleFrom": "{name}: prezzo da {price} {where}", "inN": "in {n} negozi", "inS": "da {s}",
+        "whereMany": "da {s} · {n} negozi", "whereDiff": ", fino a {d} di differenza",
+        "desc": "{name} da {price} da {s}. Confronta il prezzo in {n} {stores} ({list}) e guarda lo storico per capire se è il momento "
+                "giusto per comprare.",
+        "alertTitle": "Avviso di prezzo", "alertWait": "Un momento…", "alertSaving": "Stiamo salvando la tua risposta.",
+        "alertGo": "Vai su guitle", "alertBad": ["Link non valido", "Copia il link completo dell'e-mail e riprova."],
+        "alertDone": ["Avviso confermato!", "Ti scriveremo appena il prezzo scende. Ogni e-mail contiene un link per disiscriverti."],
+        "alertGone": ["Avviso eliminato", "Non riceverai più e-mail per questo avviso. Abbiamo cancellato il tuo indirizzo dalla lista."],
+        "alertMissing": ["Avviso non trovato", "Forse era già confermato o eliminato, o sono passati più di 7 giorni senza conferma. "
+                                               "Per aiuto scrivici a hola@guitle.com."],
+        "js": {"loadErr": "Impossibile caricare il catalogo.", "allBrands": "Tutte le marche", "all": "Tutte", "low": "Minimo",
+               "save": "Risparmi {v}", "lh": "mancina", "store": "negozio", "stores": "negozi",
+               "empty": "Nessuna {many} con questi filtri.", "more": "Mostra altre ({n} rimanenti)",
+               "meta": "{a} di {b} {many} · {m} confrontabili in più negozi · aggiornato al {d}", "best": "miglior prezzo",
+               "inStock": "disponibile", "noStock": "non disponibile", "goLong": "Vai al negozio", "goShort": "Vai", "close": "Chiudi",
+               "inAt": "da {s}", "saveMax": " · fino a {v} in meno rispetto al più caro", "atLow": "Al minimo registrato",
+               "lowTag": "Minimo registrato: {v}", "storesH": "Negozi", "evolH": "Andamento del prezzo",
+               "histErr": "Impossibile caricare lo storico.", "histSoon": "Lo storico si completerà con le prossime rilevazioni.",
+               "many": "chitarre",
+               "types": {"Semihueca": "Semi-hollow", "Moderna / Metal": "Moderna / Metal", "Otras": "Altre",
+                         "Auditorio / Concierto": "Auditorium / Concerto", "12 cuerdas": "12 corde",
+                         "Tamaño reducido": "Misura ridotta", "Clásica": "Classica", "Flamenca": "Flamenco",
+                         "Electroclásica": "Classica elettrificata"},
+               "wait": "Seguiamo questo modello da {n} {days}", "day": "giorno", "days": "giorni",
+               "waitSub": "Il verdetto sarà più affidabile con qualche settimana di storico.",
+               "min": "Prezzo minimo registrato", "minSub": "Non l'abbiamo mai vista più economica.",
+               "minBelow": " È il {p} % sotto la media degli ultimi 30 giorni.",
+               "good": "Buon momento: {p} % sotto il prezzo medio", "goodSub": "Media degli ultimi 30 giorni: {avg}.",
+               "bad": "Ora costa il {p} % più del solito",
+               "badSub": "Se non hai fretta, aspetta: la media di 30 giorni è {avg} e il minimo {min}.",
+               "normal": "Prezzo nella norma", "normalSub": "In linea con la media di 30 giorni ({avg}). Minimo registrato: {min}.",
+               "today": "prezzo oggi", "lowest": "minimo storico ({d})", "highest": "massimo storico", "avg": "media {n} giorni",
+               "since": "La seguiamo dal {d}", "noHist": "Non c'è ancora uno storico dei prezzi.", "pvp": "Prezzo ufficiale",
+               "bestLine": "Miglior prezzo", "alertOpen": "Avvisami se il prezzo scende", "emailPh": "tu@esempio.it",
+               "emailLabel": "La tua e-mail", "targetPh": "Prezzo max. (facoltativo)", "targetLabel": "Prezzo obiettivo in euro",
+               "alertBtn": "Avvisami",
+               "alertLegal": "Gratis e senza registrazione. Cliccando su «Avvisami» accetti l'<a href=\"/it/legal.html#privacy\">informativa "
+                             "sulla privacy</a>: useremo la tua e-mail solo per questo avviso e ti disiscrivi con un clic.",
+               "alertOk": "<b>Fatto!</b> Tra pochi minuti riceverai un'e-mail a {email} per confermare l'avviso (controlla anche lo spam).",
+               "alertErr": "Impossibile salvare l'avviso. Controlla l'e-mail e riprova."},
+        "mail": {"tagline": "chitarre al miglior prezzo",
+                 "footer": "guitle confronta ogni giorno i prezzi dei negozi di musica. Ricevi questa e-mail perché hai chiesto un avviso "
+                           "su guitle.com. Titolare: Manuel Lorente Gálvez, hola@guitle.com.",
+                 "privacy": "Privacy", "confirmSubject": "Conferma il tuo avviso di prezzo su guitle",
+                 "confirmTitle": "Conferma il tuo avviso di prezzo", "asked": "Hai chiesto di essere avvisato quando il prezzo scende{target}:",
+                 "below": " sotto <b>{v}</b>", "confirmAsk": "Conferma di voler ricevere l'avviso a questo indirizzo:",
+                 "confirmBtn": "Conferma l'avviso",
+                 "notYou": "Se non sei stato tu, non fare nulla: senza conferma, l'avviso si cancella da solo dopo 7 giorni.",
+                 "dropSubject": "Prezzo sceso: {name} a {price}", "dropTitle": "Il prezzo è sceso!", "nowAt": "da {s} · prima {v}",
+                 "seeAll": "Vedi i prezzi in tutti i negozi",
+                 "check": "I prezzi cambiano ogni giorno: verifica sul sito del negozio prima di acquistare. Non ti interessa più?",
+                 "stop": "Non ricevere più questo avviso"},
+    },
 }
 
 # Lo que va en el pie de cada web: España y los demás países.
@@ -275,7 +358,7 @@ def _foot(code, t):
 
 
 def _anchor(code):
-    return {"pt": "privacidade", "fr": "confidentialite"}.get(SITES[code]["t"], "privacidad")
+    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy"}.get(SITES[code]["t"], "privacidad")
 
 
 def _head(code, title, desc, canonical, extra=""):

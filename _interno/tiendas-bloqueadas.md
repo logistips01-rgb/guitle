@@ -55,4 +55,6 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 | Casa della Musica | casadellamusica.it | Sin conexión | A revisar. |
 | Banda Roma | bandaroma.it | Sin conexión | A revisar. |
 | Mondo Musica | mondomusicastore.it | Sin conexión | A revisar. |
+| Kirstein | kirstein.de/it | 403 | Alemana con web en italiano; programa de afiliados. |
+| Muziker | muziker.it | 429 | |
 | Gear4music | gear4music.it | Pendiente de Awin | Mismo feed que en España. |

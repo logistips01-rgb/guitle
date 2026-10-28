@@ -7,3 +7,4 @@ Disallow: /alerta.html
 Sitemap: https://guitle.com/sitemap.xml
 Sitemap: https://guitle.com/sitemap-pt.xml
 Sitemap: https://guitle.com/sitemap-fr.xml
+Sitemap: https://guitle.com/sitemap-it.xml
