@@ -215,7 +215,7 @@ load("data/latest.json").then(latest => {
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
 
   document.getElementById("stats").innerHTML =
-    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong>${activeStores.length}</strong>tiendas</span>` +
+    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong id="n-stores">${activeStores.length}</strong>tiendas</span>` +
     `<span><strong>${new Date(latest.updated).toLocaleDateString("es-ES", { day: "numeric", month: "short", timeZone: "Europe/Madrid" })}</strong>última revisión</span>`;
   document.getElementById("updated").textContent =
     `Datos actualizados el ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
@@ -249,24 +249,39 @@ load("data/latest.json").then(latest => {
   }).join("");
 
   // Recuento de cada sección; las guitarras de las tres suman en las estadísticas de arriba.
+  const catStores = new Set(activeStores.map(s => s.id));
   Promise.all(Object.entries(CATALOG_PAGES).map(([id, [, src]]) => load(src).then(cat => {
     const n = cat.products.length;
+    Object.keys(cat.stores || {}).forEach(s => { if (!isRef[s]) catStores.add(s); });
     document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES")} productos` : "próximamente";
     return n;
   }).catch(() => { document.querySelector(`#cat-${id} small`).textContent = "próximamente"; return 0; })))
-    .then(ns => { document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES"); });
+    .then(ns => {
+      document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES");
+      document.getElementById("n-stores").textContent = catStores.size;
+    });
 
   // La tarjeta abre directamente la ficha de la guitarra en el catálogo (por EAN); sin EAN, la búsqueda en seguimiento.
   const link = p => p.ean ? `catalogo.html?p=${encodeURIComponent(String(p.ean).replace(/^0+/, ""))}`
     : `guitarras.html?q=${encodeURIComponent(p.name.replace(/^(Fender|Epiphone|Gibson|Ibanez) /, ""))}`;
-  // Chollos: mayor descuento frente al PVP (o, sin PVP, frente a la tienda más cara)
-  const score = p => p.vsPvp ?? (p.items.length > 2 ? (p.best.price - p.items.at(-1).price) / p.items.at(-1).price * 50 : 0);
-  const deals = guitars.slice().sort((a, b) => score(a) - score(b)).slice(0, 4);
-  document.getElementById("deals").innerHTML = deals.map(p => card({
-    href: link(p), img: p.thumb ? "img/p/" + p.thumb : null, name: p.name, price: p.best.price,
-    extra: score(p) < -0.5 ? `<span class="neg">${score(p).toFixed(0)} %</span>` : "",
-    where: `en ${storeName[p.best.store]} · ${p.items.length} tiendas`,
-  })).join("");
+  // Chollos de hoy (catálogo completo): la mejor tienda frente a la mediana de las demás, en guitarras que se venden
+  // en 3 o más tiendas. Un ahorro de más del 40 % se descarta: suele ser una ficha mal emparejada, no un chollo.
+  load("data/catalog/products.json").then(cat => {
+    const median = a => { const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+    // Solo precios con stock, y fuera las guitarras con dos fichas de la misma tienda (emparejado dudoso).
+    const deals = cat.products.filter(p => p.th && p.slug && new Set(p.items.map(i => i.s)).size === p.items.length).map(p => {
+      const live = p.items.filter(i => i.st !== false);
+      if (live.length < 3) return null;
+      const mid = median(live.map(i => i.p)), best = live[0];
+      return { p, best, save: (mid - best.p) / mid * 100 };
+    }).filter(d => d && d.save >= 3 && d.save <= 40).sort((a, b) => b.save - a.save).slice(0, 4);
+    if (!deals.length) return;
+    document.getElementById("deals").innerHTML = deals.map(({ p, best, save }) => card({
+      href: `g/${p.slug}.html`, img: "img/p/" + p.th, name: p.name, price: best.p,
+      extra: `<span class="neg" title="Frente al precio medio de las tiendas">−${save.toFixed(0)} % vs. media</span>`,
+      where: `en ${cat.stores[best.s] || best.s} · ${new Set(p.items.map(i => i.s)).size} tiendas`,
+    })).join("");
+  }).catch(() => {});
 
   const drops = guitars.filter(p => p.drop > 0).sort((a, b) => b.drop - a.drop).slice(0, 4);
   if (drops.length) {
