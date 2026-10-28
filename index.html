@@ -62,19 +62,21 @@
   .logo .i::before { content: ""; position: absolute; left: 50%; top: -.06em; width: .36em; height: .36em; transform: translateX(-50%);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -80 80 82'%3E%3Cpath fill='%232a78d6' d='M0 0C-12-10-38-30-38-52C-38-70-20-78 0-78C20-78 38-70 38-52C38-30 12-10 0 0Z'/%3E%3C/svg%3E") no-repeat center / contain; }
 
-  .hero { text-align: center; padding: 40px 0 28px; }
-  .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 10px; }
+  .hero { text-align: center; padding: 34px 0 28px; }
+  .logo.mark { gap: 16px; margin-bottom: 14px; }
+  .logo.mark img { width: 84px; height: 84px; }
+  .logo.mark .word { font-size: 5rem; letter-spacing: -.045em; }
+  @media (max-width: 520px) { .logo.mark { gap: 12px; } .logo.mark img { width: 58px; height: 58px; } .logo.mark .word { font-size: 3.4rem; } }
+  .hero h1 { font-size: clamp(1.3rem, 3.6vw, 1.7rem); line-height: 1.2; letter-spacing: -.02em; margin: 0 0 22px; font-weight: 700; }
   .hero h1 span { color: var(--accent); }
+  .hero h1 small { display: block; margin-top: 6px; font-size: .95rem; font-weight: 500; letter-spacing: .01em; color: var(--text-muted); }
   .hero p { color: var(--text-secondary); font-size: 1.08rem; margin: 0 auto 22px; max-width: 620px; }
   .search { display: flex; max-width: 640px; margin: 0 auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 999px; padding: 5px; }
   .search:focus-within { border-color: var(--accent); }
   .search input { flex: 1; border: 0; background: none; font: inherit; font-size: 1.08rem; padding: 10px 16px; color: var(--text-primary); outline: none; min-width: 0; }
   .search button { border: 0; border-radius: 999px; background: var(--accent); color: #fff; font: inherit; font-weight: 600; padding: 10px 20px; cursor: pointer; }
-  .quick { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 14px; }
-  .quick a { text-decoration: none; font-size: .9rem; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary); }
-  .quick a:hover { border-color: var(--accent); color: var(--accent); }
-  .stats { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 26px; color: var(--text-muted); font-size: .92rem; }
-  .stats strong { display: block; font-size: 1.5rem; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .stats { display: flex; gap: 16px; color: var(--text-muted); font-size: .9rem; white-space: nowrap; }
+  .stats strong { color: var(--text-primary); font-size: 1.05rem; font-variant-numeric: tabular-nums; margin-right: 4px; }
 
   section { margin-top: 34px; }
   .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
@@ -102,9 +104,10 @@
   .catcard { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 14px 8px; text-align: center; text-decoration: none; }
   .catcard b { display: block; height: 32px; margin-bottom: 4px; }
   .catcard svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .catcard svg.fill { fill: currentColor; stroke: none; overflow: visible; }
   a.catcard b { color: var(--accent); }
   .catcard span { display: block; font-weight: 600; font-size: .92rem; }
-  .catcard small { color: var(--text-muted); font-size: .78rem; }
+  .catcard small { color: var(--text-muted); font-size: .78rem; white-space: nowrap; }
   .catcard.soon { opacity: .55; pointer-events: none; }
   a.catcard:hover { border-color: var(--accent); }
   .placeholder { color: var(--text-muted); grid-column: 1 / -1; padding: 10px 0; }
@@ -129,30 +132,18 @@
 <body>
 <main>
   <header class="top">
-    <a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a>
+    <div class="stats" id="stats"></div>
     <nav><a href="catalogo.html">Catálogo</a><a href="chollos.html">Chollos</a><a href="guitarras.html">Seguimiento</a></nav>
   </header>
 
   <div class="hero">
-    <h1>Tu guitarra, <span>al mejor precio</span></h1>
-    <p>Comparamos cada mañana las principales tiendas de Europa y te enseñamos dónde está más barata, cómo ha cambiado su precio y qué cupones hay activos. Guitarras ahora; bajos, amplis, pedales, teclados y micros, muy pronto.</p>
+    <a class="logo mark" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="word">gu<span class="i">ı</span>tle</span></a>
+    <h1>Tu guitarra, <span>al mejor precio</span><small>Comparador de precios de guitarras</small></h1>
     <form class="search" action="catalogo.html" method="get" role="search">
       <input name="q" type="search" placeholder="Busca: tele negra, strat, les paul, casino…" aria-label="Buscar guitarra" autocomplete="off">
       <button type="submit">Buscar</button>
     </form>
-    <div class="quick">
-      <a href="catalogo.html?q=telecaster">Telecaster</a><a href="catalogo.html?q=stratocaster">Stratocaster</a>
-      <a href="catalogo.html?q=les%20paul">Les Paul</a><a href="catalogo.html?brand=Epiphone">Epiphone</a>
-      <a href="catalogo.html?brand=Ibanez">Ibanez</a><a href="catalogo.html?brand=Gibson">Gibson</a>
-      <a href="guitarras.html?v=B">Ver comparador</a>
-    </div>
-    <div class="stats" id="stats"></div>
   </div>
-
-  <section>
-    <div class="sec-head"><h2>Explora por categoría</h2></div>
-    <div class="cats" id="cats"></div>
-  </section>
 
   <section>
     <div class="sec-head"><h2>Chollos de hoy</h2><span><a href="black-friday.html">Black Friday</a> · <a href="chollos.html">Ver todos →</a></span></div>
@@ -162,6 +153,11 @@
   <section id="drops-sec" hidden>
     <div class="sec-head"><h2>Han bajado de precio</h2><a href="guitarras.html">Ver todas →</a></div>
     <div class="row" id="drops"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Explora por categoría</h2></div>
+    <div class="cats" id="cats"></div>
   </section>
 
 
@@ -215,33 +211,34 @@ load("data/latest.json").then(latest => {
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
 
   document.getElementById("stats").innerHTML =
-    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong>${activeStores.length}</strong>tiendas</span>` +
-    `<span><strong>${new Date(latest.updated).toLocaleDateString("es-ES", { day: "numeric", month: "short", timeZone: "Europe/Madrid" })}</strong>última revisión</span>`;
+    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong id="n-stores">${activeStores.length}</strong>tiendas</span>`;
   document.getElementById("updated").textContent =
     `Datos actualizados el ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
   document.getElementById("stores").innerHTML = activeStores.map(s => `<span>${esc(s.name)}</span>`).join("");
 
   // Categorías: las que tienen productos enlazan al comparador; el resto, "próximamente". Iconos de línea (SVG, color del texto).
+  // Iconos rellenos: instrumentos de Qlementine Icons (MIT, Olivier Cléro); el estuche, propio (en diagonal, con asa).
   const ICONS = {
-    guitarra: '<path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/><path d="M14.5 9.5c-1.6-1.6-3.9-1.3-5 .2-1 .4-2.6.1-4 1.5-2.1 2.1-1.7 5.4.6 7.7s5.6 2.7 7.7.6c1.4-1.4 1.1-3 1.5-4 1.5-1.1 1.8-3.4.2-5z"/><circle cx="9.6" cy="14.4" r="1.4"/><path d="M6.8 15.8l1.6 1.6"/>',
-    // Acústica: cuerpo en ocho con boca; clásica: igual con pala calada.
-    acustica: '<path d="M12 2.5v8"/><rect x="10.6" y="1" width="2.8" height="3" rx=".6"/><path d="M12 10.2c-2.4 0-3.9 1.5-3.9 3.4 0 .9.4 1.7 1 2.2-1.5.7-2.4 2-2.4 3.4 0 2.1 2.3 3.6 5.3 3.6s5.3-1.5 5.3-3.6c0-1.4-.9-2.7-2.4-3.4.6-.5 1-1.3 1-2.2 0-1.9-1.5-3.4-3.9-3.4z"/><circle cx="12" cy="16.4" r="1.3"/>',
-    clasica: '<path d="M12 4v6.5"/><rect x="10.3" y=".8" width="3.4" height="3.6" rx=".5"/><path d="M11.3 1.8v1.6M12.7 1.8v1.6"/><path d="M12 10.2c-2.4 0-3.9 1.5-3.9 3.4 0 .9.4 1.7 1 2.2-1.5.7-2.4 2-2.4 3.4 0 2.1 2.3 3.6 5.3 3.6s5.3-1.5 5.3-3.6c0-1.4-.9-2.7-2.4-3.4.6-.5 1-1.3 1-2.2 0-1.9-1.5-3.4-3.9-3.4z"/><circle cx="12" cy="16.4" r="1.3"/>',
-    bajo: '<path d="M22 2l-8 8"/><path d="M20.5.8l2.7 2.7"/><path d="M14 10c-1.4-1.4-3.4-1.1-4.4.2-.9.4-2.3.1-3.5 1.3-1.9 1.9-1.5 4.8.5 6.9s5 2.4 6.9.5c1.2-1.2.9-2.6 1.3-3.5 1.3-1 1.6-3 .2-4.4z"/><circle cx="9.8" cy="14.2" r="1.2"/>',
-    ampli: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8.5h18"/><circle cx="12" cy="14.2" r="3.6"/><circle cx="12" cy="14.2" r=".8"/><path d="M6 6.2h.01M8.5 6.2h.01M11 6.2h.01"/>',
-    pedal: '<rect x="5" y="2" width="14" height="20" rx="2.5"/><circle cx="9" cy="6.5" r="1.6"/><circle cx="15" cy="6.5" r="1.6"/><path d="M5 11h14"/><circle cx="12" cy="16.5" r="2.4"/>',
-    teclado: '<rect x="2" y="6" width="20" height="12" rx="1.5"/><path d="M7 13v5M12 13v5M17 13v5"/><path d="M5.5 6v7h3V6M10.5 6v7h3V6M15.5 6v7h3V6"/>',
-    micro: '<rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5.5 10.5a6.5 6.5 0 0 0 13 0M12 17v4M8.5 21h7"/>',
-    estuche: '<path d="M8.5 21.5c-3 0-5.5-2.4-5.5-5.3 0-1.8.9-3.2 2-4.1.6-.5.7-1.4.3-2.1-.3-.6-.4-1.2-.4-1.8C4.9 5.6 6.7 4 9 4c1.4 0 2.6.6 3.3 1.6l7.2-3.1a1.6 1.6 0 0 1 1.3 2.9l-6.7 4c.4 1 .4 2.1-.1 3 .9.9 1.5 2.2 1.5 3.6 0 3-2.6 5.5-7 5.5z"/><path d="M8 13.5l3 3"/>',
+    guitarra: '<path d="m9.11 2.42l-1.03-.372a.1.1 0 0 1-.052-.046c-.054-.087-.052-.198-.05-.302v-.006a2.3 2.3 0 0 1 .16-.786c.13-.338.296-.566.406-.693l.01-.01c.07-.081.143-.167.243-.197a.1.1 0 0 1 .066 0l1.03.37q.06.025.089.08c.027.056.011.12-.004.182q-.008.026-.012.053L9.93.877a3.6 3.6 0 0 1-.45 1.18l-.104.17l-.028.05c-.03.057-.06.115-.117.139a.17.17 0 0 1-.12.004zM7.92 5.53l-1.03-.372a.1.1 0 0 1-.053-.049c-.052-.087-.05-.197-.05-.3v-.002c.002-.164.03-.445.161-.79a2.3 2.3 0 0 1 .418-.707a.65.65 0 0 1 .22-.184c.03-.013.06-.019.087-.01l1.03.373q.061.024.09.08c.027.057.011.12-.004.184q-.007.026-.012.053l-.034.175a3.6 3.6 0 0 1-.457 1.19l-.098.162q-.014.023-.027.05c-.031.057-.062.115-.12.14a.17.17 0 0 1-.121.002zM3.92 16l-1.03-.372a.12.12 0 0 0-.084.007a.64.64 0 0 0-.223.185a2.4 2.4 0 0 0-.417.707a2.3 2.3 0 0 0-.161.786v.006c-.002.104-.003.215.05.302q.02.033.05.046l1.03.372c.04.015.084.013.123-.003c.057-.024.088-.083.119-.14l.028-.05l.098-.162c.22-.366.376-.77.457-1.19l.033-.176l.013-.052c.015-.063.03-.126.004-.181a.16.16 0 0 0-.09-.08zm1.77-7.73l1.03.372q.062.02.121-.004c.056-.024.087-.082.118-.139l.027-.049l.11-.18c.213-.355.363-.747.442-1.16l.038-.197q.005-.027.013-.055c.015-.062.031-.124.005-.18a.16.16 0 0 0-.09-.08l-1.03-.371c-.029-.01-.064-.002-.097.013a.7.7 0 0 0-.2.168a2.3 2.3 0 0 0-.427.72a2.3 2.3 0 0 0-.16.788v.005c-.002.102-.003.212.05.298c.012.021.03.04.052.047zm-1.2 3.13l1.03.372q.062.021.122-.003c.057-.025.088-.083.119-.14l.028-.05l.098-.162c.22-.366.376-.77.457-1.19l.033-.175L6.39 10c.015-.062.031-.127.003-.183a.16.16 0 0 0-.09-.08l-1.03-.372c-.029-.01-.064-.002-.096.014a.7.7 0 0 0-.2.168a2.3 2.3 0 0 0-.427.718a2.3 2.3 0 0 0-.161.786v.006c-.002.104-.003.215.05.302q.02.033.052.046zM3.3 14.5l1.03.372q.062.021.122-.003c.057-.025.088-.083.119-.14l.028-.05l.109-.18c.214-.354.364-.746.443-1.16l.037-.196l.013-.055c.016-.062.031-.124.005-.179a.16.16 0 0 0-.09-.08l-1.04-.372c-.029-.01-.064-.002-.096.013a.7.7 0 0 0-.2.168a2.3 2.3 0 0 0-.427.718a2.3 2.3 0 0 0-.161.786v.006c-.002.104-.004.215.05.302q.02.034.052.047zm8.6-10.81A4.21 4.21 0 0 1 15.83 1C19 1 20.27 5.15 17.6 6.98c-1.14.778-1.77 2.18-1.46 3.52l1.89 7.65c-1.51.465-2.52.982-3.14 1.79c-.676.896-.844 1.55-.844 3.55a.499.499 0 1 0 1 0c0-1.5.194-2.35.649-2.95c.458-.607 1.32-1.07 3.07-1.57a.5.5 0 0 0 .352-.595l-2-8.11c-.221-.934.249-1.92 1.05-2.47c3.42-2.34 1.89-7.8-2.34-7.8c-2.16 0-4.1 1.32-4.87 3.33l-5.81 15.1c-.294.762.08 1.64.878 1.91l.276.096c.909.316 1.55.54 2.01.926c.445.375.736.95.736 2.16a.499.499 0 1 0 1 0c0-1.5-.345-2.3-1.08-2.93c-.61-.514-1.44-.802-2.3-1.1l-.302-.105a.465.465 0 0 1-.272-.614l5.81-15.1z"/>',
+    acustica: '<path d="M9.51 24a.496.496 0 0 1-.501-.5c0-2.41-2.25-2.5-2.5-2.5a.51.51 0 0 1-.501-.47l-1-18c-.01-.26.17-.48.42-.52c.01 0 1.39-.22 2.35-.7c.32-.16.591-.35.851-.54c.521-.37 1.07-.76 1.87-.76c.683 0 1.18.341 1.5.671c.322-.33.82-.671 1.5-.671c.801 0 1.35.39 1.87.76c.26.19.531.38.851.54c.961.48 2.34.7 2.35.7c.25.04.43.26.42.52l-1 18a.51.51 0 0 1-.5.47c-.25 0-2.5.09-2.5 2.5c0 .28-.22.5-.501.5l.01.02a.496.496 0 0 1-.5-.5c0-2.44 1.77-3.3 3.02-3.47l.95-17.1c-.54-.11-1.45-.34-2.2-.71c-.384-.187-.7-.413-.978-.61l-.018-.013c-.468-.338-.798-.576-1.29-.576c-.58 0-.943.538-1.03.684a.49.49 0 0 1-.463.307a.49.49 0 0 1-.463-.307c-.088-.146-.45-.684-1.03-.684c-.49 0-.82.238-1.29.576l-.005.004l-.013.009a6.7 6.7 0 0 1-.978.61c-.751.37-1.66.6-2.2.71l.95 17.1c1.25.17 3.02 1.03 3.02 3.47c0 .28-.22.5-.5.5l.01-.02z"/><path d="M10 5.48a.5.5 0 0 0-.999.041l.5 12a.5.5 0 0 0 .999-.041zm5 .04a.5.5 0 1 0-.999-.041l-.5 12a.5.5 0 1 0 .999.041zM3.38 7.66l-1.94.341c-.585 0-.585-3 0-3l1.94.341a.75.75 0 0 1 .62.739v.84a.75.75 0 0 1-.62.739M1.94 18l1.94-.341a.75.75 0 0 0 .62-.739v-.841a.75.75 0 0 0-.62-.739l-1.94-.341c-.585 0-.585 3 0 3zm-.25-5l1.94-.341a.75.75 0 0 0 .62-.739v-.841a.75.75 0 0 0-.62-.739l-1.94-.341c-.585 0-.585 3 0 3zM22.6 8l-1.94-.341a.75.75 0 0 1-.62-.739v-.84a.75.75 0 0 1 .62-.739L22.6 5c.585 0 .585 3 0 3m-2.5 9.7l1.94.341c.585 0 .585-3 0-3l-1.94.341a.75.75 0 0 0-.62.739v.841a.75.75 0 0 0 .62.739zm.3-5l1.94.341c.585 0 .585-3 0-3l-1.94.341a.75.75 0 0 0-.62.739v.841a.75.75 0 0 0 .62.739z"/>',
+    clasica: '<path d="M9.49 24a.494.494 0 0 1-.499-.5c0-2.63-1.92-3.3-3.07-3.46c-.529-.08-.929-.52-.929-1.04V3c0-.5.379-.94.909-1.03c.352-.067.55-.224.775-.403l.034-.027C7 1.3 7.369 1 8 1s1.13.31 1.45.62C9.929.95 10.82 0 12 0h.004c1.18.002 2.06.951 2.54 1.62c.32-.31.82-.62 1.45-.62s1 .3 1.29.54l.034.027c.225.179.423.336.775.403c.53.09.91.53.91 1.03v16c0 .52-.4.96-.93 1.04c-1.15.16-3.07.83-3.07 3.46c0 .28-.22.5-.499.5h-.02a.494.494 0 0 1-.499-.5c0-3.62 3.02-4.32 4.01-4.5V3c0-.01-.058-.04-.108-.05c-.619-.12-.979-.41-1.26-.64c-.26-.21-.39-.31-.649-.31c-.669 0-1.05.72-1.05.72c-.17.34-.719.34-.889 0l-.01-.018c-.103-.185-.945-1.7-2.04-1.7c-1.09 0-1.93 1.52-2.04 1.7l-.01.018c-.17.34-.72.34-.89 0C9.05 2.72 8.67 2 8 2c-.26 0-.389.1-.649.31c-.28.23-.639.52-1.26.64c-.05.01-.109.04-.109.05v16c.99.18 4.01.88 4.01 4.5c0 .28-.22.5-.499.5h-.02z"/><path d="M9.5 6a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10a.5.5 0 0 1 .5-.5m5 0a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10a.5.5 0 0 1 .5-.5M.503 7.99l1.88-.33a.75.75 0 0 0 .62-.739V6.08a.75.75 0 0 0-.62-.739l-1.88-.33a.23.23 0 0 0-.128.001c-.5.202-.5 2.78 0 2.98c.04.016.085.009.128.001zm0 4.51l1.88-.33a.75.75 0 0 0 .62-.739v-.841a.75.75 0 0 0-.62-.739l-1.88-.33a.23.23 0 0 0-.128.001c-.5.202-.5 2.78 0 2.98c.04.016.085.009.128.001zm1.877 4.2l-1.88.33c-.043.007-.088.015-.128-.001c-.5-.202-.5-2.78 0-2.98c.04-.017.085-.009.128-.001l1.88.33a.75.75 0 0 1 .62.739v.84a.75.75 0 0 1-.62.74zM21.6 7.66l1.88.33a.23.23 0 0 0 .128-.001c.5-.202.5-2.78 0-2.98a.23.23 0 0 0-.128-.001l-1.88.33a.75.75 0 0 0-.62.739v.84a.75.75 0 0 0 .62.74zm0 4.54l1.88.33a.23.23 0 0 0 .128-.001c.5-.202.5-2.78 0-2.98c-.04-.017-.085-.009-.128-.001l-1.88.33a.75.75 0 0 0-.62.739v.84a.75.75 0 0 0 .62.74zm1.9 4.8l-1.88-.33a.75.75 0 0 1-.62-.739v-.841a.75.75 0 0 1 .62-.739l1.88-.33c.043-.007.088-.015.128.001c.5.202.5 2.78 0 2.98c-.04.017-.085.009-.128.001z"/>',
+    bajo: '<path d="M9.34.432L8.17.049a1 1 0 0 0-.296-.05a.7.7 0 0 0-.505.266c-.325.356-.56.784-.686 1.25c-.171.486-.226 1-.159 1.52a.64.64 0 0 0 .386.537l1.15.378a1.1 1.1 0 0 0 .325.055a.6.6 0 0 0 .349-.108c.287-.203.456-.65.604-1.04l.01-.026c.095-.25.18-.507.24-.769c.106-.458.225-1.03.039-1.37a.58.58 0 0 0-.293-.258zm-3 4.618l1.17.383c.124.05.228.14.293.258c.186.337.067.911-.039 1.37a6 6 0 0 1-.24.769l-.01.026c-.148.389-.317.836-.604 1.04a.6.6 0 0 1-.349.109a1.1 1.1 0 0 1-.325-.055l-1.15-.378a.64.64 0 0 1-.386-.537a3.3 3.3 0 0 1 .16-1.52c.125-.465.361-.893.685-1.25A.7.7 0 0 1 6.05 5a1 1 0 0 1 .296.05zM4.51 10l1.17.382c.124.05.228.14.293.258c.186.337.067.91-.039 1.37a6 6 0 0 1-.24.769l-.01.026c-.148.389-.317.836-.604 1.04a.6.6 0 0 1-.349.108a1.1 1.1 0 0 1-.325-.055l-1.15-.378a.64.64 0 0 1-.386-.537a3.3 3.3 0 0 1 .16-1.52a3.04 3.04 0 0 1 .685-1.25a.7.7 0 0 1 .505-.266a1 1 0 0 1 .296.05zm-.67 5.4l-1.17-.382a1 1 0 0 0-.296-.05a.7.7 0 0 0-.505.266c-.325.356-.56.784-.686 1.25c-.171.486-.226 1-.159 1.52a.64.64 0 0 0 .386.537l1.15.378a1.1 1.1 0 0 0 .325.055a.6.6 0 0 0 .349-.108c.287-.203.456-.65.604-1.04l.01-.026c.095-.25.18-.507.24-.769c.106-.458.225-1.03.039-1.37a.58.58 0 0 0-.293-.258zM11.4 3.51A3.78 3.78 0 0 1 14.96 1c1.41 0 2.42.901 2.81 2.07c.393 1.18.147 2.58-.93 3.53c-.413.366-.767.701-1.02.981a3.4 3.4 0 0 0-.322.405c-.069.106-.176.291-.176.506c0 .197.059.467.129.737c.075.289.181.639.306 1.02c.248.772.579 1.71.906 2.65l.002.005c.33.939.656 1.87.9 2.63c.122.379.222.709.29.97c.073.28.096.434.096.486c0 .184-.095.393-.35.632c-.256.238-.623.459-1.04.654c-1.41.653-2.6 1.98-2.6 3.66v1.55c0 .276.233.5.5.5a.49.49 0 0 0 .501-.5v-1.55c0-1.17.844-2.21 2.03-2.76c.464-.216.938-.49 1.3-.831c.365-.341.668-.796.668-1.36c0-.198-.058-.467-.129-.737a18 18 0 0 0-.306-1.02c-.248-.772-.579-1.71-.906-2.65l-.001-.005c-.33-.939-.656-1.87-.9-2.63a19 19 0 0 1-.29-.971a4 4 0 0 1-.093-.43l.007-.01l.005-.008a2.3 2.3 0 0 1 .224-.278c.217-.239.538-.546.942-.903c1.41-1.25 1.72-3.09 1.22-4.6c-.506-1.52-1.85-2.76-3.76-2.76a4.77 4.77 0 0 0-4.5 3.17l-5.42 15.2c-.28.785.133 1.62.87 1.94c.616.264 1.41.645 2.05 1.08c.318.217.576.433.749.638c.177.21.226.36.226.455v1a.5.5 0 0 0 1.002 0v-1c0-.428-.21-.8-.461-1.1c-.255-.302-.594-.578-.951-.82c-.715-.487-1.58-.898-2.22-1.17a.557.557 0 0 1-.321-.687l5.42-15.2z"/>',
+    ampli: '<path fill-rule="evenodd" d="M.327 3.64C0 4.282 0 5.12 0 6.8v10.4c0 1.68 0 2.52.327 3.16a3.02 3.02 0 0 0 1.31 1.31c.642.327 1.48.327 3.16.327h14.4c1.68 0 2.52 0 3.16-.327a3 3 0 0 0 1.31-1.31c.327-.642.327-1.48.327-3.16V6.8c0-1.68 0-2.52-.327-3.16a3 3 0 0 0-1.31-1.31c-.642-.327-1.48-.327-3.16-.327h-14.4c-1.68 0-2.52 0-3.16.327a3.02 3.02 0 0 0-1.31 1.31m4.67.862a1.5 1.5 0 1 1-3.001-.001a1.5 1.5 0 0 1 3.001.001m4 0a1.5 1.5 0 1 1-3.001-.001a1.5 1.5 0 0 1 3.001.001m2.5 1.5a1.5 1.5 0 1 0-.001-3.001a1.5 1.5 0 0 0 .001 3.001m5.5-1.5a1.5 1.5 0 1 1-3.001-.001a1.5 1.5 0 0 1 3.001.001m3.05-1.23c-.054.107-.054.247-.054.527v1.4c0 .28 0 .42.054.527a.5.5 0 0 0 .218.218c.107.055.247.055.527.055h.4c.28 0 .42 0 .527-.055a.5.5 0 0 0 .218-.218c.055-.107.055-.247.055-.527v-1.4c0-.28 0-.42-.055-.527a.5.5 0 0 0-.218-.218C21.612 3 21.472 3 21.192 3h-.4c-.28 0-.42 0-.527.054a.5.5 0 0 0-.218.218m-19.1 7.93c0-1.12 0-1.68.218-2.11c.192-.376.498-.682.874-.874C2.467 8 3.027 8 4.149 8h15.6c1.12 0 1.68 0 2.11.218c.376.192.682.498.874.874c.218.428.218.988.218 2.11v6.6c0 1.12 0 1.68-.218 2.11a2 2 0 0 1-.874.874c-.428.218-.988.218-2.11.218h-15.6c-1.12 0-1.68 0-2.11-.218a2 2 0 0 1-.874-.874c-.218-.428-.218-.988-.218-2.11z" clip-rule="evenodd"/>',
+    pedal: '<path fill-rule="evenodd" d="M4.44 2.18c-.436.856-.436 1.98-.436 4.22v4.65l.025-.025c.548-.548 1.24-.794 2.12-.911C7 10 8.09 10 9.47 10h5.08c1.38 0 2.47 0 3.32.114c.872.117 1.57.363 2.12.91l.025.026V6.4c0-2.24 0-3.36-.436-4.22a4.03 4.03 0 0 0-1.75-1.75c-.856-.436-1.98-.436-4.22-.436h-3.2c-2.24 0-3.36 0-4.22.436a4.03 4.03 0 0 0-1.75 1.75zM8 5A2 2 0 1 0 8.001.999A2 2 0 0 0 8 5m10-2a2 2 0 1 1-4.001.001A2 2 0 0 1 18 3m-6 6a2 2 0 1 0 .001-4.001A2 2 0 0 0 12 9" clip-rule="evenodd"/><path fill-rule="evenodd" d="M20 16.5c0-1.43-.001-2.45-.105-3.23c-.102-.762-.296-1.21-.627-1.54s-.781-.524-1.54-.627c-.776-.104-1.8-.105-3.23-.105h-5c-1.43 0-2.45.001-3.23.105c-.762.102-1.21.296-1.54.627s-.524.781-.627 1.54c-.104.776-.105 1.8-.105 3.23v1.1c0 2.24 0 3.36.436 4.22c.384.753.995 1.36 1.75 1.75c.856.436 1.98.436 4.22.436h3.2c2.24 0 3.36 0 4.22-.436a4.03 4.03 0 0 0 1.75-1.75c.436-.856.436-1.98.436-4.22v-1.1zM6 17c0-.932 0-1.4.152-1.77c.203-.49.592-.879 1.08-1.08c.368-.152.833-.152 1.77-.152h6c.932 0 1.4 0 1.77.152c.49.203.879.592 1.08 1.08c.152.368.152.834.152 1.77s0 1.4-.152 1.77c-.203.49-.592.879-1.08 1.08c-.368.152-.834.152-1.77.152h-6c-.932 0-1.4 0-1.77-.152a2 2 0 0 1-1.08-1.08C6 18.402 6 17.936 6 17" clip-rule="evenodd"/>',
+    teclado: '<path fill-rule="evenodd" d="M0 9.4c0-2.24 0-3.36.436-4.22a4.03 4.03 0 0 1 1.75-1.75c.856-.436 1.98-.436 4.22-.436h11.2c2.24 0 3.36 0 4.22.436c.753.384 1.36.995 1.75 1.75c.436.856.436 1.98.436 4.22v5.2c0 2.24 0 3.36-.436 4.22a4.03 4.03 0 0 1-1.75 1.75c-.856.436-1.98.436-4.22.436h-11.2c-2.24 0-3.36 0-4.22-.436a4.03 4.03 0 0 1-1.75-1.75C0 17.964 0 16.84 0 14.6zM10 4h4v8.5c0 1.18 0 1.77.366 2.13c.31.31.781.358 1.63.365v5h-8v-5c.853-.007 1.32-.055 1.63-.365c.366-.366.366-.955.366-2.13V4zm7 16h.6c1.14 0 1.93 0 2.55-.051c.605-.05.953-.142 1.22-.276a3 3 0 0 0 1.31-1.31c.134-.263.226-.611.276-1.22c.05-.617.051-1.41.051-2.55v-5.2c0-1.14 0-1.93-.051-2.55c-.05-.605-.142-.953-.276-1.22a3 3 0 0 0-1.31-1.31c-.263-.134-.611-.226-1.22-.276c-.325-.027-.699-.04-1.15-.046v8.49c0 1.18 0 1.77-.366 2.13c-.31.31-.781.358-1.63.365v5zM7 15c-.853-.007-1.32-.055-1.63-.365c-.366-.366-.366-.955-.366-2.13v-8.49c-.447.006-.821.019-1.15.045c-.605.05-.953.142-1.22.276a3.02 3.02 0 0 0-1.31 1.31c-.134.263-.226.611-.276 1.22c-.05.617-.051 1.41-.051 2.55v5.2c0 1.14 0 1.93.051 2.55c.05.605.142.953.276 1.22a3.02 3.02 0 0 0 1.31 1.31c.263.134.611.226 1.22.276c.617.05 1.41.052 2.55.052h.6v-5z" clip-rule="evenodd"/>',
+    micro: '<path fill-rule="evenodd" d="M1.32 22.4c-.266-.266-.506-.506-.69-.722a2.5 2.5 0 0 1-.501-.836a2.5 2.5 0 0 1-.03-1.51c.1-.341.278-.615.467-.855c.175-.224.406-.473.66-.749l9.76-10.6a6.521 6.521 0 1 1 13.01-.621a6.52 6.52 0 0 1-7.14 6.49l-10.6 9.76c-.275.256-.525.486-.748.662c-.24.188-.515.366-.855.467a2.5 2.5 0 0 1-1.51-.03a2.5 2.5 0 0 1-.836-.501a13 13 0 0 1-.722-.69l-.29-.29zm-.241-1.88c.113.333.4.621.975 1.2l.24.24c.575.575.862.862 1.2.975c.293.1.61.106.907.018c.337-.1.636-.375 1.23-.926l7.06-6.52l-4.19-4.19l-6.52 7.06c-.551.597-.827.896-.926 1.23a1.5 1.5 0 0 0 .018.907zm8.11-9.94l4.24 4.24l2.39-2.21l-4.43-4.43l-2.21 2.39zm8.29 1.47c-.563 0-1.08-.281-1.47-.679l-3.36-3.36c-.398-.398-.679-.912-.679-1.47c0-3.05 2.47-5.52 5.52-5.52s5.52 2.47 5.52 5.52s-2.47 5.52-5.52 5.52z" clip-rule="evenodd"/>',
+    estuche: '<g transform="rotate(45 12 12) translate(0 -.6) scale(.9) translate(1.3 1.3)"><rect x="9.6" y="-2.6" width="4.8" height="14" rx="2.4"/><ellipse cx="12" cy="12" rx="5" ry="4.6"/><ellipse cx="12" cy="19.6" rx="6.4" ry="5.8"/><rect x="7" y="12" width="10" height="6"/><path d="M6 13H4a1 1 0 0 0-1 1v2.8a1 1 0 0 0 1 1h2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>',
   };
   const CATS = [["guitarra", "Eléctricas"], ["acustica", "Acústicas"], ["clasica", "Clásicas"], ["bajo", "Bajos"],
                 ["ampli", "Amplis"], ["pedal", "Pedales"], ["teclado", "Teclados"], ["micro", "Micros"], ["estuche", "Estuches"]];
   // Secciones del catálogo amplio: página y datos propios (el recuento llega al cargar cada JSON).
   const CATALOG_PAGES = { guitarra: ["catalogo.html", "data/catalog/products.json"],
                           acustica: ["acusticas.html", "data/catalog/acusticas/acusticas.json"],
-                          clasica: ["clasicas.html", "data/catalog/acusticas/clasicas.json"] };
+                          clasica: ["clasicas.html", "data/catalog/acusticas/clasicas.json"],
+                          teclado: ["teclados.html", "data/catalog/equipo/teclados.json"],
+                          pedal: ["pedales.html", "data/catalog/equipo/pedales.json"] };
   document.getElementById("cats").innerHTML = CATS.map(([id, label]) => {
-    const icon = `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[id]}</svg>`;
+    const icon = `<svg class="fill" viewBox="0 0 24 24" aria-hidden="true">${ICONS[id]}</svg>`;
     if (CATALOG_PAGES[id]) return `<a class="catcard" id="cat-${id}" href="${CATALOG_PAGES[id][0]}"><b>${icon}</b><span>${label}</span><small>…</small></a>`;
     const n = latest.products.filter(p => p.category === id && latest.items.some(i => i.sku === p.sku && i.price != null && !isRef[i.store])).length;
     return n ? `<a class="catcard" id="cat-${id}" href="guitarras.html?cat=${id}"><b>${icon}</b><span>${label}</span><small>${n} productos</small></a>`
@@ -249,24 +246,39 @@ load("data/latest.json").then(latest => {
   }).join("");
 
   // Recuento de cada sección; las guitarras de las tres suman en las estadísticas de arriba.
+  const catStores = new Set(activeStores.map(s => s.id));
   Promise.all(Object.entries(CATALOG_PAGES).map(([id, [, src]]) => load(src).then(cat => {
     const n = cat.products.length;
-    document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES")} productos` : "próximamente";
-    return n;
+    Object.keys(cat.stores || {}).forEach(s => { if (!isRef[s]) catStores.add(s); });
+    document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES", { useGrouping: "always" })} productos` : "próximamente";
+    return ["guitarra", "acustica", "clasica"].includes(id) ? n : 0;  // arriba solo cuentan las guitarras
   }).catch(() => { document.querySelector(`#cat-${id} small`).textContent = "próximamente"; return 0; })))
-    .then(ns => { document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES"); });
+    .then(ns => {
+      document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES", { useGrouping: "always" });
+      document.getElementById("n-stores").textContent = catStores.size;
+    });
 
   // La tarjeta abre directamente la ficha de la guitarra en el catálogo (por EAN); sin EAN, la búsqueda en seguimiento.
   const link = p => p.ean ? `catalogo.html?p=${encodeURIComponent(String(p.ean).replace(/^0+/, ""))}`
     : `guitarras.html?q=${encodeURIComponent(p.name.replace(/^(Fender|Epiphone|Gibson|Ibanez) /, ""))}`;
-  // Chollos: mayor descuento frente al PVP (o, sin PVP, frente a la tienda más cara)
-  const score = p => p.vsPvp ?? (p.items.length > 2 ? (p.best.price - p.items.at(-1).price) / p.items.at(-1).price * 50 : 0);
-  const deals = guitars.slice().sort((a, b) => score(a) - score(b)).slice(0, 4);
-  document.getElementById("deals").innerHTML = deals.map(p => card({
-    href: link(p), img: p.thumb ? "img/p/" + p.thumb : null, name: p.name, price: p.best.price,
-    extra: score(p) < -0.5 ? `<span class="neg">${score(p).toFixed(0)} %</span>` : "",
-    where: `en ${storeName[p.best.store]} · ${p.items.length} tiendas`,
-  })).join("");
+  // Chollos de hoy (catálogo completo): la mejor tienda frente a la mediana de las demás, en guitarras que se venden
+  // en 3 o más tiendas. Un ahorro de más del 40 % se descarta: suele ser una ficha mal emparejada, no un chollo.
+  load("data/catalog/products.json").then(cat => {
+    const median = a => { const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+    // Solo precios con stock, y fuera las guitarras con dos fichas de la misma tienda (emparejado dudoso).
+    const deals = cat.products.filter(p => p.th && p.slug && new Set(p.items.map(i => i.s)).size === p.items.length).map(p => {
+      const live = p.items.filter(i => i.st !== false);
+      if (live.length < 3) return null;
+      const mid = median(live.map(i => i.p)), best = live[0];
+      return { p, best, save: (mid - best.p) / mid * 100 };
+    }).filter(d => d && d.save >= 3 && d.save <= 40).sort((a, b) => b.save - a.save).slice(0, 4);
+    if (!deals.length) return;
+    document.getElementById("deals").innerHTML = deals.map(({ p, best, save }) => card({
+      href: `g/${p.slug}.html`, img: "img/p/" + p.th, name: p.name, price: best.p,
+      extra: `<span class="neg" title="Frente al precio medio de las tiendas">−${save.toFixed(0)} % vs. media</span>`,
+      where: `en ${cat.stores[best.s] || best.s} · ${new Set(p.items.map(i => i.s)).size} tiendas`,
+    })).join("");
+  }).catch(() => {});
 
   const drops = guitars.filter(p => p.drop > 0).sort((a, b) => b.drop - a.drop).slice(0, 4);
   if (drops.length) {

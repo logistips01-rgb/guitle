@@ -1,0 +1,958 @@
+{
+ "_ayuda": "Precios añadidos a mano a partir de capturas del titular (tiendas que no se pueden leer automáticamente). Cada oferta: store, ean (o name + brand), url, price, in_stock, date (AAAA-MM-DD). Caducan a los MANUAL_DAYS días de su fecha.",
+ "stores": {
+  "madridhifi": "Madrid Hifi"
+ },
+ "offers": [
+  {
+   "store": "madridhifi",
+   "ean": "885978098552",
+   "name": "Fender Player II Stratocaster RW 3-Color Sunburst",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 758,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "717669815936",
+   "name": "Squier Sonic Telecaster Butterscotch Blonde",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 163,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106237282",
+   "name": "Epiphone Les Paul Custom Amethyst Inspired by Gibson",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1299,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978118113",
+   "name": "Fender Standard Telecaster MN Aqua Marine Metallic",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 529,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "717669815646",
+   "name": "Squier Sonic Stratocaster Black",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 166,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4515276760139",
+   "name": "Ibanez GRG121DX-WNF",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 209,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106166216",
+   "name": "Epiphone Les Paul Special Double Cut Cherry Red",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/p/epiphone-les-paul-special-dc-chr/",
+   "price": 445,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "197955143064",
+   "name": "Squier Mini Stratocaster MN Sea Foam Green",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 174,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978118090",
+   "name": "Fender Standard Stratocaster HSS LRL Black",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 545,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978118137",
+   "name": "Fender Standard Telecaster MN Butterscotch Blonde",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 514.1,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4957812369343",
+   "name": "Yamaha Pacifica 112V BL RL",
+   "brand": "Yamaha",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 269,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978064267",
+   "name": "Squier Classic Vibe 60s Stratocaster LRL Candy Apple Red",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 389,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978610228",
+   "name": "Fender American Professional Classic Telecaster MN Butterscotch Blonde",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1496,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "825362243939",
+   "name": "PRS SE CE24 Charcoal Burst",
+   "brand": "PRS",
+   "url": "https://www.madridhifi.com/p/prs-se-ce24charcoalburst-738365/",
+   "price": 749,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106169149",
+   "name": "Gibson Les Paul Studio Smokehouse Burst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1590,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106236056",
+   "name": "Epiphone SG Custom Futura Midnight Ember Shift",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 795,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4960693208991",
+   "name": "Yamaha Pacifica 112J RM",
+   "brand": "Yamaha",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 215,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978883776",
+   "name": "Squier J Mascis Jazzmaster LRL Vintage White",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 515,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106036618",
+   "name": "Gibson Slash Les Paul November Burst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 2777,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978884629",
+   "name": "Squier Mini Stratocaster LRL Black",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 155,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978398102",
+   "name": "Fender Player II Modified Stratocaster HSS MN Dusk",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1037,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": null,
+   "name": "Ibanez GRX120SP-DDM",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/p/ibanez-grx120sp-ddm/",
+   "price": 216,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": null,
+   "name": "Epiphone Les Paul Standard 50s Goldtop",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 599,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978396757",
+   "name": "Fender Player II Modified Stratocaster MN 3-Color Sunburst",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 992,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763363541",
+   "name": "Ibanez AZ24S1F-VLS",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 437,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": null,
+   "name": "Epiphone Futura ES-355 Firestorm Shift",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 920,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763352934",
+   "name": "Ibanez AZ47P1QM-DEB",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1359,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106234175",
+   "name": "Gibson Les Paul Studio Session Cherry",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1650,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978098606",
+   "name": "Fender Player II Stratocaster HSS RW 3-Color Sunburst",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 825,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978134878",
+   "name": "Squier Affinity Telecaster FMT SH MN Mocha",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 259,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106234397",
+   "name": "Gibson Les Paul Studio Double Trouble Cherry Sunburst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1367,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978064588",
+   "name": "Squier Classic Vibe 60s Jazzmaster LRL Olympic White",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 418,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978064243",
+   "name": "Squier Classic Vibe 60s Stratocaster LRL Lake Placid Blue",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/p/fender-squier-classic-vibe-60s-stratocaster-lrl-lake-placid-blue/",
+   "price": 409,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106043203",
+   "name": "Epiphone Riviera Royal Tan",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 562.43,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106043227",
+   "name": "Epiphone Riviera Sparkling Burgundy",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 599,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "717669815653",
+   "name": "Squier Sonic Stratocaster 2-Color Sunburst",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/p/squier-sonic-strat-2t-sby/",
+   "price": 169,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106128979",
+   "name": "Epiphone Sheraton Vintage Sunburst",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 777,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978109432",
+   "name": "Fender Player II Stratocaster HSS RW Polar White",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 809,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4515110016071",
+   "name": "Ibanez RG550-BK",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 881,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106137438",
+   "name": "Epiphone 1963 Firebird I Heather Poly",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 999,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978118151",
+   "name": "Fender Standard Telecaster LRL 3-Color Sunburst",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 530,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978118076",
+   "name": "Fender Standard Stratocaster HSS LRL Candy Cola",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 575,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106165837",
+   "name": "Epiphone 1959 Les Paul Standard Reissue Dark Burst",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1270,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978388004",
+   "name": "Fender American Professional Classic Stratocaster HSS RW Faded Sherwood Green",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1625,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978721375",
+   "name": "Gretsch Streamliner Jet Club LRL Aged White",
+   "brand": "Gretsch",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 255,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978717446",
+   "name": "Gretsch Electromatic Jet RW Vintage White",
+   "brand": "Gretsch",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 434.25,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "197955143101",
+   "name": "Squier Sonic Stratocaster LRL Sienna Sunburst",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 180,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "197955143125",
+   "name": "Squier Sonic Stratocaster HSS MN Midnight Blue",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 177,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978857203",
+   "name": "Jackson JS22 Surfcaster HT Metallic Red",
+   "brand": "Jackson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 298,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978829095",
+   "name": "Fender Limited Edition Player Fusion Stratocaster HSS Black",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1158,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106165851",
+   "name": "Epiphone 1959 Les Paul Standard Reissue Golden Pumpkin Burst",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/p/epiphone-1959-les-paul-standard-gpb/",
+   "price": 1075,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978064335",
+   "name": "Squier Classic Vibe 70s Stratocaster HSS MN Black",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 409,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106138930",
+   "name": "Gibson Les Paul Standard 50s Plain Top Ebony",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1999.99,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978777563",
+   "name": "Fender Player II Modified Stratocaster HSS RW Olympic Pearl",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 999,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106234403",
+   "name": "Gibson Les Paul Studio Double Trouble Dirty Lemon Burst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1533,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978777631",
+   "name": "Fender Player II Modified Telecaster MN Olympic Pearl",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 991,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4957812369381",
+   "name": "Yamaha Pacifica 112V SB",
+   "brand": "Yamaha",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 269,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106136899",
+   "name": "Gibson 70s Flying V Antique Natural",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 2090,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978117871",
+   "name": "Fender Standard Stratocaster MN Candy Cola",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 531,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106178240",
+   "name": "Epiphone Les Paul Standard 50s Washed Cherry Sunburst",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 599,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978577316",
+   "name": "Fender American Professional II Telecaster MN Roasted Pine",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 2189,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106035574",
+   "name": "Gibson Les Paul Standard 60s Figured Top Unburst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 2490,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978136865",
+   "name": "Fender Player II Stratocaster MN Polar White",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 777,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106158457",
+   "name": "Gibson Les Paul Studio Blueberry Burst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1360,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4957812660099",
+   "name": "Yamaha Pacifica 112V VW Vintage White",
+   "brand": "Yamaha",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 269,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978603152",
+   "name": "Fender American Professional II Telecaster MN Butterscotch Blonde",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1950,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763375711",
+   "name": "Ibanez RG653DX-WHF",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1463,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": null,
+   "name": "Ibanez AF115-AWB",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 915,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978983094",
+   "name": "Jackson Pro Series Signature Phil Collen PC1 Worn Black",
+   "brand": "Jackson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1949,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978398676",
+   "name": "Fender Player II Modified Telecaster RW 3-Color Sunburst",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 992,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763363503",
+   "name": "Ibanez AZ22S1F-TKS",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 441,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763369109",
+   "name": "Ibanez S520AH-ABS",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 523.5,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106158044",
+   "name": "Gibson Les Paul Standard 60s Faded Vintage Bourbon Burst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 2299,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978777648",
+   "name": "Fender Player II Modified Telecaster SH MN Olympic Pearl",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/p/fender-player-ii-mod-tele-sh-mn-olp/",
+   "price": 1058,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978064311",
+   "name": "Squier Classic Vibe 70s Stratocaster LRL Olympic White",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 389,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106233123",
+   "name": "Gibson Les Paul Supreme Ebony",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 3885,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": null,
+   "name": "Ibanez AZ2204AG-TFB",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 2069,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978722792",
+   "name": "Squier Affinity Telecaster LRL Lake Placid Blue",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 239,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978063901",
+   "name": "Squier Classic Vibe 50s Stratocaster MN Black",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 399,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": null,
+   "name": "Ibanez AM153FM-ATT",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1209,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978398638",
+   "name": "Fender Player II Modified Stratocaster HSS Floyd Rose RW Dusk",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/p/fender-player-ii-modified-stratocaster-hss-fr-dusk/",
+   "price": 1083,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978109296",
+   "name": "Fender Player II Stratocaster MN Black",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 777,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763376596",
+   "name": "Ibanez RG421DX-TWS",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 361,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "719710629066",
+   "name": "LTD EC-400 See Thru Black Sunburst",
+   "brand": "LTD",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 823,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763376428",
+   "name": "Ibanez AR520HME-NT",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 575,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978723447",
+   "name": "Squier Affinity Stratocaster FMT HSS Sienna Sunburst",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 269,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978114726",
+   "name": "Fender Player II Mustang RW Black",
+   "brand": "Fender",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 685,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106176147",
+   "name": "Gibson 80s Explorer Cherry",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/p/gibson-80s-explo-cherry/",
+   "price": 2699,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "885978064342",
+   "name": "Squier Classic Vibe 70s Stratocaster HSS LRL Walnut",
+   "brand": "Squier",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 409,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763369086",
+   "name": "Ibanez RGT1220PBK-COL",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1522,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "197955147949",
+   "name": "Gretsch Streamliner CVT LRL Olive Drab",
+   "brand": "Gretsch",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 285,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106136929",
+   "name": "Gibson Les Paul Modern Studio Satin Smokehouse Burst",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1690.05,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106153537",
+   "name": "Gibson ES-330 Antique Natural",
+   "brand": "Gibson",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 2888,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "711106146454",
+   "name": "Epiphone 1963 Les Paul SG Custom Maestro Vibrola",
+   "brand": "Epiphone",
+   "url": "https://www.madridhifi.com/instrumentos-musicales/guitarras/electricas/",
+   "price": 1166,
+   "in_stock": true,
+   "date": "2026-10-28"
+  },
+  {
+   "store": "madridhifi",
+   "ean": "4549763369765",
+   "name": "Ibanez RGA20P1PB-CUL",
+   "brand": "Ibanez",
+   "url": "https://www.madridhifi.com/p/ibanez-rga20p1pb-cul/",
+   "price": 1293,
+   "in_stock": true,
+   "date": "2026-10-28"
+  }
+ ]
+}

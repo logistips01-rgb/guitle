@@ -21,6 +21,15 @@
     } catch (e) {}
   };
 
+  // Búsquedas en el catálogo (catalogo.js): se cuentan como páginas "buscar~<texto>", sin nada más.
+  const searched = new Set();
+  window.guitleSearch = q => {
+    const term = q.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim().replace(/\s+/g, "-").slice(0, 60);
+    if (term.length < 3 || searched.has(term)) return;
+    searched.add(term);
+    add(["p_buscar~" + clean(term)]);
+  };
+
   const keys = ["v", "p_" + clean(location.pathname.replace(/^\//, "") || "inicio")];
   let from = "";
   try { from = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) {}

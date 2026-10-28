@@ -1,0 +1,227 @@
+[
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Ibanez JBM27 Jake Bowen",
+  "slug": "ibanez-jbm27-jake-bowen-4515276872399",
+  "price": 910.0,
+  "median": 1244.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "LTD SN-200HT Charcoal Metallic Satin",
+  "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
+  "price": 349.0,
+  "median": 489.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "ESP LTD EC-1000T QM Charcoal Burst",
+  "slug": "esp-ltd-ec-1000t-qm-charcoal-burst-719710614420",
+  "price": 1199.0,
+  "median": 1719.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE McCarty 594 Singlecut Charcoal",
+  "slug": "prs-se-mccarty-594-singlecut-charcoal-825362244295",
+  "price": 849.0,
+  "median": 1149.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE McCarty 594 Singlecut Vintage Sunburst",
+  "slug": "prs-se-mccarty-594-singlecut-vintage-sunburst-825362244301",
+  "price": 857.0,
+  "median": 1149.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE NF3 Ice Blue Metallic",
+  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
+  "price": 739.0,
+  "median": 995.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Austin AS6PBK Super 6 Black",
+  "slug": "austin-as6pbk-super-6-black-814295014549",
+  "price": 254.1,
+  "median": 374.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Austin AS6PBK Super 6 Black",
+  "slug": "austin-as6pbk-super-6-black-814295014549",
+  "price": 267.0,
+  "median": 367.55
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Austin AS6PROGT Super 6 Gold Top",
+  "slug": "austin-as6progt-super-6-gold-top-812309025482",
+  "price": 261.0,
+  "median": 358.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Austin AS6PTS Super 6 Tsb",
+  "slug": "austin-as6pts-super-6-tsb-814295019247",
+  "price": 171.0,
+  "median": 272.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Cort G200 SP BK",
+  "slug": "cort-g200-sp-bk-8809817080531",
+  "price": 254.0,
+  "median": 339.075
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender American Vintage II 1977 Telecaster Custom RW 3-Color Sunburst",
+  "slug": "fender-american-vintage-ii-1977-telecaster-custom-rw-3-color-sunburst-197955136783",
+  "price": 1848.0,
+  "median": 2652.94
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
+  "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
+  "price": 2459.0,
+  "median": 3373.675
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
+  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
+  "price": 811.2,
+  "median": 1105.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Gretsch Streamliner Jet LRL Nightshade Purple",
+  "slug": "gretsch-streamliner-jet-lrl-nightshade-purple-885978721795",
+  "price": 334.0,
+  "median": 451.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "PRS S2 Standard 24 Satin Red Apple Metallic",
+  "slug": "prs-s2-standard-24-satin-red-apple-metallic-825362208457",
+  "price": 1999.0,
+  "median": 3034.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE DGT McCarty Tobacco Sunburst",
+  "slug": "prs-se-dgt-mccarty-tobacco-sunburst-825362244226",
+  "price": 764.0,
+  "median": 1089.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Cort GA1E OP",
+  "slug": "cort-ga1e-op-8809817081125",
+  "price": 275.0,
+  "median": 375.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Cort Little CJ Blackwood OPLB c/estuche",
+  "slug": "cort-little-cj-blackwood-oplb-c-estuche-8809625364090",
+  "price": 429.55,
+  "median": 580.8
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Lâg Tramontane T177JCE Jumbo",
+  "slug": "lag-tramontane-t177jce-jumbo-3700166370241",
+  "price": 311.0,
+  "median": 519.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Cort GA-MEDX OP W/bag",
+  "slug": "cort-ga-medx-op-w-bag-8809625361648",
+  "price": 189.05,
+  "median": 258.495
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Ibanez AAD400CE-LGS",
+  "slug": "ibanez-aad400ce-lgs-4549763283306",
+  "price": 1499.0,
+  "median": 2059.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AAM370M1CE-TPA",
+  "slug": "ibanez-aam370m1ce-tpa-4549763374035",
+  "price": 492.0,
+  "median": 696.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AE3007FMH-TBH Tobacco Edge Burst High Gloss",
+  "slug": "ibanez-ae3007fmh-tbh-tobacco-edge-burst-high-gloss-4549763365378",
+  "price": 603.0,
+  "median": 837.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Yamaha FGX820C Natural",
+  "slug": "yamaha-fgx820c-natural-4957812668668",
+  "price": 485.0,
+  "median": 676.0
+ }
+]

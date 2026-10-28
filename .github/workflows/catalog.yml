@@ -20,12 +20,13 @@ concurrency:
 jobs:
   catalog:
     # Un catálogo detrás de otro (max-parallel 1): cada tienda recibe como mucho una petición cada 3-6 s.
-    # electrica → data/catalog/ ; acustica → data/catalog/acusticas/ (acústicas y clásicas en una sola lectura)
+    # electrica → data/catalog/ ; acustica → data/catalog/acusticas/ (acústicas y clásicas en una sola lectura) ;
+    # equipo → data/catalog/equipo/ (teclados y pedales)
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
-        cat: [electrica, acustica]
+        cat: [electrica, acustica, equipo]
     runs-on: ubuntu-latest
     timeout-minutes: 355
     steps:
@@ -43,10 +44,11 @@ jobs:
         # Cada tienda va en paralelo y a su ritmo (3-6 s entre peticiones, robots.txt respetado).
         run: python -m scraper.catalog --cat ${{ matrix.cat }} --minutes "${{ inputs.minutes || '50' }}" --records-out "$RUNNER_TEMP/catalog.json" || echo "::warning::catálogo con error; se commitea lo que haya"
 
-      - name: PVP oficial de Fender
-        # es.fender.com solo responde desde aquí (runner de GitHub); robots.txt respetado, 3-6 s entre peticiones.
+      - name: PVP oficial de las marcas
+        # Fender (es.fender.com, solo responde desde aquí) 40 min; luego Gibson/Epiphone 15 y Jackson 8.
+        # robots.txt respetado, 3-6 s entre peticiones.
         if: matrix.cat == 'electrica'
-        run: python -m scraper.pvp --minutes 40 --out "$RUNNER_TEMP/pvp.json" || echo "::warning::PVP de Fender con error"
+        run: python -m scraper.pvp --minutes 40 --out "$RUNNER_TEMP/pvp.json" || echo "::warning::PVP de las marcas con error"
 
       - name: Miniaturas de fotos
         # Primero se fusiona el lote (para conocer las fotos nuevas) y luego se generan sus miniaturas.
@@ -68,7 +70,8 @@ jobs:
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             [ -f "$RUNNER_TEMP/pvp.json" ] && python -m scraper.pvp --merge "$RUNNER_TEMP/pvp.json"  # PVP al histórico, antes de construir
             python -m scraper.catalog --cat ${{ matrix.cat }} --merge "$RUNNER_TEMP/catalog.json"  # también reconstruye los JSON de la web
-            git add data/catalog/ data/deals-*.json img/p/ g/ marca/ tipo/ presupuesto/ marcas.html sitemap.xml
+            python -m scraper.checks || echo "::warning::comprobaciones con error"  # avisos de precios y fotos raros
+            git add data/catalog/ data/deals-*.json data/checks.json img/p/ g/ marca/ tipo/ presupuesto/ marcas.html sitemap.xml
             if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
             git commit -q -m "data: catálogo ${{ matrix.cat }} $(TZ=Europe/Madrid date +%F)"
             if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then python -m scraper.indexnow || true; exit 0; fi

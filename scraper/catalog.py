@@ -39,10 +39,12 @@ DIR = ROOT / "data" / "catalog"
 RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir en este tiempo
 RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se miran cada dos semanas
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
-MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35}  # por debajo no es una guitarra (ni infantil)
+MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35,  # por debajo no es una guitarra (ni infantil)
+             "teclado": 40, "pedal": 20}
+GUITAR_KINDS = {"electrica", "acustica", "clasica"}
 MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
-NOT_PRODUCT = re.compile(r"b-stock|bstock|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein|stock[ -]b\b", re.I)
+NOT_PRODUCT = re.compile(r"b-stock|bstock|b-ware|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein|stock[ -]b\b", re.I)
 
 # Session no dice en la URL qué es una guitarra: se preseleccionan marcas de guitarra eléctrica sin
 # palabras de accesorio, y la ficha (breadcrumb "E-Gitarren") confirma.
@@ -166,6 +168,15 @@ _MAT_ACOUSTIC = re.compile(r"^(guitarras-(electro)?acusticas|guitarras-(clasicas
                            r"|guitarras-(dreadnought|jumbo)$|guitarras-con-cuerdas-de-nylon)")
 
 
+def _mat_vat(data, text):
+    """MAT (PrestaShop) da el precio sin IVA a algunas visitas de fuera de la UE (el lector corre en EE. UU.): si el
+    precio leído coincide con su "price_tax_exc", se le suma el IVA español (21 %)."""
+    m = re.search(r"price_tax_exc&quot;:([0-9.]+)", text) or re.search(r'"price_tax_exc":([0-9.]+)', text)
+    if m and data.get("price") and abs(float(m.group(1)) - data["price"]) < 0.02:
+        data["price"] = round(float(m.group(1)) * 1.21, 2)
+    return data
+
+
 def _mat_category(url):
     parts = url.split("/")
     return parts[4] if len(parts) > 5 else ""
@@ -270,6 +281,7 @@ SOURCES = {
                 "parse": _parse_thomann, "kind": _only("electrica", _is_electric)},
     "mat": {"name": "MAT Guitars", "sitemap": "https://www.matguitars.com/1_es_0_sitemap.xml",
             "pick": lambda u: _mat_category(u) in MAT_ELECTRIC and not NOT_PRODUCT.search(u), "crumbs": _mat_crumbs,
+            "fix": _mat_vat,
             "kind": _only("electrica", _is_electric)},
     "drunkat": {"name": "Drunkat", "sitemap": "https://drunkat.es/var/sitemap.xml", "parse": _parse_drunkat,
                 "sub": lambda u: "sitemap-productos" in u,
@@ -344,6 +356,109 @@ ACOUSTIC_SOURCES = {
                  "pick": lambda u: "/p/" in u and _pick_acoustic_brand(u.split("/p/")[-1])},
 }
 
+# --- Teclados y pedales (catálogo "equipo") ----------------------------------------------------------
+# Cada tienda preselecciona por su categoría en la URL; la ficha (breadcrumb, URL y nombre) decide si es un teclado,
+# un pedal o un accesorio (soportes, fundas, alimentadores, pedales de sustain o de bombo…), que no entra.
+EQUIPO_SKIP = re.compile(
+    r"soporte|suporte|\bstand\b|staender|funda|bolsa|\bcapa\b|tasche|\bbag\b|\bcase\b|estuche|estojo|koffer|maleta|flight"
+    r"|banqueta|\bbanco\b|taburete|\bbench\b|cubierta|cubre|\bcover\b|alimentador|fuente de alim|adaptador|netzteil"
+    r"|power ?supply|latiguillo|\bpatch\b|\bcables?\b|kabel|\bcabo\b|pedalboard|pedal ?board|bombo|bater[ií]a|\bdrums?\b"
+    r"|percusi|auricular|headphone|platillo|ilumina|\bluz\b|\bled\b|\bdj\b|acorde[oó]n|lit[uú]rgic|sustain|sostenido"
+    r"|para teclado|para piano|mantenimiento|repuesto|conmutador|footswitch|\bmaza\b|efectos sonoros|libro|\bbook\b"
+    r"|amplificador|interfa[cz]e? midi|cables? midi|tuerca|bot[oó]n|\bkit de\b", re.I)
+_KEYBOARD = re.compile(r"piano|teclado|keyboard|sintetiz|synth|workstation|arranger|controlador midi|teclas|stage ?piano"
+                       r"|tastatur|klavier", re.I)
+_PEDAL = re.compile(r"pedal|efecto|effekt|multiefect|multi.?efect|overdrive|distors|distortion|fuzz|delay|\beco\b|echo"
+                    r"|reverb|chorus|flanger|phaser|tr[eé]molo|vibrato|wah|looper|fraseo|compres|booster|\bboost\b"
+                    r"|octav|preamp|afinador de pedal|bodentreter", re.I)
+
+
+def equipo_text(crumbs, url, name):
+    slug = url.rstrip("/").rsplit("/", 1)[-1]
+    return " / ".join([*crumbs, re.sub(r"[-_]+", " ", slug), name or ""]).lower()
+
+
+def equipo_kind(crumbs, url, name):
+    """'teclado', 'pedal' o None (accesorio u otra cosa) según categoría, URL y nombre."""
+    text = equipo_text(crumbs, url, name)
+    if EQUIPO_SKIP.search(text) or NOT_PRODUCT.search(name or ""):
+        return None
+    # Una guitarra con previo (Fishman "preamp") no es un pedal: manda la categoría de la tienda.
+    path = " / ".join(crumbs).lower()
+    if re.search(r"guitarras? (cl[aá]sic|el[eé]ctric|ac[uú]stic|electroac)|bajos? el[eé]ctric|westerngitarren|e-gitarren"
+                 r"|konzertgitarren", path) and not _PEDAL.search(path):
+        return None
+    if _PEDAL.search(text) and not re.search(r"piano digital|pianos? (electr|digital)|teclado|sintetizador con teclado", text):
+        return "pedal"
+    if _KEYBOARD.search(text):
+        return "teclado"
+    return None
+
+
+KEYBOARD_TYPES = [("Controlador MIDI", r"controlador|teclado maestro|\bmidi\b|keystep|launchkey|nanokey|minilab|keylab"),
+                  ("Piano acústico", r"piano ac[uú]stico|pianos ac[uú]sticos|piano vertical|piano de cola|silent"),
+                  ("Piano de escenario", r"escenario|stage|nord (piano|electro|grand)"),
+                  ("Sintetizador", r"sintetiz|synth|workstation|m[oó]dulo"),
+                  ("Piano digital", r"piano digital|pianos (digitales|electr)|piano electr|celviano|clavinova|arius|\b88 teclas"),
+                  ("Teclado portátil", r"teclado|arranger|acompa[nñ]amiento|port[aá]til|\bpsr|\bct-?s|\blk-?\d")]
+PEDAL_TYPES = [("Para bajo", r"\bbajos?\b|\bbass\b|bass-?effekt"),
+               ("Multiefectos", r"multi|pedalera|procesador|modelador|modeling"),
+               ("Afinador", r"afinador|tuner"),
+               ("Looper", r"loop|fraseo"),
+               ("Wah y volumen", r"wah|volumen|volume|expresi"),
+               ("Compresor", r"compres|kompressor"),
+               ("Delay", r"delay|\beco\b|echo"),
+               ("Reverb", r"reverb|\bhall\b"),
+               ("Modulación", r"chorus|flanger|phaser|tr[eé]molo|vibrato|modula|rotary|uni.?vibe"),
+               ("Overdrive y distorsión", r"overdrive|distors|distortion|fuzz|boost|drive|preamp|metal|crunch|verzerr|zerr")]
+
+
+def _pick_equipo(pattern, skip=None):
+    rx, sk = re.compile(pattern, re.I), re.compile(skip, re.I) if skip else None
+    return lambda u: bool(rx.search(u)) and not (sk and sk.search(u)) and not NOT_PRODUCT.search(u)
+
+
+_ALFASONI_EQUIPO = (r"alfasoni\.com/(pedales-de-(?!bombo|sustain)[a-z-]+|otros-pedales-de-(guitarra|bajo)|multiefectos-para-"
+                    r"(guitarra-electrica|bajo)|pedales-para-guitarra-acustica|pedales-afinadores|armonizadores-y-modelado-en-pedal"
+                    r"|procesadores-de-voz-en-pedal|sintetizadores-(con-teclado|en-modulo|de-guitarra-y-bajo)|pianos-de-escenario"
+                    r"|teclados-portatiles|pianos-digitales-[a-z]+|teclados-de-acompanamiento|teclados-midi-de-\d+-teclas"
+                    r"|workstations)/[^/]+\.html$")
+_MAT_EQUIPO = {"overdrive", "fuzz", "distorsion", "delay", "reverb", "wah-wah", "otros-pedales-para-guitarra-electrica",
+               "chorus", "compresor", "booster", "multiefectos", "sintetizador", "previos-para-bajo-pedales-para-bajo",
+               "compresor-para-bajo", "overdrive-para-bajo", "octavador", "looper-loop-station", "fuzz-para-bajo",
+               "octavador-para-bajo", "pedales-para-guitarra-acustica", "wah-wah-para-bajo", "chorus-para-bajo",
+               "multiefectos-para-bajo", "distorsion-para-bajo", "pedales-para-guitarra-electrica", "procesadores-multiefectos",
+               "sintetizador-para-bajo", "reverb-para-bajo", "efectos-de-voz-pedales"}
+_PEDAL_WORDS = r"pedal|overdrive|distortion|distorsion|fuzz|delay|reverb|chorus|flanger|phaser|tremolo|wah|looper|compressor|booster|octave|drive|echo"
+
+EQUIPO_SOURCES = {
+    "numemusic": {**SOURCES["numemusic"], "kind_url": equipo_kind,
+                  "pick": _pick_equipo(r"/\d+-(pedal-|pedalera-multi|piano-digital|teclado-|organo-stage|modulo-sintetizador"
+                                       r"|m.dulo-sintetizador|procesador-de-efectos)",
+                                       r"pedal-de-(sostenido|bombo)|para-teclado|pedalboard")},
+    "musicopolix": {**SOURCES["musicopolix"], "kind_url": equipo_kind,
+                    "pick": _pick_equipo(r"/cat/(teclados-musicales/(pianos-electronicos|teclados-electronicos|sintetizadores)"
+                                         r"|produccion-musical/teclados-controladores|accesorios/accesorios-de-guitarra/"
+                                         r"pedales-de-guitarra/(pedales|pedaleras)|accesorios/accesorios-de-bajo/pedales-bajo)/"
+                                         r"(.+/)?\d+-[^/]+\.html$")},
+    "alfasoni": {**SOURCES["alfasoni"], "kind_url": equipo_kind, "pick": _pick_equipo(_ALFASONI_EQUIPO)},
+    "mat": {**SOURCES["mat"], "kind_url": equipo_kind,
+            "pick": lambda u: _mat_category(u) in _MAT_EQUIPO and not NOT_PRODUCT.search(u)},
+    "drunkat": {**SOURCES["drunkat"], "kind_url": equipo_kind,
+                "pick": _pick_equipo(r"drunkat\.es/[^/]*(-pedal-|piano-digital|-teclado-|teclado-(midi|workstation|portatil)"
+                                     r"|-sintetizador|pedalera-multiefect|multiefectos)",
+                                     r"soporte|banqueta|latiguillo|pedalboard|funda|bolsa|alimentador|sustain")},
+    "pronorte": {**SOURCES["pronorte"], "kind_url": equipo_kind,
+                 "pick": _pick_equipo(rf"/p/[^/]*({_PEDAL_WORDS}|piano|synth|keyboard|nord-)", r"case|bag|board|cable|supply|stand")},
+    "egitana": {**SOURCES["egitana"], "kind_url": equipo_kind,
+                "pick": _pick_equipo(r"egitana\.es/[^/]*(pedal|overdrive|distor|fuzz|delay|reverb|chorus|flanger|phaser|wah"
+                                     r"|looper|compress|multiefeito|multi-efeito|piano-digital|teclado|sintetizador|controlador-midi)",
+                                     r"suporte|banco|capa|saco|estojo|sustain|fonte|cabo|pedalboard")},
+    "session": {**SOURCES["session"], "kind_url": equipo_kind,
+                "pick": _pick_equipo(rf"/products/[^/]*({_PEDAL_WORDS})",
+                                     r"pedalboard|case|bag|power|supply|cable|kabel|patch|netzteil|steel|knob|switch")},
+}
+
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
                   ("Tamaño reducido", r"reducid|travel|viaje|reise|\bmini\b|3/4|1/2|baby|little|junior|\bgs mini|\bjr\d?\b"),
                   ("Parlor", r"parlou?r"), ("Jumbo", r"jumbo|\bsj-?200|\bj-?45|\bj-?200"),
@@ -371,14 +486,18 @@ NAME_TYPES = [("T", r"tele(caster)?\b|\btl\b"),
               ("Double cut", r"\bsg\b|custom ?2[24]|\bce ?2[24]|double.?cut"),
               ("Moderna / Metal", r"explorer|flying ?v|firebird|thunderbird|phoenix|headless|warrior|ravendark|"
                                   r"\bmetal\b|[78].?(cuerdas|string)|baritone")]
-TYPES_BY_KIND = {"electrica": TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES}
-NAME_TYPES_BY_KIND = {"electrica": NAME_TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES}
+TYPES_BY_KIND = {"electrica": TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
+                 "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES}
+NAME_TYPES_BY_KIND = {"electrica": NAME_TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
+                      "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES}
 
 # Catálogos: carpeta, fuentes y fichero de la web por categoría.
 CATALOGS = {
     "electrica": {"dir": DIR, "sources": SOURCES, "files": {"electrica": "products.json"}},
     "acustica": {"dir": DIR / "acusticas", "sources": ACOUSTIC_SOURCES,
                  "files": {"acustica": "acusticas.json", "clasica": "clasicas.json"}},
+    "equipo": {"dir": DIR / "equipo", "sources": EQUIPO_SOURCES,
+               "files": {"teclado": "teclados.json", "pedal": "pedales.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -538,9 +657,34 @@ NAME_MATCH_MIN = 0.75     # parecido mínimo para unir una ficha sin EAN a un pr
 NAME_MATCH_MARGIN = 0.1   # y con ventaja clara sobre el segundo candidato
 
 
+# Referencia de fábrica en una palabra (Yamaha PACP12M, Ibanez JBM27; EC-256 cuenta como EC256).
+PLAIN_CODE = re.compile(r"\b([a-z]{2,6})(\d+[a-z]{0,4})\b")
+
+
+def _plain_codes(name):
+    lower = re.sub(r"\b([a-z]{2,6})-(?=\d)", r"\1", name.lower())
+    return {m.group(0): (m.group(1), re.match(r"\d+", m.group(2)).group()) for m in PLAIN_CODE.finditer(lower)}
+
+
+def _plain_codes_differ(a, b):
+    """Referencias de serie distinta (PACP12M ≠ PACSP12M). Se dan por iguales: una contenida en otra
+    (SS30 ≈ CTSS30HS), las mismas letras con errata en los números (RSS02T ≈ RSS20T) y una letra de menos
+    al principio con los mismos números (PA311HYNS ≈ PAC311H, EART60M ≈ EARTH60M)."""
+    ca, cb = _plain_codes(a), _plain_codes(b)
+    if not ca or not cb:
+        return False
+
+    def alike(x, y):
+        (lx, nx), (ly, ny) = ca[x], cb[y]
+        return x in y or y in x or lx == ly or (nx == ny and (lx.startswith(ly) or ly.startswith(lx)))
+    return not any(alike(x, y) for x in ca for y in cb)
+
+
 def same_product(a, b):
     ca, cb = set(MODEL_CODE.findall(a["name"].lower())), set(MODEL_CODE.findall(b["name"].lower()))
     if ca and cb and not ca & cb:
+        return False
+    if _plain_codes_differ(a["name"], b["name"]):
         return False
     ta, tb = _tokens(a), _tokens(b)
     return len(ta & tb) / max(1, len(ta | tb)) >= 0.1
@@ -567,7 +711,10 @@ def tidy(o):
 
 def guitar_type(crumbs, kind="electrica"):
     # Eléctricas: la última categoría ("Modelos ST"); acústicas y clásicas: las dos últimas ("Westerngitarren / Dreadnought").
-    leaf = (crumbs[-1] if kind == "electrica" else " / ".join(crumbs[-2:])).lower() if crumbs else ""
+    if kind not in GUITAR_KINDS:  # teclados y pedales: la última categoría ("Pedales de delay")
+        leaf = crumbs[-1].lower() if crumbs else ""
+    else:
+        leaf = (crumbs[-1] if kind == "electrica" else " / ".join(crumbs[-2:])).lower() if crumbs else ""
     leaf = re.sub(r"cl[aá]sicas y flamencas", "", leaf)  # categoría mixta de Numemusic: no dice si es flamenca
     for label, pat in TYPES_BY_KIND[kind]:
         if re.search(pat, leaf):
@@ -662,9 +809,11 @@ def read_page(fetcher, store_id, url, now):
             return rec
         soup = BeautifulSoup(resp.text, "html.parser")
         data = src["parse"](soup, resp.text) if "parse" in src else _parse_jsonld(soup, store_id)
+        if "fix" in src:
+            data = src["fix"](data, resp.text)
         if not data["crumbs"] and "crumbs" in src:
             data["crumbs"] = src["crumbs"](url)  # tiendas sin breadcrumb: la categoría de la URL (MAT)
-        kind = src["kind"](data["crumbs"])
+        kind = src["kind_url"](data["crumbs"], url, data.get("name")) if "kind_url" in src else src["kind"](data["crumbs"])
         if not kind:
             rec["status"] = "not_guitar"
             return rec
@@ -784,6 +933,33 @@ def series_for(keys, history):
     return out
 
 
+MANUAL_DAYS = 3  # un precio añadido a mano (captura) se muestra como mucho estos días
+
+
+def _manual_offers():
+    """Precios añadidos a mano (data/manual_offers.json), solo los de los últimos MANUAL_DAYS días."""
+    data = load(ROOT / "data" / "manual_offers.json", {})
+    since = (datetime.now(timezone.utc) - timedelta(days=MANUAL_DAYS)).date().isoformat()
+    return [o for o in data.get("offers", []) if o.get("price") and o.get("date", "") >= since], data.get("stores", {})
+
+
+def _attach_manual(products, manual):
+    """Añade cada precio a mano a su guitarra (por EAN, o por nombre y marca si no hay EAN)."""
+    for m in manual:
+        ean = normalize_id(m.get("ean") or "").lstrip("0")
+        target = next((p for p in products if ean and p.get("ean") == ean), None)
+        if target is None and m.get("name"):
+            scored = sorted(((name_match_score(m["name"], p["name"], p.get("brand") or ""), i) for i, p in enumerate(products)
+                             if (p.get("brand") or "").lower() == (m.get("brand") or "").lower()), reverse=True)
+            if scored and scored[0][0] >= NAME_MATCH_MIN:
+                target = products[scored[0][1]]
+        if target is None or any(i["s"] == m["store"] for i in target["items"]):
+            continue
+        target["items"].append({"s": m["store"], "p": float(m["price"]), "u": affiliates.wrap(m["store"], m["url"]),
+                                "st": m.get("in_stock"), "d": m["date"], "m": True})
+        target["items"].sort(key=lambda i: i["p"])
+
+
 def _curated_offers():
     """Tiendas que ya seguimos en products.json/latest.json (Thomann, Egitana, eBay…), cruzadas por EAN."""
     products = load(ROOT / "products.json", [])
@@ -885,9 +1061,13 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
         # Miniatura: entre las fotos de todas las tiendas, la que muestra la guitarra entera (la más esbelta).
         # Un primer plano del cuerpo (poco esbelto) no se usa: mejor sin foto que una que rompe la cuadrícula.
         thumbs = [t for t in (existing(o.get("image")) for o in group) if t]
-        best = max(thumbs, key=slenderness) if thumbs else None
-        if best and slenderness(best) >= MIN_SLENDERNESS:
-            prod["th"] = best
+        if kind not in GUITAR_KINDS:
+            if thumbs:
+                prod["th"] = thumbs[0]  # teclados y pedales: la primera foto (la de Numemusic si está)
+        else:
+            best = max(thumbs, key=slenderness) if thumbs else None
+            if best and slenderness(best) >= MIN_SLENDERNESS:
+                prod["th"] = best
         if ean in sku_by_ean:
             prod["sku"] = sku_by_ean[ean]
         products.append(prod)
@@ -911,14 +1091,18 @@ def build(offers=None, history=None):
     offers = offers if offers is not None else load(DIR / "offers.json", {})
     history = history if history is not None else load(DIR / "history.json", {})
     curated, store_names, sku_by_ean, curated_info = _curated_offers()
-    names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names
-    # Fichas que ya están en seguimiento (con su EAN): no se duplican desde el catálogo.
+    manual, manual_names = _manual_offers()
+    names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names | manual_names
+    # Una ficha sin EAN que ya está en seguimiento (Thomann) saldría duplicada: se deja solo la de seguimiento.
+    # Las que tienen EAN se quedan (traen la foto); la de seguimiento no se repite en la misma tienda.
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
-        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind and o["url"] not in followed]
+        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind
+                and (o.get("ean") or o["url"] not in followed)]
         # Las tiendas de seguimiento (products.json) son de eléctricas.
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" else ({}, {}, {})
         products = _products(kind, mine, history, *extra)
+        _attach_manual(products, manual)
         for p in products:
             p["slug"] = pages.slug_for(p)
         used = {i["s"] for p in products for i in p["items"]}
