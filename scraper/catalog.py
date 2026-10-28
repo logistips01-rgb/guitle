@@ -368,7 +368,8 @@ EQUIPO_SKIP = re.compile(
     r"|power ?supply|latiguillo|\bpatch\b|\bcables?\b|kabel|\bcabo\b|pedalboard|pedal ?board|bombo|bater[ií]a|\bdrums?\b"
     r"|percusi|auricular|headphone|platillo|ilumina|\bluz\b|\bled\b|\bdj\b|acorde[oó]n|lit[uú]rgic|sustain|sostenido"
     r"|para teclado|para piano|mantenimiento|repuesto|conmutador|footswitch|\bmaza\b|efectos sonoros|libro|\bbook\b"
-    r"|amplificador|interfa[cz]e? midi|cables? midi|tuerca|bot[oó]n|\bkit de\b", re.I)
+    r"|amplificador|interfa[cz]e? midi|cables? midi|tuerca|bot[oó]n|\bkit de\b|tremolo ?arm|palanca|\bmount\b|montaje"
+    r"|pickup|pastilla|\bgk-?\d|zubeh|ersatz|halterung", re.I)
 _KEYBOARD = re.compile(r"piano|teclado|keyboard|sintetiz|synth|workstation|arranger|controlador midi|teclas|stage ?piano"
                        r"|tastatur|klavier", re.I)
 _PEDAL = re.compile(r"pedal|efecto|effekt|multiefect|multi.?efect|overdrive|distors|distortion|fuzz|delay|\beco\b|echo"
@@ -407,6 +408,10 @@ KEYBOARD_TYPES = [("Controlador MIDI", r"controlador|teclado maestro|\bmidi\b|ke
 PEDAL_TYPES = [("Para bajo", r"\bbajos?\b|\bbass\b|bass-?effekt"),
                ("Multiefectos", r"multi|pedalera|procesador|modelador|modeling"),
                ("Afinador", r"afinador|tuner"),
+               ("Octavador y pitch", r"octav|pitch|whammy|\bpog\b|harmoni|shifter|\bdrop\b"),
+               ("Ecualizador", r"ecualiz|equaliz|\beq\b|\bge-?7|graphic"),
+               ("Puerta de ruido", r"noise|\bgate\b|ruido|suppressor|hum debugger|\bns-?2"),
+               ("Sintetizador", r"synth|sintetiz|organ|piano machine|sitar"),
                ("Looper", r"loop|fraseo"),
                ("Wah y volumen", r"wah|volumen|volume|expresi"),
                ("Compresor", r"compres|kompressor"),
@@ -648,7 +653,8 @@ def _smart_case(name):
 
 def clean_name(name, brand_raw, brand):
     """'SQUIER BY FENDER Classic Vibe…' → 'Squier Classic Vibe…'."""
-    name = re.sub(r"\s+", " ", name or "").strip()
+    name = re.sub(r"<[^>]+>", " ", html.unescape(name or ""))  # Egitana mete <b>…</b> en algunos nombres
+    name = re.sub(r"\s+", " ", name).strip()
     name = re.sub(r"\s+guitarra (el[eé]ctrica|electroac[uú]stica|ac[uú]stica|cl[aá]sica|electrocl[aá]sica|flamenca)(?=\s|$)", "",
                   name, flags=re.I)
     name = _smart_case(name)
@@ -788,6 +794,8 @@ def same_product(a, b):
 def tidy(o):
     """Normalización al construir (se aplica también a fichas ya leídas): marca, nombre, tipo y zurdas."""
     o = dict(o)
+    if "<" in o.get("name", ""):  # leída antes de limpiar las etiquetas HTML del nombre
+        o["name"] = clean_name(o["name"], o.get("brand"), o.get("brand"))
     brand = canonical_brand(o.get("brand"))
     if o.get("brand") and brand != o["brand"] and o["name"].startswith(o["brand"]):
         o["name"] = brand + o["name"][len(o["brand"]):]
@@ -1193,7 +1201,9 @@ def build(offers=None, history=None):
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
         mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind
-                and (o.get("ean") or o["url"] not in followed)]
+                and (o.get("ean") or o["url"] not in followed)
+                # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
+                and (kind in GUITAR_KINDS or not EQUIPO_SKIP.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})

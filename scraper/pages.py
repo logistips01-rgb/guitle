@@ -208,7 +208,8 @@ TYPE_TITLES = {"ST": "tipo Stratocaster (ST)", "T": "tipo Telecaster (T)", "Sing
                "Overdrive y distorsión": "de overdrive, distorsión y fuzz", "Delay": "de delay", "Reverb": "de reverb",
                "Modulación": "de modulación (chorus, flanger, phaser, trémolo)", "Compresor": "compresores",
                "Wah y volumen": "de wah y volumen", "Looper": "loopers", "Afinador": "afinadores", "Multiefectos": "multiefectos",
-               "Para bajo": "para bajo"}
+               "Para bajo": "para bajo", "Octavador y pitch": "octavadores y de pitch", "Ecualizador": "ecualizadores",
+               "Puerta de ruido": "puertas de ruido", "Sintetizador": "sintetizadores"}
 NOUN = {"electrica": "Guitarras eléctricas", "acustica": "Guitarras acústicas", "clasica": "Guitarras clásicas",
         "teclado": "Teclados y pianos", "pedal": "Pedales"}
 # Páginas por presupuesto (precio más bajo de hoy por debajo del límite) y guitarras que muestra cada una.

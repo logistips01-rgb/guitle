@@ -18,8 +18,8 @@ const TYPE_ORDERS = {
   acustica: ["Dreadnought", "Auditorio / Concierto", "Jumbo", "Parlor", "12 cuerdas", "Tamaño reducido", "Roundback", "Otras"],
   clasica: ["Clásica", "Flamenca", "Electroclásica", "Tamaño reducido", "Otras"],
   teclado: ["Piano digital", "Teclado portátil", "Piano de escenario", "Sintetizador", "Controlador MIDI", "Piano acústico", "Otras"],
-  pedal: ["Overdrive y distorsión", "Delay", "Reverb", "Modulación", "Compresor", "Wah y volumen", "Looper", "Afinador",
-          "Multiefectos", "Para bajo", "Otras"],
+  pedal: ["Overdrive y distorsión", "Delay", "Reverb", "Modulación", "Compresor", "Wah y volumen", "Octavador y pitch",
+          "Ecualizador", "Puerta de ruido", "Sintetizador", "Looper", "Afinador", "Multiefectos", "Para bajo", "Otras"],
 };
 // Cómo se llama lo que hay en cada catálogo (recuento y mensajes).
 const MANY = { teclado: "teclados", pedal: "pedales" }[CFG.kind] || "guitarras";
