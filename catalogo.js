@@ -1,11 +1,24 @@
 // Catálogo de guitarras: búsqueda, filtros y ficha con tiendas e histórico (catalogo.html, acusticas.html, clasicas.html).
 // Solo miniaturas propias (img/p/): la web no carga nada de terceros. Sin miniatura todavía, sin foto.
-const pic = p => p.th ? "img/p/" + p.th : null;
-const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
+// Otros países (guitle.com/pt/…): textos en window.GUITLE_T y el idioma en <html lang>; sin ellos, en español.
+const T = Object.assign({
+  loadErr: "No se pudo cargar el catálogo.", allBrands: "Todas las marcas", all: "Todas", low: "Mínimo", save: "Ahorra {v}",
+  lh: "zurda", store: "tienda", stores: "tiendas", empty: "No hay {many} con esos filtros.", more: "Ver más ({n} restantes)",
+  meta: "{a} de {b} {many} · {m} comparables en varias tiendas · actualizado {d}", best: "mejor precio", inStock: "en stock",
+  noStock: "sin stock", goLong: "Ir a la tienda", goShort: "Ir", close: "Cerrar", inAt: "en {s}",
+  saveMax: " · hasta {v} menos que en la más cara", atLow: "En su mínimo registrado", lowTag: "Mínimo registrado: {v}",
+  storesH: "Tiendas", evolH: "Evolución del precio", histErr: "No se pudo cargar el histórico.",
+  histSoon: "El histórico se irá completando con las próximas lecturas.", types: {},
+}, window.GUITLE_T || {});
+const tf = (s, o) => s.replace(/\{(\w+)\}/g, (_, k) => o[k]);
+const LOCALE = document.documentElement.lang === "es" ? "es-ES" : document.documentElement.lang;
+const typeName = t => T.types[t] || t;
+const pic = p => p.th ? (document.body.dataset.img || "img/p/") + p.th : null;
+const eur = v => v == null ? "–" : v.toLocaleString(LOCALE, { style: "currency", currency: document.body.dataset.cur || "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-const fmtDay = d => d ? new Date(d + "T12:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "short" }) : "";
+const fmtDay = d => d ? new Date(d + "T12:00:00").toLocaleDateString(LOCALE, { day: "numeric", month: "short" }) : "";
 // Sinónimos habituales en las búsquedas
 const ALIASES = { tele: "telecaster", strat: "stratocaster", lp: "les paul", negra: "black", blanca: "white", roja: "red", azul: "blue" };
 const PAGE = 48;
@@ -22,7 +35,7 @@ const TYPE_ORDERS = {
           "Ecualizador", "Puerta de ruido", "Sintetizador", "Looper", "Afinador", "Multiefectos", "Para bajo", "Otras"],
 };
 // Cómo se llama lo que hay en cada catálogo (recuento y mensajes).
-const MANY = { teclado: "teclados", pedal: "pedales" }[CFG.kind] || "guitarras";
+const MANY = T.many || { teclado: "teclados", pedal: "pedales" }[CFG.kind] || "guitarras";
 const TYPE_ORDER = TYPE_ORDERS[CFG.kind] || TYPE_ORDERS.electrica;
 
 async function load(path) {
@@ -52,17 +65,17 @@ load(CFG.src).then(data => {
   }
   const brands = {};
   data.products.forEach(p => { if (p.brand) brands[p.brand] = (brands[p.brand] || 0) + 1; });
-  document.getElementById("brand").innerHTML = '<option value="">Todas las marcas</option>' +
+  document.getElementById("brand").innerHTML = `<option value="">${esc(T.allBrands)}</option>` +
     Object.entries(brands).sort((a, b) => b[1] - a[1]).map(([b, n]) => `<option value="${esc(b)}">${esc(b)} (${n})</option>`).join("");
   const types = TYPE_ORDER.filter(t => data.products.some(p => p.type === t));
   document.getElementById("types").innerHTML = ["", ...types].map(t =>
-    `<button class="chip cat" data-type="${esc(t)}">${t || "Todas"}</button>`).join("");
+    `<button class="chip cat" data-type="${esc(t)}">${esc(t ? typeName(t) : T.all)}</button>`).join("");
   for (const id of ["q", "brand", "range", "show", "sort"]) document.getElementById(id).value = state[id];
   render();
   const open = params.get("p");
   // Enlaces antiguos (?p=EAN) → página propia de la guitarra.
   if (open) { const p = data.products.find(x => x.id === open); if (p) { if (p.slug) location.replace("g/" + p.slug + ".html"); else openSheet(p); } }
-}).catch(() => { document.getElementById("meta").textContent = "No se pudo cargar el catálogo."; });
+}).catch(() => { document.getElementById("meta").textContent = T.loadErr; });
 
 function matches(p) {
   if (state.type && p.type !== state.type) return false;
@@ -84,20 +97,20 @@ const SORTS = {
   price: (a, b) => a.best.p - b.best.p,
   "price-desc": (a, b) => b.best.p - a.best.p,
   save: (a, b) => b.save - a.save,
-  name: (a, b) => a.name.localeCompare(b.name, "es"),
+  name: (a, b) => a.name.localeCompare(b.name, LOCALE),
 };
 
 function tile(p) {
-  const badges = [p.atLow && p.nStores ? '<span class="badge low">Mínimo</span>' : "",
-                  p.save >= 1 ? `<span class="badge">Ahorra ${eur(Math.round(p.save))}</span>` : ""].join("");
+  const badges = [p.atLow && p.nStores ? `<span class="badge low">${esc(T.low)}</span>` : "",
+                  p.save >= 1 ? `<span class="badge">${esc(tf(T.save, { v: eur(Math.round(p.save)) }))}</span>` : ""].join("");
   // Cada guitarra enlaza a su página (g/…html): histórico completo y veredicto; sin página, la ficha emergente.
   return `<${p.slug ? "a" : "div"} class="tile" data-id="${esc(p.id)}"${p.slug ? ` href="g/${esc(p.slug)}.html"` : ""}>
     <div class="badges">${badges}</div>
     <div class="img">${pic(p) ? `<img loading="lazy" src="${esc(pic(p))}" alt="">` : NOPHOTO}</div>
-    <div class="body"><span class="brand">${esc(p.brand || "")}${p.type && p.type !== "Otras" ? " · " + esc(p.type) : ""}${p.lh ? " · zurda" : ""}</span>
+    <div class="body"><span class="brand">${esc(p.brand || "")}${p.type && p.type !== "Otras" ? " · " + esc(typeName(p.type)) : ""}${p.lh ? " · " + esc(T.lh) : ""}</span>
       <span class="name">${esc(p.name.replace(new RegExp("^" + (p.brand || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + " ", "i"), ""))}</span>
       <span class="price"><strong>${eur(p.best.p)}</strong></span>
-      <span class="foot"><span>${esc(storeName[p.best.s] || p.best.s)}</span><span class="stores-n">${p.nStores} ${p.nStores === 1 ? "tienda" : "tiendas"}</span></span>
+      <span class="foot"><span>${esc(storeName[p.best.s] || p.best.s)}</span><span class="stores-n">${p.nStores} ${p.nStores === 1 ? T.store : T.stores}</span></span>
     </div></${p.slug ? "a" : "div"}>`;
 }
 
@@ -112,13 +125,14 @@ function render() {
   const list = catalog.products.filter(matches).sort(SORTS[state.sort] || SORTS.stores);
   const grid = document.getElementById("grid");
   grid.innerHTML = list.length ? list.slice(0, state.shown).map(tile).join("")
-    : `<p class="empty">No hay ${MANY} con esos filtros.</p>`;
+    : `<p class="empty">${esc(tf(T.empty, { many: MANY }))}</p>`;
   const more = document.getElementById("more");
   more.classList.toggle("hidden", list.length <= state.shown);
-  more.textContent = `Ver más (${list.length - state.shown} restantes)`;
+  more.textContent = tf(T.more, { n: list.length - state.shown });
   const multi = catalog.products.filter(p => p.nStores > 1).length;
-  document.getElementById("meta").textContent =
-    `${list.length.toLocaleString("es-ES")} de ${catalog.products.length.toLocaleString("es-ES", { useGrouping: "always" })} ${MANY} · ${multi.toLocaleString("es-ES")} comparables en varias tiendas · actualizado ${new Date(catalog.updated).toLocaleDateString("es-ES", { day: "numeric", month: "short" })}`;
+  document.getElementById("meta").textContent = tf(T.meta, {
+    a: list.length.toLocaleString(LOCALE), b: catalog.products.length.toLocaleString(LOCALE, { useGrouping: "always" }), many: MANY,
+    m: multi.toLocaleString(LOCALE), d: new Date(catalog.updated).toLocaleDateString(LOCALE, { day: "numeric", month: "short" }) });
 }
 
 let typing;
@@ -150,21 +164,21 @@ function openSheet(p) {
     return `<tr class="${n === 0 ? "best-row" : ""}">
       <td><span class="swatch" style="background:var(${storeColor[i.s] || "--reference"})"></span>${i.u ? `<a class="store-link" ${go}>${store}</a>` : store}</td>
       <td class="num"><strong>${eur(i.p)}</strong></td>
-      <td class="num muted col-diff">${n === 0 ? "mejor precio" : "+" + eur(Math.round((i.p - p.best.p) * 100) / 100)}</td>
-      <td class="col-stock">${i.st === true ? '<span class="tag">en stock</span>' : i.st === false ? '<span class="tag warn">sin stock</span>' : ""}</td>
+      <td class="num muted col-diff">${n === 0 ? esc(T.best) : "+" + eur(Math.round((i.p - p.best.p) * 100) / 100)}</td>
+      <td class="col-stock">${i.st === true ? `<span class="tag">${esc(T.inStock)}</span>` : i.st === false ? `<span class="tag warn">${esc(T.noStock)}</span>` : ""}</td>
       <td class="muted col-date">${fmtDay(i.d)}</td>
-      <td class="num">${i.u ? `<a class="go" ${go}><span class="go-long">Ir a la tienda</span><span class="go-short">Ir</span></a>` : ""}</td></tr>`;
+      <td class="num">${i.u ? `<a class="go" ${go}><span class="go-long">${esc(T.goLong)}</span><span class="go-short">${esc(T.goShort)}</span></a>` : ""}</td></tr>`;
   }).join("");
-  s.innerHTML = `<button class="close" aria-label="Cerrar">✕</button>
+  s.innerHTML = `<button class="close" aria-label="${esc(T.close)}">✕</button>
     <div class="hero">${pic(p) ? `<img src="${esc(pic(p))}" alt="">` : ""}
-      <div><div class="muted">${esc(p.brand || "")}${p.type ? " · " + esc(p.type) : ""}</div><h2>${esc(p.name)}</h2>
-        <div class="big">${eur(p.best.p)}</div><div class="muted">en ${esc(storeName[p.best.s] || p.best.s)}${p.save >= 1 ? ` · hasta ${eur(Math.round(p.save))} menos que en la más cara` : ""}</div>
-        <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">${p.atLow ? '<span class="badge low">En su mínimo registrado</span>' : ""}
-          ${p.low != null && !p.atLow ? `<span class="tag">Mínimo registrado: ${eur(p.low)}</span>` : ""}${p.ean ? `<span class="tag">EAN ${esc(p.ean)}</span>` : ""}</div>
+      <div><div class="muted">${esc(p.brand || "")}${p.type ? " · " + esc(typeName(p.type)) : ""}</div><h2>${esc(p.name)}</h2>
+        <div class="big">${eur(p.best.p)}</div><div class="muted">${esc(tf(T.inAt, { s: storeName[p.best.s] || p.best.s }))}${p.save >= 1 ? esc(tf(T.saveMax, { v: eur(Math.round(p.save)) })) : ""}</div>
+        <div style="margin-top:6px;display:flex;gap:6px;flex-wrap:wrap">${p.atLow ? `<span class="badge low">${esc(T.atLow)}</span>` : ""}
+          ${p.low != null && !p.atLow ? `<span class="tag">${esc(tf(T.lowTag, { v: eur(p.low) }))}</span>` : ""}${p.ean ? `<span class="tag">EAN ${esc(p.ean)}</span>` : ""}</div>
         ${p.sku ? `<div style="margin-top:8px"><a class="shop" href="guitarras.html?q=${encodeURIComponent(p.name)}">Ver en seguimiento (con PVP, cupones y estuche)</a></div>` : ""}
       </div></div>
-    <h3>Tiendas</h3><div class="table-wrap"><table>${rows}</table></div>
-    <h3>Evolución del precio</h3><div class="chart-box"><canvas id="chart"></canvas></div>
+    <h3>${esc(T.storesH)}</h3><div class="table-wrap"><table>${rows}</table></div>
+    <h3>${esc(T.evolH)}</h3><div class="chart-box"><canvas id="chart"></canvas></div>
     <p class="muted" id="chart-note" style="font-size:.85rem"></p>`;
   s.classList.add("open"); document.getElementById("bg").classList.add("open");
   s.querySelector(".close").onclick = closeSheet;
@@ -179,7 +193,7 @@ document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet()
 
 async function drawChart(p) {
   const note = document.getElementById("chart-note");
-  try { priceHistory = priceHistory || await load(CFG.history); } catch (e) { note.textContent = "No se pudo cargar el histórico."; return; }
+  try { priceHistory = priceHistory || await load(CFG.history); } catch (e) { note.textContent = T.histErr; return; }
   // Claves del histórico: el EAN y, para las tiendas sin EAN (Egitana, Thomann), la URL de su ficha.
   const series = {};
   for (const k of p.hk || (p.ean ? [p.ean] : [])) for (const [s, pts] of Object.entries(priceHistory[k] || {})) series[s] = series[s] || pts;
@@ -191,7 +205,7 @@ async function drawChart(p) {
   }));
   const days = new Set(Object.values(series).flat().map(([d]) => d));
   if (days.size < 2) {
-    note.textContent = "El histórico se irá completando con las próximas lecturas.";
+    note.textContent = T.histSoon;
     document.querySelector(".chart-box").classList.add("hidden");
     return;
   }

@@ -607,6 +607,15 @@ def _discover_shopify(fetcher, base, collections):
     return urls
 
 
+def _woodbrass_fix(data, text):
+    """Woodbrass repite al final la referencia completa ("1687GT Deep Noir 1687GT-5-G"): fuera."""
+    words = (data.get("name") or "").split()
+    if len(words) > 2 and re.fullmatch(r"[A-Z0-9]+(?:-[A-Z0-9]+)+", words[-1]) \
+            and any(len(w) >= 3 and words[-1].startswith(w.split("-")[0]) for w in words[:-1]):
+        data["name"] = " ".join(words[:-1])
+    return data
+
+
 def _michenaud_fix(data, text):
     """Michenaud: breadcrumb en microdatos y la forma ("Guitare électrique > Formes > Les Paul") aparte."""
     soup = BeautifulSoup(text, "html.parser")
@@ -621,7 +630,7 @@ THOMANN_FR = "https://www.thomann.fr/"
 _FR_BRANDS = _PT_BRANDS + ("gibson", "lag", "eastman", "furch", "maton", "guild", "gretsch", "godin", "seagull", "norman")
 
 FR_SOURCES = {
-    "woodbrass": {"name": "Woodbrass", "kind": fr_kind,
+    "woodbrass": {"name": "Woodbrass", "kind": fr_kind, "fix": _woodbrass_fix,
                   "discover": lambda f: _discover_shopify(f, "https://woodbrass.com",
                                                           ("guitares-electriques", "guitares-folk", "guitares-classiques")),
                   "pick": lambda u: not NOT_PRODUCT.search(u)},
@@ -1319,12 +1328,15 @@ def build(offers=None, history=None):
         multi = sum(len({i["s"] for i in p["items"]}) > 1 for p in products)
         print(f"catálogo {kind}: {len(products)} guitarras, {multi} en más de una tienda", flush=True)
         if not spain:
-            continue  # Portugal: las páginas en portugués llegan en la fase siguiente
+            continue  # otros países: su web (scraper.intl) se genera al final
         pages.write_pages(kind, products, names)
         curated_records = load(ROOT / "data" / "history.json", []) if kind == "electrica" else []
         deals.build(kind, products, history, curated_records, names)
     if CATALOG.get("site", "es") == "es":
         pages.write_hubs()
+    else:
+        from . import intl
+        intl.write_site(CATALOG["site"])
 
 
 def main(argv=None):

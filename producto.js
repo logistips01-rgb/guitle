@@ -1,10 +1,28 @@
 // Página de una guitarra: veredicto ("¿es buen momento?") e histórico de precios.
 // Junta el histórico del catálogo (cambios de precio por tienda) con el de seguimiento (data/history.json).
 const CFG = document.body.dataset;
-const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
+// Otros países (guitle.com/pt/…): textos en window.GUITLE_T y el idioma en <html lang>; sin ellos, en español.
+const T = Object.assign({
+  wait: "Llevamos {n} {days} siguiendo este modelo", day: "día", days: "días",
+  waitSub: "El veredicto será más fiable con unas semanas de histórico.",
+  min: "Precio mínimo registrado", minSub: "Nunca la hemos visto más barata.", minBelow: " Un {p} % por debajo de su media de 30 días.",
+  good: "Buen momento: un {p} % por debajo de su precio medio", goodSub: "Media de los últimos 30 días: {avg}.",
+  bad: "Ahora está un {p} % más cara de lo habitual", badSub: "Si no tienes prisa, espera: su media de 30 días es {avg} y su mínimo, {min}.",
+  normal: "Precio normal", normalSub: "En la línea de su media de 30 días ({avg}). Mínimo registrado: {min}.",
+  today: "precio hoy", lowest: "mínimo histórico ({d})", highest: "máximo histórico", avg: "media {n} días",
+  since: "Seguimos este modelo desde el {d}.", noHist: "Aún no hay histórico de precios.", pvp: "PVP oficial", bestLine: "Mejor precio",
+  alertOpen: "Avísame si baja de precio", emailPh: "tu@correo.com", emailLabel: "Tu correo", targetPh: "Precio máx. (opcional)",
+  targetLabel: "Precio objetivo en euros", alertBtn: "Avisarme",
+  alertLegal: "Gratis y sin registro. Al pulsar «Avisarme» aceptas la <a href=\"/legal.html#privacidad\">política\n        de privacidad</a>: usaremos tu correo solo para este aviso y te das de baja con un clic.",
+  alertOk: "<b>¡Hecho!</b> En unos minutos te llegará un correo a {email} para confirmar el aviso\n        (mira también en correo no deseado).",
+  alertErr: "No se ha podido guardar el aviso. Revisa el correo e inténtalo de nuevo.",
+}, window.GUITLE_T || {});
+const tf = (s, o) => s.replace(/\{(\w+)\}/g, (_, k) => o[k]);
+const LOCALE = document.documentElement.lang === "es" ? "es-ES" : document.documentElement.lang;
+const eur = v => v == null ? "–" : v.toLocaleString(LOCALE, { style: "currency", currency: document.body.dataset.cur || "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const css = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-const fmtDay = d => d ? new Date(d + "T12:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "short" }) : "";
+const fmtDay = d => d ? new Date(d + "T12:00:00").toLocaleDateString(LOCALE, { day: "numeric", month: "short" }) : "";
 const today = new Date().toISOString().slice(0, 10);
 
 async function load(path) {
@@ -33,16 +51,16 @@ function daily(series) {
 
 function verdict(current, best) {
   const n = best.length;
-  if (n < 7) return { cls: "wait", text: `Llevamos ${n} ${n === 1 ? "día" : "días"} siguiendo este modelo`,
-                      sub: "El veredicto será más fiable con unas semanas de histórico." };
+  if (n < 7) return { cls: "wait", text: tf(T.wait, { n, days: n === 1 ? T.day : T.days }), sub: T.waitSub };
   const last30 = best.slice(-30).map(x => x[1]).filter(v => v != null);
   const avg = last30.reduce((a, b) => a + b, 0) / last30.length;
   const min = Math.min(...best.map(x => x[1]).filter(v => v != null));
   const diff = (current - avg) / avg * 100;
-  if (current <= min) return { cls: "good", text: "Precio mínimo registrado", sub: `Nunca la hemos visto más barata. ${diff < -0.5 ? `Un ${Math.abs(diff).toFixed(0)} % por debajo de su media de 30 días.` : ""}` };
-  if (diff <= -5) return { cls: "good", text: `Buen momento: un ${Math.abs(diff).toFixed(0)} % por debajo de su precio medio`, sub: `Media de los últimos 30 días: ${eur(Math.round(avg))}.` };
-  if (diff >= 5) return { cls: "bad", text: `Ahora está un ${diff.toFixed(0)} % más cara de lo habitual`, sub: `Si no tienes prisa, espera: su media de 30 días es ${eur(Math.round(avg))} y su mínimo, ${eur(min)}.` };
-  return { cls: "neutral", text: "Precio normal", sub: `En la línea de su media de 30 días (${eur(Math.round(avg))}). Mínimo registrado: ${eur(min)}.` };
+  const o = { p: Math.abs(diff).toFixed(0), avg: eur(Math.round(avg)), min: eur(min) };
+  if (current <= min) return { cls: "good", text: T.min, sub: T.minSub + (diff < -0.5 ? tf(T.minBelow, o) : "") };
+  if (diff <= -5) return { cls: "good", text: tf(T.good, o), sub: tf(T.goodSub, o) };
+  if (diff >= 5) return { cls: "bad", text: tf(T.bad, o), sub: tf(T.badSub, o) };
+  return { cls: "neutral", text: T.normal, sub: tf(T.normalSub, o) };
 }
 
 (async () => {
@@ -84,20 +102,20 @@ function verdict(current, best) {
     const minDay = bestDaily.find(x => x[1] === minV)[0];
     const last30 = vals.slice(-30), avg = last30.reduce((a, b) => a + b, 0) / last30.length;
     document.getElementById("stats").innerHTML = [
-      [eur(best.p), "precio hoy"], [eur(minV), `mínimo histórico (${fmtDay(minDay)})`], [eur(maxV), "máximo histórico"],
-      [eur(Math.round(avg)), `media ${Math.min(30, vals.length)} días`],
+      [eur(best.p), T.today], [eur(minV), tf(T.lowest, { d: fmtDay(minDay) })], [eur(maxV), T.highest],
+      [eur(Math.round(avg)), tf(T.avg, { n: Math.min(30, vals.length) })],
     ].map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
   }
   const note = document.getElementById("chart-note");
-  note.textContent = days.length ? `Seguimos este modelo desde el ${fmtDay(days[0])}.` : "Aún no hay histórico de precios.";
+  note.textContent = days.length ? tf(T.since, { d: fmtDay(days[0]) }) : T.noHist;
   if (days.length < 2 || !window.Chart) { document.querySelector(".chart-box").classList.add("hidden"); return; }
   const datasets = Object.entries(series).map(([store, pts]) => ({
-    label: names[store] || "PVP oficial", stepped: true, borderWidth: 1.5, pointRadius: 0,
+    label: names[store] || T.pvp, stepped: true, borderWidth: 1.5, pointRadius: 0,
     borderDash: pvp.includes(store) ? [6, 4] : [],
     borderColor: css(color[store] || "--reference"), backgroundColor: css(color[store] || "--reference"),
     data: [...pts.map(([d, y]) => ({ x: d, y })), { x: today, y: pts.at(-1)[1] }],
   }));
-  datasets.unshift({ label: "Mejor precio", stepped: true, borderWidth: 3, pointRadius: 0, borderColor: css("--text-primary"),
+  datasets.unshift({ label: T.bestLine, stepped: true, borderWidth: 3, pointRadius: 0, borderColor: css("--text-primary"),
                      backgroundColor: css("--text-primary"), data: bestDaily.map(([x, y]) => ({ x, y })) });
   new Chart(document.getElementById("chart"), {
     type: "line", data: { labels: days, datasets },
@@ -117,20 +135,20 @@ function verdict(current, best) {
   // Un botón discreto junto al precio; el formulario se abre al pulsarlo.
   const after = document.getElementById("verdict");
   if (!after) return;
-  const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
+  // En otros países el aviso lleva delante su código ("pt/<slug>"): scraper/alerts.py busca en ese catálogo.
+  const slug = (CFG.site ? CFG.site + "/" : "") + location.pathname.split("/").pop().replace(/\.html$/, "");
   const name = document.querySelector(".pname")?.textContent.trim() || slug;
   const price = +CFG.best;
   const box = document.createElement("div");
   box.className = "alert-box";
   box.innerHTML = `<button type="button" class="alert-open" aria-expanded="false">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
-      Avísame si baja de precio</button>
+      ${esc(T.alertOpen)}</button>
     <form id="alert-form" hidden>
-      <input type="email" id="alert-email" required placeholder="tu@correo.com" autocomplete="email" aria-label="Tu correo">
-      <input type="number" id="alert-target" min="1" step="1" placeholder="Precio máx. (opcional)" aria-label="Precio objetivo en euros">
-      <button type="submit">Avisarme</button>
-      <p class="small muted">Gratis y sin registro. Al pulsar «Avisarme» aceptas la <a href="/legal.html#privacidad">política
-        de privacidad</a>: usaremos tu correo solo para este aviso y te das de baja con un clic.</p>
+      <input type="email" id="alert-email" required placeholder="${esc(T.emailPh)}" autocomplete="email" aria-label="${esc(T.emailLabel)}">
+      <input type="number" id="alert-target" min="1" step="1" placeholder="${esc(T.targetPh)}" aria-label="${esc(T.targetLabel)}">
+      <button type="submit">${esc(T.alertBtn)}</button>
+      <p class="small muted">${T.alertLegal}</p>
     </form>
     <p class="small" id="alert-msg" role="status"></p>`;
   after.after(box);
@@ -157,11 +175,10 @@ function verdict(current, best) {
                                                           body: JSON.stringify({ fields }) });
       if (!r.ok) throw new Error(r.status);
       form.hidden = true; open.hidden = true;
-      msg.innerHTML = `<b>¡Hecho!</b> En unos minutos te llegará un correo a ${esc(email)} para confirmar el aviso
-        (mira también en correo no deseado).`;
+      msg.innerHTML = tf(T.alertOk, { email: esc(email) });
     } catch (err) {
       button.disabled = false;
-      msg.textContent = "No se ha podido guardar el aviso. Revisa el correo e inténtalo de nuevo.";
+      msg.textContent = T.alertErr;
     }
   });
 })();

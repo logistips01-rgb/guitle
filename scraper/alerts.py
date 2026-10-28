@@ -19,6 +19,7 @@ import argparse
 import html
 import json
 import os
+import re
 import smtplib
 import ssl
 import sys
@@ -43,16 +44,20 @@ def eur(v):
 
 
 def products():
-    """slug → producto de hoy (nombre, mejor precio y tienda, foto) de todos los catálogos."""
+    """slug → producto de hoy (nombre, mejor precio y tienda, foto) de todos los catálogos. Los de otros países van
+    con su código delante ("pt/<slug>"), igual que los guarda su ficha (producto.js)."""
+    from .intl import SITES, _json_path
     out = {}
-    for path in CATALOGS:
+    paths = [("", path) for path in CATALOGS] + [(code + "/", _json_path(code, kind)) for code in SITES for kind in SITES[code]["kinds"]]
+    for prefix, path in paths:
         try:
             data = json.loads((ROOT / path).read_text(encoding="utf-8"))
         except (FileNotFoundError, json.JSONDecodeError):
             continue
         for p in data["products"]:
             if p.get("slug") and p.get("items"):
-                out[p["slug"]] = {**p, "store_name": data["stores"].get(p["items"][0]["s"], p["items"][0]["s"])}
+                out[prefix + p["slug"]] = {**p, "store_name": data["stores"].get(p["items"][0]["s"], p["items"][0]["s"]),
+                                           "site": prefix.rstrip("/")}
     return out
 
 
@@ -112,17 +117,47 @@ def delete(s, doc_id):
 
 # --- Correos -------------------------------------------------------------------------------------------------
 
-def _page(title, body_html):
-    return f"""<!doctype html><html lang="es"><body style="margin:0;background:#f4f4f2;font-family:Arial,Helvetica,sans-serif;color:#0b0b0b">
+# Textos de los correos: España aquí; los demás países, en scraper.intl (T[...]["mail"]).
+ES = {"tagline": "guitarras al mejor precio",
+      "footer": "guitle compara cada día los precios de las tiendas de música.\nRecibes este correo porque pediste un aviso "
+                "en guitle.com. Responsable: Manuel Lorente Gálvez, hola@guitle.com.",
+      "privacy": "Privacidad", "confirmSubject": "Confirma tu aviso de precio en guitle", "confirmTitle": "Confirma tu aviso de precio",
+      "asked": "Has pedido que te avisemos cuando baje de precio{target}:", "below": " por debajo de <b>{v}</b>",
+      "confirmAsk": "Confirma que quieres recibir el aviso en esta dirección:", "confirmBtn": "Confirmar el aviso",
+      "notYou": "Si no lo has pedido tú, no hagas nada: sin confirmar, el aviso se borra solo en 7 días y no volverás a saber de nosotros.",
+      "dropSubject": "Ha bajado: {name} a {price}", "dropTitle": "¡Ha bajado de precio!", "nowAt": "en {s} · antes {v}",
+      "seeAll": "Ver precios en todas las tiendas",
+      "check": "Los precios cambian a diario: compruébalo en la tienda antes de comprar. ¿Ya no te interesa?",
+      "stop": "Dejar de recibir este aviso"}
+
+
+def _money(code):
+    """Formato del precio: el de España, o el del país del aviso."""
+    if not code:
+        return globals()["eur"]
+    from .intl import money
+    return lambda v: money(v, code)
+
+
+def _site(alert):
+    """(código del país o "", textos, prefijo de la ruta, página de privacidad) según el slug del aviso."""
+    from .intl import SITES, T, _anchor
+    code = alert["slug"].split("/")[0] if "/" in alert["slug"] else ""
+    if code in SITES:
+        return code, T[SITES[code]["t"]]["mail"], f"/{code}", f"/{code}/legal.html#{_anchor(code)}", SITES[code]["lang"][:2]
+    return "", ES, "", "/legal.html#privacidad", "es"
+
+
+def _page(title, body_html, m=ES, privacy="/legal.html#privacidad", lang="es"):
+    return f"""<!doctype html><html lang="{lang}"><body style="margin:0;background:#f4f4f2;font-family:Arial,Helvetica,sans-serif;color:#0b0b0b">
 <div style="max-width:560px;margin:0 auto;padding:24px 16px">
 <p style="margin:0 0 18px"><a href="{SITE}/" style="text-decoration:none"><img src="{SITE}/icons/logo-email.png" width="115" height="42"
 alt="guitle" style="vertical-align:middle;border:0"></a>
-<span style="color:#2a78d6;font-size:13px;font-weight:600;vertical-align:middle"> · guitarras al mejor precio</span></p>
+<span style="color:#2a78d6;font-size:13px;font-weight:600;vertical-align:middle"> · {m["tagline"]}</span></p>
 <div style="background:#fcfcfb;border:1px solid #e2e1dc;border-radius:14px;padding:20px">
 <h1 style="font-size:20px;margin:0 0 12px">{html.escape(title)}</h1>{body_html}</div>
-<p style="color:#7a7974;font-size:12px;line-height:1.5;margin:16px 4px 0">guitle compara cada día los precios de las tiendas de música.
-Recibes este correo porque pediste un aviso en guitle.com. Responsable: Manuel Lorente Gálvez, hola@guitle.com.
-<a href="{SITE}/legal.html#privacidad" style="color:#7a7974">Privacidad</a>.</p></div></body></html>"""
+<p style="color:#7a7974;font-size:12px;line-height:1.5;margin:16px 4px 0">{m["footer"]}
+<a href="{SITE}{privacy}" style="color:#7a7974">{m["privacy"]}</a>.</p></div></body></html>"""
 
 
 def _button(url, label):
@@ -131,35 +166,38 @@ def _button(url, label):
 
 
 def confirm_mail(alert):
-    link = f"{SITE}/alerta.html?c={alert['id']}"
-    target = f" por debajo de <b>{eur(alert['target'])}</b>" if alert.get("target") else ""
-    body = (f'<p style="line-height:1.5">Has pedido que te avisemos cuando baje de precio{target}:</p>'
+    code, m, base, privacy, lang = _site(alert)
+    eur = _money(code)
+    link = f"{SITE}{base}/alerta.html?c={alert['id']}"
+    target = m["below"].format(v=eur(alert["target"])) if alert.get("target") else ""
+    body = (f'<p style="line-height:1.5">{m["asked"].format(target=target)}</p>'
             f'<p style="font-weight:700;line-height:1.4">{html.escape(alert["name"])}</p>'
-            f'<p style="line-height:1.5">Confirma que quieres recibir el aviso en esta dirección:</p>'
-            + _button(link, "Confirmar el aviso")
-            + '<p style="color:#7a7974;font-size:13px;line-height:1.5">Si no lo has pedido tú, no hagas nada: sin confirmar, '
-              'el aviso se borra solo en 7 días y no volverás a saber de nosotros.</p>')
-    text = (f"Has pedido que te avisemos cuando baje de precio: {alert['name']}.\n\nConfirma el aviso: {link}\n\n"
-            "Si no lo has pedido tú, no hagas nada: sin confirmar, el aviso se borra solo en 7 días.")
-    return "Confirma tu aviso de precio en guitle", _page("Confirma tu aviso de precio", body), text, None
+            f'<p style="line-height:1.5">{m["confirmAsk"]}</p>'
+            + _button(link, m["confirmBtn"])
+            + f'<p style="color:#7a7974;font-size:13px;line-height:1.5">{m["notYou"]}</p>')
+    text = (f"{html.unescape(re.sub('<[^>]+>', '', m['asked'].format(target=target)))} {alert['name']}\n\n"
+            f"{m['confirmBtn']}: {link}\n\n{m['notYou']}")
+    return m["confirmSubject"], _page(m["confirmTitle"], body, m, privacy, lang), text, None
 
 
 def drop_mail(alert, p, before):
-    page = f"{SITE}/g/{p['slug']}.html"
-    off = f"{SITE}/alerta.html?baja={alert['id']}"
+    code, m, base, privacy, lang = _site(alert)
+    eur = _money(code)
+    page = f"{SITE}{base}/g/{p['slug']}.html"
+    off = f"{SITE}{base}/alerta.html?baja={alert['id']}"
     best = p["items"][0]
     img = (f'<p style="margin:0 0 12px;text-align:center"><img src="{SITE}/img/p/{html.escape(p["th"])}" alt="" '
            f'style="max-height:180px;max-width:100%"></p>' if p.get("th") else "")
     body = (img + f'<p style="font-weight:700;line-height:1.4;margin:0 0 6px">{html.escape(p["name"])}</p>'
             f'<p style="font-size:28px;font-weight:800;margin:6px 0">{eur(best["p"])}</p>'
-            f'<p style="color:#52514e;margin:0">en {html.escape(p["store_name"])} · antes {eur(before)}</p>'
-            + _button(page, "Ver precios en todas las tiendas")
-            + f'<p style="color:#7a7974;font-size:13px;line-height:1.5;margin-top:14px">Los precios cambian a diario: '
-              f'compruébalo en la tienda antes de comprar. ¿Ya no te interesa? <a href="{off}" style="color:#7a7974">'
-              f'Dejar de recibir este aviso</a>.</p>')
-    text = (f"{p['name']}\nAhora {eur(best['p'])} en {p['store_name']} (antes {eur(before)}).\n\n"
-            f"Precios en todas las tiendas: {page}\n\nDejar de recibir este aviso: {off}")
-    return f"Ha bajado: {p['name']} a {eur(best['p'])}", _page("¡Ha bajado de precio!", body), text, off
+            f'<p style="color:#52514e;margin:0">{m["nowAt"].format(s=html.escape(p["store_name"]), v=eur(before))}</p>'
+            + _button(page, m["seeAll"])
+            + f'<p style="color:#7a7974;font-size:13px;line-height:1.5;margin-top:14px">{m["check"]} <a href="{off}" style="color:#7a7974">'
+              f'{m["stop"]}</a>.</p>')
+    text = (f"{p['name']}\n{eur(best['p'])} · {m['nowAt'].format(s=p['store_name'], v=eur(before))}\n\n"
+            f"{m['seeAll']}: {page}\n\n{m['stop']}: {off}")
+    return (m["dropSubject"].format(name=p["name"], price=eur(best["p"])), _page(m["dropTitle"], body, m, privacy, lang),
+            text, off)
 
 
 class Mailer:
