@@ -396,12 +396,16 @@
   <url><loc>https://guitle.com/tipo/pedal-afinador.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-compresor.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-delay.html</loc></url>
+  <url><loc>https://guitle.com/tipo/pedal-ecualizador.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-looper.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-modulacion.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-multiefectos.html</loc></url>
+  <url><loc>https://guitle.com/tipo/pedal-octavador-y-pitch.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-overdrive-y-distorsion.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-para-bajo.html</loc></url>
+  <url><loc>https://guitle.com/tipo/pedal-puerta-de-ruido.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-reverb.html</loc></url>
+  <url><loc>https://guitle.com/tipo/pedal-sintetizador.html</loc></url>
   <url><loc>https://guitle.com/tipo/pedal-wah-y-volumen.html</loc></url>
   <url><loc>https://guitle.com/tipo/teclado-controlador-midi.html</loc></url>
   <url><loc>https://guitle.com/tipo/teclado-piano-de-escenario.html</loc></url>
@@ -6047,6 +6051,7 @@
   <url><loc>https://guitle.com/g/esp-ltd-alexi-ripped-sawtooth-purple-fade-satin-799493273328.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-alr-ii-qm-stp-andy-laroque-laroquehtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-alr-ii-qm-stp-andy-laroque-oquep41480.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-arrow-1000-candy-apple-red-eredp39642.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-arrow-1000-cars-fluence-fluencehtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-arrow-1000-pw-00pwp44332.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-arrow-1000-pw-w1000pwhtm.html</loc></url>
@@ -6068,7 +6073,10 @@
   <url><loc>https://guitle.com/g/esp-ltd-bb-600-baritone-signature-gnaturehtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-01-ft-black-ftblackhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-01-ft-cbs-01ftcbshtm.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-10-blk-0blkp14517.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-10-blk-ec10blkhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-baritone-chms-onechmshtm.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1000-black-lackp11584.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-cars-719710629080.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-evertune-bb-blks-blksp41710.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000-evertune-bb-blks-ebbblkshtm.html</loc></url>
@@ -6092,13 +6100,14 @@
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000t-qm-charcoal-burst-719710614420.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000vb-duncan-bduncanhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-1000vb-duncan-ncanp14518.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-1007b-evertune-black-neblackhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-200dx-blb-00dxblbhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-200dx-blb-xblbp37667.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-200dx-chb-xchbp37668.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-2025-50th-anniv-mg-ltd-gltdp40924.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-2025-50th-anniv-mg-ltd-ivmgltdhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-2025-mgo-719710628274.html</loc></url>
-  <url><loc>https://guitle.com/g/esp-ltd-ec-256-blk-6blkp11588.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-ec-256-black-satin-atinp14516.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-candy-apple-red-st-edstp36416.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-qm-black-cherry-sb-herrysbhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-ec-256-silver-sunburst-teardrop-719710627642.html</loc></url>
@@ -6124,7 +6133,11 @@
   <url><loc>https://guitle.com/g/esp-ltd-gh-200-blk-gary-holt-aryholthtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gh-200-blk-gary-holt-signature-799493249040.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gh-600-blk-h600blkhtm.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-gh-sv-200-blk-0blkp36415.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-gh-sv-200-blk-v200blkhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-gh-sv-blk-gary-holt-signature-719710619876.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-gl-200k-black-0kblackhtm.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-h-1001-violet-andromeda-satin-atinp39693.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-h-1001fr-blknb-799493268065.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-h-200fm-dark-brown-sb-wnsbp11585.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-h3-1000-qm-stbc-stbcp31679.html</loc></url>
@@ -6169,6 +6182,7 @@
   <url><loc>https://guitle.com/g/esp-ltd-m-400ht-sm-400htsmhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-6b-et-black-metal-ii-metaliihtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-m-7b-ht-black-metal-ii-metaliihtm.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mh-10-black-10blackhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mh-1000-evertune-charcoal-harcoalhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mh-1000-qm-blk-ocean-719710614604.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mh-1000nt-fm-charcoal-burst-719710620308.html</loc></url>
@@ -6185,8 +6199,10 @@
   <url><loc>https://guitle.com/g/esp-ltd-mirage-deluxe-87-turq-turquoise-799493270549.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-msv-1-blk-mike-schleibaum-baump39648.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-msv-1-blk-mike-schleibaum-leibaumhtm.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-azul-cielo-ielop44439.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mt-130-blk-0blkp40084.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mt-130-grey-greyp41803.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-mt-130-sky-blue-skybluehtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mt-i-mick-thomson-blks-msonsightm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mt-i-mick-thomson-obsm-sonobsmhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-mt-i-mick-thomson-signature-black-satin-719710628151.html</loc></url>
@@ -6228,6 +6244,8 @@
   <url><loc>https://guitle.com/g/esp-ltd-th-400-charcoal-metallic-719710629288.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-th-400-cm-th400cmhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-th-400-sm-th400smhtm.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-viper-1000-black-cherry-erryp31682.html</loc></url>
+  <url><loc>https://guitle.com/g/esp-ltd-viper-1000-black-cherry-kcherryhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-viper-1000-vintage-black-geblackhtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-viper-1001-et-chms-1etchmshtm.html</loc></url>
   <url><loc>https://guitle.com/g/esp-ltd-volsung-200-black-satin-cksatinhtm.html</loc></url>
@@ -6284,10 +6302,10 @@
   <url><loc>https://guitle.com/g/evh-5150-series-deluxe-qm-limeade-zest-197955146249.html</loc></url>
   <url><loc>https://guitle.com/g/evh-5150-series-deluxe-qm-pacific-drift-197955146232.html</loc></url>
   <url><loc>https://guitle.com/g/evh-5150-standard-ebony-evh-yellow-717669905323.html</loc></url>
-  <url><loc>https://guitle.com/g/evh-b-frankenstein-relic-series-b-guitarra-eletrica-ricap33105.html</loc></url>
-  <url><loc>https://guitle.com/g/evh-b-frankenstein-relic-series-b-guitarra-eletrica-ricap33106.html</loc></url>
-  <url><loc>https://guitle.com/g/evh-b-frankenstein-relic-series-b-guitarra-eletrica-ricap33107.html</loc></url>
   <url><loc>https://guitle.com/g/evh-custom-shop-wolfgang-swp-gangswphtm.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-frankenstein-relic-series-guitarra-eletrica-ricap33105.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-frankenstein-relic-series-guitarra-eletrica-ricap33106.html</loc></url>
+  <url><loc>https://guitle.com/g/evh-frankenstein-relic-series-guitarra-eletrica-ricap33107.html</loc></url>
   <url><loc>https://guitle.com/g/evh-frankenstein-series-relic-red-717669905378.html</loc></url>
   <url><loc>https://guitle.com/g/evh-frankenstein-series-relic-white-717669905385.html</loc></url>
   <url><loc>https://guitle.com/g/evh-frankie-striped-mn-relic-r-w-b-wrrelichtm.html</loc></url>
@@ -9184,8 +9202,10 @@
   <url><loc>https://guitle.com/g/ltd-ec-1000-duncan-vintage-black-799493261837.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-evertune-bb-799493273298.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-evertune-bb-black-satin-blacksatin.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-ec-1000-fluence-black-uenceblack.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-gold-andromeda-799493273304.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-lh-baritone-chms-719710616387.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-ec-1000-lh-vintage-black-ntageblack.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-piezo-799493259254.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-piezo-see-thru-black-ethrublack.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-ec-1000-qm-see-thru-purple-sunburst-719710614468.html</loc></url>
@@ -9251,6 +9271,7 @@
   <url><loc>https://guitle.com/g/ltd-horizon-ctm-87-black-719710620124.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-iron-cross-lh-snow-white-hsnowwhite.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-iron-cross-signature-james-hetfield-snow-white-840248029605.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-jm-i-deep-blood-moon-con-estuche-719710627451.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-jm-ii-black-shadow-burst-c-estuche-799493269574.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-jr-208-799493269567.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-jr-208-pelham-blue-pelhamblue.html</loc></url>
@@ -9282,6 +9303,7 @@
   <url><loc>https://guitle.com/g/ltd-mh-1000-evertune-charcoal-burst-rcoalburst.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-mh-1000-evertune-fm-719710620292.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-mh-1000nt-bb-719710627758.html</loc></url>
+  <url><loc>https://guitle.com/g/ltd-mh-1000nt-charcoal-burst-rcoalburst.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-mh-17-799493261899.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-mh-400-snow-white-719710629202.html</loc></url>
   <url><loc>https://guitle.com/g/ltd-mh-400m-ns-natural-satin-910807075960.html</loc></url>
@@ -11487,242 +11509,239 @@
   <url><loc>https://guitle.com/g/boss-ad-10-acoustic-preamp-4957054511661.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ad-2-acoustic-preamp-4957054509828.html</loc></url>
   <url><loc>https://guitle.com/g/boss-aw-3-pedal-compacto-4957054053048.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-bb-1x-bass-driver-special-edition-b-itionp4493.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-bc-1x-bass-compressor-special-edition-b-itionp5109.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-bd-2-blues-driver-boss-legend-1997-b-iverbp4287.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-bd-2w-blues-driver-edicion-especial-waza-craft-made-in-japan-b-raftbp4496.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ce-5-chorus-ensemble-boss-legend-1997-b-emiump4289.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ceb-3-bass-chorus-b-para-baixo-baixop4288.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ch-1-super-chorus-boss-legend-1990-b-orusbp3164.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-cp-1x-compressor-special-edition-b-itionp4480.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-dc-2w-dimension-c-chorus-edicion-especial-waza-craft-made-in-japan-b-raftbp9429.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-dd-200-delay-digital-12-modos-ofrecen-amplia-gama-de-delays-32-bits-italp13368.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-dd-3t-delay-digital-boss-legend-1986-b-talbp14200.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-dd-500-delay-digital-b-12-modos-y-sonido-estereo-de-estudio-32-bits-gitalp4481.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-dd-8-delay-digital-b-pedal-iconico-para-italp14201.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-dm-101-delay-machine-b-analogue-stereo-delay-inebp32672.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-dm-2w-delay-edicao-edicion-waza-craft-made-in-japan-b-raftbp4495.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ds-1-distortion-pedal-boss-legend-1978-b-emiump3163.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ds-1-wh-distortion-limited-edition-boss-legend-1978-b-tionp38281.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ds-1w-distortion-edicao-edicion-waza-craft-made-in-japan-b-aftbp29077.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ds-1x-distortion-pedal-special-edition-b-tionbp4514.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ds-2-turbo-distortion-pedal-boss-legend-1987-b-emiump4281.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-eq-200-graphic-eq-b-equalizador-grafico-10-bandas-talbp13369.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ev-1-wl-primeiro-pedal-de-expressao-wireless-bluetooth-midi-do-mundo-x100p25422.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ev-30-b-pedal-volumen-y-expresion-2-canales-a-b-en-aluminio-anaisp5175.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ev-30-b-pedal-volumen-y-expresion-2-canales-a-b-en-aluminio-ladosp5129.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-fv-500h-pedal-volume-expressao-para-guitarras-pedais-e-pedaleiras-fx-rasfxp5124.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-fv-500h-pedal-volume-expressao-para-guitarras-pedais-e-pedaleiras-fx-rasfxp5126.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-fv-500h-pedal-volume-expressao-para-guitarras-pedais-e-pedaleiras-fx-rasfxp5128.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-fz-1w-fuzz-edicao-edicion-waza-craft-made-in-japan-b-aftbp25837.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-fz-1w-fuzz-edicao-edicion-waza-craft-made-in-japan-b-ofuzzp4279.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ga-fc-ex-controlador-de-pedal-expandido-para-boss-katana-y-acoustic-bossp28773.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ga-fc-foot-controller-pedaleira-para-boss-katana-acoustic-singer-b-sbossp5161.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ge-7-equalizer-7-band-boss-legend-1983-b-emiump4278.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-geb-7-bass-equalizer-ecualizador-grafico-de-7-bandas-para-bajo-b-baixop4294.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gk-5-guitar-captador-de-senal-pastilla-dividida-de-guitarra-para-bos-arrap33132.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gk-5b-bass-b-pickup-gk-para-b-boss-gm-800-e-vg-800-b-aixop33131.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gm-800-guitar-synth-b-1-200-sons-70-ritmos-orebp32996.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gt-1000core-pedaleira-mfx-32-bits-96khz-aird-b-irdbp19827.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gx-1-electric-guitar-effects-processor-mais-vendida-do-mundo-b-tarrap3079.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gx-100-procesador-multi-effectos-guitarra-pantalla-tactil-a-color-b-cosmbp2218.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gx-100-procesador-multi-effectos-guitarra-pantalla-tactil-a-color-b-irdbp26950.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-gx-1b-bass-multi-effects-visor-a-cores-new-b-baixop5130.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-hm-2w-heavy-metal-edicion-especial-waza-craft-made-in-japan-b-aftbp25511.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-jb-2-angry-driver-overdrive-distortion-b-rcaobp7470.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ls-2-line-selector-b-selector-de-linea-2-canales-booster-volume-inhabp4334.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-md-200-modulation-b-multi-fx-modelacao-32-bits-cerbp13370.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-md-500-modulation-b-12-modos-28-tipos-modulacao-32-bits-p-guitarra-e-licerp5151.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-me-90-guitar-procesador-multi-effectos-guitarra-b-hersbp1005.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-me-90-guitar-procesador-multi-effectos-guitarra-b-irdbp32802.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ms-3-pedaleira-multi-fx-comutador-efeitos-com-visor-lcd-b-cherbp4478.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-mt-2w-metal-zone-edicion-especial-waza-craft-made-in-japan-b-ariop24272.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-mt-2w-metal-zone-edicion-especial-waza-craft-made-in-japan-b-orcaop4340.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-mt-2w-metal-zone-edicion-especial-waza-craft-made-in-japan-b-raftbp9428.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ns-2-noise-suppressor-boss-legend-1987-b-uidobp4341.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-oc-5-polyphonic-octave-b-avebp19414.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-od-200-hybrid-drive-b-pedal-overdrive-y-distorsion-para-caobp13371.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-od-3-overdrive-boss-legend-1997-b-emiump4343.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-odb-3-bass-overdrive-b-distorcao-para-baixo-baixop4312.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-os-2-overdrive-distortion-2-in-1-boss-legend-1988-b-rcaobp4302.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-ps-6-harmonist-pitch-shifter-b-tricap4297.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-1-loop-station-12-minutos-grabacion-2-entradas-y-2-salidas-b-ereobp5133.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-10r-loop-station-b-2-pistas-estereo-280-patterns-ritmos-3-visores-tmosp14040.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-202-loop-station-b-2-pistas-stereo-ritmos-vocal-multi-fx-b-1-entr-itmosp5134.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-5-loop-station-b-57-patterns-ritmos-usb-pantalla-lcd-tmosp19825.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-500-loop-station-b-2-pistas-stereo-patterns-ritmos-usb-b-1-entrad-tmosp19826.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-505mkii-looper-beatbox-workstation-b-tmosp25527.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-600-loop-station-6-pistas-200-ritmos-2-xlr-mic-inputs-b-hmboxp4275.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rc-600-loop-station-6-pistas-200-ritmos-2-xlr-mic-inputs-b-tmosp25696.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-re-202-space-echo-b-reverb-delay-digital-b-recriacao-roland-re-201-b-erbbp27202.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rv-200-reverb-digital-12-tipos-reverb-32-bits-96khz-b-verbp34161.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rv-500-reverb-digital-21-tipos-reverb-32-bits-96khz-b-italbp5152.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-rv-6-reverb-digital-8-tipos-reverb-32-bits-44-1khz-b-italbp5135.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sd-1-super-overdrive-boss-legend-1981-b-emiump3165.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sd-1w-super-overdrive-edicion-especial-waza-craft-made-in-japan-b-emiump1133.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sd-1w-super-overdrive-edicion-especial-waza-craft-made-in-japan-b-raftbp4498.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sd-1w-super-overdrive-edicion-especial-waza-craft-made-in-japan-b-tionbp4513.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sde-3-dual-digital-delay-inspirado-en-el-iconico-roland-sde-3000-b-elayp37977.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sde-3000-evh-dual-delay-limited-edition-b-evhbp32225.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sl-2-slicer-88-patterns-ritmo-porta-usb-midi-b-rnsbp29399.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sy-1-guitar-synth-b-sintetizador-121-sonidos-y-11-categorias-sonidos-icobp13653.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sy-1000-guitar-synth-b-sintetizador-150-tipos-efeitos-32-bits-b-modo-aixop15508.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-sy-200-guitar-synth-b-sintetizador-171-sonidos-y-12-categorias-sonid-nicop25333.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-te-2-tera-echo-delay-b-para-guitarra-eletrica-emiump4523.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-tr-2-tremolo-boss-legend-1997-b-molobp4298.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-tu-3-chromatic-tuner-afinador-em-pedal-mais-vendido-do-mundo-b-aixobp5139.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-tu-3w-afinador-edicion-especial-waza-craft-made-in-japan-b-raftbp5141.html</loc></url>
-  <url><loc>https://guitle.com/g/boss-b-boss-vo-1-vocoder-b-compacto-multi-aplicacoes-portatil-b-mic-xlr-input-b-orvozp5146.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bb-1x-bass-driver-4957054506551.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-bb-1x-bass-driver-special-edition-itionp4493.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bb1x-pedal-bajo-ssbb1xhtml.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bc-1x-bass-compressor-4957054508678.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-bc-1x-bass-compressor-special-edition-itionp5109.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bc1x-compresor-debajohtml.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bcb30x-pedalera-de-guitarra-4957054518004.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bd-2-4957054037192.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-bd-2-blues-driver-boss-legend-1997-iverbp4287.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bd-2-w-pedal-blues-driver-waza-craft-4957054506513.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bd-2w-blues-driver-4957054510435.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-bd-2w-blues-driver-edicion-especial-waza-craft-made-in-japan-raftbp4496.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bd2-blues-driver-pedal-guitarra-driverhtml.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bf-3-4957054057510.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bf3-316663html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-bp1w-booster-preamp-pedal-de-efectos-4957054520380.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ce-2w-4957054509804.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ce-2w-chorus-761294509807.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ce-5-chorus-ensemble-boss-legend-1997-emiump4289.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ce-5-pedal-guitarra-chorus-ensemble-4957054022815.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ce2w-pedal-de-efecto-efectohtml.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ce5-516661html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ceb-3-bass-chorus-para-baixo-baixop4288.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ceb-3-pedal-de-bajo-4957054036867.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ceb3-316803html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ch-1-super-chorus-boss-legend-1990-orusbp3164.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ch1-4957054015190.html</loc></url>
   <url><loc>https://guitle.com/g/boss-chorus-stereo-ch-1-sstereoch1.html</loc></url>
   <url><loc>https://guitle.com/g/boss-compressor-cp-1x-761294510049.html</loc></url>
   <url><loc>https://guitle.com/g/boss-cp-1x-compressor-r53708html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-cp-1x-compressor-special-edition-itionp4480.html</loc></url>
   <url><loc>https://guitle.com/g/boss-cp1x-pedal-guitarra-4957054510046.html</loc></url>
   <url><loc>https://guitle.com/g/boss-cs-3-4957054012854.html</loc></url>
   <url><loc>https://guitle.com/g/boss-cs3-pedal-compressor-guitarra-osscs3html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dc-2w-dimension-c-4957054513528.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-dc-2w-dimension-c-chorus-edicion-especial-waza-craft-made-in-japan-raftbp9429.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dd-200-4957054514600.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-dd-200-delay-digital-12-modos-ofrecen-amplia-gama-de-delays-32-bits-96khz-italp13368.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dd-200-digital-delay-4957054219086.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-dd-3t-delay-digital-boss-legend-1986-talbp14200.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dd-3t-digital-delay-4957054515065.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dd-500-4957054507275.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-dd-500-delay-digital-12-modos-y-sonido-estereo-de-estudio-32-bits-96khz-gitalp4481.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-dd-8-delay-digital-pedal-iconico-para-italp14201.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dd-8-digital-delay-4957054515058.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dd500-digital-delay-sdd500html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-delay-dm-2w-4957054512484.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dimension-chorus-dc-2w-waza-craft-wwazacraft.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dm-101-delay-machine-4957054519001.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-dm-101-delay-machine-analogue-stereo-delay-inebp32672.html</loc></url>
   <url><loc>https://guitle.com/g/boss-dm-2w-4957054506544.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-dm-2w-delay-edicao-edicion-waza-craft-made-in-japan-raftbp4495.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds-1-4957054008529.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ds-1-distortion-pedal-boss-legend-1978-emiump3163.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ds-1-wh-distortion-limited-edition-boss-legend-1978-tionp38281.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ds-1w-distortion-edicao-edicion-waza-craft-made-in-japan-aftbp29077.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds-1x-4957054506070.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ds-1x-distortion-pedal-special-edition-tionbp4514.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds-2-4957054017811.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ds-2-turbo-distortion-pedal-boss-legend-1987-emiump4281.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds1-pedal-compacto-ossds1html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds1w-waza-distortion-pedal-guitarra-4957054519322.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds1wh-pedal-de-guitarra-legendary-distorsion-edicion-limitada-blanco-4957054522711.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds1x-pedal-distorsion-guitarra-ssds1xhtml.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ds2-pedal-distorsion-guitarra-ossds2html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-eq-200-graphic-eq-equalizador-grafico-10-bandas-talbp13369.html</loc></url>
   <url><loc>https://guitle.com/g/boss-eq-200-graphic-equalizer-4957054514617.html</loc></url>
   <url><loc>https://guitle.com/g/boss-es-5-effects-switching-system-4957054508647.html</loc></url>
   <url><loc>https://guitle.com/g/boss-es-8-effects-switching-system-4957054507190.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ev-1-wl-expression-pedal-4957054517878.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ev-1-wl-primeiro-pedal-de-expressao-wireless-bluetooth-midi-do-mundo-x100p25422.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ev-30-pedal-volumen-y-expresion-2-canales-a-b-en-aluminio-anaisp5175.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ev-30-pedal-volumen-y-expresion-2-canales-a-b-en-aluminio-ladosp5129.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ex-4-effects-expander-pedalera-multiefectos-para-guitarra-4957054523497.html</loc></url>
   <url><loc>https://guitle.com/g/boss-footswich-boss-fs7-4957054506582.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fs5l-pedal-switch-interruptor-4957054081539.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fv-30h-pedal-4957054506599.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-fv-500h-pedal-volume-expressao-para-guitarras-pedais-e-pedaleiras-fx-rasfxp5124.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-fv-500h-pedal-volume-expressao-para-guitarras-pedais-e-pedaleiras-fx-rasfxp5126.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-fv-500h-pedal-volume-expressao-para-guitarras-pedais-e-pedaleiras-fx-rasfxp5128.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fv-500h-pedal-volumen-guitarra-4957054400026.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fv-50h-4957054037260.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fv-50l-4957054037253.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-fz-1w-fuzz-edicao-edicion-waza-craft-made-in-japan-aftbp25837.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-fz-1w-fuzz-edicao-edicion-waza-craft-made-in-japan-ofuzzp4279.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fz-5-pedal-guitarra-ossfz5html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fz1w-fuzz-vintage-pedal-guitarra-4957054518981.html</loc></url>
   <url><loc>https://guitle.com/g/boss-fz5-4957054403560.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ga-fc-ex-controlador-de-pedal-expandido-para-boss-katana-y-acoustic-singer-bossp28773.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ga-fc-foot-controller-pedaleira-para-boss-katana-acoustic-singer-sbossp5161.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gafc-pedalera-control-4957054503093.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gafcex-interruptor-de-pedal-4957054519452.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ge-7-4957054024888.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ge-7-equalizer-7-band-boss-legend-1983-emiump4278.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ge7-716719html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-geb-7-bass-equalizer-ecualizador-grafico-de-7-bandas-para-bajo-baixop4294.html</loc></url>
   <url><loc>https://guitle.com/g/boss-geb-7-pedal-bajo-4957054036881.html</loc></url>
   <url><loc>https://guitle.com/g/boss-geb7-716804html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-gm-800-guitar-synth-1-200-sons-70-ritmos-orebp32996.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gm-800-guitar-synthesizer-4957054518752.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gm800-sintetizador-de-guitarra-3gm800html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gt-100-4957054500085.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gt-1000-057882html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gt-1000-core-e70324html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-gt-1000core-pedaleira-mfx-32-bits-96khz-aird-irdbp19827.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gt1000-pedalera-efectos-4957054512507.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gt1000core-pedalera-multiefectos-4957054516949.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-gx-1-electric-guitar-effects-processor-mais-vendida-do-mundo-tarrap3079.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gx-1-pedalera-multiefectos-4957054520908.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gx-10-pedalera-de-guitarra-4957054522186.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-gx-100-procesador-multi-effectos-guitarra-pantalla-tactil-a-color-cosmbp2218.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-gx-100-procesador-multi-effectos-guitarra-pantalla-tactil-a-color-irdbp26950.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-gx-1b-bass-multi-effects-visor-a-cores-new-baixop5130.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gx-1b-pedalera-multiefectos-bajo-electrico-4957054520915.html</loc></url>
   <url><loc>https://guitle.com/g/boss-gx100-pedal-multiefectos-4957054517809.html</loc></url>
   <url><loc>https://guitle.com/g/boss-hm-2w-heavy-metal-4957054518646.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-hm-2w-heavy-metal-edicion-especial-waza-craft-made-in-japan-aftbp25511.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ir-200-amp-ir-cabinet-4957054517816.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ir2-amp-cabinet-pedal-de-efectos-4957054520397.html</loc></url>
   <url><loc>https://guitle.com/g/boss-jb-02-angry-driver-4957054512330.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-jb-2-angry-driver-overdrive-distortion-rcaobp7470.html</loc></url>
   <url><loc>https://guitle.com/g/boss-lmb-3-bass-limiter-enhacer-036874html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-lmb3-pedal-limitador-4957054036874.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ls-2-line-selector-selector-de-linea-2-canales-booster-volume-inhabp4334.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ls2-4957054022846.html</loc></url>
   <url><loc>https://guitle.com/g/boss-md-2-pedal-mega-distorsion-guitarra-4957054057527.html</loc></url>
   <url><loc>https://guitle.com/g/boss-md-200-modulation-4957054514624.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-md-200-modulation-multi-fx-modelacao-32-bits-cerbp13370.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-md-500-modulation-12-modos-28-tipos-modulacao-32-bits-p-guitarra-eletrica-licerp5151.html</loc></url>
   <url><loc>https://guitle.com/g/boss-md-500-modulation-4957054511272.html</loc></url>
   <url><loc>https://guitle.com/g/boss-md2-216601html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-me-90-guitar-procesador-multi-effectos-guitarra-hersbp1005.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-me-90-guitar-procesador-multi-effectos-guitarra-irdbp32802.html</loc></url>
   <url><loc>https://guitle.com/g/boss-me-90b-pedalera-multiefectos-bajo-4957054520687.html</loc></url>
   <url><loc>https://guitle.com/g/boss-me90-pedalera-multiefectos-4957054520267.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ml-2-pedal-guitarra-metal-core-4957054403553.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ml2-216602html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-mo-2-4957054503765.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ms-3-pedaleira-multi-fx-comutador-efeitos-com-visor-lcd-cherbp4478.html</loc></url>
   <url><loc>https://guitle.com/g/boss-mt-2-metal-zone-4957054020934.html</loc></url>
   <url><loc>https://guitle.com/g/boss-mt-2w-metal-zone-4957054513535.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-mt-2w-metal-zone-edicion-especial-waza-craft-made-in-japan-ariop24272.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-mt-2w-metal-zone-edicion-especial-waza-craft-made-in-japan-orcaop4340.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-mt-2w-metal-zone-edicion-especial-waza-craft-made-in-japan-raftbp9428.html</loc></url>
   <url><loc>https://guitle.com/g/boss-mt2-216598html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-mt2-3a-pedal-guitarra-metal-zone-4957054518615.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ns-2-noise-suppressor-boss-legend-1987-uidobp4341.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ns1x-pedal-noise-compressor-4957054520373.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ns2-pedal-puerta-ruido-4957054017835.html</loc></url>
   <url><loc>https://guitle.com/g/boss-oc-5-octave-e70325html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-oc-5-polyphonic-octave-avebp19414.html</loc></url>
   <url><loc>https://guitle.com/g/boss-oc5-pedal-guitarra-octavador-4957054516932.html</loc></url>
   <url><loc>https://guitle.com/g/boss-od-1x-pedal-guitarra-overdrive-4957054505981.html</loc></url>
   <url><loc>https://guitle.com/g/boss-od-200-4957054514631.html</loc></url>
   <url><loc>https://guitle.com/g/boss-od-200-hybrid-drive-4957054512286.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-od-200-hybrid-drive-pedal-overdrive-y-distorsion-para-caobp13371.html</loc></url>
   <url><loc>https://guitle.com/g/boss-od-3-4957054044220.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-od-3-overdrive-boss-legend-1997-emiump4343.html</loc></url>
   <url><loc>https://guitle.com/g/boss-od3-316600html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-odb-3-bass-overdrive-distorcao-para-baixo-baixop4312.html</loc></url>
   <url><loc>https://guitle.com/g/boss-odb3-pedal-overdrive-4957054035471.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-os-2-overdrive-distortion-2-in-1-boss-legend-1988-rcaobp4302.html</loc></url>
   <url><loc>https://guitle.com/g/boss-os-2-pedal-de-efectos-4957054018290.html</loc></url>
   <url><loc>https://guitle.com/g/boss-os2-216603html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ph-3-pedal-guitarra-4957054053031.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ph3-316662html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-ps-6-harmonist-pitch-shifter-tricap4297.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ps6-pedal-guitarra-4957054413293.html</loc></url>
   <url><loc>https://guitle.com/g/boss-pw-3-4957054507183.html</loc></url>
   <url><loc>https://guitle.com/g/boss-pw-3-wah-pedal-hpedalhtml.html</loc></url>
   <url><loc>https://guitle.com/g/boss-px-1-plugout-fx-4957054521578.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-1-loop-station-12-minutos-grabacion-2-entradas-y-2-salidas-ereobp5133.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rc-1-loop-station-4957054506537.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rc-10r-4957054514235.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-10r-loop-station-2-pistas-estereo-280-patterns-ritmos-3-visores-tmosp14040.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-202-loop-station-2-pistas-stereo-ritmos-vocal-multi-fx-1-entrada-microfo-itmosp5134.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-5-loop-station-57-patterns-ritmos-usb-pantalla-lcd-tmosp19825.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-500-loop-station-2-pistas-stereo-patterns-ritmos-usb-1-entrada-microfono-tmosp19826.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-505mkii-looper-beatbox-workstation-tmosp25527.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-600-loop-station-6-pistas-200-ritmos-2-xlr-mic-inputs-hmboxp4275.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rc-600-loop-station-6-pistas-200-ritmos-2-xlr-mic-inputs-tmosp25696.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rc202-loopstation-4957054504526.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rc5-loop-station-pedal-efectos-4957054516741.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rc500-loop-station-pedal-efectos-4957054516758.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rc505mk2-loop-station-pedalera-4957054516987.html</loc></url>
   <url><loc>https://guitle.com/g/boss-re-2-space-echo-4957054519025.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-re-202-space-echo-reverb-delay-digital-recriacao-roland-re-201-erbbp27202.html</loc></url>
   <url><loc>https://guitle.com/g/boss-re202-space-echo-pedal-guitarra-4957054519018.html</loc></url>
   <url><loc>https://guitle.com/g/boss-roland-fv30l-pedal-de-expresion-4957054506605.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rt-2-rotary-ensemble-4957054520946.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rv-200-reverb-digital-12-tipos-reverb-32-bits-96khz-verbp34161.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rv-500-reverb-4957054511265.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rv-500-reverb-761294511268.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rv-500-reverb-digital-21-tipos-reverb-32-bits-96khz-italbp5152.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rv-6-4957054507282.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-rv-6-reverb-digital-8-tipos-reverb-32-bits-44-1khz-italbp5135.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rv200-reverb-pedal-de-guitarra-4957054520403.html</loc></url>
   <url><loc>https://guitle.com/g/boss-rv6-pedal-reverb-ossrv6html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sd-1-pedal-de-efectos-4957054008505.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sd-1-super-overdrive-boss-legend-1981-emiump3165.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sd-1w-4957054506520.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sd-1w-super-overdrive-4957054512651.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sd-1w-super-overdrive-edicion-especial-waza-craft-made-in-japan-emiump1133.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sd-1w-super-overdrive-edicion-especial-waza-craft-made-in-japan-raftbp4498.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sd-1w-super-overdrive-edicion-especial-waza-craft-made-in-japan-tionbp4513.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sd1-116599html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sd1-b50-anniversary-super-overdrive-pedal-guitarra-4957054521950.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sde-3-dual-digital-delay-4957054520953.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sde-3-dual-digital-delay-inspirado-en-el-iconico-roland-sde-3000-elayp37977.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sde-3000-evh-dual-delay-limited-edition-evhbp32225.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sde-3000d-dual-digital-delay-4957054520304.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sde-3000evh-dual-digital-delay-4957054519827.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sl-2-slicer-519346html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sl-2-slicer-88-patterns-ritmo-porta-usb-midi-rnsbp29399.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sl2-slider-pedal-guitarra-4957054519346.html</loc></url>
   <url><loc>https://guitle.com/g/boss-st-2-power-stack-4957054413309.html</loc></url>
   <url><loc>https://guitle.com/g/boss-st2-pedal-guitarra-ossst2html.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sy-1-guitar-synth-sintetizador-121-sonidos-y-11-categorias-sonidos-icobp13653.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sy-1-synthesizer-4957054514389.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sy-1000-guitar-synth-sintetizador-150-tipos-efeitos-32-bits-modo-gr-300-aixop15508.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sy-1000-guitar-synthesizer-4957054514310.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-sy-200-guitar-synth-sintetizador-171-sonidos-y-12-categorias-sonidos-nicop25333.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sy-200-guitar-synthesizer-ynthesizer.html</loc></url>
   <url><loc>https://guitle.com/g/boss-sy200-pedal-sintetizador-guitarra-4957054518226.html</loc></url>
   <url><loc>https://guitle.com/g/boss-te-2-4957054503291.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-te-2-tera-echo-delay-para-guitarra-eletrica-emiump4523.html</loc></url>
   <url><loc>https://guitle.com/g/boss-tr-2-4957054042653.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-tr-2-tremolo-boss-legend-1997-molobp4298.html</loc></url>
   <url><loc>https://guitle.com/g/boss-tr2-216743html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-tu-3-4957054409661.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-tu-3-chromatic-tuner-afinador-em-pedal-mais-vendido-do-mundo-aixobp5139.html</loc></url>
   <url><loc>https://guitle.com/g/boss-tu-3s-4957054508975.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-tu-3w-afinador-edicion-especial-waza-craft-made-in-japan-raftbp5141.html</loc></url>
   <url><loc>https://guitle.com/g/boss-tu-3w-waza-craft-pedal-guitarra-4957054508968.html</loc></url>
   <url><loc>https://guitle.com/g/boss-tu3-pedal-afinador-guitarra-osstu3html.html</loc></url>
   <url><loc>https://guitle.com/g/boss-vb2w-pedal-vibrato-waza-craft-4957054508654.html</loc></url>
@@ -11735,6 +11754,7 @@
   <url><loc>https://guitle.com/g/boss-ve500-4957054512354.html</loc></url>
   <url><loc>https://guitle.com/g/boss-ve8-acoustic-singer-4957054508821.html</loc></url>
   <url><loc>https://guitle.com/g/boss-vo-1-vocoder-4957054508661.html</loc></url>
+  <url><loc>https://guitle.com/g/boss-vo-1-vocoder-compacto-multi-aplicacoes-portatil-mic-xlr-input-orvozp5146.html</loc></url>
   <url><loc>https://guitle.com/g/boss-xs-1-poly-shifter-4957054519339.html</loc></url>
   <url><loc>https://guitle.com/g/boss-xs-100-poly-shifter-4957054520694.html</loc></url>
   <url><loc>https://guitle.com/g/brand-booster-trompete-gold-matt-7640168845049.html</loc></url>
@@ -12312,7 +12332,6 @@
   <url><loc>https://guitle.com/g/fender-marine-layer-reverb-885978891146.html</loc></url>
   <url><loc>https://guitle.com/g/fender-mirror-image-delay-885978891177.html</loc></url>
   <url><loc>https://guitle.com/g/fender-mtg-tube-distortion-pedal-885978909056.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-panorama-tremolo-arm-chrome-vintage-white-tip-885978760718.html</loc></url>
   <url><loc>https://guitle.com/g/fender-pedalera-downtown-express-bass-multi-ef-885978909049.html</loc></url>
   <url><loc>https://guitle.com/g/fender-pugilist-distortion-885978891160.html</loc></url>
   <url><loc>https://guitle.com/g/fender-pugilist-distortion-v2-885978984961.html</loc></url>
@@ -12334,8 +12353,6 @@
   <url><loc>https://guitle.com/g/fender-tre-verb-tremolo-reverb-885978909070.html</loc></url>
   <url><loc>https://guitle.com/g/fender-tread-light-volume-expression-pedal-885978406104.html</loc></url>
   <url><loc>https://guitle.com/g/fender-tread-light-wah-pedal-885978406098.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-tremoloarm-american-professional-stratocaster-885978895625.html</loc></url>
-  <url><loc>https://guitle.com/g/fender-tremoloarm-original-vintage-stratocaster-717669447946.html</loc></url>
   <url><loc>https://guitle.com/g/fender-waylon-jennings-pedal-phaser-717669922498.html</loc></url>
   <url><loc>https://guitle.com/g/fender-x-hello-kitty-black-fuzz-pedal-edalp41637.html</loc></url>
   <url><loc>https://guitle.com/g/ffx-pedals-sir-reel-4018828006735.html</loc></url>
@@ -12350,9 +12367,6 @@
   <url><loc>https://guitle.com/g/floyd-rose-frt300-original-tremolo-system-gh-835580002539.html</loc></url>
   <url><loc>https://guitle.com/g/floyd-rose-frtnftc-non-fine-tuner-tremolo-system-chrome-835580011333.html</loc></url>
   <url><loc>https://guitle.com/g/floyd-rose-noiseless-tremolo-springs-green-835580015379.html</loc></url>
-  <url><loc>https://guitle.com/g/floyd-rose-original-tremolo-arm-black-835580005547.html</loc></url>
-  <url><loc>https://guitle.com/g/floyd-rose-original-tremolo-arm-chrome-835580005554.html</loc></url>
-  <url><loc>https://guitle.com/g/floyd-rose-push-in-style-tremolo-arm-black-835580008524.html</loc></url>
   <url><loc>https://guitle.com/g/formula-b-edge-echo-verb-geechoverb.html</loc></url>
   <url><loc>https://guitle.com/g/formula-b-fuzz-rangers-uzzrangers.html</loc></url>
   <url><loc>https://guitle.com/g/fortin-kali-pedal-850010140315.html</loc></url>
@@ -13404,7 +13418,7 @@
   <url><loc>https://guitle.com/g/rocktuner-pt1-mini-pedal-tuner-4033685010336.html</loc></url>
   <url><loc>https://guitle.com/g/rodenberg-sl-od-deluxe-steve-lukather-signature-overdrive-distortion-clean-boost-cleanboost.html</loc></url>
   <url><loc>https://guitle.com/g/rodenberg-sl-od-steve-lukather-signature-double-overdrive-clean-boost-cleanboost.html</loc></url>
-  <url><loc>https://guitle.com/g/roland-b-boss-ce-2w-chorus-edicion-especial-waza-craft-made-in-japan-b-raftbp5113.html</loc></url>
+  <url><loc>https://guitle.com/g/roland-boss-ce-2w-chorus-edicion-especial-waza-craft-made-in-japan-raftbp5113.html</loc></url>
   <url><loc>https://guitle.com/g/roland-gr-55s-bk-sintetizador-negro-guitarra-4957054503277.html</loc></url>
   <url><loc>https://guitle.com/g/ross-chorus-650415212583.html</loc></url>
   <url><loc>https://guitle.com/g/ross-distortion-650415212569.html</loc></url>

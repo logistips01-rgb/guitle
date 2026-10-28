@@ -385,12 +385,16 @@ tipo/electrica-t.html
 tipo/pedal-afinador.html
 tipo/pedal-compresor.html
 tipo/pedal-delay.html
+tipo/pedal-ecualizador.html
 tipo/pedal-looper.html
 tipo/pedal-modulacion.html
 tipo/pedal-multiefectos.html
+tipo/pedal-octavador-y-pitch.html
 tipo/pedal-overdrive-y-distorsion.html
 tipo/pedal-para-bajo.html
+tipo/pedal-puerta-de-ruido.html
 tipo/pedal-reverb.html
+tipo/pedal-sintetizador.html
 tipo/pedal-wah-y-volumen.html
 tipo/teclado-controlador-midi.html
 tipo/teclado-piano-de-escenario.html
