@@ -62,19 +62,20 @@
   .logo .i::before { content: ""; position: absolute; left: 50%; top: -.06em; width: .36em; height: .36em; transform: translateX(-50%);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -80 80 82'%3E%3Cpath fill='%232a78d6' d='M0 0C-12-10-38-30-38-52C-38-70-20-78 0-78C20-78 38-70 38-52C38-30 12-10 0 0Z'/%3E%3C/svg%3E") no-repeat center / contain; }
 
-  .hero { text-align: center; padding: 40px 0 28px; }
-  .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.1; letter-spacing: -.02em; margin: 0 0 10px; }
+  .hero { text-align: center; padding: 34px 0 28px; }
+  .logo.mark { gap: 16px; margin-bottom: 14px; }
+  .logo.mark img { width: 84px; height: 84px; }
+  .logo.mark .word { font-size: 5rem; letter-spacing: -.045em; }
+  @media (max-width: 520px) { .logo.mark { gap: 12px; } .logo.mark img { width: 58px; height: 58px; } .logo.mark .word { font-size: 3.4rem; } }
+  .hero h1 { font-size: clamp(1.3rem, 3.6vw, 1.7rem); line-height: 1.2; letter-spacing: -.02em; margin: 0 0 22px; font-weight: 700; }
   .hero h1 span { color: var(--accent); }
   .hero p { color: var(--text-secondary); font-size: 1.08rem; margin: 0 auto 22px; max-width: 620px; }
   .search { display: flex; max-width: 640px; margin: 0 auto; background: var(--surface-1); border: 1px solid var(--border); border-radius: 999px; padding: 5px; }
   .search:focus-within { border-color: var(--accent); }
   .search input { flex: 1; border: 0; background: none; font: inherit; font-size: 1.08rem; padding: 10px 16px; color: var(--text-primary); outline: none; min-width: 0; }
   .search button { border: 0; border-radius: 999px; background: var(--accent); color: #fff; font: inherit; font-weight: 600; padding: 10px 20px; cursor: pointer; }
-  .quick { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 14px; }
-  .quick a { text-decoration: none; font-size: .9rem; padding: 5px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface-1); color: var(--text-secondary); }
-  .quick a:hover { border-color: var(--accent); color: var(--accent); }
-  .stats { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; margin-top: 26px; color: var(--text-muted); font-size: .92rem; }
-  .stats strong { display: block; font-size: 1.5rem; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .stats { display: flex; gap: 16px; color: var(--text-muted); font-size: .9rem; white-space: nowrap; }
+  .stats strong { color: var(--text-primary); font-size: 1.05rem; font-variant-numeric: tabular-nums; margin-right: 4px; }
 
   section { margin-top: 34px; }
   .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
@@ -105,7 +106,7 @@
   .catcard svg.fill { fill: currentColor; stroke: none; overflow: visible; }
   a.catcard b { color: var(--accent); }
   .catcard span { display: block; font-weight: 600; font-size: .92rem; }
-  .catcard small { color: var(--text-muted); font-size: .78rem; }
+  .catcard small { color: var(--text-muted); font-size: .78rem; white-space: nowrap; }
   .catcard.soon { opacity: .55; pointer-events: none; }
   a.catcard:hover { border-color: var(--accent); }
   .placeholder { color: var(--text-muted); grid-column: 1 / -1; padding: 10px 0; }
@@ -130,30 +131,18 @@
 <body>
 <main>
   <header class="top">
-    <a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a>
+    <div class="stats" id="stats"></div>
     <nav><a href="catalogo.html">Catálogo</a><a href="chollos.html">Chollos</a><a href="guitarras.html">Seguimiento</a></nav>
   </header>
 
   <div class="hero">
+    <a class="logo mark" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="word">gu<span class="i">ı</span>tle</span></a>
     <h1>Tu guitarra, <span>al mejor precio</span></h1>
-    <p>Comparamos cada mañana las principales tiendas de Europa y te enseñamos dónde está más barata, cómo ha cambiado su precio y qué cupones hay activos. Guitarras ahora; bajos, amplis, pedales, teclados y micros, muy pronto.</p>
     <form class="search" action="catalogo.html" method="get" role="search">
       <input name="q" type="search" placeholder="Busca: tele negra, strat, les paul, casino…" aria-label="Buscar guitarra" autocomplete="off">
       <button type="submit">Buscar</button>
     </form>
-    <div class="quick">
-      <a href="catalogo.html?q=telecaster">Telecaster</a><a href="catalogo.html?q=stratocaster">Stratocaster</a>
-      <a href="catalogo.html?q=les%20paul">Les Paul</a><a href="catalogo.html?brand=Epiphone">Epiphone</a>
-      <a href="catalogo.html?brand=Ibanez">Ibanez</a><a href="catalogo.html?brand=Gibson">Gibson</a>
-      <a href="guitarras.html?v=B">Ver comparador</a>
-    </div>
-    <div class="stats" id="stats"></div>
   </div>
-
-  <section>
-    <div class="sec-head"><h2>Explora por categoría</h2></div>
-    <div class="cats" id="cats"></div>
-  </section>
 
   <section>
     <div class="sec-head"><h2>Chollos de hoy</h2><span><a href="black-friday.html">Black Friday</a> · <a href="chollos.html">Ver todos →</a></span></div>
@@ -163,6 +152,11 @@
   <section id="drops-sec" hidden>
     <div class="sec-head"><h2>Han bajado de precio</h2><a href="guitarras.html">Ver todas →</a></div>
     <div class="row" id="drops"></div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Explora por categoría</h2></div>
+    <div class="cats" id="cats"></div>
   </section>
 
 
@@ -216,8 +210,7 @@ load("data/latest.json").then(latest => {
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
 
   document.getElementById("stats").innerHTML =
-    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong id="n-stores">${activeStores.length}</strong>tiendas</span>` +
-    `<span><strong>${new Date(latest.updated).toLocaleDateString("es-ES", { day: "numeric", month: "short", timeZone: "Europe/Madrid" })}</strong>última revisión</span>`;
+    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong id="n-stores">${activeStores.length}</strong>tiendas</span>`;
   document.getElementById("updated").textContent =
     `Datos actualizados el ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
   document.getElementById("stores").innerHTML = activeStores.map(s => `<span>${esc(s.name)}</span>`).join("");
@@ -254,11 +247,11 @@ load("data/latest.json").then(latest => {
   Promise.all(Object.entries(CATALOG_PAGES).map(([id, [, src]]) => load(src).then(cat => {
     const n = cat.products.length;
     Object.keys(cat.stores || {}).forEach(s => { if (!isRef[s]) catStores.add(s); });
-    document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES")} productos` : "próximamente";
+    document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES", { useGrouping: "always" })} productos` : "próximamente";
     return n;
   }).catch(() => { document.querySelector(`#cat-${id} small`).textContent = "próximamente"; return 0; })))
     .then(ns => {
-      document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES");
+      document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES", { useGrouping: "always" });
       document.getElementById("n-stores").textContent = catStores.size;
     });
 
