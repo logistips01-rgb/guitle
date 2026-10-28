@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="guitle">
+<meta name="theme-color" content="#2a78d6">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="fonts/inter.css">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>Pedales de efectos · guitle</title>
+<link rel="canonical" href="https://guitle.com/pedales.html">
+<script src="vendor/chart.umd.min.js"></script>
+<link rel="stylesheet" href="catalogo.css">
+</head>
+<body data-src="data/catalog/equipo/pedales.json" data-history="data/catalog/equipo/history.json" data-kind="pedal">
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a></h1>
+      <a class="navlink" href="guitarras.html">Seguimiento</a>
+    </div>
+    <nav class="sections" aria-label="Secciones"><a href="catalogo.html">Eléctricas</a><a href="acusticas.html">Acústicas</a><a href="clasicas.html">Clásicas</a><a href="teclados.html">Teclados</a><a href="pedales.html" class="on">Pedales</a></nav>
+    <input class="search" id="q" type="search" placeholder="Busca pedales: modelo, marca, efecto…" autocomplete="off" aria-label="Buscar">
+    <div class="chips" id="types"></div>
+    <div class="filters">
+      <select id="brand" aria-label="Marca"></select>
+      <select id="range" aria-label="Precio">
+        <option value="">Cualquier precio</option><option value="0-50">Hasta 50 €</option><option value="50-100">50 – 100 €</option><option value="100-200">100 – 200 €</option><option value="200-400">200 – 400 €</option><option value="400-">Más de 400 €</option>
+      </select>
+      <select id="show" aria-label="Mostrar">
+        <option value="">Todos</option><option value="multi">En varias tiendas</option><option value="stock">En stock</option><option value="low">En su precio mínimo</option>
+      </select>
+    </div>
+  </div>
+  <div class="meta"><span id="meta">Cargando catálogo…</span>
+    <label>Orden <select id="sort"><option value="stores">Más tiendas</option><option value="price">Precio más bajo</option><option value="price-desc">Precio más alto</option><option value="save">Mayor ahorro entre tiendas</option><option value="name">Nombre</option></select></label>
+  </div>
+  <div id="grid" class="grid"></div>
+  <button class="more hidden" id="more">Ver más</button>
+  <footer class="site-foot">
+    <span>Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span>
+    <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+  </footer>
+</main>
+<div class="sheet-bg" id="bg"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+<script src="catalogo.js"></script>
+<script src="/c.js" defer></script>
+</body>
+</html>

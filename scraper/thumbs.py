@@ -155,7 +155,8 @@ def wanted():
     for path in sorted((ROOT / "data" / "catalog").rglob("offers.json")):
         for o in load(path, {}).values():
             if o.get("status") == "ok" and o.get("image"):
-                out.setdefault(o["image"], True)
+                # Las guitarras se ponen en vertical; teclados y pedales se dejan como vienen.
+                out.setdefault(o["image"], (o.get("kind") or "electrica") in {"electrica", "acustica", "clasica"})
     return out
 
 

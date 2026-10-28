@@ -17,7 +17,12 @@ const TYPE_ORDERS = {
   electrica: ["ST", "T", "Single cut", "Double cut", "Semihueca", "Offset / Retro", "Moderna / Metal", "Otras"],
   acustica: ["Dreadnought", "Auditorio / Concierto", "Jumbo", "Parlor", "12 cuerdas", "Tamaño reducido", "Roundback", "Otras"],
   clasica: ["Clásica", "Flamenca", "Electroclásica", "Tamaño reducido", "Otras"],
+  teclado: ["Piano digital", "Teclado portátil", "Piano de escenario", "Sintetizador", "Controlador MIDI", "Piano acústico", "Otras"],
+  pedal: ["Overdrive y distorsión", "Delay", "Reverb", "Modulación", "Compresor", "Wah y volumen", "Looper", "Afinador",
+          "Multiefectos", "Para bajo", "Otras"],
 };
+// Cómo se llama lo que hay en cada catálogo (recuento y mensajes).
+const MANY = { teclado: "teclados", pedal: "pedales" }[CFG.kind] || "guitarras";
 const TYPE_ORDER = TYPE_ORDERS[CFG.kind] || TYPE_ORDERS.electrica;
 
 async function load(path) {
@@ -107,13 +112,13 @@ function render() {
   const list = catalog.products.filter(matches).sort(SORTS[state.sort] || SORTS.stores);
   const grid = document.getElementById("grid");
   grid.innerHTML = list.length ? list.slice(0, state.shown).map(tile).join("")
-    : '<p class="empty">No hay guitarras con esos filtros.</p>';
+    : `<p class="empty">No hay ${MANY} con esos filtros.</p>`;
   const more = document.getElementById("more");
   more.classList.toggle("hidden", list.length <= state.shown);
   more.textContent = `Ver más (${list.length - state.shown} restantes)`;
   const multi = catalog.products.filter(p => p.nStores > 1).length;
   document.getElementById("meta").textContent =
-    `${list.length.toLocaleString("es-ES")} de ${catalog.products.length.toLocaleString("es-ES")} guitarras · ${multi.toLocaleString("es-ES")} comparables en varias tiendas · actualizado ${new Date(catalog.updated).toLocaleDateString("es-ES", { day: "numeric", month: "short" })}`;
+    `${list.length.toLocaleString("es-ES")} de ${catalog.products.length.toLocaleString("es-ES", { useGrouping: "always" })} ${MANY} · ${multi.toLocaleString("es-ES")} comparables en varias tiendas · actualizado ${new Date(catalog.updated).toLocaleDateString("es-ES", { day: "numeric", month: "short" })}`;
 }
 
 let typing;

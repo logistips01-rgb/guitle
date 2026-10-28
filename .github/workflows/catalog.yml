@@ -20,12 +20,13 @@ concurrency:
 jobs:
   catalog:
     # Un catálogo detrás de otro (max-parallel 1): cada tienda recibe como mucho una petición cada 3-6 s.
-    # electrica → data/catalog/ ; acustica → data/catalog/acusticas/ (acústicas y clásicas en una sola lectura)
+    # electrica → data/catalog/ ; acustica → data/catalog/acusticas/ (acústicas y clásicas en una sola lectura) ;
+    # equipo → data/catalog/equipo/ (teclados y pedales)
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
-        cat: [electrica, acustica]
+        cat: [electrica, acustica, equipo]
     runs-on: ubuntu-latest
     timeout-minutes: 355
     steps:

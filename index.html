@@ -234,7 +234,9 @@ load("data/latest.json").then(latest => {
   // Secciones del catálogo amplio: página y datos propios (el recuento llega al cargar cada JSON).
   const CATALOG_PAGES = { guitarra: ["catalogo.html", "data/catalog/products.json"],
                           acustica: ["acusticas.html", "data/catalog/acusticas/acusticas.json"],
-                          clasica: ["clasicas.html", "data/catalog/acusticas/clasicas.json"] };
+                          clasica: ["clasicas.html", "data/catalog/acusticas/clasicas.json"],
+                          teclado: ["teclados.html", "data/catalog/equipo/teclados.json"],
+                          pedal: ["pedales.html", "data/catalog/equipo/pedales.json"] };
   document.getElementById("cats").innerHTML = CATS.map(([id, label]) => {
     const icon = `<svg class="fill" viewBox="0 0 24 24" aria-hidden="true">${ICONS[id]}</svg>`;
     if (CATALOG_PAGES[id]) return `<a class="catcard" id="cat-${id}" href="${CATALOG_PAGES[id][0]}"><b>${icon}</b><span>${label}</span><small>…</small></a>`;
@@ -249,7 +251,7 @@ load("data/latest.json").then(latest => {
     const n = cat.products.length;
     Object.keys(cat.stores || {}).forEach(s => { if (!isRef[s]) catStores.add(s); });
     document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES", { useGrouping: "always" })} productos` : "próximamente";
-    return n;
+    return ["guitarra", "acustica", "clasica"].includes(id) ? n : 0;  // arriba solo cuentan las guitarras
   }).catch(() => { document.querySelector(`#cat-${id} small`).textContent = "próximamente"; return 0; })))
     .then(ns => {
       document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES", { useGrouping: "always" });

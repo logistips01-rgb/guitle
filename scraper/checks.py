@@ -16,7 +16,8 @@ from statistics import median
 
 ROOT = Path(__file__).resolve().parent.parent
 FILES = {"electrica": "data/catalog/products.json", "acustica": "data/catalog/acusticas/acusticas.json",
-         "clasica": "data/catalog/acusticas/clasicas.json"}
+         "clasica": "data/catalog/acusticas/clasicas.json", "teclado": "data/catalog/equipo/teclados.json",
+         "pedal": "data/catalog/equipo/pedales.json"}
 LOW = 0.75  # por debajo del 75 % de la mediana de las demás tiendas, se revisa
 
 
@@ -32,6 +33,8 @@ def _published(path):
 def check():
     issues = []
     for kind, path in FILES.items():
+        if not (ROOT / path).exists():
+            continue  # catálogo nuevo que aún no se ha leído
         products = json.loads((ROOT / path).read_text(encoding="utf-8"))["products"]
         before = {p["id"]: p for p in _published(path)}
         for p in products:

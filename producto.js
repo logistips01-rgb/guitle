@@ -33,7 +33,7 @@ function daily(series) {
 
 function verdict(current, best) {
   const n = best.length;
-  if (n < 7) return { cls: "wait", text: `Llevamos ${n} ${n === 1 ? "día" : "días"} siguiendo esta guitarra`,
+  if (n < 7) return { cls: "wait", text: `Llevamos ${n} ${n === 1 ? "día" : "días"} siguiendo este modelo`,
                       sub: "El veredicto será más fiable con unas semanas de histórico." };
   const last30 = best.slice(-30).map(x => x[1]).filter(v => v != null);
   const avg = last30.reduce((a, b) => a + b, 0) / last30.length;
@@ -89,7 +89,7 @@ function verdict(current, best) {
     ].map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join("");
   }
   const note = document.getElementById("chart-note");
-  note.textContent = days.length ? `Seguimos esta guitarra desde el ${fmtDay(days[0])}.` : "Aún no hay histórico de precios.";
+  note.textContent = days.length ? `Seguimos este modelo desde el ${fmtDay(days[0])}.` : "Aún no hay histórico de precios.";
   if (days.length < 2 || !window.Chart) { document.querySelector(".chart-box").classList.add("hidden"); return; }
   const datasets = Object.entries(series).map(([store, pts]) => ({
     label: names[store] || "PVP oficial", stepped: true, borderWidth: 1.5, pointRadius: 0,
