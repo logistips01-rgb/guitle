@@ -286,5 +286,77 @@
   "slug": "yamaha-fgx820c-natural-4957812668668",
   "price": 469.0,
   "median": 676.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Dunlop EP103 Echoplex Delay",
+  "slug": "dunlop-ep103-echoplex-delay-710137096622",
+  "price": 171.0,
+  "median": 239.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Dunlop JDF2 Fuzz Face",
+  "slug": "dunlop-jdf2-fuzz-face-710137006508",
+  "price": 128.0,
+  "median": 194.2
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Electro Harmonix Nano Battalion Bass PRE-DRIVE",
+  "slug": "electro-harmonix-nano-battalion-bass-pre-drive-683274012186",
+  "price": 99.0,
+  "median": 147.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Electro-Harmonix Little Big Muff Pi",
+  "slug": "electro-harmonix-little-big-muff-pi-683274010496",
+  "price": 62.0,
+  "median": 87.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Blackstar LT-DIST",
+  "slug": "blackstar-lt-dist-845644002405",
+  "price": 44.0,
+  "median": 84.55
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender Hammertone Distortion",
+  "slug": "fender-hammertone-distortion-885978739103",
+  "price": 53.0,
+  "median": 81.24
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender The Trapper Dual Fuzz",
+  "slug": "fender-the-trapper-dual-fuzz-885978054725",
+  "price": 109.0,
+  "median": 176.5
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Joyo JF32 Hot Plexi",
+  "slug": "joyo-jf32-hot-plexi-6972716320229",
+  "price": 21.0,
+  "median": 43.75
  }
 ]
