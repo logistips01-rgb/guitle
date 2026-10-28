@@ -841,7 +841,7 @@ epiphone-es-335-figured-raspberry-tea-burst-711106045122
 epiphone-es-335-figured-rtb-uredrtbhtm
 epiphone-es-335-ig-original-es-cherry-711106043999
 epiphone-es-335-olive-drab-711106144702
-epiphone-es-335-vintage-sunburst-w-case-stwcasehtm
+epiphone-es-335-vintage-sunburst-711106044019
 epiphone-es-335-vsb-lh-35vsblhhtm
 epiphone-es-335-vsb-s335vsbhtm
 epiphone-es-339-ch-h655091htm
@@ -851,7 +851,6 @@ epiphone-es-339-vintage-sunburst-711106042367
 epiphone-es-339-vsb-s339vsbhtm
 epiphone-es-345-varitone-stop-tail-eb-711106150826
 epiphone-es-355-dragonfly-shift-711106235974
-epiphone-es335-vintage-sunburst-711106044019
 epiphone-explorer-80s-emg-classic-white-icwhitehtm
 epiphone-explorer-80s-emg-cw-711106166360
 epiphone-explorer-80s-emg-eb-711106166377
@@ -2293,16 +2292,16 @@ fender-squier-stratocaster-affinity-hss-charcoal-frost-metallic-llicp25047
 fender-standard-stratocaster-hss-lr-black-885978118090
 fender-standard-stratocaster-hss-lr-candy-cola-885978118076
 fender-standard-stratocaster-hss-mn-aqua-marine-metallic-885978118052
-fender-standard-stratocaster-lr-3-tone-sunburst-885978117901
+fender-standard-stratocaster-lr-3-color-sunburst-885978117901
 fender-standard-stratocaster-lr-aqua-marine-metallic-885978117925
 fender-standard-stratocaster-lrl-fiesta-red-197955199894
 fender-standard-stratocaster-mn-black-197955199863
 fender-standard-stratocaster-mn-candy-cola-885978117871
-fender-standard-stratocaster-mn-owt-885978117857
+fender-standard-stratocaster-mn-olympic-white-885978117857
 fender-standard-telecaster-lr-3-color-sunburst-885978118151
+fender-standard-telecaster-lr-olympic-white-885978118212
 fender-standard-telecaster-mn-aqua-marine-metallic-885978118113
 fender-standard-telecaster-mn-butterscotch-blonde-885978118137
-fender-standard-telecaster-olympic-white-885978118212
 fender-steve-lacy-people-pleaser-stratocaster-mn-chaos-burst-717669748784
 fender-stevie-ray-vaughan-stratocaster-pf-3-color-sunburst-717669010195
 fender-stories-collection-eric-johnson-1954-virginia-stratocaster-mn-2-color-sun-885978311675
@@ -2508,11 +2507,11 @@ gibson-les-paul-standard-50s-faded-vintage-honey-burst-711106158280
 gibson-les-paul-standard-50s-faded-vintage-tobacco-burst-711106158037
 gibson-les-paul-standard-50s-figured-top-60s-cherry-711106139067
 gibson-les-paul-standard-50s-figured-top-blueberry-burst-711106139098
+gibson-les-paul-standard-50s-figured-top-heritage-cherry-sunburst-711106035536
 gibson-les-paul-standard-50s-figured-top-honey-amber-711106139050
 gibson-les-paul-standard-50s-figured-top-ocean-blue-711106139074
 gibson-les-paul-standard-50s-figured-top-tobacco-burst-711106035529
 gibson-les-paul-standard-50s-goldtop-711106035543
-gibson-les-paul-standard-50s-heritage-cherry-sunburst-711106035536
 gibson-les-paul-standard-50s-p-90-goldtop-711106035581
 gibson-les-paul-standard-50s-plain-top-ebony-711106138930
 gibson-les-paul-standard-60s-double-trouble-vintage-cherry-sunburst-711106168883
@@ -2993,7 +2992,7 @@ ibanez-az24047-bk-black-4549763280084
 ibanez-az2407f-bsr-brownish-sphalerite-4549763335050
 ibanez-az2407f-sde-sodalite-4549763335067
 ibanez-az24p1qm-dob-4549763352941
-ibanez-az24s1f-tks-4549763363527
+ibanez-az24s1f-tks-transparent-black-sunburst-4549763363527
 ibanez-az24s1f-txb-transparent-turquoise-burst-4549763363534
 ibanez-az24s1f-vls-violin-sunburst-4549763363541
 ibanez-az24s2-bk-s2bkp42691
@@ -3286,7 +3285,7 @@ ibanez-rg550-dy-genesis-desert-sun-yellow-4515110016125
 ibanez-rg550-eb-genesis-electric-blue-4515110016149
 ibanez-rg550-grf-4549763380111
 ibanez-rg550-pn-genesis-purple-neon-4515110016187
-ibanez-rg550-rf-4515276628538
+ibanez-rg550-rf-genesis-road-flare-red-4515276628538
 ibanez-rg550-whf-4549763380128
 ibanez-rg550l-dy-genesis-desert-sun-yellow-4549763072276
 ibanez-rg550l-rf-road-flare-red-4549763367891

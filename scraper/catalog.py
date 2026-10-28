@@ -940,10 +940,12 @@ def build(offers=None, history=None):
     curated, store_names, sku_by_ean, curated_info = _curated_offers()
     manual, manual_names = _manual_offers()
     names = {s: SOURCES[s]["name"] for s in SOURCES} | store_names | manual_names
-    # Fichas que ya están en seguimiento (con su EAN): no se duplican desde el catálogo.
+    # Una ficha sin EAN que ya está en seguimiento (Thomann) saldría duplicada: se deja solo la de seguimiento.
+    # Las que tienen EAN se quedan (traen la foto); la de seguimiento no se repite en la misma tienda.
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
-        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind and o["url"] not in followed]
+        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind
+                and (o.get("ean") or o["url"] not in followed)]
         # Las tiendas de seguimiento (products.json) son de eléctricas.
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" else ({}, {}, {})
         products = _products(kind, mine, history, *extra)
