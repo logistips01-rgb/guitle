@@ -170,9 +170,9 @@ charvel-pro-mod-so-cal-1-hh-ht-mpl-natural-ash-885978434015
 charvel-pro-mod-so-cal-1-hsh-slime-green-885978726455
 charvel-pro-mod-so-cal-hh-fr-3tsb-3tsbp43347
 charvel-pro-mod-so-cal-hh-fr-3tsb-hfr3tsbhtm
-charvel-pro-mod-so-cal-hh-fr-satin-primer-gray-717669550660
 charvel-pro-mod-so-cal-hss-fr-frd-ssfrfrdhtm
 charvel-pro-mod-so-cal-st-2-hh-2pt-bka-h2ptbkahtm
+charvel-pro-mod-so-cal-style-1-hh-fr-e-eb-satin-primer-gray-717669550660
 charvel-pro-mod-so-cal-style-1-hh-fr-m-mn-ib-717669869786
 charvel-pro-mod-so-cal-style-1-hh-fr-mn-gloss-black-885978434039
 charvel-pro-mod-so-cal-style-1-hh-fr-mn-natural-ash-885978435586
@@ -2232,7 +2232,6 @@ fender-squier-affinity-tele-lake-pl-blue-bluep24741
 fender-squier-classic-vibe-70-jaguar-black-885978064861
 fender-squier-classic-vibe-70-jazzmaster-vintage-blonde-ltd-885978766543
 fender-squier-classic-vibe-70-stratocaster-hss-mn-oxblood-197955248035
-fender-squier-classic-vibe-70-telecaster-thinline-natural-885978064540
 fender-squier-cv-50s-strat-ht-mn-ppg-shp-gshpp40952
 fender-squier-cv-50s-strat-mn-fr-mnfrp44671
 fender-squier-cv-50s-strat-mn-whb-nwhbp44707
@@ -3174,8 +3173,8 @@ ibanez-lb1-vl-lari-basilio-violet-4549763288974
 ibanez-lb1-wh-lari-basilio-white-4549763344960
 ibanez-lgb30-george-benson-nt-4515276765493
 ibanez-lgb30-vys-4515276599494
+ibanez-lgb300-george-benson-vys-4515110781634
 ibanez-lgb300-vys-606559749874
-ibanez-lgb300-vys-george-benson-signature-4515110781634
 ibanez-lm1-lwh-luca-mantovanelli-luna-white-4549763344687
 ibanez-lm10-mgr-4549763382108
 ibanez-ltd-rgdr61g-wh-4549763399809
@@ -3447,6 +3446,7 @@ jackson-js-series-dinky-minion-js1xm-mn-bubble-gum-pink-885978919642
 jackson-js-series-js20-dkq-2pt-tr-blu-885978000333
 jackson-js-series-js32-dkap-tr-blk-717669999476
 jackson-js-series-js32-dkap-tr-blk-brst-717669999445
+jackson-js-series-rhoads-js32-satin-gray-885978977109
 jackson-js-series-rhoads-js32-zurda-sg-885978977215
 jackson-js-series-rr-minion-js1xm-mn-snow-white-with-black-pin-stripes-885978919680
 jackson-js-series-surfcaster-js22-ht-negro-brillante-885978527397
@@ -3490,7 +3490,6 @@ jackson-js32-king-v-white-black-bevels-885978976935
 jackson-js32-rhoads-black-white-bevels-885978977123
 jackson-js32-rhoads-ivory-885978977116
 jackson-js32-rhoads-mah-natural-885978752256
-jackson-js32-rhoads-satin-gray-885978977109
 jackson-js32-warrior-black-white-bevels-885978977079
 jackson-js32l-dinky-dka-bb-885978977222
 jackson-js32q-dka-ht-dinky-transparent-black-burst-885978762439
@@ -3662,11 +3661,6 @@ jet-jt350-relic-sb-sunburst-relic-3831120911498
 jet-jt350-sbr-sunburst-3831120909891
 jet-jt450-qtpk-rosa-transparente-3831120909280
 kramer-baretta-hot-rod-blue-sparkle-with-flames-711106051833
-larry-carlton-h7-black-810046133446
-larry-carlton-h7-cherry-sunburst-810046132975
-larry-carlton-h7-see-through-red-855159008946
-larry-carlton-h7-vintage-sunburst-855159008939
-larry-carlton-h7-white-810046133453
 larry-carlton-h7t-cherry-sunburst-810046138922
 larry-carlton-h7v-black-810046134764
 larry-carlton-h7v-cherry-sunburst-810046134740
@@ -3675,6 +3669,7 @@ larry-carlton-l7v-gold-top-810046134726
 larry-carlton-s7-hss-new-gen-white-mn-hitemnhtml
 larry-carlton-s7-new-gen-black-rw-810187570865
 larry-carlton-s7fm-lh-transparent-blue-810046135068
+larry-carlton-sire-h7-white-810046133453
 ltd-alexi-hexed-sawtooth-799493276749
 ltd-alr-ii-see-thru-purple-con-estuche-719710627468
 ltd-arrow-1000-candy-apple-red-satin-719710627727
@@ -4642,7 +4637,11 @@ schecter-trad-pro-maple-tblb-810051473070
 schecter-trad-van-nuys-g-nat-ash-gna-810051470871
 schecter-ultra-iii-ivyp-815447024546
 schecter-ultra-iii-v-blue-81544700908
+sire-guitarras-h7-stratocaster-larry-carlton-855159008946
+sire-guitarras-h7-vs-larry-carlton-vin-sun-855159008939
+sire-h7-cherry-sunburst-810046132975
 sire-h7-cs-cherry-sunburst-lefthand-810046135327
+sire-h7-negra-810046133446
 sire-h7f-black-810046138946
 sire-h7f-str-red-810046138953
 sire-h7f-tobacco-burst-810046138960
@@ -4948,6 +4947,7 @@ squier-sonic-stratocaster-mn-black-717669815646
 squier-sonic-telecaster-lrl-bpg-tor-717669815943
 squier-sonic-telecaster-lrl-canary-yellow-197955143187
 squier-sonic-telecaster-mn-bpg-btb-717669815936
+squier-sq-cv-70s-tele-thinline-mn-nat-885978064540
 squier-sq-cv-bass-vi-lrl-3ts-885978064823
 squier-sq-cv-bass-vi-lrl-blk-885978064830
 squier-sq-cv-starcaster-mn-3ts-885978067800

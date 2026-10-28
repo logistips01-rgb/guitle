@@ -808,7 +808,6 @@ manuel-rodriguez-exotica-pavo-real-e-abeto-brillo-4046662299181
 manuel-rodriguez-exotica-santos-pavo-real-4046662299150
 manuel-rodriguez-ff-sabicas-boca-prestige-4046662289533
 manuel-rodriguez-ff-sabicas-prestige-4046662289526
-manuel-rodriguez-fs-magistral-abeto-4046662288055
 manuel-rodriguez-junior-prestige-4046662289519
 manuel-rodriguez-manuel-rodriguez-academia-ac40-cedro-4046662287928
 manuel-rodriguez-manuel-rodriguez-academia-ac40-natural-4046662287935
@@ -817,6 +816,7 @@ manuel-rodriguez-manuel-rodriguez-ff-sabicas-natural-910807096828
 manuel-rodriguez-manuel-rodriguez-magistral-d-caoba-natura-4046662288000
 manuel-rodriguez-manuel-rodriguez-magistral-e-nogal-gnt-4046662288031
 manuel-rodriguez-manuel-rodriguez-magistral-f-nt-palisandro-4046662288048
+manuel-rodriguez-manuel-rodriguez-magistral-f-palisandro-gnt-4046662288055
 manuel-rodriguez-manuel-rodriguez-superior-a-bubinga-abeto-4046662287812
 manuel-rodriguez-manuel-rodriguez-superior-a-bubinga-cedro-4046662287966
 manuel-rodriguez-manuel-rodriguez-superior-b-eucalipto-cedro-4046662287973
@@ -1020,7 +1020,7 @@ paco-castillo-202-cadete-cadetehtml
 paco-castillo-203-8412345104206
 paco-castillo-203-8434418054683
 paco-castillo-204-llo204html
-paco-castillo-205-llo205html
+paco-castillo-205-8434418054478
 paco-castillo-211-f-flamenca-8412345104244
 paco-castillo-211f-8434418054713
 paco-castillo-213-f-flamenca-8412345104251

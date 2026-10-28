@@ -166,6 +166,15 @@ _MAT_ACOUSTIC = re.compile(r"^(guitarras-(electro)?acusticas|guitarras-(clasicas
                            r"|guitarras-(dreadnought|jumbo)$|guitarras-con-cuerdas-de-nylon)")
 
 
+def _mat_vat(data, text):
+    """MAT (PrestaShop) da el precio sin IVA a algunas visitas de fuera de la UE (el lector corre en EE. UU.): si el
+    precio leído coincide con su "price_tax_exc", se le suma el IVA español (21 %)."""
+    m = re.search(r"price_tax_exc&quot;:([0-9.]+)", text) or re.search(r'"price_tax_exc":([0-9.]+)', text)
+    if m and data.get("price") and abs(float(m.group(1)) - data["price"]) < 0.02:
+        data["price"] = round(float(m.group(1)) * 1.21, 2)
+    return data
+
+
 def _mat_category(url):
     parts = url.split("/")
     return parts[4] if len(parts) > 5 else ""
@@ -270,6 +279,7 @@ SOURCES = {
                 "parse": _parse_thomann, "kind": _only("electrica", _is_electric)},
     "mat": {"name": "MAT Guitars", "sitemap": "https://www.matguitars.com/1_es_0_sitemap.xml",
             "pick": lambda u: _mat_category(u) in MAT_ELECTRIC and not NOT_PRODUCT.search(u), "crumbs": _mat_crumbs,
+            "fix": _mat_vat,
             "kind": _only("electrica", _is_electric)},
     "drunkat": {"name": "Drunkat", "sitemap": "https://drunkat.es/var/sitemap.xml", "parse": _parse_drunkat,
                 "sub": lambda u: "sitemap-productos" in u,
@@ -662,6 +672,8 @@ def read_page(fetcher, store_id, url, now):
             return rec
         soup = BeautifulSoup(resp.text, "html.parser")
         data = src["parse"](soup, resp.text) if "parse" in src else _parse_jsonld(soup, store_id)
+        if "fix" in src:
+            data = src["fix"](data, resp.text)
         if not data["crumbs"] and "crumbs" in src:
             data["crumbs"] = src["crumbs"](url)  # tiendas sin breadcrumb: la categoría de la URL (MAT)
         kind = src["kind"](data["crumbs"])

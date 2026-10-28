@@ -71,6 +71,7 @@ marca/kramer.html
 marca/l-arrive.html
 marca/lag.html
 marca/lag.html
+marca/larry-carlton-sire.html
 marca/larry-carlton.html
 marca/lava-music.html
 marca/lr-baggs.html

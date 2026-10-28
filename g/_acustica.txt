@@ -2308,7 +2308,6 @@ yamaha-f400-natural-satin-4957812676212
 yamaha-f400-smoky-burst-4957812676229
 yamaha-fg-ta-black-4957812615525
 yamaha-fg-ta-transacoustic-cutaway-black-4957812669221
-yamaha-fg-ta-transacoustic-cutaway-brown-sunburst-4957812669214
 yamaha-fg-ta-transacoustic-cutaway-natural-4957812669207
 yamaha-fg3-red-label-natural-4957812665827
 yamaha-fg5-red-label-natural-gloss-4957812702690
@@ -2337,6 +2336,7 @@ yamaha-fg830-nt-4957812597340
 yamaha-fg830-tbs-4957812597357
 yamaha-fg840sfm-nt-4957812597371
 yamaha-fg850-nt-4957812597388
+yamaha-fgcta-transacoustic-bs-4957812669214
 yamaha-fgta-transcaoustic-nt-guitarhtml
 yamaha-fgx3-ii-natural-aturalhtml
 yamaha-fgx3-red-label-natural-4957812665803
@@ -2447,10 +2447,10 @@ yamaha-ll16are-bs-4957812547741
 yamaha-ll16are-dt-4957812582247
 yamaha-ll16are-nt-t42464html
 yamaha-ll16d-are-black-eblackhtml
-yamaha-ll16d-are-natural-4957812547819
+yamaha-ll16d-are-natural-547819html
 yamaha-ll16d-negro-are-usticahtml
+yamaha-ll16dare-4957812547819
 yamaha-ll16dare-bl-4957812547826
-yamaha-ll16dare-usticahtml
 yamaha-ll16lare-nt-4957812547802
 yamaha-ll16m-are-natural-aturalhtml
 yamaha-ll16mare-nt-4957812559140
