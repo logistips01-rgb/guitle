@@ -5,6 +5,13 @@
 //   AAAA-MM-DD_r_<origen>  llegadas desde fuera (google.com, instagram.com…; "directo" sin origen)
 //   AAAA-MM-DD_t_<tienda>  clics hacia cada tienda
 (() => {
+  // Las visitas del propio equipo no cuentan: guitle.com/?nocontar lo apaga en ese navegador; ?contar lo vuelve a encender.
+  try {
+    const q = new URLSearchParams(location.search);
+    if (q.has("nocontar")) localStorage.setItem("guitle_nocontar", "1");
+    if (q.has("contar")) localStorage.removeItem("guitle_nocontar");
+    if (localStorage.getItem("guitle_nocontar")) return;
+  } catch (e) {}
   if (location.hostname !== "guitle.com" || navigator.webdriver
       || /bot|crawl|spider|slurp|headless|lighthouse|preview|facebookexternalhit/i.test(navigator.userAgent)) return;
   const DOCS = "projects/guitle-d48d8/databases/(default)/documents/c/";
