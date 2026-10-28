@@ -28,3 +28,6 @@ section h3 { font-size: 1.1rem; margin: 0 0 10px; }
 .go { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; font-size: .85rem; padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
 .go-short { display: none; }
 @media (max-width: 560px) { .col-diff, .col-date { display: none; } #stores td { padding: 8px 4px; } .go-long { display: none; } .go-short { display: inline; } }
+
+/* Precio añadido a mano (captura): nota pequeña bajo el nombre de la tienda */
+.manual { display: block; font-size: .72rem; color: var(--text-muted); font-weight: 400; }

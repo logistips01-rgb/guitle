@@ -61,9 +61,9 @@ def _rows(product, store_names, colors):
         store = esc(store_names.get(i["s"], i["s"]))
         go = f'href="{esc(i["u"])}" target="_blank" rel="sponsored noopener"' if i.get("u") else ""
         name = f'<a class="store-link" {go}>{store}</a>' if go else store
-        stock = '<span class="tag">en stock</span>' if i.get("st") is True else '<span class="tag warn">sin stock</span>' if i.get("st") is False else ""
         if i.get("m"):  # precio añadido a mano a partir de una captura: se dice cuándo se comprobó
-            stock += f' <span class="tag">comprobado a mano el {_day(i["d"])}</span>'
+            name += f'<small class="manual">comprobado a mano el {_day(i["d"])}</small>'
+        stock = '<span class="tag">en stock</span>' if i.get("st") is True else '<span class="tag warn">sin stock</span>' if i.get("st") is False else ""
 
         diff = "mejor precio" if n == 0 else "+" + eur(round(i["p"] - best, 2))
         button = f'<a class="go" {go}><span class="go-long">Ir a la tienda</span><span class="go-short">Ir</span></a>' if go else ""
@@ -125,7 +125,7 @@ def _render(product, kind, store_names, colors):
   </div>
   <nav class="crumbs"><a href="/">Inicio</a> › <a href="/{k['list']}">{esc(k['label'])}</a> › <a href="/marca/{plain_slug(brand)}.html">{esc(brand)}</a></nav>
   <article class="product">
-    <div class="pimg">{f'<img src="{img}" alt="{esc(name)}">' if img else ''}</div>
+    {f'<div class="pimg"><img src="{img}" alt="{esc(name)}"></div>' if img else ''}
     <div class="pinfo">
       <div class="muted">{esc(brand)}{' · ' + esc(product.get('type')) if product.get('type') and product.get('type') != 'Otras' else ''}{' · zurda' if product.get('lh') else ''}</div>
       <h2 class="pname">{esc(name)}</h2>
