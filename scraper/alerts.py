@@ -33,6 +33,7 @@ DOCS = "https://firestore.googleapis.com/v1/projects/guitle-d48d8/databases/(def
 CATALOGS = ["data/catalog/products.json", "data/catalog/acusticas/acusticas.json", "data/catalog/acusticas/clasicas.json",
             "data/catalog/equipo/teclados.json", "data/catalog/equipo/pedales.json"]
 PENDING_DAYS = 7  # sin confirmar en este tiempo, se borra
+MAX_CONFIRMS = 40  # correos de confirmación por pasada como mucho (contra el abuso del formulario)
 
 
 def eur(v):
@@ -222,22 +223,32 @@ def run(dry_run=False):
     confirmed_today = {a["email"].lower() for a in alerts if (a.get("sent_confirm") or "")[:10] == today}
     try:
         for a in alerts:
-            if not all(a.get(k) for k in ("email", "slug", "name", "price")):
+            if not all(a.get(k) for k in ("email", "slug", "price")):
                 continue
+            p = catalog.get(a["slug"])
+            if p is None:
+                # Ficha que no existe (o retirada): no se manda nada. El nombre del correo sale siempre del catálogo,
+                # nunca del formulario, para que nadie pueda colar su propio texto en un correo de guitle.
+                if not a.get("ok"):
+                    if not dry_run:
+                        delete(s, a["id"])
+                    stats["borrados"] += 1
+                continue
+            a["name"] = p["name"]
             if not a.get("ok"):
                 if datetime.fromisoformat(a["created"].replace("Z", "+00:00")) < now - timedelta(days=PENDING_DAYS):
                     if not dry_run:
                         delete(s, a["id"])
                     stats["borrados"] += 1
-                elif not a.get("sent_confirm") and a["email"].lower() not in confirmed_today:
+                elif (not a.get("sent_confirm") and a["email"].lower() not in confirmed_today
+                      and stats["confirmaciones"] < MAX_CONFIRMS):
                     mail.send(a["email"], *confirm_mail(a))
                     if not dry_run:
                         patch(s, a["id"], sent_confirm=now.isoformat(timespec="seconds"))
                     confirmed_today.add(a["email"].lower())
                     stats["confirmaciones"] += 1
                 continue
-            p = catalog.get(a["slug"])
-            if not p or a.get("notified") == today:
+            if a.get("notified") == today:
                 continue
             best = p["items"][0]["p"]
             if best <= threshold(a):
