@@ -49,7 +49,12 @@ Fase actual: rastreador personal (catálogo a mano, cron diario, página con bus
   del diseño y del riesgo, prueba previa y seguro. El láser atraviesa barnices de brillo: mejor en satinado o madera
   vista. Máquina: diodo 10-20 W (400-1.200 €) o CO₂ de sobremesa (1.500-3.000 €), extracción de humos y carcasa
   cerrada (viable en el garaje). Precios orientativos: púa/correa 5-20 €, golpeador 40-80 €, pala 30-60 €. Nunca
-  logos de marcas ajenas. Más adelante: mejoras (pastillas, golpeadores, ajustes) y configurador a medida con piezas
+  logos de marcas ajenas. **Guitarras de autor:** acústicas/clásicas baratas (laminadas, 100-250 €) grabadas enteras
+  como piezas únicas o ediciones numeradas (400-900 €) y encargos con diseño del cliente; tapa solo en superficie (de
+  ella depende el sonido), aros y fondo con más libertad, sellado o barniz después (luthier); diseños propios o con
+  licencia y "guitarra de marca X personalizada por guitle". Probar con 1-2 muestras en Instagram. Con la misma
+  máquina, regalos genéricos por encargo para amortizarla (mercado saturado: sin abrir otra marca salvo que funcione).
+  Más adelante: mejoras (pastillas, golpeadores, ajustes) y configurador a medida con piezas
   con licencia y un luthier colaborador.
 - **Cursos de guitarra.** Online y/o presenciales (en la tienda). Se cruzan con el resto: alumno que empieza
   → renting o primera guitarra recomendada en guitle → accesorios.
