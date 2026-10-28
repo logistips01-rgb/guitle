@@ -108,3 +108,53 @@ function verdict(current, best) {
                  tooltip: { callbacks: { title: c => fmtDay(c[0].label), label: c => `${c.dataset.label}: ${eur(c.parsed.y)}` } } } },
   });
 })();
+
+// Aviso por correo cuando baja el precio: se guarda en Firestore (colección "alertas") con un código aleatorio como
+// id, que solo conoce quien se apunta (confirmar y darse de baja en alerta.html). La tarea scraper/alerts.py envía
+// el correo de confirmación y los avisos. Las reglas de Firestore no dejan leer la colección desde la web.
+(() => {
+  const ALERTS = "https://firestore.googleapis.com/v1/projects/guitle-d48d8/databases/(default)/documents/alertas";
+  const after = document.querySelector("#stores")?.closest("section");
+  // Hasta que estén las reglas de Firestore y el correo, solo se ve con ?avisos (para probarlo).
+  if (!after || !(window.ALERTS_ON || new URLSearchParams(location.search).has("avisos"))) return;
+  const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
+  const name = document.querySelector(".pname")?.textContent.trim() || slug;
+  const price = +CFG.best;
+  const box = document.createElement("section");
+  box.className = "alert-box";
+  box.innerHTML = `<h3>Avísame si baja de precio</h3>
+    <p class="muted small">Te escribimos cuando el mejor precio baje. Gratis, sin registro y te das de baja con un clic.</p>
+    <form id="alert-form">
+      <input type="email" id="alert-email" required placeholder="tu@correo.com" autocomplete="email" aria-label="Tu correo">
+      <input type="number" id="alert-target" min="1" step="1" placeholder="Precio máximo (opcional)" aria-label="Precio objetivo en euros">
+      <button type="submit">Avisarme</button>
+      <label class="small muted"><input type="checkbox" required> Acepto la <a href="/legal.html#privacidad">política de privacidad</a>:
+        usaremos tu correo solo para este aviso.</label>
+    </form>
+    <p class="small" id="alert-msg" role="status"></p>`;
+  after.after(box);
+  const msg = box.querySelector("#alert-msg");
+  box.querySelector("#alert-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const email = box.querySelector("#alert-email").value.trim();
+    const target = parseFloat(box.querySelector("#alert-target").value);
+    const id = btoa(String.fromCharCode(...crypto.getRandomValues(new Uint8Array(24))))
+      .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    const fields = { email: { stringValue: email }, slug: { stringValue: slug }, name: { stringValue: name.slice(0, 190) },
+                     price: { doubleValue: price }, ok: { booleanValue: false } };
+    if (target > 0) fields.target = { doubleValue: target };
+    const button = box.querySelector("button");
+    button.disabled = true;
+    try {
+      const r = await fetch(`${ALERTS}?documentId=${id}`, { method: "POST", headers: { "Content-Type": "application/json" },
+                                                          body: JSON.stringify({ fields }) });
+      if (!r.ok) throw new Error(r.status);
+      box.querySelector("form").hidden = true;
+      msg.innerHTML = `<b>¡Hecho!</b> En unos minutos te llegará un correo a ${esc(email)} para confirmar el aviso
+        (mira también en correo no deseado).`;
+    } catch (err) {
+      button.disabled = false;
+      msg.textContent = "No se ha podido guardar el aviso. Revisa el correo e inténtalo de nuevo.";
+    }
+  });
+})();

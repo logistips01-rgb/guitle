@@ -1,0 +1,43 @@
+name: alerts
+
+# Avisos de precio por correo (scraper/alerts.py): confirmaciones de los nuevos y avisos de bajada.
+# Cada 15 minutos (GitHub a veces lo retrasa); también se puede lanzar a mano.
+on:
+  schedule:
+    - cron: "7,22,37,52 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alerts
+  cancel-in-progress: false
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scraper
+            data/catalog
+            requirements.txt
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: pip install requests google-auth
+
+      - name: Confirmaciones y avisos
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: python -m scraper.alerts

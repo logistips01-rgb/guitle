@@ -31,3 +31,15 @@ section h3 { font-size: 1.1rem; margin: 0 0 10px; }
 
 /* Precio añadido a mano (captura): nota pequeña bajo el nombre de la tienda */
 .manual { display: block; font-size: .72rem; color: var(--text-muted); font-weight: 400; }
+.alert-box { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; }
+.alert-box h3 { margin-bottom: 4px; }
+.alert-box form { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.alert-box input[type=email], .alert-box input[type=number] { font: inherit; padding: 9px 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--surface-0); color: var(--text-primary); min-width: 0; }
+.alert-box input[type=email] { flex: 2 1 220px; }
+.alert-box input[type=number] { flex: 1 1 170px; }
+.alert-box button { font: inherit; font-weight: 600; border: 0; border-radius: 999px; background: var(--accent); color: #fff;
+  padding: 9px 18px; cursor: pointer; }
+.alert-box button:disabled { opacity: .6; }
+.alert-box label { flex-basis: 100%; }
+#alert-msg:empty { display: none; }

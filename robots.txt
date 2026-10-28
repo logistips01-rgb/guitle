@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /brand/
 Disallow: /stats.html
+Disallow: /alerta.html
 
 Sitemap: https://guitle.com/sitemap.xml

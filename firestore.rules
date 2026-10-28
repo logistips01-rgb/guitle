@@ -1,0 +1,32 @@
+rules_version = '2';
+// Reglas de Firestore de guitle (proyecto guitle-d48d8). Se pegan en la consola: Firestore › Reglas › Publicar.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Contador de visitas (c.js): solo se suma de 1 en 1; leer, solo el titular (stats.html).
+    match /c/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['n']) && request.resource.data.n == 1;
+      allow update: if request.resource.data.keys().hasOnly(['n']) && request.resource.data.n == resource.data.n + 1;
+      allow read: if request.auth != null && request.auth.token.email == 'logisticaaldelis@gmail.com'
+                  && request.auth.token.email_verified;
+    }
+    // Avisos de precio (producto.js, alerta.html, scraper/alerts.py). Nadie puede leerlos desde la web: el id es un
+    // código aleatorio que solo conoce quien se apunta y sirve para confirmar (ok = true) o borrar el aviso.
+    match /alertas/{id} {
+      allow create: if id.size() >= 20
+        && request.resource.data.keys().hasOnly(['email', 'slug', 'name', 'price', 'target', 'ok'])
+        && request.resource.data.keys().hasAll(['email', 'slug', 'name', 'price', 'ok'])
+        && request.resource.data.email is string && request.resource.data.email.size() <= 120
+        && request.resource.data.email.matches('^[^@ ]+@[^@ ]+[.][^@ ]+$')
+        && request.resource.data.slug is string && request.resource.data.slug.size() <= 200
+        && request.resource.data.name is string && request.resource.data.name.size() <= 200
+        && request.resource.data.price is number
+        && (!('target' in request.resource.data) || request.resource.data.target is number)
+        && request.resource.data.ok == false;
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['ok'])
+        && request.resource.data.ok == true;
+      allow delete: if true;
+      allow read: if request.auth != null && request.auth.token.email == 'logisticaaldelis@gmail.com'
+                  && request.auth.token.email_verified;
+    }
+  }
+}
