@@ -206,8 +206,9 @@ load("data/latest.json").then(latest => {
   const guitars = latest.products.filter(p => p.category === "guitarra").map(p => {
     const items = latest.items.filter(i => i.sku === p.sku && !isRef[i.store] && i.price != null && i.status === "ok").sort((a, b) => a.price - b.price);
     const best = items[0];
-    const drops = items.filter(i => i.prev_price && i.prev_price > i.price);
-    const drop = drops.length ? Math.max(...drops.map(i => i.prev_price - i.price)) : 0;
+    // Bajada del mejor precio frente al mejor de la revisión anterior (no la de una tienda que no es la más barata).
+    const prevBest = items.length ? Math.min(...items.map(i => i.prev_price || i.price)) : 0;
+    const drop = best && prevBest - best.price >= 1 ? Math.round((prevBest - best.price) * 100) / 100 : 0;
     return best && { ...p, best, items, drop, vsPvp: p.pvp ? (best.price - p.pvp) / p.pvp * 100 : null };
   }).filter(Boolean);
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
