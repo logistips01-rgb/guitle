@@ -117,7 +117,13 @@ function render() {
 }
 
 let typing;
-document.getElementById("q").addEventListener("input", e => { clearTimeout(typing); typing = setTimeout(() => { state.q = e.target.value; state.shown = PAGE; render(); }, 150); });
+let counting;
+document.getElementById("q").addEventListener("input", e => {
+  clearTimeout(typing); typing = setTimeout(() => { state.q = e.target.value; state.shown = PAGE; render(); }, 150);
+  // Contador de búsquedas (c.js): la que queda escrita 2 s, no cada tecla.
+  clearTimeout(counting); counting = setTimeout(() => window.guitleSearch && window.guitleSearch(e.target.value), 2000);
+});
+if (params.get("q")) setTimeout(() => window.guitleSearch && window.guitleSearch(params.get("q")), 500);
 for (const id of ["brand", "range", "show", "sort"])
   document.getElementById(id).addEventListener("change", e => { state[id] = e.target.value; state.shown = PAGE; render(); });
 document.getElementById("types").addEventListener("click", e => {

@@ -63,7 +63,10 @@
       <div class="card"><h2>Clics a tiendas</h2><div class="bars" id="stores"></div></div>
       <div class="card"><h2>De dónde llegan</h2><div class="bars" id="refs"></div></div>
     </div>
-    <div class="card"><h2>Páginas más vistas</h2><div class="bars" id="pages"></div></div>
+    <div class="cols">
+      <div class="card"><h2>Búsquedas en guitle</h2><div class="bars" id="searches"></div></div>
+      <div class="card"><h2>Páginas más vistas</h2><div class="bars" id="pages"></div></div>
+    </div>
   </div>
 </main>
 <script src="vendor/chart.umd.min.js"></script>
@@ -122,7 +125,9 @@ function render() {
   const perDay = Object.fromEntries(list.map(d => [d, 0]));
   for (const r of sel) if (r.kind === "v") perDay[r.day] += r.n;
   const total = Object.values(perDay).reduce((a, b) => a + b, 0);
-  const stores = sum("t"), refs = sum("r"), pages = sum("p");
+  const stores = sum("t"), refs = sum("r"), all = sum("p");
+  const pages = Object.fromEntries(Object.entries(all).filter(([k]) => !k.startsWith("buscar~")));
+  const searches = Object.fromEntries(Object.entries(all).filter(([k]) => k.startsWith("buscar~")).map(([k, n]) => [k.slice(7), n]));
   const clicks = Object.values(stores).reduce((a, b) => a + b, 0);
   const fromGoogle = Object.entries(refs).filter(([k]) => k.startsWith("google")).reduce((a, [, n]) => a + n, 0);
 
@@ -136,6 +141,7 @@ function render() {
 
   bars("stores", stores, k => k, "Aún no hay clics a tiendas en este periodo.");
   bars("refs", refs, k => k === "directo" ? "Directo (sin origen)" : k, "Aún no hay llegadas en este periodo.");
+  bars("searches", searches, k => k.replace(/-/g, " "), "Aún no hay búsquedas en este periodo.", 15);
   bars("pages", pages, k => k === "inicio" ? "Portada" : "/" + k.replace(/~/g, "/"), "Aún no hay páginas vistas.", 15);
 
   if (chart) chart.destroy();
