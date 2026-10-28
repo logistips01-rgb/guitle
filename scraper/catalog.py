@@ -40,8 +40,8 @@ RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir e
 RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se miran cada dos semanas
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35,  # por debajo no es una guitarra (ni infantil)
-             "teclado": 40, "pedal": 20}
-GUITAR_KINDS = {"electrica", "acustica", "clasica"}
+             "teclado": 40, "pedal": 20, "portuguesa": 150}
+GUITAR_KINDS = {"electrica", "acustica", "clasica", "portuguesa"}
 MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
 NOT_PRODUCT = re.compile(r"b-stock|bstock|b-ware|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein|stock[ -]b\b", re.I)
@@ -115,11 +115,14 @@ THOMANN_ELECTRIC = ("giegst", "giegte", "gieglp", "giegsg", "gieges", "gieghe", 
 THOMANN_MAX_PAGES = 40
 
 
-def _discover_thomann(fetcher, codes):
+def _discover_thomann(fetcher, codes, base=THOMANN):
+    """Fichas de los listados de Thomann. Un código (giegst) es un listado de forma; un nombre de página
+    (cat_allProducts_GF_guitarras_electricas.html) se usa tal cual. base: thomann.es, thomann.pt…"""
     urls = set()
     for code in codes:
         for pg in range(1, THOMANN_MAX_PAGES + 1):
-            url = f"{THOMANN}cat_GK_{code}.html?ls=100&pg={pg}"
+            page = code if code.endswith(".html") else f"cat_GK_{code}.html"
+            url = f"{base}{page}?ls=100&pg={pg}"
             if not fetcher.allowed(url)[0]:
                 break
             resp = fetcher.get(url)
@@ -127,7 +130,7 @@ def _discover_thomann(fetcher, codes):
                 raise RuntimeError("HTTP 429")
             if resp.status_code != 200:
                 break
-            found = {THOMANN + h.split("?")[0] for h in re.findall(r'class="product__content[^"]*"\s+href="([^"]+\.htm)[?"]', resp.text)}
+            found = {base + h.split("?")[0] for h in re.findall(r'class="product__content[^"]*"\s+href="([^"]+\.htm)[?"]', resp.text)}
             if not found - urls:
                 break
             urls |= found
@@ -459,6 +462,94 @@ EQUIPO_SOURCES = {
                                      r"pedalboard|case|bag|power|supply|cable|kabel|patch|netzteil|steel|knob|switch")},
 }
 
+# --- Portugal (catálogo "pt"): las mismas guitarras con los precios que cada tienda pone para Portugal ----------
+# (IVA del 23 % y precios propios: Thomann.pt no cobra lo mismo que Thomann.es). Solo tiendas con web portuguesa.
+PT_SKIP = re.compile(r"baixo|\bbass\b|ukulele|cavaquinho|bandolim|banjo|amplifica|estojo|\bsaco|\bcapa\b|corda|acess[oó]r"
+                     r"|pastilha|captador|pedal|efeito|correia|suporte|afinador|palheta|cabo|kit|pack|conjunto|set\b|partes"
+                     r"|pe[cç]as|livro|m[eé]todo|sistema sem fios|wireless|microfone|piano|teclado|bateria", re.I)
+
+
+def pt_kind(crumbs):
+    """'electrica', 'acustica', 'clasica', 'portuguesa' o None, por las categorías (en portugués) de la tienda."""
+    text = " / ".join(crumbs).lower()
+    leaf = " / ".join(crumbs[-2:]).lower()  # "Guitarras e baixos" arriba no la descarta; un "Baixos" al final, sí
+    if not re.search(r"guitarr", text) or PT_SKIP.search(leaf):
+        return None
+    if re.search(r"guitarras? portuguesas?", text):
+        return "portuguesa"
+    if re.search(r"cl[aá]ssic|concerto|flamenc|nylon", text):
+        return "clasica"
+    if re.search(r"ac[uú]stic|eletroac|electroac|ocidenta|folk|western|viagem", text):
+        return "acustica"
+    if re.search(r"el[eé]c?trica", text):
+        return "electrica"
+    return None
+
+
+def _parse_egitana_pt(soup, text):
+    """Egitana.pt: analítica (categoría y precio) como en egitana.es y, además, microdatos con el EAN (gtin13)."""
+    data = _parse_egitana(soup, text)
+    micro = _parse_microdata(soup, text)
+    if micro.get("ean"):
+        data["ean"] = micro["ean"]
+    if not data.get("price") and micro.get("price"):
+        data.update({k: micro[k] for k in ("name", "brand_raw", "price", "currency", "in_stock", "image")})
+        data["ean"] = micro.get("ean")
+    if micro.get("in_stock") is not None:
+        data["in_stock"] = micro["in_stock"]
+    return data
+
+
+def _parse_salao(soup, text):
+    """Salão Musical (PrestaShop): microdatos con el precio en un span y el GTIN13 en mayúsculas."""
+    h1 = soup.find("h1")
+    price = soup.select_one('[itemprop=price][content]')
+    gtin = soup.find("meta", attrs={"itemprop": re.compile("^gtin13$", re.I)})
+    if not h1 or not price:
+        return {"crumbs": []}
+    brand = soup.find(attrs={"itemprop": "brand"})
+    brand = brand.get("content") or brand.get_text(" ", strip=True) if brand else None
+    image = soup.find("meta", attrs={"property": "og:image"})
+    avail = soup.find(attrs={"itemprop": "availability"})
+    ean = normalize_id(gtin.get("content") if gtin else "").lstrip("0")
+    return {"crumbs": [], "name": h1.get_text(" ", strip=True), "brand_raw": brand, "price": float(price["content"]),
+            "currency": "EUR", "in_stock": ("instock" in (avail.get("href") or avail.get("content") or "").lower()) if avail else None,
+            "image": image.get("content") if image else None, "ean": ean if len(ean) >= 11 else None}
+
+
+_SALAO_GUITARS = {"todas-as-guitarras-eletricas": "Guitarras elétricas", "guitarras-classicas": "Guitarras clássicas",
+                  "guitarra-classica": "Guitarras clássicas", "guitarras-flamenco": "Guitarras clássicas flamenco",
+                  "guitarras-eletroacusticas": "Guitarras eletroacústicas", "guitarras-acusticas": "Guitarras acústicas",
+                  "guitarras-portuguesas": "Guitarras portuguesas", "guitarra-portuguesa": "Guitarras portuguesas"}
+
+
+def _salao_category(url):
+    parts = url.split("/")
+    return parts[4] if len(parts) > 5 and parts[3] == "pt" else ""
+
+
+THOMANN_PT = "https://www.thomann.pt/"
+_PT_BRANDS = tuple(sorted(set(EGITANA_BRANDS) | set(ACOUSTIC_BRANDS) | {"apc", "artimusica", "alvaro", "dias", "porto"}))
+
+PT_SOURCES = {
+    "egitana": {"name": "Egitana", "sitemap": "https://www.egitana.pt/sitemaps/pt/sitemap.xml", "parse": _parse_egitana_pt,
+                "ok_status": (200, 500), "kind": pt_kind,
+                "pick": lambda u: (lambda s: s.startswith(tuple(b + "-" for b in _PT_BRANDS)) or "guitarra" in s)(
+                    u.split("egitana.pt/")[-1].split("/p/")[0].lstrip("/")) and not PT_SKIP.search(u.replace("-", " "))
+                and not NOT_PRODUCT.search(u)},
+    "thomann": {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann, "kind": pt_kind,
+                "discover": lambda f: _discover_thomann(f, ("cat_allProducts_GF_guitarras_electricas.html",
+                                                            "cat_allProducts_GF_guitarras_ocidentais.html",
+                                                            "cat_allProducts_GF_guitarras_de_concerto.html"), THOMANN_PT),
+                "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)},
+    "salaomusical": {"name": "Salão Musical", "sitemap": "https://www.salaomusical.com/1_index_sitemap.xml",
+                     "parse": _parse_salao, "kind": pt_kind,
+                     "crumbs": lambda u: [_SALAO_GUITARS.get(_salao_category(u), "")],
+                     "pick": lambda u: _salao_category(u) in _SALAO_GUITARS and not NOT_PRODUCT.search(u)},
+}
+
+PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
+
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
                   ("Tamaño reducido", r"reducid|travel|viaje|reise|\bmini\b|3/4|1/2|baby|little|junior|\bgs mini|\bjr\d?\b"),
                   ("Parlor", r"parlou?r"), ("Jumbo", r"jumbo|\bsj-?200|\bj-?45|\bj-?200"),
@@ -487,9 +578,9 @@ NAME_TYPES = [("T", r"tele(caster)?\b|\btl\b"),
               ("Moderna / Metal", r"explorer|flying ?v|firebird|thunderbird|phoenix|headless|warrior|ravendark|"
                                   r"\bmetal\b|[78].?(cuerdas|string)|baritone")]
 TYPES_BY_KIND = {"electrica": TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
-                 "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES}
+                 "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES, "portuguesa": PORTUGUESE_TYPES}
 NAME_TYPES_BY_KIND = {"electrica": NAME_TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
-                      "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES}
+                      "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES, "portuguesa": PORTUGUESE_TYPES}
 
 # Catálogos: carpeta, fuentes y fichero de la web por categoría.
 CATALOGS = {
@@ -498,6 +589,10 @@ CATALOGS = {
                  "files": {"acustica": "acusticas.json", "clasica": "clasicas.json"}},
     "equipo": {"dir": DIR / "equipo", "sources": EQUIPO_SOURCES,
                "files": {"teclado": "teclados.json", "pedal": "pedales.json"}},
+    # Portugal: aún sin páginas propias (guitle.com/pt/ llegará después); solo los JSON del catálogo.
+    "pt": {"dir": DIR / "pt", "sources": PT_SOURCES, "site": "pt",
+           "files": {"electrica": "eletricas.json", "acustica": "acusticas.json", "clasica": "classicas.json",
+                     "portuguesa": "portuguesas.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -1099,10 +1194,12 @@ def build(offers=None, history=None):
     for kind, fname in CATALOG["files"].items():
         mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind
                 and (o.get("ean") or o["url"] not in followed)]
-        # Las tiendas de seguimiento (products.json) son de eléctricas.
-        extra = (curated, sku_by_ean, curated_info) if kind == "electrica" else ({}, {}, {})
+        spain = CATALOG.get("site", "es") == "es"
+        # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
+        extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})
         products = _products(kind, mine, history, *extra)
-        _attach_manual(products, manual)
+        if spain:
+            _attach_manual(products, manual)
         for p in products:
             p["slug"] = pages.slug_for(p)
         used = {i["s"] for p in products for i in p["items"]}
@@ -1110,10 +1207,13 @@ def build(offers=None, history=None):
                             "products": products})
         multi = sum(len({i["s"] for i in p["items"]}) > 1 for p in products)
         print(f"catálogo {kind}: {len(products)} guitarras, {multi} en más de una tienda", flush=True)
+        if not spain:
+            continue  # Portugal: las páginas en portugués llegan en la fase siguiente
         pages.write_pages(kind, products, names)
         curated_records = load(ROOT / "data" / "history.json", []) if kind == "electrica" else []
         deals.build(kind, products, history, curated_records, names)
-    pages.write_hubs()
+    if CATALOG.get("site", "es") == "es":
+        pages.write_hubs()
 
 
 def main(argv=None):
