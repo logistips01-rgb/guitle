@@ -9,6 +9,11 @@ on:
       minutes:
         description: "Minutos de lectura por tienda (la primera carga completa necesita ~300)"
         default: "50"
+      solo:
+        description: "Qué catálogo leer (todos, o solo uno)"
+        type: choice
+        default: todos
+        options: [todos, equipo, electrica, acustica]
 
 permissions:
   contents: write
@@ -26,7 +31,8 @@ jobs:
       max-parallel: 1
       fail-fast: false
       matrix:
-        cat: [electrica, acustica, equipo]
+        # Programada: los tres. A mano se puede elegir uno solo (p. ej. equipo = pedales y teclados).
+        cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["electrica","acustica","equipo"]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 355
     steps:
