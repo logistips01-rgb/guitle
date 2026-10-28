@@ -58,3 +58,16 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 | Kirstein | kirstein.de/it | 403 | Alemana con web en italiano; programa de afiliados. |
 | Muziker | muziker.it | 429 | |
 | Gear4music | gear4music.it | Pendiente de Awin | Mismo feed que en España. |
+
+## Reino Unido
+
+| Tienda | Web | Motivo | Notas |
+|---|---|---|---|
+| GAK | gak.co.uk | Antibots | Tienda grande (Brighton). Prioridad alta. |
+| Gear4music | gear4music.com | Antibots | Pendiente de Awin (mismo feed para todos los países). |
+| Coda Music | coda-music.com | Antibots | |
+| PMT | pmtonline.co.uk | Sin datos | Se puede leer, pero no publica sitemap: habría que recorrer categorías. |
+| Peach Guitars | peachguitars.com | Sin datos | Fichas sin datos estructurados de producto. |
+| Guitar Village | guitarvillage.co.uk | Sin datos | El sitemap solo trae el blog. |
+| Rimmers Music | rimmersmusic.co.uk | Sin datos | Shopify sin colecciones de guitarras. |
+| Music Matter | musicmatter.co.uk | Sin conexión | A revisar. |
