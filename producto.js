@@ -115,8 +115,7 @@ function verdict(current, best) {
 (() => {
   const ALERTS = "https://firestore.googleapis.com/v1/projects/guitle-d48d8/databases/(default)/documents/alertas";
   const after = document.querySelector("#stores")?.closest("section");
-  // Hasta que estén las reglas de Firestore y el correo, solo se ve con ?avisos (para probarlo).
-  if (!after || !(window.ALERTS_ON || new URLSearchParams(location.search).has("avisos"))) return;
+  if (!after) return;
   const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
   const name = document.querySelector(".pname")?.textContent.trim() || slug;
   const price = +CFG.best;
