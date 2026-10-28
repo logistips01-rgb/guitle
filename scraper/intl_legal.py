@@ -150,4 +150,52 @@ o al Garante per la protezione dei dati personali. Titolare del trattamento: il 
 <p>guitle non usa cookie, né propri né di terze parti. Per questo non vedi alcun banner sui cookie. Usiamo solo la memoria locale del browser per ricordare
 le tue preferenze. I negozi a cui rimandiamo possono usare i propri cookie sui loro siti.</p>
 """),
+    "en": ("Legal notice and privacy", """
+<h1 style="font-size:1.8rem;margin:24px 0 6px">Legal notice and privacy</h1>
+<p class="muted">Last updated: 28 October 2026. This is a translation; if in doubt, the <a href="/legal.html">Spanish version</a> prevails.</p>
+
+<h2 id="aviso">Legal notice</h2>
+<p>This website is run by <b>Manuel Lorente Gálvez</b> (Spanish tax ID 17747339X), contact <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
+website guitle.com. Activity: price comparison for musical instruments and affiliate advertising. Hosting: GitHub Pages (GitHub, Inc.).</p>
+
+<h2 id="terms">Terms of use</h2>
+<p>guitle is a price comparison site: it doesn't sell anything. It shows the prices shops publish on their websites and links to them so you buy
+directly from them. Purchase, delivery, warranty and returns are each shop's responsibility.</p>
+<ul>
+<li><b>Prices are indicative.</b> We check prices regularly, but they can change at any time. The valid price is always the one the shop shows when you order.</li>
+<li><b>No guarantee of accuracy.</b> We take care to get every product, price and stock level right, but mistakes can happen. If you spot one, let us know.</li>
+<li><b>Trademarks and images.</b> Trademarks, product names and images belong to their owners and are used only to identify the products.</li>
+<li><b>guitle content.</b> guitle's design, logo, text and data compilations belong to its owner. Bulk copying or commercial use without permission is not allowed.</li>
+</ul>
+
+<h2 id="affiliate">Affiliate links</h2>
+<p>Some links to shops are affiliate links: if you buy after clicking, the shop may pay guitle a small commission. The price is the same for you.
+Commissions don't affect the order of results: shops are always sorted by price, lowest first.</p>
+
+<h2 id="privacy">Privacy policy</h2>
+<p>guitle doesn't ask for any personal data to use the site: no sign-up, no newsletters, no analytics or advertising tools that follow you.
+We only count visits anonymously and, if you ask for a price alert, we keep your email address for that alert.</p>
+<ul>
+<li><b>Price alerts.</b> If you ask us to tell you when a product's price drops, we store your email address, the product, its price that day and your target
+price if you give one. We use them only to send the confirmation email and the alerts for that product; never for marketing, and we never share them.
+Legal basis: your consent, given when you request the alert and confirm your email. They're stored in Google Cloud Firestore (Google Ireland Ltd., server in
+Madrid) and emails are sent from our mailbox hola@guitle.com (DonDominio, Spain). Unconfirmed alerts are deleted after 7 days; confirmed ones are kept until
+you unsubscribe with the link in every email, which deletes it straight away, or until you ask us to delete it.</li>
+<li><b>Preferences in your browser.</b> Filters or the view you choose are saved in your own browser's local storage (localStorage). They're never sent to any server.</li>
+<li><b>Hosting.</b> The site is hosted on GitHub Pages (GitHub, Inc.). Like any web server, GitHub may log each visitor's IP address for technical and security
+reasons. GitHub participates in the EU-US Data Privacy Framework and its UK Extension.</li>
+<li><b>Visit counter.</b> Each page adds 1 to an anonymous counter: the day, the page viewed, the site you came from (for example google.com), what you type into
+the catalogue search and, if you click through to a shop, the shop's name. No cookies, no IP address, nothing that identifies you. The counters are stored in
+Google Cloud Firestore (Google Ireland Ltd.), on a server in the European Union (Madrid).</li>
+<li><b>No other third-party requests.</b> Fonts, charts and product photos are all served from guitle.com.</li>
+<li><b>Going to a shop.</b> When you click through to a shop you leave guitle, and that shop's privacy policy applies.</li>
+</ul>
+<p><b>Your rights.</b> You can exercise your rights of access, rectification, erasure, objection, restriction and portability by emailing
+<a href="mailto:hola@guitle.com">hola@guitle.com</a>. If you're not satisfied with our response, you can complain to the Information Commissioner's Office (ICO)
+or to the Spanish Agencia Española de Protección de Datos. Data controller: the owner named in the legal notice.</p>
+
+<h2 id="cookies">Cookies</h2>
+<p>guitle doesn't use cookies, either its own or third-party ones, which is why you don't see a cookie banner. We only use your browser's local storage to
+remember your preferences. The shops we link to may use their own cookies on their sites.</p>
+"""),
 }

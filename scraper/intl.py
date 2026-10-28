@@ -35,6 +35,9 @@ SITES = {
     "it": {"country": "Italia", "lang": "it-IT", "t": "it", "cur": "EUR", "catalog": "it",
            "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche"},
            "amazon": None},
+    "uk": {"country": "United Kingdom", "lang": "en-GB", "t": "en", "cur": "GBP", "catalog": "uk",
+           "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
+           "amazon": None},
 }
 # España, para los enlaces entre países (hreflang y el pie de página).
 SPAIN = {"country": "España", "lang": "es-ES", "path": "/"}
@@ -281,6 +284,84 @@ T = {
                  "check": "I prezzi cambiano ogni giorno: verifica sul sito del negozio prima di acquistare. Non ti interessa più?",
                  "stop": "Non ricevere più questo avviso"},
     },
+    "en": {
+        "tagline": "guitars at the best price", "homeLabel": "guitle, home",
+        "homeTitle": "guitle · guitar price comparison",
+        "homeDesc": "guitle compares guitar prices: electric, acoustic and classical guitars across UK music shops, with the price "
+                    "history of every model.",
+        "h1": "Your guitar, <span>at the best price</span><small>Guitar price comparison</small>",
+        "searchPh": "Search: strat, les paul, yamaha, ibanez…", "searchBtn": "Search", "searchLabel": "Search for a guitar",
+        "guitars": "guitars", "storesWord": "shops", "catalog": "Catalogue",
+        "dealsH": "Biggest price gaps between shops", "dealsBadge": "−{p}% vs. the dearest",
+        "catsH": "Browse by category", "soon": "coming soon", "storesH": "Shops we compare",
+        "howH": "How it works",
+        "steps": ["Every day we check the price, stock and photo of every guitar in the shops that sell in the UK.",
+                  "We keep the price history so you can tell whether a price is genuinely good or usually lower.",
+                  "If you like, we'll email you when the price drops."],
+        "affiliate": "Some links to shops are affiliate links: if you buy, guitle may earn a commission at no extra cost to you.",
+        "legal": "Legal notice", "privacy": "Privacy", "cookies": "Cookies", "otherCountries": "guitle in other countries:",
+        "updated": "Data updated on {d}", "home": "Home",
+        "kinds": {"electrica": ("Electric guitars", "Electric", "Search electric guitars: model, brand, colour…"),
+                  "acustica": ("Acoustic guitars", "Acoustic", "Search acoustic guitars: model, brand, tonewood…"),
+                  "clasica": ("Classical guitars", "Classical", "Search classical guitars: model, brand, flamenco…")},
+        "anyPrice": "Any price", "upTo": "Up to {v}", "over": "Over {v}", "brandLabel": "Brand", "priceLabel": "Price",
+        "showLabel": "Show", "showAll": "All", "showMulti": "In several shops", "showStock": "In stock",
+        "showLow": "At their lowest price", "showLh": "Left-handed only", "loading": "Loading catalogue…", "sortLabel": "Sort",
+        "sorts": ["Most shops", "Lowest price", "Highest price", "Biggest saving between shops", "Name"], "moreBtn": "Show more",
+        "sections": "Sections", "searchAria": "Search",
+        "bestPrice": "best price", "inStock": "in stock", "noStock": "out of stock", "goLong": "Go to shop", "goShort": "Go",
+        "store": "shop", "stores": "shops", "lh": "left-handed", "storesH3": "Shops", "historyH3": "Price history",
+        "amazon": "", "titleFrom": "{name}: price from {price} {where}", "inN": "in {n} shops", "inS": "at {s}",
+        "whereMany": "at {s} · {n} shops", "whereDiff": ", up to {d} difference",
+        "desc": "{name} from {price} at {s}. Compare its price in {n} {stores} ({list}) and check the price history to see if "
+                "it's a good time to buy.",
+        "alertTitle": "Price alert", "alertWait": "One moment…", "alertSaving": "We're saving your answer.",
+        "alertGo": "Go to guitle", "alertBad": ["Invalid link", "Copy the full link from the email and try again."],
+        "alertDone": ["Alert confirmed!", "We'll email you as soon as the price drops. Every email has an unsubscribe link."],
+        "alertGone": ["Alert deleted", "You won't get any more emails for this alert. We've removed your address from our list."],
+        "alertMissing": ["Alert not found", "It may already have been confirmed or deleted, or more than 7 days passed without "
+                                            "confirmation. Need help? Email us at hola@guitle.com."],
+        "js": {"loadErr": "Couldn't load the catalogue.", "allBrands": "All brands", "all": "All", "low": "Lowest",
+               "save": "Save {v}", "lh": "left-handed", "store": "shop", "stores": "shops",
+               "empty": "No {many} match those filters.", "more": "Show more ({n} left)",
+               "meta": "{a} of {b} {many} · {m} comparable across shops · updated {d}", "best": "best price",
+               "inStock": "in stock", "noStock": "out of stock", "goLong": "Go to shop", "goShort": "Go", "close": "Close",
+               "inAt": "at {s}", "saveMax": " · up to {v} less than the dearest", "atLow": "At its lowest recorded price",
+               "lowTag": "Lowest recorded: {v}", "storesH": "Shops", "evolH": "Price history",
+               "histErr": "Couldn't load the price history.", "histSoon": "The price history will fill in over the coming days.",
+               "many": "guitars",
+               "types": {"ST": "S-style", "T": "T-style", "Semihueca": "Semi-hollow", "Offset / Retro": "Offset / Retro",
+                         "Moderna / Metal": "Modern / Metal", "Otras": "Other", "Auditorio / Concierto": "Auditorium / Concert",
+                         "12 cuerdas": "12-string", "Tamaño reducido": "Small body", "Clásica": "Classical",
+                         "Flamenca": "Flamenco", "Electroclásica": "Electro-classical"},
+               "wait": "We've been tracking this model for {n} {days}", "day": "day", "days": "days",
+               "waitSub": "The verdict gets more reliable after a few weeks of history.",
+               "min": "Lowest price on record", "minSub": "We've never seen it cheaper.", "minBelow": " {p}% below its 30-day average.",
+               "good": "Good time to buy: {p}% below its average price", "goodSub": "30-day average: {avg}.",
+               "bad": "It's {p}% dearer than usual right now",
+               "badSub": "If you're not in a hurry, wait: its 30-day average is {avg} and its lowest, {min}.",
+               "normal": "Normal price", "normalSub": "In line with its 30-day average ({avg}). Lowest on record: {min}.",
+               "today": "price today", "lowest": "all-time low ({d})", "highest": "all-time high", "avg": "{n}-day average",
+               "since": "Tracked since {d}", "noHist": "No price history yet.", "pvp": "RRP", "bestLine": "Best price",
+               "alertOpen": "Tell me if the price drops", "emailPh": "you@example.com", "emailLabel": "Your email",
+               "targetPh": "Max. price (optional)", "targetLabel": "Target price in pounds", "alertBtn": "Alert me",
+               "alertLegal": "Free, no sign-up. By clicking “Alert me” you accept our <a href=\"/uk/legal.html#privacy\">privacy "
+                             "policy</a>: we'll only use your email for this alert, and you can unsubscribe with one click.",
+               "alertOk": "<b>Done!</b> In a few minutes you'll get an email at {email} to confirm the alert (check your spam folder too).",
+               "alertErr": "We couldn't save the alert. Check the email address and try again."},
+        "mail": {"tagline": "guitars at the best price",
+                 "footer": "guitle compares music shop prices every day. You're getting this email because you asked for an alert "
+                           "on guitle.com. Data controller: Manuel Lorente Gálvez, hola@guitle.com.",
+                 "privacy": "Privacy", "confirmSubject": "Confirm your guitle price alert",
+                 "confirmTitle": "Confirm your price alert", "asked": "You asked us to tell you when the price drops{target}:",
+                 "below": " below <b>{v}</b>", "confirmAsk": "Please confirm you want to receive the alert at this address:",
+                 "confirmBtn": "Confirm the alert",
+                 "notYou": "If this wasn't you, do nothing: unconfirmed alerts are deleted automatically after 7 days.",
+                 "dropSubject": "Price drop: {name} now {price}", "dropTitle": "The price has dropped!", "nowAt": "at {s} · was {v}",
+                 "seeAll": "See prices in every shop",
+                 "check": "Prices change daily: check on the shop's site before buying. No longer interested?",
+                 "stop": "Stop this alert"},
+    },
 }
 
 # Lo que va en el pie de cada web: España y los demás países.
@@ -289,8 +370,10 @@ def _countries():
 
 
 def money(v, site):
-    """Precio con el formato del país: 1 299 € / 721,41 € (portugués y francés)."""
+    """Precio con el formato del país: 1 299 € / 721,41 € (portugués, francés, italiano); £1,299 / £721.41 (Reino Unido)."""
     whole, cents = int(round(v * 100)) // 100, int(round(v * 100)) % 100
+    if SITES[site]["cur"] == "GBP":
+        return f"£{whole:,}" + (f".{cents:02d}" if cents else "")
     txt = f"{whole:,}".replace(",", " ")
     return f"{txt},{cents:02d} €" if cents else f"{txt} €"
 
@@ -303,7 +386,9 @@ def _load(path):
 
 
 def _json_path(code, kind):
-    return f"data/catalog/{SITES[code]['catalog']}/{SITES[code]['kinds'][kind]}.json"
+    """JSON del catálogo del país para una categoría (el nombre lo fija scraper.catalog, CATALOGS[...]["files"])."""
+    from .catalog import CATALOGS
+    return f"data/catalog/{SITES[code]['catalog']}/{CATALOGS[SITES[code]['catalog']]['files'][kind]}"
 
 
 def catalogs(code):
@@ -358,7 +443,7 @@ def _foot(code, t):
 
 
 def _anchor(code):
-    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy"}.get(SITES[code]["t"], "privacidad")
+    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy", "en": "privacy"}.get(SITES[code]["t"], "privacidad")
 
 
 def _head(code, title, desc, canonical, extra=""):
@@ -492,7 +577,7 @@ def _list(code, kind, kinds):
     nav = "".join(f'<a href="/{code}/{s["kinds"][k]}.html"{" class=\"on\"" if k == kind else ""}>{esc(t["kinds"][k][1])}</a>'
                   for k in s["kinds"] if k in kinds)
     m = lambda v: money(v, code)
-    ranges = [("0-300", t["upTo"].format(v=m(300))), ("300-600", f"300 – {m(600)}"), ("600-1000", f"600 – {m(1000)}"),
+    ranges = [("0-300", t["upTo"].format(v=m(300))), ("300-600", f"{m(300)} – {m(600)}"), ("600-1000", f"{m(600)} – {m(1000)}"),
               ("1000-2000", f"{m(1000)} – {m(2000)}"), ("2000-", t["over"].format(v=m(2000)))]
     sorts = zip(("stores", "price", "price-desc", "save", "name"), t["sorts"])
     head = _head(code, f"{label} · guitle", None, f"/{code}/{page}.html",

@@ -589,9 +589,14 @@ def fr_kind(crumbs):
     return None
 
 
+SHOPIFY_KIND = {}  # URL de la ficha → categoría, según la colección de la que sale (tiendas Shopify sin breadcrumb)
+
+
 def _discover_shopify(fetcher, base, collections):
-    """Fichas de unas colecciones de Shopify (products.json, 250 por página)."""
+    """Fichas de unas colecciones de Shopify (products.json, 250 por página). collections: tupla de colecciones o
+    {colección: categoría}; en ese caso la categoría de cada ficha queda en SHOPIFY_KIND."""
     urls = set()
+    kinds = collections if isinstance(collections, dict) else {}
     for col in collections:
         for page in range(1, 41):
             url = f"{base}/collections/{col}/products.json?limit=250&page={page}"
@@ -603,7 +608,11 @@ def _discover_shopify(fetcher, base, collections):
             products = resp.json().get("products", []) if resp.status_code == 200 else []
             if not products:
                 break
-            urls |= {f"{base}/products/{p['handle']}" for p in products}
+            for p in products:
+                url = f"{base}/products/{p['handle']}"
+                urls.add(url)
+                if col in kinds:
+                    SHOPIFY_KIND.setdefault(url, kinds[col])
     return urls
 
 
@@ -706,6 +715,72 @@ IT_SOURCES = {
                    "pick": lambda u: "/prodotto/" in u and not IT_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
 }
 
+
+# --- Reino Unido ----------------------------------------------------------------------------------------
+
+UK_SKIP = re.compile(r"\bbass(es)?\b|\bamps?\b|amplifier|pedals?\b|effects?\b|strings\b|cases?\b|\bbags?\b|gig ?bags?"
+                     r"|straps?\b|stands?\b|cables?\b|accessor|pickups?\b|ukulele|mandolin|banjo|\bparts\b|tuners?\b|capos?\b"
+                     r"|books?\b|keyboards?|pianos?\b|drums?\b|microphones?|wireless|spares", re.I)
+UK_USED = re.compile(r"second ?hand|pre-?owned|ex-?demo|serial no|\bused\b|b-?stock", re.I)
+UK_NAME_SKIP = re.compile(r"(?<!\d )\bstrings?\b|^(?:case|gig ?bag|strap|stand)\b|\bbass\b|ukulele|\btuner\b|\bcapo\b"
+                          r"|\bbook\b|\bpickguard\b|\bneck\b(?! ?pickup)", re.I)
+
+
+def uk_kind(crumbs, url="", name=""):
+    """'electrica', 'acustica', 'clasica' o None, por las categorías (en inglés) de la tienda y el nombre.
+    Andertons a veces solo dice "Fender Player II Modified Guitars & Basses": entonces decide el modelo del nombre."""
+    text = " / ".join(crumbs).lower()
+    leaf = re.sub(r"guitars? (?:&|and) bass(es)?", "", " / ".join(crumbs[-2:]).lower())
+    if not re.search(r"guitar", text) or UK_SKIP.search(leaf) or re.search(r"\bbass\b", (name or "").lower()):
+        return None
+    text += " / " + (name or "").lower()  # el nombre suele decirlo ("… Classical Guitar", "… Electro Acoustic")
+    if UK_USED.search(text):
+        return None
+    if re.search(r"classical|nylon|flamenco|spanish", text):
+        return "clasica"
+    if re.search(r"acoustic|western|folk|dreadnought|parlou?r|travel", text):
+        return "acustica"
+    if re.search(r"electric|solid ?body|hollow|semi|st style|t style|single ?cut|double ?cut", text):
+        return "electrica"
+    return "electrica" if name and type_from_name(name, "", "electrica") != "Otras" else None
+
+
+def _shop_kind(url, name):
+    """Tiendas Shopify: la categoría de la colección; un bajo o una de segunda mano colados en la colección, fuera."""
+    return None if re.search(r"\bbass\b", (name or "").lower()) or UK_USED.search(name or "") else SHOPIFY_KIND.get(url)
+
+
+THOMANN_UK = "https://www.thomann.co.uk/"
+_UK_BRANDS = tuple(sorted(set(_FR_BRANDS) | {"prs", "jackson", "charvel", "evh", "schecter", "ltd", "esp", "squier", "gretsch",
+                                               "sterling", "music-man", "chapman", "vintage", "heritage", "sigma", "faith",
+                                               "tanglewood", "washburn", "guild", "martin", "taylor", "takamine", "cort"}))
+
+UK_SOURCES = {
+    "guitarguitar": {"name": "guitarguitar", "sitemap": "https://www.guitarguitar.co.uk/sitemap-products.xml",
+                     "kind_url": uk_kind,
+                     "pick": lambda u: (lambda s: s.startswith(tuple(b + "-" for b in _UK_BRANDS)))(u.rsplit("--", 1)[-1])
+                     and not UK_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
+    "thomann": {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann, "kind_url": uk_kind,
+                "discover": lambda f: _discover_thomann(f, ("cat_allProducts_GF_electric_guitars.html",
+                                                            "cat_allProducts_GF_acoustic_guitars.html",
+                                                            "cat_allProducts_GF_classical_guitars.html"), THOMANN_UK),
+                "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)},
+    "andertons": {"name": "Andertons", "sitemap": "https://www.andertons.co.uk/xmlsitemap.php",
+                  "sub": lambda l: "products" in l, "kind_url": uk_kind,
+                  "pick": lambda u: (lambda s: s.startswith(tuple(b + "-" for b in _UK_BRANDS)))(u.rstrip("/").rsplit("/", 1)[-1])
+                  and not UK_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
+    "dawsons": {"name": "Dawsons", "kind_url": lambda c, u, n: _shop_kind(u, n),
+                "discover": lambda f: _discover_shopify(f, "https://www.dawsons.co.uk", {
+                    "electric-guitars": "electrica", "acoustic-guitars": "acustica", "acoustic-electric-guitars": "acustica",
+                    "classical-guitars": "clasica"}),
+                "pick": lambda u: not NOT_PRODUCT.search(u)},
+    "bonners": {"name": "Bonners Music", "kind_url": lambda c, u, n: _shop_kind(u, n),
+                "discover": lambda f: _discover_shopify(f, "https://www.bonnersmusic.co.uk", {
+                    "electric-guitars": "electrica", "acoustic-guitars": "acustica", "electro-acoustic-guitars": "acustica",
+                    "classical-guitars": "clasica"}),
+                "pick": lambda u: not NOT_PRODUCT.search(u)},
+}
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -756,6 +831,9 @@ CATALOGS = {
            "files": {"electrica": "electriques.json", "acustica": "folk.json", "clasica": "classiques.json"}},
     "it": {"dir": DIR / "it", "sources": IT_SOURCES, "site": "it",
            "files": {"electrica": "elettriche.json", "acustica": "acustiche.json", "clasica": "classiche.json"}},
+    # Reino Unido: precios en libras (las tiendas los dan en GBP; "cur" es la moneda que se acepta).
+    "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP",
+           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -1090,7 +1168,7 @@ def read_page(fetcher, store_id, url, now):
             rec["status"] = "no_price"
             return rec
         brand = canonical_brand(data["brand_raw"])
-        rec.update(status="ok" if data["currency"] == "EUR" else "wrong_currency",
+        rec.update(status="ok" if data["currency"] == CATALOG.get("cur", "EUR") else "wrong_currency",
                    ean=data["ean"].lstrip("0") if data.get("ean") else None, brand=brand,
                    name=clean_name(data["name"], data["brand_raw"], brand), kind=kind, type=guitar_type(data["crumbs"], kind),
                    price=data["price"], currency=data["currency"], in_stock=data["in_stock"], image=data.get("image"))
@@ -1372,7 +1450,7 @@ def build(offers=None, history=None):
                 and (kind in GUITAR_KINDS or not EQUIPO_SKIP.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
         if not spain:
-            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP}[CATALOG["site"]]
+            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP}[CATALOG["site"]]
             mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})
