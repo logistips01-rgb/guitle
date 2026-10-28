@@ -1,0 +1,45 @@
+name: probe-pvp
+# Prueba puntual (se borra después): ¿publican Gretsch, Charvel, EVH y Jackson PVP en euros para España?
+on:
+  push:
+    paths: [".github/workflows/probe-pvp.yml"]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - run: |
+          python3 - <<'E'
+          import re, urllib.request, urllib.robotparser
+          UA = "Mozilla/5.0 (compatible; guitlebot/1.0; +https://guitle.com)"
+          def get(u):
+              try:
+                  r = urllib.request.urlopen(urllib.request.Request(u, headers={"User-Agent": UA}), timeout=30)
+                  return r.status, r.read().decode("utf-8", "replace")
+              except Exception as e:
+                  return getattr(e, "code", str(e)), ""
+          for host in ["es.gretschguitars.com", "es.charvel.com", "es.evhgear.com", "es.jacksonguitars.com",
+                       "www.gretschguitars.com", "www.charvel.com", "www.evhgear.com"]:
+              st, robots = get(f"https://{host}/robots.txt")
+              print(f"== {host} robots {st}")
+              if st != 200:
+                  continue
+              rp = urllib.robotparser.RobotFileParser(); rp.parse(robots.splitlines())
+              st, sm = get(f"https://{host}/sitemap.xml")
+              prods = re.findall(r"<loc>([^<]*sitemap_products[^<]*)</loc>", sm)
+              print("   sitemap", st, len(prods), "de productos")
+              if not prods:
+                  continue
+              st, ps = get(prods[0].replace("&amp;", "&"))
+              urls = re.findall(r"<loc>([^<]*/products/[^<]*)</loc>", ps)
+              print("   fichas en el primer sitemap:", len(urls))
+              for u in urls[5:8]:
+                  if not rp.can_fetch(UA, u):
+                      print("   robots no deja", u); continue
+                  st, h = get(u)
+                  cur = sorted(set(re.findall(r'"currencyCode":"([A-Z]{3})"', h)))
+                  pr = re.findall(r'"price":\{"amount":([0-9.]+),"currencyCode":"([A-Z]+)"\},"sku":"([^"]+)"', h)[:1]
+                  print("  ", st, u.rsplit("/", 1)[-1][:50], cur, pr)
+          E
