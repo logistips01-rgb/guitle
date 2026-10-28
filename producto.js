@@ -114,24 +114,32 @@ function verdict(current, best) {
 // el correo de confirmación y los avisos. Las reglas de Firestore no dejan leer la colección desde la web.
 (() => {
   const ALERTS = "https://firestore.googleapis.com/v1/projects/guitle-d48d8/databases/(default)/documents/alertas";
-  const after = document.querySelector("#stores")?.closest("section");
+  // Un botón discreto junto al precio; el formulario se abre al pulsarlo.
+  const after = document.getElementById("verdict");
   if (!after) return;
   const slug = location.pathname.split("/").pop().replace(/\.html$/, "");
   const name = document.querySelector(".pname")?.textContent.trim() || slug;
   const price = +CFG.best;
-  const box = document.createElement("section");
+  const box = document.createElement("div");
   box.className = "alert-box";
-  box.innerHTML = `<h3>Avísame si baja de precio</h3>
-    <p class="muted small">Te escribimos cuando el mejor precio baje. Gratis, sin registro y te das de baja con un clic.</p>
-    <form id="alert-form">
+  box.innerHTML = `<button type="button" class="alert-open" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+      Avísame si baja de precio</button>
+    <form id="alert-form" hidden>
       <input type="email" id="alert-email" required placeholder="tu@correo.com" autocomplete="email" aria-label="Tu correo">
-      <input type="number" id="alert-target" min="1" step="1" placeholder="Precio máximo (opcional)" aria-label="Precio objetivo en euros">
+      <input type="number" id="alert-target" min="1" step="1" placeholder="Precio máx. (opcional)" aria-label="Precio objetivo en euros">
       <button type="submit">Avisarme</button>
-      <label class="small muted"><input type="checkbox" required> Acepto la <a href="/legal.html#privacidad">política de privacidad</a>:
-        usaremos tu correo solo para este aviso.</label>
+      <p class="small muted">Gratis y sin registro. Al pulsar «Avisarme» aceptas la <a href="/legal.html#privacidad">política
+        de privacidad</a>: usaremos tu correo solo para este aviso y te das de baja con un clic.</p>
     </form>
     <p class="small" id="alert-msg" role="status"></p>`;
   after.after(box);
+  const open = box.querySelector(".alert-open"), form = box.querySelector("form");
+  open.addEventListener("click", () => {
+    form.hidden = !form.hidden;
+    open.setAttribute("aria-expanded", String(!form.hidden));
+    if (!form.hidden) box.querySelector("#alert-email").focus();
+  });
   const msg = box.querySelector("#alert-msg");
   box.querySelector("#alert-form").addEventListener("submit", async e => {
     e.preventDefault();
@@ -148,7 +156,7 @@ function verdict(current, best) {
       const r = await fetch(`${ALERTS}?documentId=${id}`, { method: "POST", headers: { "Content-Type": "application/json" },
                                                           body: JSON.stringify({ fields }) });
       if (!r.ok) throw new Error(r.status);
-      box.querySelector("form").hidden = true;
+      form.hidden = true; open.hidden = true;
       msg.innerHTML = `<b>¡Hecho!</b> En unos minutos te llegará un correo a ${esc(email)} para confirmar el aviso
         (mira también en correo no deseado).`;
     } catch (err) {
