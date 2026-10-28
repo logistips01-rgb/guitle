@@ -21,10 +21,55 @@
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "session",
+  "name": "PRS SE NF3 Ice Blue Metallic",
+  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
+  "price": 739.0,
+  "median": 990.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
   "name": "ESP LTD EC-1000T QM Charcoal Burst",
   "slug": "esp-ltd-ec-1000t-qm-charcoal-burst-719710614420",
   "price": 1199.0,
   "median": 1719.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
+  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
+  "price": 811.2,
+  "median": 1111.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Mooer GTRS S801 White",
+  "slug": "mooer-gtrs-s801-white-6971889220138",
+  "price": 333.0,
+  "median": 506.25
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Mooer GTRS S801 White",
+  "slug": "mooer-gtrs-s801-white-6971889220138",
+  "price": 333.0,
+  "median": 506.25
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE Custom 24 Semi-Hollow Piezo Orange Tiger Smokeburst",
+  "slug": "prs-se-custom-24-semi-hollow-piezo-orange-tiger-smokeburst-825362244165",
+  "price": 1299.0,
+  "median": 1795.0
  },
  {
   "kind": "electrica",
@@ -47,11 +92,20 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE NF3 Ice Blue Metallic",
-  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
-  "price": 739.0,
-  "median": 995.0
+  "store": "pronorte",
+  "name": "Yamaha PACS+12M Pacifica Standard Plus Ash Pink",
+  "slug": "yamaha-pacs-12m-pacifica-standard-plus-ash-pink-4957812697668",
+  "price": 726.0,
+  "median": 982.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "drunkat",
+  "name": "Yamaha Pacifica 311H Black",
+  "slug": "yamaha-pacifica-311h-black-4957812500098",
+  "price": 347.92,
+  "median": 425.0
  },
  {
   "kind": "electrica",
@@ -120,10 +174,10 @@
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicopolix",
-  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
-  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
-  "price": 811.2,
-  "median": 1105.0
+  "name": "Fender LTD American Vintage II 51 Telecaster Negra",
+  "slug": "fender-ltd-american-vintage-ii-51-telecaster-negra-885978795239",
+  "price": 2038.4,
+  "median": 2934.0
  },
  {
   "kind": "electrica",
@@ -142,6 +196,15 @@
   "slug": "prs-s2-standard-24-satin-red-apple-metallic-825362208457",
   "price": 1999.0,
   "median": 3034.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE Custom 24 Semi-Hollow Piezo Vintage Sunburst",
+  "slug": "prs-se-custom-24-semi-hollow-piezo-vintage-sunburst-825362244172",
+  "price": 1189.0,
+  "median": 2066.0
  },
  {
   "kind": "electrica",
