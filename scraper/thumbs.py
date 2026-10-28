@@ -156,7 +156,7 @@ def wanted():
         for o in load(path, {}).values():
             if o.get("status") == "ok" and o.get("image"):
                 # Las guitarras se ponen en vertical; teclados y pedales se dejan como vienen.
-                out.setdefault(o["image"], (o.get("kind") or "electrica") in {"electrica", "acustica", "clasica"})
+                out.setdefault(o["image"], (o.get("kind") or "electrica") in {"electrica", "acustica", "clasica", "portuguesa"})
     return out
 
 

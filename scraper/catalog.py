@@ -474,10 +474,16 @@ PT_SKIP = re.compile(r"baixo|\bbass\b|ukulele|cavaquinho|bandolim|banjo|amplific
                      r"|pe[cç]as|livro|m[eé]todo|sistema sem fios|wireless|microfone|piano|teclado|bateria", re.I)
 
 
+# Lo que se cuela en categorías de guitarra (cuerdas sueltas, paños, métodos…): se mira el nombre.
+PT_NAME_SKIP = re.compile(r"\bcordas?\b|\bpano\b|resist[eê]ncia|piano|m[eé]todo|livro|^(?:estojo|saco|capa)\b"
+                          r"|afinador|correia|palhetas?\b|suporte|\bcabo\b|ukulele|cavaquinho|\bbaixo\b|\bbass\b", re.I)
+
+
 def pt_kind(crumbs):
     """'electrica', 'acustica', 'clasica', 'portuguesa' o None, por las categorías (en portugués) de la tienda."""
     text = " / ".join(crumbs).lower()
-    leaf = " / ".join(crumbs[-2:]).lower()  # "Guitarras e baixos" arriba no la descarta; un "Baixos" al final, sí
+    # "Guitarras e baixos" arriba no la descarta; un "Baixos" al final, sí
+    leaf = re.sub(r"guitarras e baixos", "", " / ".join(crumbs[-2:]).lower())
     if not re.search(r"guitarr", text) or PT_SKIP.search(leaf):
         return None
     if re.search(r"guitarras? portuguesas?", text):
@@ -495,8 +501,11 @@ def _parse_egitana_pt(soup, text):
     """Egitana.pt: analítica (categoría y precio) como en egitana.es y, además, microdatos con el EAN (gtin13)."""
     data = _parse_egitana(soup, text)
     micro = _parse_microdata(soup, text)
-    if micro.get("ean"):
-        data["ean"] = micro["ean"]
+    # El nombre va en el h1 (no en un meta), así que el EAN se coge suelto.
+    gtin = soup.find("meta", attrs={"itemprop": re.compile("^gtin1[34]$", re.I)})
+    ean = normalize_id(gtin.get("content") if gtin else "").lstrip("0")
+    if len(ean) >= 11:
+        data["ean"] = ean
     if not data.get("price") and micro.get("price"):
         data.update({k: micro[k] for k in ("name", "brand_raw", "price", "currency", "in_stock", "image")})
         data["ean"] = micro.get("ean")
@@ -1205,6 +1214,8 @@ def build(offers=None, history=None):
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
                 and (kind in GUITAR_KINDS or not EQUIPO_SKIP.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
+        if not spain:
+            mine = [o for o in mine if not PT_NAME_SKIP.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})
         products = _products(kind, mine, history, *extra)
