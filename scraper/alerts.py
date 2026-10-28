@@ -114,8 +114,9 @@ def delete(s, doc_id):
 def _page(title, body_html):
     return f"""<!doctype html><html lang="es"><body style="margin:0;background:#f4f4f2;font-family:Arial,Helvetica,sans-serif;color:#0b0b0b">
 <div style="max-width:560px;margin:0 auto;padding:24px 16px">
-<p style="margin:0 0 18px"><a href="{SITE}/" style="text-decoration:none;color:#0b0b0b;font-weight:800;font-size:22px">guitle</a>
-<span style="color:#2a78d6;font-size:13px;font-weight:600"> · guitarras al mejor precio</span></p>
+<p style="margin:0 0 18px"><a href="{SITE}/" style="text-decoration:none"><img src="{SITE}/icons/logo-email.png" width="115" height="42"
+alt="guitle" style="vertical-align:middle;border:0"></a>
+<span style="color:#2a78d6;font-size:13px;font-weight:600;vertical-align:middle"> · guitarras al mejor precio</span></p>
 <div style="background:#fcfcfb;border:1px solid #e2e1dc;border-radius:14px;padding:20px">
 <h1 style="font-size:20px;margin:0 0 12px">{html.escape(title)}</h1>{body_html}</div>
 <p style="color:#7a7974;font-size:12px;line-height:1.5;margin:16px 4px 0">guitle compara cada día los precios de las tiendas de música.
