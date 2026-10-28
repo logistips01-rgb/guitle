@@ -36,6 +36,7 @@ marca/dgz-dime-guitarz.html
 marca/duesenberg.html
 marca/duke.html
 marca/eastman.html
+marca/edwards-guitars-basses.html
 marca/eko.html
 marca/enrique-palacios.html
 marca/epiphone.html
@@ -56,6 +57,7 @@ marca/guild.html
 marca/gypsy-rose.html
 marca/hagstrom.html
 marca/hanika.html
+marca/harmony.html
 marca/heritage.html
 marca/hofner.html
 marca/ibanez.html
@@ -76,6 +78,7 @@ marca/larry-carlton.html
 marca/lava-music.html
 marca/lr-baggs.html
 marca/ltd.html
+marca/magneto.html
 marca/manuel-rodriguez.html
 marca/marigaux.html
 marca/martin.html
@@ -100,6 +103,7 @@ marca/prudencio-saez.html
 marca/prudencio-saez.html
 marca/rafael-martin.html
 marca/randon.html
+marca/rickenbacker.html
 marca/rocio.html
 marca/rocio.html
 marca/santa-cruz.html

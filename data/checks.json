@@ -2,6 +2,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Ibanez JBM27 Jake Bowen",
+  "slug": "ibanez-jbm27-jake-bowen-4515276872399",
+  "price": 910.0,
+  "median": 1244.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -11,11 +20,101 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "ESP LTD EC-1000T QM Charcoal Burst",
+  "slug": "esp-ltd-ec-1000t-qm-charcoal-burst-719710614420",
+  "price": 1199.0,
+  "median": 1719.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicopolix",
+  "name": "Ibanez GRX40-TFB Tri Fade Burst",
+  "slug": "ibanez-grx40-tfb-tri-fade-burst-4515276686231",
+  "price": 185.95,
+  "median": 219.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE McCarty 594 Singlecut Charcoal",
+  "slug": "prs-se-mccarty-594-singlecut-charcoal-825362244295",
+  "price": 849.0,
+  "median": 1149.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE McCarty 594 Singlecut Vintage Sunburst",
+  "slug": "prs-se-mccarty-594-singlecut-vintage-sunburst-825362244301",
+  "price": 857.0,
+  "median": 1149.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE NF3 Ice Blue Metallic",
+  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
+  "price": 739.0,
+  "median": 995.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Yamaha PACP12M Pacifica Professional Sparkle Blue",
   "slug": "yamaha-pacp12m-pacifica-professional-sparkle-blue-4957812700887",
   "price": 1269.0,
   "median": 1961.125
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Austin AS6PBK Super 6 Black",
+  "slug": "austin-as6pbk-super-6-black-814295014549",
+  "price": 254.1,
+  "median": 374.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Austin AS6PBK Super 6 Black",
+  "slug": "austin-as6pbk-super-6-black-814295014549",
+  "price": 267.0,
+  "median": 367.55
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Austin AS6PROGT Super 6 Gold Top",
+  "slug": "austin-as6progt-super-6-gold-top-812309025482",
+  "price": 261.0,
+  "median": 358.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Austin AS6PTS Super 6 Tsb",
+  "slug": "austin-as6pts-super-6-tsb-814295019247",
+  "price": 171.0,
+  "median": 272.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Cort G200 SP BK",
+  "slug": "cort-g200-sp-bk-8809817080531",
+  "price": 254.0,
+  "median": 339.075
  },
  {
   "kind": "electrica",
@@ -46,30 +145,30 @@
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicopolix",
-  "name": "Ibanez GRX40-TFB Tri Fade Burst",
-  "slug": "ibanez-grx40-tfb-tri-fade-burst-4515276686231",
-  "price": 185.95,
-  "median": 219.0
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Gretsch Streamliner Jet LRL Nightshade Purple",
+  "slug": "gretsch-streamliner-jet-lrl-nightshade-purple-885978721795",
+  "price": 334.0,
+  "median": 451.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "PRS S2 Standard 24 Satin Red Apple Metallic",
+  "slug": "prs-s2-standard-24-satin-red-apple-metallic-825362208457",
+  "price": 1999.0,
+  "median": 3034.0
  },
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "session",
-  "name": "PRS SE McCarty 594 Singlecut Vintage Sunburst",
-  "slug": "prs-se-mccarty-594-singlecut-vintage-sunburst-825362244301",
-  "price": 857.0,
-  "median": 1149.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE NF3 Ice Blue Metallic",
-  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
-  "price": 739.0,
-  "median": 990.0
+  "name": "PRS SE DGT McCarty Tobacco Sunburst",
+  "slug": "prs-se-dgt-mccarty-tobacco-sunburst-825362244226",
+  "price": 764.0,
+  "median": 1089.0
  },
  {
   "kind": "acustica",
