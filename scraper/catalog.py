@@ -475,7 +475,7 @@ PT_SKIP = re.compile(r"baixo|\bbass\b|ukulele|cavaquinho|bandolim|banjo|amplific
 
 
 # Lo que se cuela en categorías de guitarra (cuerdas sueltas, paños, métodos…): se mira el nombre.
-PT_NAME_SKIP = re.compile(r"\bcordas?\b|\bpano\b|resist[eê]ncia|piano|m[eé]todo|livro|^(?:estojo|saco|capa)\b"
+PT_NAME_SKIP = re.compile(r"(?<!\d )\bcordas?\b|\bpano\b|resist[eê]ncia|piano|m[eé]todo|livro|^(?:estojo|saco|capa)\b"
                           r"|afinador|correia|palhetas?\b|suporte|\bcabo\b|ukulele|cavaquinho|\bbaixo\b|\bbass\b", re.I)
 
 
@@ -515,19 +515,19 @@ def _parse_egitana_pt(soup, text):
 
 
 def _parse_salao(soup, text):
-    """Salão Musical (PrestaShop): microdatos con el precio en un span y el GTIN13 en mayúsculas."""
+    """Salão Musical (PrestaShop): precio de su analítica (view_item) y GTIN13 en un meta (en mayúsculas)."""
     h1 = soup.find("h1")
-    price = soup.select_one('[itemprop=price][content]')
+    # El itemprop=price de la página es el del primer producto relacionado; el de la ficha va en su analítica.
+    price = re.search(r'"view_item",\s*\{[^}]*?"value":\s*([\d.]+)', text)
     gtin = soup.find("meta", attrs={"itemprop": re.compile("^gtin13$", re.I)})
     if not h1 or not price:
         return {"crumbs": []}
     brand = soup.find(attrs={"itemprop": "brand"})
     brand = brand.get("content") or brand.get_text(" ", strip=True) if brand else None
     image = soup.find("meta", attrs={"property": "og:image"})
-    avail = soup.find(attrs={"itemprop": "availability"})
     ean = normalize_id(gtin.get("content") if gtin else "").lstrip("0")
-    return {"crumbs": [], "name": h1.get_text(" ", strip=True), "brand_raw": brand, "price": float(price["content"]),
-            "currency": "EUR", "in_stock": ("instock" in (avail.get("href") or avail.get("content") or "").lower()) if avail else None,
+    return {"crumbs": [], "name": h1.get_text(" ", strip=True), "brand_raw": brand, "price": float(price.group(1)),
+            "currency": "EUR", "in_stock": None,  # la disponibilidad de la página es también la de los relacionados
             "image": image.get("content") if image else None, "ean": ean if len(ean) >= 11 else None}
 
 
