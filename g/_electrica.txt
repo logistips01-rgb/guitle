@@ -1181,7 +1181,6 @@ esp-ltd-alexi-laiho-sawtooth-awtoothhtm
 esp-ltd-alexi-ripped-sawtooth-purple-fade-satin-799493273328
 esp-ltd-alr-ii-qm-stp-andy-laroque-laroquehtm
 esp-ltd-alr-ii-qm-stp-andy-laroque-oquep41480
-esp-ltd-arrow-1000-candy-apple-red-eredp39642
 esp-ltd-arrow-1000-cars-fluence-fluencehtm
 esp-ltd-arrow-1000-pw-00pwp44332
 esp-ltd-arrow-1000-pw-w1000pwhtm
@@ -1203,10 +1202,7 @@ esp-ltd-bb-200b-qm-stblksb-satin-sbsatinhtm
 esp-ltd-bb-600-baritone-signature-gnaturehtm
 esp-ltd-ec-01-ft-black-ftblackhtm
 esp-ltd-ec-01-ft-cbs-01ftcbshtm
-esp-ltd-ec-10-blk-0blkp14517
-esp-ltd-ec-10-blk-ec10blkhtm
 esp-ltd-ec-1000-baritone-chms-onechmshtm
-esp-ltd-ec-1000-black-lackp11584
 esp-ltd-ec-1000-cars-719710629080
 esp-ltd-ec-1000-evertune-bb-blks-blksp41710
 esp-ltd-ec-1000-evertune-bb-blks-ebbblkshtm
@@ -1236,7 +1232,7 @@ esp-ltd-ec-200dx-chb-xchbp37668
 esp-ltd-ec-2025-50th-anniv-mg-ltd-gltdp40924
 esp-ltd-ec-2025-50th-anniv-mg-ltd-ivmgltdhtm
 esp-ltd-ec-2025-mgo-719710628274
-esp-ltd-ec-256-black-satin-atinp14516
+esp-ltd-ec-256-blk-6blkp11588
 esp-ltd-ec-256-candy-apple-red-st-edstp36416
 esp-ltd-ec-256-qm-black-cherry-sb-herrysbhtm
 esp-ltd-ec-256-qm-stbc-sb-719710620179
@@ -1272,7 +1268,6 @@ esp-ltd-gh-sv-blk-gary-holt-signature-719710619876
 esp-ltd-gl-200k-black-0kblackhtm
 esp-ltd-gl-desert-eagle-aglep38460
 esp-ltd-gl-desert-eagle-rteaglehtm
-esp-ltd-h-1001-violet-andromeda-satin-atinp39693
 esp-ltd-h-1001fr-blknb-799493268065
 esp-ltd-h-200fm-dark-brown-sb-wnsbp11585
 esp-ltd-h3-1000-qm-stbc-stbcp31679
@@ -1319,7 +1314,6 @@ esp-ltd-m-400ht-sm-400htsmhtm
 esp-ltd-m-6-baritone-et-black-metal-black-redburst-satin-719710629165
 esp-ltd-m-6b-et-black-metal-ii-metaliihtm
 esp-ltd-m-7b-ht-black-metal-ii-metaliihtm
-esp-ltd-mh-10-black-10blackhtm
 esp-ltd-mh-1000-evertune-cb-719710620292
 esp-ltd-mh-1000-evertune-charcoal-harcoalhtm
 esp-ltd-mh-1000-qm-blk-ocean-719710614604
@@ -3740,7 +3734,6 @@ ltd-guitarras-mh-401nt-qm-see-thru-black-910807063597
 ltd-h-1001-violet-andromeda-799493273311
 ltd-h-1007-see-thru-black-7-cuerdas-799493261431
 ltd-iron-cross-signature-james-hetfield-snow-white-840248029605
-ltd-jm-i-deep-blood-moon-con-estuche-719710627451
 ltd-jm-ii-black-shadow-burst-c-estuche-799493269574
 ltd-kh-202-black-840248009829
 ltd-kh-602-black-c-estuche-840248009843
