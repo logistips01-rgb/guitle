@@ -15,13 +15,13 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
-from . import css, ebay, jsonld, meta
+from . import affiliates, analytics, css, ebay, jsonld, meta
 from . import thumbs as thumbs_mod
 from .fetch import Fetcher, is_challenge
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
-EXTRACTORS = {"jsonld": jsonld.extract, "meta": meta.extract, "css": css.extract}
+EXTRACTORS = {"jsonld": jsonld.extract, "meta": meta.extract, "css": css.extract, "analytics": analytics.extract}
 CHAIN = ["jsonld", "meta", "css"]
 EXPECTED_CURRENCY = "EUR"
 
@@ -76,7 +76,8 @@ def scrape_item(fetcher, store, item, products, now):
             if is_challenge(resp):
                 rec["note"] = "challenge anti-bot"
             return rec
-        if resp.status_code != 200:
+        # Algunas tiendas (Egitana) responden 500 con la ficha completa: "ok_status" en stores.json.
+        if resp.status_code not in store.get("ok_status", [200]):
             rec["note"] = f"HTTP {resp.status_code}"
             return rec
         soup = BeautifulSoup(resp.content, "html.parser")
@@ -158,7 +159,8 @@ def update_latest(history, products, stores):
         key = f"{rec['store']}|{rec['sku']}"
         entry = latest.setdefault(key, {"store": rec["store"], "sku": rec["sku"]})
         if rec.get("method") != "manual":
-            entry.update(last_run=rec["date"], status=rec["status"], url=rec["url"])
+            entry.update(last_run=rec["date"], status=rec["status"], url=rec["url"],
+                         aff=affiliates.wrap(rec["store"], rec["url"]))  # enlace para la web (afiliado si lo hay)
         if rec["status"] == "ok":
             if rec.get("image"):
                 entry["image"] = rec["image"]
@@ -198,7 +200,8 @@ def with_live_pvp(products, latest, stores):
             p["image"] = images[0][2]
             # Miniatura uniforme (scraper.thumbs); entre las ya generadas, la que muestra la guitarra entera
             # (la más esbelta: alto/ancho mayor), no un primer plano.
-            thumbs = [t for t in (thumbs_mod.existing(i[2]) for i in images) if t]
+            # La web de la marca no cuenta: comparte foto entre colores.
+            thumbs = [t for t in (thumbs_mod.existing(img) for is_ref, _, img in images if not is_ref) if t]
             if thumbs:
                 p["thumb"] = max(thumbs, key=thumbs_mod.slenderness) if p.get("category", "guitarra") in thumbs_mod.ROTATE_CATEGORIES else thumbs[0]
         out.append(p)

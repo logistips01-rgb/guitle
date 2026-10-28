@@ -8,13 +8,11 @@
 <meta name="apple-mobile-web-app-title" content="guitle">
 <meta name="theme-color" content="#2a78d6">
 <link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/inter.css">
 <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <title>Comparador · guitle, guitarras al mejor precio</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="vendor/chart.umd.min.js"></script>
 <style>
   :root {
     color-scheme: light;
@@ -152,6 +150,8 @@
   .logo .i { position: relative; }
   .logo .i::before { content: ""; position: absolute; left: 50%; top: -.06em; width: .36em; height: .36em; transform: translateX(-50%);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-40 -80 80 82'%3E%3Cpath fill='%232a78d6' d='M0 0C-12-10-38-30-38-52C-38-70-20-78 0-78C20-78 38-70 38-52C38-30 12-10 0 0Z'/%3E%3C/svg%3E") no-repeat center / contain; }
+  .site-foot { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
+  .site-foot a { color: var(--text-muted); }
 </style>
 </head>
 <body>
@@ -172,12 +172,16 @@
   <div id="B" class="matrix-wrap hidden"><table class="matrix" id="matrix"></table></div>
   <details class="status" id="coupons-box"><summary>Cupones</summary><div id="coupons"></div></details>
   <details class="status"><summary>Estado de las tiendas (última ejecución)</summary><div class="table-wrap"><table id="status"></table></div></details>
+  <footer class="site-foot">
+    <span>Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span>
+    <span><a href="legal.html#aviso">Aviso legal</a> · <a href="legal.html#privacidad">Privacidad</a> · <a href="legal.html#cookies">Cookies</a></span>
+  </footer>
 </main>
 <div class="sheet-bg" id="bg"></div>
 <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
 <script>
-// Miniatura uniforme si existe; si no, la foto de la tienda.
-const pic = p => p.thumb ? "img/p/" + p.thumb : p.image;
+// Solo miniaturas propias (img/p/): la web no carga nada de terceros. Sin miniatura todavía, sin foto.
+const pic = p => p.thumb ? "img/p/" + p.thumb : null;
 const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const day = iso => iso ? iso.slice(0, 10) : "";
@@ -382,7 +386,7 @@ function render(latest, history, coupons) {
     const rows = list.map(p => {
       const by = Object.fromEntries(p.items.map(i => [i.store, i]));
       for (const i of p.items) if (i.final === p.best.final && wins[i.store] !== undefined) wins[i.store]++;
-      return `<tr><td class="prod" data-sku="${esc(p.sku)}"><span class="pn">${p.image ? `<img src="${esc(pic(p))}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}
+      return `<tr><td class="prod" data-sku="${esc(p.sku)}"><span class="pn">${pic(p) ? `<img src="${esc(pic(p))}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}
           <span><button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}" aria-label="Favorita">${favs.has(p.sku) ? "★" : "☆"}</button> ${esc(p.name)}</span></span></td>
         ${cols.map(s => {
           const i = by[s.id];
@@ -406,7 +410,7 @@ function render(latest, history, coupons) {
                     p.best.coupon ? '<span class="badge coupon">Cupón</span>' : ""].join("");
     const shortName = p.name.startsWith(p.brand + " ") ? p.name.slice(p.brand.length + 1) : p.name;
     return `<div class="tile" data-sku="${esc(p.sku)}">
-      <div class="img">${p.image ? `<img src="${esc(pic(p))}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}</div>
+      <div class="img">${pic(p) ? `<img src="${esc(pic(p))}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}</div>
       <div class="badges">${badges}</div>
       <button class="fav ${favs.has(p.sku) ? "on" : ""}" data-fav="${esc(p.sku)}" aria-label="Favorita">${favs.has(p.sku) ? "★" : "☆"}</button>
       <div class="body">
@@ -422,7 +426,7 @@ function render(latest, history, coupons) {
     if (p.case_included) parts.push(`Incluye <strong>${esc(p.case_included)}</strong> de serie.`);
     const c = p.case && bestBySku[p.case];
     if (c) {
-      parts.push(`Estuche recomendado: <a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(productBySku[p.case]?.name || p.case)}</a>
+      parts.push(`Estuche recomendado: <a href="${esc(c.url)}" target="_blank" rel="sponsored noopener">${esc(productBySku[p.case]?.name || p.case)}</a>
         — ${eur(c.final)} en ${esc(storeName[c.store])}${c.coupon ? ` (cupón ${esc(c.coupon.code)})` : ""}.
         <strong>Pack guitarra + estuche: ${eur(p.best.final + c.final)}</strong>`);
     }
@@ -442,7 +446,7 @@ function render(latest, history, coupons) {
       const priceCell = i.final == null ? "–" : i.coupon
         ? `<s class="muted">${eur(i.price)}</s> ${eur(i.final)} <span class="badge coupon">${esc(i.coupon.code)}</span>` : eur(i.final);
       return `<tr class="${isBest ? "best-row" : ""}">
-        <td><span class="swatch" style="background:var(${colorVar[i.store] || "--border"})"></span>${i.url ? `<a href="${esc(i.url)}" target="_blank" rel="noopener">${esc(storeName[i.store])}</a>` : esc(storeName[i.store])}${isRef[i.store] ? ' <span class="tag">PVP</span>' : ""}</td>
+        <td><span class="swatch" style="background:var(${colorVar[i.store] || "--border"})"></span>${i.url ? `<a href="${esc(i.aff || i.url)}" target="_blank" rel="sponsored noopener">${esc(storeName[i.store])}</a>` : esc(storeName[i.store])}${isRef[i.store] ? ' <span class="tag">PVP</span>' : ""}</td>
         <td class="num">${priceCell}${i.price_method === "manual" ? ' <span class="tag">manual</span>' : ""}</td>
         <td class="num muted">${isRef[i.store] || i.final == null ? "" : isBest ? "✓ mejor" : "+" + eur(i.final - p.best.final)}</td>
         <td>${i.in_stock === true ? "sí" : i.in_stock === false ? "no" : "?"}</td>
@@ -450,7 +454,7 @@ function render(latest, history, coupons) {
         <td>${i.status === "ok" ? "" : `<span class="tag ${statusCls}">${esc(STATUS_LABEL[i.status] || i.status)}</span>`}</td></tr>`;
     }).join("");
     s.innerHTML = `<button class="close" aria-label="Cerrar">✕</button>
-      <div class="hero">${p.image ? `<img src="${esc(pic(p))}" alt="${esc(p.name)}" referrerpolicy="no-referrer">` : ""}
+      <div class="hero">${pic(p) ? `<img src="${esc(pic(p))}" alt="${esc(p.name)}" referrerpolicy="no-referrer">` : ""}
         <div><h2>${esc(p.name)}</h2>
           <div class="big">${eur(p.best.final)} <span class="muted" style="font-size:.95rem;font-weight:400">en ${esc(storeName[p.best.store])}</span></div>
           <div class="muted">PVP ${p.pvp ? eur(p.pvp) : "pendiente"}${pvpSrc}${p.vsPvp != null ? ` · <span class="${p.vsPvp < 0 ? "neg" : "pos"}">${pct(p.vsPvp)}</span>` : ""}</div>
@@ -515,5 +519,6 @@ Promise.all([load("data/latest.json"), load("data/history.json"), load("data/cou
   .then(([latest, history, coupons, candidates]) => { render(latest, history, coupons); renderCoupons(coupons, candidates, latest); })
   .catch(err => { document.getElementById("meta").textContent = `No se pudieron cargar los datos (${err.message}). En local, sírvelo con: python -m http.server`; });
 </script>
+<script src="/c.js" defer></script>
 </body>
 </html>

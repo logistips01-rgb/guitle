@@ -14,7 +14,7 @@ import time
 from io import BytesIO
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageOps
 
 from .catalog import load
 from .fetch import Fetcher
@@ -22,7 +22,7 @@ from .fetch import Fetcher
 ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "img" / "p"
 HEIGHT = 360
-WHITE = 235  # más claro que esto se considera fondo
+WHITE = 244  # canal más oscuro por encima de esto = fondo blanco
 ROTATE_CATEGORIES = {"guitarra", "bajo"}
 
 
@@ -39,6 +39,32 @@ def slenderness(name):
     """Alto/ancho de una miniatura: una guitarra entera es esbelta (>2); un primer plano, no."""
     with Image.open(DIR / name) as im:
         return im.height / im.width
+
+
+def _erase_lines(mask):
+    """Borra rayas finas (bordes o separadores de 1-3 px que algunas tiendas dibujan en la foto).
+
+    Una columna o fila casi llena de "tinta" y aislada es una raya; el mástil de una guitarra también es
+    largo, pero mucho más ancho.
+    """
+    from PIL import ImageDraw
+    w, h = mask.size
+    draw = ImageDraw.Draw(mask)
+    for axis, n, length in ((0, w, h), (1, h, w)):
+        full = [mask.crop((i, 0, i + 1, h) if axis == 0 else (0, i, w, i + 1)).histogram()[255] > 0.5 * length
+                for i in range(n)]
+        i = 0
+        while i < n:
+            if full[i]:
+                j = i
+                while j < n and full[j]:
+                    j += 1
+                if j - i <= 3:
+                    draw.rectangle((i, 0, j - 1, h) if axis == 0 else (0, i, w, j - 1), fill=0)
+                i = j
+            else:
+                i += 1
+    return mask
 
 
 def _main_block(mask, axis):
@@ -78,7 +104,11 @@ def normalize(data, rotate=True, height=HEIGHT):
     bg = Image.new("RGBA", im.size, (255, 255, 255, 255))
     bg.alpha_composite(im)
     rgb = bg.convert("RGB")
-    mask = rgb.convert("L").point(lambda v: 255 if v < WHITE else 0)
+    # Fondo = blanco casi puro en los tres canales. Se mira el canal más oscuro, no el brillo: así un cuerpo
+    # blanco crema (Olympic White, Vintage White…) no se confunde con el fondo.
+    r, g, b = rgb.split()
+    darkest = ImageChops.darker(ImageChops.darker(r, g), b)
+    mask = darkest.point(lambda v: 255 if v < WHITE else 0)
     bbox = mask.getbbox()
     if not bbox:
         return None
@@ -88,9 +118,12 @@ def normalize(data, rotate=True, height=HEIGHT):
         small = mask.resize((max(1, round(mask.width * scale)), max(1, round(mask.height * scale))))
     else:
         scale, small = 1, mask
+    small = _erase_lines(small.copy())
     y0, y1 = _main_block(small, 1)
     x0, x1 = _main_block(small.crop((0, y0, small.width, y1)), 0)
-    box = tuple(round(v / scale) for v in (x0, y0, x1, y1))
+    # Sin salirse de la imagen: un recorte fuera de los bordes se rellena de negro (y deja una raya).
+    box = (max(0, round(x0 / scale)), max(0, round(y0 / scale)),
+           min(rgb.width, round(x1 / scale)), min(rgb.height, round(y1 / scale)))
     rgb, mask = rgb.crop(box), mask.crop(box)
     if rotate:
         w, h = rgb.size
@@ -118,9 +151,11 @@ def wanted():
     for i in latest.get("items", []):  # todas las fotos de cada producto, para poder elegir la mejor
         if i.get("image"):
             out[i["image"]] = category.get(i["sku"], "guitarra") in ROTATE_CATEGORIES
-    for o in load(ROOT / "data" / "catalog" / "offers.json", {}).values():  # todas las tiendas, para elegir la mejor
-        if o.get("status") == "ok" and o.get("image"):
-            out.setdefault(o["image"], True)
+    # Todas las tiendas de todos los catálogos (eléctricas, acústicas y clásicas), para elegir la mejor foto.
+    for path in sorted((ROOT / "data" / "catalog").rglob("offers.json")):
+        for o in load(path, {}).values():
+            if o.get("status") == "ok" and o.get("image"):
+                out.setdefault(o["image"], True)
     return out
 
 

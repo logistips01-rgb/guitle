@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2a78d6">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="stylesheet" href="fonts/inter.css">
+<link rel="stylesheet" href="catalogo.css">
+<title>Estadísticas · guitle</title>
+<style>
+  .intro { color: var(--text-secondary); margin: 4px 0 14px; }
+  .ranges { display: flex; gap: 6px; margin: 6px 0 16px; flex-wrap: wrap; }
+  .ranges button { font: inherit; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface-1); color: var(--text-secondary); cursor: pointer; }
+  .ranges button[aria-pressed="true"] { background: var(--accent-bg); color: var(--accent); border-color: var(--accent); }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .tile-s { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; }
+  .tile-s b { display: block; font-size: 1.6rem; letter-spacing: -.03em; }
+  .tile-s span { color: var(--text-muted); font-size: .85rem; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin-top: 14px; }
+  .card h2 { font-size: 1rem; margin: 0 0 10px; }
+  .chart-wrap { position: relative; height: 260px; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .bars { display: grid; gap: 6px; }
+  .bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; font-size: .88rem; }
+  .bar .lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-secondary); }
+  .bar .val { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .bar .track { grid-column: 1 / -1; height: 8px; border-radius: 4px; background: var(--grid); }
+  .bar .fill { height: 100%; border-radius: 4px; background: var(--accent); min-width: 2px; }
+  .empty { color: var(--text-muted); font-size: .9rem; }
+  .login { margin: 30px 0; }
+  .btn { font: inherit; font-weight: 600; padding: 10px 18px; border-radius: 10px; border: 0; background: var(--accent); color: #fff; cursor: pointer; }
+  .who { color: var(--text-muted); font-size: .85rem; }
+  .who button { font: inherit; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">estadísticas</span></span></a></h1>
+      <span class="who" id="who"></span>
+    </div>
+  </div>
+  <h2 style="font-size:1.5rem;margin:18px 0 0;letter-spacing:-.03em">Visitas y clics a tiendas</h2>
+  <p class="intro">Contador propio, sin cookies: páginas vistas por día, de dónde llega la gente y clics hacia cada tienda.</p>
+
+  <div class="login" id="login" hidden>
+    <p>Esta página es privada. Entra con la cuenta de Google autorizada.</p>
+    <button class="btn" id="signin">Entrar con Google</button>
+    <p class="empty" id="loginmsg"></p>
+  </div>
+
+  <div id="app" hidden>
+    <div class="ranges" role="group" aria-label="Periodo">
+      <button data-days="7">7 días</button><button data-days="30" aria-pressed="true">30 días</button><button data-days="90">90 días</button>
+    </div>
+    <div class="tiles" id="tiles"></div>
+    <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
+    <div class="cols">
+      <div class="card"><h2>Clics a tiendas</h2><div class="bars" id="stores"></div></div>
+      <div class="card"><h2>De dónde llegan</h2><div class="bars" id="refs"></div></div>
+    </div>
+    <div class="card"><h2>Páginas más vistas</h2><div class="bars" id="pages"></div></div>
+  </div>
+</main>
+<script src="vendor/chart.umd.min.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, query, where, getDocs, documentId } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// Configuración pública de la app web de Firebase (no es secreta: la protegen las reglas de Firestore).
+const app = initializeApp({
+  apiKey: "AIzaSyDEDqOCAedm1D5kV6otH8FnYRMsqKfWRt4",
+  authDomain: "guitle-d48d8.firebaseapp.com",
+  projectId: "guitle-d48d8",
+  appId: "1:987865271462:web:05bd03378a289ba87a3867",
+});
+const auth = getAuth(app), db = getFirestore(app);
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = n => n.toLocaleString("es-ES");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const dayStr = d => d.toLocaleDateString("sv-SE", { timeZone: "Europe/Madrid" });
+const shortDay = s => new Date(s + "T12:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+
+let rows = null, chart = null, days = 30;
+
+$("signin").onclick = () => signInWithPopup(auth, new GoogleAuthProvider())
+  .catch(e => { $("loginmsg").textContent = "No se pudo entrar: " + e.code; });
+
+onAuthStateChanged(auth, async user => {
+  $("login").hidden = !!user; $("app").hidden = !user;
+  $("who").innerHTML = user ? `${esc(user.email)} · <button id="out">Salir</button>` : "";
+  if (!user) return;
+  $("out").onclick = () => signOut(auth);
+  try { await load(); } catch (e) {
+    $("app").hidden = true; $("login").hidden = false;
+    $("loginmsg").textContent = "Esta cuenta no tiene permiso para ver las estadísticas.";
+  }
+});
+
+async function load() {
+  const from = dayStr(new Date(Date.now() - 89 * 864e5));
+  const snap = await getDocs(query(collection(db, "c"), where(documentId(), ">=", from), where(documentId(), "<", "3")));
+  rows = snap.docs.map(d => {
+    const [day, kind, ...rest] = d.id.split("_");
+    return { day, kind, key: rest.join("_"), n: d.data().n || 0 };
+  });
+  render();
+}
+
+function render() {
+  const today = new Date(), list = [];
+  for (let i = days - 1; i >= 0; i--) list.push(dayStr(new Date(today - i * 864e5)));
+  const inRange = new Set(list);
+  const sel = rows.filter(r => inRange.has(r.day));
+  const sum = (kind) => { const m = {}; for (const r of sel) if (r.kind === kind) m[r.key] = (m[r.key] || 0) + r.n; return m; };
+  const perDay = Object.fromEntries(list.map(d => [d, 0]));
+  for (const r of sel) if (r.kind === "v") perDay[r.day] += r.n;
+  const total = Object.values(perDay).reduce((a, b) => a + b, 0);
+  const stores = sum("t"), refs = sum("r"), pages = sum("p");
+  const clicks = Object.values(stores).reduce((a, b) => a + b, 0);
+  const fromGoogle = Object.entries(refs).filter(([k]) => k.startsWith("google")).reduce((a, [, n]) => a + n, 0);
+
+  $("tiles").innerHTML = [
+    [fmt(perDay[list.at(-1)]), "páginas vistas hoy"],
+    [fmt(total), `páginas vistas en ${days} días`],
+    [fmt(Math.round(total / days)), "media al día"],
+    [fmt(clicks), `clics a tiendas en ${days} días`],
+    [fmt(fromGoogle), "llegadas desde Google"],
+  ].map(([b, s]) => `<div class="tile-s"><b>${b}</b><span>${s}</span></div>`).join("");
+
+  bars("stores", stores, k => k, "Aún no hay clics a tiendas en este periodo.");
+  bars("refs", refs, k => k === "directo" ? "Directo (sin origen)" : k, "Aún no hay llegadas en este periodo.");
+  bars("pages", pages, k => k === "inicio" ? "Portada" : "/" + k.replace(/~/g, "/"), "Aún no hay páginas vistas.", 15);
+
+  if (chart) chart.destroy();
+  chart = new Chart($("chart"), {
+    type: "line",
+    data: { labels: list, datasets: [{ label: "Páginas vistas", data: list.map(d => perDay[d]), borderColor: css("--accent"),
+      backgroundColor: css("--accent"), borderWidth: 2, pointRadius: days <= 30 ? 3 : 0, pointHoverRadius: 5, tension: 0 }] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: { grid: { display: false }, ticks: { color: css("--text-muted"), maxTicksLimit: 8, callback(v) { return shortDay(this.getLabelForValue(v)); } } },
+                y: { beginAtZero: true, grid: { color: css("--grid") }, ticks: { color: css("--text-muted"), precision: 0 } } },
+      plugins: { legend: { display: false },
+                 tooltip: { callbacks: { title: c => shortDay(c[0].label), label: c => `${fmt(c.parsed.y)} páginas vistas` } } } },
+  });
+}
+
+function bars(id, map, label, emptyText, top = 10) {
+  const items = Object.entries(map).sort((a, b) => b[1] - a[1]).slice(0, top);
+  const max = items.length ? items[0][1] : 1;
+  $(id).innerHTML = items.length ? items.map(([k, n]) =>
+    `<div class="bar" title="${esc(label(k))}: ${fmt(n)}"><span class="lab">${esc(label(k))}</span><span class="val">${fmt(n)}</span>
+      <div class="track"><div class="fill" style="width:${(n / max * 100).toFixed(1)}%"></div></div></div>`).join("")
+    : `<p class="empty">${emptyText}</p>`;
+}
+
+document.querySelectorAll(".ranges button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".ranges button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  days = Number(b.dataset.days); if (rows) render();
+});
+</script>
+</body>
+</html>
