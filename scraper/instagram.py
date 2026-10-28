@@ -272,6 +272,9 @@ def main(argv=None):
     ap.add_argument("--date", help="AAAA-MM-DD (por defecto, hoy)")
     args = ap.parse_args(argv)
     day = date.fromisoformat(args.date) if args.date else datetime.now(timezone.utc).date()
+    if args.publish and (OUT / day.isoformat() / "published.json").exists():
+        print(f"social/{day.isoformat()} ya se publicó")
+        return
     user = api("GET", "me", fields="user_id")["user_id"] if args.publish else None
     recent = recent_captions(user or "me")
     folder, data = plan(day, recent)
@@ -281,8 +284,6 @@ def main(argv=None):
     if not args.publish:
         print(f"Sin publicar. Imágenes en {rel}/")
         return
-    if (folder / "published.json").exists():
-        sys.exit(f"{rel} ya se publicó")
     git("add", rel)
     git("commit", "-q", "-m", f"social: publicación de Instagram {day.isoformat()}")
     branch = git("rev-parse", "--abbrev-ref", "HEAD")
