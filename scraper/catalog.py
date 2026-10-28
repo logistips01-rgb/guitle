@@ -562,6 +562,84 @@ PT_SOURCES = {
                      "pick": lambda u: _salao_category(u) in _SALAO_GUITARS and not NOT_PRODUCT.search(u)},
 }
 
+
+# --- Francia --------------------------------------------------------------------------------------------
+
+FR_SKIP = re.compile(r"\bbasses?\b|\bbass\b|ukul[eé]l|mandolin|banjo|ampli|[eé]tuis?\b|housses?|cordes?\b|accessoir"
+                     r"|micros?\b|pickup|m[eé]diators?|sangles?|stands?\b|supports?|accordeurs?|c[aâ]bles?|p[eé]dales?"
+                     r"|effets?|pi[eè]ces?|m[eé]thodes?|livres?|claviers?|pianos?|batteries", re.I)
+# Nombres que se cuelan en categorías de guitarra.
+FR_NAME_SKIP = re.compile(r"(?<!\d )\bcordes?\b|\bjeux? de\b|m[eé]thode|\blivre|^(?:[eé]tui|housse|sangle)\b|accordeur"
+                          r"|m[eé]diators?|\bstand\b|ukul[eé]l|\bbasse\b|\bbass\b", re.I)
+
+
+def fr_kind(crumbs):
+    """'electrica', 'acustica', 'clasica' o None, por las categorías (en francés) de la tienda."""
+    text = " / ".join(crumbs).lower()
+    # "Guitares & Basses" arriba no la descarta; un "Basses" al final, sí
+    leaf = re.sub(r"guitares? (?:&|et) basses?", "", " / ".join(crumbs[-2:]).lower())
+    if not re.search(r"guitare", text) or FR_SKIP.search(leaf):
+        return None
+    if re.search(r"classique|nylon|flamenc", text):
+        return "clasica"
+    if re.search(r"folk|acoustique|western|voyage|parlou?r", text):
+        return "acustica"
+    if re.search(r"[eé]lectrique", text):
+        return "electrica"
+    return None
+
+
+def _discover_shopify(fetcher, base, collections):
+    """Fichas de unas colecciones de Shopify (products.json, 250 por página)."""
+    urls = set()
+    for col in collections:
+        for page in range(1, 41):
+            url = f"{base}/collections/{col}/products.json?limit=250&page={page}"
+            if not fetcher.allowed(url)[0]:
+                break
+            resp = fetcher.get(url)
+            if resp.status_code == 429:
+                raise RuntimeError("HTTP 429")
+            products = resp.json().get("products", []) if resp.status_code == 200 else []
+            if not products:
+                break
+            urls |= {f"{base}/products/{p['handle']}" for p in products}
+    return urls
+
+
+def _michenaud_fix(data, text):
+    """Michenaud: breadcrumb en microdatos y la forma ("Guitare électrique > Formes > Les Paul") aparte."""
+    soup = BeautifulSoup(text, "html.parser")
+    crumbs = [c.get_text(" ", strip=True) for c in soup.select('[itemprop=itemListElement] [itemprop=name]')]
+    forms = re.findall(r'class="linkTouch">[^<>]*?&gt;\s*Formes\s*&gt;\s*([^<]+)<|class="linkTouch">[^<>]*?>\s*Formes\s*>\s*([^<]+)<', text)
+    form = next((a or b for a, b in forms), "").strip()
+    data["crumbs"] = [c for c in crumbs if c.lower() != "accueil"] + ([form] if form else [])
+    return data
+
+
+THOMANN_FR = "https://www.thomann.fr/"
+_FR_BRANDS = _PT_BRANDS + ("gibson", "lag", "eastman", "furch", "maton", "guild", "gretsch", "godin", "seagull", "norman")
+
+FR_SOURCES = {
+    "woodbrass": {"name": "Woodbrass", "kind": fr_kind,
+                  "discover": lambda f: _discover_shopify(f, "https://woodbrass.com",
+                                                          ("guitares-electriques", "guitares-folk", "guitares-classiques")),
+                  "pick": lambda u: not NOT_PRODUCT.search(u)},
+    "starsmusic": {"name": "Stars Music", "sitemap": "https://www.stars-music.fr/sitemap_sm/sitemap_prod_fr.xml.gz",
+                   "kind": fr_kind,
+                   "pick": lambda u: (lambda s: s.startswith(tuple(b + "-" for b in _FR_BRANDS)))(u.rsplit("/", 1)[-1])
+                   and not FR_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
+    "thomann": {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann, "kind": fr_kind,
+                "discover": lambda f: _discover_thomann(f, ("cat_allProducts_GF_guitares_electriques.html",
+                                                            "cat_allProducts_GF_guitares_folk.html",
+                                                            "cat_allProducts_GF_guitares_classiques.html"), THOMANN_FR),
+                "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)},
+    "michenaud": {"name": "Michenaud", "sitemap": "https://www.michenaud.com/exchange/google/sitemap-fiches-prod.php",
+                  "kind": fr_kind, "fix": _michenaud_fix,
+                  "pick": lambda u: (lambda s: s.startswith(tuple(b + "-" for b in _FR_BRANDS)))(u.rsplit("/", 1)[-1])
+                  and not FR_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
+}
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -607,6 +685,9 @@ CATALOGS = {
     "pt": {"dir": DIR / "pt", "sources": PT_SOURCES, "site": "pt",
            "files": {"electrica": "eletricas.json", "acustica": "acusticas.json", "clasica": "classicas.json",
                      "portuguesa": "portuguesas.json"}},
+    # Francia: igual, guitle.com/fr/ llegará después.
+    "fr": {"dir": DIR / "fr", "sources": FR_SOURCES, "site": "fr",
+           "files": {"electrica": "electriques.json", "acustica": "folk.json", "clasica": "classiques.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -624,7 +705,8 @@ LEFT = re.compile(r"\b(lh|left[- ]?hand(ed)?|lefthand|left|zurd[oa]s?)\b|\d+lh\b
 BRAND_SUFFIX = re.compile(r"\s+(guitars?|españa|spain|europe)$", re.I)
 BRANDS = {"squier by fender": "Squier", "squier": "Squier", "prs": "PRS", "esp": "ESP", "ltd": "LTD", "evh": "EVH",
           "esp ltd": "LTD", "ltd guitars": "LTD", "esp guitars": "ESP", "ernie ball music man": "Music Man", "music man": "Music Man", "d'angelico": "D'Angelico",
-          "sterling by music man": "Sterling", "prs se": "PRS", "prs (paul reed smith)": "PRS", "paul reed smith": "PRS"}
+          "sterling by music man": "Sterling", "gibson electric": "Gibson", "gibson acoustic": "Gibson",
+          "gibson custom": "Gibson", "c.f. martin & co": "Martin", "c.f. martin": "Martin", "cf martin": "Martin", "prs se": "PRS", "prs (paul reed smith)": "PRS", "paul reed smith": "PRS"}
 
 
 def now_iso():
@@ -676,8 +758,12 @@ def clean_name(name, brand_raw, brand):
     return name
 
 
+# "Guitarra folk" / "Guitares folk" en Portugal y Francia es cualquier acústica de acero, no una forma.
+GENERIC_FOLK = re.compile(r"guit(?:arras?|ares?) folk", re.I)
+
+
 def type_from_name(name, url="", kind="electrica"):
-    text = name.lower() + " " + url.rsplit("/", 1)[-1].replace("-", " ")
+    text = GENERIC_FOLK.sub("", name.lower() + " " + url.rsplit("/", 1)[-1].replace("-", " "))
     for label, pat in NAME_TYPES_BY_KIND[kind]:
         if re.search(pat, text):
             return label
@@ -828,6 +914,7 @@ def guitar_type(crumbs, kind="electrica"):
     else:
         leaf = (crumbs[-1] if kind == "electrica" else " / ".join(crumbs[-2:])).lower() if crumbs else ""
     leaf = re.sub(r"cl[aá]sicas y flamencas", "", leaf)  # categoría mixta de Numemusic: no dice si es flamenca
+    leaf = GENERIC_FOLK.sub("", leaf)
     for label, pat in TYPES_BY_KIND[kind]:
         if re.search(pat, leaf):
             return label
@@ -849,6 +936,8 @@ def sitemap_urls(fetcher, url, sub=None, depth=0):
         data = gzip.decompress(data)
     text = data.decode("utf-8", "ignore")
     locs = [html.unescape(re.sub(r"^<!\[CDATA\[|\]\]>$", "", l.strip())) for l in re.findall(r"<loc>\s*(.*?)\s*</loc>", text)]
+    if "<" not in text:  # sitemap en texto: una URL por línea (Michenaud)
+        locs = [l.strip() for l in text.split() if l.startswith("http")]
     if "<sitemapindex" in text and depth < 2:
         out, failed = [], 0
         for loc in locs:
@@ -1215,7 +1304,8 @@ def build(offers=None, history=None):
                 and (kind in GUITAR_KINDS or not EQUIPO_SKIP.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
         if not spain:
-            mine = [o for o in mine if not PT_NAME_SKIP.search(o.get("name") or "")]
+            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP}[CATALOG["site"]]
+            mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})
         products = _products(kind, mine, history, *extra)
