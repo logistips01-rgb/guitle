@@ -206,10 +206,7 @@ load("data/latest.json").then(latest => {
   const guitars = latest.products.filter(p => p.category === "guitarra").map(p => {
     const items = latest.items.filter(i => i.sku === p.sku && !isRef[i.store] && i.price != null && i.status === "ok").sort((a, b) => a.price - b.price);
     const best = items[0];
-    // Bajada del mejor precio frente al mejor de la revisión anterior (no la de una tienda que no es la más barata).
-    const prevBest = items.length ? Math.min(...items.map(i => i.prev_price || i.price)) : 0;
-    const drop = best && prevBest - best.price >= 1 ? Math.round((prevBest - best.price) * 100) / 100 : 0;
-    return best && { ...p, best, items, drop, vsPvp: p.pvp ? (best.price - p.pvp) / p.pvp * 100 : null };
+    return best && { ...p, best, items, vsPvp: p.pvp ? (best.price - p.pvp) / p.pvp * 100 : null };
   }).filter(Boolean);
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
 
@@ -283,14 +280,19 @@ load("data/latest.json").then(latest => {
     })).join("");
   }).catch(() => {});
 
-  const drops = guitars.filter(p => p.drop > 0).sort((a, b) => b.drop - a.drop).slice(0, 4);
-  if (drops.length) {
+  // Han bajado hoy: del catálogo (data/deals-*.json), los mismos precios que enseña la ficha al pinchar.
+  // Primero las bajadas más grandes en proporción, con foto.
+  Promise.all(["electrica", "acustica", "clasica"].map(k => load(`data/deals-${k}.json`).catch(() => null))).then(all => {
+    const names = Object.assign({}, ...all.filter(Boolean).map(d => d.stores || {}));
+    const drops = all.filter(Boolean).flatMap(d => d.today || []).filter(r => r.th && r.stores >= 2 && r.vs_yesterday <= -1)
+      .sort((a, b) => a.vs_yesterday / (a.price - a.vs_yesterday) - b.vs_yesterday / (b.price - b.vs_yesterday)).slice(0, 4);
+    if (!drops.length) return;
     document.getElementById("drops-sec").hidden = false;
-    document.getElementById("drops").innerHTML = drops.map(p => card({
-      href: link(p), img: p.thumb ? "img/p/" + p.thumb : null, name: p.name, price: p.best.price,
-      badge: `−${eur(p.drop)}`, where: `en ${storeName[p.best.store]}`,
+    document.getElementById("drops").innerHTML = drops.map(r => card({
+      href: `g/${r.slug}.html`, img: "img/p/" + r.th, name: r.name, price: r.price,
+      badge: `−${eur(-r.vs_yesterday)}`, where: `en ${names[r.store] || r.store}`,
     })).join("");
-  }
+  });
 }).catch(() => { document.getElementById("deals").innerHTML = '<p class="placeholder">No se pudieron cargar los precios.</p>'; });
 
 Promise.all([load("data/coupons.json").catch(() => []), load("data/coupon_candidates.json").catch(() => [])]).then(([active, cands]) => {
