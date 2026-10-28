@@ -6094,6 +6094,7 @@ yamaha-pacs-12m-pacifica-standard-plus-black-4957812697699
 yamaha-pacs-12m-pacifica-standard-plus-sparkle-blue-4957812697644
 yamaha-pacs-12m-sonic-blue-4957812724920
 yamaha-pacs-12m-tobacco-brown-sunburst-4957812724937
+yamaha-pacsp12m-spb-pacifica-standard-plus-sparkle-blue-12mspbhtml
 yamaha-revstar-element-rse20-black-4957812675161
 yamaha-revstar-element-rse20-neon-yellow-4957812675192
 yamaha-revstar-element-rse20-red-copper-4957812675185

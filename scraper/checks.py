@@ -43,7 +43,9 @@ def check():
                 mid = median(others)
                 # Un precio sin IVA casi nunca es redondo (660,33 €), pero con el 21 % sí (799 €).
                 gross = i["p"] * 1.21
-                if (i["p"] % 1 and abs(gross - round(gross)) < 0.02 and abs(gross - mid) / mid < 0.03):
+                # Y un precio de tienda con céntimos acaba en 5 o 0 (185,95 €); uno sin IVA, no.
+                cents = round(i["p"] * 100) % 100
+                if (cents % 5 and abs(gross - round(gross)) < 0.02 and abs(gross - mid) / mid < 0.03):
                     issues.append({"kind": kind, "type": "sin_iva", "store": i["s"], "name": p["name"], "slug": p["slug"],
                                    "price": i["p"], "median": mid})
                 elif len(others) >= 2 and i["p"] < mid * LOW:

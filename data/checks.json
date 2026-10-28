@@ -28,15 +28,6 @@
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicopolix",
-  "name": "Ibanez GRX40-TFB Tri Fade Burst",
-  "slug": "ibanez-grx40-tfb-tri-fade-burst-4515276686231",
-  "price": 185.95,
-  "median": 219.0
- },
- {
-  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "session",
   "name": "PRS SE McCarty 594 Singlecut Charcoal",
@@ -61,15 +52,6 @@
   "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
   "price": 739.0,
   "median": 995.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Yamaha PACP12M Pacifica Professional Sparkle Blue",
-  "slug": "yamaha-pacp12m-pacifica-professional-sparkle-blue-4957812700887",
-  "price": 1269.0,
-  "median": 1961.125
  },
  {
   "kind": "electrica",

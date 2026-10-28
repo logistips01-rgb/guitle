@@ -548,9 +548,34 @@ NAME_MATCH_MIN = 0.75     # parecido mínimo para unir una ficha sin EAN a un pr
 NAME_MATCH_MARGIN = 0.1   # y con ventaja clara sobre el segundo candidato
 
 
+# Referencia de fábrica en una palabra (Yamaha PACP12M, Ibanez JBM27; EC-256 cuenta como EC256).
+PLAIN_CODE = re.compile(r"\b([a-z]{2,6})(\d+[a-z]{0,4})\b")
+
+
+def _plain_codes(name):
+    lower = re.sub(r"\b([a-z]{2,6})-(?=\d)", r"\1", name.lower())
+    return {m.group(0): (m.group(1), re.match(r"\d+", m.group(2)).group()) for m in PLAIN_CODE.finditer(lower)}
+
+
+def _plain_codes_differ(a, b):
+    """Referencias de serie distinta (PACP12M ≠ PACSP12M). Se dan por iguales: una contenida en otra
+    (SS30 ≈ CTSS30HS), las mismas letras con errata en los números (RSS02T ≈ RSS20T) y una letra de menos
+    al principio con los mismos números (PA311HYNS ≈ PAC311H, EART60M ≈ EARTH60M)."""
+    ca, cb = _plain_codes(a), _plain_codes(b)
+    if not ca or not cb:
+        return False
+
+    def alike(x, y):
+        (lx, nx), (ly, ny) = ca[x], cb[y]
+        return x in y or y in x or lx == ly or (nx == ny and (lx.startswith(ly) or ly.startswith(lx)))
+    return not any(alike(x, y) for x in ca for y in cb)
+
+
 def same_product(a, b):
     ca, cb = set(MODEL_CODE.findall(a["name"].lower())), set(MODEL_CODE.findall(b["name"].lower()))
     if ca and cb and not ca & cb:
+        return False
+    if _plain_codes_differ(a["name"], b["name"]):
         return False
     ta, tb = _tokens(a), _tokens(b)
     return len(ta & tb) / max(1, len(ta | tb)) >= 0.1
