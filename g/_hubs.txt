@@ -1,5 +1,6 @@
 marcas.html
 marca/aclam.html
+marca/acoustic-music-books.html
 marca/acus-sound-engineering.html
 marca/acus.html
 marca/adam-hall.html
@@ -24,6 +25,7 @@ marca/antonio-de-toledo.html
 marca/antonio-de-toledo.html
 marca/apc.html
 marca/applause.html
+marca/aquila-corde-armoniche.html
 marca/aria.html
 marca/armour.html
 marca/aroma.html
@@ -43,10 +45,16 @@ marca/baroni-lab.html
 marca/baton-rouge.html
 marca/beetronics.html
 marca/behringer.html
+marca/bespeco.html
+marca/big-bends.html
+marca/black-mountain-picks.html
+marca/black-mountain.html
 marca/blackstar.html
 marca/blueridge.html
 marca/bluguitar.html
 marca/boss.html
+marca/boston.html
+marca/bourbon-strap.html
 marca/brand.html
 marca/breedlove.html
 marca/bristol.html
@@ -61,10 +69,13 @@ marca/carry-on.html
 marca/casio.html
 marca/catalinbread.html
 marca/caveman-audio.html
+marca/cc1.html
 marca/chapman.html
 marca/charvel.html
+marca/cherub.html
 marca/chicago-classic.html
 marca/chicago-winds.html
+marca/chicken-picks.html
 marca/cibeles.html
 marca/citadel-electronics.html
 marca/citadel.html
@@ -98,6 +109,7 @@ marca/digitech.html
 marca/dingwall.html
 marca/donner.html
 marca/dophix.html
+marca/dr-strings.html
 marca/dreadbox.html
 marca/duesenberg.html
 marca/duke.html
@@ -141,6 +153,7 @@ marca/fujigen.html
 marca/fulltone.html
 marca/furch.html
 marca/g-l.html
+marca/g7th.html
 marca/gamechanger-audio.html
 marca/gewa.html
 marca/gibson.html
@@ -221,6 +234,7 @@ marca/m-audio.html
 marca/mad-professor.html
 marca/madarozzo.html
 marca/maestro.html
+marca/magma-strings.html
 marca/magneto.html
 marca/manuel-rodriguez.html
 marca/marcus-miller-sire.html
@@ -258,6 +272,7 @@ marca/nux.html
 marca/nux.html
 marca/okko.html
 marca/old-blood-noise-endeavors.html
+marca/olympia.html
 marca/on-stage.html
 marca/onas.html
 marca/one-control.html
@@ -273,6 +288,7 @@ marca/palmer.html
 marca/peavey.html
 marca/pedaltrain.html
 marca/peterson.html
+marca/pick-boy.html
 marca/pigtronix.html
 marca/planet-waves.html
 marca/positive-grid.html
@@ -280,6 +296,7 @@ marca/presonus.html
 marca/proco.html
 marca/prodipe.html
 marca/proel.html
+marca/pronorte.html
 marca/providence.html
 marca/prs.html
 marca/prudencio-saez.html
@@ -302,16 +319,19 @@ marca/rode.html
 marca/rodenberg.html
 marca/roland.html
 marca/ross.html
+marca/rotosound.html
 marca/sadowsky.html
 marca/samson.html
 marca/sandberg.html
 marca/santa-cruz.html
+marca/savarez.html
 marca/schecter.html
 marca/seagull.html
 marca/selmer.html
 marca/seymour-duncan.html
 marca/sheeran-by-lowden.html
 marca/sheeran-loopers.html
+marca/shubb.html
 marca/shure.html
 marca/sigma.html
 marca/simon-patrick.html
@@ -375,6 +395,7 @@ marca/way-huge-electronics.html
 marca/way-huge.html
 marca/xvive.html
 marca/yamaha.html
+marca/yellow-parts.html
 marca/yuer.html
 marca/zoom.html
 presupuesto/acustica-menos-de-1000.html
@@ -406,6 +427,9 @@ presupuesto/pedal-menos-de-50.html
 presupuesto/teclado-menos-de-1000.html
 presupuesto/teclado-menos-de-200.html
 presupuesto/teclado-menos-de-500.html
+presupuesto/varios-menos-de-10.html
+presupuesto/varios-menos-de-25.html
+presupuesto/varios-menos-de-50.html
 tipo/acustica-12-cuerdas.html
 tipo/acustica-auditorio-concierto.html
 tipo/acustica-dreadnought.html
@@ -463,3 +487,10 @@ tipo/teclado-piano-de-escenario.html
 tipo/teclado-piano-digital.html
 tipo/teclado-sintetizador.html
 tipo/teclado-teclado-portatil.html
+tipo/varios-afinadores.html
+tipo/varios-cejillas.html
+tipo/varios-correas.html
+tipo/varios-cuerdas.html
+tipo/varios-mantenimiento.html
+tipo/varios-puas.html
+tipo/varios-recambios.html

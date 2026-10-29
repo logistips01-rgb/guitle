@@ -18,6 +18,7 @@ enrique-palacios-ab04n-bajo-electroacustico-nat-8434418005838
 fender-75th-anniversary-american-professional-pj-bass-mn-2ts-885978680344
 fender-75th-anniversary-player-ii-precision-bass-mn-azg-197955231846
 fender-adam-clayton-jazz-bass-rw-shm-885978544073
+fender-american-performer-jazz-bass-rw-3tsb-885978952854
 fender-american-pro-ii-jazz-bass-mn-3cs-885978603145
 fender-american-pro-ii-jazz-bass-mn-dkn-885978580187
 fender-american-pro-ii-jazz-bass-mn-ow-885978580149
@@ -29,6 +30,9 @@ fender-bajo-squier-mini-precision-fender-lrl-sunburst-de-2-colores-oresp44014
 fender-duff-mckagan-deluxe-precision-bass-rw-white-885978075423
 fender-jaco-pastorius-fl-jbass-rw-3sb-717669010386
 fender-mike-dirnt-road-worn-prec-bass-white-blonde-885978414093
+fender-player-jazz-bass-mn-black-885978911219
+fender-player-jazz-bass-mn-pwt-885978926473
+fender-player-precision-bass-mn-black-885978911110
 fender-tony-franklin-fl-p-bass-rw-lpb-885978926855
 fender-tony-franklin-fl-pbass-rw-bk-717669315801
 g-l-gl-tribute-jb2-bajo-electrico-rw-sonic-blue-791018366515
@@ -61,6 +65,15 @@ marcus-miller-sire-m7-swamp-ash-5-fretless-natural-2nd-gen-857012007219
 marcus-miller-sire-u5-alder-4-mint-810046131046
 marcus-miller-sire-u5-alder-4-nt-810046131022
 marcus-miller-sire-u5-alder-4-ts-810046131039
+marcus-miller-v3-4-2nd-generation-antique-white-857012007882
+marcus-miller-v3-4-2nd-generation-black-857012007905
+marcus-miller-v3-4-2nd-generation-black-left-hand-855159008038
+marcus-miller-v3-4-2nd-generation-tobacco-sunburst-857012007899
+marcus-miller-v7-alder-4-antique-white-810046130025
+marcus-miller-v7-alder-4-black-810046130001
+marcus-miller-v7-alder-4-lake-placid-blue-810046130056
+marcus-miller-v7-alder-4-tobacco-sunburst-810046130018
+marcus-miller-v7-alder-4-tobacco-sunburst-left-hand-810046131060
 squier-classic-vibe-60s-jazz-bass-lrl-daphne-blue-885978064687
 squier-classic-vibe-60s-jazz-bass-lrl-fl-bajo-electrico-3-tone-sunburst-885978064694
 squier-cv-60s-jazz-bass-lrl-3-tone-sunburst-885978064663
@@ -70,3 +83,4 @@ takamine-gb30ce-lh-blk-190262042143
 yamaha-trbx174ewrtb-bajo-electrico-root-beer-4957812578615
 yamaha-trbx204-old-violin-sunburst-bajo-electrico-4957812639729
 yamaha-trbx604fm-mam-bajo-electrico-4957812625456
+yamaha-trbx604fm-natural-satin-4957812625463

@@ -106,16 +106,21 @@
   .card .where { color: var(--text-muted); font-size: .8rem; }
   .badge { position: absolute; top: 8px; left: 8px; font-size: .74rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--good-bg); color: var(--good); }
   .badge.low { background: var(--warn-bg); color: var(--warning); }
-  .cats { display: grid; grid-template-columns: repeat(9, 1fr); gap: 10px; }
-  @media (max-width: 1000px) { .cats { grid-template-columns: repeat(5, 1fr); } }
-  @media (max-width: 520px) { .cats { grid-template-columns: repeat(3, 1fr); } }
+  .cats { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 10px; }
+  @media (max-width: 1000px) { .cats { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
   .catcard { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 14px 8px; text-align: center; text-decoration: none; }
   .catcard b { display: block; height: 32px; margin-bottom: 4px; }
   .catcard svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
   .catcard svg.fill { fill: currentColor; stroke: none; overflow: visible; }
   a.catcard b { color: var(--accent); }
   .catcard span { display: block; font-weight: 600; font-size: .92rem; }
-  .catcard small { color: var(--text-muted); font-size: .78rem; white-space: nowrap; }
+  .catcard small { color: var(--text-muted); font-size: .74rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+  /* "productos" solo cuando cabe (5 columnas en tableta); en 10 columnas o en el móvil, el número a secas. */
+  .catcard small .unit { display: none; font-weight: 400; font-size: inherit; }
+  @media (min-width: 521px) and (max-width: 1000px) { .catcard small .unit { display: inline; } }
+  @media (max-width: 520px) { .cats { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+    .catcard { padding: 10px 2px; border-radius: 12px; } .catcard svg { width: 24px; height: 24px; } .catcard b { height: 26px; }
+    .catcard span { font-size: .72rem; overflow: hidden; text-overflow: ellipsis; } .catcard small { font-size: .66rem; } }
   .catcard.soon { opacity: .55; pointer-events: none; }
   a.catcard:hover { border-color: var(--accent); }
   .placeholder { color: var(--text-muted); grid-column: 1 / -1; padding: 10px 0; }
@@ -242,10 +247,11 @@ load("data/latest.json").then(latest => {
     pedal: '<path fill-rule="evenodd" d="M4.44 2.18c-.436.856-.436 1.98-.436 4.22v4.65l.025-.025c.548-.548 1.24-.794 2.12-.911C7 10 8.09 10 9.47 10h5.08c1.38 0 2.47 0 3.32.114c.872.117 1.57.363 2.12.91l.025.026V6.4c0-2.24 0-3.36-.436-4.22a4.03 4.03 0 0 0-1.75-1.75c-.856-.436-1.98-.436-4.22-.436h-3.2c-2.24 0-3.36 0-4.22.436a4.03 4.03 0 0 0-1.75 1.75zM8 5A2 2 0 1 0 8.001.999A2 2 0 0 0 8 5m10-2a2 2 0 1 1-4.001.001A2 2 0 0 1 18 3m-6 6a2 2 0 1 0 .001-4.001A2 2 0 0 0 12 9" clip-rule="evenodd"/><path fill-rule="evenodd" d="M20 16.5c0-1.43-.001-2.45-.105-3.23c-.102-.762-.296-1.21-.627-1.54s-.781-.524-1.54-.627c-.776-.104-1.8-.105-3.23-.105h-5c-1.43 0-2.45.001-3.23.105c-.762.102-1.21.296-1.54.627s-.524.781-.627 1.54c-.104.776-.105 1.8-.105 3.23v1.1c0 2.24 0 3.36.436 4.22c.384.753.995 1.36 1.75 1.75c.856.436 1.98.436 4.22.436h3.2c2.24 0 3.36 0 4.22-.436a4.03 4.03 0 0 0 1.75-1.75c.436-.856.436-1.98.436-4.22v-1.1zM6 17c0-.932 0-1.4.152-1.77c.203-.49.592-.879 1.08-1.08c.368-.152.833-.152 1.77-.152h6c.932 0 1.4 0 1.77.152c.49.203.879.592 1.08 1.08c.152.368.152.834.152 1.77s0 1.4-.152 1.77c-.203.49-.592.879-1.08 1.08c-.368.152-.834.152-1.77.152h-6c-.932 0-1.4 0-1.77-.152a2 2 0 0 1-1.08-1.08C6 18.402 6 17.936 6 17" clip-rule="evenodd"/>',
     teclado: '<path fill-rule="evenodd" d="M0 9.4c0-2.24 0-3.36.436-4.22a4.03 4.03 0 0 1 1.75-1.75c.856-.436 1.98-.436 4.22-.436h11.2c2.24 0 3.36 0 4.22.436c.753.384 1.36.995 1.75 1.75c.436.856.436 1.98.436 4.22v5.2c0 2.24 0 3.36-.436 4.22a4.03 4.03 0 0 1-1.75 1.75c-.856.436-1.98.436-4.22.436h-11.2c-2.24 0-3.36 0-4.22-.436a4.03 4.03 0 0 1-1.75-1.75C0 17.964 0 16.84 0 14.6zM10 4h4v8.5c0 1.18 0 1.77.366 2.13c.31.31.781.358 1.63.365v5h-8v-5c.853-.007 1.32-.055 1.63-.365c.366-.366.366-.955.366-2.13V4zm7 16h.6c1.14 0 1.93 0 2.55-.051c.605-.05.953-.142 1.22-.276a3 3 0 0 0 1.31-1.31c.134-.263.226-.611.276-1.22c.05-.617.051-1.41.051-2.55v-5.2c0-1.14 0-1.93-.051-2.55c-.05-.605-.142-.953-.276-1.22a3 3 0 0 0-1.31-1.31c-.263-.134-.611-.226-1.22-.276c-.325-.027-.699-.04-1.15-.046v8.49c0 1.18 0 1.77-.366 2.13c-.31.31-.781.358-1.63.365v5zM7 15c-.853-.007-1.32-.055-1.63-.365c-.366-.366-.366-.955-.366-2.13v-8.49c-.447.006-.821.019-1.15.045c-.605.05-.953.142-1.22.276a3.02 3.02 0 0 0-1.31 1.31c-.134.263-.226.611-.276 1.22c-.05.617-.051 1.41-.051 2.55v5.2c0 1.14 0 1.93.051 2.55c.05.605.142.953.276 1.22a3.02 3.02 0 0 0 1.31 1.31c.263.134.611.226 1.22.276c.617.05 1.41.052 2.55.052h.6v-5z" clip-rule="evenodd"/>',
     micro: '<path fill-rule="evenodd" d="M1.32 22.4c-.266-.266-.506-.506-.69-.722a2.5 2.5 0 0 1-.501-.836a2.5 2.5 0 0 1-.03-1.51c.1-.341.278-.615.467-.855c.175-.224.406-.473.66-.749l9.76-10.6a6.521 6.521 0 1 1 13.01-.621a6.52 6.52 0 0 1-7.14 6.49l-10.6 9.76c-.275.256-.525.486-.748.662c-.24.188-.515.366-.855.467a2.5 2.5 0 0 1-1.51-.03a2.5 2.5 0 0 1-.836-.501a13 13 0 0 1-.722-.69l-.29-.29zm-.241-1.88c.113.333.4.621.975 1.2l.24.24c.575.575.862.862 1.2.975c.293.1.61.106.907.018c.337-.1.636-.375 1.23-.926l7.06-6.52l-4.19-4.19l-6.52 7.06c-.551.597-.827.896-.926 1.23a1.5 1.5 0 0 0 .018.907zm8.11-9.94l4.24 4.24l2.39-2.21l-4.43-4.43l-2.21 2.39zm8.29 1.47c-.563 0-1.08-.281-1.47-.679l-3.36-3.36c-.398-.398-.679-.912-.679-1.47c0-3.05 2.47-5.52 5.52-5.52s5.52 2.47 5.52 5.52s-2.47 5.52-5.52 5.52z" clip-rule="evenodd"/>',
+    varios: '<path d="M12 22.5c-1.9 0-8.2-8.6-8.2-13.6C3.8 4.2 7.6 1.5 12 1.5s8.2 2.7 8.2 7.4c0 5-6.3 13.6-8.2 13.6z"/>',
     estuche: '<g transform="rotate(45 12 12) translate(0 -.6) scale(.9) translate(1.3 1.3)"><rect x="9.6" y="-2.6" width="4.8" height="14" rx="2.4"/><ellipse cx="12" cy="12" rx="5" ry="4.6"/><ellipse cx="12" cy="19.6" rx="6.4" ry="5.8"/><rect x="7" y="12" width="10" height="6"/><path d="M6 13H4a1 1 0 0 0-1 1v2.8a1 1 0 0 0 1 1h2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></g>',
   };
   const CATS = [["guitarra", "Eléctricas"], ["acustica", "Acústicas"], ["clasica", "Clásicas"], ["bajo", "Bajos"],
-                ["ampli", "Amplis"], ["pedal", "Pedales"], ["teclado", "Teclados"], ["micro", "Micros"], ["estuche", "Estuches"]];
+                ["ampli", "Amplis"], ["pedal", "Pedales"], ["teclado", "Teclados"], ["micro", "Micros"], ["estuche", "Estuches"], ["varios", "Varios"]];
   // Secciones del catálogo amplio: página y datos propios (el recuento llega al cargar cada JSON).
   const CATALOG_PAGES = { guitarra: ["catalogo.html", "data/catalog/products.json"],
                           acustica: ["acusticas.html", "data/catalog/acusticas/acusticas.json"],
@@ -255,7 +261,8 @@ load("data/latest.json").then(latest => {
                           bajo: ["bajos.html", "data/catalog/mas/bajos.json"],
                           ampli: ["amplificadores.html", "data/catalog/mas/amplis.json"],
                           estuche: ["estuches.html", "data/catalog/mas/estuches.json"],
-                          micro: ["micros.html", "data/catalog/mas/micros.json"] };
+                          micro: ["micros.html", "data/catalog/mas/micros.json"],
+                          varios: ["varios.html", "data/catalog/mas/varios.json"] };
   document.getElementById("cats").innerHTML = CATS.map(([id, label]) => {
     const icon = `<svg class="fill" viewBox="0 0 24 24" aria-hidden="true">${ICONS[id]}</svg>`;
     if (CATALOG_PAGES[id]) return `<a class="catcard" id="cat-${id}" href="${CATALOG_PAGES[id][0]}"><b>${icon}</b><span>${label}</span><small>…</small></a>`;
@@ -269,7 +276,7 @@ load("data/latest.json").then(latest => {
   Promise.all(Object.entries(CATALOG_PAGES).map(([id, [, src]]) => load(src).then(cat => {
     const n = cat.products.length;
     Object.keys(cat.stores || {}).forEach(s => { if (!isRef[s]) catStores.add(s); });
-    document.querySelector(`#cat-${id} small`).textContent = n ? `${n.toLocaleString("es-ES", { useGrouping: "always" })} productos` : "próximamente";
+    document.querySelector(`#cat-${id} small`).innerHTML = n ? `${n.toLocaleString("es-ES", { useGrouping: "always" })}<span class="unit"> productos</span>` : "próximamente";
     return ["guitarra", "acustica", "clasica"].includes(id) ? n : 0;  // arriba solo cuentan las guitarras
   }).catch(() => { document.querySelector(`#cat-${id} small`).textContent = "próximamente"; return 0; })))
     .then(ns => {

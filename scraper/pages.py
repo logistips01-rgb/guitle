@@ -35,6 +35,8 @@ KINDS = {
                 "src": "data/catalog/mas/estuches.json", "history": "data/catalog/mas/history.json"},
     "micro": {"label": "Micrófonos", "list": "micros.html",
               "src": "data/catalog/mas/micros.json", "history": "data/catalog/mas/history.json"},
+    "varios": {"label": "Accesorios", "list": "varios.html",
+               "src": "data/catalog/mas/varios.json", "history": "data/catalog/mas/history.json"},
 }
 
 
@@ -148,7 +150,7 @@ def _render(product, kind, store_names, colors):
     </div>
   </article>
   <section><h3>Tiendas</h3><div class="table-wrap"><table id="stores">{_rows(product, store_names, colors)}</table></div>
-    <p class="muted small amazon">¿Prefieres comprar en Amazon? <a href="https://www.amazon.es/s?k={quote_plus(name)}&amp;tag={AMAZON_TAG}" target="_blank" rel="sponsored noopener">Buscar este modelo en Amazon</a></p></section>
+    {f'<p class="amazon-cta"><a class="go" href="https://www.amazon.es/s?k={quote_plus(name)}&amp;tag={AMAZON_TAG}" target="_blank" rel="sponsored noopener">Buscar en Amazon</a></p>' if kind == "varios" else f'<p class="muted small amazon">¿Prefieres comprar en Amazon? <a href="https://www.amazon.es/s?k={quote_plus(name)}&amp;tag={AMAZON_TAG}" target="_blank" rel="sponsored noopener">Buscar este modelo en Amazon</a></p>'}</section>
   <section><h3>Histórico de precios</h3>
     <div class="stats" id="stats"></div>
     <div class="chart-box"><canvas id="chart"></canvas></div>
@@ -188,7 +190,7 @@ def write_pages(kind, products, store_names):
 def write_sitemap():
     """sitemap.xml con las páginas principales y las de todas las guitarras (listas g/_<categoría>.txt)."""
     urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "teclados.html", "pedales.html", "bajos.html",
-            "amplificadores.html", "estuches.html", "micros.html", "chollos.html",
+            "amplificadores.html", "estuches.html", "micros.html", "varios.html", "chollos.html",
             "black-friday.html", "guitarras.html", "paises.html"]
     hubs = PAGES / "_hubs.txt"
     if hubs.exists():
@@ -224,14 +226,19 @@ TYPE_TITLES = {"ST": "tipo Stratocaster (ST)", "T": "tipo Telecaster (T)", "Sing
                "Para acústica": "para acústica", "Combo": "combo", "Cabezal": "de cabezal", "Pantalla": "de pantalla",
                "De auriculares y portátil": "de auriculares y portátiles", "Para clásica": "para clásica",
                "Para eléctrica": "para eléctrica", "Inalámbrico": "inalámbricos", "USB": "USB", "De cinta": "de cinta",
-               "Para instrumento": "para instrumento y batería", "Condensador": "de condensador", "Dinámico": "dinámicos"}
+               "Para instrumento": "para instrumento y batería", "Condensador": "de condensador", "Dinámico": "dinámicos",
+               "Cuerdas": "cuerdas de guitarra y bajo", "Púas": "púas", "Correas": "correas de guitarra y bajo",
+               "Cables": "cables de instrumento", "Afinadores": "afinadores", "Cejillas": "cejillas",
+               "Soportes": "soportes y colgadores de guitarra", "Pastillas": "pastillas (pickups)",
+               "Recambios": "recambios (clavijas, puentes, golpeadores…)", "Mantenimiento": "limpieza y mantenimiento"}
 NOUN = {"electrica": "Guitarras eléctricas", "acustica": "Guitarras acústicas", "clasica": "Guitarras clásicas",
         "teclado": "Teclados y pianos", "pedal": "Pedales", "bajo": "Bajos", "ampli": "Amplificadores",
-        "estuche": "Fundas y estuches", "micro": "Micrófonos"}
+        "estuche": "Fundas y estuches", "micro": "Micrófonos",
+        "varios": "Accesorios"}
 # Páginas por presupuesto (precio más bajo de hoy por debajo del límite) y guitarras que muestra cada una.
 BUDGETS = {"electrica": (150, 300, 500, 1000, 2000), "acustica": (150, 300, 500, 1000), "clasica": (100, 200, 400),
            "teclado": (200, 500, 1000), "pedal": (50, 100, 200), "bajo": (200, 400, 800), "ampli": (100, 300, 600),
-           "estuche": (50, 100), "micro": (50, 100, 200)}
+           "estuche": (50, 100), "micro": (50, 100, 200), "varios": (10, 25, 50)}
 GUITAR_KINDS = {"electrica", "acustica", "clasica"}
 BUDGET_TILES = 120
 NOPHOTO = ('<svg class="nophoto" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/>'
@@ -352,7 +359,7 @@ def write_hubs():
                 continue
             url = f"tipo/{kind}-{plain_slug(t)}.html"
             # "Pianos digitales" a secas (no "Teclados y pianos pianos digitales"); el resto, categoría + tipo.
-            label = (TYPE_TITLES.get(t, t)[:1].upper() + TYPE_TITLES.get(t, t)[1:] if kind == "teclado"
+            label = (TYPE_TITLES.get(t, t)[:1].upper() + TYPE_TITLES.get(t, t)[1:] if kind in ("teclado", "varios")
                      else f"{NOUN[kind]} {TYPE_TITLES.get(t, t)}")
             written += _write(ROOT / url, _hub(url, f"{label}: precios y comparativa", label, _summary(ps, names),
                                                [(None, sorted(ps, key=order))], names, url))

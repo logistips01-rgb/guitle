@@ -41,7 +41,7 @@ RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir e
 RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se miran cada dos semanas
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35,  # por debajo no es una guitarra (ni infantil)
-             "teclado": 40, "pedal": 20, "portuguesa": 150, "bajo": 80, "ampli": 30, "estuche": 12, "micro": 15}
+             "teclado": 40, "pedal": 20, "portuguesa": 150, "bajo": 80, "ampli": 30, "estuche": 12, "micro": 15, "varios": 3}
 GUITAR_KINDS = {"electrica", "acustica", "clasica", "portuguesa"}
 MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
@@ -500,11 +500,44 @@ _MIC_ACC = re.compile(r"soporte|\bpie\b|\bstand|pinza|\bclip|anti-?pop|pop ?filt
 
 
 WITH_CASE = re.compile(r"\+ ?(g \+ )?(funda|estuche)|con (funda|estuche)|\bw/? ?case|incl", re.I)
-MAX_PRICE = {"estuche": 800}  # un "estuche" más caro es un instrumento con su estuche
+MAX_PRICE = {"estuche": 800, "varios": 500}  # un "estuche" más caro es un instrumento con su estuche
+
+
+# "Varios": accesorios de guitarra y bajo. El tipo sale de VARIOS_TYPES; aquí, solo si lo es.
+_VARIOS = re.compile(r"(?<!-)(?<!\s\d )(?<!^\d )(?<!12 )(cuerdas?\b|\bstrings?\b|saiten)|juego de cuerdas|encordado|\b0?\d\d-\d{2,3}\b|\bp[uú]as?\b|plectr|\bpicks?\b"
+                     r"|plektr|correa|\bstraps?\b|\bgurt\b|strap ?lock|cable|kabel|latiguillo|cejilla|\bcapo\b|kapodaster"
+                     r"|afinador|\btuner\b|stimmger|soporte|\bstand\b|st[aä]nder|colgador|wall ?hanger|pastillas?\b|\bpickups?\b"
+                     r"|tonabnehmer|humbucker|single ?coil|limpia|limpieza|polish|cleaner|aceite|\boil\b|winder|clavijas?\b"
+                     r"|mec[aá]nicas?\b|tuning machines|mechaniken|golpeador|pickguard|cejuela|selleta|\bnut\b|\bsaddle|slide\b"
+                     r"|bottleneck|potenci[oó]metro|\bknobs?\b|\bjack\b", re.I)
+_GUITAR_ACC = re.compile(r"guitarr|guitar|gitarr|\bbajo|\bbass|\bbaixo|el[eé]ctric|ac[uú]stic|cl[aá]sic|instrument|\bjack\b"
+                         r"|p[uú]a|plectr|\bpick|cejilla|\bcapo|kapodaster|pastilla|pickup|humbucker|single ?coil|tonabnehmer"
+                         r"|dunlop|ernie ball|d'?addario|elixir|fender|gibson|ibanez|planet waves|savarez|la bella|rotosound|dr strings"
+                         r"|gator|levy|righton|seymour|dimarzio|emg|kluson|gotoh|schaller|grover|snark|korg|tc electronic polytune"
+                         r"|hercules|k ?& ?m|warwick|ortola|cleartone|martin|augustine|aquila|gewa|rockboard|evidence", re.I)
+_NOT_GUITAR_ACC = re.compile(r"bater[ií]a|\bdrums?\b|\btom\b|hi-?hat|platillo|caja|snare|bombo|piano|teclado|keyboard|viol[ií]n"
+                             r"|viola\b|cello|chelo|contrabajo|ukelele|ukulele|mandolin|banjo|bandurria|la[uú]d|arpa|saxo|trompeta"
+                             r"|flauta|clarinete|tromb|micr[oó]?fono|microphone|mikrofon|\bmic\b|\bdj\b|altavo|speaker|\bxlr\b|midi"
+                             r"|\busb\b|hdmi|dmx|iluminaci|foco|atril|partitura|tablet|m[oó]vil|smartphone|pedalboard|\bpedal\b"
+                             r"|alimentador|fuente de alimentaci|power ?supply|v[aá]lvula|\btubes?\b|amplificador|cabezal|combo"
+                             r"|libro|m[eé]todo|\bbook\b|\bcd\b|\bdvd\b|camiseta|t-?shirt|gorra|taza|llavero", re.I)
+
+
+def varios_kind(crumbs, url="", name=""):
+    """'varios' si es un accesorio de guitarra o bajo (cuerdas, púas, correas, cables, afinadores…), si no None."""
+    text = equipo_text(crumbs, url, name)
+    if not _VARIOS.search(name or "") or _NOT_GUITAR_ACC.search(name or "") or NOT_PRODUCT.search(name or ""):
+        return None
+    return "varios" if _GUITAR_ACC.search(text) and not _NOT_GUITAR_ACC.search(" / ".join(crumbs or [])) else None
 
 
 def mas_kind(crumbs, url="", name=""):
-    """'bajo', 'ampli', 'estuche', 'micro' o None, por la categoría, la URL y el nombre."""
+    """'bajo', 'ampli', 'estuche', 'micro', 'varios' o None, por la categoría, la URL y el nombre."""
+    # Primero accesorio: "D'Addario EXL170 cuerdas bajo" son cuerdas, no un bajo.
+    return varios_kind(crumbs, url, name) or _mas_kind(crumbs, url, name)
+
+
+def _mas_kind(crumbs, url="", name=""):
     text = equipo_text(crumbs, url, name)
     if NOT_PRODUCT.search(name or "") or MAS_DROP.search(text) \
             and not _AMP.search(name or ""):
@@ -527,13 +560,27 @@ def mas_kind(crumbs, url="", name=""):
         return "ampli" if _GUITAR_CONTEXT.search(text) or re.search(
             r"marshall|orange|\bvox\b|blackstar|laney|peavey|mesa|engl|ampeg|markbass|hartke|roland|positive grid|line ?6"
             r"|kemper|aguilar|darkglass|\bebs\b|fishman|\baer\b|bugera|yamaha thr|boss|fender|victory|friedman|evh|randall", text) else None
-    if _BASS.search(text):
+    # Bajo por el nombre, la última categoría o la URL: "Guitarras y bajos" más arriba no basta (Numemusic).
+    if _BASS.search(" / ".join([name or "", crumbs[-1] if crumbs else "", url])):
         # Marcas que solo hacen amplificadores de bajo ("Ampeg Rocket Bass RB-110")
         return "ampli" if re.search(r"ampeg|markbass|hartke|gallien|trace elliot|\beden\b|\bebs\b", text) else "bajo"
     return None
 
 
-MAS_KINDS = {"bajo", "ampli", "estuche", "micro"}
+MAS_KINDS = {"bajo", "ampli", "estuche", "micro"}  # "varios" va aparte: sus filtros son otros
+VARIOS_TYPES = [("Cuerdas", r"(?<!-)(?<!\s\d )(?<!^\d )(?<!12 )(cuerdas?\b|\bstrings?\b|saiten)|juego de cuerdas|encordado"
+                            r"|\b0?\d\d-\d{2,3}\b"),
+                ("Púas", r"\bp[uú]as?\b|plectr|\bpicks?\b|plektr"),
+                ("Correas", r"correa|\bstraps?\b|\bgurt\b|strap ?lock"),
+                ("Cables", r"cable|kabel|latiguillo"),
+                ("Afinadores", r"afinador|\btuner\b|stimmger"),
+                ("Cejillas", r"cejilla|\bcapo\b|kapodaster"),
+                ("Soportes", r"soporte|\bstand\b|st[aä]nder|colgador|wall ?hanger"),
+                ("Pastillas", r"pastillas?\b|\bpickups?\b|tonabnehmer|humbucker|single ?coil"),
+                ("Recambios", r"clavijas?\b|mec[aá]nicas?\b|tuning machines|mechaniken|golpeador|pickguard|cejuela|selleta|\bnut\b"
+                              r"|\bsaddle|potenci[oó]metro|\bknobs?\b|\bjack\b"),
+                ("Mantenimiento", r"limpia|limpieza|polish|cleaner|aceite|\boil\b|winder|slide\b|bottleneck"),
+                ("Otras", r"(?!x)x")]
 MICRO_TYPES = [("Inalámbrico", r"inal[aá]mbric|wireless|\bfunk|sistema (de )?(mano|petaca|diadema)"), ("USB", r"\busb\b"),
                ("De cinta", r"\bcinta\b|ribbon|b[aä]ndchen"),
                ("Para instrumento", r"instrumento|instrument|bater[ií]a|bombo|\bdrums?\b|\bkick|para ampli|e ?906|sm ?57|e ?609"),
@@ -556,23 +603,34 @@ CASE_TYPES = [("Para bajo", r"\bbajos?\b|\bbass\b"), ("Para clásica", r"cl[aá]
 
 # Fundas y estuches, solo si la URL dice que son de guitarra o bajo (si no, entran los de batería, violín…).
 _CASES_URL = r"(estuche|funda|gig-?bag|case|koffer|tasche|estojo)"
-_MAS_URL = (r"bajo|bass|baixo|ampli|combo|cabezal|pantalla|cabinet|verstaerker|amp-|-amp\b|micr[oó]?fono|microphone|mikrofon"
+# Accesorios de guitarra y bajo (catálogo "varios": cuerdas, púas, correas, cables…).
+_VARIOS_URL = (r"cuerdas|strings|saiten|\bpuas?\b|pua-|plectr|picks?-|correa|strap|cables?-de-(guitarra|instrumento|jack)"
+               r"|cables?-(para-)?instrument|cable-jack|jack-jack|instrumentenkabel|cejilla|capo-|afinador|tuner|stimmger"
+               r"|soportes?-(de|para)-guitarra|soporte-guitarra|gitarrenst|pastillas?-|pickups?-|tonabnehmer|limpi|polish|winder"
+               r"|clavijer|mecanica|golpeador|pickguard")
+_MAS_URL = (_VARIOS_URL + r"|bajo|bass|baixo|ampli|combo|cabezal|pantalla|cabinet|verstaerker|amp-|-amp\b|micr[oó]?fono|microphone|mikrofon"
             r"|" + _CASES_URL + r"[^/]*(guitar|bajo|bass|clasic|acustic|electric|gitarre)"
             r"|(guitar|bajo|bass|gitarre)[^/]*" + _CASES_URL)
-_MAS_URL_SKIP = (r"cuerda|string|saite|correa|strap|cable|soporte|stand|pua|pastilla|pickup|valvula|tube|pedalboard|footswitch"
-                 r"|handle|corner|insert|herraje|bateria|drum|teclado|piano|alimentador|afinador"
+_MAS_URL_SKIP = (r"valvula|tube|pedalboard|footswitch|individual|ukelele|ukulele|violin|arco|cello|mandolin|banjo"
+                 r"|cables?-(para-)?(microf|altavo|audio|midi|usb|dmx|alimenta)|xlr|speakon|patch-de-bateria"
+                 r"|handle|corner|insert|herraje|bateria|drum|teclado|piano|alimentador|metronomo"
                  r"|altavo[zc]|auricular|headphone|parche|sordina|monitor|linha|100v|zonas|mezclador|mixer|cover|clamp"
                  r"|pie-de|pinza|suspensor|supensor|brazo|bolsas?-para|estuches?-para-micro|reflexion|jirafa|anti-?pop|paravientos"
-                 r"|accesorio|arco-|contrabajo|golpeador|puente|xil|conmutador|pedal|cabassa|mazas")
+                 r"|arco-|contrabajo|xil|conmutador|pedal|cabassa|mazas")
 
 MAS_SOURCES = {
     "numemusic": {**SOURCES["numemusic"], "kind_url": mas_kind,
                   "pick": _pick_equipo(r"/\d+-[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
     "musicopolix": {**SOURCES["musicopolix"], "kind_url": mas_kind,
-                    "pick": _pick_equipo(r"/cat/([^/]*(bajo|amplific|estuche|funda)[^/]*|produccion-musical/microfonos)/(.+/)?\d+-[^/]+\.html$",
+                    "pick": _pick_equipo(r"/cat/([^/]*(bajo|amplific|estuche|funda)[^/]*|produccion-musical/microfonos"
+                                         r"|accesorios/accesorios-de-(guitarra|bajo)|pro-audio/cables-de-audio/cables-para-instrumentos)"
+                                         r"/(.+/)?\d+-[^/]+\.html$",
                                          _MAS_URL_SKIP)},
     "alfasoni": {**SOURCES["alfasoni"], "kind_url": mas_kind,
-                 "pick": _pick_equipo(r"alfasoni\.com/[^/]*(bajo|amplificador|combo|cabezal|pantalla|estuche|funda|microfono)[^/]*/[^/]+\.html$",
+                 "pick": _pick_equipo(r"alfasoni\.com/([^/]*(bajo|amplificador|combo|cabezal|pantalla|estuche|funda|microfono)[^/]*"
+                                      r"|cuerdas-para-(guitarra|bajo)[^/]*|correas[^/]*|cables-de-guitarra|cables-para-patch-de-guitarra"
+                                      r"|puas[^/]*|pastillas-para-(guitarra|bajo)[^/]*|cejillas|accesorios-para-correas[^/]*"
+                                      r"|soportes-(de|para)-guitarra[^/]*|afinadores[^/]*)/[^/]+\.html$",
                                       _MAS_URL_SKIP)},
     "drunkat": {**SOURCES["drunkat"], "kind_url": mas_kind, "pick": _pick_equipo(r"drunkat\.es/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
     "pronorte": {**SOURCES["pronorte"], "kind_url": mas_kind, "pick": _pick_equipo(r"/p/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
@@ -1241,10 +1299,10 @@ NAME_TYPES = [("T", r"tele(caster)?\b|\btl\b"),
 TYPES_BY_KIND = {"electrica": TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
                  "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES, "portuguesa": PORTUGUESE_TYPES,
                  # Sin el "resto" del final: si la categoría no lo dice, el tipo sale del nombre (NAME_TYPES_BY_KIND).
-                 "bajo": BASS_TYPES[:-1], "ampli": AMP_TYPES[:-1], "estuche": CASE_TYPES[:-1], "micro": MICRO_TYPES[:-1]}
+                 "bajo": BASS_TYPES[:-1], "ampli": AMP_TYPES[:-1], "estuche": CASE_TYPES[:-1], "micro": MICRO_TYPES[:-1], "varios": VARIOS_TYPES[:-1]}
 NAME_TYPES_BY_KIND = {"electrica": NAME_TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
                       "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES, "portuguesa": PORTUGUESE_TYPES,
-                      "bajo": BASS_TYPES, "ampli": AMP_TYPES, "estuche": CASE_TYPES, "micro": MICRO_TYPES}
+                      "bajo": BASS_TYPES, "ampli": AMP_TYPES, "estuche": CASE_TYPES, "micro": MICRO_TYPES, "varios": VARIOS_TYPES}
 
 # Catálogos: carpeta, fuentes y fichero de la web por categoría.
 CATALOGS = {
@@ -1255,7 +1313,8 @@ CATALOGS = {
                "files": {"teclado": "teclados.json", "pedal": "pedales.json"}},
     # Bajos, amplificadores, estuches y micrófonos (España).
     "mas": {"dir": DIR / "mas", "sources": MAS_SOURCES,
-            "files": {"bajo": "bajos.json", "ampli": "amplis.json", "estuche": "estuches.json", "micro": "micros.json"}},
+            "files": {"bajo": "bajos.json", "ampli": "amplis.json", "estuche": "estuches.json", "micro": "micros.json",
+                      "varios": "varios.json"}},
     # Portugal: aún sin páginas propias (guitle.com/pt/ llegará después); solo los JSON del catálogo.
     "pt": {"dir": DIR / "pt", "sources": PT_SOURCES, "site": "pt",
            "files": {"electrica": "eletricas.json", "acustica": "acusticas.json", "clasica": "classicas.json",
@@ -1893,7 +1952,8 @@ def build(offers=None, history=None):
                 and (kind in GUITAR_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))
                 and (o.get("price") or 0) <= MAX_PRICE.get(kind, float("inf"))
                 and not (kind == "estuche" and WITH_CASE.search(o.get("name") or ""))
-                and not (kind == "micro" and _MIC_ACC.search(o.get("name") or ""))]
+                and not (kind == "micro" and _MIC_ACC.search(o.get("name") or ""))
+                and not (kind == "varios" and _NOT_GUITAR_ACC.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
         if CATALOG.get("min_price"):  # en otra moneda, el mínimo de MIN_PRICE (en euros) no sirve
             mine = [o for o in mine if (o.get("price") or 0) >= CATALOG["min_price"]]

@@ -156,3 +156,5 @@ details.status summary { cursor: pointer; color: var(--text-secondary); }
 .sections::-webkit-scrollbar { display: none; }
 .sections a { white-space: nowrap; flex: none; text-decoration: none; color: var(--text-secondary); font-weight: 600; padding: 6px 12px 8px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .sections a.on { color: var(--accent); border-bottom-color: var(--accent); }
+
+.amazon-cta { margin: 12px 0 4px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
