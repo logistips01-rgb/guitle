@@ -2,7 +2,13 @@
  "es": {
   "country": "España",
   "path": "/",
-  "guitars": 10995,
+  "guitars": 10977,
   "stores": 14
+ },
+ "pt": {
+  "country": "Portugal",
+  "path": "/pt/",
+  "guitars": 1576,
+  "stores": 3
  }
 }
