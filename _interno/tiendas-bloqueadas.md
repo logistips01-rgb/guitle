@@ -14,6 +14,7 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 |---|---|---|---|
 | Madrid Hifi | madridhifi.com | Solicitud enviada | Han pasado la solicitud a marketing; solo queremos su feed. |
 | Gear4music | gear4music.es | Pendiente de Awin | Usar el feed de Awin (sirve también para PT, FR, IT…). |
+| Kaufland | kaufland.es | Antibots (Cloudflare) | Marketplace alemán; sale en idealo con Thomann y Gear4music. Mirar su programa de afiliados. |
 
 ## Portugal
 
