@@ -23,6 +23,12 @@
   "guitars": 3001,
   "stores": 3
  },
+ "de": {
+  "country": "Deutschland",
+  "path": "/de/",
+  "guitars": 4143,
+  "stores": 5
+ },
  "br": {
   "country": "Brasil",
   "path": "/br/",
