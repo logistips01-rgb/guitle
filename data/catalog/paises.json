@@ -17,6 +17,12 @@
   "guitars": 4330,
   "stores": 4
  },
+ "it": {
+  "country": "Italia",
+  "path": "/it/",
+  "guitars": 3001,
+  "stores": 3
+ },
  "br": {
   "country": "Brasil",
   "path": "/br/",
