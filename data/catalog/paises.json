@@ -28,5 +28,11 @@
   "path": "/ie/",
   "guitars": 444,
   "stores": 2
+ },
+ "at": {
+  "country": "Österreich",
+  "path": "/at/",
+  "guitars": 2764,
+  "stores": 2
  }
 }
