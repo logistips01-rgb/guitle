@@ -52,5 +52,11 @@
   "path": "/nl/",
   "guitars": 2794,
   "stores": 3
+ },
+ "uk": {
+  "country": "United Kingdom",
+  "path": "/uk/",
+  "guitars": 4256,
+  "stores": 5
  }
 }
