@@ -85,3 +85,22 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 | Playtech | playtech.com.br | Sin conexión | A revisar. |
 | Contemporânea | contemporanea.com.br | Sin conexión | A revisar. |
 | Izzo Musical | izzomusical.com.br | Sin conexión | A revisar. |
+
+## México, Estados Unidos, Canadá y Latinoamérica
+
+Mercado casi todo en marketplaces: la vía buena es la API de afiliados de Mercado Libre (México, Argentina, Colombia, Chile) y
+Amazon Associates de cada país (amazon.com.mx, amazon.com, amazon.ca), más los programas de las tiendas grandes.
+
+| País | Tienda | Web | Motivo | Notas |
+|---|---|---|---|---|
+| Estados Unidos | Sweetwater | sweetwater.com | Antibots | La más grande; programa de afiliados propio. |
+| Estados Unidos | Guitar Center | guitarcenter.com | Antibots | Programa de afiliados (Impact). |
+| Estados Unidos | zZounds | zzounds.com | Antibots | |
+| Estados Unidos | American Musical Supply | americanmusical.com | 403 | |
+| Estados Unidos | Musician's Friend | musiciansfriend.com | Se puede leer | Única legible; montar cuando haya más. |
+| Canadá | Long & McQuade | long-mcquade.com | Sin datos | Se puede leer, pero sin sitemap. |
+| México | Veerkamp | veerkamponline.com | Se puede leer | Shopify; única legible (Casa Veerkamp prohíbe en robots.txt). |
+| México | Gonher | gonher.com.mx | Sin datos | El sitemap no trae fichas. |
+| Chile | Audiomusica | audiomusica.com | Se puede leer | La grande de Chile; probar. |
+| Chile | Casa Amarilla | casaamarilla.cl | Antibots | |
+| Argentina | Todo Música | todomusica.com.ar | Sin datos | Sin sitemap. |
