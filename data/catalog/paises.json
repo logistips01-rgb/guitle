@@ -46,5 +46,11 @@
   "path": "/at/",
   "guitars": 2764,
   "stores": 2
+ },
+ "nl": {
+  "country": "Nederland",
+  "path": "/nl/",
+  "guitars": 2794,
+  "stores": 3
  }
 }
