@@ -120,6 +120,9 @@ def _discover_thomann(fetcher, codes, base=THOMANN):
     """Fichas de los listados de Thomann. Un código (giegst) es un listado de forma; un nombre de página
     (cat_allProducts_GF_guitarras_electricas.html) se usa tal cual. base: thomann.es, thomann.pt…"""
     urls = set()
+    # La página "todas las eléctricas" (cat_allProducts_GF_guitares_electriques.html…) devuelve en algunos países el
+    # catálogo general (software, baterías…): las eléctricas se leen por sus listados de forma, iguales en todos.
+    codes = [c for code in codes for c in (THOMANN_ELECTRIC if re.search(r"electr|elettr|e-gitarren", code) else (code,))]
     for code in codes:
         for pg in range(1, THOMANN_MAX_PAGES + 1):
             page = code if code.endswith(".html") else f"cat_GK_{code}.html"
