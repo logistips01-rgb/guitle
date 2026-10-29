@@ -152,6 +152,7 @@ details.status summary { cursor: pointer; color: var(--text-secondary); }
 .site-foot { margin-top: 40px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; display: flex; justify-content: space-between; gap: 8px 16px; flex-wrap: wrap; }
 .site-foot a { color: var(--text-muted); }
 /* Secciones del catálogo (eléctricas, acústicas, clásicas) */
-.sections { display: flex; gap: 4px; margin: 12px 0 2px; border-bottom: 1px solid var(--border); }
-.sections a { text-decoration: none; color: var(--text-secondary); font-weight: 600; padding: 6px 12px 8px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.sections { display: flex; gap: 4px; margin: 12px 0 2px; border-bottom: 1px solid var(--border); overflow-x: auto; scrollbar-width: none; }
+.sections::-webkit-scrollbar { display: none; }
+.sections a { white-space: nowrap; flex: none; text-decoration: none; color: var(--text-secondary); font-weight: 600; padding: 6px 12px 8px; border-bottom: 2px solid transparent; margin-bottom: -1px; }
 .sections a.on { color: var(--accent); border-bottom-color: var(--accent); }

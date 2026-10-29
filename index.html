@@ -251,7 +251,10 @@ load("data/latest.json").then(latest => {
                           acustica: ["acusticas.html", "data/catalog/acusticas/acusticas.json"],
                           clasica: ["clasicas.html", "data/catalog/acusticas/clasicas.json"],
                           teclado: ["teclados.html", "data/catalog/equipo/teclados.json"],
-                          pedal: ["pedales.html", "data/catalog/equipo/pedales.json"] };
+                          pedal: ["pedales.html", "data/catalog/equipo/pedales.json"],
+                          bajo: ["bajos.html", "data/catalog/mas/bajos.json"],
+                          ampli: ["amplificadores.html", "data/catalog/mas/amplis.json"],
+                          estuche: ["estuches.html", "data/catalog/mas/estuches.json"] };
   document.getElementById("cats").innerHTML = CATS.map(([id, label]) => {
     const icon = `<svg class="fill" viewBox="0 0 24 24" aria-hidden="true">${ICONS[id]}</svg>`;
     if (CATALOG_PAGES[id]) return `<a class="catcard" id="cat-${id}" href="${CATALOG_PAGES[id][0]}"><b>${icon}</b><span>${label}</span><small>…</small></a>`;

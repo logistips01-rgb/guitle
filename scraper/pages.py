@@ -27,6 +27,12 @@ KINDS = {
                 "src": "data/catalog/equipo/teclados.json", "history": "data/catalog/equipo/history.json"},
     "pedal": {"label": "Pedales de efectos", "list": "pedales.html",
               "src": "data/catalog/equipo/pedales.json", "history": "data/catalog/equipo/history.json"},
+    "bajo": {"label": "Bajos", "list": "bajos.html",
+             "src": "data/catalog/mas/bajos.json", "history": "data/catalog/mas/history.json"},
+    "ampli": {"label": "Amplificadores", "list": "amplificadores.html",
+              "src": "data/catalog/mas/amplis.json", "history": "data/catalog/mas/history.json"},
+    "estuche": {"label": "Fundas y estuches", "list": "estuches.html",
+                "src": "data/catalog/mas/estuches.json", "history": "data/catalog/mas/history.json"},
 }
 
 
@@ -179,7 +185,8 @@ def write_pages(kind, products, store_names):
 
 def write_sitemap():
     """sitemap.xml con las páginas principales y las de todas las guitarras (listas g/_<categoría>.txt)."""
-    urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "teclados.html", "pedales.html", "chollos.html",
+    urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "teclados.html", "pedales.html", "bajos.html",
+            "amplificadores.html", "estuches.html", "chollos.html",
             "black-friday.html", "guitarras.html", "paises.html"]
     hubs = PAGES / "_hubs.txt"
     if hubs.exists():
@@ -209,12 +216,19 @@ TYPE_TITLES = {"ST": "tipo Stratocaster (ST)", "T": "tipo Telecaster (T)", "Sing
                "Modulación": "de modulación (chorus, flanger, phaser, trémolo)", "Compresor": "compresores",
                "Wah y volumen": "de wah y volumen", "Looper": "loopers", "Afinador": "afinadores", "Multiefectos": "multiefectos",
                "Para bajo": "para bajo", "Octavador y pitch": "octavadores y de pitch", "Ecualizador": "ecualizadores",
-               "Puerta de ruido": "puertas de ruido", "Sintetizador": "sintetizadores"}
+               "Puerta de ruido": "puertas de ruido", "Sintetizador": "sintetizadores",
+               "4 cuerdas": "de 4 cuerdas", "5 cuerdas": "de 5 cuerdas", "6 cuerdas o más": "de 6 cuerdas o más",
+               "Acústico": "acústicos", "Fretless": "fretless (sin trastes)", "Escala corta": "de escala corta",
+               "Para acústica": "para acústica", "Combo": "combo", "Cabezal": "de cabezal", "Pantalla": "de pantalla",
+               "De auriculares y portátil": "de auriculares y portátiles", "Para clásica": "para clásica",
+               "Para eléctrica": "para eléctrica"}
 NOUN = {"electrica": "Guitarras eléctricas", "acustica": "Guitarras acústicas", "clasica": "Guitarras clásicas",
-        "teclado": "Teclados y pianos", "pedal": "Pedales"}
+        "teclado": "Teclados y pianos", "pedal": "Pedales", "bajo": "Bajos", "ampli": "Amplificadores",
+        "estuche": "Fundas y estuches"}
 # Páginas por presupuesto (precio más bajo de hoy por debajo del límite) y guitarras que muestra cada una.
 BUDGETS = {"electrica": (150, 300, 500, 1000, 2000), "acustica": (150, 300, 500, 1000), "clasica": (100, 200, 400),
-           "teclado": (200, 500, 1000), "pedal": (50, 100, 200)}
+           "teclado": (200, 500, 1000), "pedal": (50, 100, 200), "bajo": (200, 400, 800), "ampli": (100, 300, 600),
+           "estuche": (50, 100)}
 GUITAR_KINDS = {"electrica", "acustica", "clasica"}
 BUDGET_TILES = 120
 NOPHOTO = ('<svg class="nophoto" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/>'
@@ -370,7 +384,7 @@ def write_hubs():
     links = "".join(f'<a class="chip" href="/{u}">{esc(b)} <span class="muted">({n})</span></a>'
                     for b, u, n in sorted(brands, key=lambda x: (-x[2], x[0])))
     index = _hub("marcas.html", "Marcas: precios por marca", "Marcas",
-                 f"Compara precios de {len(brands)} marcas de guitarras, teclados y pedales en las tiendas de Europa.",
+                 f"Compara precios de {len(brands)} marcas de guitarras, bajos, amplis, teclados y pedales en las tiendas de Europa.",
                  [], names, "marcas.html").replace('<p class="hub-intro">', f'<div class="links">{links}</div><p class="hub-intro">', 1)
     budgets = "".join(f'<a class="chip" href="/{u}">{esc(l)}</a>' for l, u in budget_links)
     index = index.replace("  <footer", f'  <section class="hub-sec"><h2>Por presupuesto</h2><div class="links">{budgets}</div></section>\n  <footer', 1)
