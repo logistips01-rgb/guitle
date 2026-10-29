@@ -77,8 +77,14 @@
   .search:focus-within { border-color: var(--accent); }
   .search input { flex: 1; border: 0; background: none; font: inherit; font-size: 1.08rem; padding: 10px 16px; color: var(--text-primary); outline: none; min-width: 0; }
   .search button { border: 0; border-radius: 999px; background: var(--accent); color: #fff; font: inherit; font-weight: 600; padding: 10px 20px; cursor: pointer; }
-  .stats { display: flex; gap: 16px; color: var(--text-muted); font-size: .9rem; white-space: nowrap; }
-  .stats strong { color: var(--text-primary); font-size: 1.05rem; font-variant-numeric: tabular-nums; margin-right: 4px; }
+  /* Cifras de arriba: etiquetas; la de países lleva al mapa (paises.html) */
+  .stats { display: flex; gap: 6px; flex-wrap: wrap; color: var(--text-muted); font-size: .88rem; white-space: nowrap; }
+  .stats > * { display: inline-flex; align-items: center; gap: 4px; padding: 4px 11px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface-1); text-decoration: none; color: var(--text-muted); }
+  .stats strong { color: var(--text-primary); font-size: .98rem; font-variant-numeric: tabular-nums; }
+  .stats a:hover { border-color: var(--accent); }
+  .stats a svg { width: 14px; height: 14px; fill: none; stroke: var(--accent); stroke-width: 2; }
+  @media (max-width: 520px) { .stats { font-size: .8rem; gap: 4px; } .stats > * { padding: 3px 8px; } }
 
   section { margin-top: 34px; }
   .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
@@ -211,7 +217,16 @@ load("data/latest.json").then(latest => {
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
 
   document.getElementById("stats").innerHTML =
-    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong id="n-stores">${activeStores.length}</strong>tiendas</span>`;
+    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong id="n-stores">${activeStores.length}</strong>tiendas</span>` +
+    `<a href="paises.html" title="guitle en el mundo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/>` +
+    `<path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></svg>` +
+    `<strong id="n-countries">1</strong><span id="w-countries" style="all:unset">país</span></a>`;
+  // Países con guitle (data/catalog/paises.json, scraper/intl.py): la etiqueta lleva al mapa.
+  load("data/catalog/paises.json").then(p => {
+    const n = Object.keys(p).length;
+    document.getElementById("n-countries").textContent = n;
+    document.getElementById("w-countries").textContent = n === 1 ? "país" : "países";
+  }).catch(() => {});
   document.getElementById("updated").textContent =
     `Datos actualizados el ${new Date(latest.updated).toLocaleString("es-ES", { timeZone: "Europe/Madrid" })}`;
   document.getElementById("stores").innerHTML = activeStores.map(s => `<span>${esc(s.name)}</span>`).join("");
