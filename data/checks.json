@@ -46,12 +46,6 @@
  },
  {
   "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Epiphone Casino Vintage Sunburst Original",
-  "slug": "epiphone-casino-vintage-sunburst-original-711106097367"
- },
- {
-  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
@@ -472,30 +466,6 @@
   "slug": "universal-audio-uafx-galaxi-74-tape-echo-reverb-819937003592",
   "price": 299.0,
   "median": 1646.0
- },
- {
-  "kind": "pedal",
-  "type": "foto_perdida",
-  "name": "Ernie Ball EB 6182 Mvp Most Valuable",
-  "slug": "ernie-ball-eb-6182-mvp-most-valuable-749699161820"
- },
- {
-  "kind": "pedal",
-  "type": "foto_perdida",
-  "name": "Strymon Zelzah",
-  "slug": "strymon-zelzah-852571008158"
- },
- {
-  "kind": "pedal",
-  "type": "foto_perdida",
-  "name": "Valeton Dapper Indie",
-  "slug": "valeton-dapper-indie-6959473982150"
- },
- {
-  "kind": "pedal",
-  "type": "foto_perdida",
-  "name": "Valeton Surge EP-1",
-  "slug": "valeton-surge-ep-1-6959473984017"
  },
  {
   "kind": "varios",
