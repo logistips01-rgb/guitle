@@ -102,6 +102,7 @@ def main(argv=None):
     parser.add_argument("--only-try", action="store_true", help="solo los lectores, sin la prueba de todas las tiendas")
     parser.add_argument("--sitemap", help="enseña los sitemaps de este índice y unas URLs de cada uno")
     parser.add_argument("--links", nargs="*", help="enseña los enlaces de estas páginas (listados de categoría)")
+    parser.add_argument("--domains", nargs="*", help="probar solo estos dominios (en vez de toda la lista)")
     args = parser.parse_args(argv)
     if args.links:
         fetcher = Fetcher(delay=(1.0, 2.0))
@@ -117,7 +118,9 @@ def main(argv=None):
     if args.sitemap:
         fetcher = Fetcher(delay=(1.0, 2.0))
         index = fetcher.get(args.sitemap)
-        lines = [f"# Sitemaps de {args.sitemap} (HTTP {index.status_code})", ""]
+        lines = [f"# Sitemaps de {args.sitemap} (HTTP {index.status_code}, {len(index.text)} bytes, "
+                 f"{index.headers.get('content-type', '')}, {len(re.findall('<loc>', index.text))} <loc>)",
+                 "", "```", index.text[:600], "```", ""]
         for loc in re.findall(r"<loc>\s*(.*?)\s*</loc>", index.text)[:60]:
             sub = fetcher.get(loc)
             urls = re.findall(r"<loc>\s*(.*?)\s*</loc>", sub.text)
@@ -129,7 +132,7 @@ def main(argv=None):
         return 0
     fetcher = Fetcher(delay=(1.0, 2.0))
     rows = []
-    for d in domains():
+    for d in args.domains or domains():
         rows.append(probe(fetcher, d))
         print(rows[-1], flush=True)
     Path(args.out).write_text("# Prueba de tiendas desde GitHub\n\n" + report(rows), encoding="utf-8")

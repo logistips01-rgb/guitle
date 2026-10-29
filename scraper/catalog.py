@@ -1027,11 +1027,34 @@ BR_SKIP = re.compile(r"encordoament|\bcordas?\b|\bcase\b|\bcapa\b|\bbag\b|bolsa|
                      r"|\b(?:para|de|p/) ?(?:o |a |um |uma )?(?:guitarra|viol)", re.I)
 
 
+# Lo que empieza por "Guitarra…" o "Violão…" es el instrumento aunque luego liste lo que trae ("…com afinador, cabo,
+# correia e palheta"); los accesorios empiezan por el accesorio ("Encordoamento para violão", "Pedal para guitarra").
+_BR_INSTR_FIRST = re.compile(r"^(?:guitarra|viol[aã]o|violao)\b", re.I)
+_BR_ALWAYS_SKIP = re.compile(r"outlet|mostru[aá]rio|seminov|\busad[oa]|ukulele|cavaquinho|bandolim|banjo|\bkit\b|\bbaixo\b"
+                             r"|contrabaixo|\bcd\b|\bdvd\b|livro|m[eé]todo|revista", re.I)
+# Al construir, sobre el nombre ya sin "Guitarra"/"Violão" delante: solo si empieza por un accesorio.
+BR_NAME_SKIP = re.compile(r"^(?:encordoament|cordas?\b|capa\b|bag\b|case\b|correia|cabo\b|captador|palheta|pedal|amplificador"
+                          r"|cubo\b|tarraxa|ponte\b|suporte|afinador|estante|kit\b|adesivo|interface|microfone)|"
+                          + _BR_ALWAYS_SKIP.pattern, re.I)
+
+
+def _br_instrument(*texts):
+    """True si es una guitarra o un violão (y no un accesorio, un usado o un kit)."""
+    texts = [unicodedata.normalize("NFKD", t or "").encode("ascii", "ignore").decode().lower().strip() for t in texts]
+    joined = " ".join(texts)
+    if _BR_ALWAYS_SKIP.search(joined):
+        return False
+    if any(_BR_INSTR_FIRST.search(t) for t in texts if t):
+        return True
+    return not BR_SKIP.search(joined)
+
+
 def br_kind(crumbs, url="", name=""):
     """'electrica', 'acustica', 'clasica' o None, por la URL y el nombre (las tiendas brasileñas apenas dan categorías)."""
     text = " ".join([url.rsplit("/", 1)[-1].replace("-", " "), name or "", " ".join(crumbs)]).lower()
     text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
-    if BR_SKIP.search(text):
+    full = crumbs[-1] if crumbs else name  # _br_fix deja ahí el nombre completo ("Violão Clássico Yamaha…")
+    if not _br_instrument(url.rstrip("/").rsplit("/", 1)[-1].replace("-", " "), full, name):
         return None
     if re.search(r"\bviol[aoõ]o|\bviolao", text):
         return "clasica" if re.search(r"nylon|classico|flamenco|\bcordas de n", text) else "acustica"
@@ -1077,12 +1100,12 @@ _BR_PICK = re.compile(r"guitarra|viol[aã]o|violao")
 
 def _pick_br(url):
     slug = url.rstrip("/").rsplit("/", 1)[-1].replace("-", " ")
-    return bool(_BR_PICK.search(slug)) and not BR_SKIP.search(slug) and not NOT_PRODUCT.search(url)
+    return bool(_BR_PICK.search(slug)) and _br_instrument(slug) and not NOT_PRODUCT.search(url)
 
 
 BR_SOURCES = {
     "multisom": {"name": "Multisom", "sitemap": "https://www.multisom.com.br/sitemap/index", "parse": _parse_ld_loose,
-                 "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
+                 "fix": _br_fix, "kind_url": br_kind, "pick": lambda u: bool(re.search(r"-p\d+$", u)) and _pick_br(u)},
     "mundomax": {"name": "Mundomax", "sitemap": "https://www.mundomax.com.br/sitemap.xml", "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
     "teclacenter": {"name": "Teclacenter", "sitemap": "https://www.teclacenter.com.br/google_sitemap_1.xml", "fix": _br_fix, "kind_url": br_kind,
                     "pick": _pick_br},
@@ -1961,7 +1984,7 @@ def build(offers=None, history=None):
         if CATALOG.get("min_price"):  # en otra moneda, el mínimo de MIN_PRICE (en euros) no sirve
             mine = [o for o in mine if (o.get("price") or 0) >= CATALOG["min_price"]]
         if not spain:
-            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP, "br": BR_SKIP, "ie": UK_NAME_SKIP, "at": DE_NAME_SKIP,
+            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP, "br": BR_NAME_SKIP, "ie": UK_NAME_SKIP, "at": DE_NAME_SKIP,
                     "nl": UK_NAME_SKIP}[CATALOG["site"]]
             mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
