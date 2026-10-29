@@ -35,6 +35,9 @@ SITES = {
     "it": {"country": "Italia", "lang": "it-IT", "t": "it", "cur": "EUR", "catalog": "it",
            "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche"},
            "amazon": None},
+    "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de",
+           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren"},
+           "amazon": None},
     "uk": {"country": "United Kingdom", "lang": "en-GB", "t": "en", "cur": "GBP", "catalog": "uk",
            "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
            "amazon": None},
@@ -362,6 +365,87 @@ T = {
                  "check": "Prices change daily: check on the shop's site before buying. No longer interested?",
                  "stop": "Stop this alert"},
     },
+    "de": {
+        "tagline": "Gitarren zum besten Preis", "homeLabel": "guitle, Startseite",
+        "homeTitle": "guitle · Gitarren-Preisvergleich",
+        "homeDesc": "guitle vergleicht Gitarrenpreise: E-Gitarren, Westerngitarren und Konzertgitarren in den Shops, die nach "
+                    "Deutschland liefern, mit dem Preisverlauf jedes Modells.",
+        "h1": "Deine Gitarre, <span>zum besten Preis</span><small>Gitarren-Preisvergleich</small>",
+        "searchPh": "Suche: Strat, Les Paul, Yamaha, Ibanez…", "searchBtn": "Suchen", "searchLabel": "Gitarre suchen",
+        "guitars": "Gitarren", "storesWord": "Shops", "catalog": "Katalog",
+        "dealsH": "Die größten Preisunterschiede zwischen Shops", "dealsBadge": "−{p} % ggü. dem teuersten",
+        "catsH": "Nach Kategorie stöbern", "soon": "bald", "storesH": "Shops im Vergleich",
+        "howH": "So funktioniert's",
+        "steps": ["Jeden Tag prüfen wir Preis, Verfügbarkeit und Foto jeder Gitarre in den Shops, die nach Deutschland liefern.",
+                  "Wir speichern den Preisverlauf, damit du siehst, ob ein Preis wirklich gut ist oder sonst niedriger liegt.",
+                  "Auf Wunsch schicken wir dir eine E-Mail, wenn der Preis fällt."],
+        "affiliate": "Einige Links zu Shops sind Affiliate-Links: Wenn du kaufst, kann guitle eine Provision erhalten – ohne Mehrkosten für dich.",
+        "legal": "Impressum", "privacy": "Datenschutz", "cookies": "Cookies", "otherCountries": "guitle in anderen Ländern:",
+        "updated": "Daten aktualisiert am {d}", "home": "Startseite",
+        "kinds": {"electrica": ("E-Gitarren", "E-Gitarren", "In E-Gitarren suchen: Modell, Marke, Farbe…"),
+                  "acustica": ("Westerngitarren", "Western", "In Westerngitarren suchen: Modell, Marke, Holz…"),
+                  "clasica": ("Konzertgitarren", "Konzert", "In Konzertgitarren suchen: Modell, Marke, Flamenco…")},
+        "anyPrice": "Jeder Preis", "upTo": "Bis {v}", "over": "Über {v}", "brandLabel": "Marke", "priceLabel": "Preis",
+        "showLabel": "Anzeigen", "showAll": "Alle", "showMulti": "In mehreren Shops", "showStock": "Auf Lager",
+        "showLow": "Zum Tiefstpreis", "showLh": "Nur Linkshänder", "loading": "Katalog wird geladen…", "sortLabel": "Sortieren",
+        "sorts": ["Meiste Shops", "Niedrigster Preis", "Höchster Preis", "Größte Ersparnis zwischen Shops", "Name"],
+        "moreBtn": "Mehr anzeigen", "sections": "Bereiche", "searchAria": "Suchen",
+        "bestPrice": "Bestpreis", "inStock": "auf Lager", "noStock": "nicht auf Lager", "goLong": "Zum Shop", "goShort": "Shop",
+        "store": "Shop", "stores": "Shops", "lh": "Linkshänder", "storesH3": "Shops", "historyH3": "Preisverlauf",
+        "amazon": "", "titleFrom": "{name}: Preis ab {price} {where}", "inN": "in {n} Shops", "inS": "bei {s}",
+        "whereMany": "bei {s} · {n} Shops", "whereDiff": ", bis zu {d} Unterschied",
+        "desc": "{name} ab {price} bei {s}. Vergleiche den Preis in {n} {stores} ({list}) und sieh dir den Preisverlauf an, um zu "
+                "wissen, ob jetzt ein guter Zeitpunkt zum Kauf ist.",
+        "alertTitle": "Preisalarm", "alertWait": "Einen Moment…", "alertSaving": "Wir speichern deine Antwort.",
+        "alertGo": "Zu guitle", "alertBad": ["Ungültiger Link", "Kopiere den vollständigen Link aus der E-Mail und versuche es erneut."],
+        "alertDone": ["Preisalarm bestätigt!", "Wir schreiben dir, sobald der Preis fällt. Jede E-Mail enthält einen Abmeldelink."],
+        "alertGone": ["Preisalarm gelöscht", "Du bekommst zu diesem Alarm keine E-Mails mehr. Deine Adresse wurde aus unserer Liste gelöscht."],
+        "alertMissing": ["Preisalarm nicht gefunden", "Vielleicht war er schon bestätigt oder gelöscht, oder es sind mehr als 7 Tage ohne "
+                                                      "Bestätigung vergangen. Hilfe? Schreib uns an hola@guitle.com."],
+        "js": {"loadErr": "Der Katalog konnte nicht geladen werden.", "allBrands": "Alle Marken", "all": "Alle", "low": "Tiefstpreis",
+               "save": "Spare {v}", "lh": "Linkshänder", "store": "Shop", "stores": "Shops",
+               "empty": "Keine {many} mit diesen Filtern.", "more": "Mehr anzeigen (noch {n})",
+               "meta": "{a} von {b} {many} · {m} in mehreren Shops vergleichbar · aktualisiert am {d}", "best": "Bestpreis",
+               "inStock": "auf Lager", "noStock": "nicht auf Lager", "goLong": "Zum Shop", "goShort": "Shop", "close": "Schließen",
+               "inAt": "bei {s}", "saveMax": " · bis zu {v} günstiger als der teuerste", "atLow": "Auf dem Tiefstpreis",
+               "lowTag": "Tiefstpreis: {v}", "storesH": "Shops", "evolH": "Preisverlauf",
+               "histErr": "Der Preisverlauf konnte nicht geladen werden.", "histSoon": "Der Preisverlauf füllt sich mit den nächsten Abfragen.",
+               "many": "Gitarren",
+               "types": {"ST": "ST-Modelle", "T": "T-Modelle", "Semihueca": "Halbakustik", "Moderna / Metal": "Modern / Metal",
+                         "Otras": "Andere", "Auditorio / Concierto": "Auditorium / Konzert", "12 cuerdas": "12-saitig",
+                         "Tamaño reducido": "Kleine Größe", "Clásica": "Klassisch", "Flamenca": "Flamenco",
+                         "Electroclásica": "Elektro-Klassik"},
+               "wait": "Wir beobachten dieses Modell seit {n} {days}", "day": "Tag", "days": "Tagen",
+               "waitSub": "Die Einschätzung wird nach ein paar Wochen Preisverlauf zuverlässiger.",
+               "min": "Niedrigster erfasster Preis", "minSub": "So günstig haben wir sie noch nie gesehen.",
+               "minBelow": " {p} % unter dem 30-Tage-Durchschnitt.",
+               "good": "Guter Zeitpunkt: {p} % unter dem Durchschnittspreis", "goodSub": "Durchschnitt der letzten 30 Tage: {avg}.",
+               "bad": "Gerade {p} % teurer als üblich",
+               "badSub": "Wenn du es nicht eilig hast, warte: Der 30-Tage-Durchschnitt liegt bei {avg}, der Tiefstpreis bei {min}.",
+               "normal": "Normaler Preis", "normalSub": "Im Rahmen des 30-Tage-Durchschnitts ({avg}). Tiefstpreis: {min}.",
+               "today": "Preis heute", "lowest": "Tiefstpreis ({d})", "highest": "Höchstpreis", "avg": "Durchschnitt {n} Tage",
+               "since": "Beobachtet seit {d}", "noHist": "Noch kein Preisverlauf.", "pvp": "UVP", "bestLine": "Bestpreis",
+               "alertOpen": "Benachrichtige mich, wenn der Preis fällt", "emailPh": "du@beispiel.de", "emailLabel": "Deine E-Mail",
+               "targetPh": "Max. Preis (optional)", "targetLabel": "Zielpreis in Euro", "alertBtn": "Benachrichtigen",
+               "alertLegal": "Kostenlos und ohne Anmeldung. Mit Klick auf „Benachrichtigen“ akzeptierst du die "
+                             "<a href=\"/de/legal.html#datenschutz\">Datenschutzerklärung</a>: Wir nutzen deine E-Mail nur für diesen "
+                             "Alarm, abmelden kannst du dich mit einem Klick.",
+               "alertOk": "<b>Erledigt!</b> In wenigen Minuten bekommst du eine E-Mail an {email}, um den Alarm zu bestätigen "
+                          "(schau auch im Spam-Ordner nach).",
+               "alertErr": "Der Alarm konnte nicht gespeichert werden. Prüfe die E-Mail-Adresse und versuche es erneut."},
+        "mail": {"tagline": "Gitarren zum besten Preis",
+                 "footer": "guitle vergleicht täglich die Preise von Musikgeschäften. Du erhältst diese E-Mail, weil du auf guitle.com "
+                           "einen Preisalarm angefordert hast. Verantwortlich: Manuel Lorente Gálvez, hola@guitle.com.",
+                 "privacy": "Datenschutz", "confirmSubject": "Bestätige deinen guitle-Preisalarm",
+                 "confirmTitle": "Bestätige deinen Preisalarm", "asked": "Du möchtest benachrichtigt werden, wenn der Preis fällt{target}:",
+                 "below": " unter <b>{v}</b>", "confirmAsk": "Bitte bestätige, dass du den Alarm an diese Adresse erhalten möchtest:",
+                 "confirmBtn": "Alarm bestätigen",
+                 "notYou": "Wenn du das nicht warst, tu nichts: Unbestätigte Alarme werden nach 7 Tagen automatisch gelöscht.",
+                 "dropSubject": "Preis gesunken: {name} jetzt {price}", "dropTitle": "Der Preis ist gesunken!", "nowAt": "bei {s} · vorher {v}",
+                 "seeAll": "Preise in allen Shops ansehen",
+                 "check": "Preise ändern sich täglich: Prüfe sie vor dem Kauf im Shop. Kein Interesse mehr?",
+                 "stop": "Diesen Alarm abbestellen"},
+    },
 }
 
 # Lo que va en el pie de cada web: España y los demás países.
@@ -443,7 +527,7 @@ def _foot(code, t):
 
 
 def _anchor(code):
-    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy", "en": "privacy"}.get(SITES[code]["t"], "privacidad")
+    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy", "en": "privacy", "de": "datenschutz"}.get(SITES[code]["t"], "privacidad")
 
 
 def _head(code, title, desc, canonical, extra=""):

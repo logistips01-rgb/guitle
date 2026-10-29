@@ -13,7 +13,7 @@ on:
         description: "Qué catálogo leer (todos, o solo uno)"
         type: choice
         default: todos
-        options: [todos, equipo, electrica, acustica, pt, fr, it, uk]
+        options: [todos, equipo, electrica, acustica, pt, fr, it, uk, de]
 
 permissions:
   contents: write
@@ -26,13 +26,13 @@ jobs:
   catalog:
     # Un catálogo detrás de otro (max-parallel 1): cada tienda recibe como mucho una petición cada 3-6 s.
     # electrica → data/catalog/ ; acustica → data/catalog/acusticas/ (acústicas y clásicas en una sola lectura) ;
-    # equipo → data/catalog/equipo/ (teclados y pedales) ; pt → data/catalog/pt/ (Portugal) ; fr → data/catalog/fr/ (Francia) ; it → data/catalog/it/ (Italia) ; uk → data/catalog/uk/ (Reino Unido)
+    # equipo → data/catalog/equipo/ (teclados y pedales) ; pt → data/catalog/pt/ (Portugal) ; fr → data/catalog/fr/ (Francia) ; it → data/catalog/it/ (Italia) ; uk → data/catalog/uk/ (Reino Unido) ; de → data/catalog/de/ (Alemania)
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
         # Programada: todos. A mano se puede elegir uno solo (p. ej. equipo = pedales y teclados).
-        cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["electrica","acustica","equipo","pt","fr","it","uk"]') }}
+        cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["electrica","acustica","equipo","pt","fr","it","uk","de"]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 355
     steps:

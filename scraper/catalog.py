@@ -781,6 +781,62 @@ UK_SOURCES = {
                 "pick": lambda u: not NOT_PRODUCT.search(u)},
 }
 
+
+# --- Alemania -------------------------------------------------------------------------------------------
+
+DE_SKIP = re.compile(r"\bbass|bässe|basse\b|verstärker|\bamps?\b|effekt|pedal|saiten|koffer|taschen|gig-?bag|gurt|ständer"
+                     r"|kabel|zubehör|tonabnehmer|ersatzteil|ukulele|mandolin|banjo|stimmger|plektr|kapodaster|bücher|noten"
+                     r"|keyboard|piano|drum|schlagzeug|mikrofon|pflege", re.I)
+DE_NAME_SKIP = re.compile(r"(?<!\d )\bsaiten(satz)?\b|^(?:koffer|gigbag|tasche|gurt)\b|\bbass\b|ukulele|stimmgerät"
+                          r"|b-?ware|gebraucht", re.I)
+
+
+def de_kind(crumbs):
+    """'electrica', 'acustica', 'clasica' o None, por las categorías (en alemán) de la tienda."""
+    text = " / ".join(crumbs).lower()
+    # "Gitarren und Bässe" (Thomann) o "E-Gitarren & Zubehör" (Session) arriba no la descartan; al final, sí.
+    leaf = re.sub(r"gitarren (?:und|&) bässe|e-gitarren & zubehör", "", " / ".join(crumbs[-2:]).lower())
+    if not re.search(r"gitarre", text) or DE_SKIP.search(leaf):
+        return None
+    if re.search(r"konzertgitarre|klassik|flamenco|nylon", text):
+        return "clasica"
+    if re.search(r"halbakustik|semi-?akustik|hollow|jazzgitarre", text):
+        return "electrica"  # halbakustische E-Gitarren
+    if re.search(r"westerngitarre|akustikgitarre|akustik|folk|reisegitarre", text):
+        return "acustica"
+    if re.search(r"e-gitarre", text):
+        return "electrica"
+    return None
+
+
+# Musikhaus Korn no tiene breadcrumb: el tipo va al final de la URL ("…-westerngitarre/pd/232348").
+_KORN_TYPES = {"e-gitarre": "E-Gitarren", "westerngitarre": "Westerngitarren", "konzertgitarre": "Konzertgitarren"}
+
+
+def _korn_type(url):
+    m = re.search(r"-(e-gitarre|westerngitarre|konzertgitarre)/pd/\d+$", url)
+    return m.group(1) if m else ""
+
+
+THOMANN_DE = "https://www.thomann.de/de/"
+
+DE_SOURCES = {
+    "thomann": {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann, "kind": de_kind,
+                "discover": lambda f: _discover_thomann(f, ("cat_allProducts_GF_e-gitarren.html",
+                                                            "cat_allProducts_GF_westerngitarren.html",
+                                                            "cat_allProducts_GF_konzertgitarren.html"), THOMANN_DE),
+                "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)},
+    "session": {**SOURCES["session"], "kind": de_kind,
+                "pick": lambda u: _pick_session(u) or _pick_acoustic_brand(u.split("/products/")[-1].strip("/"))},
+    "korn": {"name": "Musikhaus Korn", "sitemap": "https://www.musikhaus-korn.de/content/sitemaps/sitemap-index.xml",
+             "kind": de_kind, "crumbs": lambda u: [_KORN_TYPES.get(_korn_type(u), "")],
+             "pick": lambda u: "/de/" in u and bool(_korn_type(u)) and not NOT_PRODUCT.search(u)},
+    "hermann": {"name": "Musikhaus Hermann", "sitemap": "https://www.musikhaus-hermann.de/sitemap.xml", "kind": de_kind,
+                # Las fichas acaban en su número ("…-vintage-sunburst-42894/"); lo demás son categorías.
+                "pick": lambda u: bool(re.search(r"-\d{4,6}/$", u)) and not DE_SKIP.search(u.replace("-", " "))
+                and not NOT_PRODUCT.search(u)},
+}
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -833,7 +889,8 @@ CATALOGS = {
            "files": {"electrica": "elettriche.json", "acustica": "acustiche.json", "clasica": "classiche.json"}},
     # Reino Unido: precios en libras (las tiendas los dan en GBP; "cur" es la moneda que se acepta).
     "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP",
-           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},
+           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},    "de": {"dir": DIR / "de", "sources": DE_SOURCES, "site": "de",
+           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -1450,7 +1507,7 @@ def build(offers=None, history=None):
                 and (kind in GUITAR_KINDS or not EQUIPO_SKIP.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
         if not spain:
-            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP}[CATALOG["site"]]
+            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP}[CATALOG["site"]]
             mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})
