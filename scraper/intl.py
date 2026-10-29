@@ -38,6 +38,9 @@ SITES = {
     "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de",
            "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren"},
            "amazon": None},
+    "br": {"country": "Brasil", "lang": "pt-BR", "t": "br", "cur": "BRL", "catalog": "br",
+           "kinds": {"electrica": "guitarras", "acustica": "violoes", "clasica": "violoes-nylon"},
+           "amazon": None},
     "uk": {"country": "United Kingdom", "lang": "en-GB", "t": "en", "cur": "GBP", "catalog": "uk",
            "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
            "amazon": None},
@@ -446,6 +449,82 @@ T = {
                  "check": "Preise ändern sich täglich: Prüfe sie vor dem Kauf im Shop. Kein Interesse mehr?",
                  "stop": "Diesen Alarm abbestellen"},
     },
+    "br": {
+        "tagline": "guitarras e violões pelo melhor preço", "homeLabel": "guitle, início",
+        "homeTitle": "guitle · comparador de preços de guitarras e violões",
+        "homeDesc": "O guitle compara preços de guitarras e violões nas lojas de música do Brasil, com o histórico de preços de cada modelo.",
+        "h1": "Sua guitarra, <span>pelo melhor preço</span><small>Comparador de preços de guitarras e violões</small>",
+        "searchPh": "Busque: strat, les paul, tagima, giannini…", "searchBtn": "Buscar", "searchLabel": "Buscar guitarra ou violão",
+        "guitars": "instrumentos", "storesWord": "lojas", "catalog": "Catálogo",
+        "dealsH": "Maiores diferenças entre lojas", "dealsBadge": "−{p}% vs. a mais cara",
+        "catsH": "Explore por categoria", "soon": "em breve", "storesH": "Lojas que comparamos",
+        "howH": "Como funciona",
+        "steps": ["Todos os dias conferimos o preço, o estoque e a foto de cada guitarra e violão nas lojas do Brasil.",
+                  "Guardamos o histórico para você saber se um preço é bom de verdade ou se costuma estar mais baixo.",
+                  "Se quiser, avisamos você por e-mail quando o preço baixar."],
+        "affiliate": "Alguns links para lojas são de afiliado: se você comprar, o guitle pode receber uma comissão, sem custo para você.",
+        "legal": "Aviso legal", "privacy": "Privacidade", "cookies": "Cookies", "otherCountries": "guitle em outros países:",
+        "updated": "Dados atualizados em {d}", "home": "Início",
+        "kinds": {"electrica": ("Guitarras", "Guitarras", "Busque nas guitarras: modelo, marca, cor…"),
+                  "acustica": ("Violões de aço e folk", "Violões aço", "Busque nos violões: modelo, marca, madeira…"),
+                  "clasica": ("Violões de nylon", "Violões nylon", "Busque nos violões de nylon: modelo, marca…")},
+        "anyPrice": "Qualquer preço", "upTo": "Até {v}", "over": "Acima de {v}", "brandLabel": "Marca", "priceLabel": "Preço",
+        "showLabel": "Mostrar", "showAll": "Todos", "showMulti": "Em várias lojas", "showStock": "Em estoque",
+        "showLow": "No menor preço", "showLh": "Só canhotos", "loading": "Carregando o catálogo…", "sortLabel": "Ordenar",
+        "sorts": ["Mais lojas", "Menor preço", "Maior preço", "Maior economia entre lojas", "Nome"], "moreBtn": "Ver mais",
+        "sections": "Seções", "searchAria": "Buscar",
+        "bestPrice": "melhor preço", "inStock": "em estoque", "noStock": "sem estoque", "goLong": "Ir para a loja", "goShort": "Ir",
+        "store": "loja", "stores": "lojas", "lh": "canhoto", "storesH3": "Lojas", "historyH3": "Histórico de preços",
+        "amazon": "", "titleFrom": "{name}: preço a partir de {price} {where}", "inN": "em {n} lojas", "inS": "na {s}",
+        "whereMany": "na {s} · {n} lojas", "whereDiff": ", até {d} de diferença",
+        "desc": "{name} a partir de {price} na {s}. Compare o preço em {n} {stores} ({list}) e veja o histórico para saber se é "
+                "uma boa hora para comprar.",
+        "alertTitle": "Alerta de preço", "alertWait": "Um momento…", "alertSaving": "Estamos salvando sua resposta.",
+        "alertGo": "Ir para o guitle", "alertBad": ["Link inválido", "Copie o link completo do e-mail e tente de novo."],
+        "alertDone": ["Alerta confirmado!", "Vamos te avisar assim que o preço baixar. Cada e-mail tem um link para cancelar."],
+        "alertGone": ["Alerta apagado", "Você não vai mais receber e-mails deste alerta. Apagamos seu e-mail da nossa lista."],
+        "alertMissing": ["Não encontramos o alerta", "Talvez já estivesse confirmado ou apagado, ou passaram mais de 7 dias sem "
+                                                    "confirmação. Precisa de ajuda? Escreva para hola@guitle.com."],
+        "js": {"loadErr": "Não foi possível carregar o catálogo.", "allBrands": "Todas as marcas", "all": "Todos", "low": "Menor preço",
+               "save": "Economize {v}", "lh": "canhoto", "store": "loja", "stores": "lojas", "empty": "Não há {many} com esses filtros.",
+               "more": "Ver mais ({n} restantes)", "meta": "{a} de {b} {many} · {m} comparáveis em várias lojas · atualizado em {d}",
+               "best": "melhor preço", "inStock": "em estoque", "noStock": "sem estoque", "goLong": "Ir para a loja", "goShort": "Ir",
+               "close": "Fechar", "inAt": "na {s}", "saveMax": " · até {v} a menos que na mais cara", "atLow": "No menor preço registrado",
+               "lowTag": "Menor preço registrado: {v}", "storesH": "Lojas", "evolH": "Evolução do preço",
+               "histErr": "Não foi possível carregar o histórico.", "histSoon": "O histórico vai se completando com as próximas leituras.",
+               "many": "instrumentos",
+               "types": {"Semihueca": "Semi-acústica", "Moderna / Metal": "Moderna / Metal", "Otras": "Outros",
+                         "Auditorio / Concierto": "Auditório / Concerto", "12 cuerdas": "12 cordas", "Tamaño reducido": "Tamanho reduzido",
+                         "Clásica": "Clássico", "Flamenca": "Flamenco", "Electroclásica": "Elétrico nylon"},
+               "wait": "Acompanhamos este modelo há {n} {days}", "day": "dia", "days": "dias",
+               "waitSub": "O veredito fica mais confiável com algumas semanas de histórico.",
+               "min": "Menor preço registrado", "minSub": "Nunca vimos mais barato.", "minBelow": " {p}% abaixo da média de 30 dias.",
+               "good": "Boa hora: {p}% abaixo do preço médio", "goodSub": "Média dos últimos 30 dias: {avg}.",
+               "bad": "Agora está {p}% mais caro que o normal",
+               "badSub": "Se não tiver pressa, espere: a média de 30 dias é {avg} e o mínimo, {min}.",
+               "normal": "Preço normal", "normalSub": "Na média dos últimos 30 dias ({avg}). Menor preço registrado: {min}.",
+               "today": "preço hoje", "lowest": "menor preço ({d})", "highest": "maior preço", "avg": "média {n} dias",
+               "since": "Acompanhado desde {d}", "noHist": "Ainda não há histórico de preços.", "pvp": "Preço oficial",
+               "bestLine": "Melhor preço", "alertOpen": "Me avise se o preço baixar", "emailPh": "voce@email.com.br",
+               "emailLabel": "Seu e-mail", "targetPh": "Preço máx. (opcional)", "targetLabel": "Preço desejado em reais",
+               "alertBtn": "Me avisar",
+               "alertLegal": "Grátis e sem cadastro. Ao clicar em «Me avisar» você aceita a <a href=\"/br/legal.html#privacidade\">política "
+                             "de privacidade</a>: usamos seu e-mail só para este alerta e você cancela com um clique.",
+               "alertOk": "<b>Pronto!</b> Em alguns minutos você vai receber um e-mail em {email} para confirmar o alerta (veja também o spam).",
+               "alertErr": "Não foi possível salvar o alerta. Confira o e-mail e tente de novo."},
+        "mail": {"tagline": "guitarras e violões pelo melhor preço",
+                 "footer": "O guitle compara todos os dias os preços das lojas de música. Você recebe este e-mail porque pediu um alerta "
+                           "em guitle.com. Responsável: Manuel Lorente Gálvez, hola@guitle.com.",
+                 "privacy": "Privacidade", "confirmSubject": "Confirme seu alerta de preço no guitle",
+                 "confirmTitle": "Confirme seu alerta de preço", "asked": "Você pediu para ser avisado quando o preço baixar{target}:",
+                 "below": " para menos de <b>{v}</b>", "confirmAsk": "Confirme que quer receber o alerta neste endereço:",
+                 "confirmBtn": "Confirmar o alerta",
+                 "notYou": "Se não foi você, não faça nada: sem confirmação, o alerta é apagado sozinho em 7 dias.",
+                 "dropSubject": "Baixou: {name} por {price}", "dropTitle": "O preço baixou!", "nowAt": "na {s} · antes {v}",
+                 "seeAll": "Ver preços em todas as lojas",
+                 "check": "Os preços mudam todo dia: confira na loja antes de comprar. Não tem mais interesse?",
+                 "stop": "Parar de receber este alerta"},
+    },
 }
 
 # Lo que va en el pie de cada web: España y los demás países.
@@ -458,6 +537,8 @@ def money(v, site):
     whole, cents = int(round(v * 100)) // 100, int(round(v * 100)) % 100
     if SITES[site]["cur"] == "GBP":
         return f"£{whole:,}" + (f".{cents:02d}" if cents else "")
+    if SITES[site]["cur"] == "BRL":
+        return f"R$\u00a0{whole:,}".replace(",", ".") + f",{cents:02d}"
     txt = f"{whole:,}".replace(",", " ")
     return f"{txt},{cents:02d} €" if cents else f"{txt} €"
 
@@ -527,7 +608,7 @@ def _foot(code, t):
 
 
 def _anchor(code):
-    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy", "en": "privacy", "de": "datenschutz"}.get(SITES[code]["t"], "privacidad")
+    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy", "en": "privacy", "de": "datenschutz", "br": "privacidade"}.get(SITES[code]["t"], "privacidad")
 
 
 def _head(code, title, desc, canonical, extra=""):

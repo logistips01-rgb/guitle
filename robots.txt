@@ -10,3 +10,4 @@ Sitemap: https://guitle.com/sitemap-fr.xml
 Sitemap: https://guitle.com/sitemap-it.xml
 Sitemap: https://guitle.com/sitemap-uk.xml
 Sitemap: https://guitle.com/sitemap-de.xml
+Sitemap: https://guitle.com/sitemap-br.xml

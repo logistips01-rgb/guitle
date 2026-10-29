@@ -21,6 +21,7 @@ import gzip
 import html
 import json
 import re
+import unicodedata
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -837,6 +838,84 @@ DE_SOURCES = {
                 and not NOT_PRODUCT.search(u)},
 }
 
+
+# --- Brasil ---------------------------------------------------------------------------------------------
+# En Brasil "guitarra" es la eléctrica; las acústicas y clásicas son "violão" (de aço o de nylon).
+
+BR_SKIP = re.compile(r"encordoament|\bcordas?\b|\bcase\b|\bcapa\b|\bbag\b|bolsa|correia|\bcabo\b|captador|palheta|pedal"
+                     r"|amplificador|\bcubo\b|\bbaixo\b|tarraxa|\bponte\b|\bkit\b|suporte|afinador|estante|\bstrap\b|ukulele"
+                     r"|cavaquinho|bandolim|banjo|\bcapotraste|alavanca|escala|\bbraço\b|\bcorpo\b|knob|chave|tampa|método|livro"
+                     r"|outlet|mostru[aá]rio|seminov|usad"
+                     # Accesorios "para guitarra / de violão": adhesivos, jacks, puentes, apoyos…
+                     r"|adesivo|\bjack\b|interface|apoio|cavalete|abafador|redutor|bra[cç]adeira|tattoo|encor|\benc\b|limpa"
+                     r"|flanela|polidor|\bpino|rastilho|\bnut\b|traste|microfone|\bfonte\b|bateria|\bpra\b"
+                     r"|\b(?:para|de|p/) ?(?:o |a |um |uma )?(?:guitarra|viol)", re.I)
+
+
+def br_kind(crumbs, url="", name=""):
+    """'electrica', 'acustica', 'clasica' o None, por la URL y el nombre (las tiendas brasileñas apenas dan categorías)."""
+    text = " ".join([url.rsplit("/", 1)[-1].replace("-", " "), name or "", " ".join(crumbs)]).lower()
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
+    if BR_SKIP.search(text):
+        return None
+    if re.search(r"\bviol[aoõ]o|\bviolao", text):
+        return "clasica" if re.search(r"nylon|classico|flamenco|\bcordas de n", text) else "acustica"
+    if re.search(r"\bguitarra", text):
+        return "electrica"
+    return None
+
+
+def _parse_ld_loose(soup, text):
+    """JSON-LD de producto que no siempre es JSON válido (Multisom, Casa da Música): primero el lector normal y, si no
+    saca precio, los campos sueltos con expresiones regulares."""
+    data = _parse_jsonld(soup, "loose")
+    if data.get("price"):
+        return data
+    block = next((b for b in re.findall(r'<script[^>]*ld\+json[^>]*>(.*?)</script>', text, re.S) if '"Product"' in b), "")
+    get = lambda k: (re.search(rf'"{k}"\s*:\s*"?([^",}}\n]+)', block) or [None, None])[1]
+    name, price = get("name"), get("price")
+    if not name or not price:
+        return {"crumbs": data.get("crumbs", [])}
+    brand = re.search(r'"brand"\s*:\s*\{[^}]*"name"\s*:\s*"([^"]+)"', block)
+    image = soup.find("meta", attrs={"property": "og:image"})
+    ean = normalize_id(get("gtin13") or get("gtin") or "")
+    return {"crumbs": data.get("crumbs", []), "name": html.unescape(name.strip()), "brand_raw": brand.group(1) if brand else None,
+            "price": float(price), "currency": (get("priceCurrency") or "BRL").strip(),
+            "in_stock": "instock" in (get("availability") or "").lower(), "image": image.get("content") if image else None,
+            "ean": ean if len(ean) in (12, 13, 14) else None}
+
+
+def _br_fix(data, text):
+    """Los nombres empiezan por el instrumento ("Guitarra Tagima TG-500", "Violão Elétrico Yamaha FX310"): fuera, la
+    categoría ya lo dice (y así la marca va delante)."""
+    name = data.get("name") or ""
+    name = re.sub(r"^(?:guitarra|viol[aã]o)(?:\s+(?:el[eé]tric[oa]|eletroac[uú]stic[oa]|ac[uú]stic[oa]|folk|cl[aá]ssic[oa]"
+                  r"|de|a[cç]o|nylon|n[aá]ilon|semi-?ac[uú]stic[oa]|7 cordas|12 cordas|infantil))*\s+", "", name, flags=re.I)
+    # El nombre completo se queda en las categorías: de ahí sale si es de nylon o de aço (br_kind).
+    data["crumbs"] = list(data.get("crumbs") or []) + [data.get("name") or ""]
+    data["name"] = name.strip() or data.get("name")
+    return data
+
+
+_BR_PICK = re.compile(r"guitarra|viol[aã]o|violao")
+
+
+def _pick_br(url):
+    slug = url.rstrip("/").rsplit("/", 1)[-1].replace("-", " ")
+    return bool(_BR_PICK.search(slug)) and not BR_SKIP.search(slug) and not NOT_PRODUCT.search(url)
+
+
+BR_SOURCES = {
+    "multisom": {"name": "Multisom", "sitemap": "https://www.multisom.com.br/sitemap/index", "parse": _parse_ld_loose,
+                 "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
+    "mundomax": {"name": "Mundomax", "sitemap": "https://www.mundomax.com.br/sitemap.xml", "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
+    "teclacenter": {"name": "Teclacenter", "sitemap": "https://www.teclacenter.com.br/google_sitemap_1.xml", "fix": _br_fix, "kind_url": br_kind,
+                    "pick": _pick_br},
+    "casadamusica": {"name": "Casa da Música", "sitemap": "https://www.casadamusica.com.br/sitemap.xml", "parse": _parse_ld_loose,
+                     "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
+    "megasom": {"name": "Megasom", "sitemap": "https://www.megasom.com.br/sitemap.xml", "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
+}
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -890,7 +969,8 @@ CATALOGS = {
     # Reino Unido: precios en libras (las tiendas los dan en GBP; "cur" es la moneda que se acepta).
     "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP",
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},    "de": {"dir": DIR / "de", "sources": DE_SOURCES, "site": "de",
-           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},
+           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},    "br": {"dir": DIR / "br", "sources": BR_SOURCES, "site": "br", "cur": "BRL", "min_price": 300,
+           "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -1506,8 +1586,10 @@ def build(offers=None, history=None):
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
                 and (kind in GUITAR_KINDS or not EQUIPO_SKIP.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
+        if CATALOG.get("min_price"):  # en otra moneda, el mínimo de MIN_PRICE (en euros) no sirve
+            mine = [o for o in mine if (o.get("price") or 0) >= CATALOG["min_price"]]
         if not spain:
-            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP}[CATALOG["site"]]
+            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP, "br": BR_SKIP}[CATALOG["site"]]
             mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})

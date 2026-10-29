@@ -249,4 +249,55 @@ Agencia Española de Protección de Datos oder der Aufsichtsbehörde deines Bund
 <p>guitle verwendet keine Cookies, weder eigene noch von Dritten – deshalb siehst du kein Cookie-Banner. Wir nutzen nur den lokalen Speicher des Browsers,
 um deine Einstellungen zu merken. Die verlinkten Shops können auf ihren Websites eigene Cookies verwenden.</p>
 """),
+    "br": ("Aviso legal e privacidade", """
+<h1 style="font-size:1.8rem;margin:24px 0 6px">Aviso legal e privacidade</h1>
+<p class="muted">Última atualização: 29 de outubro de 2026. Esta é uma tradução; em caso de dúvida, prevalece a
+<a href="/legal.html">versão em espanhol</a>.</p>
+
+<h2 id="aviso">Aviso legal</h2>
+<p>Responsável por este site: <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador 22, 50830 Villanueva de Gállego (Zaragoza), Espanha
+(NIF espanhol 17747339X), contato <a href="mailto:hola@guitle.com">hola@guitle.com</a>, site guitle.com. Atividade: comparador de preços de
+instrumentos musicais e publicidade de afiliados. Hospedagem: GitHub Pages (GitHub, Inc.).</p>
+
+<h2 id="termos">Termos de uso</h2>
+<p>O guitle é um comparador: não vende produtos. Mostramos os preços que as lojas publicam em seus sites e levamos você até elas para comprar
+diretamente lá. A compra, a entrega, a garantia e as trocas são responsabilidade de cada loja.</p>
+<ul>
+<li><b>Preços indicativos.</b> Conferimos os preços periodicamente, mas eles podem mudar a qualquer momento. Vale sempre o preço que a loja mostra ao fazer o pedido.</li>
+<li><b>Sem garantia de exatidão.</b> Tomamos cuidado para que produtos, preços e estoques estejam corretos, mas pode haver erros. Se encontrar algum, escreva para nós.</li>
+<li><b>Marcas e imagens.</b> As marcas, nomes de produtos e imagens pertencem aos seus titulares e são usados só para identificar os produtos.</li>
+<li><b>Conteúdo do guitle.</b> O design, o logotipo, os textos e as compilações de dados do guitle pertencem ao seu responsável. Não é permitido copiá-los em massa nem usá-los para fins comerciais sem autorização.</li>
+</ul>
+
+<h2 id="afiliados">Links de afiliados</h2>
+<p>Alguns links para lojas são links de afiliados: se você comprar depois de clicar, a loja pode pagar ao guitle uma pequena comissão. Para você o
+preço é o mesmo. As comissões não influenciam a ordem dos resultados: as lojas são sempre ordenadas por preço, do menor para o maior.</p>
+
+<h2 id="privacidade">Política de privacidade</h2>
+<p>O guitle não pede dados pessoais para usar o site: não há cadastro, newsletter nem ferramentas de análise ou publicidade que sigam você.
+Só contamos visitas de forma anônima e, se você pedir um alerta de preço, guardamos seu e-mail para esse alerta.</p>
+<ul>
+<li><b>Alertas de preço.</b> Se você pedir para ser avisado quando o preço de um produto baixar, guardamos seu e-mail, o produto, o preço naquele dia e
+o preço desejado, se você informar. Usamos esses dados só para enviar o e-mail de confirmação e os alertas desse produto; nunca para publicidade, e não
+os compartilhamos com ninguém. Base legal: seu consentimento (art. 7, I, da LGPD), dado ao pedir o alerta e confirmar o e-mail. Os dados ficam no
+Google Cloud Firestore (Google Ireland Ltd., servidor em Madri) e os e-mails saem da nossa caixa hola@guitle.com (DonDominio, Espanha), o que implica
+transferência internacional de dados com base no seu consentimento. Sem confirmação, o alerta é apagado em 7 dias; confirmado, fica guardado até você
+cancelar pelo link de cada e-mail (que o apaga na hora) ou nos pedir para apagá-lo.</li>
+<li><b>Preferências no seu navegador.</b> Os filtros ou a visualização escolhida ficam no armazenamento local do seu navegador (localStorage) e não são enviados a nenhum servidor.</li>
+<li><b>Hospedagem.</b> O site é hospedado no GitHub Pages (GitHub, Inc.). Como qualquer servidor, o GitHub pode registrar o endereço IP de cada visita por
+motivos técnicos e de segurança.</li>
+<li><b>Contador de visitas.</b> Cada página soma 1 a um contador anônimo: o dia, a página vista, o site de onde você veio (por exemplo, google.com),
+o que você digita na busca do catálogo e, se clicar em uma loja, o nome da loja. Não usamos cookies nem guardamos seu IP ou qualquer dado que identifique
+você. Os contadores ficam no Google Cloud Firestore (Google Ireland Ltd.), em um servidor da União Europeia (Madri).</li>
+<li><b>Sem outras requisições a terceiros.</b> As fontes, os gráficos e as fotos dos produtos são servidos a partir de guitle.com.</li>
+<li><b>Ao ir para uma loja.</b> Quando você clica para ir a uma loja, sai do guitle. A partir daí vale a política de privacidade dessa loja.</li>
+</ul>
+<p><b>Seus direitos.</b> Você pode exercer os direitos de acesso, correção, eliminação, portabilidade, informação e revogação do consentimento (art. 18
+da LGPD) escrevendo para <a href="mailto:hola@guitle.com">hola@guitle.com</a>. Você também pode reclamar à Autoridade Nacional de Proteção de Dados (ANPD).
+Controlador: o responsável indicado no aviso legal.</p>
+
+<h2 id="cookies">Cookies</h2>
+<p>O guitle não usa cookies, nem próprios nem de terceiros. Por isso você não vê nenhum aviso de cookies. Só usamos o armazenamento local do navegador
+para lembrar suas preferências. As lojas para onde levamos você podem usar seus próprios cookies nos sites delas.</p>
+"""),
 }
