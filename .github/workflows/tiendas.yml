@@ -1,0 +1,28 @@
+name: tiendas
+
+# A mano: prueba desde GitHub las tiendas que no podemos leer (_interno/tiendas-bloqueadas.md) y deja el informe
+# en el resumen del trabajo y como fichero descargable. No cambia nada del repositorio.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+      - name: Probar tiendas
+        run: |
+          python -m scraper.probe --out informe-tiendas.md
+          cat informe-tiendas.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: informe-tiendas
+          path: informe-tiendas.md
