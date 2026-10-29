@@ -8,7 +8,7 @@ on:
     inputs:
       minutes:
         description: "Minutos de lectura por tienda (la primera carga completa necesita ~300)"
-        default: "50"
+        default: "150"
       solo:
         description: "Qué catálogo leer (todos, o solo uno)"
         type: choice
@@ -48,7 +48,7 @@ jobs:
 
       - name: Leer fichas (lote del día)
         # Cada tienda va en paralelo y a su ritmo (3-6 s entre peticiones, robots.txt respetado).
-        run: python -m scraper.catalog --cat ${{ matrix.cat }} --minutes "${{ inputs.minutes || '50' }}" --records-out "$RUNNER_TEMP/catalog.json" || echo "::warning::catálogo con error; se commitea lo que haya"
+        run: python -m scraper.catalog --cat ${{ matrix.cat }} --minutes "${{ inputs.minutes || '150' }}" --records-out "$RUNNER_TEMP/catalog.json" || echo "::warning::catálogo con error; se commitea lo que haya"
 
       - name: PVP oficial de las marcas
         # Fender (es.fender.com, solo responde desde aquí) 40 min; luego Gibson/Epiphone 15 y Jackson 8.
@@ -62,7 +62,7 @@ jobs:
         run: |
           [ -f "$RUNNER_TEMP/catalog.json" ] && python -m scraper.catalog --cat ${{ matrix.cat }} --merge "$RUNNER_TEMP/catalog.json"
           # El tiempo que deje la lectura, sin pasar de 150 min (el job tiene 355 en total).
-          read_min=${{ inputs.minutes || '50' }}
+          read_min=${{ inputs.minutes || '150' }}
           thumb_min=$(( 320 - read_min )); [ $thumb_min -gt 150 ] && thumb_min=150; [ $thumb_min -lt 10 ] && thumb_min=10
           python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" --cat ${{ matrix.cat }} || echo "::warning::miniaturas con error"
 
