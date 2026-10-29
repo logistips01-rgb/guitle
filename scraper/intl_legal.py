@@ -300,4 +300,54 @@ Controlador: o responsável indicado no aviso legal.</p>
 <p>O guitle não usa cookies, nem próprios nem de terceiros. Por isso você não vê nenhum aviso de cookies. Só usamos o armazenamento local do navegador
 para lembrar suas preferências. As lojas para onde levamos você podem usar seus próprios cookies nos sites delas.</p>
 """),
+    "nl": ("Juridische informatie en privacy", """
+<h1 style="font-size:1.8rem;margin:24px 0 6px">Juridische informatie en privacy</h1>
+<p class="muted">Laatst bijgewerkt: 29 oktober 2026. Dit is een vertaling; bij twijfel geldt de <a href="/legal.html">Spaanse versie</a>.</p>
+
+<h2 id="aviso">Juridische informatie</h2>
+<p>Deze website wordt beheerd door <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador 22, 50830 Villanueva de Gállego (Zaragoza), Spanje
+(Spaans fiscaal nummer NIF 17747339X), contact <a href="mailto:hola@guitle.com">hola@guitle.com</a>, website guitle.com. Activiteit: prijsvergelijking
+voor muziekinstrumenten en affiliate-reclame. Hosting: GitHub Pages (GitHub, Inc.).</p>
+
+<h2 id="voorwaarden">Gebruiksvoorwaarden</h2>
+<p>guitle is een prijsvergelijker en verkoopt zelf niets. We tonen de prijzen die winkels op hun websites publiceren en linken naar hen, zodat je
+rechtstreeks bij de winkel koopt. Aankoop, levering, garantie en retourneren vallen onder de verantwoordelijkheid van elke winkel.</p>
+<ul>
+<li><b>Prijzen zijn indicatief.</b> We controleren de prijzen regelmatig, maar ze kunnen altijd veranderen. Geldig is altijd de prijs die de winkel bij het bestellen toont.</li>
+<li><b>Geen garantie op juistheid.</b> We letten erop dat producten, prijzen en voorraad kloppen, maar er kunnen fouten in staan. Zie je er een, laat het ons weten.</li>
+<li><b>Merken en afbeeldingen.</b> Merken, productnamen en afbeeldingen zijn van hun eigenaars en worden alleen gebruikt om de producten aan te duiden.</li>
+<li><b>Inhoud van guitle.</b> Ontwerp, logo, teksten en gegevensverzamelingen van guitle zijn van de beheerder. Massaal kopiëren of commercieel gebruik zonder toestemming is niet toegestaan.</li>
+</ul>
+
+<h2 id="affiliate">Affiliatelinks</h2>
+<p>Sommige links naar winkels zijn affiliatelinks: als je na een klik iets koopt, kan de winkel guitle een kleine commissie betalen. Voor jou blijft
+de prijs gelijk. Commissies hebben geen invloed op de volgorde: winkels staan altijd op prijs, de goedkoopste eerst.</p>
+
+<h2 id="privacy">Privacybeleid</h2>
+<p>guitle vraagt geen persoonsgegevens om de website te gebruiken: geen account, geen nieuwsbrief, geen analyse- of advertentietools die je volgen.
+We tellen bezoeken alleen anoniem en bewaren, als je een prijsalert aanvraagt, je e-mailadres voor die alert.</p>
+<ul>
+<li><b>Prijsalerts.</b> Als je een bericht wilt krijgen wanneer de prijs van een product daalt, bewaren we je e-mailadres, het product, de prijs op die
+dag en, als je die opgeeft, je doelprijs. We gebruiken ze alleen voor de bevestigingsmail en de alerts voor dat product; nooit voor reclame, en we
+delen ze met niemand. Rechtsgrond: je toestemming, die je geeft door de alert aan te vragen en je e-mail te bevestigen. Ze worden opgeslagen in Google
+Cloud Firestore (Google Ireland Ltd., server in Madrid) en de e-mails worden verstuurd vanaf ons adres hola@guitle.com (DonDominio, Spanje). Onbevestigde
+alerts worden na 7 dagen verwijderd; bevestigde blijven bewaard tot je je afmeldt via de link in elke e-mail (de alert wordt dan meteen verwijderd)
+of ons vraagt ze te verwijderen.</li>
+<li><b>Voorkeuren in je browser.</b> Filters of de gekozen weergave worden in de lokale opslag van je browser (localStorage) bewaard en naar geen enkele server gestuurd.</li>
+<li><b>Hosting.</b> De website wordt gehost door GitHub Pages (GitHub, Inc.). Zoals elke webserver kan GitHub het IP-adres van elk bezoek vastleggen om
+technische en veiligheidsredenen. GitHub neemt deel aan het EU-VS Data Privacy Framework.</li>
+<li><b>Bezoekersteller.</b> Elke pagina telt 1 op bij een anonieme teller: de dag, de bekeken pagina, de website waar je vandaan komt (bijvoorbeeld
+google.com), wat je in de zoekfunctie van de catalogus typt en, als je naar een winkel klikt, de naam van de winkel. Geen cookies, geen IP-adres, niets
+dat jou identificeert. De tellers staan in Google Cloud Firestore (Google Ireland Ltd.), op een server in de Europese Unie (Madrid).</li>
+<li><b>Geen andere verzoeken aan derden.</b> Lettertypen, grafieken en productfoto's worden vanaf guitle.com geladen.</li>
+<li><b>Naar een winkel gaan.</b> Als je naar een winkel klikt, verlaat je guitle; vanaf dan geldt het privacybeleid van die winkel.</li>
+</ul>
+<p><b>Je rechten.</b> Je kunt je recht op inzage, rectificatie, verwijdering, bezwaar, beperking en overdraagbaarheid uitoefenen door te mailen naar
+<a href="mailto:hola@guitle.com">hola@guitle.com</a>. Ben je niet tevreden, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens of bij de
+Spaanse Agencia Española de Protección de Datos. Verwerkingsverantwoordelijke: de beheerder vermeld onder juridische informatie.</p>
+
+<h2 id="cookies">Cookies</h2>
+<p>guitle gebruikt geen cookies, eigen noch van derden; daarom zie je geen cookiemelding. We gebruiken alleen de lokale opslag van je browser om je
+voorkeuren te onthouden. De winkels waarnaar we linken kunnen op hun eigen websites cookies gebruiken.</p>
+"""),
 }

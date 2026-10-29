@@ -916,6 +916,43 @@ BR_SOURCES = {
     "megasom": {"name": "Megasom", "sitemap": "https://www.megasom.com.br/sitemap.xml", "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
 }
 
+
+# --- Países con solo Thomann de momento (Irlanda, Austria, Países Bajos) ----------------------------------
+
+def nl_kind(crumbs):
+    """'electrica', 'acustica', 'clasica' o None, por las categorías (en neerlandés) de Thomann.nl."""
+    text = " / ".join(crumbs).lower()
+    leaf = re.sub(r"gitaren & basgitaren", "", " / ".join(crumbs[-2:]).lower())
+    if not re.search(r"gitar", text) or re.search(r"basgitar|versterker|effect|snaren|koffer|tas\b|gigbag|accessoire|ukelele"
+                                                   r"|statief|kabel|element|pickup|onderdel", leaf):
+        return None
+    if re.search(r"klassiek|concert|flamenco|nylon", text):
+        return "clasica"
+    if re.search(r"semi-?akoest|halfakoest|hollow", text):
+        return "electrica"
+    if re.search(r"akoest|western|folk|reisgitar", text):
+        return "acustica"
+    if re.search(r"e-gitar|elektrisch", text):
+        return "electrica"
+    return None
+
+
+def _thomann_only(base, pages, kind):
+    return {"thomann": {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann, "kind": kind,
+                        "discover": lambda f: _discover_thomann(f, pages, base),
+                        "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)}}
+
+
+IE_SOURCES = _thomann_only("https://www.thomann.ie/", ("cat_allProducts_GF_electric_guitars.html",
+                                                       "cat_allProducts_GF_acoustic_guitars.html",
+                                                       "cat_allProducts_GF_classical_guitars.html"), uk_kind)
+AT_SOURCES = _thomann_only("https://www.thomann.at/", ("cat_allProducts_GF_e-gitarren.html",
+                                                       "cat_allProducts_GF_westerngitarren.html",
+                                                       "cat_allProducts_GF_konzertgitarren.html"), de_kind)
+NL_SOURCES = _thomann_only("https://www.thomann.nl/", ("cat_allProducts_GF_elektrische_gitaren.html",
+                                                       "cat_allProducts_GF_akoestische_gitaren.html",
+                                                       "cat_allProducts_GF_klassieke_gitaren.html"), nl_kind)
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -970,7 +1007,12 @@ CATALOGS = {
     "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP",
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},    "de": {"dir": DIR / "de", "sources": DE_SOURCES, "site": "de",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},    "br": {"dir": DIR / "br", "sources": BR_SOURCES, "site": "br", "cur": "BRL", "min_price": 300,
-           "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},
+           "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie",
+           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},
+    "at": {"dir": DIR / "at", "sources": AT_SOURCES, "site": "at",
+           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},
+    "nl": {"dir": DIR / "nl", "sources": NL_SOURCES, "site": "nl",
+           "files": {"electrica": "elektrische-gitaren.json", "acustica": "akoestische-gitaren.json", "clasica": "klassieke-gitaren.json"}},
 }
 CATALOG = CATALOGS["electrica"]
 
@@ -1589,7 +1631,8 @@ def build(offers=None, history=None):
         if CATALOG.get("min_price"):  # en otra moneda, el mínimo de MIN_PRICE (en euros) no sirve
             mine = [o for o in mine if (o.get("price") or 0) >= CATALOG["min_price"]]
         if not spain:
-            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP, "br": BR_SKIP}[CATALOG["site"]]
+            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP, "br": BR_SKIP, "ie": UK_NAME_SKIP, "at": DE_NAME_SKIP,
+                    "nl": UK_NAME_SKIP}[CATALOG["site"]]
             mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})

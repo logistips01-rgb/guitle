@@ -13,7 +13,7 @@ on:
         description: "Qué catálogo leer (todos, o solo uno)"
         type: choice
         default: todos
-        options: [todos, equipo, electrica, acustica, pt, fr, it, uk, de, br]
+        options: [todos, equipo, electrica, acustica, pt, fr, it, uk, de, br, ie, at, nl]
 
 permissions:
   contents: write
@@ -26,13 +26,13 @@ jobs:
   catalog:
     # Un catálogo detrás de otro (max-parallel 1): cada tienda recibe como mucho una petición cada 3-6 s.
     # electrica → data/catalog/ ; acustica → data/catalog/acusticas/ (acústicas y clásicas en una sola lectura) ;
-    # equipo → data/catalog/equipo/ (teclados y pedales) ; pt → data/catalog/pt/ (Portugal) ; fr → data/catalog/fr/ (Francia) ; it → data/catalog/it/ (Italia) ; uk → data/catalog/uk/ (Reino Unido) ; de → data/catalog/de/ (Alemania) ; br → data/catalog/br/ (Brasil)
+    # equipo → data/catalog/equipo/ (teclados y pedales) ; pt → data/catalog/pt/ (Portugal) ; fr → data/catalog/fr/ (Francia) ; it → data/catalog/it/ (Italia) ; uk → data/catalog/uk/ (Reino Unido) ; de → data/catalog/de/ (Alemania) ; br → data/catalog/br/ (Brasil) ; ie, at, nl → Irlanda, Austria, Países Bajos
     strategy:
       max-parallel: 1
       fail-fast: false
       matrix:
         # Programada: todos. A mano se puede elegir uno solo (p. ej. equipo = pedales y teclados).
-        cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["electrica","acustica","equipo","pt","fr","it","uk","de","br"]') }}
+        cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["electrica","acustica","equipo","pt","fr","it","uk","de","br","ie","at","nl"]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 355
     steps:
@@ -64,14 +64,14 @@ jobs:
           # El tiempo que deje la lectura, sin pasar de 150 min (el job tiene 355 en total).
           read_min=${{ inputs.minutes || '50' }}
           thumb_min=$(( 320 - read_min )); [ $thumb_min -gt 150 ] && thumb_min=150; [ $thumb_min -lt 10 ] && thumb_min=10
-          python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" || echo "::warning::miniaturas con error"
+          python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" --cat ${{ matrix.cat }} || echo "::warning::miniaturas con error"
 
       - name: Commit de datos
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           [ -f "$RUNNER_TEMP/catalog.json" ] || exit 0
-          for attempt in 1 2 3 4 5; do
+          for attempt in 1 2 3 4 5 6 7 8 9 10; do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             [ -f "$RUNNER_TEMP/pvp.json" ] && python -m scraper.pvp --merge "$RUNNER_TEMP/pvp.json"  # PVP al histórico, antes de construir

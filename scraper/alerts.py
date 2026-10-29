@@ -141,10 +141,10 @@ def _money(code):
 
 def _site(alert):
     """(código del país o "", textos, prefijo de la ruta, página de privacidad) según el slug del aviso."""
-    from .intl import SITES, T, _anchor
+    from .intl import SITES, _anchor, strings
     code = alert["slug"].split("/")[0] if "/" in alert["slug"] else ""
     if code in SITES:
-        return code, T[SITES[code]["t"]]["mail"], f"/{code}", f"/{code}/legal.html#{_anchor(code)}", SITES[code]["lang"][:2]
+        return code, strings(code)["mail"], f"/{code}", f"/{code}/legal.html#{_anchor(code)}", SITES[code]["lang"][:2]
     return "", ES, "", "/legal.html#privacidad", "es"
 
 

@@ -41,6 +41,29 @@ SITES = {
     "br": {"country": "Brasil", "lang": "pt-BR", "t": "br", "cur": "BRL", "catalog": "br",
            "kinds": {"electrica": "guitarras", "acustica": "violoes", "clasica": "violoes-nylon"},
            "amazon": None},
+    "ie": {"country": "Ireland", "lang": "en-IE", "t": "en", "cur": "EUR", "catalog": "ie",
+           "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
+           "amazon": None,
+           "t_over": {"homeDesc": "guitle compares guitar prices: electric, acoustic and classical guitars in the shops that sell in "
+                                  "Ireland, with the price history of every model.",
+                      "steps": ["Every day we check the price, stock and photo of every guitar in the shops that sell in Ireland.",
+                                "We keep the price history so you can tell whether a price is genuinely good or usually lower.",
+                                "If you like, we'll email you when the price drops."],
+                      "js": {"targetLabel": "Target price in euros"}},
+           "legal_replace": [("the Information Commissioner's Office (ICO)", "the Data Protection Commission (DPC)"),
+                             (" and its UK Extension", "")]},
+    "at": {"country": "Österreich", "lang": "de-AT", "t": "de", "cur": "EUR", "catalog": "at",
+           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren"},
+           "amazon": None,
+           "t_over": {"homeDesc": "guitle vergleicht Gitarrenpreise: E-Gitarren, Westerngitarren und Konzertgitarren in den Shops, "
+                                  "die nach Österreich liefern, mit dem Preisverlauf jedes Modells.",
+                      "steps": ["Jeden Tag prüfen wir Preis, Verfügbarkeit und Foto jeder Gitarre in den Shops, die nach Österreich liefern.",
+                                "Wir speichern den Preisverlauf, damit du siehst, ob ein Preis wirklich gut ist oder sonst niedriger liegt.",
+                                "Auf Wunsch schicken wir dir eine E-Mail, wenn der Preis fällt."]},
+           "legal_replace": [("oder der Aufsichtsbehörde deines Bundeslandes", "oder der österreichischen Datenschutzbehörde")]},
+    "nl": {"country": "Nederland", "lang": "nl-NL", "t": "nl", "cur": "EUR", "catalog": "nl",
+           "kinds": {"electrica": "elektrische-gitaren", "acustica": "akoestische-gitaren", "clasica": "klassieke-gitaren"},
+           "amazon": None},
     "uk": {"country": "United Kingdom", "lang": "en-GB", "t": "en", "cur": "GBP", "catalog": "uk",
            "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
            "amazon": None},
@@ -525,7 +548,100 @@ T = {
                  "check": "Os preços mudam todo dia: confira na loja antes de comprar. Não tem mais interesse?",
                  "stop": "Parar de receber este alerta"},
     },
+    "nl": {
+        "tagline": "gitaren voor de beste prijs", "homeLabel": "guitle, home",
+        "homeTitle": "guitle · gitaarprijzen vergelijken",
+        "homeDesc": "guitle vergelijkt gitaarprijzen: elektrische, akoestische en klassieke gitaren in de winkels die in Nederland "
+                    "verkopen, met de prijsgeschiedenis van elk model.",
+        "h1": "Jouw gitaar, <span>voor de beste prijs</span><small>Gitaarprijzen vergelijken</small>",
+        "searchPh": "Zoek: strat, les paul, yamaha, ibanez…", "searchBtn": "Zoeken", "searchLabel": "Gitaar zoeken",
+        "guitars": "gitaren", "storesWord": "winkels", "catalog": "Catalogus",
+        "dealsH": "De grootste prijsverschillen tussen winkels", "dealsBadge": "−{p}% t.o.v. de duurste",
+        "catsH": "Bekijk per categorie", "soon": "binnenkort", "storesH": "Winkels die we vergelijken",
+        "howH": "Zo werkt het",
+        "steps": ["Elke dag controleren we de prijs, voorraad en foto van elke gitaar in de winkels die in Nederland verkopen.",
+                  "We bewaren de prijsgeschiedenis, zodat je ziet of een prijs echt goed is of meestal lager ligt.",
+                  "Als je wilt, mailen we je zodra de prijs daalt."],
+        "affiliate": "Sommige links naar winkels zijn affiliatelinks: als je iets koopt, kan guitle een commissie krijgen, zonder extra kosten voor jou.",
+        "legal": "Juridische informatie", "privacy": "Privacy", "cookies": "Cookies", "otherCountries": "guitle in andere landen:",
+        "updated": "Gegevens bijgewerkt op {d}", "home": "Home",
+        "kinds": {"electrica": ("Elektrische gitaren", "Elektrisch", "Zoek in elektrische gitaren: model, merk, kleur…"),
+                  "acustica": ("Akoestische gitaren", "Akoestisch", "Zoek in akoestische gitaren: model, merk, hout…"),
+                  "clasica": ("Klassieke gitaren", "Klassiek", "Zoek in klassieke gitaren: model, merk, flamenco…")},
+        "anyPrice": "Elke prijs", "upTo": "Tot {v}", "over": "Meer dan {v}", "brandLabel": "Merk", "priceLabel": "Prijs",
+        "showLabel": "Tonen", "showAll": "Alle", "showMulti": "In meerdere winkels", "showStock": "Op voorraad",
+        "showLow": "Op de laagste prijs", "showLh": "Alleen linkshandig", "loading": "Catalogus laden…", "sortLabel": "Sorteren",
+        "sorts": ["Meeste winkels", "Laagste prijs", "Hoogste prijs", "Grootste besparing tussen winkels", "Naam"],
+        "moreBtn": "Meer tonen", "sections": "Secties", "searchAria": "Zoeken",
+        "bestPrice": "beste prijs", "inStock": "op voorraad", "noStock": "niet op voorraad", "goLong": "Naar de winkel", "goShort": "Naar",
+        "store": "winkel", "stores": "winkels", "lh": "linkshandig", "storesH3": "Winkels", "historyH3": "Prijsgeschiedenis",
+        "amazon": "", "titleFrom": "{name}: prijs vanaf {price} {where}", "inN": "in {n} winkels", "inS": "bij {s}",
+        "whereMany": "bij {s} · {n} winkels", "whereDiff": ", tot {d} verschil",
+        "desc": "{name} vanaf {price} bij {s}. Vergelijk de prijs in {n} {stores} ({list}) en bekijk de prijsgeschiedenis om te zien "
+                "of het een goed moment is om te kopen.",
+        "alertTitle": "Prijsalert", "alertWait": "Een moment…", "alertSaving": "We slaan je antwoord op.",
+        "alertGo": "Naar guitle", "alertBad": ["Ongeldige link", "Kopieer de volledige link uit de e-mail en probeer het opnieuw."],
+        "alertDone": ["Prijsalert bevestigd!", "We mailen je zodra de prijs daalt. Elke e-mail bevat een afmeldlink."],
+        "alertGone": ["Prijsalert verwijderd", "Je ontvangt geen e-mails meer voor deze alert. Je adres is van onze lijst verwijderd."],
+        "alertMissing": ["Prijsalert niet gevonden", "Misschien was hij al bevestigd of verwijderd, of zijn er meer dan 7 dagen verstreken "
+                                                     "zonder bevestiging. Hulp nodig? Mail ons op hola@guitle.com."],
+        "js": {"loadErr": "De catalogus kon niet worden geladen.", "allBrands": "Alle merken", "all": "Alle", "low": "Laagste prijs",
+               "save": "Bespaar {v}", "lh": "linkshandig", "store": "winkel", "stores": "winkels",
+               "empty": "Geen {many} met deze filters.", "more": "Meer tonen (nog {n})",
+               "meta": "{a} van {b} {many} · {m} vergelijkbaar in meerdere winkels · bijgewerkt op {d}", "best": "beste prijs",
+               "inStock": "op voorraad", "noStock": "niet op voorraad", "goLong": "Naar de winkel", "goShort": "Naar", "close": "Sluiten",
+               "inAt": "bij {s}", "saveMax": " · tot {v} goedkoper dan de duurste", "atLow": "Op de laagste prijs ooit",
+               "lowTag": "Laagste prijs: {v}", "storesH": "Winkels", "evolH": "Prijsverloop",
+               "histErr": "De prijsgeschiedenis kon niet worden geladen.", "histSoon": "De prijsgeschiedenis vult zich de komende dagen.",
+               "many": "gitaren",
+               "types": {"ST": "ST-modellen", "T": "T-modellen", "Semihueca": "Semi-akoestisch", "Moderna / Metal": "Modern / Metal",
+                         "Otras": "Overige", "Auditorio / Concierto": "Auditorium / Concert", "12 cuerdas": "12-snarig",
+                         "Tamaño reducido": "Klein formaat", "Clásica": "Klassiek", "Flamenca": "Flamenco",
+                         "Electroclásica": "Elektrisch klassiek"},
+               "wait": "We volgen dit model sinds {n} {days}", "day": "dag", "days": "dagen",
+               "waitSub": "Het oordeel wordt betrouwbaarder na een paar weken prijsgeschiedenis.",
+               "min": "Laagste prijs ooit", "minSub": "We hebben hem nog nooit goedkoper gezien.", "minBelow": " {p}% onder het 30-daags gemiddelde.",
+               "good": "Goed moment: {p}% onder de gemiddelde prijs", "goodSub": "Gemiddelde van de afgelopen 30 dagen: {avg}.",
+               "bad": "Nu {p}% duurder dan normaal",
+               "badSub": "Geen haast? Wacht dan: het 30-daags gemiddelde is {avg} en de laagste prijs {min}.",
+               "normal": "Normale prijs", "normalSub": "In lijn met het 30-daags gemiddelde ({avg}). Laagste prijs: {min}.",
+               "today": "prijs vandaag", "lowest": "laagste prijs ({d})", "highest": "hoogste prijs", "avg": "gemiddelde {n} dagen",
+               "since": "Gevolgd sinds {d}", "noHist": "Nog geen prijsgeschiedenis.", "pvp": "Adviesprijs", "bestLine": "Beste prijs",
+               "alertOpen": "Laat me weten als de prijs daalt", "emailPh": "jij@voorbeeld.nl", "emailLabel": "Je e-mail",
+               "targetPh": "Max. prijs (optioneel)", "targetLabel": "Doelprijs in euro", "alertBtn": "Waarschuw me",
+               "alertLegal": "Gratis en zonder account. Door op „Waarschuw me” te klikken ga je akkoord met het "
+                             "<a href=\"/nl/legal.html#privacy\">privacybeleid</a>: we gebruiken je e-mail alleen voor deze alert en je "
+                             "meldt je met één klik af.",
+               "alertOk": "<b>Klaar!</b> Over een paar minuten krijg je een e-mail op {email} om de alert te bevestigen (kijk ook in je spam).",
+               "alertErr": "De alert kon niet worden opgeslagen. Controleer het e-mailadres en probeer het opnieuw."},
+        "mail": {"tagline": "gitaren voor de beste prijs",
+                 "footer": "guitle vergelijkt elke dag de prijzen van muziekwinkels. Je krijgt deze e-mail omdat je op guitle.com een "
+                           "prijsalert hebt aangevraagd. Verantwoordelijke: Manuel Lorente Gálvez, hola@guitle.com.",
+                 "privacy": "Privacy", "confirmSubject": "Bevestig je guitle-prijsalert",
+                 "confirmTitle": "Bevestig je prijsalert", "asked": "Je wilt een bericht ontvangen als de prijs daalt{target}:",
+                 "below": " onder <b>{v}</b>", "confirmAsk": "Bevestig dat je de alert op dit adres wilt ontvangen:",
+                 "confirmBtn": "Alert bevestigen",
+                 "notYou": "Was jij dit niet? Doe dan niets: onbevestigde alerts worden na 7 dagen automatisch verwijderd.",
+                 "dropSubject": "Prijs gedaald: {name} nu {price}", "dropTitle": "De prijs is gedaald!", "nowAt": "bij {s} · eerst {v}",
+                 "seeAll": "Bekijk de prijzen in alle winkels",
+                 "check": "Prijzen veranderen dagelijks: controleer de prijs in de winkel voordat je koopt. Geen interesse meer?",
+                 "stop": "Deze alert stopzetten"},
+    },
 }
+
+
+def strings(code):
+    """Textos de un país: los de su idioma con los cambios propios del país ("t_over"; p. ej. Irlanda usa el inglés
+    del Reino Unido pero habla de Irlanda). Los enlaces a su aviso legal apuntan a su carpeta."""
+    t = json.loads(json.dumps(T[SITES[code]["t"]]))
+    for key, value in SITES[code].get("t_over", {}).items():
+        if isinstance(value, dict):
+            t[key].update(value)
+        else:
+            t[key] = value
+    t["js"]["alertLegal"] = re.sub(r"/[a-z]{2}/legal\.html", f"/{code}/legal.html", t["js"]["alertLegal"])
+    return t
+
 
 # Lo que va en el pie de cada web: España y los demás países.
 def _countries():
@@ -533,14 +649,20 @@ def _countries():
 
 
 def money(v, site):
-    """Precio con el formato del país: 1 299 € / 721,41 € (portugués, francés, italiano); £1,299 / £721.41 (Reino Unido)."""
+    """Precio con el formato del país: 1 299 € (francés, portugués), 1.299 € (alemán, italiano), € 1.299 (neerlandés),
+    €1,299 (Irlanda), £1,299 (Reino Unido), R$ 1.299,00 (Brasil)."""
     whole, cents = int(round(v * 100)) // 100, int(round(v * 100)) % 100
+    lang, dec = SITES[site]["lang"], f"{cents:02d}" if cents else ""
     if SITES[site]["cur"] == "GBP":
-        return f"£{whole:,}" + (f".{cents:02d}" if cents else "")
+        return f"£{whole:,}" + (f".{dec}" if dec else "")
     if SITES[site]["cur"] == "BRL":
         return f"R$\u00a0{whole:,}".replace(",", ".") + f",{cents:02d}"
-    txt = f"{whole:,}".replace(",", " ")
-    return f"{txt},{cents:02d} €" if cents else f"{txt} €"
+    if lang == "en-IE":
+        return f"€{whole:,}" + (f".{dec}" if dec else "")
+    if lang.startswith("nl"):
+        return f"€\u00a0{whole:,}".replace(",", ".") + (f",{dec}" if dec else "")
+    txt = f"{whole:,}".replace(",", "." if lang[:2] in ("de", "it", "es") else "\u202f")
+    return f"{txt},{dec}\u00a0€" if dec else f"{txt}\u00a0€"
 
 
 def _load(path):
@@ -608,7 +730,7 @@ def _foot(code, t):
 
 
 def _anchor(code):
-    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy", "en": "privacy", "de": "datenschutz", "br": "privacidade"}.get(SITES[code]["t"], "privacidad")
+    return {"pt": "privacidade", "fr": "confidentialite", "it": "privacy", "en": "privacy", "de": "datenschutz", "br": "privacidade", "nl": "privacy"}.get(SITES[code]["t"], "privacidad")
 
 
 def _head(code, title, desc, canonical, extra=""):
@@ -654,7 +776,7 @@ def _rows(product, names, colors, code, t):
 
 
 def _product(code, kind, product, names, alternates):
-    s, t = SITES[code], T[SITES[code]["t"]]
+    s, t = SITES[code], strings(code)
     label, _, _ = t["kinds"][kind]
     name, brand, slug = product["name"], product.get("brand") or "", product["slug"]
     colors = {st: pages.PALETTE[n % len(pages.PALETTE)] for n, st in enumerate(sorted({i["s"] for i in product["items"]}))}
@@ -736,7 +858,7 @@ def _product(code, kind, product, names, alternates):
 # --- Páginas del catálogo -------------------------------------------------------------------------------------
 
 def _list(code, kind, kinds):
-    s, t = SITES[code], T[SITES[code]["t"]]
+    s, t = SITES[code], strings(code)
     label, short, ph = t["kinds"][kind]
     page = s["kinds"][kind]
     nav = "".join(f'<a href="/{code}/{s["kinds"][k]}.html"{" class=\"on\"" if k == kind else ""}>{esc(t["kinds"][k][1])}</a>'
@@ -806,7 +928,7 @@ ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasic
 
 
 def _index(code, cats):
-    s, t = SITES[code], T[SITES[code]["t"]]
+    s, t = SITES[code], strings(code)
     names = {k: v for d in cats.values() for k, v in d["stores"].items()}
     allp = [p for d in cats.values() for p in d["products"] if p.get("slug")]
     # Mayores diferencias entre tiendas: guitarras con foto en dos o más tiendas; más del 40 % suele ser un mal emparejado.
@@ -885,7 +1007,7 @@ def _index(code, cats):
 # --- Avisos de precio (confirmar / darse de baja) ----------------------------------------------------------------
 
 def _alerta(code):
-    t = T[SITES[code]["t"]]
+    t = strings(code)
     msgs = {k: t[k] for k in ("alertBad", "alertDone", "alertGone", "alertMissing")}
     head = _head(code, f"{t['alertTitle']} · guitle", None, f"/{code}/alerta.html",
                  '<meta name="robots" content="noindex">\n<link rel="stylesheet" href="/catalogo.css">\n'
@@ -942,6 +1064,10 @@ def write_site(code):
     s = SITES[code]
     out = ROOT / code
     cats = catalogs(code)
+    if not cats:  # sin guitarras todavía (o una noche mala): no se publica una web vacía
+        print(f"web {code}: sin guitarras en el catálogo, no se genera", flush=True)
+        write_world()
+        return
     alternates = _alternates()
     written, urls, keep = 0, [f"/{code}/"], set()
     for kind, data in cats.items():
@@ -992,8 +1118,10 @@ def write_world():
 
 def legal(code):
     from .intl_legal import LEGAL
-    t = T[SITES[code]["t"]]
+    t = strings(code)
     title, body = LEGAL[SITES[code]["t"]]
+    for old, new in SITES[code].get("legal_replace", ()):
+        body = body.replace(old, new)
     head = _head(code, f"{title} · guitle", None, f"/{code}/legal.html",
                  '<link rel="stylesheet" href="/catalogo.css">\n<style>.legal { max-width: 760px; } .legal h2 { margin-top: 34px; '
                  'scroll-margin-top: 16px; } .legal p, .legal li { color: var(--text-secondary); line-height: 1.6; }</style>\n</head>')
