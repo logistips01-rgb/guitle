@@ -16,5 +16,11 @@
   "path": "/fr/",
   "guitars": 4330,
   "stores": 4
+ },
+ "br": {
+  "country": "Brasil",
+  "path": "/br/",
+  "guitars": 1099,
+  "stores": 4
  }
 }
