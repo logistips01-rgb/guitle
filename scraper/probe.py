@@ -24,7 +24,9 @@ EXTRA = ["fanfara.it", "rockshop.it", "strumentimusicali.it", "chitarre-online.i
          "gitarrenzentrum.at", "musikhaus.at", "keymusic.com", "musicmatters.nl", "guitarshop-online.nl", "max-music.nl",
          "gitaarshop.nl", "musicstore.nl", "musicalexpress.com.br", "playtech.com.br", "contemporanea.com.br",
          "izzomusical.com.br", "davyandersonmusic.ie", "kytary.fr", "musikia.fr", "planetemusique.fr", "hollywoodmusic.fr",
-         "musicmatter.co.uk", "veerkamponline.com", "audiomusica.com", "long-mcquade.com", "musiciansfriend.com"]
+         "musicmatter.co.uk", "veerkamponline.com", "audiomusica.com", "long-mcquade.com", "musiciansfriend.com",
+         # Gear4music en todos sus países (¿pasa su antibots desde GitHub?)
+         "gear4music.fr", "gear4music.it", "gear4music.de", "gear4music.nl", "gear4music.com"]
 PRODUCT_HINT = re.compile(r"/products?/|/p/|/pd/|-p\d+|\.htm|/produ|/artikel|/item")
 
 

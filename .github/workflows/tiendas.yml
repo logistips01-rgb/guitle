@@ -1,9 +1,11 @@
 name: tiendas
 
-# A mano: prueba desde GitHub las tiendas que no podemos leer (_interno/tiendas-bloqueadas.md) y deja el informe
+# A mano (o al cambiar la propia prueba): prueba desde GitHub las tiendas que no podemos leer (_interno/tiendas-bloqueadas.md) y deja el informe
 # en el resumen del trabajo y como fichero descargable. No cambia nada del repositorio.
 on:
   workflow_dispatch:
+  push:
+    paths: ["scraper/probe.py", ".github/workflows/tiendas.yml"]
 
 permissions:
   contents: read
