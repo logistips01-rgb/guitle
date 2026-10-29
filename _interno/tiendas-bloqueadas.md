@@ -71,3 +71,17 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 | Guitar Village | guitarvillage.co.uk | Sin datos | El sitemap solo trae el blog. |
 | Rimmers Music | rimmersmusic.co.uk | Sin datos | Shopify sin colecciones de guitarras. |
 | Music Matter | musicmatter.co.uk | Sin conexión | A revisar. |
+
+## Brasil
+
+| Tienda | Web | Motivo | Notas |
+|---|---|---|---|
+| Made in Brazil | madeinbrazil.com.br | Antibots | Tienda grande de São Paulo. Prioridad alta. |
+| Magazine Luiza | magazineluiza.com.br | 403 | Generalista con programa de afiliados. |
+| Mercado Livre | mercadolivre.com.br | Sin datos | Marketplace; tiene programa de afiliados con API. |
+| Amazon Brasil | amazon.com.br | Pendiente de afiliados | Darse de alta en Amazon Associados Brasil. |
+| Gang Instrumentos | gang.com.br | Sin datos | El sitemap no trae fichas de guitarras. |
+| Musical Express | musicalexpress.com.br | Sin conexión | A revisar. |
+| Playtech | playtech.com.br | Sin conexión | A revisar. |
+| Contemporânea | contemporanea.com.br | Sin conexión | A revisar. |
+| Izzo Musical | izzomusical.com.br | Sin conexión | A revisar. |
