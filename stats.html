@@ -92,7 +92,7 @@
       <div class="maps"><div class="map" id="map-world"><h3>Mundo</h3></div><div class="map" id="map-europe"><h3>Europa</h3></div></div>
       <div class="legend"><span><i style="background:var(--accent)"></i>Con guitle</span><span><i style="background:#8db8ec"></i>Encendiéndose (late hasta que tenga datos)</span><span><i style="background:#d3e2f4"></i>Próximamente</span><span><i style="background:#fff"></i>Por conquistar</span></div>
       <table class="ctable"><thead><tr><th>País</th><th>Estado</th><th class="n">Posibles guitles</th><th class="n" id="wdays">Guitles</th><th class="n">Guitarras</th><th class="n">Tiendas</th></tr></thead><tbody id="wrows"></tbody></table>
-      <p class="empty" style="margin:10px 0 0">Posibles guitles = habitantes del país (aprox.). Guitles = páginas vistas en la web de cada país (contador anónimo) en el periodo elegido.</p>
+      <p class="empty" style="margin:10px 0 0">Posibles guitles = 10 % de la población activa del país (cifras aproximadas). Guitles = páginas vistas en la web de cada país (contador anónimo) en el periodo elegido.</p>
     </div>
     <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
     <div class="cols">
@@ -129,21 +129,22 @@ const shortDay = s => new Date(s + "T12:00:00").toLocaleDateString("es-ES", { da
 let rows = null, chart = null, days = 30;
 
 // --- guitle en el mundo ---------------------------------------------------------------------------------------
-// Países: código de su carpeta en la web (España, la raíz), id del mapa (ISO numérico), población aprox. (millones)
-// y sus catálogos. Un país con catálogos y web está "Activo"; con web configurada pero aún sin datos, "Encendiéndose";
+// Países: código de su carpeta en la web (España, la raíz), id del mapa (ISO numérico), población activa aprox.
+// (millones; posibles guitles = el 10 %) y sus catálogos. Un país con catálogos y web está "Activo"; con web configurada pero aún sin datos, "Encendiéndose";
 // sin catálogos, "Próximamente". Al abrir un país nuevo, se le ponen aquí sus catálogos.
 const COUNTRIES = [
-  ["es", "724", "España", 49.1, ["data/catalog/products.json", "data/catalog/acusticas/acusticas.json", "data/catalog/acusticas/clasicas.json",
+  ["es", "724", "España", 24.6, ["data/catalog/products.json", "data/catalog/acusticas/acusticas.json", "data/catalog/acusticas/clasicas.json",
                                  "data/catalog/equipo/teclados.json", "data/catalog/equipo/pedales.json"]],
-  ["pt", "620", "Portugal", 10.7, ["data/catalog/pt/eletricas.json", "data/catalog/pt/acusticas.json", "data/catalog/pt/classicas.json",
+  ["pt", "620", "Portugal", 5.4, ["data/catalog/pt/eletricas.json", "data/catalog/pt/acusticas.json", "data/catalog/pt/classicas.json",
                                    "data/catalog/pt/portuguesas.json"]],
-  ["fr", "250", "Francia", 68.6, ["data/catalog/fr/electriques.json", "data/catalog/fr/folk.json", "data/catalog/fr/classiques.json"]],
-  ["it", "380", "Italia", 59.0, ["data/catalog/it/elettriche.json", "data/catalog/it/acustiche.json", "data/catalog/it/classiche.json"]],
-  ["uk", "826", "Reino Unido", 69.5, ["data/catalog/uk/electric.json", "data/catalog/uk/acoustic.json", "data/catalog/uk/classical.json"]],
-  ["de", "276", "Alemania", 83.5], ["at", "040", "Austria", 9.2], ["nl", "528", "Países Bajos", 18.1], ["be", "056", "Bélgica", 11.9],
-  ["ie", "372", "Irlanda", 5.4], ["mx", "484", "México", 132], ["br", "076", "Brasil", 213], ["us", "840", "Estados Unidos", 342],
-  ["ca", "124", "Canadá", 41.5], ["ar", "032", "Argentina", 46], ["co", "170", "Colombia", 53], ["cl", "152", "Chile", 20],
+  ["fr", "250", "Francia", 31.5, ["data/catalog/fr/electriques.json", "data/catalog/fr/folk.json", "data/catalog/fr/classiques.json"]],
+  ["it", "380", "Italia", 25.8, ["data/catalog/it/elettriche.json", "data/catalog/it/acustiche.json", "data/catalog/it/classiche.json"]],
+  ["uk", "826", "Reino Unido", 34.5, ["data/catalog/uk/electric.json", "data/catalog/uk/acoustic.json", "data/catalog/uk/classical.json"]],
+  ["de", "276", "Alemania", 44.5], ["at", "040", "Austria", 4.8], ["nl", "528", "Países Bajos", 10.0], ["be", "056", "Bélgica", 5.4],
+  ["ie", "372", "Irlanda", 2.8], ["mx", "484", "México", 61], ["br", "076", "Brasil", 109], ["us", "840", "Estados Unidos", 170],
+  ["ca", "124", "Canadá", 22.3], ["ar", "032", "Argentina", 21], ["co", "170", "Colombia", 26], ["cl", "152", "Chile", 10],
 ];
+const SHARE = 0.10;  // posibles guitles: el 10 % de la población activa
 const GUITAR_KINDS = new Set(["electrica", "acustica", "clasica", "portuguesa"]);
 let world = null;  // {código: {status, guitars, stores}}
 
@@ -238,13 +239,13 @@ function renderWorld(pages) {
     visits[code] = (visits[code] || 0) + n;
   }
   const live = COUNTRIES.filter(([c]) => world[c].status !== "next");
-  const reach = live.reduce((a, c) => a + c[3], 0);
+  const reach = live.reduce((a, c) => a + c[3] * SHARE, 0);
   const stores = live.reduce((a, [c]) => a + (world[c].stores || 0), 0);
   const total = Object.values(visits).reduce((a, b) => a + b, 0);
   $("wkpis").innerHTML = [
     [`${live.length} <small style="font-size:1rem;color:var(--text-muted)">/ ${COUNTRIES.length}</small>`, "países con guitle",
      `<div class="prog"><i style="width:${(live.length / COUNTRIES.length * 100).toFixed(0)}%"></i></div>`],
-    [`${fmt(Math.round(reach))} M`, "posibles guitles (habitantes de esos países)"],
+    [`${reach.toLocaleString("es-ES", { maximumFractionDigits: 1 })} M`, "posibles guitles (10 % de la población activa)"],
     [fmt(total), `guitles en ${days} días (páginas vistas)`],
     [fmt(stores), "tiendas comparadas"],
   ].map(([b, s, x]) => `<div class="tile-s"><b>${b}</b><span>${s}</span>${x || ""}</div>`).join("");
@@ -255,7 +256,7 @@ function renderWorld(pages) {
   $("wrows").innerHTML = COUNTRIES.map(([c, , name, pop]) => {
     const w = world[c];
     return `<tr><td>${esc(name)}</td><td><span class="chip-s ${w.status}">${label[w.status]}</span></td>
-      <td class="n">${pop.toLocaleString("es-ES", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} M</td>
+      <td class="n">${fmt(Math.round(pop * SHARE * 1e6))}</td>
       <td class="n">${w.status === "next" ? "" : fmt(visits[c] || 0)}</td><td class="n">${w.guitars ? fmt(w.guitars) : ""}</td>
       <td class="n">${w.stores || ""}</td></tr>`;
   }).join("");
