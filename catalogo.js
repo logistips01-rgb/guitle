@@ -36,9 +36,10 @@ const TYPE_ORDERS = {
   bajo: ["4 cuerdas", "5 cuerdas", "6 cuerdas o más", "Escala corta", "Fretless", "Acústico", "Otras"],
   ampli: ["Combo", "Cabezal", "Pantalla", "Para bajo", "Para acústica", "De auriculares y portátil", "Otras"],
   estuche: ["Para eléctrica", "Para acústica", "Para clásica", "Para bajo", "Otras"],
+  micro: ["Dinámico", "Condensador", "Inalámbrico", "Para instrumento", "USB", "De cinta", "Otras"],
 };
 // Cómo se llama lo que hay en cada catálogo (recuento y mensajes).
-const MANY = T.many || { teclado: "teclados", pedal: "pedales", bajo: "bajos", ampli: "amplis", estuche: "fundas y estuches" }[CFG.kind] || "guitarras";
+const MANY = T.many || { teclado: "teclados", pedal: "pedales", bajo: "bajos", ampli: "amplis", estuche: "fundas y estuches", micro: "micrófonos" }[CFG.kind] || "guitarras";
 const TYPE_ORDER = TYPE_ORDERS[CFG.kind] || TYPE_ORDERS.electrica;
 
 async function load(path) {

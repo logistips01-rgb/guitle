@@ -2,7 +2,7 @@
 const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currency", currency: "EUR", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 });
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const NOPHOTO = '<svg class="nophoto" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/><path d="M14.5 9.5c-1.6-1.6-3.9-1.3-5 .2-1 .4-2.6.1-4 1.5-2.1 2.1-1.7 5.4.6 7.7s5.6 2.7 7.7.6c1.4-1.4 1.1-3 1.5-4 1.5-1.1 1.8-3.4.2-5z"/><circle cx="9.6" cy="14.4" r="1.4"/></svg>';
-const KINDS = { electrica: "Eléctrica", acustica: "Acústica", clasica: "Clásica", teclado: "Teclado", pedal: "Pedal", bajo: "Bajo", ampli: "Ampli", estuche: "Estuche" };
+const KINDS = { electrica: "Eléctrica", acustica: "Acústica", clasica: "Clásica", teclado: "Teclado", pedal: "Pedal", bajo: "Bajo", ampli: "Ampli", estuche: "Estuche", micro: "Micrófono" };
 const MIN_DAYS = 7;
 
 async function load(path) {
