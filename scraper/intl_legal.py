@@ -7,7 +7,7 @@ LEGAL = {
 <a href="/legal.html">versão em espanhol</a>.</p>
 
 <h2 id="aviso">Aviso legal</h2>
-<p>Titular deste sítio web: <b>Manuel Lorente Gálvez</b> (NIF espanhol 17747339X), contacto <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
+<p>Titular deste sítio web: <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador 22, 50830 Villanueva de Gállego (Zaragoza), Espanha (NIF espanhol 17747339X), contacto <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
 sítio web guitle.com. Atividade: comparador de preços de instrumentos musicais e publicidade de afiliação.</p>
 
 <h2 id="condicoes">Condições de utilização</h2>
@@ -57,7 +57,7 @@ lembrar as tuas preferências. As lojas para onde ligamos podem usar os seus pr�
 <a href="/legal.html">version espagnole</a> fait foi.</p>
 
 <h2 id="aviso">Mentions légales</h2>
-<p>Éditeur du site : <b>Manuel Lorente Gálvez</b> (NIF espagnol 17747339X), contact <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
+<p>Éditeur du site : <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador 22, 50830 Villanueva de Gállego (Zaragoza), Espagne (NIF espagnol 17747339X), contact <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
 site guitle.com. Activité : comparateur de prix d'instruments de musique et publicité d'affiliation. Hébergement : GitHub Pages (GitHub, Inc.).</p>
 
 <h2 id="conditions">Conditions d'utilisation</h2>
@@ -107,7 +107,7 @@ navigateur pour retenir vos préférences. Les magasins vers lesquels nous renvo
 <a href="/legal.html">versione spagnola</a>.</p>
 
 <h2 id="aviso">Note legali</h2>
-<p>Titolare del sito: <b>Manuel Lorente Gálvez</b> (NIF spagnolo 17747339X), contatto <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
+<p>Titolare del sito: <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador 22, 50830 Villanueva de Gállego (Zaragoza), Spagna (NIF spagnolo 17747339X), contatto <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
 sito guitle.com. Attività: comparatore di prezzi di strumenti musicali e pubblicità di affiliazione. Hosting: GitHub Pages (GitHub, Inc.).</p>
 
 <h2 id="condizioni">Condizioni d'uso</h2>
@@ -155,7 +155,7 @@ le tue preferenze. I negozi a cui rimandiamo possono usare i propri cookie sui l
 <p class="muted">Last updated: 28 October 2026. This is a translation; if in doubt, the <a href="/legal.html">Spanish version</a> prevails.</p>
 
 <h2 id="aviso">Legal notice</h2>
-<p>This website is run by <b>Manuel Lorente Gálvez</b> (Spanish tax ID 17747339X), contact <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
+<p>This website is run by <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador 22, 50830 Villanueva de Gállego (Zaragoza), Spain (Spanish tax ID 17747339X), contact <a href="mailto:hola@guitle.com">hola@guitle.com</a>,
 website guitle.com. Activity: price comparison for musical instruments and affiliate advertising. Hosting: GitHub Pages (GitHub, Inc.).</p>
 
 <h2 id="terms">Terms of use</h2>
