@@ -973,6 +973,38 @@ DE_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.de")
 AT_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.at")
 NL_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.nl")
 
+# Auvisa (auvisa.com, Shopify): su robots.txt no deja paginar colecciones, así que se tira del sitemap (fichas de marcas
+# de guitarras) y la categoría sale del breadcrumb de cada ficha ("Guitarras / Guitarras eléctricas / …").
+AUVISA_SKIP = re.compile(r"cuerda|funda|estuche|correa|\bpua|cejilla|afinador|soporte|pastilla|clavijero|amplif|pedal|cable"
+                         r"|\bbajo|ukelele|ukulele|recambio|golpeador|puente|boton|potenciometro|mastil|cuerpo|jack|combo"
+                         r"|cabezal|pantalla|efecto|correa|limpieza|herramienta|atril|banqueta|cejuela|selleta|traste", re.I)
+
+
+def auvisa_kind(crumbs):
+    text = " / ".join(crumbs).lower()
+    if not text.startswith("guitarras") or AUVISA_SKIP.search(text):
+        return None
+    if re.search(r"espa[nñ]ola|cl[aá]sica|flamenc", text):
+        return "clasica"
+    if re.search(r"ac[uú]stica", text):
+        return "acustica"
+    if re.search(r"el[eé]ctrica", text):
+        return "electrica"
+    return None
+
+
+def _pick_auvisa(url):
+    slug = url.rsplit("/", 1)[-1]
+    return ("/products/" in url and slug.startswith(tuple(b + "-" for b in _UK_BRANDS + ("aranjuez", "prudencio-saez", "suhr",
+                                                                                          "tokai", "maybach", "jet", "mooer")))
+            and not AUVISA_SKIP.search(slug.replace("-", " ")) and not NOT_PRODUCT.search(url))
+
+
+SOURCES["auvisa"] = {"name": "Auvisa", "sitemap": "https://auvisa.com/sitemap.xml", "pick": _pick_auvisa,
+                     "kind": _only("electrica", lambda c: auvisa_kind(c) == "electrica")}
+ACOUSTIC_SOURCES["auvisa"] = {"name": "Auvisa", "sitemap": "https://auvisa.com/sitemap.xml", "pick": _pick_auvisa,
+                              "kind": lambda c: auvisa_kind(c) if auvisa_kind(c) in ("acustica", "clasica") else None}
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
