@@ -49,7 +49,10 @@ jobs:
           cache: pip
 
       - name: Instalar dependencias
-        run: pip install -r requirements.txt
+        # T0: inicio del trabajo, para que fotos y PVP no se coman el tiempo del commit (el trabajo muere a los 355 min).
+        run: |
+          echo "T0=$(date +%s)" >> "$GITHUB_ENV"
+          pip install -r requirements.txt
 
       - name: Leer fichas (lote del día)
         # Cada tienda va en paralelo y a su ritmo (3-6 s entre peticiones, robots.txt respetado).
@@ -63,18 +66,23 @@ jobs:
         # Fender (es.fender.com, solo responde desde aquí) 40 min; luego Gibson/Epiphone 15 y Jackson 8.
         # robots.txt respetado, 3-6 s entre peticiones.
         if: matrix.cat == 'es' || matrix.cat == 'electrica'
-        run: python -m scraper.pvp --minutes 40 --out "$RUNNER_TEMP/pvp.json" || echo "::warning::PVP de las marcas con error"
+        run: timeout 45m python -m scraper.pvp --minutes 40 --out "$RUNNER_TEMP/pvp.json" || echo "::warning::PVP de las marcas con error o fuera de tiempo"
 
       - name: Miniaturas de fotos
         # Primero se fusiona el lote (para conocer las fotos nuevas) y luego se generan sus miniaturas.
         # Los ficheros nuevos de img/p/ no están en git y sobreviven al reset del paso siguiente.
         run: |
-          n=$(echo $CATS | wc -w)
-          # El tiempo que deje la lectura (y el PVP en España), sin pasar de 150 min en total (el trabajo tiene 355).
-          thumb_min=$(( (280 - READ_MIN * n) / n )); [ $thumb_min -gt $((150 / n)) ] && thumb_min=$((150 / n)); [ $thumb_min -lt 10 ] && thumb_min=10
+          # Con el tiempo que quede hasta los 290 min del trabajo (quedan 65 para el commit), repartido entre los catálogos
+          # que faltan y sin pasar de 50 min por catálogo. Si no queda, las fotos esperan a la próxima vuelta.
+          left=$(echo $CATS | wc -w)
           for c in $CATS; do
             if [ -f "$RUNNER_TEMP/catalog-$c.json" ]; then python -m scraper.catalog --cat "$c" --merge "$RUNNER_TEMP/catalog-$c.json"; fi
-            python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" --cat "$c" || echo "::warning::miniaturas con error"
+            rest=$(( 290 - ($(date +%s) - T0) / 60 ))
+            thumb_min=$(( rest / left - 5 )); [ $thumb_min -gt 50 ] && thumb_min=50
+            left=$((left - 1))
+            if [ $thumb_min -lt 5 ]; then echo "::warning::sin tiempo para las fotos de $c"; continue; fi
+            timeout $((thumb_min + 10))m python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" --cat "$c" \
+              || echo "::warning::miniaturas de $c con error o fuera de tiempo"
           done
 
       - name: Commit de datos
