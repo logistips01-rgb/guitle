@@ -107,9 +107,12 @@ behringer-2600-gray-meanie-4033653032667
 behringer-cat-eurorack-4033653031646
 behringer-crave-4033653031530
 behringer-edge-4033653032582
+behringer-k-2-mk-ii-4033653033077
 behringer-kobol-expander-4033653032599
+behringer-model-15-4033653032414
 behringer-model-d-eurorack-4033653031363
 behringer-monopoly-4033653032377
+behringer-ms-5-hringerms5
 behringer-neutron-eurorack-4033653031387
 behringer-octave-divider-4033653016834
 behringer-odyssey-4033653031431
@@ -119,6 +122,7 @@ behringer-pro-800-4033653032179
 behringer-pro-vs-mini-4033653032391
 behringer-solina-string-ensemble-4033653032421
 behringer-swing-4033653032056
+behringer-sy-1-syncussion-4033653032988
 behringer-td-3-am-4033653032261
 behringer-td-3-bk-4033653032278
 behringer-td-3-mo-am-4033653032957
@@ -371,8 +375,8 @@ kawai-vpc1-piano-digital-negro-4962864309766
 korg-arp-odyssey-rev-3-teclado-4959112125001
 korg-arp-odyssey-rev1-blanco-modulo-4959112162990
 korg-b2-bk-piano-digital-negro-4959112248427
-korg-b2-sp-bk-4959112248441
-korg-b2-sp-wh-4959112248458
+korg-b2-sp-bk-piano-digital-negro-4959112248441
+korg-b2-sp-wh-piano-digital-blanco-4959112248458
 korg-b2-wh-piano-digital-blanco-4959112248434
 korg-c1-air-bk-4959112170544
 korg-c1-air-br-4959112170568
@@ -408,7 +412,7 @@ korg-kross-2-61-4959112174771
 korg-kross-2-88-mb-4959112192720
 korg-kross2-61-white-4959112179059
 korg-liano-4959112199859
-korg-liano-live-4959112238114
+korg-liano-live-piano-digital-4959112238114
 korg-liano-metallic-red-4959112233126
 korg-lp-180-wh-4959112099234
 korg-lp-380-bk-u-4959112200166
@@ -474,8 +478,8 @@ korg-pa300-4959112097346
 korg-pa5x-61-4959112236837
 korg-pa5x-76-4959112236844
 korg-pa5x-88-4959112236851
-korg-pa5x-or-61-oriental-61-teclas-teclado-electronico-4959112241701
-korg-pa5x-or-76-oriental-76-teclas-teclado-electronico-4959112241718
+korg-pa5x-or-61-4959112241701
+korg-pa5x-or-76-4959112241718
 korg-pa600-4959112097339
 korg-pa700-4959112159259
 korg-pa700-oriental-4959112159242
@@ -500,7 +504,7 @@ korg-sv2-73s-4959112194717
 korg-sv2-88-4959112194687
 korg-sv2-88s-4959112194724
 korg-volca-bass-4959112108691
-korg-volca-beats-sintetizador-4959112108684
+korg-volca-beats-4959112108684
 korg-volca-fm-2-sintetizador-4959112233140
 korg-volca-keys-4017269275083
 korg-volca-keys-4959112108707
@@ -776,7 +780,7 @@ roland-hp704la-light-oak-88-teclas-piano-digital-4957054514174
 roland-hp704pe-negro-pulido-piano-digital-4957054514402
 roland-hp704wh-blanco-88-teclas-piano-digital-4957054514198
 roland-jd-xi-4957054506445
-roland-jd-xi-sinte-con-motores-de-sonido-analogicos-y-digitales-incluye-micro-cu-eclasp5050
+roland-jd-xi-analog-digital-synth-mic-gooseneck-eclasp5050
 roland-jdxi-sintetizador-ndjdxihtml
 roland-ju-06a-4957054515096
 roland-ju-06a-boutique-sons-iconicos-roland-juno-60-e-juno-106-iquep13838

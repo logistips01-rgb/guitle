@@ -306,15 +306,6 @@
   "median": 706.65
  },
  {
-  "kind": "teclado",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Korg opsix SE Platinum",
-  "slug": "korg-opsix-se-platinum-4959112238046",
-  "price": 1179.0,
-  "median": 1639.005
- },
- {
   "kind": "pedal",
   "type": "fuera_de_lugar",
   "store": "drunkat",
@@ -358,33 +349,6 @@
   "slug": "prs-horsemeat-overdrive-825362083504",
   "price": 129.0,
   "median": 254.0
- },
- {
-  "kind": "pedal",
-  "type": "fuera_de_lugar",
-  "store": "numemusic",
-  "name": "PRS Mary Cries Optical Compressor",
-  "slug": "prs-mary-cries-optical-compressor-825362083528",
-  "price": 164.75,
-  "median": 246.05
- },
- {
-  "kind": "pedal",
-  "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS Wind Through The Trees Dual Flanger",
-  "slug": "prs-wind-through-the-trees-dual-flanger-825362083511",
-  "price": 249.0,
-  "median": 354.0
- },
- {
-  "kind": "pedal",
-  "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "PRS Wind Through The Trees Dual Flanger",
-  "slug": "prs-wind-through-the-trees-dual-flanger-825362083511",
-  "price": 250.0,
-  "median": 354.0
  },
  {
   "kind": "pedal",
@@ -452,6 +416,24 @@
  {
   "kind": "pedal",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "PRS Mary Cries Optical Compressor",
+  "slug": "prs-mary-cries-optical-compressor-825362083528",
+  "price": 164.75,
+  "median": 236.025
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "PRS Wind Through The Trees Dual Flanger",
+  "slug": "prs-wind-through-the-trees-dual-flanger-825362083511",
+  "price": 250.0,
+  "median": 354.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Universal Audio UAFX Galaxi '74 Tape Echo & Reverb",
   "slug": "universal-audio-uafx-galaxi-74-tape-echo-reverb-819937003592",
@@ -466,6 +448,12 @@
   "slug": "universal-audio-uafx-galaxi-74-tape-echo-reverb-819937003592",
   "price": 299.0,
   "median": 1646.0
+ },
+ {
+  "kind": "pedal",
+  "type": "foto_perdida",
+  "name": "Jim Dunlop MC-404 Wah",
+  "slug": "jim-dunlop-mc-404-wah-710137016637"
  },
  {
   "kind": "micro",

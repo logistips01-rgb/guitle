@@ -15,7 +15,6 @@ aguilar-tone-hammer-preamp-di-824599002036
 all-pedal-1987-steel-panther-eelpanther
 all-pedal-alcmene-dalalcmene
 all-pedal-devil-s-triad-essentials-850037850075
-all-pedal-devil-s-triad-jeff-loomis-850037850662
 all-pedal-devil-s-triad-jeff-loomis-jeffloomis
 all-pedal-galactavise-alactavise
 all-pedal-love-machine-ovemachine
@@ -56,7 +55,6 @@ audota-g58-sistema-inalambrico-guitarra-itarrahtml
 beetronics-fatbee-747742643897
 beetronics-overhive-747742643798
 beetronics-royal-jelly-747742643880
-beetronics-tuna-trem-pedal-699838858510
 beetronics-vezzpa-604947161208
 behringer-adi21-v-tone-acoustic-4033653050807
 behringer-bdi21-v-tone-bass-4033653050821
@@ -209,7 +207,7 @@ boss-gm800-sintetizador-de-guitarra-3gm800html
 boss-gt-100-4957054500085
 boss-gt-1000-057882html
 boss-gt-1000core-4957054516949
-boss-gt-1000core-pedaleira-mfx-32-bits-96khz-aird-irdbp19827
+boss-gt-1000core-guitar-effects-processor-32-bits-96khz-irdbp19827
 boss-gt1000-pedalera-efectos-4957054512507
 boss-gt1000core-pedalera-multiefectos-00corehtml
 boss-gx-1-electric-guitar-effects-processor-mais-vendida-do-mundo-tarrap3079
@@ -357,19 +355,15 @@ boss-vo-1-vocoder-compacto-multi-aplicacoes-portatil-mic-xlr-input-orvozp5146
 boss-wl60-sistema-inalambrico-4957054514655
 boss-xs-1-poly-shifter-4957054519339
 boss-xs-100-poly-shifter-4957054520694
-carl-martin-andy-timmons-signature-compressor-versandretoure-andretoure
 catalinbread-adineko-delay-853710004314
 catalinbread-adineko-ghost-853710005854
 catalinbread-belle-epoch-853710006622
 catalinbread-cb-paint-853710006998
 catalinbread-clean-little-secret-853710009210
-catalinbread-cold-one-fuzz-distortion-853710000699
 catalinbread-csidman-ghost-853710006264
 catalinbread-dirty-little-secret-deluxe-853710004536
 catalinbread-dirty-little-secret-mkiii-853710004055
 catalinbread-echorec-853710004185
-catalinbread-elements-fuzz-853710006073
-catalinbread-elements-overdrive-853710006080
 catalinbread-epoch-boost-3701320900359
 catalinbread-epoch-boost-853710006134
 catalinbread-fuzzrite-840248014861
@@ -377,7 +371,6 @@ catalinbread-fuzzrite-853710004291
 catalinbread-fuzzrite-ge-853710004772
 catalinbread-galileo-mkii-853710004246
 catalinbread-katzenkonig-853710004307
-catalinbread-naga-viper-mkii-treble-booster-853710005229
 catalinbread-rah-royal-albert-hall-overdrive-853710004024
 catalinbread-sabbra-cadabra-853710004239
 catalinbread-sft-overdrive-853710005014
@@ -418,7 +411,6 @@ d-addario-d-addario-xpndpb01-pedalera-extensible-2-railes-19954338428
 d-addario-d-addario-xpndpb02-pedalera-extendible-4-railes-19954338435
 d-addario-daddario-xpnd-pedal-power-battery-kit-ykitp39173
 d-addario-pw-ct-20-chromatic-pedal-tuner-unerp21915
-d-addario-xpnd-pedal-voltage-booster-19954452452
 daddario-pw-ct-20-chromatic-pedal-tuner-19954242435
 danelectro-3699-fuzz-611820001438
 danelectro-backtalk-reverse-delay-611820001414
@@ -499,6 +491,7 @@ digitech-dod-envelope-filter-440-691991202889
 digitech-dod-freqout-691991006432
 digitech-dod-gonkulator-691991001352
 digitech-dod-gunslinger-691991001369
+digitech-dod-jamman-solo-hd-810147520046
 digitech-dod-looking-glass-691991003912
 digitech-dod-meatbox-691991001345
 digitech-dod-mini-expression-691991006555
@@ -516,7 +509,6 @@ digitech-dod-wah-octo-fuzz-810147520145
 digitech-dod-whammy-5-691991202629
 digitech-dod-whammy-dt-691991202537
 digitech-hammer-on-810147520053
-digitech-jam-man-solo-hd-810147520046
 digitech-overdrive-250-50th-anniversary-limited-edition-810147520077
 digitech-overdrive-250-e250p30527
 digitech-trio-band-creator-pedal-guitarra-691991001
@@ -836,7 +828,7 @@ electro-harmonix-tri-parallel-mixer-683274012117
 electro-harmonix-triangle-big-muff-pi-683274012162
 electro-harmonix-v256-683274011011
 electro-harmonix-voice-box-683274010908
-electro-harmonix-wailer-wah-pro-683274012827
+electro-harmonix-wailer-wah-pro-ilerwahpro
 electro-harmonix-walking-on-the-moon-683274012469
 electro-harmonix-worm-sanalogico
 elektron-analog-heat-fx-7350049240831
@@ -896,11 +888,11 @@ eventide-time-factor-r82025html
 eventide-timefactor-840694001040
 eventide-tricerachorus-840694002085
 eventide-ultratap-840694002061
-fender-bassman-compressor-pedal-bajo-717669940799
+fender-bassman-compressor-717669940799
 fender-bassman-delay-717669940874
 fender-bassman-driver-717669940775
 fender-bassman-fuzz-717669940751
-fender-bassman-reverb-pedal-bajo-717669940935
+fender-bassman-reverb-717669940935
 fender-compugilist-compressor-distortion-885978054831
 fender-dual-marine-layer-reverb-885978429585
 fender-engager-boost-859789090258
@@ -959,7 +951,6 @@ flanger-ftn2-afinador-pedal-guitarra-6936257800633
 flanger-k02-overdrive-pedal-guitarra-910807070504
 flanger-kc6-chorus-pedal-guitarra-910807070581
 flanger-kh8-distortion-pedal-guitarra-8434418045049
-floyd-rose-frt200-original-tremolo-system-black-835580002515
 formula-b-edge-echo-verb-geechoverb
 formula-b-fuzz-rangers-uzzrangers
 foxgear-anubi-ambient-box-8057733069585
@@ -978,7 +969,6 @@ fulltone-cs-queen-bee-fuzz-676891000957
 fulltone-cs-supa-trem2-v2-tremolo-676891000834
 fulltone-custom-shop-supa-wah-hopsupawah
 fulltone-full-drive-3-676891000599
-fulltone-fulldrive-1-676891000681
 fulltone-fulldrive-2-v2-676891000841
 fulltone-hi-mu-676891001022
 fulltone-mas-malo-676891000803
@@ -1055,7 +1045,6 @@ ibanez-chorus-mini-pedal-l50555html
 ibanez-es3-echo-shifter-pedal-guitarra-4549763232809
 ibanez-flmini-flanger-mini-pedal-4549763250551
 ibanez-gsmini-4515276838074
-ibanez-ld303-multi-delay-effect-pedal-4549763363770
 ibanez-phmini-phaser-mini-4549763281791
 ibanez-pteq-pentatone-eq-pedal-guitarra-4549763354594
 ibanez-ptpre-pentatone-preamp-pedal-guitarra-4549763326010
@@ -1371,7 +1360,6 @@ keeley-dark-side-v2-1451185429500
 keeley-dynatrem-854295005338
 keeley-dyno-my-roto-854295005673
 keeley-eccos-854295005994
-keeley-electronics-realizer-reverberator-chromalux-2k24-custom-shop-810026441608
 keeley-filaments-854295005680
 keeley-fuzz-bender-854295005987
 keeley-gc-2-854295005222
@@ -1412,7 +1400,6 @@ khdk-no-1-overdrive-pedal-866640000103
 khdk-no-2-clean-boost-pedal-866640000110
 khdk-scuzz-box-pedal-866640000134
 kma-audio-machines-cirrus-delay-and-reverb-651650248948
-kma-audio-machines-guardian-of-the-wurm-distortion-pedal-651650248993
 kma-audio-machines-horizont-651650248917
 kma-audio-machines-logan-overdrive-651650248931
 kma-audio-machines-moai-maea-analog-octaver-651650248818
@@ -1518,8 +1505,6 @@ mad-professor-the-green-wonder-6430033091463
 maestro-comet-chorus-711106069180
 maestro-mariner-tremolo-711106088242
 maestro-orbit-phaser-711106088235
-maestro-orbit-phaser-pedal-haserpedal
-maestro-titan-boost-pedal-boostpedal
 markbass-compressore-pedal-8033829135167
 markbass-mark-vintage-pre-8033829131817
 markbass-mb-octaver-raw-pedal-efectos-para-bajo-8033829131947
@@ -1804,7 +1789,6 @@ mxr-m225-sub-machine-fuzz-710137088863
 mxr-m231-tap-split-trs-710137135949
 mxr-m233-micro-amp-plus-710137095274
 mxr-m234-analog-chorus-710137050044
-mxr-m249-super-badass-dynamic-overdrive-710137130364
 mxr-m251-fod-drive-710137117426
 mxr-m280-vintage-bass-octave-710137110335
 mxr-m280-vintage-bass-octave-710137110373
@@ -1856,6 +1840,7 @@ mxrm108s-ten-band-eq-pedal-guitarra-bandashtml
 mxrm196-ab-box-caja-ab-710137050914
 mxrm228-dyna-comp-deluxe-compresor-pedal-710137101210
 mxrm235-smart-gate-pro-rack-puerta-ruido-710137024205
+mxrm249-super-badass-dynamic-overdrive-pedal-710137130364
 mxrm279-deep-phase-pedal-phaser-710137126794
 mxrm282-dyna-comp-bass-pedal-bajo-compresor-710137111479
 mxrm305-multi-mode-pedal-tremolo-remolohtml
@@ -1926,7 +1911,6 @@ orange-the-amp-detonator-aby-pedal-pedalp7817
 orange-two-stroke-5060299175709
 origin-effects-cali76-bass-compressor-796554970646
 origin-effects-cali76-bass-compressor-black-796554970653
-origin-effects-m-eq-driver-764460637120
 ortega-annalogx-se-842960186949
 ortega-beatnick-842960185065
 ortega-hkprox-se-842960186925
@@ -1945,7 +1929,6 @@ palmer-pedalbay-60-pb-ped-board-psu-dpsup27383
 palmer-pocket-amp-acoustic-4049521274367
 palmer-pocket-amp-bass-4049521206412
 palmer-pocket-amp-mk2-4049521187179
-peavey-session-ltd-400-preamp-pedal-reamppedal
 pedaltrain-space-saving-tuner-pt-sst-817709002026
 peterson-strobostomp-hd-805265500629
 peterson-strobostomp-mini-805265500742
@@ -2034,8 +2017,6 @@ sheeran-looper-x-694318025871
 sheeran-loopers-busker-se-ersep38393
 sheeran-loopers-looper-x-perxp37699
 sheeran-loopers-sheeran-looperx-025871html
-shepards-end-barber-pole-flanger-oleflanger
-soldano-slo-overdrive-pedal-763815133393
 solid-gold-fx-76-mkii-octave-fuzz-octavefuzz
 solid-gold-fx-commodore-overdrive-eoverdrive
 solid-gold-fx-em-iii-delay-758358618162
@@ -2082,7 +2063,7 @@ strymon-canoga-852571008691
 strymon-cloudburst-reverb-852571008387
 strymon-compadre-comp-dual-b-852571008059
 strymon-deco-tape-saturation-doubletracker-pedal-852636007249
-strymon-deco-v2-tape-saturation-doubletracker-852571008264
+strymon-deco-v2-852571008264
 strymon-dig-digital-delay-pedal-de-guitarra-5052004495813
 strymon-dig-v2-dual-digital-delay-852571008271
 strymon-dig-v2-dual-digital-delay-elayp28529
@@ -2118,7 +2099,6 @@ strymon-ultraviolet-vibe-852571008448
 strymon-volante-magnetic-ech-852571008042
 strymon-zelzah-852571008158
 strymon-zuma-9-salidas-fuente-alimentacion-852636007317
-suhr-thornicus-fuzz-rnicusfuzz
 supro-delay-pedal-guitarra-181118090968
 supro-flanger-pedal-guitarra-687700222002
 supro-fuzz-181118090203
@@ -2207,6 +2187,7 @@ tc-electronic-quintessence-harmony-4033653015981
 tc-electronic-rush-booster-4033653014878
 tc-electronic-rusty-fuzz-4033653014977
 tc-electronic-scf-gold-4033653016797
+tc-electronic-scf-gold-se-4033653016803
 tc-electronic-sentry-noise-gate-4033653015998
 tc-electronic-shaker-vibrato-4033653016001
 tc-electronic-skysurfer-mini-reverb-4033653016964
@@ -2371,6 +2352,7 @@ walrus-audio-eb-10-cream-810424031845
 walrus-audio-janus-852732006061
 walrus-audio-julia-v2-810424032026
 walrus-audio-julianna-chorus-orusp25307
+walrus-audio-mantle-bass-pre-amp-di-fx-pedal-810424038110
 walrus-audio-polychrome-810424032866
 walrus-audio-r1-reverb-black-lackp22398
 walrus-audio-slo-multi-texture-reverb-810424031456

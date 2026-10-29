@@ -1188,7 +1188,9 @@ ortega-bwsm-2-840553027808
 ortega-bywsm-842960184099
 ortega-dssuite-c-e-840553025248
 ortega-family-pro-r55-deluxe-or55deluxe
+ortega-family-r121-wr-milyr121wr
 ortega-flametal-two-840553027976
+ortega-glamsuitece-2-842960187755
 ortega-grandsuite-842960186208
 ortega-grandsuite-ce-842960186215
 ortega-guit-electroacust-grsuite-tce-842960187403
@@ -1328,6 +1330,8 @@ ortega-rtpdlx-aca-l-842960186123
 ortega-rtpdlx-fma-l-842960186130
 ortega-rtpstd-nat-l-842960186147
 ortega-student-rst5-mbk-entrst5mbk
+ortega-tourplayer-rtp-ltd-842960187410
+ortega-tourplayer-rtp-ltd2-842960187885
 ortega-tourplayer-rtpdlx-aca-842960184938
 ortega-tourplayer-rtpdlx-fma-842960184945
 ortega-tourplayer-rtpg-ls1-842960187342
@@ -1351,6 +1355,8 @@ paco-castillo-201-mate-1-4-raespanola
 paco-castillo-201-mate-3-4-raespanola
 paco-castillo-201-mate-7-8-lasenorita
 paco-castillo-201-mate-8412345104176
+paco-castillo-201-mate-8434418054737
+paco-castillo-201-mate-raespanola
 paco-castillo-202-3-4-raespanola
 paco-castillo-202-7-8-lasenorita
 paco-castillo-202-8412345104190
