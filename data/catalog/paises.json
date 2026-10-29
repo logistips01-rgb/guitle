@@ -22,5 +22,11 @@
   "path": "/br/",
   "guitars": 1099,
   "stores": 4
+ },
+ "ie": {
+  "country": "Ireland",
+  "path": "/ie/",
+  "guitars": 444,
+  "stores": 2
  }
 }
