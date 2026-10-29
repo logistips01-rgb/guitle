@@ -2,18 +2,18 @@ name: catalog
 
 on:
   schedule:
-    # De madrugada, fuera de la hora del rastreador de precios (03:17 UTC).
-    - cron: "17 3 * * *"
+    # Tres veces al día, cada 8 horas (cada vuelta dura ~5 h 30 min, así que no se solapan): 03:17, 11:17 y 19:17 UTC.
+    - cron: "17 3,11,19 * * *"
   workflow_dispatch:
     inputs:
       minutes:
-        description: "Minutos de lectura por tienda (la primera carga completa necesita ~300)"
+        description: "Minutos de lectura por tienda en los países (España: 50 por catálogo)"
         default: "150"
       solo:
         description: "Qué catálogo leer (todos, o solo uno)"
         type: choice
         default: todos
-        options: [todos, equipo, electrica, acustica, pt, fr, it, uk, de, br, ie, at, nl]
+        options: [todos, es, equipo, electrica, acustica, pt, fr, it, uk, de, br, ie, at, nl]
 
 permissions:
   contents: write
@@ -24,17 +24,21 @@ concurrency:
 
 jobs:
   catalog:
-    # Un catálogo detrás de otro (max-parallel 1): cada tienda recibe como mucho una petición cada 3-6 s.
-    # electrica → data/catalog/ ; acustica → data/catalog/acusticas/ (acústicas y clásicas en una sola lectura) ;
-    # equipo → data/catalog/equipo/ (teclados y pedales) ; pt → data/catalog/pt/ (Portugal) ; fr → data/catalog/fr/ (Francia) ; it → data/catalog/it/ (Italia) ; uk → data/catalog/uk/ (Reino Unido) ; de → data/catalog/de/ (Alemania) ; br → data/catalog/br/ (Brasil) ; ie, at, nl → Irlanda, Austria, Países Bajos
+    # Un trabajo por país, en paralelo (cada uno lee webs distintas). España ("es") lee sus tres catálogos seguidos
+    # en un solo trabajo, porque comparten tiendas: electrica → data/catalog/ ; acustica → data/catalog/acusticas/ ;
+    # equipo → data/catalog/equipo/. Países: pt, fr, it, uk, de, br, ie, at, nl → data/catalog/<país>/.
+    # Cada tienda recibe como mucho una petición cada 3-6 s.
     strategy:
-      max-parallel: 1
       fail-fast: false
       matrix:
         # Programada: todos. A mano se puede elegir uno solo (p. ej. equipo = pedales y teclados).
-        cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["electrica","acustica","equipo","pt","fr","it","uk","de","br","ie","at","nl"]') }}
+        cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["es","pt","fr","it","uk","de","br","ie","at","nl"]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 355
+    env:
+      # Catálogos de este trabajo y minutos de lectura por tienda.
+      CATS: ${{ matrix.cat == 'es' && 'electrica acustica equipo' || matrix.cat }}
+      READ_MIN: ${{ (matrix.cat == 'es' || matrix.cat == 'electrica' || matrix.cat == 'acustica' || matrix.cat == 'equipo') && '50' || inputs.minutes || '150' }}
     steps:
       - uses: actions/checkout@v4
 
@@ -48,34 +52,42 @@ jobs:
 
       - name: Leer fichas (lote del día)
         # Cada tienda va en paralelo y a su ritmo (3-6 s entre peticiones, robots.txt respetado).
-        run: python -m scraper.catalog --cat ${{ matrix.cat }} --minutes "${{ inputs.minutes || '150' }}" --records-out "$RUNNER_TEMP/catalog.json" || echo "::warning::catálogo con error; se commitea lo que haya"
+        run: |
+          for c in $CATS; do
+            python -m scraper.catalog --cat "$c" --minutes "$READ_MIN" --records-out "$RUNNER_TEMP/catalog-$c.json" \
+              || echo "::warning::catálogo $c con error; se commitea lo que haya"
+          done
 
       - name: PVP oficial de las marcas
         # Fender (es.fender.com, solo responde desde aquí) 40 min; luego Gibson/Epiphone 15 y Jackson 8.
         # robots.txt respetado, 3-6 s entre peticiones.
-        if: matrix.cat == 'electrica'
+        if: matrix.cat == 'es' || matrix.cat == 'electrica'
         run: python -m scraper.pvp --minutes 40 --out "$RUNNER_TEMP/pvp.json" || echo "::warning::PVP de las marcas con error"
 
       - name: Miniaturas de fotos
         # Primero se fusiona el lote (para conocer las fotos nuevas) y luego se generan sus miniaturas.
         # Los ficheros nuevos de img/p/ no están en git y sobreviven al reset del paso siguiente.
         run: |
-          [ -f "$RUNNER_TEMP/catalog.json" ] && python -m scraper.catalog --cat ${{ matrix.cat }} --merge "$RUNNER_TEMP/catalog.json"
-          # El tiempo que deje la lectura, sin pasar de 150 min (el job tiene 355 en total).
-          read_min=${{ inputs.minutes || '150' }}
-          thumb_min=$(( 320 - read_min )); [ $thumb_min -gt 150 ] && thumb_min=150; [ $thumb_min -lt 10 ] && thumb_min=10
-          python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" --cat ${{ matrix.cat }} || echo "::warning::miniaturas con error"
+          n=$(echo $CATS | wc -w)
+          # El tiempo que deje la lectura (y el PVP en España), sin pasar de 150 min en total (el trabajo tiene 355).
+          thumb_min=$(( (280 - READ_MIN * n) / n )); [ $thumb_min -gt $((150 / n)) ] && thumb_min=$((150 / n)); [ $thumb_min -lt 10 ] && thumb_min=10
+          for c in $CATS; do
+            if [ -f "$RUNNER_TEMP/catalog-$c.json" ]; then python -m scraper.catalog --cat "$c" --merge "$RUNNER_TEMP/catalog-$c.json"; fi
+            python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" --cat "$c" || echo "::warning::miniaturas con error"
+          done
 
       - name: Commit de datos
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          [ -f "$RUNNER_TEMP/catalog.json" ] || exit 0
+          ls "$RUNNER_TEMP"/catalog-*.json >/dev/null 2>&1 || exit 0
           for attempt in 1 2 3 4 5 6 7 8 9 10; do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             [ -f "$RUNNER_TEMP/pvp.json" ] && python -m scraper.pvp --merge "$RUNNER_TEMP/pvp.json"  # PVP al histórico, antes de construir
-            python -m scraper.catalog --cat ${{ matrix.cat }} --merge "$RUNNER_TEMP/catalog.json"  # también reconstruye los JSON de la web
+            for c in $CATS; do  # también reconstruye los JSON de la web
+              if [ -f "$RUNNER_TEMP/catalog-$c.json" ]; then python -m scraper.catalog --cat "$c" --merge "$RUNNER_TEMP/catalog-$c.json"; fi
+            done
             python -m scraper.checks || echo "::warning::comprobaciones con error"  # avisos de precios y fotos raros
             git add data/catalog/ data/deals-*.json data/checks.json img/p/ g/ marca/ tipo/ presupuesto/ marcas.html sitemap.xml
             # Webs de otros países (pt/, fr/…) y sus sitemaps, si ya existen.
