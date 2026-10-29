@@ -478,23 +478,29 @@ MAS_SKIP = re.compile(
     r"|pedalboard|pedal ?board|teclado|piano|bater[ií]a|\bdrums?\b|bombo|platillo|auriculares? (de|para) (estudio|dj)"
     r"|altavoz (activo|de pa)|monitor de estudio|mesa de mezclas|\bdj\b|ukelele|ukulele|contrabajo|kontrabass|violonchelo"
     r"|bass ?drum|subwoofer|\bsub\b|micr[oó]fono|libro|\bbook\b|m[eé]todo", re.I)
-_CASE = re.compile(r"estuche|funda|gig ?bag|\bcase\b|softcase|hardcase|koffer|tasche|\bbolsa|estojo", re.I)
+_CASE = re.compile(r"estuche|funda|gig ?bag|\bbag\b|flexi ?case|\bcase\b|softcase|hardcase|koffer|tasche|\bbolsa|estojo", re.I)
 _AMP = re.compile(r"amplificador|\bampli\b|\bcombo|cabezal|pantalla|cabinet|\bamps?\b|verst[aä]rker|topteil|gitarrenbox"
-                  r"|bassbox|\bthr\d|katana|spark|amplug|fly ?3", re.I)
+                  r"|bassbox|\bthr\d|katana|spark|amplug|fly ?3|mini tower", re.I)
 _BASS = re.compile(r"\bbajos?\b|\bbass\b|\bbasses\b|b[aä]sse\b|e-bass|\bbaixo|basso\b", re.I)
 _GUITAR_CONTEXT = re.compile(r"guitarra|guitar|gitarre|\bbajo|\bbass|ac[uú]stic|el[eé]ctric|cl[aá]sic|guitare|chitarr", re.I)
 
 
 # Efectos y libros "de bajo" que no son bajos (también limpia lo leído antes de afinar el filtro, al construir).
 MAS_DROP = re.compile(r"\bpedal\b|pedales|efecto|overdrive|distors|delay|reverb|chorus|compress|compresor|fuzz"
-                      r"|octav|\bwah\b|flanger|phaser|lehrbuch|verlag|\bbook\b|libro|m[eé]todo", re.I)
+                      r"|octav|\bwah\b|flanger|phaser|lehrbuch|verlag|\bbook\b|libro|m[eé]todo|limiter|enhancer|\bdriver\b|effekt|prozessor"
+                      r"|processor|clarinet|posaune|tuba|mundst|winder|polish|artist ahead|rockstarter", re.I)
 
 
 # Micrófonos (Numemusic quita las tildes de la URL: "micrfono"), sin sus accesorios ni previos o interfaces.
 _MIC = re.compile(r"micr[oó]?fonos?|microphones?|mikrofon|\bmics?\b", re.I)
 _MIC_ACC = re.compile(r"soporte|\bpie\b|\bstand|pinza|\bclip|anti-?pop|pop ?filter|paravientos|windscreen|espuma|ara[ñn]a"
                       r"|shock ?mount|suspensi|cable|adaptador|funda|estuche|bolsa|\bcase\b|maleta|repuesto|accesorio|previo"
-                      r"|preamp|interfa|mezcla|mixer|grabador|recorder|brazo|\bboom\b|pantalla|absorbente|auriculares", re.I)
+                      r"|preamp|interfa|mezcla|mixer|grabador|recorder|brazo|\bboom\b|pantalla|absorbente|auriculares|kabel|st[aä]nder|halter"
+                      r"|klemme|spinne|popschutz|windschutz|koffer|tasche|adapter|\bxlr\b.*\bxlr\b", re.I)
+
+
+WITH_CASE = re.compile(r"\+ ?(g \+ )?(funda|estuche)|con (funda|estuche)|\bw/? ?case|incl", re.I)
+MAX_PRICE = {"estuche": 800}  # un "estuche" más caro es un instrumento con su estuche
 
 
 def mas_kind(crumbs, url="", name=""):
@@ -505,22 +511,25 @@ def mas_kind(crumbs, url="", name=""):
         return None
     if _MIC.search(text) and not _AMP.search(name or ""):
         return None if _MIC_ACC.search(text) else "micro"
-    if _CASE.search(text):
+    # Funda o estuche solo si lo dice el nombre o la última categoría: "Alhambra 3C + funda" o un bajo "w/ case" son
+    # instrumentos con su funda.
+    if (_CASE.search(name or "") or crumbs and _CASE.search(crumbs[-1]) or not name and _CASE.search(text)) \
+            and not WITH_CASE.search(name or ""):
         other = re.search(r"teclado|piano|bater[ií]a|platillo|micr[oó]fono|pedal|\bdj\b|altavoz|ukelele|ukulele|viol[ií]n|saxo"
                           r"|trompeta|flauta|clarinete|acorde[oó]n|tambor|snare|\bmic\b|mezclador|controlador|cello|chelo|viola\b"
-                          r"|contrabajo|herrajes|castañuelas|xil[oó]fono|hk audio|ld systems|\bjbl\b|subwoofer|\bsub\b", text)
+                          r"|contrabajo|herrajes|castañuelas|xil[oó]fono|hk audio|ld systems|\bjbl\b|subwoofer|\bsub\b|mackie|\bsrm\d|speaker|bafle", text)
         return "estuche" if not other and not _AMP.search(text) and not MAS_SKIP.search(name or "") else None
     if MAS_SKIP.search(text):
         return None
     if _AMP.search(text):
-        if re.search(r"nitro amp|strike amp|bater[ií]a|\bdrums?\b|e-drum|para teclado|keyboard amp|teclado|monitor", text):
+        if re.search(r"nitro amp|strike amp|yamaha emx|\bemx ?\d|bater[ií]a|\bdrums?\b|e-drum|para teclado|keyboard amp|teclado|monitor", text):
             return None
         return "ampli" if _GUITAR_CONTEXT.search(text) or re.search(
             r"marshall|orange|\bvox\b|blackstar|laney|peavey|mesa|engl|ampeg|markbass|hartke|roland|positive grid|line ?6"
-            r"|kemper|aguilar|darkglass|fishman|\baer\b|bugera|yamaha thr|boss|fender|victory|friedman|evh|randall", text) else None
+            r"|kemper|aguilar|darkglass|\bebs\b|fishman|\baer\b|bugera|yamaha thr|boss|fender|victory|friedman|evh|randall", text) else None
     if _BASS.search(text):
         # Marcas que solo hacen amplificadores de bajo ("Ampeg Rocket Bass RB-110")
-        return "ampli" if re.search(r"ampeg|markbass|hartke|gallien|trace elliot|\beden\b", text) else "bajo"
+        return "ampli" if re.search(r"ampeg|markbass|hartke|gallien|trace elliot|\beden\b|\bebs\b", text) else "bajo"
     return None
 
 
@@ -1881,7 +1890,10 @@ def build(offers=None, history=None):
         mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
-                and (kind in GUITAR_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))]
+                and (kind in GUITAR_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))
+                and (o.get("price") or 0) <= MAX_PRICE.get(kind, float("inf"))
+                and not (kind == "estuche" and WITH_CASE.search(o.get("name") or ""))
+                and not (kind == "micro" and _MIC_ACC.search(o.get("name") or ""))]
         spain = CATALOG.get("site", "es") == "es"
         if CATALOG.get("min_price"):  # en otra moneda, el mínimo de MIN_PRICE (en euros) no sirve
             mine = [o for o in mine if (o.get("price") or 0) >= CATALOG["min_price"]]
