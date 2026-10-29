@@ -1,0 +1,74 @@
+{
+ "date": "2026-10-29",
+ "fecha": "29 de octubre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "schecter-nick-johnston-trad-hss-a-frost-815447028537",
+   "name": "Schecter Nick Johnston Trad HSS A. Frost",
+   "brand": "Schecter",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/5/652781_61bb.jpg?store=nume_es&image-type=image",
+   "price": 834.0,
+   "store": "Nume Music",
+   "stores": 3,
+   "median": 889.5,
+   "max": 945.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 295 € menos que ayer",
+   "pct": 26,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Chollo de hoy: Schecter Nick Johnston Trad HSS A. Frost\n💶 834 € en Nume Music, comparada en 3 tiendas.\n📉 Rebajada hoy: 295 € menos que ayer.\n\n🔎 Compara su precio en guitle.com (enlace en la bio).\nPrecio del 29 de octubre; puede cambiar.\n\n#guitarra #guitarraelectrica #schecter #chollos #guitarristas #ofertas"
+ },
+ "stories": [
+  {
+   "slug": "yamaha-cgx102-4957812528603",
+   "name": "Yamaha CGX102",
+   "brand": "Yamaha",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/0/2/025452_72b6.jpg?store=nume_es&image-type=image",
+   "price": 297.33,
+   "store": "Nume Music",
+   "stores": 3,
+   "median": 332.16499999999996,
+   "max": 367.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 67,67 € menos que ayer",
+   "pct": 19,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ibanez-rgixl7-bkf-black-flat-4549763229618",
+   "name": "Ibanez RGIXL7-BKF Black Flat",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/4/646776_5bc7.jpg?store=nume_es&image-type=image",
+   "price": 804.0,
+   "store": "Nume Music",
+   "stores": 4,
+   "median": 858.0,
+   "max": 939.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 131 € menos que ayer",
+   "pct": 14,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "cort-ac120ce-op-8809383838796",
+   "name": "Cort AC120CE OP",
+   "brand": "Cort",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/1/0/100c4335_cc1f.jpg?store=nume_es&image-type=image",
+   "price": 166.57,
+   "store": "Nume Music",
+   "stores": 3,
+   "median": 168.785,
+   "max": 171.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 29,40 € menos que ayer",
+   "pct": 15,
+   "photo": "chollo-4.webp"
+  }
+ ]
+}
