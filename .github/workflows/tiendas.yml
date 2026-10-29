@@ -22,7 +22,7 @@ jobs:
       - run: pip install -q -r requirements.txt
       - name: Probar tiendas
         run: |
-          # Lectores nuevos que no se pueden probar desde fuera de GitHub (Gear4music).
+          # Lectores nuevos que no se pueden probar desde fuera de GitHub (Gear4music: solo fichas).
           python -m scraper.probe --only-try --out informe-tiendas.md --try electrica:gear4music acustica:gear4music \
             fr:gear4music it:gear4music de:gear4music nl:gear4music
           cat informe-tiendas.md >> "$GITHUB_STEP_SUMMARY"
