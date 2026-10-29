@@ -34,6 +34,33 @@
   .btn { font: inherit; font-weight: 600; padding: 10px 18px; border-radius: 10px; border: 0; background: var(--accent); color: #fff; cursor: pointer; }
   .who { color: var(--text-muted); font-size: .85rem; }
   .who button { font: inherit; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; }
+  /* guitle en el mundo: mapa en blanco, los países se pintan de azul según se encienden */
+  .world .sub { color: var(--text-muted); margin: -6px 0 12px; font-size: .9rem; }
+  .world .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+  .world .kpis b { color: var(--accent); }
+  .world .prog { height: 8px; background: var(--grid); border-radius: 99px; margin-top: 8px; overflow: hidden; }
+  .world .prog i { display: block; height: 100%; background: var(--accent); }
+  .maps { display: grid; grid-template-columns: 1.75fr 1fr; gap: 10px; margin-top: 12px; }
+  @media (max-width: 860px) { .maps { grid-template-columns: 1fr; } }
+  .map { background: #eef3f9; border: 1px solid var(--border); border-radius: 12px; padding: 8px; position: relative; min-height: 120px; }
+  .map h3 { position: absolute; margin: 0; left: 12px; top: 8px; font-size: .8rem; color: var(--text-muted); font-weight: 600; }
+  .map svg { width: 100%; height: auto; display: block; }
+  .map path { fill: #fff; stroke: #d6d5cf; stroke-width: .5; }
+  .map path.on { fill: var(--accent); stroke: #fff; }
+  .map path.new { fill: var(--accent); stroke: #fff; animation: pulse 2.2s ease-in-out infinite; }
+  .map path.next { fill: #d3e2f4; }
+  @keyframes pulse { 50% { fill: #8db8ec; } }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .map { background: #172a40; } }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--text-muted); font-size: .82rem; margin: 10px 2px; }
+  .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 1px solid #d6d5cf; }
+  .ctable { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  .ctable th, .ctable td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--grid); }
+  .ctable th { color: var(--text-muted); font-weight: 600; font-size: .78rem; }
+  .ctable .n { text-align: right; font-variant-numeric: tabular-nums; }
+  .chip-s { font-size: .74rem; font-weight: 600; padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+  .chip-s.on { background: var(--good-bg, #e6f4e8); color: var(--good, #00750a); }
+  .chip-s.new { background: var(--accent-bg); color: var(--accent); }
+  .chip-s.next { background: var(--grid); color: var(--text-muted); }
 </style>
 </head>
 <body>
@@ -58,6 +85,15 @@
       <button data-days="7">7 días</button><button data-days="30" aria-pressed="true">30 días</button><button data-days="90">90 días</button>
     </div>
     <div class="tiles" id="tiles"></div>
+    <div class="card world">
+      <h2>guitle en el mundo</h2>
+      <p class="sub">Cada país que encendemos se pinta de azul. A por el mapa entero.</p>
+      <div class="kpis" id="wkpis"></div>
+      <div class="maps"><div class="map" id="map-world"><h3>Mundo</h3></div><div class="map" id="map-europe"><h3>Europa</h3></div></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Con guitle</span><span><i style="background:#8db8ec"></i>Encendiéndose (late hasta que tenga datos)</span><span><i style="background:#d3e2f4"></i>Próximamente</span><span><i style="background:#fff"></i>Por conquistar</span></div>
+      <table class="ctable"><thead><tr><th>País</th><th>Estado</th><th class="n">Posibles guitles</th><th class="n" id="wdays">Guitles</th><th class="n">Guitarras</th><th class="n">Tiendas</th></tr></thead><tbody id="wrows"></tbody></table>
+      <p class="empty" style="margin:10px 0 0">Posibles guitles = 10 % de la población activa del país (cifras aproximadas). Guitles = páginas vistas en la web de cada país (contador anónimo) en el periodo elegido.</p>
+    </div>
     <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
     <div class="cols">
       <div class="card"><h2>Clics a tiendas</h2><div class="bars" id="stores"></div></div>
@@ -92,6 +128,42 @@ const shortDay = s => new Date(s + "T12:00:00").toLocaleDateString("es-ES", { da
 
 let rows = null, chart = null, days = 30;
 
+// --- guitle en el mundo ---------------------------------------------------------------------------------------
+// Países: código de su carpeta en la web (España, la raíz), id del mapa (ISO numérico), población activa aprox.
+// (millones; posibles guitles = el 10 %) y sus catálogos. Un país con catálogos y web está "Activo"; con web configurada pero aún sin datos, "Encendiéndose";
+// sin catálogos, "Próximamente". Al abrir un país nuevo, se le ponen aquí sus catálogos.
+const COUNTRIES = [
+  ["es", "724", "España", 24.6, ["data/catalog/products.json", "data/catalog/acusticas/acusticas.json", "data/catalog/acusticas/clasicas.json",
+                                 "data/catalog/equipo/teclados.json", "data/catalog/equipo/pedales.json"]],
+  ["pt", "620", "Portugal", 5.4, ["data/catalog/pt/eletricas.json", "data/catalog/pt/acusticas.json", "data/catalog/pt/classicas.json",
+                                   "data/catalog/pt/portuguesas.json"]],
+  ["fr", "250", "Francia", 31.5, ["data/catalog/fr/electriques.json", "data/catalog/fr/folk.json", "data/catalog/fr/classiques.json"]],
+  ["it", "380", "Italia", 25.8, ["data/catalog/it/elettriche.json", "data/catalog/it/acustiche.json", "data/catalog/it/classiche.json"]],
+  ["uk", "826", "Reino Unido", 34.5, ["data/catalog/uk/electric.json", "data/catalog/uk/acoustic.json", "data/catalog/uk/classical.json"]],
+  ["de", "276", "Alemania", 44.5, ["data/catalog/de/e-gitarren.json", "data/catalog/de/westerngitarren.json",
+                                     "data/catalog/de/konzertgitarren.json"]],
+   ["at", "040", "Austria", 4.8, ["data/catalog/at/e-gitarren.json", "data/catalog/at/westerngitarren.json", "data/catalog/at/konzertgitarren.json"]], ["nl", "528", "Países Bajos", 10.0, ["data/catalog/nl/elektrische-gitaren.json", "data/catalog/nl/akoestische-gitaren.json", "data/catalog/nl/klassieke-gitaren.json"]], ["be", "056", "Bélgica", 5.4],
+  ["ie", "372", "Irlanda", 2.8, ["data/catalog/ie/electric.json", "data/catalog/ie/acoustic.json", "data/catalog/ie/classical.json"]], ["mx", "484", "México", 61], ["br", "076", "Brasil", 109, ["data/catalog/br/guitarras.json", "data/catalog/br/violoes.json", "data/catalog/br/violoes-nylon.json"]], ["us", "840", "Estados Unidos", 170],
+  ["ca", "124", "Canadá", 22.3], ["ar", "032", "Argentina", 21], ["co", "170", "Colombia", 26], ["cl", "152", "Chile", 10],
+];
+const SHARE = 0.10;  // posibles guitles: el 10 % de la población activa
+const GUITAR_KINDS = new Set(["electrica", "acustica", "clasica", "portuguesa"]);
+let world = null;  // {código: {status, guitars, stores}}
+
+async function loadWorld() {
+  const [w, e] = await Promise.all(["img/mapa/mundo.svg", "img/mapa/europa.svg"].map(u => fetch(u).then(r => r.text()).catch(() => "")));
+  $("map-world").insertAdjacentHTML("beforeend", w);
+  $("map-europe").insertAdjacentHTML("beforeend", e);
+  world = {};
+  await Promise.all(COUNTRIES.map(async ([code, , , , files]) => {
+    if (!files) { world[code] = { status: "next" }; return; }
+    const cats = (await Promise.all(files.map(f => fetch(f, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))).filter(Boolean);
+    const guitars = cats.filter(c => GUITAR_KINDS.has(c.kind)).reduce((a, c) => a + c.products.length, 0);
+    const stores = new Set(cats.flatMap(c => Object.keys(c.stores || {})));
+    world[code] = { status: guitars ? "on" : "new", guitars, stores: stores.size };
+  }));
+}
+
 $("signin").onclick = () => signInWithPopup(auth, new GoogleAuthProvider())
   .catch(e => { $("loginmsg").textContent = "No se pudo entrar: " + e.code; });
 
@@ -113,6 +185,7 @@ async function load() {
     const [day, kind, ...rest] = d.id.split("_");
     return { day, kind, key: rest.join("_"), n: d.data().n || 0 };
   });
+  if (!world) await loadWorld();
   render();
 }
 
@@ -139,6 +212,7 @@ function render() {
     [fmt(fromGoogle), "llegadas desde Google"],
   ].map(([b, s]) => `<div class="tile-s"><b>${b}</b><span>${s}</span></div>`).join("");
 
+  renderWorld(all);
   bars("stores", stores, k => k, "Aún no hay clics a tiendas en este periodo.");
   bars("refs", refs, k => k === "directo" ? "Directo (sin origen)" : k, "Aún no hay llegadas en este periodo.");
   bars("searches", searches, k => k.replace(/-/g, " "), "Aún no hay búsquedas en este periodo.", 15);
@@ -155,6 +229,39 @@ function render() {
       plugins: { legend: { display: false },
                  tooltip: { callbacks: { title: c => shortDay(c[0].label), label: c => `${fmt(c.parsed.y)} páginas vistas` } } } },
   });
+}
+
+function renderWorld(pages) {
+  // Guitles de cada país: páginas vistas bajo su carpeta (pt~…); lo demás es España. Las búsquedas no cuentan.
+  const codes = new Set(COUNTRIES.map(c => c[0]));
+  const visits = {};
+  for (const [k, n] of Object.entries(pages)) {
+    if (k.startsWith("buscar~")) continue;
+    const code = codes.has(k.split("~")[0]) && k.includes("~") ? k.split("~")[0] : "es";
+    visits[code] = (visits[code] || 0) + n;
+  }
+  const live = COUNTRIES.filter(([c]) => world[c].status !== "next");
+  const reach = live.reduce((a, c) => a + c[3] * SHARE, 0);
+  const stores = live.reduce((a, [c]) => a + (world[c].stores || 0), 0);
+  const total = Object.values(visits).reduce((a, b) => a + b, 0);
+  $("wkpis").innerHTML = [
+    [`${live.length} <small style="font-size:1rem;color:var(--text-muted)">/ ${COUNTRIES.length}</small>`, "países con guitle",
+     `<div class="prog"><i style="width:${(live.length / COUNTRIES.length * 100).toFixed(0)}%"></i></div>`],
+    [`${reach.toLocaleString("es-ES", { maximumFractionDigits: 1 })} M`, "posibles guitles (10 % de la población activa)"],
+    [fmt(total), `guitles en ${days} días (páginas vistas)`],
+    [fmt(stores), "tiendas comparadas"],
+  ].map(([b, s, x]) => `<div class="tile-s"><b>${b}</b><span>${s}</span>${x || ""}</div>`).join("");
+  const byId = Object.fromEntries(COUNTRIES.map(([c, id]) => [id, world[c].status]));
+  document.querySelectorAll(".map path").forEach(p => { p.setAttribute("class", byId[p.dataset.id] || ""); });
+  const label = { on: "Activo", new: "Encendiéndose", next: "Próximamente" };
+  $("wdays").textContent = `Guitles (${days} días)`;
+  $("wrows").innerHTML = COUNTRIES.map(([c, , name, pop]) => {
+    const w = world[c];
+    return `<tr><td>${esc(name)}</td><td><span class="chip-s ${w.status}">${label[w.status]}</span></td>
+      <td class="n">${fmt(Math.round(pop * SHARE * 1e6))}</td>
+      <td class="n">${w.status === "next" ? "" : fmt(visits[c] || 0)}</td><td class="n">${w.guitars ? fmt(w.guitars) : ""}</td>
+      <td class="n">${w.stores || ""}</td></tr>`;
+  }).join("");
 }
 
 function bars(id, map, label, emptyText, top = 10) {

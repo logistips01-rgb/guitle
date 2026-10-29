@@ -31,3 +31,20 @@ section h3 { font-size: 1.1rem; margin: 0 0 10px; }
 
 /* Precio añadido a mano (captura): nota pequeña bajo el nombre de la tienda */
 .manual { display: block; font-size: .72rem; color: var(--text-muted); font-weight: 400; }
+.alert-box { margin: 10px 0 4px; }
+.alert-open { font: inherit; font-weight: 600; font-size: .92rem; display: inline-flex; align-items: center; gap: 7px; cursor: pointer;
+  background: var(--surface-0); color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 7px 14px; }
+.alert-open svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.alert-open[aria-expanded="true"] { background: var(--accent-bg); }
+.alert-box form { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.alert-box form[hidden] { display: none; }
+.alert-box input[type=email], .alert-box input[type=number] { font: inherit; padding: 8px 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--surface-0); color: var(--text-primary); min-width: 0; }
+.alert-box input[type=email] { flex: 2 1 200px; }
+.alert-box input[type=number] { flex: 1 1 150px; }
+.alert-box form button { font: inherit; font-weight: 600; border: 0; border-radius: 999px; background: var(--accent); color: #fff;
+  padding: 8px 18px; cursor: pointer; }
+.alert-box form button:disabled { opacity: .6; }
+.alert-box form p { flex-basis: 100%; margin: 0; }
+#alert-msg { margin: 8px 0 0; }
+#alert-msg:empty { display: none; }

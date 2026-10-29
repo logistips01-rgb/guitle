@@ -21,10 +21,55 @@
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "session",
+  "name": "PRS SE NF3 Ice Blue Metallic",
+  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
+  "price": 739.0,
+  "median": 990.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
   "name": "ESP LTD EC-1000T QM Charcoal Burst",
   "slug": "esp-ltd-ec-1000t-qm-charcoal-burst-719710614420",
   "price": 1199.0,
   "median": 1719.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
+  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
+  "price": 811.2,
+  "median": 1111.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Mooer GTRS S801 White",
+  "slug": "mooer-gtrs-s801-white-6971889220138",
+  "price": 333.0,
+  "median": 506.25
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Mooer GTRS S801 White",
+  "slug": "mooer-gtrs-s801-white-6971889220138",
+  "price": 333.0,
+  "median": 506.25
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE Custom 24 Semi-Hollow Piezo Orange Tiger Smokeburst",
+  "slug": "prs-se-custom-24-semi-hollow-piezo-orange-tiger-smokeburst-825362244165",
+  "price": 1299.0,
+  "median": 1795.0
  },
  {
   "kind": "electrica",
@@ -47,11 +92,20 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE NF3 Ice Blue Metallic",
-  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
-  "price": 739.0,
-  "median": 995.0
+  "store": "pronorte",
+  "name": "Yamaha PACS+12M Pacifica Standard Plus Ash Pink",
+  "slug": "yamaha-pacs-12m-pacifica-standard-plus-ash-pink-4957812697668",
+  "price": 726.0,
+  "median": 982.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "drunkat",
+  "name": "Yamaha Pacifica 311H Black",
+  "slug": "yamaha-pacifica-311h-black-4957812500098",
+  "price": 347.92,
+  "median": 425.0
  },
  {
   "kind": "electrica",
@@ -120,10 +174,10 @@
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicopolix",
-  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
-  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
-  "price": 811.2,
-  "median": 1105.0
+  "name": "Fender LTD American Vintage II 51 Telecaster Negra",
+  "slug": "fender-ltd-american-vintage-ii-51-telecaster-negra-885978795239",
+  "price": 2038.4,
+  "median": 2934.0
  },
  {
   "kind": "electrica",
@@ -142,6 +196,15 @@
   "slug": "prs-s2-standard-24-satin-red-apple-metallic-825362208457",
   "price": 1999.0,
   "median": 3034.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE Custom 24 Semi-Hollow Piezo Vintage Sunburst",
+  "slug": "prs-se-custom-24-semi-hollow-piezo-vintage-sunburst-825362244172",
+  "price": 1189.0,
+  "median": 2066.0
  },
  {
   "kind": "electrica",
@@ -221,7 +284,79 @@
   "store": "alfasoni",
   "name": "Yamaha FGX820C Natural",
   "slug": "yamaha-fgx820c-natural-4957812668668",
-  "price": 485.0,
+  "price": 469.0,
   "median": 676.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Dunlop EP103 Echoplex Delay",
+  "slug": "dunlop-ep103-echoplex-delay-710137096622",
+  "price": 171.0,
+  "median": 239.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Dunlop JDF2 Fuzz Face",
+  "slug": "dunlop-jdf2-fuzz-face-710137006508",
+  "price": 128.0,
+  "median": 194.2
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Electro Harmonix Nano Battalion Bass PRE-DRIVE",
+  "slug": "electro-harmonix-nano-battalion-bass-pre-drive-683274012186",
+  "price": 99.0,
+  "median": 147.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Electro-Harmonix Little Big Muff Pi",
+  "slug": "electro-harmonix-little-big-muff-pi-683274010496",
+  "price": 62.0,
+  "median": 87.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Blackstar LT-DIST",
+  "slug": "blackstar-lt-dist-845644002405",
+  "price": 44.0,
+  "median": 84.55
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender Hammertone Distortion",
+  "slug": "fender-hammertone-distortion-885978739103",
+  "price": 53.0,
+  "median": 81.24
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender The Trapper Dual Fuzz",
+  "slug": "fender-the-trapper-dual-fuzz-885978054725",
+  "price": 109.0,
+  "median": 176.5
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Joyo JF32 Hot Plexi",
+  "slug": "joyo-jf32-hot-plexi-6972716320229",
+  "price": 21.0,
+  "median": 43.75
  }
 ]

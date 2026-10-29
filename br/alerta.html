@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2a78d6">
+<title>Alerta de preço · guitle</title>
+
+<link rel="canonical" href="https://guitle.com/br/alerta.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts/inter.css">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/catalogo.css">
+<style>.card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; margin-top: 24px; } .btn { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; text-decoration: none; padding: 9px 16px; border-radius: 999px; font-weight: 600; }</style>
+</head>
+<body>
+<main>
+  <div class="topbar"><div class="row"><h1 style="flex:1;margin:0"><a class="logo" href="/br/" aria-label="guitle, início"><img src="/icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras e violões pelo melhor preço</span></span></a></h1></div></div>
+  <div class="card" id="card"><h2>Um momento…</h2><p>Estamos salvando sua resposta.</p></div>
+  <footer class="site-foot">
+    <span>Alguns links para lojas são de afiliado: se você comprar, o guitle pode receber uma comissão, sem custo para você.</span>
+    <span><a href="/br/legal.html#aviso">Aviso legal</a> · <a href="/br/legal.html#privacidade">Privacidade</a> · <a href="/br/legal.html#cookies">Cookies</a></span>
+    <span>guitle em outros países: <a href="/">España</a> · <a href="/pt/">Portugal</a> · <a href="/fr/">France</a> · <a href="/it/">Italia</a> · <a href="/de/">Deutschland</a> · <a href="/ie/">Ireland</a> · <a href="/at/">Österreich</a> · <a href="/nl/">Nederland</a> · <a href="/uk/">United Kingdom</a></span>
+  </footer>
+</main>
+<script>
+// Confirmar (?c=código) o dar de baja (?baja=código) un aviso de precio (igual que /alerta.html).
+(async () => {
+  const M = {"alertBad": ["Link inválido", "Copie o link completo do e-mail e tente de novo."], "alertDone": ["Alerta confirmado!", "Vamos te avisar assim que o preço baixar. Cada e-mail tem um link para cancelar."], "alertGone": ["Alerta apagado", "Você não vai mais receber e-mails deste alerta. Apagamos seu e-mail da nossa lista."], "alertMissing": ["Não encontramos o alerta", "Talvez já estivesse confirmado ou apagado, ou passaram mais de 7 dias sem confirmação. Precisa de ajuda? Escreva para hola@guitle.com."]};
+  const ALERTS = "https://firestore.googleapis.com/v1/projects/guitle-d48d8/databases/(default)/documents/alertas/";
+  const q = new URLSearchParams(location.search);
+  const card = document.getElementById("card");
+  const show = ([title, text]) => { card.innerHTML = `<h2>${title}</h2><p>${text}</p><a class="btn" href="/br/">Ir para o guitle</a>`; };
+  const id = (q.get("c") || q.get("baja") || "").replace(/[^A-Za-z0-9_-]/g, "");
+  if (id.length < 20) return show(M.alertBad);
+  try {
+    if (q.has("c")) {
+      const r = await fetch(`${ALERTS}${id}?updateMask.fieldPaths=ok&currentDocument.exists=true`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ fields: { ok: { booleanValue: true } } }) });
+      if (!r.ok) throw new Error(r.status);
+      show(M.alertDone);
+    } else {
+      const r = await fetch(ALERTS + id, { method: "DELETE" });
+      if (!r.ok) throw new Error(r.status);
+      show(M.alertGone);
+    }
+  } catch (e) {
+    show(M.alertMissing);
+  }
+})();
+</script>
+</body>
+</html>

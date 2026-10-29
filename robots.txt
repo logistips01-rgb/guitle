@@ -2,5 +2,15 @@ User-agent: *
 Allow: /
 Disallow: /brand/
 Disallow: /stats.html
+Disallow: /alerta.html
 
 Sitemap: https://guitle.com/sitemap.xml
+Sitemap: https://guitle.com/sitemap-pt.xml
+Sitemap: https://guitle.com/sitemap-fr.xml
+Sitemap: https://guitle.com/sitemap-it.xml
+Sitemap: https://guitle.com/sitemap-uk.xml
+Sitemap: https://guitle.com/sitemap-de.xml
+Sitemap: https://guitle.com/sitemap-br.xml
+Sitemap: https://guitle.com/sitemap-ie.xml
+Sitemap: https://guitle.com/sitemap-at.xml
+Sitemap: https://guitle.com/sitemap-nl.xml

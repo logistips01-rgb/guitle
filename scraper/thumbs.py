@@ -5,7 +5,7 @@ margen…). Aquí se recorta el fondo blanco, se pone la guitarra en vertical co
 un alto fijo, para que en la web todas se vean igual.
 
 Uso:
-    python -m scraper.thumbs [--limit 300] [--minutes 20]
+    python -m scraper.thumbs [--limit 300] [--minutes 20] [--cat pt]
 """
 import argparse
 import hashlib
@@ -143,26 +143,31 @@ def normalize(data, rotate=True, height=HEIGHT):
     return out.getvalue()
 
 
-def wanted():
-    """(url, girar) de las fotos que usa la web: productos seguidos y catálogo."""
+def wanted(cat=None):
+    """(url, girar) de las fotos que usa la web: productos seguidos y catálogo. cat: solo las de ese catálogo."""
     out = {}
     latest = load(ROOT / "data" / "latest.json", {})
     category = {p["sku"]: p.get("category", "guitarra") for p in latest.get("products", [])}
-    for i in latest.get("items", []):  # todas las fotos de cada producto, para poder elegir la mejor
+    for i in latest.get("items", []) if cat in (None, "electrica") else []:  # todas las fotos de cada producto
         if i.get("image"):
             out[i["image"]] = category.get(i["sku"], "guitarra") in ROTATE_CATEGORIES
     # Todas las tiendas de todos los catálogos (eléctricas, acústicas y clásicas), para elegir la mejor foto.
-    for path in sorted((ROOT / "data" / "catalog").rglob("offers.json")):
+    if cat:
+        from .catalog import CATALOGS
+        paths = [CATALOGS[cat]["dir"] / "offers.json"]
+    else:
+        paths = sorted((ROOT / "data" / "catalog").rglob("offers.json"))
+    for path in paths:
         for o in load(path, {}).values():
             if o.get("status") == "ok" and o.get("image"):
                 # Las guitarras se ponen en vertical; teclados y pedales se dejan como vienen.
-                out.setdefault(o["image"], (o.get("kind") or "electrica") in {"electrica", "acustica", "clasica"})
+                out.setdefault(o["image"], (o.get("kind") or "electrica") in {"electrica", "acustica", "clasica", "portuguesa"})
     return out
 
 
-def run(limit=300, minutes=20):
+def run(limit=300, minutes=20, cat=None):
     DIR.mkdir(parents=True, exist_ok=True)
-    todo = [(u, r) for u, r in wanted().items() if not (DIR / name_for(u)).exists()]
+    todo = [(u, r) for u, r in wanted(cat).items() if not (DIR / name_for(u)).exists()]
     fetcher = Fetcher(delay=(1.0, 2.0))
     deadline = time.monotonic() + minutes * 60
     done = failed = 0
@@ -194,8 +199,9 @@ def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=300)
     parser.add_argument("--minutes", type=float, default=20)
+    parser.add_argument("--cat", help="solo las fotos de este catálogo (scraper.catalog --cat)")
     args = parser.parse_args(argv)
-    run(args.limit, args.minutes)
+    run(args.limit, args.minutes, args.cat)
     return 0
 
 
