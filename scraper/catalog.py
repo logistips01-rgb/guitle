@@ -1021,6 +1021,8 @@ BR_SKIP = re.compile(r"encordoament|\bcordas?\b|\bcase\b|\bcapa\b|\bbag\b|bolsa|
                      r"|amplificador|\bcubo\b|\bbaixo\b|tarraxa|\bponte\b|\bkit\b|suporte|afinador|estante|\bstrap\b|ukulele"
                      r"|cavaquinho|bandolim|banjo|\bcapotraste|alavanca|escala|\bbraço\b|\bcorpo\b|knob|chave|tampa|método|livro"
                      r"|outlet|mostru[aá]rio|seminov|usad"
+                     r"|gabinete|\bcaixa\b|transmissor|receptor|diapas|escudo|abridor|enfeite|\bmolas?\b|chaveiro|miniatura"
+                     r"|quadro|camiseta|caneca|poster|adaptador|\btrava|bot[aã]o|protetor|\bpar\b|\bjogo\b|\bp/"
                      # Accesorios "para guitarra / de violão": adhesivos, jacks, puentes, apoyos…
                      r"|adesivo|\bjack\b|interface|apoio|cavalete|abafador|redutor|bra[cç]adeira|tattoo|encor|\benc\b|limpa"
                      r"|flanela|polidor|\bpino|rastilho|\bnut\b|traste|microfone|\bfonte\b|bateria|\bpra\b"
@@ -1034,7 +1036,8 @@ _BR_ALWAYS_SKIP = re.compile(r"outlet|mostru[aá]rio|seminov|\busad[oa]|ukulele|
                              r"|contrabaixo|\bcd\b|\bdvd\b|livro|m[eé]todo|revista", re.I)
 # Al construir, sobre el nombre ya sin "Guitarra"/"Violão" delante: solo si empieza por un accesorio.
 BR_NAME_SKIP = re.compile(r"^(?:encordoament|cordas?\b|capa\b|bag\b|case\b|correia|cabo\b|captador|palheta|pedal|amplificador"
-                          r"|cubo\b|tarraxa|ponte\b|suporte|afinador|estante|kit\b|adesivo|interface|microfone)|"
+                          r"|cubo\b|tarraxa|ponte\b|suporte|afinador|estante|kit\b|adesivo|interface|microfone|gabinete|caixa\b"
+                          r"|transmissor|receptor|diapas|escudo|abridor)|"
                           + _BR_ALWAYS_SKIP.pattern, re.I)
 
 
@@ -1112,6 +1115,10 @@ BR_SOURCES = {
     "casadamusica": {"name": "Casa da Música", "sitemap": "https://www.casadamusica.com.br/sitemap.xml", "parse": _parse_ld_loose,
                      "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
     "megasom": {"name": "Megasom", "sitemap": "https://www.megasom.com.br/sitemap.xml", "fix": _br_fix, "kind_url": br_kind, "pick": _pick_br},
+    "cheirodemusica": {"name": "Cheiro de Música", "sitemap": "https://www.cheirodemusica.com.br/sitemap.xml", "fix": _br_fix,
+                       "kind_url": br_kind, "pick": _pick_br},
+    "musitech": {"name": "Musitech", "sitemap": "https://musitech.com.br/sitemap.xml", "fix": _br_fix, "kind_url": br_kind,
+                 "pick": lambda u: "/loja/" in u and _pick_br(u)},
 }
 
 
