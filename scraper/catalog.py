@@ -1078,6 +1078,21 @@ IE_SOURCES["musicmaker"] = {"name": "Music Maker", "sitemap": "https://www.music
                             and not UK_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)}
 
 
+# Gear4music: desde GitHub sus webs de cada país se leen sin problema (no desde el entorno de pruebas). Del sitemap,
+# solo el departamento de guitarras y bajos; la categoría sale del breadcrumb de la ficha (JSON-LD con precio y EAN).
+def _gear4music(base, kind):
+    return {"name": "Gear4music", "sitemap": f"{base}/sitemap.xml", "sub": lambda u: "guitar_bass" in u, "kind": kind,
+            "pick": lambda u: not NOT_PRODUCT.search(u)}
+
+
+SOURCES["gear4music"] = _gear4music("https://www.gear4music.es", _only("electrica", _is_electric))
+ACOUSTIC_SOURCES["gear4music"] = _gear4music("https://www.gear4music.es", acoustic_kind)
+FR_SOURCES["gear4music"] = _gear4music("https://www.gear4music.fr", fr_kind)
+IT_SOURCES["gear4music"] = _gear4music("https://www.gear4music.it", it_kind)
+DE_SOURCES["gear4music"] = _gear4music("https://www.gear4music.de", de_kind)
+NL_SOURCES["gear4music"] = _gear4music("https://www.gear4music.nl", nl_kind)
+
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),

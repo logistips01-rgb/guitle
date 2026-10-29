@@ -79,10 +79,31 @@ def report(rows):
         for r in rows) + "\n"
 
 
+def try_sources(pairs, limit=6):
+    """Lee unas pocas fichas con lectores del catálogo ("fr:gear4music") y devuelve una tabla con el resultado."""
+    from . import catalog
+    rows = ["| Catálogo | Tienda | Estado | Categoría | Precio | EAN | Nombre / URL |", "|---|---|---|---|---|---|---|"]
+    for pair in pairs:
+        cat, store = pair.split(":")
+        catalog.use(cat)
+        for batch in catalog.scan([store], minutes=8, limit=limit):
+            for r in batch["records"]:
+                rows.append(f"| {cat} | {store} | {r['status']} | {r.get('kind') or ''} | {r.get('price') or ''} | "
+                            f"{r.get('ean') or ''} | {(r.get('name') or r['url'])[:70]} {r.get('note', '')[:60]} |")
+            if not batch["records"]:
+                rows.append(f"| {cat} | {store} | sin fichas | | | | {batch.get('note', '')} |")
+    return "\n".join(rows) + "\n"
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default="informe-tiendas.md")
+    parser.add_argument("--try", dest="pairs", nargs="*", help="probar lectores del catálogo: cat:tienda …")
+    parser.add_argument("--only-try", action="store_true", help="solo los lectores, sin la prueba de todas las tiendas")
     args = parser.parse_args(argv)
+    if args.only_try:
+        Path(args.out).write_text("# Prueba de lectores desde GitHub\n\n" + try_sources(args.pairs or []), encoding="utf-8")
+        return 0
     fetcher = Fetcher(delay=(1.0, 2.0))
     rows = []
     for d in domains():
