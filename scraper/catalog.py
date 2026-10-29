@@ -1052,6 +1052,32 @@ PT_SOURCES["musifex"] = {"name": "Musifex", "discover": _discover_musifex, "pars
                          "kind_url": lambda c, u, n: _shop_kind(u, n), "pick": lambda u: not NOT_PRODUCT.search(u)}
 
 
+# Music Maker (musicmaker.ie, Dublín): sin datos estructurados ni EAN; nombre, breadcrumb y precio de la propia página.
+def _parse_musicmaker(soup, text):
+    h1 = soup.find("h1")
+    price = soup.select_one(".mm-price__now")
+    if not h1 or not price:
+        return {"crumbs": []}
+    crumbs = []
+    for a in soup.select('[aria-label=Breadcrumb] a, [aria-label=breadcrumb] a, .breadcrumb a'):
+        c = a.get_text(" ", strip=True)
+        if c and c.lower() != "home" and (not crumbs or crumbs[-1] != c):
+            crumbs.append(c)
+    name = h1.get_text(" ", strip=True)
+    img = soup.select_one("#mm-gallery-img, img[itemprop=image]")
+    stock = re.search(r"(?i)\b(out of stock|in stock)\b", text)
+    return {"crumbs": crumbs, "name": name, "brand_raw": _brand_from_name(name),
+            "price": float(re.sub(r"[^\d.]", "", price.get_text())), "currency": "EUR",
+            "in_stock": stock.group(1).lower() == "in stock" if stock else None,
+            "image": img.get("src") if img else None, "ean": None}
+
+
+IE_SOURCES["musicmaker"] = {"name": "Music Maker", "sitemap": "https://www.musicmaker.ie/sitemap.xml",
+                            "parse": _parse_musicmaker, "kind_url": uk_kind,
+                            "pick": lambda u: (lambda s: s.startswith(tuple(b + "-" for b in _UK_BRANDS)))(u.rsplit("/", 1)[-1])
+                            and not UK_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)}
+
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
