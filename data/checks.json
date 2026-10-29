@@ -358,5 +358,149 @@
   "slug": "joyo-jf32-hot-plexi-6972716320229",
   "price": 21.0,
   "median": 43.75
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Daddario EPBB170 Phosphor Bronze Acoustic Bass, Long Scale [45-100]",
+  "slug": "daddario-epbb170-phosphor-bronze-acoustic-bass-long-scale-45-100-19954926083",
+  "price": 24.5,
+  "median": 36.75
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Daddario EXL190 Custom Light Long Scale [40-100]",
+  "slug": "daddario-exl190-custom-light-long-scale-40-100-19954947736",
+  "price": 20.7,
+  "median": 32.87
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Daddario NS Capo Artist",
+  "slug": "daddario-ns-capo-artist-19954971175",
+  "price": 27.0,
+  "median": 36.605000000000004
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Daddario NS Capo Tri-Action",
+  "slug": "daddario-ns-capo-tri-action-19954971151",
+  "price": 23.6,
+  "median": 32.004999999999995
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Daddario NS Micro Soundhole Tuner",
+  "slug": "daddario-ns-micro-soundhole-tuner-19954170165",
+  "price": 19.9,
+  "median": 30.0
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Daddario NYXL45105 Long Scale [45-105]",
+  "slug": "daddario-nyxl45105-long-scale-45-105-19954176846",
+  "price": 25.5,
+  "median": 39.254999999999995
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Dunlop Cejilla Advanced Curved 11CD",
+  "slug": "dunlop-cejilla-advanced-curved-11cd-710137000063",
+  "price": 6.07,
+  "median": 8.95
+ },
+ {
+  "kind": "varios",
+  "type": "sin_iva",
+  "store": "drunkat",
+  "name": "Dunlop Cejilla Advanced Flat 11FD",
+  "slug": "dunlop-cejilla-advanced-flat-11fd-710137000070",
+  "price": 7.44,
+  "median": 8.844999999999999
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Ernie Ball EB2220 Slinky Power (011-048)",
+  "slug": "ernie-ball-eb2220-slinky-power-011-048-749699122203",
+  "price": 6.35,
+  "median": 8.83
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Ernie Ball EB2626 Slinky Not Even (012-056)",
+  "slug": "ernie-ball-eb2626-slinky-not-even-012-056-749699126263",
+  "price": 6.69,
+  "median": 9.32
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Ernie Ball EB2844 Slinky Stainless Steel Super (45-100)",
+  "slug": "ernie-ball-eb2844-slinky-stainless-steel-super-45-100-749699128441",
+  "price": 22.3,
+  "median": 32.02
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender 4250L Ultracore Nickel Plated Steel 009-042",
+  "slug": "fender-4250l-ultracore-nickel-plated-steel-009-042-885978676088",
+  "price": 9.4,
+  "median": 13.765
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender 4250R Ultracore Nickel Plated Steel 010-046",
+  "slug": "fender-4250r-ultracore-nickel-plated-steel-010-046-885978676132",
+  "price": 9.3,
+  "median": 15.74
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Polypro Strap Black",
+  "slug": "fender-polypro-strap-black-885978063635",
+  "price": 7.98,
+  "median": 10.940000000000001
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "Fender Strap Locks Chrome",
+  "slug": "fender-strap-locks-chrome-717669448370",
+  "price": 19.8,
+  "median": 28.495
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Jim Dunlop 83CN Acoustic Capo",
+  "slug": "jim-dunlop-83cn-acoustic-capo-710137007222",
+  "price": 19.3,
+  "median": 28.6
  }
 ]
