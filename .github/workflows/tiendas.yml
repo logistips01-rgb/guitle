@@ -22,8 +22,9 @@ jobs:
       - run: pip install -q -r requirements.txt
       - name: Probar tiendas
         run: |
-          # Gear4music: ¿en qué sitemap del índice están las fichas?
-          python -m scraper.probe --sitemap https://www.gear4music.es/sitemap.xml --out informe-tiendas.md
+          # Gear4music: las fichas de guitarra no están en el sitemap; ¿cómo son sus listados?
+          python -m scraper.probe --out informe-tiendas.md --links https://www.gear4music.es/es/Guitarras \
+            https://www.gear4music.es/es/guitarras-electricas/guitarra
           cat informe-tiendas.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with:

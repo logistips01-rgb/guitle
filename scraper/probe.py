@@ -101,7 +101,19 @@ def main(argv=None):
     parser.add_argument("--try", dest="pairs", nargs="*", help="probar lectores del catálogo: cat:tienda …")
     parser.add_argument("--only-try", action="store_true", help="solo los lectores, sin la prueba de todas las tiendas")
     parser.add_argument("--sitemap", help="enseña los sitemaps de este índice y unas URLs de cada uno")
+    parser.add_argument("--links", nargs="*", help="enseña los enlaces de estas páginas (listados de categoría)")
     args = parser.parse_args(argv)
+    if args.links:
+        fetcher = Fetcher(delay=(1.0, 2.0))
+        lines = []
+        for url in args.links:
+            page = fetcher.get(url)
+            hrefs = sorted(set(re.findall(r'href="([^"#]+)"', page.text)))
+            lines.append(f"## {url} (HTTP {page.status_code}, {len(page.text)} bytes, robots {fetcher.allowed(url)[0]})")
+            lines += [f"- {h}" for h in hrefs if re.search(r"/[0-9A-Z]*\d[0-9A-Z]*$|page|pagina|[?&]p=", h)][:60]
+            lines.append("- precios: " + " · ".join(re.findall(r"\d+[.,]\d{2}\s*€|€\s*\d+[.,]\d{2}", page.text)[:8]))
+        Path(args.out).write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return 0
     if args.sitemap:
         fetcher = Fetcher(delay=(1.0, 2.0))
         index = fetcher.get(args.sitemap)
