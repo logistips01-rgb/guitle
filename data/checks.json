@@ -468,6 +468,216 @@
   "median": 1646.0
  },
  {
+  "kind": "bajo",
+  "type": "foto_perdida",
+  "name": "Ibanez SR300EB Bajo Eléctrico Candy Apple",
+  "slug": "ibanez-sr300eb-bajo-electrico-candy-apple-4515276877370"
+ },
+ {
+  "kind": "bajo",
+  "type": "foto_perdida",
+  "name": "Fender Squier Classic Vibe 70 Jazz Bass V Natural",
+  "slug": "fender-squier-classic-vibe-70-jazz-bass-v-natural-885978064755"
+ },
+ {
+  "kind": "bajo",
+  "type": "foto_perdida",
+  "name": "Ibanez SRH500-NNF Natural Browned Burst Flat",
+  "slug": "ibanez-srh500-nnf-natural-browned-burst-flat-4515276971481"
+ },
+ {
+  "kind": "bajo",
+  "type": "foto_perdida",
+  "name": "Aulos Nacional AULOS 533-B Baja Barroca",
+  "slug": "aulos-nacional-aulos-533-b-baja-barroca-4582202781261"
+ },
+ {
+  "kind": "bajo",
+  "type": "foto_perdida",
+  "name": "Ibanez GSRM20BWK Bajo Eléctrico Wb",
+  "slug": "ibanez-gsrm20bwk-bajo-electrico-wb-4515276764663"
+ },
+ {
+  "kind": "bajo",
+  "type": "foto_perdida",
+  "name": "Takamine GB72CEBSB",
+  "slug": "takamine-gb72cebsb-190262041467"
+ },
+ {
+  "kind": "estuche",
+  "type": "foto_perdida",
+  "name": "Gator GC-ELECTRIC",
+  "slug": "gator-gc-electric-716408500140"
+ },
+ {
+  "kind": "estuche",
+  "type": "foto_perdida",
+  "name": "Gator GC-SG",
+  "slug": "gator-gc-sg-716408501581"
+ },
+ {
+  "kind": "estuche",
+  "type": "foto_perdida",
+  "name": "Gator GWE-ELEC",
+  "slug": "gator-gwe-elec-716408504575"
+ },
+ {
+  "kind": "estuche",
+  "type": "foto_perdida",
+  "name": "Mammoth Mam 12B",
+  "slug": "mammoth-mam-12b-9357909002125"
+ },
+ {
+  "kind": "estuche",
+  "type": "foto_perdida",
+  "name": "Mammoth Royal B",
+  "slug": "mammoth-royal-b-9357909001586"
+ },
+ {
+  "kind": "estuche",
+  "type": "foto_perdida",
+  "name": "RockBag RB 20505 B Deluxe Line Electric Bass Gig Bag",
+  "slug": "rockbag-rb-20505-b-deluxe-line-electric-bass-gig-bag-4033685010503"
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Rode Stereo Videomic",
+  "slug": "rode-stereo-videomic-698813000890",
+  "price": 149.0,
+  "median": 209.0
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Rode Videomic ME",
+  "slug": "rode-videomic-me-698813004478",
+  "price": 33.0,
+  "median": 57.32
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C411L",
+  "slug": "akg-c411l-885038003809"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C411PP",
+  "slug": "akg-c411pp-885038006251"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C414XLII",
+  "slug": "akg-c414xlii-885038025924"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C414XLS",
+  "slug": "akg-c414xls-885038025917"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C451B",
+  "slug": "akg-c451b-885038006077"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C519M",
+  "slug": "akg-c519m-885038018636"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C519ML",
+  "slug": "akg-c519ml-885038018643"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG C544L",
+  "slug": "akg-c544l-885038030720"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG CK99L",
+  "slug": "akg-ck99l-885038028437"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "AKG D5S",
+  "slug": "akg-d5s-885038018582"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "Audio Technica ATM-710",
+  "slug": "audio-technica-atm-710-4961310089054"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "Audio Technica ATM230",
+  "slug": "audio-technica-atm230-4961310135591"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "Audio Technica ATM350UcW",
+  "slug": "audio-technica-atm350ucw-4961310136772"
+ },
+ {
+  "kind": "micro",
+  "type": "foto_perdida",
+  "name": "Electro Voice RE 20",
+  "slug": "electro-voice-re-20-4060039177629"
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Dunlop Cejilla Advanced Curved 11CD",
+  "slug": "dunlop-cejilla-advanced-curved-11cd-710137000063",
+  "price": 6.07,
+  "median": 8.3
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Polypro Strap Black",
+  "slug": "fender-polypro-strap-black-885978063635",
+  "price": 7.98,
+  "median": 10.89
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Jim Dunlop 83CN Acoustic Capo",
+  "slug": "jim-dunlop-83cn-acoustic-capo-710137007222",
+  "price": 19.3,
+  "median": 27.3
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Daddario EJ15 - Phosphor Bronze Extra Light [10-47]",
+  "slug": "daddario-ej15-phosphor-bronze-extra-light-10-47-19954121136",
+  "price": 6.23,
+  "median": 9.92
+ },
+ {
   "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "numemusic",
@@ -488,20 +698,20 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "alfasoni",
-  "name": "Daddario NS Capo Artist",
-  "slug": "daddario-ns-capo-artist-19954971175",
-  "price": 27.0,
-  "median": 36.605000000000004
+  "store": "session",
+  "name": "Daddario EXL220 XL Nickel Wound Super Light [40-95]",
+  "slug": "daddario-exl220-xl-nickel-wound-super-light-40-95-19954151225",
+  "price": 17.8,
+  "median": 28.799999999999997
  },
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "Daddario NS Capo Tri-Action",
-  "slug": "daddario-ns-capo-tri-action-19954971151",
-  "price": 23.6,
-  "median": 32.004999999999995
+  "store": "numemusic",
+  "name": "Daddario EXL220 XL Nickel Wound Super Light [40-95]",
+  "slug": "daddario-exl220-xl-nickel-wound-super-light-40-95-19954151225",
+  "price": 19.8,
+  "median": 27.799999999999997
  },
  {
   "kind": "varios",
@@ -520,24 +730,6 @@
   "slug": "daddario-nyxl45105-long-scale-45-105-19954176846",
   "price": 25.5,
   "median": 39.254999999999995
- },
- {
-  "kind": "varios",
-  "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Dunlop Cejilla Advanced Curved 11CD",
-  "slug": "dunlop-cejilla-advanced-curved-11cd-710137000063",
-  "price": 6.07,
-  "median": 8.95
- },
- {
-  "kind": "varios",
-  "type": "sin_iva",
-  "store": "drunkat",
-  "name": "Dunlop Cejilla Advanced Flat 11FD",
-  "slug": "dunlop-cejilla-advanced-flat-11fd-710137000070",
-  "price": 7.44,
-  "median": 8.844999999999999
  },
  {
   "kind": "varios",
@@ -587,11 +779,29 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Fender 70L 80/20 Bronze Ball End (012-052)",
+  "slug": "fender-70l-80-20-bronze-ball-end-012-052-717669853433",
+  "price": 6.3,
+  "median": 8.495000000000001
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
-  "name": "Fender Polypro Strap Black",
-  "slug": "fender-polypro-strap-black-885978063635",
-  "price": 7.98,
-  "median": 10.940000000000001
+  "name": "Fender 7250ML Nickel Plated Steel Long Scale (045-100)",
+  "slug": "fender-7250ml-nickel-plated-steel-long-scale-045-100-717669853013",
+  "price": 18.12,
+  "median": 24.775
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Fender Pickguard/Control Plate Mounting Screws 24 Chrome",
+  "slug": "fender-pickguard-control-plate-mounting-screws-24-chrome-717669507275",
+  "price": 7.0,
+  "median": 9.745000000000001
  },
  {
   "kind": "varios",
@@ -605,10 +815,124 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "alfasoni",
-  "name": "Jim Dunlop 83CN Acoustic Capo",
-  "slug": "jim-dunlop-83cn-acoustic-capo-710137007222",
-  "price": 19.3,
-  "median": 28.6
+  "store": "drunkat",
+  "name": "Righton Straps Masterkey Plus BL Red",
+  "slug": "righton-straps-masterkey-plus-bl-red-8401060310207",
+  "price": 23.0,
+  "median": 49.2
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Righton Straps Righton DUAL-HOOK-BR BR Correa de Guitarra",
+  "slug": "righton-straps-righton-dual-hook-br-br-correa-de-guitarra-8401120020350",
+  "price": 22.75,
+  "median": 31.515
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Righton Straps Righton Mojo Armour Teal Correa de Guitarra",
+  "slug": "righton-straps-righton-mojo-armour-teal-correa-de-guitarra-8436612540689",
+  "price": 51.9,
+  "median": 71.975
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Righton Straps Righton Standard Legend Jimmy Hendrix II Correa Guitarra",
+  "slug": "righton-straps-righton-standard-legend-jimmy-hendrix-ii-correa-guitarra-8419612000391",
+  "price": 35.65,
+  "median": 49.485
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Righton Straps Righton Straplink Neck Strap Negro",
+  "slug": "righton-straps-righton-straplink-neck-strap-negro-8406010060706",
+  "price": 6.15,
+  "median": 8.315
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Righton Straps Sugar Black",
+  "slug": "righton-straps-sugar-black-8401050080707",
+  "price": 63.61,
+  "median": 87.1
+ },
+ {
+  "kind": "varios",
+  "type": "sin_iva",
+  "store": "drunkat",
+  "name": "Righton Straps Talisman Victoria Black",
+  "slug": "righton-straps-talisman-victoria-black-8436612540801",
+  "price": 49.58,
+  "median": 61.5
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "DR Strings Dr Cuerdas MCA10 Multicolor 1048",
+  "slug": "dr-strings-dr-cuerdas-mca10-multicolor-1048-600781004862"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Ernie Ball EB2833 Slinky Hybrid (45-105)",
+  "slug": "ernie-ball-eb2833-slinky-hybrid-45-105-749699128335"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Ernie Ball EB4602 Strap Locks Dorado",
+  "slug": "ernie-ball-eb4602-strap-locks-dorado-749699146025"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Ibanez ICG10W Capo",
+  "slug": "ibanez-icg10w-capo-4549763230058"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Jim Dunlop Medium 010-046",
+  "slug": "jim-dunlop-medium-010-046-710137030671"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Kyser KG6NGA Cejilla Acustica/Electrica Neon Green",
+  "slug": "kyser-kg6nga-cejilla-acustica-electrica-neon-green-9265016672"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Mammoth CAPO 2A",
+  "slug": "mammoth-capo-2a-9357909002071"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Shubb C1 Acoustic Capo",
+  "slug": "shubb-c1-acoustic-capo-700682200018"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Shubb C2K Classical/Flamenco Capo",
+  "slug": "shubb-c2k-classical-flamenco-capo-700682300022"
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Shubb C2N Classical/Flamenco Capo",
+  "slug": "shubb-c2n-classical-flamenco-capo-700682000021"
  }
 ]
