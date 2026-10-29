@@ -203,7 +203,7 @@ remember your preferences. The shops we link to may use their own cookies on the
 <p class="muted">Stand: 28. Oktober 2026. Dies ist eine Übersetzung; im Zweifel gilt die <a href="/legal.html">spanische Fassung</a>.</p>
 
 <h2 id="aviso">Impressum</h2>
-<p>Betreiber dieser Website: <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador, 50830 Villanueva de Gállego (Zaragoza), Spanien
+<p>Betreiber dieser Website: <b>Manuel Lorente Gálvez</b>, Calle Allue Salvador 22, 50830 Villanueva de Gállego (Zaragoza), Spanien
 (spanische Steuernummer NIF 17747339X), Kontakt
 <a href="mailto:hola@guitle.com">hola@guitle.com</a>, Website guitle.com. Tätigkeit: Preisvergleich für Musikinstrumente und Affiliate-Werbung.
 Hosting: GitHub Pages (GitHub, Inc.).</p>
