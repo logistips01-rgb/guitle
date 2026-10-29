@@ -1081,8 +1081,10 @@ IE_SOURCES["musicmaker"] = {"name": "Music Maker", "sitemap": "https://www.music
 # Gear4music: desde GitHub sus webs de cada país se leen sin problema (no desde el entorno de pruebas). Del sitemap,
 # solo el departamento de guitarras y bajos; la categoría sale del breadcrumb de la ficha (JSON-LD con precio y EAN).
 def _gear4music(base, kind):
+    # Las fichas acaban en su código ("…/Fender-Player-II-Stratocaster-RW/6RC1"); lo demás son categorías y marcas.
     return {"name": "Gear4music", "sitemap": f"{base}/sitemap.xml", "sub": lambda u: "guitar_bass" in u, "kind": kind,
-            "pick": lambda u: not NOT_PRODUCT.search(u)}
+            "pick": lambda u: bool(re.search(r"/[0-9A-Z]{3,6}$", u)) and not re.search(r"(?i)bass|bajo|basse|basso|ukulele", u)
+            and not NOT_PRODUCT.search(u)}
 
 
 SOURCES["gear4music"] = _gear4music("https://www.gear4music.es", _only("electrica", _is_electric))
