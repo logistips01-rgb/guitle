@@ -122,7 +122,7 @@ def _discover_thomann(fetcher, codes, base=THOMANN):
     urls = set()
     # La página "todas las eléctricas" (cat_allProducts_GF_guitares_electriques.html…) devuelve en algunos países el
     # catálogo general (software, baterías…): las eléctricas se leen por sus listados de forma, iguales en todos.
-    codes = [c for code in codes for c in (THOMANN_ELECTRIC if re.search(r"electr|elettr|e-gitarren", code) else (code,))]
+    codes = [c for code in codes for c in (THOMANN_ELECTRIC if re.search(r"electr|elettr|elektr|e-gitarren", code) else (code,))]
     for code in codes:
         for pg in range(1, THOMANN_MAX_PAGES + 1):
             page = code if code.endswith(".html") else f"cat_GK_{code}.html"
@@ -1277,6 +1277,11 @@ def _parse_musicmaker(soup, text):
             "image": img.get("src") if img else None, "ean": None}
 
 
+# Waltons (Dublín): la tienda de música grande de Irlanda, precios en euros y JSON-LD en la ficha.
+IE_SOURCES["waltons"] = {"name": "Waltons", "sitemap": "https://www.waltons.ie/sitemap.xml", "kind_url": uk_kind,
+                         "pick": lambda u: "/product/" in u
+                         and (lambda s: s.startswith(tuple(b + "-" for b in _UK_BRANDS)))(u.rstrip("/").rsplit("/", 1)[-1])
+                         and not UK_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)}
 IE_SOURCES["musicmaker"] = {"name": "Music Maker", "sitemap": "https://www.musicmaker.ie/sitemap.xml",
                             "parse": _parse_musicmaker, "kind_url": uk_kind,
                             "pick": lambda u: (lambda s: s.startswith(tuple(b + "-" for b in _UK_BRANDS)))(u.rsplit("/", 1)[-1])
