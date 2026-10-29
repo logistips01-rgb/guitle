@@ -953,6 +953,26 @@ NL_SOURCES = _thomann_only("https://www.thomann.nl/", ("cat_allProducts_GF_elekt
                                                        "cat_allProducts_GF_akoestische_gitaren.html",
                                                        "cat_allProducts_GF_klassieke_gitaren.html"), nl_kind)
 
+
+# --- Woodbrass en cada país ------------------------------------------------------------------------------
+# Una sola tienda Shopify con una web por país (woodbrass.es, .it, .de…): mismas colecciones (con su nombre en
+# francés), pero cada país con su precio y su surtido (una ficha que no se vende allí da 404).
+
+WOODBRASS_ALL = {"guitares-electriques": "electrica", "guitares-folk": "acustica", "guitares-classiques": "clasica"}
+
+
+def _woodbrass(base, collections=WOODBRASS_ALL):
+    return {"name": "Woodbrass", "kind_url": lambda c, u, n: _shop_kind(u, n), "fix": _woodbrass_fix,
+            "discover": lambda f: _discover_shopify(f, base, collections), "pick": lambda u: not NOT_PRODUCT.search(u)}
+
+
+SOURCES["woodbrass"] = _woodbrass("https://woodbrass.es", {"guitares-electriques": "electrica"})
+ACOUSTIC_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.es", {"guitares-folk": "acustica", "guitares-classiques": "clasica"})
+IT_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.it")
+DE_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.de")
+AT_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.at")
+NL_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.nl")
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
