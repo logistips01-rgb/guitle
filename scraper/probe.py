@@ -100,7 +100,18 @@ def main(argv=None):
     parser.add_argument("--out", default="informe-tiendas.md")
     parser.add_argument("--try", dest="pairs", nargs="*", help="probar lectores del catálogo: cat:tienda …")
     parser.add_argument("--only-try", action="store_true", help="solo los lectores, sin la prueba de todas las tiendas")
+    parser.add_argument("--sitemap", help="enseña los sitemaps de este índice y unas URLs de cada uno")
     args = parser.parse_args(argv)
+    if args.sitemap:
+        fetcher = Fetcher(delay=(1.0, 2.0))
+        index = fetcher.get(args.sitemap)
+        lines = [f"# Sitemaps de {args.sitemap} (HTTP {index.status_code})", ""]
+        for loc in re.findall(r"<loc>\s*(.*?)\s*</loc>", index.text)[:60]:
+            sub = fetcher.get(loc)
+            urls = re.findall(r"<loc>\s*(.*?)\s*</loc>", sub.text)
+            lines.append(f"- {loc} → HTTP {sub.status_code}, {len(urls)} URLs: " + " · ".join(urls[:3]))
+        Path(args.out).write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return 0
     if args.only_try:
         Path(args.out).write_text("# Prueba de lectores desde GitHub\n\n" + try_sources(args.pairs or []), encoding="utf-8")
         return 0
