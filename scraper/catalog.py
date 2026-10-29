@@ -1005,6 +1005,53 @@ SOURCES["auvisa"] = {"name": "Auvisa", "sitemap": "https://auvisa.com/sitemap.xm
 ACOUSTIC_SOURCES["auvisa"] = {"name": "Auvisa", "sitemap": "https://auvisa.com/sitemap.xml", "pick": _pick_auvisa,
                               "kind": lambda c: auvisa_kind(c) if auvisa_kind(c) in ("acustica", "clasica") else None}
 
+# Musifex (musifex.pt, Odoo): sin datos estructurados ni EAN. Las fichas salen de los listados de cada categoría de
+# guitarras (de ahí la categoría) y el precio, del bloque de precio de la ficha.
+MUSIFEX = "https://musifex.pt"
+_MUSIFEX_CATS = {"guitarra-e-baixo-guitarras-guitarras-eletricas-190": "electrica",
+                 "guitarra-e-baixo-guitarras-guitarras-acusticas-192": "acustica",
+                 "guitarra-e-baixo-guitarras-guitarras-classicas-191": "clasica"}
+
+
+def _discover_musifex(fetcher):
+    urls = set()
+    for cat, kind in _MUSIFEX_CATS.items():
+        for page in range(1, 60):
+            url = f"{MUSIFEX}/shop/category/{cat}" + (f"/page/{page}" if page > 1 else "")
+            if not fetcher.allowed(url)[0]:
+                break
+            resp = fetcher.get(url)
+            found = {MUSIFEX + h.split("?")[0] for h in re.findall(r'itemprop="name"[^>]*href="(/shop/[^"]+)"', resp.text)}
+            if resp.status_code != 200 or not found - urls:
+                break
+            for u in found:
+                SHOPIFY_KIND.setdefault(u, kind)
+            urls |= found
+    return urls
+
+
+def _brand_from_name(name):
+    low = (name or "").lower()
+    two = next((b for b in _TWO_WORD_BRANDS if low.startswith(b + " ")), None)
+    return name[:len(two)] if two else (name.split()[0] if name else None)
+
+
+def _parse_odoo(soup, text):
+    h1 = soup.find("h1")
+    price = soup.select_one("#product_details .product_price .oe_currency_value") or soup.select_one(".product_price .oe_currency_value")
+    if not h1 or not price:
+        return {"crumbs": []}
+    name = h1.get_text(" ", strip=True)
+    image = soup.find("meta", attrs={"property": "og:image"})
+    value = float(price.get_text().replace(".", "").replace(",", "."))
+    return {"crumbs": [], "name": name, "brand_raw": _brand_from_name(name), "price": value, "currency": "EUR",
+            "in_stock": None, "image": image.get("content") if image else None, "ean": None}
+
+
+PT_SOURCES["musifex"] = {"name": "Musifex", "discover": _discover_musifex, "parse": _parse_odoo,
+                         "kind_url": lambda c, u, n: _shop_kind(u, n), "pick": lambda u: not NOT_PRODUCT.search(u)}
+
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
