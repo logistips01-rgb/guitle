@@ -886,6 +886,27 @@ def write_site(code):
             f.unlink()
     written += pages._write(ROOT / f"sitemap-{code}.xml", _sitemap(code, urls))
     print(f"web {code}: {len(urls)} páginas ({written} nuevas o cambiadas)", flush=True)
+    write_world()
+
+
+def write_world():
+    """data/catalog/paises.json: los países con web y sus cifras (guitarras y tiendas), para la etiqueta de países de la
+    portada y el mapa de paises.html. España cuenta con sus catálogos de guitarras."""
+    out = {}
+    spain = [_load(k["src"]) for kind, k in pages.KINDS.items() if kind in GUITAR_KINDS]
+    spain = [d for d in spain if d]
+    out["es"] = {"country": SPAIN["country"], "path": "/", "guitars": sum(len(d["products"]) for d in spain),
+                 "stores": len({st for d in spain for st in d["stores"]})}
+    for code, s in SITES.items():
+        cats = catalogs(code)
+        guitars = sum(len(d["products"]) for d in cats.values())
+        if guitars:
+            out[code] = {"country": s["country"], "path": f"/{code}/", "guitars": guitars,
+                         "stores": len({st for d in cats.values() for st in d["stores"]})}
+    path = ROOT / "data" / "catalog" / "paises.json"
+    text = json.dumps(out, ensure_ascii=False, indent=1) + "\n"
+    if not path.exists() or path.read_text(encoding="utf-8") != text:
+        path.write_text(text, encoding="utf-8")
 
 
 def legal(code):
