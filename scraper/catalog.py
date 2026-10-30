@@ -17,6 +17,7 @@ Uso:
     python -m scraper.catalog --build              # regenera los JSON de la web
 """
 import argparse
+import functools
 import gzip
 import html
 import json
@@ -1072,9 +1073,9 @@ def br_kind(crumbs, url="", name=""):
     return None
 
 
-def _parse_ld_loose(soup, text):
+def _parse_ld_loose(soup, text, cur="BRL"):
     """JSON-LD de producto que no siempre es JSON válido (Multisom, Casa da Música): primero el lector normal y, si no
-    saca precio, los campos sueltos con expresiones regulares."""
+    saca precio, los campos sueltos con expresiones regulares. cur: la moneda si el bloque no la dice."""
     data = _parse_jsonld(soup, "loose")
     if data.get("price"):
         return data
@@ -1087,7 +1088,7 @@ def _parse_ld_loose(soup, text):
     image = soup.find("meta", attrs={"property": "og:image"})
     ean = normalize_id(get("gtin13") or get("gtin") or "")
     return {"crumbs": data.get("crumbs", []), "name": html.unescape(name.strip()), "brand_raw": brand.group(1) if brand else None,
-            "price": float(price), "currency": (get("priceCurrency") or "BRL").strip(),
+            "price": float(price), "currency": (get("priceCurrency") or cur).strip(),
             "in_stock": "instock" in (get("availability") or "").lower(), "image": image.get("content") if image else None,
             "ean": ean if len(ean) in (12, 13, 14) else None}
 
@@ -1338,6 +1339,237 @@ def pick_for(lang, shopify=False):
         return (not shopify or "/products/" in u) and bool(_ES_PICK.search(slug)) and not ES_SKIP.search(slug) \
             and not NOT_PRODUCT.search(u) and not _GEN_NOT_PRODUCT.search(u)
     return pick
+
+
+# --- Francia: tiendas de las listas oficiales de Alhambra, Yamaha, Fender y Gibson (PrestaShop casi todas) ----------
+# La categoría de PrestaShop suele ir en la URL ("/guitare-electro-nylon/41948-yamaha-ntx1-nt.html"): si la hay, manda
+# ella; si no (o no dice qué guitarra es), el nombre, como en las tiendas españolas de esas listas.
+_FR_CAT_GUITAR = re.compile(r"guitar|[eé]lectriques?|acoustiques?|folks?|classiques?|nylon|flamenc|jazz|western|solid ?body"
+                            r"|dreadnought|jumbo|parlou?r|auditorium|demi caisse|hollow|semi|single ?cut|double ?cut|type (?:st|t)\b",
+                            re.I)
+# Accesorios que nombran la guitarra ("Capodastre pour guitare acoustique", "Étui guitare électrique").
+FR_DEALER_SKIP = re.compile(
+    FR_NAME_SKIP.pattern
+    + r"|capodastre|\b(?:pour|de|p/) ?guitares?\b|^(?:ampli|pack|kit|support|stand|c[aâ]ble|courroie|p[eé]dale|micro|corde|jeu|set"
+    r"|bretelle|repose|pupitre)\b|\bamplis?\b|amplificateurs?|si[eè]ges?\b|syst[eè]mes? hf|housses?|\b[eé]tuis?\b|\bvalise\b"
+    r"|\bpack\b|ukul[eé]l|ukebass|guitalele|guitarlele|mandolin|banjo|basse|\bbass\b|occasion|reconditionn|d[eé]mo\b|\bexpo\b"
+    r"|discontinu|carte cadeau|ch[eè]que cadeau|partition|songbook|recueil|apprenti|\bvol(?:ume)?\.? ?\d|\btome\b"
+    r"|\bpi[eè]ces?\b|chevalet|sillet|frettes?\b|chevilles?|m[eé]caniques?\b|plaque de protection|pickguard|s[eé]lecteur|switch"
+    r"|\bmicros?\b(?! ?(?:piezo|actif))|\bpiezo\b|potentiom|\bjack\b|ferrule|nettoy|entretien|\bclean|polish"
+    r"|\bstraps?\b|\bstrings?\b|gig ?bag|soft ?case|hard ?case|\bcase\b|coffre|\brack\b|\bcapo\b|\btuners?\b|\bpicks?\b|\bcable\b"
+    r"|\bpedal\b|\bamp\b|effects?\b|\bdelay\b|overdrive|distortion|\bfuzz\b|looper|\bcombo\b|\bbaffle|\bcab\b|\b[1-4]x1[02]\b"
+    r"|\b\d+ ?watts?\b|blues junior|(?:deluxe|twin|princeton|super|vibro) ?(?:reverb|champ)|\bchamp\b|bassbreaker|katana"
+    r"|\bthr ?\d|\bvt\d+x|\bac ?(?:4|10|15|30)\b(?! ?\d)|\bmustang (?:gt|lt|i|ii|iii|iv|v)\b"
+    r"|phosphore|extra light|\btirant|slinky|nickel wound|\b(?:0?(?:8|9|10|11|12|13)) ?[-/ ] ?(?:38|42|46|47|49|50|52|53|54|56)\b"
+    r"|batterie|caisse claire|cymbale|baguettes|balais|cajon|fagots|accord[eé]on|orgue|\bpiano|clavier|violon|clarinette|saxo"
+    r"|fl[uû]te|harpe|\bdvd\b|t-shirt|tee-shirt|\bmug\b|porte-cl|casquette|planche|filtre|anti-pop|baguettes?|tamborim|hickory"
+    r"|coup de pouce|nylon tip"
+    r"|^(?:d'?addario|elixir|rotosound|savarez|thomastik|aquila|dunlop|gator|hercules|k&m|boss|mooer|nux|mxr|meinl|vic firth"
+    r"|rohema|pearl|tama|zildjian|sabian|paiste|evans|remo|shure|sennheiser|marshall|orange|blackstar|laney|roland|korg"
+    r"|line ?6|fred'?s part|righton|kyser|g7th|planet waves|musicnomad|dv mark|ashdown|mackie|la ?bella|augustine|joyo"
+    r"|blacksmith|galli|cleartone|curt mangan|optima|hannabach|pyramid|ghs|dr strings|ernie ball \d)\b", re.I)
+# Lo que lleva la guitarra ("… avec étui", "+ housse") no la hace un accesorio.
+_FR_WITH = re.compile(r"\s*(?:\b(?:avec|et|with|w/|incl\.?|inclus)\b|\+|&)\s*(?:son |sa |un |une |the )?(?:[eé]tui|housse|valise|soft ?case"
+                      r"|hard ?case|gig ?bag|case|bag)\b.*$|\b(?:[eé]tui|housse|valise) (?:inclus|offert|fourni)e?s?\b.*$", re.I)
+
+
+def _fr_category(url):
+    """La categoría de la URL de PrestaShop ("guitare-electrique-type-strat-"), o "" si no la lleva."""
+    parts = [p for p in url.rstrip("/").split("/")[3:-1] if not re.fullmatch(r"[a-z]{2}|\d+|products?|produits?|store\d*", p)]
+    return parts[-1].replace("-", " ").replace("_", " ").strip() if parts else ""
+
+
+def _fr_not_guitar(text):
+    """Accesorio, bajo, ampli…: por FR_DEALER_SKIP o por las palabras de categoría de FR_SKIP ("12 cordes" no cuenta)."""
+    text = re.sub(r"\b\d{1,2}[ -]cordes\b|guitares? (?:&|et) basses?", "", _FR_WITH.sub("", text or ""), flags=re.I)
+    return bool(FR_DEALER_SKIP.search(text) or FR_SKIP.search(text))
+
+
+def _fr_slug(url):
+    return re.sub(r"\.html?$", "", url.rstrip("/").rsplit("/", 1)[-1]).replace("-", " ").replace("_", " ")
+
+
+_fr_by_name = guitar_kind_for("fr")
+
+
+def fr_dealer_kind(crumbs, url="", name=""):
+    """'electrica', 'acustica', 'clasica' o None para las tiendas francesas de las listas de marcas."""
+    if _fr_not_guitar(html.unescape(name or "")) or _fr_not_guitar(_fr_slug(url)):
+        return None
+    cats = [c for c in list(crumbs or []) + [_fr_category(url)] if c and c.lower() not in ("accueil", "home")]
+    # "Guitare acoustique 12 cordes", "Guitares & basses" arriba: no son accesorios ni bajos.
+    leaf = re.sub(r"\b\d{1,2} cordes\b|guitares? (?:&|et) basses?|guitares?[ -]basses?", "", " / ".join(cats[-2:]).lower())
+    if cats and (FR_SKIP.search(leaf) or _fr_not_guitar(_fr_category(url))):
+        return None
+    kind = fr_kind([re.sub(r"\b\d{1,2} cordes\b", "", c) for c in cats]) if cats else None
+    if kind:
+        return kind
+    # Categoría sin "guitare" ("Électrique", "Folk", "Classique") en una tienda que solo la usa para guitarras.
+    if cats and _FR_CAT_GUITAR.search(cats[-1]) and re.fullmatch(r"\s*(?:guitares?\s*)?(?:[eé]lectriques?|folk|acoustiques?"
+                                                                  r"|classiques?|[eé]lectro[- ]?acoustiques?)\s*", cats[-1].lower()):
+        return fr_kind(["guitare " + cats[-1]])
+    # Por el nombre, sin lo que lleva ("+ housse offerte") ni las cuerdas que tiene ("6 cordes"), que lo harían un accesorio.
+    clean = lambda t: re.sub(r"\b\d{1,2}[ -]cordes\b", "", _FR_WITH.sub("", t or ""), flags=re.I)
+    return _fr_by_name([clean(c) for c in crumbs or []], clean(url.rstrip("/").rsplit("/", 1)[-1].replace("-", " ")),
+                       clean(name))
+
+
+def pick_fr_dealer(u):
+    """Fichas de guitarra: por la categoría de la URL o, si no la lleva, por el nombre de la ficha."""
+    last = u.rstrip("/").rsplit("/", 1)[-1]
+    # Las fichas de PrestaShop llevan su número ("/41948-yamaha-ntx1-nt.html") y las de Oxatis acaban en "-c2x…";
+    # las de WooCommerce van bajo /produit/. Lo demás son categorías y marcas.
+    if NOT_PRODUCT.search(u) or _GEN_NOT_PRODUCT.search(u) or re.search(r"-c(?!2x)\d+x\d+$", last) \
+            or not ("/produit/" in u or re.search(r"\d", last)):
+        return False
+    slug = _FR_WITH.sub("", _fr_slug(u))
+    if _fr_not_guitar(slug) or ES_SKIP.search(_to_es(slug, "fr")):
+        return False
+    cat = _fr_category(u)
+    if cat and _FR_CAT_GUITAR.search(cat):
+        return not _fr_not_guitar(cat)
+    return pick_for("fr")(u)
+
+
+def _gtin_ok(code):
+    """¿Dígito de control de EAN/UPC correcto? (algunas tiendas ponen códigos internos en gtin13)."""
+    digits = [int(d) for d in code or ""]
+    if len(digits) not in (12, 13, 14):
+        return False
+    body = digits[:-1][::-1]
+    return (10 - sum(d * (3 if i % 2 == 0 else 1) for i, d in enumerate(body)) % 10) % 10 == digits[-1]
+
+
+# Tiendas y distribuidores que algunas fichas ponen de marca (Shopify: el "vendor").
+_FR_NOT_BRAND = re.compile(r"musi(?:c|que)|beuscher|gaffarel|camac|\bhtd\b|algam|auditorium ?4|guitar maniac|centrale|tamtam"
+                           r"|diapason", re.I)
+
+
+def _fr_dealer_fix(data, text):
+    """Nombres que empiezan por el instrumento ("Guitare Classique Yamaha CG192S"): fuera; queda en las categorías. La marca
+    separada con guion o coma ("PRS - Custom 24", "Fender, Player II, Stratocaster") y la tienda como marca ("Azema
+    Musique"), también."""
+    name = re.sub(r"\s+", " ", html.unescape(data.get("name") or "")).strip()
+    if re.search(r"Ã[\x80-\xbf]", name):  # UTF-8 leído como Latin-1 (Music Privilege: "Ã©picÃ©a")
+        try:
+            name = name.encode("latin-1").decode("utf-8")
+        except UnicodeError:
+            pass
+    brand = html.unescape(html.unescape(data.get("brand_raw") or "")).strip() or None  # Station Music: "&amp;amp;"
+    if brand and _FR_NOT_BRAND.search(brand) and not name.lower().startswith(brand.lower()):
+        brand = None  # la tienda o el distribuidor como marca ("Azema Musique", "Paul Beuscher", "Gaffarel")
+    short = re.sub(r"^(?:guitares?|guitar)(?:\s+(?:[eé]lectriques?|[eé]lectro|acoustiques?|classiques?|folk|western|jazz|de|nylon"
+                   r"|voyage|[eé]lectro-?acoustiques?|[eé]lectro-?classiques?|semi-?(?:hollow|acoustique)|hollow ?body|enfant|junior"
+                   r"|gaucher|sbody|taille|\d/\d|1/2|3/4|7/8|4/4))*\s+", "", name, flags=re.I)
+    if short != name and short:
+        data["crumbs"] = list(data.get("crumbs") or []) + [name]
+    name = short or name
+    m = re.match(r"^([^,\-]{2,25}?)\s*(?: - |, )(.+)$", name)
+    # Sin marca aparte, solo si lo de delante es una palabra ("Schecter Reaper 6 - Sky Burst" no es marca y modelo).
+    if m and (m.group(1).lower().startswith(brand.lower().split()[0]) if brand else len(m.group(1).split()) == 1):
+        brand = brand or m.group(1)
+        name = m.group(1) + " " + m.group(2).replace(", ", " ")
+    data["name"] = name
+    data["brand_raw"] = brand or _brand_from_name(name)
+    if data.get("ean") and not _gtin_ok(data["ean"]):
+        data["ean"] = None
+    return data
+
+
+def _tamtam_fix(data, text):
+    """TamTam: "Lâg - GLA T70A-BLS - Auditorium Black Satin": marca, referencia del distribuidor y modelo (a veces con la
+    marca y "Guitare électrique" otra vez delante). Queda marca + modelo."""
+    parts = re.sub(r"\s+", " ", html.unescape(data.get("name") or "")).split(" - ")
+    if len(parts) >= 3:
+        brand, model = parts[0].strip(), " - ".join(parts[2:]).strip()
+        plain = unicodedata.normalize("NFKD", brand).encode("ascii", "ignore").decode()  # "Lâg" → "Lag"
+        model = re.sub(rf"^(?:{re.escape(brand)}|{re.escape(plain)})\s+", "", model, flags=re.I)
+        data["crumbs"] = list(data.get("crumbs") or []) + [model]
+        data["name"], data["brand_raw"] = f"{brand} {model}", brand
+    return _fr_dealer_fix(data, text)
+
+
+_parse_ld_eur = functools.partial(_parse_ld_loose, cur="EUR")
+
+
+def _parse_og_micro(soup, text):
+    """Sin JSON-LD de producto (PrestaShop de Centrale Guitars, Guitar Maniac, Audio System; Shopify de TamTam): nombre en
+    el h1, precio en las meta de Open Graph (product:price o og:price), breadcrumb y EAN (gtin13) en los microdatos. Los
+    productos relacionados de abajo también llevan microdatos: solo cuenta el primero (el de la ficha)."""
+    crumbs = [c.get_text(" ", strip=True) for c in soup.select('[itemtype*="BreadcrumbList"] [itemprop=itemListElement] [itemprop=name]')]
+    crumbs = [c for c in crumbs if c and c.lower() != "accueil"][:-1]  # el último es la propia ficha
+    h1 = soup.select_one("h1[itemprop=name]") or soup.find("h1")
+    price = soup.find("meta", attrs={"property": re.compile(r"^(?:product|og):price:amount$")})
+    value = re.sub(r"\s", "", price.get("content") or "") if price else ""
+    value = value.replace(".", "").replace(",", ".") if re.search(r",\d{2}$", value) else value.replace(",", "")
+    if not h1 or not re.fullmatch(r"\d+(?:\.\d+)?", value) or not float(value):
+        return {"crumbs": crumbs}
+    cur = soup.find("meta", attrs={"property": re.compile(r"^(?:product|og):price:currency$")})
+    name = " ".join(h1.get_text(" ", strip=True).split())
+    gtin = soup.find(attrs={"itemprop": re.compile(r"^gtin(13)?$")})
+    ean = re.sub(r"\D", "", (gtin.get("content") or gtin.get_text(strip=True)) if gtin else "")
+    avail = soup.find(attrs={"itemprop": "availability"})
+    avail = (avail.get("href") or avail.get("content") or "") if avail else ""
+    brand = soup.select_one('[itemprop=brand] [itemprop=name], meta[itemprop=brand]')
+    brand = (brand.get("content") or brand.get_text(" ", strip=True)) if brand else None
+    image = soup.find("meta", attrs={"property": "og:image"})
+    return {"crumbs": crumbs, "name": name, "brand_raw": brand or _brand_from_name(name), "price": float(value),
+            "currency": cur.get("content") if cur else "EUR", "in_stock": "instock" in avail.lower() if avail else None,
+            "image": image.get("content") if image else None, "ean": ean if len(ean) in (12, 13, 14) else None}
+
+
+_PS = lambda l: "_nl_" not in l and "_en_" not in l  # PrestaShop: solo el sitemap en francés
+_WOO = lambda l: "product-sitemap" in l  # WooCommerce (Yoast): solo los de fichas
+_pick_ps = lambda u: u.endswith(".html") and pick_fr_dealer(u)  # PrestaShop: las fichas acaban en .html (lo demás, categorías)
+for _id, _name, _sm, _sub, _parse, _pick in [
+        ("hurricanemusic", "Hurricane Music", "https://www.hurricanemusic.fr/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("azemamusique", "Azema Musique", "https://www.azemamusique.fr/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("maccamusic", "Macca Music", "https://www.maccamusic.com/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("music3000", "Music 3000", "https://www.music3000.fr/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("scottomusique", "Scotto Musique", "https://www.scottomusique.com/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("ubico", "Ubico Musique", "https://www.ubico-musique.com/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("abroadmusic", "AB Road Music", "https://www.ab-roadmusic.com/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("ferremusique", "Ferré Musique", "https://www.ferremusique.com/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("musicmatos", "Musique Matos", "https://www.musicmatos.com/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("auditorium4", "Auditorium 4", "https://www.auditorium4.fr/1_index_sitemap.xml", _PS, _parse_ld_eur, _pick_ps),
+        ("nuostore", "Music City", "https://nuostore.com/sitemap_index.xml", _WOO, _parse_ld_eur, pick_fr_dealer),
+        ("westmusic", "West Music", "https://westmusic.fr/sitemap_index.xml", _WOO, _parse_ld_eur, pick_fr_dealer),
+        ("seveneant", "Sévénéant Musique", "https://www.seveneant.com/sitemap_index.xml", _WOO, _parse_ld_eur, pick_fr_dealer),
+        ("stationmusic", "Station Music", "https://station-music.com/sitemap_index.xml", _WOO, _parse_ld_eur, pick_fr_dealer),
+        ("halldemusique", "Hall de la Musique", "https://www.halldemusique.com/sitemap.xml", None, _parse_ld_eur, pick_fr_dealer),
+        ("musicprivilege", "Music Privilege", "https://www.music-privilege.fr/assets/sitemap.xml", None, _parse_ld_eur, pick_fr_dealer),
+        # Oxatis: las fichas acaban en "-c2x<número>" (Lordel marca las descatalogadas con "DISCONTINUE" en el nombre).
+        ("lordelmusique", "Lordel Musique", "https://www.lordelmusique.com/Sitemap.asp?AccID=133964&LangID=0", None, _parse_ld_eur,
+         lambda u: bool(re.search(r"-c2x\d+$", u)) and pick_fr_dealer(u)),
+        ("xlmusic", "XL Music", "https://www.xlmusic.fr/Sitemap.asp?AccID=32135&LangID=0", None, _parse_ld_eur,
+         lambda u: bool(re.search(r"-c2x\d+$", u)) and pick_fr_dealer(u)),
+        # Sin la palabra "guitare" en la URL ("/store1/Takamine-P3DC-p241093603"): todas sus fichas, y decide el nombre.
+        ("musicandco", "Music & Co", "https://www.musicandco.net/sitemap.xml", None, _parse_ld_eur,
+         lambda u: bool(re.search(r"-p\d+$", u)) and not _fr_not_guitar(_fr_slug(u)) and not NOT_PRODUCT.search(u)),
+        ("diapasonmusic", "Diapason", "https://diapasonmusic.com/sitemap.xml", None, _parse_ld_eur,
+         lambda u: "/products/" in u and pick_fr_dealer(u)),
+        # Sin JSON-LD de producto: Open Graph y microdatos.
+        ("tamtam", "TamTam", "https://www.tamtamonline.com/sitemap.xml", None, _parse_og_micro,
+         lambda u: "/products/" in u and pick_fr_dealer(u)),
+        ("centraleguitars", "Centrale Guitars", "https://www.centraleguitars.com/1_index_sitemap.xml", _PS, _parse_og_micro, _pick_ps),
+        ("guitarmaniac", "Guitar Maniac", "https://www.guitarmaniac.com/1_index_sitemap.xml", _PS, _parse_og_micro, _pick_ps),
+        ("audiosystem", "Audio System", "https://audiosystem.fr/1_index_sitemap.xml", _PS, _parse_og_micro, _pick_ps)]:
+    FR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "sub": _sub, "parse": _parse, "fix": _fr_dealer_fix,
+                       "kind_url": fr_dealer_kind, "pick": _pick}
+FR_SOURCES["tamtam"]["fix"] = _tamtam_fix
+
+# Guitar Legend (París): un sitemap por idioma; solo las fichas en francés. Breadcrumb y EAN en el JSON-LD.
+FR_SOURCES["guitarlegend"] = {
+    "name": "Guitar Legend", "sitemap": "https://www.guitar-legend.com/sitemap.xml", "sub": lambda l: "/fr/products" in l,
+    "parse": _parse_ld_eur, "fix": _fr_dealer_fix, "kind_url": fr_dealer_kind,
+    "pick": lambda u: "/fr/" in u and bool(re.search(r"-\d+\.html$", u)) and not _fr_not_guitar(_fr_slug(u))
+    and not NOT_PRODUCT.search(u)}
+# Paul Beuscher (París, Shopify): su sitemap son 370.000 partituras; las guitarras, de la colección "guitares".
+# En gtin13 mezcla EAN de verdad con códigos internos que hasta cuadran el dígito de control ("1570050132734"): sin EAN.
+FR_SOURCES["paulbeuscher"] = {"name": "Paul Beuscher", "parse": _parse_ld_eur, "kind_url": fr_dealer_kind,
+                              "fix": lambda d, t: {**_fr_dealer_fix(d, t), "ean": None},
+                              "discover": lambda f: _discover_shopify(f, "https://paul-beuscher.com", ("guitares",)),
+                              "pick": lambda u: not NOT_PRODUCT.search(u) and not _fr_not_guitar(_fr_slug(u))}
 
 
 for _id, _name, _sm in [("microfusa", "Microfusa", "https://www.microfusa.com/sitemap.xml"),
