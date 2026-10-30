@@ -450,6 +450,24 @@
   "median": 1646.0
  },
  {
+  "kind": "bajo",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Cort Bajo Elec Action Junior Opbc",
+  "slug": "cort-bajo-elec-action-junior-opbc-8809383838093",
+  "price": 191.0,
+  "median": 259.13
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "AKG P120",
+  "slug": "akg-p120-885038037033",
+  "price": 95.0,
+  "median": 136.5
+ },
+ {
   "kind": "micro",
   "type": "fuera_de_lugar",
   "store": "alfasoni",
@@ -468,6 +486,33 @@
   "median": 57.32
  },
  {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Samson C01U Usb Micrófono De Condensador",
+  "slug": "samson-c01u-usb-microfono-de-condensador-809164016045",
+  "price": 95.0,
+  "median": 177.28
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Samson C01U Usb Micrófono De Condensador",
+  "slug": "samson-c01u-usb-microfono-de-condensador-809164016045",
+  "price": 103.56,
+  "median": 173.0
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Se Electronics DynaCaster DCM6",
+  "slug": "se-electronics-dynacaster-dcm6-819032011348",
+  "price": 115.0,
+  "median": 196.01
+ },
+ {
   "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "drunkat",
@@ -482,7 +527,7 @@
   "store": "drunkat",
   "name": "Fender Polypro Strap Black",
   "slug": "fender-polypro-strap-black-885978063635",
-  "price": 7.98,
+  "price": 8.16,
   "median": 10.89
  },
  {
@@ -501,7 +546,7 @@
   "name": "Daddario EJ15 - Phosphor Bronze Extra Light [10-47]",
   "slug": "daddario-ej15-phosphor-bronze-extra-light-10-47-19954121136",
   "price": 6.23,
-  "median": 9.92
+  "median": 10.035
  },
  {
   "kind": "varios",
@@ -563,7 +608,7 @@
   "store": "drunkat",
   "name": "Ernie Ball EB2220 Slinky Power (011-048)",
   "slug": "ernie-ball-eb2220-slinky-power-011-048-749699122203",
-  "price": 6.35,
+  "price": 6.5,
   "median": 8.83
  },
  {
@@ -610,15 +655,6 @@
   "slug": "fender-70l-80-20-bronze-ball-end-012-052-717669853433",
   "price": 6.3,
   "median": 8.495000000000001
- },
- {
-  "kind": "varios",
-  "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Fender 7250ML Nickel Plated Steel Long Scale (045-100)",
-  "slug": "fender-7250ml-nickel-plated-steel-long-scale-045-100-717669853013",
-  "price": 18.12,
-  "median": 24.775
  },
  {
   "kind": "varios",
