@@ -95,6 +95,7 @@ def products(lo=MIN_PRICE, hi=MAX_PRICE):
                         "img": p["img"], "price": best["p"], "store": stores.get(best["s"], best["s"]),
                         "stores": len({i["s"] for i in items}), "median": median(prices[1:]), "max": prices[-1],
                         "next": min(i["p"] for i in items if i["s"] != best["s"]),
+                        "rows": [[stores.get(i["s"], i["s"]), i["p"]] for i in {i["s"]: i for i in reversed(items)}.values()][::-1],
                         "pvp": ref[-1][1] if ref else None})
     return out
 
@@ -266,7 +267,7 @@ def plan(day, recent):
     data = {"date": day.isoformat(), "fecha": fecha, "post": post, "stories": stories[:STORIES]}
     (folder / "plan.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     subprocess.run(["node", str(ROOT / "brand" / "social.js"), str(folder)], check=True, cwd=ROOT)
-    subprocess.run(["node", str(ROOT / "brand" / "reel.js"), str(folder)], check=True, cwd=ROOT)
+    daily_reels(day, folder, recent + "\n" + "\n".join(p["name"] for p in data["stories"]), prods, fetcher)
     return folder, data
 
 
@@ -354,6 +355,116 @@ def arranque(day, publish_now):
     kids = [container(user, image_url=base + f"2-carrusel-{i}.jpg", is_carousel_item="true") for i in range(1, 5)]
     done["carrusel"] = publish(user, container(user, media_type="CAROUSEL", children=",".join(kids), caption=cap2))
     print(json.dumps(done, indent=1))
+
+
+# --- Reels del día (no se publican solos: el usuario les pone música y los sube) ----------------------------------
+
+BLACK_FRIDAY = date(2026, 11, 27)
+LABELS = {"electrica": "Eléctrica", "acustica": "Acústica", "clasica": "Clásica"}
+
+
+def _reel(folder, name, post, fecha, caption):
+    sub = folder / name
+    sub.mkdir(parents=True, exist_ok=True)
+    (sub / "plan.json").write_text(json.dumps({"fecha": fecha, "post": post, "stories": []}, ensure_ascii=False, indent=1) + "\n",
+                                   encoding="utf-8")
+    (sub / "texto.txt").write_text(caption + "\n", encoding="utf-8")
+    subprocess.run(["node", str(ROOT / "brand" / "reel.js"), str(sub)], check=True, cwd=ROOT)
+
+
+def daily_reels(day, folder, recent, prods, fetcher):
+    """Tres Reels: chollos por categoría, cuenta atrás del Black Friday y uno sobre guitle (rota de tema)."""
+    meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
+             "noviembre", "diciembre"]
+    fecha = f"{day.day} de {meses[day.month - 1]}"
+    for name in ("reel-1-chollos", "reel-2-black-friday", "reel-3-guitle"):
+        (folder / name).mkdir(parents=True, exist_ok=True)
+    # 1. Chollos: 2 eléctricas, 1 acústica y 1 clásica
+    deals, picks = rank_deals(prods, recent), []
+    for k in ["electrica", "electrica", "acustica", "clasica"]:
+        for p in deals:
+            if p["kind"] == k and all(p["slug"] != q["slug"] and p["brand"] != q["brand"] for q in picks):
+                got = with_photos([p], 1, fetcher, folder / "reel-1-chollos", f"g{len(picks)}-")
+                if got:
+                    picks.append({**got[0], "label": LABELS[k]})
+                    break
+    if picks:
+        icons = ["🎸", "⚡", "🪵", "🎼"]
+        lines = "\n".join(f"{icons[i]} {p['label']}: {p['name']} a {eur(p['price'])} en {p['store']} ({p['why'][0].lower() + p['why'][1:]})"
+                          for i, p in enumerate(picks))
+        _reel(folder, "reel-1-chollos", {"type": "top", "title": f"chollos de {MIN_PRICE} a {MAX_PRICE} €", "hook": "Chollos de hoy",
+                                          "picks": picks}, fecha,
+              f"🔥 Chollos de hoy entre {MIN_PRICE} y {MAX_PRICE} € 👇\n\n{lines}\n\n¿Cuál te llevarías? 💬\n"
+              f"🔎 Compara precios en guitle.com (enlace en la bio). Precios del {fecha}; pueden cambiar.\n\n"
+              "#guitarra #guitarraelectrica #guitarraacustica #guitarraclasica #chollos #guitarristas #ofertas "
+              + " ".join(dict.fromkeys(tag(p["brand"]) for p in picks)))
+    # 2. Black Friday: el precio de hoy de una guitarra popular, para comprobar después si la rebaja es real
+    days = (BLACK_FRIDAY - day).days
+    if days > 0:
+        kind = ["electrica", "acustica", "electrica", "clasica"][day.toordinal() % 4]
+        pool = sorted((p for p in prods if p["kind"] == kind and p["name"] not in recent and p["stores"] >= 4),
+                      key=lambda p: -p["stores"])
+        got = with_photos(pool, 1, fetcher, folder / "reel-2-black-friday", "g")
+        if got:
+            p = got[0]
+            _reel(folder, "reel-2-black-friday", {"type": "bf", "days": days, "deal": p}, fecha,
+                  f"⏳ Faltan {days} {'día' if days == 1 else 'días'} para el Black Friday.\n"
+                  f"📌 Apunta este precio: {p['name']} a {eur(p['price'])} hoy en {p['store']} (en otras tiendas, de {eur(p['next'])} a {eur(p['max'])}).\n"
+                  "El 27 de noviembre te diremos si su rebaja es real o es un descuento inflado. Guárdalo y síguenos 👀\n\n"
+                  f"#blackfriday #blackfriday2026 #guitarra {HASHTAGS[p['kind']]} {tag(p['brand'])} #chollos #guitarristas")
+    # 3. Sobre guitle
+    paises = load(ROOT / "data/catalog/paises.json", {})
+    n = f"{paises.get('es', {}).get('guitars', 0):,}".replace(",", ".")
+    stores = sorted({x.replace(" (eBay)", "") for path in CATALOGS.values() for x in load(path, {}).get("stores", {}).values()})
+    showcase = with_photos(sorted(prods, key=lambda p: -p["stores"]), 5, fetcher, folder / "reel-3-guitle", "g")
+    ex = max((p for p in prods if p["stores"] >= 5), key=lambda p: p["max"] - p["price"])
+    rows = ex["rows"][:3] + ex["rows"][-1:] if len(ex["rows"]) > 4 else ex["rows"]
+    topics = [
+        ("¿Qué es guitle?", [
+            {"hook": "guitle", "title": "¿Qué es guitle?", "sub": "El comparador de precios de guitarras",
+             "visual": {"type": "guitars", "photos": [p["photo"] for p in showcase]}},
+            {"title": f"{n} guitarras en {len(stores)} tiendas", "sub": "Revisamos todos los precios, cada día",
+             "visual": {"type": "chips", "items": stores}},
+            {"title": "Te decimos dónde está más barata", "sub": "Gratis y sin registrarte", "size": 120}],
+         f"🎸 ¿Qué es guitle? El comparador de precios de guitarras: {n} guitarras en {len(stores)} tiendas, revisadas cada día.\n"
+         "Busca la tuya y mira dónde está más barata. Gratis y sin registrarte.\n🔎 guitle.com (enlace en la bio)\n\n"
+         "#guitarra #guitarraelectrica #guitarristas #comparadordeprecios #musica"),
+        ("Misma guitarra, distinto precio", [
+            {"hook": "¿Sabías que…?", "title": "La misma guitarra puede costar mucho más según la tienda"},
+            {"title": ex["name"], "size": 76, "visual": {"type": "prices", "rows": rows}},
+            {"title": f"{eur(ex['max'] - ex['price'])} de diferencia", "sub": "Compara antes de comprar", "size": 130}],
+         f"😮 La misma guitarra, {eur(ex['max'] - ex['price'])} de diferencia según la tienda: {ex['name']}, de {eur(ex['price'])} a {eur(ex['max'])} hoy.\n"
+         "Por eso existe guitle: comparamos cada guitarra en todas las tiendas, cada día.\n🔎 guitle.com (enlace en la bio)\n\n"
+         f"#guitarra {HASHTAGS[ex['kind']]} {tag(ex['brand'])} #comparadordeprecios #guitarristas"),
+        ("Descuentos inflados", [
+            {"hook": "Ojo en Black Friday", "title": "Hay descuentos que son mentira"},
+            {"title": "Suben el precio… y luego lo «rebajan»", "sub": "Ejemplo", "size": 96,
+             "visual": {"type": "chart", "points": [899, 899, 899, 999, 999, 999, 899, 899],
+                        "marks": [[1, "899 €", "#1f9d55"], [4, "999 €", "#d64545"], [7, "«−10 %»", "#d64545"]]}},
+            {"title": "guitle lo detecta con el histórico de precios", "sub": "Míralo antes de comprar en guitle.com"}],
+         "⚠️ Ojo con los descuentos inflados: algunas tiendas suben el precio unas semanas antes y luego lo «rebajan»… al precio de siempre.\n"
+         "En guitle guardamos el precio de cada guitarra cada día, así que lo ves al momento.\n🔎 guitle.com (enlace en la bio)\n\n"
+         "#blackfriday #guitarra #guitarristas #chollos #descuentos"),
+        ("¿Es buen momento?", [
+            {"hook": "Antes de comprar", "title": "¿Es buen momento para comprarla?"},
+            {"title": "Mira su histórico de precios", "sub": "Ejemplo", "size": 100,
+             "visual": {"type": "chart", "points": [829, 829, 799, 829, 789, 789, 769, 749],
+                        "marks": [[0, "829 €", "#52514e"], [7, "Hoy: mínimo", "#1f9d55"]]}},
+            {"title": "En guitle tienes el histórico de cada guitarra", "sub": "Gratis, en su ficha de guitle.com"}],
+         "📉 ¿Es buen momento para comprar esa guitarra? Mira su histórico de precios: si hoy está en su mínimo, ¡a por ella!\n"
+         "En guitle lo tienes gratis en la ficha de cada guitarra.\n🔎 guitle.com (enlace en la bio)\n\n"
+         "#guitarra #guitarristas #comprarguitarra #chollos"),
+        ("10 países", [
+            {"hook": "¿Y fuera de España?", "title": f"Comparamos guitarras en {len(paises)} países"},
+            {"title": "Mira cuánto cuesta fuera", "size": 100,
+             "visual": {"type": "chips", "items": ["España"] + [PAISES[c] for c in sorted(paises, key=lambda c: -paises[c].get('guitars', 0)) if c in PAISES]}},
+            {"title": "Todo en guitle.com", "sub": "Gratis y sin registrarte", "size": 120}],
+         f"🌍 guitle no es solo España: comparamos precios de guitarras en {len(paises)} países: España, "
+         + ", ".join(PAISES[c] for c in paises if c in PAISES) + ".\n🔎 guitle.com (enlace en la bio)\n\n"
+         "#guitarra #guitarristas #comparadordeprecios #europa"),
+    ]
+    title, slides, caption = topics[day.toordinal() % len(topics)]
+    _reel(folder, "reel-3-guitle", {"type": "guitle", "topic": title, "slides": slides}, fecha, caption)
 
 
 # --- Stories de la tarde ---------------------------------------------------------------------------------------

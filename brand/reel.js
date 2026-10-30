@@ -53,6 +53,46 @@ if (post.type === "chollo") {
     <p class="d" style="font-size:190px;margin-top:70px;${a("pop", t + .35, .45)}">${eur(p.price)}</p>
     <p style="font-size:50px;margin-top:20px;${a("up", t + .6)}">en ${esc(p.store)}</p>
     <div class="d" style="margin-top:50px;background:${YELLOW};color:${INK};font-size:46px;padding:20px 36px;border-radius:24px;text-wrap:balance;letter-spacing:-.02em;${a("pop", t + 1.0, .4)}">${esc(p.why)}</div>`]);
+} else if (post.type === "bf") {
+  // Cuenta atrás para el Black Friday: el precio de hoy de una guitarra popular, para comprobar luego si la rebaja es real
+  const p = post.deal;
+  scenes.push([2.6, t => `${hook(t, "Black Friday")}
+    <p class="d" style="font-size:170px;margin-top:330px;${a("up", t + .2)}">Faltan</p>
+    <p class="d" style="font-size:420px;color:${YELLOW};margin-top:10px;${a("pop", t + .45, .5)}">${post.days}</p>
+    <p class="d" style="font-size:150px;margin-top:10px;${a("up", t + .7)}">${post.days === 1 ? "día" : "días"}</p>`]);
+  scenes.push([2.8, t => `<p class="d" style="font-size:96px;text-wrap:balance;${a("up", t + .05)}">Apunta este precio</p>
+    ${photoCard(p, t + .2, 840)}${nameBlock(p, t + .6)}`]);
+  scenes.push([3.4, t => `<p style="font-size:50px;opacity:.85;margin-top:300px;${a("up", t + .05)}">Hoy, ${plan.fecha}</p>
+    <p class="d" style="font-size:200px;margin-top:30px;${a("pop", t + .25, .45)}">${eur(p.price)}</p>
+    <p style="font-size:50px;margin-top:20px;${a("up", t + .5)}">en ${esc(p.store)}</p>
+    <div class="card" style="margin-top:90px;padding:40px 50px;font-size:46px;text-wrap:balance;${a("up", t + .9)}">En las otras ${p.stores - 1} tiendas: <b class="d" style="letter-spacing:-.02em">de ${eur(p.next)} a ${eur(p.max)}</b></div>`]);
+  scenes.push([3.0, t => `<p class="d" style="font-size:124px;margin-top:400px;text-wrap:balance;${a("up", t + .05)}">¿Bajará de verdad en Black Friday?</p>
+    <p style="font-size:54px;margin-top:70px;text-wrap:balance;${a("up", t + .5)}">El 27 de noviembre te lo decimos, con su histórico de precios.</p>
+    <div class="d" style="margin-top:80px;background:${YELLOW};color:${INK};font-size:58px;padding:22px 44px;border-radius:999px;${a("pop", t + 1.0, .4)}">Guárdalo 📌</div>`]);
+} else if (post.type === "guitle") {
+  // Sobre guitle: diapositivas de texto con un elemento visual (fila de guitarras, precios, gráfica…)
+  const visual = (v, t) => {
+    if (!v) return "";
+    if (v.type === "guitars") return `<div class="card" style="width:100%;height:640px;margin-top:80px;display:flex;justify-content:space-evenly;align-items:center;padding:30px 20px;${a("rise", t + .4, .7)}">
+      ${v.photos.map(f => `<img src="data:image/webp;base64,${b64(path.join(DIR, f))}" style="height:100%;max-width:${Math.floor(900 / v.photos.length)}px;object-fit:contain">`).join("")}</div>`;
+    if (v.type === "prices") return `<div class="card" style="width:100%;margin-top:70px;padding:30px 40px;text-align:left;${a("up", t + .4)}">
+      ${v.rows.map((r, i) => `<div style="display:flex;justify-content:space-between;padding:18px 24px;border-radius:18px;font-size:42px;
+        ${i === 0 ? `background:${GREEN};color:#fff` : i === v.rows.length - 1 ? `background:#fde8e8;color:${RED}` : ""}"><span>${esc(r[0])}</span><b class="d" style="letter-spacing:-.02em">${eur(r[1])}</b></div>`).join("")}</div>`;
+    if (v.type === "chart") {
+      const pts = v.points, max = Math.max(...pts), min = Math.min(...pts), X = i => 40 + i * 820 / (pts.length - 1), Y = q => 380 - (q - min) / (max - min || 1) * 300;
+      return `<div class="card" style="width:100%;margin-top:70px;padding:30px;${a("up", t + .4)}"><svg viewBox="0 0 900 440" width="100%">
+        <polyline fill="none" stroke="${BLUE}" stroke-width="10" stroke-linejoin="round" points="${pts.map((q, i) => `${X(i)},${Y(q)}`).join(" ")}"/>
+        ${v.marks.map(([i, txt, color]) => `<circle cx="${X(i)}" cy="${Y(pts[i])}" r="16" fill="${color}"/><text x="${Math.min(X(i), 760)}" y="${Y(pts[i]) - 30}" font-size="38" font-weight="800" fill="${color}" text-anchor="middle">${txt}</text>`).join("")}
+      </svg></div>`;
+    }
+    if (v.type === "chips") return `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin-top:70px;${a("up", t + .4)}">
+      ${v.items.map(x => `<span class="d" style="background:#fff;color:${INK};font-size:42px;padding:18px 30px;border-radius:999px;letter-spacing:-.02em">${esc(x)}</span>`).join("")}</div>`;
+    return "";
+  };
+  post.slides.forEach(sl => scenes.push([sl.dur || 3.2, t => `${sl.hook ? hook(t, esc(sl.hook)) : ""}
+    <p class="d" style="font-size:${sl.size || 112}px;margin-top:${sl.visual ? (sl.hook ? 70 : 120) : 420}px;text-wrap:balance;${a("up", t + .1)}">${esc(sl.title)}</p>
+    ${sl.sub ? `<p style="font-size:50px;margin-top:44px;text-wrap:balance;opacity:.92;${a("up", t + .3)}">${esc(sl.sub)}</p>` : ""}
+    ${visual(sl.visual, t)}`]));
 } else {
   const n = post.picks.length;
   scenes.push([2.8, t => `${hook(t, post.hook || "Top " + n)}
@@ -77,7 +117,7 @@ const kf = timed.map(([s, e], i) => `@keyframes sc${i}{${i ? `0%,${pc(s)}{opacit
   `${i === timed.length - 1 ? "100%{opacity:1}" : `${pc(e - .15)}{opacity:1}${pc(e)},100%{opacity:0}`}}`).join("");
 const HTML = `<style>${font(600, "inter-semibold.woff2")}${font(800, "inter-extrabold.woff2")}${kf}
 *{margin:0;box-sizing:border-box} body{width:1080px;height:1920px;overflow:hidden;font-family:Inter,sans-serif;font-weight:600;
-  background:radial-gradient(120% 80% at 50% 0%,#3b8ae6 0%,${BLUE} 55%,#1f63b8 100%);color:#fff}
+  background:${post.type === "bf" ? "radial-gradient(120% 80% at 50% 0%,#2a2a2a 0%,#0b0b0b 70%)" : `radial-gradient(120% 80% at 50% 0%,#3b8ae6 0%,${BLUE} 55%,#1f63b8 100%)`};color:#fff}
 .sc{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:170px 70px 0}
 .d{font-weight:800;letter-spacing:-.04em;line-height:1}
 .card{background:#fff;color:${INK};border-radius:44px;box-shadow:0 30px 80px rgba(0,0,0,.18)}
