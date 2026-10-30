@@ -499,7 +499,8 @@ _MIC = re.compile(r"micr[oó]?fonos?|microphones?|mikrofon|\bmics?\b", re.I)
 _MIC_ACC = re.compile(r"soporte|\bpie\b|\bstand|pinza|\bclip|anti-?pop|pop ?filter|paravientos|windscreen|espuma|ara[ñn]a"
                       r"|shock ?mount|suspensi|cable|adaptador|funda|estuche|bolsa|\bcase\b|maleta|repuesto|accesorio|previo"
                       r"|preamp|interfa|mezcla|mixer|grabador|recorder|brazo|\bboom\b|pantalla|absorbente|auriculares|kabel|st[aä]nder|halter"
-                      r"|klemme|spinne|popschutz|windschutz|koffer|tasche|adapter|\bxlr\b.*\bxlr\b", re.I)
+                      r"|klemme|spinne|popschutz|windschutz|koffer|tasche|adapter|\bxlr\b.*\bxlr\b"
+                      r"|cachimbo|canopla|c[aá]psula|arara|expositor|pedestal|globo|garra|haste|\bpara micr", re.I)
 
 
 WITH_CASE = re.compile(r"\+ ?(g \+ )?(funda|estuche)|con (funda|estuche)|\bw/? ?case|incl", re.I)
@@ -520,7 +521,8 @@ _GUITAR_ACC = re.compile(r"guitarr|guitar|gitarr|\bbajo|\bbass|\bbaixo|el[eé]ct
                          r"|hercules|k ?& ?m|warwick|ortola|cleartone|martin|augustine|aquila|gewa|rockboard|evidence"
                          r"|\bp10\b|santo angelo|tagima|giannini|strinberg|michael|\bnig\b|\bsg\b|izzo|dolphin|rozini|onerr", re.I)
 _NOT_GUITAR_ACC = re.compile(r"bater[ií]a|\bdrums?\b|\btom\b|hi-?hat|platillo|caja|snare|bombo|piano|teclado|keyboard|viol[ií]n"
-                             r"|viola\b|cello|chelo|contrabajo|ukelele|ukulele|mandolin|banjo|bandurria|la[uú]d|arpa|saxo|trompeta"
+                             r"|viola\b|cello|chelo|contrabajo|ukelele|ukulele|mandolin|banjo|bandurria|la[uú]d|arpa|saxo|\bsax\b|clarinete|sopro"
+                             r"|cavaco|cavaquinho|bandolim|violoncelo|boquilha|trompeta"
                              r"|flauta|clarinete|tromb|micr[oó]?fono|microphone|mikrofon|\bmic\b|\bdj\b|altavo|speaker|\bxlr\b|midi"
                              r"|\busb\b|hdmi|dmx|iluminaci|foco|atril|partitura|tablet|m[oó]vil|smartphone|pedalboard|\bpedal\b"
                              r"|alimentador|fuente de alimentaci|power ?supply|v[aá]lvula|\btubes?\b|amplificador|cabezal|combo"
@@ -531,6 +533,8 @@ def varios_kind(crumbs, url="", name=""):
     """'varios' si es un accesorio de guitarra o bajo (cuerdas, púas, correas, cables, afinadores…), si no None."""
     text = equipo_text(crumbs, url, name)
     if not _VARIOS.search(name or "") or _NOT_GUITAR_ACC.search(name or "") or NOT_PRODUCT.search(name or ""):
+        return None
+    if re.search(r"\b(0?[4-9]|1[0-2]) (cuerdas|cordas|strings?)\b", name or "", re.I):  # "Ibanez 07 Cordas RG7421": guitarra
         return None
     return "varios" if _GUITAR_ACC.search(text) and not _NOT_GUITAR_ACC.search(" / ".join(crumbs or [])) else None
 
@@ -1711,6 +1715,8 @@ CATALOGS = {
            "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},
     # Brasil: equipo. Mismas tiendas; sin el filtro de nombres de las guitarras (aquí los accesorios sí entran).
     "brmas": {"dir": DIR / "brmas", "sources": BRMAS_SOURCES, "site": "br", "cur": "BRL", "min_price": 10, "name_skip": None,
+              # En reales: un "case" de más de R$ 3.000 o un "acessório" de más de R$ 2.500 es un instrumento con su case.
+              "max_price": {"estuche": 3000, "varios": 2500},
               "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json", "teclado": "teclados.json",
                         "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie",
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},
@@ -2334,7 +2340,7 @@ def build(offers=None, history=None):
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
                 and (kind in GUITAR_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))
-                and (o.get("price") or 0) <= MAX_PRICE.get(kind, float("inf"))
+                and (o.get("price") or 0) <= CATALOG.get("max_price", MAX_PRICE).get(kind, float("inf"))
                 and not (kind == "estuche" and WITH_CASE.search(o.get("name") or ""))
                 and not (kind == "micro" and _MIC_ACC.search(o.get("name") or ""))
                 and not (kind == "varios" and _NOT_GUITAR_ACC.search(o.get("name") or ""))]
