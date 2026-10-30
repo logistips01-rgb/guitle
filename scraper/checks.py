@@ -39,6 +39,9 @@ def check():
             continue  # catálogo nuevo que aún no se ha leído
         products = json.loads((ROOT / path).read_text(encoding="utf-8"))["products"]
         before = {p["id"]: p for p in _published(path)}
+        # Las fichas van a R2, no a git: se mira la lista de la categoría (g/_<categoría>.txt), no el fichero.
+        lst = ROOT / "g" / f"_{kind}.txt"
+        pages = set(lst.read_text(encoding="utf-8").split()) if lst.exists() else set()
         for p in products:
             items = [i for i in p["items"] if not i.get("m")]
             for i in items:
@@ -59,7 +62,7 @@ def check():
             old = before.get(p["id"])
             if old and old.get("th") and not p.get("th"):
                 issues.append({"kind": kind, "type": "foto_perdida", "name": p["name"], "slug": p["slug"]})
-            if not (ROOT / "g" / f"{p['slug']}.html").exists():
+            if p["slug"] not in pages:
                 issues.append({"kind": kind, "type": "sin_pagina", "name": p["name"], "slug": p["slug"]})
     return issues
 

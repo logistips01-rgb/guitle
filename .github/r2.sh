@@ -6,9 +6,9 @@
 # Lo que va a R2 está también en .github/r2-exclude.txt, para que r2.yml no lo toque ni lo borre.
 set -euo pipefail
 
-R2_SITES="pt"  # webs de países que van a R2
-R2_ES=0        # 1: también las páginas de España (g/*.html, marca/, tipo/, presupuesto/, marcas.html, sitemap.xml)
-R2_IMG=0       # 1: también las miniaturas (img/p/); en git queda su lista, data/thumbs.json
+R2_SITES="pt fr it uk de br ie at nl"  # webs de países que van a R2
+R2_ES=1        # 1: también las páginas de España (g/*.html, marca/, tipo/, presupuesto/, marcas.html, sitemap.xml)
+R2_IMG=1       # 1: también las miniaturas (img/p/); en git queda su lista, data/thumbs.json
 
 ALL_SITES=$(python -c "from scraper.intl import SITES; print(' '.join(SITES))")
 in_r2() { case " $R2_SITES " in *" $1 "*) return 0 ;; esac; return 1; }

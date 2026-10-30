@@ -11,3 +11,21 @@
 /firestore.rules
 /.gitignore
 /LICENSE
+# La web generada, que las lecturas suben directas a R2 (.github/r2.sh): aquí no se tocan ni se borran.
+/pt/**
+/fr/**
+/it/**
+/uk/**
+/de/**
+/br/**
+/ie/**
+/at/**
+/nl/**
+/sitemap.xml
+/sitemap-*.xml
+/g/**
+/marca/**
+/tipo/**
+/presupuesto/**
+/marcas.html
+/img/p/**

@@ -2,3 +2,21 @@ __pycache__/
 *.pyc
 brand/.cache/
 brand/__pycache__/
+# La web generada va directa al bucket R2 (.github/r2.sh); en git solo quedan los datos.
+/pt/
+/fr/
+/it/
+/uk/
+/de/
+/br/
+/ie/
+/at/
+/nl/
+/g/*.html
+/marca/
+/tipo/
+/presupuesto/
+/marcas.html
+/sitemap.xml
+/sitemap-*.xml
+/img/p/
