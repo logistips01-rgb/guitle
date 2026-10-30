@@ -55,16 +55,17 @@ if (post.type === "chollo") {
     <div class="d" style="margin-top:50px;background:${YELLOW};color:${INK};font-size:46px;padding:20px 36px;border-radius:24px;text-wrap:balance;letter-spacing:-.02em;${a("pop", t + 1.0, .4)}">${esc(p.why)}</div>`]);
 } else {
   const n = post.picks.length;
-  scenes.push([2.8, t => `${hook(t, "Top " + n)}
+  scenes.push([2.8, t => `${hook(t, post.hook || "Top " + n)}
     <p class="d" style="font-size:128px;margin-top:60px;text-wrap:balance;${a("up", t + .2)}">${esc(post.title[0].toUpperCase() + post.title.slice(1))}</p>
     <div class="card" style="width:100%;height:760px;margin-top:70px;display:flex;justify-content:space-evenly;align-items:center;padding:30px 20px;${a("rise", t + .4, .7)}">
       ${post.picks.map(p => `<img src="${img(p)}" style="height:100%;max-width:${Math.floor(900 / n)}px;object-fit:contain">`).join("")}</div>`]);
-  post.picks.forEach((p, i) => scenes.push([2.3, t => `<div style="display:flex;width:100%;justify-content:space-between;align-items:center">
-      <span class="d" style="font-size:150px;color:${YELLOW};${a("pop", t + .05, .4)}">#${i + 1}</span>
+  post.picks.forEach((p, i) => scenes.push([p.why ? 2.8 : 2.3, t => `<div style="display:flex;width:100%;justify-content:space-between;align-items:center">
+      <span class="d" style="font-size:${p.label ? 96 : 150}px;color:${YELLOW};${a("pop", t + .05, .4)}">${p.label ? esc(p.label) : "#" + (i + 1)}</span>
       <span style="font-size:36px;opacity:.85">${i + 1} / ${n}</span></div>
     ${photoCard(p, t, 820)}${nameBlock(p, t + .3)}
     <p class="d" style="font-size:120px;margin-top:26px;${a("pop", t + .55, .4)}">${eur(p.price)}</p>
-    <p style="font-size:42px;margin-top:10px;${a("up", t + .7)}">en ${esc(p.store)} · ${p.stores} tiendas</p>`]));
+    <p style="font-size:42px;margin-top:10px;${a("up", t + .7)}">en ${esc(p.store)} · ${p.stores} tiendas</p>
+    ${p.why ? `<div class="d" style="margin-top:30px;background:${YELLOW};color:${INK};font-size:40px;padding:16px 30px;border-radius:20px;letter-spacing:-.02em;${a("pop", t + .9, .4)}">${esc(p.why)}</div>` : ""}`]));
 }
 scenes.push([3.0, t => cta(t)]);
 

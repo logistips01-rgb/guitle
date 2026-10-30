@@ -43,9 +43,10 @@ CATALOGS = {"electrica": ROOT / "data/catalog/products.json",
             "clasica": ROOT / "data/catalog/acusticas/clasicas.json"}
 KIND_NAMES = {"electrica": ("eléctrica", "eléctricas"), "acustica": ("acústica", "acústicas"), "clasica": ("clásica", "clásicas")}
 # Rangos de los tops, en el orden en que rotan (uno cada dos días).
-TOPS = [("electrica", 0, 300), ("acustica", 0, 300), ("electrica", 300, 700), ("clasica", 0, 250),
-        ("electrica", 700, 1200), ("acustica", 300, 800), ("electrica", 1200, 2500), ("clasica", 250, 700)]
-MIN_PRICE = 120      # por debajo suelen ser packs, juguetes o errores de catálogo
+TOPS = [("electrica", 150, 300), ("acustica", 150, 300), ("electrica", 300, 500), ("clasica", 150, 300),
+        ("electrica", 500, 750), ("acustica", 300, 750), ("clasica", 300, 750)]
+MIN_PRICE = 150      # franja de precios que pide el usuario (y por debajo suelen ser packs o errores de catálogo)
+MAX_PRICE = 750
 MIN_STORES = 3       # para hablar de "el mejor precio" tiene que haber con qué comparar
 STORIES = 3          # chollos en stories en cada tanda (mediodía y tarde)
 REEL_AUTO = False    # el Reel no se publica solo: se le pasa al usuario para que le ponga música y lo suba él
@@ -62,6 +63,7 @@ ACRONYMS = {"LTD", "ESP", "EVH", "PRS", "SG", "HSS", "HH", "SSS", "RW", "MN", "E
 
 def tidy(name):
     """Nombres en mayúsculas de algunas tiendas ("LES PAUL STANDARD") → "Les Paul Standard"."""
+    name = name.strip().rstrip(".")
     words = name.split()
     upper = [w for w in words if w.isalpha() and w.isupper() and len(w) > 2]
     if len(upper) < len(words) / 2:
@@ -75,7 +77,7 @@ def tag(s):
 
 # --- Datos ---------------------------------------------------------------------------------------------------
 
-def products():
+def products(lo=MIN_PRICE, hi=MAX_PRICE):
     """Guitarras del catálogo con foto, en stock en varias tiendas y con su mejor precio."""
     pvp = load(ROOT / "data/catalog/pvp.json", {}).get("prices", {})
     out = []
@@ -84,7 +86,7 @@ def products():
         stores = cat.get("stores", {})
         for p in cat.get("products", []):
             items = sorted((i for i in p.get("items", []) if i.get("p") and i.get("st") is not False), key=lambda i: i["p"])
-            if not p.get("img") or len({i["s"] for i in items}) < MIN_STORES or items[0]["p"] < MIN_PRICE:
+            if not p.get("img") or len({i["s"] for i in items}) < MIN_STORES or not lo <= items[0]["p"] <= hi:
                 continue
             best = items[0]
             prices = [i["p"] for i in items]
@@ -92,6 +94,7 @@ def products():
             out.append({"slug": p["slug"], "name": tidy(p["name"]), "brand": p.get("brand") or "", "kind": kind,
                         "img": p["img"], "price": best["p"], "store": stores.get(best["s"], best["s"]),
                         "stores": len({i["s"] for i in items}), "median": median(prices[1:]), "max": prices[-1],
+                        "next": min(i["p"] for i in items if i["s"] != best["s"]),
                         "pvp": ref[-1][1] if ref else None})
     return out
 
@@ -123,9 +126,9 @@ def rank_deals(prods, recent):
         elif p["pvp"] and p["price"] <= p["pvp"] * 0.85:
             prio, pct = 1, (1 - p["price"] / p["pvp"]) * 100
             why = f"{pct:.0f} % por debajo del PVP oficial ({eur(p['pvp'])})"
-        elif p["price"] <= p["median"] * 0.9:
-            prio, pct = 0, (1 - p["price"] / p["median"]) * 100
-            why = f"{eur(p['median'] - p['price'])} menos que en el resto de tiendas"
+        elif p["price"] <= p["next"] * 0.9:  # frente a la siguiente tienda más barata, no a la media
+            prio, pct = 0, (1 - p["price"] / p["next"]) * 100
+            why = f"{eur(p['next'] - p['price'])} menos que en cualquier otra tienda"
         else:
             continue
         if pct > 60:  # rebajas tan grandes suelen ser un error de emparejamiento, no un chollo
@@ -293,7 +296,7 @@ def arranque(day, publish_now):
     paises = load(ROOT / "data/catalog/paises.json", {})
     stores = sorted({n.replace(" (eBay)", "") for path in CATALOGS.values() for n in load(path, {}).get("stores", {}).values()})
     others = sorted((c for c in paises if c in PAISES), key=lambda c: -paises[c].get("guitars", 0))
-    prods = sorted(products(), key=lambda p: -p["stores"])
+    prods = sorted(products(120, 100000), key=lambda p: -p["stores"])  # escaparate: todas las gamas
     fetcher = Fetcher(delay=(0.5, 1.0))
     src = ARRANQUE / "src"
     src.mkdir(parents=True, exist_ok=True)
