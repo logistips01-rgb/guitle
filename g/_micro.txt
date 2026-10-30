@@ -1630,16 +1630,6 @@ shure-pga58xlr-microfono-42406397148
 shure-pgastudiokit4-42406396783
 shure-rk265g-beta-58a-mikrofonkorb-42406053785
 shure-rk320-42406053778
-shure-rpw112-42406124201
-shure-rpw114-42406124218
-shure-rpw116-42406124225
-shure-rpw118-42406124232
-shure-rpw120-42406124249
-shure-rpw122-42406124256
-shure-rpw170-para-ksm8-42406403641
-shure-rpw174-para-ksm8-42406403658
-shure-rpw184-para-ksm9-42406130615
-shure-rpw186-para-ksm9sh-42406265386
 shure-shsv100-microfono-dinamico-esv100html
 shure-shsv200-microfono-dinamico-esv200html
 shure-slxd14e-g59-42406561594

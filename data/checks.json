@@ -360,24 +360,6 @@
   "median": 1609.5
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Danelectro de 12 cuerdas para zurdos Danelectro Vintage 12 negro brillo",
-  "slug": "danelectro-de-12-cuerdas-para-zurdos-danelectro-vintage-12-negro-brillo-611820022099"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Spira J400MBK Barítono negro satinado",
-  "slug": "spira-j400mbk-baritono-negro-satinado-3831120940634"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Sterling JP157 Dimarzio Arce Acolchado Paraíso Cerúleo",
-  "slug": "sterling-jp157-dimarzio-arce-acolchado-paraiso-ceruleo-810002951794"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
@@ -933,7 +915,7 @@
   "name": "Akg Italia Akg C5",
   "slug": "akg-italia-akg-c5-885038018599",
   "price": 145.0,
-  "median": 234.54500000000002
+  "median": 229.0
  },
  {
   "kind": "micro",
@@ -992,6 +974,33 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Daddario EJ15 - Phosphor Bronze Extra Light [10-47]",
+  "slug": "daddario-ej15-phosphor-bronze-extra-light-10-47-19954121136",
+  "price": 6.23,
+  "median": 10.17
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Daddario EJ26 - Phosphor Bronze Custom Light [11-52]",
+  "slug": "daddario-ej26-phosphor-bronze-custom-light-11-52-19954122164",
+  "price": 8.6,
+  "median": 12.0
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Daddario EXL220 XL Nickel Wound Super Light [40-95]",
+  "slug": "daddario-exl220-xl-nickel-wound-super-light-40-95-19954151225",
+  "price": 16.83,
+  "median": 22.6
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Dunlop Cejilla Advanced Curved 11CD",
   "slug": "dunlop-cejilla-advanced-curved-11cd-710137000063",
@@ -1020,19 +1029,28 @@
   "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "numemusic",
-  "name": "Daddario EJ15 - Phosphor Bronze Extra Light [10-47]",
-  "slug": "daddario-ej15-phosphor-bronze-extra-light-10-47-19954121136",
-  "price": 6.23,
-  "median": 10.035
+  "name": "Daddario EJ11 - 80/20 Bronze Light [12-53]",
+  "slug": "daddario-ej11-80-20-bronze-light-12-53-19954122126",
+  "price": 8.18,
+  "median": 12.3
  },
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "numemusic",
-  "name": "Daddario EJ26 - Phosphor Bronze Custom Light [11-52]",
-  "slug": "daddario-ej26-phosphor-bronze-custom-light-11-52-19954122164",
+  "store": "mat",
+  "name": "Daddario EJ11 - 80/20 Bronze Light [12-53]",
+  "slug": "daddario-ej11-80-20-bronze-light-12-53-19954122126",
   "price": 8.6,
-  "median": 12.035
+  "median": 12.09
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Daddario EJ42 Resophonic Guitar [16-56]",
+  "slug": "daddario-ej42-resophonic-guitar-16-56-19954122171",
+  "price": 8.9,
+  "median": 13.05
  },
  {
   "kind": "varios",
@@ -1046,29 +1064,20 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "Daddario EXL190 Custom Light Long Scale [40-100]",
-  "slug": "daddario-exl190-custom-light-long-scale-40-100-19954947736",
-  "price": 20.7,
-  "median": 32.87
+  "store": "numemusic",
+  "name": "Daddario ESXL120 - Doble Bola Super Light [09-42]",
+  "slug": "daddario-esxl120-doble-bola-super-light-09-42-19954141417",
+  "price": 21.19,
+  "median": 28.35
  },
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "numemusic",
-  "name": "Daddario EXL220 XL Nickel Wound Super Light [40-95]",
-  "slug": "daddario-exl220-xl-nickel-wound-super-light-40-95-19954151225",
-  "price": 16.83,
-  "median": 27.799999999999997
- },
- {
-  "kind": "varios",
-  "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "Daddario EXL220 XL Nickel Wound Super Light [40-95]",
-  "slug": "daddario-exl220-xl-nickel-wound-super-light-40-95-19954151225",
-  "price": 17.8,
-  "median": 27.314999999999998
+  "name": "Daddario EXL160 Long Scale [50-105]",
+  "slug": "daddario-exl160-long-scale-50-105-19954151249",
+  "price": 18.91,
+  "median": 27.310000000000002
  },
  {
   "kind": "varios",
@@ -1082,38 +1091,47 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "Daddario NYXL45105 Long Scale [45-105]",
-  "slug": "daddario-nyxl45105-long-scale-45-105-19954176846",
-  "price": 25.5,
-  "median": 39.254999999999995
+  "store": "mat",
+  "name": "Daddario NYXL0838 Extra Super Light [08-38]",
+  "slug": "daddario-nyxl0838-extra-super-light-08-38-19954911690",
+  "price": 13.9,
+  "median": 19.45
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Ernie Ball EB2003 Earthwood 80/20 Bronze Medium-Light (12-54)",
+  "slug": "ernie-ball-eb2003-earthwood-80-20-bronze-medium-light-12-54-749699120032",
+  "price": 6.3,
+  "median": 9.435
  },
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "drunkat",
-  "name": "Ernie Ball EB2220 Slinky Power (011-048)",
-  "slug": "ernie-ball-eb2220-slinky-power-011-048-749699122203",
-  "price": 6.5,
-  "median": 8.83
+  "name": "Ernie Ball EB2812 Slinky Flatwound Regular (50-105)",
+  "slug": "ernie-ball-eb2812-slinky-flatwound-regular-50-105-749699128120",
+  "price": 54.0,
+  "median": 72.43
  },
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Ernie Ball EB2626 Slinky Not Even (012-056)",
-  "slug": "ernie-ball-eb2626-slinky-not-even-012-056-749699126263",
-  "price": 6.69,
-  "median": 9.32
+  "store": "musicopolix",
+  "name": "Ernie Ball EB2835 Juego Cuerdas Bajo Slinky 40-95",
+  "slug": "ernie-ball-eb2835-juego-cuerdas-bajo-slinky-40-95-749699128359",
+  "price": 25.0,
+  "median": 44.5
  },
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Ernie Ball EB2832 Slinky Regular (50-105)",
-  "slug": "ernie-ball-eb2832-slinky-regular-50-105-749699128328",
-  "price": 21.54,
-  "median": 29.515
+  "store": "mat",
+  "name": "Ernie Ball EB2835 Juego Cuerdas Bajo Slinky 40-95",
+  "slug": "ernie-ball-eb2835-juego-cuerdas-bajo-slinky-40-95-749699128359",
+  "price": 27.0,
+  "median": 43.5
  },
  {
   "kind": "varios",
@@ -1127,11 +1145,29 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "alfasoni",
-  "name": "Fender 2\" Sonoran Strap Saguaro",
-  "slug": "fender-2-sonoran-strap-saguaro-885978558193",
-  "price": 38.99,
-  "median": 52.495000000000005
+  "store": "session",
+  "name": "Ernie Ball Power Slinky Bass 2831 .055-110",
+  "slug": "ernie-ball-power-slinky-bass-2831-055-110-749699128311",
+  "price": 20.1,
+  "median": 51.0
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Ernie Ball Power Slinky Bass 2831 .055-110",
+  "slug": "ernie-ball-power-slinky-bass-2831-055-110-749699128311",
+  "price": 23.0,
+  "median": 49.55
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Fender 250R NPS 10-46 Ball End",
+  "slug": "fender-250r-nps-10-46-ball-end-717669853310",
+  "price": 6.0,
+  "median": 8.495000000000001
  },
  {
   "kind": "varios",
@@ -1163,6 +1199,42 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Fender 7250-5L Nickel Plated Steel Long Scale 040-115",
+  "slug": "fender-7250-5l-nickel-plated-steel-long-scale-040-115-717669853907",
+  "price": 18.94,
+  "median": 25.924999999999997
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Fender Ball End 09-42 250L Nps",
+  "slug": "fender-ball-end-09-42-250l-nps-717669853334",
+  "price": 6.0,
+  "median": 8.495000000000001
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Fender Bronze Acus Ball End 70CL 011-052",
+  "slug": "fender-bronze-acus-ball-end-70cl-011-052-717669853426",
+  "price": 6.3,
+  "median": 8.545
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender Gitarrengurt Weighless 2 Monogrammed Strap White/Brown/Yellow",
+  "slug": "fender-gitarrengurt-weighless-2-monogrammed-strap-white-brown-yellow-885978381906",
+  "price": 17.5,
+  "median": 24.64
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "alfasoni",
   "name": "Fender Pickguard/Control Plate Mounting Screws 24 Chrome",
   "slug": "fender-pickguard-control-plate-mounting-screws-24-chrome-717669507275",
@@ -1181,6 +1253,15 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Fender Super Deluxe Vintage-style Strap, Black",
+  "slug": "fender-super-deluxe-vintage-style-strap-black-717669446222",
+  "price": 28.9,
+  "median": 39.6
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Righton Straps Masterkey Plus BL Red",
   "slug": "righton-straps-masterkey-plus-bl-red-8401060310207",
@@ -1194,7 +1275,7 @@
   "name": "Righton Straps Righton DUAL-HOOK-BR BR Correa de Guitarra",
   "slug": "righton-straps-righton-dual-hook-br-br-correa-de-guitarra-8401120020350",
   "price": 22.75,
-  "median": 31.515
+  "median": 31.064999999999998
  },
  {
   "kind": "varios",
@@ -1203,7 +1284,7 @@
   "name": "Righton Straps Righton Mojo Armour Teal Correa de Guitarra",
   "slug": "righton-straps-righton-mojo-armour-teal-correa-de-guitarra-8436612540689",
   "price": 51.9,
-  "median": 71.975
+  "median": 70.95
  },
  {
   "kind": "varios",
@@ -1212,7 +1293,7 @@
   "name": "Righton Straps Righton Standard Legend Jimmy Hendrix II Correa Guitarra",
   "slug": "righton-straps-righton-standard-legend-jimmy-hendrix-ii-correa-guitarra-8419612000391",
   "price": 35.65,
-  "median": 49.485
+  "median": 48.78
  },
  {
   "kind": "varios",
@@ -1231,14 +1312,5 @@
   "slug": "righton-straps-sugar-black-8401050080707",
   "price": 63.61,
   "median": 87.1
- },
- {
-  "kind": "varios",
-  "type": "sin_iva",
-  "store": "drunkat",
-  "name": "Righton Straps Talisman Victoria Black",
-  "slug": "righton-straps-talisman-victoria-black-8436612540801",
-  "price": 49.58,
-  "median": 61.5
  }
 ]

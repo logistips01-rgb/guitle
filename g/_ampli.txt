@@ -723,12 +723,12 @@ joyo-bsk-40-bk-6972716327860
 joyo-bsk-40-wh-6972716327990
 joyo-bsk-80-6972716329246
 joyo-dc-15-6972716322223
-joyo-dc-15b-oelectrico
+joyo-dc-15b-6972716320786
 joyo-dc-15s-326375html
-joyo-dc-30-aelectrica
-joyo-dc15b-amplficador-de-bajo-15w-6972716320786
+joyo-dc-30-6972716322513
+joyo-dc15b-amplficador-de-bajo-15w-ajo15whtml
 joyo-dc15s-6972716326375
-joyo-dc30-amplificador-de-30w-6972716322513
+joyo-dc30-amplificador-de-30w-0wjoyohtml
 joyo-jam-buddy-ii-6972716321837
 joyo-jam-buddy-ill-6972716321509
 joyo-jca-40-6972716326306
@@ -1565,6 +1565,7 @@ walkasse-wc-headcustom-esp-8436560472018
 walkasse-wc-headdsl100hr-esp-436560472001
 walkasse-wc-hotrodlux-w-esp-8436560472032
 walrus-audio-canvas-re-amp-eampp39381
+warwick-bc-10-8-10-watt-bass-combo-4033685600872
 warwick-bc20-amplificador-de-bajo-230v-4033685536973
 warwick-bc40-amplificador-de-bajo-230v-4033685600001
 warwick-bc80-amplificador-de-bajo-230v-4033685600049

@@ -1,5 +1,7 @@
 admira-buleria-8435732402310
 admira-lola-8435732402341
+aguilar-filter-twin-v2-bass-dual-envelope-filter-8245990017634
+aguilar-micro-db316-midrange-eq-824599002050
 alto-professional-altamira-n300f-4564568318
 alvarez-ab60-ce-spbshb-60cespbshb
 alvarez-ab60ce-artist-814295012934
@@ -17,6 +19,7 @@ austin-ajb300n-606707538046
 austin-apb200-bk-814295014594
 austin-apb200-sb-814295014617
 austin-apb200rd-814295014600
+boss-geb-7-graphic-bass-equalizer-4957054036881
 bromo-bat8e-bass-bajo-acustico-8997032898281
 bromo-bat8efl-bass-fretless-bajo-acustico-8997032898298
 brunswickacoustic-bass-black-lackp41963
@@ -498,7 +501,7 @@ ibanez-afb200-tks-artcore-transparent-black-sunburst-4549763114785
 ibanez-agb200-bkf-artcore-black-flat-4549763335685
 ibanez-anb205-twb-adam-nitti-transparent-wine-red-burst-4549763168863
 ibanez-anb306-adam-nitti-4515276878612
-ibanez-bass-workshop-btb605lm-bkf-tb605lmbkf
+ibanez-bass-workshop-btb605lm-bkf-4549763376725
 ibanez-bass-workshop-btb605ms-som-tb605mssom
 ibanez-bass-workshop-btb805ms-fnl-tb805msfnl
 ibanez-bass-workshop-srf706-bbf-4515276922773
@@ -506,7 +509,7 @@ ibanez-bass-workshop-ub804-bul-opub804bul
 ibanez-btb1835-ndl-natural-shadow-low-gloss-4549763281197
 ibanez-btb1836-ndl-natural-shadow-low-gloss-4549763281203
 ibanez-btb605-tgf-transparent-gray-flat-4549763366610
-ibanez-btb605lmbkf-black-flat-4549763376725
+ibanez-btb605lmbkf-black-flat-376725html
 ibanez-btb605mlmpwm-pearl-white-matte-4549763352552
 ibanez-btb605ms-mam-bass-workshop-midnight-arctic-ocean-matte-4549763364593
 ibanez-btb605mssom-solar-eclipse-matte-4549763376718
@@ -731,10 +734,10 @@ jackson-ltd-legend-series-signature-david-ellefson-cb-concert-bass-885978527120
 jackson-pro-series-spectra-bass-sbp-iv-firestorm-fade-717669997526
 jackson-spectra-bass-js2p-il-bkb-717669560935
 jackson-spectra-bass-sbxm-iv-snw-885978428359
+jackson-x-rrb-iv-rhoads-bass-bk-pin-kpinp45663
 jackson-x-series-concert-bass-cbxdx-iv-m-mn-icb-717669902292
 jackson-x-series-concert-bass-cbxnt-dx-iv-matte-army-drab-717669902285
 jackson-x-series-concert-bass-cbxnt-dx-iv-rocket-red-885978751716
-jackson-x-series-rrb-iv-rhoads-bass-amaranth-black-with-white-pinstripes-885978829354
 jackson-x-series-signature-david-ellefson-kelly-bird-iv-bass-885978341238
 jet-jb300-ow-white-mini-bajo-electrico-3831120936194
 jet-jb300-pk-shell-pink-mini-bajo-electrico-3831120936200
@@ -1483,17 +1486,14 @@ yamaha-bb434-maple-black-eblackhtml
 yamaha-bb434-tea-blue-eabluehtml
 yamaha-bb434-tobacco-brown-sunburst-nbursthtml
 yamaha-bb434m-bajo-electrico-negro-4957812619271
-yamaha-bb435-bl-4957812619424
 yamaha-bb435-black-5blackhtml
 yamaha-bb435-tb-4957812619417
 yamaha-bb435-tbs-4957812619431
 yamaha-bb435-teal-blue-albluehtml
 yamaha-bb734-trans-matte-black-4957812619349
 yamaha-bb734a-tmbl-l56572html
-yamaha-bb735-5-c-bajo-electrico-trans-matte-black-4957812619363
 yamaha-bb735-a-dark-coffee-sunburst-nbursthtml
 yamaha-bb735a-dcs-4957812619356
-yamaha-bb735a-tmbl-l56574html
 yamaha-bb735a-translucent-matte-black-eblackhtml
 yamaha-bbne2-nathan-east-black-4960693187548
 yamaha-bbne2-nathan-east-white-4960693187531
@@ -1504,7 +1504,9 @@ yamaha-bbp35-vs-4957812689595
 yamaha-beyond-classic-bb234-black-4957812619202
 yamaha-beyond-classic-bb434-tobaco-brown-sunburst-4957812619264
 yamaha-beyond-classic-bb434m-tobaco-brown-sunburst-4957812619288
+yamaha-beyond-classic-bb435-black-5-cuerdas-4957812619424
 yamaha-beyond-classic-bb734a-dark-coffee-sunburst-4957812619332
+yamaha-beyond-classic-bb735a-translucent-matte-black-5-cuerdas-4957812619363
 yamaha-drums-yamaha-trbx204-bright-red-metallic-639705html
 yamaha-trb-jp2-john-patitucci-am-4960693220993
 yamaha-trb-jp2-john-patitucci-trd-4960693221006
