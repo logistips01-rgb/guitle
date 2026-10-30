@@ -1561,7 +1561,12 @@ for _id, _name, _sm, _sub, _parse, _pick in [
                        "kind_url": fr_dealer_kind, "pick": _pick}
 FR_SOURCES["tamtam"]["fix"] = _tamtam_fix
 
-# Guitar Legend (París) queda fuera: su robots.txt veta a los bots de IA (ClaudeBot, anthropic-ai) y declara ai-train=no.
+# Guitar Legend (París): un sitemap por idioma; solo las fichas en francés. Breadcrumb y EAN en el JSON-LD.
+FR_SOURCES["guitarlegend"] = {
+    "name": "Guitar Legend", "sitemap": "https://www.guitar-legend.com/sitemap.xml", "sub": lambda l: "/fr/products" in l,
+    "parse": _parse_ld_eur, "fix": _fr_dealer_fix, "kind_url": fr_dealer_kind,
+    "pick": lambda u: "/fr/" in u and bool(re.search(r"-\d+\.html$", u)) and not _fr_not_guitar(_fr_slug(u))
+    and not NOT_PRODUCT.search(u)}
 # Paul Beuscher (París, Shopify): su sitemap son 370.000 partituras; las guitarras, de la colección "guitares".
 # En gtin13 mezcla EAN de verdad con códigos internos que hasta cuadran el dígito de control ("1570050132734"): sin EAN.
 FR_SOURCES["paulbeuscher"] = {"name": "Paul Beuscher", "parse": _parse_ld_eur, "kind_url": fr_dealer_kind,
