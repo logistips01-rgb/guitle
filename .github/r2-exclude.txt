@@ -11,6 +11,3 @@
 /firestore.rules
 /.gitignore
 /LICENSE
-# Webs que la lectura del catálogo sube directas a R2 (R2_SITES en catalog.yml): aquí no se tocan ni se borran.
-/pt/**
-/sitemap-pt.xml

@@ -1,11 +1,16 @@
 name: r2
 
 # Copia la web al bucket R2 "guitle" de Cloudflare, de donde la sirve el Worker (cloudflare/worker.js).
+# Sin --fast-list: así no lista en el bucket las carpetas excluidas (cada listado es una operación de pago).
 # Solo sube lo que ha cambiado (rclone compara el MD5 de cada archivo con el ETag del bucket) y borra lo que ya no
 # está, así que cada lectura gasta pocas escrituras. Lo que no se publica: .github/r2-exclude.txt.
 on:
   push:
     branches: [claude/friendly-fermat-yycain]
+  # Los commits de los workflows (lecturas, crecimiento) no lanzan push: catalog y scrape lo lanzan desde .github/r2.sh.
+  workflow_run:
+    workflows: [crecimiento]
+    types: [completed]
   workflow_dispatch:
 
 concurrency:
@@ -22,6 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: claude/friendly-fermat-yycain  # la última versión, también si lo lanza otro workflow
           fetch-depth: 1
       - name: Instalar rclone
         # La versión de Ubuntu (1.60) manda cabeceras que R2 no admite (501 NotImplemented).
@@ -44,5 +50,5 @@ jobs:
             rclone copyto robots.txt r2:guitle/robots.txt -vv --dump headers --retries 1 2>&1 | grep -iv "authorization\|x-amz-security\|credential" | tail -80
             exit 1
           fi
-          rclone sync . r2:guitle --checksum --fast-list --transfers 32 --checkers 32 \
+          rclone sync . r2:guitle --checksum --transfers 32 --checkers 32 \
             --exclude-from .github/r2-exclude.txt --stats 1m --stats-one-line --stats-log-level NOTICE

@@ -87,6 +87,8 @@ publicar() {
   fi
   echo "R2: $(wc -l < "$URLS") páginas nuevas o cambiadas"
   python -m scraper.indexnow --files "$URLS" || true
+  # Lo que sigue en git (datos, portada…) lo sube r2.yml; un commit hecho desde un workflow no lo lanza solo.
+  gh workflow run r2.yml --ref "$GITHUB_REF_NAME" || echo "::warning::no se pudo lanzar r2.yml"
 }
 
 case "${1:-}" in
