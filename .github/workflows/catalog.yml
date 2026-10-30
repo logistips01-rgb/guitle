@@ -33,6 +33,9 @@ jobs:
     # Cada tienda recibe como mucho una petición cada 3-6 s.
     strategy:
       fail-fast: false
+      # GitHub da 20 máquinas a la vez: se dejan 4 libres para que la subida a R2 (los cambios de la web) y los avisos
+      # de precio no esperen horas a que acabe la lectura.
+      max-parallel: 16
       matrix:
         # Programada: todos. A mano se puede elegir uno solo (p. ej. equipo = pedales y teclados).
         cat: ${{ fromJSON(inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","ie","iemas","at","atmas","nl","nlmas"]') }}
