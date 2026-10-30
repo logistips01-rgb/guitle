@@ -33,15 +33,50 @@ def name_for(url):
     return hashlib.sha1(url.encode()).hexdigest()[:16] + ".webp"
 
 
+# Miniaturas ya hechas y su alto/ancho: las fotos están en R2 (no en git), así que la lista dice cuáles hay sin
+# tenerlas en disco. index() la completa con las nuevas de img/p/.
+INDEX = ROOT / "data" / "thumbs.json"
+_index = None
+
+
+def _load_index():
+    global _index
+    if _index is None:
+        _index = load(INDEX, {})
+    return _index
+
+
 def existing(url):
     """Nombre de la miniatura si ya existe (para los JSON de la web)."""
-    return name_for(url) if url and (DIR / name_for(url)).exists() else None
+    if not url:
+        return None
+    name = name_for(url)
+    return name if name in _load_index() or (DIR / name).exists() else None
 
 
 def slenderness(name):
     """Alto/ancho de una miniatura: una guitarra entera es esbelta (>2); un primer plano, no."""
-    with Image.open(DIR / name) as im:
-        return im.height / im.width
+    if (DIR / name).exists():
+        with Image.open(DIR / name) as im:
+            return im.height / im.width
+    return _load_index().get(name, 0)
+
+
+def index():
+    """Añade a data/thumbs.json las miniaturas de img/p/ que aún no están. Devuelve cuántas."""
+    idx, new = _load_index(), 0
+    for f in DIR.glob("*.webp") if DIR.exists() else []:
+        if f.name not in idx:
+            try:
+                with Image.open(f) as im:
+                    idx[f.name] = round(im.height / im.width, 4)
+                new += 1
+            except Exception as exc:  # noqa: BLE001 - una foto rota no se apunta (se rehará)
+                print(f"[thumb] {f.name}: {type(exc).__name__}", flush=True)
+    # Una entrada por línea y en orden: en git, cada lectura solo añade líneas.
+    INDEX.write_text("{\n" + ",\n".join(f'"{k}":{v}' for k, v in sorted(idx.items())) + "\n}\n", encoding="utf-8")
+    print(f"miniaturas: {len(idx)} en la lista ({new} nuevas)", flush=True)
+    return new
 
 
 def _erase_lines(mask):
@@ -194,7 +229,7 @@ def run(limit=300, minutes=20, cat=None, workers=8):
     """Las fotos se piden por tienda (dominio) en paralelo: cada tienda, de una en una y con su pausa de 1-2 s, como
     siempre; lo que cambia es que varias tiendas avanzan a la vez."""
     DIR.mkdir(parents=True, exist_ok=True)
-    todo = [(u, r) for u, r in wanted(cat).items() if not (DIR / name_for(u)).exists()]
+    todo = [(u, r) for u, r in wanted(cat).items() if not existing(u)]
     by_host = {}
     for url, rotate in todo:
         by_host.setdefault(urlparse(url).netloc, []).append((url, rotate))
@@ -225,8 +260,12 @@ def main(argv=None):
     parser.add_argument("--limit", type=int, default=300)
     parser.add_argument("--minutes", type=float, default=20)
     parser.add_argument("--cat", help="solo las fotos de este catálogo (scraper.catalog --cat)")
+    parser.add_argument("--index", action="store_true", help="solo apuntar en data/thumbs.json las de img/p/")
     args = parser.parse_args(argv)
-    run(args.limit, args.minutes, args.cat)
+    if args.index:
+        index()
+    else:
+        run(args.limit, args.minutes, args.cat)
     return 0
 
 

@@ -8,12 +8,15 @@ set -euo pipefail
 
 R2_SITES="pt"  # webs de países que van a R2
 R2_ES=0        # 1: también las páginas de España (g/*.html, marca/, tipo/, presupuesto/, marcas.html, sitemap.xml)
+R2_IMG=0       # 1: también las miniaturas (img/p/); en git queda su lista, data/thumbs.json
 
 ALL_SITES=$(python -c "from scraper.intl import SITES; print(' '.join(SITES))")
 in_r2() { case " $R2_SITES " in *" $1 "*) return 0 ;; esac; return 1; }
 
 git_add() {
-  git add "$@" img/p/
+  python -m scraper.thumbs --index  # las miniaturas nuevas de img/p/, a la lista
+  git add "$@" data/thumbs.json
+  if [ "$R2_IMG" = 0 ]; then git add img/p/; fi
   if [ "$R2_ES" = 1 ]; then
     git add g/_*.txt  # listas de fichas por categoría: el sitemap de España sale de ellas
   else
@@ -77,6 +80,10 @@ publicar() {
     done
     one marcas.html
     one sitemap.xml
+  fi
+  if [ "$R2_IMG" = 1 ] && compgen -G "img/p/*.webp" >/dev/null; then
+    # Solo hay en disco las de esta lectura (las demás están ya en R2): sin listar el bucket, una a una.
+    rclone copy img/p r2:guitle/img/p --no-traverse --checksum --transfers 32 --stats-log-level NOTICE
   fi
   echo "R2: $(wc -l < "$URLS") páginas nuevas o cambiadas"
   python -m scraper.indexnow --files "$URLS" || true
