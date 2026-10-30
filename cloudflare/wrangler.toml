@@ -2,7 +2,9 @@
 name = "guitle"
 main = "worker.js"
 compatibility_date = "2025-06-15"
-workers_dev = true
+workers_dev = false
+# Dirección de prueba (Cloudflare crea el DNS y el certificado). guitle.com sigue en GitHub Pages hasta cambiarlo aquí.
+routes = [{ pattern = "prueba.guitle.com", custom_domain = true }]
 
 [[r2_buckets]]
 binding = "SITE"
