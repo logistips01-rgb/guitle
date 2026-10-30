@@ -1,4 +1,4 @@
-// Contador de visitas de guitle, sin cookies ni datos personales: solo suma 1 por día a unos contadores en
+// Contador de visitas de guitle (solo personas: 3 s visible y algún gesto), sin cookies ni datos personales: suma 1 a unos contadores en
 // Firestore (proyecto guitle-d48d8). Las reglas de Firestore solo permiten sumar de 1 en 1, nunca leer ni borrar.
 //   AAAA-MM-DD_v           visitas (páginas vistas) del día
 //   AAAA-MM-DD_p_<página>  vistas de cada página
@@ -41,7 +41,21 @@
   let from = "";
   try { from = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) {}
   if (from !== location.hostname) keys.push("r_" + (from ? clean(from) : "directo"));
-  add(keys);
+  // Solo cuentan las personas: la visita se suma cuando la página lleva 3 s visible y ha habido un gesto (ratón,
+  // scroll, toque o tecla). Los robots que se hacen pasar por navegador cargan y se van sin tocar nada.
+  let human = false, done = false, shown = 0, since = document.visibilityState === "visible" ? Date.now() : 0;
+  const check = () => {
+    if (done || !human || !since) return;
+    const t = shown + Date.now() - since;
+    if (t >= 3000) { done = true; add(keys); } else setTimeout(check, 3000 - t);
+  };
+  ["pointermove", "pointerdown", "scroll", "wheel", "touchstart", "keydown"].forEach(ev =>
+    addEventListener(ev, () => { if (!human) { human = true; check(); } }, { passive: true, capture: true }));
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") since = Date.now();
+    else if (since) { shown += Date.now() - since; since = 0; }
+    check();
+  });
 
   // Clics hacia las tiendas (enlaces patrocinados). Awin y similares llevan la URL de la tienda dentro.
   document.addEventListener("click", e => {
