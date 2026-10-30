@@ -36,8 +36,9 @@
   .who button { font: inherit; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; }
   /* guitle en el mundo: mapa en blanco, los países se pintan de azul según se encienden */
   .world .sub { color: var(--text-muted); margin: -6px 0 12px; font-size: .9rem; }
-  .world .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
-  .world .kpis b { color: var(--accent); }
+  .world .kpis, #gkpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+  .world .kpis b, #gkpis b { color: var(--accent); }
+  #gkpis { margin-bottom: 14px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
   .world .prog { height: 8px; background: var(--grid); border-radius: 99px; margin-top: 8px; overflow: hidden; }
   .world .prog i { display: block; height: 100%; background: var(--accent); }
   .maps { display: grid; grid-template-columns: 1.75fr 1fr; gap: 10px; margin-top: 12px; }
@@ -93,6 +94,13 @@
       <div class="legend"><span><i style="background:var(--accent)"></i>Con guitle</span><span><i style="background:#8db8ec"></i>Encendiéndose (late hasta que tenga datos)</span><span><i style="background:#d3e2f4"></i>Próximamente</span><span><i style="background:#fff"></i>Por conquistar</span></div>
       <table class="ctable"><thead><tr><th>País</th><th>Estado</th><th class="n">Posibles guitles</th><th class="n" id="wdays">Guitles</th><th class="n">Guitarras</th><th class="n">Tiendas</th></tr></thead><tbody id="wrows"></tbody></table>
       <p class="empty" style="margin:10px 0 0">Posibles guitles = 10 % de la población activa del país (cifras aproximadas). Guitles = páginas vistas en la web de cada país (contador anónimo) en el periodo elegido.</p>
+    </div>
+    <div class="card">
+      <h2>Crecimiento del catálogo</h2>
+      <p class="sub">Productos comparados en cada país desde el primer día (un punto cada 6 horas, tras cada lectura).</p>
+      <div class="kpis" id="gkpis"></div>
+      <div class="chart-wrap" style="height:320px"><canvas id="gchart" aria-label="Productos por país a lo largo del tiempo"></canvas></div>
+      <div style="overflow-x:auto"><table class="ctable" style="min-width:560px"><thead><tr><th>País</th><th class="n">Guitarras</th><th class="n">Equipo</th><th class="n">Total</th><th class="n">Tiendas</th><th class="n">Últimas 24 h</th><th class="n">Desde el inicio</th></tr></thead><tbody id="grows"></tbody></table></div>
     </div>
     <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
     <div class="cols">
@@ -172,6 +180,7 @@ onAuthStateChanged(auth, async user => {
   $("who").innerHTML = user ? `${esc(user.email)} · <button id="out">Salir</button>` : "";
   if (!user) return;
   $("out").onclick = () => signOut(auth);
+  renderGrowth().catch(() => {});
   try { await load(); } catch (e) {
     $("app").hidden = true; $("login").hidden = false;
     $("loginmsg").textContent = "Esta cuenta no tiene permiso para ver las estadísticas.";
@@ -262,6 +271,54 @@ function renderWorld(pages) {
       <td class="n">${w.status === "next" ? "" : fmt(visits[c] || 0)}</td><td class="n">${w.guitars ? fmt(w.guitars) : ""}</td>
       <td class="n">${w.stores || ""}</td></tr>`;
   }).join("");
+}
+
+// Crecimiento del catálogo (data/crecimiento.json, scraper/crecimiento.py): filas [momento, país, guitarras, equipo, tiendas].
+const GROWTH_COLORS = { es: "#2a78d6", pt: "#1e9e6a", fr: "#7b5cd6", it: "#e0892b", uk: "#d6455d", de: "#3f3f46",
+                        br: "#2bb3c0", ie: "#7fb13a", at: "#c45ab3", nl: "#e5b51d" };
+let growthChart = null;
+async function renderGrowth() {
+  const { rows: g } = await fetch("data/crecimiento.json", { cache: "no-store" }).then(r => r.json());
+  const moments = [...new Set(g.map(r => r[0]))].sort();
+  const name = Object.fromEntries(COUNTRIES.map(([c, , n]) => [c, n]));
+  const codes = Object.keys(GROWTH_COLORS).filter(c => g.some(r => r[1] === c));
+  const at = {};  // país → momento → fila
+  for (const r of g) (at[r[1]] = at[r[1]] || {})[r[0]] = r;
+  const total = r => r ? r[2] + r[3] : 0;
+  const sumAt = m => codes.reduce((a, c) => a + total(at[c][m]), 0);
+  const last = moments.at(-1), first = moments[0];
+  const dayAgo = moments.filter(m => m <= new Date(Date.parse(last) - 864e5).toISOString().slice(0, 16)).at(-1) || first;
+  const shortM = m => `${Number(m.slice(8, 10))}/${Number(m.slice(5, 7))} ${m.slice(11, 13)}h`;
+  const delta = n => n ? `<span style="color:var(--good,#00750a)">+${fmt(n)}</span>` : "";
+  $("gkpis").innerHTML = [
+    [fmt(sumAt(last)), "productos comparados hoy"],
+    [delta(sumAt(last) - sumAt(dayAgo)) || "0", "en las últimas 24 h"],
+    [fmt(codes.length), "países con catálogo"],
+    [fmt(Math.round((Date.parse(last) - Date.parse(first)) / 864e5)), `días desde el ${shortM(first).split(" ")[0]}`],
+  ].map(([b, s]) => `<div class="tile-s"><b>${b}</b><span>${s}</span></div>`).join("");
+  if (growthChart) growthChart.destroy();
+  growthChart = new Chart($("gchart"), {
+    type: "line",
+    data: { labels: moments, datasets: codes.map(c => ({
+      label: name[c] || c, data: moments.map(m => total(at[c][m])), fill: true, borderWidth: 1.5, pointRadius: 0, tension: 0,
+      borderColor: GROWTH_COLORS[c], backgroundColor: GROWTH_COLORS[c] + "cc" })) },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: { grid: { display: false }, ticks: { color: css("--text-muted"), maxTicksLimit: 8, callback(v) { return shortM(this.getLabelForValue(v)); } } },
+                y: { stacked: true, beginAtZero: true, grid: { color: css("--grid") }, ticks: { color: css("--text-muted"), callback: v => fmt(v) } } },
+      plugins: { legend: { labels: { color: css("--text-secondary"), boxWidth: 10 } },
+                 tooltip: { itemSort: (a, b) => b.parsed.y - a.parsed.y,
+                            callbacks: { title: c => shortM(c[0].label), label: c => `${c.dataset.label}: ${fmt(c.parsed.y)}`,
+                                         footer: c => `Total: ${fmt(c.reduce((a, x) => a + x.parsed.y, 0))}` } } } },
+  });
+  $("grows").innerHTML = codes.map(c => [c, at[c][last]]).sort((a, b) => total(b[1]) - total(a[1])).map(([c, r]) => {
+    const since = Object.values(at[c]).sort((a, b) => a[0] < b[0] ? -1 : 1)[0];
+    return `<tr><td><i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:${GROWTH_COLORS[c]};margin-right:7px"></i>${esc(name[c] || c)}</td>
+      <td class="n">${r ? fmt(r[2]) : ""}</td><td class="n">${r && r[3] ? fmt(r[3]) : ""}</td><td class="n"><b>${fmt(total(r))}</b></td>
+      <td class="n">${r ? r[4] : ""}</td><td class="n">${delta(total(r) - total(at[c][dayAgo]))}</td>
+      <td class="n">${delta(total(r) - total(since))} <small style="color:var(--text-muted)">desde ${shortM(since[0]).split(" ")[0]}</small></td></tr>`;
+  }).join("") + `<tr><td><b>Total</b></td><td class="n"><b>${fmt(codes.reduce((a, c) => a + (at[c][last]?.[2] || 0), 0))}</b></td>
+      <td class="n"><b>${fmt(codes.reduce((a, c) => a + (at[c][last]?.[3] || 0), 0))}</b></td><td class="n"><b>${fmt(sumAt(last))}</b></td>
+      <td></td><td class="n">${delta(sumAt(last) - sumAt(dayAgo))}</td><td class="n">${delta(sumAt(last) - sumAt(first))}</td></tr>`;
 }
 
 function bars(id, map, label, emptyText, top = 10) {
