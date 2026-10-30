@@ -1403,6 +1403,7 @@ for _id, _name, _sm in [("x5music", "X5 Music", "https://www.x5music.com.br/site
                         ("supersom", "Super Som", "https://www.supersominstrumentos.com.br/sitemap.xml")]:
     BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "fix": _br_fix, "kind_url": br_kind,
                        "pick": lambda u: _pick_vtex(u) or _pick_br(u)}
+BR_SOURCES["ninjasom"]["pick"] = _pick_vtex  # sus demás URLs son listados
 
 # Musical Center Som (WooCommerce): en el sitemap también van categorías y etiquetas; solo las fichas.
 BR_SOURCES["musicalcentersom"]["pick"] = lambda u: "/produto/" in u and _pick_br(u)
