@@ -3154,7 +3154,7 @@ _EQ_EN_FOR = re.compile(r"\b(?:for|fits?|to fit|suits?)\b|^(?:\S+ ){0,2}strings?
                         r"|\b(?:hard ?case|case|gig ?bag|bag|strap|stand|hanger|cable|lead|cover|polish)\b.*\bguitar\b"
                         r"|\bguitar\b.*\b(?:strings|string set|singles?)\b", re.I)
 # En inglés, el nombre que acaba en un accesorio lo es ("… Jazz III Nylon Guitar Pick, Black Stiffo, 6 Pack").
-_EQ_EN_ACC_LAST = re.compile(r"\b(?:picks?|plectrums?|strings?|string set|strap|hard ?case|case|gig ?bag|bag|cable|lead|capo|slide"
+_EQ_EN_ACC_LAST = re.compile(r"\b(?<!\d-)(?<!\d )(?:picks?|plectrums?|strings?|string set|strap|hard ?case|case|gig ?bag|bag|cable|lead|capo|slide"
                              r"|tuner|stand|hanger|polish|cleaner|pickups?|pickup set|pickguard|scratch ?plate|knobs?|winder"
                              r"|footswitch)\b(?=\s*(?:$|[,(\-–|]|\d+ ?pack|\bset\b|x ?\d))", re.I)
 # "… with Custom Shop Pickups", "… | With FREE Gigbag", "(Incl. Gig bag, Cable, Picks)": lo que va con la guitarra.
