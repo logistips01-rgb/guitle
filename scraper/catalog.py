@@ -27,6 +27,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 import requests
 from bs4 import BeautifulSoup
@@ -867,7 +868,9 @@ def it_kind(crumbs):
 
 
 # Marcas de dos palabras que Guitarshop.it no da aparte (el nombre empieza por la marca).
-_TWO_WORD_BRANDS = ("music man", "ernie ball", "harley benton", "d'angelico", "gibson custom", "fender custom")
+_TWO_WORD_BRANDS = ("music man", "ernie ball", "harley benton", "d'angelico", "gibson custom", "fender custom",
+                    "paco castillo", "jose ferrer", "josé ferrer", "jose torres", "josé torres", "salvador cortez",
+                    "manuel rodriguez", "baton rouge", "line 6", "martin & co.", "la mancha", "vicente carrillo")
 
 
 def _guitarshop_fix(data, text):
@@ -1357,6 +1360,216 @@ for _id, _name, _sm in [("microfusa", "Microfusa", "https://www.microfusa.com/si
                     "kind_url": lambda c, u="", n="": "electrica" if es_guitar_kind(c, u, n) == "electrica" else None}
     ACOUSTIC_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "pick": _pk,
                              "kind_url": lambda c, u="", n="": k if (k := es_guitar_kind(c, u, n)) in ("acustica", "clasica") else None}
+
+
+# --- Portugal e Italia: tiendas de los directorios de distribuidores (sitemap + JSON-LD) --------------------------
+# Accesorios con nombre en el idioma de la tienda (o en inglés: Gewa en FAF Música) que el clasificador por nombre no
+# reconoce: capos, atriles, clavijeros, golpeadores… Lo que diga el nombre manda sobre la categoría.
+_DEALER_SKIP = {
+    "pt": re.compile(r"transpositor|\bestante|\bpauta|\bapoio|dedeira|tarraxa|\bponte\b|pastilha|captador|\bal[cç]a\b|\bmala\b"
+                     r"|limpeza|polimento|abafador|\bpe[cç]as?\b|\bkit\b|\bpack\b|conjunto|\bcordas?\b|encordoament|palheta"
+                     r"|correia|afinador|suporte|estojo|\bsaco\b|\bcapa\b|\bbaixo\b|cavaquinho|bandolim|ukulele|guitalele"
+                     r"|amplificador|\bpedal|efeito|\bcabo\b|microfone|m[eé]todo|livro|usad[oa]|recondicionad|seminov"
+                     r"|cart[aã]o (de )?oferta|vale de oferta|\bpara guitarra|\bcurso\b|[aá]lbum|partitura|songbook|\bcd\b(?![- ]?\d)"
+                     r"|\bdvd\b|bateria|baqueta|banco|cadeira|acess[oó]rio|\bjack\b|[oó]rg[aã]o|\bdrag[aã]o\b|a[cç]o inox"
+                     r"|rastilho|pestana|trastes?\b|camiseta|caneca", re.I),
+    "it": re.compile(r"capotasto|leggio|meccanic|\bponte\b|battipenna|\bpick-?ups?\b|tracoll|cinghi|custodi|astucci|\bborsa"
+                     r"|\bcord[ae]\b|mut[ae] di|plettr|accordator|\bsupport[oi]\b|reggichitarr|amplificator|\bpedal|effett"
+                     r"|\bcav[oi]\b|microfon|metodo|\blibr[oi]\b|usat[oa]|\bbass[oi]\b|ukulele|mandolin|banjo|ricambi|\bkit\b"
+                     r"|\bpack\b|tastier|pian[oi]|pianoforte|ex ?demo|esposizione|ricondizionat|buono regalo|gift card"
+                     r"|\bper chitarr|\bcorso\b|lezion|dizionario|\baccordi\b|spartit|songbook|antologia|\bstudi\b|batteri"
+                     r"|bacchett|mallet|glockenspiel|xilofon|rullante|\bpiatt[oi]\b|panca|sgabell|accessori|didattica"
+                     r"|edizioni|\bsingola\b|\bjack\b|alimentator|wireless|trasmettitor|synth|sellett|traversin|tappo"
+                     r"|ponticell|tastini|maglietta|felpa|cappell[oi]|tazza|portachiavi|organo|\bmuta\b|\bset (?:chitarra|di corde)"
+                     r"|\bper (?:violin|pianofort|flaut|sax|clarinett|tromb|viol|archi|canto)|potenziometr|\bmolle\b|teoria"
+                     r"|\bbasi della\b|gadget|\bleva\b|poggiapiede", re.I)}
+# Lo que el nombre dice que trae ("… com saco", "… con custodia", "… w/ case") no lo convierte en accesorio.
+_DEALER_WITH = re.compile(r"\s(?:com|c/|con|w/|with|incl\.?|inclus[oa]|includ\w*|\+|&)\s.*$", re.I)
+# "12 corde", "7 cordas", "6-string": es la guitarra, no las cuerdas.
+_DEALER_STRINGS = re.compile(r"\b\d{1,2}[ -]?(?:cord[ae]s?|strings?)\b", re.I)
+_EN_SKIP = re.compile(r"\bstrings?\b|\bpicks?\b|\bcapo\b|\bstraps?\b|gig ?bag|\bcase\b|\bstand\b|\btuners?\b|\bpickups?\b"
+                      r"|\bbass\b|armrest|clamp|polish|cleaner|\bnut\b|saddle|bridge pins?|machine heads?|pickguard|\bknobs?\b"
+                      r"|humidifier|\bslide\b|\bhanger\b|wall ?mount|\bcable\b|\bbook\b|\bbag\b|\bfor (?:\w+ )?guitars?\b"
+                      r"|play.?along|\bvol(?:ume)?\.? ?(?:\d+|[ivx]+)\b|excerpts|drums?\b|sticks\b|mallets?\b|soundhole|phosphor"
+                      r"|80/20|light bronze|silked|nickel wound|round ?wound|flat ?wound|(?:normal|high|hard|low) tension"
+                      r"|wireless|synth|processor|humidity|power supply|truss ?rod|\bcover\b|fret ?wire|t-?shirt|hoodie|\bmug\b|poster|keychain"
+                      r"|ball ?end|tie ?end|extra light|custom light|medium light|electric nickel|\bthemes\b|control plates?"
+                      r"|tuning machines?|\bhat\b|beanie|switch tips?|potentiometer|\bsolos?\b|recorded versions?|feedback"
+                      r"|monitoring|\bmat\b|springs?\b|taylorsense|\blicks\b|tremolo arm|trem arm|whammy|footrest"
+                      # Calibres de cuerdas ("11-52", "010 - 046") y referencias de cuerdas Martin (MSP3100, MA540, M160…)
+                      r"|\b0?(?:0[89]|1[0-4])\s?[-–]\s?0?(?:[3-7]\d|80)\b|\bmartin (?:msp|ma|mm|mfx?|m)\s?\d{2,4}"
+                      # Marcas que solo hacen accesorios
+                      r"|dimarzio|\bgator\b|righton|vic firth|d.?addario|elixir|seymour duncan|rotosound|dunlop|planet waves|carl martin"
+                      # Editoriales de libros y partituras
+                      r"|hal leonard|carisch|\bcurci\b|music sales|ricordi|volont[eé]|eschig|berklee|mel bay|\balfred\b|wise publ", re.I)
+# Categorías que engloban guitarras con otras cosas: no descartan.
+_DEALER_BOTH = re.compile(r"(?i)instrumentos( musicais)?( de)? cordas?|strumenti a corda|chitarre[ -]e[ -]bassi|chitarre bassi"
+                          r"|guitarras? e baixos?|guitarra e baixo")
+# El nombre lo dice claramente ("Chitarra classica", "Guitarra Eletroacústica"): manda sobre los modelos que reconoce
+# es_guitar_kind ("Lag OC70 Chitarra Classica" no es acústica por ser Lag).
+_DEALER_SAYS = [("clasica", re.compile(r"cl[aá]ssic(?:[ao]|he|al)\b|flamenc|\bnylon\b|\bconcerto\b", re.I)),
+                ("acustica", re.compile(r"ac[uú]stic|folk\b|western|dreadnought", re.I)),
+                ("electrica", re.compile(r"el[eé]c?tric[ao]\b|elettric[ah]e?\b|\belectric\b", re.I))]
+# Modelos que las tiendas italianas y portuguesas anuncian sin decir qué son (Eko, Sire, Rocio…).
+_DEALER_MODELS = [("clasica", re.compile(r"\beko(?: guitars)? (?:cs|vibra|studio|conservatorio)\b|\brocio\b", re.I)),
+                  ("acustica", re.compile(r"\beko(?: guitars)? (?:ranger|nxt|tri|one|mia|marco polo|ego|dmv|ndr|laurel)\b", re.I)),
+                  ("electrica", re.compile(r"\beko(?: guitars)? (?:s|ls|st|tl|vt|dv|vr|fire|aire|camaro|tero|cv|m)\b ?-?\d*"
+                                           r"|\bsire(?: guitars)? (?:s|l|t|h|j|v)\d", re.I))]
+_DEALER_SEMI = re.compile(r"semi-? ?(?:ac[uú]stic|hollow)|hollow ?body|semi-?ac[uú]stic", re.I)
+
+
+def dealer_kind(lang):
+    """'electrica', 'acustica', 'clasica' (o 'portuguesa', en Portugal) para las tiendas de los directorios: primero la
+    categoría de la tienda (breadcrumb) si la hay y lo dice; si no, el nombre y la URL (guitar_kind_for)."""
+    by_name = guitar_kind_for(lang)
+    by_crumbs = {"pt": pt_kind, "it": it_kind}[lang]
+    skip = lambda t: bool(_DEALER_SKIP[lang].search(t) or _EN_SKIP.search(t) or ES_SKIP.search(_to_es(t, lang)))
+
+    def kind(crumbs, url="", name=""):
+        name = _DEALER_STRINGS.sub(" ", name or "")
+        core = _DEALER_WITH.sub("", name)
+        slug = _DEALER_WITH.sub("", _DEALER_STRINGS.sub(" ", url.rstrip("/").rsplit("/", 1)[-1].replace("-", " ").replace("_", " ")))
+        # La ruta de la URL suele llevar la categoría ("/chitarre/corde/…", "/negozio/chitarre/chitarre-acustiche/…").
+        segs = [unquote(x).replace("-", " ").replace("_", " ") for x in urlsplit(url.rstrip("/")).path.split("/")[1:]
+                if x and not re.fullmatch(r"[\d,]+", x)][:-1]  # sin la ficha (ni su número, si acaba en él)
+        if skip(core) or (not name and skip(slug)) or _DEALER_SKIP[lang].search(_DEALER_BOTH.sub("", " / ".join(segs))):
+            return None
+        crumbs = [_DEALER_STRINGS.sub(" ", c) for c in crumbs or []
+                  if c and c.strip().lower() not in ("início", "inicio", "home", "homepage")]
+        text = " ".join(crumbs + [core, slug]).lower()
+        if lang == "pt" and re.search(r"guitarras? portuguesas?|guitarras? (?:de )?fado", text):
+            return "portuguesa"
+        if _DEALER_SEMI.search(text) and not re.search(r"cl[aá]ssic|nylon", text):
+            return "electrica"  # semiacústicas y hollow body: eléctricas
+        if crumbs:
+            k = by_crumbs(crumbs)
+            if k in ("electrica", "acustica", "clasica"):
+                return k
+            if _DEALER_SKIP[lang].search(_DEALER_WITH.sub("", _DEALER_BOTH.sub("", crumbs[-1]))):
+                return None  # la tienda lo tiene en accesorios, bajos…
+        if segs and (k := by_crumbs(segs)) in ("electrica", "acustica", "clasica"):
+            return k
+        if re.search(r"guitar|chitarr", core.lower()):
+            for k, pat in _DEALER_SAYS:
+                if pat.search(core):
+                    return k
+        for k, pat in _DEALER_MODELS:
+            if pat.search(core) or (not core and pat.search(slug)):
+                return k
+        return by_name(crumbs, "/" + slug.replace(" ", "-"), core)
+    return kind
+
+
+_DEALER_GENERIC = re.compile(r"^(?:(?:chitarr[ae]|guitarras?|guitars?|electric|acoustic|classical|el[eé]trica|eletroac[uú]stica"
+                             r"|ac[uú]stica|cl[aá]ssica|elettric[ah]|acustic[ah]|classic[ah]|semiacustica|elettrificata|la|il"
+                             r"|\d/\d)\s+)+", re.I)
+
+
+def _dealer_fix(store_name):
+    """Nombre sin " | Tienda" ni " - Tienda - Ciudad" al final; marca sin entidades HTML, ni la tienda ("Clan della Musica"),
+    ni la jerarquía de Shopify ("Fender, Fender > Squier" → "Squier"), ni "Chitarra" (de "Chitarra elettrica Airline …").
+    Los libros (EAN que es un ISBN: 978…, 979…) quedan como libros."""
+    norm = lambda t: re.sub(r"[^a-z]", "", t.lower())
+
+    def fix(data, text):
+        parts = re.split(r"\s+[-|–]\s+", html.unescape(data.get("name") or "").strip())
+        cut = next((i for i in range(1, len(parts)) if norm(store_name) in norm(parts[i])), len(parts))
+        data["name"] = " - ".join(parts[:cut]).strip() or None
+        brand = html.unescape(str(data.get("brand_raw") or "")).split(",")[-1].split(">")[-1].strip()
+        if not brand or norm(brand) == norm(store_name) or _DEALER_GENERIC.fullmatch(brand + " "):
+            brand = _brand_from_name(_DEALER_GENERIC.sub("", data["name"])) if data["name"] else None
+        data["brand_raw"] = brand
+        if brand and _EN_SKIP.search(brand):  # marca de accesorios (Vic Firth, D'Addario…), aunque el nombre no la lleve
+            data["crumbs"] = ["accessori acessório"]
+            return data
+        bare = _DEALER_GENERIC.sub("", data["name"] or "").strip()
+        if bare and bare != data["name"] and len(bare.split()) >= 2:
+            data["crumbs"] = list(data.get("crumbs") or []) + [data["name"]]  # de ahí sale el tipo
+            data["name"] = bare
+        if str(data.get("ean") or "").startswith(("978", "979")):
+            data["crumbs"] = ["libro livro"]
+        return data
+    return fix
+
+
+def _parse_ld_eur(soup, text):
+    """_parse_ld_loose para tiendas en euros: sin priceCurrency en el JSON-LD roto, el precio es en euros (no reales)."""
+    data = _parse_ld_loose(soup, text)
+    if data.get("price") and data.get("currency") == "BRL":
+        data["currency"] = "EUR"
+    return data
+
+
+def _dealer(name, sitemap, lang, path=None, sub=None, parse=_parse_ld_eur, shopify=False, cat_path=None, **extra):
+    """Fuente de una tienda de los directorios. path: la URL de una ficha tiene que contenerlo (regex). cat_path: tiendas
+    cuya URL lleva la categoría ("/chitarre-elettriche/…"): se cogen todas las fichas de esa categoría aunque el nombre
+    no diga "chitarra"."""
+    if shopify and not path:
+        path = r"^https?://[^/]+/products/"  # sin las copias en otros idiomas (/en/products/…)
+
+    def pick(u):
+        if (path and not re.search(path, u)) or (shopify and "/products/" not in u) or NOT_PRODUCT.search(u) \
+                or _GEN_NOT_PRODUCT.search(u):
+            return False
+        slug = _DEALER_WITH.sub("", re.sub(r"\.html?$", "", u.rstrip("/").rsplit("/", 1)[-1]).replace("-", " ").replace("_", " "))
+        if _DEALER_SKIP[lang].search(slug) or _EN_SKIP.search(slug) or ES_SKIP.search(_to_es(slug, lang)):
+            return False
+        return bool(cat_path and re.search(cat_path, u)) or bool(_ES_PICK.search(_to_es(slug, lang)))
+    src = {"name": name, "sitemap": sitemap, "parse": parse, "fix": _dealer_fix(name), "kind_url": dealer_kind(lang),
+           "pick": pick, **extra}
+    if sub:
+        src["sub"] = (lambda l: re.search(sub, l) is not None) if isinstance(sub, str) else sub
+    return src
+
+
+# Probadas a mano (unas 12 fichas por tienda): precio en euros y, casi siempre, la categoría en el breadcrumb o en la URL.
+_DEALERS_PT = {
+    "guitarcustom": _dealer("Guitar Custom", "https://guitarcustom.pt/wp-sitemap.xml", "pt", path="/produto/", sub="posts-product"),
+    "discosom": _dealer("Discosom", "https://discosom.pt/sitemap_index.xml", "pt", path="/produto/", sub="product-sitemap"),
+    "tonsemelodias": _dealer("Tons e Melodias", "https://www.tonsemelodias.com/wp-sitemap.xml", "pt", path="/produto/",
+                             sub="posts-product"),
+    "adagio": _dealer("Adagio", "https://adagio.pt/sitemap_index.xml", "pt", path="/loja/", sub="product-sitemap"),
+    "russomusica": _dealer("Russo Música", "https://russomusica.com/wp-sitemap.xml", "pt", path="/loja/", sub="posts-product"),
+}
+_DEALERS_IT = {
+    "musicis": _dealer("Musicis", "https://www.musicis.it/sitemap.xml", "it"),
+    "cavalli": _dealer("Cavalli Musica", "https://www.cavallimusica.com/media/sitemap.xml", "it"),
+    "zecchini": _dealer("Zecchini Musica", "https://www.zecchinimusica.it/sitemap.xml", "it", sub="nuovo"),
+    "biasin": _dealer("Biasin", "https://biasin.com/sitemap.xml", "it"),
+    "yourmusiconline": _dealer("Your Music Online", "https://yourmusiconline.it/sitemap.xml", "it", sub="sitemap_products",
+                               shopify=True),
+    "clandellamusica": _dealer("Clan della Musica", "https://www.clandellamusica.it/sitemap.xml", "it",
+                               sub=r"\.it/sitemap_products", shopify=True),
+    "disanto": _dealer("Di Santo Musica", "https://www.disantomusica.it/sitemap.xml", "it", sub="sitemap_products", shopify=True),
+    "ceccherini": _dealer("Ceccherini Music", "https://ceccherinimusic.com/sitemap.xml", "it", sub="sitemap_products",
+                          shopify=True),
+    "globalnetshop": _dealer("Global Net Shop", "https://www.globalnetshop.it/sitemap.xml", "it", sub="sitemap_products",
+                             shopify=True),
+    "barone": _dealer("Barone Musica", "https://www.baronemusica.com/sitemap_index.xml", "it", path="/prodotto/",
+                      sub="product-sitemap"),
+    "lenzotti": _dealer("Lenzotti", "https://shop.lenzotti.it/sitemap_index.xml", "it", path="/negozio/", sub="product-sitemap",
+                        cat_path=r"/negozio/chitarre/chitarre-(elettriche|acustiche|classiche)[^/]*/"),
+    "emusicstore": _dealer("E-Musicstore", "https://www.e-musicstore.it/sitemap_index.xml", "it", path="/shop/",
+                           sub="product-sitemap", cat_path=r"/shop/chitarre/chitarre-(elettriche|acustiche|classiche)[^/]*/"),
+    "cappellani": _dealer("Cappellani Musica", "https://cappellanimusica.it/sitemap_index.xml", "it", path="/prodotto/",
+                          sub="product-sitemap"),
+    "cittadellamusica": _dealer("Cittadella della Musica", "https://cittadellamusica.store/media/mapping/sitemap/sitemap.xml",
+                                "it", path=r"-mh\d+\.html$"),
+    "smpalma": _dealer("SM Palma", "https://www.smpalma.it/sitemap_product_product_product.xml", "it"),
+    "suonostore": _dealer("Suono Store", "https://shop.suonostore.com/sitemap_index.xml", "it", path="/p/", sub="product-sitemap"),
+    "centrodellamusica": _dealer("Centro della Musica", "https://www.centrodellamusica.net/sitemap.xml", "it",
+                                 sub="sitemap_products", shopify=True),
+    "fireflyaudio": _dealer("Firefly Audio", "https://www.fireflyaudio.it/wp-sitemap.xml", "it", sub="posts-product",
+                            path=r"/shop/[^?]*chitarr"),
+    "direzionemusica": _dealer("Direzione Musica", "https://www.direzionemusica.it/sitemap.xml", "it"),
+    "redhouse": _dealer("Red House", "https://redhouse.it/1_index_sitemap.xml", "it"),
+    "stralu": _dealer("Stralù", "https://www.stralu.it/wp-sitemap.xml", "it", sub="posts-product"),
+    "checcacci": _dealer("Checcacci", "https://www.checcacci.it/wp-sitemap.xml", "it", sub="posts-product"),
+    "semstrumenti": _dealer("S&M Strumenti", "https://semstrumenti.it/sitemap.xml", "it", path="/catalogo-completo/",
+                            cat_path=r"/catalogo-completo/chitarre-(elettriche|acustiche|classiche)"),
+}
+PT_SOURCES.update(_DEALERS_PT)
+IT_SOURCES.update(_DEALERS_IT)
 
 
 # Musifex (musifex.pt, Odoo): sin datos estructurados ni EAN. Las fichas salen de los listados de cada categoría de
@@ -2074,6 +2287,8 @@ def _parse_jsonld(soup, store_id):
     if not product or not offer:
         return {"crumbs": crumbs}
     brand_raw = product.get("brand")
+    if isinstance(brand_raw, list):  # WooCommerce con varias marcas: ["Ibanez"] (Discosom, Tons e Melodias)
+        brand_raw = brand_raw[0] if brand_raw else None
     brand_raw = brand_raw.get("name") if isinstance(brand_raw, dict) else brand_raw
     ean = next((normalize_id(product.get(k)) for k in ("gtin13", "gtin", "gtin12", "gtin14") if product.get(k)), None)
     mpn = normalize_id(product.get("mpn"))
