@@ -30,8 +30,10 @@
 - Motivo: proteger el código (guitle va a crecer). Ya hay LICENSE "todos los derechos reservados" mientras tanto.
 - Problema: en privado, GitHub Actions solo da 2.000 min/mes gratis; las lecturas gastan cientos de miles → hace falta
   un servidor propio como runner (sus minutos no cuentan).
-- Plan acordado: Hetzner Cloud (cuenta con hola@guitle.com, nunca Aldelis), proyecto "guitle", servidor x86 8 vCPU /
-  16 GB (gama CPX, ~25-30 €/mes), Ubuntu 24.04, Alemania. Guion cloud-config (sin claves en el repo) que instala ~16-20
+- Plan acordado: Hetzner Cloud (cuenta con hola@guitle.com, nunca Aldelis), proyecto "guitle". 30 €/mes le parece
+  mucho: objetivo ~8-10 €/mes con un x86 de 4 vCPU / 8 GB (Ubuntu 24.04, Alemania) y ~8 runners. Antes: limpieza del
+  repo (checkout ligero) y juntar trabajos (guitarras + equipo de cada país en uno) para que bastan menos runners;
+  la regla de 20 h ya acorta las lecturas. ARM (~6-7 €) posible si se prueba. Guion cloud-config (sin claves en el repo) que instala ~16-20
   runners con etiqueta "guitle"; el token de registro lo copia el usuario de Settings → Actions → Runners (caduca en
   1 h) al crear el servidor. Workflows a runs-on: [self-hosted, guitle] (necesitan sudo, setup-python, setup-node, rclone).
 - Antes de pasar las lecturas: probar desde la IP del servidor que las tiendas responden igual (Fender solo respondía
