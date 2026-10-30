@@ -10,3 +10,4 @@
 /requirements.txt
 /firestore.rules
 /.gitignore
+/LICENSE

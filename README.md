@@ -1,5 +1,7 @@
 # guitle — rastreador de precios de guitarras y audio
 
+© 2026 guitle. Todos los derechos reservados: ver [LICENSE](LICENSE). Este repositorio es público solo para verlo; no se puede copiar ni usar sin permiso.
+
 - `products.json`: productos por SKU del fabricante, con `brand`, `category`, EAN (verifica que la URL es el producto correcto) y PVP de respaldo.
 - `stores.json`: tiendas, método preferido (`jsonld` | `meta` | `css`), selector CSS opcional y `{sku, url}`.
 - `scraper/`: un módulo por método de extracción; `run.py` prueba primero el método declarado y luego el resto.
