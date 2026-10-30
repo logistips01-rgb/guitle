@@ -369,7 +369,7 @@ ACOUSTIC_SOURCES = {
 # Cada tienda preselecciona por su categoría en la URL; la ficha (breadcrumb, URL y nombre) decide si es un teclado,
 # un pedal o un accesorio (soportes, fundas, alimentadores, pedales de sustain o de bombo…), que no entra.
 EQUIPO_SKIP = re.compile(
-    r"soporte|suporte|\bstand\b|staender|funda|bolsa|\bcapa\b|tasche|\bbag\b|\bcase\b|estuche|estojo|koffer|maleta|flight"
+    r"soporte|suporte|\bstand\b|staender|funda(?!ment)|bolsa|\bcapa\b|tasche|\bbag\b|\bcase\b|estuche|estojo|koffer|maleta|flight"
     r"|banqueta|\bbanco\b|taburete|\bbench\b|cubierta|cubre|\bcover\b|alimentador|fuente de alim|adaptador|netzteil"
     r"|power ?supply|latiguillo|\bpatch\b|\bcables?\b|kabel|\bcabo\b|pedalboard|pedal ?board|bombo|bater[ií]a|\bdrums?\b"
     r"|percusi|auricular|headphone|platillo|ilumina|\bluz\b|\bled\b|\bdj\b|acorde[oó]n|lit[uú]rgic|sustain|sostenido"
@@ -483,7 +483,7 @@ MAS_SKIP = re.compile(
     r"|pedalboard|pedal ?board|teclado|piano|bater[ií]a|\bdrums?\b|bombo|platillo|auriculares? (de|para) (estudio|dj)"
     r"|altavoz (activo|de pa)|monitor de estudio|mesa de mezclas|\bdj\b|ukelele|ukulele|contrabajo|kontrabass|violonchelo"
     r"|bass ?drum|subwoofer|\bsub\b|micr[oó]fono|libro|\bbook\b|m[eé]todo", re.I)
-_CASE = re.compile(r"estuche|funda|gig ?bag|\bbag\b|flexi ?case|\bcase\b|softcase|hardcase|koffer|tasche|\bbolsa|estojo", re.I)
+_CASE = re.compile(r"estuche|funda(?!ment)|gig ?bag|\bbag\b|flexi ?case|\bcase\b|softcase|hardcase|koffer|tasche|\bbolsa|estojo", re.I)
 _AMP = re.compile(r"amplificador|\bampli\b|\bcombo|cabezal|pantalla|cabinet|\bamps?\b|verst[aä]rker|topteil|gitarrenbox"
                   r"|bassbox|\bthr\d|katana|spark|amplug|fly ?3|mini tower", re.I)
 _BASS = re.compile(r"\bbajos?\b|\bbass\b|\bbasses\b|b[aä]sse\b|e-bass|\bbaixo|basso\b", re.I)
@@ -1399,7 +1399,10 @@ _TO_ES = {
 # "bass verstärker") y luego se traduce cada parte.
 _TO_ES_EQUIPO = {
     # URLs sin diéresis ("gitarrenverstaerker", "fur"): solo en las palabras que importan ("blue" no es "blü")
-    "de": [(r"verstaerker", "verstärker"), (r"staender", "ständer"), (r"kopfhoerer", "kopfhörer"), (r"\bfuer\b|\bfur\b", "für"),
+    # "Verstärker und Pedale" agrupa: no dice que un pedal sea un ampli
+    "de": [(r"verst(?:ä|ae)rker\s*(?:und|&)\s*(?:effekt)?pedale", "equipo"), (r"saitenhalter\w*", "cordal"),
+           (r"mikrofon-?arm", "micrófono brazo"),
+           (r"verstaerker", "verstärker"), (r"staender", "ständer"), (r"kopfhoerer", "kopfhörer"), (r"\bfuer\b|\bfur\b", "für"),
            (r"baesse", "bässe"), (r"geraete?", "gerät"), (r"roehre", "röhre"), (r"fluegel", "flügel"), (r"zubehoer", "zubehör"),
            (r"buehne", "bühne"), (r"huelle", "hülle"), (r"fu(?:ß|ss)-?schalter|fu(?:ß|ss)-?taster", "footswitch"),
            (r"\b(\w{3,}?)(koffer|taschen?|gigbags?|st[aä]nder|stativ|halter(?:ung)?|kabel|gurte?|saiten|verst[aä]rker"
@@ -1425,23 +1428,42 @@ _TO_ES_EQUIPO = {
            (r"\bfunk\w*|drahtlos\w*", "inalámbrico"), (r"\btaschen\b", "funda"), (r"hard-?case|form-?koffer", "estuche"),
            (r"kapodaster", "cejilla"), (r"mechanik\w*", "clavijas"), (r"bottle ?neck", "bottleneck"), (r"klammer|klemme", "pinza"),
            (r"taschensender", "transmisor inalámbrico"), (r"tonabnehmer", "pastilla"), (r"schlagbrett", "golpeador"),
-           (r"wandhalter\w*", "colgador"), (r"\bstativ\w*|\bhalter(?:ung)?\b", "soporte"), (r"\bpflege\w*|reinig\w*", "limpieza"),
+           (r"wandhalter\w*", "colgador"), (r"\bstativ\w*|\bhalter(?:ung)?\b", "soporte"), (r"pflege\w*|reinig\w*", "limpieza"), (r"\bsteg\b", "puente"),
            (r"netzteile?", "alimentador"),
            (r"schutzh[uü]lle|abdeckung|staubschutz", "cubierta"), (r"ersatz\w*", "repuesto"),
            (r"schlagzeug\w*|\bdrums?\b|e-?drums?", "batería"), (r"\bbecken\b", "platillo"),
            (r"lehrbuch|songbook|notenbuch|\bnoten\b", "libro"), (r"lautsprecher", "altavoz")],
-    "nl": [(r"\b(\w{3,}?)(versterkers?|koffers?|tas|hoes|snaren|kabels?|statief|standaard|pedalen|pedaal|microfoons?)\b", r"\1 \2"),
+    # "gitaar" → "gitare": "gita(a|re)n?" de _TO_ES dejaría "basgitaar" en "bajor" y "gitaartas" en "guitarrar funda"
+    "nl": [(r"gitaar", "gitare"), (r"tortex standaard", "tortex standard"), (r"midi ?baspeda(?:al|len)", "controlador midi"),
+           (r"\belectrisch", "elektrisch"), (r"\bgitarist(?:en)?\b", "gitare"), (r"\bbassist(?:en)?\b", "bas"),
+           (r"gitare ?band(?:en)?|draagband(?:en)?", "correas"), (r"effectpedalen\s*(?:&|en)\s*voedingen?", "effectpedalen"),
+           (r"digitale vleugels?", "piano digital"),
+           # pedales de piano: no son efectos (MAS_DROP y EQUIPO_SKIP los quitan por "sustain")
+           (r"(?:sustain|demper|volume)?-?(?:pedaal|pedalen) ?(?:unit|voor (?:piano|keyboard|toetsen))|sustain-?pedaal|voetpedaal",
+            "pedal de sustain"),
+           (r"\b(?:gitare|bas|versterker|buizen)[- ]?(?:top|kop)(?:pen|s)?\b", " cabezal"),
+           (r"\b(\w{3,}?)(versterkers?|koffers?|tas(?:sen)?|hoes(?:zen)?|snaren|kabels?|statief|standaards?|pedalen|pedaal"
+            r"|microfoons?|combo'?s?|riem(?:en)?|effect(?:en)?|snaar|covers?)\b", r"\1 \2"),
+           (r"\bbuizen-?\s*", "valvular "), (r"\bcombo'?s?\b", "cubo amplificador"),
+           (r"snaren-?sets?\b|\bset snaren\b", "juego de cuerdas"),
            (r"\bmet\b", "con"), (r"\binclusief\b|\bincl\b\.?", "incl"), (r"\bvoor\b", "para"),
-           (r"basgita(?:a|re)n?|elektrische bas\w*", "bajo"), (r"\bbas\b", "bajo"), (r"versterkers?", "amplificador"),
-           (r"\btop\b|\bkop\b", "cabezal"), (r"speakerkast\w*|\bkast\b", "pantalla"), (r"multi-?effect\w*", "multiefectos"),
-           (r"effect-?pedalen|effect-?pedaal|pedalen|pedaal", "pedal"), (r"stemapparaten?", "afinador"),
+           (r"basgita(?:a|re)n?|elektrische bas\w*", "bajo"), (r"akoestische bas\w*", "bajo acústico"), (r"\bbas\b", "bajo"),
+           (r"contrabas\w*", "contrabajo"), (r"versterkers?", "amplificador"),
+           (r"speakerkast\w*|\bkast\b|\bcabinets?\b", "pantalla"), (r"multi-?effect\w*", "multiefectos"),
+           (r"effect-?pedalen|effect-?pedaal|pedalen|pedaal", "pedal"), (r"\beffect(?:en)?\b", "efecto"),
+           (r"stemapparaten?", "afinador"),
            (r"digitale piano'?s?", "piano digital"), (r"stage ?piano'?s?", "piano de escenario"), (r"synthesizers?", "sintetizador"),
+           (r"akoestische piano'?s?|\bpiano'?s? akoestisch", "piano acústico"), (r"\bvleugels?\b", "piano de cola"),
            (r"midi[- ]?(keyboard|controller)s?|masterkeyboards?", "controlador midi"), (r"keyboards?", "teclado"),
            (r"microfoons?", "micrófono"), (r"draadloze?", "inalámbrico"), (r"condensator\w*", "condensador"),
-           (r"dynamische?", "dinámico"), (r"koffers?", "estuche"), (r"\btas\b|\bhoes\b|gigbags?", "funda"), (r"snaren", "cuerdas"),
-           (r"\bkabels?\b", "cable"), (r"statief|standaard", "soporte"), (r"koptelefoons?", "auriculares"),
+           (r"dynamische?", "dinámico"), (r"stofhoes|stofkap", "cubierta"), (r"koffers?", "estuche"),
+           (r"\btas(?:sen)?\b|\bhoes(?:zen)?\b|gigbags?", "funda"), (r"snaren|\bsnaar\b", "cuerdas"), (r"\bcovers?\b", "cubierta"),
+           (r"\briemen\b", "correas"),
+           (r"\bkabels?\b", "cable"), (r"statief|(?<!tortex )standaards?", "soporte"), (r"koptelefoons?|hoofdtelefoons?", "auriculares"),
            (r"drumstel\w*|\bdrums?\b", "batería"), (r"bekkens?", "platillo"), (r"capo'?s?", "cejilla"),
-           (r"element(en)?\b", "pastilla"), (r"voedingen?|adapters?", "alimentador")],
+           (r"stemmechaniek\w*|mechanieken", "clavijas"), (r"element(en)?\b", "pastilla"), (r"voedingen?|adapters?", "alimentador"),
+           (r"onderhoud\w*|reinig\w*|poetsdoek\w*", "limpieza"), (r"\bgebruikt\b", "usado"),
+           (r"lesboek\w*|\bboek\b|methode\b|songbook", "libro")],
     "fr": [(r"\bavec\b", "con"), (r"\bpour\b", "para"),
            (r"micros? (?:guitare|basse|manche|chevalet|humbucker|simple|double|piezo)\w*", "pastilla"),
            (r"microphones?|micros? (?:chant|instrument|statique|dynamique|cardio\w*|usb|sans fil|hf|serre-t[eê]te|cravate)", "micrófono"),
@@ -1467,9 +1489,12 @@ _TO_ES_EQUIPO = {
            (r"\bteclados?\b", "teclado"), (r"sintetizadores?", "sintetizador"), (r"capotrastes?", "cejilla"),
            (r"captador(es)?", "pastilla"), (r"auscultadores|fones? de ouvido", "auriculares"), (r"bateria", "batería"),
            (r"pratos?\b", "platillo"), (r"fontes? de alimenta\w*", "alimentador")],
-    "en": [(r"\bwith\b|\bw/\s*", "con "), (r"sparkl\w*", "brillante"),  # "Sparkling Burgundy" no es un Spark
+    "en": [(r"\b(?:all[- ])?tube\s+(?=(?:amp|head|combo|cabezal|amplificador|cubo))", "valvular "),
+           (r"\bwith\b|\bw/\s*", "con "), (r"\bcry ?baby\b(?! wah)", "cry baby wah"), (r"\bstraps\b", "correas"),
+           (r"(?<!short )(?<!long )\bsleeve\b", "funda"),
+           (r"\b(?:\w+ )?strings? capo\b", "cejilla"), (r"\bmic blend\b", "pastilla blend"), (r"sparkl\w*", "brillante"),  # "Sparkling Burgundy" no es un Spark
            (r"machine ?heads?|tuning machines?|\btuners\b", "clavijas"), (r"bottle ?neck", "bottleneck"), (r"\bfor\b", "para"), (r"\bbass guitars?\b", "bajo"), (r"\bbasses\b", "bajo"),
-           (r"\b(?:amp(?:lifier)? )?heads?\b", "cabezal"), (r"speaker cab(?:inet)?s?|\bcabs?\b", "pantalla"),
+           (r"\b(?:amp(?:lifier)? )?heads?\b", "cabezal"), (r"speaker cab(?:inet)?s?\b|\bcabs?\b", "pantalla"),
            (r"multi-?effects?", "multiefectos"), (r"effects? pedals?|stomp ?box(?:es)?", "pedal"),
            (r"digital pianos?", "piano digital"), (r"midi (?:keyboard|controller)s?|master keyboards?", "controlador midi"),
            (r"microphones?|\bmics?\b", "micrófono"), (r"headphones?", "auriculares"), (r"drum ?kits?|\bdrums?\b", "batería"),
@@ -3003,7 +3028,8 @@ for _cat, _id, _src in [
 #      hechas con _store/_shopify ya lo traen en "shop") o "exclude" (con el motivo: tiendas que descubren sus fichas por
 #      las categorías de guitarras, como Thomann, Woodbrass o Gear4music). Una tienda sin lo uno ni lo otro da error.
 #   3. scraper/intl.py: SITES["fr"]["extra_catalogs"] = ["frmas"] y las páginas nuevas en SITES["fr"]["kinds"]; en T["fr"],
-#      "kinds" (títulos), "nouns" (qué se cuenta en cada categoría), "allWord" y los tipos en ["js"]["types"].
+#      "kinds" (títulos), "nouns" (qué se cuenta en cada categoría), "allWord" y los tipos en ["js"]["types"]. Un país con
+#      el idioma de otro usa sus textos (Austria: SITES["at"]["t"] = "de") y basta con sus "kinds" y "extra_catalogs".
 #   4. .github/workflows/catalog.yml: "frmas" en la matriz y en las opciones de "solo".
 #   5. Prueba sin tocar data/: python -m scraper.catalog --cat frmas --only <tienda> --limit 40 --records-out /tmp/x.json
 #      y revisar "kind", "type" y "name" de cada ficha del lote (status "not_guitar": descartada).
@@ -3018,11 +3044,12 @@ _EQ_PICK = re.compile(
     r"|polish|\bslide\b", re.I)
 _EQ_PICK_SKIP = re.compile(
     r"bater[ií]a|drum|platillo|snare|hi-?hat|\btoms?\b|cajon|percus|\bkick|fu(?:ß|ss)maschine|\bsticks?\b|schl[aä]gel|beater"
-    r"|\bfell\b|violin|viola\b|cello|geige|\bsax|trompet|posaun|klarinet|fl[oö]te|flauta|\bhorn\b|tuba|\bbl[aä]tter?\b"
-    r"|mundst|ukulele|ukelele|mandolin|banjo|harfe|zither|akkordeon|harmonika|licht|leuchte|\bled\b|dmx|nebel|laser|traverse"
-    r"|\bdj\b|mischpult|mixer|libro|gutschein|geschenk|\bshirt|hoodie|tasse|poster|sticker|usado|b-?ware|gebraucht"
+    r"|\bfell\b|violin|viola\b|cello|geige|sax(?!on)|trompet|posaun|klarinet|fl[oö]te|flauta|fluit|\bhorn\b|tuba"
+    r"|(?:wald|tenor|fl(?:ü|ue|u)gel|bassett|parforce|jagd|alt)horn|bl(?:ä|ae|a)tt(?:er)?\b"
+    r"|mundst|pauke|ukulele|ukelele|mandolin|banjo|harfe|zither|akkordeon|harmonika|licht|leuchte|\bled\b|dmx|nebel|laser|traverse"
+    r"|\bdj\b|didgeridoo|handpan|mischpult|mixer|libro|gutschein|geschenk|\bshirt|hoodie|tasse|poster|sticker|usado|b-?ware|gebraucht"
     r"|ausstellung|vorf[uü]hr|\bmiete\b|reparatur|service|\bxlr\b|cinch|speicherkarte|altavoz|subwoofer|\brack|in ear"
-    r"|recorder|beschallung|\bpa\b", re.I)
+    r"|recorder|beschallung|\bpa\b|notenpult|lessenaar|\briet(?:en)?\b|rietbinder|mondstuk", re.I)
 _EQ_BRANDS = tuple(b + " " for b in (
     "boss", "mxr", "electro harmonix", "ehx", "strymon", "tc electronic", "walrus audio", "jhs", "earthquaker", "keeley",
     "line 6", "line6", "fractal", "kemper", "neural dsp", "marshall", "orange", "blackstar", "laney", "mesa boogie", "engl",
@@ -3038,27 +3065,43 @@ _EQ_DROP = re.compile(
     r"|klarinet|\bklar\b|\bbl[aä]tt(?:er)?\b|\breeds?\b|saxo|posaun|tuba|euphonium|trompet|\bhorn|fl[oö]te|querfl|violin|geige"
     r"|viola\b|cello|ukulele|ukelele|\btenor (?:bag|funda)|bariton soporte|banjo|mandolin|harfe|zither|klangschale|sansula|kalimba|boomwhack|cajon"
     r"|bater[ií]a|platillo|orchester|notenpult|\bpult\b|socken|socks|t-?shirt|hoodie|tasse|becher|schl[uü]ssel|keyring"
-    r"|anh[aä]nger|pendant|poster|sticker|aufkleber|geschenk|gutschein|(?:single|double|twin|doppel)[- ]?pedal", re.I)
+    r"|anh[aä]nger|pendant|poster|sticker|aufkleber|geschenk|gutschein|(?:single|double|twin|doppel)[- ]?pedal"
+    # neerlandés: flautas, boquillas, cañas; libros y lecciones; alfombras, banquetas y calcetines "de piano"
+    r"|fluit|hoorn|mondstuk|\briet(?:en)?\b|sokken|hal leonard|\blessen\b|lesmateriaal|bladmuziek|carpet|tapijt"
+    r"|pianobank|pianokruk|klavierbank|klavierhocker|banqueta|pianolamp|pianoschotel|\blamp\b|\bdeel \d|\bmethod\b"
+    r"|\binsert\b|\buke\b|multi-?tool|(?:bass|bas)drum|pauke|timpani|getr(?:ä|ae)nke|koelkast|fridge|k[uü]hlschrank|viool"
+    r"|didgeridoo|handpan|pedalbay|klettband|velcro|boxen ?(?:soporte|colgador)"
+    # una guitarra o un bajo con su ampli ("Fender Squier Sonic Stratocaster met 10 watt versterker")
+    r"|\b(?:stratocaster|telecaster|guitarra|bajo)\b[^/]*\bcon\b[^/]*\bamplificador|\bsongs?\b|easy piano|\bpieces\b|piano en viool", re.I)
 # Estuches y fundas: solo los de guitarra, bajo, amplis, pedales o teclados (no los de flautas, mesas de mezclas o racks).
 _EQ_CASE_FOR = re.compile(r"guitarr|guitar|gitarr|\bbajo|\bbass|western|dreadnought|jumbo|parlou?r|\bclassic|cl[aá]sica"
                           r"|el[eé]ctrica|ac[uú]stica|strat|\btele|les ?paul|\blp\b|\bsg\b|\bes-?3|flying ?v|explorer|jazz|precision"
                           r"|amplificador|\bamp|combo|cubo|cabezal|pantalla|pedal"
                           r"|ibanez|fender|gibson|epiphone|gretsch|squier|ortega|schecter|\bprs\b|\besp\b|\bltd\b|jackson|charvel"
-                          r"|hagstrom|martin|taylor|warwick|rockbag|rockcase|hiscox|\bsks\b|tkl|gator g", re.I)
+                          r"|hagstrom|martin|taylor|warwick|rockbag|rockcase|hiscox|\bsks\b|tkl|gator g|konzert|klassik", re.I)
 # El nombre dice que es una guitarra ("Yamaha AC5M Westerngitarre … mit Tonabnehmer") y no algo para ella.
 _EQ_GUITAR_NAME = re.compile(r"guitarra (?:el[eé]ctrica|ac[uú]stica|cl[aá]sica)|electroac[uú]stica|\b(?:stratocaster|telecaster"
-                             r"|les paul|jazzmaster|jaguar)\b", re.I)
+                             r"|les paul|jazzmaster|jaguar|explorer|firebird|flying v)\b", re.I)
 _EQ_FOR_GUITAR = re.compile(r"\bpara\b|amplificador|\bcubo\b|cabezal|pantalla|pedal|efecto|multiefect|estuche|funda|cuerdas|\bstrings?\b|correa|soporte|cable|p[uú]as?\b|cejilla|afinador"
                             r"|colgador|limpieza|golpeador \w+ (?:para|de)|clavijas|repuesto|\bcase\b|\bbag\b|hardcase|softcase|gig ?bag"
                             r"|\bstrap|\bstand\b", re.I)
 # Categorías de otros instrumentos o de otras cosas ("Ständer für Blasinstrumente", "Klangschalen - Taschen").
 _EQ_DROP_CAT = re.compile(r"blasinstrument|holzblas|blechblas|\bbrass\b|streichinstrument|ukulele|meditation|esoter|klangschal"
                           r"|notenst|notenpult|\bdj\b|licht|souvenir|geschenk|kalimba|sansula|percussion|batería|otros saiteninstr"
-                          r"|andere saiteninstr|tasten ?accesorios|accesorios para tasten", re.I)
+                          r"|andere saiteninstr|tasten ?accesorios|accesorios para tasten"
+                          r"|boxen ?(?:soporte|st[aä]nder)|lautsprecherst|strijk|drum|schlagwerk|blaasinstrument|\bblaas\b|\briet"
+                          r"|klarinet|saxofoon|lessenaar|bladmuziek|lesboek|percussie|onderdelen toetsen", re.I)
 # Marcas de pedales: "Darkglass Microtubes B7K", "Electro-Harmonix Bass Metaphors" son pedales de bajo, no bajos.
 _EQ_PEDAL_BRANDS = re.compile(r"^(?:electro[- ]?harmonix|ehx|darkglass|mxr|tc electronic|strymon|walrus|jhs|earthquaker|keeley"
                               r"|source audio|tech ?21|zoom|boss|digitech|eventide|mooer|nux|hotone|joyo|wampler|xotic|fulltone"
                               r"|tone city|caline|donner|behringer|danelectro|ibanez (?:ts|tube screamer)|dunlop|origin effects)\b", re.I)
+# Marcas que solo hacen amplis (y algún pedal o cable, que se quitan aparte): "Ampeg Venture V3", "Kemper Profiler Stage".
+_EQ_ONLY_AMPS = re.compile(r"^(?:ampeg|kemper|revv(?: amplification)?|bad cat|mesa ?(?:/ ?)?boogie|friedman|bogner|diezel|engl"
+                           r"|supro|matchless|two-rock|eich(?: amps)?|markbass|mark bass|hartke)\b", re.I)
+# Marcas que solo hacen pedales: sin más, un pedal ("MXR M292 Carbon Copy Deluxe").
+_EQ_ONLY_PEDALS = re.compile(r"^(?:mxr|electro[- ]?harmonix|ehx|strymon|walrus audio|jhs|earthquaker(?: devices)?|keeley|wampler"
+                             r"|xotic|fulltone|chase bliss|old blood noise|jackson audio|origin effects|catalinbread|caroline"
+                             r"|death by audio|fairfield|way huge|tone city|beetronics)\b", re.I)
 # "Gitarren & Bässe", "Gitarre & Bass Zubehör": categorías que agrupan; no dicen que sea de bajo (quedan en "guitarra")
 _EQ_GROUP = re.compile(r"\b(?:guitarras?|bajos?)(?:(?:\s*(?:&|y|und|and|e|et|en|/|,|\+|-)\s*)+(?:guitarras?|bajos?|accesorios))+", re.I)
 
@@ -3103,23 +3146,65 @@ def equipo_kind_for(lang, guitar=None):
         cats = [c for c in cats if c]
         if _EQ_DROP.search(es_name) or NOT_PRODUCT.search(name or "") or any(_EQ_DROP_CAT.search(c) for c in cats) \
                 or _EQ_GUITAR_NAME.search(es_name) and not _EQ_FOR_GUITAR.search(es_name) \
-                or cats and _EQ_GUITAR_NAME.search(cats[-1]) and not _EQ_PICK.search(cats[-1]) \
-                and not _EQ_FOR_GUITAR.search(cats[-1]):  # "Westerngitarren - 6-Saitig", no "Gurte für E-Gitarren"
+                and not re.search(r"\bbass\b|basgita", name or "", re.I) \
+                or cats and _EQ_GUITAR_NAME.search(cats[-1]) and not _EQ_PICK.search(" / ".join(cats[-3:])) \
+                and not _EQ_FOR_GUITAR.search(" / ".join(cats[-3:])):
+            # "Westerngitarren - 6-Saitig", no "Gurte für E-Gitarren" ni "Snaren > Elektrische gitaar"
             return None
         slug = "x/" + _to_es(_eq_slug(url), lang, equipo=True)
         found = mas_kind(cats, slug, es_name) or equipo_kind(cats, slug, es_name)
         if not found and cats:
             # El nombre a secas no lo dice ("Ernie Ball 2090 Paradigm .010-.050"); las categorías sí ("E-Gitarrensaiten").
-            said = " ".join(cats[-2:] + [es_name])
+            said = " ".join(cats[-3:] + [es_name])
             found = mas_kind(cats, slug, said) or equipo_kind(cats, slug, said)
+        if not found and not re.search(r"teclado|piano|bater[ií]a|\bpa\b|monitor|cable|alimentador|funda|estuche|soporte"
+                                       r"|cubierta|\bcover|pedalboard|interfa", " / ".join(cats[-1:] + [es_name])) \
+                and not (guitar and guitar(crumbs, url, name)):
+            # Sin categoría que lo diga (Shopify, Joh. de Heer): lo que solo puede ser de guitarra o bajo
+            if re.search(r"\bcorreas?\b|cejilla|\bp[uú]as?\b|plectr|strap ?lock", es_name):
+                found = "varios"
+            elif re.search(r"\bcabezal\b|\bcubo amplificador\b", es_name) and not MAS_SKIP.search(es_name) \
+                    and re.search(r"\d ?w(?:att)?\b|valvular|\bamp", es_name):  # "Bad Cat Lynx Head 50W", no "Bound Head Veneer"
+                found = "ampli"
+            elif _EQ_ONLY_AMPS.search(es_name) and not MAS_SKIP.search(es_name) \
+                    and not re.search(r"pedal|efecto|\bpatch|footswitch|\bdi\b|\bpower\b|supply", es_name):  # "Ampeg Venture V3"
+                found = "ampli"
+            elif _EQ_ONLY_PEDALS.search(es_name) and not MAS_SKIP.search(es_name) \
+                    and not re.search(r"brick|\bpower\b|supply|voeding|netzteil|\bpatch", es_name):  # "MXR M292 Carbon Copy Deluxe"
+                found = "pedal"
+        # Un pedal solo por la URL ("…-hh-tremolo-2000") que la tienda da por guitarra es una guitarra (Music Man Axis)
+        if found == "pedal" and not _PEDAL.search(" / ".join(cats[-1:] + [es_name])) and guitar and guitar(crumbs, url, name):
+            return None
         # Lo que el clasificador de guitarras de la tienda da por guitarra no es un accesorio ni un estuche ("Westerngitarre
         # … Tonabnehmer, inkl. Koffer"); un ampli o un pedal sí lo es aunque su categoría diga "für E-Gitarren".
         if found in ("varios", "estuche") and guitar and guitar(crumbs, url, name):
             return None
         if found == "estuche" and not _EQ_CASE_FOR.search(" / ".join([es_name, slug] + cats[-1:])):
             return None
+        # "Gretsch Electromatic Jet Club 1 Pickup": la guitarra, con sus pastillas; "Martin 000-18": no son cuerdas 0.00-.018
+        if found == "varios" and (re.search(r"\b[1-3] ?(?:pickups?|pastillas?)\b", es_name)
+                                  or re.search(r"\b0{2,3}-\d\d\b", es_name) and not re.search(r"cuerdas|strings?", es_name)):
+            return None
+        # "Klassieke gitaar - massief sparren - palissander - koffer": la guitarra, con su estuche
+        guitar_at, case_at = _EQ_GUITAR_NAME.search(es_name), _CASE.search(es_name)
+        if found == "estuche" and guitar_at and case_at and guitar_at.start() < case_at.start() \
+                and not re.search(r"\bpara\b", es_name[:case_at.start()]) \
+                and re.search(r"(?:\s-\s|\bcon\b|\+)\s*(?:\w+\s+)?$", es_name[:case_at.start()]):
+            return None
         if found == "bajo" and _EQ_PEDAL_BRANDS.search(es_name):
             return "pedal"
+        # "Fender Genuine Replacement Part … Jazz Bass neck": una pieza, no un bajo
+        if found == "bajo" and re.search(r"\bneck\b|\bhals\b|\bbody\b|replacement|onderde(?:el|len)|ersatzteil",
+                                         " / ".join([es_name] + cats[-2:])):
+            return None
+        if found == "bajo" and re.match(r"(?:savarez|d ?'?addario|elixir|rotosound|la bella|ghs|dr strings|pyramid|thomastik"
+                                        r"|hannabach|aquila|augustine|cleartone|optima)\b", es_name):
+            return "varios"  # "Savarez E-Bass Hexagonal Explosion 4-str.": cuerdas
+        if found == "bajo" and re.match(r"(?:mark ?bass|ampeg|hartke|gallien|trace elliot|eich)\b", es_name):
+            return "ampli"  # "Mark BASS CMB 121": un combo
+        # Lo que es para un piano ("Piano Polish", "Versterkercover"…) no es un piano
+        if found == "teclado" and re.search(r"limpieza|polish|cubierta|soporte|funda|estuche", es_name):
+            return None
         # Un previo o un simulador en "Effektgeräte" ("Victory V1 The Duchess Pedal", "Mooer GE 1000 Amp Modeling") es un pedal
         if found == "ampli" and re.search(r"pedal|multiefect|efecto|distors|overdrive", " / ".join(cats[-2:])) \
                 and not re.search(r"amplificador|cubo|cabezal|pantalla", " / ".join(cats[-2:])):
@@ -3138,9 +3223,12 @@ def _equipo_fix(fix, lang):
     def f(data, text):
         data = fix(data, text) if fix else data
         crumbs = [c for c in data.get("crumbs") or [] if not c.startswith("#")]
+        # "Snaren > Elektrische gitaar": la última no dice qué es; la de antes, sí
+        last = crumbs[-2:] if crumbs and _EQ_GUITAR_NAME.search(_eq_name(crumbs[-1], lang)) else crumbs[-1:]
         if data.get("name"):
             data["crumbs"] = list(data.get("crumbs") or []) + [
-                _EQ_MARK + " / ".join([_eq_name(data["name"], lang)] + [_EQ_GROUP.sub(" guitarra ", _eq_name(c, lang)) for c in crumbs[-1:]])]
+                _EQ_MARK + " / ".join([_eq_name(data["name"], lang)]
+                                      + [_eq_name(_EQ_GROUP.sub(" guitarra ", _to_es(c, lang, equipo=True)), "") for c in last])]
         return data
     return f
 
@@ -3183,6 +3271,24 @@ EQUIPO_COUNTRIES = {
            "exclude": {"korn": "sin breadcrumb y con muchas fichas retiradas en el sitemap (sin precio ni JSON-LD de producto): "
                                "de 228 000 URL, unas 45 000 pasarían el filtro y la mitad no tienen precio",
                        "thomann": "descubre sus fichas por las categorías de guitarras (cat_allProducts_GF_…)",
+                       "woodbrass": "descubre sus fichas por las colecciones Shopify de guitarras",
+                       "gear4music": "su sitemap solo se lee en el departamento de guitarras (guitar_bass); 403 fuera de GitHub"}},
+    # Austria: en alemán, como Alemania (mismo vocabulario, mismos ficheros y textos: intl.T["de"]).
+    "at": {"sources": AT_SOURCES, "lang": "de+en", "site": "at", "max_price": {"estuche": 800, "varios": 500},
+           "files": {"bajo": "baesse.json", "ampli": "verstaerker.json", "pedal": "effektpedale.json",
+                     "teclado": "keyboards.json", "micro": "mikrofone.json", "estuche": "koffer-taschen.json",
+                     "varios": "zubehoer.json"},
+           # sus guitarras salen de la sección de guitarras; el equipo está en todo /shop/
+           "shops": {"hammerschmidt": {"path": r"/shop/(?!abverkauf/)"}},
+           "exclude": {"thomann": "descubre sus fichas por las categorías de guitarras (cat_allProducts_GF_…)",
+                       "woodbrass": "descubre sus fichas por las colecciones Shopify de guitarras"}},
+    "nl": {"sources": NL_SOURCES, "lang": "nl+en", "site": "nl", "max_price": {"estuche": 800, "varios": 500},
+           "files": {"bajo": "basgitaren.json", "ampli": "versterkers.json", "pedal": "effectpedalen.json",
+                     "teclado": "keyboards.json", "micro": "microfoons.json", "estuche": "koffers-tassen.json",
+                     "varios": "accessoires.json"},
+           # sus fichas cuelgan de la raíz; lo que tiene más ruta son categorías ("/audio/microfoons/usb-microfoon")
+           "shops": {"klundert": {"path": r"\.nl/[^/]+$"}},
+           "exclude": {"thomann": "descubre sus fichas por las categorías de guitarras (cat_allProducts_GF_…)",
                        "woodbrass": "descubre sus fichas por las colecciones Shopify de guitarras",
                        "gear4music": "su sitemap solo se lee en el departamento de guitarras (guitar_bass); 403 fuera de GitHub"}},
 }
