@@ -1927,6 +1927,7 @@ esp-ltd-alexi-laiho-sawtooth-awtoothhtm
 esp-ltd-alexi-ripped-sawtooth-purple-fade-satin-799493273328
 esp-ltd-alr-ii-qm-stp-andy-laroque-laroquehtm
 esp-ltd-alr-ii-qm-stp-andy-laroque-oquep41480
+esp-ltd-arrow-1000-candy-apple-red-eredp39642
 esp-ltd-arrow-1000-cars-fluence-fluencehtm
 esp-ltd-arrow-1000-pw-00pwp44332
 esp-ltd-arrow-1000-pw-w1000pwhtm
@@ -1947,7 +1948,10 @@ esp-ltd-bb-200b-qm-stblksb-satin-sbsatinhtm
 esp-ltd-bb-600-baritone-signature-gnaturehtm
 esp-ltd-ec-01-ft-black-ftblackhtm
 esp-ltd-ec-01-ft-cbs-01ftcbshtm
+esp-ltd-ec-10-blk-0blkp14517
+esp-ltd-ec-10-blk-ec10blkhtm
 esp-ltd-ec-1000-baritone-chms-onechmshtm
+esp-ltd-ec-1000-black-lackp11584
 esp-ltd-ec-1000-evertune-bb-blks-blksp41710
 esp-ltd-ec-1000-evertune-bb-blks-ebbblkshtm
 esp-ltd-ec-1000-granito-brillante-antep44335
@@ -1965,6 +1969,7 @@ esp-ltd-ec-1000t-honey-burst-satin-atinp15561
 esp-ltd-ec-1000t-qm-charcoal-burst-719710614420
 esp-ltd-ec-1000vb-duncan-bduncanhtm
 esp-ltd-ec-1000vb-duncan-ncanp14518
+esp-ltd-ec-1007b-evertune-black-neblackhtm
 esp-ltd-ec-200dx-blb-00dxblbhtm
 esp-ltd-ec-200dx-blb-xblbp37667
 esp-ltd-ec-200dx-chb-xchbp37668
@@ -1998,7 +2003,11 @@ esp-ltd-gary-holt-gh-sv-oltghsvhtm
 esp-ltd-gh-200-blk-gary-holt-aryholthtm
 esp-ltd-gh-200-blk-gary-holt-signature-799493249040
 esp-ltd-gh-600-blk-h600blkhtm
+esp-ltd-gh-sv-200-blk-0blkp36415
+esp-ltd-gh-sv-200-blk-v200blkhtm
 esp-ltd-gh-sv-blk-gary-holt-signature-719710619876
+esp-ltd-gl-200k-black-0kblackhtm
+esp-ltd-h-1001-violet-andromeda-satin-atinp39693
 esp-ltd-h-200fm-dark-brown-sb-wnsbp11585
 esp-ltd-h3-1000-qm-stbc-stbcp31679
 esp-ltd-h3-1000fr-metallic-silver-csilverhtm
@@ -2042,6 +2051,7 @@ esp-ltd-m-400ht-cm-400htcmhtm
 esp-ltd-m-400ht-sm-400htsmhtm
 esp-ltd-m-6b-et-black-metal-ii-metaliihtm
 esp-ltd-m-7b-ht-black-metal-ii-metaliihtm
+esp-ltd-mh-10-black-10blackhtm
 esp-ltd-mh-1000-evertune-charcoal-harcoalhtm
 esp-ltd-mh-1000-qm-blk-ocean-719710614604
 esp-ltd-mh-1000nt-gs-000ntgshtm
@@ -2056,9 +2066,11 @@ esp-ltd-mh1000-nt-fm-charcoal-harcoalhtm
 esp-ltd-mirage-deluxe-87-turq-turquoise-799493270549
 esp-ltd-msv-1-blk-mike-schleibaum-baump39648
 esp-ltd-msv-1-blk-mike-schleibaum-leibaumhtm
+esp-ltd-mt-130-azul-cielo-ielop44439
 esp-ltd-mt-130-blk-0blkp40084
 esp-ltd-mt-130-blue-bluep40086
 esp-ltd-mt-130-grey-greyp41803
+esp-ltd-mt-130-sky-blue-skybluehtm
 esp-ltd-mt-i-mick-thomson-blks-msonsightm
 esp-ltd-mt-i-mick-thomson-obsm-sonobsmhtm
 esp-ltd-mv-1000-maverick-pw-erickpwhtm
@@ -2094,6 +2106,8 @@ esp-ltd-ted-ec-blk-edecblkhtm
 esp-ltd-th-1000-et-fm-stbsb-fmstbsbhtm
 esp-ltd-th-400-cm-th400cmhtm
 esp-ltd-th-400-sm-th400smhtm
+esp-ltd-viper-1000-black-cherry-erryp31682
+esp-ltd-viper-1000-black-cherry-kcherryhtm
 esp-ltd-viper-1000-vintage-black-geblackhtm
 esp-ltd-viper-1001-et-chms-1etchmshtm
 esp-ltd-volsung-200-black-satin-cksatinhtm
@@ -6297,7 +6311,9 @@ ltd-ec-1000-duncan-vintage-black-799493261837
 ltd-ec-1000-emg-blk-8402480075974
 ltd-ec-1000-evertune-bb-799493273298
 ltd-ec-1000-evertune-bb-black-satin-blacksatin
+ltd-ec-1000-fluence-black-uenceblack
 ltd-ec-1000-gold-andromeda-799493273304
+ltd-ec-1000-lh-vintage-black-ntageblack
 ltd-ec-1000-pearl-white-000pwnuevo
 ltd-ec-1000-piezo-799493259254
 ltd-ec-1000-piezo-see-thru-black-ethrublack
@@ -6387,6 +6403,7 @@ ltd-esp-ltd-horizon-custom-87-blk-negra-719710620124
 ltd-esp-ltd-horizon-custom-87-car-candy-apple-red-719710620100
 ltd-esp-ltd-horizon-custom-87-pwh-pearl-white-719710620117
 ltd-esp-ltd-jd-i-ss-joe-duplantier-silver-sunburst-719710629424
+ltd-esp-ltd-jm-i-dbm-josh-middleton-deep-blood-moon-719710627451
 ltd-esp-ltd-kh-v-mgld-kirk-hammett-metallic-gold-1100000893332
 ltd-esp-ltd-m-1001-cms-charcoal-metallic-satin-719710620278
 ltd-esp-ltd-m-6-baritone-et-black-metal-ii-black-red-burst-satin-719710629165
@@ -6480,12 +6497,14 @@ ltd-mh-1000-evertune-fm-719710620292
 ltd-mh-1000nt-bb-719710627758
 ltd-mh-1000nt-bold-bind-black-satin-000ntnuevo
 ltd-mh-1000nt-bold-bind-black-satin-000ntnuevo
+ltd-mh-1000nt-charcoal-burst-rcoalburst
 ltd-mh-17-799493261899
 ltd-mh-200-blk-799493260908
 ltd-mirage-deluxe-87-metallic-gold-719710614345
 ltd-mirage-deluxe-87sw-snow-white-wwhitehtml
 ltd-mk-ec-fr-719710619913
 ltd-msv-1-719710627420
+ltd-mt-130-blue-t1300nuevo
 ltd-mt-130-orange-799493263299
 ltd-mt-130-red-840248014304
 ltd-mt-130-sky-blue-719710627550
