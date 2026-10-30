@@ -10,9 +10,12 @@ Uso:
 import argparse
 import hashlib
 import sys
+import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
 from io import BytesIO
 from pathlib import Path
+from urllib.parse import urlparse
 
 from PIL import Image, ImageChops, ImageOps
 
@@ -165,34 +168,56 @@ def wanted(cat=None):
     return out
 
 
-def run(limit=300, minutes=20, cat=None):
+def _one(fetcher, url, rotate):
+    """La miniatura de una foto: "ok", "failed" o "skip" (robots.txt no la deja)."""
+    try:
+        src = url
+        if not fetcher.allowed(src)[0]:
+            # Muchas tiendas prohíben URLs con parámetros (?ts=…): la misma imagen sin ellos suele estar permitida.
+            src = url.split("?")[0]
+            if src == url or not fetcher.allowed(src)[0]:
+                return "skip"
+        resp = fetcher.get(src)
+        if resp.status_code != 200 or not resp.headers.get("content-type", "").startswith("image"):
+            return "failed"
+        data = normalize(resp.content, rotate)
+        if not data:
+            return "failed"
+        (DIR / name_for(url)).write_bytes(data)
+        return "ok"
+    except Exception as exc:  # noqa: BLE001 - una foto rara no para el resto
+        print(f"[thumb] {url[:80]}: {type(exc).__name__}", flush=True)
+        return "failed"
+
+
+def run(limit=300, minutes=20, cat=None, workers=8):
+    """Las fotos se piden por tienda (dominio) en paralelo: cada tienda, de una en una y con su pausa de 1-2 s, como
+    siempre; lo que cambia es que varias tiendas avanzan a la vez."""
     DIR.mkdir(parents=True, exist_ok=True)
     todo = [(u, r) for u, r in wanted(cat).items() if not (DIR / name_for(u)).exists()]
-    fetcher = Fetcher(delay=(1.0, 2.0))
+    by_host = {}
+    for url, rotate in todo:
+        by_host.setdefault(urlparse(url).netloc, []).append((url, rotate))
     deadline = time.monotonic() + minutes * 60
-    done = failed = 0
-    for url, rotate in todo[:limit]:
-        if time.monotonic() > deadline:
-            break
-        try:
-            src = url
-            if not fetcher.allowed(src)[0]:
-                # Muchas tiendas prohíben URLs con parámetros (?ts=…): la misma imagen sin ellos suele estar permitida.
-                src = url.split("?")[0]
-                if src == url or not fetcher.allowed(src)[0]:
-                    continue
-            resp = fetcher.get(src)
-            if resp.status_code != 200 or not resp.headers.get("content-type", "").startswith("image"):
-                failed += 1
-                continue
-            data = normalize(resp.content, rotate)
-            if data:
-                (DIR / name_for(url)).write_bytes(data)
-                done += 1
-        except Exception as exc:  # noqa: BLE001 - una foto rara no para el resto
-            failed += 1
-            print(f"[thumb] {url[:80]}: {type(exc).__name__}", flush=True)
-    print(f"miniaturas: {done} nuevas, {failed} fallidas, {max(0, len(todo) - done - failed)} pendientes", flush=True)
+    counts = {"ok": 0, "failed": 0, "skip": 0}
+    lock = threading.Lock()
+
+    def host(items):
+        fetcher = Fetcher(delay=(1.0, 2.0))
+        for url, rotate in items:
+            with lock:
+                if time.monotonic() > deadline or counts["ok"] + counts["failed"] >= limit:
+                    return
+            res = _one(fetcher, url, rotate)
+            with lock:
+                counts[res] += 1
+
+    # Las tiendas con más fotos primero, para que no queden para el final.
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        list(pool.map(host, sorted(by_host.values(), key=len, reverse=True)))
+    pending = max(0, len(todo) - sum(counts.values()))
+    print(f"miniaturas: {counts['ok']} nuevas, {counts['failed']} fallidas, {pending} pendientes "
+          f"({len(by_host)} tiendas)", flush=True)
 
 
 def main(argv=None):
