@@ -268,6 +268,13 @@ def plan(day, recent):
 
 
 def git(*args):
+    if args[0] == "push":  # el workflow de precios también hace commits en la rama: se integran y se reintenta
+        for attempt in range(4):
+            if subprocess.run(["git", *args], cwd=ROOT, capture_output=True).returncode == 0:
+                return ""
+            branch = args[-1].split(":")[-1]
+            subprocess.run(["git", "pull", "-q", "--no-rebase", "--no-edit", "origin", branch], cwd=ROOT, check=True)
+            time.sleep(2 ** attempt)
     return subprocess.run(["git", *args], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip()
 
 
