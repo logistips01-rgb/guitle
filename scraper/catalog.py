@@ -1089,7 +1089,8 @@ def _parse_ld_loose(soup, text):
 def _br_fix(data, text):
     """Los nombres empiezan por el instrumento ("Guitarra Tagima TG-500", "Violão Elétrico Yamaha FX310"): fuera, la
     categoría ya lo dice (y así la marca va delante)."""
-    name = data.get("name") or ""
+    name = html.unescape(data.get("name") or "")  # Conca, China Som, Audio POA: "Viol&#227;o"
+    data["name"] = name
     name = re.sub(r"^(?:guitarra|viol[aã]o)(?:\s+(?:el[eé]tric[oa]|eletroac[uú]stic[oa]|ac[uú]stic[oa]|folk|cl[aá]ssic[oa]"
                   r"|de|a[cç]o|nylon|n[aá]ilon|semi-?ac[uú]stic[oa]|7 cordas|12 cordas|infantil))*\s+", "", name, flags=re.I)
     # El nombre completo se queda en las categorías: de ahí sale si es de nylon o de aço (br_kind).
@@ -1344,6 +1345,65 @@ for _id, _name, _sm in [("tangomusic", "Tango Music", "https://www.tangomusic.co
                          "https://dcdn-us.mitiendanube.com/stores/008/045/752/themes/common/sitemap.xml.gz")]:
     BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "fix": _br_fix, "kind_url": br_kind,
                        "pick": _pick_br}
+# De los distribuidores de Gibson/Epiphone (Royal Music, que tiene tienda propia) e Ibanez (Musical Express).
+for _id, _name, _sm in [("royalmusic", "Royal Music", "https://store.royalmusic.com.br/sitemap.xml"),
+                        ("musicacenter", "Música Center", "https://www.musicacenter.com.br/sitemap.xml"),
+                        ("concamusic", "Conca Music", "https://www.concamusic.com.br/sitemap/index"),
+                        ("lojapontomusical", "Ponto Musical",
+                         "https://dcdn-us.mitiendanube.com/stores/001/130/862/themes/common/sitemap.xml.gz"),
+                        ("duettomusical", "Duetto Musical", "https://duettomusical.com.br/sitemap.xml"),
+                        ("eimusica", "Eimusica", "https://acdn-us.mitiendanube.com/stores/004/379/567/themes/common/sitemap.xml.gz"),
+                        ("luggi", "Luggi", "https://www.luggi.com.br/sitemap.xml"),
+                        ("estacaomusicalbh", "Estação Musical",
+                         "https://dcdn-us.mitiendanube.com/stores/006/021/944/themes/common/sitemap.xml.gz"),
+                        ("tamborim", "Tamborim de Ouro", "https://tamborimonline.com.br/sitemap.xml"),
+                        ("rivermusic", "River Music", "https://dcdn-us.mitiendanube.com/stores/007/991/644/themes/common/sitemap.xml.gz")]:
+    BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "fix": _br_fix, "kind_url": br_kind,
+                       "pick": _pick_br}
+
+
+# De los listados oficiales de tiendas de Tagima (tagima.com.br/pt/lojas) y Michael (onde encontrar).
+for _id, _name, _sm in [
+        ("akusticamusical", "Akustica Musical", "https://www.akusticamusical.com.br/sitemap.xml"),
+        ("rckaudio", "RCK Audio", "https://www.rckaudio.com.br/sitemap.xml"),
+        ("tunermusic", "Tuner Music", "https://dcdn-us.mitiendanube.com/stores/001/620/210/themes/common/sitemap.xml.gz"),
+        ("lojarockclube", "Rock Clube", "https://acdn-us.mitiendanube.com/stores/006/644/674/themes/common/sitemap.xml.gz"),
+        ("shoppingdamusica", "Shopping da Música",
+         "https://acdn-us.mitiendanube.com/stores/002/790/962/themes/common/sitemap.xml.gz"),
+        ("chinasom", "China Som", "https://www.chinasom.com.br/sitemap/index"),
+        ("panoramamusical", "Panorama Musical",
+         "https://dcdn-us.mitiendanube.com/stores/006/589/607/themes/common/sitemap.xml.gz"),
+        ("musichallcenter", "Music Hall Center",
+         "https://dcdn-us.mitiendanube.com/stores/006/471/427/themes/common/sitemap.xml.gz"),
+        ("supersonora", "Supersonora", "https://www.supersonora.com.br/sitemap.xml"),
+        ("sosom", "Só Som", "https://www.sosom.com.br/sitemap.xml"),
+        ("pontodomusico", "Ponto do Músico", "https://www.pontodomusico.com.br/sitemap.xml"),
+        ("soprodivinomusical", "Sopro Divino", "https://www.soprodivinomusical.com.br/sitemap.xml.gz"),
+        ("armazemdomusico", "Armazém do Músico",
+         "https://acdn-us.mitiendanube.com/stores/006/996/172/themes/common/sitemap.xml.gz"),
+        ("elomusical", "Elo Musical", "https://www.elomusical.com.br/sitemap.xml"),
+        ("audiopoa", "Audio POA", "https://audiopoa.com/sitemap/index"),
+        ("fujisom", "Fujisom", "https://www.fujisom.com.br/sitemap.xml"),
+        ("apopularaudio", "A Popular Áudio",
+         "https://dcdn-us.mitiendanube.com/stores/006/726/228/themes/common/sitemap.xml.gz"),
+        ("islmusic", "ISL Music", "https://dcdn-us.mitiendanube.com/stores/007/059/393/themes/common/sitemap.xml.gz"),
+        ("opsom", "OP Som", "https://dcdn-us.mitiendanube.com/stores/001/435/423/themes/common/sitemap.xml.gz")]:
+    BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "fix": _br_fix, "kind_url": br_kind,
+                       "pick": _pick_br}
+
+
+def _pick_vtex(u):
+    """Tiendas VTEX: la ficha acaba en /p ("…/guitarra-ibanez-rg121dx/p")."""
+    u = u.rstrip("/")
+    return u.endswith("/p") and _pick_br(u[:-2])
+
+
+for _id, _name, _sm in [("x5music", "X5 Music", "https://www.x5music.com.br/sitemap.xml"),
+                        ("ninjasom", "Ninja Som", "https://www.ninjasom.com.br/sitemap.xml"),
+                        ("supersom", "Super Som", "https://www.supersominstrumentos.com.br/sitemap.xml")]:
+    BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "fix": _br_fix, "kind_url": br_kind,
+                       "pick": lambda u: _pick_vtex(u) or _pick_br(u)}
+
 # Musical Center Som (WooCommerce): en el sitemap también van categorías y etiquetas; solo las fichas.
 BR_SOURCES["musicalcentersom"]["pick"] = lambda u: "/produto/" in u and _pick_br(u)
 
