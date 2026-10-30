@@ -34,7 +34,7 @@ import requests
 from bs4 import BeautifulSoup
 
 from . import affiliates, analytics, deals, jsonld, pages
-from .common import normalize_id
+from .common import normalize_currency, normalize_id, parse_availability, parse_price
 from .fetch import DELAY, Fetcher, is_challenge
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -1298,18 +1298,27 @@ _TO_ES = {
            (r"\bbasses?\b", "bajo"), (r"\bcordes\b", "cuerdas"), (r"housses?", "funda"), (r"[eé]tuis?", "estuche"),
            (r"sangles?", "correa"), (r"m[eé]diators?", "púa"), (r"c[aâ]bles?", "cable"), (r"accordeurs?", "afinador"),
            (r"occasion", "usado"), (r"m[eé]thode", "método"), (r"\blivres?\b", "libro"), (r"p[eé]dales?", "pedal")],
-    "de": [(r"e-gitarren?", "guitarra eléctrica"), (r"westerngitarren?", "guitarra acústica western"),
-           (r"akustikgitarren?", "guitarra acústica"), (r"konzertgitarren?|klassische gitarren?", "guitarra clásica"),
-           (r"gitarren?", "guitarra"), (r"e-b[aä]sse?|\bb[aä]sse?\b", "bajo"), (r"saiten(satz)?", "cuerdas"), (r"koffer", "estuche"),
+    # Primero las semiacústicas ("Halbakustik", "Semi-Akustik"): son eléctricas, no acústicas.
+    "de": [(r"halb-?akusti\w*|semi-?akusti\w*|hollow-?body|jazzgitarren?", "guitarra eléctrica semi hueca"),
+           (r"\be-?gitarren?|elektrogitarren?", "guitarra eléctrica"), (r"westerngitarren?", "guitarra acústica western"),
+           (r"elektro-?akusti\w*", "electroacústica"), (r"akustikgitarren?", "guitarra acústica"),
+           (r"konzertgitarren?|klassi(?:k|sche) ?gitarren?|klassikgitarren?", "guitarra clásica"), (r"flamenco", "flamenca"),
+           (r"gitarren?", "guitarra"), (r"\bakusti\w*", "acústica"), (r"e-b[aä]sse?|\bb[aä]sse?\b", "bajo"), (r"saiten(satz)?", "cuerdas"), (r"koffer", "estuche"),
            (r"tasche|gigbag", "funda"), (r"\bgurt\b", "correa"), (r"plektr(um|en)", "púa"), (r"kabel", "cable"),
            (r"stimmger[aä]t", "afinador"), (r"st[aä]nder", "soporte"), (r"verst[aä]rker|\bcombo\b", "amplificador"),
            (r"gebraucht|b-ware", "usado"), (r"\bschule\b|\bbuch\b", "libro"), (r"effektger[aä]t|effekt", "pedal")],
-    "nl": [(r"elektrische gita(a|re)n?", "guitarra eléctrica"), (r"akoestische gita(a|re)n?", "guitarra acústica"),
-           (r"klassieke gita(a|re)n?", "guitarra clásica"), (r"basgita(a|re)n?|\bbas\b", "bajo"), (r"gita(a|re)n?", "guitarra"),
+    # En neerlandés "semi-akoestisch" suele ser una electroacústica; las semihuecas eléctricas son "hollow body".
+    "nl": [(r"semi[- ]?akoestisch\w*", "electroacústica"), (r"half-?akoestisch\w*|hollow-?body", "guitarra eléctrica semi hueca"),
+           (r"elektrische gita(a|re)n?", "guitarra eléctrica"), (r"elektro-?akoestisch\w*", "electroacústica"),
+           (r"akoestische gita(a|re)n?|westerngita(a|re)n?", "guitarra acústica"),
+           (r"klassieke gita(a|re)n?|concertgita(a|re)n?|spaanse gita(a|re)n?", "guitarra clásica"), (r"flamenco", "flamenca"),
+           (r"\bakoestisch\w*", "acústica"), (r"\bklassiek\w*", "clásica"), (r"\belektrisch\w*", "eléctrica"), (r"basgita(a|re)n?|\bbas\b", "bajo"), (r"gita(a|re)n?", "guitarra"),
            (r"snaren", "cuerdas"), (r"koffer", "estuche"), (r"\bhoes\b|gigbag|\btas\b", "funda"), (r"\briem\b|gitaarband", "correa"),
            (r"plectrum", "púa"), (r"kabel", "cable"), (r"stemapparaat", "afinador"), (r"standaard", "soporte"),
            (r"versterker", "amplificador"), (r"tweedehands|occasion", "usado"), (r"effectpedaal|pedaal", "pedal")],
-    "en": [(r"electric", "eléctrica"), (r"acoustic", "acústica"), (r"classical", "clásica"), (r"guitars?", "guitarra"),
+    "en": [(r"semi-?hollow|hollow-?body|archtop", "eléctrica semi hueca"), (r"electro-?acoustic", "electroacústica"),
+           (r"electric", "eléctrica"), (r"acoustic", "acústica"), (r"classical", "clásica"), (r"flamenco", "flamenca"),
+           (r"\bguitars?\b", "guitarra"),
            (r"\bstrings?\b", "cuerdas"), (r"gig ?bag|\bcase\b|\bbag\b", "funda"), (r"\bstrap\b", "correa"),
            (r"\bpicks?\b|plectrums?", "púa"), (r"\bcables?\b|\blead\b", "cable"), (r"\btuner\b", "afinador"),
            (r"\bstand\b", "soporte"), (r"amplifier|\bamp\b|\bcombo\b", "amplificador"), (r"pre-?owned|\bused\b|b-stock", "usado"),
@@ -1317,9 +1326,11 @@ _TO_ES = {
 
 
 def _to_es(text, lang):
+    """lang: "de", o varios idiomas en orden ("nl+en": tiendas neerlandesas con nombres en inglés)."""
     text = (text or "").lower()
-    for pat, es in _TO_ES.get(lang, []):
-        text = re.sub(pat, es, text)
+    for one in lang.split("+"):
+        for pat, es in _TO_ES.get(one, []):
+            text = re.sub(pat, es, text)
     return text
 
 
@@ -2155,6 +2166,316 @@ DE_SOURCES["gear4music"] = _gear4music("https://www.gear4music.de", de_kind)
 NL_SOURCES["gear4music"] = _gear4music("https://www.gear4music.nl", nl_kind)
 
 
+# --- Alemania, Austria y Países Bajos: tiendas de las listas de distribuidores de las marcas -----------------------
+# Sin categorías fiables: el tipo sale del nombre y de la URL (guitar_kind_for, en alemán o neerlandés y en inglés), con un
+# filtro más de accesorios en esos idiomas. "Con estuche", "mit Tonabnehmer"… describen la guitarra: se quitan antes.
+_DACH_WITH = re.compile(r"(?:\b(?:inkl\.?|incl\.?|inklusive|inclusief|including|mit|with|w/|met|und|and|en|plus)\s+|\+\s*)"
+                        r"(?:(?:hard|soft|form|gig|deluxe|original|premium|luxe|tolex|fender|gibson|ibanez|vintage)[\s-]?)*"
+                        r"(?:koffer|case|gig-?bag|tasche|hoes|etui|bag|tonabnehmer|pick-?ups?|element|elektronik|electronics"
+                        r"|tuner|stimmgerät|eq)\w*", re.I)
+_DACH_SKIP = re.compile(
+    r"saiten(?!instrument)|\bsaite\b|\bstrings\b|string ?set|snaren|\bsnaar\b|(?<![\w-])0?\d{2}-\d{2,3}(?![\w-])"
+    r"|koffer|gig-?bag|tasche|hoes\b|hoezen|\bcases?\b|\bbag\b|\betui|gurt\b|gurte\b|gitarrengurt|gitarregurt|gitaarband|draagriem|\bstraps?\b"
+    r"|tonabnehmer|\bpick-?ups?\b|humbucker|single-?coil|mechanik|mechaniek|machine ?heads?|\bsattel|\bsteg\b|schlagbrett"
+    r"|slagplaat|pickguard|ersatzteil|onderde[el]|replacement part|accessor|\bparts?\b|\bbridge\b|brücke|tailpiece|vibrato unit|tremolo arm|vibratohebel"
+    r"|ukulele|ukelele|zither|guitarlele|guitalele|mandolin|banjo|bouzouki|\bsaz\b|(?<!am)bass(?!wood|ador)|bässe|\b[45]-?str\b|\b[45]-?saiter|\b[45]-?snarig|\bbas\b|basgita"
+    r"|ständer|staender|statief|standaard|\bstand\b|wandhalter|wall ?hanger|hanger|halter|kapodaster|\bcapo\b"
+    r"|plektr|plectr|\bpicks?\b|stimmger|stemapparaat|\btuner\b|verstärker|verstaerker|versterker|\bamp\b|combo\b"
+    r"|kabel|\bcable\b|pflege|reinig|polish|\bset\b|starter-?set|startersset|bundle|\bpack\b|paket|\bkit\b"
+    r"|gutschein|cadeaubon|gift ?card|kopie von|lehrbuch|gitarrenschule|schule\b|songbook|\bnoten\b|\bbuch\b|\bboek\b"
+    r"|methode|gebraucht|tweedehands|occasion|b-?ware|b-?stock|vorführ|ausstellung|\bdemo\b|ex-?demo|\bused\b"
+    r"|pre-?owned|second ?hand|\bmiete|\bhuur|effekt|pedal|preamp|\beffect|looper|hocker|\bstool|\bstuhl|fußbank|voetbank"
+    r"|footrest|#\d{5,}|\b19[4-9]\d$|cradle|cajon|marcus miller|gitarrenbox|topteil|cabinet|\bknobs?\b|\bswitch\b|schalter|\bpoti\b|bürste|brush|besen|\bcover\b|seeburg|klavar|harmonium|\bblf\b|\bpiano|klavier|flügel|lautsprecher|luidspreker|speaker|stütze|stuetze|befeucht|humidif|bevochtig|sticker|poster|shirt|hoodie|socken|socks|sokken|schild\b|magnet|anhänger|schlüssel|keychain|sleutelhanger|miniatur|tasse|becher|\btasse|\bmug\b|\bcd\b(?![- ]?\d)"
+    r"|\bdvd\b|kopfhörer|headphone|mikrofon|microfoon|microphone|wireless|interface|ersatz|zubehör|zubehoer|accessoir"
+    r"|reparatur|reparatie|einstell|service|versicherung|\bsaitenhalter|slide\b|bottleneck|\bnut\b|\bsaddle"
+    # "… für E-Gitarre", "… voor klassieke gitaar": es para la guitarra, no la guitarra
+    r"|\b(?:für|fuer|for|voor)\b[^,]{0,25}(?:gitarren?|guitars?|gita(?:a|re)n?)\b"
+    # Marcas que solo hacen accesorios (Ernie Ball sí hace guitarras: las Music Man)
+    r"|^(?:d'?\s?addario|elixir|dunlop|hercules|k\s?&?\s?m|gator|hiscox|rockcase|rockbag|seymour duncan|dimarzio|emg|schaller"
+    r"|gotoh|kyser|shubb|planet waves|pickboy|ernie ball(?! music ?man)|rotosound|savarez|hannabach|la bella|thomastik|gewa (?:pure"
+    r"|economy|prestige|premium|flex)|fishman|boss|tc electronic|nux|righton|levy'?s|fender (?:case|gig ?bag|strap|strings"
+    r"|picks?|cable)|ibanez (?:powerpad|gig ?bag|case))\b", re.I)
+
+_DACH_GROUP = re.compile(r"(?:git\w*|b[aä]ss\w*|basgita\w*)(?:(?:\s*(?:&|und|en|and|/|,|-|\+)\s*)+(?:git\w*|b[aä]ss\w*|baesse|strings"
+                         r"|zubeh\w*|basgita\w*|accessoires|amps?|verst[aä]rker|versterkers|effekte))+", re.I)
+# Categorías de otros instrumentos (Yamaha "C2X" es un piano de cola, no una clásica).
+_DACH_OTHER = re.compile(r"tasteninstr|klavier|flügel|\bpiano|keyboard|blasinstr|streichinstr|schlagzeug|\bdrums?\b|percussion"
+                         r"|orgel|akkordeon|zither|violin|\bviola|cello|toetsinstr|blaasinstr|strijkinstr|slagwerk|\bdj\b"
+                         r"|beschallung|recording|bladmuziek|\bnoten\b|cajon|\baudio\b|lautsprecher|luidspreker|speaker", re.I)
+# Piezas sueltas: "Fender Stratocaster Neck", "Gibson SG Body" (no "… Roasted Maple Neck" al final de un nombre largo).
+_DACH_PART = re.compile(r"^(?:\S+\s+){0,3}(?:neck|body|hals|korpus)\b(?![\s-]*(?:thru|through))", re.I)
+# El tipo según la categoría de la tienda (de la más concreta a la más general); las semiacústicas son eléctricas.
+_DACH_CAT_TYPES = [("electrica", r"halb[- ]?akust|semi[- ]?akust|half[- ]?akoest|semi[- ]?hollow|hollow|jazzgitarr|archtop"),
+                   ("clasica", r"konzert-?gitarr|klassi|flamenc|nylon|concertgita|spaanse"),
+                   ("acustica", r"western|akusti|akoesti|acoustic|\bfolk|dreadnought|jumbo|parlou?r|grand auditorium"),
+                   ("electrica", r"\be-?gitarr|elektrische gita|electric|elektrisch|single-?cut|double-?cut|solid-?body"
+                                 r"|superstrat|\b[stj]-style|\bst-|\bt-modell|offset|headless|\blp-modell")]
+# Marcas que solo (o casi solo) hacen eléctricas: "PRS SE CE 24", "Duesenberg Julietta" no dicen qué son.
+_ELECTRIC_ONLY = re.compile(r"^(?:prs|paul reed smith|duesenberg|spira|jet|patina|chapman|suhr|tom anderson|nik huber|schecter|jackson"
+                            r"|charvel|evh|sterling|hagstrom|rickenbacker|reverend|kiesel|strandberg|mayones|solar|fgn|fujigen"
+                            r"|tokai|squier|music ?man|ernie ball music ?man|esp|ltd|e-ii|g&l|friedman|knaggs|gretsch|danelectro"
+                            r"|kramer|ormsby|aristides|vola|maybach|harley benton)\b", re.I)
+_NOT_ELECTRIC = re.compile(r"acoustic|akusti|akoest|western|dreadnought|jumbo|parlou?r|konzert|concert|klassi|nylon|angelus|tonare"
+                           r"|\bse [apt]\d0|\b[apt]20e?\b|jim dandy|rancher|falcon jr|\bcustom 4\d\b", re.I)
+
+
+def _dach_cat_type(crumbs):
+    for c in reversed(crumbs or []):
+        for kind, rx in _DACH_CAT_TYPES:
+            if re.search(rx, c.lstrip("#"), re.I):
+                return kind
+    return None
+
+
+def dach_kind(lang):
+    """Clasificador de las tiendas alemanas, austriacas y neerlandesas (lang: "de" o "nl"; también en inglés). Decide, por
+    este orden, lo que diga el nombre ("Konzertgitarre"), la categoría de la tienda, el modelo (guitar_kind_for) y la marca."""
+    base = guitar_kind_for(lang + "+en")
+
+    def kind(crumbs, url="", name=""):
+        name = " ".join(_DACH_WITH.sub(" ", name or "").split())
+        slug = _DACH_WITH.sub(" ", _dach_slug(url).replace("-", " ").replace("_", " "))
+        # Las categorías también descartan ("E-Bässe", "Zubehör", "Flügel"), pero no "Gitarren & Bässe". Las etiquetas de
+        # Shopify ("#…") solo si son de otro instrumento: traen de todo ("hardcase", "outlet"…).
+        cats = [_DACH_GROUP.sub(" ", _DACH_WITH.sub(" ", c)) for c in crumbs or [] if not c.startswith("#")]
+        if _DACH_SKIP.search(name) or _DACH_PART.search(name) or _DACH_SKIP.search(slug) \
+                or any(_DACH_SKIP.search(c) for c in cats) or any(_DACH_OTHER.search(c) for c in crumbs or []):
+            return None
+        said = _to_es(name, lang + "+en")
+        if re.search(r"guitarra clásica|guitarra flamenca|flamenca\W+guitarra", said):
+            return "clasica"
+        # "Semi-akoestische gitaar" es una electroacústica, salvo en semihuecas eléctricas ("Gretsch G5422TG", "Epiphone ES-335")
+        if re.search(r"semi[- ]?ako", name, re.I) and (_ELECTRIC_ONLY.search(name) or re.search(
+                r"(?i)epiphone|gibson (?:es|cs)|ibanez (?:as|af|am|sa)\d|\bes-?\d{3}|casino|hollow|archtop|thinline", name)):
+            return "electrica"
+        if re.search(r"guitarra acústica|electroacústica", said) and "eléctrica" not in said:
+            return "acustica"
+        if re.search(r"guitarra eléctrica", said) and not re.search(r"acústica|clásica", said):
+            return "electrica"
+        kind = _dach_cat_type(crumbs) or base(crumbs, "x/" + slug.replace(" ", "-"), name)
+        if not kind and _ELECTRIC_ONLY.search(name) and not _NOT_ELECTRIC.search(name + " " + " ".join(crumbs or [])):
+            kind = "electrica"
+        return kind
+    return kind
+
+
+def _dach_slug(url):
+    """Lo último de la URL con el nombre: sin el número de artículo (".../e-gitarre-xy/0054601"), ni ".html", ni "-p-305092"."""
+    parts = [p for p in re.sub(r"[?#].*$", "", url).rstrip("/").split("/") if p]
+    while len(parts) > 3 and re.fullmatch(r"[0-9]+(?:-[0-9a-f]{32})?|[0-9A-Z]{5,}|[0-9a-f]{32}", parts[-1]):
+        parts.pop()
+    slug = re.sub(r"\.(html?|php)$", "", parts[-1] if parts else "")
+    return re.sub(r"-p-\d+$|_\d{5,}$|-\d{5,}$|^p\d+_", "", slug)
+
+
+# Marcas de guitarras para preseleccionar URLs sin "Gitarre" (Yamaha, Gewa y Stagg hacen de todo: solo con su modelo).
+_DACH_BRANDS = tuple(b.replace("-", " ") + " " for b in tuple(x for x in _UK_BRANDS if x not in ("gewa", "stagg")) + ("harley-benton", "hora", "lakewood", "furch",
+                                                                        "hanika", "duesenberg", "warwick", "framus", "fgn",
+                                                                        "maybach", "patina", "richwood", "aria", "tokai",
+                                                                        "spira", "jet", "suhr", "tom-anderson", "nik-huber",
+                                                                        "rickenbacker", "eko", "lag", "la-mancha", "juan-salvador",
+                                                                        "valencia", "sx", "gretsch", "d-angelico", "eastman"))
+
+
+def _pick_dach(lang, base, path=None, shopify=False):
+    """Fichas de una tienda: de su dominio (algunos sitemaps traen espejos y webs de pruebas), con la ruta de las fichas
+    (path) y que por la URL parezcan una guitarra o empiecen por una marca de guitarras."""
+    base = base.rstrip("/")
+    rx = re.compile(path) if path else None
+
+    def pick(u):
+        if not u.startswith(base + "/") or (rx and not rx.search(u)) or (shopify and not re.match(re.escape(base) + r"/products/", u)):
+            return False
+        if NOT_PRODUCT.search(u) or _GEN_NOT_PRODUCT.search(u.replace("/products/", "/")):
+            return False
+        slug = _DACH_WITH.sub(" ", _dach_slug(u).replace("-", " ").replace("_", " ").lower())
+        es = _to_es(slug, lang + "+en")
+        if _DACH_SKIP.search(slug) or ES_SKIP.search(es):
+            return False
+        if slug.startswith("yamaha "):
+            return bool(_ES_PICK.search(es) or _YAMAHA_GUITAR.search(slug))
+        return bool(_ES_PICK.search(es)) or slug.startswith(_DACH_BRANDS)
+    return pick
+
+
+_YAMAHA_GUITAR = re.compile(r"^yamaha (?:pacifica|revstar|rs[sep]?|pac|c|cg|cx|ncx|ntx|cs|gc|f|fs|fg|fgx|fsx|apx|cpx|ll|ls|lj|ac"
+                            r"|aj|storia|jr|slg|csf|tag|gl)\s?\d")
+
+
+def _parse_shopware(soup, text):
+    """Shopware 6 sin JSON-LD de producto: microdatos (precio, moneda, EAN y marca) del bloque del producto; el nombre, del h1
+    (el primer itemprop=name de la página es la marca o el menú)."""
+    crumbs = []
+    for el in soup.select('[itemtype$="BreadcrumbList"] [itemprop=name]'):
+        c = el.get_text(" ", strip=True) or el.get("content") or ""
+        if c and (not crumbs or crumbs[-1] != c):
+            crumbs.append(c)
+    product = soup.find(attrs={"itemtype": re.compile(r"schema\.org/Product$")})
+    h1 = soup.select_one("h1.product-detail-name") or soup.find("h1")
+    if not product or not h1:
+        return {"crumbs": crumbs}
+
+    def prop(node, name):
+        el = node.find(attrs={"itemprop": name}) if node else None
+        if el is None:
+            return None
+        return (el.get("content") or el.get("href") or el.get_text(" ", strip=True) or "").strip() or None
+
+    offer = product.find(attrs={"itemprop": "offers"}) or product
+    price = parse_price(prop(offer, "price") or prop(offer, "lowPrice"))
+    name = " ".join(h1.get_text(" ", strip=True).split())
+    if crumbs and crumbs[-1].lower() == name.lower():
+        crumbs = crumbs[:-1]
+    if not price or not name:
+        return {"crumbs": crumbs}
+    brand = product.find(attrs={"itemprop": "brand"})
+    brand = (brand.get("content") or prop(brand, "name") or brand.get_text(" ", strip=True)) if brand else None
+    ean = normalize_id(prop(product, "gtin13") or prop(product, "gtin") or prop(product, "gtin14") or "")
+    avail = prop(offer, "availability")
+    image = soup.find("meta", attrs={"property": "og:image"})
+    return {"crumbs": crumbs, "name": name, "brand_raw": (brand or "").strip() or _brand_from_name(name), "price": price,
+            "currency": normalize_currency(prop(offer, "priceCurrency")) or "EUR", "in_stock": parse_availability(avail),
+            "image": image.get("content") if image else None, "ean": ean if len(ean) in (12, 13, 14) else None}
+
+
+def _parse_shopify_json(soup, text):
+    """Ficha de Shopify leída en /products/<handle>.json?currency=EUR: desde GitHub (EE. UU.) algunas tiendas dan el precio
+    en dólares si no se pide la moneda (Dirk Witte); trae el EAN (barcode), el tipo de producto y las etiquetas, que hacen
+    de categoría."""
+    p = json.loads(text).get("product") or {}
+    variants = [v for v in p.get("variants") or [] if parse_price(v.get("price"))]
+    crumbs = [p["product_type"]] if p.get("product_type") else []
+    if not variants or not p.get("title"):
+        return {"crumbs": crumbs}
+    tags = p.get("tags") or ""
+    tags = ", ".join(tags) if isinstance(tags, list) else tags
+    crumbs = ([f"#{tags}"] if tags else []) + crumbs
+    v = min(variants, key=lambda v: parse_price(v["price"]))
+    ean = normalize_id(v.get("barcode") or "")
+    image = (p.get("image") or {}).get("src") or next((i.get("src") for i in p.get("images") or []), None)
+    return {"crumbs": crumbs, "name": p["title"], "brand_raw": p.get("vendor"), "price": parse_price(v["price"]),
+            "currency": normalize_currency(v.get("price_currency")) or "EUR", "in_stock": None, "image": image,
+            "ean": ean if len(ean) in (12, 13, 14) and ean.isdigit() else None}
+
+
+def _shopify(name, base, lang):
+    return {"name": name, "sitemap": f"{base}/sitemap.xml", "parse": _parse_shopify_json, "kind_url": dach_kind(lang),
+            "fetch": lambda u: u.split("?")[0] + ".json", "pick": _pick_dach(lang, base, shopify=True), "fix": _dach_fix}
+
+
+def _real_ean(ean):
+    """EAN/UPC con dígito de control correcto, que no sea de uso interno (prefijo 2) ni un número de la tienda con ceros."""
+    e = re.sub(r"\D", "", str(ean))
+    e = e.zfill(13) if len(e) == 12 else e
+    if len(e) not in (13, 14) or e.startswith("2") or re.match(r"^0?\d0{5}", e):
+        return False
+    digits = [int(c) for c in e]
+    total = sum(d * (3 if i % 2 == 0 else 1) for i, d in enumerate(reversed(digits[:-1])))
+    return (10 - total % 10) % 10 == digits[-1]
+
+
+def _dach_fix(data, text):
+    """Limpieza común: entidades HTML en nombre y categorías, variables de plantilla sin rellenar ("~PR-Hersteller_StripHtml~",
+    Musik Dressler), el nombre de la tienda al final ("… - KEY-WI MUSIC") y la marca, si falta, del nombre. En WooCommerce,
+    las categorías del producto van en las clases de su bloque ("product_cat-e-gitarren")."""
+    name = re.sub(r"~[^~\s]*~\s*", "", html.unescape(data.get("name") or ""))
+    data["name"] = re.sub(r"\s+[-–|]\s+key-wi music$", "", name.strip(), flags=re.I) or data.get("name")
+    brand = re.sub(r"~[^~\s]*~", "", data.get("brand_raw") or "").strip()
+    # La tienda o el distribuidor como marca ("Music All In", "algam DACH GmbH"): fuera, también del principio del nombre.
+    if re.fullmatch(r"(?i)music all in|tfoa|key-wi(?: music)?|algam dach gmbh|musifacts", brand):
+        data["name"] = re.sub(rf"^{re.escape(brand)}\s+", "", data["name"], flags=re.I)
+        brand = ""
+    data["brand_raw"] = brand or (_brand_from_name(data["name"]) if data.get("name") else None)
+    if data.get("ean") and not _real_ean(data["ean"]):
+        data["ean"] = None  # códigos internos de la tienda ("1", "7000000086424", "1000000083644")
+    tag = re.search(r'<(?:div|article)\b[^>]*\bid="product-\d+"[^>]*>', text)
+    cats = re.findall(r"\bproduct_cat-([a-z0-9-]+)", tag.group(0)) if tag else []
+    crumbs = [html.unescape(c) for c in data.get("crumbs") or []] + cats
+    if not crumbs and text.lstrip()[:1] == "<":
+        # Sin breadcrumb en JSON-LD: el de microdatos (Magna Music) o la categoría de su analítica (Klundert, "item_category").
+        soup = BeautifulSoup(text, "html.parser")
+        for el in soup.select('[itemtype$="BreadcrumbList"] [itemprop=name]'):
+            c = el.get_text(" ", strip=True) or el.get("content") or ""
+            if c and c not in crumbs:
+                crumbs.append(c)
+        if not crumbs:
+            crumbs = [html.unescape(m) for m in re.findall(r'"item_category\d?"\s*:\s*"([^"]{2,60})"', text)[:3]]
+    data["crumbs"] = crumbs
+    return data
+
+
+def _path_crumbs(url):
+    """La ruta de la URL como categorías (".../gitarre-bass/gitarre/e-gitarre/19493/…")."""
+    return [p for p in re.sub(r"^https?://[^/]+", "", url).strip("/").split("/")[:-1] if not p.isdigit()]
+
+
+def _store(name, sitemap, lang, path=None, parse=None, base=None, path_crumbs=False, sub=None):
+    base = base or re.match(r"https?://[^/]+", sitemap).group(0)
+    src = {"name": name, "sitemap": sitemap, "kind_url": dach_kind(lang), "pick": _pick_dach(lang, base, path),
+           "fix": _dach_fix}
+    if parse:
+        src["parse"] = parse
+    if path_crumbs:  # sin breadcrumb en la ficha: la ruta de la URL lo dice
+        src["crumbs"] = _path_crumbs
+    if sub:
+        src["sub"] = sub
+    return src
+
+
+for _cat, _id, _src in [
+        # JSON-LD de producto (con EAN casi todas)
+        (DE_SOURCES, "promusictools", _store("Pro Music Tools", "https://www.promusictools.com/sitemap.xml", "de", r"/p/",
+                                                  # solo el sitemap de fichas en alemán (los demás: inglés, categorías, marcas)
+                                                  sub=lambda u: u == "https://www.promusictools.com/products-sitemap.xml")),
+        (DE_SOURCES, "zoundhouse", _store("Zoundhouse", "https://www.zoundhouse.de/sitemap.xml", "de")),
+        (DE_SOURCES, "shop2rock", _store("Shop2Rock", "https://www.shop2rock.de/sitemap.xml", "de", r"/gitarre-bass/")),
+        (DE_SOURCES, "lange", _store("Musikhaus Lange", "https://musikhaus-lange.de/sitemap.xml", "de", r"/product/")),
+        (DE_SOURCES, "imm", _store("IMM Professional", "https://imm-professional.de/sitemap_index.xml", "de")),
+        (DE_SOURCES, "dressler", _store("Musik Dressler", "https://www.musik-dressler.de/toprank-sitemap_deutsch0.xml", "de")),
+        (DE_SOURCES, "soundofmusic", _store("Sound of Music", "https://www.sound-of-music.de/sitemap_index.xml", "de", r"/shop/")),
+        (DE_SOURCES, "insound", _store("Insound", "https://www.insound.de/sitemap.xml", "de", r"/gitarre-bass/gitarre/",
+                                    path_crumbs=True)),
+        (DE_SOURCES, "wittl", _store("Musik Wittl", "https://musik-wittl.de/sitemap.xml", "de")),
+        (DE_SOURCES, "musikebert", _shopify("Musik Ebert", "https://www.musik-ebert.de", "de")),
+        (DE_SOURCES, "actionmusic", _shopify("Action Music", "https://action-music.eu", "de")),
+        (AT_SOURCES, "musikpaul", _store("Musik Paul", "https://musikpaul.at/sitemap.xml", "de", r"/produkt/")),
+        (AT_SOURCES, "hammerschmidt", _store("Musikhaus Hammerschmidt", "https://www.musikhaus-hammerschmidt.at/sitemap_index.xml",
+                                             "de", r"/shop/gitarren-baesse/(?:e-gitarren|westerngitarren|konzertgitarren"
+                                                   r"|akustikgitarren|gitarren)")),
+        (AT_SOURCES, "keywi", _store("Key-Wi Music", "https://www.keywi.com/sitemap_index.xml", "de", r"/produkt/")),
+        (AT_SOURCES, "danys", _shopify("Dany's Music Shop", "https://danysmusicshop.at", "de")),
+        (NL_SOURCES, "magnamusic", _store("Magna Music", "https://www.magnamusic.nl/sitemap.xml", "nl", r"/producten/\d+/")),
+        (NL_SOURCES, "klundert", _store("Klundert Music", "https://www.klundertmusic.nl/sitemap_nl.xml", "nl")),
+        (NL_SOURCES, "gooise", _store("Gooise Gitaren", "https://www.gooise-gitaren.nl/sitemap.xml", "nl", r"/contents/nl/p\d+_")),
+        (NL_SOURCES, "dijkman", _store("Dijkman Muziek", "https://www.dijkmanmuziek.nl/1_index_sitemap.xml", "nl")),
+        (NL_SOURCES, "alphenaar", _store("Alphenaar", "https://alphenaar.com/sitemap.xml", "nl")),
+        (NL_SOURCES, "vanderzwaag", _store("Van der Zwaag Muziek", "https://www.vanderzwaagmuziek.nl/sitemap_index.xml", "nl",
+                                           r"/product/")),
+        (NL_SOURCES, "musicallin", _shopify("Music All In", "https://musicallin.nl", "nl")),
+        (NL_SOURCES, "tfoa", _shopify("TFOA", "https://www.tfoa.eu", "nl")),
+        (NL_SOURCES, "dijkmans", _shopify("Dijkmans Guitars", "https://dijkmansguitars.com", "nl")),
+        # Shopware 6 con microdatos
+        (DE_SOURCES, "mjguitars", _store("MJ Guitars", "https://www.mjguitars.de/sitemap.xml", "de", r"\.html$", parse=_parse_shopware)),
+        (DE_SOURCES, "musictown", _store("Music Town", "https://music-town.de/sitemap.xml", "de", r"[^/]$", parse=_parse_shopware)),
+        (DE_SOURCES, "musikbeck", _store("Musik Beck", "https://www.musikbeck.de/sitemap.xml", "de", parse=_parse_shopware)),
+        (DE_SOURCES, "dornbusch", _store("Musikhaus am Dornbusch", "https://www.musikhausamdornbusch.de/sitemap.xml", "de", r"[^/]$",
+                                         parse=_parse_shopware)),
+        (DE_SOURCES, "soundland", _store("Soundland", "https://www.soundland.de/sitemap.xml", "de", r"/gitarre/",
+                                         parse=_parse_shopware)),
+        (DE_SOURCES, "zoelch", _store("Musikhaus Zölch", "https://www.musikhaus-zoelch.de/sitemap.xml", "de",
+                                      r"(?i)/zupfinstrumente/(?:e-gitarren|westerngitarren|konzertgitarren|akustikgitarren"
+                                      r"|halbakustik|jazzgitarren|semi|gitarren)", parse=_parse_shopware)),
+        (DE_SOURCES, "soundaktuell", _store("Soundaktuell Guitars", "https://soundaktuellguitars.de/sitemap.xml", "de", r"[^/]$",
+                                            parse=_parse_shopware)),
+        (DE_SOURCES, "markstein", _store("Musikhaus Markstein", "https://www.markstein.de/sitemap.xml", "de", r"[^/]$",
+                                         parse=_parse_shopware)),
+        (AT_SOURCES, "schagerl", _store("Schagerl", "https://schagerl.com/sitemap.xml", "de", r"/p/", parse=_parse_shopware)),
+        (AT_SOURCES, "roxor", _store("Roxor Store", "https://www.roxorstore.at/sitemap.xml", "de", r"[^/]$", parse=_parse_shopware)),
+        (NL_SOURCES, "johdeheer", _store("Joh. de Heer", "https://www.johdeheer.nl/sitemap.xml", "nl", r"/artikel/",
+                                         parse=_parse_shopware))]:
+    _cat[_id] = _src
+
+
 PORTUGUESE_TYPES = [("Lisboa", r"lisboa"), ("Coimbra", r"coimbra"), ("Porto", r"\bporto\b")]
 
 ACOUSTIC_TYPES = [("12 cuerdas", r"12 cuerdas|12-string|12-saiter|zwölfsait|\b12\b"),
@@ -2540,11 +2861,13 @@ def read_page(fetcher, store_id, url, now):
     src = SOURCES[store_id]
     rec = {"store": store_id, "url": url, "checked": now, "status": "error"}
     try:
-        allowed, info = fetcher.allowed(url)
+        # "fetch": otra URL con los datos de la ficha (Shopify: /products/<handle>.json); la oferta sigue siendo la ficha.
+        page = src["fetch"](url) if "fetch" in src else url
+        allowed, info = fetcher.allowed(page)
         if not allowed:
             rec["status"] = "robots_disallowed"
             return rec
-        resp = fetcher.get(url)
+        resp = fetcher.get(page)
         if resp.status_code in (404, 410):
             rec["status"] = "gone"
             return rec
