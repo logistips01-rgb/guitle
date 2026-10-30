@@ -1281,6 +1281,65 @@ def _pick_es_shopify(u):
     return "/products/" in u and _pick_es(u)
 
 
+# Otros idiomas: las palabras clave al español y se clasifica con es_guitar_kind (que también reconoce modelos).
+_TO_ES = {
+    "pt": [(r"el[eé]tric[ao]", "eléctrica"), (r"cl[aá]ssic[ao]", "clásica"), (r"\bbaixos?\b", "bajo"), (r"\bcordas\b", "cuerdas"),
+           (r"estojo|\bsaco\b|\bcapa\b", "funda"), (r"correia", "correa"), (r"palhetas?", "púa"), (r"\bcabos?\b", "cable"),
+           (r"suporte", "soporte"), (r"usad[ao]", "usado"), (r"livro", "libro"), (r"cavaquinho", "ukelele")],
+    "it": [(r"chitarr[ae]", "guitarra"), (r"elettric[ah]e?", "eléctrica"), (r"classic[ah]e?", "clásica"), (r"acustic[ah]e?", "acústica"),
+           (r"\bbass[oi]\b", "bajo"), (r"\bcorde\b", "cuerdas"), (r"custodi[ae]", "estuche"), (r"\bborsa\b", "funda"),
+           (r"tracolla", "correa"), (r"plettr[oi]", "púa"), (r"\bcav[oi]\b", "cable"), (r"accordatore", "afinador"),
+           (r"support[oi]", "soporte"), (r"amplificator[ei]", "amplificador"), (r"usat[oa]", "usado"), (r"pedal[ei]", "pedal")],
+    "fr": [(r"guitares?", "guitarra"), (r"[eé]lectriques?", "eléctrica"), (r"classiques?", "clásica"), (r"acoustiques?", "acústica"),
+           (r"\bbasses?\b", "bajo"), (r"\bcordes\b", "cuerdas"), (r"housses?", "funda"), (r"[eé]tuis?", "estuche"),
+           (r"sangles?", "correa"), (r"m[eé]diators?", "púa"), (r"c[aâ]bles?", "cable"), (r"accordeurs?", "afinador"),
+           (r"occasion", "usado"), (r"m[eé]thode", "método"), (r"\blivres?\b", "libro"), (r"p[eé]dales?", "pedal")],
+    "de": [(r"e-gitarren?", "guitarra eléctrica"), (r"westerngitarren?", "guitarra acústica western"),
+           (r"akustikgitarren?", "guitarra acústica"), (r"konzertgitarren?|klassische gitarren?", "guitarra clásica"),
+           (r"gitarren?", "guitarra"), (r"e-b[aä]sse?|\bb[aä]sse?\b", "bajo"), (r"saiten(satz)?", "cuerdas"), (r"koffer", "estuche"),
+           (r"tasche|gigbag", "funda"), (r"\bgurt\b", "correa"), (r"plektr(um|en)", "púa"), (r"kabel", "cable"),
+           (r"stimmger[aä]t", "afinador"), (r"st[aä]nder", "soporte"), (r"verst[aä]rker|\bcombo\b", "amplificador"),
+           (r"gebraucht|b-ware", "usado"), (r"\bschule\b|\bbuch\b", "libro"), (r"effektger[aä]t|effekt", "pedal")],
+    "nl": [(r"elektrische gita(a|re)n?", "guitarra eléctrica"), (r"akoestische gita(a|re)n?", "guitarra acústica"),
+           (r"klassieke gita(a|re)n?", "guitarra clásica"), (r"basgita(a|re)n?|\bbas\b", "bajo"), (r"gita(a|re)n?", "guitarra"),
+           (r"snaren", "cuerdas"), (r"koffer", "estuche"), (r"\bhoes\b|gigbag|\btas\b", "funda"), (r"\briem\b|gitaarband", "correa"),
+           (r"plectrum", "púa"), (r"kabel", "cable"), (r"stemapparaat", "afinador"), (r"standaard", "soporte"),
+           (r"versterker", "amplificador"), (r"tweedehands|occasion", "usado"), (r"effectpedaal|pedaal", "pedal")],
+    "en": [(r"electric", "eléctrica"), (r"acoustic", "acústica"), (r"classical", "clásica"), (r"guitars?", "guitarra"),
+           (r"\bstrings?\b", "cuerdas"), (r"gig ?bag|\bcase\b|\bbag\b", "funda"), (r"\bstrap\b", "correa"),
+           (r"\bpicks?\b|plectrums?", "púa"), (r"\bcables?\b|\blead\b", "cable"), (r"\btuner\b", "afinador"),
+           (r"\bstand\b", "soporte"), (r"amplifier|\bamp\b|\bcombo\b", "amplificador"), (r"pre-?owned|\bused\b|b-stock", "usado"),
+           (r"\bbook\b", "libro")]}
+
+
+def _to_es(text, lang):
+    text = (text or "").lower()
+    for pat, es in _TO_ES.get(lang, []):
+        text = re.sub(pat, es, text)
+    return text
+
+
+def guitar_kind_for(lang, keep=("electrica", "acustica", "clasica")):
+    """Clasificador por nombre y URL para tiendas sin categorías fiables, en el idioma de la tienda."""
+    def kind(crumbs, url="", name=""):
+        k = es_guitar_kind([_to_es(c, lang) for c in crumbs or []], _to_es(url.rstrip("/").rsplit("/", 1)[-1], lang),
+                           _to_es(name, lang))
+        return k if k in keep else None
+    return kind
+
+
+_GEN_NOT_PRODUCT = re.compile(r"/(blogs?|collections|brand|marcas?|marques?|marken?|merken?|categor[a-z]*|kategorie[n]?|category"
+                              r"|autor[a-z-]*|tags?|etiqueta|pages|news|magazin[e]?)/", re.I)
+
+
+def pick_for(lang, shopify=False):
+    def pick(u):
+        slug = _to_es(u.rstrip("/").rsplit("/", 1)[-1].replace("-", " ").replace("_", " "), lang)
+        return (not shopify or "/products/" in u) and bool(_ES_PICK.search(slug)) and not ES_SKIP.search(slug) \
+            and not NOT_PRODUCT.search(u) and not _GEN_NOT_PRODUCT.search(u)
+    return pick
+
+
 for _id, _name, _sm in [("microfusa", "Microfusa", "https://www.microfusa.com/sitemap.xml"),
                         ("musicsales", "Musicsales", "https://www.musicsales.es/1_index_sitemap.xml"),
                         ("musicalsanfrancisco", "Musical San Francisco", "https://www.musicalsanfrancisco.es/sitemap_index.xml"),
