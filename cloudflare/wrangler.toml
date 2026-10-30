@@ -1,0 +1,9 @@
+# Worker que sirve guitle.com desde R2 (lo despliega .github/workflows/cloudflare.yml).
+name = "guitle"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+workers_dev = true
+
+[[r2_buckets]]
+binding = "SITE"
+bucket_name = "guitle"

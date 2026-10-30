@@ -1,0 +1,39 @@
+name: r2
+
+# Copia la web al bucket R2 "guitle" de Cloudflare, de donde la sirve el Worker (cloudflare/worker.js).
+# Solo sube lo que ha cambiado (rclone compara el MD5 de cada archivo con el ETag del bucket) y borra lo que ya no
+# está, así que cada lectura gasta pocas escrituras. Lo que no se publica: .github/r2-exclude.txt.
+on:
+  push:
+    branches: [claude/friendly-fermat-yycain]
+  workflow_dispatch:
+
+concurrency:
+  group: r2
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Instalar rclone
+        run: sudo apt-get update -q && sudo apt-get install -y -q rclone && rclone version
+      - name: Subir a R2
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+          ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+        run: |
+          export RCLONE_CONFIG_R2_ENDPOINT="https://${ACCOUNT,,}.r2.cloudflarestorage.com"
+          rclone sync . r2:guitle --checksum --fast-list --transfers 32 --checkers 32 \
+            --exclude-from .github/r2-exclude.txt --stats 1m --stats-one-line --stats-log-level NOTICE

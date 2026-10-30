@@ -1,0 +1,12 @@
+# Lo que no se publica en R2 (código, notas internas, configuración del repositorio).
+/.git/**
+/.github/**
+/.claude/**
+/_interno/**
+/scraper/**
+/cloudflare/**
+/README.md
+/ROADMAP.md
+/requirements.txt
+/firestore.rules
+/.gitignore
