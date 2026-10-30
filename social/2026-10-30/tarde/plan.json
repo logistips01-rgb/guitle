@@ -1,0 +1,55 @@
+{
+ "date": "2026-10-30",
+ "fecha": "30 de octubre",
+ "post": null,
+ "stories": [
+  {
+   "slug": "alvarez-rs26n-regent-812309025895",
+   "name": "Alvarez RS26N Regent",
+   "brand": "Alvarez",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/5/657966_cc85.jpg?store=nume_es&image-type=image",
+   "price": 160.0,
+   "store": "Pronorte",
+   "stores": 3,
+   "median": 189.0,
+   "max": 189.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 29 € menos que ayer",
+   "pct": 15,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "prs-s2-vela-semihollow-mahi-blue-825362110101",
+   "name": "PRS S2 Vela Semihollow Mahi Blue",
+   "brand": "PRS",
+   "kind": "electrica",
+   "img": "https://www.pronorte.es/_files/product/22700/gallery2/guitarra-electrica-prs-s2-vela-semihollow-mahi-blue-2.jpg",
+   "price": 1707.0,
+   "store": "Pronorte",
+   "stores": 3,
+   "median": 1934.0,
+   "max": 2061.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 283 € menos que ayer",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ibanez-tod10n-tkf-tim-henson-transparent-black-flat-4549763334558",
+   "name": "Ibanez TOD10N-TKF Tim Henson Transparent Black Flat",
+   "brand": "Ibanez",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/7/676666_ea7a.jpg?store=nume_es&image-type=image",
+   "price": 560.77,
+   "store": "Nume Music",
+   "stores": 4,
+   "median": 629.0,
+   "max": 635.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 84,23 € menos que ayer",
+   "pct": 13,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}
