@@ -3,6 +3,15 @@
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "session",
+  "name": "PRS SE NF3 Ice Blue Metallic",
+  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
+  "price": 739.0,
+  "median": 985.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
   "price": 349.0,
@@ -47,6 +56,33 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE Custom 24 Semi-Hollow Piezo Vintage Sunburst",
+  "slug": "prs-se-custom-24-semi-hollow-piezo-vintage-sunburst-825362244172",
+  "price": 1189.0,
+  "median": 1795.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Austin AS6PROBK Super 6 Pro Black",
+  "slug": "austin-as6probk-super-6-pro-black-812309025475",
+  "price": 169.0,
+  "median": 275.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Cort G200 SP BK",
+  "slug": "cort-g200-sp-bk-8809817080531",
+  "price": 237.4,
+  "median": 330.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Fender American Vintage II 1977 Telecaster Custom RW 3-Color Sunburst",
   "slug": "fender-american-vintage-ii-1977-telecaster-custom-rw-3-color-sunburst-197955136783",
@@ -57,46 +93,37 @@
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "numemusic",
-  "name": "Mooer GTRS S801 White",
-  "slug": "mooer-gtrs-s801-white-6971889220138",
-  "price": 333.0,
-  "median": 506.25
+  "name": "Mooer GTRS S800 Blue",
+  "slug": "mooer-gtrs-s800-blue-6971889220053",
+  "price": 258.5,
+  "median": 379.08
  },
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "mat",
-  "name": "Mooer GTRS S801 White",
-  "slug": "mooer-gtrs-s801-white-6971889220138",
-  "price": 333.0,
-  "median": 506.25
+  "store": "numemusic",
+  "name": "PRS 40th Anniv. McCarty SC56 Limited Edition Faded Blue Jean",
+  "slug": "prs-40th-anniv-mccarty-sc56-limited-edition-faded-blue-jean-825362167471",
+  "price": 4499.0,
+  "median": 5999.0
  },
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE Custom 24 Semi-Hollow Piezo Orange Tiger Smokeburst",
-  "slug": "prs-se-custom-24-semi-hollow-piezo-orange-tiger-smokeburst-825362244165",
-  "price": 1299.0,
-  "median": 1795.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE McCarty 594 Singlecut Charcoal",
-  "slug": "prs-se-mccarty-594-singlecut-charcoal-825362244295",
-  "price": 849.0,
-  "median": 1149.0
+  "store": "auvisa",
+  "name": "PRS 40th Anniv. McCarty SC56 Limited Edition Faded Blue Jean",
+  "slug": "prs-40th-anniv-mccarty-sc56-limited-edition-faded-blue-jean-825362167471",
+  "price": 4499.0,
+  "median": 5999.0
  },
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "session",
-  "name": "PRS SE McCarty 594 Singlecut Vintage Sunburst",
-  "slug": "prs-se-mccarty-594-singlecut-vintage-sunburst-825362244301",
-  "price": 857.0,
-  "median": 1149.0
+  "name": "PRS SE Custom 24 Semi-Hollow Piezo Lake Blue",
+  "slug": "prs-se-custom-24-semi-hollow-piezo-lake-blue-825362244158",
+  "price": 1269.0,
+  "median": 1799.0
  },
  {
   "kind": "electrica",
@@ -133,15 +160,6 @@
   "slug": "austin-as6progt-super-6-gold-top-812309025482",
   "price": 261.0,
   "median": 358.5
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Austin AS6PTS Super 6 Tsb",
-  "slug": "austin-as6pts-super-6-tsb-814295019247",
-  "price": 171.0,
-  "median": 272.5
  },
  {
   "kind": "electrica",
@@ -200,20 +218,38 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE Custom 24 Semi-Hollow Piezo Vintage Sunburst",
-  "slug": "prs-se-custom-24-semi-hollow-piezo-vintage-sunburst-825362244172",
-  "price": 1189.0,
-  "median": 2066.0
+  "store": "musicsales",
+  "name": "LTD EC-256 Vintage Gold Satin",
+  "slug": "ltd-ec-256-vintage-gold-satin-719710620155",
+  "price": 349.0,
+  "median": 564.0
  },
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE DGT McCarty Tobacco Sunburst",
-  "slug": "prs-se-dgt-mccarty-tobacco-sunburst-825362244226",
-  "price": 764.0,
-  "median": 1089.0
+  "store": "pronorte",
+  "name": "PRS CE22 Limited Edition Black Amber",
+  "slug": "prs-ce22-limited-edition-black-amber-825362247913",
+  "price": 2231.0,
+  "median": 3084.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "PRS Hollowbody SE Standard DH Dog Hair Smokeburst",
+  "slug": "prs-hollowbody-se-standard-dh-dog-hair-smokeburst-825362244660",
+  "price": 979.0,
+  "median": 1333.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "microfusa",
+  "name": "PRS SE Custom 24 SEMI-HOLLOW Piezo Charcoal Burst",
+  "slug": "prs-se-custom-24-semi-hollow-piezo-charcoal-burst-825362186502",
+  "price": 1099.0,
+  "median": 1609.5
  },
  {
   "kind": "electrica",
@@ -234,6 +270,18 @@
   "median": 867.5
  },
  {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Ibanez RG5320C-PW Prestige Polar White Con Estuche",
+  "slug": "ibanez-rg5320c-pw-prestige-polar-white-con-estuche-4549763306296"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "LTD PHX-7 Barítono Metal negro Degradado rojo Satén",
+  "slug": "ltd-phx-7-baritono-metal-negro-degradado-rojo-saten-719710629257"
+ },
+ {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
@@ -241,42 +289,6 @@
   "slug": "lag-t118dce-brs-tramontane-118-dreadnought-cutaway-natural-3700166363137",
   "price": 410.1,
   "median": 547.5
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "Ibanez AAM100E-BK Black High Gloss",
-  "slug": "ibanez-aam100e-bk-black-high-gloss-4549763367785",
-  "price": 352.0,
-  "median": 499.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "auvisa",
-  "name": "Ibanez AAM100E-BK Black High Gloss",
-  "slug": "ibanez-aam100e-bk-black-high-gloss-4549763367785",
-  "price": 352.0,
-  "median": 499.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "Ibanez AAM100E-NT Natural High Gloss",
-  "slug": "ibanez-aam100e-nt-natural-high-gloss-4549763367792",
-  "price": 352.0,
-  "median": 499.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "auvisa",
-  "name": "Ibanez AAM100E-NT Natural High Gloss",
-  "slug": "ibanez-aam100e-nt-natural-high-gloss-4549763367792",
-  "price": 352.0,
-  "median": 499.0
  },
  {
   "kind": "acustica",
@@ -290,11 +302,47 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AAM100E-BK Black High Gloss",
+  "slug": "ibanez-aam100e-bk-black-high-gloss-4549763367785",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Ibanez AAM100E-BK Black High Gloss",
+  "slug": "ibanez-aam100e-bk-black-high-gloss-4549763367785",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AAM100E-NT Natural High Gloss",
+  "slug": "ibanez-aam100e-nt-natural-high-gloss-4549763367792",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Ibanez AAM100E-NT Natural High Gloss",
+  "slug": "ibanez-aam100e-nt-natural-high-gloss-4549763367792",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "musicsales",
-  "name": "LAG T70ACE-NAT Tramontane 70 Auditorium Cutaway Natural",
-  "slug": "lag-t70ace-nat-tramontane-70-auditorium-cutaway-natural-3700166371859",
-  "price": 288.0,
-  "median": 391.5
+  "name": "LAG T70D-NAT Tramontane 70 Dreadnought Natural",
+  "slug": "lag-t70d-nat-tramontane-70-dreadnought-natural-3700166371798",
+  "price": 199.0,
+  "median": 266.08
  },
  {
   "kind": "acustica",
@@ -349,6 +397,60 @@
   "slug": "ibanez-aj70m2e-pw-4549763377661",
   "price": 305.0,
   "median": 429.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 1 TBW1TE Viaje",
+  "slug": "lag-bluewave-1-tbw1te-viaje-3700166373082",
+  "price": 399.0,
+  "median": 579.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 1 Travel Marrón",
+  "slug": "lag-bluewave-1-travel-marron-3700166374966",
+  "price": 399.0,
+  "median": 609.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TBW2ACE Auditorium Ctw",
+  "slug": "lag-bluewave-2-tbw2ace-auditorium-ctw-3700166373099",
+  "price": 469.0,
+  "median": 729.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TBW2DCE Dreadnought Ctw",
+  "slug": "lag-bluewave-2-tbw2dce-dreadnought-ctw-3700166373112",
+  "price": 469.0,
+  "median": 661.18
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TLBW2DCE Dreadnought Cutaway Zurda",
+  "slug": "lag-bluewave-2-tlbw2dce-dreadnought-cutaway-zurda-3700166373150",
+  "price": 469.0,
+  "median": 729.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 Tbw2Te de viaje",
+  "slug": "lag-bluewave-2-tbw2te-de-viaje-3700166373136",
+  "price": 469.0,
+  "median": 729.0
  },
  {
   "kind": "acustica",
@@ -426,55 +528,10 @@
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "woodbrass",
-  "name": "Lâg Bluewave 1 TBW1TE Viaje",
-  "slug": "lag-bluewave-1-tbw1te-viaje-3700166373082",
-  "price": 399.0,
-  "median": 579.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Lâg Bluewave 1 Travel Marrón",
-  "slug": "lag-bluewave-1-travel-marron-3700166374966",
-  "price": 399.0,
-  "median": 611.5
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Lâg Bluewave 2 TBW2ACE Auditorium Ctw",
-  "slug": "lag-bluewave-2-tbw2ace-auditorium-ctw-3700166373099",
-  "price": 469.0,
-  "median": 729.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Lâg Bluewave 2 TBW2DCE Dreadnought Ctw",
-  "slug": "lag-bluewave-2-tbw2dce-dreadnought-ctw-3700166373112",
-  "price": 469.0,
-  "median": 645.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Lâg Bluewave 2 TLBW2DCE Dreadnought Cutaway Zurda",
-  "slug": "lag-bluewave-2-tlbw2dce-dreadnought-cutaway-zurda-3700166373150",
-  "price": 469.0,
-  "median": 729.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Lâg Bluewave 2 Tbw2Te de viaje",
-  "slug": "lag-bluewave-2-tbw2te-de-viaje-3700166373136",
-  "price": 469.0,
-  "median": 729.0
+  "name": "Lâg HyVibe 1 Serie 20 Dreadnought Ctw",
+  "slug": "lag-hyvibe-1-serie-20-dreadnought-ctw-3700166366374",
+  "price": 499.0,
+  "median": 883.31
  },
  {
   "kind": "acustica",
@@ -487,21 +544,9 @@
  },
  {
   "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Yamaha FG 800 Black",
-  "slug": "yamaha-fg-800-black-4957812641487",
-  "price": 228.0,
-  "median": 316.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "alfasoni",
-  "name": "Yamaha FS820-RR",
-  "slug": "yamaha-fs820-rr-4957812668705",
-  "price": 369.0,
-  "median": 497.0
+  "type": "foto_perdida",
+  "name": "SX Color Marron",
+  "slug": "sx-color-marron-6940651407305"
  },
  {
   "kind": "clasica",
@@ -520,6 +565,15 @@
   "slug": "ibanez-ga360tce-tbk-etbkp43917",
   "price": 480.0,
   "median": 699.0
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 Cbw2E Classical 4/4",
+  "slug": "lag-bluewave-2-cbw2e-classical-4-4-3700166373105",
+  "price": 469.0,
+  "median": 767.0
  },
  {
   "kind": "clasica",
@@ -543,10 +597,10 @@
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "woodbrass",
-  "name": "Lâg Bluewave 2 Cbw2E Classical 4/4",
-  "slug": "lag-bluewave-2-cbw2e-classical-4-4-3700166373105",
-  "price": 469.0,
-  "median": 772.5
+  "name": "Lâg Bluewave 1 TNBW1TE Viaje Nylon",
+  "slug": "lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143",
+  "price": 399.0,
+  "median": 552.135
  },
  {
   "kind": "clasica",
@@ -556,6 +610,12 @@
   "slug": "manuel-rodriguez-exotica-santos-pavo-real-4046662299150",
   "price": 456.78,
   "median": 705.5
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Valencia VC564 4/4 Degradado",
+  "slug": "valencia-vc564-4-4-degradado-8997032893903"
  },
  {
   "kind": "pedal",
