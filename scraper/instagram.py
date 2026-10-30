@@ -365,9 +365,10 @@ def tarde(day, publish_now):
     recent = recent_captions(user)
     for f in sorted(OUT.glob("*/plan.json"))[-10:] + sorted(OUT.glob("*/tarde/plan.json"))[-10:]:
         d = load(f, {})
-        recent += "\n" + "\n".join(p["name"] for p in d.get("stories", []) + d.get("post", {}).get("picks", []))
-        if d.get("post", {}).get("deal"):
-            recent += "\n" + d["post"]["deal"]["name"]
+        post = d.get("post") or {}
+        recent += "\n" + "\n".join(p["name"] for p in d.get("stories", []) + post.get("picks", []))
+        if post.get("deal"):
+            recent += "\n" + post["deal"]["name"]
     folder.mkdir(parents=True, exist_ok=True)
     stories = with_photos(rank_deals(products(), recent), STORIES, Fetcher(delay=(0.5, 1.0)), folder, "chollo-")
     if not stories:
