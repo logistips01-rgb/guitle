@@ -908,8 +908,8 @@ UK_SKIP = re.compile(r"\bbass(es)?\b|\bamps?\b|amplifier|pedals?\b|effects?\b|st
                      r"|straps?\b|stands?\b|cables?\b|accessor|pickups?\b|ukulele|mandolin|banjo|\bparts\b|tuners?\b|capos?\b"
                      r"|books?\b|keyboards?|pianos?\b|drums?\b|microphones?|wireless|spares", re.I)
 UK_USED = re.compile(r"second ?hand|pre-?owned|ex-?demo|serial no|\bused\b|b-?stock", re.I)
-UK_NAME_SKIP = re.compile(r"(?<!\d )\bstrings?\b|^(?:case|gig ?bag|strap|stand)\b|\bbass\b|ukulele|\btuner\b|\bcapo\b"
-                          r"|\bbook\b|\bpickguard\b|\bneck\b(?! ?pickup)", re.I)
+UK_NAME_SKIP = re.compile(r"(?<!\d )(?<!\d-)\bstrings?\b|^(?:case|gig ?bag|strap|stand)\b|\bbass\b|ukulele|\btuner\b|\bcapo\b"
+                          r"|\bbook\b|\bpickguard\b|\bneck\s*(?:$|for\b)", re.I)  # "… Maple Neck, Black" sí es guitarra
 
 
 def uk_kind(crumbs, url="", name=""):
@@ -2316,6 +2316,264 @@ IE_SOURCES["musicmaker"] = {"name": "Music Maker", "sitemap": "https://www.music
                             and not UK_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)}
 
 
+# --- Más tiendas del Reino Unido (libras) e Irlanda (euros) -------------------------------------------------
+# Tiendas pequeñas y medianas: la categoría sale del breadcrumb (o del tipo de producto de Shopify) y, si no lo dice,
+# del nombre (guitar_kind_for("en")). Las de segunda mano, fuera: no se comparan con las nuevas.
+EN_HEADERS = {"Accept-Language": "en-GB,en;q=0.9"}
+_EN_USED = re.compile(UK_USED.pattern + r"|2nd[- ]?hand|secondhand|pre-?loved|refurbished|open[- ]?box"
+                      r"|ex[- ]?display", re.I)
+_EN_NOT_GUITAR = re.compile(r"\bbass\b|ukulele|\buke\b|banjo|mandolin|bouzouki|violin|cello|\bharp\b|guitalele|guitarlele"
+                            r"|\bkids?\b.*\bset\b|gift ?(card|voucher)|\bbook\b|tab edition|songbook|sheet music|\bdvd\b"
+                            r"|\bacoustics\b|piano|keyboard|\bdrums?\b|saxophone|trumpet|xylophone|sousaphone|speakers?\b|cabinet"
+                            r"|\bmixer|mixing|headphones|\bwedge\b|monitor|wireless|\bgrade \d|\bamp(lifier)?\b|\bcombo\b"
+                            # Bajos que no dicen "bass" y cabezales de ampli
+                            r"|stingray|\bray ?[345]\b|thunderbird|precision|jazz ?bass|\b[pj]-?bass|spectra|stiletto|\bb-?20\d"
+                            r"|\b5150\b|\bhead\b"
+                            r"|drum ?sticks|nylon tip|brushes|harmonica|lever nylon|octave|phosphor|megapack|sticky|\bpieces\b"
+                            r"|clarinet|trombone|flute|cornet|euphonium|\bhorn\b|synth|interface|ear ?plugs|processor|subwoofer|\bfoam\b"
+                            r"|normal tension|taylor swift|studies|hymns|guitar collection|\btee\b|t-shirt|socks|greeting card|tubing"
+                            r"|washers|machine ?heads?|\bknobs?\b|recorder|resonator|lap steel"
+                            r"|80/20|bronze (?:wound|strings|extra|light|medium|\d)|extra light|custom light|super light", re.I)
+# Accesorios: los que empiezan por el accesorio ("Graphtech … saddle" no, pero "Fender Trem Cover" sí, por la palabra).
+_EN_ACC = re.compile(r"^(?:\S+ ){0,3}(?:hard ?case|gig ?bag|case|strings?|string set|strap|stand|wall hanger|hanger|pickups?"
+                     r"|pickup set|tuners?|machine heads|tuning (?:pegs|keys)|scratch ?plate|pickguard|bridge|saddles?|knobs?|nut"
+                     r"|neck|body|loaded|wiring|harness|tremolo arm|whammy bar|capo|slide|picks?|plectrums?|polish|cleaner"
+                     r"|humidifier|cable|lead|footswitch|pots?|switch|jack plate|output jack|truss rod)\b"
+                     r"|\b(?:saddles?|switch|pots?|cover|switch ?plate|surround|machine heads?|truss rod|compatible|replacement"
+                     r"|vibramate|bridge pins"
+                     r"|cleaner|polish|glaze|footrest|stand|hanger|capo|strings|string set|lacquer|aerosol|simulator|preamp"
+                     r"|soundhole|strap|tuners)\b|(?<!with )(?<!w/)(?<!w/ )\bpickup\b", re.I)
+# "… with Gig Bag", "… Inc Hardcase": el estuche va con la guitarra; para clasificar, fuera.
+_EN_WITH_CASE = re.compile(r"\s*(?:\bwith\b|\bw/|\binc\b\.?|\bincl\b\.?|\bincluding\b|\+|&|,)\s*(?:a\s+|free\s+)?(?:\S+\s+){0,3}?"
+                           r"(?:hard ?case|hard ?shell case|gig ?bag|case|bag|hsc|ohsc)\b.*$", re.I)
+# Marcas que son casi siempre eléctricas: si el nombre no dice más ("Epiphone Crestwood Custom"), eléctrica.
+# (Sin Fender, Yamaha, Ibanez ni Cort: también venden amplis, bajos y sintes con nombres que no lo dicen.)
+_EN_ELECTRIC_BRANDS = re.compile(r"^(?:squier|jackson|charvel|esp|ltd|schecter|evh|sterling|chapman|music man|ernie ball music man"
+                                 r"|gretsch|prs|epiphone|gibson|g&l|suhr|tokai|danelectro|reverend|patina|eastcoast|kramer|dean"
+                                 r"|solar|rickenbacker(?! 4\d{3}))\b", re.I)
+_EN_ACOUSTIC_BRANDS = re.compile(r"^(?:lowden|martin|taylor|furch|maton|larrivee|lakewood|breedlove|morris|seagull|faith|sigma"
+                                 r"|takamine|yairi|k\. ?yairi|collings|santa cruz|atkin|art ?& ?lutherie|simon ?& ?patrick|norman"
+                                 r"|cole clark|alvarez|washburn heritage)\b", re.I)
+_EN_ACOUSTIC_WORDS = re.compile(r"acoustic|classical|nylon|dreadnought|jumbo|parlou?r|auditorium|concert|\bom\b|hummingbird|dove"
+                                r"|masterbilt|texan|frontier|angelus|songmaker|j-?45|sj-?200|\bcd-?\d|\bfg\w*\d|\bapx|\bga\d|\bac\d", re.I)
+
+
+def en_kind(crumbs, url="", name=""):
+    """'electrica', 'acustica', 'clasica' o None para las tiendas británicas e irlandesas pequeñas."""
+    name = _EN_WITH_CASE.sub("", html.unescape(html.unescape(name or ""))).strip()
+    crumbs = [html.unescape(html.unescape(c)) for c in crumbs or [] if c]  # "&amp;#8220;" no es un "amp"
+    if len(crumbs) > 1 and len(crumbs[-1]) > 15 and (crumbs[-1].lower() in name.lower() or name.lower() in crumbs[-1].lower()):
+        crumbs = crumbs[:-1]  # el último es la propia ficha
+    bare = re.sub(r"^(?:new|genuine|official)\s+", "", name, flags=re.I)
+    if _EN_USED.search(" / ".join(crumbs + [name, url])) or _EN_NOT_GUITAR.search(name) or _EN_ACC.search(bare) \
+            or re.search(r"(?<!\d )(?<!\d-)\bstrings?\b|\bneck\s*(?:$|for\b|with scallop)|replacement neck", name, re.I):
+        return None
+    if re.search(r"semi[- ]?acoustic|semi[- ]?hollow|hollow ?body|thinline|archtop electric", name, re.I):
+        return "electrica"
+    if re.search(r"\bclassic(al)? guitar|nylon[- ]string guitar", name, re.I):
+        return "clasica"
+    if re.search(r"\b(ovation|applause|redondo|newporter|malibu)\b", name, re.I) and not re.search(r"\belectric guitar", name, re.I):
+        return "acustica"
+    leaf = re.sub(r"guitars? (?:&|and) bass(es)?", "", " / ".join(crumbs[-2:]).lower())
+    if UK_SKIP.search(leaf) or _EN_NOT_GUITAR.search(leaf.replace("acoustics", "")):  # "Gibson Acoustics"
+        return None
+    # Shopify: el tipo de producto a veces es solo "Electric" / "Acoustic Guitar".
+    text = " ".join(crumbs).lower()
+    if re.search(r"guitar", text) or re.fullmatch(r"(electric|acoustic|electro[- ]acoustic|classical)s?", text):
+        k = uk_kind(crumbs + ["Guitars"], url, name)
+        if k:
+            return k
+    k = guitar_kind_for("en")([], url, name)
+    if k:
+        return k
+    if _EN_ACOUSTIC_BRANDS.search(bare) and not re.search(r"\belectric guitar|\bbass", name, re.I):
+        return "acustica"
+    if _EN_ELECTRIC_BRANDS.search(bare) and not _EN_ACOUSTIC_WORDS.search(name):
+        return "electrica"
+    return None
+
+
+_EN_PICK = pick_for("en")
+
+
+def _pick_en(shopify=False, path=None):
+    """Fichas con una palabra de guitarra en la URL o que empiezan por una marca de guitarras ("prs-se-custom-24")."""
+    def pick(u):
+        if shopify and not re.match(r"https?://[^/]+/products/[^/?#]+$", u):  # sin las copias por idioma (/ja/products/…)
+            return False
+        if path and not re.search(path, u):
+            return False
+        slug = re.sub(r"\.(html?|asp|php)$", "", u.rstrip("/").rsplit("/", 1)[-1].lower()).replace("_", "-")
+        slug = re.sub(r"^\d+-", "", slug)  # PrestaShop: "13369-martin-dx2el…"
+        text = slug.replace("-", " ")
+        where = "/" + u.split("://", 1)[-1].split("/", 1)[-1]  # sin el dominio ("themusicoutlet.ie" no es un outlet)
+        if _EN_USED.search(text) or _EN_NOT_GUITAR.search(text) or NOT_PRODUCT.search(where) or _GEN_NOT_PRODUCT.search(where):
+            return False
+        return _EN_PICK(where.rstrip("/").rsplit("/", 1)[0] + "/" + slug) or \
+            (slug.startswith(tuple(b + "-" for b in _UK_BRANDS)) and not UK_SKIP.search(text)
+             and not ES_SKIP.search(_to_es(text, "en")))
+    return pick
+
+
+def _shopify_url(cur, json_feed=True):
+    """La ficha de Shopify con la moneda de la tienda: sin "?currency=" sale en la del visitante (dólares desde GitHub)."""
+    return lambda u: u.split("?")[0].rstrip("/") + (".json" if json_feed else "") + f"?currency={cur}"
+
+
+def _parse_shopify_json(soup, text):
+    """Ficha de Shopify en JSON (/products/<handle>.json): precio en la moneda de la tienda (el HTML lo da en la del
+    visitante, que desde GitHub es dólares), EAN (barcode) y tipo de producto, que hace de categoría."""
+    try:
+        p = json.loads(text)["product"]
+    except (ValueError, KeyError, TypeError):
+        return {"crumbs": []}
+    variants = p.get("variants") or []
+    def sold_out(v):
+        return v.get("inventory_management") == "shopify" and v.get("inventory_policy") == "deny" \
+            and isinstance(v.get("inventory_quantity"), int) and v["inventory_quantity"] <= 0
+    v = next((v for v in variants if not sold_out(v)), variants[0] if variants else None)
+    if not v or not v.get("price"):
+        return {"crumbs": [p.get("product_type") or ""]}
+    tags = p.get("tags") or ""
+    tags = ", ".join(tags) if isinstance(tags, list) else tags
+    crumbs = [c for c in [p.get("product_type")] if c]
+    if _EN_USED.search(tags):
+        crumbs.append("Used")
+    ean = normalize_id(v.get("barcode") or "")
+    ean = ean if ean.isdigit() and len(ean) in (12, 13, 14) and len(ean.lstrip("0")) >= 11 else None  # no códigos internos
+    in_stock = (not sold_out(v)) if "inventory_quantity" in v else None
+    vendor = p.get("vendor") or ""
+    if vendor.lower() not in (p.get("title") or "").lower():  # IT Music pone su nombre de vendedor
+        vendor = _brand_from_name(p.get("title"))
+    return {"crumbs": crumbs, "name": html.unescape(p.get("title") or "").strip(), "brand_raw": vendor,
+            "price": float(v["price"]), "currency": v.get("price_currency") or "GBP", "in_stock": in_stock,
+            "image": (p.get("image") or {}).get("src"), "ean": ean}
+
+
+def _parse_en(cur):
+    """JSON-LD (también el que no es JSON válido) o, si no, microdatos; la moneda de la tienda si la ficha no la dice."""
+    def parse(soup, text):
+        data = _parse_jsonld(soup, "en")
+        if not data.get("price"):
+            loose = _parse_ld_loose(soup, text)
+            if loose.get("price"):
+                if not re.search(r'"priceCurrency"', text):
+                    loose["currency"] = cur
+                data = {**loose, "crumbs": data.get("crumbs") or loose.get("crumbs", [])}
+        if not data.get("price"):
+            micro = _parse_microdata(soup, text)
+            if micro.get("price"):
+                if not soup.find(attrs={"itemprop": "priceCurrency"}):
+                    micro["currency"] = cur
+                data = {**micro, "crumbs": data.get("crumbs") or micro.get("crumbs", [])}
+        if data.get("price") and not data.get("currency"):
+            data["currency"] = cur
+        if isinstance(data.get("brand_raw"), list):  # Rockem: [{"@type": "Brand", "name": "Stagg"}]
+            first = (data["brand_raw"] or [None])[0]
+            data["brand_raw"] = first.get("name") if isinstance(first, dict) else first
+        if data.get("price") and not data.get("brand_raw"):
+            data["brand_raw"] = _brand_from_name(data.get("name"))
+        if data.get("name"):
+            data["name"] = html.unescape(html.unescape(data["name"])).strip()  # "Barnes &amp;amp; Mullins"
+            data["name"] = re.sub(r"\s+-\s+[\w.]+\.(?:ie|co\.uk|com)$", "", data["name"])  # "… - soundshop.ie"
+        ean = str(data.get("ean") or "")
+        if ean and not (ean.isdigit() and len(ean) in (12, 13, 14) and len(ean.lstrip("0")) >= 11):
+            data["ean"] = None  # "EASTMANAC108CELTD" y códigos internos
+        return data
+    return parse
+
+
+def _parse_savins(soup, text):
+    """Savins (PrestaShop, Dublín): microdatos sueltos; precio en el bloque .product-prices, breadcrumb en microdatos."""
+    h1 = soup.select_one("h1[itemprop=name]") or soup.find("h1")
+    price = soup.select_one(".product-prices [itemprop=price]")
+    bc = soup.select_one("[itemtype*=BreadcrumbList]")
+    crumbs = [x.get_text(" ", strip=True) for x in bc.select("[itemprop=name]")] if bc else []
+    crumbs = [c for c in crumbs[:-1] if c.lower() != "home"]
+    if not h1 or not price or not price.get("content"):
+        return {"crumbs": crumbs}
+    name = h1.get_text(" ", strip=True)
+    avail = soup.select_one(".product-prices [itemprop=availability]")
+    img = soup.select_one('meta[property="og:image"]')
+    return {"crumbs": crumbs, "name": name, "brand_raw": _brand_from_name(name), "price": float(price["content"]),
+            "currency": "EUR", "in_stock": ("instock" in avail.get("href", "").lower()) if avail else None,
+            "image": img.get("content") if img else None, "ean": None}
+
+
+def _ror_fix(data, text):
+    """ROR: el breadcrumb arrastra los filtros de la ficha ("… / Acoustic Guitars / Strings / 6 / Brand / Martin")."""
+    crumbs = list(data.get("crumbs") or [])
+    if "Brand" in crumbs:
+        crumbs = crumbs[:crumbs.index("Brand")]
+    data["crumbs"] = [c for c in crumbs if c not in ("Strings", "Category") and not c.isdigit()]
+    return data
+
+
+def _en_store(name, sitemap, cur, shopify=False, path=None, sub=None, json_feed=True, **extra):
+    src = {"name": name, "sitemap": sitemap, "kind_url": en_kind, "pick": _pick_en(shopify, path)}
+    if shopify:
+        # El .json de la ficha (precio, EAN y tipo de producto) salvo si robots.txt lo prohíbe (Music Street): el HTML.
+        src.update(page_url=_shopify_url(cur, json_feed), parse=_parse_shopify_json if json_feed else _parse_en(cur),
+                   sub=sub or (lambda l: bool(re.match(r"https?://[^/]+/sitemap_products_", l))))
+    else:
+        src["parse"] = _parse_en(cur)
+        if sub:
+            src["sub"] = sub
+    src.update(extra)
+    return src
+
+
+for _id, _name, _sm, _kw in [
+        ("peach", "Peach Guitars", "https://www.peachguitars.com/sitemap.xml", {"path": r"\.htm$"}),
+        ("musicstreet", "Music Street", "https://www.musicstreet.co.uk/sitemap.xml", {"shopify": True, "json_feed": False}),
+        ("richtone", "Richtone Music", "https://richtonemusic.co.uk/xmlsitemap.php", {"sub": lambda l: "product" in l}),
+        ("gpas", "Guitars Pedals Amps & Stuff", "https://guitarspedalsampsandstuff.co.uk/sitemap_index.xml",
+         {"path": r"/product/", "sub": lambda l: "product" in l}),
+        ("absolutemusic", "Absolute Music", "https://www.absolutemusic.co.uk/xmlsitemap.php", {"sub": lambda l: "product" in l}),
+        ("projectmusic", "Project Music", "https://projectmusic.net/sitemap.xml", {"path": r"-p\.asp$"}),
+        ("rguitars", "R Guitars", "https://rguitars.co.uk/sitemap.xml", {"shopify": True}),
+        ("fairdeal", "Fair Deal Music", "https://www.fairdealmusic.co.uk/sitemap.xml", {"shopify": True}),
+        ("achamilton", "A.C. Hamilton", "https://www.achamilton.co.uk/wp-sitemap.xml",
+         {"path": r"/product/", "sub": lambda l: "product" in l}),
+        ("guitarmania", "Guitar Mania", "https://www.guitarmania.co.uk/sitemap_index.xml",
+         {"path": r"/product/", "sub": lambda l: "product" in l}),
+        ("promenade", "Promenade Music", "https://www.promenademusic.co.uk/sitemap_index.xml", {"sub": lambda l: "product" in l}),
+        ("reidys", "Reidys", "https://shop.reidys.com/sitemap.xml", {"shopify": True}),
+        ("matchetts", "Matchetts Music", "https://matchettsmusic.com/sitemap.xml", {"shopify": True}),
+        ("forsyths", "Forsyths", "https://www.forsyths.co.uk/sitemap.xml", {"path": r"/guitars/"}),
+        ("astrings", "A Strings", "https://astrings.co.uk/sitemap.xml", {"shopify": True}),
+        ("londonguitarstudio", "London Guitar Studio", "https://www.londonguitarstudio.com/sitemap.xml", {"path": r"/p/"}),
+        ("guitarbitz", "Guitarbitz", "https://www.guitarbitz.com/sitemap.xml", {"shopify": True}),
+        ("giggear", "Gig Gear", "https://www.giggear.co.uk/sitemap.xml", {}),
+        ("suttonmusic", "Sutton Music", "https://suttonmusic.co.uk/sitemap.xml", {"shopify": True}),
+        ("themusicbank", "The Music Bank", "https://themusicbank.co.uk/sitemap.xml", {"shopify": True}),
+        ("wunjo", "Wunjo Guitars", "https://www.wunjoguitars.com/sitemap.xml", {"shopify": True}),
+        ("musicbros", "Music Bros", "https://www.musicbros.co.uk/sitemap.xml", {"shopify": True}),
+        ("randtmusic", "R&T Music", "https://randtmusic.co.uk/sitemap.xml", {"shopify": True}),
+        ("rockem", "Rockem Music", "https://rockemmusic.com/sitemap.xml", {"path": r"/product/"}),
+        ("parkland", "Parkland Music", "https://www.parklandmusicstore.co.uk/sitemap.xml", {"shopify": True}),
+        ("jamesmusic", "James Music", "https://www.james-music.co.uk/sitemap.xml", {"shopify": True}),
+        ("nessmusic", "Ness Music", "https://nessmusic.co.uk/sitemap.xml", {"shopify": True}),
+        ("soundgarden", "The Sound Garden", "https://www.thesoundgarden.co.uk/sitemap.xml", {"shopify": True}),
+        ("modernmusic", "Modern Music", "https://modernmusic.co.uk/sitemap.xml", {}),
+        ("paisley", "Paisley Music", "https://www.paisleymusic.com/sitemap.xml", {}),
+        ("millers", "Millers Music", "https://millersmusic.co.uk/sitemap.xml", {"shopify": True})]:
+    UK_SOURCES[_id] = _en_store(_name, _sm, "GBP", **_kw)
+
+for _id, _name, _sm, _kw in [
+        ("xmusic", "X Music", "https://xmusic.ie/sitemap.xml", {"path": r"/product/"}),
+        ("musicminds", "Music Minds", "https://www.musicminds.ie/sitemap.xml", {"path": r"\.html$"}),
+        ("savins", "Savins", "https://www.savins.ie/1_index_sitemap.xml", {"path": r"/\d+-[^/]+\.html$", "parse": _parse_savins}),
+        ("someneck", "Some Neck Guitars", "https://www.someneckguitars.com/sitemap.xml", {"shopify": True}),
+        ("promusica", "Pro Musica", "https://promusica.ie/sitemap_index.xml", {"path": r"/product/"}),
+        ("soundshop", "Sound Shop", "https://www.soundshop.ie/sitemap_index.xml", {"path": r"/shop/"}),
+        ("everest", "Everest Music", "https://everestmusic.com/sitemap.xml", {}),
+        ("musicoutlet", "The Music Outlet", "https://themusicoutlet.ie/wp-sitemap.xml", {"path": r"/product/"}),
+        ("ror", "ROR Music", "https://www.ror.ie/sitemap.xml", {"fix": _ror_fix}),
+        ("itmusic", "IT Music", "https://itmusic.ie/sitemap.xml", {"shopify": True})]:
+    IE_SOURCES[_id] = _en_store(_name, _sm, "EUR", **_kw)
+
+
 # Gear4music: desde GitHub sus webs de cada país se leen sin problema (no desde el entorno de pruebas). Del sitemap,
 # solo el departamento de guitarras y bajos; la categoría sale del breadcrumb de la ficha (JSON-LD con precio y EAN).
 def _gear4music(base, kind):
@@ -2701,7 +2959,7 @@ CATALOGS = {
     "it": {"dir": DIR / "it", "sources": IT_SOURCES, "site": "it",
            "files": {"electrica": "elettriche.json", "acustica": "acustiche.json", "clasica": "classiche.json"}},
     # Reino Unido: precios en libras (las tiendas los dan en GBP; "cur" es la moneda que se acepta).
-    "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP",
+    "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP", "headers": EN_HEADERS,
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},    "de": {"dir": DIR / "de", "sources": DE_SOURCES, "site": "de",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},    "br": {"dir": DIR / "br", "sources": BR_SOURCES, "site": "br", "cur": "BRL", "min_price": 300,
            "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},
@@ -2710,7 +2968,7 @@ CATALOGS = {
               # En reales: un "case" de más de R$ 3.000 o un "acessório" de más de R$ 2.500 es un instrumento con su case.
               "max_price": {"estuche": 3000, "varios": 2500},
               "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json", "teclado": "teclados.json",
-                        "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie",
+                        "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie", "headers": EN_HEADERS,
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},
     "at": {"dir": DIR / "at", "sources": AT_SOURCES, "site": "at",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},
@@ -3028,8 +3286,9 @@ def read_page(fetcher, store_id, url, now):
     src = SOURCES[store_id]
     rec = {"store": store_id, "url": url, "checked": now, "status": "error"}
     try:
-        # "fetch": otra URL con los datos de la ficha (Shopify: /products/<handle>.json); la oferta sigue siendo la ficha.
-        page = src["fetch"](url) if "fetch" in src else url
+        # "fetch" / "page_url": otra URL con los datos de la ficha (Shopify: /products/<handle>.json, con el precio en la
+        # moneda de la tienda); la oferta sigue siendo la ficha.
+        page = src["fetch"](url) if "fetch" in src else src["page_url"](url) if "page_url" in src else url
         allowed, info = fetcher.allowed(page)
         if not allowed:
             rec["status"] = "robots_disallowed"
@@ -3090,6 +3349,7 @@ def due_urls(store_id, urls, offers, now):
 def scan_store(store_id, offers, minutes, limit):
     src = SOURCES[store_id]
     fetcher = Fetcher(src.get("delay", DELAY))
+    fetcher.session.headers.update(CATALOG.get("headers", {}))  # Reino Unido e Irlanda: en inglés (A Strings traduce)
     now = now_iso()
     out = {"store": store_id, "sitemap": None, "records": []}
     try:
