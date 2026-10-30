@@ -517,7 +517,8 @@ _GUITAR_ACC = re.compile(r"guitarr|guitar|gitarr|\bbajo|\bbass|\bbaixo|el[eé]ct
                          r"|p[uú]a|plectr|\bpick|cejilla|\bcapo|kapodaster|pastilla|pickup|humbucker|single ?coil|tonabnehmer"
                          r"|dunlop|ernie ball|d'?addario|elixir|fender|gibson|ibanez|planet waves|savarez|la bella|rotosound|dr strings"
                          r"|gator|levy|righton|seymour|dimarzio|emg|kluson|gotoh|schaller|grover|snark|korg|tc electronic polytune"
-                         r"|hercules|k ?& ?m|warwick|ortola|cleartone|martin|augustine|aquila|gewa|rockboard|evidence", re.I)
+                         r"|hercules|k ?& ?m|warwick|ortola|cleartone|martin|augustine|aquila|gewa|rockboard|evidence"
+                         r"|\bp10\b|santo angelo|tagima|giannini|strinberg|michael|\bnig\b|\bsg\b|izzo|dolphin|rozini|onerr", re.I)
 _NOT_GUITAR_ACC = re.compile(r"bater[ií]a|\bdrums?\b|\btom\b|hi-?hat|platillo|caja|snare|bombo|piano|teclado|keyboard|viol[ií]n"
                              r"|viola\b|cello|chelo|contrabajo|ukelele|ukulele|mandolin|banjo|bandurria|la[uú]d|arpa|saxo|trompeta"
                              r"|flauta|clarinete|tromb|micr[oó]?fono|microphone|mikrofon|\bmic\b|\bdj\b|altavo|speaker|\bxlr\b|midi"
@@ -590,18 +591,19 @@ MICRO_TYPES = [("Inalámbrico", r"inal[aá]mbric|wireless|\bfunk|sistema (de )?(
                ("Condensador", r"condensador|condenser|kondensator|\bc ?214|\bat ?[24]0\d\d|\bm ?3\b|\bnt ?1|\btlm|\bu ?87|\bc ?414"),
                ("Dinámico", r"din[aá]mic|dynamic|sm ?58|sm ?7|beta ?58|e ?8[234]5|e ?9[34]5|pga ?48|md ?421|re ?20"),
                ("Otras", r"(?!x)x")]
-BASS_TYPES = [("6 cuerdas o más", r"\b[6-9] ?(cuerdas|strings?|saiter)\b|\b[6-9]-(string|saiter)"),
-              ("5 cuerdas", r"\b5 ?(cuerdas|strings?|saiter)\b|\b5-(string|saiter)"),
+BASS_TYPES = [("6 cuerdas o más", r"\b[6-9] ?(cuerdas|cordas|strings?|saiter)\b|\b[6-9]-(string|saiter)"),
+              ("5 cuerdas", r"\b5 ?(cuerdas|cordas|strings?|saiter)\b|\b5-(string|saiter)"),
               ("Acústico", r"ac[uú]stic|acoustic|akustik|electroac"), ("Fretless", r"fretless|sin trastes"),
               ("Escala corta", r"short ?scale|escala corta|mustang|mikro|\bjunior|\bmini\b|3/4"),
               ("4 cuerdas", r".")]
-AMP_TYPES = [("Para bajo", r"\bbajos?\b|\bbass\b|ampeg|markbass|hartke|aguilar|darkglass"),
-             ("Para acústica", r"ac[uú]stic|acoustic|akustik|loudbox|\baer\b"),
-             ("Combo", r"\bcombo"), ("Cabezal", r"cabezal|\bhead\b|topteil|\bcabeza\b"),
-             ("Pantalla", r"pantalla|cabinet|\bcab\b|\bbox\b|gitarrenbox"),
+AMP_TYPES = [("Para bajo", r"\bbajos?\b|\bbaixos?\b|contrabaixo|\bbass\b|ampeg|markbass|hartke|aguilar|darkglass"),
+             ("Para acústica", r"ac[uú]stic|acoustic|akustik|loudbox|\baer\b|viol[aã]o"),
+             ("Combo", r"\bcombo|\bcubo\b"), ("Cabezal", r"cabezal|cabe[cç]ote|\bhead\b|topteil|\bcabeza\b"),
+             ("Pantalla", r"pantalla|caixa|gabinete|cabinet|\bcab\b|\bbox\b|gitarrenbox"),
              ("De auriculares y portátil", r"auricular|headphone|amplug|port[aá]til|\bmini\b|bater[ií]a|\bfly\b"),
              ("Combo", r".")]
-CASE_TYPES = [("Para bajo", r"\bbajos?\b|\bbass\b"), ("Para clásica", r"cl[aá]sic|classic|espa[nñ]ola|konzert"),
+CASE_TYPES = [("Para bajo", r"\bbajos?\b|\bbaixos?\b|\bbass\b"),
+              ("Para clásica", r"cl[aá]sic|classic|espa[nñ]ola|konzert|nylon|n[aá]ilon"),
               ("Para acústica", r"ac[uú]stic|acoustic|western|folk|dreadnought|jumbo"), ("Para eléctrica", r".")]
 
 # Fundas y estuches, solo si la URL dice que son de guitarra o bajo (si no, entran los de batería, violín…).
@@ -1211,6 +1213,89 @@ SOURCES["auvisa"] = {"name": "Auvisa", "sitemap": "https://auvisa.com/sitemap.xm
 ACOUSTIC_SOURCES["auvisa"] = {"name": "Auvisa", "sitemap": "https://auvisa.com/sitemap.xml", "pick": _pick_auvisa,
                               "kind": lambda c: auvisa_kind(c) if auvisa_kind(c) in ("acustica", "clasica") else None}
 
+# --- España: tiendas de las listas oficiales de Alhambra, Yamaha, Fender/Jackson y Gibson (sin datos de categoría fiables):
+# el tipo de guitarra sale del nombre y de la URL.
+ES_SKIP = re.compile(r"funda|estuche|\bcase\b|gig ?bag|cuerdas?\b|juego de|correa|pedal|amplificador|\bampli\b|\bcombo\b|cable"
+                     r"|soporte|afinador|\bp[uú]as?\b|cejilla|ukelele|ukulele|\bbajos?\b|\bbass\b|banjo|mandolin|bandurria|la[uú]d"
+                     r"|m[eé]todo|libro|partitura|\bpack\b|\bkit\b|recambio|pastilla|clavij|golpeador|puente|cejuela|selleta"
+                     r"|usad|segunda mano|ocasi[oó]n|outlet|b-?stock|reacondicionad|exposici[oó]n|tarjeta regalo|bolsa|mochila"
+                     r"|limpia|humidific|capodaster|\bdvd\b|\bcd\b(?![- ]?\d)|camiseta|taza|llavero|miniatura|guitalele|requinto", re.I)
+_ES_CLASICA = r"cl[aá]sica|flamenca|espa[nñ]ola|nylon|n[aá]ilon|cadete|alhambra|admira|raimundo|camps\b|prudencio|esteve|paco castillo|j\.? ?torres"
+_ES_ACUSTICA = r"ac[uú]stica|electroac|folk|western|dreadnought|jumbo|parlor|auditorium|taylor|\bmartin\b|tanglewood|sigma"
+_ES_ELECTRICA = (r"el[eé]ctrica|electric|stratocaster|telecaster|\bstrat\b|\btele\b|les paul|\bsg\b|jazzmaster|jaguar|mustang"
+                 r"|semi ?hueca|hollow|ibanez|\besp\b|\bltd\b|jackson|charvel|schecter|\bprs\b|gretsch|squier|epiphone|gibson"
+                 r"|fender|yamaha pacifica|pacifica|revstar|\bcort\b|harley benton|sterling|evh|music man|\bg&l\b|suhr|tokai")
+
+
+_ES_MODELS = [(r"\btakamine g?c\d|\byamaha (c|cg|cx|ncx|ntx|cs|cgs|gc)\d|\bcort ac\d|\bibanez (ga|gcs)\d|\bfender cn ?\d", "clasica"),
+              (r"\btakamine\b|\byamaha (f|fs|fg|fgx|fsx|apx|cpx|ll|ls|lj|ac|aj|storia|jr|red label)\s?\d|\bcort (af|ad|earth|luce|mr|ga|sfx|cec)"
+               r"|\bibanez (aw|aeg|ac|pf|aam|aem|pn|tcy|v)\d|\bfender (cd|cc|cb|fa|ct|cp)\s?\d|\bfender (malibu|newporter|redondo|monterey)"
+               r"|\bepiphone (dr|aj|j ?45|hummingbird|masterbilt|songmaker)|\bgibson (j ?45|hummingbird|sj ?200|l ?00)|\bguild\b|\bsigma\b"
+               r"|\btanglewood\b|\bmaton\b|\bcole clark\b|\blag\b", "acustica"),
+              (r"\bibanez (grg|rg|az|s|sa|as|ar|jem|jiva|gio|grx|gsa|gax|rgd|rga|rgr|rgms|ad|tod|ps|azs|mar|jsm|pgm|fr|q)\s?\d"
+               r"|\bepiphone (the dot|dot|casino|es ?\d|les paul|lp|sg|explorer|flying v|firebird|riviera|sheraton|coronet|wilshire)"
+               r"|\bgibson (les paul|lp|sg|es ?\d|explorer|flying v|firebird|midtown)|\bcort (g|x|kx|cr|z|m|ex)\s?\d"
+               r"|\b(jackson|charvel|schecter|esp|ltd|evh|gretsch|squier|harley benton|sterling|tokai|g l|music man|suhr)\b"
+               r"|\byamaha (pacifica|revstar|rs|pac)\s?\d", "electrica")]
+
+
+def es_guitar_kind(crumbs, url="", name=""):
+    """'electrica', 'acustica', 'clasica' o None para las tiendas españolas sin categorías fiables."""
+    text = " ".join([url.rstrip("/").rsplit("/", 1)[-1].replace("-", " "), name or "", " ".join(crumbs or [])]).lower()
+    if ES_SKIP.search(name or "") or ES_SKIP.search(url.rstrip("/").rsplit("/", 1)[-1].replace("-", " ")):
+        return None
+    # Modelos que las tiendas anuncian sin decir qué son ("Takamine GN30", "Ibanez GRG170DX", "Yamaha FGX830C").
+    model = re.sub(r"[^a-z0-9 ]", " ", (name or "").lower())
+    for pat, kind in _ES_MODELS:
+        if re.search(pat, model):
+            return kind
+    if not re.search(r"guitarra|guitar|" + _ES_CLASICA + "|" + _ES_ACUSTICA + "|" + _ES_ELECTRICA, text):
+        return None
+    if re.search(_ES_CLASICA, text) and not re.search(r"el[eé]ctrica|folk|western|acero", text):
+        return "clasica"
+    if re.search(_ES_ACUSTICA, text):
+        return "acustica"
+    if re.search(_ES_ELECTRICA, text) and re.search(r"guitarra|guitar|el[eé]ctrica|stratocaster|telecaster|les paul|\bsg\b"
+                                                    r"|pacifica|revstar|jazzmaster|jaguar|mustang|\bstrat\b|\btele\b", text):
+        return "electrica"
+    return None
+
+
+_ES_PICK = re.compile(r"guitarra|guitar|" + _ES_CLASICA + "|" + _ES_ACUSTICA + "|stratocaster|telecaster|les-paul|pacifica", re.I)
+
+
+_ES_NOT_PRODUCT = re.compile(r"/(blogs?|collections|brand|marcas?|categor[a-z]*|category|autor[a-z-]*|tags?|etiqueta|pages)/|%5C|\+-\+"
+                             r"|/\d+-[a-z]+$|djembe", re.I)
+
+
+def _pick_es(u):
+    slug = u.rstrip("/").rsplit("/", 1)[-1].replace("-", " ")
+    return bool(_ES_PICK.search(slug)) and not ES_SKIP.search(slug) and not NOT_PRODUCT.search(u) and not _ES_NOT_PRODUCT.search(u)
+
+
+def _pick_es_shopify(u):
+    return "/products/" in u and _pick_es(u)
+
+
+for _id, _name, _sm in [("microfusa", "Microfusa", "https://www.microfusa.com/sitemap.xml"),
+                        ("musicsales", "Musicsales", "https://www.musicsales.es/1_index_sitemap.xml"),
+                        ("musicalsanfrancisco", "Musical San Francisco", "https://www.musicalsanfrancisco.es/sitemap_index.xml"),
+                        ("neomusica", "Neomúsica", "https://www.neomusica.es/sitemap.xml"),
+                        ("malaga8", "Madrid Musical Málaga 8", "https://www.malaga8.com/1_index_sitemap.xml"),
+                        ("partitura", "Partitura", "https://www.partituraonline.com/1_index_sitemap.xml"),
+                        ("rockbox", "Rockbox", "https://www.rockbox.es/1_index_sitemap.xml"),
+                        ("abrines", "Abrines Música", "https://www.abrinesmusica.com/1_index_sitemap.xml"),
+                        ("zingla", "Zingla Música", "https://www.zinglamusica.com/sitemap_index.xml"),
+                        ("fuste", "Musical Fusté", "https://www.musicalfuste.com/sitemap_index.xml"),
+                        ("hazen", "Hazen", "https://www.hazen.es/sitemap.xml"),
+                        ("trinomusic", "Trino Musical", "https://www.trinomusic.com/sitemap.xml")]:
+    _pk = _pick_es_shopify if _id in ("microfusa", "neomusica") else _pick_es
+    SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "pick": _pk,
+                    "kind_url": lambda c, u="", n="": "electrica" if es_guitar_kind(c, u, n) == "electrica" else None}
+    ACOUSTIC_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "pick": _pk,
+                             "kind_url": lambda c, u="", n="": k if (k := es_guitar_kind(c, u, n)) in ("acustica", "clasica") else None}
+
+
 # Musifex (musifex.pt, Odoo): sin datos estructurados ni EAN. Las fichas salen de los listados de cada categoría de
 # guitarras (de ahí la categoría) y el precio, del bloque de precio de la ficha.
 MUSIFEX = "https://musifex.pt"
@@ -1276,6 +1361,52 @@ def _parse_musicmaker(soup, text):
             "price": float(re.sub(r"[^\d.]", "", price.get_text())), "currency": "EUR",
             "in_stock": stock.group(1).lower() == "in stock" if stock else None,
             "image": img.get("src") if img else None, "ean": None}
+
+
+# --- Brasil: equipo (catálogo "brmas"): bajos, amplis, pedales, teclados, micros, estuches y accesorios ----------------
+# Se traduce el texto al vocabulario de los clasificadores de España (mas_kind, equipo_kind y sus tipos) y se usan tal cual.
+_PT_ES = [(r"contrabaixos?|baixos?(?= el[eé]trico| ativo| passivo| \d| de \d|\b)", "bajo"), (r"\bcordas\b", "cuerdas"),
+          (r"encordoamentos?", "juego de cuerdas"), (r"palhetas?", "púas"), (r"correias?", "correa"), (r"\bcabos?\b", "cable"),
+          (r"capotraste|braçadeira", "cejilla"), (r"suportes?|estantes?", "soporte"), (r"captador(es)?", "pastilla"),
+          (r"tarraxas?", "clavijas"), (r"cabe[cç]otes?", "cabezal"), (r"\bcaixas?\b|gabinetes?", "pantalla"),
+          (r"\bcubos?\b", "combo"), (r"microfones?", "micrófono"), (r"sem fio", "inalámbrico"), (r"pedaleiras?", "pedalera"),
+          (r"\bcases?\b|\bbags?\b|\bcapas?\b|estojos?|semi ?case|hard ?case|soft ?case", "funda"), (r"viol[aã]o", "guitarra acústica"),
+          (r"bateria", "batería"), (r"fones? de ouvido", "auriculares"), (r"\bteclados?\b", "teclado")]
+
+
+def _pt_es(text):
+    text = (text or "").lower()
+    for pat, es in _PT_ES:
+        text = re.sub(pat, es, text)
+    return text
+
+
+def br_mas_kind(crumbs, url="", name=""):
+    """'bajo', 'ampli', 'pedal', 'teclado', 'micro', 'estuche', 'varios' o None, para las tiendas brasileñas."""
+    crumbs, url, name = [_pt_es(c) for c in crumbs or []], _pt_es(url.rsplit("/", 1)[-1].replace("-", " ")), _pt_es(name)
+    if re.search(r"\bkit\b|usad|seminov|outlet|mostru", name):
+        return None
+    return mas_kind(crumbs, url, name) or equipo_kind(crumbs, url, name)
+
+
+def _br_mas_fix(data, text):
+    """Como en las guitarras, y además el nombre traducido al final de las categorías: de ahí salen los tipos."""
+    data = _br_fix(data, text)
+    data["crumbs"] = list(data.get("crumbs") or []) + [_pt_es(data["crumbs"][-1] if data.get("crumbs") else data.get("name"))]
+    return data
+
+
+_BR_MAS_URL = re.compile(r"baixo|contrabaixo|amplificador|\bcubo|cabecote|cabeçote|caixa|pedal|pedaleira|teclado|piano|sintetiz"
+                         r"|controlador|microfone|\bcase\b|\bbag\b|\bcapa\b|estojo|encordoamento|\bcordas?\b|palheta|correia"
+                         r"|\bcabo\b|afinador|capotraste|suporte|captador|tarraxa|fone|interface|booster|overdrive|distortion|delay"
+                         r"|reverb|fuzz|chorus|looper|multiefeito", re.I)
+
+
+def _pick_br_mas(u):
+    u = u.rstrip("/")
+    slug = (u[:-2] if u.endswith("/p") else u).rsplit("/", 1)[-1].replace("-", " ")
+    return bool(_BR_MAS_URL.search(slug)) and not NOT_PRODUCT.search(u) \
+        and not re.search(r"(?i)\bkit\b|usad|seminov|outlet|mostru|bateria eletr|ac[uú]stica (bateria|tambor)", slug)
 
 
 # Fender Brasil (fender.com.br, la lleva Pride Music, importador y distribuidor oficial, São Paulo): vende directamente y a veces más barato que las
@@ -1470,6 +1601,16 @@ for _id, _name, _sm in [("x5music", "X5 Music", "https://www.x5music.com.br/site
 BR_SOURCES["ninjasom"]["pick"] = _pick_vtex  # sus demás URLs son listados
 BR_SOURCES["serenata"]["pick"] = _pick_vtex
 
+# Las mismas tiendas brasileñas para el equipo (menos Fender Brasil, que solo lista guitarras, y Teclacenter, bloqueada).
+BRMAS_SOURCES = {}
+for _id, _src in BR_SOURCES.items():
+    if _id in ("fenderbr", "teclacenter"):
+        continue
+    BRMAS_SOURCES[_id] = {**_src, "kind_url": br_mas_kind, "fix": _br_mas_fix, "pick": _pick_br_mas}
+BRMAS_SOURCES["musicalcentersom"]["pick"] = lambda u: "/produto/" in u and _pick_br_mas(u)
+for _id in ("ninjasom", "serenata", "x5music", "supersom"):
+    BRMAS_SOURCES[_id]["pick"] = lambda u: u.rstrip("/").endswith("/p") and _pick_br_mas(u)
+
 # Musical Center Som (WooCommerce): en el sitemap también van categorías y etiquetas; solo las fichas.
 BR_SOURCES["musicalcentersom"]["pick"] = lambda u: "/produto/" in u and _pick_br(u)
 
@@ -1567,7 +1708,11 @@ CATALOGS = {
     "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP",
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},    "de": {"dir": DIR / "de", "sources": DE_SOURCES, "site": "de",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},    "br": {"dir": DIR / "br", "sources": BR_SOURCES, "site": "br", "cur": "BRL", "min_price": 300,
-           "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie",
+           "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},
+    # Brasil: equipo. Mismas tiendas; sin el filtro de nombres de las guitarras (aquí los accesorios sí entran).
+    "brmas": {"dir": DIR / "brmas", "sources": BRMAS_SOURCES, "site": "br", "cur": "BRL", "min_price": 10, "name_skip": None,
+              "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json", "teclado": "teclados.json",
+                        "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie",
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},
     "at": {"dir": DIR / "at", "sources": AT_SOURCES, "site": "at",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},
@@ -2197,9 +2342,11 @@ def build(offers=None, history=None):
         if CATALOG.get("min_price"):  # en otra moneda, el mínimo de MIN_PRICE (en euros) no sirve
             mine = [o for o in mine if (o.get("price") or 0) >= CATALOG["min_price"]]
         if not spain:
-            skip = {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP, "de": DE_NAME_SKIP, "br": BR_NAME_SKIP, "ie": UK_NAME_SKIP, "at": DE_NAME_SKIP,
-                    "nl": UK_NAME_SKIP}[CATALOG["site"]]
-            mine = [o for o in mine if not skip.search(o.get("name") or "")]
+            skip = CATALOG.get("name_skip", {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP,
+                                              "de": DE_NAME_SKIP, "br": BR_NAME_SKIP, "ie": UK_NAME_SKIP, "at": DE_NAME_SKIP,
+                                              "nl": UK_NAME_SKIP}[CATALOG["site"]])
+            if skip:
+                mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
         extra = (curated, sku_by_ean, curated_info) if kind == "electrica" and spain else ({}, {}, {})
         products = _products(kind, mine, history, *extra)

@@ -22,12 +22,17 @@ jobs:
       - run: pip install -q -r requirements.txt
       - name: Probar tiendas
         run: |
-          # Brasil: ¿por qué el sitemap de Teclacenter sale vacío desde GitHub?, ¿se leen sus fichas y las de Multisom?,
-          # y tiendas brasileñas aún sin probar.
-          python -m scraper.probe --out t1.md --sitemap https://www.teclacenter.com.br/google_sitemap_1.xml || true
-          python -m scraper.probe --out t2.md --only-try --try br:teclacenter br:multisom || true
-          python -m scraper.probe --out t3.md --domains musicalexpress.com.br playtech.com.br contemporanea.com.br \
-            izzomusical.com.br madeinbrazil.com.br gang.com.br || true
+          # España: tiendas de las listas oficiales de las marcas que desde fuera de GitHub no dan precio o nos bloquean,
+          # y los buscadores de tiendas de las marcas que no respondían.
+          python -m scraper.probe --out t1.md --only-try --try acustica:partitura acustica:fuste acustica:abrines \
+            acustica:trinomusic electrica:zingla electrica:neomusica electrica:microfusa || true
+          python -m scraper.probe --out t2.md --domains musicalguima.com valenciamusical.com tempoinstruments.es musikarte.net \
+            musimaster.com slapmusicstore.com surarte.com unionmusical.es promusica.es intermusic-pro.com audenis.com \
+            alteisa.com musicaltamayo.com musicaljam.es || true
+          python -m scraper.probe --out t3.md --links https://www.ibanez.com/eu/dealer/ https://www.espguitars.com/dealers \
+            https://prsguitars.com/dealers https://www.cortguitars.com/dealers https://www.ortegaguitars.com/dealer-locator \
+            https://cordobaguitars.com/where-to-buy/ https://www.taylorguitars.com/dealers \
+            https://www.martinguitar.com/store-locator.html https://es.fender.com/pages/dealer-locator || true
           cat t1.md t2.md t3.md > informe-tiendas.md
           cat informe-tiendas.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4

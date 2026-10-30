@@ -38,8 +38,10 @@ SITES = {
     "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de",
            "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren"},
            "amazon": None},
-    "br": {"country": "Brasil", "lang": "pt-BR", "t": "br", "cur": "BRL", "catalog": "br",
-           "kinds": {"electrica": "guitarras", "acustica": "violoes", "clasica": "violoes-nylon"},
+    "br": {"country": "Brasil", "lang": "pt-BR", "t": "br", "cur": "BRL", "catalog": "br", "extra_catalogs": ["brmas"],
+           "kinds": {"electrica": "guitarras", "acustica": "violoes", "clasica": "violoes-nylon", "bajo": "baixos",
+                     "ampli": "amplificadores", "pedal": "pedais", "teclado": "teclados", "micro": "microfones",
+                     "estuche": "cases", "varios": "acessorios"},
            "amazon": None},
     "ie": {"country": "Ireland", "lang": "en-IE", "t": "en", "cur": "EUR", "catalog": "ie",
            "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
@@ -490,7 +492,14 @@ T = {
         "updated": "Dados atualizados em {d}", "home": "Início",
         "kinds": {"electrica": ("Guitarras", "Guitarras", "Busque nas guitarras: modelo, marca, cor…"),
                   "acustica": ("Violões de aço e folk", "Violões aço", "Busque nos violões: modelo, marca, madeira…"),
-                  "clasica": ("Violões de nylon", "Violões nylon", "Busque nos violões de nylon: modelo, marca…")},
+                  "clasica": ("Violões de nylon", "Violões nylon", "Busque nos violões de nylon: modelo, marca…"),
+                  "bajo": ("Contrabaixos", "Baixos", "Busque nos baixos: modelo, marca, cordas…"),
+                  "ampli": ("Amplificadores", "Amplis", "Busque nos amplificadores: modelo, marca, potência…"),
+                  "pedal": ("Pedais de efeito", "Pedais", "Busque nos pedais: modelo, marca, efeito…"),
+                  "teclado": ("Teclados e pianos", "Teclados", "Busque nos teclados: modelo, marca…"),
+                  "micro": ("Microfones", "Microfones", "Busque nos microfones: modelo, marca, tipo…"),
+                  "estuche": ("Cases, bags e capas", "Cases", "Busque nos cases e bags: modelo, marca…"),
+                  "varios": ("Acessórios", "Acessórios", "Busque nos acessórios: cordas, palhetas, correias, cabos…")},
         "anyPrice": "Qualquer preço", "upTo": "Até {v}", "over": "Acima de {v}", "brandLabel": "Marca", "priceLabel": "Preço",
         "showLabel": "Mostrar", "showAll": "Todos", "showMulti": "Em várias lojas", "showStock": "Em estoque",
         "showLow": "No menor preço", "showLh": "Só canhotos", "loading": "Carregando o catálogo…", "sortLabel": "Ordenar",
@@ -518,7 +527,21 @@ T = {
                "many": "instrumentos",
                "types": {"Semihueca": "Semi-acústica", "Moderna / Metal": "Moderna / Metal", "Otras": "Outros",
                          "Auditorio / Concierto": "Auditório / Concerto", "12 cuerdas": "12 cordas", "Tamaño reducido": "Tamanho reduzido",
-                         "Clásica": "Clássico", "Flamenca": "Flamenco", "Electroclásica": "Elétrico nylon"},
+                         "Clásica": "Clássico", "Flamenca": "Flamenco", "Electroclásica": "Elétrico nylon",
+                         "4 cuerdas": "4 cordas", "5 cuerdas": "5 cordas", "6 cuerdas o más": "6 cordas ou mais",
+                         "Acústico": "Acústico", "Escala corta": "Escala curta", "Combo": "Combo / cubo", "Cabezal": "Cabeçote",
+                         "Pantalla": "Caixa", "Para bajo": "Para baixo", "Para acústica": "Para violão",
+                         "De auriculares y portátil": "Portátil / fone", "Para eléctrica": "Para guitarra",
+                         "Para clásica": "Para violão nylon", "Overdrive y distorsión": "Overdrive e distorção",
+                         "Modulación": "Modulação", "Compresor": "Compressor", "Wah y volumen": "Wah e volume",
+                         "Octavador y pitch": "Oitavador e pitch", "Ecualizador": "Equalizador", "Puerta de ruido": "Noise gate",
+                         "Sintetizador": "Sintetizador", "Afinador": "Afinador", "Multiefectos": "Pedaleiras e multiefeitos",
+                         "Piano digital": "Piano digital", "Teclado portátil": "Teclado arranjador", "Piano de escenario": "Stage piano",
+                         "Controlador MIDI": "Controlador MIDI", "Piano acústico": "Piano acústico", "Dinámico": "Dinâmico",
+                         "Condensador": "Condensador", "Inalámbrico": "Sem fio", "Para instrumento": "Para instrumento",
+                         "De cinta": "De fita", "Cuerdas": "Cordas", "Púas": "Palhetas", "Correas": "Correias", "Cables": "Cabos",
+                         "Afinadores": "Afinadores", "Cejillas": "Capotrastes", "Soportes": "Suportes", "Pastillas": "Captadores",
+                         "Recambios": "Peças de reposição", "Mantenimiento": "Limpeza e manutenção"},
                "wait": "Acompanhamos este modelo há {n} {days}", "day": "dia", "days": "dias",
                "waitSub": "O veredito fica mais confiável com algumas semanas de histórico.",
                "min": "Menor preço registrado", "minSub": "Nunca vimos mais barato.", "minBelow": " {p}% abaixo da média de 30 dias.",
@@ -675,7 +698,11 @@ def _load(path):
 def _json_path(code, kind):
     """JSON del catálogo del país para una categoría (el nombre lo fija scraper.catalog, CATALOGS[...]["files"])."""
     from .catalog import CATALOGS
-    return f"data/catalog/{SITES[code]['catalog']}/{CATALOGS[SITES[code]['catalog']]['files'][kind]}"
+    # Las guitarras en el catálogo del país; el equipo, si lo hay, en otro ("brmas").
+    for cat in [SITES[code]["catalog"]] + SITES[code].get("extra_catalogs", []):
+        if kind in CATALOGS[cat]["files"]:
+            return f"data/catalog/{cat}/{CATALOGS[cat]['files'][kind]}"
+    raise KeyError(kind)
 
 
 def catalogs(code):
@@ -924,7 +951,8 @@ def _card(code, p, names, t):
             f'<span class="where">{esc(t["whereMany"].format(s=names.get(best["s"], best["s"]), n=n))}</span></div></a>')
 
 
-ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasica", "portuguesa": "acustica"}
+ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasica", "portuguesa": "acustica", "bajo": "bajo",
+             "ampli": "ampli", "pedal": "pedal", "teclado": "teclado", "micro": "micro", "estuche": "estuche", "varios": "varios"}
 
 
 def _index(code, cats):

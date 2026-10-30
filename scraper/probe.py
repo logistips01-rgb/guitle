@@ -108,7 +108,11 @@ def main(argv=None):
         fetcher = Fetcher(delay=(1.0, 2.0))
         lines = []
         for url in args.links:
-            page = fetcher.get(url)
+            try:
+                page = fetcher.get(url)
+            except Exception as exc:  # noqa: BLE001
+                lines.append(f"## {url}: {type(exc).__name__}")
+                continue
             hrefs = sorted(set(re.findall(r'href="([^"#]+)"', page.text)))
             lines.append(f"## {url} (HTTP {page.status_code}, {len(page.text)} bytes, robots {fetcher.allowed(url)[0]})")
             lines += [f"- {h}" for h in hrefs if re.search(r"/[0-9A-Z]*\d[0-9A-Z]*$|page|pagina|[?&]p=", h)][:60]
