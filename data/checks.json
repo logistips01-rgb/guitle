@@ -459,18 +459,6 @@
   "median": 259.13
  },
  {
-  "kind": "ampli",
-  "type": "foto_perdida",
-  "name": "Ashdown Studio Jnr",
-  "slug": "ashdown-studio-jnr-745114432582"
- },
- {
-  "kind": "ampli",
-  "type": "foto_perdida",
-  "name": "Blackstar Unity Bass 700 Head",
-  "slug": "blackstar-unity-bass-700-head-845644005963"
- },
- {
   "kind": "micro",
   "type": "fuera_de_lugar",
   "store": "alfasoni",
@@ -523,30 +511,6 @@
   "slug": "se-electronics-dynacaster-dcm6-819032011348",
   "price": 115.0,
   "median": 196.01
- },
- {
-  "kind": "micro",
-  "type": "foto_perdida",
-  "name": "EK Audio DM150 Micrófono Dinámico",
-  "slug": "ek-audio-dm150-microfono-dinamico-8436032361291"
- },
- {
-  "kind": "micro",
-  "type": "foto_perdida",
-  "name": "EK Audio HT9A Micrófono De Cabeza",
-  "slug": "ek-audio-ht9a-microfono-de-cabeza-8436032361321"
- },
- {
-  "kind": "micro",
-  "type": "foto_perdida",
-  "name": "EK Audio Micrófono De Solapa LT4A",
-  "slug": "ek-audio-microfono-de-solapa-lt4a-8436032361338"
- },
- {
-  "kind": "micro",
-  "type": "foto_perdida",
-  "name": "Joyo DM2 Micrófono Dinámico Inalámbrico",
-  "slug": "joyo-dm2-microfono-dinamico-inalambrico-6972716329291"
  },
  {
   "kind": "varios",
@@ -772,17 +736,5 @@
   "slug": "righton-straps-talisman-victoria-black-8436612540801",
   "price": 49.58,
   "median": 61.5
- },
- {
-  "kind": "varios",
-  "type": "foto_perdida",
-  "name": "Ernie Ball EB2227 Slinky Ultra (010-048)",
-  "slug": "ernie-ball-eb2227-slinky-ultra-010-048-749699102786"
- },
- {
-  "kind": "varios",
-  "type": "foto_perdida",
-  "name": "Fender Strap Block 4-Pack Black (2) and Daphne Blue (2)",
-  "slug": "fender-strap-block-4-pack-black-2-and-daphne-blue-2-885978638567"
  }
 ]
