@@ -24,7 +24,11 @@ jobs:
         with:
           fetch-depth: 1
       - name: Instalar rclone
-        run: sudo apt-get update -q && sudo apt-get install -y -q rclone && rclone version
+        # La versión de Ubuntu (1.60) manda cabeceras que R2 no admite (501 NotImplemented).
+        run: |
+          curl -fsSLO https://downloads.rclone.org/v1.68.2/rclone-v1.68.2-linux-amd64.zip
+          unzip -q rclone-v1.68.2-linux-amd64.zip && sudo install rclone-v1.68.2-linux-amd64/rclone /usr/local/bin/
+          rm -rf rclone-v1.68.2-linux-amd64* && rclone version
       - name: Subir a R2
         env:
           RCLONE_CONFIG_R2_TYPE: s3
@@ -35,5 +39,10 @@ jobs:
           ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
         run: |
           export RCLONE_CONFIG_R2_ENDPOINT="https://${ACCOUNT,,}.r2.cloudflarestorage.com"
+          # Prueba con un archivo: si R2 lo rechaza, el log enseña lo que se ha enviado y se para aquí.
+          if ! rclone copyto robots.txt r2:guitle/robots.txt --checksum -v; then
+            rclone copyto robots.txt r2:guitle/robots.txt -vv --dump headers --retries 1 2>&1 | grep -iv "authorization\|x-amz-security\|credential" | tail -80
+            exit 1
+          fi
           rclone sync . r2:guitle --checksum --fast-list --transfers 32 --checkers 32 \
             --exclude-from .github/r2-exclude.txt --stats 1m --stats-one-line --stats-log-level NOTICE
