@@ -351,24 +351,6 @@
   "median": 497.0
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Ibanez AEG1221BOT Negro opaco",
-  "slug": "ibanez-aeg1221bot-negro-opaco-4549763376671"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Ibanez EWP14WBOPN Tenor",
-  "slug": "ibanez-ewp14wbopn-tenor-4515276838524"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Yamaha FG820 BS",
-  "slug": "yamaha-fg820-bs-4957812668613"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "auvisa",
@@ -538,12 +520,6 @@
   "slug": "universal-audio-uafx-galaxi-74-tape-echo-reverb-819937003592",
   "price": 299.0,
   "median": 1646.0
- },
- {
-  "kind": "pedal",
-  "type": "foto_perdida",
-  "name": "Catalinbread Katzenkönig",
-  "slug": "catalinbread-katzenkonig-853710004307"
  },
  {
   "kind": "bajo",
