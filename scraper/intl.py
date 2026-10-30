@@ -15,6 +15,7 @@ import html
 import json
 import re
 import sys
+from datetime import date
 from pathlib import Path
 from urllib.parse import quote_plus
 
@@ -1145,8 +1146,11 @@ def _index(code, cats):
     def gap(p):
         top = max(i["p"] for i in p["items"])
         return (top - p["items"][0]["p"]) / top
-    deals = sorted((p for p in allp if p.get("th") and len({i["s"] for i in p["items"]}) >= 2 and 0.03 <= gap(p) <= 0.4),
-                   key=gap, reverse=True)[:4]
+    # Cuatro de los 28 mejores, distintos cada día, para que la portada no repita mientras los precios no se muevan.
+    top = sorted((p for p in allp if p.get("th") and len({i["s"] for i in p["items"]}) >= 2 and 0.03 <= gap(p) <= 0.4),
+                 key=gap, reverse=True)[:28]
+    start = date.today().toordinal() * 4 % len(top) if top else 0
+    deals = (top[start:] + top[:start])[:4]
     # Iconos de las categorías: los mismos de la portada española.
     text = (ROOT / "index.html").read_text(encoding="utf-8")
     icons = dict(re.findall(r"^\s{4}(\w+): '(.*?)',$", text, re.M))
