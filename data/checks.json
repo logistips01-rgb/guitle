@@ -20,24 +20,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
-  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
-  "price": 811.2,
-  "median": 1105.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "auvisa",
-  "name": "Cort G290 Fat II Avb Antique Violin Burst.",
-  "slug": "cort-g290-fat-ii-avb-antique-violin-burst-8809625369569",
-  "price": 529.0,
-  "median": 719.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "session",
   "name": "ESP LTD EC-1000T QM Charcoal Burst",
   "slug": "esp-ltd-ec-1000t-qm-charcoal-burst-719710614420",
@@ -47,20 +29,29 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
+  "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
+  "price": 2459.0,
+  "median": 3543.675
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender Player II Modified Stratocaster HSS Floyd Rose 3 Tone Sunburst",
+  "slug": "fender-player-ii-modified-stratocaster-hss-floyd-rose-3-tone-sunburst-885978398621",
+  "price": 811.2,
+  "median": 1105.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Fender American Vintage II 1977 Telecaster Custom RW 3-Color Sunburst",
   "slug": "fender-american-vintage-ii-1977-telecaster-custom-rw-3-color-sunburst-197955136783",
   "price": 1848.0,
   "median": 2659.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "numemusic",
-  "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
-  "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
-  "price": 2459.0,
-  "median": 3388.35
  },
  {
   "kind": "electrica",
@@ -106,15 +97,6 @@
   "slug": "prs-se-mccarty-594-singlecut-vintage-sunburst-825362244301",
   "price": 857.0,
   "median": 1149.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Schecter Sun Valley SS FR-S R.blue",
-  "slug": "schecter-sun-valley-ss-fr-s-r-blue-815447024461",
-  "price": 799.0,
-  "median": 1149.5
  },
  {
   "kind": "electrica",
@@ -209,20 +191,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "Gretsch Streamliner Jet LRL Nightshade Purple",
-  "slug": "gretsch-streamliner-jet-lrl-nightshade-purple-885978721795",
-  "price": 334.0,
-  "median": 451.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "mat",
-  "name": "PRS S2 Standard 24 Satin Red Apple Metallic",
-  "slug": "prs-s2-standard-24-satin-red-apple-metallic-825362208457",
-  "price": 1999.0,
-  "median": 2884.0
+  "store": "microfusa",
+  "name": "Godin Radium Matte Green",
+  "slug": "godin-radium-matte-green-623501050406",
+  "price": 999.0,
+  "median": 1452.0
  },
  {
   "kind": "electrica",
@@ -241,6 +214,117 @@
   "slug": "prs-se-dgt-mccarty-tobacco-sunburst-825362244226",
   "price": 764.0,
   "median": 1089.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Schecter Sun Valley Super Shredder FR WHT",
+  "slug": "schecter-sun-valley-super-shredder-fr-wht-815447023228",
+  "price": 636.0,
+  "median": 874.35
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Schecter Sun Valley Super Shredder FR WHT",
+  "slug": "schecter-sun-valley-super-shredder-fr-wht-815447023228",
+  "price": 649.7,
+  "median": 867.5
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Amh90-Bk Hollow Body",
+  "slug": "amh90-bk-hollow-body-4549763280374"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Cort Cr200Fbl",
+  "slug": "cort-cr200fbl-8809625365165"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Cort Cr250Tbk",
+  "slug": "cort-cr250tbk-8809625361877"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Cort Mbm-1 Meta Series Sb",
+  "slug": "cort-mbm-1-meta-series-sb-8809625365639"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Cort Mbm-1 Meta Series Ss",
+  "slug": "cort-mbm-1-meta-series-ss-8809625365653"
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "LAG T118DCE-BRS Tramontane 118 Dreadnought Cutaway Natural",
+  "slug": "lag-t118dce-brs-tramontane-118-dreadnought-cutaway-natural-3700166363137",
+  "price": 410.1,
+  "median": 547.5
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AAM100E-BK Black High Gloss",
+  "slug": "ibanez-aam100e-bk-black-high-gloss-4549763367785",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Ibanez AAM100E-BK Black High Gloss",
+  "slug": "ibanez-aam100e-bk-black-high-gloss-4549763367785",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Ibanez AAM100E-NT Natural High Gloss",
+  "slug": "ibanez-aam100e-nt-natural-high-gloss-4549763367792",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Ibanez AAM100E-NT Natural High Gloss",
+  "slug": "ibanez-aam100e-nt-natural-high-gloss-4549763367792",
+  "price": 352.0,
+  "median": 499.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Lâg Tramontane T177JCE Jumbo",
+  "slug": "lag-tramontane-t177jce-jumbo-3700166370241",
+  "price": 311.0,
+  "median": 519.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "LAG T70ACE-NAT Tramontane 70 Auditorium Cutaway Natural",
+  "slug": "lag-t70ace-nat-tramontane-70-auditorium-cutaway-natural-3700166371859",
+  "price": 288.0,
+  "median": 391.5
  },
  {
   "kind": "acustica",
@@ -282,10 +366,46 @@
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "pronorte",
-  "name": "Lâg Tramontane T177JCE Jumbo",
-  "slug": "lag-tramontane-t177jce-jumbo-3700166370241",
-  "price": 311.0,
-  "median": 519.0
+  "name": "Ibanez AJ70M2E-PW",
+  "slug": "ibanez-aj70m2e-pw-4549763377661",
+  "price": 305.0,
+  "median": 429.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Ibanez AJ70M2E-PW",
+  "slug": "ibanez-aj70m2e-pw-4549763377661",
+  "price": 305.0,
+  "median": 429.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Sigma GTCE",
+  "slug": "sigma-gtce-4260279935168",
+  "price": 290.0,
+  "median": 386.99
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "musicalsanfrancisco",
+  "name": "Applause Jump Slope Shoulder Dreadnought melocotón",
+  "slug": "applause-jump-slope-shoulder-dreadnought-melocoton-4046662295350",
+  "price": 168.49,
+  "median": 241.1
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "hazen",
+  "name": "Art & Lutherie Roadhouse / Tennessee Red",
+  "slug": "art-lutherie-roadhouse-tennessee-red-52500nuevo",
+  "price": 514.3,
+  "median": 865.5
  },
  {
   "kind": "acustica",
@@ -295,6 +415,15 @@
   "slug": "art-luthier-art-luthier-americana-natural-eq-623501050703",
   "price": 317.0,
   "median": 459.625
+ },
+ {
+  "kind": "acustica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Carry On CO-MINI-A-GTR - Mini Acoustic Guitar",
+  "slug": "carry-on-co-mini-a-gtr-mini-acoustic-guitar-845644008575",
+  "price": 123.96,
+  "median": 148.995
  },
  {
   "kind": "acustica",
@@ -326,11 +455,65 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 1 TBW1TE Viaje",
+  "slug": "lag-bluewave-1-tbw1te-viaje-3700166373082",
+  "price": 399.0,
+  "median": 579.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 1 Travel Marrón",
+  "slug": "lag-bluewave-1-travel-marron-3700166374966",
+  "price": 399.0,
+  "median": 611.5
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TBW2ACE Auditorium Ctw",
+  "slug": "lag-bluewave-2-tbw2ace-auditorium-ctw-3700166373099",
+  "price": 469.0,
+  "median": 729.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TBW2DCE Dreadnought Ctw",
+  "slug": "lag-bluewave-2-tbw2dce-dreadnought-ctw-3700166373112",
+  "price": 469.0,
+  "median": 645.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TLBW2DCE Dreadnought Cutaway Zurda",
+  "slug": "lag-bluewave-2-tlbw2dce-dreadnought-cutaway-zurda-3700166373150",
+  "price": 469.0,
+  "median": 729.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 Tbw2Te de viaje",
+  "slug": "lag-bluewave-2-tbw2te-de-viaje-3700166373136",
+  "price": 469.0,
+  "median": 729.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
-  "name": "PRS SE A20E Black Top",
-  "slug": "prs-se-a20e-black-top-825362127505",
-  "price": 499.0,
-  "median": 706.65
+  "name": "Sigma JM-SG45",
+  "slug": "sigma-jm-sg45-4260279937360",
+  "price": 566.0,
+  "median": 775.0
  },
  {
   "kind": "acustica",
@@ -349,6 +532,60 @@
   "slug": "yamaha-fs820-rr-4957812668705",
   "price": 369.0,
   "median": 497.0
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Martin 00010E L Road Series Zurdos",
+  "slug": "martin-00010e-l-road-series-zurdos-729789580878"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "SX Dreadnought Negro SD104BK",
+  "slug": "sx-dreadnought-negro-sd104bk-6940651407282"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Ibanez AJ7012M1EBK Artwood Negro",
+  "slug": "ibanez-aj7012m1ebk-artwood-negro-4549763377678"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Martin D18 Dreadnought.",
+  "slug": "martin-d18-dreadnought-729789412766"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Martin GPC-16 A/E Cutaway - Abeto Sitka / Palisandro",
+  "slug": "martin-gpc-16-a-e-cutaway-abeto-sitka-palisandro-729789671811"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "SX SD104RDS Rojo",
+  "slug": "sx-sd104rds-rojo-6940651407312"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Sigma GM Serie Limitada",
+  "slug": "sigma-gm-serie-limitada-4260685051667"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Takamine GD51 E/A Dreadnought Cutway (Zurdos) Natural GD51CELH-NAT",
+  "slug": "takamine-gd51-e-a-dreadnought-cutway-zurdos-natural-gd51celh-nat-190262042211"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Tanglewood Amplificada Super Folk Cutaway Tanglewood TW4KOA",
+  "slug": "tanglewood-amplificada-super-folk-cutaway-tanglewood-tw4koa-810944012829"
  },
  {
   "kind": "clasica",
@@ -371,11 +608,68 @@
  {
   "kind": "clasica",
   "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Alhambra Premier Pro Madagascar",
+  "slug": "alhambra-premier-pro-madagascar-8436623081393",
+  "price": 2069.1,
+  "median": 2775.5
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "Ibanez FRH20QMN-WRL Wine Red Low Gloss",
   "slug": "ibanez-frh20qmn-wrl-wine-red-low-gloss-4549763370006",
   "price": 449.0,
   "median": 635.0
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 Cbw2E Classical 4/4",
+  "slug": "lag-bluewave-2-cbw2e-classical-4-4-3700166373105",
+  "price": 469.0,
+  "median": 772.5
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Manuel Rodriguez EXÓTICA Santos Pavo Real",
+  "slug": "manuel-rodriguez-exotica-santos-pavo-real-4046662299150",
+  "price": 456.78,
+  "median": 705.5
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Takamine GC5 E/A Cutaway GC5CELH-NAT (Zurdos)",
+  "slug": "takamine-gc5-e-a-cutaway-gc5celh-nat-zurdos-190262043058"
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Alhambra Z-NATURE CW EZ wBAG",
+  "slug": "alhambra-z-nature-cw-ez-wbag-8436623082857"
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Gc12S Artesanal",
+  "slug": "gc12s-artesanal-4957812517294"
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Godin Arena CW Clasica II RN",
+  "slug": "godin-arena-cw-clasica-ii-rn-623501051793"
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Takamine Classique Cutaway Electro GC3CENAT",
+  "slug": "takamine-classique-cutaway-electro-gc3cenat-190262041306"
  },
  {
   "kind": "pedal",

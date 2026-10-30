@@ -273,6 +273,7 @@ casio-teclado-casio-ct-s200-bk-de-61-teclas-para-principiantes-producto-de-segun
 casio-wu-bt10-4971850349617
 clavia-nord-lead-a1-8435017321770
 clavia-nord-piano-monitor-v2-834035001493
+clavia-nord-triple-pedal-834035001141
 crumar-mojo-61b-lower-manual-8719147415425
 crumar-mojo-61b-lower-manual-ltd-8719147461156
 donner-b1-6975626381113
@@ -639,7 +640,6 @@ nord-piano-6-88-834035001721
 nord-stage-4-73-834035001660
 nord-stage-4-88-834035001677
 nord-stage-4-compact-834035001653
-nord-triple-pedal-834035001141
 nord-wave-2-834035001523
 novation-49-sl-mkiii-815301001065
 novation-61-sl-mkiii-815301001072
