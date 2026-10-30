@@ -146,7 +146,6 @@ marca/diamond.html
 marca/diezel.html
 marca/digitech-dod.html
 marca/digitech.html
-marca/digitech.html
 marca/dimarzio.html
 marca/dingwall.html
 marca/dino-baffetti.html
@@ -201,6 +200,7 @@ marca/epiphone.html
 marca/ernie-ball.html
 marca/esi.html
 marca/esp.html
+marca/esteve.html
 marca/ev-electro-voice.html
 marca/eventide.html
 marca/evh.html
@@ -211,6 +211,7 @@ marca/fender-squier.html
 marca/fender.html
 marca/fenton.html
 marca/feurich.html
+marca/fgn.html
 marca/fgn.html
 marca/fire-stone.html
 marca/fishman.html
@@ -241,6 +242,7 @@ marca/gator.html
 marca/genuine-straps.html
 marca/gewa.html
 marca/ghs.html
+marca/gibson-accessories.html
 marca/gibson-gear.html
 marca/gibson.html
 marca/gitane.html
@@ -621,6 +623,7 @@ marca/vintage.html
 marca/viscount.html
 marca/vonyx.html
 marca/voodoo-lab.html
+marca/voodoo.html
 marca/vox.html
 marca/vox.html
 marca/vsound.html
