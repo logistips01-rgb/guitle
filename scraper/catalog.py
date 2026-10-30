@@ -1486,7 +1486,7 @@ _TO_ES_EQUIPO = {
            (r"claviers?", "teclado"), (r"capodastres?", "cejilla"), (r"\bsupports?\b|\bstands?\b|\bpieds?\b", "soporte"),
            (r"\bcasques?\b", "auriculares"), (r"batteries?", "batería"), (r"cymbales?", "platillo"), (r"alimentations?", "alimentador"),
            (r"contrebasses?", "contrabajo"), (r"\bcordes?\s+(?:seules?|unitaires?|au d[eé]tail|d[eé]tail)", "cuerda suelta"),
-           (r"\bjeux? de cordes", "juego de cuerdas"), (r"\bcourroies?\b|\bbretelles?\b", "correa"), (r"attaches?[ -]correa", "strap lock"),
+           (r"\bjeux? de cordes", "juego de cuerdas"), (r"\bc[aâ]bles? bretelles?\b", "cable en y"), (r"\bcourroies?\b|\bbretelles?\b", "correa"), (r"attaches?[ -]correa", "strap lock"),
            (r"\bvalises?\b", "estuche"), (r"\bonglets?\b", "púa"), (r"m[eé]caniques?", "clavijas"), (r"\bchevalets?\b", "puente"),
            (r"\bsillets?\b", "cejuela"), (r"plaques? de protection", "golpeador"), (r"\bboutons?\b", "knobs"),
            (r"potentiom[eè]tres?", "potenciómetro"), (r"nettoyants?|entretien|chiffons?|lustr\w*", "limpieza"), (r"\bhuiles?\b", "aceite"),
@@ -3246,8 +3246,10 @@ def equipo_kind_for(lang, guitar=None):
         bass_cat = bool(cats and re.search(r"\bbajos?\b", cats[-1])) and not bass_things
         found = mas_kind(cats, slug, es_name) or equipo_kind(cats, slug, es_name)
         # "Pedale effetto MXR M233 Micro Amp": el nombre empieza diciendo que es un pedal
+        # (no en una categoría de guitarras: "Pédale G.C DW 3000" en "Guitares classiques" es un reposapiés)
         if not found and re.match(r"(?:pedal|efecto|multiefectos)\b", es_name) \
-                and not re.search(r"sustain|bombo|footswitch|teclado|piano|bater[ií]a|pedal ?board|single pedal", es_name):
+                and not re.search(r"sustain|bombo|footswitch|teclado|piano|bater[ií]a|pedal ?board|single pedal", es_name) \
+                and not _GUITAR_CAT.search(" / ".join(cats[-2:])):
             found = "pedal"
         if not found and cats:
             # El nombre a secas no lo dice ("Ernie Ball 2090 Paradigm .010-.050"); las categorías sí ("E-Gitarrensaiten").
