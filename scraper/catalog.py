@@ -1392,6 +1392,70 @@ for _id, _name, _sm in [
                        "pick": _pick_br}
 
 
+def _br_price(txt):
+    """'R$ 7.317,00' → 7317.0"""
+    m = re.search(r"([\d.]+,\d{2})", txt or "")
+    return float(m.group(1).replace(".", "").replace(",", ".")) if m else None
+
+
+def _br_ean(text):
+    m = re.search(r"(?<!\d)(789\d{10}|0?\d{12})(?!\d)", text) if re.search(r"(?i)\bean|gtin|c[oó]digo de barras", text) else None
+    return m.group(1) if m else None
+
+
+def _parse_micro_br(soup, text):
+    """Microdatos de schema.org en etiquetas o meta (Praise, Serenata, Soco Music)."""
+    data = _parse_microdata(soup, text)
+    if data.get("price"):
+        data["in_stock"] = None if "availability" not in text else data["in_stock"]
+        return data
+    price = soup.find(attrs={"itemprop": "price"})
+    h1 = soup.find("h1")
+    if not price or not h1:
+        return {"crumbs": []}
+    value = price.get("content") or price.get_text(strip=True)
+    try:
+        value = float(value) if re.fullmatch(r"[\d.]+", value) else _br_price(value)
+    except ValueError:
+        value = None
+    if not value:
+        return {"crumbs": []}
+    name = h1.get_text(" ", strip=True)
+    img = soup.select_one('meta[property="og:image"]')
+    return {"crumbs": [], "name": name, "brand_raw": _brand_from_name(name), "price": value, "currency": "BRL",
+            "in_stock": None, "image": img.get("content") if img else None, "ean": _br_ean(text)}
+
+
+def _parse_woo_br(soup, text):
+    """WooCommerce sin JSON-LD de producto (Música Mais, Alberto Teclados): el bloque de precio de la ficha. Se quita el
+    precio tachado y, de los que quedan (boleto con descuento, tarjeta…), el más alto: el precio normal."""
+    h1 = soup.select_one(".product_title, h1")
+    box = soup.select_one(".summary p.price, p.price")
+    if not h1 or not box:
+        return {"crumbs": []}
+    for d in box.find_all("del"):
+        d.decompose()
+    prices = [p for p in (_br_price(a.get_text(" ", strip=True)) for a in box.select(".woocommerce-Price-amount")) if p]
+    if not prices:
+        return {"crumbs": []}
+    name = h1.get_text(" ", strip=True)
+    img = soup.select_one('meta[property="og:image"]')
+    return {"crumbs": [], "name": name, "brand_raw": _brand_from_name(name), "price": max(prices), "currency": "BRL",
+            "in_stock": False if re.search(r"(?i)fora de estoque|esgotado", text) else None,
+            "image": img.get("content") if img else None, "ean": _br_ean(text)}
+
+
+for _id, _name, _sm, _parse in [
+        ("praisemusic", "Praise Music", "https://www.praisemusic.com.br/sitemap.xml", _parse_micro_br),
+        ("serenata", "A Serenata", "https://www.serenatanet.com.br/sitemap.xml", _parse_micro_br),
+        ("socomusic", "Soco Music", "https://www.socomusic.com.br/sitemap.xml", _parse_micro_br),
+        ("musicamais", "Música Mais", "https://www.musicamais.com.br/sitemap.xml", _parse_woo_br),
+        ("albertoteclados", "Alberto Teclados", "https://albertoteclados.com.br/sitemap.xml", _parse_woo_br)]:
+    BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse, "fix": _br_fix, "kind_url": br_kind,
+                       "pick": lambda u: (u.rstrip("/").endswith("/p") and _pick_br(u.rstrip("/")[:-2])) or
+                       ("/p" != u[-2:] and _pick_br(u) and not re.search(r"/cordas/(violao|guitarra)[^/]*/?$", u))}
+
+
 def _pick_vtex(u):
     """Tiendas VTEX: la ficha acaba en /p ("…/guitarra-ibanez-rg121dx/p")."""
     u = u.rstrip("/")
@@ -1404,6 +1468,7 @@ for _id, _name, _sm in [("x5music", "X5 Music", "https://www.x5music.com.br/site
     BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "fix": _br_fix, "kind_url": br_kind,
                        "pick": lambda u: _pick_vtex(u) or _pick_br(u)}
 BR_SOURCES["ninjasom"]["pick"] = _pick_vtex  # sus demás URLs son listados
+BR_SOURCES["serenata"]["pick"] = _pick_vtex
 
 # Musical Center Som (WooCommerce): en el sitemap también van categorías y etiquetas; solo las fichas.
 BR_SOURCES["musicalcentersom"]["pick"] = lambda u: "/produto/" in u and _pick_br(u)
