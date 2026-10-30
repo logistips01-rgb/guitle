@@ -41,7 +41,8 @@ jobs:
     env:
       # Catálogos de este trabajo y minutos de lectura por tienda.
       CATS: ${{ matrix.cat == 'es' && 'electrica acustica equipo' || matrix.cat }}
-      READ_MIN: ${{ (matrix.cat == 'es' || matrix.cat == 'electrica' || matrix.cat == 'acustica' || matrix.cat == 'equipo') && '50' || inputs.minutes || '150' }}
+      # brmas (equipo de Brasil) relee las 20 tiendas de br a la vez que br: con 150 min la máquina caía antes de guardar.
+      READ_MIN: ${{ (matrix.cat == 'es' || matrix.cat == 'electrica' || matrix.cat == 'acustica' || matrix.cat == 'equipo') && '50' || matrix.cat == 'brmas' && '75' || inputs.minutes || '150' }}
     steps:
       - uses: actions/checkout@v4
 
