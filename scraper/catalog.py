@@ -1202,6 +1202,17 @@ DE_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.de")
 AT_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.at")
 NL_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.nl")
 
+# Bélgica: Thomann (thomann.de/be/, en inglés: clasificador inglés), Woodbrass (woodbrass.be) y Stars Music (su web belga,
+# en francés, mismas fichas y precio que la francesa). IVA del 21 %, como en Países Bajos.
+BE_SOURCES = _thomann_only("https://www.thomann.de/be/", ("cat_allProducts_GF_electric_guitars.html",
+                                                          "cat_allProducts_GF_steel_string_acoustic_guitars.html",
+                                                          "cat_allProducts_GF_classical_guitars.html"), uk_kind)
+BE_SOURCES["woodbrass"] = _woodbrass("https://woodbrass.be")
+BE_SOURCES["starsmusic"] = {**FR_SOURCES["starsmusic"],
+                            "sitemap": "https://www.stars-music.be/sitemap_sm/sitemap_prod_fr_be.xml.gz"}
+# Nombres en francés (Stars Music, Woodbrass) y en inglés (Thomann).
+BE_NAME_SKIP = re.compile(FR_NAME_SKIP.pattern + "|" + UK_NAME_SKIP.pattern, re.I)
+
 # Auvisa (auvisa.com, Shopify): su robots.txt no deja paginar colecciones, así que se tira del sitemap (fichas de marcas
 # de guitarras) y la categoría sale del breadcrumb de cada ficha ("Guitarras / Guitarras eléctricas / …").
 AUVISA_SKIP = re.compile(r"cuerda|funda|estuche|correa|\bpua|cejilla|afinador|soporte|pastilla|clavijero|amplif|pedal|cable"
@@ -3837,6 +3848,14 @@ EQUIPO_COUNTRIES = {
            "shops": {"hammerschmidt": {"path": r"/shop/(?!abverkauf/)"}},
            "exclude": {"thomann": "descubre sus fichas por las categorías de guitarras (cat_allProducts_GF_…)",
                        "woodbrass": "descubre sus fichas por las colecciones Shopify de guitarras"}},
+    # Bélgica: el equipo sale de Stars Music (en francés); Thomann y Woodbrass solo descubren guitarras.
+    "be": {"sources": BE_SOURCES, "lang": "fr+en", "site": "be", "max_price": {"estuche": 800, "varios": 500},
+           "files": {"bajo": "basgitaren.json", "ampli": "versterkers.json", "pedal": "effectpedalen.json",
+                     "teclado": "keyboards.json", "micro": "microfoons.json", "estuche": "koffers-tassen.json",
+                     "varios": "accessoires.json"},
+           "shops": {"starsmusic": {"base": "https://www.stars-music.be", "path": r"/[^/]+_\d+\.html$"}},
+           "exclude": {"thomann": "descubre sus fichas por las categorías de guitarras (cat_allProducts_GF_…)",
+                       "woodbrass": "descubre sus fichas por las colecciones Shopify de guitarras"}},
     "nl": {"sources": NL_SOURCES, "lang": "nl+en", "site": "nl", "max_price": {"estuche": 800, "varios": 500},
            "files": {"bajo": "basgitaren.json", "ampli": "versterkers.json", "pedal": "effectpedalen.json",
                      "teclado": "keyboards.json", "micro": "microfoons.json", "estuche": "koffers-tassen.json",
@@ -3921,6 +3940,8 @@ CATALOGS = {
     "at": {"dir": DIR / "at", "sources": AT_SOURCES, "site": "at",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},
     "nl": {"dir": DIR / "nl", "sources": NL_SOURCES, "site": "nl",
+           "files": {"electrica": "elektrische-gitaren.json", "acustica": "akoestische-gitaren.json", "clasica": "klassieke-gitaren.json"}},
+    "be": {"dir": DIR / "be", "sources": BE_SOURCES, "site": "be",
            "files": {"electrica": "elektrische-gitaren.json", "acustica": "akoestische-gitaren.json", "clasica": "klassieke-gitaren.json"}},
 }
 # Equipo de cada país de EQUIPO_COUNTRIES: "demas" → data/catalog/demas/, en la web del país (intl.SITES[...]["extra_catalogs"]).
@@ -4568,7 +4589,7 @@ def build(offers=None, history=None):
         if not spain:
             skip = CATALOG.get("name_skip", {"pt": PT_NAME_SKIP, "fr": FR_NAME_SKIP, "it": IT_NAME_SKIP, "uk": UK_NAME_SKIP,
                                               "de": DE_NAME_SKIP, "br": BR_NAME_SKIP, "ie": UK_NAME_SKIP, "at": DE_NAME_SKIP,
-                                              "nl": UK_NAME_SKIP}[CATALOG["site"]])
+                                              "nl": UK_NAME_SKIP, "be": BE_NAME_SKIP}[CATALOG["site"]])
             if skip:
                 mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).

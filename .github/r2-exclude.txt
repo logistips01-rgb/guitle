@@ -21,6 +21,7 @@
 /ie/**
 /at/**
 /nl/**
+/be/**
 /sitemap.xml
 /sitemap-*.xml
 /g/**

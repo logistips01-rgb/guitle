@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 CAT = ROOT / "data" / "catalog"
 OUT = ROOT / "data" / "crecimiento.json"
-COUNTRIES = ["es", "pt", "fr", "it", "uk", "de", "br", "ie", "at", "nl"]
+COUNTRIES = ["es", "pt", "fr", "it", "uk", "de", "br", "ie", "at", "nl", "be"]
 # España tiene sus propias carpetas; los demás países, <país>/ (guitarras) y <país>mas/ (equipo).
 ES_GUITARS = {"products.json", "acusticas/acusticas.json", "acusticas/clasicas.json"}
 ES_EQUIPO = ("equipo/", "mas/")

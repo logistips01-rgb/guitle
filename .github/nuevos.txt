@@ -1,0 +1,2 @@
+# Tocar este fichero lanza la primera lectura de los países nuevos (catalog.yml, NUEVOS).
+be bemas

@@ -84,6 +84,18 @@ SITES = {
                      "bajo": "basgitaren", "ampli": "versterkers", "pedal": "effectpedalen", "teclado": "keyboards",
                      "micro": "microfoons", "estuche": "koffers-tassen", "varios": "accessoires"},
            "amazon": None},
+    # Bélgica: en neerlandés (Flandes es el mayor mercado online), con los textos de Países Bajos (T["nl"]).
+    "be": {"country": "België", "lang": "nl-BE", "t": "nl", "cur": "EUR", "catalog": "be", "extra_catalogs": ["bemas"],
+           "kinds": {"electrica": "elektrische-gitaren", "acustica": "akoestische-gitaren", "clasica": "klassieke-gitaren",
+                     "bajo": "basgitaren", "ampli": "versterkers", "pedal": "effectpedalen", "teclado": "keyboards",
+                     "micro": "microfoons", "estuche": "koffers-tassen", "varios": "accessoires"},
+           "amazon": None,
+           "t_over": {"homeDesc": "guitle vergelijkt gitaarprijzen: elektrische, akoestische en klassieke gitaren in de winkels "
+                                  "die in België verkopen, met de prijsgeschiedenis van elk model.",
+                      "steps": ["Elke dag controleren we de prijs, voorraad en foto van elke gitaar in de winkels die in België verkopen.",
+                                "We bewaren de prijsgeschiedenis, zodat je ziet of een prijs echt goed is of meestal lager ligt.",
+                                "Als je wilt, mailen we je zodra de prijs daalt."]},
+           "legal_replace": [("de Autoriteit Persoonsgegevens", "de Gegevensbeschermingsautoriteit (GBA)")]},
     "uk": {"country": "United Kingdom", "lang": "en-GB", "t": "en", "cur": "GBP", "catalog": "uk", "extra_catalogs": ["ukmas"],
            "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars", "bajo": "basses",
                      "ampli": "amps", "pedal": "effects-pedals", "teclado": "keyboards", "micro": "microphones",

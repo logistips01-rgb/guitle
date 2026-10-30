@@ -158,7 +158,7 @@ const COUNTRIES = [
   ["uk", "826", "Reino Unido", 34.5, ["data/catalog/uk/electric.json", "data/catalog/uk/acoustic.json", "data/catalog/uk/classical.json"]],
   ["de", "276", "Alemania", 44.5, ["data/catalog/de/e-gitarren.json", "data/catalog/de/westerngitarren.json",
                                      "data/catalog/de/konzertgitarren.json"]],
-   ["at", "040", "Austria", 4.8, ["data/catalog/at/e-gitarren.json", "data/catalog/at/westerngitarren.json", "data/catalog/at/konzertgitarren.json"]], ["nl", "528", "Países Bajos", 10.0, ["data/catalog/nl/elektrische-gitaren.json", "data/catalog/nl/akoestische-gitaren.json", "data/catalog/nl/klassieke-gitaren.json"]], ["be", "056", "Bélgica", 5.4],
+   ["at", "040", "Austria", 4.8, ["data/catalog/at/e-gitarren.json", "data/catalog/at/westerngitarren.json", "data/catalog/at/konzertgitarren.json"]], ["nl", "528", "Países Bajos", 10.0, ["data/catalog/nl/elektrische-gitaren.json", "data/catalog/nl/akoestische-gitaren.json", "data/catalog/nl/klassieke-gitaren.json"]], ["be", "056", "Bélgica", 5.4, ["data/catalog/be/elektrische-gitaren.json", "data/catalog/be/akoestische-gitaren.json", "data/catalog/be/klassieke-gitaren.json"]],
   ["ie", "372", "Irlanda", 2.8, ["data/catalog/ie/electric.json", "data/catalog/ie/acoustic.json", "data/catalog/ie/classical.json"]], ["mx", "484", "México", 61], ["br", "076", "Brasil", 109, ["data/catalog/br/guitarras.json", "data/catalog/br/violoes.json", "data/catalog/br/violoes-nylon.json"]], ["us", "840", "Estados Unidos", 170],
   ["ca", "124", "Canadá", 22.3], ["ar", "032", "Argentina", 21], ["co", "170", "Colombia", 26], ["cl", "152", "Chile", 10],
 ];
@@ -283,7 +283,8 @@ function renderWorld(pages) {
 
 // Crecimiento del catálogo (data/crecimiento.json, scraper/crecimiento.py): filas [momento, país, guitarras, equipo, tiendas].
 const GROWTH_COLORS = { es: "#2a78d6", pt: "#1e9e6a", fr: "#7b5cd6", it: "#e0892b", uk: "#d6455d", de: "#3f3f46",
-                        br: "#2bb3c0", ie: "#7fb13a", at: "#c45ab3", nl: "#e5b51d" };
+                        br: "#2bb3c0", ie: "#7fb13a", at: "#c45ab3", nl: "#e5b51d",
+                        be: "#8a5a2b" };
 let growthChart = null;
 async function renderGrowth() {
   const { rows: g, actualizado: upd = {} } = await fetch("data/crecimiento.json", { cache: "no-store" }).then(r => r.json());
