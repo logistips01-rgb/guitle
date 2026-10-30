@@ -961,7 +961,7 @@ UK_SOURCES = {
                      and not UK_SKIP.search(u.replace("-", " ")) and not NOT_PRODUCT.search(u)},
     "thomann": {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann, "kind_url": uk_kind,
                 "discover": lambda f: _discover_thomann(f, ("cat_allProducts_GF_electric_guitars.html",
-                                                            "cat_allProducts_GF_acoustic_guitars.html",
+                                                            "cat_allProducts_GF_steel_string_acoustic_guitars.html",
                                                             "cat_allProducts_GF_classical_guitars.html"), THOMANN_UK),
                 "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)},
     "andertons": {"name": "Andertons", "sitemap": "https://www.andertons.co.uk/xmlsitemap.php",
@@ -1173,7 +1173,7 @@ def _thomann_only(base, pages, kind):
 
 
 IE_SOURCES = _thomann_only("https://www.thomann.ie/", ("cat_allProducts_GF_electric_guitars.html",
-                                                       "cat_allProducts_GF_acoustic_guitars.html",
+                                                       "cat_allProducts_GF_steel_string_acoustic_guitars.html",
                                                        "cat_allProducts_GF_classical_guitars.html"), uk_kind)
 AT_SOURCES = _thomann_only("https://www.thomann.at/", ("cat_allProducts_GF_e-gitarren.html",
                                                        "cat_allProducts_GF_westerngitarren.html",
