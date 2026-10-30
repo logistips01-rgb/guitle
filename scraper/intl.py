@@ -35,8 +35,11 @@ SITES = {
     "it": {"country": "Italia", "lang": "it-IT", "t": "it", "cur": "EUR", "catalog": "it",
            "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche"},
            "amazon": None},
-    "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de",
-           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren"},
+    # Equipo en otro catálogo ("demas", scraper.catalog.EQUIPO_COUNTRIES); sus páginas salen cuando tiene productos.
+    "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de", "extra_catalogs": ["demas"],
+           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren", "bajo": "baesse",
+                     "ampli": "verstaerker", "pedal": "effektpedale", "teclado": "keyboards", "micro": "mikrofone",
+                     "estuche": "koffer-taschen", "varios": "zubehoer"},
            "amazon": None},
     "br": {"country": "Brasil", "lang": "pt-BR", "t": "br", "cur": "BRL", "catalog": "br", "extra_catalogs": ["brmas"],
            "kinds": {"electrica": "guitarras", "acustica": "violoes", "clasica": "violoes-nylon", "bajo": "baixos",
@@ -412,7 +415,18 @@ T = {
         "updated": "Daten aktualisiert am {d}", "home": "Startseite",
         "kinds": {"electrica": ("E-Gitarren", "E-Gitarren", "In E-Gitarren suchen: Modell, Marke, Farbe…"),
                   "acustica": ("Westerngitarren", "Western", "In Westerngitarren suchen: Modell, Marke, Holz…"),
-                  "clasica": ("Konzertgitarren", "Konzert", "In Konzertgitarren suchen: Modell, Marke, Flamenco…")},
+                  "clasica": ("Konzertgitarren", "Konzert", "In Konzertgitarren suchen: Modell, Marke, Flamenco…"),
+                  "bajo": ("E-Bässe und Akustikbässe", "Bässe", "In Bässen suchen: Modell, Marke, 5-Saiter…"),
+                  "ampli": ("Gitarren- und Bassverstärker", "Verstärker", "In Verstärkern suchen: Modell, Marke, Combo, Topteil…"),
+                  "pedal": ("Effektpedale", "Effekte", "In Effektpedalen suchen: Modell, Marke, Effekt…"),
+                  "teclado": ("Keyboards und Digitalpianos", "Keyboards", "In Keyboards suchen: Modell, Marke…"),
+                  "micro": ("Mikrofone", "Mikrofone", "In Mikrofonen suchen: Modell, Marke, Typ…"),
+                  "estuche": ("Koffer und Gigbags", "Koffer", "In Koffern und Gigbags suchen: Modell, Marke…"),
+                  "varios": ("Gitarrenzubehör", "Zubehör", "Im Zubehör suchen: Saiten, Plektren, Gurte, Kabel…")},
+        # Lo que se cuenta en cada categoría de equipo (portada y lista) y, si no son solo guitarras, el total.
+        "nouns": {"bajo": "Bässe", "ampli": "Verstärker", "pedal": "Pedale", "teclado": "Keyboards", "micro": "Mikrofone",
+                  "estuche": "Koffer", "varios": "Artikel"},
+        "allWord": "Produkte",
         "anyPrice": "Jeder Preis", "upTo": "Bis {v}", "over": "Über {v}", "brandLabel": "Marke", "priceLabel": "Preis",
         "showLabel": "Anzeigen", "showAll": "Alle", "showMulti": "In mehreren Shops", "showStock": "Auf Lager",
         "showLow": "Zum Tiefstpreis", "showLh": "Nur Linkshänder", "loading": "Katalog wird geladen…", "sortLabel": "Sortieren",
@@ -442,7 +456,22 @@ T = {
                "types": {"ST": "ST-Modelle", "T": "T-Modelle", "Semihueca": "Halbakustik", "Moderna / Metal": "Modern / Metal",
                          "Otras": "Andere", "Auditorio / Concierto": "Auditorium / Konzert", "12 cuerdas": "12-saitig",
                          "Tamaño reducido": "Kleine Größe", "Clásica": "Klassisch", "Flamenca": "Flamenco",
-                         "Electroclásica": "Elektro-Klassik"},
+                         "Electroclásica": "Elektro-Klassik",
+                         "4 cuerdas": "4-Saiter", "5 cuerdas": "5-Saiter", "6 cuerdas o más": "6-Saiter und mehr",
+                         "Acústico": "Akustikbass", "Fretless": "Fretless", "Escala corta": "Short Scale", "Combo": "Combos",
+                         "Cabezal": "Topteile", "Pantalla": "Boxen", "Para bajo": "Für Bass", "Para acústica": "Für Akustikgitarre",
+                         "De auriculares y portátil": "Kopfhörer- und Mini-Amps", "Para eléctrica": "Für E-Gitarre",
+                         "Para clásica": "Für Konzertgitarre", "Overdrive y distorsión": "Overdrive und Distortion",
+                         "Modulación": "Modulation", "Compresor": "Kompressor", "Wah y volumen": "Wah und Volume",
+                         "Octavador y pitch": "Oktaver und Pitch", "Ecualizador": "Equalizer", "Puerta de ruido": "Noise Gate",
+                         "Sintetizador": "Synthesizer", "Afinador": "Stimmgerät", "Multiefectos": "Multieffekte",
+                         "Reverb": "Hall", "Piano digital": "Digitalpianos", "Teclado portátil": "Keyboards",
+                         "Piano de escenario": "Stagepianos", "Controlador MIDI": "MIDI-Controller", "Piano acústico": "Klaviere",
+                         "Dinámico": "Dynamisch", "Condensador": "Kondensator", "Inalámbrico": "Funk",
+                         "Para instrumento": "Instrumentenmikrofone", "De cinta": "Bändchen", "Cuerdas": "Saiten",
+                         "Púas": "Plektren", "Correas": "Gurte", "Cables": "Kabel", "Afinadores": "Stimmgeräte",
+                         "Cejillas": "Kapodaster", "Soportes": "Ständer", "Pastillas": "Tonabnehmer", "Recambios": "Ersatzteile",
+                         "Mantenimiento": "Pflege"},
                "wait": "Wir beobachten dieses Modell seit {n} {days}", "day": "Tag", "days": "Tagen",
                "waitSub": "Die Einschätzung wird nach ein paar Wochen Preisverlauf zuverlässiger.",
                "min": "Niedrigster erfasster Preis", "minSub": "So günstig haben wir sie noch nie gesehen.",
@@ -705,6 +734,11 @@ def _json_path(code, kind):
     raise KeyError(kind)
 
 
+def _history_path(code, kind):
+    """Histórico de precios del catálogo de la categoría (el equipo, "brmas", "demas"…, tiene el suyo)."""
+    return _json_path(code, kind).rsplit("/", 1)[0] + "/history.json"
+
+
 def catalogs(code):
     """Categoría → JSON del catálogo del país (solo las que ya tienen guitarras)."""
     out = {}
@@ -778,8 +812,9 @@ def _head(code, title, desc, canonical, extra=""):
 {extra}"""
 
 
-def _gt(t):
-    return f'<script>window.GUITLE_T = {json.dumps(t["js"], ensure_ascii=False)};</script>'
+def _gt(t, kind=None):
+    js = t["js"] | ({"many": t["nouns"][kind]} if kind in t.get("nouns", {}) else {})  # qué se cuenta en la lista
+    return f'<script>window.GUITLE_T = {json.dumps(js, ensure_ascii=False)};</script>'
 
 
 # --- Página de cada guitarra ---------------------------------------------------------------------------------
@@ -827,7 +862,7 @@ def _product(code, kind, product, names, alternates):
           "offers": {"@type": "AggregateOffer", "priceCurrency": s["cur"], "lowPrice": min(prices), "highPrice": max(prices),
                      "offerCount": len(product["items"])}}
     ld = {key: v for key, v in ld.items() if v}
-    history = f"/data/catalog/{s['catalog']}/history.json"
+    history = "/" + _history_path(code, kind)
     typ = product.get("type")
     typ = t["js"]["types"].get(typ, typ) if typ and typ != "Otras" else ""
     amazon = (f'\n    <p class="muted small amazon">{t["amazon"].format(u=esc(s["amazon"].format(q=quote_plus(name))))}</p>'
@@ -895,9 +930,9 @@ def _list(code, kind, kinds):
               ("1000-2000", f"{m(1000)} – {m(2000)}"), ("2000-", t["over"].format(v=m(2000)))]
     sorts = zip(("stores", "price", "price-desc", "save", "name"), t["sorts"])
     head = _head(code, f"{label} · guitle", None, f"/{code}/{page}.html",
-                 f'<script src="/vendor/chart.umd.min.js"></script>\n<link rel="stylesheet" href="/catalogo.css">\n{_gt(t)}\n</head>')
+                 f'<script src="/vendor/chart.umd.min.js"></script>\n<link rel="stylesheet" href="/catalogo.css">\n{_gt(t, kind)}\n</head>')
     return f"""{head}
-<body data-src="/{_json_path(code, kind)}" data-history="/data/catalog/{s['catalog']}/history.json" data-kind="{kind}" data-img="/img/p/" data-cur="{s['cur']}">
+<body data-src="/{_json_path(code, kind)}" data-history="/{_history_path(code, kind)}" data-kind="{kind}" data-img="/img/p/" data-cur="{s['cur']}">
 <main>
   <div class="topbar">
     <div class="row">
@@ -970,7 +1005,7 @@ def _index(code, cats):
     icons = dict(re.findall(r"^\s{4}(\w+): '(.*?)',$", text, re.M))
     tiles = "".join(f'<a class="catcard" href="/{code}/{s["kinds"][k]}.html"><b><svg class="fill" viewBox="0 0 24 24" aria-hidden="true">'
                     f'{icons.get(ICON_KIND[k], "")}</svg></b><span>{esc(t["kinds"][k][1])}</span>'
-                    f'<small>{len(cats[k]["products"]):,} {esc(t["guitars"])}</small></a>'.replace(",", " ")
+                    f'<small>{len(cats[k]["products"]):,} {esc(t.get("nouns", {}).get(k, t["guitars"]))}</small></a>'.replace(",", " ")
                     for k in s["kinds"] if k in cats)
     first = s["kinds"][next(iter(cats))] if cats else next(iter(s["kinds"].values()))
     updated = max((d["updated"] for d in cats.values()), default="")
@@ -984,11 +1019,12 @@ def _index(code, cats):
 {_index_css()}
 </head>""")
     n_stores = len({i["s"] for p in allp for i in p["items"]})
+    word = t["guitars"] if set(cats) <= set(GUITAR_KINDS) else t.get("allWord", t["guitars"])
     return f"""{head}
 <body>
 <main>
   <header class="top">
-    <div class="stats"><span><strong>{len([p for p in allp if True]):,}</strong>{esc(t['guitars'])}</span><span><strong>{n_stores}</strong>{esc(t['storesWord'])}</span></div>
+    <div class="stats"><span><strong>{len([p for p in allp if True]):,}</strong>{esc(word)}</span><span><strong>{n_stores}</strong>{esc(t['storesWord'])}</span></div>
     <nav><a href="/{code}/{first}.html">{esc(t['catalog'])}</a></nav>
   </header>
 
