@@ -1021,7 +1021,7 @@ BR_SKIP = re.compile(r"encordoament|\bcordas?\b|\bcase\b|\bcapa\b|\bbag\b|bolsa|
                      r"|amplificador|\bcubo\b|\bbaixo\b|tarraxa|\bponte\b|\bkit\b|suporte|afinador|estante|\bstrap\b|ukulele"
                      r"|cavaquinho|bandolim|banjo|\bcapotraste|alavanca|escala|\bbraço\b|\bcorpo\b|knob|chave|tampa|método|livro"
                      r"|outlet|mostru[aá]rio|seminov|usad"
-                     r"|gabinete|\bcaixa\b|transmissor|receptor|diapas|escudo|abridor|enfeite|\bmolas?\b|chaveiro|miniatura"
+                     r"|gabinete|\bcaixa\b|cabe[cç]ote|\bcombo\b|hard ?case|soft ?case|transmissor|receptor|diapas|escudo|abridor|enfeite|\bmolas?\b|chaveiro|miniatura"
                      r"|quadro|camiseta|caneca|poster|adaptador|\btrava|bot[aã]o|protetor|\bpar\b|\bjogo\b|\bp/"
                      # Accesorios "para guitarra / de violão": adhesivos, jacks, puentes, apoyos…
                      r"|adesivo|\bjack\b|interface|apoio|cavalete|abafador|redutor|bra[cç]adeira|tattoo|encor|\benc\b|limpa"
@@ -1277,7 +1277,7 @@ def _parse_musicmaker(soup, text):
             "image": img.get("src") if img else None, "ean": None}
 
 
-# Fender Brasil (fender.com.br, de Pride Music, distribuidor oficial): vende directamente y a veces más barato que las
+# Fender Brasil (fender.com.br, la lleva Pride Music, importador y distribuidor oficial, São Paulo): vende directamente y a veces más barato que las
 # tiendas. Sus fichas no traen EAN, pero sí la referencia de Fender ("#026-6020-560"), que en otras tiendas va con EAN.
 FENDER_BR = "https://www.fender.com.br"
 _FENDER_BR_CATS = ("guitarras", "guitarras/stratocaster", "guitarras/telecaster", "guitarras/squier", "guitarras/lancamentos",
@@ -1333,7 +1333,21 @@ def _parse_fender_br(soup, text):
             "image": img.get("src") if img else None, "ean": _ref_ean().get(ref) if ref else None, "ref": ref}
 
 
-BR_SOURCES["fenderbr"] = {"name": "Fender Brasil", "discover": _discover_fender_br, "parse": _parse_fender_br, "fix": _br_fix,
+# Tiendas de la lista oficial de distribuidores de Yamaha Brasil (br.yamaha.com/pt/dealers) que venden guitarras online
+# y publican sitemap con precio en la ficha.
+for _id, _name, _sm in [("tangomusic", "Tango Music", "https://www.tangomusic.com.br/sitemap.xml"),
+                        ("ajoiamusical", "A Joia Musical", "https://www.ajoiamusical.com.br/sitemap.xml"),
+                        ("carneiromusic", "Carneiro Music", "https://www.carneiromusic.com.br/sitemap.xml"),
+                        ("destroyer", "Destroyer", "https://www.destroyer.com.br/sitemap.xml"),
+                        ("musicalcentersom", "Musical Center Som", "https://www.musicalcentersom.com.br/sitemap.xml"),
+                        ("palaciodosom", "Palácio do Som",
+                         "https://dcdn-us.mitiendanube.com/stores/008/045/752/themes/common/sitemap.xml.gz")]:
+    BR_SOURCES[_id] = {"name": _name, "sitemap": _sm, "parse": _parse_ld_loose, "fix": _br_fix, "kind_url": br_kind,
+                       "pick": _pick_br}
+# Musical Center Som (WooCommerce): en el sitemap también van categorías y etiquetas; solo las fichas.
+BR_SOURCES["musicalcentersom"]["pick"] = lambda u: "/produto/" in u and _pick_br(u)
+
+BR_SOURCES["fenderbr"] = {"name": "Fender Brasil (Pride Music)", "discover": _discover_fender_br, "parse": _parse_fender_br, "fix": _br_fix,
                           "kind_url": br_kind, "pick": lambda u: not re.search(r"(?i)baixo|bass|amplificador|pedal|cabo|correia"
                                                                                 r"|encordoamento|palheta|sistema-de-som|monitor|camiseta|bone", u)}
 
