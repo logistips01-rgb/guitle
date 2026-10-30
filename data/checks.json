@@ -270,18 +270,6 @@
   "median": 867.5
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez RG5320C-PW Prestige Polar White Con Estuche",
-  "slug": "ibanez-rg5320c-pw-prestige-polar-white-con-estuche-4549763306296"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "LTD PHX-7 Barítono Metal negro Degradado rojo Satén",
-  "slug": "ltd-phx-7-baritono-metal-negro-degradado-rojo-saten-719710629257"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
@@ -543,12 +531,6 @@
   "median": 775.0
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "SX Color Marron",
-  "slug": "sx-color-marron-6940651407305"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "auvisa",
@@ -610,12 +592,6 @@
   "slug": "manuel-rodriguez-exotica-santos-pavo-real-4046662299150",
   "price": 456.78,
   "median": 705.5
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Valencia VC564 4/4 Degradado",
-  "slug": "valencia-vc564-4-4-degradado-8997032893903"
  },
  {
   "kind": "pedal",
