@@ -531,36 +531,6 @@
   "median": 259.13
  },
  {
-  "kind": "ampli",
-  "type": "foto_perdida",
-  "name": "Fishman Loudbox Micro",
-  "slug": "fishman-loudbox-micro-605609185631"
- },
- {
-  "kind": "ampli",
-  "type": "foto_perdida",
-  "name": "Hiwatt HB115HN",
-  "slug": "hiwatt-hb115hn-5060737660408"
- },
- {
-  "kind": "ampli",
-  "type": "foto_perdida",
-  "name": "Hiwatt HB210HN",
-  "slug": "hiwatt-hb210hn-5060737660415"
- },
- {
-  "kind": "ampli",
-  "type": "foto_perdida",
-  "name": "Hiwatt HB410HN",
-  "slug": "hiwatt-hb410hn-5060737660422"
- },
- {
-  "kind": "estuche",
-  "type": "foto_perdida",
-  "name": "Admira ADM10 para",
-  "slug": "admira-adm10-para-8436032359021"
- },
- {
   "kind": "micro",
   "type": "fuera_de_lugar",
   "store": "alfasoni",
@@ -856,11 +826,5 @@
   "slug": "righton-straps-talisman-victoria-black-8436612540801",
   "price": 49.58,
   "median": 61.5
- },
- {
-  "kind": "varios",
-  "type": "foto_perdida",
-  "name": "Savarez A230XL Bronze (010-047) 12c",
-  "slug": "savarez-a230xl-bronze-010-047-12c-698502621443"
  }
 ]
