@@ -6,7 +6,8 @@ Cada día: un post en el feed, alternando
     que en el resto de tiendas), en post 4:5;
   - "top": carrusel con 5 guitarras populares (las que más tiendas venden) de un rango de precio, rotando categoría y
     rango;
-y varias stories con los chollos del día. No repite guitarras publicadas hace poco (mira los textos ya publicados).
+un Reel con el mismo contenido animado (brand/reel.js; reel.mp4 sirve también para TikTok) y varias stories
+con los chollos del día. No repite guitarras publicadas hace poco (mira los textos ya publicados).
 
 Instagram descarga las imágenes de una URL pública: se suben al repo (social/<fecha>/) y se usa la URL raw del commit.
 La API va por graph.instagram.com con el token que inyecta el proxy del entorno (no hay token en el repo).
@@ -170,9 +171,9 @@ def recent_captions(user, limit=60):
         return ""
 
 
-def container(user, **params):
+def container(user, tries=40, **params):
     cid = api("POST", f"{user}/media", **params)["id"]
-    for _ in range(40):
+    for _ in range(tries):
         status = api("GET", cid, fields="status_code").get("status_code")
         if status == "FINISHED":
             return cid
@@ -259,6 +260,7 @@ def plan(day, recent):
     data = {"date": day.isoformat(), "fecha": fecha, "post": post, "stories": stories[:STORIES]}
     (folder / "plan.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     subprocess.run(["node", str(ROOT / "brand" / "social.js"), str(folder)], check=True, cwd=ROOT)
+    subprocess.run(["node", str(ROOT / "brand" / "reel.js"), str(folder)], check=True, cwd=ROOT)
     return folder, data
 
 
@@ -294,13 +296,16 @@ def main(argv=None):
             break
         time.sleep(5)
     slides = sorted(p.name for p in folder.glob("post-*.jpg"))
-    done = {"post": None, "stories": []}
+    done = {"post": None, "reel": None, "stories": []}
     if len(slides) == 1:
         done["post"] = publish(user, container(user, image_url=base + slides[0], caption=data["post"]["caption"]))
     else:
         kids = [container(user, image_url=base + s, is_carousel_item="true") for s in slides]
         done["post"] = publish(user, container(user, media_type="CAROUSEL", children=",".join(kids),
                                                caption=data["post"]["caption"]))
+    if (folder / "reel.mp4").exists():  # el vídeo tarda más en procesarse: hasta 5 minutos
+        done["reel"] = publish(user, container(user, tries=100, media_type="REELS", video_url=base + "reel.mp4",
+                                               caption=data["post"]["caption"], share_to_feed="true"))
     for s in sorted(folder.glob("story-*.jpg")):
         done["stories"].append(publish(user, container(user, media_type="STORIES", image_url=base + s.name)))
     (folder / "published.json").write_text(json.dumps(done, indent=1) + "\n", encoding="utf-8")
