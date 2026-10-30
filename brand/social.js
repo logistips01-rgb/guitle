@@ -77,7 +77,8 @@ const topEnd = () => `<div style="width:1080px;height:1350px;background:${BLUE};
 
 const pages = [];
 const post = plan.post;
-if (post.type === "chollo") pages.push(["post-1.jpg", 1080, 1350, dealPost(post.deal)]);
+if (!post) { /* tanda de solo stories (--tarde) */ }
+else if (post.type === "chollo") pages.push(["post-1.jpg", 1080, 1350, dealPost(post.deal)]);
 else pages.push(["post-1.jpg", 1080, 1350, topCover(post)],
   ...post.picks.map((p, i) => [`post-${i + 2}.jpg`, 1080, 1350, topSlide(post, p, i + 1)]),
   [`post-${post.picks.length + 2}.jpg`, 1080, 1350, topEnd()]);

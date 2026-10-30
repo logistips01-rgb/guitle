@@ -6,8 +6,8 @@ Cada día: un post en el feed, alternando
     que en el resto de tiendas), en post 4:5;
   - "top": carrusel con 5 guitarras populares (las que más tiendas venden) de un rango de precio, rotando categoría y
     rango;
-un Reel con el mismo contenido animado (brand/reel.js; reel.mp4 sirve también para TikTok) y varias stories
-con los chollos del día. No repite guitarras publicadas hace poco (mira los textos ya publicados).
+un Reel con el mismo contenido animado (brand/reel.js; no se publica solo: el usuario le pone música y lo sube,
+y sirve también para TikTok) y stories con los chollos del día, a mediodía y por la tarde (--tarde). No repite guitarras publicadas hace poco (mira los textos ya publicados).
 
 Instagram descarga las imágenes de una URL pública: se suben al repo (social/<fecha>/) y se usa la URL raw del commit.
 La API va por graph.instagram.com con el token que inyecta el proxy del entorno (no hay token en el repo).
@@ -15,6 +15,7 @@ La API va por graph.instagram.com con el token que inyecta el proxy del entorno 
 Uso:
     python -m scraper.instagram             # genera social/<fecha>/ sin publicar (para revisar)
     python -m scraper.instagram --publish   # genera, sube a la rama actual y publica
+    python -m scraper.instagram --tarde [--publish]      # stories de la tarde con otros chollos
     python -m scraper.instagram --arranque [--publish]   # presentación y "¿Cómo funciona?" con las cifras de hoy
 """
 import argparse
@@ -46,7 +47,8 @@ TOPS = [("electrica", 0, 300), ("acustica", 0, 300), ("electrica", 300, 700), ("
         ("electrica", 700, 1200), ("acustica", 300, 800), ("electrica", 1200, 2500), ("clasica", 250, 700)]
 MIN_PRICE = 120      # por debajo suelen ser packs, juguetes o errores de catálogo
 MIN_STORES = 3       # para hablar de "el mejor precio" tiene que haber con qué comparar
-STORIES = 3          # chollos en stories cada día
+STORIES = 3          # chollos en stories en cada tanda (mediodía y tarde)
+REEL_AUTO = False    # el Reel no se publica solo: se le pasa al usuario para que le ponga música y lo suba él
 HASHTAGS = {"electrica": "#guitarraelectrica", "acustica": "#guitarraacustica", "clasica": "#guitarraclasica"}
 
 
@@ -344,15 +346,65 @@ def arranque(day, publish_now):
     print(json.dumps(done, indent=1))
 
 
+# --- Stories de la tarde ---------------------------------------------------------------------------------------
+
+def tarde(day, publish_now):
+    """Segunda tanda de stories: otros chollos del día, sin repetir los de mediodía ni los de días anteriores."""
+    folder = OUT / day.isoformat() / "tarde"
+    if publish_now and (folder / "published.json").exists():
+        print(f"{folder.relative_to(ROOT).as_posix()} ya se publicó")
+        return
+    user = api("GET", "me", fields="user_id")["user_id"] if publish_now else "me"
+    recent = recent_captions(user)
+    for f in sorted(OUT.glob("*/plan.json"))[-10:] + sorted(OUT.glob("*/tarde/plan.json"))[-10:]:
+        d = load(f, {})
+        recent += "\n" + "\n".join(p["name"] for p in d.get("stories", []) + d.get("post", {}).get("picks", []))
+        if d.get("post", {}).get("deal"):
+            recent += "\n" + d["post"]["deal"]["name"]
+    folder.mkdir(parents=True, exist_ok=True)
+    stories = with_photos(rank_deals(products(), recent), STORIES, Fetcher(delay=(0.5, 1.0)), folder, "chollo-")
+    if not stories:
+        print("Sin chollos nuevos para la tarde")
+        return
+    meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
+             "noviembre", "diciembre"]
+    data = {"date": day.isoformat(), "fecha": f"{day.day} de {meses[day.month - 1]}", "post": None, "stories": stories}
+    (folder / "plan.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    subprocess.run(["node", str(ROOT / "brand" / "social.js"), str(folder)], check=True, cwd=ROOT)
+    print(json.dumps([p["name"] for p in stories], ensure_ascii=False))
+    if not publish_now:
+        return
+    rel = folder.relative_to(ROOT).as_posix()
+    git("add", rel)
+    git("commit", "-q", "-m", f"social: stories de la tarde {day.isoformat()}")
+    branch = git("rev-parse", "--abbrev-ref", "HEAD")
+    git("push", "-q", "origin", f"HEAD:{branch}")
+    base = f"{REPO_RAW}/{git('rev-parse', 'HEAD')}/{rel}/"
+    for _ in range(20):
+        if requests.head(base + "story-1.jpg", timeout=30).status_code == 200:
+            break
+        time.sleep(5)
+    done = [publish(user, container(user, media_type="STORIES", image_url=base + s.name))
+            for s in sorted(folder.glob("story-*.jpg"))]
+    (folder / "published.json").write_text(json.dumps({"stories": done}, indent=1) + "\n", encoding="utf-8")
+    git("add", rel)
+    git("commit", "-q", "-m", f"social: publicadas las stories de la tarde {day.isoformat()}")
+    git("push", "-q", "origin", f"HEAD:{branch}")
+    print(json.dumps(done, indent=1))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--publish", action="store_true", help="sube las imágenes a la rama actual y publica")
     ap.add_argument("--date", help="AAAA-MM-DD (por defecto, hoy)")
     ap.add_argument("--arranque", action="store_true", help="presentación y carrusel con las cifras de hoy")
+    ap.add_argument("--tarde", action="store_true", help="segunda tanda de stories con otros chollos del día")
     args = ap.parse_args(argv)
     day = date.fromisoformat(args.date) if args.date else datetime.now(timezone.utc).date()
     if args.arranque:
         return arranque(day, args.publish)
+    if args.tarde:
+        return tarde(day, args.publish)
     if args.publish and (OUT / day.isoformat() / "published.json").exists():
         print(f"social/{day.isoformat()} ya se publicó")
         return
@@ -382,7 +434,7 @@ def main(argv=None):
         kids = [container(user, image_url=base + s, is_carousel_item="true") for s in slides]
         done["post"] = publish(user, container(user, media_type="CAROUSEL", children=",".join(kids),
                                                caption=data["post"]["caption"]))
-    if (folder / "reel.mp4").exists():  # el vídeo tarda más en procesarse: hasta 5 minutos
+    if REEL_AUTO and (folder / "reel.mp4").exists():  # el vídeo tarda más en procesarse: hasta 5 minutos
         done["reel"] = publish(user, container(user, tries=100, media_type="REELS", video_url=base + "reel.mp4",
                                                caption=data["post"]["caption"], share_to_feed="true"))
     for s in sorted(folder.glob("story-*.jpg")):
