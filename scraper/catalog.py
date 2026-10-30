@@ -1033,7 +1033,7 @@ BR_SKIP = re.compile(r"encordoament|\bcordas?\b|\bcase\b|\bcapa\b|\bbag\b|bolsa|
 # correia e palheta"); los accesorios empiezan por el accesorio ("Encordoamento para violão", "Pedal para guitarra").
 _BR_INSTR_FIRST = re.compile(r"^(?:guitarra|viol[aã]o|violao)\b", re.I)
 _BR_ALWAYS_SKIP = re.compile(r"outlet|mostru[aá]rio|seminov|\busad[oa]|ukulele|cavaquinho|bandolim|banjo|\bkit\b|\bbaixo\b"
-                             r"|contrabaixo|\bcd\b|\bdvd\b|livro|m[eé]todo|revista", re.I)
+                             r"|contrabaixo|\bcd\b(?![- ]?\d)|\bdvd\b|livro|m[eé]todo|revista", re.I)  # "CD-140" es un modelo
 # Al construir, sobre el nombre ya sin "Guitarra"/"Violão" delante: solo si empieza por un accesorio.
 BR_NAME_SKIP = re.compile(r"^(?:encordoament|cordas?\b|capa\b|bag\b|case\b|correia|cabo\b|captador|palheta|pedal|amplificador"
                           r"|cubo\b|tarraxa|ponte\b|suporte|afinador|estante|kit\b|adesivo|interface|microfone|gabinete|caixa\b"
@@ -1275,6 +1275,67 @@ def _parse_musicmaker(soup, text):
             "price": float(re.sub(r"[^\d.]", "", price.get_text())), "currency": "EUR",
             "in_stock": stock.group(1).lower() == "in stock" if stock else None,
             "image": img.get("src") if img else None, "ean": None}
+
+
+# Fender Brasil (fender.com.br, de Pride Music, distribuidor oficial): vende directamente y a veces más barato que las
+# tiendas. Sus fichas no traen EAN, pero sí la referencia de Fender ("#026-6020-560"), que en otras tiendas va con EAN.
+FENDER_BR = "https://www.fender.com.br"
+_FENDER_BR_CATS = ("guitarras", "guitarras/stratocaster", "guitarras/telecaster", "guitarras/squier", "guitarras/lancamentos",
+                   "acusticos", "acusticos/dreadnought", "acusticos/newporter", "acusticos/telecaster", "acusticos/lancamentos")
+_REF_EAN = None
+
+
+def _ref_ean():
+    """Referencia de fabricante (0266020560) → EAN, de lo ya leído en todos los catálogos."""
+    global _REF_EAN
+    if _REF_EAN is None:
+        _REF_EAN = {}
+        for f in sorted(DIR.glob("**/offers.json")):
+            for u, v in load(f, {}).items():
+                if not v.get("ean"):
+                    continue
+                if v.get("ref"):
+                    _REF_EAN.setdefault(re.sub(r"\D", "", str(v["ref"])), v["ean"])
+                for c in re.findall(r"(?<!\d)(0\d{9}|\d{3}-\d{4}-\d{3})(?!\d)", f"{v.get('name') or ''} {u}"):
+                    _REF_EAN.setdefault(c.replace("-", ""), v["ean"])
+    return _REF_EAN
+
+
+def _discover_fender_br(fetcher):
+    # Su sitemap es viejo y sus enlaces dan fichas vacías: solo los listados de cada categoría.
+    urls = set()
+    for cat in _FENDER_BR_CATS:
+        page = f"{FENDER_BR}/{cat}"
+        if not fetcher.allowed(page)[0]:
+            continue
+        resp = fetcher.get(page)
+        if resp.status_code == 200:
+            urls |= set(re.findall(r'href="(https://www\.fender\.com\.br/produto/[^"#?]+)"', resp.text))
+    # La misma ficha puede salir con y sin categoría en la URL: una por número de producto.
+    return sorted({re.search(r"/produto/(\d+)", u).group(1): u for u in sorted(urls)}.values())
+
+
+def _parse_fender_br(soup, text):
+    plain = re.sub(r"\s+", " ", soup.get_text(" ", strip=True))
+    title = re.search(r"((?:GUITARRA|VIOL[ÃA]O|BAIXO|CONTRABAIXO)(?:(?!R\$|SKU:).){5,160}?)\s+SKU:", plain, re.I)
+    price = re.search(r"SKU:\s*\d+\s*R\$\s*([\d.]+,\d{2})", plain)
+    if not title or not price or price.group(1) == "0,00":  # sin precio: producto descatalogado
+        return {"crumbs": []}
+    name = re.sub(r"\s*[®™]", "", title.group(1)).strip()
+    ref = re.search(r"Modelo:\s*#?\s*(\d{3}-?\d{4}-?\d{3})", plain)
+    ref = ref.group(1).replace("-", "") if ref else None
+    name = re.sub(r"\s*\d{3}-\d{4}-\d{3}\s*-?\s*", " ", name).strip()
+    name = " ".join(w.capitalize() if w.isupper() and len(w) > 3 else w for w in name.split())
+    img = soup.select_one('img[src*="/imgs/produtos/"]')
+    return {"crumbs": [title.group(1)], "name": name, "brand_raw": "Squier" if re.search(r"squier", name, re.I) else "Fender",
+            "price": float(price.group(1).replace(".", "").replace(",", ".")), "currency": "BRL",
+            "in_stock": True if "ADICIONAR AO CARRINHO" in plain.upper() else (False if re.search(r"(?i)indispon|esgotad", plain) else None),
+            "image": img.get("src") if img else None, "ean": _ref_ean().get(ref) if ref else None, "ref": ref}
+
+
+BR_SOURCES["fenderbr"] = {"name": "Fender Brasil", "discover": _discover_fender_br, "parse": _parse_fender_br, "fix": _br_fix,
+                          "kind_url": br_kind, "pick": lambda u: not re.search(r"(?i)baixo|bass|amplificador|pedal|cabo|correia"
+                                                                                r"|encordoamento|palheta|sistema-de-som|monitor|camiseta|bone", u)}
 
 
 # Waltons (Dublín): la tienda de música grande de Irlanda, precios en euros y JSON-LD en la ficha.
