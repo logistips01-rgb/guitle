@@ -42,6 +42,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 355
     env:
+      # Webs de países que no se guardan en git: la lectura las sube directas al bucket R2 (las sirve el Worker).
+      R2_SITES: "pt"
+      RCLONE_CONFIG_R2_TYPE: s3
+      RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+      R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
       # Catálogos de este trabajo y minutos de lectura por tienda.
       CATS: ${{ matrix.cat == 'es' && 'electrica acustica equipo' || matrix.cat }}
       # brmas (equipo de Brasil) relee las 20 tiendas de br a la vez que br: con 150 min la máquina caía antes de guardar.
@@ -64,6 +72,10 @@ jobs:
         run: |
           echo "T0=$(date +%s)" >> "$GITHUB_ENV"
           pip install -r requirements.txt
+          curl -fsSLO https://downloads.rclone.org/v1.68.2/rclone-v1.68.2-linux-amd64.zip
+          unzip -q rclone-v1.68.2-linux-amd64.zip && sudo install rclone-v1.68.2-linux-amd64/rclone /usr/local/bin/
+          rm -rf rclone-v1.68.2-linux-amd64*
+          echo "RCLONE_CONFIG_R2_ENDPOINT=https://${R2_ACCOUNT,,}.r2.cloudflarestorage.com" >> "$GITHUB_ENV"
 
       - name: Leer fichas (lote del día)
         # Cada tienda va en paralelo y a su ritmo (3-6 s entre peticiones, robots.txt respetado).
@@ -110,13 +122,31 @@ jobs:
             done
             python -m scraper.checks || echo "::warning::comprobaciones con error"  # avisos de precios y fotos raros
             git add data/catalog/ data/deals-*.json data/checks.json img/p/ g/ marca/ tipo/ presupuesto/ marcas.html sitemap.xml
-            # Webs de otros países (pt/, fr/…) y sus sitemaps, si ya existen.
+            # Webs de otros países (pt/, fr/…) y sus sitemaps, si ya existen; las de R2_SITES no van a git.
             for d in sitemap-*.xml $(python -c "from scraper.intl import SITES; print(' '.join(SITES))"); do
+              s=${d#sitemap-}; s=${s%.xml}
+              case " $R2_SITES " in *" $s "*) continue;; esac
               if [ -e "$d" ]; then git add "$d"; fi
             done
             if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
             git commit -q -m "data: catálogo ${{ matrix.cat }} $(TZ=Europe/Madrid date +%F)"
-            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then python -m scraper.indexnow || true; exit 0; fi
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then
+              python -m scraper.indexnow || true
+              # Webs de R2_SITES que este trabajo ha generado: al bucket (solo lo que cambia; borra las páginas que ya
+              # no existen, con tope por si algo saliera mal) y aviso a los buscadores de las nuevas o cambiadas.
+              for s in $R2_SITES; do
+                [ -f "$s/index.html" ] || continue
+                n=$(find "$s" -type f | wc -l)
+                if [ "$n" -lt 50 ]; then echo "::warning::web $s con solo $n ficheros: no se sube"; continue; fi
+                rclone sync "$s" "r2:guitle/$s" --checksum --fast-list --transfers 32 --checkers 32 --max-delete 3000 \
+                  --combined "$RUNNER_TEMP/r2-$s.txt" --stats-log-level NOTICE
+                if [ -f "sitemap-$s.xml" ]; then rclone copyto "sitemap-$s.xml" "r2:guitle/sitemap-$s.xml" --checksum; fi
+                { grep -E '^[+*] .*\.html$' "$RUNNER_TEMP/r2-$s.txt" || true; } | cut -c3- | sed "s#^#$s/#" > "$RUNNER_TEMP/r2-$s-urls.txt"
+                echo "web $s: $n ficheros, $(wc -l < "$RUNNER_TEMP/r2-$s-urls.txt") páginas nuevas o cambiadas en R2"
+                python -m scraper.indexnow --files "$RUNNER_TEMP/r2-$s-urls.txt" || true
+              done
+              exit 0
+            fi
             echo "push rechazado, reintento $attempt"; sleep $((attempt * 5))
           done
           exit 1
