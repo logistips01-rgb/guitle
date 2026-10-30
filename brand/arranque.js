@@ -1,6 +1,6 @@
 // Publicaciones de arranque de Instagram: presentación, carrusel "cómo funciona", story y portadas de destacadas.
-// Uso: FONT=ruta/InterDisplay-ExtraBold.ttf FONT_TEXT=ruta/Inter-SemiBold.ttf node brand/arranque.js  (desde la raíz del repo)
-// Las fotos salen de brand/.cache/ (alta resolución, ver generar.py) o, si no están, de img/p/.
+// Uso: python -m scraper.instagram --arranque [--publish]  (prepara brand/png/arranque/datos.json y src/, y llama a
+// este script con node desde la raíz del repo). Fuente Inter de fonts/.
 const { chromium } = require("playwright");
 const fs = require("fs");
 const path = require("path");
@@ -10,30 +10,22 @@ const OUT = path.join(ROOT, "brand", "png", "arranque");
 const BLUE = "#2a78d6", INK = "#0b0b0b", SURFACE = "#f4f4f2", MUTED = "#52514e";
 const svg = name => fs.readFileSync(path.join(ROOT, "brand", name), "utf8");
 const sized = (name, style) => svg(name).replace("<svg ", `<svg style="${style}" `);
-const dataUri = file => "data:image/webp;base64," + fs.readFileSync(file).toString("base64");
-const fontFace = (name, file) => file && fs.existsSync(file)
-  ? `@font-face { font-family: "${name}"; src: url("data:font/ttf;base64,${fs.readFileSync(file).toString("base64")}"); }` : "";
-const CSS = `${fontFace("InterDisplay", process.env.FONT)}${fontFace("InterText", process.env.FONT_TEXT)}
-  * { margin: 0; box-sizing: border-box; } p { text-wrap: balance; } body { font-family: InterText, InterDisplay, system-ui, sans-serif; }
-  .d { font-family: InterDisplay, system-ui, sans-serif; font-weight: 800; letter-spacing: -.03em; }`;
+const b64 = file => fs.readFileSync(file).toString("base64");
+const font = (w, f) => `@font-face{font-family:Inter;font-weight:${w};src:url(data:font/woff2;base64,${b64(path.join(ROOT, "fonts", f))})}`;
+const CSS = `${font(600, "inter-semibold.woff2")}${font(800, "inter-extrabold.woff2")}
+  * { margin: 0; box-sizing: border-box; } p { text-wrap: balance; } body { font-family: Inter, system-ui, sans-serif; font-weight: 600; }
+  .d { font-weight: 800; letter-spacing: -.03em; }`;
 
-// Datos reales: tiendas con precio, guitarras con foto y la guitarra con más tiendas para el ejemplo.
-const latest = JSON.parse(fs.readFileSync(path.join(ROOT, "data", "latest.json"), "utf8"));
-const isRef = id => latest.stores.find(s => s.id === id)?.reference;
-const storeName = id => latest.stores.find(s => s.id === id)?.name || id;
-const okItems = latest.items.filter(i => i.status === "ok" && i.price != null && !isRef(i.store));
-const stores = [...new Set(okItems.map(i => storeName(i.store).replace(/ \(eBay\)$/, "")))].sort();
-const guitars = latest.products.filter(p => p.category === "guitarra" && p.thumb).map(p => {
-  const hi = path.join(ROOT, "brand", ".cache", p.thumb);
-  const items = okItems.filter(i => i.sku === p.sku).sort((a, b) => a.price - b.price);
-  return { ...p, items, img: dataUri(fs.existsSync(hi) ? hi : path.join(ROOT, "img", "p", p.thumb)) };
-}).filter(p => p.items.length);
-const pickNames = ["Player II Telecaster MN 3-Color", "Les Paul Standard 50s", "RG550", "Casino", "Player II Stratocaster MN Aquatone", "SG Standard"];
-const showcase = pickNames.map(n => guitars.find(g => g.name.includes(n))).filter(Boolean);
-const example = guitars.find(g => g.name.includes("Player II Stratocaster RW Polar"))
-  || [...guitars].sort((a, b) => b.items.length - a.items.length)[0];
-const eur = v => v.toLocaleString("es-ES", { minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 }) + " €";
-const day = new Date(example.items[0].price_date).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+// Datos del día (cifras, tiendas, países, fotos y la guitarra de ejemplo) que prepara scraper/instagram.py --arranque.
+const datos = JSON.parse(fs.readFileSync(path.join(OUT, "datos.json"), "utf8"));
+const img = f => "data:image/webp;base64," + b64(path.join(OUT, "src", f));
+const stores = datos.stores;
+const showcase = datos.showcase.map(f => ({ img: img(f) }));
+const example = { ...datos.example, img: img(datos.example.img) };
+const storeName = s => s;
+const eur = v => v.toLocaleString("es-ES", { useGrouping: "always", minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 }) + " €";
+const num = v => v.toLocaleString("es-ES", { useGrouping: "always" });
+const day = datos.day;
 
 const guitarRow = (height, maxWidth) => showcase.map(g =>
   `<img src="${g.img}" style="height:${height}px;max-width:${maxWidth}px;object-fit:contain">`).join("");
@@ -60,7 +52,7 @@ const pages = {
   "1-presentacion.png": [1080, 1350, `<div style="width:1080px;height:1350px;background:${BLUE};color:#fff;padding:90px 80px 80px;display:flex;flex-direction:column">
       <div style="width:440px">${sized("logo-blanco.svg", "width:440px;height:auto;display:block")}</div>
       <div style="margin-top:60px">${h1("Compara el precio de tu próxima guitarra.", 92, "#fff")}
-        ${lead("Revisamos cada día las tiendas de Europa y te decimos dónde está más barata.", "rgba(255,255,255,.9)")}</div>
+        ${lead(`Revisamos cada día ${num(datos.guitars)} guitarras en ${stores.length} tiendas y te decimos dónde está más barata.`, "rgba(255,255,255,.9)")}</div>
       <div style="flex:1;background:#fff;border-radius:44px;margin-top:50px;display:flex;justify-content:space-evenly;align-items:center;padding:0 24px;min-height:0">
         ${guitarRow(360, 140)}</div>
       <p class="d" style="font-size:44px;margin-top:44px;letter-spacing:-.01em">guitle.com</p></div>`],
@@ -75,7 +67,7 @@ const pages = {
       <div style="margin-top:90px">${h1(`Revisamos ${stores.length} tiendas cada día`)}${lead("Precio, disponibilidad y descuentos de cada guitarra, actualizados a diario.")}</div>
       <div style="display:flex;flex-wrap:wrap;gap:20px;margin-top:70px">
         ${stores.map(s => `<span class="d" style="background:#fff;font-size:42px;padding:22px 34px;border-radius:999px;letter-spacing:-.01em">${s}</span>`).join("")}</div>
-      <p style="font-size:30px;color:${MUTED};margin-top:auto">Y vamos sumando más.</p>`)],
+      <p style="font-size:32px;line-height:1.35;color:${MUTED};margin-top:auto">Y también comparamos en ${datos.countries.slice(0, -1).join(", ")} y ${datos.countries.at(-1)}.</p>`)],
 
   "2-carrusel-3.png": [1080, 1350, slide(3, `
       <div style="margin-top:70px">${h1("Te decimos dónde está más barata")}</div>
@@ -94,7 +86,7 @@ const pages = {
         ${lead("Cada día publicamos las mejores bajadas de precio. Síguenos para no perderte ninguna.")}</div>
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:40px">
         <span style="color:${BLUE}">${icon("chollos", 230)}</span>
-        <span class="d" style="background:${BLUE};color:#fff;font-size:56px;padding:30px 64px;border-radius:999px;letter-spacing:-.01em">Busca tu guitarra en guitle.com</span></div>`)],
+        <span class="d" style="background:${BLUE};color:#fff;font-size:50px;padding:30px 56px;border-radius:999px;letter-spacing:-.02em;white-space:nowrap">Busca tu guitarra en guitle.com</span></div>`)],
 
   "3-story-ya-estamos-aqui.png": [1080, 1920, `<div style="width:1080px;height:1920px;background:${BLUE};color:#fff;padding:150px 80px;display:flex;flex-direction:column;align-items:center;text-align:center">
       ${sized("logo-blanco.svg", "width:640px;height:auto")}

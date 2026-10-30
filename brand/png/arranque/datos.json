@@ -1,0 +1,91 @@
+{
+ "guitars": 13777,
+ "stores": [
+  "Alfasoni",
+  "Auvisa",
+  "Drunkat",
+  "Egitana",
+  "Kirstein",
+  "MAT Guitars",
+  "Madrid Hifi",
+  "Multiocio",
+  "Music Store",
+  "Musicopolix",
+  "Nume Music",
+  "Pronorte",
+  "Session",
+  "Thomann",
+  "Woodbrass"
+ ],
+ "countries": [
+  "Francia",
+  "Alemania",
+  "Reino Unido",
+  "Italia",
+  "Países Bajos",
+  "Brasil",
+  "Austria",
+  "Irlanda",
+  "Portugal"
+ ],
+ "showcase": [
+  "g0.webp",
+  "g1.webp",
+  "g2.webp",
+  "g3.webp",
+  "g4.webp",
+  "g5.webp"
+ ],
+ "example": {
+  "name": "Fender Player II Stratocaster RW Polar White",
+  "brand": "Fender",
+  "img": "ejemplo.webp",
+  "items": [
+   {
+    "store": "Musicopolix",
+    "price": 721.41
+   },
+   {
+    "store": "Drunkat",
+    "price": 758.0
+   },
+   {
+    "store": "Session",
+    "price": 769.0
+   },
+   {
+    "store": "Music Store (eBay)",
+    "price": 769.0
+   },
+   {
+    "store": "Egitana",
+    "price": 771.0
+   },
+   {
+    "store": "Nume Music",
+    "price": 777.0
+   },
+   {
+    "store": "MAT Guitars",
+    "price": 777.0
+   },
+   {
+    "store": "Woodbrass",
+    "price": 777.0
+   },
+   {
+    "store": "Thomann",
+    "price": 777.0
+   },
+   {
+    "store": "Pronorte",
+    "price": 799.0
+   },
+   {
+    "store": "Alfasoni",
+    "price": 799.0
+   }
+  ]
+ },
+ "day": "30 de octubre de 2026"
+}

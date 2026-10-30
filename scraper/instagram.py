@@ -15,6 +15,7 @@ La API va por graph.instagram.com con el token que inyecta el proxy del entorno 
 Uso:
     python -m scraper.instagram             # genera social/<fecha>/ sin publicar (para revisar)
     python -m scraper.instagram --publish   # genera, sube a la rama actual y publica
+    python -m scraper.instagram --arranque [--publish]   # presentación y "¿Cómo funciona?" con las cifras de hoy
 """
 import argparse
 import json
@@ -268,12 +269,90 @@ def git(*args):
     return subprocess.run(["git", *args], cwd=ROOT, check=True, capture_output=True, text=True).stdout.strip()
 
 
+# --- Presentación (relanzamiento con las cifras del día) --------------------------------------------------------
+
+ARRANQUE = ROOT / "brand" / "png" / "arranque"
+PAISES = {"pt": "Portugal", "fr": "Francia", "it": "Italia", "de": "Alemania", "uk": "Reino Unido", "ie": "Irlanda",
+          "nl": "Países Bajos", "at": "Austria", "br": "Brasil"}
+SHOWCASE = ["Player II Telecaster MN 3-Color", "Les Paul Standard 50s", "RG550", "Casino", "Player II Stratocaster MN Aquatone",
+            "SG Standard"]
+EXAMPLE = "Fender Player II Stratocaster RW Polar White"
+
+
+def arranque(day, publish_now):
+    """Presentación y carrusel "¿Cómo funciona?" con las guitarras, tiendas y países de hoy (brand/arranque.js)."""
+    paises = load(ROOT / "data/catalog/paises.json", {})
+    stores = sorted({n.replace(" (eBay)", "") for path in CATALOGS.values() for n in load(path, {}).get("stores", {}).values()})
+    others = sorted((c for c in paises if c in PAISES), key=lambda c: -paises[c].get("guitars", 0))
+    prods = sorted(products(), key=lambda p: -p["stores"])
+    fetcher = Fetcher(delay=(0.5, 1.0))
+    src = ARRANQUE / "src"
+    src.mkdir(parents=True, exist_ok=True)
+    showcase = []
+    for i, name in enumerate(SHOWCASE):
+        p = next((p for p in prods if name in p["name"]), None)
+        if p and photo(p, fetcher, src / f"g{i}.webp"):
+            showcase.append(f"g{i}.webp")
+    raw = next(p for p in load(CATALOGS["electrica"], {})["products"] if p["name"] == EXAMPLE)
+    names = load(CATALOGS["electrica"], {})["stores"]
+    items, seen = [], set()
+    for i in sorted((i for i in raw["items"] if i.get("p") and i.get("st") is not False), key=lambda i: i["p"]):
+        if i["s"] not in seen:
+            seen.add(i["s"])
+            items.append({"store": names.get(i["s"], i["s"]), "price": i["p"]})
+    photo({"img": raw["img"]}, fetcher, src / "ejemplo.webp")
+    meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
+             "noviembre", "diciembre"]
+    datos = {"guitars": paises.get("es", {}).get("guitars") or sum(len(load(p, {}).get("products", [])) for p in CATALOGS.values()),
+             "stores": stores, "countries": [PAISES[c] for c in others], "showcase": showcase,
+             "example": {"name": tidy(raw["name"]), "brand": raw.get("brand", ""), "img": "ejemplo.webp", "items": items},
+             "day": f"{day.day} de {meses[day.month - 1]} de {day.year}"}
+    (ARRANQUE / "datos.json").write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    subprocess.run(["node", str(ROOT / "brand" / "arranque.js")], check=True, cwd=ROOT)
+    n = f"{datos['guitars']:,}".replace(",", ".")
+    paises_txt = ", ".join(datos["countries"][:-1]) + " y " + datos["countries"][-1]
+    cap1 = (f"¡Hola! Somos guitle 🎸\nCada día comparamos el precio de {n} guitarras en {len(stores)} tiendas para que sepas "
+            f"dónde está más barata la que quieres. Y también en {paises_txt}.\n"
+            "Aquí publicamos cada día chollos de verdad, tops por precio y los descuentos falsos que conviene evitar.\n"
+            "👉 Busca tu guitarra en guitle.com (enlace en la bio)\n\n"
+            "#guitarra #guitarraelectrica #guitarraacustica #fender #gibson #ibanez #guitarristas #chollos")
+    cap2 = ("¿Cómo funciona guitle? 👇\n"
+            f"1️⃣ Revisamos cada día el precio de {n} guitarras en {len(stores)} tiendas.\n"
+            "2️⃣ Te enseñamos dónde está más barata, con su histórico de precios.\n"
+            "3️⃣ Publicamos aquí los mejores chollos, cada día.\n"
+            "Síguenos y activa las notificaciones 🔔 Enlace en la bio.\n\n"
+            "#guitarra #guitarraelectrica #comparadordeprecios #chollos #guitarristas")
+    print(json.dumps({"guitarras": n, "tiendas": len(stores), "paises": datos["countries"], "fotos": len(showcase)},
+                     ensure_ascii=False))
+    if not publish_now:
+        print("Sin publicar. Imágenes en brand/png/arranque/jpg/")
+        return
+    rel = ARRANQUE.relative_to(ROOT).as_posix()
+    git("add", rel)
+    git("commit", "-q", "-m", f"social: presentación actualizada {day.isoformat()}")
+    branch = git("rev-parse", "--abbrev-ref", "HEAD")
+    git("push", "-q", "origin", f"HEAD:{branch}")
+    base = f"{REPO_RAW}/{git('rev-parse', 'HEAD')}/{rel}/jpg/"
+    for _ in range(20):
+        if requests.head(base + "1-presentacion.jpg", timeout=30).status_code == 200:
+            break
+        time.sleep(5)
+    user = api("GET", "me", fields="user_id")["user_id"]
+    done = {"presentacion": publish(user, container(user, image_url=base + "1-presentacion.jpg", caption=cap1))}
+    kids = [container(user, image_url=base + f"2-carrusel-{i}.jpg", is_carousel_item="true") for i in range(1, 5)]
+    done["carrusel"] = publish(user, container(user, media_type="CAROUSEL", children=",".join(kids), caption=cap2))
+    print(json.dumps(done, indent=1))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--publish", action="store_true", help="sube las imágenes a la rama actual y publica")
     ap.add_argument("--date", help="AAAA-MM-DD (por defecto, hoy)")
+    ap.add_argument("--arranque", action="store_true", help="presentación y carrusel con las cifras de hoy")
     args = ap.parse_args(argv)
     day = date.fromisoformat(args.date) if args.date else datetime.now(timezone.utc).date()
+    if args.arranque:
+        return arranque(day, args.publish)
     if args.publish and (OUT / day.isoformat() / "published.json").exists():
         print(f"social/{day.isoformat()} ya se publicó")
         return
