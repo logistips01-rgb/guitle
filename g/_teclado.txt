@@ -273,6 +273,7 @@ casio-teclado-casio-ct-s200-bk-de-61-teclas-para-principiantes-producto-de-segun
 casio-wu-bt10-4971850349617
 clavia-nord-lead-a1-8435017321770
 clavia-nord-piano-monitor-v2-834035001493
+clavia-nord-triple-pedal-834035001141
 crumar-mojo-61b-lower-manual-8719147415425
 crumar-mojo-61b-lower-manual-ltd-8719147461156
 donner-b1-6975626381113
@@ -639,7 +640,6 @@ nord-piano-6-88-834035001721
 nord-stage-4-73-834035001660
 nord-stage-4-88-834035001677
 nord-stage-4-compact-834035001653
-nord-triple-pedal-834035001141
 nord-wave-2-834035001523
 novation-49-sl-mkiii-815301001065
 novation-61-sl-mkiii-815301001072
@@ -771,9 +771,9 @@ roland-go-88px-4957054520496
 roland-go-keys-3-midnight-blue-4957054520021
 roland-go-keys-3-minion-edicion-limitada-4957054524654
 roland-go-keys-3-rd-teclado-digital-4957054521721
-roland-go-keys-3-rojo-sinte-1-154-sonidos-y-203-acompanamientos-automaticos-61-n-atilbp5177
+roland-go-keys-3-red-sintetizador-1-154-sons-203-ritmos-ritmos-stz-gratis-atilbp5177
 roland-go-keys-3-turquoise-4957054521745
-roland-go-keys-5-grafite-sinte-1-154-sonidos-y-203-acompanamientos-automaticos-6-ndbk5p5018
+roland-go-keys-5-graphite-sintetizador-1-154-sons-203-ritmos-ritmos-stz-gratis-ndbk5p5018
 roland-go-keys-5-gt-teclado-digital-4957054521738
 roland-go-keys-5-white-4957054520465
 roland-go-piano-teclado-digital-4957054510053

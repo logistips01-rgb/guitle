@@ -44,9 +44,12 @@ function daily(series) {
       for (const [pd, price] of pts) if (pd <= d) perStore[store] = price;
       if (perStore[store] != null && (best == null || perStore[store] < best)) best = perStore[store];
     }
-    out.push([d, best]);
+    out.push([d, best, Object.keys(perStore).length]);
   }
-  return { days: out.map(x => x[0]), best: out };
+  // Los primeros días se iban sumando tiendas: con una sola, su precio parecía el "mejor" y luego una "bajada" que
+  // era solo una tienda nueva. El mejor precio empieza el primer día con al menos la mitad de las tiendas.
+  const most = Math.max(...out.map(x => x[2])), from = out.findIndex(x => x[2] * 2 >= most);
+  return { days: out.map(x => x[0]), best: out.slice(from).map(([d, b]) => [d, b]) };
 }
 
 function verdict(current, best) {
@@ -110,12 +113,12 @@ function verdict(current, best) {
   note.textContent = days.length ? tf(T.since, { d: fmtDay(days[0]) }) : T.noHist;
   if (days.length < 2 || !window.Chart) { document.querySelector(".chart-box").classList.add("hidden"); return; }
   const datasets = Object.entries(series).map(([store, pts]) => ({
-    label: names[store] || T.pvp, stepped: true, borderWidth: 1.5, pointRadius: 0,
+    label: names[store] || T.pvp, borderWidth: 1.5, pointRadius: 2.5,
     borderDash: pvp.includes(store) ? [6, 4] : [],
     borderColor: css(color[store] || "--reference"), backgroundColor: css(color[store] || "--reference"),
     data: [...pts.map(([d, y]) => ({ x: d, y })), { x: today, y: pts.at(-1)[1] }],
   }));
-  datasets.unshift({ label: T.bestLine, stepped: true, borderWidth: 3, pointRadius: 0, borderColor: css("--text-primary"),
+  datasets.unshift({ label: T.bestLine, borderWidth: 3, pointRadius: 3.5, borderColor: css("--text-primary"),
                      backgroundColor: css("--text-primary"), data: bestDaily.map(([x, y]) => ({ x, y })) });
   new Chart(document.getElementById("chart"), {
     type: "line", data: { labels: days, datasets },

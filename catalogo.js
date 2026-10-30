@@ -204,7 +204,7 @@ async function drawChart(p) {
   for (const k of p.hk || (p.ean ? [p.ean] : [])) for (const [s, pts] of Object.entries(priceHistory[k] || {})) series[s] = series[s] || pts;
   const today = new Date().toISOString().slice(0, 10);
   const datasets = Object.entries(series).map(([store, pts]) => ({
-    label: storeName[store] || store, stepped: true, borderWidth: 2, pointRadius: 2, borderColor: css(storeColor[store] || "--reference"),
+    label: storeName[store] || store, borderWidth: 2, pointRadius: 2.5, borderColor: css(storeColor[store] || "--reference"),
     backgroundColor: css(storeColor[store] || "--reference"),
     data: [...pts.map(([d, v]) => ({ x: d, y: v })), { x: today, y: pts.at(-1)[1] }],
   }));

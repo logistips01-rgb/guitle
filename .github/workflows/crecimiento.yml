@@ -1,0 +1,47 @@
+name: crecimiento
+
+# Añade a data/crecimiento.json los productos y tiendas de cada país tras cada lectura del catálogo (stats.html).
+on:
+  workflow_run:
+    workflows: [catalog]
+    types: [completed]
+  schedule:
+    - cron: "41 */6 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: crecimiento
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  punto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/friendly-fermat-yycain
+          fetch-depth: 1
+          sparse-checkout: |
+            data
+            scraper
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Añadir el punto de ahora y guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4; do
+            git fetch -q origin claude/friendly-fermat-yycain && git reset -q --hard origin/claude/friendly-fermat-yycain
+            python -m scraper.crecimiento
+            git add data/crecimiento.json
+            if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+            git commit -q -m "data: crecimiento $(TZ=Europe/Madrid date '+%F %H:%M')"
+            if git push -q origin HEAD:claude/friendly-fermat-yycain; then exit 0; fi
+            sleep $((i * 10))
+          done
+          exit 1

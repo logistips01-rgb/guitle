@@ -41,6 +41,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "data" / "catalog"
 RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir en este tiempo
 RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se miran cada dos semanas
+RECHECK_MIN_HOURS = 20  # ninguna ficha se relee antes: con todo al día, la lectura acaba antes en vez de repetir
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35,  # por debajo no es una guitarra (ni infantil)
              "teclado": 40, "pedal": 20, "portuguesa": 150, "bajo": 80, "ampli": 30, "estuche": 12, "micro": 15, "varios": 3}
@@ -4286,9 +4287,11 @@ def read_page(fetcher, store_id, url, now):
 
 
 def due_urls(store_id, urls, offers, now):
-    """Orden de visita: nunca leídas, luego las más antiguas. Las que no son guitarra esperan 60 días."""
+    """Orden de visita: nunca leídas, luego las más antiguas. Las que no son guitarra esperan 60 días y ninguna se
+    relee si se leyó hace menos de RECHECK_MIN_HOURS."""
     skip_before = (datetime.fromisoformat(now) - timedelta(days=RECHECK_SKIPPED_DAYS)).isoformat()
     no_price_before = (datetime.fromisoformat(now) - timedelta(days=RECHECK_NO_PRICE_DAYS)).isoformat()
+    recent = (datetime.fromisoformat(now) - timedelta(hours=RECHECK_MIN_HOURS)).isoformat()
     fresh, old = [], []
     for url in urls:
         o = offers.get(url)
@@ -4297,6 +4300,8 @@ def due_urls(store_id, urls, offers, now):
         elif o.get("status") in ("not_guitar", "gone") and o["checked"] > skip_before:
             continue
         elif o.get("status") == "no_price" and o["checked"] > no_price_before:
+            continue
+        elif o["checked"] > recent:
             continue
         else:
             old.append((o["checked"], url))
