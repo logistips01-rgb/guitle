@@ -43,6 +43,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Datos al día
+        # Una vuelta que esperó en cola trae el commit de cuando se creó, sin lo que guardaron las vueltas anteriores:
+        # leería otra vez las mismas fichas "nuevas". Se parte siempre de lo último publicado.
+        run: git fetch -q origin "${GITHUB_REF_NAME}" && git reset -q --hard "origin/${GITHUB_REF_NAME}"
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
