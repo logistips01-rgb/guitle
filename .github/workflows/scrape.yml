@@ -80,6 +80,10 @@ jobs:
       - name: Commit de datos
         if: steps.gate.outputs.run == 'true'
         # Se fusiona sobre la última versión de la rama (otra ejecución o un push pueden haber llegado antes).
+        env:
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -90,10 +94,14 @@ jobs:
             python -m scraper.run --merge "$RUNNER_TEMP/records.json"
             [ -f "$RUNNER_TEMP/coupons.json" ] && python -m scraper.coupons --merge "$RUNNER_TEMP/coupons.json" --new-out "$RUNNER_TEMP/new_coupons.md"
             [ -f data/catalog/offers.json ] && python -m scraper.catalog --build
-            git add data/ img/p/ g/ marca/ tipo/ presupuesto/ marcas.html sitemap.xml
+            bash .github/r2.sh git-add data/  # la web generada, a git o a R2 según .github/r2.sh
             if git diff --cached --quiet; then echo "Sin cambios en data/"; exit 0; fi
             git commit -q -m "data: precios $(TZ=Europe/Madrid date +%F)"
-            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then python -m scraper.indexnow || true; exit 0; fi
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then
+              python -m scraper.indexnow || true
+              bash .github/r2.sh publicar
+              exit 0
+            fi
             echo "push rechazado, reintento $attempt"; sleep $((attempt * 5))
           done
           exit 1
