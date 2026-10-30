@@ -9,6 +9,17 @@
 <meta name="theme-color" content="#2a78d6">
 <meta name="description" content="guitle es un comparador de precios de guitarras: eléctricas, acústicas y clásicas en las tiendas que venden en España, con el histórico de precios de cada modelo y los chollos reales.">
 <link rel="canonical" href="https://guitle.com/">
+<link rel="alternate" hreflang="de-AT" href="https://guitle.com/at/">
+<link rel="alternate" hreflang="pt-BR" href="https://guitle.com/br/">
+<link rel="alternate" hreflang="de-DE" href="https://guitle.com/de/">
+<link rel="alternate" hreflang="es-ES" href="https://guitle.com/">
+<link rel="alternate" hreflang="fr-FR" href="https://guitle.com/fr/">
+<link rel="alternate" hreflang="en-IE" href="https://guitle.com/ie/">
+<link rel="alternate" hreflang="it-IT" href="https://guitle.com/it/">
+<link rel="alternate" hreflang="nl-NL" href="https://guitle.com/nl/">
+<link rel="alternate" hreflang="pt-PT" href="https://guitle.com/pt/">
+<link rel="alternate" hreflang="en-GB" href="https://guitle.com/uk/">
+<link rel="alternate" hreflang="x-default" href="https://guitle.com/">
 <meta property="og:site_name" content="guitle">
 <meta property="og:title" content="guitle · comparador de precios de guitarras">
 <meta property="og:url" content="https://guitle.com/">
@@ -54,7 +65,14 @@
   header.top nav a { text-decoration: none; padding: 6px 12px; border-radius: 999px; color: var(--text-secondary); font-size: .95rem; }
   header.top nav a:hover { background: var(--surface-1); }
   header.top nav a { white-space: nowrap; }
-  @media (max-width: 520px) { header.top nav a:last-child { display: none; } header.top nav a { border: 1px solid var(--border); background: var(--surface-1); padding: 5px 10px; font-size: .85rem; } header.top nav { gap: 4px; } }
+  /* Móvil: las cifras en una fila arriba y el menú debajo, en texto, de lado a lado. */
+  @media (max-width: 520px) {
+    header.top { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 0 4px; }
+    header.top .stats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    header.top .stats::-webkit-scrollbar { display: none; }
+    header.top nav { margin-left: 0; justify-content: space-between; gap: 4px; }
+    header.top nav a { padding: 6px 4px; font-size: 1rem; color: var(--text-primary); }
+  }
   .logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-primary); }
   .logo img { width: 34px; height: 34px; }
   .logo .word { font-weight: 800; font-size: 1.6rem; letter-spacing: -.03em; line-height: 1; }
@@ -91,6 +109,7 @@
   .sec-head h2 { font-size: 1.2rem; margin: 0; }
   .sec-head a { font-size: .92rem; color: var(--accent); text-decoration: none; white-space: nowrap; }
   .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .card .tag { font-size: .68rem; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
   @media (max-width: 860px) { .row { grid-template-columns: repeat(2, 1fr); gap: 10px; } }
   .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: transform .12s, box-shadow .12s; position: relative; }
   .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
@@ -161,6 +180,7 @@
   <section>
     <div class="sec-head"><h2>Chollos de hoy</h2><span><a href="black-friday.html">Black Friday</a> · <a href="chollos.html">Ver todos →</a></span></div>
     <div class="row" id="deals"><p class="placeholder">Cargando…</p></div>
+    <div class="row" id="deals-equipo" hidden style="margin-top:14px"></div>
   </section>
 
   <section id="drops-sec" hidden>
@@ -202,11 +222,11 @@ const eur = v => v == null ? "–" : v.toLocaleString("es-ES", { style: "currenc
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const load = p => fetch(p, { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject(new Error(p)));
 
-function card({ href, img, name, price, where, extra, badge, badgeCls }) {
+function card({ href, img, name, price, where, extra, badge, badgeCls, tag }) {
   return `<a class="card" href="${esc(href)}">
     ${badge ? `<span class="badge ${badgeCls || ""}">${badge}</span>` : ""}
     <div class="img">${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer">` : ""}</div>
-    <div class="body"><span class="name">${esc(name)}</span>
+    <div class="body">${tag ? `<span class="tag">${esc(tag)}</span>` : ""}<span class="name">${esc(name)}</span>
       <span class="price"><strong>${eur(price)}</strong>${extra || ""}</span>
       <span class="where">${esc(where)}</span></div></a>`;
 }
@@ -222,7 +242,7 @@ load("data/latest.json").then(latest => {
   const activeStores = latest.stores.filter(s => !s.reference && latest.items.some(i => i.store === s.id && i.status === "ok"));
 
   document.getElementById("stats").innerHTML =
-    `<span><strong id="n-guitars">${guitars.length}</strong>guitarras</span><span><strong id="n-stores">${activeStores.length}</strong>tiendas</span>` +
+    `<span><strong id="n-guitars">…</strong>guitarras</span><span><strong id="n-stores">…</strong>tiendas</span>` +
     `<a href="paises.html" title="guitle en el mundo"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/>` +
     `<path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z"/></svg>` +
     `<strong id="n-countries">1</strong><span id="w-countries" style="all:unset">país</span></a>`;
@@ -273,38 +293,60 @@ load("data/latest.json").then(latest => {
 
   // Recuento de cada sección; las guitarras de las tres suman en las estadísticas de arriba.
   const catStores = new Set(activeStores.map(s => s.id));
-  Promise.all(Object.entries(CATALOG_PAGES).map(([id, [, src]]) => load(src).then(cat => {
+  const loads = Object.fromEntries(Object.entries(CATALOG_PAGES).map(([id, [, src]]) => [id, load(src)]));
+  Promise.all(["guitarra", "acustica", "clasica"].map(id => loads[id].then(c => c.products.length).catch(() => 0)))
+    .then(ns => { document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES", { useGrouping: "always" }); });
+  Promise.all(Object.entries(CATALOG_PAGES).map(([id]) => loads[id].then(cat => {
     const n = cat.products.length;
     Object.keys(cat.stores || {}).forEach(s => { if (!isRef[s]) catStores.add(s); });
     document.querySelector(`#cat-${id} small`).innerHTML = n ? `${n.toLocaleString("es-ES", { useGrouping: "always" })}<span class="unit"> productos</span>` : "próximamente";
     return ["guitarra", "acustica", "clasica"].includes(id) ? n : 0;  // arriba solo cuentan las guitarras
   }).catch(() => { document.querySelector(`#cat-${id} small`).textContent = "próximamente"; return 0; })))
-    .then(ns => {
-      document.getElementById("n-guitars").textContent = ns.reduce((a, b) => a + b, 0).toLocaleString("es-ES", { useGrouping: "always" });
-      document.getElementById("n-stores").textContent = catStores.size;
-    });
+    .then(() => { document.getElementById("n-stores").textContent = catStores.size; });
 
   // La tarjeta abre directamente la ficha de la guitarra en el catálogo (por EAN); sin EAN, la búsqueda en seguimiento.
   const link = p => p.ean ? `catalogo.html?p=${encodeURIComponent(String(p.ean).replace(/^0+/, ""))}`
     : `guitarras.html?q=${encodeURIComponent(p.name.replace(/^(Fender|Epiphone|Gibson|Ibanez) /, ""))}`;
-  // Chollos de hoy (catálogo completo): la mejor tienda frente a la mediana de las demás, en guitarras que se venden
-  // en 3 o más tiendas. Un ahorro de más del 40 % se descarta: suele ser una ficha mal emparejada, no un chollo.
-  load("data/catalog/products.json").then(cat => {
-    const median = a => { const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
-    // Solo precios con stock, y fuera las guitarras con dos fichas de la misma tienda (emparejado dudoso).
-    const deals = cat.products.filter(p => p.th && p.slug && new Set(p.items.map(i => i.s)).size === p.items.length).map(p => {
-      const live = p.items.filter(i => i.st !== false);
-      if (live.length < 3) return null;
-      const mid = median(live.map(i => i.p)), best = live[0];
-      return { p, best, save: (mid - best.p) / mid * 100 };
-    }).filter(d => d && d.save >= 3 && d.save <= 40).sort((a, b) => b.save - a.save).slice(0, 4);
-    if (!deals.length) return;
-    document.getElementById("deals").innerHTML = deals.map(({ p, best, save }) => card({
-      href: `g/${p.slug}.html`, img: "img/p/" + p.th, name: p.name, price: best.p,
-      extra: `<span class="neg" title="Frente al precio medio de las tiendas">−${save.toFixed(0)} % vs. media</span>`,
-      where: `en ${cat.stores[best.s] || best.s} · ${new Set(p.items.map(i => i.s)).size} tiendas`,
-    })).join("");
+  // Chollos de hoy: la mejor tienda frente a la mediana de las demás (con stock). Un ahorro de más del 40 % se descarta:
+  // suele ser una ficha mal emparejada. Para todos los bolsillos: eléctricas de gama baja, media y alta y una acústica o
+  // clásica; debajo, cuatro categorías de equipo que rotan cada día para que todas salgan.
+  const median = a => { const s = a.slice().sort((x, y) => x - y), m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  const dealsOf = (cat, minStores) => cat.products.filter(p => p.th && p.slug && new Set(p.items.map(i => i.s)).size === p.items.length).map(p => {
+    const live = p.items.filter(i => i.st !== false);
+    if (live.length < minStores) return null;
+    const mid = median(live.map(i => i.p)), best = live[0];
+    return { p, best, save: (mid - best.p) / mid * 100, stores: cat.stores };
+  }).filter(d => d && d.save >= 3 && d.save <= 40).sort((a, b) => b.save - a.save);
+  // El mejor del tramo de precio; si no hay con 3 tiendas, con 2.
+  const bestIn = (cat, lo, hi) => [3, 2].map(n => dealsOf(cat, n).find(d => d.best.p >= lo && d.best.p < hi)).find(Boolean);
+  const dealCard = (d, tag) => card({
+    href: `g/${d.p.slug}.html`, img: "img/p/" + d.p.th, name: d.p.name, price: d.best.p, tag,
+    extra: `<span class="neg" title="Frente al precio medio de las tiendas">−${d.save.toFixed(0)} % vs. media</span>`,
+    where: `en ${d.stores[d.best.s] || d.best.s} · ${new Set(d.p.items.map(i => i.s)).size} tiendas`,
+  });
+  const EQUIPO = [["bajo", "Bajo", "data/catalog/mas/bajos.json"], ["ampli", "Ampli", "data/catalog/mas/amplis.json"],
+                  ["pedal", "Pedal", "data/catalog/equipo/pedales.json"], ["teclado", "Teclado", "data/catalog/equipo/teclados.json"],
+                  ["micro", "Micrófono", "data/catalog/mas/micros.json"], ["estuche", "Estuche", "data/catalog/mas/estuches.json"],
+                  ["varios", "Accesorio", "data/catalog/mas/varios.json"]];
+  const day = Math.floor(Date.now() / 864e5);
+  const equipoHoy = [0, 1, 2, 3].map(i => EQUIPO[(day * 4 + i) % EQUIPO.length]);
+  // Los mismos catálogos que ya se están cargando para los recuentos (no se descargan dos veces).
+  Promise.all([loads.guitarra, loads.acustica.catch(() => null), loads.clasica.catch(() => null)]).then(([elec, acu, cla]) => {
+    const guitar = [[bestIn(elec, 0, 300), "Eléctrica · gama baja"], [bestIn(elec, 300, 800), "Eléctrica · gama media"],
+                    [bestIn(elec, 800, 1e9), "Eléctrica · gama alta"],
+                    // Acústica un día, clásica al siguiente (si ese día no hay, la otra), siempre por debajo de 600 €.
+                    ...[[acu, "Acústica"], [cla, "Clásica"]].sort(() => day % 2 ? -1 : 1).map(([c, t]) => [c && bestIn(c, 0, 600), t])
+                      .filter(([d]) => d).slice(0, 1)];
+    const cards = guitar.filter(([d]) => d).map(([d, t]) => dealCard(d, t));
+    if (cards.length) document.getElementById("deals").innerHTML = cards.join("");
   }).catch(() => {});
+  Promise.all(equipoHoy.map(([id, t, src]) => (loads[id] || load(src)).then(c => [[2].map(n => dealsOf(c, n)[0]).find(Boolean), t]).catch(() => [null, t])))
+    .then(list => {
+      const cards = list.filter(([d]) => d).map(([d, t]) => dealCard(d, t));
+      if (!cards.length) return;
+      document.getElementById("deals-equipo").hidden = false;
+      document.getElementById("deals-equipo").innerHTML = cards.join("");
+    });
 
   // Han bajado hoy: del catálogo (data/deals-*.json), los mismos precios que enseña la ficha al pinchar.
   // Primero las bajadas más grandes en proporción, con foto.

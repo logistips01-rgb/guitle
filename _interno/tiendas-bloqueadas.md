@@ -14,6 +14,7 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 |---|---|---|---|
 | Madrid Hifi | madridhifi.com | Solicitud enviada | Han pasado la solicitud a marketing; solo queremos su feed. |
 | Gear4music | gear4music.es | Pendiente de Awin | Usar el feed de Awin (sirve también para PT, FR, IT…). |
+| Kaufland | kaufland.es | Antibots (Cloudflare) | Marketplace alemán; sale en idealo con Thomann y Gear4music. Mirar su programa de afiliados. |
 
 ## Portugal
 
@@ -81,10 +82,11 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 | Mercado Livre | mercadolivre.com.br | Sin datos | Marketplace; tiene programa de afiliados con API. |
 | Amazon Brasil | amazon.com.br | Pendiente de afiliados | Darse de alta en Amazon Associados Brasil. |
 | Gang Instrumentos | gang.com.br | Sin datos | El sitemap no trae fichas de guitarras. |
-| Musical Express | musicalexpress.com.br | Sin conexión | A revisar. |
-| Playtech | playtech.com.br | Sin conexión | A revisar. |
-| Contemporânea | contemporanea.com.br | Sin conexión | A revisar. |
-| Izzo Musical | izzomusical.com.br | Sin conexión | A revisar. |
+| Teclacenter | teclacenter.com.br | Antibots desde GitHub | Desde fuera de GitHub se lee bien (1.000+ guitarras); pedir feed. |
+| Musical Express | musicalexpress.com.br | Sin conexión | Tampoco responde desde GitHub (29-oct). |
+| Playtech | playtech.com.br | Sin conexión | Tampoco responde desde GitHub (29-oct). |
+| Contemporânea | contemporanea.com.br | Sin conexión | Tampoco responde desde GitHub (29-oct). |
+| Izzo Musical | izzomusical.com.br | Sin conexión | Tampoco responde desde GitHub (29-oct). |
 
 ## México, Estados Unidos, Canadá y Latinoamérica
 

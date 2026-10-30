@@ -87,6 +87,23 @@ def _rows(product, store_names, colors):
     return "\n".join(out)
 
 
+_ALTERNATES = None
+
+
+def _alternates(product):
+    """hreflang de la misma guitarra en las webs de otros países (guitle.com/fr/g/…), si la tienen. Google solo hace caso
+    si los enlaces van en los dos sentidos: las de los países ya apuntan aquí (intl.py)."""
+    global _ALTERNATES
+    if not product.get("ean"):
+        return ""
+    from . import intl  # aquí y no arriba: intl importa este módulo
+    if _ALTERNATES is None:
+        _ALTERNATES = intl._alternates()
+    links = dict(_ALTERNATES.get(product["ean"], {}))
+    links["es"] = f"{SITE}/g/{product['slug']}.html"
+    return intl._hreflang(links)
+
+
 def _render(product, kind, store_names, colors):
     k = KINDS[kind]
     esc = lambda v: html.escape(str(v or ""), quote=True)
@@ -118,6 +135,7 @@ def _render(product, kind, store_names, colors):
 <title>{esc(title)} · guitle</title>
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{SITE}/g/{slug}.html">
+{_alternates(product)}
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">
 {f'<meta property="og:image" content="{SITE}{img}">' if img else ''}

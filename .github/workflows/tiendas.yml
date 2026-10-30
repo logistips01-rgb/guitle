@@ -22,9 +22,18 @@ jobs:
       - run: pip install -q -r requirements.txt
       - name: Probar tiendas
         run: |
-          # Gear4music: las fichas de guitarra no están en el sitemap; ¿cómo son sus listados?
-          python -m scraper.probe --out informe-tiendas.md --links https://www.gear4music.es/es/Guitarras \
-            https://www.gear4music.es/es/guitarras-electricas/guitarra
+          # España: tiendas de las listas oficiales de las marcas que desde fuera de GitHub no dan precio o nos bloquean,
+          # y los buscadores de tiendas de las marcas que no respondían.
+          python -m scraper.probe --out t1.md --only-try --try acustica:partitura acustica:fuste acustica:abrines \
+            acustica:trinomusic electrica:zingla electrica:neomusica electrica:microfusa || true
+          python -m scraper.probe --out t2.md --domains musicalguima.com valenciamusical.com tempoinstruments.es musikarte.net \
+            musimaster.com slapmusicstore.com surarte.com unionmusical.es promusica.es intermusic-pro.com audenis.com \
+            alteisa.com musicaltamayo.com musicaljam.es || true
+          python -m scraper.probe --out t3.md --links https://www.ibanez.com/eu/dealer/ https://www.espguitars.com/dealers \
+            https://prsguitars.com/dealers https://www.cortguitars.com/dealers https://www.ortegaguitars.com/dealer-locator \
+            https://cordobaguitars.com/where-to-buy/ https://www.taylorguitars.com/dealers \
+            https://www.martinguitar.com/store-locator.html https://es.fender.com/pages/dealer-locator || true
+          cat t1.md t2.md t3.md > informe-tiendas.md
           cat informe-tiendas.md >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-artifact@v4
         with:

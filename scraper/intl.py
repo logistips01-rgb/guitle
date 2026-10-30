@@ -26,23 +26,37 @@ GUITAR_KINDS = ("electrica", "acustica", "clasica", "portuguesa")
 
 # Por país: idioma, moneda, catálogo (carpeta de data/catalog) y, por categoría, el nombre de su página y de su JSON.
 SITES = {
-    "pt": {"country": "Portugal", "lang": "pt-PT", "t": "pt", "cur": "EUR", "catalog": "pt",
-           "kinds": {"electrica": "eletricas", "acustica": "acusticas", "clasica": "classicas", "portuguesa": "portuguesas"},
+    # Equipo en "ptmas" (scraper.catalog.EQUIPO_COUNTRIES), como Alemania.
+    "pt": {"country": "Portugal", "lang": "pt-PT", "t": "pt", "cur": "EUR", "catalog": "pt", "extra_catalogs": ["ptmas"],
+           "kinds": {"electrica": "eletricas", "acustica": "acusticas", "clasica": "classicas", "portuguesa": "portuguesas",
+                     "bajo": "baixos", "ampli": "amplificadores", "pedal": "pedais", "teclado": "teclados", "micro": "microfones",
+                     "estuche": "estojos", "varios": "acessorios"},
            "amazon": "https://www.amazon.es/s?k={q}&tag=guitle-21"},
-    "fr": {"country": "France", "lang": "fr-FR", "t": "fr", "cur": "EUR", "catalog": "fr",
-           "kinds": {"electrica": "electriques", "acustica": "folk", "clasica": "classiques"},
+    "fr": {"country": "France", "lang": "fr-FR", "t": "fr", "cur": "EUR", "catalog": "fr", "extra_catalogs": ["frmas"],
+           "kinds": {"electrica": "electriques", "acustica": "folk", "clasica": "classiques", "bajo": "basses", "ampli": "amplis",
+                     "pedal": "pedales-effets", "teclado": "claviers", "micro": "micros", "estuche": "etuis-housses",
+                     "varios": "accessoires"},
            "amazon": None},
-    "it": {"country": "Italia", "lang": "it-IT", "t": "it", "cur": "EUR", "catalog": "it",
-           "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche"},
+    "it": {"country": "Italia", "lang": "it-IT", "t": "it", "cur": "EUR", "catalog": "it", "extra_catalogs": ["itmas"],
+           "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche", "bajo": "bassi",
+                     "ampli": "amplificatori", "pedal": "pedali-effetto", "teclado": "tastiere", "micro": "microfoni",
+                     "estuche": "custodie", "varios": "accessori"},
            "amazon": None},
-    "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de",
-           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren"},
+    # Equipo en otro catálogo ("demas", scraper.catalog.EQUIPO_COUNTRIES); sus páginas salen cuando tiene productos.
+    "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de", "extra_catalogs": ["demas"],
+           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren", "bajo": "baesse",
+                     "ampli": "verstaerker", "pedal": "effektpedale", "teclado": "keyboards", "micro": "mikrofone",
+                     "estuche": "koffer-taschen", "varios": "zubehoer"},
            "amazon": None},
-    "br": {"country": "Brasil", "lang": "pt-BR", "t": "br", "cur": "BRL", "catalog": "br",
-           "kinds": {"electrica": "guitarras", "acustica": "violoes", "clasica": "violoes-nylon"},
+    "br": {"country": "Brasil", "lang": "pt-BR", "t": "br", "cur": "BRL", "catalog": "br", "extra_catalogs": ["brmas"],
+           "kinds": {"electrica": "guitarras", "acustica": "violoes", "clasica": "violoes-nylon", "bajo": "baixos",
+                     "ampli": "amplificadores", "pedal": "pedais", "teclado": "teclados", "micro": "microfones",
+                     "estuche": "cases", "varios": "acessorios"},
            "amazon": None},
-    "ie": {"country": "Ireland", "lang": "en-IE", "t": "en", "cur": "EUR", "catalog": "ie",
-           "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
+    "ie": {"country": "Ireland", "lang": "en-IE", "t": "en", "cur": "EUR", "catalog": "ie", "extra_catalogs": ["iemas"],
+           "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars", "bajo": "basses",
+                     "ampli": "amps", "pedal": "effects-pedals", "teclado": "keyboards", "micro": "microphones",
+                     "estuche": "cases-bags", "varios": "accessories"},
            "amazon": None,
            "t_over": {"homeDesc": "guitle compares guitar prices: electric, acoustic and classical guitars in the shops that sell in "
                                   "Ireland, with the price history of every model.",
@@ -52,8 +66,11 @@ SITES = {
                       "js": {"targetLabel": "Target price in euros"}},
            "legal_replace": [("the Information Commissioner's Office (ICO)", "the Data Protection Commission (DPC)"),
                              (" and its UK Extension", "")]},
-    "at": {"country": "Österreich", "lang": "de-AT", "t": "de", "cur": "EUR", "catalog": "at",
-           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren"},
+    # Textos de Alemania (T["de"]), también los del equipo ("atmas").
+    "at": {"country": "Österreich", "lang": "de-AT", "t": "de", "cur": "EUR", "catalog": "at", "extra_catalogs": ["atmas"],
+           "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren", "bajo": "baesse",
+                     "ampli": "verstaerker", "pedal": "effektpedale", "teclado": "keyboards", "micro": "mikrofone",
+                     "estuche": "koffer-taschen", "varios": "zubehoer"},
            "amazon": None,
            "t_over": {"homeDesc": "guitle vergleicht Gitarrenpreise: E-Gitarren, Westerngitarren und Konzertgitarren in den Shops, "
                                   "die nach Österreich liefern, mit dem Preisverlauf jedes Modells.",
@@ -61,11 +78,15 @@ SITES = {
                                 "Wir speichern den Preisverlauf, damit du siehst, ob ein Preis wirklich gut ist oder sonst niedriger liegt.",
                                 "Auf Wunsch schicken wir dir eine E-Mail, wenn der Preis fällt."]},
            "legal_replace": [("oder der Aufsichtsbehörde deines Bundeslandes", "oder der österreichischen Datenschutzbehörde")]},
-    "nl": {"country": "Nederland", "lang": "nl-NL", "t": "nl", "cur": "EUR", "catalog": "nl",
-           "kinds": {"electrica": "elektrische-gitaren", "acustica": "akoestische-gitaren", "clasica": "klassieke-gitaren"},
+    "nl": {"country": "Nederland", "lang": "nl-NL", "t": "nl", "cur": "EUR", "catalog": "nl", "extra_catalogs": ["nlmas"],
+           "kinds": {"electrica": "elektrische-gitaren", "acustica": "akoestische-gitaren", "clasica": "klassieke-gitaren",
+                     "bajo": "basgitaren", "ampli": "versterkers", "pedal": "effectpedalen", "teclado": "keyboards",
+                     "micro": "microfoons", "estuche": "koffers-tassen", "varios": "accessoires"},
            "amazon": None},
-    "uk": {"country": "United Kingdom", "lang": "en-GB", "t": "en", "cur": "GBP", "catalog": "uk",
-           "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars"},
+    "uk": {"country": "United Kingdom", "lang": "en-GB", "t": "en", "cur": "GBP", "catalog": "uk", "extra_catalogs": ["ukmas"],
+           "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars", "bajo": "basses",
+                     "ampli": "amps", "pedal": "effects-pedals", "teclado": "keyboards", "micro": "microphones",
+                     "estuche": "cases-bags", "varios": "accessories"},
            "amazon": None},
 }
 # España, para los enlaces entre países (hreflang y el pie de página).
@@ -92,7 +113,18 @@ T = {
         "kinds": {"electrica": ("Guitarras elétricas", "Elétricas", "Pesquisa nas elétricas: modelo, marca, cor…"),
                   "acustica": ("Guitarras acústicas", "Acústicas", "Pesquisa nas acústicas: modelo, marca, madeira…"),
                   "clasica": ("Guitarras clássicas", "Clássicas", "Pesquisa nas clássicas: modelo, marca, flamenca…"),
-                  "portuguesa": ("Guitarras portuguesas", "Portuguesas", "Pesquisa nas guitarras portuguesas: modelo, Lisboa, Coimbra…")},
+                  "portuguesa": ("Guitarras portuguesas", "Portuguesas", "Pesquisa nas guitarras portuguesas: modelo, Lisboa, Coimbra…"),
+                  "bajo": ("Baixos elétricos e acústicos", "Baixos", "Pesquisa nos baixos: modelo, marca, 5 cordas…"),
+                  "ampli": ("Amplificadores de guitarra e baixo", "Amplificadores", "Pesquisa nos amplificadores: modelo, marca, combo, cabeça…"),
+                  "pedal": ("Pedais de efeito", "Pedais", "Pesquisa nos pedais: modelo, marca, efeito…"),
+                  "teclado": ("Teclados e pianos digitais", "Teclados", "Pesquisa nos teclados: modelo, marca…"),
+                  "micro": ("Microfones", "Microfones", "Pesquisa nos microfones: modelo, marca, tipo…"),
+                  "estuche": ("Estojos e sacos", "Estojos", "Pesquisa nos estojos e sacos: modelo, marca…"),
+                  "varios": ("Acessórios de guitarra", "Acessórios", "Pesquisa nos acessórios: cordas, palhetas, correias, cabos…")},
+        # Lo que se cuenta en cada categoría de equipo (portada y lista) y, si no son solo guitarras, el total.
+        "nouns": {"bajo": "baixos", "ampli": "amplificadores", "pedal": "pedais", "teclado": "teclados", "micro": "microfones",
+                  "estuche": "estojos", "varios": "artigos"},
+        "allWord": "produtos",
         "anyPrice": "Qualquer preço", "upTo": "Até {v}", "over": "Mais de {v}", "brandLabel": "Marca", "priceLabel": "Preço",
         "showLabel": "Mostrar", "showAll": "Todas", "showMulti": "Em várias lojas", "showStock": "Em stock",
         "showLow": "No preço mínimo", "showLh": "Só canhotas", "loading": "A carregar o catálogo…", "sortLabel": "Ordenar",
@@ -120,7 +152,22 @@ T = {
                "many": "guitarras",
                "types": {"Semihueca": "Semi-acústica", "Moderna / Metal": "Moderna / Metal", "Otras": "Outras",
                          "Auditorio / Concierto": "Auditório / Concerto", "12 cuerdas": "12 cordas",
-                         "Tamaño reducido": "Tamanho reduzido", "Clásica": "Clássica", "Electroclásica": "Eletroclássica"},
+                         "Tamaño reducido": "Tamanho reduzido", "Clásica": "Clássica", "Electroclásica": "Eletroclássica",
+                         "4 cuerdas": "4 cordas", "5 cuerdas": "5 cordas", "6 cuerdas o más": "6 cordas ou mais",
+                         "Acústico": "Acústico", "Fretless": "Fretless", "Escala corta": "Escala curta", "Combo": "Combos",
+                         "Cabezal": "Cabeças", "Pantalla": "Colunas", "Para bajo": "Para baixo",
+                         "Para acústica": "Para guitarra acústica", "De auriculares y portátil": "Portáteis e de auscultadores",
+                         "Para eléctrica": "Para guitarra elétrica", "Para clásica": "Para guitarra clássica",
+                         "Overdrive y distorsión": "Overdrive e distorção", "Modulación": "Modulação", "Compresor": "Compressor",
+                         "Wah y volumen": "Wah e volume", "Octavador y pitch": "Oitavador e pitch", "Ecualizador": "Equalizador",
+                         "Puerta de ruido": "Noise gate", "Sintetizador": "Sintetizador", "Afinador": "Afinador",
+                         "Multiefectos": "Pedaleiras e multiefeitos", "Piano digital": "Pianos digitais",
+                         "Teclado portátil": "Teclados", "Piano de escenario": "Pianos de palco", "Controlador MIDI": "Controladores MIDI",
+                         "Piano acústico": "Pianos acústicos", "Dinámico": "Dinâmico", "Condensador": "Condensador",
+                         "Inalámbrico": "Sem fios", "Para instrumento": "Para instrumento", "De cinta": "De fita", "Cuerdas": "Cordas",
+                         "Púas": "Palhetas", "Correas": "Correias", "Cables": "Cabos", "Afinadores": "Afinadores",
+                         "Cejillas": "Capotrastes", "Soportes": "Suportes", "Pastillas": "Captadores",
+                         "Recambios": "Peças de substituição", "Mantenimiento": "Limpeza e manutenção"},
                "wait": "Seguimos este modelo há {n} {days}", "day": "dia", "days": "dias",
                "waitSub": "O veredicto será mais fiável com algumas semanas de histórico.",
                "min": "Preço mínimo registado", "minSub": "Nunca a vimos mais barata.", "minBelow": " Está {p} % abaixo da média de 30 dias.",
@@ -170,7 +217,18 @@ T = {
         "updated": "Données mises à jour le {d}", "home": "Accueil",
         "kinds": {"electrica": ("Guitares électriques", "Électriques", "Recherche parmi les électriques : modèle, marque, couleur…"),
                   "acustica": ("Guitares folk et acoustiques", "Folk", "Recherche parmi les folk : modèle, marque, bois…"),
-                  "clasica": ("Guitares classiques", "Classiques", "Recherche parmi les classiques : modèle, marque, flamenca…")},
+                  "clasica": ("Guitares classiques", "Classiques", "Recherche parmi les classiques : modèle, marque, flamenca…"),
+                  "bajo": ("Basses électriques et acoustiques", "Basses", "Recherche parmi les basses : modèle, marque, 5 cordes…"),
+                  "ampli": ("Amplis guitare et basse", "Amplis", "Recherche parmi les amplis : modèle, marque, combo, tête…"),
+                  "pedal": ("Pédales d'effets", "Effets", "Recherche parmi les pédales : modèle, marque, effet…"),
+                  "teclado": ("Claviers et pianos numériques", "Claviers", "Recherche parmi les claviers : modèle, marque…"),
+                  "micro": ("Micros", "Micros", "Recherche parmi les micros : modèle, marque, type…"),
+                  "estuche": ("Étuis et housses", "Étuis", "Recherche parmi les étuis et housses : modèle, marque…"),
+                  "varios": ("Accessoires guitare", "Accessoires", "Recherche parmi les accessoires : cordes, médiators, sangles, câbles…")},
+        # Ce qu'on compte dans chaque catégorie d'équipement (accueil et liste) et, si ce ne sont pas que des guitares, le total.
+        "nouns": {"bajo": "basses", "ampli": "amplis", "pedal": "pédales", "teclado": "claviers", "micro": "micros",
+                  "estuche": "étuis", "varios": "articles"},
+        "allWord": "produits",
         "anyPrice": "Tous les prix", "upTo": "Jusqu'à {v}", "over": "Plus de {v}", "brandLabel": "Marque", "priceLabel": "Prix",
         "showLabel": "Afficher", "showAll": "Toutes", "showMulti": "Dans plusieurs magasins", "showStock": "En stock",
         "showLow": "À leur prix le plus bas", "showLh": "Gauchères uniquement", "loading": "Chargement du catalogue…",
@@ -190,7 +248,7 @@ T = {
                                                 "confirmation. Besoin d'aide ? Écrivez-nous à hola@guitle.com."],
         "js": {"loadErr": "Impossible de charger le catalogue.", "allBrands": "Toutes les marques", "all": "Toutes", "low": "Prix bas",
                "save": "−{v}", "lh": "gaucher", "store": "magasin", "stores": "magasins",
-               "empty": "Aucune {many} avec ces filtres.", "more": "Voir plus ({n} restantes)",
+               "empty": "Aucun résultat avec ces filtres.", "more": "Voir plus ({n} autres)",
                "meta": "{a} sur {b} {many} · {m} comparables dans plusieurs magasins · mis à jour le {d}", "best": "meilleur prix",
                "inStock": "en stock", "noStock": "épuisé", "goLong": "Voir le magasin", "goShort": "Voir", "close": "Fermer",
                "inAt": "chez {s}", "saveMax": " · jusqu'à {v} de moins que le plus cher", "atLow": "À son prix le plus bas",
@@ -200,13 +258,29 @@ T = {
                "types": {"Semihueca": "Demi-caisse", "Moderna / Metal": "Moderne / Metal", "Otras": "Autres",
                          "Auditorio / Concierto": "Auditorium / Concert", "12 cuerdas": "12 cordes",
                          "Tamaño reducido": "Taille réduite", "Clásica": "Classique", "Flamenca": "Flamenco",
-                         "Electroclásica": "Électro-classique"},
+                         "Electroclásica": "Électro-classique",
+                         "4 cuerdas": "4 cordes", "5 cuerdas": "5 cordes", "6 cuerdas o más": "6 cordes et plus",
+                         "Acústico": "Basse acoustique", "Fretless": "Fretless", "Escala corta": "Short scale", "Combo": "Combos",
+                         "Cabezal": "Têtes", "Pantalla": "Baffles", "Para bajo": "Pour basse", "Para acústica": "Pour guitare acoustique",
+                         "De auriculares y portátil": "Amplis casque et portables", "Para eléctrica": "Pour guitare électrique",
+                         "Para clásica": "Pour guitare classique", "Overdrive y distorsión": "Overdrive et distorsion",
+                         "Modulación": "Modulation", "Compresor": "Compresseur", "Wah y volumen": "Wah et volume",
+                         "Octavador y pitch": "Octaver et pitch", "Ecualizador": "Égaliseur", "Puerta de ruido": "Noise gate",
+                         "Sintetizador": "Synthétiseurs", "Afinador": "Accordeurs", "Multiefectos": "Multi-effets",
+                         "Reverb": "Reverb", "Delay": "Delay", "Looper": "Looper", "Piano digital": "Pianos numériques",
+                         "Teclado portátil": "Claviers arrangeurs", "Piano de escenario": "Pianos de scène",
+                         "Controlador MIDI": "Claviers maîtres MIDI", "Piano acústico": "Pianos acoustiques",
+                         "Dinámico": "Dynamiques", "Condensador": "Statiques", "Inalámbrico": "Sans fil", "USB": "USB",
+                         "Para instrumento": "Pour instruments", "De cinta": "À ruban", "Cuerdas": "Cordes",
+                         "Púas": "Médiators", "Correas": "Sangles", "Cables": "Câbles", "Afinadores": "Accordeurs",
+                         "Cejillas": "Capodastres", "Soportes": "Stands", "Pastillas": "Micros guitare et basse",
+                         "Recambios": "Pièces détachées", "Mantenimiento": "Entretien"},
                "wait": "Nous suivons ce modèle depuis {n} {days}", "day": "jour", "days": "jours",
                "waitSub": "Le verdict sera plus fiable après quelques semaines d'historique.",
-               "min": "Prix le plus bas relevé", "minSub": "Nous ne l'avons jamais vue moins chère.",
+               "min": "Prix le plus bas relevé", "minSub": "Nous n'avons jamais relevé de prix plus bas.",
                "minBelow": " {p} % sous sa moyenne sur 30 jours.",
                "good": "Bon moment : {p} % sous son prix moyen", "goodSub": "Moyenne des 30 derniers jours : {avg}.",
-               "bad": "Elle est actuellement {p} % plus chère que d'habitude",
+               "bad": "Son prix est actuellement {p} % plus élevé que d'habitude",
                "badSub": "Si vous n'êtes pas pressé, attendez : sa moyenne sur 30 jours est de {avg} et son prix le plus bas, {min}.",
                "normal": "Prix normal", "normalSub": "Dans la moyenne des 30 derniers jours ({avg}). Prix le plus bas relevé : {min}.",
                "today": "prix du jour", "lowest": "plus bas historique ({d})", "highest": "plus haut historique",
@@ -252,7 +326,18 @@ T = {
         "updated": "Dati aggiornati al {d}", "home": "Home",
         "kinds": {"electrica": ("Chitarre elettriche", "Elettriche", "Cerca tra le elettriche: modello, marca, colore…"),
                   "acustica": ("Chitarre acustiche", "Acustiche", "Cerca tra le acustiche: modello, marca, legno…"),
-                  "clasica": ("Chitarre classiche", "Classiche", "Cerca tra le classiche: modello, marca, flamenco…")},
+                  "clasica": ("Chitarre classiche", "Classiche", "Cerca tra le classiche: modello, marca, flamenco…"),
+                  "bajo": ("Bassi elettrici e acustici", "Bassi", "Cerca tra i bassi: modello, marca, 5 corde…"),
+                  "ampli": ("Amplificatori per chitarra e basso", "Amplificatori", "Cerca tra gli amplificatori: modello, marca, combo, testata…"),
+                  "pedal": ("Pedali effetto", "Effetti", "Cerca tra i pedali: modello, marca, effetto…"),
+                  "teclado": ("Tastiere e pianoforti digitali", "Tastiere", "Cerca tra le tastiere: modello, marca…"),
+                  "micro": ("Microfoni", "Microfoni", "Cerca tra i microfoni: modello, marca, tipo…"),
+                  "estuche": ("Custodie e borse", "Custodie", "Cerca tra custodie e borse: modello, marca…"),
+                  "varios": ("Accessori per chitarra", "Accessori", "Cerca tra gli accessori: corde, plettri, tracolle, cavi…")},
+        # Lo que se cuenta en cada categoría de equipo (portada y lista) y, si no son solo guitarras, el total.
+        "nouns": {"bajo": "bassi", "ampli": "amplificatori", "pedal": "pedali", "teclado": "tastiere", "micro": "microfoni",
+                  "estuche": "custodie", "varios": "articoli"},
+        "allWord": "prodotti",
         "anyPrice": "Qualsiasi prezzo", "upTo": "Fino a {v}", "over": "Oltre {v}", "brandLabel": "Marca", "priceLabel": "Prezzo",
         "showLabel": "Mostra", "showAll": "Tutte", "showMulti": "In più negozi", "showStock": "Disponibili",
         "showLow": "Al prezzo minimo", "showLh": "Solo mancine", "loading": "Caricamento del catalogo…", "sortLabel": "Ordina",
@@ -272,7 +357,7 @@ T = {
                                                "Per aiuto scrivici a hola@guitle.com."],
         "js": {"loadErr": "Impossibile caricare il catalogo.", "allBrands": "Tutte le marche", "all": "Tutte", "low": "Minimo",
                "save": "Risparmi {v}", "lh": "mancina", "store": "negozio", "stores": "negozi",
-               "empty": "Nessuna {many} con questi filtri.", "more": "Mostra altre ({n} rimanenti)",
+               "empty": "Nessun risultato con questi filtri.", "more": "Mostra altre ({n} rimanenti)",
                "meta": "{a} di {b} {many} · {m} confrontabili in più negozi · aggiornato al {d}", "best": "miglior prezzo",
                "inStock": "disponibile", "noStock": "non disponibile", "goLong": "Vai al negozio", "goShort": "Vai", "close": "Chiudi",
                "inAt": "da {s}", "saveMax": " · fino a {v} in meno rispetto al più caro", "atLow": "Al minimo registrato",
@@ -282,7 +367,22 @@ T = {
                "types": {"Semihueca": "Semi-hollow", "Moderna / Metal": "Moderna / Metal", "Otras": "Altre",
                          "Auditorio / Concierto": "Auditorium / Concerto", "12 cuerdas": "12 corde",
                          "Tamaño reducido": "Misura ridotta", "Clásica": "Classica", "Flamenca": "Flamenco",
-                         "Electroclásica": "Classica elettrificata"},
+                         "Electroclásica": "Classica elettrificata",
+                         "4 cuerdas": "4 corde", "5 cuerdas": "5 corde", "6 cuerdas o más": "6 corde e più",
+                         "Acústico": "Acustici", "Fretless": "Fretless", "Escala corta": "Scala corta", "Combo": "Combo",
+                         "Cabezal": "Testate", "Pantalla": "Casse", "Para bajo": "Per basso", "Para acústica": "Per acustica",
+                         "De auriculares y portátil": "Da cuffia e portatili", "Para eléctrica": "Per elettrica",
+                         "Para clásica": "Per classica", "Overdrive y distorsión": "Overdrive e distorsione",
+                         "Modulación": "Modulazione", "Compresor": "Compressori", "Wah y volumen": "Wah e volume",
+                         "Octavador y pitch": "Octaver e pitch", "Ecualizador": "Equalizzatori", "Puerta de ruido": "Noise gate",
+                         "Sintetizador": "Synth", "Afinador": "Accordatori", "Multiefectos": "Multieffetto",
+                         "Reverb": "Riverbero", "Piano digital": "Pianoforti digitali", "Teclado portátil": "Tastiere",
+                         "Piano de escenario": "Stage piano", "Controlador MIDI": "Controller MIDI",
+                         "Piano acústico": "Pianoforti acustici", "Dinámico": "Dinamici", "Condensador": "A condensatore",
+                         "Inalámbrico": "Wireless", "Para instrumento": "Per strumenti", "De cinta": "A nastro",
+                         "Cuerdas": "Corde", "Púas": "Plettri", "Correas": "Tracolle", "Cables": "Cavi",
+                         "Afinadores": "Accordatori", "Cejillas": "Capotasti", "Soportes": "Supporti", "Pastillas": "Pickup",
+                         "Recambios": "Ricambi", "Mantenimiento": "Manutenzione"},
                "wait": "Seguiamo questo modello da {n} {days}", "day": "giorno", "days": "giorni",
                "waitSub": "Il verdetto sarà più affidabile con qualche settimana di storico.",
                "min": "Prezzo minimo registrato", "minSub": "Non l'abbiamo mai vista più economica.",
@@ -332,7 +432,18 @@ T = {
         "updated": "Data updated on {d}", "home": "Home",
         "kinds": {"electrica": ("Electric guitars", "Electric", "Search electric guitars: model, brand, colour…"),
                   "acustica": ("Acoustic guitars", "Acoustic", "Search acoustic guitars: model, brand, tonewood…"),
-                  "clasica": ("Classical guitars", "Classical", "Search classical guitars: model, brand, flamenco…")},
+                  "clasica": ("Classical guitars", "Classical", "Search classical guitars: model, brand, flamenco…"),
+                  "bajo": ("Electric and acoustic basses", "Basses", "Search basses: model, brand, 5-string…"),
+                  "ampli": ("Guitar and bass amps", "Amps", "Search amps: model, brand, combo, head…"),
+                  "pedal": ("Effects pedals", "Effects", "Search effects pedals: model, brand, effect…"),
+                  "teclado": ("Keyboards and digital pianos", "Keyboards", "Search keyboards: model, brand…"),
+                  "micro": ("Microphones", "Microphones", "Search microphones: model, brand, type…"),
+                  "estuche": ("Cases and gig bags", "Cases", "Search cases and gig bags: model, brand…"),
+                  "varios": ("Guitar accessories", "Accessories", "Search accessories: strings, picks, straps, cables…")},
+        # Lo que se cuenta en cada categoría de equipo (portada y lista) y, si no son solo guitarras, el total.
+        "nouns": {"bajo": "basses", "ampli": "amps", "pedal": "pedals", "teclado": "keyboards", "micro": "microphones",
+                  "estuche": "cases", "varios": "items"},
+        "allWord": "products",
         "anyPrice": "Any price", "upTo": "Up to {v}", "over": "Over {v}", "brandLabel": "Brand", "priceLabel": "Price",
         "showLabel": "Show", "showAll": "All", "showMulti": "In several shops", "showStock": "In stock",
         "showLow": "At their lowest price", "showLh": "Left-handed only", "loading": "Loading catalogue…", "sortLabel": "Sort",
@@ -362,7 +473,22 @@ T = {
                "types": {"ST": "S-style", "T": "T-style", "Semihueca": "Semi-hollow", "Offset / Retro": "Offset / Retro",
                          "Moderna / Metal": "Modern / Metal", "Otras": "Other", "Auditorio / Concierto": "Auditorium / Concert",
                          "12 cuerdas": "12-string", "Tamaño reducido": "Small body", "Clásica": "Classical",
-                         "Flamenca": "Flamenco", "Electroclásica": "Electro-classical"},
+                         "Flamenca": "Flamenco", "Electroclásica": "Electro-classical",
+                         "4 cuerdas": "4-string", "5 cuerdas": "5-string", "6 cuerdas o más": "6-string and more",
+                         "Acústico": "Acoustic bass", "Fretless": "Fretless", "Escala corta": "Short scale", "Combo": "Combos",
+                         "Cabezal": "Heads", "Pantalla": "Cabinets", "Para bajo": "For bass", "Para acústica": "For acoustic",
+                         "De auriculares y portátil": "Headphone and mini amps", "Para eléctrica": "For electric",
+                         "Para clásica": "For classical", "Overdrive y distorsión": "Overdrive and distortion",
+                         "Modulación": "Modulation", "Compresor": "Compressor", "Wah y volumen": "Wah and volume",
+                         "Octavador y pitch": "Octave and pitch", "Ecualizador": "EQ", "Puerta de ruido": "Noise gate",
+                         "Sintetizador": "Synths", "Afinador": "Tuner", "Multiefectos": "Multi-effects",
+                         "Reverb": "Reverb", "Piano digital": "Digital pianos", "Teclado portátil": "Portable keyboards",
+                         "Piano de escenario": "Stage pianos", "Controlador MIDI": "MIDI controllers", "Piano acústico": "Acoustic pianos",
+                         "Dinámico": "Dynamic", "Condensador": "Condenser", "Inalámbrico": "Wireless",
+                         "Para instrumento": "Instrument mics", "De cinta": "Ribbon", "Cuerdas": "Strings",
+                         "Púas": "Picks", "Correas": "Straps", "Cables": "Cables", "Afinadores": "Tuners",
+                         "Cejillas": "Capos", "Soportes": "Stands", "Pastillas": "Pickups", "Recambios": "Spare parts",
+                         "Mantenimiento": "Care"},
                "wait": "We've been tracking this model for {n} {days}", "day": "day", "days": "days",
                "waitSub": "The verdict gets more reliable after a few weeks of history.",
                "min": "Lowest price on record", "minSub": "We've never seen it cheaper.", "minBelow": " {p}% below its 30-day average.",
@@ -410,7 +536,18 @@ T = {
         "updated": "Daten aktualisiert am {d}", "home": "Startseite",
         "kinds": {"electrica": ("E-Gitarren", "E-Gitarren", "In E-Gitarren suchen: Modell, Marke, Farbe…"),
                   "acustica": ("Westerngitarren", "Western", "In Westerngitarren suchen: Modell, Marke, Holz…"),
-                  "clasica": ("Konzertgitarren", "Konzert", "In Konzertgitarren suchen: Modell, Marke, Flamenco…")},
+                  "clasica": ("Konzertgitarren", "Konzert", "In Konzertgitarren suchen: Modell, Marke, Flamenco…"),
+                  "bajo": ("E-Bässe und Akustikbässe", "Bässe", "In Bässen suchen: Modell, Marke, 5-Saiter…"),
+                  "ampli": ("Gitarren- und Bassverstärker", "Verstärker", "In Verstärkern suchen: Modell, Marke, Combo, Topteil…"),
+                  "pedal": ("Effektpedale", "Effekte", "In Effektpedalen suchen: Modell, Marke, Effekt…"),
+                  "teclado": ("Keyboards und Digitalpianos", "Keyboards", "In Keyboards suchen: Modell, Marke…"),
+                  "micro": ("Mikrofone", "Mikrofone", "In Mikrofonen suchen: Modell, Marke, Typ…"),
+                  "estuche": ("Koffer und Gigbags", "Koffer", "In Koffern und Gigbags suchen: Modell, Marke…"),
+                  "varios": ("Gitarrenzubehör", "Zubehör", "Im Zubehör suchen: Saiten, Plektren, Gurte, Kabel…")},
+        # Lo que se cuenta en cada categoría de equipo (portada y lista) y, si no son solo guitarras, el total.
+        "nouns": {"bajo": "Bässe", "ampli": "Verstärker", "pedal": "Pedale", "teclado": "Keyboards", "micro": "Mikrofone",
+                  "estuche": "Koffer", "varios": "Artikel"},
+        "allWord": "Produkte",
         "anyPrice": "Jeder Preis", "upTo": "Bis {v}", "over": "Über {v}", "brandLabel": "Marke", "priceLabel": "Preis",
         "showLabel": "Anzeigen", "showAll": "Alle", "showMulti": "In mehreren Shops", "showStock": "Auf Lager",
         "showLow": "Zum Tiefstpreis", "showLh": "Nur Linkshänder", "loading": "Katalog wird geladen…", "sortLabel": "Sortieren",
@@ -440,7 +577,22 @@ T = {
                "types": {"ST": "ST-Modelle", "T": "T-Modelle", "Semihueca": "Halbakustik", "Moderna / Metal": "Modern / Metal",
                          "Otras": "Andere", "Auditorio / Concierto": "Auditorium / Konzert", "12 cuerdas": "12-saitig",
                          "Tamaño reducido": "Kleine Größe", "Clásica": "Klassisch", "Flamenca": "Flamenco",
-                         "Electroclásica": "Elektro-Klassik"},
+                         "Electroclásica": "Elektro-Klassik",
+                         "4 cuerdas": "4-Saiter", "5 cuerdas": "5-Saiter", "6 cuerdas o más": "6-Saiter und mehr",
+                         "Acústico": "Akustikbass", "Fretless": "Fretless", "Escala corta": "Short Scale", "Combo": "Combos",
+                         "Cabezal": "Topteile", "Pantalla": "Boxen", "Para bajo": "Für Bass", "Para acústica": "Für Akustikgitarre",
+                         "De auriculares y portátil": "Kopfhörer- und Mini-Amps", "Para eléctrica": "Für E-Gitarre",
+                         "Para clásica": "Für Konzertgitarre", "Overdrive y distorsión": "Overdrive und Distortion",
+                         "Modulación": "Modulation", "Compresor": "Kompressor", "Wah y volumen": "Wah und Volume",
+                         "Octavador y pitch": "Oktaver und Pitch", "Ecualizador": "Equalizer", "Puerta de ruido": "Noise Gate",
+                         "Sintetizador": "Synthesizer", "Afinador": "Stimmgerät", "Multiefectos": "Multieffekte",
+                         "Reverb": "Hall", "Piano digital": "Digitalpianos", "Teclado portátil": "Keyboards",
+                         "Piano de escenario": "Stagepianos", "Controlador MIDI": "MIDI-Controller", "Piano acústico": "Klaviere",
+                         "Dinámico": "Dynamisch", "Condensador": "Kondensator", "Inalámbrico": "Funk",
+                         "Para instrumento": "Instrumentenmikrofone", "De cinta": "Bändchen", "Cuerdas": "Saiten",
+                         "Púas": "Plektren", "Correas": "Gurte", "Cables": "Kabel", "Afinadores": "Stimmgeräte",
+                         "Cejillas": "Kapodaster", "Soportes": "Ständer", "Pastillas": "Tonabnehmer", "Recambios": "Ersatzteile",
+                         "Mantenimiento": "Pflege"},
                "wait": "Wir beobachten dieses Modell seit {n} {days}", "day": "Tag", "days": "Tagen",
                "waitSub": "Die Einschätzung wird nach ein paar Wochen Preisverlauf zuverlässiger.",
                "min": "Niedrigster erfasster Preis", "minSub": "So günstig haben wir sie noch nie gesehen.",
@@ -490,7 +642,14 @@ T = {
         "updated": "Dados atualizados em {d}", "home": "Início",
         "kinds": {"electrica": ("Guitarras", "Guitarras", "Busque nas guitarras: modelo, marca, cor…"),
                   "acustica": ("Violões de aço e folk", "Violões aço", "Busque nos violões: modelo, marca, madeira…"),
-                  "clasica": ("Violões de nylon", "Violões nylon", "Busque nos violões de nylon: modelo, marca…")},
+                  "clasica": ("Violões de nylon", "Violões nylon", "Busque nos violões de nylon: modelo, marca…"),
+                  "bajo": ("Contrabaixos", "Baixos", "Busque nos baixos: modelo, marca, cordas…"),
+                  "ampli": ("Amplificadores", "Amplis", "Busque nos amplificadores: modelo, marca, potência…"),
+                  "pedal": ("Pedais de efeito", "Pedais", "Busque nos pedais: modelo, marca, efeito…"),
+                  "teclado": ("Teclados e pianos", "Teclados", "Busque nos teclados: modelo, marca…"),
+                  "micro": ("Microfones", "Microfones", "Busque nos microfones: modelo, marca, tipo…"),
+                  "estuche": ("Cases, bags e capas", "Cases", "Busque nos cases e bags: modelo, marca…"),
+                  "varios": ("Acessórios", "Acessórios", "Busque nos acessórios: cordas, palhetas, correias, cabos…")},
         "anyPrice": "Qualquer preço", "upTo": "Até {v}", "over": "Acima de {v}", "brandLabel": "Marca", "priceLabel": "Preço",
         "showLabel": "Mostrar", "showAll": "Todos", "showMulti": "Em várias lojas", "showStock": "Em estoque",
         "showLow": "No menor preço", "showLh": "Só canhotos", "loading": "Carregando o catálogo…", "sortLabel": "Ordenar",
@@ -518,7 +677,21 @@ T = {
                "many": "instrumentos",
                "types": {"Semihueca": "Semi-acústica", "Moderna / Metal": "Moderna / Metal", "Otras": "Outros",
                          "Auditorio / Concierto": "Auditório / Concerto", "12 cuerdas": "12 cordas", "Tamaño reducido": "Tamanho reduzido",
-                         "Clásica": "Clássico", "Flamenca": "Flamenco", "Electroclásica": "Elétrico nylon"},
+                         "Clásica": "Clássico", "Flamenca": "Flamenco", "Electroclásica": "Elétrico nylon",
+                         "4 cuerdas": "4 cordas", "5 cuerdas": "5 cordas", "6 cuerdas o más": "6 cordas ou mais",
+                         "Acústico": "Acústico", "Escala corta": "Escala curta", "Combo": "Combo / cubo", "Cabezal": "Cabeçote",
+                         "Pantalla": "Caixa", "Para bajo": "Para baixo", "Para acústica": "Para violão",
+                         "De auriculares y portátil": "Portátil / fone", "Para eléctrica": "Para guitarra",
+                         "Para clásica": "Para violão nylon", "Overdrive y distorsión": "Overdrive e distorção",
+                         "Modulación": "Modulação", "Compresor": "Compressor", "Wah y volumen": "Wah e volume",
+                         "Octavador y pitch": "Oitavador e pitch", "Ecualizador": "Equalizador", "Puerta de ruido": "Noise gate",
+                         "Sintetizador": "Sintetizador", "Afinador": "Afinador", "Multiefectos": "Pedaleiras e multiefeitos",
+                         "Piano digital": "Piano digital", "Teclado portátil": "Teclado arranjador", "Piano de escenario": "Stage piano",
+                         "Controlador MIDI": "Controlador MIDI", "Piano acústico": "Piano acústico", "Dinámico": "Dinâmico",
+                         "Condensador": "Condensador", "Inalámbrico": "Sem fio", "Para instrumento": "Para instrumento",
+                         "De cinta": "De fita", "Cuerdas": "Cordas", "Púas": "Palhetas", "Correas": "Correias", "Cables": "Cabos",
+                         "Afinadores": "Afinadores", "Cejillas": "Capotrastes", "Soportes": "Suportes", "Pastillas": "Captadores",
+                         "Recambios": "Peças de reposição", "Mantenimiento": "Limpeza e manutenção"},
                "wait": "Acompanhamos este modelo há {n} {days}", "day": "dia", "days": "dias",
                "waitSub": "O veredito fica mais confiável com algumas semanas de histórico.",
                "min": "Menor preço registrado", "minSub": "Nunca vimos mais barato.", "minBelow": " {p}% abaixo da média de 30 dias.",
@@ -567,7 +740,18 @@ T = {
         "updated": "Gegevens bijgewerkt op {d}", "home": "Home",
         "kinds": {"electrica": ("Elektrische gitaren", "Elektrisch", "Zoek in elektrische gitaren: model, merk, kleur…"),
                   "acustica": ("Akoestische gitaren", "Akoestisch", "Zoek in akoestische gitaren: model, merk, hout…"),
-                  "clasica": ("Klassieke gitaren", "Klassiek", "Zoek in klassieke gitaren: model, merk, flamenco…")},
+                  "clasica": ("Klassieke gitaren", "Klassiek", "Zoek in klassieke gitaren: model, merk, flamenco…"),
+                  "bajo": ("Elektrische en akoestische basgitaren", "Basgitaren", "Zoek in basgitaren: model, merk, 5-snarig…"),
+                  "ampli": ("Gitaar- en basversterkers", "Versterkers", "Zoek in versterkers: model, merk, combo, top…"),
+                  "pedal": ("Effectpedalen", "Effecten", "Zoek in effectpedalen: model, merk, effect…"),
+                  "teclado": ("Keyboards en digitale piano's", "Keyboards", "Zoek in keyboards: model, merk…"),
+                  "micro": ("Microfoons", "Microfoons", "Zoek in microfoons: model, merk, type…"),
+                  "estuche": ("Koffers en gigbags", "Koffers", "Zoek in koffers en gigbags: model, merk…"),
+                  "varios": ("Gitaaraccessoires", "Accessoires", "Zoek in accessoires: snaren, plectrums, riemen, kabels…")},
+        # Wat er in elke categorie geteld wordt (home en lijst) en, als het niet alleen gitaren zijn, het totaal.
+        "nouns": {"bajo": "basgitaren", "ampli": "versterkers", "pedal": "pedalen", "teclado": "keyboards", "micro": "microfoons",
+                  "estuche": "koffers", "varios": "artikelen"},
+        "allWord": "producten",
         "anyPrice": "Elke prijs", "upTo": "Tot {v}", "over": "Meer dan {v}", "brandLabel": "Merk", "priceLabel": "Prijs",
         "showLabel": "Tonen", "showAll": "Alle", "showMulti": "In meerdere winkels", "showStock": "Op voorraad",
         "showLow": "Op de laagste prijs", "showLh": "Alleen linkshandig", "loading": "Catalogus laden…", "sortLabel": "Sorteren",
@@ -597,7 +781,22 @@ T = {
                "types": {"ST": "ST-modellen", "T": "T-modellen", "Semihueca": "Semi-akoestisch", "Moderna / Metal": "Modern / Metal",
                          "Otras": "Overige", "Auditorio / Concierto": "Auditorium / Concert", "12 cuerdas": "12-snarig",
                          "Tamaño reducido": "Klein formaat", "Clásica": "Klassiek", "Flamenca": "Flamenco",
-                         "Electroclásica": "Elektrisch klassiek"},
+                         "Electroclásica": "Elektrisch klassiek",
+                         "4 cuerdas": "4-snarig", "5 cuerdas": "5-snarig", "6 cuerdas o más": "6-snarig en meer",
+                         "Acústico": "Akoestische bas", "Fretless": "Fretless", "Escala corta": "Short scale", "Combo": "Combo's",
+                         "Cabezal": "Tops", "Pantalla": "Speakerkasten", "Para bajo": "Voor bas", "Para acústica": "Voor akoestisch",
+                         "De auriculares y portátil": "Koptelefoon- en mini-versterkers", "Para eléctrica": "Voor elektrisch",
+                         "Para clásica": "Voor klassiek", "Overdrive y distorsión": "Overdrive en distortion",
+                         "Modulación": "Modulatie", "Compresor": "Compressor", "Wah y volumen": "Wah en volume",
+                         "Octavador y pitch": "Octaver en pitch", "Ecualizador": "Equalizer", "Puerta de ruido": "Noise gate",
+                         "Sintetizador": "Synthesizers", "Afinador": "Stemapparaat", "Multiefectos": "Multi-effecten",
+                         "Reverb": "Reverb", "Piano digital": "Digitale piano's", "Teclado portátil": "Keyboards",
+                         "Piano de escenario": "Stagepiano's", "Controlador MIDI": "MIDI-controllers", "Piano acústico": "Akoestische piano's",
+                         "Dinámico": "Dynamisch", "Condensador": "Condensator", "Inalámbrico": "Draadloos",
+                         "Para instrumento": "Instrumentmicrofoons", "De cinta": "Lintmicrofoons", "Cuerdas": "Snaren",
+                         "Púas": "Plectrums", "Correas": "Gitaarriemen", "Cables": "Kabels", "Afinadores": "Stemapparaten",
+                         "Cejillas": "Capo's", "Soportes": "Standaards", "Pastillas": "Elementen", "Recambios": "Onderdelen",
+                         "Mantenimiento": "Onderhoud"},
                "wait": "We volgen dit model sinds {n} {days}", "day": "dag", "days": "dagen",
                "waitSub": "Het oordeel wordt betrouwbaarder na een paar weken prijsgeschiedenis.",
                "min": "Laagste prijs ooit", "minSub": "We hebben hem nog nooit goedkoper gezien.", "minBelow": " {p}% onder het 30-daags gemiddelde.",
@@ -675,7 +874,16 @@ def _load(path):
 def _json_path(code, kind):
     """JSON del catálogo del país para una categoría (el nombre lo fija scraper.catalog, CATALOGS[...]["files"])."""
     from .catalog import CATALOGS
-    return f"data/catalog/{SITES[code]['catalog']}/{CATALOGS[SITES[code]['catalog']]['files'][kind]}"
+    # Las guitarras en el catálogo del país; el equipo, si lo hay, en otro ("brmas").
+    for cat in [SITES[code]["catalog"]] + SITES[code].get("extra_catalogs", []):
+        if kind in CATALOGS[cat]["files"]:
+            return f"data/catalog/{cat}/{CATALOGS[cat]['files'][kind]}"
+    raise KeyError(kind)
+
+
+def _history_path(code, kind):
+    """Histórico de precios del catálogo de la categoría (el equipo, "brmas", "demas"…, tiene el suyo)."""
+    return _json_path(code, kind).rsplit("/", 1)[0] + "/history.json"
 
 
 def catalogs(code):
@@ -751,8 +959,9 @@ def _head(code, title, desc, canonical, extra=""):
 {extra}"""
 
 
-def _gt(t):
-    return f'<script>window.GUITLE_T = {json.dumps(t["js"], ensure_ascii=False)};</script>'
+def _gt(t, kind=None):
+    js = t["js"] | ({"many": t["nouns"][kind]} if kind in t.get("nouns", {}) else {})  # qué se cuenta en la lista
+    return f'<script>window.GUITLE_T = {json.dumps(js, ensure_ascii=False)};</script>'
 
 
 # --- Página de cada guitarra ---------------------------------------------------------------------------------
@@ -800,7 +1009,7 @@ def _product(code, kind, product, names, alternates):
           "offers": {"@type": "AggregateOffer", "priceCurrency": s["cur"], "lowPrice": min(prices), "highPrice": max(prices),
                      "offerCount": len(product["items"])}}
     ld = {key: v for key, v in ld.items() if v}
-    history = f"/data/catalog/{s['catalog']}/history.json"
+    history = "/" + _history_path(code, kind)
     typ = product.get("type")
     typ = t["js"]["types"].get(typ, typ) if typ and typ != "Otras" else ""
     amazon = (f'\n    <p class="muted small amazon">{t["amazon"].format(u=esc(s["amazon"].format(q=quote_plus(name))))}</p>'
@@ -868,9 +1077,9 @@ def _list(code, kind, kinds):
               ("1000-2000", f"{m(1000)} – {m(2000)}"), ("2000-", t["over"].format(v=m(2000)))]
     sorts = zip(("stores", "price", "price-desc", "save", "name"), t["sorts"])
     head = _head(code, f"{label} · guitle", None, f"/{code}/{page}.html",
-                 f'<script src="/vendor/chart.umd.min.js"></script>\n<link rel="stylesheet" href="/catalogo.css">\n{_gt(t)}\n</head>')
+                 f'<script src="/vendor/chart.umd.min.js"></script>\n<link rel="stylesheet" href="/catalogo.css">\n{_gt(t, kind)}\n</head>')
     return f"""{head}
-<body data-src="/{_json_path(code, kind)}" data-history="/data/catalog/{s['catalog']}/history.json" data-kind="{kind}" data-img="/img/p/" data-cur="{s['cur']}">
+<body data-src="/{_json_path(code, kind)}" data-history="/{_history_path(code, kind)}" data-kind="{kind}" data-img="/img/p/" data-cur="{s['cur']}">
 <main>
   <div class="topbar">
     <div class="row">
@@ -924,7 +1133,8 @@ def _card(code, p, names, t):
             f'<span class="where">{esc(t["whereMany"].format(s=names.get(best["s"], best["s"]), n=n))}</span></div></a>')
 
 
-ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasica", "portuguesa": "acustica"}
+ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasica", "portuguesa": "acustica", "bajo": "bajo",
+             "ampli": "ampli", "pedal": "pedal", "teclado": "teclado", "micro": "micro", "estuche": "estuche", "varios": "varios"}
 
 
 def _index(code, cats):
@@ -942,7 +1152,7 @@ def _index(code, cats):
     icons = dict(re.findall(r"^\s{4}(\w+): '(.*?)',$", text, re.M))
     tiles = "".join(f'<a class="catcard" href="/{code}/{s["kinds"][k]}.html"><b><svg class="fill" viewBox="0 0 24 24" aria-hidden="true">'
                     f'{icons.get(ICON_KIND[k], "")}</svg></b><span>{esc(t["kinds"][k][1])}</span>'
-                    f'<small>{len(cats[k]["products"]):,} {esc(t["guitars"])}</small></a>'.replace(",", " ")
+                    f'<small>{len(cats[k]["products"]):,} {esc(t.get("nouns", {}).get(k, t["guitars"]))}</small></a>'.replace(",", " ")
                     for k in s["kinds"] if k in cats)
     first = s["kinds"][next(iter(cats))] if cats else next(iter(s["kinds"].values()))
     updated = max((d["updated"] for d in cats.values()), default="")
@@ -956,11 +1166,12 @@ def _index(code, cats):
 {_index_css()}
 </head>""")
     n_stores = len({i["s"] for p in allp for i in p["items"]})
+    word = t["guitars"] if set(cats) <= set(GUITAR_KINDS) else t.get("allWord", t["guitars"])
     return f"""{head}
 <body>
 <main>
   <header class="top">
-    <div class="stats"><span><strong>{len([p for p in allp if True]):,}</strong>{esc(t['guitars'])}</span><span><strong>{n_stores}</strong>{esc(t['storesWord'])}</span></div>
+    <div class="stats"><span><strong>{len([p for p in allp if True]):,}</strong>{esc(word)}</span><span><strong>{n_stores}</strong>{esc(t['storesWord'])}</span></div>
     <nav><a href="/{code}/{first}.html">{esc(t['catalog'])}</a></nav>
   </header>
 
