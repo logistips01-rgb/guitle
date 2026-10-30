@@ -234,36 +234,6 @@
   "median": 867.5
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Amh90-Bk Hollow Body",
-  "slug": "amh90-bk-hollow-body-4549763280374"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Cort Cr200Fbl",
-  "slug": "cort-cr200fbl-8809625365165"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Cort Cr250Tbk",
-  "slug": "cort-cr250tbk-8809625361877"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Cort Mbm-1 Meta Series Sb",
-  "slug": "cort-mbm-1-meta-series-sb-8809625365639"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Cort Mbm-1 Meta Series Ss",
-  "slug": "cort-mbm-1-meta-series-ss-8809625365653"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
@@ -534,60 +504,6 @@
   "median": 497.0
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Martin 00010E L Road Series Zurdos",
-  "slug": "martin-00010e-l-road-series-zurdos-729789580878"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "SX Dreadnought Negro SD104BK",
-  "slug": "sx-dreadnought-negro-sd104bk-6940651407282"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Ibanez AJ7012M1EBK Artwood Negro",
-  "slug": "ibanez-aj7012m1ebk-artwood-negro-4549763377678"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Martin D18 Dreadnought.",
-  "slug": "martin-d18-dreadnought-729789412766"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Martin GPC-16 A/E Cutaway - Abeto Sitka / Palisandro",
-  "slug": "martin-gpc-16-a-e-cutaway-abeto-sitka-palisandro-729789671811"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "SX SD104RDS Rojo",
-  "slug": "sx-sd104rds-rojo-6940651407312"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Sigma GM Serie Limitada",
-  "slug": "sigma-gm-serie-limitada-4260685051667"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Takamine GD51 E/A Dreadnought Cutway (Zurdos) Natural GD51CELH-NAT",
-  "slug": "takamine-gd51-e-a-dreadnought-cutway-zurdos-natural-gd51celh-nat-190262042211"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Tanglewood Amplificada Super Folk Cutaway Tanglewood TW4KOA",
-  "slug": "tanglewood-amplificada-super-folk-cutaway-tanglewood-tw4koa-810944012829"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "auvisa",
@@ -640,36 +556,6 @@
   "slug": "manuel-rodriguez-exotica-santos-pavo-real-4046662299150",
   "price": 456.78,
   "median": 705.5
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Takamine GC5 E/A Cutaway GC5CELH-NAT (Zurdos)",
-  "slug": "takamine-gc5-e-a-cutaway-gc5celh-nat-zurdos-190262043058"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Alhambra Z-NATURE CW EZ wBAG",
-  "slug": "alhambra-z-nature-cw-ez-wbag-8436623082857"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Gc12S Artesanal",
-  "slug": "gc12s-artesanal-4957812517294"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Godin Arena CW Clasica II RN",
-  "slug": "godin-arena-cw-clasica-ii-rn-623501051793"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Takamine Classique Cutaway Electro GC3CENAT",
-  "slug": "takamine-classique-cutaway-electro-gc3cenat-190262041306"
  },
  {
   "kind": "pedal",
