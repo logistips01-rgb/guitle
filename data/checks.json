@@ -711,6 +711,15 @@
   "median": 259.13
  },
  {
+  "kind": "ampli",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "PRS Cabezal MT15 V2 Tremonti",
+  "slug": "prs-cabezal-mt15-v2-tremonti-825362239215",
+  "price": 599.0,
+  "median": 1031.5
+ },
+ {
   "kind": "micro",
   "type": "fuera_de_lugar",
   "store": "alfasoni",
@@ -822,6 +831,15 @@
   "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "numemusic",
+  "name": "Daddario EJ26 - Phosphor Bronze Custom Light [11-52]",
+  "slug": "daddario-ej26-phosphor-bronze-custom-light-11-52-19954122164",
+  "price": 8.6,
+  "median": 12.035
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
   "name": "Daddario EPBB170 Phosphor Bronze Acoustic Bass, Long Scale [45-100]",
   "slug": "daddario-epbb170-phosphor-bronze-acoustic-bass-long-scale-45-100-19954926083",
   "price": 24.5,
@@ -839,20 +857,20 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "session",
+  "store": "numemusic",
   "name": "Daddario EXL220 XL Nickel Wound Super Light [40-95]",
   "slug": "daddario-exl220-xl-nickel-wound-super-light-40-95-19954151225",
-  "price": 17.8,
-  "median": 28.799999999999997
+  "price": 16.83,
+  "median": 27.799999999999997
  },
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "numemusic",
+  "store": "session",
   "name": "Daddario EXL220 XL Nickel Wound Super Light [40-95]",
   "slug": "daddario-exl220-xl-nickel-wound-super-light-40-95-19954151225",
-  "price": 19.8,
-  "median": 27.799999999999997
+  "price": 17.8,
+  "median": 27.314999999999998
  },
  {
   "kind": "varios",
@@ -861,7 +879,7 @@
   "name": "Daddario NS Micro Soundhole Tuner",
   "slug": "daddario-ns-micro-soundhole-tuner-19954170165",
   "price": 19.9,
-  "median": 30.0
+  "median": 29.45
  },
  {
   "kind": "varios",
@@ -893,11 +911,29 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Ernie Ball EB2832 Slinky Regular (50-105)",
+  "slug": "ernie-ball-eb2832-slinky-regular-50-105-749699128328",
+  "price": 21.54,
+  "median": 29.515
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "Ernie Ball EB2844 Slinky Stainless Steel Super (45-100)",
   "slug": "ernie-ball-eb2844-slinky-stainless-steel-super-45-100-749699128441",
   "price": 22.3,
   "median": 32.02
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Fender 2\" Sonoran Strap Saguaro",
+  "slug": "fender-2-sonoran-strap-saguaro-885978558193",
+  "price": 38.99,
+  "median": 52.495000000000005
  },
  {
   "kind": "varios",
