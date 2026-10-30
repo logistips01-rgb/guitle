@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: r2
+  group: r2-sync
   cancel-in-progress: false
 
 permissions:
