@@ -1,6 +1,7 @@
 """Crecimiento de guitle: productos y tiendas de cada país a lo largo del tiempo (data/crecimiento.json).
 
-Un punto cada 6 horas (hora de España): [momento, país, guitarras, equipo, tiendas]. Lo pinta stats.html.
+Un punto cada 6 horas (hora de España): [momento, país, guitarras, equipo, tiendas]. Lo pinta stats.html, que también
+avisa de anomalías; para la de "sin actualizar" se guarda la última lectura de cada catálogo ("actualizado").
 
     python -m scraper.crecimiento             # añade el punto de ahora, con el catálogo del disco
     python -m scraper.crecimiento --backfill  # rehace todo desde el historial de git (desde el primer día)
@@ -78,6 +79,22 @@ def now():
     return rows(bucket(datetime.now(timezone.utc)), count(files))
 
 
+def updated():
+    """{país: {"g": última lectura de sus guitarras, "e": de su equipo}} (ISO, UTC)."""
+    out = {}
+    for p in CAT.rglob("*.json"):
+        g = group(str(p.relative_to(CAT)))
+        if not g:
+            continue
+        try:
+            u = json.loads(p.read_text(encoding="utf-8")).get("updated")
+        except ValueError:
+            continue
+        if u and u > out.setdefault(g[0], {}).get(g[1], ""):
+            out[g[0]][g[1]] = u
+    return out
+
+
 def git(*args):
     return subprocess.run(["git", *args], cwd=ROOT, capture_output=True, text=True, check=True).stdout
 
@@ -114,7 +131,8 @@ def main():
         data = json.loads(OUT.read_text(encoding="utf-8"))["rows"] if OUT.exists() else []
         new = now()
         data = [r for r in data if r[0] != new[0][0]] + new if new else data
-    OUT.write_text(json.dumps({"cols": ["momento", "pais", "guitarras", "equipo", "tiendas"], "rows": data},
+    OUT.write_text(json.dumps({"cols": ["momento", "pais", "guitarras", "equipo", "tiendas"], "rows": data,
+                               "actualizado": updated()},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"crecimiento: {len(data)} filas, {len({r[0] for r in data})} momentos", flush=True)
 

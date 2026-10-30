@@ -38,6 +38,13 @@
   .world .sub { color: var(--text-muted); margin: -6px 0 12px; font-size: .9rem; }
   .world .kpis, #gkpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
   .world .kpis b, #gkpis b { color: var(--accent); }
+  .alert { display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid var(--border); }
+  .alert:first-child { border-top: 0; }
+  .alert b { font-size: .74rem; font-weight: 600; padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+  .alert.bad b { background: #fde8e8; color: #b42318; }
+  .alert.warn b { background: #fdf3dc; color: #8a5a00; }
+  .alert.ok b { background: var(--good-bg, #e6f4e8); color: var(--good, #00750a); }
+  .alert span { color: var(--text-secondary); }
   #gkpis { margin-bottom: 14px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
   .world .prog { height: 8px; background: var(--grid); border-radius: 99px; margin-top: 8px; overflow: hidden; }
   .world .prog i { display: block; height: 100%; background: var(--accent); }
@@ -85,6 +92,7 @@
     <div class="ranges" role="group" aria-label="Periodo">
       <button data-days="7">7 días</button><button data-days="30" aria-pressed="true">30 días</button><button data-days="90">90 días</button>
     </div>
+    <div class="card" id="health"><h2>Avisos del catálogo</h2><div id="alerts"><p class="empty">Comprobando…</p></div></div>
     <div class="tiles" id="tiles"></div>
     <div class="card world">
       <h2>guitle en el mundo</h2>
@@ -278,7 +286,7 @@ const GROWTH_COLORS = { es: "#2a78d6", pt: "#1e9e6a", fr: "#7b5cd6", it: "#e0892
                         br: "#2bb3c0", ie: "#7fb13a", at: "#c45ab3", nl: "#e5b51d" };
 let growthChart = null;
 async function renderGrowth() {
-  const { rows: g } = await fetch("data/crecimiento.json", { cache: "no-store" }).then(r => r.json());
+  const { rows: g, actualizado: upd = {} } = await fetch("data/crecimiento.json", { cache: "no-store" }).then(r => r.json());
   const moments = [...new Set(g.map(r => r[0]))].sort();
   const name = Object.fromEntries(COUNTRIES.map(([c, , n]) => [c, n]));
   const codes = Object.keys(GROWTH_COLORS).filter(c => g.some(r => r[1] === c));
@@ -296,6 +304,7 @@ async function renderGrowth() {
     [fmt(codes.length), "países con catálogo"],
     [fmt(Math.round((Date.parse(last) - Date.parse(first)) / 864e5)), `días desde el ${shortM(first).split(" ")[0]}`],
   ].map(([b, s]) => `<div class="tile-s"><b>${b}</b><span>${s}</span></div>`).join("");
+  renderAlerts(codes, at, moments, upd, name);
   if (growthChart) growthChart.destroy();
   growthChart = new Chart($("gchart"), {
     type: "line",
@@ -319,6 +328,27 @@ async function renderGrowth() {
   }).join("") + `<tr><td><b>Total</b></td><td class="n"><b>${fmt(codes.reduce((a, c) => a + (at[c][last]?.[2] || 0), 0))}</b></td>
       <td class="n"><b>${fmt(codes.reduce((a, c) => a + (at[c][last]?.[3] || 0), 0))}</b></td><td class="n"><b>${fmt(sumAt(last))}</b></td>
       <td></td><td class="n">${delta(sumAt(last) - sumAt(dayAgo))}</td><td class="n">${delta(sumAt(last) - sumAt(first))}</td></tr>`;
+}
+
+// Avisos: lo raro en la última lectura frente a la anterior (mismos datos que el crecimiento).
+function renderAlerts(codes, at, moments, upd, name) {
+  const last = moments.at(-1), prev = moments.at(-2), out = [];
+  const add = (cls, tag, text) => out.push(`<div class="alert ${cls}"><b>${tag}</b><span>${text}</span></div>`);
+  const kinds = [[2, "g", "guitarras"], [3, "e", "equipo"]];
+  for (const c of codes) {
+    const r = at[c][last], p = prev && at[c][prev], n = esc(name[c] || c);
+    if (!r) { add("bad", "Sin datos", `${n}: no aparece en la última lectura.`); continue; }
+    for (const [i, k, label] of kinds) {
+      if (!r[i]) { add("bad", "Sin datos", `${n}: no hay ${label} en el catálogo.`); continue; }
+      if (p && p[i] && r[i] < p[i] * 0.8)
+        add("bad", "Caída brusca", `${n}: ${label} de ${fmt(p[i])} a ${fmt(r[i])} (−${Math.round((1 - r[i] / p[i]) * 100)} %) en la última lectura.`);
+      const u = upd[c]?.[k], h = u ? (Date.now() - Date.parse(u)) / 36e5 : null;
+      if (h != null && h > 24) add("warn", "Sin actualizar", `${n}: ${label} sin lectura nueva desde hace ${Math.round(h)} h.`);
+    }
+    if (p && r[4] < p[4]) add("warn", "Tiendas", `${n}: de ${p[4]} a ${r[4]} tiendas en la última lectura.`);
+  }
+  $("alerts").innerHTML = out.length ? out.join("")
+    : `<div class="alert ok"><b>Todo en orden</b><span>Todos los países tienen guitarras y equipo, al día y sin caídas.</span></div>`;
 }
 
 function bars(id, map, label, emptyText, top = 10) {
