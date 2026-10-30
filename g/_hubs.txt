@@ -19,6 +19,7 @@ marca/all-pedal.html
 marca/almeria.html
 marca/altamira.html
 marca/alto-professional.html
+marca/alto.html
 marca/alvarez.html
 marca/alysee.html
 marca/amadeus.html
@@ -202,6 +203,7 @@ marca/esi.html
 marca/esp.html
 marca/esteve.html
 marca/ev-electro-voice.html
+marca/eve-audio.html
 marca/eventide.html
 marca/evh.html
 marca/faith-nexus.html
@@ -474,6 +476,7 @@ marca/prudencio-saez.html
 marca/prudencio-saez.html
 marca/pure-gewa.html
 marca/pyramid.html
+marca/qsc.html
 marca/qtx.html
 marca/quik-lok.html
 marca/rafael-martin.html
@@ -551,10 +554,10 @@ marca/snark.html
 marca/soldano.html
 marca/solid-gold-fx.html
 marca/solid-gold-fx.html
-marca/solid-state-logic.html
 marca/sonicware.html
 marca/sonor.html
 marca/sontronics.html
+marca/soundboks.html
 marca/soundsation.html
 marca/source-audio.html
 marca/spectrasonics.html

@@ -531,6 +531,36 @@
   "median": 259.13
  },
  {
+  "kind": "ampli",
+  "type": "foto_perdida",
+  "name": "Fishman Loudbox Micro",
+  "slug": "fishman-loudbox-micro-605609185631"
+ },
+ {
+  "kind": "ampli",
+  "type": "foto_perdida",
+  "name": "Hiwatt HB115HN",
+  "slug": "hiwatt-hb115hn-5060737660408"
+ },
+ {
+  "kind": "ampli",
+  "type": "foto_perdida",
+  "name": "Hiwatt HB210HN",
+  "slug": "hiwatt-hb210hn-5060737660415"
+ },
+ {
+  "kind": "ampli",
+  "type": "foto_perdida",
+  "name": "Hiwatt HB410HN",
+  "slug": "hiwatt-hb410hn-5060737660422"
+ },
+ {
+  "kind": "estuche",
+  "type": "foto_perdida",
+  "name": "Admira ADM10 para",
+  "slug": "admira-adm10-para-8436032359021"
+ },
+ {
   "kind": "micro",
   "type": "fuera_de_lugar",
   "store": "alfasoni",
@@ -538,6 +568,24 @@
   "slug": "akg-p120-885038037033",
   "price": 95.0,
   "median": 136.5
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Akg Italia Akg C5",
+  "slug": "akg-italia-akg-c5-885038018599",
+  "price": 145.0,
+  "median": 234.54500000000002
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Rode NT1 5th Generation Silver",
+  "slug": "rode-nt1-5th-generation-silver-698813010523",
+  "price": 210.42,
+  "median": 307.565
  },
  {
   "kind": "micro",
@@ -808,5 +856,11 @@
   "slug": "righton-straps-talisman-victoria-black-8436612540801",
   "price": 49.58,
   "median": 61.5
+ },
+ {
+  "kind": "varios",
+  "type": "foto_perdida",
+  "name": "Savarez A230XL Bronze (010-047) 12c",
+  "slug": "savarez-a230xl-bronze-010-047-12c-698502621443"
  }
 ]
