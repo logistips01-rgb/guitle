@@ -25,3 +25,17 @@
 - Siguiente tanda de países con 10 agentes; luego Latinoamérica (cada país con su web y su moneda, envíos entre ellos).
 - Panel "Crecimiento de guitle": regenerarlo tras cada fase.
 - El usuario lanza el catálogo con "todos" a mano (yo no puedo lanzarlo: 403).
+
+## Mejora pendiente: repositorio privado (proteger el código) — cuando el usuario lo diga
+- Motivo: proteger el código (guitle va a crecer). Ya hay LICENSE "todos los derechos reservados" mientras tanto.
+- Problema: en privado, GitHub Actions solo da 2.000 min/mes gratis; las lecturas gastan cientos de miles → hace falta
+  un servidor propio como runner (sus minutos no cuentan).
+- Plan acordado: Hetzner Cloud (cuenta con hola@guitle.com, nunca Aldelis), proyecto "guitle", servidor x86 8 vCPU /
+  16 GB (gama CPX, ~25-30 €/mes), Ubuntu 24.04, Alemania. Guion cloud-config (sin claves en el repo) que instala ~16-20
+  runners con etiqueta "guitle"; el token de registro lo copia el usuario de Settings → Actions → Runners (caduca en
+  1 h) al crear el servidor. Workflows a runs-on: [self-hosted, guitle] (necesitan sudo, setup-python, setup-node, rclone).
+- Antes de pasar las lecturas: probar desde la IP del servidor que las tiendas responden igual (Fender solo respondía
+  desde GitHub). Reinicio automático de runners y aviso en stats si no hay lecturas.
+- Cuando todo funcione: repositorio a privado (oculta también el historial); GitHub Pages deja de hacer falta.
+- Bloquear el entrenamiento de IA en la web: Cloudflare → políticas de IA → Formación: Bloquear (búsqueda y agentes
+  siguen permitidos). Pendiente de que el usuario decida.
