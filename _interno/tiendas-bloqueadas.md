@@ -42,6 +42,7 @@ Motivos: **403** = nos deniega el acceso · **antibots** = página de comprobaci
 
 | Tienda | Web | Motivo | Notas |
 |---|---|---|---|
+| Musicis | musicis.it | Antibots (desde el 30/10) | Página «Verifica accesso / Security Check» tras leer más rápido que su Crawl-delay (10 s); ya se respeta. Si sigue, pedirles el feed. Teníamos 1.043 guitarras. |
 | StrumentiMusicali.net | strumentimusicali.net | 403 | La mayor tienda online italiana (100.000 artículos). Prioridad alta. |
 | Gino Guitars | ginoguitars.com | Antibots | Boutique de guitarras muy valorada. |
 | Mama's Music | mamasmusicstore.it | 403 | |
