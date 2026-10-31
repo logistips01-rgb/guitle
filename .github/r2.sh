@@ -65,7 +65,7 @@ publicar() {
   URLS="$RUNNER_TEMP/r2-urls.txt"; : > "$URLS"
   for s in $R2_SITES; do
     if [ ! -f "$s/index.html" ]; then continue; fi  # este trabajo no ha generado esa web
-    n=$(find "$s" -type f | wc -l)
+    n=$( { find "$s" -type f || true; } | wc -l)
     # Una web a medias no se sube: borraría en R2 las páginas que le faltan. Tope de borrado, por si acaso.
     if [ "$n" -lt 50 ]; then echo "::warning::web $s con solo $n ficheros: no se sube"; continue; fi
     up sync "$s" "$s" --max-delete 3000
@@ -75,7 +75,7 @@ publicar() {
     # Fichas: cada trabajo genera solo las de sus categorías, así que se copian (nunca se borran, como en git).
     if compgen -G "g/*.html" >/dev/null; then up copy g g --include "*.html"; fi
     for d in marca tipo presupuesto; do  # se generan enteras en cada lectura de España
-      n=$(find "$d" -name '*.html' 2>/dev/null | wc -l)
+      n=$( { find "$d" -name '*.html' 2>/dev/null || true; } | wc -l)  # sin la carpeta (trabajo de otro país): 0
       if [ "$n" -ge 10 ]; then up sync "$d" "$d" --max-delete 500; fi
     done
     one marcas.html
@@ -91,8 +91,30 @@ publicar() {
   gh workflow run r2.yml --ref "$GITHUB_REF_NAME" || echo "::warning::no se pudo lanzar r2.yml"
 }
 
+# Quita de data/thumbs.json las miniaturas que no están en R2 ni en disco (una subida que falló): así se vuelven a bajar
+# en vez de quedar rotas en la web. La lista del bucket se lee una vez por trabajo.
+reparar() {
+  rclone_ready
+  local list="$RUNNER_TEMP/r2-img.txt"
+  if [ ! -s "$list" ]; then rclone lsf r2:guitle/img/p --files-only --fast-list > "$list"; fi
+  [ "$(wc -l < "$list")" -gt 1000 ] || { echo "::warning::lista de R2 vacía o corta: no se repara"; return 0; }
+  python - "$list" <<'PY'
+import json, sys
+from pathlib import Path
+have = set(Path(sys.argv[1]).read_text().split())
+path = Path("data/thumbs.json")
+idx = json.loads(path.read_text())
+gone = [k for k in idx if k not in have and not Path("img/p", k).exists()]
+for k in gone:
+    del idx[k]
+path.write_text("{\n" + ",\n".join(f'"{k}":{v}' for k, v in sorted(idx.items())) + "\n}\n")
+print(f"miniaturas: {len(gone)} apuntadas pero sin subir a R2; se volverán a bajar")
+PY
+}
+
 case "${1:-}" in
   git-add) shift; git_add "$@" ;;
   publicar) publicar ;;
-  *) echo "uso: $0 git-add RUTAS… | publicar" >&2; exit 2 ;;
+  reparar) reparar ;;
+  *) echo "uso: $0 git-add RUTAS… | publicar | reparar" >&2; exit 2 ;;
 esac

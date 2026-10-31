@@ -99,6 +99,7 @@ jobs:
           # Con el tiempo que quede hasta los 290 min del trabajo (quedan 65 para el commit), repartido entre los catálogos
           # que faltan y sin pasar de 50 min por catálogo. Si no queda, las fotos esperan a la próxima vuelta.
           left=$(echo $CATS | wc -w)
+          bash .github/r2.sh reparar || echo "::warning::no se pudo comprobar img/p en R2"  # fotos apuntadas y sin subir
           for c in $CATS; do
             if [ -f "$RUNNER_TEMP/catalog-$c.json" ]; then python -m scraper.catalog --cat "$c" --merge "$RUNNER_TEMP/catalog-$c.json"; fi
             rest=$(( 290 - ($(date +%s) - T0) / 60 ))
@@ -117,6 +118,7 @@ jobs:
           for attempt in 1 2 3 4 5 6 7 8 9 10; do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            bash .github/r2.sh reparar || true
             [ -f "$RUNNER_TEMP/pvp.json" ] && python -m scraper.pvp --merge "$RUNNER_TEMP/pvp.json"  # PVP al histórico, antes de construir
             for c in $CATS; do  # también reconstruye los JSON de la web
               if [ -f "$RUNNER_TEMP/catalog-$c.json" ]; then python -m scraper.catalog --cat "$c" --merge "$RUNNER_TEMP/catalog-$c.json"; fi

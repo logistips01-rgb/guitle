@@ -60,6 +60,7 @@ jobs:
           min=$(( next - now - 40 )); [ $min -gt 100 ] && min=100
           if [ $min -lt 15 ]; then echo "::warning::sin tiempo antes de la próxima lectura"; exit 0; fi
           g=$(( min * 2 / 3 )); e=$(( min - g ))
+          bash .github/r2.sh reparar || echo "::warning::no se pudo comprobar img/p en R2"  # fotos apuntadas y sin subir
           echo "fotos de ${{ matrix.pais }}: $g + $e min"
           timeout $(( g + 5 ))m python -m scraper.thumbs --limit 100000 --minutes "$g" --cat "${{ matrix.pais }}" || true
           timeout $(( e + 5 ))m python -m scraper.thumbs --limit 100000 --minutes "$e" --cat "${{ matrix.pais }}mas" || true
@@ -72,6 +73,7 @@ jobs:
           for attempt in 1 2 3 4 5 6 7 8; do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            bash .github/r2.sh reparar || true
             # Las fotos nuevas (img/p/, fuera de git) siguen en disco: los JSON y las páginas del país las recogen.
             python -m scraper.catalog --cat "${{ matrix.pais }}" --build
             python -m scraper.catalog --cat "${{ matrix.pais }}mas" --build

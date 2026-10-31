@@ -93,6 +93,7 @@ jobs:
           for attempt in 1 2 3 4 5; do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            bash .github/r2.sh reparar || true
             python -m scraper.run --merge "$RUNNER_TEMP/records.json"
             [ -f "$RUNNER_TEMP/coupons.json" ] && python -m scraper.coupons --merge "$RUNNER_TEMP/coupons.json" --new-out "$RUNNER_TEMP/new_coupons.md"
             [ -f data/catalog/offers.json ] && python -m scraper.catalog --build
