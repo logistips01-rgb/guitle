@@ -75,21 +75,12 @@
     <div class="kpi"><b>Cada día</b><span>precio, stock e histórico</span></div>
   </div>
 
-  <h2>Cómo funciona</h2>
-  <ul>
-    <li>Cada día revisamos el precio, el stock y la foto de cada producto en las fichas públicas de las tiendas.</li>
-    <li>Guardamos el histórico de precios: el comprador ve si una oferta es de verdad buena.</li>
-    <li>Agrupamos el mismo modelo de todas las tiendas (por EAN y por nombre) y las ordenamos por precio.</li>
-    <li>El botón de cada tienda lleva a la ficha exacta del producto en tu web.</li>
-  </ul>
-  <p>Webs por país<span id="countries"></span>, cada una en su idioma y su moneda, con las tiendas que venden en ese país.</p>
-
   <h2>Qué gana tu tienda</h2>
   <div class="cards">
     <div class="card"><h3>Compradores decididos</h3><p>Quien llega desde guitle ya ha elegido el modelo y está comparando
       precio: entra en tu ficha con intención de comprar.</p></div>
-    <div class="card"><h3>Aparecer no cuesta nada</h3><p>Mostramos los precios de todas las tiendas, colaboren o no con
-      nosotros. Nadie paga por salir primero: manda el precio.</p></div>
+    <div class="card"><h3>Aparecer no cuesta nada</h3><p>Nadie paga por salir primero en guitle: el orden lo decide
+      el precio.</p></div>
     <div class="card"><h3>Visibilidad en otros países</h3><p>Si envías fuera de tu país, tus productos pueden aparecer
       también en las webs de esos países.</p></div>
   </div>
@@ -98,16 +89,11 @@
   <div class="cards">
     <div class="card"><h3>Programa de afiliados</h3><p>Si tienes programa de afiliados (Awin, Tradedoubler, propio…),
       enlazamos tus fichas con nuestro código: solo nos pagas si vendes.</p></div>
-    <div class="card"><h3>Feed de productos</h3><p>Un fichero CSV o XML con EAN, precio, stock, URL y foto. Es más exacto
-      y más rápido para nosotros, y no tenemos que leer tu web.</p></div>
+    <div class="card"><h3>Feed de productos</h3><p>Un fichero CSV o XML con EAN, precio, stock, URL y foto. Nos ahorra
+      mucho trabajo de catalogación: tus productos entran antes, completos y con los datos exactos.</p></div>
     <div class="card"><h3>Datos que corregir</h3><p>Si ves un precio, una foto o un producto mal asociado, escríbenos y lo
       arreglamos.</p></div>
   </div>
-
-  <h2>Cómo leemos tu web</h2>
-  <p>Leemos solo fichas públicas y siempre respetamos tu robots.txt, incluida la pausa entre peticiones que pidas
-    (Crawl-delay). Vamos despacio: una petición cada pocos segundos por tienda. Nunca nos saltamos protecciones ni
-    accedemos a zonas privadas. Si prefieres no aparecer en guitle, escríbenos y te retiramos.</p>
 
   <h2>Contacto</h2>
   <p>Escríbenos y te contestamos en un día laborable.</p>
@@ -116,9 +102,6 @@
 </main>
 <script>
 // Cifras de ahora (data/resumen.json, que se rehace tras cada lectura del catálogo): crecen o bajan con él.
-const NAMES = { es: "España", pt: "Portugal", fr: "Francia", it: "Italia", uk: "Reino Unido", de: "Alemania", br: "Brasil",
-                ie: "Irlanda", at: "Austria", nl: "Países Bajos", be: "Bélgica", ch: "Suiza", pl: "Polonia", se: "Suecia",
-                no: "Noruega", dk: "Dinamarca" };
 fetch("/data/resumen.json").then(r => r.json()).then(d => {
   const n = v => v.toLocaleString("es-ES");
   // Hacia abajo, a la centena o al millar: "+270.500 productos" sin prometer de más.
@@ -126,8 +109,6 @@ fetch("/data/resumen.json").then(r => r.json()).then(d => {
   document.getElementById("kp").textContent = "+" + n(floor(d.productos));
   document.getElementById("kt").textContent = n(d.tiendas);
   document.getElementById("kc").textContent = d.paises.length;
-  const list = d.paises.map(c => NAMES[c] || c.toUpperCase());
-  document.getElementById("countries").textContent = ": " + list.slice(0, -1).join(", ") + " y " + list.at(-1);
 }).catch(() => {});
 </script>
 <script src="/c.js" defer></script>
