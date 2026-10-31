@@ -1,4 +1,4 @@
-# Dónde nos quedamos (30-10-2026)
+# Dónde nos quedamos (31-10-2026)
 
 ## Publicado (en la rama claude/friendly-fermat-yycain)
 - Tiendas nuevas de los directorios de marcas en los 9 países fuera de Brasil.
@@ -14,17 +14,29 @@
 - Secretos en GitHub: R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, CLOUDFLARE_API_TOKEN.
 - Volver atrás: nubes de los 4 registros A y www en gris → vuelve GitHub Pages.
 
+## Hecho el 30/31-10-2026
+- La web generada (webs de países, fichas de España, miniaturas) ya no va a git: cada lectura la sube a R2 (.github/r2.sh);
+  en git quedan los datos (~300 ficheros). r2.yml se lanza tras cada commit de las lecturas.
+- fotos.yml: baja las miniaturas que faltan entre lecturas (40 min de margen antes de la siguiente).
+- Contador de visitas: solo personas (3 s visible + gesto). El lector respeta el Crawl-delay del robots.txt.
+- Bélgica (be/bemas): primera lectura lanzada por .github/nuevos.txt; meterla en la vuelta programada tras ella.
+- Búsqueda de tiendas de Bélgica, Suiza, Polonia, Suecia, Dinamarca y Noruega: informes en el scratchpad de la sesión
+  (resumen: CH 13 legibles, NO 11, PL 13, SE 8, BE 3+9, DK 5).
+
+## Afiliación (seguimiento)
+- Madrid Hifi y Awin: solicitadas el 27/10; correos a tiendas el 30/10. Si no hay respuesta hacia el 10/11, recordatorio
+  corto (lo redacto, lo envía el usuario desde hola@guitle.com) con la página "Para tiendas" (pendiente de hacer y enseñar).
+
 ## Pendiente
-- Que GitHub deje de crecer: subir páginas/fotos generadas a R2 desde la propia lectura y dejar de guardarlas en git
-  (las miniaturas de img/p/ hay que comprobarlas contra R2 para no volver a bajarlas). Luego apagar GitHub Pages.
+- Apagar GitHub Pages.
 - Rehacer el historial de la rama para bajar los ~835 MB: solo con confirmación expresa del usuario (no se deshace).
-- Equipo de Brasil (brmas): tanda de lectura bajada a 75 min; comprobar que guarda en la próxima lectura.
+- Equipo de Brasil e Italia (brmas, itmas): tanda de 75 min; comprobar que guardan en la lectura de las 03:17 UTC del 31/10.
 - Probar desde GitHub las tiendas que bloquean (Bettin, Music Centre, B Sharp, Gear4music.de, Guitarpoint, Musikhammer,
   Schreeven…) antes de descartarlas.
 - Directorios de ESP, Cort y Martin (se leen desde GitHub).
 - Siguiente tanda de países con 10 agentes; luego Latinoamérica (cada país con su web y su moneda, envíos entre ellos).
 - Panel "Crecimiento de guitle": regenerarlo tras cada fase.
-- El usuario lanza el catálogo con "todos" a mano (yo no puedo lanzarlo: 403).
+- Lanzar a mano: no puedo (403); se lanza por push a rutas (nuevos.txt, fotos.yml).
 
 ## Mejora pendiente: repositorio privado (proteger el código) — cuando el usuario lo diga
 - Motivo: proteger el código (guitle va a crecer). Ya hay LICENSE "todos los derechos reservados" mientras tanto.
