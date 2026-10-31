@@ -1,4 +1,5 @@
-"""Crecimiento de guitle: productos y tiendas de cada país a lo largo del tiempo (data/crecimiento.json).
+"""Crecimiento de guitle: productos y tiendas de cada país a lo largo del tiempo (data/crecimiento.json), y el
+resumen de ahora (data/resumen.json: productos, tiendas y países) para la página "Para tiendas".
 
 Un punto cada 6 horas (hora de España): [momento, país, guitarras, equipo, tiendas]. Lo pinta stats.html, que también
 avisa de anomalías; para la de "sin actualizar" se guarda la última lectura de cada catálogo ("actualizado").
@@ -74,6 +75,23 @@ def rows(moment, counts):
     return [[moment, c, *counts[c]] for c in COUNTRIES if c in counts]
 
 
+def resumen():
+    """data/resumen.json: productos, tiendas distintas y países con catálogo, para la página "Para tiendas"."""
+    total, stores, countries = 0, set(), set()
+    for p in CAT.rglob("*.json"):
+        g = group(str(p.relative_to(CAT)))
+        if not g:
+            continue
+        n, st = parse(p.read_text(encoding="utf-8"))
+        if n:
+            total += n
+            stores |= st
+            countries.add(g[0])
+    out = {"productos": total, "tiendas": len(stores), "paises": [c for c in COUNTRIES if c in countries],
+           "actualizado": datetime.now(timezone.utc).isoformat(timespec="minutes")}
+    (ROOT / "data" / "resumen.json").write_text(json.dumps(out, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def now():
     files = {str(p.relative_to(CAT)): parse(p.read_text(encoding="utf-8")) for p in CAT.rglob("*.json")}
     return rows(bucket(datetime.now(timezone.utc)), count(files))
@@ -135,6 +153,7 @@ def main():
                                "actualizado": updated()},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"crecimiento: {len(data)} filas, {len({r[0] for r in data})} momentos", flush=True)
+    resumen()
 
 
 if __name__ == "__main__":

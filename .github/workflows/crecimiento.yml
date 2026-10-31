@@ -38,7 +38,7 @@ jobs:
           for i in 1 2 3 4; do
             git fetch -q origin claude/friendly-fermat-yycain && git reset -q --hard origin/claude/friendly-fermat-yycain
             python -m scraper.crecimiento
-            git add data/crecimiento.json
+            git add data/crecimiento.json data/resumen.json
             if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
             git commit -q -m "data: crecimiento $(TZ=Europe/Madrid date '+%F %H:%M')"
             if git push -q origin HEAD:claude/friendly-fermat-yycain; then exit 0; fi
