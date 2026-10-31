@@ -465,6 +465,7 @@ marca/hd12-28.html
 marca/headrush.html
 marca/heritage.html
 marca/hermanos-bros.html
+marca/hils.html
 marca/hipshot.html
 marca/hiwatt.html
 marca/hk-audio.html
@@ -497,6 +498,8 @@ marca/j.html
 marca/jackson-audio.html
 marca/jackson.html
 marca/james-neligan.html
+marca/james.html
+marca/jason.html
 marca/jbl.html
 marca/jbm10fx.html
 marca/jeronimo.html
@@ -508,6 +511,7 @@ marca/jhs.html
 marca/jim-dunlop.html
 marca/jn.html
 marca/jo-ral.html
+marca/john.html
 marca/jose-ferrer.html
 marca/jose-gomez.html
 marca/jose-gomez.html
@@ -621,6 +625,7 @@ marca/martinez.html
 marca/martinez.html
 marca/maton.html
 marca/maxon.html
+marca/maybach.html
 marca/maybach.html
 marca/mayones.html
 marca/mayson.html
@@ -1002,6 +1007,7 @@ marca/vga-3d-tk.html
 marca/vga-3ps-na.html
 marca/vga-3ps-tk.html
 marca/vga-3ps-tr.html
+marca/vgs.html
 marca/vicoustic.html
 marca/victory-amps.html
 marca/vintage.html
@@ -1029,6 +1035,7 @@ marca/way-huge-electronics.html
 marca/way-huge.html
 marca/way.html
 marca/wingo.html
+marca/woodbrass.html
 marca/work.html
 marca/xvive.html
 marca/xvive.html
@@ -1062,6 +1069,8 @@ presupuesto/estuche-menos-de-50.html
 presupuesto/micro-menos-de-100.html
 presupuesto/micro-menos-de-200.html
 presupuesto/micro-menos-de-50.html
+presupuesto/pack-menos-de-150.html
+presupuesto/pack-menos-de-300.html
 presupuesto/pedal-menos-de-100.html
 presupuesto/pedal-menos-de-200.html
 presupuesto/pedal-menos-de-50.html
@@ -1111,6 +1120,9 @@ tipo/micro-dinamico.html
 tipo/micro-inalambrico.html
 tipo/micro-para-instrumento.html
 tipo/micro-usb.html
+tipo/pack-acustica.html
+tipo/pack-clasica.html
+tipo/pack-electrica.html
 tipo/pedal-afinador.html
 tipo/pedal-compresor.html
 tipo/pedal-delay.html

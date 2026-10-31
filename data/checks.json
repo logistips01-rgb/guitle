@@ -2,24 +2,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "musicsales",
-  "name": "Yamaha PACS+12M Pacifica Standard Plus Black",
-  "slug": "yamaha-pacs-12m-pacifica-standard-plus-black-4957812697699",
-  "price": 715.0,
-  "median": 1007.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "PRS SE NF3 Ice Blue Metallic",
-  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
-  "price": 739.0,
-  "median": 985.5
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "alteisa",
   "name": "Yamaha PACS+12 Pacifica Standard Plus Shell White",
   "slug": "yamaha-pacs-12-pacifica-standard-plus-shell-white-4957812697675",
@@ -47,29 +29,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "LTD SN-200HT Charcoal Metallic Satin",
-  "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
-  "price": 349.0,
-  "median": 489.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "auvisa",
-  "name": "LTD SN-200HT Charcoal Metallic Satin",
-  "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
-  "price": 349.0,
-  "median": 489.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Sire X5 Trans Blue",
-  "slug": "sire-x5-trans-blue-810046138984",
-  "price": 339.0,
-  "median": 466.0
+  "store": "musicsales",
+  "name": "Yamaha PACS+12M Pacifica Standard Plus Black",
+  "slug": "yamaha-pacs-12m-pacifica-standard-plus-black-4957812697699",
+  "price": 715.0,
+  "median": 1015.0
  },
  {
   "kind": "electrica",
@@ -92,6 +56,51 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "LTD SN-200HT Charcoal Metallic Satin",
+  "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
+  "price": 349.0,
+  "median": 489.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "LTD SN-200HT Charcoal Metallic Satin",
+  "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
+  "price": 349.0,
+  "median": 489.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "PRS SE NF3 Ice Blue Metallic",
+  "slug": "prs-se-nf3-ice-blue-metallic-825362244356",
+  "price": 739.0,
+  "median": 985.75
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "PRS SE Paul\\'s Guitar Signature Charcoal con Funda",
+  "slug": "prs-se-paul-s-guitar-signature-charcoal-con-funda-825362164654",
+  "price": 799.0,
+  "median": 1092.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Sire X5 Trans Blue",
+  "slug": "sire-x5-trans-blue-810046138984",
+  "price": 339.0,
+  "median": 466.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "auvisa",
   "name": "Cort G290 Fat II Avb Antique Violin Burst.",
   "slug": "cort-g290-fat-ii-avb-antique-violin-burst-8809625369569",
@@ -110,20 +119,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "Yamaha PACS+12M Pacifica Standard Plus Ash Pink",
-  "slug": "yamaha-pacs-12m-pacifica-standard-plus-ash-pink-4957812697668",
-  "price": 726.0,
-  "median": 1015.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "alteisa",
-  "name": "Yamaha PACS+12M Pacifica Standard Plus Ash Pink",
-  "slug": "yamaha-pacs-12m-pacifica-standard-plus-ash-pink-4957812697668",
-  "price": 726.0,
-  "median": 1015.0
+  "name": "PRS S2 Vela Satin Vintage Cherry",
+  "slug": "prs-s2-vela-satin-vintage-cherry-825362169116",
+  "price": 1219.75,
+  "median": 1899.0
  },
  {
   "kind": "electrica",
@@ -154,6 +154,15 @@
  },
  {
   "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Hagstrom Adina Blue Sky",
+  "slug": "hagstrom-adina-blue-sky-7340071904269",
+  "price": 685.13,
+  "median": 820.5
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "session",
   "name": "PRS SE Custom 24 Semi-Hollow Piezo Vintage Sunburst",
@@ -173,6 +182,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "EVH LTD Frankenstein Relic Series MN SVB",
+  "slug": "evh-ltd-frankenstein-relic-series-mn-svb-717669905415",
+  "price": 999.0,
+  "median": 1336.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Fender American Vintage II 1977 Telecaster Custom RW 3-Color Sunburst",
   "slug": "fender-american-vintage-ii-1977-telecaster-custom-rw-3-color-sunburst-197955136783",
@@ -182,11 +200,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "auvisa",
-  "name": "Hagstrom Adina Cre Crema",
-  "slug": "hagstrom-adina-cre-crema-7340071904238",
-  "price": 549.0,
-  "median": 772.0
+  "store": "microfusa",
+  "name": "Godin Stadium HT Trans White RN with Bag",
+  "slug": "godin-stadium-ht-trans-white-rn-with-bag-623501049349",
+  "price": 999.0,
+  "median": 1390.0
  },
  {
   "kind": "electrica",
@@ -196,6 +214,42 @@
   "slug": "mooer-gtrs-s800-blue-6971889220053",
   "price": 258.5,
   "median": 379.08
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Mooer MHL100 Dreamy Blue",
+  "slug": "mooer-mhl100-dreamy-blue-6971889223764",
+  "price": 313.22,
+  "median": 369.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Mooer MHL100 Green Grad.",
+  "slug": "mooer-mhl100-green-grad-6971889223733",
+  "price": 313.22,
+  "median": 369.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Mooer MHL100 Purple Burst",
+  "slug": "mooer-mhl100-purple-burst-6971889223771",
+  "price": 313.22,
+  "median": 369.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Mooer MHL100 Purple Grad.",
+  "slug": "mooer-mhl100-purple-grad-6971889223757",
+  "price": 313.22,
+  "median": 369.0
  },
  {
   "kind": "electrica",
@@ -271,6 +325,15 @@
  },
  {
   "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Carry On ST Guitar negra",
+  "slug": "carry-on-st-guitar-negra-845644007042",
+  "price": 197.52,
+  "median": 238.0
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "woodbrass",
   "name": "D'Angelico Excel 59 Morado",
@@ -281,29 +344,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "ESP E-II Eclipse Tiger Eye Sunburst",
-  "slug": "esp-e-ii-eclipse-tiger-eye-sunburst-719710616721",
-  "price": 2249.0,
-  "median": 3349.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "ESP E-II Horizon FR BLK",
   "slug": "esp-e-ii-horizon-fr-blk-uperstrato",
   "price": 2253.0,
   "median": 3309.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "EVH LTD Frankenstein Relic Series MN SVB",
-  "slug": "evh-ltd-frankenstein-relic-series-mn-svb-717669905415",
-  "price": 999.0,
-  "median": 1405.5
  },
  {
   "kind": "electrica",
@@ -331,15 +376,6 @@
   "slug": "ltd-ec-256-vintage-gold-satin-719710620155",
   "price": 349.0,
   "median": 564.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "PRS CE22 Limited Edition Black Amber",
-  "slug": "prs-ce22-limited-edition-black-amber-825362247913",
-  "price": 2231.0,
-  "median": 3084.5
  },
  {
   "kind": "electrica",
@@ -605,6 +641,24 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Furch Yellow G-CR a",
+  "slug": "furch-yellow-g-cr-a-8596387009115",
+  "price": 1799.0,
+  "median": 2418.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Furch Yellow OM-SR VTC",
+  "slug": "furch-yellow-om-sr-vtc-8596387017103",
+  "price": 1799.0,
+  "median": 2507.2349999999997
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "Hagstrom Orsa Dreadnought CE Nat",
   "slug": "hagstrom-orsa-dreadnought-ce-nat-7340071903156",
@@ -623,6 +677,15 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "partitura",
+  "name": "Sigma DM-18",
+  "slug": "sigma-dm-18-4260279934543",
+  "price": 464.0,
+  "median": 628.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Sigma JM-SG45",
   "slug": "sigma-jm-sg45-4260279937360",
@@ -637,6 +700,15 @@
   "slug": "yamaha-fs820ii-rr-4957812668705",
   "price": 315.24,
   "median": 482.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Yamaha TAG1E Nat Transacoustic Dreadnought",
+  "slug": "yamaha-tag1e-nat-transacoustic-dreadnought-4957812722261",
+  "price": 695.0,
+  "median": 962.895
  },
  {
   "kind": "clasica",
@@ -664,15 +736,6 @@
   "slug": "lag-bluewave-2-cbw2e-classical-4-4-3700166373105",
   "price": 469.0,
   "median": 767.0
- },
- {
-  "kind": "clasica",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Alhambra Premier Pro Madagascar",
-  "slug": "alhambra-premier-pro-madagascar-8436623081393",
-  "price": 2069.1,
-  "median": 2775.5
  },
  {
   "kind": "clasica",
@@ -718,6 +781,15 @@
   "slug": "manuel-rodriguez-exotica-santos-pavo-real-4046662299150",
   "price": 456.78,
   "median": 705.5
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "Ortega R55",
+  "slug": "ortega-r55-842960181333",
+  "price": 149.0,
+  "median": 230.565
  },
  {
   "kind": "teclado",
