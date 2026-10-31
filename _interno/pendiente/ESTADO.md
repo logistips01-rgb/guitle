@@ -23,6 +23,14 @@
 - Búsqueda de tiendas de Bélgica, Suiza, Polonia, Suecia, Dinamarca y Noruega: informes en el scratchpad de la sesión
   (resumen: CH 13 legibles, NO 11, PL 13, SE 8, BE 3+9, DK 5).
 
+## Packs (31-10-2026)
+- Sección propia publicada (packs.html y una página por país); foto entera del pack (thumbs.py, modo "pack").
+- Pendiente: decidir si los kits para montar (Harley Benton "Electric Guitar Kit") van en packs o en eléctricas.
+- Siguiente idea del usuario, "pack guitle": por cada pack, el mismo contenido en piezas sueltas más baratas de cualquier
+  tienda. Pasos: guardar el contenido del pack (de su descripción, en la misma lectura); buscar guitarra y ampli por
+  modelo y lo genérico (funda, correa, cable, púas, afinador) lo más barato equivalente; avisar de portes y de
+  "modelo equivalente" cuando la guitarra solo exista en pack. Enseñar un ejemplo antes de publicar.
+
 ## Afiliación (seguimiento)
 - Madrid Hifi y Awin: solicitadas el 27/10; correos a tiendas el 30/10. Si no hay respuesta hacia el 10/11, recordatorio
   corto (lo redacto, lo envía el usuario desde hola@guitle.com) con la página "Para tiendas" (pendiente de hacer y enseñar).
