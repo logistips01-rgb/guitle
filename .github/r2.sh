@@ -96,7 +96,10 @@ publicar() {
 reparar() {
   rclone_ready
   local list="$RUNNER_TEMP/r2-img.txt"
-  if [ ! -s "$list" ]; then rclone lsf r2:guitle/img/p --files-only --fast-list > "$list"; fi
+  # Solo una lista entera: se escribe aparte y se da por buena si rclone acaba sin error.
+  if [ ! -s "$list" ]; then
+    rclone lsf r2:guitle/img/p --files-only --fast-list > "$list.tmp" && mv "$list.tmp" "$list" || { rm -f "$list.tmp"; return 0; }
+  fi
   [ "$(wc -l < "$list")" -gt 1000 ] || { echo "::warning::lista de R2 vacía o corta: no se repara"; return 0; }
   python - "$list" <<'PY'
 import json, sys
@@ -105,6 +108,9 @@ have = set(Path(sys.argv[1]).read_text().split())
 path = Path("data/thumbs.json")
 idx = json.loads(path.read_text())
 gone = [k for k in idx if k not in have and not Path("img/p", k).exists()]
+if len(have) < 0.5 * len(idx):  # el bucket tiene casi todas: una lista mucho más corta es que no cuadra
+    print(f"::warning::R2 lista {len(have)} miniaturas y la lista tiene {len(idx)}: no se toca")
+    sys.exit(0)
 for k in gone:
     del idx[k]
 path.write_text("{\n" + ",\n".join(f'"{k}":{v}' for k, v in sorted(idx.items())) + "\n}\n")
