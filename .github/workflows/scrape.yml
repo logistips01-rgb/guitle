@@ -10,12 +10,8 @@ on:
     - cron: "0 10 * * *"
     - cron: "0 13 * * *"
   workflow_dispatch:
-  # Al cambiar el workflow o el scraper se ejecuta una vez para validarlo.
-  push:
-    paths:
-      - ".github/workflows/scrape.yml"
-      - "scraper/**"
-      - "stores.json"
+  # Sin "push": cada cambio en el scraper lanzaba una lectura de precios entera (visitas de más a las tiendas y más
+  # trabajos guardando a la vez).
 
 permissions:
   contents: write
@@ -90,7 +86,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           [ -f "$RUNNER_TEMP/records.json" ] || echo "[]" > "$RUNNER_TEMP/records.json"
-          for attempt in 1 2 3 4 5; do
+          # Muchos trabajos guardan a la vez (lecturas, fotos, precios): se insiste hasta 40 veces, con una pausa al azar para
+          # no chocar otra vez con los mismos. Perder el lote de una lectura es lo peor que puede pasar.
+          for attempt in $(seq 40); do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             bash .github/r2.sh reparar || true
@@ -105,7 +103,7 @@ jobs:
               bash .github/r2.sh publicar
               exit 0
             fi
-            echo "push rechazado, reintento $attempt"; sleep $((attempt * 5))
+            echo "push rechazado, reintento $attempt"; sleep $(( 5 + RANDOM % 40 ))
           done
           exit 1
 

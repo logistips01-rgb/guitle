@@ -115,7 +115,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           ls "$RUNNER_TEMP"/catalog-*.json >/dev/null 2>&1 || exit 0
-          for attempt in 1 2 3 4 5 6 7 8 9 10; do
+          # Muchos trabajos guardan a la vez (lecturas, fotos, precios): se insiste hasta 40 veces, con una pausa al azar para
+          # no chocar otra vez con los mismos. Perder el lote de una lectura es lo peor que puede pasar.
+          for attempt in $(seq 40); do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
             bash .github/r2.sh reparar || true
@@ -133,6 +135,6 @@ jobs:
               bash .github/r2.sh publicar  # la web generada que no va a git, al bucket R2
               exit 0
             fi
-            echo "push rechazado, reintento $attempt"; sleep $((attempt * 5))
+            echo "push rechazado, reintento $attempt"; sleep $(( 5 + RANDOM % 40 ))
           done
           exit 1
