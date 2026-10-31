@@ -49,11 +49,11 @@ GUITAR_KINDS = {"electrica", "acustica", "clasica", "portuguesa"}
 # Packs (guitarra con ampli, funda, accesorios…): sección propia. "packac": los de acústicas y clásicas de España, que van
 # en otro catálogo (acusticas/) con su histórico; en la web se juntan con los de eléctricas (packs.html).
 PACK_KINDS = {"pack", "packac"}
-PACK = re.compile(r"\b(?:pack|bundle|starter[- ]?(?:set|kit|pack)?|komplett-?set|kit|conjunto|value pack|player pack|set)\b"
+# Los kits para montar (DIY: guitarra por piezas) también van en packs.
+PACK = re.compile(r"\b(?:diy|pack|bundle|starter[- ]?(?:set|kit|pack)?|komplett-?set|kit|conjunto|value pack|player pack|set)\b"
                   r"|\+\s*(?:amp|ampli|amplificador|verst\w*)\b|\bw(?:ith|/)\s*amp\b|\bcon ampli(?:ficador)?\b|\bmit verst", re.I)
 NOT_PACK = re.compile(r"\b(?:pickup|string|cuerdas|saiten|cordes|corde|pick|pua|púas|knob|screw|tuner|mechanik|clavij)\w*\s+(?:set|pack|kit)"
-                      r"|\b\d+\s*(?:er|x)?[- ]?pack\b|\bset (?:of|de) \d|neck[- ]set|set[- ]?neck|set-in|\bset ?up\b"
-                      r"|\bdiy\b", re.I)  # un kit para montar (DIY) es una guitarra, no un pack
+                      r"|\b\d+\s*(?:er|x)?[- ]?pack\b|\bset (?:of|de) \d|neck[- ]set|set[- ]?neck|set-in|\bset ?up\b", re.I)
 # Equipo que algún listado de guitarras de Thomann trae como "Bundle" (amplis, inalámbricos, pastillas, procesadores):
 # no es una guitarra ni un pack de guitarra, así que no entra.
 GEAR_IN_GUITARS = re.compile(r"\bkatana\b|headrush|\bwms ?\d|wireless|draadloze|drahtlos|sans fil|fluence|humbucker set"
