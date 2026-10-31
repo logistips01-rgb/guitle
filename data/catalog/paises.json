@@ -53,6 +53,12 @@
   "guitars": 27183,
   "stores": 13
  },
+ "be": {
+  "country": "België",
+  "path": "/be/",
+  "guitars": 1381,
+  "stores": 1
+ },
  "uk": {
   "country": "United Kingdom",
   "path": "/uk/",
