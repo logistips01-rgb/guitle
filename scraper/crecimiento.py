@@ -20,7 +20,7 @@ CAT = ROOT / "data" / "catalog"
 OUT = ROOT / "data" / "crecimiento.json"
 COUNTRIES = ["es", "pt", "fr", "it", "uk", "de", "br", "ie", "at", "nl", "be"]
 # España tiene sus propias carpetas; los demás países, <país>/ (guitarras) y <país>mas/ (equipo).
-ES_GUITARS = {"products.json", "acusticas/acusticas.json", "acusticas/clasicas.json"}
+ES_GUITARS = {"products.json", "acusticas/acusticas.json", "acusticas/clasicas.json", "packs.json", "acusticas/packs.json"}
 ES_EQUIPO = ("equipo/", "mas/")
 SKIP = ("history.json", "offers.json", "pvp.json", "paises.json")
 

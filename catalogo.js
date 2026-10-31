@@ -37,16 +37,26 @@ const TYPE_ORDERS = {
   ampli: ["Combo", "Cabezal", "Pantalla", "Para bajo", "Para acústica", "De auriculares y portátil", "Otras"],
   estuche: ["Para eléctrica", "Para acústica", "Para clásica", "Para bajo", "Otras"],
   micro: ["Dinámico", "Condensador", "Inalámbrico", "Para instrumento", "USB", "De cinta", "Otras"],
+  pack: ["Eléctrica", "Acústica", "Clásica", "Otras"],
   varios: ["Cuerdas", "Púas", "Correas", "Cables", "Afinadores", "Cejillas", "Soportes", "Pastillas", "Recambios", "Mantenimiento", "Otras"],
 };
 // Cómo se llama lo que hay en cada catálogo (recuento y mensajes).
-const MANY = T.many || { teclado: "teclados", pedal: "pedales", bajo: "bajos", ampli: "amplis", estuche: "fundas y estuches", micro: "micrófonos", varios: "accesorios" }[CFG.kind] || "guitarras";
+const MANY = T.many || { pack: "packs", teclado: "teclados", pedal: "pedales", bajo: "bajos", ampli: "amplis", estuche: "fundas y estuches", micro: "micrófonos", varios: "accesorios" }[CFG.kind] || "guitarras";
 const TYPE_ORDER = TYPE_ORDERS[CFG.kind] || TYPE_ORDERS.electrica;
 
-async function load(path) {
+async function load1(path) {
   const r = await fetch(path, { cache: "no-store" });
   if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
   return r.json();
+}
+// Una lista puede venir de varios ficheros ("a.json,b.json": los packs de España): se juntan productos, tiendas e histórico.
+async function load(paths) {
+  const parts = await Promise.all(paths.split(",").map(p => load1(p).catch(e => null)));
+  const ok = parts.filter(Boolean);
+  if (!ok.length) throw new Error(`${paths}: sin datos`);
+  if (ok.length === 1) return ok[0];
+  if (ok[0].products) return { ...ok[0], stores: Object.assign({}, ...ok.map(d => d.stores)), products: ok.flatMap(d => d.products) };
+  return Object.assign({}, ...ok);
 }
 
 const params = new URLSearchParams(location.search);

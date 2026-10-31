@@ -23,6 +23,11 @@ KINDS = {
                  "src": "data/catalog/acusticas/acusticas.json", "history": "data/catalog/acusticas/history.json"},
     "clasica": {"label": "Guitarras clásicas", "list": "clasicas.html",
                 "src": "data/catalog/acusticas/clasicas.json", "history": "data/catalog/acusticas/history.json"},
+    # Packs: los de eléctricas (catálogo electrica) y los de acústicas y clásicas (catálogo acustica), en una sola lista.
+    "pack": {"label": "Packs de guitarra", "list": "packs.html",
+             "src": "data/catalog/packs.json", "history": "data/catalog/history.json"},
+    "packac": {"label": "Packs de guitarra", "list": "packs.html",
+               "src": "data/catalog/acusticas/packs.json", "history": "data/catalog/acusticas/history.json"},
     "teclado": {"label": "Teclados y pianos", "list": "teclados.html",
                 "src": "data/catalog/equipo/teclados.json", "history": "data/catalog/equipo/history.json"},
     "pedal": {"label": "Pedales de efectos", "list": "pedales.html",
@@ -207,7 +212,7 @@ def write_pages(kind, products, store_names):
 
 def write_sitemap():
     """sitemap.xml con las páginas principales y las de todas las guitarras (listas g/_<categoría>.txt)."""
-    urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "teclados.html", "pedales.html", "bajos.html",
+    urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "packs.html", "teclados.html", "pedales.html", "bajos.html",
             "amplificadores.html", "estuches.html", "micros.html", "varios.html", "chollos.html",
             "black-friday.html", "guitarras.html", "paises.html"]
     hubs = PAGES / "_hubs.txt"
@@ -252,12 +257,12 @@ TYPE_TITLES = {"ST": "tipo Stratocaster (ST)", "T": "tipo Telecaster (T)", "Sing
 NOUN = {"electrica": "Guitarras eléctricas", "acustica": "Guitarras acústicas", "clasica": "Guitarras clásicas",
         "teclado": "Teclados y pianos", "pedal": "Pedales", "bajo": "Bajos", "ampli": "Amplificadores",
         "estuche": "Fundas y estuches", "micro": "Micrófonos",
-        "varios": "Accesorios"}
+        "varios": "Accesorios", "pack": "Packs de guitarra"}
 # Páginas por presupuesto (precio más bajo de hoy por debajo del límite) y guitarras que muestra cada una.
 BUDGETS = {"electrica": (150, 300, 500, 1000, 2000), "acustica": (150, 300, 500, 1000), "clasica": (100, 200, 400),
            "teclado": (200, 500, 1000), "pedal": (50, 100, 200), "bajo": (200, 400, 800), "ampli": (100, 300, 600),
-           "estuche": (50, 100), "micro": (50, 100, 200), "varios": (10, 25, 50)}
-GUITAR_KINDS = {"electrica", "acustica", "clasica"}
+           "estuche": (50, 100), "micro": (50, 100, 200), "varios": (10, 25, 50), "pack": (150, 300)}
+GUITAR_KINDS = {"electrica", "acustica", "clasica", "pack"}
 BUDGET_TILES = 120
 NOPHOTO = ('<svg class="nophoto" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3l-6.5 6.5"/><path d="M19.5 1.5l3 3-1.5 1.5-3-3z"/>'
            '<path d="M14.5 9.5c-1.6-1.6-3.9-1.3-5 .2-1 .4-2.6.1-4 1.5-2.1 2.1-1.7 5.4.6 7.7s5.6 2.7 7.7.6c1.4-1.4 1.1-3 1.5-4 '
@@ -348,6 +353,11 @@ def write_hubs():
         except (FileNotFoundError, json.JSONDecodeError):
             continue
         catalogs[kind] = data
+    # Los packs de acústicas y clásicas, con los de eléctricas: una sola sección "Packs de guitarra".
+    if "packac" in catalogs:
+        extra = catalogs.pop("packac")
+        base = catalogs.setdefault("pack", {"stores": {}, "products": []})
+        catalogs["pack"] = {**base, "stores": {**base["stores"], **extra["stores"]}, "products": base["products"] + extra["products"]}
     names = {s: n for d in catalogs.values() for s, n in d["stores"].items()}
     order = lambda p: (-len({i["s"] for i in p["items"]}), p["items"][0]["p"])
     pages, written = [], 0
@@ -378,6 +388,7 @@ def write_hubs():
             url = f"tipo/{kind}-{plain_slug(t)}.html"
             # "Pianos digitales" a secas (no "Teclados y pianos pianos digitales"); el resto, categoría + tipo.
             label = (TYPE_TITLES.get(t, t)[:1].upper() + TYPE_TITLES.get(t, t)[1:] if kind in ("teclado", "varios")
+                     else f"Packs de guitarra {t.lower()}" if kind == "pack"
                      else f"{NOUN[kind]} {TYPE_TITLES.get(t, t)}")
             written += _write(ROOT / url, _hub(url, f"{label}: precios y comparativa", label, _summary(ps, names),
                                                [(None, sorted(ps, key=order))], names, url))

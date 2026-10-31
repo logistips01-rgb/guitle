@@ -842,6 +842,36 @@ T = {
 }
 
 
+# Packs (guitarra con ampli, funda, accesorios…): sección propia en cada país, detrás de las clásicas.
+# Idioma → (título, nombre corto, buscador, qué se cuenta, tipos); país → nombre de su página.
+PACK_T = {
+    "pt": ("Packs de guitarra", "Packs", "Pesquisa nos packs: modelo, marca, com amplificador…", "packs",
+           {"Eléctrica": "Elétrica", "Acústica": "Acústica"}),
+    "fr": ("Packs guitare", "Packs", "Recherche parmi les packs : modèle, marque, avec ampli…", "packs",
+           {"Eléctrica": "Électrique", "Acústica": "Folk"}),
+    "it": ("Pack chitarra", "Pack", "Cerca tra i pack: modello, marca, con ampli…", "pack",
+           {"Eléctrica": "Elettrica", "Acústica": "Acustica"}),
+    "en": ("Guitar packs", "Packs", "Search guitar packs: model, brand, with amp…", "packs",
+           {"Eléctrica": "Electric", "Acústica": "Acoustic"}),
+    "de": ("Gitarren-Sets", "Sets", "In Gitarren-Sets suchen: Modell, Marke, mit Verstärker…", "Sets",
+           {"Eléctrica": "E-Gitarre", "Acústica": "Westerngitarre"}),
+    "br": ("Kits de guitarra e violão", "Kits", "Busque nos kits: modelo, marca, com amplificador…", "kits",
+           {"Eléctrica": "Guitarra", "Acústica": "Violão"}),
+    "nl": ("Gitaarsets", "Sets", "Zoek in gitaarsets: model, merk, met versterker…", "sets",
+           {"Eléctrica": "Elektrisch", "Acústica": "Akoestisch"}),
+}
+PACK_PAGE = {"pt": "packs", "fr": "packs", "it": "pack", "uk": "guitar-packs", "ie": "guitar-packs", "de": "gitarren-sets",
+             "at": "gitarren-sets", "br": "kits", "nl": "gitaarsets", "be": "gitaarsets"}
+for _lang, (_title, _short, _ph, _noun, _types) in PACK_T.items():
+    T[_lang]["kinds"]["pack"] = (_title, _short, _ph)
+    T[_lang].setdefault("nouns", {})["pack"] = _noun
+    T[_lang]["js"]["types"].update(_types)
+for _code, _page in PACK_PAGE.items():
+    _kinds = list(SITES[_code]["kinds"].items())
+    _at = max(i for i, (k, _) in enumerate(_kinds) if k in ("clasica", "portuguesa")) + 1
+    SITES[_code]["kinds"] = dict(_kinds[:_at] + [("pack", _page)] + _kinds[_at:])
+
+
 def strings(code):
     """Textos de un país: los de su idioma con los cambios propios del país ("t_over"; p. ej. Irlanda usa el inglés
     del Reino Unido pero habla de Irlanda). Los enlaces a su aviso legal apuntan a su carpeta."""
@@ -1147,7 +1177,8 @@ def _card(code, p, names, t):
 
 
 ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasica", "portuguesa": "acustica", "bajo": "bajo",
-             "ampli": "ampli", "pedal": "pedal", "teclado": "teclado", "micro": "micro", "estuche": "estuche", "varios": "varios"}
+             "ampli": "ampli", "pedal": "pedal", "teclado": "teclado", "micro": "micro", "estuche": "estuche", "varios": "varios",
+             "pack": "guitarra"}
 
 
 def _index(code, cats):

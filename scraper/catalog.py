@@ -46,6 +46,36 @@ DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han le�
 MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35,  # por debajo no es una guitarra (ni infantil)
              "teclado": 40, "pedal": 20, "portuguesa": 150, "bajo": 80, "ampli": 30, "estuche": 12, "micro": 15, "varios": 3}
 GUITAR_KINDS = {"electrica", "acustica", "clasica", "portuguesa"}
+# Packs (guitarra con ampli, funda, accesorios…): sección propia. "packac": los de acústicas y clásicas de España, que van
+# en otro catálogo (acusticas/) con su histórico; en la web se juntan con los de eléctricas (packs.html).
+PACK_KINDS = {"pack", "packac"}
+PACK = re.compile(r"\b(?:pack|bundle|starter[- ]?(?:set|kit|pack)?|komplett-?set|kit|conjunto|value pack|player pack|set)\b"
+                  r"|\+\s*(?:amp|ampli|amplificador|verst\w*)\b|\bw(?:ith|/)\s*amp\b|\bcon ampli(?:ficador)?\b|\bmit verst", re.I)
+NOT_PACK = re.compile(r"\b(?:pickup|string|cuerdas|saiten|cordes|corde|pick|pua|púas|knob|screw|tuner|mechanik|clavij)\w*\s+(?:set|pack|kit)"
+                      r"|\b\d+\s*(?:er|x)?[- ]?pack\b|\bset (?:of|de) \d|neck[- ]set|set[- ]?neck|set-in|\bset ?up\b"
+                      r"|\bdiy\b", re.I)  # un kit para montar (DIY) es una guitarra, no un pack
+# Equipo que algún listado de guitarras de Thomann trae como "Bundle" (amplis, inalámbricos, pastillas, procesadores):
+# no es una guitarra ni un pack de guitarra, así que no entra.
+GEAR_IN_GUITARS = re.compile(r"\bkatana\b|headrush|\bwms ?\d|wireless|draadloze|drahtlos|sans fil|fluence|humbucker set"
+                             r"|pickup set|processor|prozessor|\bp[uú]as\b|\bpicks\b|m[eé]diators\b", re.I)
+
+
+def is_pack(o):
+    """¿Esta ficha de guitarra es un pack (guitarra con ampli, funda, accesorios…)?"""
+    name = o.get("name") or ""
+    return ((o.get("kind") or "electrica") in GUITAR_KINDS and bool(PACK.search(name)) and not NOT_PACK.search(name)
+            and not GEAR_IN_GUITARS.search(name))
+
+
+def route(o, files):
+    """Categoría en la que entra una ficha en un catálogo con esos ficheros: los packs, a la suya si el catálogo la
+    tiene; el equipo colado en las guitarras, a ninguna (None)."""
+    kind = o.get("kind") or "electrica"
+    if kind in GUITAR_KINDS and GEAR_IN_GUITARS.search(o.get("name") or ""):
+        return None
+    if is_pack(o):
+        return next((k for k in ("pack", "packac") if k in files), kind)
+    return kind
 MIN_SLENDERNESS = 1.7      # alto/ancho mínimo de la miniatura de una guitarra entera (un primer plano ronda 1)
 
 NOT_PRODUCT = re.compile(r"b-stock|bstock|b-ware|outlet|usad[ao]|segunda-mano|gebraucht|pre-owned|\bused\b|demo|vorfuehr|gutschein|stock[ -]b\b", re.I)
@@ -3907,9 +3937,9 @@ NAME_TYPES_BY_KIND = {"electrica": NAME_TYPES, "acustica": ACOUSTIC_TYPES, "clas
 
 # Catálogos: carpeta, fuentes y fichero de la web por categoría.
 CATALOGS = {
-    "electrica": {"dir": DIR, "sources": SOURCES, "files": {"electrica": "products.json"}},
+    "electrica": {"dir": DIR, "sources": SOURCES, "files": {"electrica": "products.json", "pack": "packs.json"}},
     "acustica": {"dir": DIR / "acusticas", "sources": ACOUSTIC_SOURCES,
-                 "files": {"acustica": "acusticas.json", "clasica": "clasicas.json"}},
+                 "files": {"acustica": "acusticas.json", "clasica": "clasicas.json", "packac": "packs.json"}},
     "equipo": {"dir": DIR / "equipo", "sources": EQUIPO_SOURCES,
                "files": {"teclado": "teclados.json", "pedal": "pedales.json"}},
     # Bajos, amplificadores, estuches y micrófonos (España).
@@ -3919,30 +3949,30 @@ CATALOGS = {
     # Portugal: aún sin páginas propias (guitle.com/pt/ llegará después); solo los JSON del catálogo.
     "pt": {"dir": DIR / "pt", "sources": PT_SOURCES, "site": "pt",
            "files": {"electrica": "eletricas.json", "acustica": "acusticas.json", "clasica": "classicas.json",
-                     "portuguesa": "portuguesas.json"}},
+                     "portuguesa": "portuguesas.json", "pack": "packs.json"}},
     # Francia: igual, guitle.com/fr/ llegará después.
     "fr": {"dir": DIR / "fr", "sources": FR_SOURCES, "site": "fr",
-           "files": {"electrica": "electriques.json", "acustica": "folk.json", "clasica": "classiques.json"}},
+           "files": {"electrica": "electriques.json", "acustica": "folk.json", "clasica": "classiques.json", "pack": "packs.json"}},
     "it": {"dir": DIR / "it", "sources": IT_SOURCES, "site": "it",
-           "files": {"electrica": "elettriche.json", "acustica": "acustiche.json", "clasica": "classiche.json"}},
+           "files": {"electrica": "elettriche.json", "acustica": "acustiche.json", "clasica": "classiche.json", "pack": "packs.json"}},
     # Reino Unido: precios en libras (las tiendas los dan en GBP; "cur" es la moneda que se acepta).
     "uk": {"dir": DIR / "uk", "sources": UK_SOURCES, "site": "uk", "cur": "GBP", "headers": EN_HEADERS,
-           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},    "de": {"dir": DIR / "de", "sources": DE_SOURCES, "site": "de",
-           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},    "br": {"dir": DIR / "br", "sources": BR_SOURCES, "site": "br", "cur": "BRL", "min_price": 300,
-           "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json"}},
+           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json", "pack": "packs.json"}},    "de": {"dir": DIR / "de", "sources": DE_SOURCES, "site": "de",
+           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json", "pack": "packs.json"}},    "br": {"dir": DIR / "br", "sources": BR_SOURCES, "site": "br", "cur": "BRL", "min_price": 300,
+           "files": {"electrica": "guitarras.json", "acustica": "violoes.json", "clasica": "violoes-nylon.json", "pack": "packs.json"}},
     # Brasil: equipo. Mismas tiendas; sin el filtro de nombres de las guitarras (aquí los accesorios sí entran).
     "brmas": {"dir": DIR / "brmas", "sources": BRMAS_SOURCES, "site": "br", "cur": "BRL", "min_price": 10, "name_skip": None,
               # En reales: un "case" de más de R$ 3.000 o un "acessório" de más de R$ 2.500 es un instrumento con su case.
               "max_price": {"estuche": 3000, "varios": 2500},
               "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json", "teclado": "teclados.json",
                         "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie", "headers": EN_HEADERS,
-           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json"}},
+           "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json", "pack": "packs.json"}},
     "at": {"dir": DIR / "at", "sources": AT_SOURCES, "site": "at",
-           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json"}},
+           "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json", "pack": "packs.json"}},
     "nl": {"dir": DIR / "nl", "sources": NL_SOURCES, "site": "nl",
-           "files": {"electrica": "elektrische-gitaren.json", "acustica": "akoestische-gitaren.json", "clasica": "klassieke-gitaren.json"}},
+           "files": {"electrica": "elektrische-gitaren.json", "acustica": "akoestische-gitaren.json", "clasica": "klassieke-gitaren.json", "pack": "packs.json"}},
     "be": {"dir": DIR / "be", "sources": BE_SOURCES, "site": "be",
-           "files": {"electrica": "elektrische-gitaren.json", "acustica": "akoestische-gitaren.json", "clasica": "klassieke-gitaren.json"}},
+           "files": {"electrica": "elektrische-gitaren.json", "acustica": "akoestische-gitaren.json", "clasica": "klassieke-gitaren.json", "pack": "packs.json"}},
 }
 # Equipo de cada país de EQUIPO_COUNTRIES: "demas" → data/catalog/demas/, en la web del país (intl.SITES[...]["extra_catalogs"]).
 for _code, _eq in EQUIPO_COUNTRIES.items():
@@ -4538,8 +4568,13 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
             prod["lh"] = True
         # Miniatura: entre las fotos de todas las tiendas, la que muestra la guitarra entera (la más esbelta).
         # Un primer plano del cuerpo (poco esbelto) no se usa: mejor sin foto que una que rompe la cuadrícula.
-        thumbs = [t for t in (existing(o.get("image")) for o in group) if t]
-        if kind not in GUITAR_KINDS:
+        thumbs = [t for t in (existing(o.get("image"), pack=kind in PACK_KINDS) for o in group) if t]
+        if kind in PACK_KINDS:
+            # Packs: la foto entera (guitarra, ampli, funda…), sin exigir que sea esbelta.
+            prod["type"] = {"acustica": "Acústica", "clasica": "Clásica", "portuguesa": "Clásica"}.get(main.get("kind"), "Eléctrica")
+            if thumbs:
+                prod["th"] = thumbs[0]
+        elif kind not in GUITAR_KINDS:
             if thumbs:
                 prod["th"] = thumbs[0]  # teclados y pedales: la primera foto (la de Numemusic si está)
         else:
@@ -4575,10 +4610,10 @@ def build(offers=None, history=None):
     # Las que tienen EAN se quedan (traen la foto); la de seguimiento no se repite en la misma tienda.
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
-        mine = [o for o in offers.values() if (o.get("kind") or "electrica") == kind
+        mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
-                and (kind in GUITAR_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))
+                and (kind in GUITAR_KINDS | PACK_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))
                 and (o.get("price") or 0) <= CATALOG.get("max_price", MAX_PRICE).get(kind, float("inf"))
                 and not (kind == "estuche" and WITH_CASE.search(o.get("name") or ""))
                 and not (kind == "micro" and _MIC_ACC.search(o.get("name") or ""))
@@ -4607,6 +4642,8 @@ def build(offers=None, history=None):
         if not spain:
             continue  # otros países: su web (scraper.intl) se genera al final
         pages.write_pages(kind, products, names)
+        if kind in PACK_KINDS:
+            continue  # los packs no van a los chollos de portada
         curated_records = load(ROOT / "data" / "history.json", []) if kind == "electrica" else []
         deals.build(kind, products, history, curated_records, names)
     if CATALOG.get("site", "es") == "es":

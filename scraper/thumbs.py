@@ -19,7 +19,7 @@ from urllib.parse import urlparse
 
 from PIL import Image, ImageChops, ImageOps
 
-from .catalog import load
+from .catalog import is_pack, load
 from .fetch import Fetcher
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -29,8 +29,9 @@ WHITE = 244  # canal más oscuro por encima de esto = fondo blanco
 ROTATE_CATEGORIES = {"guitarra", "bajo"}
 
 
-def name_for(url):
-    return hashlib.sha1(url.encode()).hexdigest()[:16] + ".webp"
+def name_for(url, pack=False):
+    """Nombre de la miniatura. Los packs tienen la suya (la foto entera), distinta de la de una guitarra sola."""
+    return hashlib.sha1((("pack:" if pack else "") + url).encode()).hexdigest()[:16] + ".webp"
 
 
 # Miniaturas ya hechas y su alto/ancho: las fotos están en R2 (no en git), así que la lista dice cuáles hay sin
@@ -46,11 +47,11 @@ def _load_index():
     return _index
 
 
-def existing(url):
+def existing(url, pack=False):
     """Nombre de la miniatura si ya existe (para los JSON de la web)."""
     if not url:
         return None
-    name = name_for(url)
+    name = name_for(url, pack)
     return name if name in _load_index() or (DIR / name).exists() else None
 
 
@@ -151,19 +152,21 @@ def normalize(data, rotate=True, height=HEIGHT):
     if not bbox:
         return None
     rgb, mask = rgb.crop(bbox), mask.crop(bbox)
-    if max(rgb.size) > 600:  # proyecciones sobre una copia pequeña: rápido y suficiente
-        scale = 600 / max(rgb.size)
-        small = mask.resize((max(1, round(mask.width * scale)), max(1, round(mask.height * scale))))
-    else:
-        scale, small = 1, mask
-    small = _erase_lines(small.copy())
-    y0, y1 = _main_block(small, 1)
-    x0, x1 = _main_block(small.crop((0, y0, small.width, y1)), 0)
-    # Sin salirse de la imagen: un recorte fuera de los bordes se rellena de negro (y deja una raya).
-    box = (max(0, round(x0 / scale)), max(0, round(y0 / scale)),
-           min(rgb.width, round(x1 / scale)), min(rgb.height, round(y1 / scale)))
-    rgb, mask = rgb.crop(box), mask.crop(box)
-    if rotate:
+    if rotate != "pack":
+        # Pack (rotate="pack"): la foto entera (guitarra, ampli, funda…), sin quedarse con la pieza más grande ni girarla.
+        if max(rgb.size) > 600:  # proyecciones sobre una copia pequeña: rápido y suficiente
+            scale = 600 / max(rgb.size)
+            small = mask.resize((max(1, round(mask.width * scale)), max(1, round(mask.height * scale))))
+        else:
+            scale, small = 1, mask
+        small = _erase_lines(small.copy())
+        y0, y1 = _main_block(small, 1)
+        x0, x1 = _main_block(small.crop((0, y0, small.width, y1)), 0)
+        # Sin salirse de la imagen: un recorte fuera de los bordes se rellena de negro (y deja una raya).
+        box = (max(0, round(x0 / scale)), max(0, round(y0 / scale)),
+               min(rgb.width, round(x1 / scale)), min(rgb.height, round(y1 / scale)))
+        rgb, mask = rgb.crop(box), mask.crop(box)
+    if rotate is True:
         w, h = rgb.size
         if w > h * 1.15:  # tumbada → vertical
             rgb = rgb.rotate(90, expand=True, fillcolor="white")
@@ -182,7 +185,8 @@ def normalize(data, rotate=True, height=HEIGHT):
 
 
 def wanted(cat=None):
-    """(url, girar) de las fotos que usa la web: productos seguidos y catálogo. cat: solo las de ese catálogo."""
+    """{url: girar} de las fotos que usa la web: productos seguidos y catálogo; girar = "pack" para la foto entera de un
+    pack. cat: solo las de ese catálogo."""
     out = {}
     latest = load(ROOT / "data" / "latest.json", {})
     category = {p["sku"]: p.get("category", "guitarra") for p in latest.get("products", [])}
@@ -198,8 +202,9 @@ def wanted(cat=None):
     for path in paths:
         for o in load(path, {}).values():
             if o.get("status") == "ok" and o.get("image"):
-                # Las guitarras se ponen en vertical; teclados y pedales se dejan como vienen.
-                out.setdefault(o["image"], (o.get("kind") or "electrica") in {"electrica", "acustica", "clasica", "portuguesa"})
+                # Las guitarras se ponen en vertical; teclados y pedales se dejan como vienen; un pack, entero.
+                out.setdefault(o["image"], "pack" if is_pack(o)
+                               else (o.get("kind") or "electrica") in {"electrica", "acustica", "clasica", "portuguesa"})
     return out
 
 
@@ -218,7 +223,7 @@ def _one(fetcher, url, rotate):
         data = normalize(resp.content, rotate)
         if not data:
             return "failed"
-        (DIR / name_for(url)).write_bytes(data)
+        (DIR / name_for(url, rotate == "pack")).write_bytes(data)
         return "ok"
     except Exception as exc:  # noqa: BLE001 - una foto rara no para el resto
         print(f"[thumb] {url[:80]}: {type(exc).__name__}", flush=True)
@@ -229,7 +234,7 @@ def run(limit=300, minutes=20, cat=None, workers=8):
     """Las fotos se piden por tienda (dominio) en paralelo: cada tienda, de una en una y con su pausa de 1-2 s, como
     siempre; lo que cambia es que varias tiendas avanzan a la vez."""
     DIR.mkdir(parents=True, exist_ok=True)
-    todo = [(u, r) for u, r in wanted(cat).items() if not existing(u)]
+    todo = [(u, r) for u, r in wanted(cat).items() if not existing(u, r == "pack")]
     by_host = {}
     for url, rotate in todo:
         by_host.setdefault(urlparse(url).netloc, []).append((url, rotate))
