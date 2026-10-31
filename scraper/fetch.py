@@ -19,7 +19,8 @@ DELAY = (3.0, 6.0)
 
 # Marcas de páginas anti-bot. "captcha" a secas no vale: muchas tiendas tienen reCAPTCHA en formularios.
 CHALLENGE_MARKERS = ("just a moment", "cf-challenge", "challenge-platform", "verifying your connection",
-                     "captcha-delivery", "datadome", "perimeterx", "access denied", "attention required")
+                     "captcha-delivery", "datadome", "perimeterx", "access denied", "attention required",
+                     "<title>security check", "verifica accesso")  # Musicis: "Verifica accesso / Security Check"
 
 
 def is_challenge(resp):
@@ -37,9 +38,20 @@ class Fetcher:
         self._last = None
         self._pages = {}
 
-    def _wait(self):
+    def _crawl_delay(self, url):
+        """Segundos que pide el robots.txt del dominio entre peticiones (Crawl-delay), o 0."""
+        parts = urlsplit(url)
+        rp = self._robots.get(f"{parts.scheme}://{parts.netloc}")
+        try:
+            return float(rp[0].crawl_delay(USER_AGENT) or 0) if rp else 0
+        except (TypeError, ValueError):
+            return 0
+
+    def _wait(self, url=None):
         if self._last is not None:
-            pause = random.uniform(*self.delay) - (time.monotonic() - self._last)
+            # Nunca menos de lo que pide la tienda en su robots.txt (Musicis: 10 s).
+            gap = max(random.uniform(*self.delay), self._crawl_delay(url) if url else 0)
+            pause = gap - (time.monotonic() - self._last)
             if pause > 0:
                 time.sleep(pause)
         self._last = time.monotonic()
@@ -86,7 +98,8 @@ class Fetcher:
     def _get_with_retry(self, url):
         """Un reintento ante cortes de red o 5xx; los 403 no se reintentan."""
         for attempt in (1, 2):
-            self._wait()
+            self.robots(url)  # para saber su Crawl-delay
+            self._wait(url)
             try:
                 resp = self.session.get(url, timeout=TIMEOUT, allow_redirects=True)
             except (requests.ConnectionError, requests.Timeout):
