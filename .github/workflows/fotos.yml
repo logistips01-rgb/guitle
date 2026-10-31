@@ -2,7 +2,7 @@ name: fotos
 
 # Miniaturas de las fotos de producto que faltan, en las máquinas que deja libres la lectura del catálogo. La lectura
 # solo baja fotos con el tiempo que le sobra (como mucho 50 min) y en los países grandes casi nunca sobra: aquí se
-# bajan entre vuelta y vuelta, hasta 40 min antes de la siguiente (03:17, 11:17 y 19:17 UTC) para no retrasarla.
+# bajan entre vuelta y vuelta, hasta 90 min antes de la siguiente (guardar incluido) (03:17, 11:17 y 19:17 UTC) para no retrasarla.
 # Cada tienda, con sus pausas de siempre (1-2 s, o lo que pida su robots.txt). Al acabar, se reconstruyen las webs del
 # país con sus fotos nuevas y todo va a R2 (.github/r2.sh).
 on:
@@ -30,7 +30,7 @@ jobs:
         # Los países con más fichas sin foto; cada uno, sus guitarras y su equipo ("<país>mas").
         pais: [uk, fr, nl, it, ie, de, br]
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 220
     env:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -50,11 +50,12 @@ jobs:
 
       - name: Bajar fotos
         run: |
-          # Minutos hasta la próxima vuelta del catálogo, menos 40 de margen; como mucho 100 (2/3 guitarras, 1/3 equipo).
+          # Minutos hasta la próxima vuelta del catálogo, menos 90 de margen (guardar y subir la web tarda hasta 50 min);
+          # como mucho 100 (2/3 guitarras, 1/3 equipo).
           # Si algo falla, no se pierde nada: las fotos que falten se bajan en la pasada siguiente.
           now=$(( 10#$(date -u +%H) * 60 + 10#$(date -u +%M) ))
           next=$(for h in 3 11 19 27; do m=$(( h * 60 + 17 )); [ $m -gt $now ] && echo $m && break; done)
-          min=$(( next - now - 40 )); [ $min -gt 100 ] && min=100
+          min=$(( next - now - 90 )); [ $min -gt 100 ] && min=100
           if [ $min -lt 15 ]; then echo "::warning::sin tiempo antes de la próxima lectura"; exit 0; fi
           g=$(( min * 2 / 3 )); e=$(( min - g ))
           bash .github/r2.sh reparar || echo "::warning::no se pudo comprobar img/p en R2"  # fotos apuntadas y sin subir

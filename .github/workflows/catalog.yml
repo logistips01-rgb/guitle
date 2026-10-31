@@ -4,8 +4,9 @@ on:
   schedule:
     # Tres veces al día, cada 8 horas (cada vuelta dura ~5 h 30 min, así que no se solapan): 03:17, 11:17 y 19:17 UTC.
     - cron: "17 3,11,19 * * *"
-  # Países nuevos: su primera lectura en cuanto están listos, sin esperar a la vuelta programada ni retrasarla
-  # (otro turno de concurrencia y solo 2 máquinas). Se lanza tocando .github/nuevos.txt; los países, en NUEVOS (abajo).
+  # Turno aparte: la primera lectura de un país nuevo, o repetir una que se perdió, sin esperar a la vuelta programada
+  # ni retrasarla (otro turno de concurrencia, 2 máquinas y 90 min). Se lanza tocando .github/nuevos.txt; los
+  # catálogos, en NUEVOS (abajo).
   push:
     branches: [claude/friendly-fermat-yycain]
     paths: [".github/nuevos.txt"]
@@ -45,7 +46,7 @@ jobs:
       max-parallel: ${{ github.event_name == 'push' && 2 || 16 }}
       matrix:
         # Programada: todos (los NUEVOS entran tras su primera lectura). A mano, uno solo (p. ej. equipo = pedales y teclados).
-        cat: ${{ fromJSON(github.event_name == 'push' && '["be","bemas"]' || inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","ie","iemas","at","atmas","nl","nlmas"]') }}
+        cat: ${{ fromJSON(github.event_name == 'push' && '["de","fr"]' || inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || '["es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","ie","iemas","at","atmas","nl","nlmas","be","bemas"]') }}
     runs-on: ubuntu-latest
     timeout-minutes: 355
     env:
@@ -58,7 +59,7 @@ jobs:
       CATS: ${{ matrix.cat == 'es' && 'electrica acustica equipo' || matrix.cat }}
       # brmas e itmas (equipo de Brasil e Italia: 20 y 27 tiendas, alguna de 14.000 páginas): con 150 min la máquina
       # caía antes de guardar y se perdía todo; con 75 guardan y la siguiente lectura sigue por donde iban.
-      READ_MIN: ${{ (matrix.cat == 'es' || matrix.cat == 'electrica' || matrix.cat == 'acustica' || matrix.cat == 'equipo') && '50' || (matrix.cat == 'brmas' || matrix.cat == 'itmas') && '75' || inputs.minutes || '150' }}
+      READ_MIN: ${{ github.event_name == 'push' && '90' || (matrix.cat == 'es' || matrix.cat == 'electrica' || matrix.cat == 'acustica' || matrix.cat == 'equipo') && '50' || (matrix.cat == 'brmas' || matrix.cat == 'itmas') && '75' || inputs.minutes || '150' }}
     steps:
       - uses: actions/checkout@v4
 
