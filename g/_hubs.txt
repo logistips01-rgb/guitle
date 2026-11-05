@@ -745,7 +745,6 @@ marca/palmin.html
 marca/palosanto.html
 marca/paoletti.html
 marca/para.html
-marca/paranormal.html
 marca/partsland.html
 marca/patina.html
 marca/pc12mh-opn.html
@@ -994,7 +993,6 @@ marca/tech21.html
 marca/teenage-engineering.html
 marca/teisco.html
 marca/tele.html
-marca/telecaster.html
 marca/telefunken.html
 marca/teleman-t52-2-bb-keith.html
 marca/teleman-t54-2tsb-aged.html
