@@ -16,15 +16,22 @@ def check(code, n=400):
     random.seed(7)
     sample = urls if len(urls) <= n else random.sample(urls, n)
 
+    def get(url):
+        for attempt in range(4):  # cortes de red puntuales: se reintenta
+            try:
+                return requests.get(url, headers=UA, timeout=60)
+            except requests.RequestException:
+                if attempt == 3:
+                    raise
+
     def one(u):
         r = random.randint(0, 10**9)
-        a = requests.get(f"{u}?x={r}", headers=UA, timeout=60)
-        b = requests.get(f"{u}?caja=1&x={r}", headers=UA, timeout=60)
+        a, b = get(f"{u}?x={r}"), get(f"{u}?caja=1&x={r}")
         if b.headers.get("x-guitle-caja") != "1":
             return u, "sin caja"
         return u, "ok" if a.status_code == 200 and a.content == b.content else "distinta"
 
-    with ThreadPoolExecutor(8) as ex:
+    with ThreadPoolExecutor(4) as ex:
         res = list(ex.map(one, sample))
     bad = [(u, s) for u, s in res if s != "ok"]
     print(f"{code}: {len(urls)} fichas en el sitemap, {len(sample)} comprobadas, {len(sample) - len(bad)} iguales, "

@@ -1,4 +1,4 @@
 # Tocar este fichero genera y sube a R2 la web de estos países con lo que ya hay en data/ (publicar.yml).
 # Ojo: solo queda una tanda en espera; la nueva sustituye a la anterior, así que hay que poner todos los países pendientes.
-lu fi
-# 16:43:24 primeras cajas (prueba)
+pt fr it uk de br ie at nl be ch pl se no dk cz sk hu ro bg gr
+# 17:01:55 cajas del resto de países (unas 2.048 escrituras por país, una vez)
