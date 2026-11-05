@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Curso gratis de guitarra para principiantes · guitle</title>
+<meta name="description" content="Aprende a tocar la guitarra desde cero en cinco lecciones: postura y púa, acordes abiertos, rasgueo, escalas y dos canciones, con metrónomo y acordes que suenan.">
+<link rel="canonical" href="https://guitle.com/curso/">
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Curso gratis de guitarra para principiantes", "description": "Cinco lecciones para aprender a tocar la guitarra desde cero: postura y púa, acordes abiertos, rasgueo y ritmo, escalas y dos canciones.", "inLanguage": "es", "isAccessibleForFree": true, "provider": {"@type": "Organization", "name": "guitle", "url": "https://guitle.com"}}</script>
+<link rel="stylesheet" href="/fonts/inter.css">
+<style>
+:root{
+  --bg:#DCE6EC; --surface:#F2F6F8; --ink:#1C2A33; --ink-2:#4E6170;
+  --blue:#2F6F96; --blue-deep:#1F4D6B; --butter:#E2A33A; --wood:#8A5A2B; --maple:#EFE3C8;
+  --line:#B8CBD6; --ok:#2E7D5B;
+  --font-display:Inter,system-ui,sans-serif;
+  --font-body:Inter,system-ui,Helvetica,Arial,sans-serif;
+  --font-mono:ui-monospace,Menlo,Consolas,monospace;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#13202A; --surface:#1C2C38; --ink:#E9EFF3; --ink-2:#9FB3C1;
+    --blue:#6FB0D8; --blue-deep:#A9D3EC; --butter:#E8B45A; --wood:#C8905A; --maple:#2A3A46;
+    --line:#34495A; --ok:#6CC49A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#13202A; --surface:#1C2C38; --ink:#E9EFF3; --ink-2:#9FB3C1;
+  --blue:#6FB0D8; --blue-deep:#A9D3EC; --butter:#E8B45A; --wood:#C8905A; --maple:#2A3A46;
+  --line:#34495A; --ok:#6CC49A;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:17px;line-height:1.55;height:100%;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;line-height:1.1;margin:0}
+h1{font-size:clamp(2.4rem,9vw,4rem);letter-spacing:-.02em}
+h2{font-size:1.9rem;margin-bottom:.35em}
+h3{font-size:1.25rem;font-weight:600;margin-top:1.6em;margin-bottom:.4em}
+p{margin:.5em 0 1em;max-width:36em}
+a{color:var(--blue)}
+.wrap{max-width:720px;margin:0 auto;padding:1.2rem 1.1rem calc(6rem + env(safe-area-inset-bottom,0px))}
+
+/* portada */
+.hero{padding:2.2rem 0 1.2rem;border-bottom:3px solid var(--ink)}
+.hero .gift{font-size:.95rem;color:var(--ink-2);margin:0 0 .8rem}
+.hero p.lead{font-size:1.15rem;margin-top:1rem}
+.strings{display:block;width:100%;height:46px;margin-top:1.2rem}
+.strings line{stroke:var(--ink);opacity:.85}
+
+/* lecciones */
+.lesson{display:none;padding-top:1.4rem}
+.lesson.active{display:block}
+.lesson-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:.6rem}
+.lesson-head .n{font-family:var(--font-display);font-size:3rem;font-weight:800;color:var(--butter);line-height:1}
+.goal{background:var(--maple);border-left:4px solid var(--wood);padding:.7rem .9rem;border-radius:0 8px 8px 0;margin:1rem 0 1.4rem}
+.goal b{display:block;font-size:.9rem;color:var(--wood)}
+
+/* diagramas */
+.chords{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.9rem;margin:1rem 0}
+.chord{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.6rem .4rem .5rem;text-align:center}
+.chord svg{width:100%;height:auto;display:block}
+.chord .nm{font-family:var(--font-display);font-size:1.5rem;font-weight:800;margin-bottom:.2rem}
+.chord button{margin-top:.4rem}
+.fb{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.6rem;margin:1rem 0;overflow-x:auto}
+.fb svg{display:block;min-width:420px;width:100%;height:auto}
+
+/* tablatura */
+pre.tab{font-family:var(--font-mono);font-size:.95rem;line-height:1.45;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem;overflow-x:auto;margin:.8rem 0 1.2rem;white-space:pre}
+pre.tab .pk{color:var(--blue-deep);font-weight:600}
+pre.tab .ch{color:var(--wood);font-weight:600}
+.lyric{font-family:var(--font-mono);font-size:.95rem;line-height:1.5;white-space:pre;overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem;margin:.8rem 0 1.2rem}
+.lyric .ch{color:var(--wood);font-weight:600}
+
+/* controles */
+button{font:inherit;font-weight:700;background:var(--blue);color:#fff;border:0;border-radius:999px;padding:.55rem 1.1rem;cursor:pointer}
+button.ghost{background:transparent;color:var(--blue);border:2px solid var(--blue);padding:.45rem 1rem}
+button:focus-visible,label:focus-within,.nav button:focus-visible{outline:3px solid var(--butter);outline-offset:2px}
+.tool{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem;margin:1.2rem 0}
+.tool .row{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.big{font-family:var(--font-display);font-size:2.6rem;font-weight:800;line-height:1;min-width:3ch}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.done{display:flex;align-items:center;gap:.6rem;margin:2rem 0 0;padding:.9rem 1rem;border:2px dashed var(--line);border-radius:12px;font-weight:700}
+.done input{width:1.3rem;height:1.3rem;accent-color:var(--ok)}
+.tip{font-size:.95rem;color:var(--ink-2)}
+ul{padding-left:1.2rem;max-width:36em}
+li{margin:.35em 0}
+
+/* navegación inferior */
+.nav{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--line);display:flex;padding:.3rem .2rem;padding-bottom:calc(.3rem + env(safe-area-inset-bottom,0px));z-index:20}
+.nav button{flex:1;background:none;color:var(--ink-2);border:0;border-radius:8px;padding:.45rem .1rem;font-size:.72rem;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:.15rem;line-height:1.1}
+.nav button .k{font-family:var(--font-display);font-size:1.25rem;font-weight:800;line-height:1}
+.nav button.on{color:var(--blue);background:var(--bg)}
+.nav button.ok .k::after{content:" ✓";color:var(--ok);font-size:.8rem}
+.pager{display:flex;justify-content:space-between;margin-top:2rem;gap:.6rem}
+@media (prefers-reduced-motion:no-preference){.lesson.active{animation:in .25s ease-out}@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<section class="lesson active" id="l0">
+  <header class="hero">
+    <p class="gift"><a href="/" style="font-weight:700;text-decoration:none">{{0}}</a> {{1}}</p>
+    <h1>{{2}}</h1>
+    <p class="lead">{{3}}</p>
+    <svg class="strings" viewBox="0 0 600 46" preserveAspectRatio="none" aria-hidden="true">
+      <line x1="0" y1="4" x2="600" y2="4" stroke-width="3.2"/><line x1="0" y1="12" x2="600" y2="12" stroke-width="2.6"/>
+      <line x1="0" y1="20" x2="600" y2="20" stroke-width="2.1"/><line x1="0" y1="28" x2="600" y2="28" stroke-width="1.6"/>
+      <line x1="0" y1="36" x2="600" y2="36" stroke-width="1.1"/><line x1="0" y1="44" x2="600" y2="44" stroke-width=".8"/>
+    </svg>
+  </header>
+
+  <p class="tip">{{4}} <a href="/guias/primera-guitarra-electrica.html">{{5}}</a>{{6}} <a href="/guias/guitarra-clasica-o-acustica.html">{{7}}</a> {{8}} <a href="/">{{9}}</a>{{10}}</p>
+  <h2 style="margin-top:1.6rem">{{11}}</h2>
+  <p>{{12}}</p>
+  <ul>
+    <li><b>{{13}}</b> {{14}}</li>
+    <li><b>{{15}}</b> {{16}}</li>
+    <li><b>{{17}}</b> {{18}}</li>
+  </ul>
+
+  <h3>{{19}}</h3>
+  <p>{{20}} <b>{{21}}</b> {{22}}</p>
+  <div class="tool">
+    <div class="row"><b>{{23}}</b></div>
+    <div class="row" style="margin-top:.6rem" id="openStrings"></div>
+    <p class="tip" style="margin:.6rem 0 0">{{24}}</p>
+  </div>
+
+  <h3>{{25}}</h3>
+  <p>{{26}} <b>1</b> {{27}} <b>2</b> {{28}} <b>3</b> {{29}} <b>4</b> {{30}} <b>{{31}}</b> {{32}} <b>{{33}}</b>{{34}}</p>
+  <div class="chords" style="grid-template-columns:repeat(auto-fill,minmax(130px,160px))" id="demoChord"></div>
+
+  <div class="pager"><span></span><button onclick="go(1)">{{35}}</button></div>
+</section>
+
+<section class="lesson" id="l1">
+  <div class="lesson-head"><span class="n">1</span><h2>{{36}}</h2></div>
+  <div class="goal"><b>{{37}}</b>{{38}}</div>
+
+  <h3>{{39}}</h3>
+  <ul>
+    <li>{{40}}</li>
+    <li>{{41}}</li>
+    <li>{{42}} <b>{{43}}</b> {{44}}</li>
+  </ul>
+
+  <h3>{{45}}</h3>
+  <p>{{46}}</p>
+  <p>{{47}} <span style="font-family:var(--font-mono);color:var(--blue-deep);font-weight:600">⊓</span> {{48}} <span style="font-family:var(--font-mono);color:var(--blue-deep);font-weight:600">V</span> {{49}} <b>{{50}}</b> {{51}}</p>
+
+  <h3>{{52}}</h3>
+  <p>{{53}}</p>
+<pre class="tab"><span class="pk">    ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V</span>
+e|-------------------------------------------0-0-0-0--|
+B|-----------------------------------0-0-0-0----------|
+G|---------------------------0-0-0-0------------------|
+D|-------------------0-0-0-0--------------------------|
+A|-----------0-0-0-0----------------------------------|
+E|---0-0-0-0------------------------------------------|</pre>
+
+  <h3>{{54}}</h3>
+  <p>{{55}}</p>
+<pre class="tab"><span class="pk">    ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V</span>
+e|---------------------5-6-7-8--|
+B|-------------5-6-7-8----------|
+G|-----5-6-7-8------------------|
+D|------------------------------|   …y sigue con D, A y E
+A|------------------------------|
+E|------------------------------|</pre>
+
+  <div class="tool" id="metro1"></div>
+
+  <label class="done"><input type="checkbox" data-done="1"> {{56}}</label>
+  <div class="pager"><button class="ghost" onclick="go(0)">{{57}}</button><button onclick="go(2)">{{58}}</button></div>
+</section>
+
+<section class="lesson" id="l2">
+  <div class="lesson-head"><span class="n">2</span><h2>{{59}}</h2></div>
+  <div class="goal"><b>{{60}}</b>{{61}}</div>
+  <p>{{62}} <b>{{63}}</b> {{64}}</p>
+
+  <h3>{{65}}</h3>
+  <div class="chords" id="chordsA"></div>
+
+  <h3>{{66}}</h3>
+  <div class="chords" id="chordsB"></div>
+
+  <h3>{{67}}</h3>
+  <p>{{68}}</p>
+  <div class="tool" id="changer">
+    <div class="row"><span class="big" id="chT">60</span><span class="big" id="chN" style="color:var(--butter)">0</span><span class="tip">{{69}}</span></div>
+    <div class="row" style="margin-top:.7rem"><button id="chStart">{{70}}</button><button class="ghost" id="chTap" disabled>{{71}}</button></div>
+    <p class="tip" id="chBest" style="margin:.6rem 0 0"></p>
+  </div>
+
+  <h3>{{72}}</h3>
+  <ul>
+    <li>{{73}} <b>{{74}}</b> {{75}}</li>
+    <li>{{76}}</li>
+  </ul>
+
+  <label class="done"><input type="checkbox" data-done="2"> {{77}}</label>
+  <div class="pager"><button class="ghost" onclick="go(1)">{{78}}</button><button onclick="go(3)">{{79}}</button></div>
+</section>
+
+<section class="lesson" id="l3">
+  <div class="lesson-head"><span class="n">3</span><h2>{{80}}</h2></div>
+  <div class="goal"><b>{{81}}</b>{{82}}</div>
+
+  <h3>{{83}}</h3>
+  <p>{{84}} <b>{{85}}</b> {{86}} <b>{{87}}</b>{{88}}</p>
+
+  <h3>{{89}}</h3>
+<pre class="tab">   1   2   3   4  |  1   2   3   4
+   <span class="pk">⊓   ⊓   ⊓   ⊓</span>  |  <span class="pk">⊓   ⊓   ⊓   ⊓</span>
+   <span class="ch">Em</span>              |  <span class="ch">Am</span></pre>
+
+  <h3>{{90}}</h3>
+<pre class="tab">   1 y 2 y 3 y 4 y
+   <span class="pk">⊓ V ⊓ V ⊓ V ⊓ V</span></pre>
+
+  <h3>{{91}}</h3>
+  <p>{{92}} <b>{{93}}</b> {{94}}</p>
+<pre class="tab">   1 y 2 y 3 y 4 y
+   <span class="pk">⊓   ⊓ V   V ⊓ V</span></pre>
+
+  <h3>{{95}}</h3>
+  <p>{{96}} <b>{{97}}</b>{{98}} <b>{{99}}</b>{{100}}</p>
+  <div class="tool" id="metro3"></div>
+
+  <label class="done"><input type="checkbox" data-done="3"> {{101}}</label>
+  <div class="pager"><button class="ghost" onclick="go(2)">{{102}}</button><button onclick="go(4)">{{103}}</button></div>
+</section>
+
+<section class="lesson" id="l4">
+  <div class="lesson-head"><span class="n">4</span><h2>{{104}}</h2></div>
+  <div class="goal"><b>{{105}}</b>{{106}}</div>
+  <p>{{107}}</p>
+
+  <h3>{{108}}</h3>
+  <p>{{109}}</p>
+  <div class="fb" id="fbC"></div>
+<pre class="tab"><span class="pk">    ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V</span>
+e|-------------------------------0-1-3--|
+B|-------------------------0-1-3--------|
+G|---------------------0-2--------------|
+D|---------------0-2-3------------------|
+A|---------0-2-3------------------------|
+E|---0-1-3------------------------------|</pre>
+
+  <h3>{{110}}</h3>
+  <p>{{111}}</p>
+  <div class="fb" id="fbPent"></div>
+<pre class="tab"><span class="pk">    ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V ⊓ V</span>
+e|---------------------5-8--|
+B|-----------------5-8------|
+G|-------------5-7----------|
+D|---------5-7--------------|
+A|-----5-7------------------|
+E|-5-8----------------------|</pre>
+
+  <h3>{{112}}</h3>
+  <ul>
+    <li>{{113}} <b>{{114}}</b> {{115}}</li>
+    <li>{{116}} <b>{{117}}</b> {{118}}</li>
+    <li>{{119}}</li>
+  </ul>
+  <div class="tool" id="metro4"></div>
+
+  <label class="done"><input type="checkbox" data-done="4"> {{120}}</label>
+  <div class="pager"><button class="ghost" onclick="go(3)">{{121}}</button><button onclick="go(5)">{{122}}</button></div>
+</section>
+
+<section class="lesson" id="l5">
+  <div class="lesson-head"><span class="n">5</span><h2>{{123}}</h2></div>
+  <div class="goal"><b>{{124}}</b>{{125}}</div>
+
+  <h3>{{126}}</h3>
+  <p>{{127}}</p>
+  <div class="chords" style="grid-template-columns:repeat(auto-fill,minmax(130px,160px))" id="chordsSong"></div>
+<div class="lyric"><span class="ch">C</span>
+La cucaracha, la cucaracha,
+                      <span class="ch">G7</span>
+ya no puede caminar,
+porque no tiene, porque le falta
+                      <span class="ch">C</span>
+las dos patitas de atrás.</div>
+  <p class="tip">{{128}}</p>
+
+  <h3>{{129}}</h3>
+  <p>{{130}}</p>
+<pre class="tab">e|-0-0-1-3-3-1-0-------------0-0-----|
+B|---------------3-1-1-3---------3-3━|
+
+e|-0-0-1-3-3-1-0-------------0-------|
+B|---------------3-1-1-3-------3-1-1━|</pre>
+  <p>{{131}}</p>
+
+  <div class="tool" id="metro5"></div>
+
+  <h3>{{132}}</h3>
+  <ul>
+    <li>{{133}} <b>{{134}}</b> {{135}} <b>{{136}}</b>{{137}}</li>
+    <li>{{138}}</li>
+    <li>{{139}}</li>
+  </ul>
+
+  <label class="done"><input type="checkbox" data-done="5"> {{140}}</label>
+  <div class="pager"><button class="ghost" onclick="go(4)">{{141}}</button><button onclick="go(0)">{{142}}</button></div>
+</section>
+
+</div>
+
+<nav class="nav" aria-label="Lecciones">
+  <button data-go="0"><span class="k">⌂</span>{{143}}</button>
+  <button data-go="1"><span class="k">1</span>{{144}}</button>
+  <button data-go="2"><span class="k">2</span>{{145}}</button>
+  <button data-go="3"><span class="k">3</span>{{146}}</button>
+  <button data-go="4"><span class="k">4</span>{{147}}</button>
+  <button data-go="5"><span class="k">5</span>{{148}}</button>
+</nav>
+
+<script>
+/* ---------- datos ---------- */
+const CHORDS = {
+  Em:{name:"Em",label:"{{149}}",frets:[0,2,2,0,0,0],fing:[0,2,3,0,0,0]},
+  Am:{name:"Am",label:"{{150}}",frets:[-1,0,2,2,1,0],fing:[0,0,2,3,1,0]},
+  D: {name:"D", label:"{{151}}",frets:[-1,-1,0,2,3,2],fing:[0,0,0,1,3,2]},
+  G: {name:"G", label:"{{152}}",frets:[3,2,0,0,0,3],fing:[2,1,0,0,0,3]},
+  C: {name:"C", label:"{{153}}",frets:[-1,3,2,0,1,0],fing:[0,3,2,0,1,0]},
+  E: {name:"E", label:"{{154}}",frets:[0,2,2,1,0,0],fing:[0,2,3,1,0,0]},
+  A: {name:"A", label:"{{155}}",frets:[-1,0,2,2,2,0],fing:[0,0,1,2,3,0]},
+  Dm:{name:"Dm",label:"{{156}}",frets:[-1,-1,0,2,3,1],fing:[0,0,0,2,3,1]},
+  G7:{name:"G7",label:"{{157}}",frets:[3,2,0,0,0,1],fing:[3,2,0,0,0,1]}
+};
+const TUNING=[82.41,110,146.83,196,246.94,329.63];
+const TUNING_NAMES=["{{158}}","{{159}}","{{160}}","{{161}}","{{162}}","{{163}}"];
+
+/* ---------- audio ---------- */
+let ctx=null;
+function ac(){ if(!ctx){ ctx=new (window.AudioContext||window.webkitAudioContext)(); } if(ctx.state==="suspended") ctx.resume(); return ctx; }
+function pluck(freq,at,dur=1.6,vol=.22){
+  const c=ac(), o=c.createOscillator(), g=c.createGain(), f=c.createBiquadFilter();
+  o.type="triangle"; o.frequency.value=freq;
+  f.type="lowpass"; f.frequency.setValueAtTime(2200,at); f.frequency.exponentialRampToValueAtTime(500,at+dur);
+  g.gain.setValueAtTime(0,at); g.gain.linearRampToValueAtTime(vol,at+.008); g.gain.exponentialRampToValueAtTime(.0005,at+dur);
+  o.connect(f); f.connect(g); g.connect(c.destination); o.start(at); o.stop(at+dur+.05);
+}
+function playString(i){ pluck(TUNING[i],ac().currentTime,2.2,.3); }
+function strum(ch){
+  const t=ac().currentTime; let k=0;
+  ch.frets.forEach((fr,i)=>{ if(fr<0) return; pluck(TUNING[i]*Math.pow(2,fr/12),t+k*0.045); k++; });
+}
+function click(accent){
+  const c=ac(), t=c.currentTime, o=c.createOscillator(), g=c.createGain();
+  o.frequency.value=accent?1600:1000; g.gain.setValueAtTime(.35,t); g.gain.exponentialRampToValueAtTime(.001,t+.06);
+  o.connect(g); g.connect(c.destination); o.start(t); o.stop(t+.07);
+}
+
+/* ---------- diagramas de acorde ---------- */
+function chordSVG(ch){
+  const W=120,H=140,x0=20,y0=30,sx=16,sy=22;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="{{164}}${ch.label}">`;
+  s+=`<rect x="${x0-1}" y="${y0-3}" width="${sx*5+2}" height="4" fill="var(--ink)"/>`;
+  for(let f=1;f<=4;f++) s+=`<line x1="${x0}" y1="${y0+f*sy}" x2="${x0+sx*5}" y2="${y0+f*sy}" stroke="var(--line)" stroke-width="1.5"/>`;
+  for(let i=0;i<6;i++) s+=`<line x1="${x0+i*sx}" y1="${y0}" x2="${x0+i*sx}" y2="${y0+4*sy}" stroke="var(--ink)" stroke-width="${1.9-i*.2}"/>`;
+  ch.frets.forEach((fr,i)=>{
+    const x=x0+i*sx;
+    if(fr<0) s+=`<text x="${x}" y="${y0-9}" font-size="12" text-anchor="middle" fill="var(--ink-2)" font-family="var(--font-body)">X</text>`;
+    else if(fr===0) s+=`<circle cx="${x}" cy="${y0-12}" r="4.5" fill="none" stroke="var(--ink)" stroke-width="1.6"/>`;
+    else s+=`<circle cx="${x}" cy="${y0+(fr-.5)*sy}" r="7.5" fill="var(--blue)"/><text x="${x}" y="${y0+(fr-.5)*sy+4}" font-size="11" font-weight="700" text-anchor="middle" fill="#fff" font-family="var(--font-body)">${ch.fing[i]||""}</text>`;
+  });
+  return s+"</svg>";
+}
+function renderChords(el,keys){
+  el.innerHTML=keys.map(k=>{const c=CHORDS[k];return `<div class="chord"><div class="nm">${c.name}</div>${chordSVG(c)}<div class="tip">${c.label}</div><button class="ghost" data-strum="${k}">{{165}}</button></div>`;}).join("");
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-strum]"); if(b){ strum(CHORDS[b.dataset.strum]); b.textContent="♪ {{165}}"; setTimeout(()=>b.textContent="{{165}}",600); }
+  const s=e.target.closest("[data-str]"); if(s) playString(+s.dataset.str);
+  const n=e.target.closest("[data-go]"); if(n) go(+n.dataset.go);
+});
+
+/* ---------- mástil tumbado ---------- */
+function fretboardSVG(notes,start,count,roots){
+  const fw=46,sh=20,x0=40,y0=18,W=x0+fw*count+16,H=y0+sh*5+28;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="{{166}}">`;
+  s+=`<rect x="${x0}" y="${y0-4}" width="${fw*count}" height="${sh*5+8}" rx="3" fill="var(--maple)"/>`;
+  for(let f=0;f<=count;f++) s+=`<line x1="${x0+f*fw}" y1="${y0-4}" x2="${x0+f*fw}" y2="${y0+sh*5+4}" stroke="${f===0&&start===0?"var(--ink)":"var(--line)"}" stroke-width="${f===0&&start===0?5:2}"/>`;
+  for(let i=0;i<6;i++) s+=`<line x1="${x0}" y1="${y0+(5-i)*sh}" x2="${x0+fw*count}" y2="${y0+(5-i)*sh}" stroke="var(--ink)" stroke-width="${2.2-i*.25}"/>`;
+  for(let f=1;f<=count;f++){ const n=start+f; if([3,5,7,9,12].includes(n)) s+=`<text x="${x0+(f-.5)*fw}" y="${H-6}" font-size="11" text-anchor="middle" fill="var(--ink-2)" font-family="var(--font-body)">${n}</text>`; }
+  notes.forEach(([str,fr])=>{
+    const isRoot=roots.some(r=>r[0]===str&&r[1]===fr);
+    const cx= fr===0 ? x0-14 : x0+(fr-start-.5)*fw, cy=y0+(5-str)*sh;
+    s+=`<circle cx="${cx}" cy="${cy}" r="8" fill="${isRoot?"var(--butter)":"var(--blue)"}"/>`;
+  });
+  return s+"</svg>";
+}
+
+/* ---------- metrónomo ---------- */
+function metronome(el,bpm,label){
+  el.innerHTML=`<div class="row"><b>${label}</b></div>
+  <div class="row" style="margin-top:.5rem"><span class="big"><span class="bpm">${bpm}</span></span><span class="tip">{{167}}</span><button class="m-toggle" style="margin-left:auto">{{168}}</button></div>
+  <input type="range" min="40" max="160" value="${bpm}" class="m-range" aria-label="Tempo">
+  <div class="row" style="justify-content:center;gap:.6rem;margin-top:.4rem">${[1,2,3,4].map(i=>`<span class="beat" style="width:14px;height:14px;border-radius:50%;background:var(--line)"></span>`).join("")}</div>`;
+  const rng=el.querySelector(".m-range"), out=el.querySelector(".bpm"), btn=el.querySelector(".m-toggle"), beats=[...el.querySelectorAll(".beat")];
+  let timer=null, beat=0;
+  rng.oninput=()=>{ out.textContent=rng.value; if(timer) start(); };
+  function tick(){ click(beat===0); beats.forEach((b,i)=>b.style.background=i===beat?(beat===0?"var(--butter)":"var(--blue)"):"var(--line)"); beat=(beat+1)%4; }
+  function start(){ stop(); beat=0; tick(); timer=setInterval(tick,60000/+rng.value); btn.textContent="{{169}}"; }
+  function stop(){ if(timer){clearInterval(timer);timer=null;} btn.textContent="{{168}}"; beats.forEach(b=>b.style.background="var(--line)"); }
+  btn.onclick=()=> timer?stop():start();
+  el._stop=stop;
+}
+
+/* ---------- cronómetro de cambios ---------- */
+(function(){
+  const T=document.getElementById("chT"),N=document.getElementById("chN"),S=document.getElementById("chStart"),P=document.getElementById("chTap"),B=document.getElementById("chBest");
+  let best=0; try{ best=+(localStorage.getItem("gtr-best")||0); }catch(e){}
+  if(best) B.textContent=`{{170}}${best} {{171}}`;
+  let left=60,n=0,iv=null;
+  S.onclick=()=>{ if(iv){clearInterval(iv);iv=null;} left=60;n=0;T.textContent=60;N.textContent=0;P.disabled=false;S.textContent="{{177}}";
+    iv=setInterval(()=>{ left--; T.textContent=left; if(left<=0){ clearInterval(iv);iv=null;P.disabled=true;S.textContent="{{178}}";
+      if(n>best){best=n; try{localStorage.setItem("gtr-best",best);}catch(e){} B.textContent=`{{172}}${best} {{173}} ${best>=30?"{{174}}":"{{175}}"}`;}
+      else B.textContent=`${n} {{173}} {{176}}${best}.`; } },1000); };
+  P.onclick=()=>{ n++; N.textContent=n; };
+})();
+
+/* ---------- navegación y progreso ---------- */
+const sections=[...document.querySelectorAll(".lesson")], navBtns=[...document.querySelectorAll(".nav button")];
+function go(i){
+  sections.forEach((s,k)=>s.classList.toggle("active",k===i));
+  navBtns.forEach((b,k)=>b.classList.toggle("on",k===i));
+  document.querySelectorAll(".tool").forEach(t=>t._stop&&t._stop());
+  window.scrollTo({top:0,behavior:"auto"});
+  try{ localStorage.setItem("gtr-pos",i); }catch(e){}
+}
+function loadDone(){
+  let d={}; try{ d=JSON.parse(localStorage.getItem("gtr-done")||"{}"); }catch(e){}
+  document.querySelectorAll("[data-done]").forEach(cb=>{ cb.checked=!!d[cb.dataset.done]; navBtns[+cb.dataset.done].classList.toggle("ok",cb.checked);
+    cb.onchange=()=>{ d[cb.dataset.done]=cb.checked; navBtns[+cb.dataset.done].classList.toggle("ok",cb.checked); try{localStorage.setItem("gtr-done",JSON.stringify(d));}catch(e){} }; });
+}
+
+/* ---------- arranque ---------- */
+document.getElementById("openStrings").innerHTML=TUNING_NAMES.map((n,i)=>`<button class="ghost" data-str="${i}">${n}</button>`).join("");
+renderChords(document.getElementById("demoChord"),["Am"]);
+renderChords(document.getElementById("chordsA"),["Em","Am","D","G","C"]);
+renderChords(document.getElementById("chordsB"),["E","A","Dm","G7"]);
+renderChords(document.getElementById("chordsSong"),["C","G7"]);
+document.getElementById("fbC").innerHTML=fretboardSVG(
+  [[0,0],[0,1],[0,3],[1,0],[1,2],[1,3],[2,0],[2,2],[2,3],[3,0],[3,2],[4,0],[4,1],[4,3],[5,0],[5,1],[5,3]],0,4,[[1,3],[4,1]]);
+document.getElementById("fbPent").innerHTML=fretboardSVG(
+  [[0,5],[0,8],[1,5],[1,7],[2,5],[2,7],[3,5],[3,7],[4,5],[4,8],[5,5],[5,8]],4,5,[[0,5],[5,5],[2,7]]);
+metronome(document.getElementById("metro1"),60,"{{179}}");
+metronome(document.getElementById("metro3"),70,"{{179}}");
+metronome(document.getElementById("metro4"),60,"{{179}}");
+metronome(document.getElementById("metro5"),60,"{{179}}");
+loadDone();
+let pos=0; try{ pos=+(localStorage.getItem("gtr-pos")||0); }catch(e){}
+const h=location.hash.replace("#",""); if(/^l[0-5]$/.test(h)) pos=+h[1];
+go(pos);
+</script>
+<script src="/c.js" defer></script>
+</body>
+</html>

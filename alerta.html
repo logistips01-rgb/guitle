@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2a78d6">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="stylesheet" href="fonts/inter.css">
+<link rel="stylesheet" href="catalogo.css">
+<title>Aviso de precio · guitle</title>
+<style>
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 16px; padding: 22px; margin: 30px 0; max-width: 620px; }
+  .card h2 { margin: 0 0 8px; font-size: 1.35rem; letter-spacing: -.02em; }
+  .card p { color: var(--text-secondary); line-height: 1.5; }
+  .card a.btn { display: inline-block; margin-top: 8px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; padding: 9px 18px; border-radius: 999px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a></h1>
+    </div>
+  </div>
+  <div class="card" id="card"><h2>Un momento…</h2><p>Estamos guardando tu respuesta.</p></div>
+  <footer class="site-foot">
+    <span><a href="legal.html#privacidad">Privacidad</a> · <a href="mailto:hola@guitle.com">hola@guitle.com</a></span>
+  </footer>
+</main>
+<script>
+// Confirmar (?c=código) o dar de baja (?baja=código) un aviso de precio. El código es el id del aviso en Firestore.
+(async () => {
+  const ALERTS = "https://firestore.googleapis.com/v1/projects/guitle-d48d8/databases/(default)/documents/alertas/";
+  const q = new URLSearchParams(location.search);
+  const card = document.getElementById("card");
+  const show = (title, text) => { card.innerHTML = `<h2>${title}</h2><p>${text}</p><a class="btn" href="./">Ir a guitle</a>`; };
+  const id = (q.get("c") || q.get("baja") || "").replace(/[^A-Za-z0-9_-]/g, "");
+  if (id.length < 20) return show("Enlace no válido", "Copia el enlace completo del correo e inténtalo de nuevo.");
+  try {
+    if (q.has("c")) {
+      const r = await fetch(`${ALERTS}${id}?updateMask.fieldPaths=ok&currentDocument.exists=true`, {
+        method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ fields: { ok: { booleanValue: true } } }) });
+      if (!r.ok) throw new Error(r.status);
+      show("¡Aviso confirmado!", "Te escribiremos en cuanto baje el precio. Cada correo lleva un enlace para darte de baja.");
+    } else {
+      const r = await fetch(ALERTS + id, { method: "DELETE" });
+      if (!r.ok) throw new Error(r.status);
+      show("Aviso borrado", "No volverás a recibir correos de este aviso. Hemos borrado tu correo de nuestra lista.");
+    }
+  } catch (e) {
+    show("No hemos encontrado el aviso", "Puede que ya estuviera confirmado o borrado, o que hayan pasado más de 7 días sin confirmarlo. Si necesitas ayuda, escríbenos a hola@guitle.com.");
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+# Tocar este fichero genera y sube a R2 la web de estos países con lo que ya hay en data/ (publicar.yml).
+# Ojo: solo queda una tanda en espera; la nueva sustituye a la anterior, así que hay que poner todos los países pendientes.
+uk fr pl cz sk hu ro bg gr fi se no dk
+# 18:28:15 guías y curso en 11 idiomas

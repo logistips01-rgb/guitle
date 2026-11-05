@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2a78d6">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="stylesheet" href="fonts/inter.css">
+<link rel="stylesheet" href="catalogo.css">
+<title>Estadísticas · guitle</title>
+<style>
+  .intro { color: var(--text-secondary); margin: 4px 0 14px; }
+  .ranges { display: flex; gap: 6px; margin: 6px 0 16px; flex-wrap: wrap; }
+  .ranges button { font: inherit; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface-1); color: var(--text-secondary); cursor: pointer; }
+  .ranges button[aria-pressed="true"] { background: var(--accent-bg); color: var(--accent); border-color: var(--accent); }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+  .tile-s { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; }
+  .tile-s b { display: block; font-size: 1.6rem; letter-spacing: -.03em; }
+  .tile-s span { color: var(--text-muted); font-size: .85rem; }
+  .card { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin-top: 14px; }
+  .card h2 { font-size: 1rem; margin: 0 0 10px; }
+  .chart-wrap { position: relative; height: 260px; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .bars { display: grid; gap: 6px; }
+  .bar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; font-size: .88rem; }
+  .bar .lab { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-secondary); }
+  .bar .val { color: var(--text-primary); font-variant-numeric: tabular-nums; }
+  .bar .track { grid-column: 1 / -1; height: 8px; border-radius: 4px; background: var(--grid); }
+  .bar .fill { height: 100%; border-radius: 4px; background: var(--accent); min-width: 2px; }
+  .empty { color: var(--text-muted); font-size: .9rem; }
+  .login { margin: 30px 0; }
+  .btn { font: inherit; font-weight: 600; padding: 10px 18px; border-radius: 10px; border: 0; background: var(--accent); color: #fff; cursor: pointer; }
+  .who { color: var(--text-muted); font-size: .85rem; }
+  .who button { font: inherit; background: none; border: 0; color: var(--accent); cursor: pointer; padding: 0; }
+  /* guitle en el mundo: mapa en blanco, los países se pintan de azul según se encienden */
+  .world .sub { color: var(--text-muted); margin: -6px 0 12px; font-size: .9rem; }
+  .world .kpis, #gkpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+  .world .kpis b, #gkpis b { color: var(--accent); }
+  .alert { display: flex; gap: 10px; align-items: baseline; padding: 8px 0; border-top: 1px solid var(--border); }
+  .alert:first-child { border-top: 0; }
+  .alert b { font-size: .74rem; font-weight: 600; padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+  .alert.bad b { background: #fde8e8; color: #b42318; }
+  .alert.warn b { background: #fdf3dc; color: #8a5a00; }
+  .alert.ok b { background: var(--good-bg, #e6f4e8); color: var(--good, #00750a); }
+  .alert span { color: var(--text-secondary); }
+  #gkpis { margin-bottom: 14px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+  .world .prog { height: 8px; background: var(--grid); border-radius: 99px; margin-top: 8px; overflow: hidden; }
+  .world .prog i { display: block; height: 100%; background: var(--accent); }
+  .maps { display: grid; grid-template-columns: 1.75fr 1fr; gap: 10px; margin-top: 12px; }
+  @media (max-width: 860px) { .maps { grid-template-columns: 1fr; } }
+  .map { background: #eef3f9; border: 1px solid var(--border); border-radius: 12px; padding: 8px; position: relative; min-height: 120px; }
+  .map h3 { position: absolute; margin: 0; left: 12px; top: 8px; font-size: .8rem; color: var(--text-muted); font-weight: 600; }
+  .map svg { width: 100%; height: auto; display: block; }
+  .map path { fill: #fff; stroke: #d6d5cf; stroke-width: .5; }
+  .map path.on { fill: var(--accent); stroke: #fff; }
+  .map path.new { fill: var(--accent); stroke: #fff; animation: pulse 2.2s ease-in-out infinite; }
+  .map path.next { fill: #d3e2f4; }
+  @keyframes pulse { 50% { fill: #8db8ec; } }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .map { background: #172a40; } }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--text-muted); font-size: .82rem; margin: 10px 2px; }
+  .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 1px solid #d6d5cf; }
+  .ctable { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  .ctable th, .ctable td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--grid); }
+  .ctable th { color: var(--text-muted); font-weight: 600; font-size: .78rem; }
+  .ctable .n { text-align: right; font-variant-numeric: tabular-nums; }
+  .ctable tfoot th { color: var(--text-primary); font-weight: 700; font-size: .9rem; border-top: 2px solid var(--grid); border-bottom: 0; }
+  .chip-s { font-size: .74rem; font-weight: 600; padding: 2px 9px; border-radius: 99px; white-space: nowrap; }
+  .chip-s.on { background: var(--good-bg, #e6f4e8); color: var(--good, #00750a); }
+  .chip-s.new { background: var(--accent-bg); color: var(--accent); }
+  .chip-s.next { background: var(--grid); color: var(--text-muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="./" aria-label="guitle, inicio"><img src="icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">estadísticas</span></span></a></h1>
+      <span class="who" id="who"></span>
+    </div>
+  </div>
+  <h2 style="font-size:1.5rem;margin:18px 0 0;letter-spacing:-.03em">Visitas y clics a tiendas</h2>
+  <p class="intro">Contador propio, sin cookies: páginas vistas por día, de dónde llega la gente y clics hacia cada tienda.</p>
+
+  <div class="login" id="login" hidden>
+    <p>Esta página es privada. Entra con la cuenta de Google autorizada.</p>
+    <button class="btn" id="signin">Entrar con Google</button>
+    <p class="empty" id="loginmsg"></p>
+  </div>
+
+  <div id="app" hidden>
+    <div class="ranges" role="group" aria-label="Periodo">
+      <button data-days="7">7 días</button><button data-days="30" aria-pressed="true">30 días</button><button data-days="90">90 días</button>
+    </div>
+    <div class="card" id="health"><h2>Avisos del catálogo</h2><div id="alerts"><p class="empty">Comprobando…</p></div></div>
+    <div class="tiles" id="tiles"></div>
+    <div class="card world">
+      <h2>guitle en el mundo</h2>
+      <p class="sub">Cada país que encendemos se pinta de azul. A por el mapa entero.</p>
+      <div class="kpis" id="wkpis"></div>
+      <div class="maps"><div class="map" id="map-world"><h3>Mundo</h3></div><div class="map" id="map-europe"><h3>Europa</h3></div></div>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Con guitle</span><span><i style="background:#8db8ec"></i>Encendiéndose (late hasta que tenga datos)</span><span><i style="background:#d3e2f4"></i>Próximamente</span><span><i style="background:#fff"></i>Por conquistar</span></div>
+      <div style="overflow-x:auto"><table class="ctable" style="min-width:720px"><thead><tr><th>País</th><th>Estado</th><th class="n">Posibles guitles</th><th class="n" id="wdays">Guitles</th><th class="n">Guitarras</th><th class="n">Tiendas</th><th class="n">Visitas hoy</th><th class="n">Clics hoy</th></tr></thead><tbody id="wrows"></tbody><tfoot id="wfoot"></tfoot></table></div>
+      <p class="empty" style="margin:10px 0 0">Posibles guitles = 10 % de la población activa del país (cifras aproximadas). Guitles = páginas vistas en la web de cada país (contador anónimo) en el periodo elegido; desde el 31/10/2026 solo cuentan las de personas (3 s en pantalla y algún gesto: ratón, scroll, toque o tecla). Visitas y clics hoy: desde las 0:00 (hora de España). Los clics llevan el país desde el 2/11/2026; los anteriores se asignan por el dominio de la tienda (.pt, .fr…) y, si no lo dice, a España. Total de posibles guitles: solo los países activos. Total de tiendas: tiendas distintas (una tienda en varios países, como Thomann, cuenta una vez). Guitarras: eléctricas, acústicas, clásicas, portuguesas y packs.</p>
+    </div>
+    <div class="card">
+      <h2>Crecimiento del catálogo</h2>
+      <p class="sub">Productos comparados en cada país desde el primer día (un punto cada 6 horas, tras cada lectura).</p>
+      <div class="kpis" id="gkpis"></div>
+      <div class="chart-wrap" style="height:320px"><canvas id="gchart" aria-label="Productos por país a lo largo del tiempo"></canvas></div>
+      <div style="overflow-x:auto"><table class="ctable" style="min-width:560px"><thead><tr><th>País</th><th class="n">Guitarras</th><th class="n">Equipo</th><th class="n">Total</th><th class="n">Tiendas</th><th class="n">Últimas 24 h</th><th class="n">Desde el inicio</th></tr></thead><tbody id="grows"></tbody></table></div>
+    </div>
+    <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
+    <div class="cols">
+      <div class="card"><h2>Clics a tiendas</h2><div class="bars" id="stores"></div></div>
+      <div class="card"><h2>De dónde llegan</h2><div class="bars" id="refs"></div></div>
+    </div>
+    <div class="cols">
+      <div class="card"><h2>Búsquedas en guitle</h2><div class="bars" id="searches"></div></div>
+      <div class="card"><h2>Páginas más vistas</h2><div class="bars" id="pages"></div></div>
+    </div>
+  </div>
+</main>
+<script src="vendor/chart.umd.min.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getFirestore, collection, query, where, getDocs, documentId } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// Configuración pública de la app web de Firebase (no es secreta: la protegen las reglas de Firestore).
+const app = initializeApp({
+  apiKey: "AIzaSyDEDqOCAedm1D5kV6otH8FnYRMsqKfWRt4",
+  authDomain: "guitle-d48d8.firebaseapp.com",
+  projectId: "guitle-d48d8",
+  appId: "1:987865271462:web:05bd03378a289ba87a3867",
+});
+const auth = getAuth(app), db = getFirestore(app);
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const fmt = n => n.toLocaleString("es-ES");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const dayStr = d => d.toLocaleDateString("sv-SE", { timeZone: "Europe/Madrid" });
+const shortDay = s => new Date(s + "T12:00:00").toLocaleDateString("es-ES", { day: "numeric", month: "short" });
+
+let rows = null, chart = null, days = 30;
+
+// --- guitle en el mundo ---------------------------------------------------------------------------------------
+// Países: código de su carpeta en la web (España, la raíz), id del mapa (ISO numérico), población activa aprox.
+// (millones; posibles guitles = el 10 %) y sus catálogos. Un país con catálogos y web está "Activo"; con web configurada pero aún sin datos, "Encendiéndose";
+// sin catálogos, "Próximamente". Al abrir un país nuevo, se le ponen aquí sus catálogos.
+const COUNTRIES = [
+  ["es", "724", "España", 24.6, ["data/catalog/products.json", "data/catalog/acusticas/acusticas.json", "data/catalog/acusticas/clasicas.json",
+                                 "data/catalog/equipo/teclados.json", "data/catalog/equipo/pedales.json"]],
+  ["pt", "620", "Portugal", 5.4, ["data/catalog/pt/eletricas.json", "data/catalog/pt/acusticas.json", "data/catalog/pt/classicas.json",
+                                   "data/catalog/pt/portuguesas.json"]],
+  ["fr", "250", "Francia", 31.5, ["data/catalog/fr/electriques.json", "data/catalog/fr/folk.json", "data/catalog/fr/classiques.json"]],
+  ["it", "380", "Italia", 25.8, ["data/catalog/it/elettriche.json", "data/catalog/it/acustiche.json", "data/catalog/it/classiche.json"]],
+  ["uk", "826", "Reino Unido", 34.5, ["data/catalog/uk/electric.json", "data/catalog/uk/acoustic.json", "data/catalog/uk/classical.json"]],
+  ["de", "276", "Alemania", 44.5, ["data/catalog/de/e-gitarren.json", "data/catalog/de/westerngitarren.json",
+                                     "data/catalog/de/konzertgitarren.json"]],
+   ["at", "040", "Austria", 4.8, ["data/catalog/at/e-gitarren.json", "data/catalog/at/westerngitarren.json", "data/catalog/at/konzertgitarren.json"]], ["nl", "528", "Países Bajos", 10.0, ["data/catalog/nl/elektrische-gitaren.json", "data/catalog/nl/akoestische-gitaren.json", "data/catalog/nl/klassieke-gitaren.json"]], ["cz", "203", "Chequia", 5.4, ["data/catalog/cz/elektricke-kytary.json", "data/catalog/cz/akusticke-kytary.json", "data/catalog/cz/klasicke-kytary.json"]],
+  ["sk", "703", "Eslovaquia", 2.8, ["data/catalog/sk/elektricke-gitary.json", "data/catalog/sk/akusticke-gitary.json", "data/catalog/sk/klasicke-gitary.json"]],
+  ["hu", "348", "Hungría", 4.8, ["data/catalog/hu/elektromos-gitarok.json", "data/catalog/hu/akusztikus-gitarok.json", "data/catalog/hu/klasszikus-gitarok.json"]],
+  ["ro", "642", "Rumanía", 8.1, ["data/catalog/ro/chitare-electrice.json", "data/catalog/ro/chitare-acustice.json", "data/catalog/ro/chitare-clasice.json"]],
+  ["bg", "100", "Bulgaria", 2.9, ["data/catalog/bg/elektricheski-kitari.json", "data/catalog/bg/akustichni-kitari.json", "data/catalog/bg/klasicheski-kitari.json"]],
+  ["gr", "300", "Grecia", 4.7, ["data/catalog/gr/ilektrikes-kithares.json", "data/catalog/gr/akoustikes-kithares.json", "data/catalog/gr/klasikes-kithares.json"]],
+  ["fi", "246", "Finlandia", 2.7, ["data/catalog/fi/sahkokitarat.json", "data/catalog/fi/akustiset-kitarat.json", "data/catalog/fi/klassiset-kitarat.json"]],
+  ["lu", "442", "Luxemburgo", 0.5, ["data/catalog/lu/electriques.json", "data/catalog/lu/folk.json", "data/catalog/lu/classiques.json"]],
+  ["pl", "616", "Polonia", 17.3, ["data/catalog/pl/gitary-elektryczne.json", "data/catalog/pl/gitary-akustyczne.json", "data/catalog/pl/gitary-klasyczne.json"]],
+  ["se", "752", "Suecia", 5.6, ["data/catalog/se/elgitarrer.json", "data/catalog/se/akustiska-gitarrer.json", "data/catalog/se/klassiska-gitarrer.json"]],
+  ["no", "578", "Noruega", 2.9, ["data/catalog/no/elgitarer.json", "data/catalog/no/akustiske-gitarer.json", "data/catalog/no/klassiske-gitarer.json"]],
+  ["dk", "208", "Dinamarca", 3.1, ["data/catalog/dk/elguitarer.json", "data/catalog/dk/akustiske-guitarer.json", "data/catalog/dk/klassiske-guitarer.json"]],
+  ["ch", "756", "Suiza", 4.7, ["data/catalog/ch/e-gitarren.json", "data/catalog/ch/westerngitarren.json", "data/catalog/ch/konzertgitarren.json"]], ["be", "056", "Bélgica", 5.4, ["data/catalog/be/elektrische-gitaren.json", "data/catalog/be/akoestische-gitaren.json", "data/catalog/be/klassieke-gitaren.json"]],
+  ["ie", "372", "Irlanda", 2.8, ["data/catalog/ie/electric.json", "data/catalog/ie/acoustic.json", "data/catalog/ie/classical.json"]], ["mx", "484", "México", 61], ["br", "076", "Brasil", 109, ["data/catalog/br/guitarras.json", "data/catalog/br/violoes.json", "data/catalog/br/violoes-nylon.json"]], ["us", "840", "Estados Unidos", 170],
+  ["ca", "124", "Canadá", 22.3], ["ar", "032", "Argentina", 21], ["co", "170", "Colombia", 26], ["cl", "152", "Chile", 10],
+];
+const SHARE = 0.10;  // posibles guitles: el 10 % de la población activa
+// Los packs (guitarra con funda, ampli…) cuentan como guitarras, igual que en la portada y en el crecimiento del catálogo.
+const GUITAR_KINDS = new Set(["electrica", "acustica", "clasica", "portuguesa", "pack", "packac"]);
+const packFiles = code => code === "es" ? ["data/catalog/packs.json", "data/catalog/acusticas/packs.json"]
+  : [`data/catalog/${code}/${code === "pl" ? "zestawy" : "packs"}.json`];
+let world = null;  // {código: {status, guitars, stores}}
+
+async function loadWorld() {
+  const [w, e] = await Promise.all(["img/mapa/mundo.svg", "img/mapa/europa.svg"].map(u => fetch(u).then(r => r.text()).catch(() => "")));
+  $("map-world").insertAdjacentHTML("beforeend", w);
+  $("map-europe").insertAdjacentHTML("beforeend", e);
+  world = {};
+  await Promise.all(COUNTRIES.map(async ([code, , , , files]) => {
+    if (!files) { world[code] = { status: "next" }; return; }
+    const cats = (await Promise.all([...files, ...packFiles(code)].map(f => fetch(f, { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null)))).filter(Boolean);
+    const guitars = cats.filter(c => GUITAR_KINDS.has(c.kind)).reduce((a, c) => a + c.products.length, 0);
+    const stores = new Set(cats.flatMap(c => Object.keys(c.stores || {})));
+    world[code] = { status: guitars ? "on" : "new", guitars, stores: stores.size, storeIds: [...stores] };
+  }));
+}
+
+$("signin").onclick = () => signInWithPopup(auth, new GoogleAuthProvider())
+  .catch(e => { $("loginmsg").textContent = "No se pudo entrar: " + e.code; });
+
+onAuthStateChanged(auth, async user => {
+  $("login").hidden = !!user; $("app").hidden = !user;
+  $("who").innerHTML = user ? `${esc(user.email)} · <button id="out">Salir</button>` : "";
+  if (!user) return;
+  $("out").onclick = () => signOut(auth);
+  renderGrowth().catch(() => {});
+  try { await load(); } catch (e) {
+    $("app").hidden = true; $("login").hidden = false;
+    $("loginmsg").textContent = "Esta cuenta no tiene permiso para ver las estadísticas.";
+  }
+});
+
+async function load() {
+  const from = dayStr(new Date(Date.now() - 89 * 864e5));
+  const snap = await getDocs(query(collection(db, "c"), where(documentId(), ">=", from), where(documentId(), "<", "3")));
+  rows = snap.docs.map(d => {
+    const [day, kind, ...rest] = d.id.split("_");
+    return { day, kind, key: rest.join("_"), n: d.data().n || 0 };
+  });
+  if (!world) await loadWorld();
+  render();
+}
+
+function render() {
+  const today = new Date(), list = [];
+  for (let i = days - 1; i >= 0; i--) list.push(dayStr(new Date(today - i * 864e5)));
+  const inRange = new Set(list);
+  const sel = rows.filter(r => inRange.has(r.day));
+  const sum = (kind) => { const m = {}; for (const r of sel) if (r.kind === kind) m[r.key] = (m[r.key] || 0) + r.n; return m; };
+  const perDay = Object.fromEntries(list.map(d => [d, 0]));
+  for (const r of sel) if (r.kind === "v") perDay[r.day] += r.n;
+  const total = Object.values(perDay).reduce((a, b) => a + b, 0);
+  const clicksBy = sum("t"), refs = sum("r"), all = sum("p");
+  const stores = {};  // clics por tienda (la clave lleva "~<país>" desde el 2/11/2026)
+  for (const [k, n] of Object.entries(clicksBy)) { const st = k.split("~")[0]; stores[st] = (stores[st] || 0) + n; }
+  const pages = Object.fromEntries(Object.entries(all).filter(([k]) => !k.startsWith("buscar~")));
+  const searches = Object.fromEntries(Object.entries(all).filter(([k]) => k.startsWith("buscar~")).map(([k, n]) => [k.slice(7), n]));
+  const clicks = Object.values(stores).reduce((a, b) => a + b, 0);
+  const fromGoogle = Object.entries(refs).filter(([k]) => k.startsWith("google")).reduce((a, [, n]) => a + n, 0);
+
+  $("tiles").innerHTML = [
+    [fmt(perDay[list.at(-1)]), "páginas vistas hoy"],
+    [fmt(total), `páginas vistas en ${days} días`],
+    [fmt(Math.round(total / days)), "media al día"],
+    [fmt(clicks), `clics a tiendas en ${days} días`],
+    [fmt(fromGoogle), "llegadas desde Google"],
+  ].map(([b, s]) => `<div class="tile-s"><b>${b}</b><span>${s}</span></div>`).join("");
+
+  renderWorld(all, rows.filter(r => r.day === list.at(-1)));
+  bars("stores", stores, k => k, "Aún no hay clics a tiendas en este periodo.");
+  bars("refs", refs, k => k === "directo" ? "Directo (sin origen)" : k, "Aún no hay llegadas en este periodo.");
+  bars("searches", searches, k => k.replace(/-/g, " "), "Aún no hay búsquedas en este periodo.", 15);
+  bars("pages", pages, k => k === "inicio" ? "Portada" : "/" + k.replace(/~/g, "/"), "Aún no hay páginas vistas.", 15);
+
+  if (chart) chart.destroy();
+  chart = new Chart($("chart"), {
+    type: "line",
+    data: { labels: list, datasets: [{ label: "Páginas vistas", data: list.map(d => perDay[d]), borderColor: css("--accent"),
+      backgroundColor: css("--accent"), borderWidth: 2, pointRadius: days <= 30 ? 3 : 0, pointHoverRadius: 5, tension: 0 }] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: { grid: { display: false }, ticks: { color: css("--text-muted"), maxTicksLimit: 8, callback(v) { return shortDay(this.getLabelForValue(v)); } } },
+                y: { beginAtZero: true, grid: { color: css("--grid") }, ticks: { color: css("--text-muted"), precision: 0 } } },
+      plugins: { legend: { display: false },
+                 tooltip: { callbacks: { title: c => shortDay(c[0].label), label: c => `${fmt(c.parsed.y)} páginas vistas` } } } },
+  });
+}
+
+// País de un clic a tienda: el que lleva la clave (thomann.de~pt) o, en los clics antiguos, el del dominio.
+const TLD = { pt: "pt", fr: "fr", it: "it", uk: "uk", de: "de", at: "at", nl: "nl", be: "be", ch: "ch", pl: "pl", se: "se", no: "no",
+              dk: "dk", cz: "cz", sk: "sk", hu: "hu", ro: "ro", bg: "bg", gr: "gr", fi: "fi", lu: "lu", ie: "ie", br: "br", es: "es" };
+const clickCountry = k => k.includes("~") ? k.split("~")[1] : (TLD[k.split(".").at(-1)] || "es");
+
+function renderWorld(pages, todayRows) {
+  // Guitles de cada país: páginas vistas bajo su carpeta (pt~…); lo demás es España. Las búsquedas no cuentan.
+  const codes = new Set(COUNTRIES.map(c => c[0]));
+  const pageCountry = k => codes.has(k.split("~")[0]) && k.includes("~") ? k.split("~")[0] : "es";
+  const visits = {}, vToday = {}, cToday = {};
+  for (const [k, n] of Object.entries(pages)) {
+    if (k.startsWith("buscar~")) continue;
+    const code = pageCountry(k);
+    visits[code] = (visits[code] || 0) + n;
+  }
+  for (const r of todayRows) {
+    if (r.kind === "p" && !r.key.startsWith("buscar~")) { const c = pageCountry(r.key); vToday[c] = (vToday[c] || 0) + r.n; }
+    if (r.kind === "t") { const c = clickCountry(r.key); cToday[c] = (cToday[c] || 0) + r.n; }
+  }
+  const live = COUNTRIES.filter(([c]) => world[c].status !== "next");
+  const reach = live.reduce((a, c) => a + c[3] * SHARE, 0);
+  // Tiendas distintas: Thomann o Woodbrass, que están en muchos países, cuentan una vez.
+  const stores = new Set(live.flatMap(([c]) => world[c].storeIds || [])).size;
+  const total = Object.values(visits).reduce((a, b) => a + b, 0);
+  $("wkpis").innerHTML = [
+    [`${live.length} <small style="font-size:1rem;color:var(--text-muted)">/ ${COUNTRIES.length}</small>`, "países con guitle",
+     `<div class="prog"><i style="width:${(live.length / COUNTRIES.length * 100).toFixed(0)}%"></i></div>`],
+    [`${reach.toLocaleString("es-ES", { maximumFractionDigits: 1 })} M`, "posibles guitles (10 % de la población activa)"],
+    [fmt(total), `guitles en ${days} días (páginas vistas)`],
+    [fmt(stores), "tiendas comparadas"],
+  ].map(([b, s, x]) => `<div class="tile-s"><b>${b}</b><span>${s}</span>${x || ""}</div>`).join("");
+  const byId = Object.fromEntries(COUNTRIES.map(([c, id]) => [id, world[c].status]));
+  document.querySelectorAll(".map path").forEach(p => { p.setAttribute("class", byId[p.dataset.id] || ""); });
+  const label = { on: "Activo", new: "Encendiéndose", next: "Próximamente" };
+  $("wdays").textContent = `Guitles (${days} días)`;
+  $("wrows").innerHTML = COUNTRIES.map(([c, , name, pop]) => {
+    const w = world[c];
+    return `<tr><td>${esc(name)}</td><td><span class="chip-s ${w.status}">${label[w.status]}</span></td>
+      <td class="n">${fmt(Math.round(pop * SHARE * 1e6))}</td>
+      <td class="n">${w.status === "next" ? "" : fmt(visits[c] || 0)}</td><td class="n">${w.guitars ? fmt(w.guitars) : ""}</td>
+      <td class="n">${w.stores || ""}</td>
+      <td class="n">${w.status === "next" ? "" : fmt(vToday[c] || 0)}</td><td class="n">${w.status === "next" ? "" : fmt(cToday[c] || 0)}</td></tr>`;
+  }).join("");
+  const tot = f => COUNTRIES.reduce((a, row) => a + (f(row) || 0), 0);
+  const sumMap = m => Object.values(m).reduce((a, b) => a + b, 0);
+  $("wfoot").innerHTML = `<tr><th>Total</th><th>${live.length} activos</th>
+    <th class="n" title="Solo los países activos, como el recuadro de arriba; con los próximos serían ${fmt(Math.round(tot(([, , , pop]) => pop) * SHARE * 1e6))}">${fmt(Math.round(reach * 1e6))}</th><th class="n">${fmt(total)}</th>
+    <th class="n">${fmt(tot(([c]) => world[c].guitars))}</th><th class="n" title="Tiendas distintas (sumando país por país serían ${fmt(tot(([c]) => world[c].stores))})">${fmt(stores)}</th>
+    <th class="n">${fmt(sumMap(vToday))}</th><th class="n">${fmt(sumMap(cToday))}</th></tr>`;
+}
+
+// Crecimiento del catálogo (data/crecimiento.json, scraper/crecimiento.py): filas [momento, país, guitarras, equipo, tiendas].
+const GROWTH_COLORS = { es: "#2a78d6", pt: "#1e9e6a", fr: "#7b5cd6", it: "#e0892b", uk: "#d6455d", de: "#3f3f46",
+                        br: "#2bb3c0", ie: "#7fb13a", at: "#c45ab3", nl: "#e5b51d",
+                        be: "#8a5a2b", ch: "#c0392b",
+                        pl: "#dc143c", se: "#006aa7", no: "#7a3b8f", dk: "#5c8a3a",
+                        cz: "#11457e", sk: "#0b4ea2", hu: "#477050", ro: "#fcd116", bg: "#00966e", gr: "#0d5eaf", fi: "#2a9d8f", lu: "#00a1de" };
+let growthChart = null;
+async function renderGrowth() {
+  const { rows: g, actualizado: upd = {} } = await fetch("data/crecimiento.json", { cache: "no-store" }).then(r => r.json());
+  const moments = [...new Set(g.map(r => r[0]))].sort();
+  const name = Object.fromEntries(COUNTRIES.map(([c, , n]) => [c, n]));
+  const codes = Object.keys(GROWTH_COLORS).filter(c => g.some(r => r[1] === c));
+  const at = {};  // país → momento → fila
+  for (const r of g) (at[r[1]] = at[r[1]] || {})[r[0]] = r;
+  const total = r => r ? r[2] + r[3] : 0;
+  const sumAt = m => codes.reduce((a, c) => a + total(at[c][m]), 0);
+  const last = moments.at(-1), first = moments[0];
+  const dayAgo = moments.filter(m => m <= new Date(Date.parse(last) - 864e5).toISOString().slice(0, 16)).at(-1) || first;
+  const shortM = m => `${Number(m.slice(8, 10))}/${Number(m.slice(5, 7))} ${m.slice(11, 13)}h`;
+  const delta = n => n ? `<span style="color:var(--good,#00750a)">+${fmt(n)}</span>` : "";
+  $("gkpis").innerHTML = [
+    [fmt(sumAt(last)), "productos comparados hoy"],
+    [delta(sumAt(last) - sumAt(dayAgo)) || "0", "en las últimas 24 h"],
+    [fmt(codes.length), "países con catálogo"],
+    [fmt(Math.round((Date.parse(last) - Date.parse(first)) / 864e5)), `días desde el ${shortM(first).split(" ")[0]}`],
+  ].map(([b, s]) => `<div class="tile-s"><b>${b}</b><span>${s}</span></div>`).join("");
+  renderAlerts(codes, at, moments, upd, name);
+  if (growthChart) growthChart.destroy();
+  growthChart = new Chart($("gchart"), {
+    type: "line",
+    data: { labels: moments, datasets: codes.map(c => ({
+      label: name[c] || c, data: moments.map(m => total(at[c][m])), fill: true, borderWidth: 1.5, pointRadius: 0, tension: 0,
+      borderColor: GROWTH_COLORS[c], backgroundColor: GROWTH_COLORS[c] + "cc" })) },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: { grid: { display: false }, ticks: { color: css("--text-muted"), maxTicksLimit: 8, callback(v) { return shortM(this.getLabelForValue(v)); } } },
+                y: { stacked: true, beginAtZero: true, grid: { color: css("--grid") }, ticks: { color: css("--text-muted"), callback: v => fmt(v) } } },
+      plugins: { legend: { labels: { color: css("--text-secondary"), boxWidth: 10 } },
+                 tooltip: { itemSort: (a, b) => b.parsed.y - a.parsed.y,
+                            callbacks: { title: c => shortM(c[0].label), label: c => `${c.dataset.label}: ${fmt(c.parsed.y)}`,
+                                         footer: c => `Total: ${fmt(c.reduce((a, x) => a + x.parsed.y, 0))}` } } } },
+  });
+  $("grows").innerHTML = codes.map(c => [c, at[c][last]]).sort((a, b) => total(b[1]) - total(a[1])).map(([c, r]) => {
+    const since = Object.values(at[c]).sort((a, b) => a[0] < b[0] ? -1 : 1)[0];
+    return `<tr><td><i style="display:inline-block;width:9px;height:9px;border-radius:2px;background:${GROWTH_COLORS[c]};margin-right:7px"></i>${esc(name[c] || c)}</td>
+      <td class="n">${r ? fmt(r[2]) : ""}</td><td class="n">${r && r[3] ? fmt(r[3]) : ""}</td><td class="n"><b>${fmt(total(r))}</b></td>
+      <td class="n">${r ? r[4] : ""}</td><td class="n">${delta(total(r) - total(at[c][dayAgo]))}</td>
+      <td class="n">${delta(total(r) - total(since))} <small style="color:var(--text-muted)">desde ${shortM(since[0]).split(" ")[0]}</small></td></tr>`;
+  }).join("") + `<tr><td><b>Total</b></td><td class="n"><b>${fmt(codes.reduce((a, c) => a + (at[c][last]?.[2] || 0), 0))}</b></td>
+      <td class="n"><b>${fmt(codes.reduce((a, c) => a + (at[c][last]?.[3] || 0), 0))}</b></td><td class="n"><b>${fmt(sumAt(last))}</b></td>
+      <td></td><td class="n">${delta(sumAt(last) - sumAt(dayAgo))}</td><td class="n">${delta(sumAt(last) - sumAt(first))}</td></tr>`;
+}
+
+// Avisos: lo raro en la última lectura frente a la anterior (mismos datos que el crecimiento).
+function renderAlerts(codes, at, moments, upd, name) {
+  const last = moments.at(-1), prev = moments.at(-2), out = [];
+  const add = (cls, tag, text) => out.push(`<div class="alert ${cls}"><b>${tag}</b><span>${text}</span></div>`);
+  const kinds = [[2, "g", "guitarras"], [3, "e", "equipo"]];
+  for (const c of codes) {
+    const r = at[c][last], p = prev && at[c][prev], n = esc(name[c] || c);
+    if (!r) { add("bad", "Sin datos", `${n}: no aparece en la última lectura.`); continue; }
+    for (const [i, k, label] of kinds) {
+      if (!r[i]) { add("bad", "Sin datos", `${n}: no hay ${label} en el catálogo.`); continue; }
+      if (p && p[i] && r[i] < p[i] * 0.8)
+        add("bad", "Caída brusca", `${n}: ${label} de ${fmt(p[i])} a ${fmt(r[i])} (−${Math.round((1 - r[i] / p[i]) * 100)} %) en la última lectura.`);
+      const u = upd[c]?.[k], h = u ? (Date.now() - Date.parse(u)) / 36e5 : null;
+      if (h != null && h > 24) add("warn", "Sin actualizar", `${n}: ${label} sin lectura nueva desde hace ${Math.round(h)} h.`);
+    }
+    if (p && r[4] < p[4]) add("warn", "Tiendas", `${n}: de ${p[4]} a ${r[4]} tiendas en la última lectura.`);
+  }
+  $("alerts").innerHTML = out.length ? out.join("")
+    : `<div class="alert ok"><b>Todo en orden</b><span>Todos los países tienen guitarras y equipo, al día y sin caídas.</span></div>`;
+}
+
+function bars(id, map, label, emptyText, top = 10) {
+  const items = Object.entries(map).sort((a, b) => b[1] - a[1]).slice(0, top);
+  const max = items.length ? items[0][1] : 1;
+  $(id).innerHTML = items.length ? items.map(([k, n]) =>
+    `<div class="bar" title="${esc(label(k))}: ${fmt(n)}"><span class="lab">${esc(label(k))}</span><span class="val">${fmt(n)}</span>
+      <div class="track"><div class="fill" style="width:${(n / max * 100).toFixed(1)}%"></div></div></div>`).join("")
+    : `<p class="empty">${emptyText}</p>`;
+}
+
+document.querySelectorAll(".ranges button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".ranges button").forEach(x => x.setAttribute("aria-pressed", x === b));
+  days = Number(b.dataset.days); if (rows) render();
+});
+</script>
+</body>
+</html>

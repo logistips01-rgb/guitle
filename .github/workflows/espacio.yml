@@ -1,0 +1,33 @@
+name: espacio
+
+# Mide cuánto ocupa el bucket R2 "guitle" (total y por carpeta). Solo lee. Se lanza tocando .github/espacio.txt.
+on:
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [.github/espacio.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Instalar rclone
+        run: |
+          curl -fsSLO https://downloads.rclone.org/v1.68.2/rclone-v1.68.2-linux-amd64.zip
+          unzip -q rclone-v1.68.2-linux-amd64.zip && sudo install rclone-v1.68.2-linux-amd64/rclone /usr/local/bin/
+      - name: Medir
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+          ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+        run: |
+          export RCLONE_CONFIG_R2_ENDPOINT="https://${ACCOUNT,,}.r2.cloudflarestorage.com"
+          echo "TOTAL"; rclone size r2:guitle --fast-list
+          for d in $(rclone lsf r2:guitle --dirs-only); do echo "== $d $(rclone size r2:guitle/$d --fast-list --json)"; done

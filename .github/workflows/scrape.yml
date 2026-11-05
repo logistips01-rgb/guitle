@@ -1,0 +1,116 @@
+name: scrape-prices
+
+on:
+  schedule:
+    # GitHub cron va en UTC: 07:00 UTC = 09:00 en verano (CEST), 08:00 UTC = 09:00 en invierno (CET).
+    # El paso "¿Toca revisar precios?" deja pasar la primera que llegue desde las 09 de Madrid.
+    - cron: "0 7 * * *"
+    - cron: "0 8 * * *"
+    # Respaldo por si GitHub retrasa o pierde los anteriores.
+    - cron: "0 10 * * *"
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+  # Sin "push": cada cambio en el scraper lanzaba una lectura de precios entera (visitas de más a las tiendas y más
+  # trabajos guardando a la vez).
+
+permissions:
+  contents: write
+  issues: write
+  actions: write  # r2.sh lanza r2.yml: los commits de un workflow no lanzan otros workflows
+
+concurrency:
+  group: scrape-prices
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: ¿Toca revisar precios?
+        id: gate
+        # GitHub retrasa a veces los cron horas: la ejecución programada vale desde las 09 de Madrid
+        # mientras los precios no se hayan revisado ya hoy a partir de esa hora (los cron de después
+        # son de respaldo y se saltan si ya está hecho).
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          hour=$(TZ=Europe/Madrid date +%-H); today=$(TZ=Europe/Madrid date +%F)
+          last=$(python3 -c "import json, datetime, zoneinfo; u = json.load(open('data/latest.json'))['updated']; print(datetime.datetime.fromisoformat(u).astimezone(zoneinfo.ZoneInfo('Europe/Madrid')).strftime('%F %-H'))" 2>/dev/null || echo "- 0")
+          if [ "$hour" -lt 9 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Hora Madrid $hour: antes de las 09, se omite."
+          elif [ "${last% *}" = "$today" ] && [ "${last#* }" -ge 9 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Ya revisado hoy ($last), se omite."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        if: steps.gate.outputs.run == 'true'
+        run: pip install -r requirements.txt
+
+      - name: Scraper
+        if: steps.gate.outputs.run == 'true'
+        # Las tiendas que fallan quedan registradas con su status; el job no debe romperse por ellas.
+        env:
+          EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}
+          EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+        run: python -m scraper.run --records-out "$RUNNER_TEMP/records.json" || echo "::warning::scraper terminó con error; se commitea lo que haya"
+
+
+      - name: Detector de cupones
+        if: steps.gate.outputs.run == 'true'
+        run: python -m scraper.coupons --records-out "$RUNNER_TEMP/coupons.json" || echo "::warning::detector de cupones con error"
+
+      - name: Miniaturas de fotos
+        if: steps.gate.outputs.run == 'true'
+        # Fotos nuevas → img/p/ (recortadas, en vertical, mismo alto). Quedan sin seguimiento hasta el commit.
+        run: python -m scraper.thumbs --limit 150 --minutes 10 || echo "::warning::miniaturas con error"
+
+      - name: Commit de datos
+        if: steps.gate.outputs.run == 'true'
+        # Se fusiona sobre la última versión de la rama (otra ejecución o un push pueden haber llegado antes).
+        env:
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          [ -f "$RUNNER_TEMP/records.json" ] || echo "[]" > "$RUNNER_TEMP/records.json"
+          # Muchos trabajos guardan a la vez (lecturas, fotos, precios): se insiste hasta 40 veces, con una pausa al azar para
+          # no chocar otra vez con los mismos. Perder el lote de una lectura es lo peor que puede pasar.
+          for attempt in $(seq 40); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            bash .github/r2.sh reparar || true
+            python -m scraper.run --merge "$RUNNER_TEMP/records.json"
+            [ -f "$RUNNER_TEMP/coupons.json" ] && python -m scraper.coupons --merge "$RUNNER_TEMP/coupons.json" --new-out "$RUNNER_TEMP/new_coupons.md"
+            [ -f data/catalog/offers.json ] && python -m scraper.catalog --build
+            bash .github/r2.sh git-add data/  # la web generada, a git o a R2 según .github/r2.sh
+            if git diff --cached --quiet; then echo "Sin cambios en data/"; exit 0; fi
+            git commit -q -m "data: precios $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then
+              python -m scraper.indexnow || true
+              bash .github/r2.sh publicar
+              exit 0
+            fi
+            echo "push rechazado, reintento $attempt"; sleep $(( 5 + RANDOM % 40 ))
+          done
+          exit 1
+
+      - name: Aviso de cupones nuevos
+        if: steps.gate.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -f "$RUNNER_TEMP/new_coupons.md" ] || exit 0
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "🏷️ Cupones nuevos $(TZ=Europe/Madrid date +%F)" --body-file "$RUNNER_TEMP/new_coupons.md"

@@ -1,0 +1,1 @@
+# Tocar este fichero rehace las miniaturas de data/fotos-malas.txt (rehacer-fotos.yml). 2026-11-04

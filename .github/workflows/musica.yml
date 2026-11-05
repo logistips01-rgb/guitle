@@ -1,0 +1,61 @@
+name: musica
+
+# Discos (vinilo, CD y casete) de las tiendas de discos de cada país (scraper/musica.py): catálogo, códigos de barras
+# nuevos y páginas de cada disco. Una vez al día, fuera de las horas de la lectura de guitarras.
+on:
+  schedule:
+    - cron: "41 15 * * *"
+  push:  # tocar .github/musica.txt la lanza a mano
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/musica.txt"]
+  workflow_dispatch:
+
+concurrency:
+  group: musica
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  musica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    strategy:
+      fail-fast: false
+      matrix:
+        pais: [uk]
+    env:
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/friendly-fermat-yycain
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Leer y generar
+        run: timeout 165m python -m scraper.musica --pais "${{ matrix.pais }}" --minutes 150 || true
+      - name: Guardar y publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp -r "data/musica/${{ matrix.pais }}" "$RUNNER_TEMP/musica"
+          for attempt in $(seq 40); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            mkdir -p "data/musica/${{ matrix.pais }}" && cp "$RUNNER_TEMP"/musica/* "data/musica/${{ matrix.pais }}/"
+            git add "data/musica/${{ matrix.pais }}/codigos.json" "data/musica/${{ matrix.pais }}/discos.json"
+            if git diff --cached --quiet; then break; fi
+            git commit -q -m "data: música ${{ matrix.pais }} $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep $(( 5 + RANDOM % 40 ))
+          done
+          python -m scraper.musica --pais "${{ matrix.pais }}" --build
+          bash .github/r2.sh carpeta "${{ matrix.pais }}/records"

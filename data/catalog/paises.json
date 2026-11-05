@@ -1,0 +1,146 @@
+{
+ "es": {
+  "country": "España",
+  "path": "/",
+  "guitars": 23430,
+  "stores": 25
+ },
+ "pt": {
+  "country": "Portugal",
+  "path": "/pt/",
+  "guitars": 16533,
+  "stores": 9
+ },
+ "fr": {
+  "country": "France",
+  "path": "/fr/",
+  "guitars": 50296,
+  "stores": 27
+ },
+ "it": {
+  "country": "Italia",
+  "path": "/it/",
+  "guitars": 64643,
+  "stores": 26
+ },
+ "de": {
+  "country": "Deutschland",
+  "path": "/de/",
+  "guitars": 46792,
+  "stores": 23
+ },
+ "br": {
+  "country": "Brasil",
+  "path": "/br/",
+  "guitars": 42681,
+  "stores": 51
+ },
+ "ie": {
+  "country": "Ireland",
+  "path": "/ie/",
+  "guitars": 25473,
+  "stores": 11
+ },
+ "at": {
+  "country": "Österreich",
+  "path": "/at/",
+  "guitars": 15151,
+  "stores": 8
+ },
+ "nl": {
+  "country": "Nederland",
+  "path": "/nl/",
+  "guitars": 31719,
+  "stores": 13
+ },
+ "pl": {
+  "country": "Polska",
+  "path": "/pl/",
+  "guitars": 24159,
+  "stores": 3
+ },
+ "cz": {
+  "country": "Česko",
+  "path": "/cz/",
+  "guitars": 9894,
+  "stores": 2
+ },
+ "sk": {
+  "country": "Slovensko",
+  "path": "/sk/",
+  "guitars": 10398,
+  "stores": 2
+ },
+ "hu": {
+  "country": "Magyarország",
+  "path": "/hu/",
+  "guitars": 7300,
+  "stores": 2
+ },
+ "ro": {
+  "country": "România",
+  "path": "/ro/",
+  "guitars": 5985,
+  "stores": 2
+ },
+ "bg": {
+  "country": "България",
+  "path": "/bg/",
+  "guitars": 2431,
+  "stores": 1
+ },
+ "gr": {
+  "country": "Ελλάδα",
+  "path": "/gr/",
+  "guitars": 4866,
+  "stores": 2
+ },
+ "fi": {
+  "country": "Suomi",
+  "path": "/fi/",
+  "guitars": 2970,
+  "stores": 1
+ },
+ "lu": {
+  "country": "Luxembourg",
+  "path": "/lu/",
+  "guitars": 2404,
+  "stores": 1
+ },
+ "se": {
+  "country": "Sverige",
+  "path": "/se/",
+  "guitars": 14682,
+  "stores": 3
+ },
+ "no": {
+  "country": "Norge",
+  "path": "/no/",
+  "guitars": 18028,
+  "stores": 4
+ },
+ "dk": {
+  "country": "Danmark",
+  "path": "/dk/",
+  "guitars": 5608,
+  "stores": 2
+ },
+ "ch": {
+  "country": "Schweiz",
+  "path": "/ch/",
+  "guitars": 18441,
+  "stores": 5
+ },
+ "be": {
+  "country": "België",
+  "path": "/be/",
+  "guitars": 20764,
+  "stores": 3
+ },
+ "uk": {
+  "country": "United Kingdom",
+  "path": "/uk/",
+  "guitars": 64633,
+  "stores": 34
+ }
+}

@@ -1,0 +1,2 @@
+# Tocar este fichero lanza el turno aparte del catálogo (catalog.yml, NUEVOS).
+czmas skmas humas romas bgmas grmas (primera lectura de equipo)

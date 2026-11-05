@@ -1,0 +1,145 @@
+name: catalog
+
+on:
+  schedule:
+    # Tres veces al día, cada 8 horas (cada vuelta dura ~5 h 30 min, así que no se solapan): 03:17, 11:17 y 19:17 UTC.
+    # Una línea por vuelta: los países grandes se leen en las tres; los pequeños, en una (ver la matriz).
+    - cron: "17 3 * * *"
+    - cron: "17 11 * * *"
+    - cron: "17 19 * * *"
+  # Turno aparte: la primera lectura de un país nuevo, o repetir una que se perdió, sin esperar a la vuelta programada
+  # ni retrasarla (otro turno de concurrencia, 2 máquinas y 90 min). Se lanza tocando .github/nuevos.txt; los
+  # catálogos, en NUEVOS (abajo).
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/nuevos.txt"]
+  workflow_dispatch:
+    inputs:
+      minutes:
+        description: "Minutos de lectura por tienda en los países (España: 50 por catálogo)"
+        default: "150"
+      solo:
+        description: "Qué catálogo leer (todos, o solo uno)"
+        type: choice
+        default: todos
+        options: [todos, es, equipo, electrica, acustica, mas, pt, ptmas, fr, frmas, it, itmas, uk, ukmas, de, demas, br, brmas, ie, iemas, at, atmas, nl, nlmas, be, bemas, ch, chmas, pl, plmas, se, semas, no, nomas, dk, dkmas, cz, czmas, sk, skmas, hu, humas, ro, romas, bg, bgmas, gr, grmas, fi, lu]
+
+permissions:
+  contents: write
+  actions: write  # r2.sh lanza r2.yml: los commits de un workflow no lanzan otros workflows
+
+concurrency:
+  group: ${{ github.event_name == 'push' && 'catalog-nuevos' || 'catalog' }}
+  cancel-in-progress: false
+
+jobs:
+  catalog:
+    # Un trabajo por país, en paralelo (cada uno lee webs distintas). España ("es") lee sus tres catálogos seguidos
+    # en un solo trabajo, porque comparten tiendas: electrica → data/catalog/ ; acustica → data/catalog/acusticas/ ;
+    # equipo → data/catalog/equipo/. "mas" (bajos, amplis, fundas y estuches de España → data/catalog/mas/) va en su propio
+    # trabajo para no alargar el de España. Países: pt, fr, it, uk, de, br, ie, at, nl, be → data/catalog/<país>/; su equipo
+    # (bajos, amplis, pedales, teclados, micros, estuches y accesorios), en "<país>mas" (brmas, demas, ptmas, frmas, itmas, ukmas,
+    # iemas, atmas, nlmas, bemas → data/catalog/<país>mas/).
+    # Cada tienda recibe como mucho una petición cada 3-6 s.
+    strategy:
+      fail-fast: false
+      # GitHub da 20 máquinas a la vez: 14 para la lectura, 3 para las fotos y 3 siempre libres para la subida a R2, los
+      # precios, los avisos y "publicar" (que no esperen horas a que acabe la lectura).
+      # Países nuevos (push): 2, que caben junto a los 16 de la vuelta programada.
+      max-parallel: ${{ github.event_name == 'push' && 2 || 14 }}
+      matrix:
+        # Programada: los grandes en cada vuelta; los pequeños, una vez al día (20 máquinas no dan para todos tres veces).
+        # A mano, uno solo (p. ej. equipo = pedales y teclados). NUEVOS: los del push.
+        cat: ${{ fromJSON(github.event_name == 'push' && '["czmas","skmas","humas","romas","bgmas","grmas"]' || inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || format('[{0}{1}]', '"es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","nl","nlmas"', github.event.schedule == '17 19 * * *' && ',"at","atmas","ie","iemas","be","bemas","ch","chmas"' || github.event.schedule == '17 3 * * *' && ',"pl","plmas","se","semas","no","nomas","dk","dkmas"' || github.event.schedule == '17 11 * * *' && ',"cz","czmas","sk","skmas","hu","humas","ro","romas","bg","bgmas","gr","grmas","fi","lu"' || '')) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    env:
+      # Para subir la web generada al bucket R2 (.github/r2.sh).
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+      GH_TOKEN: ${{ github.token }}  # para lanzar r2.yml tras cada commit (.github/r2.sh)
+      # Catálogos de este trabajo y minutos de lectura por tienda.
+      CATS: ${{ matrix.cat == 'es' && 'electrica acustica equipo' || matrix.cat }}
+      # brmas e itmas (equipo de Brasil e Italia: 20 y 27 tiendas, alguna de 14.000 páginas): con 150 min la máquina
+      # caía antes de guardar y se perdía todo; con 75 guardan y la siguiente lectura sigue por donde iban.
+      READ_MIN: ${{ github.event_name == 'push' && '90' || (matrix.cat == 'es' || matrix.cat == 'electrica' || matrix.cat == 'acustica' || matrix.cat == 'equipo') && '50' || (matrix.cat == 'brmas' || matrix.cat == 'itmas') && '75' || inputs.minutes || '150' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Datos al día
+        # Una vuelta que esperó en cola trae el commit de cuando se creó, sin lo que guardaron las vueltas anteriores:
+        # leería otra vez las mismas fichas "nuevas". Se parte siempre de lo último publicado.
+        run: git fetch -q origin "${GITHUB_REF_NAME}" && git reset -q --hard "origin/${GITHUB_REF_NAME}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar dependencias
+        # T0: inicio del trabajo, para que fotos y PVP no se coman el tiempo del commit (el trabajo muere a los 355 min).
+        run: |
+          echo "T0=$(date +%s)" >> "$GITHUB_ENV"
+          pip install -r requirements.txt
+
+      - name: Leer fichas (lote del día)
+        # Cada tienda va en paralelo y a su ritmo (3-6 s entre peticiones, robots.txt respetado).
+        run: |
+          for c in $CATS; do
+            python -m scraper.catalog --cat "$c" --minutes "$READ_MIN" --records-out "$RUNNER_TEMP/catalog-$c.json" \
+              || echo "::warning::catálogo $c con error; se commitea lo que haya"
+          done
+
+      - name: PVP oficial de las marcas
+        # Fender (es.fender.com, solo responde desde aquí) 40 min; luego Gibson/Epiphone 15 y Jackson 8.
+        # robots.txt respetado, 3-6 s entre peticiones.
+        if: matrix.cat == 'es' || matrix.cat == 'electrica'
+        run: timeout 45m python -m scraper.pvp --minutes 40 --out "$RUNNER_TEMP/pvp.json" || echo "::warning::PVP de las marcas con error o fuera de tiempo"
+
+      - name: Miniaturas de fotos
+        # Primero se fusiona el lote (para conocer las fotos nuevas) y luego se generan sus miniaturas.
+        # Los ficheros nuevos de img/p/ no están en git y sobreviven al reset del paso siguiente.
+        run: |
+          # Con el tiempo que quede hasta los 290 min del trabajo (quedan 65 para el commit), repartido entre los catálogos
+          # que faltan y sin pasar de 50 min por catálogo. Si no queda, las fotos esperan a la próxima vuelta.
+          left=$(echo $CATS | wc -w)
+          bash .github/r2.sh reparar || echo "::warning::no se pudo comprobar img/p en R2"  # fotos apuntadas y sin subir
+          for c in $CATS; do
+            if [ -f "$RUNNER_TEMP/catalog-$c.json" ]; then python -m scraper.catalog --cat "$c" --merge "$RUNNER_TEMP/catalog-$c.json"; fi
+            rest=$(( 290 - ($(date +%s) - T0) / 60 ))
+            thumb_min=$(( rest / left - 5 )); [ $thumb_min -gt 50 ] && thumb_min=50
+            left=$((left - 1))
+            if [ $thumb_min -lt 5 ]; then echo "::warning::sin tiempo para las fotos de $c"; continue; fi
+            timeout $((thumb_min + 10))m python -m scraper.thumbs --limit 5000 --minutes "$thumb_min" --cat "$c" \
+              || echo "::warning::miniaturas de $c con error o fuera de tiempo"
+          done
+
+      - name: Commit de datos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          ls "$RUNNER_TEMP"/catalog-*.json >/dev/null 2>&1 || exit 0
+          # Muchos trabajos guardan a la vez (lecturas, fotos, precios): se insiste hasta 40 veces, con una pausa al azar para
+          # no chocar otra vez con los mismos. Perder el lote de una lectura es lo peor que puede pasar.
+          for attempt in $(seq 40); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            bash .github/r2.sh reparar || true
+            [ -f "$RUNNER_TEMP/pvp.json" ] && python -m scraper.pvp --merge "$RUNNER_TEMP/pvp.json"  # PVP al histórico, antes de construir
+            for c in $CATS; do  # también reconstruye los JSON de la web
+              if [ -f "$RUNNER_TEMP/catalog-$c.json" ]; then python -m scraper.catalog --cat "$c" --merge "$RUNNER_TEMP/catalog-$c.json"; fi
+            done
+            python -m scraper.checks || echo "::warning::comprobaciones con error"  # avisos de precios y fotos raros
+            # Datos a git; la web generada, a git o a R2 según .github/r2.sh.
+            bash .github/r2.sh git-add data/catalog/ data/deals-*.json data/checks.json data/portada.json
+            if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+            git commit -q -m "data: catálogo ${{ matrix.cat }} $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then
+              python -m scraper.indexnow || true
+              bash .github/r2.sh publicar  # la web generada que no va a git, al bucket R2
+              exit 0
+            fi
+            echo "push rechazado, reintento $attempt"; sleep $(( 5 + RANDOM % 40 ))
+          done
+          exit 1

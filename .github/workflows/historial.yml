@@ -1,0 +1,66 @@
+name: historial
+
+# Historial corto: GitHub se queda con la foto actual del proyecto y suelta el historial de cambios de los datos (cada
+# lectura guarda ficheros de 20-35 MB y el repositorio crecía cientos de MB por semana). Los precios y su evolución
+# están dentro de los propios ficheros (history.json…), así que no se pierde nada. Las lecturas en marcha, al guardar,
+# ven el cambio y vuelven a partir de lo último (git fetch + reset), como siempre.
+# La rama de Instagram se rehace encima, ya al día con la principal, y se le pone social/sync.sh nuevo (que sabe
+# partir de la rama rehecha). La rama vieja "main" se borra.
+on:
+  schedule:
+    - cron: "41 1 * * 0"  # domingos 01:41 UTC
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [.github/historial.txt]
+  workflow_dispatch:
+
+concurrency:
+  group: historial
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  corto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Rehacer las ramas con solo la foto actual
+        env:
+          D: claude/friendly-fermat-yycain
+          S: claude/exciting-cerf-q48nxa
+          TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          git init -q r && cd r
+          git remote add origin "https://x-access-token:${TOKEN}@github.com/${{ github.repository }}.git"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          day=$(TZ=Europe/Madrid date +%F)
+          for attempt in $(seq 20); do
+            git fetch -q origin "$D" "$S" || git fetch -q origin "$D"
+            d=$(git rev-parse "origin/$D")
+            root=$(git commit-tree "$d^{tree}" -m "Historial corto: foto del proyecto el $day")
+            refs=("$root:refs/heads/$D"); lease=(--force-with-lease="refs/heads/$D:$d")
+            if git rev-parse -q --verify "origin/$S" >/dev/null; then
+              s=$(git rev-parse "origin/$S")
+              git checkout -q -B s "$s"
+              if ! git merge -q --no-edit -X theirs "origin/$D" >/dev/null 2>&1; then
+                for f in $(git diff --name-only --diff-filter=U); do
+                  if git cat-file -e "origin/$D:$f" 2>/dev/null; then git checkout -q --theirs -- "$f" && git add "$f"; else git rm -q "$f"; fi
+                done
+                git commit -q --no-edit
+              fi
+              git show "origin/$D:.github/social-sync.sh" > social/sync.sh && git add social/sync.sh
+              git diff --cached --quiet || git commit -q -m "social: sync.sh para el historial corto"
+              snew=$(git commit-tree "HEAD^{tree}" -p "$root" -m "Instagram: foto de la rama el $day")
+              refs+=("$snew:refs/heads/$S"); lease+=(--force-with-lease="refs/heads/$S:$s")
+            fi
+            if git push -q --atomic "${lease[@]}" origin "${refs[@]}"; then
+              echo "Ramas rehechas: $D -> $root"; git push -q origin --delete main 2>/dev/null || true
+              exit 0
+            fi
+            echo "alguien guardó a la vez; reintento $attempt"; sleep $(( 10 + RANDOM % 30 ))
+          done
+          exit 1
