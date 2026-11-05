@@ -73,12 +73,15 @@ publicar() {
     # Una web a medias no se sube: borraría en R2 las páginas que le faltan. Tope de borrado, por si acaso.
     if [ "$n" -lt 50 ]; then echo "::warning::web $s con solo $n ficheros: no se sube"; continue; fi
     python -m scraper.cajas "$s" || echo "::warning::no se pudieron hacer las cajas de $s"
+    # Las guías (y su curso) se suben solo el día 1 de cada mes (o con GUIAS=1): el resto de días se quedan como están
+    # en R2, sin subirlas ni borrarlas. Sus precios cambian a diario, pero una guía no necesita estar al día.
+    local excl=()
+    if [ "$(date -u +%d)" != "01" ] && [ "${GUIAS:-0}" != "1" ]; then excl+=(--exclude "/guias/**"); fi
     if in_cajas "$s" && compgen -G "$s/_g/*.json.gz" >/dev/null; then
       # Las fichas sueltas se quedan en R2 como están (respaldo del Worker), sin subirlas ni borrarlas.
-      up sync "$s" "$s" --max-delete 3000 --exclude "/g/**"
-    else
-      up sync "$s" "$s" --max-delete 3000
+      excl+=(--exclude "/g/**")
     fi
+    up sync "$s" "$s" --max-delete 3000 "${excl[@]}"
     one "sitemap-$s.xml"
   done
   if [ "$R2_ES" = 1 ]; then
@@ -88,7 +91,10 @@ publicar() {
       n=$( { find "$d" -name '*.html' 2>/dev/null || true; } | wc -l)  # sin la carpeta (trabajo de otro país): 0
       if [ "$n" -ge 10 ]; then up sync "$d" "$d" --max-delete 500; fi
     done
-    if compgen -G "guias/*.html" >/dev/null; then up copy guias guias --include "*.html"; fi  # guías de compra
+    # Guías de compra: solo el día 1 de cada mes (o con GUIAS=1), como las de los países.
+    if compgen -G "guias/*.html" >/dev/null && { [ "$(date -u +%d)" = "01" ] || [ "${GUIAS:-0}" = "1" ]; }; then
+      up copy guias guias --include "*.html"
+    fi
     one marcas.html
     one sitemap.xml
   fi
