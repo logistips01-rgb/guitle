@@ -657,7 +657,10 @@ def reels_tarde(cc, day, recent):
             hechos.append(sub.name)
         else:
             sub.mkdir(parents=True, exist_ok=True)
-            kind, tlo, thi = cfg["tops"][(day.toordinal() // 2 + 3) % len(cfg["tops"])]
+            j = (day.toordinal() + 3) % len(cfg["tops"])  # cada día otro, y nunca el del post
+            if j == (day.toordinal() // 2) % len(cfg["tops"]):
+                j = (j + 1) % len(cfg["tops"])
+            kind, tlo, thi = cfg["tops"][j]
             picks = sorted(ig.with_photos(ig.top_of(fiables, kind, tlo, thi, recent), 5, fetcher, sub, "g"), key=lambda p: p["price"])
             if len(picks) >= 3:
                 rango = (cfg["rango_txt"][0] if tlo <= lo else cfg["rango_txt"][1]).format(lo=money(tlo), hi=money(thi))
