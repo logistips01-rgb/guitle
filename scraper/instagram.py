@@ -557,12 +557,12 @@ def daily_reels(day, folder, recent, prods, fetcher):
     showcase = with_photos(sorted(prods, key=lambda p: -p["stores"]), 5, fetcher, folder / "reel-3-guitle", "g")
     ex = max((p for p in prods if p["stores"] >= 5), key=lambda p: p["max"] - p["price"])
     rows = ex["rows"][:3] + ex["rows"][-1:] if len(ex["rows"]) > 4 else ex["rows"]
+    rows = [[f"Tienda {'ABCD'[i]}", r[1]] for i, r in enumerate(rows)]  # en los Reels sobre guitle, tiendas sin nombre
     topics = [
         ("¿Qué es guitle?", [
             {"hook": "guitle", "title": "¿Qué es guitle?", "sub": "El comparador de precios de guitarras",
              "visual": {"type": "guitars", "photos": [p["photo"] for p in showcase]}},
-            {"title": f"{n} guitarras en {len(stores)} tiendas", "sub": "Revisamos todos los precios, cada día",
-             "visual": {"type": "chips", "items": stores}},
+            {"title": f"{n} guitarras en {len(stores)} tiendas", "sub": "Revisamos todos los precios, cada día", "size": 120},
             {"title": "Te decimos dónde está más barata", "sub": "Gratis y sin registrarte", "size": 120}],
          f"🎸 ¿Qué es guitle? El comparador de precios de guitarras: {n} guitarras en {len(stores)} tiendas, revisadas cada día.\n"
          "Busca la tuya y mira dónde está más barata. Gratis y sin registrarte.\n🔎 guitle.com (enlace en la bio)\n\n"

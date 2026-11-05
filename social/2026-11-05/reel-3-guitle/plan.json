@@ -22,36 +22,7 @@
    {
     "title": "23.417 guitarras en 25 tiendas",
     "sub": "Revisamos todos los precios, cada día",
-    "visual": {
-     "type": "chips",
-     "items": [
-      "Abrines Música",
-      "Alfasoni",
-      "Alteisa",
-      "Auvisa",
-      "Drunkat",
-      "Egitana",
-      "Hazen",
-      "Kirstein",
-      "MAT Guitars",
-      "Madrid Musical Málaga 8",
-      "Microfusa",
-      "Multiocio",
-      "Music Store",
-      "Musical Fusté",
-      "Musical San Francisco",
-      "Musicopolix",
-      "Musicsales",
-      "Neomúsica",
-      "Nume Music",
-      "Partitura",
-      "Pronorte",
-      "Session",
-      "Thomann",
-      "Woodbrass",
-      "Zingla Música"
-     ]
-    }
+    "size": 120
    },
    {
     "title": "Te decimos dónde está más barata",

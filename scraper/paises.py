@@ -710,12 +710,14 @@ def reels_tarde(cc, day, recent):
     if showcase:
         topics.append(("que", [
             {"hook": "guitle", "title": q[0], "sub": q[1], "visual": {"type": "guitars", "photos": [p["photo"] for p in showcase]}},
-            {"title": q[2].format(n=n, s=s), "sub": q[3], "visual": {"type": "chips", "items": chips}},
+            {"title": q[2].format(n=n, s=s), "sub": q[3], "size": 120},
             {"title": q[4], "sub": q[5], "size": 120}], q[6].format(n=n, s=s, web=web) + f"\n\n{tags}"))
     cands = [p for p in fiables if p["stores"] >= 5 and p["max"] <= 1.45 * p["price"]]  # diferencias creíbles
     if cands:
         ex = max(cands, key=lambda p: p["max"] - p["price"])
         rows = ex["rows"][:3] + ex["rows"][-1:] if len(ex["rows"]) > 4 else ex["rows"]
+        tienda = {"pt": "Loja", "fr": "Magasin", "it": "Negozio", "de": "Shop", "en": "Shop"}[cfg["lang"]]
+        rows = [[f"{tienda} {'ABCD'[i]}", r[1]] for i, r in enumerate(rows)]  # en los Reels sobre guitle, tiendas sin nombre
         m, d = T["misma"], money(ex["max"] - ex["price"])
         topics.append(("misma", [
             {"hook": m[0], "title": m[1]},

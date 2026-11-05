@@ -14,6 +14,9 @@
 - No usar voces sintéticas en los vídeos: texto y subtítulos en pantalla.
 - Precios reales del día, comprobados tienda por tienda; si una rebaja o una foto parecen raras, se cambia la guitarra.
 - Rango de precios de chollos y tops: 150–750 €.
+- **Nunca nombres de tiendas reales en las publicaciones de presentación** ("¿Cómo funciona guitle?", "¿Qué es guitle?",
+  promoción, Reels sobre guitle): "Tienda A, B, C…" y "25 tiendas" sin lista. En los chollos y tops del día sí se dice
+  dónde está más barata cada guitarra.
 
 ## Discos en @guitle.uk (guitle.com/uk/records)
 

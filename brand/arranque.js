@@ -66,7 +66,8 @@ const pages = {
   "2-carrusel-2.png": [1080, 1350, slide(2, `
       <div style="margin-top:90px">${h1(`Revisamos ${stores.length} tiendas cada día`)}${lead("Precio, disponibilidad y descuentos de cada guitarra, actualizados a diario.")}</div>
       <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:56px">
-        ${stores.map(s => `<span class="d" style="background:#fff;font-size:${stores.length > 16 ? 30 : 42}px;padding:${stores.length > 16 ? "15px 24px" : "22px 34px"};border-radius:999px;letter-spacing:-.01em">${s}</span>`).join("")}</div>
+        ${["Eléctricas", "Acústicas", "Clásicas", "Precio de hoy", "Disponibilidad", "Histórico de precios", "Rebajas reales", "Descuentos inflados"]
+          .map(s => `<span class="d" style="background:#fff;font-size:42px;padding:22px 34px;border-radius:999px;letter-spacing:-.01em">${s}</span>`).join("")}</div>
       <p style="font-size:32px;line-height:1.35;color:${MUTED};margin-top:auto">Y también comparamos en ${datos.countries.slice(0, -1).join(", ")} y ${datos.countries.at(-1)}.</p>`)],
 
   "2-carrusel-3.png": [1080, 1350, slide(3, `
@@ -78,7 +79,7 @@ const pages = {
           <p class="d" style="font-size:40px;line-height:1.08;margin:6px 0 26px">${example.name.replace(example.brand + " ", "")}</p>
           ${example.items.slice(0, 6).map((i, k) => `<div style="display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-radius:18px;margin-top:8px;
               font-size:31px;${k ? `color:${INK}` : `background:${BLUE};color:#fff`}">
-            <span>${storeName(i.store)}</span><span class="d" style="letter-spacing:-.01em">${eur(i.price)}</span></div>`).join("")}</div></div>
+            <span>Tienda ${"ABCDEF"[k]}</span><span class="d" style="letter-spacing:-.01em">${eur(i.price)}</span></div>`).join("")}</div></div>
       <p style="font-size:26px;color:${MUTED};margin-top:24px">Precios reales del ${day}.</p>`)],
 
   "2-carrusel-4.png": [1080, 1350, slide(4, `
