@@ -16,7 +16,7 @@ const ext = key => (key.match(/\.([a-z0-9]+)$/i) || [])[1]?.toLowerCase();
 // fichero por ficha. Se activa un país cuando se ha comprobado que sus fichas salen idénticas (?caja=1 lo prueba sin
 // activarlo). Si la caja no está o no tiene la ficha, se sirve el fichero de siempre.
 const CAJAS = 2048;
-const CON_CAJAS = new Set(["lu", "fi"]);
+const CON_CAJAS = new Set(["lu", "fi", "pt", "fr", "it", "de", "pl"]);
 
 function fnv(text) {
   let h = 0x811c9dc5;
