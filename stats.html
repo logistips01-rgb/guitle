@@ -112,6 +112,11 @@
       <div style="overflow-x:auto"><table class="ctable" style="min-width:560px"><thead><tr><th>País</th><th class="n">Guitarras</th><th class="n">Equipo</th><th class="n">Total</th><th class="n">Tiendas</th><th class="n">Últimas 24 h</th><th class="n">Desde el inicio</th></tr></thead><tbody id="grows"></tbody></table></div>
     </div>
     <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
+    <div class="card" id="hist"><h2 style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">Histórico diario (todas las webs)
+      <span><button class="btn" id="histcsv" type="button">Descargar CSV</button></span></h2>
+      <p class="empty" style="margin:0 0 10px">Un registro por día desde el primer día con visitas (hora de Madrid), guardado cada madrugada. Visitas = páginas vistas por personas (sin robots ni el equipo); clics = clics hacia las tiendas.</p>
+      <div style="overflow-x:auto;max-height:420px;overflow-y:auto"><table class="ctable" style="min-width:560px"><thead><tr><th>Día</th><th class="n">Visitas</th><th class="n">Clics a tiendas</th><th class="n">Desde Google</th><th class="n">Desde Instagram</th><th class="n">Directo</th><th class="n">Otros</th></tr></thead><tbody id="histrows"><tr><td colspan="7" class="empty">Cargando…</td></tr></tbody><tfoot id="histfoot"></tfoot></table></div>
+    </div>
     <div class="cols">
       <div class="card"><h2>Clics a tiendas</h2><div class="bars" id="stores"></div></div>
       <div class="card"><h2>De dónde llegan</h2><div class="bars" id="refs"></div></div>
@@ -220,7 +225,34 @@ async function load() {
   });
   if (!world) await loadWorld();
   render();
+  loadHistory();
 }
+
+// Histórico diario (scraper/resumen_visitas.py): un documento "resumen_AAAA-MM-DD" por día en la colección "c".
+let hist = [];
+async function loadHistory() {
+  try {
+    const snap = await getDocs(query(collection(db, "c"), where(documentId(), ">=", "resumen_"), where(documentId(), "<", "resumen_~")));
+    hist = snap.docs.map(d => d.data()).sort((a, b) => b.fecha.localeCompare(a.fecha));
+  } catch (e) { hist = []; }
+  const cols = ["visitas", "clics", "google", "instagram", "directo", "otros_origenes"];
+  if (!hist.length) {
+    $("histrows").innerHTML = `<tr><td colspan="7" class="empty">El primer resumen se guarda esta madrugada.</td></tr>`;
+    $("histfoot").innerHTML = "";
+    return;
+  }
+  $("histrows").innerHTML = hist.map(r => `<tr><td>${esc(r.fecha)}</td>${cols.map(c => `<td class="n">${fmt(r[c] || 0)}</td>`).join("")}</tr>`).join("");
+  const tot = c => hist.reduce((a, r) => a + (r[c] || 0), 0);
+  $("histfoot").innerHTML = `<tr><th>Total (${hist.length} días)</th>${cols.map(c => `<th class="n">${fmt(tot(c))}</th>`).join("")}</tr>`;
+}
+document.addEventListener("click", e => {
+  if (e.target.id !== "histcsv" || !hist.length) return;
+  const head = "fecha;visitas;clics_a_tiendas;desde_google;desde_instagram;directo;otros_origenes";
+  const lines = [...hist].reverse().map(r => [r.fecha, r.visitas, r.clics, r.google, r.instagram, r.directo, r.otros_origenes].map(v => v ?? 0).join(";"));
+  const blob = new Blob(["\ufeff" + head + "\n" + lines.join("\n") + "\n"], { type: "text/csv;charset=utf-8" });
+  const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(blob), download: `guitle-visitas-${hist.at(-1).fecha}_a_${hist[0].fecha}.csv` });
+  a.click(); URL.revokeObjectURL(a.href);
+});
 
 function render() {
   const today = new Date(), list = [];

@@ -1154,6 +1154,15 @@
  {
   "kind": "pedal",
   "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender Reflecting Pool Delay/Reverb",
+  "slug": "fender-reflecting-pool-delay-reverb-885978054732",
+  "price": 243.32,
+  "median": 325.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
   "store": "pronorte",
   "name": "PRS Horsemeat Overdrive",
   "slug": "prs-horsemeat-overdrive-825362083504",
@@ -1285,6 +1294,15 @@
   "slug": "markbass-mb58r-cmd-151-p-combo-ombop34035",
   "price": 791.0,
   "median": 1089.0
+ },
+ {
+  "kind": "ampli",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Mooer F15i Li Imperial Gold",
+  "slug": "mooer-f15i-li-imperial-gold-6971889223184",
+  "price": 119.0,
+  "median": 159.0
  },
  {
   "kind": "ampli",

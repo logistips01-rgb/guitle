@@ -1296,6 +1296,7 @@ shergold-libertine-standard-bass-sbl15-solid-black-lackp43197
 shergold-sbl15-libertine-standard-bass-guitar-metallic-gold-goldp43088
 shergold-telstar-standard-bass-sbt14-black-lackp43198
 shergold-telstar-standard-bass-sbt14-champagne-gold-gloss-lossp42026
+shure-glx-d-16p-z4-sistema-inalambrico-digital-para-guitarra-y-bajo-42406719629
 sire-marcus-miller-m7-swamp-ash-4-2nd-gen-tbk-857012007127
 sire-marcus-miller-m7-swamp-ash-4-fretless-2nd-gen-tbl-857012007165
 sire-marcus-miller-p7-swamp-ash-4-2nd-gen-ts-857012007486
