@@ -1,0 +1,39 @@
+name: consumo
+
+# Consumo de Cloudflare en el periodo de facturación (solo lee): operaciones de R2 por tipo, almacenamiento y
+# peticiones del Worker. Para saber qué genera el cargo por uso. Se lanza tocando .github/consumo.txt.
+on:
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [.github/consumo.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Consultar la API de analítica
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+        run: |
+          A="${ACCOUNT,,}"
+          q() {
+            curl -s https://api.cloudflare.com/client/v4/graphql -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" \
+              --data "$(jq -n --arg q "$1" '{query:$q}')" | jq -c '.errors // .data'
+          }
+          for range in "2026-10-30T00:00:00Z 2026-11-06T00:00:00Z" ; do
+            set -- $range
+            echo "== R2: operaciones por tipo ($1 → $2)"
+            q "{viewer{accounts(filter:{accountTag:\"$A\"}){r2OperationsAdaptiveGroups(limit:100,filter:{datetime_geq:\"$1\",datetime_lt:\"$2\"}){sum{requests} dimensions{actionType bucketName}}}}}"
+            echo "== R2: almacenamiento"
+            q "{viewer{accounts(filter:{accountTag:\"$A\"}){r2StorageAdaptiveGroups(limit:10,filter:{datetime_geq:\"$1\",datetime_lt:\"$2\"},orderBy:[datetime_DESC]){max{payloadSize metadataSize objectCount} dimensions{bucketName datetime}}}}}"
+            echo "== Worker: peticiones y CPU"
+            q "{viewer{accounts(filter:{accountTag:\"$A\"}){workersInvocationsAdaptive(limit:20,filter:{datetime_geq:\"$1\",datetime_lt:\"$2\"}){sum{requests subrequests errors} quantiles{cpuTimeP50 cpuTimeP99} dimensions{scriptName}}}}}"
+            echo "== R2: operaciones por día (tipo A: escrituras y listados)"
+            q "{viewer{accounts(filter:{accountTag:\"$A\"}){r2OperationsAdaptiveGroups(limit:200,filter:{datetime_geq:\"$1\",datetime_lt:\"$2\",actionType_in:[\"PutObject\",\"ListObjects\",\"ListObjectsV2\",\"CopyObject\",\"CreateMultipartUpload\",\"UploadPart\",\"CompleteMultipartUpload\",\"DeleteObject\",\"DeleteObjects\"]}){sum{requests} dimensions{date actionType}}}}}"
+          done
