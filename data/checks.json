@@ -972,84 +972,6 @@
   "median": 482.0
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Applause Wood Classics AAS96-1 Dreadnought Slope Shoulder Sunburst",
-  "slug": "applause-wood-classics-aas96-1-dreadnought-slope-shoulder-sunburst-4046662295251"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Cort AF515CE OP",
-  "slug": "cort-af515ce-op-8809383831780"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eastman AC630-SB Jumbo Sunburst",
-  "slug": "eastman-ac630-sb-jumbo-sunburst-846940000522"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eastman E3D-DLX",
-  "slug": "eastman-e3d-dlx-846940061431"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eastman Pch2-Tg-Bk Negro",
-  "slug": "eastman-pch2-tg-bk-negro-846940004858"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Azul Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-azul-sunburst-8033675650104"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Rojo Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-rojo-sunburst-8033675650098"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Furch Yellow Gc-CR Ant",
-  "slug": "furch-yellow-gc-cr-ant-8596387002116"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Godin Imperial Laguna Blue GT EQ Dreadnought",
-  "slug": "godin-imperial-laguna-blue-gt-eq-dreadnought-623501049486"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Martin D-42",
-  "slug": "martin-d-42-od42309264"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Ovation Pro Series Elite USA natural mate",
-  "slug": "ovation-pro-series-elite-usa-natural-mate-4046662308661"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Sigma TW-16E-BKW",
-  "slug": "sigma-tw-16e-bkw-4260685054705"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Takamine Cutaway Dreadnought Takamine EF381 Negra, 12 Cuerdas",
-  "slug": "takamine-cutaway-dreadnought-takamine-ef381-negra-12-cuerdas-190262011781"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1123,18 +1045,6 @@
  },
  {
   "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Alhambra 3C-CW-E1",
-  "slug": "alhambra-3c-cw-e1-8436623080884"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Alhambra Española Alhambra 6 Olivo",
-  "slug": "alhambra-espanola-alhambra-6-olivo-mbra6olivo"
- },
- {
-  "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
   "name": "Cort AC200 3/4 OP w/bag",
@@ -1186,30 +1096,6 @@
   "slug": "ortega-espanola-amplificada-cutaway-ortega-tourplayer-rtpg-ls2-842960187359",
   "price": 577.69,
   "median": 708.5
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Alhambra 4P Natural",
-  "slug": "alhambra-4p-natural-8436623080976"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Alhambra 5P 7/8",
-  "slug": "alhambra-5p-7-8-3725084708365"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Alhambra 5P CT FISHMAN E2",
-  "slug": "alhambra-5p-ct-fishman-e2-8436623081003"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Alhambra 7P Classic Nat",
-  "slug": "alhambra-7p-classic-nat-8436623081126"
  },
  {
   "kind": "teclado",
