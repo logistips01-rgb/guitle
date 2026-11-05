@@ -3332,6 +3332,90 @@ for _id, _name, _sm, _kw in [
     IE_SOURCES[_id] = _en_store(_name, _sm, "EUR", **_kw)
 
 
+# --- México: en pesos. Categorías y nombres en español (es_guitar_kind). Las Shopify, por su .json con ?currency=MXN;
+# Eusica, por el JSON-LD de la ficha (probada a mano; robots.txt la permite). Faly Music, no: rechaza al lector (403).
+MX_SOURCES = {}
+_parse_mx_shopify_base = _parse_shopify_json
+
+
+def _parse_mx_shopify(soup, text):
+    data = _parse_mx_shopify_base(soup, text)
+    if data.get("price") is not None and data.get("currency") in (None, "", "GBP"):
+        data["currency"] = "MXN"
+    return data
+
+
+# Nombres que no son una guitarra (México): cuerdas, fundas, bajos, ukuleles, refacciones…
+MX_NAME_SKIP = re.compile(r"(?<!\d )\bcuerdas?\b|encordad|^(?:funda|estuche|correa|tahal[ií]|atril|soporte)\b|\bbajo\b(?! quinto)"
+                          r"|ukulele|afinador|\bcapo\b|cejilla|pastilla|refacci|m[eé]todo|\blibro\b|amplificador|\bcombo\b|\bstrap\b|\bcdas\b"
+                          r"|\bjuego de\b|\bset de\b|\bpicks?\b|\bcable\b|\bslide\b|\bstand\b",
+                          re.I)
+_MX_ACC = re.compile(r"(?:amplificador|afinador|atril|bafle|funda|estuche|cuerdas?|correa|pastilla|asiento|banco|soporte|cable"
+                     r"|pedal|plumilla|puas?|capo|cejilla|gancho|repuesto|refacci|bocina|audifono|metodo|libro|tahali|clavij"
+                     r"|puente|limpi|humidif|bajo|ukulele|violin|banjo|mandolina|teclado|bater|boton|perilla|selector|tarola"
+                     r"|platillo|bumper|cabezal|gabinete|mezcladora|microfono|aceite|cartera|termo|combo|encordad|sordina|cuerda|kit"
+                     r"|organizador|lampara|playera|gorra|taza|llavero|stand|base|porta|adaptador|eliminador|fuente|bolsa)"
+                     r"|.*-para-(?:guitarra|guitarrista|bajo)")
+
+
+def _mx_pick(shopify=False, path=None):
+    def pick(u):
+        if shopify and not re.match(r"https?://[^/]+/products/[^/?#]+$", u):
+            return False
+        if path and not re.search(path, u):
+            return False
+        where = "/" + u.split("://", 1)[-1].split("/", 1)[-1]
+        if NOT_PRODUCT.search(where) or _GEN_NOT_PRODUCT.search(where) or re.search(r"-en/?$", u):  # "-en": copia en inglés
+            return False
+        slug = u.rstrip("/").rsplit("/", 1)[-1].lower()
+        if _MX_ACC.match(slug):  # accesorios con "guitarra" en el nombre ("atril-para-guitarra…"): no se leen
+            return False
+        return bool(path) or bool(_ES_PICK.search(slug)) or es_guitar_kind([], u, slug.replace("-", " ")) is not None
+    return pick
+
+
+_MX_TYPE = (r"(?:guitarra|requinto|docerola)(?:\s+(?:el[eé]ctrica|el?[eé]?ctroac[uú]stica|electro[\s-]?ac[uú]stica|ac[uú]stica|cl[aá]sica"
+            r"|electro[\s-]?cl[aá]sica|texana|folk))?")
+
+
+def _mx_fix(data, text):
+    """Nombres de las tiendas mexicanas, limpios: sin caracteres rotos (ElÃ©ctrica), sin el tipo delante ni detrás
+    ("Guitarra Eléctrica Cort X100", "…, Guitarra Eléctrica") y sin la marca repetida: "Cort X100"."""
+    name = data.get("name") or ""
+    for bad, good in (("Ã¡", "á"), ("Ã©", "é"), ("Ã\xad", "í"), ("Ã³", "ó"), ("Ãº", "ú"), ("Ã±", "ñ"), ("Ã‰", "É"),
+                      ("Â", "")):
+        name = name.replace(bad, good)
+    clean = re.sub(r"^((?:[\w&.-]+\s+){0,2}?)" + _MX_TYPE + r"\s+", r"\1", name, count=1, flags=re.I)
+    clean = re.sub(r",?\s*" + _MX_TYPE + r"\s*(?=,|$)", "", clean, flags=re.I)
+    clean = re.sub(r"\b(\w+(?:\s+\w+)?)\s+\1\b", r"\1", clean, flags=re.I)  # "Cort Cort X100", "Tres Pinos Tres Pinos"
+    clean = re.sub(r"[\s,]+$", "", re.sub(r"\s{2,}", " ", clean)).strip()
+    if clean:
+        data["name"] = clean[0].upper() + clean[1:]
+    return data
+
+
+def _mx_store(name, base, shopify=False, path=None, sitemap=None):
+    src = {"name": name, "sitemap": sitemap or f"{base}/sitemap.xml", "kind_url": es_guitar_kind, "fix": _mx_fix,
+           "pick": _mx_pick(shopify, path), "shop": {"base": base, "path": path, "lang": "es+en", "shopify": shopify}}
+    if shopify:
+        src.update(page_url=_shopify_url("MXN"), parse=_parse_mx_shopify,
+                   sub=lambda l: bool(re.match(r"https?://[^/]+/sitemap_products_", l)))
+    else:
+        src["parse"] = _parse_en("MXN")
+    return src
+
+
+MX_SOURCES.update({
+    "veerkamp": _mx_store("Veerkamp", "https://veerkamponline.com", shopify=True),
+    "hermes": _mx_store("Hermes Music Club", "https://hermesmusicclub.mx", shopify=True),
+    "doris": _mx_store("Musicales Doris", "https://musicalesdoris.com", shopify=True),
+    "rocklab": _mx_store("The Rock Lab", "https://therocklab.mx", shopify=True),
+    "pepis": _mx_store("Pepis Music", "https://pepismusic.mx", shopify=True),
+    "eusica": _mx_store("Eusica", "https://eusica.mx",
+                        path=r"/productos/(?:guitarras/(?:guitarras_electricas|electroacusticas|martin|fender)|instrumentos/guitarras)/[^/]+$"),
+})
+
+
 # Gear4music: desde GitHub sus webs de cada país se leen sin problema (no desde el entorno de pruebas). Del sitemap,
 # solo el departamento de guitarras y bajos; la categoría sale del breadcrumb de la ficha (JSON-LD con precio y EAN).
 def _gear4music(base, kind):
@@ -4384,6 +4468,10 @@ CATALOGS = {
               "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json", "teclado": "teclados.json",
                         "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie", "headers": EN_HEADERS,
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json", "pack": "packs.json"}},
+    # México: en pesos. Sin guitarras de menos de 1.500 pesos (cuerdas, fundas y accesorios que se cuelan).
+    "mx": {"dir": DIR / "mx", "sources": MX_SOURCES, "site": "mx", "cur": "MXN", "min_price": 1500, "cluster_names": True,
+           "files": {"electrica": "guitarras-electricas.json", "acustica": "guitarras-acusticas.json",
+                     "clasica": "guitarras-clasicas.json", "pack": "paquetes.json"}},
     "at": {"dir": DIR / "at", "sources": AT_SOURCES, "site": "at",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json", "pack": "packs.json"}},
     "nl": {"dir": DIR / "nl", "sources": NL_SOURCES, "site": "nl",
@@ -4620,6 +4708,33 @@ def name_match_score(a_name, b_name, brand):
         # Mismo código de modelo y acabado (Ibanez AZ24S2-BK): misma guitarra; distinto: otra.
         return 1.0 if ca & cb else 0.0
     return len(ta & tb) / max(1, len(ta | tb))
+
+
+_GENERIC_ES = re.compile(r"\b(?:guitarra|guitar|el[eé]ctric[ao]|electroac[uú]stic[ao]|electro|ac[uú]stic[ao]|cl[aá]sic[ao]"
+                         r"|de|con|para|y|en|color|acabado)\b", re.I)
+
+
+def _cluster_by_name(groups):
+    """Une las fichas sin EAN de tiendas distintas que son el mismo modelo (marca igual y nombre casi igual)."""
+    clusters = {}  # marca -> [[clave, nombre limpio, tiendas]]
+    for key in sorted([k for k in groups if k.startswith("url:")], key=lambda k: groups[k][0]["store"]):
+        if key not in groups:
+            continue
+        o = groups[key][0]
+        clean = _GENERIC_ES.sub(" ", o["name"])
+        cands = clusters.setdefault(o.get("brand"), [])
+        scored = sorted(((name_match_score(clean, c[1], o.get("brand")), i) for i, c in enumerate(cands)
+                         if o["store"] not in c[2]), reverse=True)
+        if o.get("brand") and scored and scored[0][0] >= NAME_MATCH_MIN \
+                and (len(scored) == 1 or scored[0][0] - scored[1][0] >= NAME_MATCH_MARGIN):
+            c = cands[scored[0][1]]
+            target = groups[c[0]]
+            mid = sorted(x["price"] for x in target)[len(target) // 2]
+            if mid and 0.5 <= o["price"] / mid <= 2:  # el mismo modelo no cuesta el doble en otra tienda
+                target.append(groups.pop(key)[0])
+                c[2].add(o["store"])
+                continue
+        cands.append([key, clean, {o["store"]}])
 
 
 NAME_MATCH_MIN = 0.75     # parecido mínimo para unir una ficha sin EAN a un producto
@@ -4991,6 +5106,8 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
         if o["price"] < MIN_PRICE.get(kind, 0):
             continue  # accesorio colado (cejillas, armónicas…) cuyo nombre no dice lo que es
         o = tidy(o)
+        if CATALOG.get("cluster_names"):  # México: también las fichas leídas antes de limpiar el nombre
+            o = _mx_fix(dict(o), "")
         groups.setdefault(o.get("ean") or "url:" + o["url"], []).append(o)
     # Fichas sin EAN (Egitana): se unen al producto con EAN cuyo nombre coincide sin dudas.
     by_brand = {}
@@ -5014,6 +5131,10 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
         mid = sorted(x["price"] for x in target)[len(target) // 2]
         key = min(keys, key=lambda k: abs(math.log(groups[k][0]["price"] / mid)) if mid else 0)
         target.append(groups.pop(key)[0])
+    # Países donde casi ninguna tienda da el EAN (México): las fichas sin EAN de tiendas distintas se agrupan entre sí
+    # por marca y nombre (el mismo parecido que arriba, sin las palabras genéricas "guitarra eléctrica"…).
+    if CATALOG.get("cluster_names"):
+        _cluster_by_name(groups)
     # Mismo EAN pero producto distinto (EAN mal puesto en una tienda) → se separan. Solo el primer grupo,
     # el de Numemusic si está, conserva el EAN (histórico y cruce con las tiendas de seguimiento).
     clusters = []
@@ -5081,6 +5202,9 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
             if thumbs:
                 prod["th"] = thumbs[0]  # teclados y pedales: la primera foto (la de Numemusic si está)
         else:
+            # Las de espaldas (scraper/espaldas.py), fuera: mejor la foto de frente de otra tienda.
+            from .espaldas import espaldas
+            thumbs = [t for t in thumbs if t not in espaldas()] or thumbs  # si no hay otra, la que haya
             best = max(thumbs, key=slenderness) if thumbs else None
             if best and slenderness(best) >= MIN_SLENDERNESS:
                 prod["th"] = best
@@ -5131,7 +5255,7 @@ def build(offers=None, history=None):
                                               "ch": DE_NAME_SKIP, "pl": PL_NAME_SKIP,
                                               "se": UK_NAME_SKIP, "no": UK_NAME_SKIP, "dk": UK_NAME_SKIP,
                                               **dict.fromkeys(("cz", "sk", "hu", "ro", "bg", "gr", "fi"), UK_NAME_SKIP),
-                                              "lu": FR_NAME_SKIP}[CATALOG["site"]])
+                                              "lu": FR_NAME_SKIP, "mx": MX_NAME_SKIP}[CATALOG["site"]])
             if skip:
                 mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
@@ -5157,7 +5281,8 @@ def build(offers=None, history=None):
         pages.write_hubs()
     else:
         from . import intl
-        intl.write_site(CATALOG["site"])
+        if CATALOG["site"] in intl.SITES:  # un país nuevo lee precios antes de tener web (México, hasta que se apruebe)
+            intl.write_site(CATALOG["site"])
 
 
 def main(argv=None):

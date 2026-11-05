@@ -22,6 +22,7 @@ NICE = {"BRL": {30: 200, 50: 300, 100: 600, 150: 1000, 200: 1200, 300: 2000, 400
         "RON": {30: 150, 50: 250, 100: 500, 150: 750, 200: 1000, 300: 1500, 400: 2000, 500: 2500, 1000: 5000},
         "SEK": {30: 300, 50: 500, 100: 1000, 150: 1500, 200: 2000, 300: 3000, 400: 4500, 500: 5500, 1000: 11000},
         "NOK": {30: 300, 50: 500, 100: 1000, 150: 1500, 200: 2000, 300: 3000, 400: 4500, 500: 6000, 1000: 12000},
+        "MXN": {30: 600, 50: 1000, 100: 2000, 150: 3000, 200: 4000, 300: 6000, 400: 8000, 500: 10000, 1000: 20000},
         "DKK": {30: 200, 50: 400, 100: 750, 150: 1100, 200: 1500, 300: 2200, 400: 3000, 500: 3700, 1000: 7500}}
 
 
@@ -126,7 +127,7 @@ def _page(code, url, title, desc, body, grids, faqs, mod, intl, t):
 # scraper/curso/plantilla.html lleva los textos como {{n}}; scraper/curso/<idioma>.json, sus traducciones (180, en el
 # mismo orden que es.json). Un portugués para Portugal y Brasil.
 COURSE_LANG = {"pt": "pt", "br": "pt", "fr": "fr", "it": "it", "en": "en", "de": "de", "nl": "nl",
-               **{x: x for x in ("pl", "cs", "sk", "hu", "ro", "bg", "el", "fi", "sv", "nb", "da")}}
+               "es": "es", **{x: x for x in ("pl", "cs", "sk", "hu", "ro", "bg", "el", "fi", "sv", "nb", "da")}}
 
 
 def write_course(code, intl):
