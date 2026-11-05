@@ -1289,6 +1289,15 @@
  {
   "kind": "ampli",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Mooer F15i Li Imperial Gold",
+  "slug": "mooer-f15i-li-imperial-gold-6971889223184",
+  "price": 119.0,
+  "median": 159.0
+ },
+ {
+  "kind": "ampli",
+  "type": "fuera_de_lugar",
   "store": "pronorte",
   "name": "PRS Cabezal MT15 V2 Tremonti",
   "slug": "prs-cabezal-mt15-v2-tremonti-825362239215",

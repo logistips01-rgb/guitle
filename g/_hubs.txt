@@ -266,6 +266,7 @@ marca/d-addario.html
 marca/d-addario.html
 marca/d-addario.html
 marca/d-angelico.html
+marca/d-grip.html
 marca/d.html
 marca/d12e.html
 marca/d16.html

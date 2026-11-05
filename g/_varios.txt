@@ -357,6 +357,7 @@ d-addario-daddario-serie-ej10-cuerdas-010047html
 d-addario-daddario-xlb032-bass-xl-single-string-ringp29484
 d-addario-daddario-xlb100-bass-xl-single-string-ringp29489
 d-addario-daddario-xlb145-bass-xl-single-string-ringp29490
+d-addario-daddario-xsb45105-regular-medium-cuerdas-bajo-electrico-45-105-19954432591
 d-addario-dp0002-pro-winder-2prowinder
 d-addario-dp0002w-pro-winder-guitar-19954315795
 d-addario-ecb80-chromes-bass-light-long-scale-40-95-199549256976
@@ -473,7 +474,6 @@ d-addario-xsapb1256-cuerdas-12-56-19954371326
 d-addario-xsapb1356-cuerdas-13-56-19954337575
 d-addario-xsb32130ms-bass-hybrid-light-multiscale-6-string-32-130-19954432621
 d-addario-xsb45100-bass-regular-light-long-scale-i-45-100-19954432584
-d-addario-xsb45105-bass-regular-light-top-medium-long-scale-45-105-19954432591
 d-addario-xsb45130-bass-regular-light-long-scale-5-string-45-130-19954432607
 d-addario-xsb45130ms-bass-hybrid-light-multiscale-5-string-45-130-19954443948
 d-addario-xsb45130sl-bass-regular-light-super-long-scale-5-string-45-130-19954432614
@@ -492,6 +492,9 @@ d-addario-xte1149-super-light-cuerdas-11-49-19954308889
 d-angelico-dar1046-rock-10s-cuerdas-10-46-19954203054
 d-angelico-leather-guitar-strap-black-correa-687700224518
 d-angelico-leather-guitar-strap-brown-correa-687700224501
+d-grip-pack-6-puas-jazz-a-0-88-small-8594189530202
+d-grip-pack-6-puas-jazz-a-1-00-small-8594189530219
+d-grip-pack-6-puas-jazz-a-1-18-small-8594189530226
 daddario-25l00-dx-leather-strap-bk-19954944759
 daddario-25l01-dx-wide-brown-leather-strap-19954944766
 daddario-25ls00-dx-leather-strap-ribet-bk-19954944773
@@ -910,6 +913,7 @@ dr-strings-red-devils-rdb-45-600781001625
 dr-strings-red-devils-rdb5-45-600781001632
 dr-strings-tite-fit-bt-10-010-052-600781000437
 dr-strings-tite-fit-eh-11-011-050-600781000451
+dr-strings-tite-fit-eh7-11-60-nickel-nickelhtml
 dr-strings-tite-fit-lh-9-009-042-600781000604
 dr-strings-tite-fit-lh-9-009-046-600781000567
 dr-strings-tite-fit-mt-10-mt10p32774
