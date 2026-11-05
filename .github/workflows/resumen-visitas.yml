@@ -31,4 +31,5 @@ jobs:
       - name: Resumir los días que faltan
         env:
           FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
-        run: python -m scraper.resumen_visitas
+        timeout-minutes: 20
+        run: python -u -m scraper.resumen_visitas
