@@ -329,7 +329,7 @@ def plan(day, recent):
             f"🔥 Chollo de hoy: {deal['name']}\n"
             f"💶 {eur(deal['price'])} en {deal['store']}, comparada en {deal['stores']} tiendas.\n"
             f"📉 {deal['why']}.\n\n"
-            f"🔎 Compara su precio en guitle.com (enlace en la bio).\n"
+            f"👉 Todos los chollos de hoy, a un toque: enlace en la bio.\n"
             f"Precio del {fecha}; puede cambiar.\n\n"
             f"#guitarra {HASHTAGS[deal['kind']]} {tag(deal['brand'])} #chollos #guitarristas #ofertas")}
         stories = stories[1:]
@@ -344,7 +344,7 @@ def plan(day, recent):
             f"🎸 {title[0].upper() + title[1:]}: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n"
             f"{lines}\n\n"
             f"¿Con cuál te quedas? Te leemos en comentarios 💬\n"
-            f"🔎 Compara precios en guitle.com (enlace en la bio). Precios del {fecha}.\n\n"
+            f"👉 Todos los chollos de hoy, a un toque: enlace en la bio. Precios del {fecha}.\n\n"
             f"#guitarra {HASHTAGS[kind]} #guitarristas #comprarguitarra "
             + " ".join(dict.fromkeys(tag(p["brand"]) for p in picks)))}
         stories = stories[:STORIES]
@@ -469,7 +469,7 @@ def reel_top(day, folder, prods, recent, fetcher, fecha):
     lines = "\n".join(f"{i}️⃣ {p['name']}: {eur(p['price'])} en {p['store']}" for i, p in enumerate(picks, 1))
     _reel(folder, "reel-2-top", {"type": "top", "title": title, "hook": "Top por precio", "picks": picks}, fecha,
           f"🎸 {title[0].upper() + title[1:]}: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n{lines}\n\n"
-          f"¿Con cuál te quedas? 💬\n🔎 Compara precios en guitle.com (enlace en la bio). Precios del {fecha}.\n\n"
+          f"¿Con cuál te quedas? 💬\n👉 Todos los chollos de hoy, a un toque: enlace en la bio. Precios del {fecha}.\n\n"
           f"#guitarra {HASHTAGS[kind]} #guitarristas #comprarguitarra " + " ".join(dict.fromkeys(tag(p["brand"]) for p in picks)))
 LABELS = {"electrica": "Eléctrica", "acustica": "Acústica", "clasica": "Clásica"}
 
@@ -530,7 +530,7 @@ def daily_reels(day, folder, recent, prods, fetcher):
         _reel(folder, "reel-1-chollos", {"type": "top", "title": f"chollos de {MIN_PRICE} a {MAX_PRICE} €", "hook": "Chollos de hoy",
                                           "picks": picks}, fecha,
               f"🔥 Chollos de hoy entre {MIN_PRICE} y {MAX_PRICE} € 👇\n\n{lines}\n\n¿Cuál te llevarías? 💬\n"
-              f"🔎 Compara precios en guitle.com (enlace en la bio). Precios del {fecha}; pueden cambiar.\n\n"
+              f"👉 Todos los chollos de hoy, a un toque: enlace en la bio. Precios del {fecha}; pueden cambiar.\n\n"
               "#guitarra #guitarraelectrica #guitarraacustica #guitarraclasica #chollos #guitarristas #ofertas "
               + " ".join(dict.fromkeys(tag(p["brand"]) for p in picks)))
     # 2. Black Friday: el precio de hoy de una guitarra popular, para comprobar después si la rebaja es real

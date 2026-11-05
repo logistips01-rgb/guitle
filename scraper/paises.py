@@ -18,6 +18,7 @@ import argparse
 import json
 import os
 import random
+import re
 import subprocess
 import sys
 import time
@@ -275,6 +276,15 @@ PAISES = {
         "fecha": lambda d: f"{d.day} {MESES['nl'][d.month - 1]}",
     },
 }
+
+
+# En los chollos y tops, la bio lleva a la página «Chollos de hoy» de la web (guitle.com/<país>/hoy/, scraper/hoy.py)
+BIO_HOY = {"pt": "(todas as promoções de hoje no link da bio 👆)", "fr": "(tous les bons plans du jour via le lien en bio 👆)",
+           "it": "(tutte le offerte di oggi nel link in bio 👆)", "de": "(alle Deals von heute über den Link in der Bio 👆)",
+           "en": "(all today’s deals via the link in bio 👆)", "nl": "(alle deals van vandaag via de link in bio 👆)"}
+for _cfg in PAISES.values():
+    for _k in ("cap_chollo", "cap_top", "cap_reel"):
+        _cfg[_k] = re.sub(r"\((?:link na bio|lien en bio|link in bio|Link in der Bio)\)", BIO_HOY[_cfg["lang"]], _cfg[_k])
 
 
 def dinero(cfg):
