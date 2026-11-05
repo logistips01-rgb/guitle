@@ -1,0 +1,215 @@
+{
+ "fecha": "5 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "top",
+  "title": "5 guitarras elétricas até R$ 2.000",
+  "hook": "Top do dia",
+  "picks": [
+   {
+    "slug": "giannini-stratocaster-g100-trd-wh-translucent-red-7890443014381",
+    "name": "Giannini Stratocaster G100 TRD/WH Translucent Red",
+    "brand": "Giannini",
+    "kind": "electrica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1402804/guitarra_giannini_stratocaster_g100_trd_wh_translucent_red_523_1_14693e4e91acff53e8c255434d171de7.jpg",
+    "price": 809.1,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 973.395,
+    "max": 1033.29,
+    "next": 913.5,
+    "rows": [
+     [
+      "Mundomax",
+      809.1
+     ],
+     [
+      "Destroyer",
+      913.5
+     ],
+     [
+      "Tuner Music",
+      1033.29
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "tagima-stratocaster-metallic-surf-green-tg-520-msg-tagima-7898651948498",
+    "name": "Tagima Stratocaster Metallic Surf Green TG-520 MSG - Tagima",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/194741/Guitarra-Stratocaster-Metallic-Surf-Green-TG-520-MSG---Tagima.png?v=638653904042970000",
+    "price": 918.16,
+    "store": "Ninja Som",
+    "stores": 6,
+    "median": 1088.1,
+    "max": 1259.9,
+    "next": 986.76,
+    "rows": [
+     [
+      "Ninja Som",
+      918.16
+     ],
+     [
+      "Akustica Musical",
+      986.76
+     ],
+     [
+      "Mundomax",
+      1079.1
+     ],
+     [
+      "Música Center",
+      1088.1
+     ],
+     [
+      "Cheiro de Música",
+      1199.0
+     ],
+     [
+      "Luggi",
+      1259.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "michael-stratocaster-michael-rocker-gms250-amber-7899091123452",
+    "name": "Michael Stratocaster Michael Rocker GMS250 Amber",
+    "brand": "Michael",
+    "kind": "electrica",
+    "img": "https://www.supersonora.com.br/cdn/shop/files/KqHuky.jpg?v=1783624351&width=1920",
+    "price": 1019.9,
+    "store": "Supersonora",
+    "stores": 3,
+    "median": 1355.1,
+    "max": 1416.0,
+    "next": 1294.2,
+    "rows": [
+     [
+      "Supersonora",
+      1019.9
+     ],
+     [
+      "Música Center",
+      1294.2
+     ],
+     [
+      "Cheiro de Música",
+      1416.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "strinberg-les-paul-lps230-cs-cherry-sunburst-7899854510352",
+    "name": "Strinberg Les Paul LPS230 CS Cherry Sunburst",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-strinberg-les-paul-lps230-cs-cherry-sunburst-1132210/1352857.jpg?w=1000&h=1000&v=202508070719&qs=ignore",
+    "price": 1223.1,
+    "store": "Akustica Musical",
+    "stores": 5,
+    "median": 1434.45,
+    "max": 1490.0,
+    "next": 1259.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      1223.1
+     ],
+     [
+      "Mundomax",
+      1259.1
+     ],
+     [
+      "Tango Music",
+      1429.0
+     ],
+     [
+      "Luggi",
+      1439.9
+     ],
+     [
+      "Só Som",
+      1490.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "seizi-fun-vintage-budokan-shell-pink-seizi-7898512901907",
+    "name": "Seizi Fun Vintage Budokan Shell Pink - Seizi",
+    "brand": "Seizi",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/220042/Guitarra-Fun-Vintage-Budokan-Shell-Pink---Seizi.jpg?v=639148133716070000",
+    "price": 1277.88,
+    "store": "Ninja Som",
+    "stores": 3,
+    "median": 1439.5,
+    "max": 1549.0,
+    "next": 1330.0,
+    "rows": [
+     [
+      "Ninja Som",
+      1277.88
+     ],
+     [
+      "Ponto Musical",
+      1330.0
+     ],
+     [
+      "Royal Music",
+      1549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   }
+  ]
+ }
+}
