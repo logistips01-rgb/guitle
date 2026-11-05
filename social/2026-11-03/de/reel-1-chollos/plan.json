@@ -1,0 +1,172 @@
+{
+ "fecha": "3. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "spira-s-500-qab-trans-aqua-blue-e-gitarre-3831120929950",
+    "name": "Spira S-500 QAB Trans Aqua Blue E-Gitarre",
+    "brand": "Spira",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/134539/lg/spira-guitars-s-500-qab-trans-aqua-blue-e-gitarre.jpg",
+    "price": 409.0,
+    "store": "IMM Professional",
+    "stores": 3,
+    "median": 489.5,
+    "max": 490.0,
+    "next": 489.0,
+    "rows": [
+     [
+      "IMM Professional",
+      409.0
+     ],
+     [
+      "Musikhaus Korn",
+      489.0
+     ],
+     [
+      "Shop2Rock",
+      490.0
+     ]
+    ],
+    "pvp": null,
+    "why": "80 € günstiger als in allen anderen Shops",
+    "pct": 16,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "cort-g110-opsb-e-gitarre-open-pore-sunburst-8809625369620",
+    "name": "Cort G110 OPSB E-Gitarre, open pore sunburst",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/cort_g110opsb_1.jpg",
+    "price": 200.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 229.0,
+    "max": 229.0,
+    "next": 229.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      200.0
+     ],
+     [
+      "Woodbrass",
+      229.0
+     ],
+     [
+      "Musikhaus Lange",
+      229.0
+     ]
+    ],
+    "pvp": null,
+    "why": "29 € günstiger als in allen anderen Shops",
+    "pct": 13,
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "takamine-new-yorker-gy51-electro-natural-190262041139",
+    "name": "Takamine New Yorker GY51 Electro Natural",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://woodbrass.de/cdn/shop/files/6a29bd70ae30d0e9611ccac40e00b2b6d95ea52a_GTA_GY51ENAT.png?height=1200&pad_color=ffffff&v=1793493473&width=1200",
+    "price": 459.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 566.0,
+    "max": 589.0,
+    "next": 543.0,
+    "rows": [
+     [
+      "Woodbrass",
+      459.0
+     ],
+     [
+      "Shop2Rock",
+      543.0
+     ],
+     [
+      "Musik Beck",
+      589.0
+     ]
+    ],
+    "pvp": null,
+    "why": "84 € günstiger als in allen anderen Shops",
+    "pct": 15,
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-family-r121-wr-3-4-840553063394",
+    "name": "Ortega Family R121 WR 3/4",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.session.de/media/39/d9/38/1662495351/ortega_-_ortega_family_r121_wr_3_4_-_0.jpg?ts=1741881048",
+    "price": 185.0,
+    "store": "Session",
+    "stores": 4,
+    "median": 216.0,
+    "max": 229.0,
+    "next": 207.0,
+    "rows": [
+     [
+      "Session",
+      185.0
+     ],
+     [
+      "Woodbrass",
+      207.0
+     ],
+     [
+      "Shop2Rock",
+      216.0
+     ],
+     [
+      "Music Town",
+      229.0
+     ]
+    ],
+    "pvp": null,
+    "why": "22 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

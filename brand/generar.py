@@ -87,7 +87,8 @@ def wordmark(font, x, y, size, color, pick_color):
     return svg, end - x
 
 
-def logo_svg(font, color=INK, accent=BLUE, icon=True, tagline=True, icon_bg=BLUE, icon_fg="#fff"):
+def logo_svg(font, color=INK, accent=BLUE, icon=True, tagline=True, icon_bg=BLUE, icon_fg="#fff",
+             tagline_text="guitarras al mejor precio"):
     size = 230
     x = 20
     parts = []
@@ -101,7 +102,7 @@ def logo_svg(font, color=INK, accent=BLUE, icon=True, tagline=True, icon_bg=BLUE
     right = x + width
     if tagline:
         # Bajo la cola de la "g" (descendente de Inter ≈ 0,24 em)
-        td, tend, _ = font.path("guitarras al mejor precio", x + 6, base + 104, 50, -0.01)
+        td, tend, _ = font.path(tagline_text, x + 6, base + 104, 50, -0.01)
         parts.append(f'<path fill="{accent}" d="{td}"/>')
         right = max(right, tend)
     w = round(right + 24)

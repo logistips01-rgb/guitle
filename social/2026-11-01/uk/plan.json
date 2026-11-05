@@ -1,0 +1,243 @@
+{
+ "date": "2026-11-01",
+ "fecha": "1 November",
+ "post": {
+  "type": "top",
+  "title": "3 classical guitars under £250",
+  "kind": "clasica",
+  "picks": [
+   {
+    "slug": "yamaha-c40-classical-guitar-syamahac40",
+    "name": "Yamaha C40 | Classical Guitar",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://cdn.shopify.com/s/files/1/0934/6888/5372/files/1017064A2AFE4496A46053111BE743D7_12073_tcm116-1712025.jpg?v=1765888680",
+    "price": 131.0,
+    "store": "Parkland Music",
+    "stores": 5,
+    "median": 139.0,
+    "max": 142.0,
+    "next": 139.0,
+    "rows": [
+     [
+      "Parkland Music",
+      131.0
+     ],
+     [
+      "guitarguitar",
+      139.0
+     ],
+     [
+      "Bonners Music",
+      139.0
+     ],
+     [
+      "A Strings",
+      139.0
+     ],
+     [
+      "Reidys",
+      142.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "takamine-gc1-nat-egc1nathtm",
+    "name": "Takamine GC1-NAT",
+    "brand": "Takamine",
+    "kind": "clasica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/588570.jpg",
+    "price": 189.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 209.0,
+    "max": 219.0,
+    "next": 199.0,
+    "rows": [
+     [
+      "Thomann",
+      189.0
+     ],
+     [
+      "A Strings",
+      199.0
+     ],
+     [
+      "Rockem Music",
+      219.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "cordoba-c1m-ce-protege-electro-cutaway-classical-guitar-809870026949",
+    "name": "Cordoba C1M-CE Protege Electro Cutaway Classical Guitar",
+    "brand": "Cordoba",
+    "kind": "clasica",
+    "img": "https://cdn.shopify.com/s/files/1/0432/6024/8218/products/3-2.png?v=1648124481",
+    "price": 199.0,
+    "store": "A Strings",
+    "stores": 5,
+    "median": 289.0,
+    "max": 299.0,
+    "next": 239.0,
+    "rows": [
+     [
+      "A Strings",
+      199.0
+     ],
+     [
+      "Ness Music",
+      239.0
+     ],
+     [
+      "Andertons",
+      289.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      289.0
+     ],
+     [
+      "guitarguitar",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   }
+  ],
+  "caption": "🎸 3 classical guitars under £250: the best sellers in UK shops, with today’s best price 👇\n\n1️⃣ Yamaha C40 | Classical Guitar: £131 at Parkland Music\n2️⃣ Takamine GC1-NAT: £189 at Thomann\n3️⃣ Cordoba C1M-CE Protege Electro Cutaway Classical Guitar: £199 at A Strings\n\nWhich one would you pick? Tell us in the comments 💬\n🔎 Compare prices on guitle.com/uk (link in bio). Prices on 1 November.\n\n#guitar #guitarist #guitardeals #ukguitar #classicalguitar #yamaha #takamine #cordoba"
+ },
+ "stories": [
+  {
+   "slug": "brunswick-btk60ko-grand-auditorium-electro-acoustic-guitar-koa-5036678153866",
+   "name": "Brunswick BTK60KO Grand Auditorium Electro-Acoustic Guitar, Koa",
+   "brand": "Brunswick",
+   "kind": "acustica",
+   "img": "https://cdn11.bigcommerce.com/s-hvzya2q3vy/images/stencil/1280x1280/products/58229/178729/brubtk60ko__37020.1790685566.jpg?c=1",
+   "price": 149.0,
+   "store": "Absolute Music",
+   "stores": 3,
+   "median": 219.0,
+   "max": 229.0,
+   "next": 209.0,
+   "rows": [
+    [
+     "Absolute Music",
+     149.0
+    ],
+    [
+     "Reidys",
+     209.0
+    ],
+    [
+     "Millers Music",
+     229.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£60 less than any other shop",
+   "pct": 29,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "kx100-bkm-electric-guitar-8809625361990",
+   "name": "Kx100 BKM Electric Guitar",
+   "brand": "Kx100",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0570/0730/8961/products/cort-kx100-bkm-black-metallic-p1328-1007_image_1.jpg?v=1637845089",
+   "price": 219.0,
+   "store": "Ness Music",
+   "stores": 3,
+   "median": 289.0,
+   "max": 289.0,
+   "next": 289.0,
+   "rows": [
+    [
+     "Ness Music",
+     219.0
+    ],
+    [
+     "R Guitars",
+     289.0
+    ],
+    [
+     "Sutton Music",
+     289.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£70 less than any other shop",
+   "pct": 24,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "epiphone-les-paul-special-left-handed-tv-yellow-711106054131",
+   "name": "Epiphone Les Paul Special (Left-handed); TV Yellow",
+   "brand": "Epiphone",
+   "kind": "electrica",
+   "img": "https://www.bonnersmusic.co.uk/cdn/shop/files/Untitled-1_e8731640-9861-4d9f-a7de-6e621bfd4246.jpg?v=1718109207&width=1920",
+   "price": 349.0,
+   "store": "Bonners Music",
+   "stores": 4,
+   "median": 449.0,
+   "max": 449.0,
+   "next": 439.0,
+   "rows": [
+    [
+     "Bonners Music",
+     349.0
+    ],
+    [
+     "A Strings",
+     439.0
+    ],
+    [
+     "Peach Guitars",
+     449.0
+    ],
+    [
+     "Music Bros",
+     449.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£90 less than any other shop",
+   "pct": 21,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

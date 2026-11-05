@@ -1,0 +1,440 @@
+{
+ "date": "2026-11-03",
+ "fecha": "3 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 eléctricas de 500 € a 750 €",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "fender-standard-telecaster-lr-olympic-white-885978118212",
+    "name": "Fender Standard Telecaster LR Olympic White",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/734663_1_71fa.jpg?store=nume_es&image-type=image",
+    "price": 518.0,
+    "store": "Alteisa",
+    "stores": 12,
+    "median": 529.0,
+    "max": 566.0,
+    "next": 518.0,
+    "rows": [
+     [
+      "Alteisa",
+      518.0
+     ],
+     [
+      "Egitana",
+      518.0
+     ],
+     [
+      "Auvisa",
+      519.0
+     ],
+     [
+      "Musicopolix",
+      524.0
+     ],
+     [
+      "Nume Music",
+      529.0
+     ],
+     [
+      "MAT Guitars",
+      529.0
+     ],
+     [
+      "Pronorte",
+      529.0
+     ],
+     [
+      "Microfusa",
+      529.0
+     ],
+     [
+      "Alfasoni",
+      529.0
+     ],
+     [
+      "Session",
+      557.0
+     ],
+     [
+      "Music Store (eBay)",
+      557.0
+     ],
+     [
+      "Woodbrass",
+      566.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "sire-larry-carlton-h7-white-810046133453",
+    "name": "Sire Larry Carlton H7 White",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://drunkat.es/upload/productos/800x800/sire_h7-wh-white_1.jpg",
+    "price": 549.0,
+    "store": "Drunkat",
+    "stores": 10,
+    "median": 574.0,
+    "max": 641.0,
+    "next": 549.0,
+    "rows": [
+     [
+      "Drunkat",
+      549.0
+     ],
+     [
+      "Musicsales",
+      549.0
+     ],
+     [
+      "Auvisa",
+      549.0
+     ],
+     [
+      "Alfasoni",
+      555.0
+     ],
+     [
+      "Alteisa",
+      555.0
+     ],
+     [
+      "MAT Guitars",
+      574.0
+     ],
+     [
+      "Musicopolix",
+      574.4
+     ],
+     [
+      "Partitura",
+      640.19
+     ],
+     [
+      "Pronorte",
+      641.0
+     ],
+     [
+      "Woodbrass",
+      641.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "ltd-kh-202-black-840248009829",
+    "name": "LTD KH-202 Black",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/4/646819JPG_1_6050.jpg?store=nume_es&image-type=image",
+    "price": 570.0,
+    "store": "Alfasoni",
+    "stores": 10,
+    "median": 649.0,
+    "max": 685.0,
+    "next": 570.0,
+    "rows": [
+     [
+      "Alfasoni",
+      570.0
+     ],
+     [
+      "Drunkat",
+      570.0
+     ],
+     [
+      "Alteisa",
+      576.77
+     ],
+     [
+      "Auvisa",
+      599.0
+     ],
+     [
+      "MAT Guitars",
+      647.0
+     ],
+     [
+      "Session",
+      649.0
+     ],
+     [
+      "Pronorte",
+      649.0
+     ],
+     [
+      "Woodbrass",
+      649.0
+     ],
+     [
+      "Nume Music",
+      649.78
+     ],
+     [
+      "Musicopolix",
+      685.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "yamaha-revstar-standard-rss02t-black-4957812675130",
+    "name": "Yamaha Revstar Standard RSS02T Black",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/666357_5da1.jpg?store=nume_es&image-type=image",
+    "price": 627.0,
+    "store": "Alteisa",
+    "stores": 10,
+    "median": 729.0,
+    "max": 822.53,
+    "next": 695.0,
+    "rows": [
+     [
+      "Alteisa",
+      627.0
+     ],
+     [
+      "Auvisa",
+      695.0
+     ],
+     [
+      "Musical San Francisco",
+      699.0
+     ],
+     [
+      "Session",
+      718.0
+     ],
+     [
+      "Woodbrass",
+      729.0
+     ],
+     [
+      "Egitana",
+      729.0
+     ],
+     [
+      "Thomann",
+      729.0
+     ],
+     [
+      "MAT Guitars",
+      786.0
+     ],
+     [
+      "Nume Music",
+      805.62
+     ],
+     [
+      "Hazen",
+      822.53
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "prs-se-silver-sky-lauren-green-825362248347",
+    "name": "PRS SE Silver Sky Lauren Green",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/738358_b173.jpg?store=nume_es&image-type=image",
+    "price": 749.0,
+    "store": "Nume Music",
+    "stores": 11,
+    "median": 809.0,
+    "max": 948.0,
+    "next": 749.0,
+    "rows": [
+     [
+      "Nume Music",
+      749.0
+     ],
+     [
+      "Session",
+      749.0
+     ],
+     [
+      "Pronorte",
+      749.0
+     ],
+     [
+      "Woodbrass",
+      749.0
+     ],
+     [
+      "Auvisa",
+      749.0
+     ],
+     [
+      "Microfusa",
+      749.0
+     ],
+     [
+      "MAT Guitars",
+      869.0
+     ],
+     [
+      "Musical San Francisco",
+      894.02
+     ],
+     [
+      "Egitana",
+      925.0
+     ],
+     [
+      "Alteisa",
+      925.4
+     ],
+     [
+      "Drunkat",
+      948.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   }
+  ],
+  "caption": "🎸 5 eléctricas de 500 € a 750 €: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n1️⃣ Fender Standard Telecaster LR Olympic White: 518 € en Alteisa\n2️⃣ Sire Larry Carlton H7 White: 549 € en Drunkat\n3️⃣ LTD KH-202 Black: 570 € en Alfasoni\n4️⃣ Yamaha Revstar Standard RSS02T Black: 627 € en Alteisa\n5️⃣ PRS SE Silver Sky Lauren Green: 749 € en Nume Music\n\n¿Con cuál te quedas? Te leemos en comentarios 💬\n🔎 Compara precios en guitle.com (enlace en la bio). Precios del 3 de noviembre.\n\n#guitarra #guitarraelectrica #guitarristas #comprarguitarra #fender #sire #ltd #yamaha #prs"
+ },
+ "stories": [
+  {
+   "slug": "sire-q3-tobacco-sunburst-810187571022",
+   "name": "Sire Q3 Tobacco Sunburst",
+   "brand": "Sire",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/735291_eda3.jpg?store=nume_es&image-type=image",
+   "price": 339.0,
+   "store": "Pronorte",
+   "stores": 8,
+   "median": 410.12,
+   "max": 435.0,
+   "next": 339.0,
+   "rows": [
+    [
+     "Pronorte",
+     339.0
+    ],
+    [
+     "Musicsales",
+     339.0
+    ],
+    [
+     "Nume Music",
+     339.01
+    ],
+    [
+     "Woodbrass",
+     349.0
+    ],
+    [
+     "Musical San Francisco",
+     410.12
+    ],
+    [
+     "Auvisa",
+     429.0
+    ],
+    [
+     "MAT Guitars",
+     435.0
+    ],
+    [
+     "Alteisa",
+     435.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 10 % por debajo de su media",
+   "pct": 10,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "mooer-gtrs-sl810-brown-burst-6971889222927",
+   "name": "Mooer Gtrs SL810 Brown Burst",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/1/0/1005399_1_1_cf3e.jpg?store=nume_es&image-type=image",
+   "price": 401.28,
+   "store": "Nume Music",
+   "stores": 4,
+   "median": 498.0,
+   "max": 498.0,
+   "next": 498.0,
+   "rows": [
+    [
+     "Nume Music",
+     401.28
+    ],
+    [
+     "Drunkat",
+     498.0
+    ],
+    [
+     "Musical San Francisco",
+     498.0
+    ],
+    [
+     "Thomann",
+     498.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 11 % por debajo de su media",
+   "pct": 11,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "yamaha-pacifica-311h-black-4957812500098",
+   "name": "Yamaha Pacifica 311H Black",
+   "brand": "Yamaha",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/0/4/047455_ab74.jpg?store=nume_es&image-type=image",
+   "price": 343.0,
+   "store": "Microfusa",
+   "stores": 6,
+   "median": 425.0,
+   "max": 449.03,
+   "next": 360.8,
+   "rows": [
+    [
+     "Microfusa",
+     343.0
+    ],
+    [
+     "Nume Music",
+     360.8
+    ],
+    [
+     "Woodbrass",
+     425.0
+    ],
+    [
+     "Thomann",
+     425.0
+    ],
+    [
+     "MAT Guitars",
+     429.0
+    ],
+    [
+     "Hazen",
+     449.03
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 8 % por debajo de su media",
+   "pct": 8,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}

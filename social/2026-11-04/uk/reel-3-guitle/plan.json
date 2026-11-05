@@ -1,0 +1,83 @@
+{
+ "fecha": "4 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "guitle",
+  "topic": "misma",
+  "slides": [
+   {
+    "hook": "Did you know?",
+    "title": "The same guitar can cost a lot more depending on the shop"
+   },
+   {
+    "title": "ESP LTD EC-256 Blk",
+    "size": 76,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Reidys",
+       499.0
+      ],
+      [
+       "Guitars Pedals Amps & Stuff",
+       562.0
+      ],
+      [
+       "Project Music",
+       594.0
+      ],
+      [
+       "Andertons",
+       649.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "£150 difference",
+    "sub": "Compare before you buy",
+    "size": 130
+   }
+  ]
+ }
+}

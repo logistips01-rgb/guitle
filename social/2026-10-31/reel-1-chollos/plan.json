@@ -1,0 +1,179 @@
+{
+ "fecha": "31 de octubre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
+    "name": "LTD SN-200HT Charcoal Metallic Satin",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/662347JPG_1_ec04.jpg?store=nume_es&image-type=image",
+    "price": 349.0,
+    "store": "Auvisa",
+    "stores": 7,
+    "median": 489.0,
+    "max": 579.0,
+    "next": 489.0,
+    "rows": [
+     [
+      "Auvisa",
+      349.0
+     ],
+     [
+      "Nume Music",
+      489.0
+     ],
+     [
+      "Alfasoni",
+      489.0
+     ],
+     [
+      "MAT Guitars",
+      489.0
+     ],
+     [
+      "Drunkat",
+      489.0
+     ],
+     [
+      "Alteisa",
+      489.0
+     ],
+     [
+      "Pronorte",
+      579.0
+     ]
+    ],
+    "pvp": null,
+    "why": "140 € menos que en cualquier otra tienda",
+    "pct": 29,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sire-x5-trans-blue-810046138984",
+    "name": "Sire X5 Trans Blue",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/707091_2a73.jpg?store=nume_es&image-type=image",
+    "price": 339.0,
+    "store": "Woodbrass",
+    "stores": 6,
+    "median": 466.0,
+    "max": 537.0,
+    "next": 465.0,
+    "rows": [
+     [
+      "Woodbrass",
+      339.0
+     ],
+     [
+      "Musicopolix",
+      465.0
+     ],
+     [
+      "Auvisa",
+      465.0
+     ],
+     [
+      "Nume Music",
+      466.0
+     ],
+     [
+      "MAT Guitars",
+      481.0
+     ],
+     [
+      "Pronorte",
+      537.0
+     ]
+    ],
+    "pvp": null,
+    "why": "126 € menos que en cualquier otra tienda",
+    "pct": 27,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "alvarez-aed66-ce-armrest-elite-677523002097",
+    "name": "Alvarez AED66 CE Armrest Elite",
+    "brand": "Alvarez",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/706333_ff0d.jpg?store=nume_es&image-type=image",
+    "price": 649.0,
+    "store": "Pronorte",
+    "stores": 5,
+    "median": 774.4,
+    "max": 775.0,
+    "next": 695.95,
+    "rows": [
+     [
+      "Pronorte",
+      649.0
+     ],
+     [
+      "Musicopolix",
+      695.95
+     ],
+     [
+      "Nume Music",
+      774.4
+     ],
+     [
+      "Alteisa",
+      774.4
+     ],
+     [
+      "Drunkat",
+      775.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 125 € menos que ayer",
+    "pct": 16,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "jose-gomez-c40-eq-8434418041904",
+    "name": "Jose Gomez C40-EQ",
+    "brand": "Jose Gomez",
+    "kind": "clasica",
+    "img": "https://drunkat.es/upload/productos/800x800/jose-gomez_c40-eq_1.png",
+    "price": 244.0,
+    "store": "Drunkat",
+    "stores": 4,
+    "median": 268.9,
+    "max": 275.0,
+    "next": 254.15,
+    "rows": [
+     [
+      "Drunkat",
+      244.0
+     ],
+     [
+      "Musical San Francisco",
+      254.15
+     ],
+     [
+      "Alteisa",
+      268.9
+     ],
+     [
+      "MAT Guitars",
+      275.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 8 € menos que ayer",
+    "pct": 3,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

@@ -1,0 +1,268 @@
+{
+ "fecha": "4 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 acústicas de 150 € a 300 €",
+  "hook": "Top por precio",
+  "picks": [
+   {
+    "slug": "cort-af510e-bks-8809383838550",
+    "name": "Cort AF510E Bks",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/6/061448_7fa7.jpg?store=nume_es&image-type=image",
+    "price": 187.0,
+    "store": "Alteisa",
+    "stores": 8,
+    "median": 209.0,
+    "max": 240.0,
+    "next": 205.0,
+    "rows": [
+     [
+      "Alteisa",
+      187.0
+     ],
+     [
+      "Auvisa",
+      205.0
+     ],
+     [
+      "Nume Music",
+      209.0
+     ],
+     [
+      "Alfasoni",
+      209.0
+     ],
+     [
+      "MAT Guitars",
+      209.0
+     ],
+     [
+      "Microfusa",
+      209.0
+     ],
+     [
+      "Musicopolix",
+      219.0
+     ],
+     [
+      "Pronorte",
+      240.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "gretsch-jim-dandy-wn-rex-burst-717669567194",
+    "name": "Gretsch Jim Dandy WN Rex Burst",
+    "brand": "Gretsch",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/707836_6f04.jpg?store=nume_es&image-type=image",
+    "price": 191.0,
+    "store": "Alteisa",
+    "stores": 7,
+    "median": 195.0,
+    "max": 212.0,
+    "next": 195.0,
+    "rows": [
+     [
+      "Alteisa",
+      191.0
+     ],
+     [
+      "Nume Music",
+      195.0
+     ],
+     [
+      "Woodbrass",
+      195.0
+     ],
+     [
+      "Madrid Musical Málaga 8",
+      195.0
+     ],
+     [
+      "Microfusa",
+      195.0
+     ],
+     [
+      "Session",
+      199.0
+     ],
+     [
+      "MAT Guitars",
+      212.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "ibanez-pf12mhce-opn-open-pore-natural-4515276967439",
+    "name": "Ibanez PF12MHCE-OPN Open Pore Natural",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/737835_1_b414.jpg?store=nume_es&image-type=image",
+    "price": 193.0,
+    "store": "Pronorte",
+    "stores": 11,
+    "median": 197.0,
+    "max": 207.2,
+    "next": 193.0,
+    "rows": [
+     [
+      "Pronorte",
+      193.0
+     ],
+     [
+      "Auvisa",
+      193.0
+     ],
+     [
+      "Nume Music",
+      193.38
+     ],
+     [
+      "Alfasoni",
+      193.38
+     ],
+     [
+      "Alteisa",
+      193.38
+     ],
+     [
+      "MAT Guitars",
+      196.0
+     ],
+     [
+      "Musicopolix",
+      198.0
+     ],
+     [
+      "Woodbrass",
+      198.0
+     ],
+     [
+      "Egitana",
+      198.0
+     ],
+     [
+      "Session",
+      199.0
+     ],
+     [
+      "Partitura",
+      207.2
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "fender-cp-60s-parlor-wn-sunburst-885978875665",
+    "name": "Fender CP-60S Parlor WN Sunburst",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/2/629939_1_a47d.jpg?store=nume_es&image-type=image",
+    "price": 199.0,
+    "store": "Nume Music",
+    "stores": 10,
+    "median": 219.0,
+    "max": 234.0,
+    "next": 199.0,
+    "rows": [
+     [
+      "Nume Music",
+      199.0
+     ],
+     [
+      "Session",
+      199.0
+     ],
+     [
+      "Woodbrass",
+      199.0
+     ],
+     [
+      "Auvisa",
+      199.0
+     ],
+     [
+      "Madrid Musical Málaga 8",
+      199.0
+     ],
+     [
+      "Alfasoni",
+      219.0
+     ],
+     [
+      "Microfusa",
+      219.0
+     ],
+     [
+      "Musicopolix",
+      220.21
+     ],
+     [
+      "Musical San Francisco",
+      225.0
+     ],
+     [
+      "Pronorte",
+      234.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "lag-t88a-tramontane-88-auditorium-natural-3700166363076",
+    "name": "LAG T88A Tramontane 88 Auditorium Natural",
+    "brand": "LAG",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/1/718732_1_1f0f.jpg?store=nume_es&image-type=image",
+    "price": 269.0,
+    "store": "Musicopolix",
+    "stores": 7,
+    "median": 319.0,
+    "max": 319.0,
+    "next": 289.45,
+    "rows": [
+     [
+      "Musicopolix",
+      269.0
+     ],
+     [
+      "Musical San Francisco",
+      289.45
+     ],
+     [
+      "Nume Music",
+      319.0
+     ],
+     [
+      "Alfasoni",
+      319.0
+     ],
+     [
+      "MAT Guitars",
+      319.0
+     ],
+     [
+      "Pronorte",
+      319.0
+     ],
+     [
+      "Woodbrass",
+      319.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   }
+  ]
+ },
+ "stories": []
+}

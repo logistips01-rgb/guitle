@@ -1,0 +1,69 @@
+{
+ "date": "2026-11-02",
+ "fecha": "2 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "mooer-msc10-pro-guitar-surf-green-rfgreenhtm",
+   "name": "Mooer MSC10 Pro Guitar Surf Green",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/593075.jpg",
+   "price": 171.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 214.0,
+   "max": 229.0,
+   "next": 199.0,
+   "rows": [
+    [
+     "Thomann",
+     171.0
+    ],
+    [
+     "Zecchini Musica",
+     199.0
+    ],
+    [
+     "Woodbrass",
+     229.0
+    ]
+   ],
+   "pvp": null,
+   "why": "28 € in meno che negli altri negozi",
+   "pct": 14,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Offerta del giorno: Mooer MSC10 Pro Guitar Surf Green\n💶 171 € da Thomann, confrontata in 3 negozi.\n📉 28 € in meno che negli altri negozi.\n\n🔎 Confronta il prezzo su guitle.com/it (link in bio).\nPrezzo del 2 novembre; può cambiare.\n\n#chitarra #chitarrista #offerte #sconti #chitarraelettrica #mooer"
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}

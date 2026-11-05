@@ -1,0 +1,167 @@
+{
+ "date": "2026-11-02",
+ "fecha": "2 November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "charvel-standard-series-san-dimas-style-2-sd2-hh-ht-satin-gray-tsatingray",
+   "name": "Charvel Standard Series San Dimas Style 2 SD2 HH HT Satin Gray",
+   "brand": "Charvel",
+   "kind": "electrica",
+   "img": "https://images.guitarguitar.co.uk/cdn/large/170/260109452439008f.jpg",
+   "price": 399.0,
+   "store": "guitarguitar",
+   "stores": 4,
+   "median": 499.0,
+   "max": 509.0,
+   "next": 499.0,
+   "rows": [
+    [
+     "guitarguitar",
+     399.0
+    ],
+    [
+     "Andertons",
+     499.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     499.0
+    ],
+    [
+     "A Strings",
+     509.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£100 less than any other shop",
+   "pct": 20,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal of the day: Charvel Standard Series San Dimas Style 2 SD2 HH HT Satin Gray\n💷 £399 at guitarguitar, compared across 4 shops.\n📉 £100 less than any other shop.\n\n🔎 Compare its price on guitle.com/uk (link in bio).\nPrice on 2 November; it may change.\n\n#guitar #guitarist #guitardeals #ukguitar #electricguitar #charvel"
+ },
+ "stories": [
+  {
+   "slug": "eastman-pch1-d-rosewood-natural-846940033971",
+   "name": "Eastman PCH1-D - Rosewood - Natural",
+   "brand": "Eastman",
+   "kind": "acustica",
+   "img": "https://images.platform2d.com/?uuid=6cfded01-1a2b-429f-b8a9-8c0b4b37e3a7&database=mow_1066&width=600&height=895&format=webp&canvas=1&background=000000&watermark=&noimage=wood&signature=eb7773dc0e8066a8d1ad2c0505c6b760",
+   "price": 299.0,
+   "store": "Peach Guitars",
+   "stores": 3,
+   "median": 369.0,
+   "max": 369.0,
+   "next": 369.0,
+   "rows": [
+    [
+     "Peach Guitars",
+     299.0
+    ],
+    [
+     "Project Music",
+     369.0
+    ],
+    [
+     "R Guitars",
+     369.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£70 less than any other shop",
+   "pct": 19,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "fender-cd-60s-dreadnought-natural-885978875757",
+   "name": "Fender CD-60S Dreadnought Natural",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/7axx44zi.png?v=1715680039",
+   "price": 154.0,
+   "store": "Reidys",
+   "stores": 3,
+   "median": 194.0,
+   "max": 199.0,
+   "next": 189.0,
+   "rows": [
+    [
+     "Reidys",
+     154.0
+    ],
+    [
+     "A Strings",
+     189.0
+    ],
+    [
+     "guitarguitar",
+     199.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£35 less than any other shop",
+   "pct": 19,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "yamaha-fg-ta-transacoustic-guitar-in-vintage-tint-intagetint",
+   "name": "Yamaha FG-TA TransAcoustic Guitar In Vintage Tint",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/download_24.jpg?v=1740054814",
+   "price": 529.0,
+   "store": "Fair Deal Music",
+   "stores": 3,
+   "median": 649.0,
+   "max": 649.0,
+   "next": 649.0,
+   "rows": [
+    [
+     "Fair Deal Music",
+     529.0
+    ],
+    [
+     "Bonners Music",
+     649.0
+    ],
+    [
+     "Reidys",
+     649.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£120 less than any other shop",
+   "pct": 18,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

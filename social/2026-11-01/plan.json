@@ -1,0 +1,408 @@
+{
+ "date": "2026-11-01",
+ "fecha": "1 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 clásicas de 150 € a 300 €",
+  "kind": "clasica",
+  "picks": [
+   {
+    "slug": "admira-juanita-8436032350110",
+    "name": "Admira Juanita",
+    "brand": "Admira",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/739901_5996.jpg?store=nume_es&image-type=image",
+    "price": 167.0,
+    "store": "Nume Music",
+    "stores": 14,
+    "median": 167.0,
+    "max": 189.0,
+    "next": 167.0,
+    "rows": [
+     [
+      "Nume Music",
+      167.0
+     ],
+     [
+      "Alfasoni",
+      167.0
+     ],
+     [
+      "MAT Guitars",
+      167.0
+     ],
+     [
+      "Drunkat",
+      167.0
+     ],
+     [
+      "Auvisa",
+      167.0
+     ],
+     [
+      "Musicsales",
+      167.0
+     ],
+     [
+      "Microfusa",
+      167.0
+     ],
+     [
+      "Neomúsica",
+      167.0
+     ],
+     [
+      "Alteisa",
+      167.0
+     ],
+     [
+      "Musical San Francisco",
+      167.0
+     ],
+     [
+      "Musicopolix",
+      169.0
+     ],
+     [
+      "Pronorte",
+      185.0
+     ],
+     [
+      "Musical Fusté",
+      185.0
+     ],
+     [
+      "Abrines Música",
+      189.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "yamaha-cg102-natural-4957812496971",
+    "name": "Yamaha CG102 Natural",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/662852_182c.jpg?store=nume_es&image-type=image",
+    "price": 215.0,
+    "store": "Musical San Francisco",
+    "stores": 6,
+    "median": 239.0,
+    "max": 244.0,
+    "next": 216.6,
+    "rows": [
+     [
+      "Musical San Francisco",
+      215.0
+     ],
+     [
+      "Nume Music",
+      216.6
+     ],
+     [
+      "Alfasoni",
+      216.6
+     ],
+     [
+      "MAT Guitars",
+      239.0
+     ],
+     [
+      "Egitana",
+      243.0
+     ],
+     [
+      "Woodbrass",
+      244.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "jose-torres-jtc-5s-8435017324948",
+    "name": "Jose Torres JTC-5S",
+    "brand": "Jose Torres",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/3/031839_8d76.jpg?store=nume_es&image-type=image",
+    "price": 219.0,
+    "store": "Alfasoni",
+    "stores": 6,
+    "median": 219.0,
+    "max": 279.0,
+    "next": 219.0,
+    "rows": [
+     [
+      "Alfasoni",
+      219.0
+     ],
+     [
+      "Musicopolix",
+      219.0
+     ],
+     [
+      "MAT Guitars",
+      219.0
+     ],
+     [
+      "Musicsales",
+      219.0
+     ],
+     [
+      "Nume Music",
+      239.0
+     ],
+     [
+      "Abrines Música",
+      279.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "ibanez-ga5tce-am-amber-high-gloss-4515110153073",
+    "name": "Ibanez GA5TCE-AM Amber High Gloss",
+    "brand": "Ibanez",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/656917_b908.jpg?store=nume_es&image-type=image",
+    "price": 222.0,
+    "store": "Alteisa",
+    "stores": 9,
+    "median": 225.14,
+    "max": 239.2,
+    "next": 222.0,
+    "rows": [
+     [
+      "Alteisa",
+      222.0
+     ],
+     [
+      "Egitana",
+      222.0
+     ],
+     [
+      "Musicopolix",
+      224.0
+     ],
+     [
+      "Pronorte",
+      225.0
+     ],
+     [
+      "Nume Music",
+      225.14
+     ],
+     [
+      "Alfasoni",
+      225.14
+     ],
+     [
+      "Woodbrass",
+      237.0
+     ],
+     [
+      "Session",
+      238.0
+     ],
+     [
+      "Partitura",
+      239.2
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "lag-occitania-70-oc70-3-3700166309852",
+    "name": "LAG Occitania 70 OC70-3",
+    "brand": "LAG",
+    "kind": "clasica",
+    "img": "https://alfasoni.com/510454-home_default/lag-occitania-70-oc70-3.jpg",
+    "price": 229.0,
+    "store": "Alfasoni",
+    "stores": 6,
+    "median": 239.0,
+    "max": 279.0,
+    "next": 229.0,
+    "rows": [
+     [
+      "Alfasoni",
+      229.0
+     ],
+     [
+      "MAT Guitars",
+      229.0
+     ],
+     [
+      "Pronorte",
+      229.0
+     ],
+     [
+      "Musicopolix",
+      239.0
+     ],
+     [
+      "Musical San Francisco",
+      253.16
+     ],
+     [
+      "Woodbrass",
+      279.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   }
+  ],
+  "caption": "🎸 5 clásicas de 150 € a 300 €: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n1️⃣ Admira Juanita: 167 € en Nume Music\n2️⃣ Yamaha CG102 Natural: 215 € en Musical San Francisco\n3️⃣ Jose Torres JTC-5S: 219 € en Alfasoni\n4️⃣ Ibanez GA5TCE-AM Amber High Gloss: 222 € en Alteisa\n5️⃣ LAG Occitania 70 OC70-3: 229 € en Alfasoni\n\n¿Con cuál te quedas? Te leemos en comentarios 💬\n🔎 Compara precios en guitle.com (enlace en la bio). Precios del 1 de noviembre.\n\n#guitarra #guitarraclasica #guitarristas #comprarguitarra #admira #yamaha #josetorres #ibanez #lag"
+ },
+ "stories": [
+  {
+   "slug": "sigma-000t-42-4260685050868",
+   "name": "Sigma 000T-42",
+   "brand": "Sigma",
+   "kind": "acustica",
+   "img": "https://drunkat.es/upload/productos/800x800/sigma_000t-42_1.jpg",
+   "price": 680.0,
+   "store": "Drunkat",
+   "stores": 5,
+   "median": 891.0,
+   "max": 903.0,
+   "next": 743.29,
+   "rows": [
+    [
+     "Drunkat",
+     680.0
+    ],
+    [
+     "Partitura",
+     743.29
+    ],
+    [
+     "Woodbrass",
+     879.0
+    ],
+    [
+     "Pronorte",
+     903.0
+    ],
+    [
+     "Madrid Musical Málaga 8",
+     903.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 155 € menos que ayer",
+   "pct": 19,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "ltd-ec-201-ft-black-719710620223",
+   "name": "LTD EC-201 FT Black",
+   "brand": "LTD",
+   "kind": "electrica",
+   "img": "https://drunkat.es/upload/productos/800x800/ltd_ec-201-ft_1.jpg",
+   "price": 463.0,
+   "store": "Drunkat",
+   "stores": 5,
+   "median": 549.0,
+   "max": 559.0,
+   "next": 541.0,
+   "rows": [
+    [
+     "Drunkat",
+     463.0
+    ],
+    [
+     "Alteisa",
+     541.0
+    ],
+    [
+     "Auvisa",
+     549.0
+    ],
+    [
+     "Musicsales",
+     549.0
+    ],
+    [
+     "Pronorte",
+     559.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 96 € menos que ayer",
+   "pct": 17,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "admira-virtuoso-electrificada-fishman-cutaway-8436032350264",
+   "name": "Admira Virtuoso Electrificada Fishman Cutaway",
+   "brand": "Admira",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/0/4/049626_1_2ba4.jpg?store=nume_es&image-type=image",
+   "price": 341.0,
+   "store": "Drunkat",
+   "stores": 12,
+   "median": 387.0,
+   "max": 430.0,
+   "next": 350.0,
+   "rows": [
+    [
+     "Drunkat",
+     341.0
+    ],
+    [
+     "Musicopolix",
+     350.0
+    ],
+    [
+     "Auvisa",
+     385.0
+    ],
+    [
+     "Alfasoni",
+     387.0
+    ],
+    [
+     "MAT Guitars",
+     387.0
+    ],
+    [
+     "Musicsales",
+     387.0
+    ],
+    [
+     "Microfusa",
+     387.0
+    ],
+    [
+     "Neomúsica",
+     387.0
+    ],
+    [
+     "Musical San Francisco",
+     387.0
+    ],
+    [
+     "Alteisa",
+     387.0
+    ],
+    [
+     "Nume Music",
+     387.01
+    ],
+    [
+     "Pronorte",
+     430.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 46 € menos que ayer",
+   "pct": 12,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}

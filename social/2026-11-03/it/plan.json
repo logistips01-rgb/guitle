@@ -1,0 +1,194 @@
+{
+ "date": "2026-11-03",
+ "fecha": "3 novembre",
+ "post": {
+  "type": "top",
+  "title": "4 chitarre elettriche da 500 € a 750 €",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "ibanez-rg470ahm-bmt-0ahmbmthtm",
+    "name": "Ibanez RG470AHM-BMT",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/581705.jpg",
+    "price": 521.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 535.5,
+    "max": 541.0,
+    "next": 530.0,
+    "rows": [
+     [
+      "Thomann",
+      521.0
+     ],
+     [
+      "Woodbrass",
+      530.0
+     ],
+     [
+      "Di Santo Musica",
+      541.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "fender-standard-stratocaster-aqua-marine-metallic-chitarra-elettrica-a-21-tasti-885978117925",
+    "name": "Fender Standard Stratocaster Aqua Marine Metallic Chitarra elettrica a 21 Tasti",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.globalnetshop.it/cdn/shop/files/01-0266240560_1024x.jpg?v=1784903256",
+    "price": 525.0,
+    "store": "Global Net Shop",
+    "stores": 3,
+    "median": 551.5,
+    "max": 555.0,
+    "next": 548.0,
+    "rows": [
+     [
+      "Global Net Shop",
+      525.0
+     ],
+     [
+      "Woodbrass",
+      548.0
+     ],
+     [
+      "Thomann",
+      555.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "ltd-ec-eclipse-256-black-840248027137",
+    "name": "LTD Ec Eclipse 256 Black",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://woodbrass.it/cdn/shop/files/94c93dc34bdcb712c8fe3b387a7d83f9c88ce7fa_GES_EC256_BLK.png?height=1200&pad_color=ffffff&v=1793641617&width=1200",
+    "price": 549.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 574.0,
+    "max": 589.0,
+    "next": 559.0,
+    "rows": [
+     [
+      "Woodbrass",
+      549.0
+     ],
+     [
+      "Zecchini Musica",
+      559.0
+     ],
+     [
+      "Guitar Shop",
+      589.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "yamaha-revstar-standard-rss20-vintage-white-ss20vwhtml",
+    "name": "Yamaha Revstar Standard RSS20 vintage white",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.cavallimusica.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/r/e/revstarbianca3000.jpg",
+    "price": 699.0,
+    "store": "Cavalli Musica",
+    "stores": 4,
+    "median": 749.0,
+    "max": 766.0,
+    "next": 729.0,
+    "rows": [
+     [
+      "Cavalli Musica",
+      699.0
+     ],
+     [
+      "S&M Strumenti",
+      729.0
+     ],
+     [
+      "Woodbrass",
+      749.0
+     ],
+     [
+      "Thomann",
+      766.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   }
+  ],
+  "caption": "🎸 4 chitarre elettriche da 500 € a 750 €: le più vendute nei negozi, con il miglior prezzo di oggi 👇\n\n1️⃣ Ibanez RG470AHM-BMT: 521 € da Thomann\n2️⃣ Fender Standard Stratocaster Aqua Marine Metallic Chitarra elettrica a 21 Tasti: 525 € da Global Net Shop\n3️⃣ LTD Ec Eclipse 256 Black: 549 € da Woodbrass\n4️⃣ Yamaha Revstar Standard RSS20 vintage white: 699 € da Cavalli Musica\n\nQuale scegli? Diccelo nei commenti 💬\n🔎 Confronta i prezzi su guitle.com/it (link in bio). Prezzi del 3 novembre.\n\n#chitarra #chitarrista #offerte #sconti #chitarraelettrica #ibanez #fender #ltd #yamaha"
+ },
+ "stories": [
+  {
+   "slug": "mooer-msc10-elite-fiesta-red-c10efrhtml",
+   "name": "Mooer MSC10 Elite Fiesta Red",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://www.cavallimusica.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/m/s/msc10efr-p.jpg",
+   "price": 179.0,
+   "store": "Cavalli Musica",
+   "stores": 3,
+   "median": 219.0,
+   "max": 239.0,
+   "next": 199.0,
+   "rows": [
+    [
+     "Cavalli Musica",
+     179.0
+    ],
+    [
+     "Zecchini Musica",
+     199.0
+    ],
+    [
+     "Woodbrass",
+     239.0
+    ]
+   ],
+   "pvp": null,
+   "why": "20 € in meno che negli altri negozi",
+   "pct": 10,
+   "photo": "chollo-1.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}

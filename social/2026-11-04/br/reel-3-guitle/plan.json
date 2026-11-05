@@ -1,0 +1,83 @@
+{
+ "fecha": "4 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "guitle",
+  "topic": "misma",
+  "slides": [
+   {
+    "hook": "Você sabia?",
+    "title": "A mesma guitarra pode custar bem mais dependendo da loja"
+   },
+   {
+    "title": "Takamine GD71CE & TK-40D",
+    "size": 76,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Akustica Musical",
+       4221.0
+      ],
+      [
+       "Mundomax",
+       4769.1
+      ],
+      [
+       "Ponto do Músico",
+       4930.0
+      ],
+      [
+       "Megasom",
+       5599.9
+      ]
+     ]
+    }
+   },
+   {
+    "title": "R$ 1.378,90 de diferença",
+    "sub": "Compare antes de comprar",
+    "size": 130
+   }
+  ]
+ }
+}

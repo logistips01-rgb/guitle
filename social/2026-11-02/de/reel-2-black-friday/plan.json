@@ -1,0 +1,112 @@
+{
+ "fecha": "2. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "bf",
+  "days": 25,
+  "deal": {
+   "slug": "ibanez-gio-grg121dx-bkf-e-gitarre-4515276693444",
+   "name": "Ibanez GIO GRG121DX-BKF E-Gitarre",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://imm-professional.de/media/image/product/132685/lg/ibanez-gio-grg121dx-bkf.jpg",
+   "price": 216.0,
+   "store": "IMM Professional",
+   "stores": 12,
+   "median": 239.0,
+   "max": 299.0,
+   "next": 217.0,
+   "rows": [
+    [
+     "IMM Professional",
+     216.0
+    ],
+    [
+     "Session",
+     217.0
+    ],
+    [
+     "Thomann",
+     217.0
+    ],
+    [
+     "Soundland",
+     219.0
+    ],
+    [
+     "Woodbrass",
+     227.0
+    ],
+    [
+     "Music Town",
+     239.0
+    ],
+    [
+     "Musikhaus Markstein",
+     239.0
+    ],
+    [
+     "Shop2Rock",
+     247.0
+    ],
+    [
+     "Musikhaus Lange",
+     249.0
+    ],
+    [
+     "Musik Dressler",
+     249.0
+    ],
+    [
+     "Musikhaus am Dornbusch",
+     249.0
+    ],
+    [
+     "Action Music",
+     299.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "fecha": "2 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "fender-player-ii-stratocaster-hialeah-yellow-885978109333",
+    "name": "Fender Player II Stratocaster Hialeah Yellow",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://hurricanemusic.fr/160802-home_default/fender-player-ii-stratocaster-hialeah-yellow.webp",
+    "price": 729.0,
+    "store": "Hurricane Music",
+    "stores": 3,
+    "median": 899.0,
+    "max": 929.0,
+    "next": 869.0,
+    "rows": [
+     [
+      "Hurricane Music",
+      729.0
+     ],
+     [
+      "Scotto Musique",
+      869.0
+     ],
+     [
+      "Music 3000",
+      929.0
+     ]
+    ],
+    "pvp": null,
+    "why": "140 € de moins que dans les autres magasins",
+    "pct": 16,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "squier-stratocaster-classic-vibe-lrl-olympic-white-885978064311",
+    "name": "Squier Stratocaster Classic Vibe Lrl Olympic White",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/9eb2b2cde2d7da4ae7dd118fa0a3929ffb83fd62_FMIC_0374020501.jpg?height=1200&pad_color=ffffff&v=1792552080&width=1200",
+    "price": 400.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 477.0,
+    "max": 479.0,
+    "next": 475.0,
+    "rows": [
+     [
+      "Woodbrass",
+      400.0
+     ],
+     [
+      "Hurricane Music",
+      475.0
+     ],
+     [
+      "Scotto Musique",
+      479.0
+     ]
+    ],
+    "pvp": null,
+    "why": "75 € de moins que dans les autres magasins",
+    "pct": 16,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "sigma-dm-sg5-serie-sg-dmsg5sigma",
+    "name": "Sigma DM-SG5 Serie SG",
+    "brand": "Sigma",
+    "kind": "acustica",
+    "img": "https://seveneant.com/wp-content/uploads/2024/02/sigma-dm-sg5-serie-sg-2.jpeg",
+    "price": 699.0,
+    "store": "Sévénéant Musique",
+    "stores": 5,
+    "median": 879.0,
+    "max": 895.0,
+    "next": 879.0,
+    "rows": [
+     [
+      "Sévénéant Musique",
+      699.0
+     ],
+     [
+      "Woodbrass",
+      879.0
+     ],
+     [
+      "Hurricane Music",
+      879.0
+     ],
+     [
+      "Music 3000",
+      879.0
+     ],
+     [
+      "Scotto Musique",
+      895.0
+     ]
+    ],
+    "pvp": null,
+    "why": "180 € de moins que dans les autres magasins",
+    "pct": 20,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

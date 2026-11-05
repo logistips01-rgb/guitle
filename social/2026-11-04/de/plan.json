@@ -1,0 +1,171 @@
+{
+ "date": "2026-11-04",
+ "fecha": "4. November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "epiphone-j-45-standard-ec-honey-burst-711106166476",
+   "name": "Epiphone J-45 Standard EC Honey Burst",
+   "brand": "Epiphone",
+   "kind": "acustica",
+   "img": "https://www.session.de/media/ed/82/96/1772024208/epiphone-j-45-standard-ec-honey-burst.webp?ts=1772024208",
+   "price": 667.0,
+   "store": "Session",
+   "stores": 3,
+   "median": 874.0,
+   "max": 899.0,
+   "next": 849.0,
+   "rows": [
+    [
+     "Session",
+     667.0
+    ],
+    [
+     "Zoundhouse",
+     849.0
+    ],
+    [
+     "Woodbrass",
+     899.0
+    ]
+   ],
+   "pvp": null,
+   "why": "182 € günstiger als in allen anderen Shops",
+   "pct": 21,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal des Tages: Epiphone J-45 Standard EC Honey Burst\n💶 667 € bei Session, verglichen in 3 Shops.\n📉 182 € günstiger als in allen anderen Shops.\n\n🔎 Vergleiche den Preis auf guitle.com/de (Link in der Bio).\nPreis vom 4. November; kann sich ändern.\n\n#gitarre #gitarrist #angebote #deals #westerngitarre #epiphone"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-aad77m1e-oaw-ibanez-advanced-acoustic-aad-akustikgitarre-6-string-open-po-tiquewhite",
+   "name": "Ibanez AAD77M1E-OAW IBANEZ Advanced Acoustic AAD Akustikgitarre 6-String - Open Pore Antique White",
+   "brand": "Ibanez",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0641/5876/1131/files/a8e0c802-617b-4066-901e-933db88cd1bf.jpg?v=1770210805",
+   "price": 340.38,
+   "store": "Shop2Rock",
+   "stores": 5,
+   "median": 399.0,
+   "max": 399.0,
+   "next": 399.0,
+   "rows": [
+    [
+     "Shop2Rock",
+     340.38
+    ],
+    [
+     "Action Music",
+     399.0
+    ],
+    [
+     "Musikhaus Korn",
+     399.0
+    ],
+    [
+     "Musik Dressler",
+     399.0
+    ],
+    [
+     "Music Town",
+     399.0
+    ]
+   ],
+   "pvp": null,
+   "why": "58,62 € günstiger als in allen anderen Shops",
+   "pct": 15,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "martin-lx1e-westerngitarre-little-martin-bauform-fichte-massiv-mahagoni-hochdruc-729789507875",
+   "name": "Martin LX1E Westerngitarre – Little-Martin-Bauform, Fichte massiv, Mahagoni-Hochdrucklaminat, inkl. Tonabnehmer und Gigbag",
+   "brand": "Martin",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0063/3559/4578/files/0bbf95e5d292f6f053088f6d42153345_2.webp?v=1721384066",
+   "price": 597.0,
+   "store": "Musik Ebert",
+   "stores": 3,
+   "median": 699.0,
+   "max": 699.0,
+   "next": 699.0,
+   "rows": [
+    [
+     "Musik Ebert",
+     597.0
+    ],
+    [
+     "Woodbrass",
+     699.0
+    ],
+    [
+     "Zoundhouse",
+     699.0
+    ]
+   ],
+   "pvp": null,
+   "why": "102 € günstiger als in allen anderen Shops",
+   "pct": 15,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "gretsch-streamliner-jet-lrl-gunmetal-885978721757",
+   "name": "Gretsch Streamliner Jet LRL Gunmetal",
+   "brand": "Gretsch",
+   "kind": "electrica",
+   "img": "https://www.session.de/media/77/42/72/1751543385/gretsch-streamliner-jet-lrl-gunmetal-05.webp?ts=1751543385",
+   "price": 339.0,
+   "store": "Session",
+   "stores": 3,
+   "median": 403.0,
+   "max": 419.0,
+   "next": 387.0,
+   "rows": [
+    [
+     "Session",
+     339.0
+    ],
+    [
+     "Woodbrass",
+     387.0
+    ],
+    [
+     "Musikhaus Korn",
+     419.0
+    ]
+   ],
+   "pvp": null,
+   "why": "48 € günstiger als in allen anderen Shops",
+   "pct": 12,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

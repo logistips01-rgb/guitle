@@ -1,0 +1,235 @@
+{
+ "fecha": "4. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "5 Westerngitarren unter 300 €",
+  "hook": "Top des Tages",
+  "picks": [
+   {
+    "slug": "yamaha-f400-natur-satiniert-4957812676212",
+    "name": "Yamaha F400 Natur satiniert",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://woodbrass.de/cdn/shop/files/64c1e7feaba56b4e16edf55d454e67341708591d_YAMAHA_VEK4340.jpg?height=1200&pad_color=ffffff&v=1793113750&width=1200",
+    "price": 150.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 156.0,
+    "max": 159.0,
+    "next": 153.0,
+    "rows": [
+     [
+      "Woodbrass",
+      150.0
+     ],
+     [
+      "Musikhaus Korn",
+      153.0
+     ],
+     [
+      "Musik Ebert",
+      159.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "fender-california-standard-redondo-ce-ipg-frd-885978679720",
+    "name": "Fender California Standard Redondo CE IPG FRD",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://www.session.de/media/72/e1/ed/1749572241/fender-california-standard-redondo-ce-ipg-frd.webp?ts=1749572241",
+    "price": 195.0,
+    "store": "Session",
+    "stores": 5,
+    "median": 222.0,
+    "max": 239.0,
+    "next": 205.0,
+    "rows": [
+     [
+      "Session",
+      195.0
+     ],
+     [
+      "Woodbrass",
+      205.0
+     ],
+     [
+      "Zoundhouse",
+      215.0
+     ],
+     [
+      "Shop2Rock",
+      229.0
+     ],
+     [
+      "Musikhaus Markstein",
+      239.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "ibanez-aw54-opn-4515276639039",
+    "name": "Ibanez AW54-OPN",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.session.de/media/a1/aa/c0/1662743228/Ibanez_AW54-OPN_10010987-0.jpg?ts=1662743228",
+    "price": 225.0,
+    "store": "Session",
+    "stores": 9,
+    "median": 254.0,
+    "max": 289.0,
+    "next": 225.0,
+    "rows": [
+     [
+      "Session",
+      225.0
+     ],
+     [
+      "Musikhaus Markstein",
+      225.0
+     ],
+     [
+      "Thomann",
+      225.0
+     ],
+     [
+      "Woodbrass",
+      236.0
+     ],
+     [
+      "Music Town",
+      249.0
+     ],
+     [
+      "Shop2Rock",
+      259.0
+     ],
+     [
+      "Musik Beck",
+      269.0
+     ],
+     [
+      "Musikhaus Lange",
+      289.0
+     ],
+     [
+      "Musik Dressler",
+      289.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "cort-luce-l60-natural-glossy-gloss-8809817985348",
+    "name": "Cort Luce L60 Natural Glossy Gloss",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://woodbrass.de/cdn/shop/files/dc99470ae10b05605b916bea263b099cb7bb7ca5_SAICO_L60NAT.jpg?height=1200&pad_color=ffffff&v=1792529105&width=1200",
+    "price": 235.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 239.0,
+    "max": 239.0,
+    "next": 239.0,
+    "rows": [
+     [
+      "Woodbrass",
+      235.0
+     ],
+     [
+      "Session",
+      239.0
+     ],
+     [
+      "Musikhaus Korn",
+      239.0
+     ],
+     [
+      "Musikhaus Zölch",
+      239.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "lag-westerngitarre-tramontane-t70a-nat-3700166371842",
+    "name": "LAG Westerngitarre Tramontane T70A NAT",
+    "brand": "LAG",
+    "kind": "acustica",
+    "img": "https://www.musik-dressler.de/$WS/musik-dressler/websale8_shop-musik-dressler/produkte/medien/bilder/normal/LGT70ANAT02.jpg",
+    "price": 249.0,
+    "store": "Musik Dressler",
+    "stores": 4,
+    "median": 258.0,
+    "max": 279.0,
+    "next": 249.0,
+    "rows": [
+     [
+      "Musik Dressler",
+      249.0
+     ],
+     [
+      "Musik Ebert",
+      249.0
+     ],
+     [
+      "Shop2Rock",
+      258.0
+     ],
+     [
+      "Woodbrass",
+      279.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   }
+  ]
+ }
+}

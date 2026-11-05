@@ -1,0 +1,188 @@
+{
+ "fecha": "2. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "schecter-c-6-pro-charcoal-burst-815447025949",
+    "name": "Schecter C-6 Pro Charcoal Burst",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://woodbrass.de/cdn/shop/files/525c2a8f8adaa42b4bcfb12bc0eb3edd17e59df9_HTD_SCH_C_6PRO_CHBU.jpg?height=1200&pad_color=ffffff&v=1792518389&width=1200",
+    "price": 732.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 927.5,
+    "max": 956.0,
+    "next": 899.0,
+    "rows": [
+     [
+      "Woodbrass",
+      732.0
+     ],
+     [
+      "Session",
+      899.0
+     ],
+     [
+      "Shop2Rock",
+      956.0
+     ]
+    ],
+    "pvp": null,
+    "why": "167 € günstiger als in allen anderen Shops",
+    "pct": 19,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "squier-classic-vibe-70s-strat-ht-hss-lrl-owt-885978674527",
+    "name": "Squier Classic Vibe '70s Strat HT HSS LRL OWT",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.markstein.de/media/78/15/f4/1784566871/squier_classic_vibe_70s_strat_ht_hss_lrl_owt_00054054_1.jpg",
+    "price": 380.0,
+    "store": "Musikhaus Markstein",
+    "stores": 5,
+    "median": 455.0,
+    "max": 477.0,
+    "next": 455.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      380.0
+     ],
+     [
+      "Session",
+      455.0
+     ],
+     [
+      "Zoundhouse",
+      455.0
+     ],
+     [
+      "Thomann",
+      455.0
+     ],
+     [
+      "Woodbrass",
+      477.0
+     ]
+    ],
+    "pvp": null,
+    "why": "75 € günstiger als in allen anderen Shops",
+    "pct": 16,
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "ibanez-aam50ce-opn-advanced-auditorium-elektro-akustik-gitarre-open-pore-natural-4549763353559",
+    "name": "Ibanez AAM50CE-OPN Advanced Auditorium Elektro-Akustik-Gitarre, open pore natural",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/ibanez_aam50ceopn_1.jpg",
+    "price": 238.52,
+    "store": "Shop2Rock",
+    "stores": 6,
+    "median": 297.0,
+    "max": 349.0,
+    "next": 283.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      238.52
+     ],
+     [
+      "Session",
+      283.0
+     ],
+     [
+      "Musikhaus Markstein",
+      283.0
+     ],
+     [
+      "Woodbrass",
+      297.0
+     ],
+     [
+      "Music Town",
+      349.0
+     ],
+     [
+      "Musikhaus am Dornbusch",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "why": "44,48 € günstiger als in allen anderen Shops",
+    "pct": 16,
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-re238sn-bkt-38snbkthtm",
+    "name": "Ortega RE238SN-BKT",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/533671.jpg",
+    "price": 444.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 577.45,
+    "max": 599.9,
+    "next": 555.0,
+    "rows": [
+     [
+      "Thomann",
+      444.0
+     ],
+     [
+      "Musikhaus Markstein",
+      555.0
+     ],
+     [
+      "Musik Beck",
+      599.9
+     ]
+    ],
+    "pvp": null,
+    "why": "111 € günstiger als in allen anderen Shops",
+    "pct": 20,
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

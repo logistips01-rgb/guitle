@@ -1,0 +1,195 @@
+{
+ "fecha": "4 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "top",
+  "title": "5 acoustic guitars under £250",
+  "hook": "Today’s top",
+  "picks": [
+   {
+    "slug": "brunswick-bt200-travel-acoustic-guitar-tobacco-burst-5036678116267",
+    "name": "Brunswick BT200 Travel Acoustic Guitar, Tobacco Burst",
+    "brand": "Brunswick",
+    "kind": "acustica",
+    "img": "https://cdn11.bigcommerce.com/s-hvzya2q3vy/images/stencil/1280x1280/products/54732/161250/brubt200tb__63080.1747306267.jpg?c=1",
+    "price": 130.0,
+    "store": "Absolute Music",
+    "stores": 3,
+    "median": 151.0,
+    "max": 163.0,
+    "next": 139.0,
+    "rows": [
+     [
+      "Absolute Music",
+      130.0
+     ],
+     [
+      "Ness Music",
+      139.0
+     ],
+     [
+      "Millers Music",
+      163.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "yamaha-f400-acoustic-guitar-smokey-black-889025140805",
+    "name": "Yamaha F400 Acoustic Guitar, Smokey Black",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://cdn11.bigcommerce.com/s-hvzya2q3vy/images/stencil/1280x1280/products/58052/177395/yamgf400smb__41046.1788883541.jpg?c=1",
+    "price": 155.0,
+    "store": "Absolute Music",
+    "stores": 3,
+    "median": 155.0,
+    "max": 155.0,
+    "next": 155.0,
+    "rows": [
+     [
+      "Absolute Music",
+      155.0
+     ],
+     [
+      "Andertons",
+      155.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      155.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "chord-n6-dzb-nomad-series-grand-auditorium-electro-acoustic-deep-zebrano-5015972232293",
+    "name": "Chord N6-DZB Nomad Series Grand Auditorium Electro-Acoustic - Deep Zebrano",
+    "brand": "Chord",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/175224UK_CO1.jpg?v=1760455305",
+    "price": 169.0,
+    "store": "Reidys",
+    "stores": 3,
+    "median": 189.0,
+    "max": 199.0,
+    "next": 179.0,
+    "rows": [
+     [
+      "Reidys",
+      169.0
+     ],
+     [
+      "Ness Music",
+      179.0
+     ],
+     [
+      "Guitarbitz",
+      199.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "ibanez-pf1512-nt-f1512nthtm",
+    "name": "Ibanez PF1512-NT",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/325891.jpg",
+    "price": 190.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 222.25,
+    "max": 249.0,
+    "next": 195.5,
+    "rows": [
+     [
+      "Thomann",
+      190.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      195.5
+     ],
+     [
+      "guitarguitar",
+      249.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "cort-ga-medx-grand-regal-series-open-pore-acoustic-guitar-8809383831667",
+    "name": "Cort GA MEDX Grand Regal Series Open Pore Acoustic Guitar",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/0432/6024/8218/products/GAMEDX.png?v=1648124662",
+    "price": 192.0,
+    "store": "A Strings",
+    "stores": 3,
+    "median": 229.0,
+    "max": 239.0,
+    "next": 219.0,
+    "rows": [
+     [
+      "A Strings",
+      192.0
+     ],
+     [
+      "guitarguitar",
+      219.0
+     ],
+     [
+      "Reidys",
+      239.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   }
+  ]
+ }
+}

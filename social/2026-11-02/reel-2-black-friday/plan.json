@@ -1,0 +1,81 @@
+{
+ "fecha": "2 de noviembre",
+ "post": {
+  "type": "bf",
+  "days": 25,
+  "deal": {
+   "slug": "fender-standard-stratocaster-mn-olympic-white-885978117857",
+   "name": "Fender Standard Stratocaster MN Olympic White",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/734664_1_cdaa.jpg?store=nume_es&image-type=image",
+   "price": 495.0,
+   "store": "Egitana",
+   "stores": 14,
+   "median": 507.0,
+   "max": 577.0,
+   "next": 498.39,
+   "rows": [
+    [
+     "Egitana",
+     495.0
+    ],
+    [
+     "Alteisa",
+     498.39
+    ],
+    [
+     "Auvisa",
+     499.0
+    ],
+    [
+     "Pronorte",
+     505.0
+    ],
+    [
+     "Musical San Francisco",
+     505.0
+    ],
+    [
+     "Alfasoni",
+     505.0
+    ],
+    [
+     "Nume Music",
+     505.01
+    ],
+    [
+     "MAT Guitars",
+     507.0
+    ],
+    [
+     "Microfusa",
+     512.0
+    ],
+    [
+     "Musicopolix",
+     534.65
+    ],
+    [
+     "Drunkat",
+     535.0
+    ],
+    [
+     "Session",
+     569.0
+    ],
+    [
+     "Music Store (eBay)",
+     569.0
+    ],
+    [
+     "Woodbrass",
+     577.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ },
+ "stories": []
+}

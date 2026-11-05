@@ -1,0 +1,112 @@
+{
+ "date": "2026-10-31",
+ "fecha": "31 de octubre",
+ "post": null,
+ "stories": [
+  {
+   "slug": "sigma-000t-42-4260685050868",
+   "name": "Sigma 000T-42",
+   "brand": "Sigma",
+   "kind": "acustica",
+   "img": "https://drunkat.es/upload/productos/800x800/sigma_000t-42_1.jpg",
+   "price": 680.0,
+   "store": "Drunkat",
+   "stores": 5,
+   "median": 891.0,
+   "max": 903.0,
+   "next": 743.29,
+   "rows": [
+    [
+     "Drunkat",
+     680.0
+    ],
+    [
+     "Partitura",
+     743.29
+    ],
+    [
+     "Woodbrass",
+     879.0
+    ],
+    [
+     "Pronorte",
+     903.0
+    ],
+    [
+     "Madrid Musical Málaga 8",
+     903.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 155 € menos que ayer",
+   "pct": 19,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "jose-gomez-c40-eq-8434418041904",
+   "name": "Jose Gomez C40-EQ",
+   "brand": "Jose Gomez",
+   "kind": "clasica",
+   "img": "https://drunkat.es/upload/productos/800x800/jose-gomez_c40-eq_1.png",
+   "price": 244.0,
+   "store": "Drunkat",
+   "stores": 4,
+   "median": 268.9,
+   "max": 275.0,
+   "next": 254.15,
+   "rows": [
+    [
+     "Drunkat",
+     244.0
+    ],
+    [
+     "Musical San Francisco",
+     254.15
+    ],
+    [
+     "Alteisa",
+     268.9
+    ],
+    [
+     "MAT Guitars",
+     275.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 8 € menos que ayer",
+   "pct": 3,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "yamaha-cg192c-4957812472289",
+   "name": "Yamaha CG192C",
+   "brand": "Yamaha",
+   "kind": "clasica",
+   "img": "https://www.pronorte.es/_files/product/4461/image/guitarra-clasica-yamaha-cg192c.jpg",
+   "price": 565.0,
+   "store": "Musical San Francisco",
+   "stores": 3,
+   "median": 608.5,
+   "max": 649.0,
+   "next": 568.0,
+   "rows": [
+    [
+     "Musical San Francisco",
+     565.0
+    ],
+    [
+     "Alfasoni",
+     568.0
+    ],
+    [
+     "Woodbrass",
+     649.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 22 € menos que ayer",
+   "pct": 4,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}

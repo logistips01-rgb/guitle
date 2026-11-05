@@ -1,0 +1,196 @@
+{
+ "fecha": "1 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "esp-ltd-pheonix-200dx-red-burst-719710628939",
+    "name": "ESP LTD Pheonix-200DX Red Burst",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/10024036.jpg?v=1778598846",
+    "price": 405.0,
+    "store": "Reidys",
+    "stores": 4,
+    "median": 499.0,
+    "max": 499.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "Reidys",
+      405.0
+     ],
+     [
+      "Fair Deal Music",
+      499.0
+     ],
+     [
+      "Andertons",
+      499.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£94 less than any other shop",
+    "pct": 19,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "epiphone-les-paul-special-tv-yellow-premium-budget-electric-guitar-711106478296",
+    "name": "Epiphone Les Paul Special TV Yellow - Premium Budget Electric Guitar",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://images.platform2d.com/?uuid=40785e6d-f098-4476-a899-02a8a4a7aca2&database=mow_1066&width=600&height=895&format=webp&canvas=1&background=000000&watermark=&noimage=wood&signature=f607d5b6d63108e26d0871fabacff2d2",
+    "price": 319.99,
+    "store": "Peach Guitars",
+    "stores": 7,
+    "median": 424.0,
+    "max": 589.0,
+    "next": 379.0,
+    "rows": [
+     [
+      "Peach Guitars",
+      319.99
+     ],
+     [
+      "Bonners Music",
+      379.0
+     ],
+     [
+      "Project Music",
+      399.0
+     ],
+     [
+      "Thomann",
+      399.0
+     ],
+     [
+      "Music Bros",
+      449.0
+     ],
+     [
+      "A Strings",
+      469.0
+     ],
+     [
+      "Music Street",
+      589.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£59.01 less than any other shop",
+    "pct": 16,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "cort-ndx-baritone-natural-satin-acoustic-guitar-turalsatin",
+    "name": "Cort NDX Baritone Natural Satin - Acoustic Guitar",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://www.musicstreet.co.uk/cdn/shop/files/2450427-09.webp?v=1789163400&width=1920",
+    "price": 519.0,
+    "store": "Music Street",
+    "stores": 3,
+    "median": 649.0,
+    "max": 649.0,
+    "next": 649.0,
+    "rows": [
+     [
+      "Music Street",
+      519.0
+     ],
+     [
+      "guitarguitar",
+      649.0
+     ],
+     [
+      "Peach Guitars",
+      649.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£130 less than any other shop",
+    "pct": 20,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   },
+   {
+    "slug": "yamaha-cg102-classical-guitar-icalguitar",
+    "name": "Yamaha CG102 Classical Guitar",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://cdn.shopify.com/s/files/1/3005/0144/products/abrsm-music-theory-model-answers-2018-grades-1-to-8-25825885.jpg?v=1586193992",
+    "price": 170.0,
+    "store": "Sutton Music",
+    "stores": 5,
+    "median": 212.0,
+    "max": 219.0,
+    "next": 209.0,
+    "rows": [
+     [
+      "Sutton Music",
+      170.0
+     ],
+     [
+      "Music Street",
+      209.0
+     ],
+     [
+      "Parkland Music",
+      209.0
+     ],
+     [
+      "Bonners Music",
+      215.0
+     ],
+     [
+      "guitarguitar",
+      219.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£39 less than any other shop",
+    "pct": 19,
+    "photo": "g3-1.webp",
+    "label": "Classical"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

@@ -1,0 +1,152 @@
+{
+ "fecha": "4 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "yamaha-revstar-rss20-flash-green-shgreenhtm",
+    "name": "Yamaha Revstar RSS20 Flash Green",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/539407.jpg",
+    "price": 599.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 699.0,
+    "max": 699.0,
+    "next": 699.0,
+    "rows": [
+     [
+      "Thomann",
+      599.0
+     ],
+     [
+      "guitarguitar",
+      699.0
+     ],
+     [
+      "R Guitars",
+      699.0
+     ],
+     [
+      "Music Street",
+      699.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£100 less than any other shop",
+    "pct": 14,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "fender-player-ii-telecaster-hh-in-rallye-orange-llyeorange",
+    "name": "Fender Player II Telecaster HH in Rallye Orange",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://cdn11.bigcommerce.com/s-4hc0jwsnnq/images/stencil/1280x1280/products/57941/407644/0140570530%2520%281%29__01501.1781707024.jpg?c=1",
+    "price": 639.0,
+    "store": "Andertons",
+    "stores": 6,
+    "median": 789.0,
+    "max": 789.0,
+    "next": 726.0,
+    "rows": [
+     [
+      "Andertons",
+      639.0
+     ],
+     [
+      "Peach Guitars",
+      726.0
+     ],
+     [
+      "guitarguitar",
+      749.0
+     ],
+     [
+      "Absolute Music",
+      789.0
+     ],
+     [
+      "A Strings",
+      789.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      789.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£87 less than any other shop",
+    "pct": 12,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "epiphone-j-45-ec-w-fishman-presys-ii-sitka-spruce-mahogany-aged-vintage-sunburst-711106045511",
+    "name": "Epiphone J-45 EC w/Fishman Presys II - Sitka Spruce & Mahogany - Aged Vintage Sunburst Gloss",
+    "brand": "Epiphone",
+    "kind": "acustica",
+    "img": "https://images.platform2d.com/?uuid=3e6f0bae-7d77-4927-b0a5-32f1045a4daa&database=mow_1066&width=600&height=895&format=webp&canvas=1&background=000000&watermark=&noimage=wood&signature=67944b108019b19c13cf87f824164d55",
+    "price": 639.99,
+    "store": "Peach Guitars",
+    "stores": 3,
+    "median": 749.0,
+    "max": 749.0,
+    "next": 749.0,
+    "rows": [
+     [
+      "Peach Guitars",
+      639.99
+     ],
+     [
+      "Music Street",
+      749.0
+     ],
+     [
+      "A Strings",
+      749.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£109.01 less than any other shop",
+    "pct": 15,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

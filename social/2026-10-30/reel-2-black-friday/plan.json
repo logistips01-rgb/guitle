@@ -1,0 +1,57 @@
+{
+ "fecha": "30 de octubre",
+ "post": {
+  "type": "bf",
+  "days": 28,
+  "deal": {
+   "slug": "ibanez-ga35tce-dvs-dark-violin-sunburst-high-gloss-4515110851634",
+   "name": "Ibanez GA35TCE-DVS Dark Violin Sunburst High Gloss",
+   "brand": "Ibanez",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/7/676674_aa04.jpg?store=nume_es&image-type=image",
+   "price": 296.0,
+   "store": "Egitana",
+   "stores": 8,
+   "median": 298.0,
+   "max": 355.0,
+   "next": 298.0,
+   "rows": [
+    [
+     "Egitana",
+     296.0
+    ],
+    [
+     "Nume Music",
+     298.0
+    ],
+    [
+     "Alfasoni",
+     298.0
+    ],
+    [
+     "Pronorte",
+     298.0
+    ],
+    [
+     "Auvisa",
+     298.0
+    ],
+    [
+     "MAT Guitars",
+     317.0
+    ],
+    [
+     "Musicopolix",
+     349.0
+    ],
+    [
+     "Session",
+     355.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ },
+ "stories": []
+}

@@ -1,0 +1,199 @@
+{
+ "date": "2026-11-04",
+ "fecha": "4 November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "squier-classic-vibe-70s-strat-hss-mn-black-885978064335",
+   "name": "Squier Classic Vibe 70s Strat HSS MN Black",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/qszwye4j.png?v=1716388696",
+   "price": 330.0,
+   "store": "Reidys",
+   "stores": 7,
+   "median": 399.0,
+   "max": 419.0,
+   "next": 379.0,
+   "rows": [
+    [
+     "Reidys",
+     330.0
+    ],
+    [
+     "A Strings",
+     379.0
+    ],
+    [
+     "guitarguitar",
+     399.0
+    ],
+    [
+     "Andertons",
+     399.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     399.0
+    ],
+    [
+     "Music Street",
+     419.0
+    ],
+    [
+     "Wunjo Guitars",
+     419.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£49 less than any other shop",
+   "pct": 13,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal of the day: Squier Classic Vibe 70s Strat HSS MN Black\n💷 £330 at Reidys, compared across 7 shops.\n📉 £49 less than any other shop.\n\n🔎 Compare its price on guitle.com/uk (link in bio).\nPrice on 4 November; it may change.\n\n#guitar #guitarist #guitardeals #ukguitar #electricguitar #squier"
+ },
+ "stories": [
+  {
+   "slug": "cort-ga-medx-grand-regal-series-mahogany-open-pore-acoustic-guitar-8809625364762",
+   "name": "Cort GA MEDX Grand Regal Series Mahogany Open Pore Acoustic Guitar",
+   "brand": "Cort",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0432/6024/8218/products/GAMEDXMOPmain_251a7c43-bd5c-4597-95f8-05bbf7394723.png?v=1648124667",
+   "price": 199.0,
+   "store": "A Strings",
+   "stores": 3,
+   "median": 244.0,
+   "max": 249.0,
+   "next": 239.0,
+   "rows": [
+    [
+     "A Strings",
+     199.0
+    ],
+    [
+     "Matchetts Music",
+     239.0
+    ],
+    [
+     "Reidys",
+     249.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£40 less than any other shop",
+   "pct": 17,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "seagull-merlin-mahogany-diatonic-fretted-dulcimer-623501039098",
+   "name": "Seagull Merlin Mahogany Diatonic Fretted Dulcimer",
+   "brand": "Seagull",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0432/6024/8218/products/125558-7vsj-vwb4-8g3a-uz64-9axf-img-27508-adc6bcfe.png?v=1597834544",
+   "price": 159.0,
+   "store": "A Strings",
+   "stores": 3,
+   "median": 204.0,
+   "max": 219.0,
+   "next": 189.0,
+   "rows": [
+    [
+     "A Strings",
+     159.0
+    ],
+    [
+     "Fair Deal Music",
+     189.0
+    ],
+    [
+     "Sutton Music",
+     219.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£30 less than any other shop",
+   "pct": 16,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "squier-cv-60s-strat-car-tratcarhtm",
+   "name": "Squier CV 60s Strat CAR",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/468420.jpg",
+   "price": 339.0,
+   "store": "Thomann",
+   "stores": 8,
+   "median": 399.0,
+   "max": 429.0,
+   "next": 379.0,
+   "rows": [
+    [
+     "Thomann",
+     339.0
+    ],
+    [
+     "Reidys",
+     379.0
+    ],
+    [
+     "guitarguitar",
+     399.0
+    ],
+    [
+     "Fair Deal Music",
+     399.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     399.0
+    ],
+    [
+     "Music Street",
+     419.0
+    ],
+    [
+     "Dawsons",
+     419.0
+    ],
+    [
+     "A Strings",
+     429.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£40 less than any other shop",
+   "pct": 11,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

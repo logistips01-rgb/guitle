@@ -1,0 +1,175 @@
+{
+ "fecha": "3 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "hagstrom-adina-blue-sky-7340071904269",
+    "name": "Hagstrom Adina Blue Sky",
+    "brand": "Hagstrom",
+    "kind": "electrica",
+    "img": "https://www.pronorte.es/_files/product/28693/image/guitarra-electrica-hagstrom-adina-blue-sky-1.jpg",
+    "price": 685.0,
+    "store": "Pronorte",
+    "stores": 5,
+    "median": 820.5,
+    "max": 828.98,
+    "next": 685.13,
+    "rows": [
+     [
+      "Pronorte",
+      685.0
+     ],
+     [
+      "Musical San Francisco",
+      685.13
+     ],
+     [
+      "Auvisa",
+      819.0
+     ],
+     [
+      "Woodbrass",
+      822.0
+     ],
+     [
+      "Musicsales",
+      828.98
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 6 % por debajo de su media",
+    "pct": 6,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sire-s3-new-gen-dark-navy-810187571626",
+    "name": "Sire S3 New Gen Dark Navy",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/735316_8622.jpg?store=nume_es&image-type=image",
+    "price": 349.0,
+    "store": "Woodbrass",
+    "stores": 9,
+    "median": 448.495,
+    "max": 448.99,
+    "next": 439.0,
+    "rows": [
+     [
+      "Woodbrass",
+      349.0
+     ],
+     [
+      "Auvisa",
+      439.0
+     ],
+     [
+      "Pronorte",
+      445.0
+     ],
+     [
+      "Musical San Francisco",
+      445.45
+     ],
+     [
+      "MAT Guitars",
+      448.0
+     ],
+     [
+      "Nume Music",
+      448.99
+     ],
+     [
+      "Musicopolix",
+      448.99
+     ],
+     [
+      "Drunkat",
+      448.99
+     ],
+     [
+      "Alteisa",
+      448.99
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 130 € menos que ayer",
+    "pct": 27,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "cort-cj-retro-vsm-w-bag-8809625361686",
+    "name": "Cort CJ Retro Vsm W/bag",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/4/747625_25b2.jpg?store=nume_es&image-type=image",
+    "price": 279.0,
+    "store": "Auvisa",
+    "stores": 4,
+    "median": 285.0,
+    "max": 347.0,
+    "next": 281.0,
+    "rows": [
+     [
+      "Auvisa",
+      279.0
+     ],
+     [
+      "Drunkat",
+      281.0
+     ],
+     [
+      "Nume Music",
+      285.0
+     ],
+     [
+      "Pronorte",
+      347.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 10 % por debajo de su media",
+    "pct": 10,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "alvarez-rc26-regent-814295015928",
+    "name": "Alvarez RC26 Regent",
+    "brand": "Alvarez",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/657962_2e32.jpg?store=nume_es&image-type=image",
+    "price": 218.0,
+    "store": "Alteisa",
+    "stores": 3,
+    "median": 242.005,
+    "max": 249.01,
+    "next": 235.0,
+    "rows": [
+     [
+      "Alteisa",
+      218.0
+     ],
+     [
+      "Pronorte",
+      235.0
+     ],
+     [
+      "Nume Music",
+      249.01
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 2 % por debajo de su media",
+    "pct": 2,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}
