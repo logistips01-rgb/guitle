@@ -3348,7 +3348,9 @@ def _parse_mx_shopify(soup, text):
 _MX_ACC = re.compile(r"(?:amplificador|afinador|atril|bafle|funda|estuche|cuerdas?|correa|pastilla|asiento|banco|soporte|cable"
                      r"|pedal|plumilla|puas?|capo|cejilla|gancho|repuesto|refacci|bocina|audifono|metodo|libro|tahali|clavij"
                      r"|puente|limpi|humidif|bajo|ukulele|violin|banjo|mandolina|teclado|bater|boton|perilla|selector|tarola"
-                     r"|platillo|bumper|cabezal|gabinete|mezcladora|microfono|aceite|cartera|termo)")
+                     r"|platillo|bumper|cabezal|gabinete|mezcladora|microfono|aceite|cartera|termo|combo|encordad|sordina|cuerda|kit"
+                     r"|organizador|lampara|playera|gorra|taza|llavero|stand|base|porta|adaptador|eliminador|fuente|bolsa)"
+                     r"|.*-para-(?:guitarra|guitarrista|bajo)")
 
 
 def _mx_pick(shopify=False, path=None):
