@@ -436,7 +436,6 @@ epiphone-940-efbcs-711106261409
 epiphone-940-egcs-s40300html
 epiphone-940-ehlcs-711106261492
 epiphone-940-ejccs-711106261522
-epiphone-940-ejumbo-o40301html
 epiphone-940-el0cs-s47972html
 epiphone-940-embcs-s72832html
 epiphone-940-enlpcs-s40302html

@@ -1658,7 +1658,7 @@ shure-sm137-42406167628
 shure-sm137-lc-c46041html
 shure-sm31fh-42406325745
 shure-sm35-tqg-42406325820
-shure-sm39-lm3-42406798754
+shure-sm39-microfono-diadema-42406798754
 shure-sm39-tqg-42406798785
 shure-sm57-lc-42406071819
 shure-sm57lce-e19268html
@@ -1726,8 +1726,8 @@ warm-audio-wa-19-nickel-850031640429
 warm-audio-wa-2ft-fen-tone-850031640689
 warm-audio-wa-44-850031640399
 warm-audio-wa-47f-850031640115
+warm-audio-wa-47jr-713541493124
 warm-audio-wa-47jr-black-860191002197
-warm-audio-wa-47jr-fet-condenser-microphone-713541493124
 warm-audio-wa-47jr-se-850031640788
 warm-audio-wa-47jr-se-black-850031640801
 warm-audio-wa-67-microphone-850016400604

@@ -58,12 +58,13 @@ ampeg-heritage-hsvt-810e-614252308991
 ampeg-heritage-svt-410hlf-614252307697
 ampeg-heritage-svt-cl-614252309127
 ampeg-micro-cl-bass-stack-220-240v-614252309165
-ampeg-micro-cl-stack-cabezal-bajo-614252309387
+ampeg-micro-cl-stack-614252309387
 ampeg-micro-cl-stack-lstackhtml
 ampeg-micro-vr-200w-bass-head-230v-614252308335
 ampeg-micro-vr-cabezal-y-pantalla-bajo-electrico-crovrhhtml
 ampeg-micro-vr-classic-614252308922
 ampeg-micro-vr-heu-cabezal-para-bajo-assamphtml
+ampeg-rb-112-rocket-bass-614252317153
 ampeg-rb-210-614252317269
 ampeg-rb108-361101html
 ampeg-rb110-361163html
@@ -79,7 +80,6 @@ ampeg-rocket-bass-rb-112-614252361248
 ampeg-rocket-bass-rb-115-614252361309
 ampeg-rocket-bass-rb-210-614252361361
 ampeg-rocket-bass-rb108-614252317054
-ampeg-rocket-bass-rb112-614252317153
 ampeg-svt-210av-classic-614252310574
 ampeg-svt-212av-classic-series-cabinet-614252308601
 ampeg-svt-212av-t212avhtml
