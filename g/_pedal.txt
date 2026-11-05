@@ -135,9 +135,9 @@ boss-ch-1-super-chorus-boss-legend-1990-orusbp3164
 boss-ch1-4957054015190
 boss-chorus-stereo-ch-1-sstereoch1
 boss-compressor-cp-1x-761294510049
-boss-cp-1x-compressor-r53708html
+boss-cp-1x-compressor-4957054510046
 boss-cp-1x-compressor-special-edition-itionp4480
-boss-cp1x-pedal-guitarra-4957054510046
+boss-cp1x-pedal-guitarra-itarrahtml
 boss-cs-3-4957054012854
 boss-cs3-pedal-compressor-guitarra-osscs3html
 boss-dc-2w-dimension-c-4957054513528
@@ -277,7 +277,7 @@ boss-os2-216603html
 boss-ph-3-pedal-guitarra-4957054053031
 boss-ph3-316662html
 boss-ps-6-harmonist-pitch-shifter-tricap4297
-boss-ps6-pedal-guitarra-4957054413293
+boss-ps6-4957054413293
 boss-pw-3-4957054507183
 boss-pw-3-wah-pedal-hpedalhtml
 boss-px-1-plugout-fx-4957054521578
@@ -347,7 +347,7 @@ boss-tu-3s-4957054508975
 boss-tu-3w-afinador-edicion-especial-waza-craft-made-in-japan-raftbp5141
 boss-tu-3w-waza-craft-4957054510459
 boss-tu-3w-waza-craft-pedal-guitarra-4957054508968
-boss-tu3-pedal-afinador-guitarra-osstu3html
+boss-tu3-328439html
 boss-vb2w-pedal-vibrato-waza-craft-4957054508654
 boss-ve-1-vocal-echo-4957054506889
 boss-ve-2-4957054504496
@@ -884,7 +884,7 @@ empress-effects-buffer-850040850185
 empress-effects-buffer-850040850192
 empress-effects-compressor-mkii-850040850208
 empress-effects-compressor-mkii-blue-ormkiiblue
-empress-effects-compressor-mkii-silver-850040850215
+empress-effects-compressor-mkii-silver-mkiisilver
 empress-effects-distortion-distortion
 empress-effects-drive-850040850451
 empress-effects-echosystem-850040850161
@@ -942,7 +942,7 @@ fender-bassman-reverb-717669940935
 fender-compugilist-compressor-distortion-885978054831
 fender-dual-marine-layer-reverb-885978429585
 fender-engager-boost-859789090258
-fender-engager-boost-pedal-guitarra-885978909025
+fender-engager-boost-pedal-885978909025
 fender-exp-2-expression-pedal-885978986583
 fender-full-moon-distortion-859789090326
 fender-full-moon-distortion-pedal-885978909032
@@ -1011,7 +1011,7 @@ foxgear-t7e-baby-vintage-echo-8057733069806
 fulltone-custom-shop-supa-wah-hopsupawah
 fulltone-full-drive-3-676891000599
 fulltone-fulldrive-2-v2-676891000841
-fulltone-mini-deja-vibe-mdv-3-676891000575
+fulltone-mdv-3-676891000575
 fulltone-ocd-ge-gold-limited-edition-605258521767
 fulltone-ocd-lux-763532367217
 fulltone-ocd-v2-gold-limited-edition-605258542939
@@ -1153,8 +1153,8 @@ j-rockett-univerb-851236004351
 jackson-audio-amp-mode-302128186131
 jackson-audio-asabi-600093087638
 jackson-audio-belle-starr-302128186124
+jackson-audio-bloom-midi-302128186087
 jackson-audio-bloom-v2-black-302128186117
-jackson-audio-bloom-v2-silver-302128186087
 jackson-audio-blossom-302128186148
 jackson-audio-broken-arrow-v2-midi-600093087560
 jackson-audio-fuzz-classic-modern-ssicmodern
@@ -1817,6 +1817,7 @@ mxr-m-109s-6-band-equalizer-silver-710137095625
 mxr-m-132-super-comp-p33631html
 mxr-m-135-smartgate-e34972html
 mxr-m-222-talk-box-710137062146
+mxr-m-228-dyna-comp-deluxe-710137101210
 mxr-m-236-super-badass-variac-fuzz-710137094932
 mxr-m-267-octavio-fuzz-710137118591
 mxr-m-280-vintage-bass-octave-710137110335
@@ -1902,7 +1903,6 @@ mxr-yjm308-yngwie-malmsteen-overdrive-710137137936
 mxr-yngwie-malmsteen-overdrive-red-eredp39097
 mxrm108s-ten-band-eq-pedal-guitarra-bandashtml
 mxrm196-ab-box-caja-ab-710137050914
-mxrm228-dyna-comp-deluxe-compresor-pedal-710137101210
 mxrm231-tap-split-trs-pedal-guitarra-710137135949
 mxrm235-smart-gate-pro-rack-puerta-ruido-710137024205
 mxrm249-super-badass-dynamic-overdrive-pedal-710137130364
