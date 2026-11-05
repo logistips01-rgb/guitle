@@ -969,6 +969,8 @@ def money(v, site):
     lang, dec = SITES[site]["lang"], f"{cents:02d}" if cents else ""
     if SITES[site]["cur"] == "GBP":
         return f"£{whole:,}" + (f".{dec}" if dec else "")
+    if SITES[site]["cur"] == "MXN":  # México: $12,999 (o $12,999.50)
+        return f"${whole:,}" + (f".{dec}" if dec else "")
     if SITES[site]["cur"] == "BRL":
         return f"R$\u00a0{whole:,}".replace(",", ".") + f",{cents:02d}"
     if SITES[site]["cur"] in CUR_AFTER:  # zlotys, coronas, florines…: "1 299 zł", "12 990 kr"

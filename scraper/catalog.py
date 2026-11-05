@@ -3332,6 +3332,63 @@ for _id, _name, _sm, _kw in [
     IE_SOURCES[_id] = _en_store(_name, _sm, "EUR", **_kw)
 
 
+# --- México: en pesos. Categorías y nombres en español (es_guitar_kind). Las Shopify, por su .json con ?currency=MXN;
+# Eusica, por el JSON-LD de la ficha (probada a mano; robots.txt la permite). Faly Music, no: rechaza al lector (403).
+MX_SOURCES = {}
+_parse_mx_shopify_base = _parse_shopify_json
+
+
+def _parse_mx_shopify(soup, text):
+    data = _parse_mx_shopify_base(soup, text)
+    if data.get("price") is not None and data.get("currency") in (None, "", "GBP"):
+        data["currency"] = "MXN"
+    return data
+
+
+_MX_ACC = re.compile(r"(?:amplificador|afinador|atril|bafle|funda|estuche|cuerdas?|correa|pastilla|asiento|banco|soporte|cable"
+                     r"|pedal|plumilla|puas?|capo|cejilla|gancho|repuesto|refacci|bocina|audifono|metodo|libro|tahali|clavij"
+                     r"|puente|limpi|humidif|bajo|ukulele|violin|banjo|mandolina|teclado|bater|boton|perilla|selector|tarola"
+                     r"|platillo|bumper|cabezal|gabinete|mezcladora|microfono|aceite|cartera|termo)")
+
+
+def _mx_pick(shopify=False, path=None):
+    def pick(u):
+        if shopify and not re.match(r"https?://[^/]+/products/[^/?#]+$", u):
+            return False
+        if path and not re.search(path, u):
+            return False
+        where = "/" + u.split("://", 1)[-1].split("/", 1)[-1]
+        if NOT_PRODUCT.search(where) or _GEN_NOT_PRODUCT.search(where) or re.search(r"-en/?$", u):  # "-en": copia en inglés
+            return False
+        slug = u.rstrip("/").rsplit("/", 1)[-1].lower()
+        if _MX_ACC.match(slug):  # accesorios con "guitarra" en el nombre ("atril-para-guitarra…"): no se leen
+            return False
+        return bool(path) or bool(_ES_PICK.search(slug)) or es_guitar_kind([], u, slug.replace("-", " ")) is not None
+    return pick
+
+
+def _mx_store(name, base, shopify=False, path=None, sitemap=None):
+    src = {"name": name, "sitemap": sitemap or f"{base}/sitemap.xml", "kind_url": es_guitar_kind,
+           "pick": _mx_pick(shopify, path), "shop": {"base": base, "path": path, "lang": "es+en", "shopify": shopify}}
+    if shopify:
+        src.update(page_url=_shopify_url("MXN"), parse=_parse_mx_shopify,
+                   sub=lambda l: bool(re.match(r"https?://[^/]+/sitemap_products_", l)))
+    else:
+        src["parse"] = _parse_en("MXN")
+    return src
+
+
+MX_SOURCES.update({
+    "veerkamp": _mx_store("Veerkamp", "https://veerkamponline.com", shopify=True),
+    "hermes": _mx_store("Hermes Music Club", "https://hermesmusicclub.mx", shopify=True),
+    "doris": _mx_store("Musicales Doris", "https://musicalesdoris.com", shopify=True),
+    "rocklab": _mx_store("The Rock Lab", "https://therocklab.mx", shopify=True),
+    "pepis": _mx_store("Pepis Music", "https://pepismusic.mx", shopify=True),
+    "eusica": _mx_store("Eusica", "https://eusica.mx",
+                        path=r"/productos/(?:guitarras/(?:guitarras_electricas|electroacusticas|martin|fender)|instrumentos/guitarras)/[^/]+$"),
+})
+
+
 # Gear4music: desde GitHub sus webs de cada país se leen sin problema (no desde el entorno de pruebas). Del sitemap,
 # solo el departamento de guitarras y bajos; la categoría sale del breadcrumb de la ficha (JSON-LD con precio y EAN).
 def _gear4music(base, kind):
@@ -4384,6 +4441,10 @@ CATALOGS = {
               "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json", "teclado": "teclados.json",
                         "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie", "headers": EN_HEADERS,
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json", "pack": "packs.json"}},
+    # México: en pesos. Sin guitarras de menos de 1.500 pesos (cuerdas, fundas y accesorios que se cuelan).
+    "mx": {"dir": DIR / "mx", "sources": MX_SOURCES, "site": "mx", "cur": "MXN", "min_price": 1500,
+           "files": {"electrica": "guitarras-electricas.json", "acustica": "guitarras-acusticas.json",
+                     "clasica": "guitarras-clasicas.json", "pack": "paquetes.json"}},
     "at": {"dir": DIR / "at", "sources": AT_SOURCES, "site": "at",
            "files": {"electrica": "e-gitarren.json", "acustica": "westerngitarren.json", "clasica": "konzertgitarren.json", "pack": "packs.json"}},
     "nl": {"dir": DIR / "nl", "sources": NL_SOURCES, "site": "nl",
@@ -5160,7 +5221,8 @@ def build(offers=None, history=None):
         pages.write_hubs()
     else:
         from . import intl
-        intl.write_site(CATALOG["site"])
+        if CATALOG["site"] in intl.SITES:  # un país nuevo lee precios antes de tener web (México, hasta que se apruebe)
+            intl.write_site(CATALOG["site"])
 
 
 def main(argv=None):
