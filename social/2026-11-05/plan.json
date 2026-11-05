@@ -1,0 +1,416 @@
+{
+ "date": "2026-11-05",
+ "fecha": "5 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 acústicas de 300 € a 750 €",
+  "kind": "acustica",
+  "picks": [
+   {
+    "slug": "ibanez-aw84ce-wk-weathered-black-open-pore-4515276897439",
+    "name": "Ibanez AW84CE-WK Weathered Black Open Pore",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/737778_1_c369.jpg?store=nume_es&image-type=image",
+    "price": 312.0,
+    "store": "Auvisa",
+    "stores": 12,
+    "median": 319.2,
+    "max": 357.0,
+    "next": 315.0,
+    "rows": [
+     [
+      "Auvisa",
+      312.0
+     ],
+     [
+      "Alfasoni",
+      315.0
+     ],
+     [
+      "MAT Guitars",
+      315.0
+     ],
+     [
+      "Pronorte",
+      315.0
+     ],
+     [
+      "Drunkat",
+      315.0
+     ],
+     [
+      "Alteisa",
+      315.0
+     ],
+     [
+      "Partitura",
+      319.2
+     ],
+     [
+      "Woodbrass",
+      322.0
+     ],
+     [
+      "Session",
+      324.0
+     ],
+     [
+      "Musicopolix",
+      338.8
+     ],
+     [
+      "Nume Music",
+      342.78
+     ],
+     [
+      "Egitana",
+      357.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "sire-a3-d-dreadnought-vintage-sunburst-855159008731",
+    "name": "Sire A3-D Dreadnought Vintage Sunburst",
+    "brand": "Sire",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/4/640232_dbbd.jpg?store=nume_es&image-type=image",
+    "price": 319.0,
+    "store": "Musicopolix",
+    "stores": 11,
+    "median": 327.025,
+    "max": 375.0,
+    "next": 319.0,
+    "rows": [
+     [
+      "Musicopolix",
+      319.0
+     ],
+     [
+      "Alteisa",
+      319.0
+     ],
+     [
+      "Microfusa",
+      322.0
+     ],
+     [
+      "Auvisa",
+      322.0
+     ],
+     [
+      "Nume Music",
+      322.05
+     ],
+     [
+      "Alfasoni",
+      322.05
+     ],
+     [
+      "MAT Guitars",
+      332.0
+     ],
+     [
+      "Partitura",
+      370.89
+     ],
+     [
+      "Pronorte",
+      371.0
+     ],
+     [
+      "Musical San Francisco",
+      371.07
+     ],
+     [
+      "Woodbrass",
+      375.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "fender-cd-140sce-all-mahogany-wn-w-case-885978875504",
+    "name": "Fender CD-140SCE All-Mahogany WN w-case",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/2/625172_0783.jpg?store=nume_es&image-type=image",
+    "price": 355.0,
+    "store": "Auvisa",
+    "stores": 8,
+    "median": 366.0,
+    "max": 396.0,
+    "next": 357.2,
+    "rows": [
+     [
+      "Auvisa",
+      355.0
+     ],
+     [
+      "Musicopolix",
+      357.2
+     ],
+     [
+      "Alteisa",
+      357.2
+     ],
+     [
+      "Nume Music",
+      366.0
+     ],
+     [
+      "Drunkat",
+      366.0
+     ],
+     [
+      "Alfasoni",
+      375.0
+     ],
+     [
+      "Musical San Francisco",
+      375.0
+     ],
+     [
+      "MAT Guitars",
+      396.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "cort-essence-ga4-btsg-8809817985126",
+    "name": "Cort ESSENCE-GA4 Btsg",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/1/718911_36d3.jpg?store=nume_es&image-type=image",
+    "price": 357.0,
+    "store": "MAT Guitars",
+    "stores": 8,
+    "median": 424.0,
+    "max": 458.0,
+    "next": 421.0,
+    "rows": [
+     [
+      "MAT Guitars",
+      357.0
+     ],
+     [
+      "Pronorte",
+      421.0
+     ],
+     [
+      "Musical San Francisco",
+      421.49
+     ],
+     [
+      "Alteisa",
+      421.5
+     ],
+     [
+      "Auvisa",
+      424.0
+     ],
+     [
+      "Nume Music",
+      433.49
+     ],
+     [
+      "Musicopolix",
+      449.0
+     ],
+     [
+      "Woodbrass",
+      458.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "lag-t170a-tramontane-170-auditorium-natural-3700166362994",
+    "name": "LAG T170A Tramontane 170 Auditorium Natural",
+    "brand": "LAG",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/1/718721_1_3124.jpg?store=nume_es&image-type=image",
+    "price": 375.0,
+    "store": "Musicopolix",
+    "stores": 8,
+    "median": 399.0,
+    "max": 457.9,
+    "next": 389.22,
+    "rows": [
+     [
+      "Musicopolix",
+      375.0
+     ],
+     [
+      "Musical San Francisco",
+      389.22
+     ],
+     [
+      "Alfasoni",
+      399.0
+     ],
+     [
+      "MAT Guitars",
+      399.0
+     ],
+     [
+      "Pronorte",
+      399.0
+     ],
+     [
+      "Musicsales",
+      399.0
+     ],
+     [
+      "Woodbrass",
+      429.0
+     ],
+     [
+      "Nume Music",
+      457.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   }
+  ],
+  "caption": "🎸 5 acústicas de 300 € a 750 €: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n1️⃣ Ibanez AW84CE-WK Weathered Black Open Pore: 312 € en Auvisa\n2️⃣ Sire A3-D Dreadnought Vintage Sunburst: 319 € en Musicopolix\n3️⃣ Fender CD-140SCE All-Mahogany WN w-case: 355 € en Auvisa\n4️⃣ Cort ESSENCE-GA4 Btsg: 357 € en MAT Guitars\n5️⃣ LAG T170A Tramontane 170 Auditorium Natural: 375 € en Musicopolix\n\n¿Con cuál te quedas? Te leemos en comentarios 💬\n🔎 Compara precios en guitle.com (enlace en la bio). Precios del 5 de noviembre.\n\n#guitarra #guitarraacustica #guitarristas #comprarguitarra #ibanez #sire #fender #cort #lag"
+ },
+ "stories": [
+  {
+   "slug": "cort-mbm-2h-sblk-8809817985775",
+   "name": "Cort MBM-2H Sblk",
+   "brand": "Cort",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/735397_9c9e.jpg?store=nume_es&image-type=image",
+   "price": 469.0,
+   "store": "Drunkat",
+   "stores": 4,
+   "median": 690.0,
+   "max": 865.0,
+   "next": 570.25,
+   "rows": [
+    [
+     "Drunkat",
+     469.0
+    ],
+    [
+     "Musical San Francisco",
+     570.25
+    ],
+    [
+     "Nume Music",
+     690.0
+    ],
+    [
+     "Woodbrass",
+     865.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 22 % por debajo de su media",
+   "pct": 22,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "sire-s3-new-gen-car-candy-apple-red-810187571657",
+   "name": "Sire S3 New Gen CAR Candy Apple Red",
+   "brand": "Sire",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/735319_eab3.jpg?store=nume_es&image-type=image",
+   "price": 374.0,
+   "store": "Drunkat",
+   "stores": 9,
+   "median": 441.5,
+   "max": 448.99,
+   "next": 374.0,
+   "rows": [
+    [
+     "Drunkat",
+     374.0
+    ],
+    [
+     "Alteisa",
+     374.0
+    ],
+    [
+     "Musicopolix",
+     438.0
+    ],
+    [
+     "MAT Guitars",
+     438.0
+    ],
+    [
+     "Auvisa",
+     439.0
+    ],
+    [
+     "Woodbrass",
+     444.0
+    ],
+    [
+     "Pronorte",
+     445.0
+    ],
+    [
+     "Musical San Francisco",
+     445.45
+    ],
+    [
+     "Nume Music",
+     448.99
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 14 % por debajo de su media",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ibanez-az24s2-mlb-2mlbp43823",
+   "name": "Ibanez AZ24S2-MLB",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://detalhes.egitana.es/ibanez-az24s2-mlb_69e748a805ec5.jpg",
+   "price": 392.0,
+   "store": "Egitana",
+   "stores": 5,
+   "median": 477.0,
+   "max": 479.0,
+   "next": 398.0,
+   "rows": [
+    [
+     "Egitana",
+     392.0
+    ],
+    [
+     "Pronorte",
+     398.0
+    ],
+    [
+     "Woodbrass",
+     477.0
+    ],
+    [
+     "Thomann",
+     477.0
+    ],
+    [
+     "Session",
+     479.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 16 % por debajo de su media",
+   "pct": 16,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}
