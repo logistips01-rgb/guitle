@@ -82,7 +82,9 @@ def main():
     while day < today and reads < MAX_READS:
         key = day.isoformat()
         if key not in done or day == today - timedelta(days=1):
-            docs = _run(s, key + "_", key + "_~")
+            # Solo lo que hace falta: el total del día (_v), los clics (_t_…) y los orígenes (_r_…); no las miles de
+            # páginas vistas (_p_…).
+            docs = _run(s, key + "_r_", key + "_r_~") + _run(s, key + "_t_", key + "_t_~") + _run(s, key + "_v", key + "_v~")
             reads += len(docs) + 1
             row = summary(docs, key)
             if not docs:  # día sin ninguna visita: no se guarda
