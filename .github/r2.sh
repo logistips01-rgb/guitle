@@ -12,6 +12,10 @@ R2_IMG=1       # 1: también las miniaturas (img/p/); en git queda su lista, dat
 
 ALL_SITES=$(python -c "from scraper.intl import SITES; print(' '.join(SITES))")
 in_r2() { case " $R2_SITES " in *" $1 "*) return 0 ;; esac; return 1; }
+# Países cuyas fichas sirve el Worker desde las cajas (scraper/cajas.py; la misma lista que CON_CAJAS en
+# cloudflare/worker.js): sus fichas sueltas (<país>/g/) ya no se suben, solo las cajas (<país>/_g/) que cambian.
+R2_CAJAS=""
+in_cajas() { case " $R2_CAJAS " in *" $1 "*) return 0 ;; esac; return 1; }
 
 git_add() {
   python -m scraper.thumbs --index  # las miniaturas nuevas de img/p/, a la lista
@@ -68,7 +72,13 @@ publicar() {
     n=$( { find "$s" -type f || true; } | wc -l)
     # Una web a medias no se sube: borraría en R2 las páginas que le faltan. Tope de borrado, por si acaso.
     if [ "$n" -lt 50 ]; then echo "::warning::web $s con solo $n ficheros: no se sube"; continue; fi
-    up sync "$s" "$s" --max-delete 3000
+    python -m scraper.cajas "$s" || echo "::warning::no se pudieron hacer las cajas de $s"
+    if in_cajas "$s" && compgen -G "$s/_g/*.json.gz" >/dev/null; then
+      # Las fichas sueltas se quedan en R2 como están (respaldo del Worker), sin subirlas ni borrarlas.
+      up sync "$s" "$s" --max-delete 3000 --exclude "/g/**"
+    else
+      up sync "$s" "$s" --max-delete 3000
+    fi
     one "sitemap-$s.xml"
   done
   if [ "$R2_ES" = 1 ]; then
