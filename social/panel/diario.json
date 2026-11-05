@@ -266,8 +266,74 @@
  {
   "dia": "2026-11-04",
   "cuenta": "@guitle.br",
+  "alcance": 5,
+  "visualizaciones": 9,
+  "visitas_perfil": 0,
+  "cuentas_interactuaron": 1,
+  "interacciones": 3,
+  "clics_web": 0,
+  "seguidores": null
+ },
+ {
+  "dia": "2026-11-04",
+  "cuenta": "@guitle.de",
+  "alcance": 21,
+  "visualizaciones": 26,
+  "visitas_perfil": 0,
+  "cuentas_interactuaron": 1,
+  "interacciones": 1,
+  "clics_web": 0,
+  "seguidores": null
+ },
+ {
+  "dia": "2026-11-04",
+  "cuenta": "@guitle.es",
+  "alcance": 1828,
+  "visualizaciones": 2718,
+  "visitas_perfil": 82,
+  "cuentas_interactuaron": 20,
+  "interacciones": 19,
+  "clics_web": 31,
+  "seguidores": null
+ },
+ {
+  "dia": "2026-11-04",
+  "cuenta": "@guitle.fr",
+  "alcance": 9,
+  "visualizaciones": 9,
+  "visitas_perfil": 0,
+  "cuentas_interactuaron": 0,
+  "interacciones": 0,
+  "clics_web": 0,
+  "seguidores": null
+ },
+ {
+  "dia": "2026-11-04",
+  "cuenta": "@guitle.it",
+  "alcance": 146,
+  "visualizaciones": 149,
+  "visitas_perfil": 0,
+  "cuentas_interactuaron": 0,
+  "interacciones": 0,
+  "clics_web": 0,
+  "seguidores": null
+ },
+ {
+  "dia": "2026-11-04",
+  "cuenta": "@guitle.uk",
+  "alcance": 20,
+  "visualizaciones": 28,
+  "visitas_perfil": 2,
+  "cuentas_interactuaron": 2,
+  "interacciones": 4,
+  "clics_web": 0,
+  "seguidores": null
+ },
+ {
+  "dia": "2026-11-05",
+  "cuenta": "@guitle.br",
   "alcance": 1,
-  "visualizaciones": 1,
+  "visualizaciones": 5,
   "visitas_perfil": 0,
   "cuentas_interactuaron": 1,
   "interacciones": 1,
@@ -275,10 +341,10 @@
   "seguidores": 1
  },
  {
-  "dia": "2026-11-04",
+  "dia": "2026-11-05",
   "cuenta": "@guitle.de",
-  "alcance": 1,
-  "visualizaciones": 2,
+  "alcance": 13,
+  "visualizaciones": 19,
   "visitas_perfil": 0,
   "cuentas_interactuaron": 0,
   "interacciones": 0,
@@ -286,21 +352,21 @@
   "seguidores": 0
  },
  {
-  "dia": "2026-11-04",
+  "dia": "2026-11-05",
   "cuenta": "@guitle.es",
-  "alcance": 1193,
-  "visualizaciones": 1726,
-  "visitas_perfil": 56,
-  "cuentas_interactuaron": 15,
-  "interacciones": 14,
-  "clics_web": 21,
-  "seguidores": 85
+  "alcance": 373,
+  "visualizaciones": 519,
+  "visitas_perfil": 16,
+  "cuentas_interactuaron": 3,
+  "interacciones": 4,
+  "clics_web": 3,
+  "seguidores": 101
  },
  {
-  "dia": "2026-11-04",
+  "dia": "2026-11-05",
   "cuenta": "@guitle.fr",
-  "alcance": 8,
-  "visualizaciones": 8,
+  "alcance": 0,
+  "visualizaciones": 0,
   "visitas_perfil": 0,
   "cuentas_interactuaron": 0,
   "interacciones": 0,
@@ -308,10 +374,10 @@
   "seguidores": 0
  },
  {
-  "dia": "2026-11-04",
+  "dia": "2026-11-05",
   "cuenta": "@guitle.it",
-  "alcance": 97,
-  "visualizaciones": 92,
+  "alcance": 11,
+  "visualizaciones": 11,
   "visitas_perfil": 0,
   "cuentas_interactuaron": 0,
   "interacciones": 0,
@@ -319,13 +385,13 @@
   "seguidores": 0
  },
  {
-  "dia": "2026-11-04",
+  "dia": "2026-11-05",
   "cuenta": "@guitle.uk",
-  "alcance": 2,
-  "visualizaciones": 4,
-  "visitas_perfil": 1,
-  "cuentas_interactuaron": 1,
-  "interacciones": 1,
+  "alcance": 14,
+  "visualizaciones": 13,
+  "visitas_perfil": 0,
+  "cuentas_interactuaron": 0,
+  "interacciones": 0,
   "clics_web": 0,
   "seguidores": 1
  }
