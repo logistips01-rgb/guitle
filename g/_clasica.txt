@@ -3405,10 +3405,10 @@ takamine-gc1lh-nat-guitarra-espanola-para-zurdos-799493251210
 takamine-gc1nat-799493251227
 takamine-gc2-cutaway-electro-negro-190262041214
 takamine-gc3-natural-190262041290
-takamine-gc3ce-nat-3cenathtml
+takamine-gc3ce-nat-190262041306
 takamine-gc3ce-nat-4582270040338
 takamine-gc3cenat-799493251258
-takamine-gc3cenat-natural-190262041306
+takamine-gc3cenat-natural-ural168122
 takamine-gc5-e-a-cutaway-gc5celh-nat-zurdos-190262043058
 takamine-gc5ce-nat-guitarra-espanola-electrificada-190262043324
 takamine-gc5ce-nat-negc5cenat
@@ -3755,8 +3755,8 @@ yamaha-cg182s-abeto-15860nuevo
 yamaha-cg182sf-flamenco-57700nuevo
 yamaha-cg192s-4957812472272
 yamaha-cgs-103aii-clasica-cadete-3-4-p13634html
-yamaha-cgs102a-02-natural-aturalhtml
 yamaha-cgs102a-102ap32456
+yamaha-cgs102a-ii-4957812496902
 yamaha-cgs103a-classical-guitar-uitarp8245
 yamaha-cgs103a-natural-4957812496919
 yamaha-cgs104a-02-104a02html
@@ -3774,7 +3774,7 @@ yamaha-cs40ii-cs40iihtml
 yamaha-cx40-ii-036683html
 yamaha-cx40-ii-x40iip6673
 yamaha-cx40ii-4957812496896
-yamaha-d-etude-cgs102-1-2-4957812496902
+yamaha-d-etude-cgs102-1-2-1021220971
 yamaha-espanola-yamaha-c40-ayamahac40
 yamaha-espanola-yamaha-cg122ms-4957812472166
 yamaha-espanola-yamaha-cg162c-4957812472210
@@ -3796,7 +3796,6 @@ yamaha-estudio-c40-iii-4-4-iii4419549
 yamaha-estudio-gcx40-4-4-4044147687
 yamaha-gc12c-4957812517300
 yamaha-gc12c-cedar-top-20130nuevo
-yamaha-gc12s-s52922html
 yamaha-gc12s-spruce-top-20120nuevo
 yamaha-gc22c-4957812517317
 yamaha-gc22c-cedar-top-20150nuevo
@@ -3805,6 +3804,7 @@ yamaha-gc22s-spruce-top-20140nuevo
 yamaha-gc32c-cedro-gc32cnuevo
 yamaha-gc32s-abeto-gc32snuevo
 yamaha-gc82c-86792969565
+yamaha-gran-concierto-yamaha-gc12s-spruce-top-con-estuche-stuchehtml
 yamaha-gx122mc-22mcp29075
 yamaha-nc1xfm-natural-aturalhtml
 yamaha-ncx1-cedro-z9310nuevo

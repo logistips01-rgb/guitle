@@ -541,6 +541,12 @@
  },
  {
   "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "LTD EC-256FM Stpsb",
+  "slug": "ltd-ec-256fm-stpsb-799493258042"
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "LTD TE-1000 Silver Blast",
@@ -604,12 +610,90 @@
  },
  {
   "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Sterling ST. VINCENT GOLDIE SSS M/R TREMOLO Velveteen",
+  "slug": "sterling-st-vincent-goldie-sss-m-r-tremolo-velveteen-810002952517"
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Sx SST Alder H Vintage White",
   "slug": "sx-sst-alder-h-vintage-white-6940651408777",
   "price": 118.68,
   "median": 244.35
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Bacchus Global DUKE-STD A-RED",
+  "slug": "bacchus-global-duke-std-a-red-4571470400226"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Cort Kx300 Etched Black R",
+  "slug": "cort-kx300-etched-black-r-8809625365189"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Eastman AR480CE-SB Sunburst",
+  "slug": "eastman-ar480ce-sb-sunburst-846940002939"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Eastman AR880ce Classic",
+  "slug": "eastman-ar880ce-classic-846940009211"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Eastman Juliet P90 VR Vintage Red",
+  "slug": "eastman-juliet-p90-vr-vintage-red-vintagered"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Eko Tero 800 Musa rojo flameado",
+  "slug": "eko-tero-800-musa-rojo-flameado-8056734499186"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Fender Kingfish Telecaster Deluxe RW MSNT",
+  "slug": "fender-kingfish-telecaster-deluxe-rw-msnt-885978998388"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Gretsch G5622T CB Electromatic LRL Zafiro de medianoche",
+  "slug": "gretsch-g5622t-cb-electromatic-lrl-zafiro-de-medianoche-717669887230"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Hagstrom De 12 Cuerdas Hagstrom Viking DLX 12 WCT Wild Cherry Transparent",
+  "slug": "hagstrom-de-12-cuerdas-hagstrom-viking-dlx-12-wct-wild-cherry-transparent-7340071900964"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Justin York Supe",
+  "slug": "justin-york-supe-7340071903309"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "PRS semihueca PRS Special Semi-Hollow Cobalt Smokeburst",
+  "slug": "prs-semihueca-prs-special-semi-hollow-cobalt-smokeburst-825362168157"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Prodipe TC80BS Butterscotch",
+  "slug": "prodipe-tc80bs-butterscotch-3760010256213"
  },
  {
   "kind": "acustica",
@@ -847,15 +931,6 @@
  },
  {
   "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Eastman E8D-TC Natural Thermo Cure",
-  "slug": "eastman-e8d-tc-natural-thermo-cure-846940000089",
-  "price": 1199.0,
-  "median": 1599.0
- },
- {
-  "kind": "acustica",
   "type": "sin_iva",
   "store": "alfasoni",
   "name": "Epiphone Texan Masterbilt Antique Natural Aged Original",
@@ -1045,6 +1120,12 @@
  },
  {
   "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Alhambra CS-1 CW electrificada Fishmann E8",
+  "slug": "alhambra-cs-1-cw-electrificada-fishmann-e8-8436623081249"
+ },
+ {
+  "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
   "name": "Cort AC200 3/4 OP w/bag",
@@ -1096,6 +1177,12 @@
   "slug": "ortega-espanola-amplificada-cutaway-ortega-tourplayer-rtpg-ls2-842960187359",
   "price": 577.69,
   "median": 708.5
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Takamine electroacústica Takamine DH90",
+  "slug": "takamine-electroacustica-takamine-dh90-190262012566"
  },
  {
   "kind": "teclado",

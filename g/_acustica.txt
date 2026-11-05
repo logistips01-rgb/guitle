@@ -1445,7 +1445,7 @@ eastman-e6ss-tc-sb-sunburst-thermo-cure-846940063138
 eastman-e6ss-tc-sb-traditional-dreadnought-slope-shoulder-sunburst-thermo-cured-1100000334750
 eastman-e6ss-tc-traditional-dreadnought-slope-shoulder-natural-thermo-cured-846940003066
 eastman-e6ssl-tc-sunburst-lh-cher431797
-eastman-e8d-tc-natural-thermo-cure-846940000089
+eastman-e8d-tc-846940000089
 eastman-e8om-tc-846940000096
 eastman-l-om-qs-846940004872
 eastman-l-omce-qs-natural-846940004889
@@ -1533,6 +1533,7 @@ epiphone-hummingbird-signature-eric-church-cobra-burst-oscuro-ibg-711106237671
 epiphone-hummingbird-standard-cherry-sunburst-711106166407
 epiphone-hummingbird-standard-ec-natural-711106166438
 epiphone-hummingbird-studio-ec-heritage-cherry-sunburst-711106173962
+epiphone-hummingbird-studio-ec-lh-herritage-cherry-711106173986
 epiphone-hummingbird-studio-ec-natural-711106173979
 epiphone-hummingbird-studio-heritage-cherry-sunburst-711106173924
 epiphone-hummingbird-studio-lh-herritage-cherry-711106173948
@@ -1584,6 +1585,7 @@ escapade-a-e-khaya-3700166373174
 esp-de-7-cuerdas-esp-ltd-tl-7-black-7blackhtml
 esp-ltd-tl-6-aqua-marine-burst-ebursthtml
 esp-ltd-tl-6-natural-aturalhtml
+esp-ltd-tl-6-qm-charcoal-burst-lbursthtml
 esp-ltd-tombstone-a-300e-9610013000001
 esp-para-zurdos-esp-ltd-tl-6-lh-black-hblackhtml
 ewp12ewb-opn-piccolo-o26360html
@@ -2159,7 +2161,7 @@ gibson-hummingbird-standard-sunburst-cereza-vintage-moderno-711106246093
 gibson-hummingbird-standard-translucent-teal-modern-711106175218
 gibson-hummingbird-standard-turquesa-del-sudoeste-moderno-711106233611
 gibson-hummingbird-standard-vintage-sunburst-moderno-711106056302
-gibson-hummingbird-studio-rosewood-711106096230
+gibson-hummingbird-studio-rosewood-711106139357
 gibson-hummingbird-studio-walnut-burst-711106170299
 gibson-hummingbird-studio-walnut-satin-natural-711106139333
 gibson-j-160e-original-vintage-sunburst-711106174419
@@ -3306,7 +3308,7 @@ martin-000-28ec-auditorium-eric-clapton-lh-729789036405
 martin-000-28ec-auditorium-eric-clapton-sunburst-729789036207
 martin-000-42-ge-standard-golden-era-729789683234
 martin-000-42-l-ge-standard-golden-era-zurdos-729789683258
-martin-000-42-modern-deluxe-deluxehtml
+martin-000-42-modern-deluxe-729789586368
 martin-000-ec-30th-eric-clapton-signature-729789677745
 martin-000-ec-eric-clapton-30th-aniversario-729789667517
 martin-000-ec-eric-clapton-signature-30th-anniversary-2-niversary2
@@ -4925,9 +4927,9 @@ takamine-gd34ce-negra-190262041245
 takamine-gd37ce-pw-dreadnought-cw-blanco-perla-192026204347
 takamine-gd38ce-blk-black-usse373044
 takamine-gd51-e-a-dreadnought-cutway-zurdos-natural-gd51celh-nat-190262042211
+takamine-gd51-nat-190262041535
 takamine-gd51-nat-4582270040017
 takamine-gd51-nat-d51nathtml
-takamine-gd51-natural-190262041535
 takamine-gd51-natural-lh-190262042228
 takamine-gd51ce-nat-799493251609
 takamine-gd51ce-nat-lh-atlhp45019
@@ -4947,7 +4949,6 @@ takamine-gd90ce-mdnat-dreadnought-190262050025
 takamine-gd93-e-a-dreadnought-cutaway-p34117html
 takamine-gd93-nat-190262041566
 takamine-gd93ce-nat-dreadnought-799493251678
-takamine-gd93ce-natural-ural162576
 takamine-gd93cenat-dreadnought-190262041559
 takamine-gd93nat-dreadnought-799493251685
 takamine-gf15ce-blk-799493251692
@@ -6469,14 +6470,12 @@ yamaha-tag1-e-natural-uralp44091
 yamaha-tag1-e-negro-translucido-cidop44302
 yamaha-tag1-e-sand-burst-urstp44153
 yamaha-tag1c-nat-transacoustic-dreadnought-4957812712279
-yamaha-tag1cnt-transacoustic-segunda-generacion-dreadnought-con-funda-nfundahtml
 yamaha-tag1csdb-transacoustic-segunda-generacion-dreadnought-con-funda-nfundahtml
 yamaha-tag1e-nat-transacoustic-dreadnought-4957812722261
 yamaha-tag1e-negro-translucido-4957812722285
 yamaha-tag1e-sand-burst-4957812722278
 yamaha-tag1e-sb-transacoustic-dreadnought-sand-burst-49578127222278
 yamaha-tag1e-tb-transacoustic-dreadnought-translucent-black-49578127222285
-yamaha-tag1ent-transacoustic-segunda-generacion-dreadnought-con-funda-nfundahtml
 yamaha-tag1esdb-transacoustic-segunda-generacion-dreadnought-con-funda-nfundahtml
 yamaha-tag1etbl-transacoustic-segunda-generacion-dreadnought-con-funda-nfundahtml
 yamaha-tag3-c-natural-gennatural

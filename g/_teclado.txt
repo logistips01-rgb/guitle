@@ -559,7 +559,6 @@ m-audio-keystation-61-mk3-694318023914
 m-audio-keystation-88-mk3-694318025024
 m-audio-keystation-mini-32-mk3-694318024010
 m-audio-m-audio-oxygenpro49-teclado-controlador-npro49html
-m-audio-oxygen-25-mk5-694318025420
 m-audio-oxygen-49-mk5-581594html
 m-audio-oxygen-49-mkv-694318025437
 m-audio-oxygen-61-mk5-581595html
@@ -946,7 +945,7 @@ yamaha-p-145bt-black-4957812710817
 yamaha-p-225-black-4957812679435
 yamaha-p-225-white-4957812679534
 yamaha-p-225b-piano-digital-portatil-para-iniciantes-gitalp3039
-yamaha-p-45-b-b47669html
+yamaha-p-45-b-4957812579698
 yamaha-p-45-b-piano-digital-best-seller-calidad-y-precio-rtatilp890
 yamaha-p-525-black-4957812690683
 yamaha-p-525-white-4957812690775
@@ -957,7 +956,7 @@ yamaha-p145b-88-teclas-piano-digital-4957812679138
 yamaha-p225-b-alportatil
 yamaha-p225b-88-teclas-teclado-digital-9p225bhtml
 yamaha-p225w-88-teclas-teclado-digital-2p225whtml
-yamaha-p45-4957812579698
+yamaha-p45-alportatil
 yamaha-piano-digital-piaggero-yamaha-np-15-negro-de-61-teclas-para-principiantes-ntesp45587
 yamaha-ps500b-negro-piano-digital-ps500bhtml
 yamaha-ps500wh-blanco-piano-digital-s500whhtml
@@ -1003,7 +1002,6 @@ yamaha-yc73-4957812664738
 yamaha-yc88-4957812664790
 yamaha-ydp-145-black-arius-4957812674768
 yamaha-ydp-145-rosewood-arius-4957812674676
-yamaha-ydp-145b-arius-piano-digital-preto-de-88-teclas-ghs-sghsp27768
 yamaha-ydp-146-arius-piano-digital-blanco-957812717625
 yamaha-ydp-146-arius-piano-digital-negro-957812717526
 yamaha-ydp-146-arius-piano-digital-palisandro-957812717427

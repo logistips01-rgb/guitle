@@ -131,7 +131,7 @@ boss-ce5-516661html
 boss-ceb-3-bass-chorus-para-baixo-baixop4288
 boss-ceb-3-pedal-de-bajo-4957054036867
 boss-ceb3-316803html
-boss-ch-1-super-chorus-boss-legend-1990-orusbp3164
+boss-ch-1-super-chorus-boss-legend-1989-orusbp3164
 boss-ch1-4957054015190
 boss-chorus-stereo-ch-1-sstereoch1
 boss-compressor-cp-1x-761294510049
@@ -249,7 +249,7 @@ boss-me90-pedalera-multiefectos-37me90html
 boss-ml-2-4957054403553
 boss-ml2-216602html
 boss-mo-2-4957054503765
-boss-ms-3-pedaleira-multi-fx-comutador-efeitos-com-visor-lcd-cherbp4478
+boss-ms-3-guitar-switcher-effects-processor-cherbp4478
 boss-mt-2-metal-zone-4957054020934
 boss-mt-2w-metal-zone-4957054513535
 boss-mt-2w-metal-zone-edicion-especial-waza-craft-made-in-japan-ariop24272
@@ -287,8 +287,8 @@ boss-rc-10r-4957054514235
 boss-rc-10r-looper-280-patterns-ritmos-3-visores-tmosp14040
 boss-rc-202-loop-station-2-pistas-stereo-ritmos-vocal-multi-fx-1-entrada-microfo-itmosp5134
 boss-rc-5-loop-station-4957054516741
-boss-rc-5-loop-station-57-patterns-ritmos-usb-pantalla-lcd-tmosp19825
-boss-rc-500-loop-station-2-pistas-stereo-patterns-ritmos-usb-1-entrada-microfono-tmosp19826
+boss-rc-5-loop-station-57-patterns-ritmos-usb-lcd-tmosp19825
+boss-rc-500-loop-station-2-pistas-stereo-patterns-ritmos-usb-xlr-mic-input-tmosp19826
 boss-rc-505mkii-looper-beatbox-workstation-tmosp25527
 boss-rc-600-loop-station-6-pistas-200-ritmos-2-entradas-microfone-xlr-hmboxp4275
 boss-rc-600-loop-station-6-pistas-200-ritmos-2-entradas-microfone-xlr-tmosp25696
@@ -344,7 +344,7 @@ boss-tr2-216743html
 boss-tu-3-4957054409661
 boss-tu-3-chromatic-tuner-afinador-em-pedal-mais-vendido-do-mundo-aixobp5139
 boss-tu-3s-4957054508975
-boss-tu-3w-afinador-edicion-especial-waza-craft-made-in-japan-raftbp5141
+boss-tu-3w-afinador-edicao-waza-craft-made-in-japan-raftbp5141
 boss-tu-3w-waza-craft-4957054510459
 boss-tu-3w-waza-craft-pedal-guitarra-4957054508968
 boss-tu3-328439html
@@ -569,13 +569,11 @@ dunlop-105q-crybaby-mini-bass-wah-710137085824
 dunlop-535ar-cry-baby-mini-auto-return-710137121331
 dunlop-535q-cry-baby-multi-wah-710137014565
 dunlop-95-q-710137017665
-dunlop-95q-cry-baby-pedal-wah-wah-wahwahhtml
 dunlop-bfg-07-siete-santos-octavio-fuzz-710137111394
 dunlop-bg-95-crybaby-wah-710137035539
 dunlop-cbj95-cry-baby-junior-wah-710137122352
 dunlop-cbm535q-cry-baby-mini-multi-wah-710137103436
 dunlop-cbm95-crybaby-mini-wah-niwahp2327
-dunlop-cm95-cry-baby-clyde-mccoy-signature-710137041608
 dunlop-cmb-95-crybaby-710137081345
 dunlop-cry-baby-jerry-cantrell-pedal-guitarra-fx-wah-ierfoghtml
 dunlop-crybaby-wylde-audio-signature-wah-wa-45-wa45p36885
@@ -1245,7 +1243,9 @@ jhs-pedals-violet-lb-purple-650415212712
 jhs-pedals-volture-650415212163
 jhs-pedals-whitey-tighty-650415211852
 jim-dunlop-535q-c-cry-baby-wah-wah-535q-cromado-710137017740
+jim-dunlop-95q-wah-crybaby-y34335html
 jim-dunlop-cbm95-cry-baby-mini-wah-h47602html
+jim-dunlop-cm-95-clyde-mccoy-crybaby-wah-710137041608
 jim-dunlop-dcr-1fc-crybaby-controlador-710137006096
 jim-dunlop-gcb-80-volume-high-gain-710137006157
 jim-dunlop-jd4s-crybaby-rotovibe-expresion-710137006492
@@ -1629,7 +1629,6 @@ mooer-009-blacknight-micro-preamp-6943206792185
 mooer-014-taxidea-tarsus-micro-preamp-6943206792345
 mooer-a7-ambiance-ambient-reverb-verbp20584
 mooer-a7-ambience-6971889227779
-mooer-airswitch-c4-controladora-inalambrica-6943206792284
 mooer-audiofile-6943206792505
 mooer-baby-tuner-6943206790846
 mooer-baby-water-delay-y-chorus-acustico-6943206791591
