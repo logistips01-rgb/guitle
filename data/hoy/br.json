@@ -1,0 +1,126 @@
+{
+ "fecha": "2026-11-05",
+ "pais": "br",
+ "items": [
+  {
+   "slug": "squier-sonic-stratocaster-lrl-bpg-cab-azul-717669815660",
+   "name": "Squier Sonic Stratocaster LRL BPG CAB Azul",
+   "brand": "Squier",
+   "price": "R$ 2.128,17",
+   "store": "Carneiro Music",
+   "kind": "electrica",
+   "img": "56bdbf34846d094f.webp",
+   "why": ""
+  },
+  {
+   "slug": "benson-stratocaster-hardy-series-901-black-gold-com-bag-7899701569793",
+   "name": "Benson Stratocaster Hardy Series 901 Black Gold Com Bag",
+   "brand": "Benson",
+   "price": "R$ 2.241",
+   "store": "Akustica Musical",
+   "kind": "electrica",
+   "img": "7649d75c0757071f.webp",
+   "why": ""
+  },
+  {
+   "slug": "tagima-signature-edu-ardanuy-road-striker-org-super-strato-7898569453848",
+   "name": "Tagima Signature Edu Ardanuy Road Striker ORG Super Strato",
+   "brand": "Tagima",
+   "price": "R$ 2.331",
+   "store": "Akustica Musical",
+   "kind": "electrica",
+   "img": "9c7780a54157b6f4.webp",
+   "why": ""
+  },
+  {
+   "slug": "strinberg-shn6-next-headless-multiscale-hh-azul-7899854525530",
+   "name": "Strinberg SHN6 Next Headless Multiscale HH Azul",
+   "brand": "Strinberg",
+   "price": "R$ 2.790",
+   "store": "Duetto Musical",
+   "kind": "electrica",
+   "img": "8040d3ee8bb91db9.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-revstar-element-rse20-4957812675161",
+   "name": "Yamaha Revstar Element RSE20",
+   "brand": "Yamaha",
+   "price": "R$ 4.221",
+   "store": "Akustica Musical",
+   "kind": "electrica",
+   "img": "bb39eb0e79ad9959.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-fender-affinity-series-telecaster-left-handed-butterscotch-blonde-885978722839",
+   "name": "Squier Fender Affinity Series Telecaster Left-Handed Butterscotch Blonde",
+   "brand": "Squier",
+   "price": "R$ 2.549,99",
+   "store": "RCK Audio",
+   "kind": "electrica",
+   "img": "c43ea06c4d089b9b.webp",
+   "why": "R$ 447,91 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "tagima-tw55-bs-c-bk-butterscotch-tw-series-telecaster-passiva-7898563976602",
+   "name": "Tagima TW55 BS C/BK Butterscotch TW Series Telecaster Passiva",
+   "brand": "Tagima",
+   "price": "R$ 1.093,49",
+   "store": "Mundomax",
+   "kind": "electrica",
+   "img": "9a78f929ae6ac7ce.webp",
+   "why": "R$ 166,41 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "strinberg-diamond-dd2sc-n-folk-7899854525509",
+   "name": "Strinberg Diamond DD2SC N Folk",
+   "brand": "Strinberg",
+   "price": "R$ 1.937,99",
+   "store": "RCK Audio",
+   "kind": "acustica",
+   "img": "043e07256e832a9c.webp",
+   "why": "R$ 401,11 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "giannini-performance-plus-gny-7890443025646",
+   "name": "Giannini Performance Plus GNY",
+   "brand": "Giannini",
+   "price": "R$ 982,59",
+   "store": "RCK Audio",
+   "kind": "clasica",
+   "img": "33172af8be12733d.webp",
+   "why": "R$ 178,41 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "seizi-mini-kyoto-solid-abalone-com-bag-koa-7898512909316",
+   "name": "Seizi Mini Kyoto Solid Abalone Com Bag Koa",
+   "brand": "Seizi",
+   "price": "R$ 2.141,24",
+   "store": "RCK Audio",
+   "kind": "acustica",
+   "img": "2ce27ec796c5c796.webp",
+   "why": "R$ 690,76 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "takamine-gd12ce-lh-tp-4t-canhoto-natural-fosco-190262041726",
+   "name": "Takamine GD12CE LH & TP-4T Canhoto Natural Fosco",
+   "brand": "Takamine",
+   "price": "R$ 2.699,10",
+   "store": "Akustica Musical",
+   "kind": "acustica",
+   "img": "e34bedbab55e5659.webp",
+   "why": "R$ 702,81 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "strinberg-vienna-ve30c-ns-natural-fosco-euro-series-de-nylon-c-afinador-7899854522942",
+   "name": "Strinberg Vienna VE30C NS Natural Fosco Euro Series de Nylon C/ Afinador",
+   "brand": "Strinberg",
+   "price": "R$ 809,10",
+   "store": "Akustica Musical",
+   "kind": "clasica",
+   "img": "08403364319f7f08.webp",
+   "why": "R$ 190,80 a menos que em qualquer outra loja"
+  }
+ ]
+}

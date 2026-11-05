@@ -1,0 +1,126 @@
+{
+ "fecha": "2026-11-05",
+ "pais": "es",
+ "items": [
+  {
+   "slug": "ibanez-aw84ce-wk-weathered-black-open-pore-4515276897439",
+   "name": "Ibanez AW84CE-WK Weathered Black Open Pore",
+   "brand": "Ibanez",
+   "price": "312 €",
+   "store": "Auvisa",
+   "kind": "acustica",
+   "img": "bcfa11ebcffacd9f.webp",
+   "why": ""
+  },
+  {
+   "slug": "sire-a3-d-dreadnought-vintage-sunburst-855159008731",
+   "name": "Sire A3-D Dreadnought Vintage Sunburst",
+   "brand": "Sire",
+   "price": "319 €",
+   "store": "Musicopolix",
+   "kind": "acustica",
+   "img": "c03d731841b06340.webp",
+   "why": ""
+  },
+  {
+   "slug": "fender-cd-140sce-all-mahogany-wn-w-case-885978875504",
+   "name": "Fender CD-140SCE All-Mahogany WN w-case",
+   "brand": "Fender",
+   "price": "355 €",
+   "store": "Auvisa",
+   "kind": "acustica",
+   "img": "07fd49c198304db9.webp",
+   "why": ""
+  },
+  {
+   "slug": "cort-essence-ga4-btsg-8809817985126",
+   "name": "Cort ESSENCE-GA4 Btsg",
+   "brand": "Cort",
+   "price": "357 €",
+   "store": "MAT Guitars",
+   "kind": "acustica",
+   "img": "32513f1dc6619764.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-t170a-tramontane-170-auditorium-natural-3700166362994",
+   "name": "LAG T170A Tramontane 170 Auditorium Natural",
+   "brand": "LAG",
+   "price": "375 €",
+   "store": "Musicopolix",
+   "kind": "acustica",
+   "img": "ced7e6abc96d3d89.webp",
+   "why": ""
+  },
+  {
+   "slug": "fender-player-ii-telecaster-rw-transparent-cherry-885978112432",
+   "name": "Fender Player II Telecaster RW Transparent Cherry",
+   "brand": "Fender",
+   "price": "747 €",
+   "store": "Egitana",
+   "kind": "electrica",
+   "img": "cd88f55e83b6714e.webp",
+   "why": "Mínimo histórico: 12 % por debajo de su media"
+  },
+  {
+   "slug": "ibanez-s520ah-abs-antique-brown-stained-4549763369109",
+   "name": "Ibanez S520AH-ABS Antique Brown Stained",
+   "brand": "Ibanez",
+   "price": "513 €",
+   "store": "Egitana",
+   "kind": "electrica",
+   "img": "4500f9f1d56c12ef.webp",
+   "why": "Bajada real: 24 % por debajo de su media"
+  },
+  {
+   "slug": "sigma-dm-1-4260279937469",
+   "name": "Sigma DM-1",
+   "brand": "Sigma",
+   "price": "283 €",
+   "store": "Drunkat",
+   "kind": "acustica",
+   "img": "3382456d55273d13.webp",
+   "why": "Mínimo histórico: 8 % por debajo de su media"
+  },
+  {
+   "slug": "ortega-r221snbk-840553023084",
+   "name": "Ortega R221SNBK",
+   "brand": "Ortega",
+   "price": "221,96 €",
+   "store": "Musicopolix",
+   "kind": "clasica",
+   "img": "0e4fc82e1d325437.webp",
+   "why": "Mínimo histórico: 16 % por debajo de su media"
+  },
+  {
+   "slug": "cort-mbm-2h-sblk-8809817985775",
+   "name": "Cort MBM-2H Sblk",
+   "brand": "Cort",
+   "price": "469 €",
+   "store": "Drunkat",
+   "kind": "electrica",
+   "img": "c5290109e0fcf21f.webp",
+   "why": "Mínimo histórico: 22 % por debajo de su media"
+  },
+  {
+   "slug": "sire-s3-new-gen-car-candy-apple-red-810187571657",
+   "name": "Sire S3 New Gen CAR Candy Apple Red",
+   "brand": "Sire",
+   "price": "374 €",
+   "store": "Drunkat",
+   "kind": "electrica",
+   "img": "d9a0b7f8d2ddae13.webp",
+   "why": "Mínimo histórico: 14 % por debajo de su media"
+  },
+  {
+   "slug": "ibanez-az24s2-mlb-2mlbp43823",
+   "name": "Ibanez AZ24S2-MLB",
+   "brand": "Ibanez",
+   "price": "392 €",
+   "store": "Egitana",
+   "kind": "electrica",
+   "img": "1a38e1519b99a727.webp",
+   "why": "Mínimo histórico: 16 % por debajo de su media"
+  }
+ ]
+}
