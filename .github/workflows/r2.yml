@@ -1,9 +1,10 @@
 name: r2
 
 # Copia la web al bucket R2 "guitle" de Cloudflare, de donde la sirve el Worker (cloudflare/worker.js).
-# Sin --fast-list: así no lista en el bucket las carpetas excluidas (cada listado es una operación de pago).
-# Solo sube lo que ha cambiado (rclone compara el MD5 de cada archivo con el ETag del bucket) y borra lo que ya no
-# está, así que cada lectura gasta pocas escrituras. Lo que no se publica: .github/r2-exclude.txt.
+# Sin listar el bucket (cada listado es una operación de pago de clase A, y antes eran ~600 por vuelta, ~65 vueltas al
+# día): se guarda en el bucket la lista de lo publicado con su MD5 (_sync/manifest.txt); cada vuelta compara la lista
+# del repositorio con esa, sube solo lo nuevo o cambiado y borra lo que ya no está. Sin lista guardada (la primera vez)
+# o a mano con "completo", sync de siempre. Lo que no se publica: .github/r2-exclude.txt.
 on:
   push:
     branches: [claude/friendly-fermat-yycain]
@@ -12,6 +13,11 @@ on:
     workflows: [crecimiento]
     types: [completed]
   workflow_dispatch:
+    inputs:
+      completo:
+        description: "Sync completo (lista el bucket entero)"
+        type: boolean
+        default: false
 
 concurrency:
   group: r2-sync
@@ -50,5 +56,21 @@ jobs:
             rclone copyto robots.txt r2:guitle/robots.txt -vv --dump headers --retries 1 2>&1 | grep -iv "authorization\|x-amz-security\|credential" | tail -80
             exit 1
           fi
-          rclone sync . r2:guitle --checksum --transfers 32 --checkers 32 \
-            --exclude-from .github/r2-exclude.txt --stats 1m --stats-one-line --stats-log-level NOTICE
+          rclone md5sum . --exclude-from .github/r2-exclude.txt | LC_ALL=C sort > "$RUNNER_TEMP/new.txt"
+          if [ "${{ inputs.completo }}" != "true" ] && rclone copyto r2:guitle/_sync/manifest.txt "$RUNNER_TEMP/old.txt" 2>/dev/null; then
+            LC_ALL=C sort -o "$RUNNER_TEMP/old.txt" "$RUNNER_TEMP/old.txt"
+            # Nuevos o cambiados: líneas (md5 + ruta) que no estaban; borrados: rutas que ya no están.
+            LC_ALL=C comm -13 "$RUNNER_TEMP/old.txt" "$RUNNER_TEMP/new.txt" | sed 's/^[0-9a-f]*  //' > "$RUNNER_TEMP/up.txt"
+            LC_ALL=C comm -23 <(sed "s/^[0-9a-f]*  //" "$RUNNER_TEMP/old.txt" | LC_ALL=C sort) <(sed "s/^[0-9a-f]*  //" "$RUNNER_TEMP/new.txt" | LC_ALL=C sort) > "$RUNNER_TEMP/gone.txt"
+            echo "Cambiados: $(wc -l < "$RUNNER_TEMP/up.txt") · borrados: $(wc -l < "$RUNNER_TEMP/gone.txt")"
+            if [ -s "$RUNNER_TEMP/up.txt" ]; then
+              rclone copy . r2:guitle --files-from-raw "$RUNNER_TEMP/up.txt" --no-check-dest --no-traverse --transfers 32 \
+                --stats 1m --stats-one-line --stats-log-level NOTICE
+            fi
+            while IFS= read -r f; do rclone deletefile "r2:guitle/$f" || true; done < "$RUNNER_TEMP/gone.txt"
+          else
+            echo "Sin lista guardada (o completo): sync de todo"
+            rclone sync . r2:guitle --checksum --transfers 32 --checkers 32 --exclude "/_sync/**" \
+              --exclude-from .github/r2-exclude.txt --stats 1m --stats-one-line --stats-log-level NOTICE
+          fi
+          rclone copyto "$RUNNER_TEMP/new.txt" r2:guitle/_sync/manifest.txt
