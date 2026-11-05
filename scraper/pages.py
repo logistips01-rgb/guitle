@@ -368,6 +368,9 @@ def _thumbs_ok():
             _THUMBS_OK -= {b for b in bad if not b.startswith("#")}
         except FileNotFoundError:
             pass
+        # Guitarras de espaldas (scraper/espaldas.py): tampoco.
+        from .espaldas import espaldas
+        _THUMBS_OK -= espaldas()
     return _THUMBS_OK
 
 

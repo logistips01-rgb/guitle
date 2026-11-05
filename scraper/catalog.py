@@ -5081,6 +5081,9 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
             if thumbs:
                 prod["th"] = thumbs[0]  # teclados y pedales: la primera foto (la de Numemusic si está)
         else:
+            # Las de espaldas (scraper/espaldas.py), fuera: mejor la foto de frente de otra tienda.
+            from .espaldas import espaldas
+            thumbs = [t for t in thumbs if t not in espaldas()]
             best = max(thumbs, key=slenderness) if thumbs else None
             if best and slenderness(best) >= MIN_SLENDERNESS:
                 prod["th"] = best
