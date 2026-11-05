@@ -32,7 +32,7 @@ def _run(s, start, end, limit=None):
                              "orderBy": [{"field": {"fieldPath": "__name__"}}]}}
     if limit:
         q["structuredQuery"]["limit"] = limit
-    r = s.post(f"{DOCS}:runQuery", json=q, timeout=120)
+    r = s.post(f"{DOCS}:runQuery", json=q, timeout=(20, 120))
     r.raise_for_status()
     return [x["document"] for x in r.json() if "document" in x]
 
@@ -60,9 +60,12 @@ def summary(docs, day):
 
 
 def main():
+    print("[resumen] conectando con Firestore", flush=True)
     s = session()
     today = datetime.now(ZoneInfo("Europe/Madrid")).date()
+    print("[resumen] leyendo los días ya resumidos", flush=True)
     done = {d["name"].rsplit("/", 1)[-1][len("resumen_"):] for d in _run(s, "resumen_", "resumen_~")}
+    print(f"[resumen] {len(done)} días ya resumidos; buscando el primer día con visitas", flush=True)
     first = _run(s, "2000", "3", limit=1)
     if not first:
         print("[resumen] aún no hay visitas")

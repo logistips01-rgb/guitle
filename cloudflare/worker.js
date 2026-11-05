@@ -12,6 +12,27 @@ const TYPES = {
 
 const ext = key => (key.match(/\.([a-z0-9]+)$/i) || [])[1]?.toLowerCase();
 
+// Fichas en cajas (scraper/cajas.py): las fichas de estos países salen de <país>/_g/<caja>.json.gz en vez de un
+// fichero por ficha. Se activa un país cuando se ha comprobado que sus fichas salen idénticas (?caja=1 lo prueba sin
+// activarlo). Si la caja no está o no tiene la ficha, se sirve el fichero de siempre.
+const CAJAS = 2048;
+const CON_CAJAS = new Set(["lu", "fi"]);
+
+function fnv(text) {
+  let h = 0x811c9dc5;
+  for (const b of new TextEncoder().encode(text)) h = Math.imul(h ^ b, 0x01000193) >>> 0;
+  return h >>> 0;
+}
+
+async function fromBox(env, code, slug) {
+  const box = `${code}/_g/${(fnv(slug) % CAJAS).toString(16).padStart(4, "0")}.json.gz`;
+  const obj = await env.SITE.get(box);
+  if (!obj) return null;
+  const pages = JSON.parse(await new Response(obj.body.pipeThrough(new DecompressionStream("gzip"))).text());
+  if (typeof pages[slug] !== "string") return null;
+  return { html: pages[slug], etag: `"${obj.etag.replace(/"/g, "")}-${fnv(slug).toString(16)}"` };
+}
+
 export default {
   async fetch(req, env, ctx) {
     if (req.method !== "GET" && req.method !== "HEAD") return new Response("Method Not Allowed", { status: 405, headers: { allow: "GET, HEAD" } });
@@ -28,6 +49,22 @@ export default {
     let key;
     try { key = decodeURIComponent(url.pathname).replace(/^\/+/, ""); } catch { return notFound(); }
     if (key === "" || key.endsWith("/")) key += "index.html";
+
+    const ficha = key.match(/^([a-z]{2})\/g\/([^/]+)\.html$/);
+    const probar = url.searchParams.get("caja") === "1";
+    if (ficha && (CON_CAJAS.has(ficha[1]) || probar)) {
+      let box = null;
+      try { box = await fromBox(env, ficha[1], ficha[2]); } catch { box = null; }
+      if (box) {
+        const headers = new Headers({ "content-type": TYPES.html, etag: box.etag, "cache-control": "public, max-age=600",
+          "x-content-type-options": "nosniff", "x-guitle-caja": "1" });
+        if (req.headers.get("if-none-match") === box.etag) return new Response(null, { status: 304, headers });
+        const res = new Response(req.method === "HEAD" ? null : box.html, { headers });
+        if (req.method === "GET" && !probar) ctx.waitUntil(cache.put(req, res.clone()));
+        return res;
+      }
+      if (probar) return new Response("sin caja", { status: 404, headers: { "x-guitle-caja": "0" } });
+    }
 
     let obj = await env.SITE.get(key, { onlyIf: req.headers });
     if (!obj && !ext(key)) {

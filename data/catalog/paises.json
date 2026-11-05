@@ -56,7 +56,7 @@
  "pl": {
   "country": "Polska",
   "path": "/pl/",
-  "guitars": 26073,
+  "guitars": 29058,
   "stores": 3
  },
  "cz": {
@@ -110,19 +110,19 @@
  "se": {
   "country": "Sverige",
   "path": "/se/",
-  "guitars": 14682,
+  "guitars": 15305,
   "stores": 3
  },
  "no": {
   "country": "Norge",
   "path": "/no/",
-  "guitars": 18028,
+  "guitars": 19331,
   "stores": 4
  },
  "dk": {
   "country": "Danmark",
   "path": "/dk/",
-  "guitars": 5608,
+  "guitars": 6412,
   "stores": 2
  },
  "ch": {
