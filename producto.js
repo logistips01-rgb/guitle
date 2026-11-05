@@ -128,7 +128,54 @@ function verdict(current, best) {
       plugins: { legend: { labels: { color: css("--text-secondary"), boxWidth: 10 } },
                  tooltip: { callbacks: { title: c => fmtDay(c[0].label), label: c => `${c.dataset.label}: ${eur(c.parsed.y)}` } } } },
   });
+  if (CFG.site === "ar") realPrices(bestDaily);
 })();
+
+// Argentina: el mejor precio de cada día pasado a pesos de hoy con el IPC del INDEC (data/ipc-ar.json, scraper/ipc_ar.py),
+// en una gráfica aparte: con la inflación, el precio en pesos sube aunque la guitarra no se encarezca de verdad.
+// Los meses que el INDEC aún no ha publicado se estiman con la última inflación mensual conocida, y se dice.
+async function realPrices(bestDaily) {
+  let ipc;
+  try { ipc = await load("/data/ipc-ar.json"); } catch (e) { return; }
+  const pts = bestDaily.filter(([, y]) => y != null);
+  if (pts.length < 2 || !ipc.meses || !ipc.ultimo) return;
+  const monthsAfter = (a, b) => (+b.slice(0, 4) - +a.slice(0, 4)) * 12 + (+b.slice(5, 7) - +a.slice(5, 7));
+  // Índice de un mes (publicado, o estimado con la última inflación) y, para un día, el interpolado entre la mitad de su
+  // mes y la del mes de al lado: así la inflación se reparte día a día y la línea no salta al cambiar de mes.
+  const month = m => ipc.meses[m] || (monthsAfter(ipc.ultimo, m) > 0
+    ? ipc.meses[ipc.ultimo] * Math.pow(1 + (ipc.tasa || 0), monthsAfter(ipc.ultimo, m)) : null);
+  const shift = (m, k) => { const d = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7) - 1 + k, 15)); return d.toISOString().slice(0, 7); };
+  const index = day => {
+    const m = day.slice(0, 7), dd = +day.slice(8, 10), len = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 0)).getUTCDate();
+    const t = (dd - 15) / len, other = month(shift(m, t >= 0 ? 1 : -1)), here = month(m);
+    if (!here) return null;
+    return other ? here * Math.pow(other / here, Math.abs(t)) : here;
+  };
+  const now = index(today);
+  const real = pts.map(([d, y]) => [d, index(d) ? Math.round(y * now / index(d)) : null]).filter(([, y]) => y != null);
+  if (real.length < 2) return;
+  const est = monthsAfter(ipc.ultimo, today.slice(0, 7)) > 0;
+  const nextMonth = m => new Date(Date.UTC(+m.slice(0, 4), +m.slice(5, 7), 15)).toLocaleDateString(LOCALE, { month: "long", year: "numeric" });
+  const box = document.createElement("div");
+  box.className = "chart-box";
+  box.innerHTML = `<h2 style="font-size:1.05rem;margin:18px 0 4px">Precio sin inflación (en pesos de hoy)</h2>
+    <p class="small muted" style="margin:0 0 8px">El mejor precio de cada día ajustado con el índice de precios del INDEC:
+    así se ve si la guitarra bajó de verdad o solo parece más cara por la inflación.${est ? ` Desde ${nextMonth(ipc.ultimo)} el INDEC aún no publicó el índice: se estima con la última inflación mensual (${(ipc.tasa * 100).toFixed(1).replace(".", ",")} %).` : ""}</p>
+    <div style="position:relative;height:240px"><canvas id="chart-real" aria-label="Precio sin inflación"></canvas></div>`;
+  document.querySelector(".chart-box").after(box);
+  new Chart(document.getElementById("chart-real"), {
+    type: "line", data: { labels: real.map(x => x[0]), datasets: [
+      { label: "Mejor precio en pesos de hoy", borderWidth: 3, pointRadius: 3, borderColor: css("--accent"),
+        backgroundColor: css("--accent"), data: real.map(([x, y]) => ({ x, y })) },
+      { label: "Mejor precio del día (sin ajustar)", borderWidth: 1.5, pointRadius: 0, borderDash: [6, 4],
+        borderColor: css("--text-muted"), backgroundColor: css("--text-muted"), data: pts.map(([x, y]) => ({ x, y })) }] },
+    options: { responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+      scales: { x: { grid: { color: css("--grid") }, ticks: { color: css("--text-muted"), maxTicksLimit: 6, callback: function (v) { return fmtDay(this.getLabelForValue(v)); } } },
+                y: { grid: { color: css("--grid") }, ticks: { color: css("--text-muted"), callback: v => eur(v) } } },
+      plugins: { legend: { labels: { color: css("--text-secondary"), boxWidth: 10 } },
+                 tooltip: { callbacks: { title: c => fmtDay(c[0].label), label: c => `${c.dataset.label}: ${eur(c.parsed.y)}` } } } },
+  });
+}
 
 // Aviso por correo cuando baja el precio: se guarda en Firestore (colección "alertas") con un código aleatorio como
 // id, que solo conoce quien se apunta (confirmar y darse de baja en alerta.html). La tarea scraper/alerts.py envía
