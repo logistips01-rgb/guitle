@@ -1,0 +1,126 @@
+{
+ "fecha": "2026-11-05",
+ "pais": "de",
+ "items": [
+  {
+   "slug": "ibanez-aw84ce-wk-4515276897439",
+   "name": "Ibanez AW84CE-WK",
+   "brand": "Ibanez",
+   "price": "324 €",
+   "store": "Session",
+   "kind": "acustica",
+   "img": "c7c694a6c076dc86.webp",
+   "why": ""
+  },
+  {
+   "slug": "cort-earth-mini-go-8809817986031",
+   "name": "Cort Earth Mini Go",
+   "brand": "Cort",
+   "price": "356 €",
+   "store": "Session",
+   "kind": "acustica",
+   "img": "0ef98d26e1fe7777.webp",
+   "why": ""
+  },
+  {
+   "slug": "epiphone-j-45-studio-ec-vintage-sunburst-711106174044",
+   "name": "Epiphone J-45 Studio EC Vintage Sunburst",
+   "brand": "Epiphone",
+   "price": "389 €",
+   "store": "Session",
+   "kind": "acustica",
+   "img": "8a8a63b20f5d41fa.webp",
+   "why": ""
+  },
+  {
+   "slug": "takamine-gn20ce-ns-tp4-td-799493251821",
+   "name": "Takamine Gn20Ce Ns Tp4 Td",
+   "brand": "Takamine",
+   "price": "429 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "7b0bcea3e53c513c.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-sauvage-ace-auditorium-elektro-akustik-gitarre-inkl-gigbag-3700166372979",
+   "name": "Lag Sauvage-ACE Auditorium Elektro-Akustik-Gitarre inkl. Gigbag",
+   "brand": "Lag",
+   "price": "492 €",
+   "store": "Shop2Rock",
+   "kind": "acustica",
+   "img": "ee4a7bfac9650f05.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-as73-ttf-as73ttfhtm",
+   "name": "Ibanez AS73-TTF",
+   "brand": "Ibanez",
+   "price": "439 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "83382dccad2da61d.webp",
+   "why": "50 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "epiphone-emperor-swingster-fgm-711106045238",
+   "name": "Epiphone Emperor Swingster FGM",
+   "brand": "Epiphone",
+   "price": "699 €",
+   "store": "Session",
+   "kind": "electrica",
+   "img": "1e60434a20cdaa55.webp",
+   "why": "87 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "cort-core-dc-amh-8809625369811",
+   "name": "Cort CORE-DC AMH",
+   "brand": "Cort",
+   "price": "479 €",
+   "store": "Session",
+   "kind": "acustica",
+   "img": "51f19ad89a8f7ebf.webp",
+   "why": "60 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "ortega-r121l3-4-840553025828",
+   "name": "Ortega R121L3/4",
+   "brand": "Ortega",
+   "price": "185 €",
+   "store": "Session",
+   "kind": "clasica",
+   "img": "a058941c2d00d307.webp",
+   "why": "22 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "ibanez-aeg50-ibh-indigo-blau-burst-4549763230942",
+   "name": "Ibanez AEG50-IBH Indigo-Blau-Burst",
+   "brand": "Ibanez",
+   "price": "271 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "2e64453afd0c1d27.webp",
+   "why": "49 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "cort-pure-d-natural-satin-8809817983313",
+   "name": "Cort PURE-D Natural Satin",
+   "brand": "Cort",
+   "price": "339 €",
+   "store": "Session",
+   "kind": "acustica",
+   "img": "6bcd855b0011b6b7.webp",
+   "why": "60 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "takamine-gd93ce-natural-190262041559",
+   "name": "Takamine Gd93Ce Natural",
+   "brand": "Takamine",
+   "price": "565 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "c9c31265f39dd9de.webp",
+   "why": "79 € günstiger als in allen anderen Shops"
+  }
+ ]
+}

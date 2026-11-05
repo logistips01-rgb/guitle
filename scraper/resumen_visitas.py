@@ -66,18 +66,30 @@ def main():
     print("[resumen] leyendo los días ya resumidos", flush=True)
     done = {d["name"].rsplit("/", 1)[-1][len("resumen_"):] for d in _run(s, "resumen_", "resumen_~")}
     print(f"[resumen] {len(done)} días ya resumidos; buscando el primer día con visitas", flush=True)
-    first = _run(s, "2000", "3", limit=1)
+    # El primer día con visitas reales (algún contador suelto de pruebas de 2025 no cuenta): desde septiembre de 2026.
+    first = _run(s, "2026-09-01", "3", limit=1)
     if not first:
         print("[resumen] aún no hay visitas")
         return
     day = date.fromisoformat(first[0]["name"].rsplit("/", 1)[-1][:10])
+    # Días vacíos guardados por error antes de ese día (una vuelta que empezó en 2025): se borran.
+    base = DOCS
+    for old in sorted(done):
+        if old < day.isoformat():
+            s.delete(f"{base}/c/resumen_{old}", timeout=60)
+            done.discard(old)
     reads, written = 0, 0
     while day < today and reads < MAX_READS:
         key = day.isoformat()
         if key not in done or day == today - timedelta(days=1):
-            docs = _run(s, key + "_", key + "_~")
+            # Solo lo que hace falta: el total del día (_v), los clics (_t_…) y los orígenes (_r_…); no las miles de
+            # páginas vistas (_p_…).
+            docs = _run(s, key + "_r_", key + "_r_~") + _run(s, key + "_t_", key + "_t_~") + _run(s, key + "_v", key + "_v~")
             reads += len(docs) + 1
             row = summary(docs, key)
+            if not docs:  # día sin ninguna visita: no se guarda
+                day += timedelta(days=1)
+                continue
             s.patch(f"{DOCS}/c/resumen_{key}", json={"fields": {
                 k: ({"stringValue": v} if k == "fecha" else {"integerValue": str(v)}) for k, v in row.items()}},
                 timeout=60).raise_for_status()

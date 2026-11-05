@@ -1513,6 +1513,8 @@ def write_site(code):
     from . import guias_intl
     from . import musica  # discos (vinilo, CD, casete) del país, si tiene tiendas de discos (scraper/musica.py)
     urls += musica.write_pages(code)
+    from . import hoy  # "Chollos de hoy" (enlace de la bio de Instagram): página fija, los datos los pone redes
+    hoy.write_country(code, sys.modules[__name__])
     course = guias_intl.write_course(code, sys.modules[__name__])  # antes que las guías: su índice lo enlaza
     urls += ([course] if course else []) + guias_intl.write(code, cats, sys.modules[__name__])
     # Guitarras que ya no están en el catálogo: su página se borra.

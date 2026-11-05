@@ -1,0 +1,86 @@
+{
+ "fecha": "2026-11-05",
+ "pais": "it",
+ "items": [
+  {
+   "slug": "ibanez-aw65ece-lg-natural-low-gloss-chitarra-acustica-elettrificata-4515110921306",
+   "name": "Ibanez AW65ECE LG Natural Low Gloss Chitarra Acustica Elettrificata",
+   "brand": "Ibanez",
+   "price": "329 €",
+   "store": "Di Santo Musica",
+   "kind": "acustica",
+   "img": "7a1cfea95270eff0.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-apx600-ovs-chitarra-acustica-elettrificata-cutaway-old-violin-sunburst-4957812623926",
+   "name": "Yamaha APX600 OVS Chitarra Acustica Elettrificata CutAway, Old Violin Sunburst",
+   "brand": "Yamaha",
+   "price": "344 €",
+   "store": "Global Net Shop",
+   "kind": "acustica",
+   "img": "ccb7cb407384aeb0.webp",
+   "why": ""
+  },
+  {
+   "slug": "takamine-gd93ce-natural-190262041559",
+   "name": "Takamine Gd93Ce Natural",
+   "brand": "Takamine",
+   "price": "539 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "d6f242569071475f.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-stratocaster-sonic-mn-sunburst-a-2-colori-717669815653",
+   "name": "Squier Stratocaster Sonic Mn Sunburst a 2 colori",
+   "brand": "Squier",
+   "price": "175 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "a3e6797364f62b73.webp",
+   "why": "14 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "yamaha-pacifica-112j-red-metallic-chitarra-elettrica-4957812688178",
+   "name": "Yamaha Pacifica 112J Red Metallic Chitarra Elettrica",
+   "brand": "Yamaha",
+   "price": "239 €",
+   "store": "Di Santo Musica",
+   "kind": "electrica",
+   "img": "16e8c7f1aeee5866.webp",
+   "why": "9 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "eko-ls-300-honey-sunburst-chitarra-elettrica-a-22-tasti-con-pickup-h-h-8056734498547",
+   "name": "Eko LS-300 HONEY SUNBURST Chitarra Elettrica a 22 Tasti con pickup H-H",
+   "brand": "Eko",
+   "price": "215 €",
+   "store": "Global Net Shop",
+   "kind": "electrica",
+   "img": "ae2162d882045157.webp",
+   "why": "14 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "ibanez-pf15-nt-natural-performance-4515110038745",
+   "name": "Ibanez Pf15-Nt Natural Performance",
+   "brand": "Ibanez",
+   "price": "186 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "97b8a9437ba8f35c.webp",
+   "why": "9 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "squier-stratocaster-sonic-lrl-ultravioletto-717669815677",
+   "name": "Squier Stratocaster Sonic Lrl Ultravioletto",
+   "brand": "Squier",
+   "price": "175 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "00f6a7b492e8fce7.webp",
+   "why": "14 € in meno che negli altri negozi"
+  }
+ ]
+}

@@ -1,0 +1,116 @@
+{
+ "fecha": "2026-11-05",
+ "pais": "fr",
+ "items": [
+  {
+   "slug": "yamaha-apx600-oriental-blue-burst-4957812623933",
+   "name": "Yamaha APX600 Oriental Blue Burst",
+   "brand": "Yamaha",
+   "price": "338 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "ffdf660b3b3b3d15.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-bluewave-1-tbw1te-travel-3700166373082",
+   "name": "Lâg Bluewave 1 TBW1TE Travel",
+   "brand": "Lâg",
+   "price": "399 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "c839454ff0fab1ed.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-sauvage-ace-3700166372979",
+   "name": "lag SAUVAGE-ACE",
+   "brand": "lag",
+   "price": "488 €",
+   "store": "Musique Matos",
+   "kind": "acustica",
+   "img": "151767edb0a30556.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-t118asce-blk-3700166363229",
+   "name": "Lag T118ASCE-BLK",
+   "brand": "LAG",
+   "price": "559 €",
+   "store": "Scotto Musique",
+   "kind": "acustica",
+   "img": "96814f7744d569e8.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-lag-t118asce-brs-auditorium-slim-3700166363182",
+   "name": "Lag Lâg - T118ASCE-BRS Auditorium Slim",
+   "brand": "Lag",
+   "price": "579 €",
+   "store": "Audio System",
+   "kind": "acustica",
+   "img": "9c8be9a58b5211f0.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-mustang-sonic-mn-2-color-sunburst-717669816018",
+   "name": "Squier Mustang Sonic Mn 2-Color Sunburst",
+   "brand": "Squier",
+   "price": "157 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "03360940a359e693.webp",
+   "why": "21 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "cort-ibanez-grx40-ca-4515110159204",
+   "name": "Cort Ibanez GRX40-CA",
+   "brand": "Cort",
+   "price": "169 €",
+   "store": "Audio System",
+   "kind": "electrica",
+   "img": "bd5448444277666c.webp",
+   "why": "20 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "takamine-gn75ce-wr-wine-red-190262040026",
+   "name": "Takamine GN75CE-WR Wine Red",
+   "brand": "Takamine",
+   "price": "555 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "cc6f4418e6443694.webp",
+   "why": "144 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "takamine-gc1ce-nat-natural-190262041474",
+   "name": "Takamine Gc1Ce-Nat Natural",
+   "brand": "Takamine",
+   "price": "289 €",
+   "store": "Woodbrass",
+   "kind": "clasica",
+   "img": "5cf282842d369797.webp",
+   "why": "60 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "epiphone-hummingbird-standard-cherry-sunburst-ibg-711106166407",
+   "name": "Epiphone Hummingbird Standard Cherry Sunburst IBG",
+   "brand": "Epiphone",
+   "price": "749 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "adb1617a2760842e.webp",
+   "why": "150 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "martin-co-c-f-martin-lx1re-serie-little-729789592574",
+   "name": "Martin & co C. F. Martin - LX1RE Serie Little",
+   "brand": "Martin & co",
+   "price": "599 €",
+   "store": "Audio System",
+   "kind": "acustica",
+   "img": "9509f0b8bfff5d62.webp",
+   "why": "90 € de moins que dans les autres magasins"
+  }
+ ]
+}
