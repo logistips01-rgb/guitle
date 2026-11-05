@@ -57,7 +57,9 @@ jobs:
             exit 1
           fi
           rclone md5sum . --exclude-from .github/r2-exclude.txt | LC_ALL=C sort > "$RUNNER_TEMP/new.txt"
-          if [ "${{ inputs.completo }}" != "true" ] && rclone copyto r2:guitle/_sync/manifest.txt "$RUNNER_TEMP/old.txt" 2>/dev/null; then
+          rm -f "$RUNNER_TEMP/old.txt"
+          rclone copyto r2:guitle/_sync/manifest.txt "$RUNNER_TEMP/old.txt" 2>/dev/null || true
+          if [ "${{ inputs.completo }}" != "true" ] && [ -s "$RUNNER_TEMP/old.txt" ]; then
             LC_ALL=C sort -o "$RUNNER_TEMP/old.txt" "$RUNNER_TEMP/old.txt"
             # Nuevos o cambiados: líneas (md5 + ruta) que no estaban; borrados: rutas que ya no están.
             LC_ALL=C comm -13 "$RUNNER_TEMP/old.txt" "$RUNNER_TEMP/new.txt" | sed 's/^[0-9a-f]*  //' > "$RUNNER_TEMP/up.txt"
