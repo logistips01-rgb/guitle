@@ -22,7 +22,7 @@ on:
         description: "Qué catálogo leer (todos, o solo uno)"
         type: choice
         default: todos
-        options: [todos, es, equipo, electrica, acustica, mas, pt, ptmas, fr, frmas, it, itmas, uk, ukmas, de, demas, br, brmas, ie, iemas, at, atmas, nl, nlmas, be, bemas, ch, chmas, pl, plmas, se, semas, no, nomas, dk, dkmas, cz, czmas, sk, skmas, hu, humas, ro, romas, bg, bgmas, gr, grmas, fi, lu, mx]
+        options: [todos, es, equipo, electrica, acustica, mas, pt, ptmas, fr, frmas, it, itmas, uk, ukmas, de, demas, br, brmas, ie, iemas, at, atmas, nl, nlmas, be, bemas, ch, chmas, pl, plmas, se, semas, no, nomas, dk, dkmas, cz, czmas, sk, skmas, hu, humas, ro, romas, bg, bgmas, gr, grmas, fi, lu, mx, ar]
 
 permissions:
   contents: write
@@ -50,7 +50,7 @@ jobs:
       matrix:
         # Programada: los grandes en cada vuelta; los pequeños, una vez al día (20 máquinas no dan para todos tres veces).
         # A mano, uno solo (p. ej. equipo = pedales y teclados). NUEVOS: los del push.
-        cat: ${{ fromJSON(github.event_name == 'push' && '["mx"]' || inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || format('[{0}{1}]', '"es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","nl","nlmas"', github.event.schedule == '17 19 * * *' && ',"at","atmas","ie","iemas","be","bemas","ch","chmas","mx"' || github.event.schedule == '17 3 * * *' && ',"pl","plmas","se","semas","no","nomas","dk","dkmas"' || github.event.schedule == '17 11 * * *' && ',"cz","czmas","sk","skmas","hu","humas","ro","romas","bg","bgmas","gr","grmas","fi","lu"' || '')) }}
+        cat: ${{ fromJSON(github.event_name == 'push' && '["ar"]' || inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || format('[{0}{1}]', '"es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","nl","nlmas"', github.event.schedule == '17 19 * * *' && ',"at","atmas","ie","iemas","be","bemas","ch","chmas","mx","ar"' || github.event.schedule == '17 3 * * *' && ',"pl","plmas","se","semas","no","nomas","dk","dkmas"' || github.event.schedule == '17 11 * * *' && ',"cz","czmas","sk","skmas","hu","humas","ro","romas","bg","bgmas","gr","grmas","fi","lu"' || '')) }}
     runs-on: ubuntu-latest
     timeout-minutes: 355
     env:

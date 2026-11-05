@@ -3358,7 +3358,7 @@ _MX_ACC = re.compile(r"(?:amplificador|afinador|atril|bafle|funda|estuche|cuerda
                      r"|.*-para-(?:guitarra|guitarrista|bajo)")
 
 
-def _mx_pick(shopify=False, path=None):
+def _mx_pick(shopify=False, path=None, need_word=False):
     def pick(u):
         if shopify and not re.match(r"https?://[^/]+/products/[^/?#]+$", u):
             return False
@@ -3367,10 +3367,10 @@ def _mx_pick(shopify=False, path=None):
         where = "/" + u.split("://", 1)[-1].split("/", 1)[-1]
         if NOT_PRODUCT.search(where) or _GEN_NOT_PRODUCT.search(where) or re.search(r"-en/?$", u):  # "-en": copia en inglés
             return False
-        slug = u.rstrip("/").rsplit("/", 1)[-1].lower()
+        slug = re.sub(r"^product-", "", u.rstrip("/").rsplit("/", 1)[-1].lower())  # Heaven: /product-<nombre>
         if _MX_ACC.match(slug):  # accesorios con "guitarra" en el nombre ("atril-para-guitarra…"): no se leen
             return False
-        return bool(path) or bool(_ES_PICK.search(slug)) or es_guitar_kind([], u, slug.replace("-", " ")) is not None
+        return (bool(path) and not need_word) or bool(_ES_PICK.search(slug)) or es_guitar_kind([], u, slug.replace("-", " ")) is not None
     return pick
 
 
@@ -3394,16 +3394,63 @@ def _mx_fix(data, text):
     return data
 
 
-def _mx_store(name, base, shopify=False, path=None, sitemap=None):
-    src = {"name": name, "sitemap": sitemap or f"{base}/sitemap.xml", "kind_url": es_guitar_kind, "fix": _mx_fix,
-           "pick": _mx_pick(shopify, path), "shop": {"base": base, "path": path, "lang": "es+en", "shopify": shopify}}
+def _mx_store(name, base, shopify=False, path=None, sitemap=None, cur="MXN", fix=None, need_word=False):
+    src = {"name": name, "sitemap": sitemap or f"{base}/sitemap.xml", "kind_url": es_guitar_kind, "fix": fix or _mx_fix,
+           "pick": _mx_pick(shopify, path, need_word), "shop": {"base": base, "path": path, "lang": "es+en", "shopify": shopify}}
     if shopify:
         src.update(page_url=_shopify_url("MXN"), parse=_parse_mx_shopify,
                    sub=lambda l: bool(re.match(r"https?://[^/]+/sitemap_products_", l)))
     else:
-        src["parse"] = _parse_en("MXN")
+        src["parse"] = _parse_en(cur)
     return src
 
+
+# --- Argentina: en pesos argentinos. Tiendanube (fichas /productos/…), Heaven (/product-…) y Feedback (PrestaShop),
+# todas con JSON-LD; probadas a mano y permitidas por su robots.txt. Simisol (su sitemap solo da categorías), CYC
+# (antibots), Centro Música (no responde fuera de Argentina) y Hendrix (6 visitas por hora) quedan fuera.
+AR_SOURCES = {}
+
+
+def _ar_fix(data, text):
+    """Como en México, y además: fotos grandes (Tiendanube da la de 480 px; Heaven, la pequeña) y sin la "marca"
+    Guitarra que pone alguna tienda."""
+    data = _mx_fix(data, text)
+    img = data.get("image") or ""
+    img = re.sub(r"-480-0\.(webp|jpe?g|png)", r"-1024-1024.\1", img)
+    img = img.replace("_small.jpg", "_medium.jpg")
+    if img:
+        data["image"] = img
+    if (data.get("brand_raw") or "").strip().lower() in ("guitarra", "guitarras", "instrumentos"):
+        data["brand_raw"] = None
+    return data
+
+
+def _ar_store(name, base, path, sitemap=None, need_word=True):
+    """need_word: la ficha tiene que decir guitarra (o un modelo conocido) en la URL; si no, se leería toda la tienda."""
+    return _mx_store(name, base, path=path, sitemap=sitemap, cur="ARS", fix=_ar_fix, need_word=need_word)
+
+
+_TN = r"/productos/[^/]+/?$"   # Tiendanube
+_HV = r"/product-[^/]+$"       # Heaven
+AR_SOURCES.update({
+    "kairon": _ar_store("Kairon Music", "https://www.kaironmusic.com.ar", _TN, "https://www.kaironmusic.com.ar/sitemap.xml.gz"),
+    "baires": _ar_store("Baires Rocks", "https://www.baires.rocks", _TN, "https://www.baires.rocks/sitemap.xml.gz"),
+    "famusic": _ar_store("Famusic", "https://www.famusic.com.ar", _TN, "https://www.famusic.com.ar/sitemap.xml.gz"),
+    "musicaysonido": _ar_store("Música y Sonido", "https://www.musicaysonido.com.ar", _TN,
+                               "https://acdn-us.mitiendanube.com/stores/003/928/657/themes/common/sitemap.xml.gz"),
+    "monroe": _ar_store("Musical Monroe", "https://musicalmonroe.com.ar", _TN,
+                        "https://acdn-us.mitiendanube.com/stores/007/110/865/themes/common/sitemap.xml.gz"),
+    "musicalhouse": _ar_store("Musical House", "https://musicalhouse.com.ar", _TN,
+                              "https://dcdn-us.mitiendanube.com/stores/123/734/themes/common/sitemap.xml.gz"),
+    "bestmusic": _ar_store("Best Music", "https://www.bestmusic.com.ar", _HV),
+    "themusicstore": _ar_store("The Music Store", "https://www.themusicstore.com.ar", _HV),
+    "getback": _ar_store("Get Back", "https://www.get-back.com.ar", _HV),
+    "lacasa": _ar_store("La Casa del Instrumento", "https://lacasadelinstrumentomusical.com.ar", _HV),
+    "fusion": _ar_store("Fusión Musical", "https://fusionmusical.com.ar", _HV),
+    "feedback": _ar_store("Tienda Feedback", "https://tiendafeedback.com.ar",
+                          r"/instrumentos/guitarras-bajos/guitarras/guitarras-(?:electricas|acusticas|clasicas)/[^/]+\.html$",
+                          "https://tiendafeedback.com.ar/1_index_sitemap.xml", need_word=False),
+})
 
 MX_SOURCES.update({
     "veerkamp": _mx_store("Veerkamp", "https://veerkamponline.com", shopify=True),
@@ -4469,6 +4516,10 @@ CATALOGS = {
                         "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie", "headers": EN_HEADERS,
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json", "pack": "packs.json"}},
     # México: en pesos. Sin guitarras de menos de 1.500 pesos (cuerdas, fundas y accesorios que se cuelan).
+    # Argentina: en pesos argentinos (mínimo 100.000: con la inflación, hoy una guitarra de estudio cuesta más).
+    "ar": {"dir": DIR / "ar", "sources": AR_SOURCES, "site": "ar", "cur": "ARS", "min_price": 100000, "cluster_names": True,
+           "files": {"electrica": "guitarras-electricas.json", "acustica": "guitarras-acusticas.json",
+                     "clasica": "guitarras-clasicas.json", "pack": "paquetes.json"}},
     "mx": {"dir": DIR / "mx", "sources": MX_SOURCES, "site": "mx", "cur": "MXN", "min_price": 1500, "cluster_names": True,
            "files": {"electrica": "guitarras-electricas.json", "acustica": "guitarras-acusticas.json",
                      "clasica": "guitarras-clasicas.json", "pack": "paquetes.json"}},
@@ -4710,12 +4761,26 @@ def name_match_score(a_name, b_name, brand):
     return len(ta & tb) / max(1, len(ta | tb))
 
 
-_GENERIC_ES = re.compile(r"\b(?:guitarra|guitar|el[eé]ctric[ao]|electroac[uú]stic[ao]|electro|ac[uú]stic[ao]|cl[aá]sic[ao]"
-                         r"|de|con|para|y|en|color|acabado)\b", re.I)
+_GENERIC_ES = re.compile(r"\b(?:guitarra|guitar|guit|elec|el[eé]ctric[ao]|electroac[uú]stic[ao]|electro|ac[uú]stic[ao]"
+                         r"|cl[aá]sic[ao]|diap|de|con|para|y|en|color|acabado)\b\.?", re.I)
+# Número de pieza de Fender, Squier, Gretsch, Jackson, Charvel y EVH (037-0200-581, 0370200581): identifica el modelo
+# y el acabado; las tiendas argentinas y mexicanas lo ponen en el nombre o en la referencia.
+_FENDER_PN = re.compile(r"(?<![\d-])(0\d{2})[-\s]?(\d{4})[-\s]?(\d{3})(?![\d-])")
 
 
 def _cluster_by_name(groups):
     """Une las fichas sin EAN de tiendas distintas que son el mismo modelo (marca igual y nombre casi igual)."""
+    by_pn = {}
+    for key in [k for k in groups if k.startswith("url:")]:
+        o = groups[key][0]
+        m = _FENDER_PN.search(o["name"] + " " + (o.get("sku") or ""))
+        if m:
+            pn = "".join(m.groups())
+            target = by_pn.get(pn)
+            if target and target in groups and o["store"] not in {x["store"] for x in groups[target]}:
+                groups[target].append(groups.pop(key)[0])
+            elif not target:
+                by_pn[pn] = key
     clusters = {}  # marca -> [[clave, nombre limpio, tiendas]]
     for key in sorted([k for k in groups if k.startswith("url:")], key=lambda k: groups[k][0]["store"]):
         if key not in groups:
@@ -5255,7 +5320,7 @@ def build(offers=None, history=None):
                                               "ch": DE_NAME_SKIP, "pl": PL_NAME_SKIP,
                                               "se": UK_NAME_SKIP, "no": UK_NAME_SKIP, "dk": UK_NAME_SKIP,
                                               **dict.fromkeys(("cz", "sk", "hu", "ro", "bg", "gr", "fi"), UK_NAME_SKIP),
-                                              "lu": FR_NAME_SKIP, "mx": MX_NAME_SKIP}[CATALOG["site"]])
+                                              "lu": FR_NAME_SKIP, "mx": MX_NAME_SKIP, "ar": MX_NAME_SKIP}[CATALOG["site"]])
             if skip:
                 mine = [o for o in mine if not skip.search(o.get("name") or "")]
         # Las tiendas de seguimiento (products.json) y los precios a mano son de España (eléctricas).
