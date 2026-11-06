@@ -280,7 +280,7 @@ boss-ps6-4957054413293
 boss-pw-3-4957054507183
 boss-pw-3-wah-pedal-hpedalhtml
 boss-px-1-plugout-fx-4957054521578
-boss-rc-1-loop-station-12-minutos-grabacion-2-entradas-y-2-salidas-ereobp5133
+boss-rc-1-loop-station-2-inputs-x-2-outputs-ereobp5133
 boss-rc-1-loop-station-4957054506537
 boss-rc-10r-4957054514235
 boss-rc-10r-looper-280-patterns-ritmos-3-visores-tmosp14040
@@ -329,11 +329,11 @@ boss-sl2-slider-pedal-guitarra-096sl2html
 boss-st-2-power-stack-4957054413309
 boss-st2-pedal-guitarra-ossst2html
 boss-sy-1-synthesizer-121-sons-11-categorias-sons-icobp13653
+boss-sy-1-synthesizer-4957054514389
 boss-sy-1000-guitar-synthesizer-200-sons-150-efeitos-modo-gr-300-aixop15508
 boss-sy-1000-guitar-synthesizer-4957054514310
 boss-sy-200-guitar-synth-171-sons-12-categorias-sons-nicop25333
 boss-sy-200-guitar-synthesizer-ynthesizer
-boss-sy1-synthesizer-pedal-4957054514389
 boss-sy200-pedal-sintetizador-guitarra-4957054518226
 boss-te-2-4957054503291
 boss-te-2-tera-echo-delay-para-guitarra-eletrica-emiump4523
@@ -568,6 +568,7 @@ dunlop-105q-crybaby-mini-bass-wah-710137085824
 dunlop-535ar-cry-baby-mini-auto-return-710137121331
 dunlop-535q-cry-baby-multi-wah-710137014565
 dunlop-95-q-710137017665
+dunlop-95q-cry-baby-wah-wah-babywahwah
 dunlop-bfg-07-siete-santos-octavio-fuzz-710137111394
 dunlop-bg-95-crybaby-wah-710137035539
 dunlop-cbj95-cry-baby-junior-wah-710137122352
@@ -1012,7 +1013,7 @@ fulltone-mdv-3-676891000575
 fulltone-ocd-ge-gold-limited-edition-605258521767
 fulltone-ocd-lux-763532367217
 fulltone-ocd-v2-gold-limited-edition-605258542939
-fulltone-robin-trower-676891000452
+fulltone-robin-trower-overdrive-676891000452
 fulltone-soul-bender-overdrive-ooverdrive
 fulltone-soulbender-sb2-676891000544
 fulltone-supatrem-jr-locompacto
@@ -1242,7 +1243,6 @@ jhs-pedals-violet-lb-purple-650415212712
 jhs-pedals-volture-650415212163
 jhs-pedals-whitey-tighty-650415211852
 jim-dunlop-535q-c-cry-baby-wah-wah-535q-cromado-710137017740
-jim-dunlop-95q-wah-crybaby-y34335html
 jim-dunlop-cbm95-cry-baby-mini-wah-h47602html
 jim-dunlop-cm-95-clyde-mccoy-crybaby-wah-710137041608
 jim-dunlop-dcr-1fc-crybaby-controlador-710137006096
@@ -1788,12 +1788,12 @@ morley-volume-commander-664101001818
 mxr-bass-compressor-m87b-blackout-limited-edition-tionp33275
 mxr-carbon-copy-mini-710137110595
 mxr-csp-026-74-vintage-phase-90-710137038288
-mxr-csp-041-hybrid-fuzz-710137128972
 mxr-csp-102sl-script-dyna-comp-710137095564
 mxr-csp027-custom-shop-timmy-overdrive-710137117501
 mxr-csp027-timmy-overdrive-rivep15691
 mxr-csp033g-gran-torino-710137136038
 mxr-csp039-duke-of-tone-overdrive-710137128507
+mxr-csp041-hybrid-fuzz-710137128972
 mxr-distortion-evh-modern-high-gain-710137144125
 mxr-dookie-drive-distortion-30th-anniversary-710137139169
 mxr-duke-of-tone-overdrive-rivep29122

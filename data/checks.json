@@ -91,12 +91,27 @@
  },
  {
   "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Cort Space G6TR SGLG w/bag",
+  "slug": "cort-space-g6tr-sglg-w-bag-8809817986970"
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "partitura",
   "name": "Jackson JS1X DINKY MINION BLACK",
   "slug": "jackson-js1x-dinky-minion-black-nblackhtml",
   "price": 133.6,
   "median": 186.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "PRS SE Silver Sky Maple LH Summit Purple",
+  "slug": "prs-se-silver-sky-maple-lh-summit-purple-825362248477",
+  "price": 598.0,
+  "median": 960.2
  },
  {
   "kind": "electrica",
@@ -142,6 +157,15 @@
   "slug": "godin-stadium-ht-matte-black-mn-with-bag-623501049332",
   "price": 999.0,
   "median": 1333.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "thomann",
+  "name": "Mooer Gtrs SL810 Brown Burst",
+  "slug": "mooer-gtrs-sl810-brown-burst-6971889222927",
+  "price": 354.0,
+  "median": 498.0
  },
  {
   "kind": "electrica",
@@ -443,15 +467,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Charvel Pro-Mod So-Cal Style 1 HH FR E EB Satin Primer Gray",
-  "slug": "charvel-pro-mod-so-cal-style-1-hh-fr-e-eb-satin-primer-gray-717669550660",
-  "price": 729.9,
-  "median": 1145.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "ESP E-II Horizon FR BLK",
   "slug": "esp-e-ii-horizon-fr-blk-uperstrato",
@@ -556,6 +571,15 @@
   "slug": "maybach-lester-wild-cherry-59-aged-bachtipolp",
   "price": 1623.0,
   "median": 2199.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Mooer Gtrs P800 White",
+  "slug": "mooer-gtrs-p800-white-6971889220442",
+  "price": 399.0,
+  "median": 549.995
  },
  {
   "kind": "electrica",
@@ -929,20 +953,20 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
-  "store": "partitura",
-  "name": "Takamine GN75CE-TBK",
-  "slug": "takamine-gn75ce-tbk-040019html",
-  "price": 468.0,
-  "median": 625.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
   "store": "woodbrass",
   "name": "Takamine Gln12Ens 12 Nex Spruce-Mahogany",
   "slug": "takamine-gln12ens-12-nex-spruce-mahogany-190262060024",
   "price": 233.0,
   "median": 314.94
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "Tanglewood TRX2E",
+  "slug": "tanglewood-trx2e-rx2ep40582",
+  "price": 202.0,
+  "median": 298.365
  },
  {
   "kind": "acustica",
@@ -1220,7 +1244,7 @@
   "store": "pronorte",
   "name": "Joyo R-14 Atmosphere Reverb",
   "slug": "joyo-r-14-atmosphere-reverb-6972716320946",
-  "price": 72.0,
+  "price": 64.0,
   "median": 104.45
  },
  {

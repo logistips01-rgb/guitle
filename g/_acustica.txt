@@ -1749,7 +1749,6 @@ fender-finneas-signature-acoustasonic-player-telecaster-717669923303
 fender-fsr-ca-std-monterey-bpg-nat-gnatp42209
 fender-fsr-po-220e-orchestra-717669723491
 fender-g5022cbfe-rancher-falcon-jumbo-umbop29685
-fender-hellcat-lh-signature-tim-armstrong-wn-natural-885978875795
 fender-hellcat-tim-amstrong-signature-bpg-chck-885978882670
 fender-highway-dreadnought-all-mahogany-097-2512-122-512122html
 fender-highway-series-dreadnought-rosewood-fingerboard-natural-uralp33478
@@ -1806,6 +1805,7 @@ fender-redondo-special-pf-black-pickguard-honey-burst-717669621292
 fender-redondo-special-pf-black-pickguard-natural-717669621285
 fender-sonoran-mini-con-funda-nat-885978877232
 fender-squier-sa-105ce-natural-turalp2336
+fender-tim-armstrong-hellcat-lh-zurdos-natural-885978875795
 fender-tim-armstrong-hellcat-wn-natural-885978875016
 fender-villager-12-string-wn-tortoiseshell-pickguard-aged-natural-717669621506
 fg-ta-bl-western-negra-4957812615525
@@ -2413,7 +2413,6 @@ gretsch-ltd-jim-dandy-parlor-solid-top-heritage-burst-ebursthtml
 guild-200-bt-240e-natural-baritona-ritonahtml
 guild-200-bt-258e-natural-baritona-de-8-cuerdas-uerdashtml
 guild-200-ds-240-memoir-natural-usticahtml
-guild-a-20-bob-marley-rleyp26844
 guild-a20-bob-marley-signature-dreadnought-614252350112
 guild-bt-258e-deluxe-baritone-tonep45855
 guild-d-120-nat-westerly-614252346986
@@ -2866,8 +2865,8 @@ ibanez-tcm50fm-odb-open-pore-denim-blue-4549763357564
 ibanez-tcy10e-bk-black-high-gloss-4515110515796
 ibanez-tcy10e-edicion-ltd-marfil-alto-brillo-illo436299
 ibanez-tcy10e-ivh-ivory-high-gloss-4549763285010
-ibanez-tcy10e-sfh-ztcy10esfh
-ibanez-tcy10esfh-sea-foam-green-4549763285041
+ibanez-tcy10e-sfh-sea-foam-green-4549763285041
+ibanez-tcy10esfh-electrificada-ficadahtml
 ibanez-tcy10le-bk-515796html
 ibanez-tcy10lebk-electrificada-left-para-zurdos-negra-4549763285829
 ibanez-tcy10pa-bkb-series-talman-transparent-brown-black-burst-high-gloss-4549763377005
@@ -4930,9 +4929,10 @@ takamine-gd51-nat-190262041535
 takamine-gd51-nat-4582270040017
 takamine-gd51-nat-d51nathtml
 takamine-gd51-natural-lh-190262042228
-takamine-gd51ce-nat-799493251609
+takamine-gd51ce-nat-enatp10481
 takamine-gd51ce-nat-lh-atlhp45019
 takamine-gd51ce-nat-lh-dreadnought-zurdos-799493251593
+takamine-gd51ce-nat-t41082html
 takamine-gd51cenat-190262041528
 takamine-gd51lh-nat-799493251616
 takamine-gd51nat-dreadnought-799493251623
@@ -6026,7 +6026,7 @@ yamaha-f310-folk-tobacco-brown-sunburst-4957812668224
 yamaha-f310-natural-310natural
 yamaha-f310-natural-e4640nuevo
 yamaha-f310-nt-ii-folk-natural-4957812306775
-yamaha-f310-tbs-10tbsp7717
+yamaha-f310-tbs-4957812306799
 yamaha-f310-tobacco-brown-sunburst-31000nuevo
 yamaha-f310tbsii-sombreada-da3824html
 yamaha-f370-folk-4957812314701
