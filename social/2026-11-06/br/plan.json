@@ -1,0 +1,175 @@
+{
+ "date": "2026-11-06",
+ "fecha": "6 de novembro",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "tagima-utah-gran-reserva-dkmop-aco-eletrico-7898563975049",
+   "name": "Tagima Utah Gran Reserva DKMOP Aço Elétrico",
+   "brand": "Tagima",
+   "kind": "acustica",
+   "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-tagima-utah-gran-reserva-dkmop-aco-eletrico-1133060/1353707.jpg?w=1000&h=1000&v=202508070413&qs=ignore",
+   "price": 1057.5,
+   "store": "Destroyer",
+   "stores": 3,
+   "median": 1324.0,
+   "max": 1349.0,
+   "next": 1299.0,
+   "rows": [
+    [
+     "Destroyer",
+     1057.5
+    ],
+    [
+     "Soco Music",
+     1299.0
+    ],
+    [
+     "Só Som",
+     1349.0
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 241,50 a menos que em qualquer outra loja",
+   "pct": 19,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Promoção do dia: Tagima Utah Gran Reserva DKMOP Aço Elétrico\n💶 R$ 1.057,50 em Destroyer, comparada em 3 lojas.\n📉 R$ 241,50 a menos que em qualquer outra loja.\n\n🔎 Compare o preço em guitle.com/br (todas as promoções de hoje no link da bio 👆).\nPreço de 6 de novembro; pode mudar.\n\n#guitarra #guitarrista #promoção #ofertas #violao #tagima"
+ },
+ "stories": [
+  {
+   "slug": "strinberg-sd301hcr-ns-galaxy-series-folk-de-aco-natural-fosco-c-efeitos-e-bag-7899854524199",
+   "name": "Strinberg SD301HCR NS Galaxy Series Folk de Aço Natural Fosco C/ Efeitos e Bag",
+   "brand": "Strinberg",
+   "kind": "acustica",
+   "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-sd301hcr-ns-galaxy-series-folk-de-aco-natural-fosco-c-efeitos-e-bag-672424/893071.jpg?w=1000&h=1000&v=202508070700&qs=ignore",
+   "price": 1701.0,
+   "store": "Akustica Musical",
+   "stores": 6,
+   "median": 2429.91,
+   "max": 2550.0,
+   "next": 1979.1,
+   "rows": [
+    [
+     "Akustica Musical",
+     1701.0
+    ],
+    [
+     "Mundomax",
+     1979.1
+    ],
+    [
+     "Só Som",
+     2359.0
+    ],
+    [
+     "Luggi",
+     2429.91
+    ],
+    [
+     "Megasom",
+     2449.9
+    ],
+    [
+     "Soco Music",
+     2550.0
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 278,10 a menos que em qualquer outra loja",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "giannini-gsf1d-mini-jumbo-aco-preto-togiannini",
+   "name": "Giannini GSF1D Mini Jumbo Aço Preto",
+   "brand": "Giannini",
+   "kind": "acustica",
+   "img": "https://static.mundomax.com.br/produtos/65710/1200/1.jpg",
+   "price": 809.1,
+   "store": "Mundomax",
+   "stores": 3,
+   "median": 995.27,
+   "max": 1019.25,
+   "next": 971.29,
+   "rows": [
+    [
+     "Mundomax",
+     809.1
+    ],
+    [
+     "Supersonora",
+     971.29
+    ],
+    [
+     "Tuner Music",
+     1019.25
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 162,19 a menos que em qualquer outra loja",
+   "pct": 17,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "benson-exf900ce-exodus-series-grand-auditorium-koa-burst-pre-fishman-aco-c-bag-7899701570133",
+   "name": "Benson EXF900CE Exodus Series Grand Auditorium Koa Burst Pré Fishman Aço C/ Bag",
+   "brand": "Benson",
+   "kind": "acustica",
+   "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-benson-exf900ce-exodus-series-grand-auditorium-koa-burst-pre-fishman-aco-c-bag-1132865/1353512.jpg?w=1000&h=1000&v=202508070623&qs=ignore",
+   "price": 2331.0,
+   "store": "Akustica Musical",
+   "stores": 3,
+   "median": 2794.05,
+   "max": 2799.0,
+   "next": 2789.1,
+   "rows": [
+    [
+     "Akustica Musical",
+     2331.0
+    ],
+    [
+     "Mundomax",
+     2789.1
+    ],
+    [
+     "Ponto do Músico",
+     2799.0
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 458,10 a menos que em qualquer outra loja",
+   "pct": 16,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}
