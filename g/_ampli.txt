@@ -302,6 +302,7 @@ boss-katana-210-bass-amp-pro-300w-2x10-2x10p27200
 boss-katana-210-bass-ana210bass
 boss-katana-210-bass-combo-bajo-electrico-4957054518455
 boss-katana-212-gen3-4957054520649
+boss-katana-25-tana25html
 boss-katana-50-gen-3-combo-4957054520618
 boss-katana-50-gen-3-guitar-combo-50w-mais-vendido-do-mundo-1x12p14291
 boss-katana-50-gen3-ex-4957054520625
@@ -383,7 +384,6 @@ dv-mark-dv-little-jazz-8033829137147
 dv-mark-dv-micro-60-8033829137451
 dv-mark-dv-micro-60-cmt-8033829137468
 dv-mark-dv-neoclassic-112-small-8033829136799
-dv-mark-dv-neoclassic-212-8033829136805
 dv-mark-dv-neoclassic-412-8033829136812
 dv-mark-jazz-12-8033829137314
 dv-mark-little-jazz-8033829137307

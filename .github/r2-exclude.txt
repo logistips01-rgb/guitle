@@ -36,6 +36,9 @@
 /fi/**
 /lu/**
 /mx/**
+# Discos de España y sus cajas: los sube la lectura de discos (musica.yml, r2.sh carpeta)
+/discos/**
+/_r/**
 /ar/**
 /sitemap.xml
 /sitemap-*.xml

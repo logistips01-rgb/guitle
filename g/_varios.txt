@@ -495,6 +495,15 @@ d-angelico-leather-guitar-strap-brown-correa-687700224501
 d-grip-pack-6-puas-jazz-a-0-88-small-8594189530202
 d-grip-pack-6-puas-jazz-a-1-00-small-8594189530219
 d-grip-pack-6-puas-jazz-a-1-18-small-8594189530226
+d-grip-pack-6-puas-jazz-a-1-40-small-8594189530233
+d-grip-pack-6-puas-jazz-b-0-88-medium-8594189530363
+d-grip-pack-6-puas-jazz-b-1-00-medium-8594189530370
+d-grip-pack-6-puas-jazz-b-1-14-medium-8594189530387
+d-grip-pack-6-puas-jazz-b-1-40-medium-8594189530394
+d-grip-pack-6-puas-jazz-c-0-88-big-8594189530523
+d-grip-pack-6-puas-jazz-c-1-00-big-8594189530530
+d-grip-pack-6-puas-jazz-c-1-18-big-8594189530547
+d-grip-pack-6-puas-jazz-c-1-40-big-8594189530554
 daddario-25l00-dx-leather-strap-bk-19954944759
 daddario-25l01-dx-wide-brown-leather-strap-19954944766
 daddario-25ls00-dx-leather-strap-ribet-bk-19954944773
@@ -756,6 +765,9 @@ dimarzio-dd2200jp-correa-de-guitarra-j-petrucci-cliplock-negro-costura-azul-6633
 dimarzio-dd2200jpbkbls-correa-petrucci-corta-bk-663334045538
 dimarzio-dd2246-polyphia-correa-guitarra-negra-663334162754
 dimarzio-dd2247-polyphia-correa-guitarra-blanca-663334164253
+dimarzio-dd3100ngn-strap-neon-green-663334034761
+dimarzio-dd3100nw-strap-nylon-white-663334000346
+dimarzio-dd3100t-camo-strap-663334025257
 dimarzio-dd3146-polyphia-correa-guitarra-negra-663334162747
 dimarzio-dd3147-polyphia-correa-guitarra-flores-663334164291
 dimarzio-dp240-vintage-mini-humbucker-neck-663334037045

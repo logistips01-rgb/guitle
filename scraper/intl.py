@@ -52,7 +52,7 @@ SITES = {
            "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche", "bajo": "bassi",
                      "ampli": "amplificatori", "pedal": "pedali-effetto", "teclado": "tastiere", "micro": "microfoni",
                      "estuche": "custodie", "varios": "accessori"},
-           "amazon": None},
+           "amazon": "https://www.amazon.it/s?k={q}&tag=guitle0e-21"},
     # Equipo en otro catálogo ("demas", scraper.catalog.EQUIPO_COUNTRIES); sus páginas salen cuando tiene productos.
     "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de", "extra_catalogs": ["demas"],
            "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren", "bajo": "baesse",
@@ -68,7 +68,7 @@ SITES = {
            "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars", "bajo": "basses",
                      "ampli": "amps", "pedal": "effects-pedals", "teclado": "keyboards", "micro": "microphones",
                      "estuche": "cases-bags", "varios": "accessories"},
-           "amazon": None,
+           "amazon": "https://www.amazon.co.uk/s?k={q}&tag=guitle08-21",
            "t_over": {"homeDesc": "guitle compares guitar prices: electric, acoustic and classical guitars in the shops that sell in "
                                   "Ireland, with the price history of every model.",
                       "steps": ["Every day we check the price, stock and photo of every guitar in the shops that sell in Ireland.",
@@ -422,7 +422,8 @@ T = {
         "sections": "Sezioni", "searchAria": "Cerca",
         "bestPrice": "miglior prezzo", "inStock": "disponibile", "noStock": "non disponibile", "goLong": "Vai al negozio", "goShort": "Vai",
         "store": "negozio", "stores": "negozi", "lh": "mancina", "storesH3": "Negozi", "historyH3": "Storico dei prezzi",
-        "amazon": "", "titleFrom": "{name}: prezzo da {price} {where}", "inN": "in {n} negozi", "inS": "da {s}",
+        "amazon": "Preferisci comprare su Amazon? <a href=\"{u}\" target=\"_blank\" rel=\"sponsored noopener\">Cerca questo modello su Amazon</a>",
+        "amazonNote": "In qualità di Affiliato Amazon, guitle riceve un guadagno dagli acquisti idonei.", "titleFrom": "{name}: prezzo da {price} {where}", "inN": "in {n} negozi", "inS": "da {s}",
         "whereMany": "da {s} · {n} negozi", "whereDiff": ", fino a {d} di differenza",
         "desc": "{name} da {price} da {s}. Confronta il prezzo in {n} {stores} ({list}) e guarda lo storico per capire se è il momento "
                 "giusto per comprare.",
@@ -948,6 +949,11 @@ for _code, _page in PACK_PAGE.items():
 def strings(code):
     """Textos de un país: los de su idioma con los cambios propios del país ("t_over"; p. ej. Irlanda usa el inglés
     del Reino Unido pero habla de Irlanda). Los enlaces a su aviso legal apuntan a su carpeta."""
+    if code == "es":  # la web de España (en la raíz), para secciones hechas con estas piezas (discos, scraper/musica.py)
+        t = json.loads(json.dumps(T["es"]))
+        t["affiliate"] = "Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti."
+        t["js"]["alertLegal"] = re.sub(r"/[a-z]{2}/legal\.html", "/legal.html", t["js"]["alertLegal"])
+        return t
     t = json.loads(json.dumps(T[SITES[code]["t"]]))
     for key, value in SITES[code].get("t_over", {}).items():
         if isinstance(value, dict):
@@ -979,6 +985,8 @@ def money(v, site):
     """Precio con el formato del país: 1 299 € (francés, portugués), 1.299 € (alemán, italiano), € 1.299 (neerlandés),
     €1,299 (Irlanda), £1,299 (Reino Unido), R$ 1.299,00 (Brasil)."""
     whole, cents = int(round(v * 100)) // 100, int(round(v * 100)) % 100
+    if site == "es":  # España (la web de la raíz): 1.299 € o 12,99 €
+        return f"{whole:,}".replace(",", ".") + (f",{cents:02d}" if cents else "") + "\u00a0€"
     lang, dec = SITES[site]["lang"], f"{cents:02d}" if cents else ""
     if SITES[site]["cur"] == "GBP":
         return f"£{whole:,}" + (f".{dec}" if dec else "")
@@ -1062,12 +1070,15 @@ esc = lambda v: html.escape(str(v or ""), quote=True)
 
 
 def _logo(code, t):
-    return (f'<h1 style="flex:1;margin:0"><a class="logo" href="/{code}/" aria-label="{esc(t["homeLabel"])}"><img src="/icons/icon.svg" '
+    return (f'<h1 style="flex:1;margin:0"><a class="logo" href="{"/" if code == "es" else f"/{code}/"}" aria-label="{esc(t["homeLabel"])}"><img src="/icons/icon.svg" '
             f'alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">{esc(t["tagline"])}'
             f'</span></span></a></h1>')
 
 
 def _foot(code, t):
+    if code == "es":  # el mismo pie que las fichas de España (scraper/pages.py)
+        return (f'<footer class="site-foot">\n    <span>{esc(t["affiliate"])}</span>\n    <span><a href="/legal.html#aviso">Aviso legal</a> · '
+                '<a href="/legal.html#privacidad">Privacidad</a> · <a href="/legal.html#cookies">Cookies</a></span>\n  </footer>')
     here = SITES[code]["country"]
     others = " · ".join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries(code) if n != here)
     amz = f' {t["amazonNote"]}' if SITES[code].get("amazon") and t.get("amazonNote") else ""
@@ -1087,7 +1098,7 @@ def _anchor(code):
 
 
 def _head(code, title, desc, canonical, extra=""):
-    s = SITES[code]
+    s = SITES[code] if code != "es" else {"lang": "es"}
     return f"""<!doctype html>
 <html lang="{s['lang']}">
 <head>
