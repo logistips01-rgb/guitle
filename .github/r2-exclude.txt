@@ -35,6 +35,8 @@
 /gr/**
 /fi/**
 /lu/**
+/mx/**
+/ar/**
 /sitemap.xml
 /sitemap-*.xml
 /g/**

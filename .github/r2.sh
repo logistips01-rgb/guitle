@@ -6,7 +6,7 @@
 # Lo que va a R2 está también en .github/r2-exclude.txt, para que r2.yml no lo toque ni lo borre.
 set -euo pipefail
 
-R2_SITES="pt fr it uk de br ie at nl be ch pl se no dk cz sk hu ro bg gr fi lu"  # webs de países que van a R2
+R2_SITES="pt fr it uk de br ie at nl be ch pl se no dk cz sk hu ro bg gr fi lu mx ar"  # webs de países que van a R2
 R2_ES=1        # 1: también las páginas de España (g/*.html, marca/, tipo/, presupuesto/, marcas.html, sitemap.xml)
 R2_IMG=1       # 1: también las miniaturas (img/p/); en git queda su lista, data/thumbs.json
 
@@ -14,7 +14,7 @@ ALL_SITES=$(python -c "from scraper.intl import SITES; print(' '.join(SITES))")
 in_r2() { case " $R2_SITES " in *" $1 "*) return 0 ;; esac; return 1; }
 # Países cuyas fichas sirve el Worker desde las cajas (scraper/cajas.py; la misma lista que CON_CAJAS en
 # cloudflare/worker.js): sus fichas sueltas (<país>/g/) ya no se suben, solo las cajas (<país>/_g/) que cambian.
-R2_CAJAS="lu fi pt fr it de pl se no dk uk br ie at nl be ch cz sk ro bg hu gr"
+R2_CAJAS="lu fi pt fr it de pl se no dk uk br ie at nl be ch cz sk ro bg hu gr mx ar"
 in_cajas() { case " $R2_CAJAS " in *" $1 "*) return 0 ;; esac; return 1; }
 
 git_add() {

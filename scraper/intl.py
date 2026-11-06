@@ -110,6 +110,12 @@ SITES = {
            "kinds": _LANG_KINDS("bg"), "amazon": None},
     "gr": {"country": "Ελλάδα", "lang": "el-GR", "t": "el", "cur": "EUR", "catalog": "gr", "extra_catalogs": ["grmas"],
            "kinds": _LANG_KINDS("el"), "amazon": None},
+    # Latinoamérica: textos en español (scraper/idiomas/es.py), de momento solo guitarras. Argentina, con la gráfica de
+    # precio sin inflación (producto.js, data/ipc-ar.json).
+    "mx": {"country": "México", "lang": "es-MX", "t": "es", "cur": "MXN", "catalog": "mx",
+           "kinds": {k: v for k, v in _LANG_KINDS("es").items() if k in ("electrica", "acustica", "clasica")}, "amazon": None},
+    "ar": {"country": "Argentina", "lang": "es-AR", "t": "es", "cur": "ARS", "catalog": "ar",
+           "kinds": {k: v for k, v in _LANG_KINDS("es").items() if k in ("electrica", "acustica", "clasica")}, "amazon": None},
     "fi": {"country": "Suomi", "lang": "fi-FI", "t": "fi", "cur": "EUR", "catalog": "fi", "extra_catalogs": [],
            "kinds": _LANG_KINDS("fi", GUITARS_ONLY), "amazon": None},
     # Luxemburgo: en francés, con los textos de Francia.
@@ -953,8 +959,15 @@ def strings(code):
 
 
 # Lo que va en el pie de cada web: España y los demás países.
-def _countries():
-    return [(SPAIN["country"], "/")] + [(s["country"], f"/{code}/") for code, s in SITES.items()]
+# Países que aún no salen en el pie "guitle en otros países" de las demás webs: añadirlos cambia TODAS las fichas de todos
+# los países (cientos de miles de escrituras en R2). Se añaden de una vez cuando toque un cambio de diseño general.
+SIN_PIE = {"mx", "ar"}
+
+
+def _countries(code=None):
+    """Webs para el pie de la web `code`: las nuevas (SIN_PIE) solo se enlazan entre ellas."""
+    hide = SIN_PIE if code not in SIN_PIE else set()
+    return [(SPAIN["country"], "/")] + [(s["country"], f"/{c}/") for c, s in SITES.items() if c not in hide]
 
 
 # Monedas con el símbolo detrás: separador de miles y símbolo.
@@ -1028,6 +1041,8 @@ def _alternates():
             if p.get("ean") and p.get("slug"):
                 out.setdefault(p["ean"], {})["es"] = f"{SITE}/g/{p['slug']}.html"
     for code in SITES:
+        if code in SIN_PIE:  # las webs nuevas aún no se enlazan desde las fichas de las demás (ver SIN_PIE)
+            continue
         for kind in SITES[code]["kinds"]:
             for p in (_load(_json_path(code, kind)) or {}).get("products", []):
                 if p.get("ean") and p.get("slug"):
@@ -1054,7 +1069,7 @@ def _logo(code, t):
 
 def _foot(code, t):
     here = SITES[code]["country"]
-    others = " · ".join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries() if n != here)
+    others = " · ".join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries(code) if n != here)
     amz = f' {t["amazonNote"]}' if SITES[code].get("amazon") and t.get("amazonNote") else ""
     return (f'<footer class="site-foot">\n    <span>{esc(t["affiliate"] + amz)}</span>\n'
             f'    <span><a href="/{code}/legal.html#aviso">{esc(t["legal"])}</a> · <a href="/{code}/legal.html#{_anchor(code)}">'
@@ -1420,7 +1435,7 @@ def _index(code, cats):
 
   <footer><span>{esc(t['updated'].format(d=f'{updated[8:10]}/{updated[5:7]}/{updated[:4]}'))}</span><span><a href="/{code}/legal.html#aviso">{esc(t['legal'])}</a> · <a href="/{code}/legal.html#{_anchor(code)}">{esc(t['privacy'])}</a> · <a href="/{code}/legal.html#cookies">{esc(t['cookies'])}</a></span>
     <span style="flex-basis:100%">{esc(t['affiliate'])}</span>
-    <span style="flex-basis:100%">{esc(t['otherCountries'])} {' · '.join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries() if n != s['country'])}</span></footer>
+    <span style="flex-basis:100%">{esc(t['otherCountries'])} {' · '.join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries(code) if n != s['country'])}</span></footer>
 </main>
 <script src="/c.js" defer></script>
 </body>
