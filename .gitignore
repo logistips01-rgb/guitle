@@ -39,3 +39,6 @@ brand/__pycache__/
 # Discos de España (guitle.com/discos/) y sus cajas: los sube la lectura de discos (musica.yml)
 /discos/
 /_r/
+
+# Música de los Reels (scraper/musica_libre.py): se descarga en cada máquina, no se sube
+social/musica/
