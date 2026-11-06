@@ -56,6 +56,17 @@ async function fromBox(env, code, slug) {
   return { html: box.pages[slug], etag: `"${box.etag}-${fnv(slug).toString(16)}"` };
 }
 
+// Secciones enteras en cajas (scraper/cajas.py empaquetar_carpeta): la sección de discos de estos países. La clave es la
+// ruta dentro del país ("records/x.html", "records/artist/y.html", "records/index.html").
+const CAJAS_R = 512;
+const SECCIONES = { records: new Set(["uk"]) };
+
+async function fromSectionBox(env, code, rel) {
+  const box = await openBox(env, `${code}/_r/${(fnv(rel) % CAJAS_R).toString(16).padStart(4, "0")}.json.gz`);
+  if (!box || typeof box.pages[rel] !== "string") return null;
+  return { html: box.pages[rel], etag: `"${box.etag}-${fnv(rel).toString(16)}"` };
+}
+
 export default {
   async fetch(req, env, ctx) {
     if (req.method !== "GET" && req.method !== "HEAD") return new Response("Method Not Allowed", { status: 405, headers: { allow: "GET, HEAD" } });
@@ -73,6 +84,19 @@ export default {
     try { key = decodeURIComponent(url.pathname).replace(/^\/+/, ""); } catch { return notFound(); }
     if (key === "" || key.endsWith("/")) key += "index.html";
 
+    const sec = key.match(/^([a-z]{2})\/((records)\/.+\.html)$/);
+    if (sec && (SECCIONES[sec[3]]?.has(sec[1]) || url.searchParams.get("caja") === "1")) {
+      let box = null;
+      try { box = await fromSectionBox(env, sec[1], sec[2]); } catch { box = null; }
+      if (box) {
+        const headers = new Headers({ "content-type": TYPES.html, etag: box.etag, "cache-control": "public, max-age=600",
+          "x-content-type-options": "nosniff", "x-guitle-caja": "1" });
+        if (req.headers.get("if-none-match") === box.etag) return new Response(null, { status: 304, headers });
+        const res = new Response(req.method === "HEAD" ? null : box.html, { headers });
+        if (req.method === "GET" && url.searchParams.get("caja") !== "1") ctx.waitUntil(cache.put(req, res.clone()));
+        return res;
+      }
+    }
     const ficha = key.match(/^([a-z]{2})\/g\/([^/]+)\.html$/);
     const probar = url.searchParams.get("caja") === "1";
     if (ficha && (CON_CAJAS.has(ficha[1]) || probar)) {

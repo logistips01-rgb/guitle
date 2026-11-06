@@ -173,8 +173,9 @@ def build_data(pais):
     out.sort(key=lambda d: (-len(d["items"]), d["name"]))
     # En git solo los que se comparan (dos o más tiendas): son los que tienen página. El catálogo de cada tienda
     # (tiendas.json) no se guarda en git: se vuelve a leer cada día.
-    out = [d for d in out if len(d["items"]) >= 2]
-    _save(folder / "discos.json", out)
+    # En git (discos.json) solo los que se comparan: lo leen la portada y las lecturas de guitarras. Las páginas se
+    # hacen de todos (también los de una sola tienda: llevan el botón de Amazon), en la lectura de discos.
+    _save(folder / "discos.json", [d for d in out if len(d["items"]) >= 2])
     return out
 
 
@@ -188,6 +189,7 @@ TXT = {"uk": {"dir": "records", "one": "record", "home": "Records", "promo": "Ne
               "more": "Most compared", "note": "Prices include VAT; delivery may vary by shop.",
               "amazon": "https://www.amazon.co.uk/s?k={ean}&tag=guitle08-21", "amazon_btn": "Search this record on Amazon",
               "amazon_txt": "Prefer to buy on Amazon?",
+              "desc1": "{n} on {f}: today's price at {s} and where else to buy it, including Amazon.", "where1": "at {s}",
               "search_ph": "Search records: artist or album…", "search_res": "{n} records found", "search_none": "No records found",
               "f_artist": "Artist or band", "f_format": "Format", "f_all": "All formats", "f_sort": "Sort",
               "s_price": "Cheapest first", "s_shops": "Most compared", "s_az": "A–Z",
@@ -222,7 +224,8 @@ def _e(v):
 
 
 def write_pages(pais, discs=None):
-    """Página de cada disco que está en dos o más tiendas, listados por formato y el índice. Devuelve sus URL."""
+    """Página de cada disco con código (en una o más tiendas), listados por formato y el índice. Devuelve sus URL.
+    Las páginas van en cajas (scraper/cajas.py, <país>/_r/): .github/r2.sh carpeta sube solo las cajas que cambian."""
     from . import intl, pages
     if pais not in TXT:
         return []
@@ -265,11 +268,11 @@ def write_pages(pais, discs=None):
     except Exception:  # noqa: BLE001 - sin catálogo de guitarras, sin recuadro
         pass
     acount = {}
-    for d in multi:
+    for d in discs:
         if " - " in d["name"]:
             a = d["name"].split(" - ", 1)[0].strip()
             acount[a] = acount.get(a, 0) + 1
-    for d in multi:
+    for d in discs:  # todos: también los de una sola tienda (precio + botón de Amazon)
         f1 = T["fmt1"][d["fmt"]]
         url = f"/{pais}/{T['dir']}/{d['slug']}.html"
         path = out / f"{d['slug']}.html"
@@ -311,7 +314,7 @@ def write_pages(pais, discs=None):
     def artist(d):
         return d["name"].split(" - ", 1)[0].strip() if " - " in d["name"] else ""
     by_artist = {}
-    for d in multi:
+    for d in discs:
         if artist(d):
             by_artist.setdefault(artist(d), []).append(d)
     adir = out / "artist"
@@ -393,7 +396,7 @@ let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>
     for f in out.glob("*.html"):
         if f not in keep:
             f.unlink()
-    print(f"música {pais}: {len(discs)} discos con código, {len(multi)} en dos o más tiendas", flush=True)
+    print(f"música {pais}: {len(discs)} discos con código (todos con página), {len(multi)} en dos o más tiendas", flush=True)
     return urls
 
 
@@ -416,15 +419,25 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
     colors = {st: pages.PALETTE[n % len(pages.PALETTE)] for n, st in enumerate(sorted({i["s"] for i in items}))}
     n, prices = len(items), [i["p"] for i in items]
     title = T["title"].format(n=d["name"], f=f1)
-    desc = T["desc"].format(n=d["name"], f=f1, k=n)
-    where = t["whereMany"].format(s=names.get(best["s"], best["s"]), n=n) + (
+    desc = T["desc"].format(n=d["name"], f=f1, k=n) if n > 1 else T.get("desc1", T["desc"]).format(
+        n=d["name"], f=f1, k=n, s=names.get(best["s"], best["s"]))
+    where = (t["whereMany"].format(s=names.get(best["s"], best["s"]), n=n) if n > 1
+             else T.get("where1", "at {s}").format(s=names.get(best["s"], best["s"]))) + (
         t["whereDiff"].format(d=intl.money(round(max(prices) - min(prices)), pais)) if max(prices) - min(prices) >= 1 else "")
     ld = {"@context": "https://schema.org", "@type": "Product", "name": f"{d['name']} ({f1})", "gtin13": d["ean"],
           "image": d.get("img"), "url": f"https://guitle.com{url}",
           "offers": {"@type": "AggregateOffer", "priceCurrency": intl.SITES[pais]["cur"], "lowPrice": min(prices),
                      "highPrice": max(prices), "offerCount": n}}
-    amazon = (f'\n    <p class="muted small amazon">{_e(T["amazon_txt"])} <a href="{_e(T["amazon"].format(ean=d["ean"]))}" '
-              f'target="_blank" rel="sponsored noopener">{_e(T["amazon_btn"])}</a></p>' if T.get("amazon") else "")
+    if not T.get("amazon"):
+        amazon = ""
+    elif len(d["items"]) == 1:  # una sola tienda: Amazon como segunda opción bien visible (botón)
+        amazon = (f'\n    <p style="margin:14px 0 0">{_e(T["amazon_txt"])} <a class="btn-amz" href="{_e(T["amazon"].format(ean=d["ean"]))}" '
+                  f'target="_blank" rel="sponsored noopener" style="display:inline-block;margin-left:8px;padding:8px 16px;'
+                  f'border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);font-weight:600;text-decoration:none">'
+                  f'{_e(T["amazon_btn"])} →</a></p>')
+    else:
+        amazon = (f'\n    <p class="muted small amazon">{_e(T["amazon_txt"])} <a href="{_e(T["amazon"].format(ean=d["ean"]))}" '
+                  f'target="_blank" rel="sponsored noopener">{_e(T["amazon_btn"])}</a></p>')
     img = f'<div class="pimg"><img src="{_e(d["img"])}&width=600" alt="{_e(d["name"])}"></div>' if d.get("img") else ""
     head = intl._head(pais, f"{title} · guitle", desc, url,
                       f'<meta property="og:title" content="{_e(title)}">\n<meta property="og:description" content="{_e(desc)}">\n'

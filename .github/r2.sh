@@ -77,7 +77,9 @@ publicar() {
     python -m scraper.cajas "$s" || echo "::warning::no se pudieron hacer las cajas de $s"
     # Las guías (y su curso) se suben solo el día 1 de cada mes (o con GUIAS=1): el resto de días se quedan como están
     # en R2, sin subirlas ni borrarlas. Sus precios cambian a diario, pero una guía no necesita estar al día.
-    local excl=()
+    # La sección de discos (<país>/records/ y sus cajas <país>/_r/) la sube su propia lectura (musica.yml): aquí ni se
+    # sube ni se borra, aunque esta lectura no la haya generado.
+    local excl=(--exclude "/records/**" --exclude "/_r/**")
     if [ "$(date -u +%d)" != "01" ] && [ "${GUIAS:-0}" != "1" ]; then excl+=(--exclude "/guias/**"); fi
     if in_cajas "$s" && compgen -G "$s/_g/*.json.gz" >/dev/null; then
       # Las fichas sueltas se quedan en R2 como están (respaldo del Worker), sin subirlas ni borrarlas.
@@ -140,11 +142,17 @@ print(f"miniaturas: {len(gone)} apuntadas pero sin subir a R2; se volverán a ba
 PY
 }
 
-# Sube una carpeta generada suelta (p. ej. uk/records de scraper.musica), sin borrar nada en R2.
+# Sube la sección de discos de un país (p. ej. uk/records de scraper.musica), sin borrar nada en R2: sus páginas van en
+# cajas (<país>/_r/, scraper/cajas.py) y solo se suben las cajas que cambian, el sitemap y el índice del buscador.
 carpeta() {
   rclone_ready
   URLS="$RUNNER_TEMP/r2-urls.txt"; : > "$URLS"
-  if [ -d "$1" ]; then up copy "$1" "$1" --include "*.html" --include "*.xml" --include "*.json"; fi
+  if [ -d "$1" ]; then
+    local pais=${1%%/*} sub=${1#*/}
+    python -m scraper.cajas --carpeta "$pais" "$sub"
+    up copy "$pais/_r" "$pais/_r" --include "*.json.gz"
+    up copy "$1" "$1" --include "*.xml" --include "*.json"
+  fi
   python -m scraper.indexnow --files "$URLS" || true
 }
 

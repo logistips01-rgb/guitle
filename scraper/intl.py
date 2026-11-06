@@ -1286,14 +1286,14 @@ ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasic
 def _music_nav(code):
     from .musica import TXT as MUSIC
     return (f' <a class="navlink" style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none" href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>'
-            if code in MUSIC and (ROOT / code / MUSIC[code]["dir"] / "index.html").exists() else "")
+            if code in MUSIC and (ROOT / "data" / "musica" / code / "discos.json").exists() else "")
 
 
 def _vinyl_row(code):
     """Chollos de discos en la portada del país (si tiene sección de discos, scraper/musica.py)."""
     from . import musica
     T = musica.TXT.get(code)
-    if not T or not (ROOT / code / T["dir"] / "index.html").exists():
+    if not T or not (ROOT / "data" / "musica" / code / "discos.json").exists():
         return ""
     cards = "".join(f'<a class="card" href="/{code}/{T["dir"]}/{esc(d["slug"])}.html"><span class="badge">{esc(T["save"].format(m=money(save, code)))}</span>'
                     f'<div class="img"><img src="{esc(d["img"])}&width=300" alt="" loading="lazy"></div><div class="body"><span class="name">'
@@ -1307,7 +1307,7 @@ def _music_promo(code):
     """Aviso bajo el buscador y casilla en categorías para la sección de discos (si existe)."""
     from .musica import TXT as MUSIC
     m = MUSIC.get(code)
-    if not m or not (ROOT / code / m["dir"] / "index.html").exists():
+    if not m or not (ROOT / "data" / "musica" / code / "discos.json").exists():
         return "", ""
     url = f"/{code}/{m['dir']}/"
     promo = (f'<p style="margin:14px 0 0;text-align:center"><a href="{url}" style="display:inline-block;background:var(--accent-bg);color:var(--accent);'
@@ -1327,7 +1327,7 @@ def _guides_link(code):
     from .guias_intl import _lang_module
     mod = _lang_module(SITES[code]["t"])
     from .musica import TXT as MUSIC
-    music = f'<a style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none" href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>' if code in MUSIC and (ROOT / code / MUSIC[code]["dir"] / "index.html").exists() else ""
+    music = f'<a style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none" href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>' if code in MUSIC and (ROOT / "data" / "musica" / code / "discos.json").exists() else ""
     return (f'<a href="/{code}/guias/">{esc(mod.GUIDES_WORD)}</a>' if mod else "") + music
 
 
@@ -1528,8 +1528,7 @@ def write_site(code):
     urls.append(f"/{code}/legal.html")
     # Guías de compra en su idioma, con sus guitarras y su moneda (scraper/guias_intl.py)
     from . import guias_intl
-    from . import musica  # discos (vinilo, CD, casete) del país, si tiene tiendas de discos (scraper/musica.py)
-    urls += musica.write_pages(code)
+    # Los discos (scraper/musica.py) los genera y sube su propia lectura (.github/workflows/musica.yml), en cajas; aquí no.
     from . import hoy  # "Chollos de hoy" (enlace de la bio de Instagram): página fija, los datos los pone redes
     hoy.write_country(code, sys.modules[__name__])
     course = guias_intl.write_course(code, sys.modules[__name__])  # antes que las guías: su índice lo enlaza
