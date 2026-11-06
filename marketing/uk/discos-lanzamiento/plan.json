@@ -1,0 +1,95 @@
+{
+ "fecha": "",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for record deals",
+  "web": "guitle.com/uk/records"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "guitle",
+  "topic": "records",
+  "slides": [
+   {
+    "hook": "New on guitle",
+    "title": "Not just guitars anymore",
+    "sub": "Vinyl, CDs and cassettes at the best price",
+    "size": 110,
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "c0.jpg",
+      "c1.jpg",
+      "c2.jpg"
+     ]
+    }
+   },
+   {
+    "hook": "Same record, different price",
+    "title": "Stereophonics – Tune!",
+    "size": 72,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Shop A",
+       56.99
+      ],
+      [
+       "Shop B",
+       71.99
+      ],
+      [
+       "Shop C",
+       80.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "£23.01 cheaper",
+    "sub": "Same record, same format, different shop",
+    "size": 130
+   },
+   {
+    "title": "Thousands of records",
+    "sub": "Compared across UK record shops, every day",
+    "size": 120,
+    "visual": {
+     "type": "chips",
+     "items": [
+      "Vinyl",
+      "CDs",
+      "Cassettes",
+      "Artist pages",
+      "Search & filters"
+     ]
+    }
+   },
+   {
+    "title": "Find yours and pay less",
+    "sub": "Free, no sign-up · link in bio",
+    "size": 120
+   }
+  ]
+ }
+}
