@@ -89,6 +89,8 @@ publicar() {
     one "sitemap-$s.xml"
   done
   if [ "$R2_ES" = 1 ]; then
+    # Regalos de Navidad (guitle.com/navidad/): con los catálogos de España de este trabajo
+    if python -m scraper.navidad >/dev/null 2>&1 && [ -f navidad/index.html ]; then up copy navidad navidad; fi
     # Fichas: cada trabajo genera solo las de sus categorías, así que se copian (nunca se borran, como en git).
     if compgen -G "g/*.html" >/dev/null; then up copy g g --include "*.html"; fi
     for d in marca tipo presupuesto; do  # se generan enteras en cada lectura de España

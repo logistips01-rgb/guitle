@@ -1542,6 +1542,9 @@ def write_site(code):
     # Los discos (scraper/musica.py) los genera y sube su propia lectura (.github/workflows/musica.yml), en cajas; aquí no.
     from . import hoy  # "Chollos de hoy" (enlace de la bio de Instagram): página fija, los datos los pone redes
     hoy.write_country(code, sys.modules[__name__])
+    from . import navidad  # regalos de Navidad para músicos (fr, it, pt, uk, ie), con lo mejor del catálogo de hoy
+    xmas = navidad.write_country(code, sys.modules[__name__])
+    urls += [xmas] if xmas else []
     course = guias_intl.write_course(code, sys.modules[__name__])  # antes que las guías: su índice lo enlaza
     urls += ([course] if course else []) + guias_intl.write(code, cats, sys.modules[__name__])
     # Guitarras que ya no están en el catálogo: su página se borra.
