@@ -69,6 +69,9 @@ SRC = {"pt": "es"}
 PT_FROM_ES = {"altafidelidad", "ega", "maxvinilos"}
 STORES["pt"] = {k: (f"{n} (Espanha)", u) for k, (n, u) in STORES["es"].items() if k in PT_FROM_ES}
 STORES["pt"]["cdgo"] = ("CDGO (Tubitek)", "https://cdgo.com")
+# CDGO también envía a España (correo certificado): España usa lo que ya se consulta para Portugal, sin leerla otra vez.
+STORES["es"]["cdgo"] = ("CDGO (Portugal)", "https://cdgo.com")
+SHARED_LOOKUP = {"es": {"cdgo": "pt"}}
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
 # ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
 LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
@@ -196,7 +199,7 @@ def read(pais, minutes):
     fresh = (folder / "tiendas.json").exists() and time.time() - (folder / "tiendas.json").stat().st_mtime < 20 * 3600
     shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {}) and k not in WOO.get(pais, ())
              and k not in WOO_NAME.get(pais, ()) and k not in SITEMAP.get(pais, {})
-             and k not in LISTING.get(pais, {})}
+             and k not in LISTING.get(pais, {}) and k not in SHARED_LOOKUP.get(pais, {})}
     for sid, (name, base) in ([] if fresh else shops.items()):  # catálogos: una vez al día
         if time.time() > end:
             break
@@ -579,6 +582,13 @@ def build_data(pais):
                     catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                       "st": row[2], "img": row[6], "u": row[3]}
                     codes.setdefault(sid, {})[e] = e
+    for sid, other in SHARED_LOOKUP.get(pais, {}).items():  # tiendas consultadas para otro país (CDGO, para Portugal)
+        fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
+        for e, row in _load(DATA / other / "consultas.json", {}).get(sid, {}).items():
+            if len(row) >= 7 and e in fmt_of:
+                catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
+                                                  "st": row[2], "img": row[6], "u": row[3]}
+                codes.setdefault(sid, {})[e] = e
     catalog = {k: v for k, v in catalog.items() if k in STORES[pais]}  # Portugal: solo las tiendas que envían allí
     if src in SITEMAP:  # tiendas leídas por su mapa del sitio: todos sus discos con formato (también los que solo tienen ellas)
         found = _load(DATA / src / "consultas.json", {})
