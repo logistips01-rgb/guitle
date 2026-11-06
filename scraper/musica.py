@@ -133,8 +133,9 @@ def read_awin(pais):
     cols = ("aw_deep_link,product_name,merchant_name,search_price,currency,merchant_category,category_name,ean,"
             "product_GTIN,merchant_image_url,aw_image_url,in_stock,brand_name,aw_product_id")
     catalog, codes, cats = {}, {}, {}
-    print(f"[awin] {len(feeds)} ficheros en la cuenta: " + "; ".join(
-        f"{f.get('Advertiser Name')} ({f.get('Membership Status')}, {f.get('Primary Region')})" for f in feeds)[:3000], flush=True)
+    joined = sorted({(f.get("Advertiser Name"), f.get("Primary Region")) for f in feeds
+                     if (f.get("Membership Status") or "").lower() in ("active", "joined")})
+    print(f"[awin] {len(feeds)} ficheros en la cuenta; anunciantes aprobados: {joined}", flush=True)
     for sid, needle in AWIN[pais].items():
         mine = [f for f in feeds if needle in (f.get("Advertiser Name") or "").lower()
                 and (f.get("Membership Status") or "").lower() in ("active", "joined")
@@ -858,6 +859,11 @@ def write_pages(pais, discs=None):
 
     urls, keep = [], set()
     multi = [d for d in discs if len(d["items"]) >= 2]
+    # Con pocos discos comparados (una sola tienda con catálogo, como Cultura en Francia), los listados, la portada y el
+    # buscador enseñan todos los discos (con foto primero): cada uno con su tienda y el botón de Amazon.
+    few = len(multi) < 200
+    if few:
+        multi = sorted(discs, key=lambda d: (-len(d["items"]), not d.get("img"), d["fmt"] != "vinilo", d["name"]))
     # Chollos de guitarras del día en cada disco (y discos en las fichas de guitarras): un público lleva al otro
     guitar_box = ""
     try:
@@ -975,7 +981,7 @@ let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>
 """.replace("__CUR__", intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR").replace("__AP__", json.dumps({a: slug(a) for a in artists_pages}, ensure_ascii=False))
                  .replace("__RES__", _e(T["search_res"])).replace("__NONE__", _e(T["search_none"])).replace("__ALL__", _e(T["artist_all"])))
     body = (f'  <p class="hub-intro" style="color:var(--text-secondary)">{_e(T["d_index"])}</p>\n' + search + f'  <div class="links">{"".join(links)}</div>\n'
-            f'  <section class="hub-sec"><h2>{_e(T["more"])}</h2><div class="grid">{best}</div></section>')
+            f'  <section class="hub-sec"><h2>{_e(T["tile"] if few else T["more"])}</h2><div class="grid">{best}</div></section>')
     path = out / "index.html"
     pages._write(path, page(f"{_pre(pais)}/{T['dir']}/", T["h_index"], T["d_index"], body))
     urls.insert(0, f"{_pre(pais)}/{T['dir']}/")
@@ -1003,7 +1009,7 @@ let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>
     for f in out.glob("*.html"):
         if f not in keep:
             f.unlink()
-    print(f"música {pais}: {len(discs)} discos con código (todos con página), {len(multi)} en dos o más tiendas", flush=True)
+    print(f"música {pais}: {len(discs)} discos con código (todos con página), {sum(1 for d in discs if len(d["items"]) >= 2)} en dos o más tiendas", flush=True)
     return urls
 
 
