@@ -1,0 +1,255 @@
+{
+ "fecha": "6 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "5 guitares électriques de 300 € à 500 €",
+  "hook": "Top du jour",
+  "picks": [
+   {
+    "slug": "ibanez-azes40b-black-4549763381590",
+    "name": "Ibanez AZES40B Black",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/e33e90ae7b7d3a70d8df9c0bed0ba183c1fd24d2_HOSHINO_AZES40BBK.jpg?height=1200&pad_color=ffffff&v=1792619807&width=1200",
+    "price": 329.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 329.0,
+    "max": 329.0,
+    "next": 329.0,
+    "rows": [
+     [
+      "Woodbrass",
+      329.0
+     ],
+     [
+      "Stars Music",
+      329.0
+     ],
+     [
+      "Michenaud",
+      329.0
+     ],
+     [
+      "Music 3000",
+      329.0
+     ],
+     [
+      "Thomann",
+      329.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "epiphone-sg-tribute-plus-cherry-burst-711106175317",
+    "name": "Epiphone SG Tribute Plus Cherry Burst",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/4a88db0617eee30be4372df92868043ec677ce41_GBI_E1SGTPCBNH1.jpg?height=1200&pad_color=ffffff&v=1793727453&width=1200",
+    "price": 333.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 369.0,
+    "max": 369.0,
+    "next": 369.0,
+    "rows": [
+     [
+      "Woodbrass",
+      333.0
+     ],
+     [
+      "Stars Music",
+      369.0
+     ],
+     [
+      "Guitar Legend",
+      369.0
+     ],
+     [
+      "Michenaud",
+      369.0
+     ],
+     [
+      "Azema Musique",
+      369.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "squier-stratocaster-60s-classic-vibe-lrl-lake-placid-blue-885978064243",
+    "name": "Squier Stratocaster 60S Classic Vibe Lrl Lake Placid Blue",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/67fe75ca26ad823229599d71896162a7a7ea9868_FMIC_0374010502.jpg?height=1200&pad_color=ffffff&v=1793735993&width=1200",
+    "price": 419.0,
+    "store": "Woodbrass",
+    "stores": 8,
+    "median": 437.0,
+    "max": 459.0,
+    "next": 419.0,
+    "rows": [
+     [
+      "Woodbrass",
+      419.0
+     ],
+     [
+      "Music 3000",
+      419.0
+     ],
+     [
+      "Michenaud",
+      419.0
+     ],
+     [
+      "Guitar Maniac",
+      429.0
+     ],
+     [
+      "Stars Music",
+      437.0
+     ],
+     [
+      "Guitar Legend",
+      437.0
+     ],
+     [
+      "Scotto Musique",
+      439.0
+     ],
+     [
+      "Hurricane Music",
+      459.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "yamaha-revstar-rse20-element-red-copper-4957812675185",
+    "name": "Yamaha Revstar RSE20 Element red copper",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://guitarmaniac.com/22424-large_default/yamaha-revstar-rse20-element-red-copper.jpg",
+    "price": 469.0,
+    "store": "Guitar Maniac",
+    "stores": 5,
+    "median": 479.0,
+    "max": 499.0,
+    "next": 479.0,
+    "rows": [
+     [
+      "Guitar Maniac",
+      469.0
+     ],
+     [
+      "Woodbrass",
+      479.0
+     ],
+     [
+      "Stars Music",
+      479.0
+     ],
+     [
+      "Thomann",
+      479.0
+     ],
+     [
+      "Michenaud",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "prs-ce24-se-standard-satin-ice-blue-metallic-tallichtml",
+    "name": "PRS CE24 SE Standard Satin Ice Blue Metallic",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://www.music3000.fr/100376-home_default/prs-ce24-se-standard-satin-ice-blue-metallic.jpg",
+    "price": 489.0,
+    "store": "Music 3000",
+    "stores": 7,
+    "median": 499.0,
+    "max": 549.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "Music 3000",
+      489.0
+     ],
+     [
+      "Woodbrass",
+      499.0
+     ],
+     [
+      "Stars Music",
+      499.0
+     ],
+     [
+      "Hurricane Music",
+      499.0
+     ],
+     [
+      "Ferré Musique",
+      499.0
+     ],
+     [
+      "Music Privilege",
+      519.0
+     ],
+     [
+      "Azema Musique",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}
