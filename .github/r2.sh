@@ -47,7 +47,9 @@ rclone_ready() {
 up() {
   local mode=$1 src=$2 dst=$3 log="$RUNNER_TEMP/r2-log.txt"; shift 3
   if [ "$mode" = sync ]; then
-    rclone sync "$src" "r2:guitle/$dst" --checksum --fast-list --transfers 32 --checkers 32 \
+    # Sin --fast-list: así no lista las carpetas excluidas (las fichas sueltas de los países con cajas, decenas de miles
+    # de objetos); cada página de listado es una operación de pago.
+    rclone sync "$src" "r2:guitle/$dst" --checksum --transfers 32 --checkers 32 \
       --combined "$RUNNER_TEMP/r2-comb.txt" --stats-log-level NOTICE "$@"
     { grep -E '^[+*] .*\.html$' "$RUNNER_TEMP/r2-comb.txt" || true; } | cut -c3- | sed "s#^#$dst/#" >> "$URLS"
   else  # copy no admite --combined: lo copiado sale del registro
@@ -111,6 +113,9 @@ publicar() {
 # Quita de data/thumbs.json las miniaturas que no están en R2 ni en disco (una subida que falló): así se vuelven a bajar
 # en vez de quedar rotas en la web. La lista del bucket se lee una vez por trabajo.
 reparar() {
+  # Listar las ~560.000 miniaturas son ~560 operaciones de pago: solo lo hace la lectura de España (R2_REPARAR=1), una
+  # vez por tanda, no cada uno de los ~40 trabajos del día. Lo que falte se vuelve a bajar en la siguiente.
+  if [ "${R2_REPARAR:-0}" != "1" ]; then return 0; fi
   rclone_ready
   local list="$RUNNER_TEMP/r2-img.txt"
   # Solo una lista entera: se escribe aparte y se da por buena si rclone acaba sin error.
