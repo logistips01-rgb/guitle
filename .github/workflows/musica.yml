@@ -23,7 +23,7 @@ permissions:
 jobs:
   musica:
     runs-on: ubuntu-latest
-    timeout-minutes: 200
+    timeout-minutes: 355
     # Cada país espera solo a su propia lectura (lanzar España no espera a la de Italia, que dura horas)
     concurrency:
       group: musica-${{ matrix.pais }}
@@ -31,8 +31,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # A mano: un país (input) o, al tocar .github/musica.txt, "[solo es]" en el mensaje del commit
-        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || contains(github.event.head_commit.message, '[solo es]') && '["es"]' || '["uk","fr","it","es"]') }}
+        # A mano: un país (input) o, al tocar .github/musica.txt, "[solo es]" o "[solo fr]" en el mensaje del commit
+        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || contains(github.event.head_commit.message, '[solo es]') && '["es"]' || contains(github.event.head_commit.message, '[solo fr]') && '["fr"]' || '["uk","fr","it","es"]') }}
     env:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -69,3 +69,23 @@ jobs:
           python -m scraper.musica --pais "${{ matrix.pais }}" --build
           dir=$(python -c "from scraper.musica import TXT; print(TXT['${{ matrix.pais }}']['dir'])")
           if [ "${{ matrix.pais }}" = es ]; then bash .github/r2.sh carpeta "$dir"; else bash .github/r2.sh carpeta "${{ matrix.pais }}/$dir"; fi
+      # Portugal: con el catálogo de España recién leído (tiendas.json no va a git), las tiendas que envían a Portugal y
+      # CDGO consultada disco a disco.
+      - name: Portugal (con el catálogo de España)
+        if: matrix.pais == 'es'
+        run: |
+          timeout 160m python -m scraper.musica --pais pt --minutes 150 || true
+          mkdir -p data/musica/pt "$RUNNER_TEMP/musica-pt" && cp -r data/musica/pt/. "$RUNNER_TEMP/musica-pt/"
+          for attempt in $(seq 40); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            mkdir -p data/musica/pt && cp -r "$RUNNER_TEMP/musica-pt/." data/musica/pt/
+            git add -A data/musica/pt
+            if git diff --cached --quiet; then break; fi
+            git commit -q -m "data: música pt $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep $(( 5 + RANDOM % 40 ))
+          done
+          cp "$RUNNER_TEMP/musica/tiendas.json" data/musica/es/ 2>/dev/null || true
+          python -m scraper.musica --pais pt --build
+          bash .github/r2.sh carpeta pt/discos

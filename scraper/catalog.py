@@ -3475,6 +3475,64 @@ def _gear4music(base, kind):
 SOURCES["gear4music"] = _gear4music("https://www.gear4music.es", _only("electrica", _is_electric))
 ACOUSTIC_SOURCES["gear4music"] = _gear4music("https://www.gear4music.es", acoustic_kind)
 FR_SOURCES["gear4music"] = _gear4music("https://www.gear4music.fr", fr_kind)
+
+
+@functools.lru_cache(maxsize=None)
+def _awin_rows(needle):
+    """Instrumentos de un anunciante de Awin aprobado (su fichero de productos, con la clave AWIN_FEED_KEY): una vez por
+    trabajo. Cada fila trae precio, stock, EAN, foto, categoría y el enlace de afiliado (que es la URL de la oferta)."""
+    import csv
+    import io
+    import os
+    key = os.environ.get("AWIN_FEED_KEY")
+    if not key:
+        print(f"[awin] sin AWIN_FEED_KEY: {needle} no se lee", flush=True)
+        return ()
+    feeds = list(csv.DictReader(io.StringIO(requests.get(f"https://productdata.awin.com/datafeed/list/apikey/{key}",
+                                                         timeout=120).text)))
+    mine = [f for f in feeds if needle in (f.get("Advertiser Name") or "").lower()
+            and (f.get("Membership Status") or "").lower() in ("active", "joined")]
+    cols = ("aw_deep_link,product_name,merchant_category,search_price,currency,ean,product_GTIN,merchant_image_url,"
+            "aw_image_url,in_stock,brand_name")
+    rows = []
+    for f in mine:
+        url = (f"https://productdata.awin.com/datafeed/download/apikey/{key}/language/any/fid/{f['Feed ID']}/columns/"
+               f"{cols}/format/csv/delimiter/%2C/compression/gzip/adultcontent/1/")
+        try:
+            raw = gzip.decompress(requests.get(url, timeout=600).content).decode("utf-8", "ignore")
+        except Exception as exc:  # noqa: BLE001
+            print(f"[awin] {needle} fichero {f['Feed ID']}: {exc}", flush=True)
+            continue
+        rows += [r for r in csv.DictReader(io.StringIO(raw)) if (r.get("merchant_category") or "").startswith("Instruments")]
+    print(f"[awin] {needle}: {len(rows)} instrumentos en {len(mine)} ficheros", flush=True)
+    return tuple(rows)
+
+
+def _awin_source(name, needle):
+    """Tienda afiliada en Awin (Cultura): sus productos salen de su fichero, no de su web (que no deja leer)."""
+    def feed():
+        for r in _awin_rows(needle):
+            try:
+                price = float(r.get("search_price") or 0)
+            except ValueError:
+                continue
+            ean = re.sub(r"\D", "", r.get("ean") or r.get("product_GTIN") or "")
+            # "Guitare électrique Fender Squier …": fuera el tipo del principio (va en la categoría)
+            name = re.sub(r"(?i)^(?:guitare|basse|ampli(?:ficateur)?|p[ée]dale|pack|ukul[ée]l[ée])(?:\s+(?:[ée]lectro-acoustique|"
+                          r"[ée]lectrique|folk|classique|acoustique|guitare|basse|d'effets?|bluetooth|de|pour))*\s+", "",
+                          html.unescape(r.get("product_name") or "")).strip()
+            name = re.sub(r"(?i)^fender\s+(?=squier\b)", "", name)  # "Fender Squier …" → "Squier …"
+            yield {"url": r.get("aw_deep_link"), "name": name,
+                   "brand_raw": r.get("brand_name") or None, "price": price or None, "currency": r.get("currency") or "EUR",
+                   "in_stock": (r.get("in_stock") or "1") not in ("0", "false", "no"),
+                   "image": r.get("merchant_image_url") or r.get("aw_image_url"),
+                   "ean": ean if _real_ean(ean) else None,
+                   "crumbs": [c.strip() for c in (r.get("merchant_category") or "").split(">")]}
+    return {"name": name, "kind": fr_kind, "feed": feed, "pick": lambda u: True,
+            "shop": {"base": "https://www.cultura.com", "path": None}}
+
+
+FR_SOURCES["cultura"] = _awin_source("Cultura", "cultura")
 IT_SOURCES["gear4music"] = _gear4music("https://www.gear4music.it", it_kind)
 DE_SOURCES["gear4music"] = _gear4music("https://www.gear4music.de", de_kind)
 NL_SOURCES["gear4music"] = _gear4music("https://www.gear4music.nl", nl_kind)
@@ -5037,6 +5095,30 @@ def scan_store(store_id, offers, minutes, limit):
     fetcher.session.headers.update(CATALOG.get("headers", {}))  # Reino Unido e Irlanda: en inglés (A Strings traduce)
     now = now_iso()
     out = {"store": store_id, "sitemap": None, "records": []}
+    if "feed" in src:  # tiendas con fichero de productos (Awin): todo de una vez, sin leer fichas
+        for data in src["feed"]():
+            rec = {"store": store_id, "url": data["url"], "checked": now, "status": "error"}
+            if not data["url"]:
+                continue
+            kind = src["kind_url"](data["crumbs"], data["url"], data["name"]) if "kind_url" in src else src["kind"](data["crumbs"])
+            if not kind:
+                rec["status"] = "not_guitar"
+            elif data["price"] is None:
+                rec["status"] = "no_price"
+            else:
+                brand = canonical_brand(data["brand_raw"])
+                rec.update(status="ok" if data["currency"] == CATALOG.get("cur", "EUR") else "wrong_currency",
+                           ean=data["ean"].lstrip("0") if data.get("ean") else None, brand=brand,
+                           name=clean_name(data["name"], data["brand_raw"], brand), kind=kind,
+                           type=guitar_type(data["crumbs"] + [data["name"]], kind), price=data["price"], currency=data["currency"],
+                           in_stock=data["in_stock"], image=data.get("image"))
+            out["records"].append(rec)
+        out["sitemap"] = [r["url"] for r in out["records"]]
+        stats = {}
+        for r in out["records"]:
+            stats[r["status"]] = stats.get(r["status"], 0) + 1
+        print(f"[{store_id}] fichero: {len(out['records'])} productos {stats}", flush=True)
+        return out
     try:
         urls = src["discover"](fetcher) if "discover" in src else sitemap_urls(fetcher, src["sitemap"], src.get("sub"))
         picked = sorted({u for u in urls if src["pick"](u)})

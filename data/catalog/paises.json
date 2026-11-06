@@ -122,19 +122,19 @@
  "se": {
   "country": "Sverige",
   "path": "/se/",
-  "guitars": 16109,
+  "guitars": 16122,
   "stores": 3
  },
  "no": {
   "country": "Norge",
   "path": "/no/",
-  "guitars": 19331,
+  "guitars": 21021,
   "stores": 4
  },
  "dk": {
   "country": "Danmark",
   "path": "/dk/",
-  "guitars": 6412,
+  "guitars": 7220,
   "stores": 2
  },
  "ch": {

@@ -7,7 +7,8 @@
   const pais = root.dataset.pais, base = pais === "es" ? "" : "/" + pais;
   const t = JSON.parse(root.dataset.t || "{}");
   const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const DIRS = { record: "records", disque: "disques", disco: "dischi" };  // discos: su sección; guitarras: /g/
+  // discos: su sección ("disco" es dischi en Italia y discos en España y Portugal); guitarras: /g/
+  const DIRS = { record: "records", disque: "disques", disco: pais === "it" ? "dischi" : "discos" };
   const img = s => !s ? "" : /^https?:|^\//.test(s) ? s : "/img/p/" + s;
   const empty = () => { root.innerHTML = `<p class="hub-intro">${esc(t.empty)} <a class="navlink" href="${base}/">${esc(t.catalog)} →</a></p>`; };
   fetch(`/data/hoy/${pais}.json?d=${new Date().toISOString().slice(0, 13)}`)

@@ -40,7 +40,11 @@
   const keys = ["v", "p_" + clean(location.pathname.replace(/^\//, "") || "inicio")];
   let from = "";
   try { from = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) {}
-  if (from !== location.hostname) keys.push("r_" + (from ? clean(from) : "directo"));
+  // Promociones: un enlace con ?utm_source=… (o ?ref=…) cuenta con ese origen ("r_promo-navidad-fr"), venga de donde venga
+  let promo = "";
+  try { const q = new URLSearchParams(location.search); promo = q.get("utm_source") || q.get("ref") || ""; } catch (e) {}
+  if (promo) keys.push("r_promo-" + promo.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").slice(0, 50));
+  else if (from !== location.hostname) keys.push("r_" + (from ? clean(from) : "directo"));
   // Solo cuentan las personas: la visita se suma cuando la página lleva 3 s visible y ha habido un gesto (ratón,
   // scroll, toque o tecla). Los robots que se hacen pasar por navegador cargan y se van sin tocar nada.
   let human = false, done = false, shown = 0, since = document.visibilityState === "visible" ? Date.now() : 0;
