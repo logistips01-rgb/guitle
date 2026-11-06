@@ -125,8 +125,11 @@ def read_awin(pais):
         print("[awin] falta AWIN_FEED_KEY: no se lee nada", flush=True)
         return
     folder = DATA / pais
-    feeds = list(csv.DictReader(io.StringIO(requests.get(f"https://productdata.awin.com/datafeed/list/apikey/{key}",
-                                                         timeout=120).text)))
+    r = requests.get(f"https://productdata.awin.com/datafeed/list/apikey/{key}", timeout=120)
+    feeds = list(csv.DictReader(io.StringIO(r.text)))
+    if not feeds:  # clave equivocada o sin anunciantes aprobados: lo que contesta Awin (sin la clave)
+        print(f"[awin] lista de ficheros vacía: HTTP {r.status_code}, {len(key)} caracteres de clave, respuesta: "
+              f"{r.text[:300].replace(key, '***')!r}", flush=True)
     cols = ("aw_deep_link,product_name,merchant_name,search_price,currency,merchant_category,category_name,ean,"
             "product_GTIN,merchant_image_url,aw_image_url,in_stock,brand_name,aw_product_id")
     catalog, codes, cats = {}, {}, {}
