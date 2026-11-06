@@ -30,7 +30,7 @@ AMAZON = {"es": "https://www.amazon.es/s?k={q}&tag=guitle-21", "pt": "https://ww
           "uk": "https://www.amazon.co.uk/s?k={q}&tag=guitle08-21", "ie": "https://www.amazon.co.uk/s?k={q}&tag=guitle08-21"}
 
 TXT = {
-    "es": {"amz": "Ver en Amazon", "dir": "navidad", "title": "Regalos de Navidad para músicos",
+    "es": {"sel": "Nuestra selección en Amazon", "amz": "Ver en Amazon", "dir": "navidad", "title": "Regalos de Navidad para músicos",
            "desc": "Ideas de regalo para guitarristas y músicos por presupuesto, con el precio más bajo de hoy en cada tienda: accesorios, pedales, amplis, guitarras y vinilos.",
            "intro": "¿No sabes qué regalar a un guitarrista? Aquí tienes ideas por presupuesto, con el mejor precio de hoy comparado entre tiendas. Los precios se actualizan cada día.",
            "b": ["Menos de 25 €", "De 25 a 75 €", "De 75 a 200 €", "Más de 200 €"],
@@ -41,7 +41,7 @@ TXT = {
                     "Mira la fecha de entrega de cada tienda: en diciembre los envíos tardan más.",
                     "Antes de comprar, compara: la misma guitarra puede costar bastante menos en otra tienda.",
                     "Para los que empiezan, un pack (guitarra + ampli + accesorios) suele salir más barato que por separado."]},
-    "fr": {"amz": "Voir sur Amazon", "dir": "noel", "title": "Cadeaux de Noël pour musiciens",
+    "fr": {"sel": "Notre sélection sur Amazon", "amz": "Voir sur Amazon", "dir": "noel", "title": "Cadeaux de Noël pour musiciens",
            "desc": "Idées cadeaux pour guitaristes et musiciens par budget, au prix le plus bas du jour : accessoires, pédales, amplis, guitares et vinyles.",
            "intro": "Vous ne savez pas quoi offrir à un guitariste ? Voici des idées par budget, au meilleur prix du jour comparé entre magasins. Les prix sont mis à jour chaque jour.",
            "b": ["Moins de 25 €", "De 25 à 75 €", "De 75 à 200 €", "Plus de 200 €"],
@@ -52,7 +52,7 @@ TXT = {
                     "Vérifiez le délai de livraison de chaque magasin : en décembre, les envois sont plus longs.",
                     "Comparez avant d'acheter : la même guitare peut coûter bien moins cher ailleurs.",
                     "Pour un débutant, un pack (guitare + ampli + accessoires) revient souvent moins cher."]},
-    "it": {"amz": "Vedi su Amazon", "dir": "natale", "title": "Regali di Natale per musicisti",
+    "it": {"sel": "La nostra selezione su Amazon", "amz": "Vedi su Amazon", "dir": "natale", "title": "Regali di Natale per musicisti",
            "desc": "Idee regalo per chitarristi e musicisti per budget, al prezzo più basso di oggi: accessori, pedali, amplificatori, chitarre e vinili.",
            "intro": "Non sai cosa regalare a un chitarrista? Ecco idee per budget, al miglior prezzo di oggi confrontato tra negozi. I prezzi si aggiornano ogni giorno.",
            "b": ["Meno di 25 €", "Da 25 a 75 €", "Da 75 a 200 €", "Più di 200 €"],
@@ -63,7 +63,7 @@ TXT = {
                     "Controlla i tempi di consegna di ogni negozio: a dicembre le spedizioni sono più lente.",
                     "Confronta prima di comprare: la stessa chitarra può costare molto meno in un altro negozio.",
                     "Per chi inizia, un pack (chitarra + ampli + accessori) di solito costa meno."]},
-    "pt": {"amz": "Ver na Amazon", "dir": "natal", "title": "Prendas de Natal para músicos",
+    "pt": {"sel": "A nossa seleção na Amazon", "amz": "Ver na Amazon", "dir": "natal", "title": "Prendas de Natal para músicos",
            "desc": "Ideias de prendas para guitarristas e músicos por orçamento, ao preço mais baixo de hoje: acessórios, pedais, amplificadores, guitarras e vinis.",
            "intro": "Não sabe o que oferecer a um guitarrista? Aqui tem ideias por orçamento, ao melhor preço de hoje comparado entre lojas. Os preços são atualizados todos os dias.",
            "b": ["Menos de 25 €", "De 25 a 75 €", "De 75 a 200 €", "Mais de 200 €"],
@@ -74,7 +74,7 @@ TXT = {
                     "Veja o prazo de entrega de cada loja: em dezembro os envios demoram mais.",
                     "Compare antes de comprar: a mesma guitarra pode custar bastante menos noutra loja.",
                     "Para quem começa, um pack (guitarra + amplificador + acessórios) costuma sair mais barato."]},
-    "en": {"amz": "View on Amazon", "dir": "christmas", "title": "Christmas gifts for musicians",
+    "en": {"sel": "Our Amazon picks", "amz": "View on Amazon", "dir": "christmas", "title": "Christmas gifts for musicians",
            "desc": "Gift ideas for guitarists and musicians by budget, at today's lowest price: accessories, pedals, amps, guitars and vinyl.",
            "intro": "Not sure what to get a guitarist? Here are ideas by budget, at today's best price compared across shops. Prices update every day.",
            "b": ["Under £25", "£25 to £75", "£75 to £200", "Over £200"],
@@ -178,6 +178,9 @@ def page(code, lang, cats, intl):
     return (head + "</head>\n<body>\n<main>\n"
             f'  <div class="topbar"><div class="row">{intl._logo(code, t)}<a class="navlink" href="{pre}/">{e(t["home"])}</a></div></div>\n'
             f'  <div class="xmas"><h2>🎄 {e(T["title"])}</h2><p>{e(T["intro"])}</p></div>\n'
+            # Selección a mano en Amazon (data/navidad/<país>.json, la edita Manuel): la lee navidad.js al abrir la página
+            f'  <section class="hub-sec" id="amzsel" data-pais="{code}" data-h="{e(T["sel"])}" data-b="{e(T["amz"])}" hidden></section>\n'
+            '  <script src="/navidad.js" defer></script>\n'
             + "\n".join(secs)
             + f'\n  <section class="hub-sec" style="max-width:780px"><h2>{e(T["tips_h"])}</h2><ul style="line-height:1.7">{tips}</ul></section>\n'
             f'  {intl._foot(code, t)}\n</main>\n<script src="/c.js" defer></script>\n</body>\n</html>\n'), url
