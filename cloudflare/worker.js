@@ -16,7 +16,7 @@ const ext = key => (key.match(/\.([a-z0-9]+)$/i) || [])[1]?.toLowerCase();
 // fichero por ficha. Se activa un país cuando se ha comprobado que sus fichas salen idénticas (?caja=1 lo prueba sin
 // activarlo). Si la caja no está o no tiene la ficha, se sirve el fichero de siempre.
 const CAJAS = 2048;
-const CON_CAJAS = new Set(["lu", "fi", "pt", "fr", "it", "de", "pl", "se", "no", "dk"]);
+const CON_CAJAS = new Set(["lu", "fi", "pt", "fr", "it", "de", "pl", "se", "no", "dk", "uk", "br", "ie", "at", "nl", "be", "ch", "cz", "sk", "ro", "bg", "hu", "gr", "mx", "ar"]);
 
 function fnv(text) {
   let h = 0x811c9dc5;
@@ -24,13 +24,47 @@ function fnv(text) {
   return h >>> 0;
 }
 
+// Cajas ya abiertas, en memoria (unas pocas decenas, 10 minutos): la siguiente ficha de la misma caja no vuelve a
+// leer R2 ni a descomprimir. Y la caja comprimida, en la caché de Cloudflare, para el resto de servidores de la zona.
+const BOXES = new Map();
+const BOX_TTL = 600e3, BOX_MAX = 64;
+
+async function openBox(env, box) {
+  const hit = BOXES.get(box);
+  if (hit && Date.now() - hit.t < BOX_TTL) return hit;
+  const ckey = new Request(`https://cajas.guitle.com/${box}`);
+  let res = await caches.default.match(ckey), etag;
+  if (res) etag = res.headers.get("x-etag");
+  else {
+    const obj = await env.SITE.get(box);
+    if (!obj) return null;
+    etag = obj.etag.replace(/"/g, "");
+    const raw = await obj.arrayBuffer();
+    res = new Response(raw, { headers: { "cache-control": "public, max-age=600", "x-etag": etag } });
+    await caches.default.put(ckey, res.clone());
+  }
+  const pages = JSON.parse(await new Response(res.body.pipeThrough(new DecompressionStream("gzip"))).text());
+  const entry = { pages, etag, t: Date.now() };
+  if (BOXES.size >= BOX_MAX) BOXES.delete(BOXES.keys().next().value);
+  BOXES.set(box, entry);
+  return entry;
+}
+
 async function fromBox(env, code, slug) {
-  const box = `${code}/_g/${(fnv(slug) % CAJAS).toString(16).padStart(4, "0")}.json.gz`;
-  const obj = await env.SITE.get(box);
-  if (!obj) return null;
-  const pages = JSON.parse(await new Response(obj.body.pipeThrough(new DecompressionStream("gzip"))).text());
-  if (typeof pages[slug] !== "string") return null;
-  return { html: pages[slug], etag: `"${obj.etag.replace(/"/g, "")}-${fnv(slug).toString(16)}"` };
+  const box = await openBox(env, `${code}/_g/${(fnv(slug) % CAJAS).toString(16).padStart(4, "0")}.json.gz`);
+  if (!box || typeof box.pages[slug] !== "string") return null;
+  return { html: box.pages[slug], etag: `"${box.etag}-${fnv(slug).toString(16)}"` };
+}
+
+// Secciones enteras en cajas (scraper/cajas.py empaquetar_carpeta): la sección de discos de estos países. La clave es la
+// ruta dentro del país ("records/x.html", "records/artist/y.html", "records/index.html").
+const CAJAS_R = 512;
+const SECCIONES = { records: new Set(["uk"]), disques: new Set(["fr"]) };
+
+async function fromSectionBox(env, code, rel) {
+  const box = await openBox(env, `${code}/_r/${(fnv(rel) % CAJAS_R).toString(16).padStart(4, "0")}.json.gz`);
+  if (!box || typeof box.pages[rel] !== "string") return null;
+  return { html: box.pages[rel], etag: `"${box.etag}-${fnv(rel).toString(16)}"` };
 }
 
 export default {
@@ -50,6 +84,19 @@ export default {
     try { key = decodeURIComponent(url.pathname).replace(/^\/+/, ""); } catch { return notFound(); }
     if (key === "" || key.endsWith("/")) key += "index.html";
 
+    const sec = key.match(/^([a-z]{2})\/((records|disques)\/.+\.html)$/);
+    if (sec && (SECCIONES[sec[3]]?.has(sec[1]) || url.searchParams.get("caja") === "1")) {
+      let box = null;
+      try { box = await fromSectionBox(env, sec[1], sec[2]); } catch { box = null; }
+      if (box) {
+        const headers = new Headers({ "content-type": TYPES.html, etag: box.etag, "cache-control": "public, max-age=600",
+          "x-content-type-options": "nosniff", "x-guitle-caja": "1" });
+        if (req.headers.get("if-none-match") === box.etag) return new Response(null, { status: 304, headers });
+        const res = new Response(req.method === "HEAD" ? null : box.html, { headers });
+        if (req.method === "GET" && url.searchParams.get("caja") !== "1") ctx.waitUntil(cache.put(req, res.clone()));
+        return res;
+      }
+    }
     const ficha = key.match(/^([a-z]{2})\/g\/([^/]+)\.html$/);
     const probar = url.searchParams.get("caja") === "1";
     if (ficha && (CON_CAJAS.has(ficha[1]) || probar)) {

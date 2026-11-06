@@ -6,7 +6,7 @@
 # Lo que va a R2 está también en .github/r2-exclude.txt, para que r2.yml no lo toque ni lo borre.
 set -euo pipefail
 
-R2_SITES="pt fr it uk de br ie at nl be ch pl se no dk cz sk hu ro bg gr fi lu"  # webs de países que van a R2
+R2_SITES="pt fr it uk de br ie at nl be ch pl se no dk cz sk hu ro bg gr fi lu mx ar"  # webs de países que van a R2
 R2_ES=1        # 1: también las páginas de España (g/*.html, marca/, tipo/, presupuesto/, marcas.html, sitemap.xml)
 R2_IMG=1       # 1: también las miniaturas (img/p/); en git queda su lista, data/thumbs.json
 
@@ -14,7 +14,7 @@ ALL_SITES=$(python -c "from scraper.intl import SITES; print(' '.join(SITES))")
 in_r2() { case " $R2_SITES " in *" $1 "*) return 0 ;; esac; return 1; }
 # Países cuyas fichas sirve el Worker desde las cajas (scraper/cajas.py; la misma lista que CON_CAJAS en
 # cloudflare/worker.js): sus fichas sueltas (<país>/g/) ya no se suben, solo las cajas (<país>/_g/) que cambian.
-R2_CAJAS="lu fi pt fr it de pl se no dk"
+R2_CAJAS="lu fi pt fr it de pl se no dk uk br ie at nl be ch cz sk ro bg hu gr mx ar"
 in_cajas() { case " $R2_CAJAS " in *" $1 "*) return 0 ;; esac; return 1; }
 
 git_add() {
@@ -47,7 +47,9 @@ rclone_ready() {
 up() {
   local mode=$1 src=$2 dst=$3 log="$RUNNER_TEMP/r2-log.txt"; shift 3
   if [ "$mode" = sync ]; then
-    rclone sync "$src" "r2:guitle/$dst" --checksum --fast-list --transfers 32 --checkers 32 \
+    # Sin --fast-list: así no lista las carpetas excluidas (las fichas sueltas de los países con cajas, decenas de miles
+    # de objetos); cada página de listado es una operación de pago.
+    rclone sync "$src" "r2:guitle/$dst" --checksum --transfers 32 --checkers 32 \
       --combined "$RUNNER_TEMP/r2-comb.txt" --stats-log-level NOTICE "$@"
     { grep -E '^[+*] .*\.html$' "$RUNNER_TEMP/r2-comb.txt" || true; } | cut -c3- | sed "s#^#$dst/#" >> "$URLS"
   else  # copy no admite --combined: lo copiado sale del registro
@@ -75,7 +77,9 @@ publicar() {
     python -m scraper.cajas "$s" || echo "::warning::no se pudieron hacer las cajas de $s"
     # Las guías (y su curso) se suben solo el día 1 de cada mes (o con GUIAS=1): el resto de días se quedan como están
     # en R2, sin subirlas ni borrarlas. Sus precios cambian a diario, pero una guía no necesita estar al día.
-    local excl=()
+    # La sección de discos (<país>/records/ y sus cajas <país>/_r/) la sube su propia lectura (musica.yml): aquí ni se
+    # sube ni se borra, aunque esta lectura no la haya generado.
+    local excl=(--exclude "/records/**" --exclude "/_r/**")
     if [ "$(date -u +%d)" != "01" ] && [ "${GUIAS:-0}" != "1" ]; then excl+=(--exclude "/guias/**"); fi
     if in_cajas "$s" && compgen -G "$s/_g/*.json.gz" >/dev/null; then
       # Las fichas sueltas se quedan en R2 como están (respaldo del Worker), sin subirlas ni borrarlas.
@@ -111,6 +115,9 @@ publicar() {
 # Quita de data/thumbs.json las miniaturas que no están en R2 ni en disco (una subida que falló): así se vuelven a bajar
 # en vez de quedar rotas en la web. La lista del bucket se lee una vez por trabajo.
 reparar() {
+  # Listar las ~560.000 miniaturas son ~560 operaciones de pago: solo lo hace la lectura de España (R2_REPARAR=1), una
+  # vez por tanda, no cada uno de los ~40 trabajos del día. Lo que falte se vuelve a bajar en la siguiente.
+  if [ "${R2_REPARAR:-0}" != "1" ]; then return 0; fi
   rclone_ready
   local list="$RUNNER_TEMP/r2-img.txt"
   # Solo una lista entera: se escribe aparte y se da por buena si rclone acaba sin error.
@@ -135,11 +142,17 @@ print(f"miniaturas: {len(gone)} apuntadas pero sin subir a R2; se volverán a ba
 PY
 }
 
-# Sube una carpeta generada suelta (p. ej. uk/records de scraper.musica), sin borrar nada en R2.
+# Sube la sección de discos de un país (p. ej. uk/records de scraper.musica), sin borrar nada en R2: sus páginas van en
+# cajas (<país>/_r/, scraper/cajas.py) y solo se suben las cajas que cambian, el sitemap y el índice del buscador.
 carpeta() {
   rclone_ready
   URLS="$RUNNER_TEMP/r2-urls.txt"; : > "$URLS"
-  if [ -d "$1" ]; then up copy "$1" "$1" --include "*.html" --include "*.xml" --include "*.json"; fi
+  if [ -d "$1" ]; then
+    local pais=${1%%/*} sub=${1#*/}
+    python -m scraper.cajas --carpeta "$pais" "$sub"
+    up copy "$pais/_r" "$pais/_r" --include "*.json.gz"
+    up copy "$1" "$1" --include "*.xml" --include "*.json"
+  fi
   python -m scraper.indexnow --files "$URLS" || true
 }
 

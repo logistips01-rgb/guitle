@@ -110,6 +110,12 @@ SITES = {
            "kinds": _LANG_KINDS("bg"), "amazon": None},
     "gr": {"country": "Ελλάδα", "lang": "el-GR", "t": "el", "cur": "EUR", "catalog": "gr", "extra_catalogs": ["grmas"],
            "kinds": _LANG_KINDS("el"), "amazon": None},
+    # Latinoamérica: textos en español (scraper/idiomas/es.py), de momento solo guitarras. Argentina, con la gráfica de
+    # precio sin inflación (producto.js, data/ipc-ar.json).
+    "mx": {"country": "México", "lang": "es-MX", "t": "es", "cur": "MXN", "catalog": "mx",
+           "kinds": {k: v for k, v in _LANG_KINDS("es").items() if k in ("electrica", "acustica", "clasica")}, "amazon": None},
+    "ar": {"country": "Argentina", "lang": "es-AR", "t": "es", "cur": "ARS", "catalog": "ar",
+           "kinds": {k: v for k, v in _LANG_KINDS("es").items() if k in ("electrica", "acustica", "clasica")}, "amazon": None},
     "fi": {"country": "Suomi", "lang": "fi-FI", "t": "fi", "cur": "EUR", "catalog": "fi", "extra_catalogs": [],
            "kinds": _LANG_KINDS("fi", GUITARS_ONLY), "amazon": None},
     # Luxemburgo: en francés, con los textos de Francia.
@@ -953,8 +959,15 @@ def strings(code):
 
 
 # Lo que va en el pie de cada web: España y los demás países.
-def _countries():
-    return [(SPAIN["country"], "/")] + [(s["country"], f"/{code}/") for code, s in SITES.items()]
+# Países que aún no salen en el pie "guitle en otros países" de las demás webs: añadirlos cambia TODAS las fichas de todos
+# los países (cientos de miles de escrituras en R2). Se añaden de una vez cuando toque un cambio de diseño general.
+SIN_PIE = {"mx", "ar"}
+
+
+def _countries(code=None):
+    """Webs para el pie de la web `code`: las nuevas (SIN_PIE) solo se enlazan entre ellas."""
+    hide = SIN_PIE if code not in SIN_PIE else set()
+    return [(SPAIN["country"], "/")] + [(s["country"], f"/{c}/") for c, s in SITES.items() if c not in hide]
 
 
 # Monedas con el símbolo detrás: separador de miles y símbolo.
@@ -969,6 +982,8 @@ def money(v, site):
     lang, dec = SITES[site]["lang"], f"{cents:02d}" if cents else ""
     if SITES[site]["cur"] == "GBP":
         return f"£{whole:,}" + (f".{dec}" if dec else "")
+    if SITES[site]["cur"] == "ARS":  # Argentina: $ 1.234.567 (o $ 1.234.567,50)
+        return f"$\u00a0{whole:,}".replace(",", ".") + (f",{dec}" if dec else "")
     if SITES[site]["cur"] == "MXN":  # México: $12,999 (o $12,999.50)
         return f"${whole:,}" + (f".{dec}" if dec else "")
     if SITES[site]["cur"] == "BRL":
@@ -1026,6 +1041,8 @@ def _alternates():
             if p.get("ean") and p.get("slug"):
                 out.setdefault(p["ean"], {})["es"] = f"{SITE}/g/{p['slug']}.html"
     for code in SITES:
+        if code in SIN_PIE:  # las webs nuevas aún no se enlazan desde las fichas de las demás (ver SIN_PIE)
+            continue
         for kind in SITES[code]["kinds"]:
             for p in (_load(_json_path(code, kind)) or {}).get("products", []):
                 if p.get("ean") and p.get("slug"):
@@ -1052,7 +1069,7 @@ def _logo(code, t):
 
 def _foot(code, t):
     here = SITES[code]["country"]
-    others = " · ".join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries() if n != here)
+    others = " · ".join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries(code) if n != here)
     amz = f' {t["amazonNote"]}' if SITES[code].get("amazon") and t.get("amazonNote") else ""
     return (f'<footer class="site-foot">\n    <span>{esc(t["affiliate"] + amz)}</span>\n'
             f'    <span><a href="/{code}/legal.html#aviso">{esc(t["legal"])}</a> · <a href="/{code}/legal.html#{_anchor(code)}">'
@@ -1269,14 +1286,14 @@ ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasic
 def _music_nav(code):
     from .musica import TXT as MUSIC
     return (f' <a class="navlink" style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none" href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>'
-            if code in MUSIC and (ROOT / code / MUSIC[code]["dir"] / "index.html").exists() else "")
+            if code in MUSIC and (ROOT / "data" / "musica" / code / "discos.json").exists() else "")
 
 
 def _vinyl_row(code):
     """Chollos de discos en la portada del país (si tiene sección de discos, scraper/musica.py)."""
     from . import musica
     T = musica.TXT.get(code)
-    if not T or not (ROOT / code / T["dir"] / "index.html").exists():
+    if not T or not (ROOT / "data" / "musica" / code / "discos.json").exists():
         return ""
     cards = "".join(f'<a class="card" href="/{code}/{T["dir"]}/{esc(d["slug"])}.html"><span class="badge">{esc(T["save"].format(m=money(save, code)))}</span>'
                     f'<div class="img"><img src="{esc(d["img"])}&width=300" alt="" loading="lazy"></div><div class="body"><span class="name">'
@@ -1290,7 +1307,7 @@ def _music_promo(code):
     """Aviso bajo el buscador y casilla en categorías para la sección de discos (si existe)."""
     from .musica import TXT as MUSIC
     m = MUSIC.get(code)
-    if not m or not (ROOT / code / m["dir"] / "index.html").exists():
+    if not m or not (ROOT / "data" / "musica" / code / "discos.json").exists():
         return "", ""
     url = f"/{code}/{m['dir']}/"
     promo = (f'<p style="margin:14px 0 0;text-align:center"><a href="{url}" style="display:inline-block;background:var(--accent-bg);color:var(--accent);'
@@ -1310,7 +1327,7 @@ def _guides_link(code):
     from .guias_intl import _lang_module
     mod = _lang_module(SITES[code]["t"])
     from .musica import TXT as MUSIC
-    music = f'<a style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none" href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>' if code in MUSIC and (ROOT / code / MUSIC[code]["dir"] / "index.html").exists() else ""
+    music = f'<a style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none" href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>' if code in MUSIC and (ROOT / "data" / "musica" / code / "discos.json").exists() else ""
     return (f'<a href="/{code}/guias/">{esc(mod.GUIDES_WORD)}</a>' if mod else "") + music
 
 
@@ -1418,7 +1435,7 @@ def _index(code, cats):
 
   <footer><span>{esc(t['updated'].format(d=f'{updated[8:10]}/{updated[5:7]}/{updated[:4]}'))}</span><span><a href="/{code}/legal.html#aviso">{esc(t['legal'])}</a> · <a href="/{code}/legal.html#{_anchor(code)}">{esc(t['privacy'])}</a> · <a href="/{code}/legal.html#cookies">{esc(t['cookies'])}</a></span>
     <span style="flex-basis:100%">{esc(t['affiliate'])}</span>
-    <span style="flex-basis:100%">{esc(t['otherCountries'])} {' · '.join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries() if n != s['country'])}</span></footer>
+    <span style="flex-basis:100%">{esc(t['otherCountries'])} {' · '.join(f'<a href="{u}">{esc(n)}</a>' for n, u in _countries(code) if n != s['country'])}</span></footer>
 </main>
 <script src="/c.js" defer></script>
 </body>
@@ -1511,8 +1528,7 @@ def write_site(code):
     urls.append(f"/{code}/legal.html")
     # Guías de compra en su idioma, con sus guitarras y su moneda (scraper/guias_intl.py)
     from . import guias_intl
-    from . import musica  # discos (vinilo, CD, casete) del país, si tiene tiendas de discos (scraper/musica.py)
-    urls += musica.write_pages(code)
+    # Los discos (scraper/musica.py) los genera y sube su propia lectura (.github/workflows/musica.yml), en cajas; aquí no.
     from . import hoy  # "Chollos de hoy" (enlace de la bio de Instagram): página fija, los datos los pone redes
     hoy.write_country(code, sys.modules[__name__])
     course = guias_intl.write_course(code, sys.modules[__name__])  # antes que las guías: su índice lo enlaza

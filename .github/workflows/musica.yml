@@ -25,12 +25,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pais: [uk]
+        pais: [uk, fr]
     env:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
       GH_TOKEN: ${{ github.token }}
+      AWIN_FEED_KEY: ${{ secrets.AWIN_FEED_KEY }}  # Francia: ficheros de productos de las tiendas afiliadas en Awin
     steps:
       - uses: actions/checkout@v4
         with:
@@ -46,16 +47,17 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cp -r "data/musica/${{ matrix.pais }}" "$RUNNER_TEMP/musica"
+          mkdir -p "data/musica/${{ matrix.pais }}" "$RUNNER_TEMP/musica"
+          cp -r "data/musica/${{ matrix.pais }}/." "$RUNNER_TEMP/musica/"
           for attempt in $(seq 40); do
             git fetch -q origin "${GITHUB_REF_NAME}"
             git reset -q --hard "origin/${GITHUB_REF_NAME}"
-            mkdir -p "data/musica/${{ matrix.pais }}" && cp "$RUNNER_TEMP"/musica/* "data/musica/${{ matrix.pais }}/"
-            git add "data/musica/${{ matrix.pais }}/codigos.json" "data/musica/${{ matrix.pais }}/discos.json"
+            mkdir -p "data/musica/${{ matrix.pais }}" && cp -r "$RUNNER_TEMP/musica/." "data/musica/${{ matrix.pais }}/"
+            git add -A "data/musica/${{ matrix.pais }}"  # codigos.json y discos.json (tiendas.json no va a git)
             if git diff --cached --quiet; then break; fi
             git commit -q -m "data: música ${{ matrix.pais }} $(TZ=Europe/Madrid date +%F)"
             if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
             sleep $(( 5 + RANDOM % 40 ))
           done
           python -m scraper.musica --pais "${{ matrix.pais }}" --build
-          bash .github/r2.sh carpeta "${{ matrix.pais }}/records"
+          bash .github/r2.sh carpeta "${{ matrix.pais }}/$(python -c "from scraper.musica import TXT; print(TXT['${{ matrix.pais }}']['dir'])")"

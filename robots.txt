@@ -27,6 +27,8 @@ Sitemap: https://guitle.com/sitemap-hu.xml
 Sitemap: https://guitle.com/sitemap-ro.xml
 Sitemap: https://guitle.com/sitemap-bg.xml
 Sitemap: https://guitle.com/sitemap-gr.xml
+Sitemap: https://guitle.com/sitemap-mx.xml
+Sitemap: https://guitle.com/sitemap-ar.xml
 Sitemap: https://guitle.com/sitemap-fi.xml
 Sitemap: https://guitle.com/sitemap-lu.xml
 Sitemap: https://guitle.com/uk/records/sitemap.xml

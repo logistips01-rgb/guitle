@@ -524,15 +524,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "Jackson LTD Legend Series Signature Scott Ian Rhoads RR22 NOT",
-  "slug": "jackson-ltd-legend-series-signature-scott-ian-rhoads-rr22-not-885978527106",
-  "price": 1929.0,
-  "median": 2642.8
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "LTD EC-256 Vintage Gold Satin",
   "slug": "ltd-ec-256-vintage-gold-satin-719710620155",
@@ -844,15 +835,6 @@
   "slug": "cort-ga-dao-nat-8809817984617",
   "price": 223.14,
   "median": 262.75
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Eastman E8D-TC Natural Thermo Cure",
-  "slug": "eastman-e8d-tc-natural-thermo-cure-846940000089",
-  "price": 1199.0,
-  "median": 1599.0
  },
  {
   "kind": "acustica",
@@ -1289,6 +1271,15 @@
  {
   "kind": "ampli",
   "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Markbass CMD 101 Micro Marcus Miller",
+  "slug": "markbass-cmd-101-micro-marcus-miller-8033829131695",
+  "price": 317.33,
+  "median": 501.5
+ },
+ {
+  "kind": "ampli",
+  "type": "fuera_de_lugar",
   "store": "egitana",
   "name": "Markbass MB58R CMD 151 P Combo",
   "slug": "markbass-mb58r-cmd-151-p-combo-ombop34035",
@@ -1303,6 +1294,24 @@
   "slug": "mooer-f15i-li-imperial-gold-6971889223184",
   "price": 119.0,
   "median": 159.0
+ },
+ {
+  "kind": "ampli",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Orange Crush 12 BK",
+  "slug": "orange-crush-12-bk-5060299175006",
+  "price": 67.36,
+  "median": 111.005
+ },
+ {
+  "kind": "ampli",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Orange Crush Acoustic 30 BLK",
+  "slug": "orange-crush-acoustic-30-blk-5060299177673",
+  "price": 233.87,
+  "median": 356.005
  },
  {
   "kind": "ampli",
@@ -1339,6 +1348,15 @@
   "slug": "epiphone-sg-bass-modern-hardshell-case-black-711106058146",
   "price": 180.6,
   "median": 242.155
+ },
+ {
+  "kind": "estuche",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender FB405 Electric Bass Gig Bag",
+  "slug": "fender-fb405-electric-bass-gig-bag-885978822140",
+  "price": 21.9,
+  "median": 29.695
  },
  {
   "kind": "micro",
@@ -1681,15 +1699,6 @@
   "slug": "jim-dunlop-83cn-acoustic-capo-710137007222",
   "price": 19.3,
   "median": 26.299999999999997
- },
- {
-  "kind": "varios",
-  "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Righton Straps Masterkey Plus BL Red",
-  "slug": "righton-straps-masterkey-plus-bl-red-8401060310207",
-  "price": 23.0,
-  "median": 49.2
  },
  {
   "kind": "varios",

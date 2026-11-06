@@ -1,0 +1,42 @@
+name: ipc-ar
+
+# IPC de Argentina (INDEC) para la gráfica "precio sin inflación" de guitle.com/ar/ (scraper/ipc_ar.py): cada lunes
+# se descarga y, si hay un mes nuevo, se guarda data/ipc-ar.json (r2.yml lo sube a la web).
+on:
+  schedule:
+    - cron: "29 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write  # para lanzar r2.yml tras guardar
+
+jobs:
+  ipc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: Descargar y guardar
+        run: |
+          python -m scraper.ipc_ar
+          cp data/ipc-ar.json "$RUNNER_TEMP/ipc.json"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in $(seq 20); do
+            git fetch -q origin "${GITHUB_REF_NAME}" && git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            cp "$RUNNER_TEMP/ipc.json" data/ipc-ar.json && git add data/ipc-ar.json
+            if git diff --cached --quiet; then echo "Sin mes nuevo"; exit 0; fi
+            git commit -q -m "data: IPC de Argentina"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then gh workflow run r2.yml --ref "${GITHUB_REF_NAME}" || true; exit 0; fi
+            sleep $(( 5 + RANDOM % 20 ))
+          done
+          exit 1
+        env:
+          GH_TOKEN: ${{ github.token }}

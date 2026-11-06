@@ -27,12 +27,18 @@ STORES = {
            "sisterray": ("Sister Ray", "https://www.sisterray.co.uk"),
            "drift": ("Drift Records", "https://www.driftrecords.com"),
            "crash": ("Crash Records", "https://www.crashrecords.co.uk")},
+    # Francia: tiendas afiliadas en Awin; el catálogo sale de su fichero de productos (read_awin), no de su web.
+    "fr": {"cultura": ("Cultura", "https://www.cultura.com"), "fnac": ("Fnac", "https://www.fnac.com"),
+           "zavvi": ("Zavvi", "https://fr.zavvi.com")},
 }
+# Anunciantes de Awin de cada país: id de tienda → texto que lleva su nombre en Awin (en minúsculas).
+AWIN = {"fr": {"cultura": "cultura", "fnac": "fnac", "zavvi": "zavvi"}}
 # Formato por el título, el tipo o la variante; lo demás (camisetas, chapas, bolsas, tocadiscos…) no entra.
 FORMATS = [("casete", r"\bcassette|\bcass\b|\btape\b|\bmc\b"), ("cd", r"\bcd\b|\bcds\b|compact disc"),
-           ("vinilo", r"vinyl|\blp\b|\b2lp\b|\b3lp\b|\b12\"|\b7\"|\b10\"|\b12 inch|\b7 inch|\bep\b")]
+           ("vinilo", r"vinyl|\blp\b|\b2lp\b|\b3lp\b|\b12\"|\b7\"|\b10\"|\b12 inch|\b7 inch|\bep\b|\b33 ?tours|\b45 ?tours")]
 NOT_MUSIC = re.compile(r"(?i)t-?shirt|\btee\b|hoodie|sweat|badge|tote|\bbag\b|slipmat|poster|turntable|record player|"
-                       r"gift card|voucher|cleaning|sleeve[s]? pack|inner sleeves|outer sleeves|mug\b|\bhat\b|cap\b|book\b")
+                       r"gift card|voucher|cleaning|sleeve[s]? pack|inner sleeves|outer sleeves|mug\b|\bhat\b|cap\b|book\b|"
+                       r"\blivre\b|platine|tourne-?disque|partition|\bdvd\b|blu-?ray|carte cadeau|affiche|sac\b")
 CLEAN = re.compile(r"(?i)\s*[\(\[]?(?:\*?pre-?order\*?|due out[^\)\]]*|signed|indie exclusive|limited edition|"
                    r"vinyl lp|vinyl|\blp\b|\b2lp\b|\bcd\b|cassette|\btape\b)[\)\]]?\s*")
 
@@ -62,8 +68,64 @@ def _save(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
 
 
+def read_awin(pais):
+    """Países con tiendas afiliadas en Awin (Francia): su fichero de productos trae precio, stock, EAN y el enlace de
+    afiliado de cada disco. Escribe tiendas.json y codigos.json con la misma forma que las tiendas Shopify, así que
+    build_data y las páginas son las mismas. Necesita AWIN_FEED_KEY (la "Datafeed API key" de Awin, secreto de GitHub)."""
+    import csv, gzip, io, os, requests
+    key = os.environ.get("AWIN_FEED_KEY")
+    if not key:
+        print("[awin] falta AWIN_FEED_KEY: no se lee nada", flush=True)
+        return
+    folder = DATA / pais
+    feeds = list(csv.DictReader(io.StringIO(requests.get(f"https://productdata.awin.com/datafeed/list/apikey/{key}",
+                                                         timeout=120).text)))
+    cols = ("aw_deep_link,product_name,merchant_name,search_price,currency,merchant_category,category_name,ean,"
+            "product_GTIN,merchant_image_url,aw_image_url,in_stock,brand_name,aw_product_id")
+    catalog, codes = {}, {}
+    for sid, needle in AWIN[pais].items():
+        mine = [f for f in feeds if needle in (f.get("Advertiser Name") or "").lower()
+                and (f.get("Membership Status") or "").lower() in ("active", "joined")
+                and (f.get("Primary Region") or "").upper() in ("FR", "") ]
+        print(f"[awin] {sid}: {len(mine)} ficheros aprobados", flush=True)
+        items = {}
+        for f in mine:
+            url = (f"https://productdata.awin.com/datafeed/download/apikey/{key}/language/any/fid/{f['Feed ID']}/columns/"
+                   f"{cols}/format/csv/delimiter/%2C/compression/gzip/adultcontent/1/")
+            try:
+                raw = gzip.decompress(requests.get(url, timeout=600).content).decode("utf-8", "ignore")
+            except Exception as exc:  # noqa: BLE001
+                print(f"[awin] {sid} fichero {f['Feed ID']}: {exc}", flush=True)
+                continue
+            for row in csv.DictReader(io.StringIO(raw)):
+                name = row.get("product_name") or ""
+                fmt = _fmt(name, row.get("merchant_category"), row.get("category_name"))
+                if not fmt or NOT_MUSIC.search(name):
+                    continue
+                ean = re.sub(r"\D", "", row.get("ean") or row.get("product_GTIN") or "").lstrip("0")
+                try:
+                    price = float(row.get("search_price") or 0)
+                except ValueError:
+                    continue
+                if not price or not (11 <= len(ean) <= 13):
+                    continue
+                h = row.get("aw_product_id") or ean
+                items[h] = {"t": name, "v": row.get("brand_name") or "", "ty": row.get("merchant_category") or "", "f": fmt,
+                            "p": price, "st": (row.get("in_stock") or "1") not in ("0", "false", "no"),
+                            "img": row.get("merchant_image_url") or row.get("aw_image_url"), "u": row.get("aw_deep_link")}
+                codes.setdefault(sid, {})[h] = ean.zfill(13)
+        if items:
+            catalog[sid] = items
+            print(f"[awin] {sid}: {len(items)} discos con EAN", flush=True)
+    if catalog:
+        _save(folder / "tiendas.json", catalog)
+        _save(folder / "codigos.json", codes)
+
+
 def read(pais, minutes):
     """Catálogo de cada tienda y códigos de barras que faltan, hasta agotar el tiempo."""
+    if pais in AWIN:
+        return read_awin(pais)
     from .fetch import Fetcher
     folder = DATA / pais
     catalog = _load(folder / "tiendas.json", {})   # {tienda: {handle: {t, v, ty, f, p, st, img}}}
@@ -151,13 +213,14 @@ def build_data(pais):
                 continue
             ean = ean.zfill(13)
             d = by.setdefault(ean, {"ean": ean, "names": [], "fmt": it["f"], "img": None, "items": []})
-            artist = {"recordstore": it["v"], "sisterray": it["ty"]}.get(sid, "")
+            artist = {"recordstore": it["v"], "sisterray": it["ty"], "cultura": it["v"], "fnac": it["v"],
+                      "zavvi": it["v"]}.get(sid, "")
             title = it["t"]
             if artist and " - " not in title and not title.lower().startswith(artist.lower()):
                 title = f"{artist} - {re.sub(r':\s*(?:CD|Vinyl LP|Cassette)\s*$', '', title)}"
             d["names"].append(title)
             d["img"] = d["img"] or it.get("img")
-            d["items"].append({"s": sid, "p": it["p"], "u": f"{base}/products/{h}", "st": it["st"]})
+            d["items"].append({"s": sid, "p": it["p"], "u": it.get("u") or f"{base}/products/{h}", "st": it["st"]})
     out = []
     for d in by.values():
         # El nombre más limpio: con "Artista - Título" y sin coletillas de formato o reserva
@@ -173,8 +236,9 @@ def build_data(pais):
     out.sort(key=lambda d: (-len(d["items"]), d["name"]))
     # En git solo los que se comparan (dos o más tiendas): son los que tienen página. El catálogo de cada tienda
     # (tiendas.json) no se guarda en git: se vuelve a leer cada día.
-    out = [d for d in out if len(d["items"]) >= 2]
-    _save(folder / "discos.json", out)
+    # En git (discos.json) solo los que se comparan: lo leen la portada y las lecturas de guitarras. Las páginas se
+    # hacen de todos (también los de una sola tienda: llevan el botón de Amazon), en la lectura de discos.
+    _save(folder / "discos.json", [d for d in out if len(d["items"]) >= 2])
     return out
 
 
@@ -188,6 +252,7 @@ TXT = {"uk": {"dir": "records", "one": "record", "home": "Records", "promo": "Ne
               "more": "Most compared", "note": "Prices include VAT; delivery may vary by shop.",
               "amazon": "https://www.amazon.co.uk/s?k={ean}&tag=guitle08-21", "amazon_btn": "Search this record on Amazon",
               "amazon_txt": "Prefer to buy on Amazon?",
+              "desc1": "{n} on {f}: today's price at {s} and where else to buy it, including Amazon.", "where1": "at {s}",
               "search_ph": "Search records: artist or album…", "search_res": "{n} records found", "search_none": "No records found",
               "f_artist": "Artist or band", "f_format": "Format", "f_all": "All formats", "f_sort": "Sort",
               "s_price": "Cheapest first", "s_shops": "Most compared", "s_az": "A–Z",
@@ -217,12 +282,39 @@ TXT = {"uk": {"dir": "records", "one": "record", "home": "Records", "promo": "Ne
                        ("Are coloured vinyl editions worth the extra cost?", "They're collectable and often limited, but the music is the same: if you just want to listen, the standard black pressing is usually cheaper.")]}}
 
 
+TXT["fr"] = {
+    "dir": "disques", "one": "disque", "home": "Disques", "promo": "Nouveau : comparez les prix des vinyles, CD et cassettes",
+    "tile": "Vinyles, CD et cassettes",
+    "fmts": {"vinilo": ("Vinyles", "vinyles"), "cd": ("CD", "cd"), "casete": ("Cassettes", "cassettes")},
+    "fmt1": {"vinilo": "vinyle", "cd": "CD", "casete": "cassette"},
+    "title": "{n} en {f} : comparateur de prix",
+    "desc": "Comparez le prix de {n} en {f} chez {k} disquaires en ligne en France : prix du jour, stock et magasin le moins cher.",
+    "desc1": "{n} en {f} : prix du jour chez {s} et où l'acheter ailleurs, Amazon compris.", "where1": "chez {s}",
+    "h_index": "Disques : comparez les prix des vinyles, CD et cassettes",
+    "d_index": "Comparez chaque jour le prix des vinyles, CD et cassettes chez les disquaires en ligne en France.",
+    "in_stock": "En stock", "out": "Épuisé", "shops": "magasins", "buy": "Voir en magasin", "cheapest": "Le moins cher aujourd'hui",
+    "more": "Les plus comparés", "note": "Prix TTC ; les frais de port peuvent varier selon le magasin.",
+    "amazon": "https://www.amazon.fr/s?k={ean}&tag=guitle00-21", "amazon_btn": "Chercher ce disque sur Amazon",
+    "amazon_txt": "Vous préférez Amazon ?",
+    "search_ph": "Rechercher : artiste ou album…", "search_res": "{n} disques trouvés", "search_none": "Aucun disque trouvé",
+    "f_artist": "Artiste ou groupe", "f_format": "Format", "f_all": "Tous les formats", "f_sort": "Trier",
+    "s_price": "Moins cher d'abord", "s_shops": "Les plus comparés", "s_az": "A–Z",
+    "artist_t": "{a} : prix des vinyles, CD et cassettes",
+    "artist_d": "Comparez le prix de {n} disques de {a} en vinyle, CD et cassette chez les disquaires en ligne en France.",
+    "artist_all": "Tous ses disques",
+    "deals": "Bons plans vinyles et CD", "deals_file": "bons-plans", "save": "{m} de moins qu'au plus cher",
+    "deals_desc": "Les disques avec le plus grand écart de prix entre magasins aujourd'hui (en stock uniquement).",
+    "guitars": "Les bons plans guitares du jour", "guitars_more": "Tous les bons plans guitares",
+}
+
+
 def _e(v):
     return html.escape(str(v or ""), quote=True)
 
 
 def write_pages(pais, discs=None):
-    """Página de cada disco que está en dos o más tiendas, listados por formato y el índice. Devuelve sus URL."""
+    """Página de cada disco con código (en una o más tiendas), listados por formato y el índice. Devuelve sus URL.
+    Las páginas van en cajas (scraper/cajas.py, <país>/_r/): .github/r2.sh carpeta sube solo las cajas que cambian."""
     from . import intl, pages
     if pais not in TXT:
         return []
@@ -265,11 +357,11 @@ def write_pages(pais, discs=None):
     except Exception:  # noqa: BLE001 - sin catálogo de guitarras, sin recuadro
         pass
     acount = {}
-    for d in multi:
+    for d in discs:
         if " - " in d["name"]:
             a = d["name"].split(" - ", 1)[0].strip()
             acount[a] = acount.get(a, 0) + 1
-    for d in multi:
+    for d in discs:  # todos: también los de una sola tienda (precio + botón de Amazon)
         f1 = T["fmt1"][d["fmt"]]
         url = f"/{pais}/{T['dir']}/{d['slug']}.html"
         path = out / f"{d['slug']}.html"
@@ -311,7 +403,7 @@ def write_pages(pais, discs=None):
     def artist(d):
         return d["name"].split(" - ", 1)[0].strip() if " - " in d["name"] else ""
     by_artist = {}
-    for d in multi:
+    for d in discs:
         if artist(d):
             by_artist.setdefault(artist(d), []).append(d)
     adir = out / "artist"
@@ -393,7 +485,7 @@ let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>
     for f in out.glob("*.html"):
         if f not in keep:
             f.unlink()
-    print(f"música {pais}: {len(discs)} discos con código, {len(multi)} en dos o más tiendas", flush=True)
+    print(f"música {pais}: {len(discs)} discos con código (todos con página), {len(multi)} en dos o más tiendas", flush=True)
     return urls
 
 
@@ -416,15 +508,25 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
     colors = {st: pages.PALETTE[n % len(pages.PALETTE)] for n, st in enumerate(sorted({i["s"] for i in items}))}
     n, prices = len(items), [i["p"] for i in items]
     title = T["title"].format(n=d["name"], f=f1)
-    desc = T["desc"].format(n=d["name"], f=f1, k=n)
-    where = t["whereMany"].format(s=names.get(best["s"], best["s"]), n=n) + (
+    desc = T["desc"].format(n=d["name"], f=f1, k=n) if n > 1 else T.get("desc1", T["desc"]).format(
+        n=d["name"], f=f1, k=n, s=names.get(best["s"], best["s"]))
+    where = (t["whereMany"].format(s=names.get(best["s"], best["s"]), n=n) if n > 1
+             else T.get("where1", "at {s}").format(s=names.get(best["s"], best["s"]))) + (
         t["whereDiff"].format(d=intl.money(round(max(prices) - min(prices)), pais)) if max(prices) - min(prices) >= 1 else "")
     ld = {"@context": "https://schema.org", "@type": "Product", "name": f"{d['name']} ({f1})", "gtin13": d["ean"],
           "image": d.get("img"), "url": f"https://guitle.com{url}",
           "offers": {"@type": "AggregateOffer", "priceCurrency": intl.SITES[pais]["cur"], "lowPrice": min(prices),
                      "highPrice": max(prices), "offerCount": n}}
-    amazon = (f'\n    <p class="muted small amazon">{_e(T["amazon_txt"])} <a href="{_e(T["amazon"].format(ean=d["ean"]))}" '
-              f'target="_blank" rel="sponsored noopener">{_e(T["amazon_btn"])}</a></p>' if T.get("amazon") else "")
+    if not T.get("amazon"):
+        amazon = ""
+    elif len(d["items"]) == 1:  # una sola tienda: Amazon como segunda opción bien visible (botón)
+        amazon = (f'\n    <p style="margin:14px 0 0">{_e(T["amazon_txt"])} <a class="btn-amz" href="{_e(T["amazon"].format(ean=d["ean"]))}" '
+                  f'target="_blank" rel="sponsored noopener" style="display:inline-block;margin-left:8px;padding:8px 16px;'
+                  f'border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);font-weight:600;text-decoration:none">'
+                  f'{_e(T["amazon_btn"])} →</a></p>')
+    else:
+        amazon = (f'\n    <p class="muted small amazon">{_e(T["amazon_txt"])} <a href="{_e(T["amazon"].format(ean=d["ean"]))}" '
+                  f'target="_blank" rel="sponsored noopener">{_e(T["amazon_btn"])}</a></p>')
     img = f'<div class="pimg"><img src="{_e(d["img"])}&width=600" alt="{_e(d["name"])}"></div>' if d.get("img") else ""
     head = intl._head(pais, f"{title} · guitle", desc, url,
                       f'<meta property="og:title" content="{_e(title)}">\n<meta property="og:description" content="{_e(desc)}">\n'

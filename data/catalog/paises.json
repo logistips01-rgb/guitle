@@ -2,37 +2,37 @@
  "es": {
   "country": "España",
   "path": "/",
-  "guitars": 23442,
+  "guitars": 23419,
   "stores": 25
  },
  "pt": {
   "country": "Portugal",
   "path": "/pt/",
-  "guitars": 16533,
+  "guitars": 16488,
   "stores": 9
  },
  "fr": {
   "country": "France",
   "path": "/fr/",
-  "guitars": 50287,
+  "guitars": 50280,
   "stores": 27
  },
  "it": {
   "country": "Italia",
   "path": "/it/",
-  "guitars": 64652,
+  "guitars": 64721,
   "stores": 26
  },
  "de": {
   "country": "Deutschland",
   "path": "/de/",
-  "guitars": 47879,
+  "guitars": 49230,
   "stores": 23
  },
  "br": {
   "country": "Brasil",
   "path": "/br/",
-  "guitars": 42717,
+  "guitars": 42694,
   "stores": 51
  },
  "ie": {
@@ -44,13 +44,13 @@
  "at": {
   "country": "Österreich",
   "path": "/at/",
-  "guitars": 15190,
+  "guitars": 15191,
   "stores": 8
  },
  "nl": {
   "country": "Nederland",
   "path": "/nl/",
-  "guitars": 31793,
+  "guitars": 31820,
   "stores": 13
  },
  "pl": {
@@ -62,49 +62,49 @@
  "cz": {
   "country": "Česko",
   "path": "/cz/",
-  "guitars": 9894,
+  "guitars": 13117,
   "stores": 2
  },
  "sk": {
   "country": "Slovensko",
   "path": "/sk/",
-  "guitars": 10398,
+  "guitars": 14305,
   "stores": 2
  },
  "hu": {
   "country": "Magyarország",
   "path": "/hu/",
-  "guitars": 10360,
+  "guitars": 13473,
   "stores": 2
  },
  "ro": {
   "country": "România",
   "path": "/ro/",
-  "guitars": 7636,
+  "guitars": 10392,
   "stores": 2
  },
  "bg": {
   "country": "България",
   "path": "/bg/",
-  "guitars": 3181,
+  "guitars": 5001,
   "stores": 1
  },
  "gr": {
   "country": "Ελλάδα",
   "path": "/gr/",
-  "guitars": 6489,
+  "guitars": 9152,
   "stores": 2
  },
  "fi": {
   "country": "Suomi",
   "path": "/fi/",
-  "guitars": 3780,
+  "guitars": 4585,
   "stores": 1
  },
  "lu": {
   "country": "Luxembourg",
   "path": "/lu/",
-  "guitars": 3184,
+  "guitars": 3961,
   "stores": 1
  },
  "se": {
@@ -140,7 +140,7 @@
  "uk": {
   "country": "United Kingdom",
   "path": "/uk/",
-  "guitars": 64676,
+  "guitars": 64661,
   "stores": 34
  }
 }

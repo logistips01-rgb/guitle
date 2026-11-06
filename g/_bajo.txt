@@ -746,7 +746,6 @@ jackson-js3-concert-bass-stn-blk-885978977291
 jackson-js3-iv-spectra-sn-wht-gold-885978424702
 jackson-js3-spectra-iv-gloss-black-885978104697
 jackson-js3-spectra-v-silverburst-885978104741
-jackson-js3vq-concert-bass-tr-rd-br-885978977307
 jackson-limited-ed-js-series-concert-bass-minion-js1x-sbrst-717669848262
 jackson-ltd-legend-series-signature-david-ellefson-cb-concert-bass-885978527120
 jackson-pro-series-spectra-bass-sbp-iv-firestorm-fade-717669997526
