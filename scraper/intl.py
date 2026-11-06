@@ -68,7 +68,7 @@ SITES = {
            "kinds": {"electrica": "electric-guitars", "acustica": "acoustic-guitars", "clasica": "classical-guitars", "bajo": "basses",
                      "ampli": "amps", "pedal": "effects-pedals", "teclado": "keyboards", "micro": "microphones",
                      "estuche": "cases-bags", "varios": "accessories"},
-           "amazon": None,
+           "amazon": "https://www.amazon.co.uk/s?k={q}&tag=guitle08-21",
            "t_over": {"homeDesc": "guitle compares guitar prices: electric, acoustic and classical guitars in the shops that sell in "
                                   "Ireland, with the price history of every model.",
                       "steps": ["Every day we check the price, stock and photo of every guitar in the shops that sell in Ireland.",
