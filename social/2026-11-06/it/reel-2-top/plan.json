@@ -1,0 +1,170 @@
+{
+ "fecha": "6 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "top",
+  "title": "4 chitarre elettriche da 300 € a 500 €",
+  "hook": "Top del giorno",
+  "picks": [
+   {
+    "slug": "eko-fire-400-aurora-flamed-grey-burst-chitarra-elettrica-8056734499254",
+    "name": "Eko Fire 400 aurora Flamed Grey Burst Chitarra Elettrica",
+    "brand": "Eko",
+    "kind": "electrica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/9741_--_000_12746_1024x1024.jpg?v=1774255061",
+    "price": 339.0,
+    "store": "Di Santo Musica",
+    "stores": 3,
+    "median": 369.0,
+    "max": 399.0,
+    "next": 339.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      339.0
+     ],
+     [
+      "Global Net Shop",
+      339.0
+     ],
+     [
+      "Woodbrass",
+      399.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "ibanez-af55-tf-zaf55tfhtm",
+    "name": "Ibanez AF55-TF",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/331687.jpg",
+    "price": 368.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 389.0,
+    "max": 399.0,
+    "next": 374.0,
+    "rows": [
+     [
+      "Thomann",
+      368.0
+     ],
+     [
+      "Woodbrass",
+      374.0
+     ],
+     [
+      "Direzione Musica",
+      389.0
+     ],
+     [
+      "Your Music Online",
+      399.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "fender-squier-classic-vibe-50s-stratocaster-mn-2-tone-sunburst-885978063895",
+    "name": "Fender Squier Classic Vibe '50s Stratocaster MN 2 Tone Sunburst",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/0374005500_gtr_frt_001_rr_1024x1024.png?v=1772334460",
+    "price": 399.0,
+    "store": "Global Net Shop",
+    "stores": 3,
+    "median": 417.0,
+    "max": 429.0,
+    "next": 405.0,
+    "rows": [
+     [
+      "Global Net Shop",
+      399.0
+     ],
+     [
+      "Woodbrass",
+      405.0
+     ],
+     [
+      "Direzione Musica",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "yamaha-revstar-element-rse20-swift-blue-chitarra-elettrica-4957812675154",
+    "name": "Yamaha Revstar Element RSE20 Swift Blue chitarra elettrica",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/5870_--_000_8657_1024x1024.jpg?v=1772305541",
+    "price": 449.0,
+    "store": "Di Santo Musica",
+    "stores": 3,
+    "median": 466.5,
+    "max": 469.0,
+    "next": 464.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      449.0
+     ],
+     [
+      "Woodbrass",
+      464.0
+     ],
+     [
+      "Global Net Shop",
+      469.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   }
+  ]
+ }
+}
