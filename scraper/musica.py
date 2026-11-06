@@ -27,12 +27,18 @@ STORES = {
            "sisterray": ("Sister Ray", "https://www.sisterray.co.uk"),
            "drift": ("Drift Records", "https://www.driftrecords.com"),
            "crash": ("Crash Records", "https://www.crashrecords.co.uk")},
+    # Francia: tiendas afiliadas en Awin; el catálogo sale de su fichero de productos (read_awin), no de su web.
+    "fr": {"cultura": ("Cultura", "https://www.cultura.com"), "fnac": ("Fnac", "https://www.fnac.com"),
+           "zavvi": ("Zavvi", "https://fr.zavvi.com")},
 }
+# Anunciantes de Awin de cada país: id de tienda → texto que lleva su nombre en Awin (en minúsculas).
+AWIN = {"fr": {"cultura": "cultura", "fnac": "fnac", "zavvi": "zavvi"}}
 # Formato por el título, el tipo o la variante; lo demás (camisetas, chapas, bolsas, tocadiscos…) no entra.
 FORMATS = [("casete", r"\bcassette|\bcass\b|\btape\b|\bmc\b"), ("cd", r"\bcd\b|\bcds\b|compact disc"),
-           ("vinilo", r"vinyl|\blp\b|\b2lp\b|\b3lp\b|\b12\"|\b7\"|\b10\"|\b12 inch|\b7 inch|\bep\b")]
+           ("vinilo", r"vinyl|\blp\b|\b2lp\b|\b3lp\b|\b12\"|\b7\"|\b10\"|\b12 inch|\b7 inch|\bep\b|\b33 ?tours|\b45 ?tours")]
 NOT_MUSIC = re.compile(r"(?i)t-?shirt|\btee\b|hoodie|sweat|badge|tote|\bbag\b|slipmat|poster|turntable|record player|"
-                       r"gift card|voucher|cleaning|sleeve[s]? pack|inner sleeves|outer sleeves|mug\b|\bhat\b|cap\b|book\b")
+                       r"gift card|voucher|cleaning|sleeve[s]? pack|inner sleeves|outer sleeves|mug\b|\bhat\b|cap\b|book\b|"
+                       r"\blivre\b|platine|tourne-?disque|partition|\bdvd\b|blu-?ray|carte cadeau|affiche|sac\b")
 CLEAN = re.compile(r"(?i)\s*[\(\[]?(?:\*?pre-?order\*?|due out[^\)\]]*|signed|indie exclusive|limited edition|"
                    r"vinyl lp|vinyl|\blp\b|\b2lp\b|\bcd\b|cassette|\btape\b)[\)\]]?\s*")
 
@@ -62,8 +68,64 @@ def _save(path, data):
     path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":"), sort_keys=True), encoding="utf-8")
 
 
+def read_awin(pais):
+    """Países con tiendas afiliadas en Awin (Francia): su fichero de productos trae precio, stock, EAN y el enlace de
+    afiliado de cada disco. Escribe tiendas.json y codigos.json con la misma forma que las tiendas Shopify, así que
+    build_data y las páginas son las mismas. Necesita AWIN_FEED_KEY (la "Datafeed API key" de Awin, secreto de GitHub)."""
+    import csv, gzip, io, os, requests
+    key = os.environ.get("AWIN_FEED_KEY")
+    if not key:
+        print("[awin] falta AWIN_FEED_KEY: no se lee nada", flush=True)
+        return
+    folder = DATA / pais
+    feeds = list(csv.DictReader(io.StringIO(requests.get(f"https://productdata.awin.com/datafeed/list/apikey/{key}",
+                                                         timeout=120).text)))
+    cols = ("aw_deep_link,product_name,merchant_name,search_price,currency,merchant_category,category_name,ean,"
+            "product_GTIN,merchant_image_url,aw_image_url,in_stock,brand_name,aw_product_id")
+    catalog, codes = {}, {}
+    for sid, needle in AWIN[pais].items():
+        mine = [f for f in feeds if needle in (f.get("Advertiser Name") or "").lower()
+                and (f.get("Membership Status") or "").lower() in ("active", "joined")
+                and (f.get("Primary Region") or "").upper() in ("FR", "") ]
+        print(f"[awin] {sid}: {len(mine)} ficheros aprobados", flush=True)
+        items = {}
+        for f in mine:
+            url = (f"https://productdata.awin.com/datafeed/download/apikey/{key}/language/any/fid/{f['Feed ID']}/columns/"
+                   f"{cols}/format/csv/delimiter/%2C/compression/gzip/adultcontent/1/")
+            try:
+                raw = gzip.decompress(requests.get(url, timeout=600).content).decode("utf-8", "ignore")
+            except Exception as exc:  # noqa: BLE001
+                print(f"[awin] {sid} fichero {f['Feed ID']}: {exc}", flush=True)
+                continue
+            for row in csv.DictReader(io.StringIO(raw)):
+                name = row.get("product_name") or ""
+                fmt = _fmt(name, row.get("merchant_category"), row.get("category_name"))
+                if not fmt or NOT_MUSIC.search(name):
+                    continue
+                ean = re.sub(r"\D", "", row.get("ean") or row.get("product_GTIN") or "").lstrip("0")
+                try:
+                    price = float(row.get("search_price") or 0)
+                except ValueError:
+                    continue
+                if not price or not (11 <= len(ean) <= 13):
+                    continue
+                h = row.get("aw_product_id") or ean
+                items[h] = {"t": name, "v": row.get("brand_name") or "", "ty": row.get("merchant_category") or "", "f": fmt,
+                            "p": price, "st": (row.get("in_stock") or "1") not in ("0", "false", "no"),
+                            "img": row.get("merchant_image_url") or row.get("aw_image_url"), "u": row.get("aw_deep_link")}
+                codes.setdefault(sid, {})[h] = ean.zfill(13)
+        if items:
+            catalog[sid] = items
+            print(f"[awin] {sid}: {len(items)} discos con EAN", flush=True)
+    if catalog:
+        _save(folder / "tiendas.json", catalog)
+        _save(folder / "codigos.json", codes)
+
+
 def read(pais, minutes):
     """Catálogo de cada tienda y códigos de barras que faltan, hasta agotar el tiempo."""
+    if pais in AWIN:
+        return read_awin(pais)
     from .fetch import Fetcher
     folder = DATA / pais
     catalog = _load(folder / "tiendas.json", {})   # {tienda: {handle: {t, v, ty, f, p, st, img}}}
@@ -151,13 +213,14 @@ def build_data(pais):
                 continue
             ean = ean.zfill(13)
             d = by.setdefault(ean, {"ean": ean, "names": [], "fmt": it["f"], "img": None, "items": []})
-            artist = {"recordstore": it["v"], "sisterray": it["ty"]}.get(sid, "")
+            artist = {"recordstore": it["v"], "sisterray": it["ty"], "cultura": it["v"], "fnac": it["v"],
+                      "zavvi": it["v"]}.get(sid, "")
             title = it["t"]
             if artist and " - " not in title and not title.lower().startswith(artist.lower()):
                 title = f"{artist} - {re.sub(r':\s*(?:CD|Vinyl LP|Cassette)\s*$', '', title)}"
             d["names"].append(title)
             d["img"] = d["img"] or it.get("img")
-            d["items"].append({"s": sid, "p": it["p"], "u": f"{base}/products/{h}", "st": it["st"]})
+            d["items"].append({"s": sid, "p": it["p"], "u": it.get("u") or f"{base}/products/{h}", "st": it["st"]})
     out = []
     for d in by.values():
         # El nombre más limpio: con "Artista - Título" y sin coletillas de formato o reserva
@@ -217,6 +280,32 @@ TXT = {"uk": {"dir": "records", "one": "record", "home": "Records", "promo": "Ne
               "faqs": [("Where is the cheapest place to buy vinyl in the UK?", "It depends on the record: the same pressing can be several pounds cheaper in one shop than another. Compare the exact edition (by barcode) across UK record shops before buying."),
                        ("Why is the same vinyl record different prices in different shops?", "Each shop sets its own price and runs its own offers, and stock levels change daily, so the cheapest shop for a record changes over time."),
                        ("Are coloured vinyl editions worth the extra cost?", "They're collectable and often limited, but the music is the same: if you just want to listen, the standard black pressing is usually cheaper.")]}}
+
+
+TXT["fr"] = {
+    "dir": "disques", "one": "disque", "home": "Disques", "promo": "Nouveau : comparez les prix des vinyles, CD et cassettes",
+    "tile": "Vinyles, CD et cassettes",
+    "fmts": {"vinilo": ("Vinyles", "vinyles"), "cd": ("CD", "cd"), "casete": ("Cassettes", "cassettes")},
+    "fmt1": {"vinilo": "vinyle", "cd": "CD", "casete": "cassette"},
+    "title": "{n} en {f} : comparateur de prix",
+    "desc": "Comparez le prix de {n} en {f} chez {k} disquaires en ligne en France : prix du jour, stock et magasin le moins cher.",
+    "desc1": "{n} en {f} : prix du jour chez {s} et où l'acheter ailleurs, Amazon compris.", "where1": "chez {s}",
+    "h_index": "Disques : comparez les prix des vinyles, CD et cassettes",
+    "d_index": "Comparez chaque jour le prix des vinyles, CD et cassettes chez les disquaires en ligne en France.",
+    "in_stock": "En stock", "out": "Épuisé", "shops": "magasins", "buy": "Voir en magasin", "cheapest": "Le moins cher aujourd'hui",
+    "more": "Les plus comparés", "note": "Prix TTC ; les frais de port peuvent varier selon le magasin.",
+    "amazon": "https://www.amazon.fr/s?k={ean}&tag=guitle00-21", "amazon_btn": "Chercher ce disque sur Amazon",
+    "amazon_txt": "Vous préférez Amazon ?",
+    "search_ph": "Rechercher : artiste ou album…", "search_res": "{n} disques trouvés", "search_none": "Aucun disque trouvé",
+    "f_artist": "Artiste ou groupe", "f_format": "Format", "f_all": "Tous les formats", "f_sort": "Trier",
+    "s_price": "Moins cher d'abord", "s_shops": "Les plus comparés", "s_az": "A–Z",
+    "artist_t": "{a} : prix des vinyles, CD et cassettes",
+    "artist_d": "Comparez le prix de {n} disques de {a} en vinyle, CD et cassette chez les disquaires en ligne en France.",
+    "artist_all": "Tous ses disques",
+    "deals": "Bons plans vinyles et CD", "deals_file": "bons-plans", "save": "{m} de moins qu'au plus cher",
+    "deals_desc": "Les disques avec le plus grand écart de prix entre magasins aujourd'hui (en stock uniquement).",
+    "guitars": "Les bons plans guitares du jour", "guitars_more": "Tous les bons plans guitares",
+}
 
 
 def _e(v):
