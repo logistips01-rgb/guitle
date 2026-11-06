@@ -58,10 +58,11 @@ CAJAS_R = 512  # secciones como la de discos (<país>/records/): todas sus pági
 def empaquetar_carpeta(code, sub):
     """Todas las páginas de <país>/<sub>/ (también las de subcarpetas, p. ej. records/artist/) en <país>/_r/; la clave de
     cada página es su ruta dentro del país ("records/x.html") y su caja, FNV de esa clave módulo CAJAS_R."""
-    src, out = ROOT / code / sub, ROOT / code / "_r"
+    home = ROOT if code == "es" else ROOT / code  # España, en la raíz: discos/ y _r/
+    src, out = home / sub, home / "_r"
     boxes = {}
     for f in src.rglob("*.html"):
-        key = f.relative_to(ROOT / code).as_posix()
+        key = f.relative_to(home).as_posix()
         boxes.setdefault(f"{fnv(key) % CAJAS_R:04x}", {})[key] = f.read_text(encoding="utf-8")
     if not boxes:
         return 0, 0

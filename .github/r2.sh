@@ -148,9 +148,11 @@ carpeta() {
   rclone_ready
   URLS="$RUNNER_TEMP/r2-urls.txt"; : > "$URLS"
   if [ -d "$1" ]; then
-    local pais=${1%%/*} sub=${1#*/}
+    local pais=${1%%/*} sub=${1#*/} home
+    if [ "$1" = "discos" ]; then pais=es sub=discos; fi  # España, en la raíz: discos/ y sus cajas en _r/
+    home=$([ "$pais" = es ] && echo _r || echo "$pais/_r")
     python -m scraper.cajas --carpeta "$pais" "$sub"
-    up copy "$pais/_r" "$pais/_r" --include "*.json.gz"
+    up copy "$home" "$home" --include "*.json.gz"
     up copy "$1" "$1" --include "*.xml" --include "*.json"
   fi
   python -m scraper.indexnow --files "$URLS" || true

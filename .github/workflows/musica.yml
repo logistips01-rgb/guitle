@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pais: [uk, fr, it]
+        pais: [uk, fr, it, es]
     env:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
@@ -60,4 +60,5 @@ jobs:
             sleep $(( 5 + RANDOM % 40 ))
           done
           python -m scraper.musica --pais "${{ matrix.pais }}" --build
-          bash .github/r2.sh carpeta "${{ matrix.pais }}/$(python -c "from scraper.musica import TXT; print(TXT['${{ matrix.pais }}']['dir'])")"
+          dir=$(python -c "from scraper.musica import TXT; print(TXT['${{ matrix.pais }}']['dir'])")
+          if [ "${{ matrix.pais }}" = es ]; then bash .github/r2.sh carpeta "$dir"; else bash .github/r2.sh carpeta "${{ matrix.pais }}/$dir"; fi

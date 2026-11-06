@@ -36,3 +36,6 @@ brand/__pycache__/
 /sitemap-*.xml
 /img/p/
 /data/musica/*/tiendas.json
+# Discos de España (guitle.com/discos/) y sus cajas: los sube la lectura de discos (musica.yml)
+/discos/
+/_r/

@@ -36,6 +36,13 @@ STORES["it"] = {"radiation": ("Radiation Records", "https://shop.radiationrecord
                 "ibs": ("IBS", "https://www.ibs.it"), "feltrinelli": ("laFeltrinelli", "https://www.lafeltrinelli.it"),
                 "mondadori": ("Mondadori Store", "https://www.mondadoristore.it"),
                 "laziale": ("Discoteca Laziale", "https://www.discotecalaziale.com")}
+# España: tiendas de discos independientes (estudio: marketing/tiendas-discos-espana.md, rama de redes). Supersonic en
+# Shopify (el código de barras va en la referencia); El Genio Equivocado y Alta Fidelidad en WooCommerce (WOO).
+STORES["es"] = {"supersonic": ("Discos Supersonic", "https://discossupersonicsantander.com"),
+                "ege": ("El Genio Equivocado", "https://egebotiga.com"),
+                "altafidelidad": ("Discos Alta Fidelidad", "https://discosaltafidelidad.es")}
+# Tiendas en WooCommerce: catálogo por su API pública de tienda (/wp-json/wc/store/v1/products), con el EAN en "sku".
+WOO = {"es": {"ege", "altafidelidad"}}
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
 # ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
 LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
@@ -43,11 +50,12 @@ LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://
 # Anunciantes de Awin de cada país: id de tienda → texto que lleva su nombre en Awin (en minúsculas).
 AWIN = {"fr": {"cultura": "cultura", "fnac": "fnac", "zavvi": "zavvi"}}
 # Formato por el título, el tipo o la variante; lo demás (camisetas, chapas, bolsas, tocadiscos…) no entra.
-FORMATS = [("casete", r"\bcassette|\bcass\b|\btape\b|\bmc\b"), ("cd", r"\bcd\b|\bcds\b|compact disc"),
-           ("vinilo", r"vinyl|\blp\b|\b2lp\b|\b3lp\b|\b12\"|\b7\"|\b10\"|\b12 inch|\b7 inch|\bep\b|\b33 ?tours|\b45 ?tours")]
+FORMATS = [("casete", r"\bcassette|\bcass\b|\btape\b|\bmc\b|\bcasete"), ("cd", r"\b[2-9]?cds?\b|compact disc"),
+           ("vinilo", r"vinyl|vinilo|\b(?:7|10|12)\s?[″”]|\blp\b|\b2lp\b|\b3lp\b|\b12\"|\b7\"|\b10\"|\b12 inch|\b7 inch|\bep\b|\b33 ?tours|\b45 ?tours")]
 NOT_MUSIC = re.compile(r"(?i)t-?shirt|\btee\b|hoodie|sweat|badge|tote|\bbag\b|slipmat|poster|turntable|record player|"
                        r"gift card|voucher|cleaning|sleeve[s]? pack|inner sleeves|outer sleeves|mug\b|\bhat\b|cap\b|book\b|"
-                       r"\blivre\b|platine|tourne-?disque|partition|\bdvd\b|blu-?ray|carte cadeau|affiche|sac\b")
+                       r"\blivre\b|platine|tourne-?disque|partition|\bdvd\b|blu-?ray|carte cadeau|affiche|sac\b|"
+                       r"\blibro\b|camiseta|sudadera|tocadiscos|tarjeta regalo|\bbolsa\b|\bp[óo]ster\b|\btaza\b")
 CLEAN = re.compile(r"(?i)\s*[\(\[]?(?:\*?pre-?order\*?|due out[^\)\]]*|signed|indie exclusive|limited edition|"
                    r"vinyl lp|vinyl|\blp\b|\b2lp\b|\bcd\b|cassette|\btape\b)[\)\]]?\s*")
 
@@ -142,7 +150,7 @@ def read(pais, minutes):
     end = time.time() + minutes * 60
     fetcher = Fetcher(delay=(1.0, 2.0))
     fresh = (folder / "tiendas.json").exists() and time.time() - (folder / "tiendas.json").stat().st_mtime < 20 * 3600
-    shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {})}
+    shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {}) and k not in WOO.get(pais, ())}
     for sid, (name, base) in ([] if fresh else shops.items()):  # catálogos: una vez al día
         if time.time() > end:
             break
@@ -175,6 +183,13 @@ def read(pais, minutes):
                 items[p["handle"]] = {"t": p.get("title", ""), "v": p.get("vendor", ""), "ty": p.get("product_type", ""),
                                       "f": f, "p": price, "st": bool(v.get("available")), "img": img}
             page += 1
+        if items:
+            catalog[sid] = items
+            print(f"[{sid}] {len(items)} discos", flush=True)
+    for sid in ([] if fresh else sorted(WOO.get(pais, ()))):
+        if time.time() > end:
+            break
+        items = _read_woo(fetcher, STORES[pais][sid][1], end, codes.setdefault(sid, {}))
         if items:
             catalog[sid] = items
             print(f"[{sid}] {len(items)} discos", flush=True)
@@ -218,6 +233,56 @@ def read(pais, minutes):
     print(f"códigos nuevos: {count[0]}", flush=True)
     if pais in LOOKUP:
         _lookup(pais, end, catalog, codes)
+
+
+def _woo_name(name):
+    """"Artista «Título» LP" (El Genio Equivocado) o "Artista | Título (Vinilo azul)" (Alta Fidelidad) → "Artista - Título"."""
+    name = re.sub(r"\s+", " ", html.unescape(name)).strip()
+    m = re.match(r"^(.+?)\s*«(.+?)»", name)
+    if m:
+        return f"{m.group(1).strip()} - {m.group(2).strip()}"
+    m = re.match(r"^(.+?)\s+\|\s+(.+)$", name)
+    if m:
+        title = re.sub(r"\s*\((?:[^)]*\b(?:vinilo|cd|casete|lp)\b[^)]*)\)\s*$", "", m.group(2), flags=re.I)
+        return f"{m.group(1).strip()} - {title.strip()}"
+    return name
+
+
+def _read_woo(fetcher, base, end, codes):
+    """Catálogo de una tienda WooCommerce por su API pública de tienda (la misma que usa su web): 100 productos por
+    página. El EAN va en la referencia (sku): se guarda en codes sin pedir nada más."""
+    items, page = {}, 1
+    while time.time() < end and page <= 400:
+        url = f"{base}/wp-json/wc/store/v1/products?per_page=100&page={page}"
+        if not fetcher.allowed(url)[0]:
+            break
+        try:
+            r = fetcher.get(url)
+            prods = r.json() if r.status_code == 200 else []
+        except Exception:  # noqa: BLE001
+            break
+        if not isinstance(prods, list) or not prods:
+            break
+        for p in prods:
+            cats = " ".join(c.get("name", "") for c in p.get("categories") or [])
+            raw = html.unescape(p.get("name") or "")
+            f = _fmt(raw, cats)
+            if not f or NOT_MUSIC.search(raw):
+                continue
+            pr = p.get("prices") or {}
+            try:
+                price = int(pr["price"]) / 10 ** int(pr.get("currency_minor_unit", 2))
+            except (KeyError, TypeError, ValueError):
+                continue
+            ean = re.sub(r"\D", "", str(p.get("sku") or "")).lstrip("0")
+            if not price or not (11 <= len(ean) <= 13):
+                continue
+            h = str(p["id"])
+            codes[h] = ean.zfill(13)
+            items[h] = {"t": _woo_name(raw), "v": "", "ty": cats, "f": f, "p": price, "st": bool(p.get("is_in_stock")),
+                        "img": ((p.get("images") or [{}])[0]).get("src"), "u": p.get("permalink")}
+        page += 1
+    return items
 
 
 def _ld_disc(html_text):
@@ -327,7 +392,7 @@ def build_data(pais):
             items.setdefault(i["s"], i)  # una oferta por tienda
         d["items"] = sorted(items.values(), key=lambda i: (not i["st"], i["p"]))
         d["name"] = name
-        d["slug"] = f"{slug(name)}-{ {'vinilo': 'vinyl', 'cd': 'cd', 'casete': 'cassette'}[d['fmt']] }-{d['ean']}"
+        d["slug"] = f"{slug(name)}-{TXT.get(pais, {}).get("sfx", {'vinilo': 'vinyl', 'cd': 'cd', 'casete': 'cassette'})[d['fmt']]}-{d['ean']}"
         out.append(d)
     out.sort(key=lambda d: (-len(d["items"]), d["name"]))
     # En git solo los que se comparan (dos o más tiendas): son los que tienen página. El catálogo de cada tienda
@@ -429,6 +494,67 @@ TXT["it"] = {
 }
 
 
+
+TXT["es"] = {
+    "dir": "discos", "one": "disco", "home": "Discos", "promo": "Nuevo: compara precios de vinilos, CD y casetes",
+    "tile": "Vinilos, CD y casetes", "shops_n": 3, "sfx": {"vinilo": "vinilo", "cd": "cd", "casete": "casete"},
+    "fmts": {"vinilo": ("Vinilos", "vinilos"), "cd": ("CD", "cd"), "casete": ("Casetes", "casetes")},
+    "fmt1": {"vinilo": "vinilo", "cd": "CD", "casete": "casete"},
+    "title": "{n} en {f}: comparador de precios",
+    "desc": "Compara el precio de {n} en {f} en {k} tiendas de discos de España: precio de hoy, stock y la tienda más barata.",
+    "desc1": "{n} en {f}: precio de hoy en {s} y dónde más comprarlo, también en Amazon.", "where1": "en {s}",
+    "h_index": "Discos: compara precios de vinilos, CD y casetes",
+    "d_index": "Compara cada día el precio de vinilos, CD y casetes en tiendas de discos de España.",
+    "in_stock": "Disponible", "out": "Agotado", "shops": "tiendas", "buy": "Ver en la tienda", "cheapest": "El más barato hoy",
+    "more": "Los más comparados", "note": "Precios con IVA; los gastos de envío dependen de cada tienda.",
+    "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Buscar este disco en Amazon",
+    "amazon_txt": "¿Prefieres comprarlo en Amazon?",
+    "search_ph": "Busca un disco: artista o álbum…", "search_res": "{n} discos encontrados", "search_none": "No hay discos con esa búsqueda",
+    "f_artist": "Artista o grupo", "f_format": "Formato", "f_all": "Todos los formatos", "f_sort": "Ordenar",
+    "s_price": "Más baratos primero", "s_shops": "Más comparados", "s_az": "A–Z",
+    "artist_t": "{a}: precios de vinilos, CD y casetes",
+    "artist_d": "Compara el precio de {n} discos de {a} en vinilo, CD y casete en tiendas de discos de España.",
+    "artist_all": "Todos sus discos",
+    "deals": "Chollos de vinilos y CD", "deals_file": "chollos", "save": "{m} menos que en la más cara",
+    "deals_desc": "Los discos con más diferencia de precio entre tiendas hoy (solo con stock).",
+    "guitars": "Chollos de guitarras de hoy", "guitars_more": "Todos los chollos de guitarras",
+    "guide_file": "donde-comprar-vinilos-baratos", "guide": "Dónde comprar vinilos más baratos en España",
+    "guide_desc": "Cómo encontrar el precio más bajo de un vinilo, CD o casete en España: compara tiendas de discos, fíjate en la edición y en el envío, con los mayores ahorros de hoy.",
+    "guide_body": """<section class="hub-sec guia" style="max-width:780px;line-height:1.65">
+<h2>El mismo disco puede costar muy distinto</h2>
+<p>Cada tienda de discos pone su precio a la misma edición, y en vinilo nuevo la diferencia suele ser de <strong>3 a 15 €</strong>. Antes de comprar, compara exactamente la misma edición (el mismo código de barras) en varias tiendas: guitle lo hace cada día con {shops} tiendas de discos de España, además de Amazon, y te enseña la más barata con stock.</p>
+<h2>Fíjate en la edición</h2>
+<ul>
+<li><strong>El vinilo negro normal</strong> suele ser la edición más barata.</li>
+<li><strong>Los vinilos de color, ediciones limitadas o firmadas</strong> cuestan más y se agotan antes: compara siempre la misma edición.</li>
+<li><strong>Las reediciones y remasterizaciones</strong> tienen su propio código de barras: una reedición de 2024 es un disco distinto del original.</li>
+</ul>
+<h2>No te olvides del envío</h2>
+<p>Muchas tiendas de discos tienen envío gratis a partir de un importe mínimo. Si compras un solo disco, un precio algo más alto con envío gratis puede salir más barato.</p>
+<h2>Preventas</h2>
+<p>Las novedades suelen estar más baratas en preventa, y el precio tiende a subir cuando se agota la primera tirada.</p>
+<h2>Compra en tiendas de discos</h2>
+<p>Las tiendas independientes (Supersonic en Santander, El Genio Equivocado en Barcelona, Alta Fidelidad en Oviedo…) a menudo tienen mejor precio que las grandes superficies, y comprarles ayuda a que sigan abiertas.</p>
+</section>""",
+    "faqs": [("¿Dónde es más barato comprar vinilos en España?", "Depende del disco: la misma edición puede costar varios euros menos en una tienda que en otra. Compara la edición exacta (por su código de barras) en varias tiendas de discos antes de comprar."),
+             ("¿Por qué el mismo vinilo tiene precios distintos en cada tienda?", "Cada tienda pone su precio y sus ofertas, y el stock cambia cada día, así que la tienda más barata de un disco va cambiando."),
+             ("¿Merece la pena pagar más por un vinilo de color?", "Son coleccionables y a menudo limitados, pero la música es la misma: si solo quieres escucharlo, el vinilo negro normal suele ser más barato.")],
+}
+
+def _pre(pais):
+    """Ruta de la web del país: España está en la raíz (guitle.com/discos/), los demás en su carpeta (/uk/records/)."""
+    return "" if pais == "es" else f"/{pais}"
+
+
+def _img(u, w):
+    """Foto a un tamaño: las de Shopify se piden ya reducidas (?width=); las demás tal cual."""
+    if not u:
+        return ""
+    if "cdn.shopify.com" in u or "/cdn/shop/" in u:
+        return f'{u}{"&" if "?" in u else "?"}width={w}'
+    return u
+
+
 def _e(v):
     return html.escape(str(v or ""), quote=True)
 
@@ -444,7 +570,7 @@ def write_pages(pais, discs=None):
         return []
     T, t = TXT[pais], intl.strings(pais)
     names = {sid: n for sid, (n, _) in STORES[pais].items()}
-    out = ROOT / pais / T["dir"]
+    out = (ROOT if pais == "es" else ROOT / pais) / T["dir"]
     css = ('<link rel="stylesheet" href="/catalogo.css">\n<style>.disc{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:24px;'
            'margin-top:16px}.disc img{width:100%;border-radius:12px;background:#fff}.offers{width:100%;border-collapse:collapse}'
            '.offers td{padding:10px 6px;border-bottom:1px solid var(--border)}.offers .p{font-weight:700;text-align:right;'
@@ -452,7 +578,7 @@ def write_pages(pais, discs=None):
            '{.disc{grid-template-columns:1fr}}.dl{display:grid;gap:8px}.dl a{display:flex;justify-content:space-between;gap:12px;'
            'padding:10px 12px;border:1px solid var(--border);border-radius:10px;color:var(--text-primary);text-decoration:none}'
            '.dl a:hover{border-color:var(--accent)}.dl small{color:var(--text-muted)}</style>\n')
-    top = f'  <div class="topbar"><div class="row">{intl._logo(pais, t)}<a class="navlink" href="/{pais}/{T["dir"]}/">{_e(T["home"])}</a></div></div>\n'
+    top = f'  <div class="topbar"><div class="row">{intl._logo(pais, t)}<a class="navlink" href="{_pre(pais)}/{T["dir"]}/">{_e(T["home"])}</a></div></div>\n'
 
     def page(url, title, desc, body, ld=None):
         extra = css + (f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n' if ld else "")
@@ -473,7 +599,7 @@ def write_pages(pais, discs=None):
         gnames = {k: v for d in cats.values() for k, v in d["stores"].items()}
         if gs:
             from .guias_intl import _tile
-            guitar_box = (f'  <section><h3>{_e(T["guitars"])} <a class="navlink" href="/{pais}/">{_e(T["guitars_more"])} →</a></h3>'
+            guitar_box = (f'  <section><h3>{_e(T["guitars"])} <a class="navlink" href="{_pre(pais)}/">{_e(T["guitars_more"])} →</a></h3>'
                           f'<div class="grid">' + "".join(_tile(pais, p, gnames, intl, t) for p in gs) + "</div></section>")
     except Exception:  # noqa: BLE001 - sin catálogo de guitarras, sin recuadro
         pass
@@ -484,10 +610,10 @@ def write_pages(pais, discs=None):
             acount[a] = acount.get(a, 0) + 1
     for d in discs:  # todos: también los de una sola tienda (precio + botón de Amazon)
         f1 = T["fmt1"][d["fmt"]]
-        url = f"/{pais}/{T['dir']}/{d['slug']}.html"
+        url = f"{_pre(pais)}/{T['dir']}/{d['slug']}.html"
         path = out / f"{d['slug']}.html"
         a = d["name"].split(" - ", 1)[0].strip() if " - " in d["name"] else ""
-        alink = (f' · <a href="/{pais}/{T["dir"]}/artist/{slug(a)}.html">{_e(T["artist_all"])} ({_e(a)})</a>'
+        alink = (f' · <a href="{_pre(pais)}/{T["dir"]}/artist/{slug(a)}.html">{_e(T["artist_all"])} ({_e(a)})</a>'
                  if a and acount.get(a, 0) >= 2 and slug(a) else "")
         pages._write(path, _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink))
         urls.append(url)
@@ -499,7 +625,7 @@ def write_pages(pais, discs=None):
         if not ds:
             continue
         items = "".join(_disc_tile(pais, d, T, names) for d in ds)
-        url = f"/{pais}/{T['dir']}/{fname}.html"
+        url = f"{_pre(pais)}/{T['dir']}/{fname}.html"
         path = out / f"{fname}.html"
         pages._write(path, page(url, label, T["d_index"], f'  <div class="grid">{items}</div>'))
         urls.append(url)
@@ -513,7 +639,7 @@ def write_pages(pais, discs=None):
     if deals:
         rows = "".join(_disc_tile(pais, d, T, names).replace('<div class="img">', f'<span class="badge">{_e(T["save"].format(m=intl.money(gap(d), pais)))}</span><div class="img">', 1)
                        for d in deals)
-        url = f"/{pais}/{T['dir']}/{T['deals_file']}.html"
+        url = f"{_pre(pais)}/{T['dir']}/{T['deals_file']}.html"
         path = out / f"{T['deals_file']}.html"
         pages._write(path, page(url, T["deals"], T["deals_desc"], f'  <p class="hub-intro" style="color:var(--text-secondary)">{_e(T["deals_desc"])}</p>\n  <div class="grid">{rows}</div>'))
         urls.append(url)
@@ -535,7 +661,7 @@ def write_pages(pais, discs=None):
         aslug = slug(name_a)
         if not aslug:
             continue
-        url = f"/{pais}/{T['dir']}/artist/{aslug}.html"
+        url = f"{_pre(pais)}/{T['dir']}/artist/{aslug}.html"
         path = adir / f"{aslug}.html"
         tiles = "".join(_disc_tile(pais, d, T, names) for d in sorted(ds, key=lambda d: d["name"]))
         pages._write(path, page(url, T["artist_t"].format(a=name_a), T["artist_d"].format(a=name_a, n=len(ds)),
@@ -567,35 +693,36 @@ def write_pages(pais, discs=None):
               '  <section class="hub-sec" id="results" hidden><h2 id="rh"></h2><div class="grid" id="rg"></div></section>\n'
               + r"""  <script>(()=>{let idx=null;const $=i=>document.getElementById(i),q=$('q'),fa=$('fa'),ff=$('ff'),fs=$('fs'),sec=$('results'),g=$('rg'),h=$('rh');
 const n=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-const money=v=>'£'+v.toFixed(2).replace(/\.00$/,'');const AP=__AP__;
+const money=v=>new Intl.NumberFormat(document.documentElement.lang,{style:'currency',currency:'__CUR__',minimumFractionDigits:v%1?2:0}).format(v);
+const im=u=>/cdn\.shopify\.com|\/cdn\/shop\//.test(u)?u+(u.includes('?')?'&':'?')+'width=300':u;const AP=__AP__;
 async function run(){const t=n(q.value.trim()),a=n(fa.value.trim()),f=ff.value;if(t.length<2&&!a&&!f){sec.hidden=true;return}
 if(!idx)idx=await (await fetch('search.json')).json();const w=t.length>=2?t.split(/\s+/):[];
 let r=idx.filter(d=>{const x=' '+n(d[0]).replace(/[^a-z0-9]+/g,' ');return w.every(k=>x.includes(' '+k))&&(!a||(' '+n(d[6]).replace(/[^a-z0-9]+/g,' ')).includes(' '+a.replace(/[^a-z0-9]+/g,' ').trim()))&&(!f||d[2]===f)});
 const s=fs.value;r.sort((x,y)=>s==='n'?y[4]-x[4]||x[3]-y[3]:s==='a'?x[0].localeCompare(y[0]):x[3]-y[3]);const tot=r.length;r=r.slice(0,120);
 const ap=fa.value.trim()&&AP[fa.value.trim()];h.innerHTML=(tot?'__RES__'.replace('{n}',tot):'__NONE__')+(ap?` · <a href="artist/${ap}.html">__ALL__ →</a>`:'');
-g.innerHTML=r.map(d=>`<a class="tile" href="${e(d[1])}.html"><div class="img">${d[5]?`<img loading="lazy" src="${e(d[5])}&width=300" alt="">`:''}</div><div class="body"><span class="brand">${e(d[2])}</span><span class="name">${e(d[0])}</span><span class="price"><strong>${money(d[3])}</strong></span><span class="foot"><span>${e(d[6])}</span><span class="stores-n">${d[4]}</span></span></div></a>`).join('');sec.hidden=false}
+g.innerHTML=r.map(d=>`<a class="tile" href="${e(d[1])}.html"><div class="img">${d[5]?`<img loading="lazy" src="${e(im(d[5]))}" alt="">`:''}</div><div class="body"><span class="brand">${e(d[2])}</span><span class="name">${e(d[0])}</span><span class="price"><strong>${money(d[3])}</strong></span><span class="foot"><span>${e(d[6])}</span><span class="stores-n">${d[4]}</span></span></div></a>`).join('');sec.hidden=false}
 let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>x.addEventListener('input',go));[ff,fs].forEach(x=>x.addEventListener('change',run));})();</script>
-""".replace("__AP__", json.dumps({a: slug(a) for a in artists_pages}, ensure_ascii=False))
+""".replace("__CUR__", intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR").replace("__AP__", json.dumps({a: slug(a) for a in artists_pages}, ensure_ascii=False))
                  .replace("__RES__", _e(T["search_res"])).replace("__NONE__", _e(T["search_none"])).replace("__ALL__", _e(T["artist_all"])))
     body = (f'  <p class="hub-intro" style="color:var(--text-secondary)">{_e(T["d_index"])}</p>\n' + search + f'  <div class="links">{"".join(links)}</div>\n'
             f'  <section class="hub-sec"><h2>{_e(T["more"])}</h2><div class="grid">{best}</div></section>')
     path = out / "index.html"
-    pages._write(path, page(f"/{pais}/{T['dir']}/", T["h_index"], T["d_index"], body))
-    urls.insert(0, f"/{pais}/{T['dir']}/")
+    pages._write(path, page(f"{_pre(pais)}/{T['dir']}/", T["h_index"], T["d_index"], body))
+    urls.insert(0, f"{_pre(pais)}/{T['dir']}/")
     keep.add(path)
     # Guía "dónde comprar vinilo más barato"
     if "guide_file" in T:
         gd = deals[:12] if deals else multi[:12]
-        rows = "".join(f'<a href="/{pais}/{T["dir"]}/{d["slug"]}.html"><span>{_e(d["name"])} · {T["fmt1"][d["fmt"]]}</span><small>'
+        rows = "".join(f'<a href="{_pre(pais)}/{T["dir"]}/{d["slug"]}.html"><span>{_e(d["name"])} · {T["fmt1"][d["fmt"]]}</span><small>'
                        f'{_e(T["save"].format(m=intl.money(gap(d), pais)))}</small></a>' for d in gd if gap(d))
         ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in T["faqs"]]}
         faq = "".join(f"<details><summary>{_e(q)}</summary><p>{_e(a)}</p></details>" for q, a in T["faqs"])
         body = (f'  <p class="hub-intro" style="color:var(--text-secondary)">{_e(T["guide_desc"])}</p>\n'
-                + T["guide_body"].format(shops=len(STORES[pais]) - 1)
+                + T["guide_body"].format(shops=T.get("shops_n", len(STORES[pais]) - 1))
                 + (f'\n  <section class="hub-sec"><h2>{_e(T["deals"])}</h2><div class="dl">{rows}</div></section>' if rows else "")
                 + f'\n  <section class="hub-sec" style="max-width:780px"><h2>FAQ</h2>{faq}</section>\n' + guitar_box)
-        url = f"/{pais}/{T['dir']}/{T['guide_file']}.html"
+        url = f"{_pre(pais)}/{T['dir']}/{T['guide_file']}.html"
         path = out / f"{T['guide_file']}.html"
         pages._write(path, page(url, T["guide"], T["guide_desc"], body, ld))
         urls.insert(1, url)
@@ -613,8 +740,8 @@ let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>
 def _disc_tile(pais, d, T, names):
     from . import intl
     best = sorted(d["items"], key=lambda i: (not i["st"], i["p"]))[0]
-    img = f'<img loading="lazy" src="{_e(d["img"])}&width=300" alt="">' if d.get("img") else ""
-    return (f'<a class="tile" href="/{pais}/{T["dir"]}/{_e(d["slug"])}.html"><div class="img">{img}</div><div class="body">'
+    img = f'<img loading="lazy" src="{_e(_img(d["img"], 300))}" alt="">' if d.get("img") else ""
+    return (f'<a class="tile" href="{_pre(pais)}/{T["dir"]}/{_e(d["slug"])}.html"><div class="img">{img}</div><div class="body">'
             f'<span class="brand">{_e(T["fmt1"][d["fmt"]])}</span><span class="name">{_e(d["name"])}</span>'
             f'<span class="price"><strong>{intl.money(best["p"], pais)}</strong></span><span class="foot">'
             f'<span>{_e(names.get(best["s"], best["s"]))}</span><span class="stores-n">{len(d["items"])}</span></span></div></a>')
@@ -636,7 +763,7 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
         t["whereDiff"].format(d=intl.money(round(max(prices) - min(prices)), pais)) if max(prices) - min(prices) >= 1 else "")
     ld = {"@context": "https://schema.org", "@type": "Product", "name": f"{d['name']} ({f1})", "gtin13": d["ean"],
           "image": d.get("img"), "url": f"https://guitle.com{url}",
-          "offers": {"@type": "AggregateOffer", "priceCurrency": intl.SITES[pais]["cur"], "lowPrice": min(prices),
+          "offers": {"@type": "AggregateOffer", "priceCurrency": (intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR"), "lowPrice": min(prices),
                      "highPrice": max(prices), "offerCount": n}}
     if not T.get("amazon"):
         amazon = ""
@@ -648,7 +775,7 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
     else:
         amazon = (f'\n    <p class="muted small amazon">{_e(T["amazon_txt"])} <a href="{_e(T["amazon"].format(ean=d["ean"]))}" '
                   f'target="_blank" rel="sponsored noopener">{_e(T["amazon_btn"])}</a></p>')
-    img = f'<div class="pimg"><img src="{_e(d["img"])}&width=600" alt="{_e(d["name"])}"></div>' if d.get("img") else ""
+    img = f'<div class="pimg"><img src="{_e(_img(d["img"], 600))}" alt="{_e(d["name"])}"></div>' if d.get("img") else ""
     head = intl._head(pais, f"{title} · guitle", desc, url,
                       f'<meta property="og:title" content="{_e(title)}">\n<meta property="og:description" content="{_e(desc)}">\n'
                       + (f'<meta property="og:image" content="{_e(d["img"])}">\n' if d.get("img") else "")
@@ -660,10 +787,10 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
   <div class="topbar">
     <div class="row">
       {intl._logo(pais, t)}
-      <a class="navlink" href="/{pais}/{T['dir']}/">{_e(T['home'])}</a>
+      <a class="navlink" href="{_pre(pais)}/{T['dir']}/">{_e(T['home'])}</a>
     </div>
   </div>
-  <nav class="crumbs"><a href="/{pais}/">{_e(t['home'])}</a> › <a href="/{pais}/{T['dir']}/">{_e(T['home'])}</a> › <a href="/{pais}/{T['dir']}/{T['fmts'][d['fmt']][1]}.html">{_e(T['fmts'][d['fmt']][0])}</a></nav>
+  <nav class="crumbs"><a href="{_pre(pais)}/">{_e(t['home'])}</a> › <a href="{_pre(pais)}/{T['dir']}/">{_e(T['home'])}</a> › <a href="{_pre(pais)}/{T['dir']}/{T['fmts'][d['fmt']][1]}.html">{_e(T['fmts'][d['fmt']][0])}</a></nav>
   <article class="product">
     {img}
     <div class="pinfo">
