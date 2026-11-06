@@ -24,13 +24,36 @@ function fnv(text) {
   return h >>> 0;
 }
 
+// Cajas ya abiertas, en memoria (unas pocas decenas, 10 minutos): la siguiente ficha de la misma caja no vuelve a
+// leer R2 ni a descomprimir. Y la caja comprimida, en la caché de Cloudflare, para el resto de servidores de la zona.
+const BOXES = new Map();
+const BOX_TTL = 600e3, BOX_MAX = 64;
+
+async function openBox(env, box) {
+  const hit = BOXES.get(box);
+  if (hit && Date.now() - hit.t < BOX_TTL) return hit;
+  const ckey = new Request(`https://cajas.guitle.com/${box}`);
+  let res = await caches.default.match(ckey), etag;
+  if (res) etag = res.headers.get("x-etag");
+  else {
+    const obj = await env.SITE.get(box);
+    if (!obj) return null;
+    etag = obj.etag.replace(/"/g, "");
+    const raw = await obj.arrayBuffer();
+    res = new Response(raw, { headers: { "cache-control": "public, max-age=600", "x-etag": etag } });
+    await caches.default.put(ckey, res.clone());
+  }
+  const pages = JSON.parse(await new Response(res.body.pipeThrough(new DecompressionStream("gzip"))).text());
+  const entry = { pages, etag, t: Date.now() };
+  if (BOXES.size >= BOX_MAX) BOXES.delete(BOXES.keys().next().value);
+  BOXES.set(box, entry);
+  return entry;
+}
+
 async function fromBox(env, code, slug) {
-  const box = `${code}/_g/${(fnv(slug) % CAJAS).toString(16).padStart(4, "0")}.json.gz`;
-  const obj = await env.SITE.get(box);
-  if (!obj) return null;
-  const pages = JSON.parse(await new Response(obj.body.pipeThrough(new DecompressionStream("gzip"))).text());
-  if (typeof pages[slug] !== "string") return null;
-  return { html: pages[slug], etag: `"${obj.etag.replace(/"/g, "")}-${fnv(slug).toString(16)}"` };
+  const box = await openBox(env, `${code}/_g/${(fnv(slug) % CAJAS).toString(16).padStart(4, "0")}.json.gz`);
+  if (!box || typeof box.pages[slug] !== "string") return null;
+  return { html: box.pages[slug], etag: `"${box.etag}-${fnv(slug).toString(16)}"` };
 }
 
 export default {
