@@ -38,9 +38,9 @@ STORES["it"] = {"radiation": ("Radiation Records", "https://shop.radiationrecord
                 "laziale": ("Discoteca Laziale", "https://www.discotecalaziale.com")}
 # España: tiendas de discos independientes (estudio: marketing/tiendas-discos-espana.md, rama de redes). Supersonic en
 # Shopify (el código de barras va en la referencia); El Genio Equivocado y Alta Fidelidad en WooCommerce (WOO).
-STORES["es"] = {"supersonic": ("Discos Supersonic", "https://discossupersonicsantander.com"),
+STORES["es"] = {"supersonic": ("Supersonic", "https://discossupersonicsantander.com"),
                 "ege": ("El Genio Equivocado", "https://egebotiga.com"),
-                "altafidelidad": ("Discos Alta Fidelidad", "https://discosaltafidelidad.es")}
+                "altafidelidad": ("Alta Fidelidad", "https://discosaltafidelidad.es")}
 # Tiendas en WooCommerce: catálogo por su API pública de tienda (/wp-json/wc/store/v1/products), con el EAN en "sku".
 WOO = {"es": {"ege", "altafidelidad"}}
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
@@ -780,6 +780,7 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
                       f'<meta property="og:title" content="{_e(title)}">\n<meta property="og:description" content="{_e(desc)}">\n'
                       + (f'<meta property="og:image" content="{_e(d["img"])}">\n' if d.get("img") else "")
                       + '<link rel="stylesheet" href="/catalogo.css">\n<link rel="stylesheet" href="/producto.css">\n'
+                      '<style>@media(max-width:420px){#stores td{padding-left:3px;padding-right:3px}#stores .tag{font-size:.72rem;padding:1px 4px}}</style>\n'
                       f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n</head>')
     return f"""{head}
 <body>
