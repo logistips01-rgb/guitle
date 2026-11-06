@@ -15,9 +15,6 @@ on:
         type: string
         default: ""
 
-concurrency:
-  group: musica
-  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -27,10 +24,15 @@ jobs:
   musica:
     runs-on: ubuntu-latest
     timeout-minutes: 200
+    # Cada país espera solo a su propia lectura (lanzar España no espera a la de Italia, que dura horas)
+    concurrency:
+      group: musica-${{ matrix.pais }}
+      cancel-in-progress: false
     strategy:
       fail-fast: false
       matrix:
-        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || '["uk","fr","it","es"]') }}
+        # A mano: un país (input) o, al tocar .github/musica.txt, "[solo es]" en el mensaje del commit
+        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || contains(github.event.head_commit.message, '[solo es]') && '["es"]' || '["uk","fr","it","es"]') }}
     env:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
