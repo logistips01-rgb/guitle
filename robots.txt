@@ -32,3 +32,4 @@ Sitemap: https://guitle.com/sitemap-ar.xml
 Sitemap: https://guitle.com/sitemap-fi.xml
 Sitemap: https://guitle.com/sitemap-lu.xml
 Sitemap: https://guitle.com/uk/records/sitemap.xml
+Sitemap: https://guitle.com/it/dischi/sitemap.xml
