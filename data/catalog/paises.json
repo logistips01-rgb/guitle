@@ -20,7 +20,7 @@
  "it": {
   "country": "Italia",
   "path": "/it/",
-  "guitars": 64761,
+  "guitars": 64765,
   "stores": 26
  },
  "de": {
@@ -32,7 +32,7 @@
  "br": {
   "country": "Brasil",
   "path": "/br/",
-  "guitars": 42663,
+  "guitars": 42625,
   "stores": 51
  },
  "ie": {
@@ -56,7 +56,7 @@
  "pl": {
   "country": "Polska",
   "path": "/pl/",
-  "guitars": 30529,
+  "guitars": 31774,
   "stores": 3
  },
  "cz": {

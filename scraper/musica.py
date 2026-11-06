@@ -72,6 +72,18 @@ STORES["pt"]["cdgo"] = ("CDGO (Tubitek)", "https://cdgo.com")
 # CDGO también envía a España (correo certificado): España usa lo que ya se consulta para Portugal, sin leerla otra vez.
 STORES["es"]["cdgo"] = ("CDGO (Portugal)", "https://cdgo.com")
 SHARED_LOOKUP = {"es": {"cdgo": "pt"}}
+# eBay (API oficial, claves EBAY_CLIENT_ID/SECRET): cada disco por su código de barras, nuevo y a precio fijo, el más
+# barato; el enlace es el de afiliado de eBay Partner Network (campid de Manuel). La API da 5.000 consultas al día para
+# todo: cada país usa como mucho EBAY_DAILY.
+EBAY = {"es": ("EBAY_ES", "https://www.ebay.es"), "fr": ("EBAY_FR", "https://www.ebay.fr"),
+        "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk")}
+EBAY_CAMPID = "5339241544"
+# Consultas al día por país (4 países). La clave de eBay es la misma que la de mootle y el cupo (5.000/día) es de las
+# dos webs: guitle discos 4 × 900 + guitle guitarras (~200) + mootle 800 ≤ 5.000. Se cambia sin tocar código con la
+# variable de GitHub EBAY_MAX_CALLS (Settings → Secrets and variables → Actions → Variables).
+EBAY_DAILY = int(__import__("os").environ.get("EBAY_MAX_CALLS") or 900)  # 900 mientras mootle hace su primera pasada (a 800/día, ~2 semanas desde el 6-11-2026); luego 1.000
+for _c, (_m, _base) in EBAY.items():
+    STORES[_c]["ebay"] = ("eBay", _base)
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
 # ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
 LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
@@ -193,7 +205,8 @@ def read(pais, minutes):
     """Catálogo de cada tienda y códigos de barras que faltan, hasta agotar el tiempo."""
     if pais in AWIN:
         read_awin(pais)
-        return _mb_artists(pais, time.time() + minutes * 60)
+        _ebay(pais, time.time() + minutes * 60 * 0.3)
+        return _mb_artists(pais, time.time() + minutes * 60 * 0.7)
     if pais in SRC:  # Portugal: el catálogo de la lectura de España (mismo trabajo) y las tiendas que se consultan por EAN
         src = DATA / SRC[pais]
         catalog = _load(src / "tiendas.json", {})  # todos los discos de España: se buscan en CDGO
@@ -214,7 +227,7 @@ def read(pais, minutes):
     fresh = (folder / "tiendas.json").exists() and time.time() - (folder / "tiendas.json").stat().st_mtime < 20 * 3600
     shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {}) and k not in WOO.get(pais, ())
              and k not in WOO_NAME.get(pais, ()) and k not in SITEMAP.get(pais, {})
-             and k not in LISTING.get(pais, {}) and k not in SHARED_LOOKUP.get(pais, {})}
+             and k not in LISTING.get(pais, {}) and k not in SHARED_LOOKUP.get(pais, {}) and k != "ebay"}
     for sid, (name, base) in ([] if fresh else shops.items()):  # catálogos: una vez al día
         if time.time() > end:
             break
@@ -264,6 +277,8 @@ def read(pais, minutes):
             print(f"[{sid}] {len(items)} discos", flush=True)
     if not fresh:
         _save(folder / "tiendas.json", catalog)
+    if pais in EBAY:  # eBay por código de barras, antes de las tareas largas (hasta 25 min)
+        _ebay(pais, min(end, time.time() + 25 * 60))
     # Códigos de barras: de la ficha de cada disco, una vez
     # Una tienda por hilo, cada una con su Fetcher y sus pausas: avanzan a la vez sin apretar a ninguna.
     from concurrent.futures import ThreadPoolExecutor
@@ -398,49 +413,98 @@ def _read_listing(fetcher, tpl, end, codes):
 
 
 def _mb_artists(pais, end):
-    """Artista de los discos que llegan sin él (Cultura solo da el título): MusicBrainz, la base de datos libre de discos,
-    por su código de barras, a una consulta por segundo (lo que pide su API). Se guarda en artistas.json (en git):
-    {ean: [fecha, artista o ""]}; los no encontrados se reintentan a los 30 días."""
+    """Artista de los discos que llegan sin él (Cultura solo da el título), por su código de barras: MusicBrainz (la base
+    de datos libre de discos, una consulta por segundo) y Apple Music (API pública de iTunes, unas 20 por minuto), las
+    dos a la vez. Se guarda en artistas.json (en git): {ean: [fecha, artista o "", fuentes probadas "mb,it"]}; los no
+    encontrados se reintentan a los 60 días."""
+    import threading
     from datetime import date, timedelta
     from .fetch import Fetcher
     folder = DATA / pais
     done = _load(folder / "artistas.json", {})
+    for v in done.values():  # las de antes: [fecha, artista], de MusicBrainz
+        v += ["mb"] if len(v) == 2 else []
     catalog, codes = _load(folder / "tiendas.json", {}), _load(folder / "codigos.json", {})
-    todo = []
-    for sid, its in catalog.items():
-        for h, it in its.items():
-            e = codes.get(sid, {}).get(h)
-            if e and " - " not in (it.get("t") or "") and not it.get("v") and e not in done:
-                todo.append((it["f"] != "vinilo", e))
-    retry = (date.today() - timedelta(days=30)).isoformat()
-    todo = [e for _, e in sorted(set(todo))] + [e for e, v in done.items() if not v[1] and v[0] < retry]
-    f = Fetcher(delay=(1.1, 1.4))
-    f.session.headers["User-Agent"] = "guitle/1.0 (+https://guitle.com)"
-    today, n, found = date.today().isoformat(), 0, 0
-    for e in todo:
-        if time.time() > end:
-            break
-        codes_q = " OR ".join(sorted({e, e.lstrip("0"), e[1:] if e.startswith("0") else e}))
-        url = f"https://musicbrainz.org/ws/2/release/?query=barcode:({codes_q})&fmt=json&limit=3"
-        try:
-            r = f.get(url)
-            if r.status_code == 503:  # demasiado deprisa: se sigue mañana
-                break
-            rels = (r.json().get("releases") or []) if r.status_code == 200 else None
-        except Exception:  # noqa: BLE001
-            continue
-        if rels is None:
-            continue
-        credit = (rels[0].get("artist-credit") or []) if rels else []
-        artist = "".join((c.get("name") or "") + (c.get("joinphrase") or "") for c in credit).strip()
-        artist = "" if artist.lower() in ("various artists", "[unknown]") else artist
-        done[e] = [today, artist]
-        n += 1
-        found += bool(artist)
-        if n % 500 == 0:
+    retry = (date.today() - timedelta(days=60)).isoformat()
+    for e, v in list(done.items()):
+        if not v[1] and v[0] < retry:
+            del done[e]
+    todo = sorted({(it["f"] != "vinilo", codes[sid][h]) for sid, its in catalog.items() for h, it in its.items()
+                   if codes.get(sid, {}).get(h) and " - " not in (it.get("t") or "") and not it.get("v")})
+    todo = [e for _, e in todo]
+    lock, today, stats = threading.Lock(), date.today().isoformat(), {"mb": [0, 0], "it": [0, 0]}
+
+    def mark(e, src, artist):
+        with lock:
+            v = done.setdefault(e, [today, "", ""])
+            v[0] = today
+            if artist and not v[1]:
+                v[1] = artist
+            v[2] = ",".join(sorted(set(filter(None, v[2].split(","))) | {src}))
+            stats[src][0] += 1
+            stats[src][1] += bool(artist)
+
+    def tried(e, src):
+        with lock:
+            v = done.get(e)
+            return bool(v and (v[1] or src in v[2].split(",")))
+
+    def musicbrainz():
+        f = Fetcher(delay=(1.1, 1.4))
+        f.session.headers["User-Agent"] = "guitle/1.0 (+https://guitle.com)"
+        busy = 0
+        for e in todo:
+            if time.time() > end or busy > 30:
+                return
+            if tried(e, "mb"):
+                continue
+            q = " OR ".join(sorted({e, e.lstrip("0")}))
+            try:
+                r = f.get(f"https://musicbrainz.org/ws/2/release/?query=barcode:({q})&fmt=json&limit=3")
+            except Exception:  # noqa: BLE001
+                continue
+            if r.status_code in (429, 503):  # va deprisa para ellos: pausa y se sigue
+                busy += 1
+                time.sleep(10)
+                continue
+            busy = 0
+            rels = (r.json().get("releases") or []) if r.status_code == 200 else []
+            credit = (rels[0].get("artist-credit") or []) if rels else []
+            artist = "".join((c.get("name") or "") + (c.get("joinphrase") or "") for c in credit).strip()
+            mark(e, "mb", "" if artist.lower() in ("various artists", "[unknown]") else artist)
+
+    def itunes():
+        f = Fetcher(delay=(3.1, 3.6))
+        busy = 0
+        for e in todo:
+            if time.time() > end or busy > 10:
+                return
+            if tried(e, "it"):
+                continue
+            try:
+                r = f.get(f"https://itunes.apple.com/lookup?upc={e}")
+            except Exception:  # noqa: BLE001
+                continue
+            if r.status_code in (403, 429):
+                busy += 1
+                time.sleep(60)
+                continue
+            busy = 0
+            res = (r.json().get("results") or []) if r.status_code == 200 else []
+            artist = (res[0].get("artistName") or "") if res else ""
+            mark(e, "it", "" if artist.lower() in ("various artists", "varios artistas", "artistes divers") else artist)
+
+    threads = [threading.Thread(target=musicbrainz), threading.Thread(target=itunes)]
+    for t in threads:
+        t.start()
+    while any(t.is_alive() for t in threads):
+        time.sleep(60)
+        with lock:
             _save(folder / "artistas.json", done)
     _save(folder / "artistas.json", done)
-    print(f"[musicbrainz] {n} discos consultados, {found} con artista; pendientes {max(0, len(todo) - n)}", flush=True)
+    found = sum(1 for e in todo if done.get(e, ["", ""])[1])
+    print(f"[artistas] MusicBrainz {stats['mb'][0]} consultas ({stats['mb'][1]} con artista), iTunes {stats['it'][0]} "
+          f"({stats['it'][1]}); con artista {found} de {len(todo)}", flush=True)
 
 
 def _woo_name(name):
@@ -523,6 +587,68 @@ def _ld_disc(html_text):
             if isinstance(a, dict) and a.get("name"):
                 out["v"] = a["name"]
     return out
+
+
+def _ebay(pais, end):
+    """eBay por código de barras: hasta EBAY_DAILY discos al día, primero los ya comparados en varias tiendas, luego
+    los vinilos, y los más antiguos. Se guarda en consultas.json como las tiendas de LOOKUP:
+    {"ebay": {ean: [fecha, precio, stock, url de afiliado, título, "", foto] o [fecha]}}."""
+    import os
+    from datetime import date
+    if pais not in EBAY or not (os.environ.get("EBAY_CLIENT_ID") and os.environ.get("EBAY_CLIENT_SECRET")):
+        return
+    import requests
+    from .ebay import SEARCH_URL, _get_token
+    folder = DATA / pais
+    catalog, codes = _load(folder / "tiendas.json", {}), _load(folder / "codigos.json", {})
+    seen = _load(folder / "consultas.json", {})
+    done = seen.setdefault("ebay", {})
+    n_of, fmt_of = {}, {}
+    for sid, hs in codes.items():
+        for h, e in hs.items():
+            if e:
+                n_of[e] = n_of.get(e, 0) + 1
+                fmt_of.setdefault(e, (catalog.get(sid, {}).get(h) or {}).get("f"))
+    today = date.today().isoformat()
+    todo = sorted((e for e in n_of if done.get(e, [""])[0] != today),
+                  key=lambda e: (done.get(e, [""])[0] != "", -min(n_of[e], 3), fmt_of.get(e) != "vinilo", done.get(e, [""])[0]))
+    market, _ = EBAY[pais]
+    cur = {"uk": "GBP"}.get(pais, "EUR")
+    try:
+        token = _get_token()
+    except Exception as exc:  # noqa: BLE001
+        print(f"[ebay] sin token: {exc}", flush=True)
+        return
+    headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": market,
+               "X-EBAY-C-ENDUSERCTX": f"affiliateCampaignId={EBAY_CAMPID},affiliateReferenceId=guitle-{pais}"}
+    n = found = 0
+    for e in todo[:EBAY_DAILY]:
+        if time.time() > end:
+            break
+        try:
+            r = requests.get(SEARCH_URL, timeout=30, headers=headers,
+                             params={"gtin": e, "filter": "buyingOptions:{FIXED_PRICE},conditionIds:{1000}",
+                                     "sort": "price", "limit": "5"})
+        except requests.RequestException:
+            continue
+        if r.status_code == 429:  # cupo del día agotado
+            print("[ebay] cupo diario de la API agotado", flush=True)
+            break
+        if r.status_code != 200:
+            continue
+        items = [i for i in r.json().get("itemSummaries", [])
+                 if (i.get("price") or {}).get("currency") == cur and (i.get("price") or {}).get("value")]
+        n += 1
+        if items:
+            it = min(items, key=lambda i: float(i["price"]["value"]))
+            done[e] = [today, float(it["price"]["value"]), True, it.get("itemAffiliateWebUrl") or it.get("itemWebUrl"),
+                       it.get("title") or "", "", ((it.get("image") or {}).get("imageUrl") or "")]
+            found += 1
+        else:
+            done[e] = [today]
+        time.sleep(0.3)
+    _save(folder / "consultas.json", seen)
+    print(f"[ebay] {n} discos consultados, {found} en eBay", flush=True)
 
 
 def _cdgo_disc(text):
@@ -650,6 +776,13 @@ def build_data(pais):
                 catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                   "st": row[2], "img": row[6], "u": row[3]}
                 codes.setdefault(sid, {})[e] = e
+    if pais in EBAY:  # eBay, consultado por código de barras
+        fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
+        for e, row in _load(folder / "consultas.json", {}).get("ebay", {}).items():
+            if len(row) >= 7 and e in fmt_of:
+                catalog.setdefault("ebay", {})[e] = {"t": row[4], "v": "", "ty": "", "f": fmt_of[e], "p": row[1],
+                                                     "st": row[2], "img": row[6], "u": row[3]}
+                codes.setdefault("ebay", {})[e] = e
     catalog = {k: v for k, v in catalog.items() if k in STORES[pais]}  # Portugal: solo las tiendas que envían allí
     if src in SITEMAP:  # tiendas leídas por su mapa del sitio: todos sus discos con formato (también los que solo tienen ellas)
         found = _load(DATA / src / "consultas.json", {})
