@@ -79,9 +79,9 @@ EBAY = {"es": ("EBAY_ES", "https://www.ebay.es"), "fr": ("EBAY_FR", "https://www
         "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk")}
 EBAY_CAMPID = "5339241544"
 # Consultas al día por país (4 países). La clave de eBay es la misma que la de mootle y el cupo (5.000/día) es de las
-# dos webs: guitle discos 4 × 1.000 + guitle guitarras (~100) + mootle 400 ≤ 5.000. Se cambia sin tocar código con la
+# dos webs: guitle discos 4 × 900 + guitle guitarras (~200) + mootle 800 ≤ 5.000. Se cambia sin tocar código con la
 # variable de GitHub EBAY_MAX_CALLS (Settings → Secrets and variables → Actions → Variables).
-EBAY_DAILY = int(__import__("os").environ.get("EBAY_MAX_CALLS") or 1000)
+EBAY_DAILY = int(__import__("os").environ.get("EBAY_MAX_CALLS") or 900)  # 900 mientras mootle hace su primera pasada (a 800/día, ~2 semanas desde el 6-11-2026); luego 1.000
 for _c, (_m, _base) in EBAY.items():
     STORES[_c]["ebay"] = ("eBay", _base)
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la

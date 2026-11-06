@@ -41,7 +41,7 @@ jobs:
       AWIN_FEED_KEY: ${{ secrets.AWIN_FEED_KEY }}
       EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}  # eBay: discos por código de barras (API oficial)
       EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
-      EBAY_MAX_CALLS: ${{ vars.EBAY_MAX_CALLS }}  # consultas de eBay al día por país (vacío: 1.000)  # Francia: ficheros de productos de las tiendas afiliadas en Awin
+      EBAY_MAX_CALLS: ${{ vars.EBAY_MAX_CALLS }}  # consultas de eBay al día por país (vacío: 900)  # Francia: ficheros de productos de las tiendas afiliadas en Awin
     steps:
       - uses: actions/checkout@v4
         with:
