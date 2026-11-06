@@ -2303,6 +2303,7 @@ esp-ltd-alexi-laiho-sawtooth-awtoothhtm
 esp-ltd-alexi-ripped-sawtooth-con-estuche-799493273328
 esp-ltd-alr-ii-qm-stp-andy-laroque-laroquehtm
 esp-ltd-alr-ii-qm-stp-andy-laroque-oquep41480
+esp-ltd-arrow-1000-candy-apple-red-719710627727
 esp-ltd-arrow-1000-evertune-black-eblackhtml
 esp-ltd-arrow-1000-pw-00pwp44332
 esp-ltd-arrow-1000-pw-w1000pwhtm
@@ -2952,6 +2953,7 @@ fender-75th-anniversary-american-ultra-ii-telecaster-diapason-de-ebano-oro-liqui
 fender-75th-anniversary-american-vintage-ii-1951-nocaster-mn-blonde-197955197180
 fender-75th-anniversary-player-ii-baritone-telecaster-mn-butterscotch-blonde-197955244969
 fender-75th-anniversary-player-ii-baritone-telecaster-mn-lake-placid-blue-34-197955244976
+fender-75th-anniversary-player-ii-baritone-telecaster-rw-3-color-sunburst-197955229379
 fender-75th-anniversary-player-ii-baritone-telecaster-rw-black-197955229348
 fender-75th-anniversary-player-ii-telecaster-dds-ecasterdds
 fender-75th-anniversary-player-ii-telecaster-mn-aztec-gold-197955229416
@@ -4102,7 +4104,6 @@ fender-tele-dual-p90-black-paisley-paisleyhtm
 fender-tele-dual-p90-pink-paisley-paisleyhtm
 fender-telecaster-1977-custom-american-vintage-ii-rw-blanco-olimpico-717669590383
 fender-telecaster-60s-thinline-vintera-ii-mn-negro-717669920241
-fender-telecaster-75-anni-player-ii-baritono-rw-sunburst-de-3-colores-197955229379
 fender-telecaster-acoustasonic-player-signature-finneas-rw-degradado-cappuccino-717669923303
 fender-telecaster-acoustasonic-triplesonic-signature-jack-white-ltd-mn-blanco-ar-885978048649
 fender-telecaster-american-acoustasonic-ebo-negro-885978072927
@@ -4695,6 +4696,7 @@ gibson-les-paul-custom-long-scale-eb-scaleebhtm
 gibson-les-paul-custom-peter-frampton-ramptonhtm
 gibson-les-paul-custom-signature-peter-frampton-phenix-inspirada-vos-ebano-cs-711106437330
 gibson-les-paul-custom-silverburst-ch-burstchhtm
+gibson-les-paul-custom-silverburst-cs503734-444410040003
 gibson-les-paul-custom-tsunb-ha-cs-unbhacshtm
 gibson-les-paul-custom-w-ebony-fingerboard-gloss-711106926674
 gibson-les-paul-deluxe-70s-gt-rd70sgthtm
@@ -7431,7 +7433,6 @@ jackson-rrt-5-pro-rhoads-bk-885978491803
 jackson-rrt-rhoads-black-dsblackhtm
 jackson-rrx24-black-camo-885978762392
 jackson-rrx24-black-with-yellow-bevels-s473110htm
-jackson-rrx24-red-wblack-bevels-kbevelshtm
 jackson-rrx24-rhoads-black-dsblackhtm
 jackson-rrx24m-rhoads-white-wblack-pinstripe-885978776337
 jackson-rrx24m-white-w-black-pinstripe-nstripehtm
@@ -7897,7 +7898,6 @@ lsl-thin-bone-3tb-light-aged-ghtagedhtm
 lsl-xt4dx-curly-mango-5a-mango5ahtm
 ltd-alexi-200-ysignature
 ltd-alexi-hexed-sawtooth-799493276749
-ltd-arrow-1000-719710627727
 ltd-arrow-1000-nt-charcoal-metallic-satin-719710614390
 ltd-arrow-1000-violet-andromeda-154826037297
 ltd-arrow-1000nt-charcoal-metallic-satin-allicsatin
@@ -7979,7 +7979,6 @@ ltd-eclipse-ec-400-qm-degradado-vintage-tage431203
 ltd-eclipse-ec-400-qm-sunburst-negro-translucido-cido431202
 ltd-esp-ltd-alexi200-blk-negra-840248016964
 ltd-esp-ltd-alr-ii-andy-larocque-stp-see-thru-purple-719710627468
-ltd-esp-ltd-arrow1000-cars-fishman-candy-apple-red-satin-leredsatin
 ltd-esp-ltd-arrow1000-pw-pearl-white-719710629042
 ltd-esp-ltd-arrow400-cm-charcoal-metallic-719710629028
 ltd-esp-ltd-arrow400-sm-scarlet-metallic-719710629035
@@ -8368,7 +8367,6 @@ maybach-lester-gold-rush-90-aged-1000000701883
 maybach-lester-gold-rush-p90-maybach-tipo-lp-standard-p90-aged-90agedhtml
 maybach-lester-gold-rush-tipo-lp-standard-57-aged-57agedhtml
 maybach-lester-gold-rush-tipo-lp-standard-57-aged-57agedhtml
-maybach-lester-green-burst-custom-aged-tomagedhtm
 maybach-lester-green-burst-custom-shop-customshop
 maybach-lester-havanna-tobacco-58-aged-1000000701906
 maybach-lester-havanna-tobacco-maybach-tipo-lp-standard-58-aged-58agedhtml

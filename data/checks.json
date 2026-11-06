@@ -524,15 +524,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "session",
-  "name": "Jackson LTD Legend Series Signature Scott Ian Rhoads RR22 NOT",
-  "slug": "jackson-ltd-legend-series-signature-scott-ian-rhoads-rr22-not-885978527106",
-  "price": 1929.0,
-  "median": 2642.8
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "LTD EC-256 Vintage Gold Satin",
   "slug": "ltd-ec-256-vintage-gold-satin-719710620155",

@@ -86,7 +86,6 @@ behringer-uc200-ultra-chorus-4033653052177
 behringer-um300-ultra-metal-4033653052276
 behringer-ut300-ultra-tremolo-4033653052191
 behringer-vd400-vintage-delay-4033653053570
-behringer-vp1-vintage-phaser-4033653051446
 behringer-vt999-vintage-tube-monster-4033653053037
 blackstar-dept-10-amped-2-pedal-preamp-845644006861
 blackstar-dept-10-boost-845644006632
