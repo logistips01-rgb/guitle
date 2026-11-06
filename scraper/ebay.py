@@ -24,6 +24,7 @@ TIMEOUT = 25  # segundos por petición a la API
 NEW_CONDITION = "1000"
 
 _token = None
+CAMPID = "5339241544"  # eBay Partner Network (guitle)
 
 
 def has_credentials():
@@ -96,7 +97,9 @@ def search(store, product):
     cfg = store["ebay"]
     seller = cfg["seller"].lower()
     headers = {"Authorization": f"Bearer {_get_token()}",
-               "X-EBAY-C-MARKETPLACE-ID": cfg.get("marketplace", "EBAY_DE")}
+               "X-EBAY-C-MARKETPLACE-ID": cfg.get("marketplace", "EBAY_DE"),
+               # eBay Partner Network: el enlace de cada anuncio sale con el campid de guitle (itemAffiliateWebUrl)
+               "X-EBAY-C-ENDUSERCTX": f"affiliateCampaignId={CAMPID},affiliateReferenceId=guitle"}
     base = {"filter": f"sellers:{{{cfg['seller']}}},conditionIds:{{{NEW_CONDITION}}},buyingOptions:{{FIXED_PRICE}}",
             "limit": "50"}
     attempts = ([("gtin", {"gtin": product["ean"]})] if product.get("ean") else []) + [("q", {"q": product["name"]})]
@@ -112,7 +115,7 @@ def search(store, product):
             return "ok", {
                 "price": float(best["price"]["value"]),
                 "currency": best["price"].get("currency"),
-                "url": best.get("itemWebUrl"),
+                "url": best.get("itemAffiliateWebUrl") or best.get("itemWebUrl"),
                 "image": (best.get("image") or {}).get("imageUrl"),
                 "title": best.get("title"),
             }

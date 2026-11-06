@@ -72,6 +72,15 @@ STORES["pt"]["cdgo"] = ("CDGO (Tubitek)", "https://cdgo.com")
 # CDGO también envía a España (correo certificado): España usa lo que ya se consulta para Portugal, sin leerla otra vez.
 STORES["es"]["cdgo"] = ("CDGO (Portugal)", "https://cdgo.com")
 SHARED_LOOKUP = {"es": {"cdgo": "pt"}}
+# eBay (API oficial, claves EBAY_CLIENT_ID/SECRET): cada disco por su código de barras, nuevo y a precio fijo, el más
+# barato; el enlace es el de afiliado de eBay Partner Network (campid de Manuel). La API da 5.000 consultas al día para
+# todo: cada país usa como mucho EBAY_DAILY.
+EBAY = {"es": ("EBAY_ES", "https://www.ebay.es"), "fr": ("EBAY_FR", "https://www.ebay.fr"),
+        "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk")}
+EBAY_CAMPID = "5339241544"
+EBAY_DAILY = 1100
+for _c, (_m, _base) in EBAY.items():
+    STORES[_c]["ebay"] = ("eBay", _base)
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
 # ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
 LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
@@ -193,7 +202,8 @@ def read(pais, minutes):
     """Catálogo de cada tienda y códigos de barras que faltan, hasta agotar el tiempo."""
     if pais in AWIN:
         read_awin(pais)
-        return _mb_artists(pais, time.time() + minutes * 60)
+        _ebay(pais, time.time() + minutes * 60 * 0.3)
+        return _mb_artists(pais, time.time() + minutes * 60 * 0.7)
     if pais in SRC:  # Portugal: el catálogo de la lectura de España (mismo trabajo) y las tiendas que se consultan por EAN
         src = DATA / SRC[pais]
         catalog = _load(src / "tiendas.json", {})  # todos los discos de España: se buscan en CDGO
@@ -214,7 +224,7 @@ def read(pais, minutes):
     fresh = (folder / "tiendas.json").exists() and time.time() - (folder / "tiendas.json").stat().st_mtime < 20 * 3600
     shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {}) and k not in WOO.get(pais, ())
              and k not in WOO_NAME.get(pais, ()) and k not in SITEMAP.get(pais, {})
-             and k not in LISTING.get(pais, {}) and k not in SHARED_LOOKUP.get(pais, {})}
+             and k not in LISTING.get(pais, {}) and k not in SHARED_LOOKUP.get(pais, {}) and k != "ebay"}
     for sid, (name, base) in ([] if fresh else shops.items()):  # catálogos: una vez al día
         if time.time() > end:
             break
@@ -264,6 +274,8 @@ def read(pais, minutes):
             print(f"[{sid}] {len(items)} discos", flush=True)
     if not fresh:
         _save(folder / "tiendas.json", catalog)
+    if pais in EBAY:  # eBay por código de barras, antes de las tareas largas (hasta 25 min)
+        _ebay(pais, min(end, time.time() + 25 * 60))
     # Códigos de barras: de la ficha de cada disco, una vez
     # Una tienda por hilo, cada una con su Fetcher y sus pausas: avanzan a la vez sin apretar a ninguna.
     from concurrent.futures import ThreadPoolExecutor
@@ -574,6 +586,68 @@ def _ld_disc(html_text):
     return out
 
 
+def _ebay(pais, end):
+    """eBay por código de barras: hasta EBAY_DAILY discos al día, primero los ya comparados en varias tiendas, luego
+    los vinilos, y los más antiguos. Se guarda en consultas.json como las tiendas de LOOKUP:
+    {"ebay": {ean: [fecha, precio, stock, url de afiliado, título, "", foto] o [fecha]}}."""
+    import os
+    from datetime import date
+    if pais not in EBAY or not (os.environ.get("EBAY_CLIENT_ID") and os.environ.get("EBAY_CLIENT_SECRET")):
+        return
+    import requests
+    from .ebay import SEARCH_URL, _get_token
+    folder = DATA / pais
+    catalog, codes = _load(folder / "tiendas.json", {}), _load(folder / "codigos.json", {})
+    seen = _load(folder / "consultas.json", {})
+    done = seen.setdefault("ebay", {})
+    n_of, fmt_of = {}, {}
+    for sid, hs in codes.items():
+        for h, e in hs.items():
+            if e:
+                n_of[e] = n_of.get(e, 0) + 1
+                fmt_of.setdefault(e, (catalog.get(sid, {}).get(h) or {}).get("f"))
+    today = date.today().isoformat()
+    todo = sorted((e for e in n_of if done.get(e, [""])[0] != today),
+                  key=lambda e: (done.get(e, [""])[0] != "", -min(n_of[e], 3), fmt_of.get(e) != "vinilo", done.get(e, [""])[0]))
+    market, _ = EBAY[pais]
+    cur = {"uk": "GBP"}.get(pais, "EUR")
+    try:
+        token = _get_token()
+    except Exception as exc:  # noqa: BLE001
+        print(f"[ebay] sin token: {exc}", flush=True)
+        return
+    headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": market,
+               "X-EBAY-C-ENDUSERCTX": f"affiliateCampaignId={EBAY_CAMPID},affiliateReferenceId=guitle-{pais}"}
+    n = found = 0
+    for e in todo[:EBAY_DAILY]:
+        if time.time() > end:
+            break
+        try:
+            r = requests.get(SEARCH_URL, timeout=30, headers=headers,
+                             params={"gtin": e, "filter": "buyingOptions:{FIXED_PRICE},conditionIds:{1000}",
+                                     "sort": "price", "limit": "5"})
+        except requests.RequestException:
+            continue
+        if r.status_code == 429:  # cupo del día agotado
+            print("[ebay] cupo diario de la API agotado", flush=True)
+            break
+        if r.status_code != 200:
+            continue
+        items = [i for i in r.json().get("itemSummaries", [])
+                 if (i.get("price") or {}).get("currency") == cur and (i.get("price") or {}).get("value")]
+        n += 1
+        if items:
+            it = min(items, key=lambda i: float(i["price"]["value"]))
+            done[e] = [today, float(it["price"]["value"]), True, it.get("itemAffiliateWebUrl") or it.get("itemWebUrl"),
+                       it.get("title") or "", "", ((it.get("image") or {}).get("imageUrl") or "")]
+            found += 1
+        else:
+            done[e] = [today]
+        time.sleep(0.3)
+    _save(folder / "consultas.json", seen)
+    print(f"[ebay] {n} discos consultados, {found} en eBay", flush=True)
+
+
 def _cdgo_disc(text):
     """Ficha de CDGO: precio ("product-price-value"), si sale ya ("Envio: Imediato"), título y foto (og:)."""
     m = re.search(r'product-price-value[^>]*>\s*<span>\s*([\d.,]+)\s*€', text)
@@ -699,6 +773,13 @@ def build_data(pais):
                 catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                   "st": row[2], "img": row[6], "u": row[3]}
                 codes.setdefault(sid, {})[e] = e
+    if pais in EBAY:  # eBay, consultado por código de barras
+        fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
+        for e, row in _load(folder / "consultas.json", {}).get("ebay", {}).items():
+            if len(row) >= 7 and e in fmt_of:
+                catalog.setdefault("ebay", {})[e] = {"t": row[4], "v": "", "ty": "", "f": fmt_of[e], "p": row[1],
+                                                     "st": row[2], "img": row[6], "u": row[3]}
+                codes.setdefault("ebay", {})[e] = e
     catalog = {k: v for k, v in catalog.items() if k in STORES[pais]}  # Portugal: solo las tiendas que envían allí
     if src in SITEMAP:  # tiendas leídas por su mapa del sitio: todos sus discos con formato (también los que solo tienen ellas)
         found = _load(DATA / src / "consultas.json", {})
