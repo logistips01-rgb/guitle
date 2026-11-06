@@ -31,3 +31,22 @@ Si necesitáis más información, datos de tráfico o una llamada, estaré encan
 Un saludo,
 Manuel Lorente
 guitle.com · hola@guitle.com
+
+---
+
+## Versión corta (máx. 1.000 caracteres, para el formulario): 917 caracteres
+
+Hola, equipo de afiliación de Fnac:
+
+Hace unos días solicité unirme a vuestro programa con guitle.com y fue rechazado. Creo que me adelanté: aún no tenía publicada la sección por la que os escribía. Ya está en línea y me gustaría que lo volvierais a valorar.
+
+guitle.com es un comparador de precios independiente: compara cada día el mismo producto en varias tiendas y muestra dónde está más barato. Está activo en 27 países y en España compara unas 23.000 guitarras de 25 tiendas.
+
+La nueva sección guitle.com/discos/ compara más de 12.000 vinilos, CD y casetes de tiendas españolas, emparejados por código de barras (EAN). Con vuestro feed de Awin, cada disco de Fnac aparecería comparado con enlace de afiliado, como ya hacemos en Francia con Cultura.
+
+Promoción editorial y de comparación: sin cupones, cashback ni pujas por vuestra marca.
+
+Gracias por vuestro tiempo.
+
+Manuel Lorente
+guitle.com · hola@guitle.com
