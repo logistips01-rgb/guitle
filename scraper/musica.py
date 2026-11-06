@@ -41,8 +41,27 @@ STORES["it"] = {"radiation": ("Radiation Records", "https://shop.radiationrecord
 STORES["es"] = {"supersonic": ("Supersonic", "https://discossupersonicsantander.com"),
                 "ege": ("El Genio Equivocado", "https://egebotiga.com"),
                 "altafidelidad": ("Alta Fidelidad", "https://discosaltafidelidad.es")}
+STORES["es"]["ega"] = ("Discos EGA", "https://discosega.es")
+# Tiendas que publican en su mapa del sitio la dirección de cada disco con su código de barras al final
+# (".../143-bunbury-palosanto-cd-0825646408641.html"): de cada ficha, precio y stock (JSON-LD), poco a poco (SITEMAP_MIN
+# minutos al día), primero los discos que también tienen otras tiendas. Se guarda en consultas.json, como LOOKUP.
+SITEMAP = {"es": {"ega": "https://discosega.es/1_es_0_sitemap.xml"}}
+SITEMAP_MIN = 100
 # Tiendas en WooCommerce: catálogo por su API pública de tienda (/wp-json/wc/store/v1/products), con el EAN en "sku".
 WOO = {"es": {"ege", "altafidelidad"}}
+# Tiendas en WooCommerce sin código de barras: sus discos se emparejan por artista, título y formato con los que sí lo
+# tienen (de otras tiendas), solo cuando no hay duda de la edición (_name_key, build_data). No crean discos nuevos.
+STORES["es"] |= {"revolver": ("Revolver Records", "https://revolverrecords.es"),
+                 "borabora": ("Discos Bora Bora", "https://discosborabora.com"),
+                 "maxvinilos": ("MaxVinilos", "https://maxvinilos.com"),
+                 "bcore": ("BCore Disc", "https://bcstore.bcoredisc.com")}
+WOO_NAME = {"es": {"revolver", "borabora", "maxvinilos", "bcore"}}
+# Tiendas PrestaShop cuyo listado trae, de cada disco, la dirección con el código de barras al final y el precio:
+# se lee el listado entero (páginas de ~100). Su nombre suele ser solo el título, así que solo se suman a discos que
+# ya tienen otras tiendas (ONLY_MATCH), sin crear discos nuevos.
+STORES["es"]["marilians"] = ("Marilians", "https://www.marilians.com")
+LISTING = {"es": {"marilians": "https://www.marilians.com/2-inicio?page={n}"}}
+ONLY_MATCH = {"marilians"}
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
 # ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
 LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
@@ -150,7 +169,9 @@ def read(pais, minutes):
     end = time.time() + minutes * 60
     fetcher = Fetcher(delay=(1.0, 2.0))
     fresh = (folder / "tiendas.json").exists() and time.time() - (folder / "tiendas.json").stat().st_mtime < 20 * 3600
-    shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {}) and k not in WOO.get(pais, ())}
+    shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {}) and k not in WOO.get(pais, ())
+             and k not in WOO_NAME.get(pais, ()) and k not in SITEMAP.get(pais, {})
+             and k not in LISTING.get(pais, {})}
     for sid, (name, base) in ([] if fresh else shops.items()):  # catálogos: una vez al día
         if time.time() > end:
             break
@@ -186,10 +207,15 @@ def read(pais, minutes):
         if items:
             catalog[sid] = items
             print(f"[{sid}] {len(items)} discos", flush=True)
-    for sid in ([] if fresh else sorted(WOO.get(pais, ()))):
+    for sid in ([] if fresh else sorted(WOO.get(pais, ())) + sorted(WOO_NAME.get(pais, ()))):
         if time.time() > end:
             break
-        items = _read_woo(fetcher, STORES[pais][sid][1], end, codes.setdefault(sid, {}))
+        items = _read_woo(fetcher, STORES[pais][sid][1], end, codes.setdefault(sid, {}), need_ean=sid in WOO.get(pais, ()))
+        if items:
+            catalog[sid] = items
+            print(f"[{sid}] {len(items)} discos", flush=True)
+    for sid, tpl in ([] if fresh else sorted(LISTING.get(pais, {}).items())):
+        items = _read_listing(fetcher, tpl, end, codes.setdefault(sid, {}))
         if items:
             catalog[sid] = items
             print(f"[{sid}] {len(items)} discos", flush=True)
@@ -233,6 +259,99 @@ def read(pais, minutes):
     print(f"códigos nuevos: {count[0]}", flush=True)
     if pais in LOOKUP:
         _lookup(pais, end, catalog, codes)
+    if pais in SITEMAP:
+        _sitemap_stores(pais, end, catalog, codes)
+
+
+def _nice(name):
+    """"BUNBURY ENRIQUE - PALOSANTO (CD)" → "Bunbury Enrique - Palosanto": sin el formato y sin todo en mayúsculas."""
+    name = re.sub(r"\s*[\(\[][^\)\]]*\b(?:cd|lp|vinilo|vinyl|casete|cassette|mc|ep|single)\b[^\)\]]*[\)\]]\s*$", "",
+                  html.unescape(name or ""), flags=re.I).strip()
+    name = re.sub(r"\s+-\s+(?:\d?cd|\d?lp|vinilo|vinyl|casete|cassette|mc|ep|single)\b[^-]*$", "", name, flags=re.I).strip()
+    if name.isupper():
+        name = re.sub(r"[^\W\d_]+(?:['´’][^\W\d_]+)?", lambda m: m.group(0)[:1].upper() + m.group(0)[1:], name.lower())
+    return name
+
+
+def _sitemap_stores(pais, end, catalog, codes):
+    """Tiendas de SITEMAP: dirección y EAN de cada disco del mapa del sitio; precio y stock de la ficha (JSON-LD).
+    Primero los nunca consultados que ya tienen otras tiendas, luego los nunca consultados y luego los más antiguos."""
+    from datetime import date
+    from .fetch import Fetcher
+    folder = DATA / pais
+    seen = _load(folder / "consultas.json", {})
+    ours = {e for s, hs in codes.items() for e in hs.values() if e}
+    today = date.today().isoformat()
+    stop = min(end, time.time() + SITEMAP_MIN * 60)
+    for sid, sm in SITEMAP[pais].items():
+        f = Fetcher(delay=(1.0, 2.0))
+        try:
+            if not f.allowed(sm)[0]:
+                continue
+            urls = re.findall(r"<loc>(?:<!\[CDATA\[)?([^<\]]+?-(\d{12,13})\.html)", f.get(sm).text)
+        except Exception as exc:  # noqa: BLE001
+            print(f"[{sid}] sin mapa del sitio: {exc}", flush=True)
+            continue
+        url_of = {e.zfill(13): u for u, e in urls}
+        done = seen.setdefault(sid, {})
+        for e in [e for e in done if e not in url_of]:  # ya no está en la tienda
+            del done[e]
+        todo = sorted(url_of, key=lambda e: (e in done, e not in ours, done.get(e, [""])[0]))
+        n = 0
+        for e in todo:
+            if time.time() > stop or done.get(e, [""])[0] == today:
+                break
+            u = url_of[e]
+            if not f.allowed(u)[0]:
+                break
+            try:
+                r = f.get(u)
+                d = _ld_disc(r.text) if r.status_code == 200 else {}
+            except Exception:  # noqa: BLE001
+                continue
+            done[e] = ([today, d["p"], d.get("st", True), u, _nice(d.get("t")), "", d.get("img") or "", _fmt(d.get("t")) or ""]
+                       if d.get("p") else [today])
+            n += 1
+            if n % 500 == 0:
+                _save(folder / "consultas.json", seen)
+        print(f"[{sid}] {len(url_of)} discos en su mapa · {n} fichas leídas · {sum(1 for x in done.values() if len(x) > 1)} con precio", flush=True)
+    _save(folder / "consultas.json", seen)
+
+
+def _read_listing(fetcher, tpl, end, codes):
+    """Listado de una tienda PrestaShop (LISTING), página a página: dirección con EAN, nombre, precio y si está agotado."""
+    items, n = {}, 1
+    while time.time() < end and n <= 300:
+        url = tpl.format(n=n)
+        if not fetcher.allowed(url)[0]:
+            break
+        try:
+            r = fetcher.get(url)
+            t = r.text if r.status_code == 200 else ""
+        except Exception:  # noqa: BLE001
+            break
+        blocks = t.split('class="product-miniature')[1:]
+        new = 0
+        for b in blocks:
+            m = re.search(r'href="(https?://[^"]+?-(\d{12,13})\.html)"', b)
+            pr = re.search(r'itemprop="price"[^>]*>\s*([\d.]+,\d{2})', b)
+            if not m or not pr:
+                continue
+            e = m.group(2).zfill(13)
+            if e in items:
+                continue
+            name = re.search(r'product-title[^>]*><a[^>]*>([^<]+)</a>', b)
+            img = re.search(r'<img[^>]+src="([^"]+)"', b)
+            items[e] = {"t": html.unescape(name.group(1)).strip() if name else "", "v": "", "ty": "", "f": "",
+                        "p": float(pr.group(1).replace(".", "").replace(",", ".")),
+                        "st": not re.search(r"(?i)out[_-]of[_-]stock|agotado|sin stock", b), "img": img.group(1) if img else None,
+                        "u": m.group(1)}
+            codes[e] = e
+            new += 1
+        if not new:
+            break
+        n += 1
+    return items
 
 
 def _woo_name(name):
@@ -241,14 +360,15 @@ def _woo_name(name):
     m = re.match(r"^(.+?)\s*«(.+?)»", name)
     if m:
         return f"{m.group(1).strip()} - {m.group(2).strip()}"
-    m = re.match(r"^(.+?)\s+\|\s+(.+)$", name)
+    m = re.match(r"^(.+?)\s+[\|–—]\s+(.+)$", name)
     if m:
-        title = re.sub(r"\s*\((?:[^)]*\b(?:vinilo|cd|casete|lp)\b[^)]*)\)\s*$", "", m.group(2), flags=re.I)
+        # Fuera "(Vinilo)" o "(CD)"; "(Vinilo azul)" se queda: es otra edición
+        title = re.sub(r"\s*\(\s*(?:\d?\s?(?:vinilos?|cd|casete|lp)\s*)\)\s*$", "", m.group(2), flags=re.I)
         return f"{m.group(1).strip()} - {title.strip()}"
     return name
 
 
-def _read_woo(fetcher, base, end, codes):
+def _read_woo(fetcher, base, end, codes, need_ean=True):
     """Catálogo de una tienda WooCommerce por su API pública de tienda (la misma que usa su web): 100 productos por
     página. El EAN va en la referencia (sku): se guarda en codes sin pedir nada más."""
     items, page = {}, 1
@@ -264,7 +384,8 @@ def _read_woo(fetcher, base, end, codes):
         if not isinstance(prods, list) or not prods:
             break
         for p in prods:
-            cats = " ".join(c.get("name", "") for c in p.get("categories") or [])
+            cats = " ".join([c.get("name", "") for c in p.get("categories") or []]
+                            + [t.get("name", "") for a in p.get("attributes") or [] for t in a.get("terms") or []])
             raw = html.unescape(p.get("name") or "")
             f = _fmt(raw, cats)
             if not f or NOT_MUSIC.search(raw):
@@ -275,10 +396,11 @@ def _read_woo(fetcher, base, end, codes):
             except (KeyError, TypeError, ValueError):
                 continue
             ean = re.sub(r"\D", "", str(p.get("sku") or "")).lstrip("0")
-            if not price or not (11 <= len(ean) <= 13):
+            if not price or (need_ean and not (11 <= len(ean) <= 13)):
                 continue
             h = str(p["id"])
-            codes[h] = ean.zfill(13)
+            if need_ean:
+                codes[h] = ean.zfill(13)
             items[h] = {"t": _woo_name(raw), "v": "", "ty": cats, "f": f, "p": price, "st": bool(p.get("is_in_stock")),
                         "img": ((p.get("images") or [{}])[0]).get("src"), "u": p.get("permalink")}
         page += 1
@@ -353,6 +475,49 @@ def _lookup(pais, end, catalog, codes):
     _save(folder / "consultas.json", seen)
 
 
+_ED_WORDS = (r"colou?r|clear|transparent|marble|splatter|indie|limitad|limited|firmad|signed|deluxe|picture|especial|"
+             r"aniversario|anniversary|\bbox\b|\bred\b|\bblue\b|\bgreen\b|\byellow\b|\bwhite\b|\bpink\b|\bpurple\b|"
+             r"\borange\b|\bgold|azul|\brojo|verde|amarill|blanco|\brosa\b|naranja|morado|dorado|\b[2-9] ?(?:lp|cd)")
+_NOISE = re.compile(r"(?i)\b(?:lp|2lp|3lp|cd|2cd|vinilo|vinyl|casete|cassette|mc|ep|ed|edici[oó]n|edition|reedici[oó]n|"
+                    r"reissue|remaster(?:ed|izado)?|the|el|la|los|las)\b")
+
+
+def _name_key(name):
+    """Clave para emparejar sin código de barras: (artista, título) normalizados y si es una edición especial."""
+    t = unicodedata.normalize("NFKD", html.unescape(name)).encode("ascii", "ignore").decode().lower()
+    special = bool(re.search(_ED_WORDS, t))
+    if " - " not in t:
+        return None, special
+    a, ti = t.split(" - ", 1)
+    ti = re.sub(r"[\(\[].*?[\)\]]", " ", ti)
+    ti = re.split(r"\b(?:lp|cd|vinilo|vinyl|ed\.?|edicion|edition)\b", ti)[0]  # lo que va tras el formato: edición
+    norm = lambda x: " ".join(_NOISE.sub(" ", re.sub(r"[^a-z0-9]+", " ", x)).split())
+    a, ti = norm(a), norm(ti)
+    return ((a, ti) if a and ti else None), special
+
+
+def _match_names(pais, catalog, by):
+    """Discos de tiendas sin código (WOO_NAME) con el disco con código de mismo artista, título y formato. Solo si hay
+    un único candidato con el mismo tipo de edición (normal o especial): si hay duda, no se empareja."""
+    index = {}
+    for ean, d in by.items():
+        for n in d["names"]:
+            k, sp = _name_key(n)
+            if k:
+                index.setdefault((k, d["fmt"], sp), set()).add(ean)
+    matched = {}
+    for sid in WOO_NAME[pais]:
+        for h, it in catalog.get(sid, {}).items():
+            k, sp = _name_key(it["t"])
+            cands = index.get((k, it["f"], sp)) if k else None
+            if cands and len(cands) == 1:
+                ean = next(iter(cands))
+                if all(i["s"] != sid for i in by[ean]["items"]):
+                    by[ean]["items"].append({"s": sid, "p": it["p"], "u": it.get("u"), "st": it["st"]})
+                    matched[sid] = matched.get(sid, 0) + 1
+    print("emparejados por nombre: " + ", ".join(f"{s} {n}" for s, n in sorted(matched.items())), flush=True)
+
+
 def build_data(pais):
     """Discos agrupados por código de barras: [{ean, name, fmt, img, items: [{s, p, u, st}]}]."""
     folder = DATA / pais
@@ -364,6 +529,14 @@ def build_data(pais):
                 if len(row) >= 7 and e in fmt_of:
                     catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                       "st": row[2], "img": row[6], "u": row[3]}
+                    codes.setdefault(sid, {})[e] = e
+    if pais in SITEMAP:  # tiendas leídas por su mapa del sitio: todos sus discos con formato (también los que solo tienen ellas)
+        found = _load(folder / "consultas.json", {})
+        for sid in SITEMAP[pais]:
+            for e, row in found.get(sid, {}).items():
+                if len(row) >= 8 and row[7]:
+                    catalog.setdefault(sid, {})[e] = {"t": row[4], "v": "", "ty": "", "f": row[7], "p": row[1], "st": row[2],
+                                                      "img": row[6], "u": row[3]}
                     codes.setdefault(sid, {})[e] = e
     by = {}
     for sid, its in catalog.items():
@@ -380,8 +553,16 @@ def build_data(pais):
             if artist and " - " not in title and not title.lower().startswith(artist.lower()):
                 title = f"{artist} - {re.sub(r':\s*(?:CD|Vinyl LP|Cassette)\s*$', '', title)}"
             d["names"].append(title)
+            d["fmt"] = d["fmt"] or it["f"]  # las de ONLY_MATCH no saben el formato: el de las demás
             d["img"] = d["img"] or it.get("img")
             d["items"].append({"s": sid, "p": it["p"], "u": it.get("u") or f"{base}/products/{h}", "st": it["st"]})
+    # Tiendas que solo se suman a discos de otras (ONLY_MATCH): fuera los que solo tienen ellas
+    by = {e: d for e, d in by.items() if any(i["s"] not in ONLY_MATCH for i in d["items"])}
+    for d in by.values():  # el formato y el nombre, de las otras tiendas
+        own = [n for n, i in zip(d["names"], d["items"]) if i["s"] not in ONLY_MATCH]
+        d["names"] = own or d["names"]
+    if pais in WOO_NAME:
+        _match_names(pais, catalog, by)
     out = []
     for d in by.values():
         # El nombre más limpio: con "Artista - Título" y sin coletillas de formato o reserva
