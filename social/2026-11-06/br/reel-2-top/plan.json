@@ -1,0 +1,207 @@
+{
+ "fecha": "6 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "top",
+  "title": "5 guitarras elétricas de R$ 2.000 a R$ 4.500",
+  "hook": "Top do dia",
+  "picks": [
+   {
+    "slug": "benson-stratocaster-hardy-series-901-black-gold-com-bag-7899701569793",
+    "name": "Benson Stratocaster Hardy Series 901 Black Gold Com Bag",
+    "brand": "Benson",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-benson-stratocaster-hardy-series-901-black-gold-com-bag-1132754/1353401.jpg?w=1000&h=1000&v=202508070557&qs=ignore",
+    "price": 2241.0,
+    "store": "Akustica Musical",
+    "stores": 4,
+    "median": 2599.0,
+    "max": 2699.1,
+    "next": 2384.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      2241.0
+     ],
+     [
+      "Música Center",
+      2384.1
+     ],
+     [
+      "Duetto Musical",
+      2599.0
+     ],
+     [
+      "Mundomax",
+      2699.1
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "ibanez-grg140-sunburst-4515110777286",
+    "name": "Ibanez Grg140 Sunburst",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://images.tcdn.com.br/img/img_prod/477617/guitarra_ibanez_grg140_sunburst_52615_1_c2245d95c48ea847975f81a9c5a6fb6a_20241203145114.jpeg",
+    "price": 2501.91,
+    "store": "Luggi",
+    "stores": 3,
+    "median": 2728.8,
+    "max": 2789.1,
+    "next": 2668.5,
+    "rows": [
+     [
+      "Luggi",
+      2501.91
+     ],
+     [
+      "Música Center",
+      2668.5
+     ],
+     [
+      "Mundomax",
+      2789.1
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "tagima-ja-3-signature-juninho-afram-natural-7898563977982",
+    "name": "Tagima JA-3 Signature Juninho Afram Natural",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-ja-3-signature-juninho-afram-natural-80196/267686.jpg?w=1000&h=1000&v=202508062324&qs=ignore",
+    "price": 2519.91,
+    "store": "Luggi",
+    "stores": 4,
+    "median": 2731.5,
+    "max": 2879.0,
+    "next": 2590.0,
+    "rows": [
+     [
+      "Luggi",
+      2519.91
+     ],
+     [
+      "Só Som",
+      2590.0
+     ],
+     [
+      "Música Center",
+      2731.5
+     ],
+     [
+      "Casa da Música",
+      2879.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "strinberg-headless-next-shn6-multiscale-red-c-bag-7899854525547",
+    "name": "Strinberg Headless Next SHN6 Multiscale Red C/ Bag",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-strinberg-headless-next-shn6-multiscale-red-c-bag-1132987/1353634.jpg?w=1000&h=1000&v=202508062318&qs=ignore",
+    "price": 2790.0,
+    "store": "Duetto Musical",
+    "stores": 3,
+    "median": 2951.95,
+    "max": 2999.9,
+    "next": 2904.0,
+    "rows": [
+     [
+      "Duetto Musical",
+      2790.0
+     ],
+     [
+      "Cheiro de Música",
+      2904.0
+     ],
+     [
+      "Luggi",
+      2999.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "yamaha-revstar-element-rs-e20-vw-vintage-white-4957812675178",
+    "name": "Yamaha Revstar Element RS E20 VW Vintage White",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-yamaha-revstar-element-rs-e20-vw-vintage-white-1134070/1354779-1.jpg?w=1000&h=1000&v=202604200932&qs=ignore",
+    "price": 4221.0,
+    "store": "Akustica Musical",
+    "stores": 4,
+    "median": 4319.1,
+    "max": 4627.0,
+    "next": 4228.2,
+    "rows": [
+     [
+      "Akustica Musical",
+      4221.0
+     ],
+     [
+      "Música Center",
+      4228.2
+     ],
+     [
+      "Mundomax",
+      4319.1
+     ],
+     [
+      "Cheiro de Música",
+      4627.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}
