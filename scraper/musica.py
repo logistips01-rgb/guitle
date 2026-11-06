@@ -398,49 +398,98 @@ def _read_listing(fetcher, tpl, end, codes):
 
 
 def _mb_artists(pais, end):
-    """Artista de los discos que llegan sin él (Cultura solo da el título): MusicBrainz, la base de datos libre de discos,
-    por su código de barras, a una consulta por segundo (lo que pide su API). Se guarda en artistas.json (en git):
-    {ean: [fecha, artista o ""]}; los no encontrados se reintentan a los 30 días."""
+    """Artista de los discos que llegan sin él (Cultura solo da el título), por su código de barras: MusicBrainz (la base
+    de datos libre de discos, una consulta por segundo) y Apple Music (API pública de iTunes, unas 20 por minuto), las
+    dos a la vez. Se guarda en artistas.json (en git): {ean: [fecha, artista o "", fuentes probadas "mb,it"]}; los no
+    encontrados se reintentan a los 60 días."""
+    import threading
     from datetime import date, timedelta
     from .fetch import Fetcher
     folder = DATA / pais
     done = _load(folder / "artistas.json", {})
+    for v in done.values():  # las de antes: [fecha, artista], de MusicBrainz
+        v += ["mb"] if len(v) == 2 else []
     catalog, codes = _load(folder / "tiendas.json", {}), _load(folder / "codigos.json", {})
-    todo = []
-    for sid, its in catalog.items():
-        for h, it in its.items():
-            e = codes.get(sid, {}).get(h)
-            if e and " - " not in (it.get("t") or "") and not it.get("v") and e not in done:
-                todo.append((it["f"] != "vinilo", e))
-    retry = (date.today() - timedelta(days=30)).isoformat()
-    todo = [e for _, e in sorted(set(todo))] + [e for e, v in done.items() if not v[1] and v[0] < retry]
-    f = Fetcher(delay=(1.1, 1.4))
-    f.session.headers["User-Agent"] = "guitle/1.0 (+https://guitle.com)"
-    today, n, found = date.today().isoformat(), 0, 0
-    for e in todo:
-        if time.time() > end:
-            break
-        codes_q = " OR ".join(sorted({e, e.lstrip("0"), e[1:] if e.startswith("0") else e}))
-        url = f"https://musicbrainz.org/ws/2/release/?query=barcode:({codes_q})&fmt=json&limit=3"
-        try:
-            r = f.get(url)
-            if r.status_code == 503:  # demasiado deprisa: se sigue mañana
-                break
-            rels = (r.json().get("releases") or []) if r.status_code == 200 else None
-        except Exception:  # noqa: BLE001
-            continue
-        if rels is None:
-            continue
-        credit = (rels[0].get("artist-credit") or []) if rels else []
-        artist = "".join((c.get("name") or "") + (c.get("joinphrase") or "") for c in credit).strip()
-        artist = "" if artist.lower() in ("various artists", "[unknown]") else artist
-        done[e] = [today, artist]
-        n += 1
-        found += bool(artist)
-        if n % 500 == 0:
+    retry = (date.today() - timedelta(days=60)).isoformat()
+    for e, v in list(done.items()):
+        if not v[1] and v[0] < retry:
+            del done[e]
+    todo = sorted({(it["f"] != "vinilo", codes[sid][h]) for sid, its in catalog.items() for h, it in its.items()
+                   if codes.get(sid, {}).get(h) and " - " not in (it.get("t") or "") and not it.get("v")})
+    todo = [e for _, e in todo]
+    lock, today, stats = threading.Lock(), date.today().isoformat(), {"mb": [0, 0], "it": [0, 0]}
+
+    def mark(e, src, artist):
+        with lock:
+            v = done.setdefault(e, [today, "", ""])
+            v[0] = today
+            if artist and not v[1]:
+                v[1] = artist
+            v[2] = ",".join(sorted(set(filter(None, v[2].split(","))) | {src}))
+            stats[src][0] += 1
+            stats[src][1] += bool(artist)
+
+    def tried(e, src):
+        with lock:
+            v = done.get(e)
+            return bool(v and (v[1] or src in v[2].split(",")))
+
+    def musicbrainz():
+        f = Fetcher(delay=(1.1, 1.4))
+        f.session.headers["User-Agent"] = "guitle/1.0 (+https://guitle.com)"
+        busy = 0
+        for e in todo:
+            if time.time() > end or busy > 30:
+                return
+            if tried(e, "mb"):
+                continue
+            q = " OR ".join(sorted({e, e.lstrip("0")}))
+            try:
+                r = f.get(f"https://musicbrainz.org/ws/2/release/?query=barcode:({q})&fmt=json&limit=3")
+            except Exception:  # noqa: BLE001
+                continue
+            if r.status_code in (429, 503):  # va deprisa para ellos: pausa y se sigue
+                busy += 1
+                time.sleep(10)
+                continue
+            busy = 0
+            rels = (r.json().get("releases") or []) if r.status_code == 200 else []
+            credit = (rels[0].get("artist-credit") or []) if rels else []
+            artist = "".join((c.get("name") or "") + (c.get("joinphrase") or "") for c in credit).strip()
+            mark(e, "mb", "" if artist.lower() in ("various artists", "[unknown]") else artist)
+
+    def itunes():
+        f = Fetcher(delay=(3.1, 3.6))
+        busy = 0
+        for e in todo:
+            if time.time() > end or busy > 10:
+                return
+            if tried(e, "it"):
+                continue
+            try:
+                r = f.get(f"https://itunes.apple.com/lookup?upc={e}")
+            except Exception:  # noqa: BLE001
+                continue
+            if r.status_code in (403, 429):
+                busy += 1
+                time.sleep(60)
+                continue
+            busy = 0
+            res = (r.json().get("results") or []) if r.status_code == 200 else []
+            artist = (res[0].get("artistName") or "") if res else ""
+            mark(e, "it", "" if artist.lower() in ("various artists", "varios artistas", "artistes divers") else artist)
+
+    threads = [threading.Thread(target=musicbrainz), threading.Thread(target=itunes)]
+    for t in threads:
+        t.start()
+    while any(t.is_alive() for t in threads):
+        time.sleep(60)
+        with lock:
             _save(folder / "artistas.json", done)
     _save(folder / "artistas.json", done)
-    print(f"[musicbrainz] {n} discos consultados, {found} con artista; pendientes {max(0, len(todo) - n)}", flush=True)
+    found = sum(1 for e in todo if done.get(e, ["", ""])[1])
+    print(f"[artistas] MusicBrainz {stats['mb'][0]} consultas ({stats['mb'][1]} con artista), iTunes {stats['it'][0]} "
+          f"({stats['it'][1]}); con artista {found} de {len(todo)}", flush=True)
 
 
 def _woo_name(name):
