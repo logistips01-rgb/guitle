@@ -44,7 +44,7 @@
  "at": {
   "country": "Österreich",
   "path": "/at/",
-  "guitars": 15191,
+  "guitars": 15206,
   "stores": 8
  },
  "nl": {
@@ -94,6 +94,18 @@
   "path": "/gr/",
   "guitars": 9152,
   "stores": 2
+ },
+ "mx": {
+  "country": "México",
+  "path": "/mx/",
+  "guitars": 2870,
+  "stores": 6
+ },
+ "ar": {
+  "country": "Argentina",
+  "path": "/ar/",
+  "guitars": 2299,
+  "stores": 7
  },
  "fi": {
   "country": "Suomi",
