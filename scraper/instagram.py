@@ -455,7 +455,7 @@ def dia_bf(day):
 def reel_top(day, folder, prods, recent, fetcher, fecha):
     """Reel de la franja de las 17:37 los días sin cuenta atrás: top 5 por precio (otro rango que el del post)."""
     # Cambia cada día y nunca coincide con el top del carrusel del post (ese rota cada 2 días)
-    i = (day.toordinal() + 3) % len(TOPS)
+    i = (day.toordinal() + 4) % len(TOPS)
     if i == (day.toordinal() // 2) % len(TOPS):
         i = (i + 1) % len(TOPS)
     kind, lo, hi = TOPS[i]

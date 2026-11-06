@@ -667,7 +667,7 @@ def reels_tarde(cc, day, recent):
             hechos.append(sub.name)
         else:
             sub.mkdir(parents=True, exist_ok=True)
-            j = (day.toordinal() + 3) % len(cfg["tops"])  # cada día otro, y nunca el del post
+            j = (day.toordinal() + 4) % len(cfg["tops"])  # cada día otro, y nunca el del post
             if j == (day.toordinal() // 2) % len(cfg["tops"]):
                 j = (j + 1) % len(cfg["tops"])
             kind, tlo, thi = cfg["tops"][j]

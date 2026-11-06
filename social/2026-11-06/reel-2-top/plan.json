@@ -2,257 +2,329 @@
  "fecha": "6 de noviembre",
  "post": {
   "type": "top",
-  "title": "5 acústicas de 150 € a 300 €",
+  "title": "5 eléctricas de 300 € a 500 €",
   "hook": "Top por precio",
   "picks": [
    {
-    "slug": "cort-ga-medx-m-op-w-bag-8809625365240",
-    "name": "Cort GA-MEDX M OP W/bag",
-    "brand": "Cort",
-    "kind": "acustica",
-    "img": "https://www.numemusic.es/media/catalog/product/7/4/747552_0386.jpg?store=nume_es&image-type=image",
-    "price": 203.47,
-    "store": "Alteisa",
-    "stores": 7,
-    "median": 268.23,
-    "max": 319.84,
-    "next": 239.0,
-    "rows": [
-     [
-      "Alteisa",
-      203.47
-     ],
-     [
-      "Musicopolix",
-      239.0
-     ],
-     [
-      "Pronorte",
-      264.0
-     ],
-     [
-      "Musical San Francisco",
-      264.46
-     ],
-     [
-      "Nume Music",
-      272.0
-     ],
-     [
-      "Drunkat",
-      272.0
-     ],
-     [
-      "Partitura",
-      319.84
-     ]
-    ],
-    "pvp": null,
-    "photo": "g3.webp"
-   },
-   {
-    "slug": "ibanez-ac340-opn-open-pore-natural-4515276965947",
-    "name": "Ibanez AC340-OPN Open Pore Natural",
+    "slug": "ibanez-rga42ex-bam-black-aurora-burst-matte-4549763265296",
+    "name": "Ibanez RGA42EX-BAM Black Aurora Burst Matte",
     "brand": "Ibanez",
-    "kind": "acustica",
-    "img": "https://www.numemusic.es/media/catalog/product/6/7/676673_5d4a.jpg?store=nume_es&image-type=image",
-    "price": 239.0,
-    "store": "MAT Guitars",
-    "stores": 11,
-    "median": 245.0,
-    "max": 308.0,
-    "next": 239.2,
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/737918_1_bb7e.jpg?store=nume_es&image-type=image",
+    "price": 355.0,
+    "store": "Alfasoni",
+    "stores": 12,
+    "median": 398.0,
+    "max": 409.0,
+    "next": 355.0,
     "rows": [
      [
-      "MAT Guitars",
-      239.0
-     ],
-     [
-      "Partitura",
-      239.2
+      "Alfasoni",
+      355.0
      ],
      [
       "Auvisa",
-      242.0
-     ],
-     [
-      "Nume Music",
-      245.0
-     ],
-     [
-      "Alfasoni",
-      245.0
-     ],
-     [
-      "Pronorte",
-      245.0
-     ],
-     [
-      "Woodbrass",
-      245.0
+      355.0
      ],
      [
       "Alteisa",
-      245.0
-     ],
-     [
-      "Session",
-      246.0
-     ],
-     [
-      "Musicopolix",
-      254.0
-     ],
-     [
-      "Egitana",
-      308.0
-     ]
-    ],
-    "pvp": null,
-    "photo": "g1.webp"
-   },
-   {
-    "slug": "alvarez-rf26cesb-regent-812309020920",
-    "name": "Alvarez RF26CESB Regent",
-    "brand": "Alvarez",
-    "kind": "acustica",
-    "img": "https://www.numemusic.es/media/catalog/product/6/6/662233_c2a0.jpg?store=nume_es&image-type=image",
-    "price": 242.1,
-    "store": "Nume Music",
-    "stores": 6,
-    "median": 245.8,
-    "max": 274.0,
-    "next": 242.1,
-    "rows": [
-     [
-      "Nume Music",
-      242.1
+      355.0
      ],
      [
       "Musicsales",
-      242.1
-     ],
-     [
-      "Alteisa",
-      242.1
-     ],
-     [
-      "Musicopolix",
-      245.8
-     ],
-     [
-      "Drunkat",
-      251.95
-     ],
-     [
-      "Pronorte",
-      274.0
-     ]
-    ],
-    "pvp": null,
-    "photo": "g5.webp"
-   },
-   {
-    "slug": "fender-cd-60sce-dreadnought-wn-natural-885978875719",
-    "name": "Fender CD-60SCE Dreadnought WN Natural",
-    "brand": "Fender",
-    "kind": "acustica",
-    "img": "https://www.numemusic.es/media/catalog/product/6/2/620575_1_ae05.jpg?store=nume_es&image-type=image",
-    "price": 269.0,
-    "store": "Partitura",
-    "stores": 10,
-    "median": 289.0,
-    "max": 313.0,
-    "next": 280.0,
-    "rows": [
-     [
-      "Partitura",
-      269.0
-     ],
-     [
-      "Musical San Francisco",
-      280.0
-     ],
-     [
-      "Auvisa",
-      285.0
-     ],
-     [
-      "Nume Music",
-      289.0
-     ],
-     [
-      "Alfasoni",
-      289.0
-     ],
-     [
-      "Pronorte",
-      289.0
-     ],
-     [
-      "Drunkat",
-      289.0
-     ],
-     [
-      "Musicopolix",
-      298.87
+      355.0
      ],
      [
       "MAT Guitars",
-      304.0
+      385.0
+     ],
+     [
+      "Nume Music",
+      385.74
+     ],
+     [
+      "Pronorte",
+      398.0
      ],
      [
       "Woodbrass",
-      313.0
+      398.0
+     ],
+     [
+      "Thomann",
+      398.0
+     ],
+     [
+      "Session",
+      399.0
+     ],
+     [
+      "Musical San Francisco",
+      405.0
+     ],
+     [
+      "Musicopolix",
+      409.0
      ]
     ],
     "pvp": null,
     "photo": "g2.webp"
    },
    {
-    "slug": "gretsch-deltoluxe-dreadnought-wn-black-top-717669567170",
-    "name": "Gretsch Deltoluxe Dreadnought WN Black Top",
-    "brand": "Gretsch",
-    "kind": "acustica",
-    "img": "https://www.numemusic.es/media/catalog/product/7/0/707831_6174.jpg?store=nume_es&image-type=image",
-    "price": 275.0,
-    "store": "Woodbrass",
-    "stores": 7,
-    "median": 288.5,
-    "max": 301.35,
-    "next": 275.0,
+    "slug": "yamaha-revstar-element-rse20-swift-blue-4957812675154",
+    "name": "Yamaha Revstar Element RSE20 Swift Blue",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/666359_ce22.jpg?store=nume_es&image-type=image",
+    "price": 386.0,
+    "store": "Pronorte",
+    "stores": 11,
+    "median": 467.5,
+    "max": 511.28,
+    "next": 386.0,
     "rows": [
      [
-      "Woodbrass",
-      275.0
+      "Pronorte",
+      386.0
      ],
      [
-      "Microfusa",
-      275.0
+      "Alteisa",
+      386.0
+     ],
+     [
+      "Auvisa",
+      389.0
+     ],
+     [
+      "Egitana",
+      389.0
+     ],
+     [
+      "Musical San Francisco",
+      425.0
      ],
      [
       "Session",
-      279.0
+      464.0
      ],
      [
-      "Drunkat",
-      288.0
+      "Woodbrass",
+      471.0
+     ],
+     [
+      "Thomann",
+      471.0
      ],
      [
       "MAT Guitars",
-      289.0
+      489.0
      ],
      [
       "Nume Music",
-      291.83
+      500.69
      ],
      [
-      "Musicopolix",
-      301.35
+      "Hazen",
+      511.28
      ]
     ],
     "pvp": null,
     "photo": "g4.webp"
+   },
+   {
+    "slug": "squier-classic-vibe-70s-stratocaster-hss-mn-black-885978064335",
+    "name": "Squier Classic Vibe 70s Stratocaster HSS MN Black",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/2/620931_1_d227.jpg?store=nume_es&image-type=image",
+    "price": 409.0,
+    "store": "Drunkat",
+    "stores": 10,
+    "median": 416.07,
+    "max": 459.0,
+    "next": 409.0,
+    "rows": [
+     [
+      "Drunkat",
+      409.0
+     ],
+     [
+      "Pronorte",
+      409.0
+     ],
+     [
+      "Auvisa",
+      409.0
+     ],
+     [
+      "Woodbrass",
+      409.0
+     ],
+     [
+      "Thomann",
+      409.0
+     ],
+     [
+      "Nume Music",
+      416.07
+     ],
+     [
+      "Session",
+      419.0
+     ],
+     [
+      "MAT Guitars",
+      419.0
+     ],
+     [
+      "Musical San Francisco",
+      435.0
+     ],
+     [
+      "Alfasoni",
+      459.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "ltd-ec-256-snow-white-799493258059",
+    "name": "LTD EC-256 Snow White",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/4/647372_e5a0.jpg?store=nume_es&image-type=image",
+    "price": 455.0,
+    "store": "Musicsales",
+    "stores": 12,
+    "median": 473.0,
+    "max": 599.0,
+    "next": 465.0,
+    "rows": [
+     [
+      "Musicsales",
+      455.0
+     ],
+     [
+      "Nume Music",
+      465.0
+     ],
+     [
+      "Alfasoni",
+      465.0
+     ],
+     [
+      "Pronorte",
+      465.0
+     ],
+     [
+      "Auvisa",
+      465.0
+     ],
+     [
+      "Alteisa",
+      465.0
+     ],
+     [
+      "Drunkat",
+      473.0
+     ],
+     [
+      "Woodbrass",
+      499.0
+     ],
+     [
+      "Hazen",
+      499.0
+     ],
+     [
+      "Musicopolix",
+      529.0
+     ],
+     [
+      "Partitura",
+      591.2
+     ],
+     [
+      "MAT Guitars",
+      599.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "fender-standard-stratocaster-lr-3-color-sunburst-885978117901",
+    "name": "Fender Standard Stratocaster LR 3-Color Sunburst",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/734666_1_c744.jpg?store=nume_es&image-type=image",
+    "price": 499.0,
+    "store": "Musical San Francisco",
+    "stores": 14,
+    "median": 526.0,
+    "max": 569.0,
+    "next": 499.98,
+    "rows": [
+     [
+      "Musical San Francisco",
+      499.0
+     ],
+     [
+      "Nume Music",
+      499.98
+     ],
+     [
+      "Alteisa",
+      520.0
+     ],
+     [
+      "Egitana",
+      520.0
+     ],
+     [
+      "Auvisa",
+      525.0
+     ],
+     [
+      "MAT Guitars",
+      526.0
+     ],
+     [
+      "Pronorte",
+      526.0
+     ],
+     [
+      "Microfusa",
+      526.0
+     ],
+     [
+      "Alfasoni",
+      526.0
+     ],
+     [
+      "Drunkat",
+      535.0
+     ],
+     [
+      "Musicopolix",
+      560.07
+     ],
+     [
+      "Session",
+      569.0
+     ],
+     [
+      "Woodbrass",
+      569.0
+     ],
+     [
+      "Music Store (eBay)",
+      569.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
    }
   ]
  },
