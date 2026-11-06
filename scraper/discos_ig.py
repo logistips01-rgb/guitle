@@ -33,6 +33,8 @@ TIENDAS = {"recordstore": "Recordstore", "assai": "Assai Records", "sisterray": 
 FORMATO = {"vinilo": "vinyl", "cd": "CD", "casete": "cassette"}
 TAGS = "#vinyl #vinylrecords #vinylcollection #recordcollector #vinyldeals #ukvinyl"
 DIAS = {1: "same", 3: "same", 4: "semana"}  # martes, jueves, viernes
+# Cuentas cuyos discos aún no se publican (Italia: Manuel quiere probar antes guitle.com/it/dischi/)
+EN_ESPERA = {"it"}
 
 # Artistas conocidos (grandes, clásicos y actuales con público amplio en Reino Unido). Se compara sin acentos ni
 # mayúsculas con lo que va antes de " - " en el nombre del disco.
@@ -286,6 +288,9 @@ def main(argv=None):
     ap.add_argument("--date")
     ap.add_argument("--pais", default="uk", choices=sorted(PAIS), help="cuenta (uk, es, it); por defecto uk")
     a = ap.parse_args(argv)
+    if a.pais in EN_ESPERA:
+        print(f"{a.pais}: discos en espera hasta que Manuel lo diga (EN_ESPERA en scraper/discos_ig.py); no se genera nada")
+        return
     day = date.fromisoformat(a.date) if a.date else date.today()
     folder, plan = generar(day, a.tipo, a.pais)
     if folder:
