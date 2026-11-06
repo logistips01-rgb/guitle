@@ -572,7 +572,6 @@ fender-stratocaster-telecaster-poodle-case-brown-717669559434
 fender-telecaster-thermometer-case-tweed-885978703869
 fender-troubadour-electric-bass-gig-bag-navy-885978517626
 fender-troubadour-electric-guitar-gig-bag-navy-885978517046
-fender-troubadour-gigbag-electric-bass-olive-885978517510
 fender-troubadour-guitar-gigbag-nvy-gnvyp41028
 fishman-deluxe-carry-bag-sa-330x-605609154781
 furch-gigbag-8596387016007
@@ -1448,7 +1447,6 @@ rockcase-rc-10608-b-sb-standard-line-classical-guitar-hardshell-case-dshellcase
 rockcase-rc-10609-b-sb-standard-line-acoustic-guitar-hardshell-case-4033685037920
 rockcase-rc-10619-bct-sb-standard-line-acoustic-guitar-case-4033685406085
 rockcase-rc-10806-b-standard-line-electric-guitar-flight-case-4033685027556
-rockcase-rc-abs-10404-b-sb-standard-line-electric-guitar-case-lp-style-4033685441017
 rockcase-rc-abs-10408-b-sb-standard-line-classical-guitar-case-4033685441130
 rockcase-rc10604bct4-estuche-tipo-lp-blk-4033685405361
 rockcase-rc10604brctsb-estuche-les-paul-marron-4033685405422
