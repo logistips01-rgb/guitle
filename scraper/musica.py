@@ -62,10 +62,18 @@ WOO_NAME = {"es": {"revolver", "borabora", "maxvinilos", "bcore"}}
 STORES["es"]["marilians"] = ("Marilians", "https://www.marilians.com")
 LISTING = {"es": {"marilians": "https://www.marilians.com/2-inicio?page={n}"}}
 ONLY_MATCH = {"marilians"}
+# Portugal: los discos de las tiendas españolas que envían a Portugal (la misma lectura de España, SRC) y CDGO (la tienda
+# online de Tubitek, Oporto), que se consulta disco a disco por su código de barras (robots.txt: una petición cada 5 s).
+SRC = {"pt": "es"}
+# Tiendas españolas que dicen en su web que envían a Portugal (comprobado el 6-11-2026; las demás no lo dicen)
+PT_FROM_ES = {"altafidelidad", "ega", "maxvinilos"}
+STORES["pt"] = {k: (f"{n} (Espanha)", u) for k, (n, u) in STORES["es"].items() if k in PT_FROM_ES}
+STORES["pt"]["cdgo"] = ("CDGO (Tubitek)", "https://cdgo.com")
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
 # ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
 LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
                  "mondadori": "https://www.mondadoristore.it/x/p/{ean}", "laziale": "https://www.discotecalaziale.com/{ean}_x"}}
+LOOKUP["pt"] = {"cdgo": "https://cdgo.com/detalhe/{ean}/x"}  # CDGO: la dirección vale con cualquier nombre tras el EAN
 # Anunciantes de Awin de cada país: id de tienda → texto que lleva su nombre en Awin (en minúsculas).
 AWIN = {"fr": {"cultura": "cultura", "fnac": "fnac", "zavvi": "zavvi"}}
 # Formato por el título, el tipo o la variante; lo demás (camisetas, chapas, bolsas, tocadiscos…) no entra.
@@ -162,6 +170,17 @@ def read(pais, minutes):
     """Catálogo de cada tienda y códigos de barras que faltan, hasta agotar el tiempo."""
     if pais in AWIN:
         return read_awin(pais)
+    if pais in SRC:  # Portugal: el catálogo de la lectura de España (mismo trabajo) y las tiendas que se consultan por EAN
+        src = DATA / SRC[pais]
+        catalog = _load(src / "tiendas.json", {})  # todos los discos de España: se buscan en CDGO
+        codes = _load(src / "codigos.json", {})
+        for sid, found in _load(src / "consultas.json", {}).items():  # también los discos de Discos EGA
+            if sid in SITEMAP.get(SRC[pais], {}):
+                for e, row in found.items():
+                    if len(row) >= 8 and row[7]:
+                        catalog.setdefault(sid, {})[e] = {"f": row[7]}
+                        codes.setdefault(sid, {})[e] = e
+        return _lookup(pais, time.time() + minutes * 60, catalog, codes)
     from .fetch import Fetcher
     folder = DATA / pais
     catalog = _load(folder / "tiendas.json", {})   # {tienda: {handle: {t, v, ty, f, p, st, img}}}
@@ -436,6 +455,24 @@ def _ld_disc(html_text):
     return out
 
 
+def _cdgo_disc(text):
+    """Ficha de CDGO: precio ("product-price-value"), si sale ya ("Envio: Imediato"), título y foto (og:)."""
+    m = re.search(r'product-price-value[^>]*>\s*<span>\s*([\d.,]+)\s*€', text)
+    if not m:
+        return {}
+    # "Envio: Imediato" o "Envio: 6-15 dias úteis" (se pide a la distribuidora): disponible si se puede añadir al carrito
+    out = {"p": float(m.group(1).replace(",", ".")),
+           "st": "Adicionar ao" in text[m.end():m.end() + 1500] and not re.search(r"(?i)esgotad|indispon", text[m.end():m.end() + 1500])}
+    t = re.search(r'og:title" content="([^"]+)"', text)
+    if t:  # "Álbum - Artista" → "Artista - Álbum"
+        a, _, b = html.unescape(t.group(1)).rpartition(" - ")
+        out["t"] = f"{b} - {a}" if a else b
+    i = re.search(r'og:image" content="([^"]+)"', text)
+    if i:
+        out["img"] = i.group(1)
+    return out
+
+
 def _lookup(pais, end, catalog, codes):
     """Tiendas sin catálogo (LOOKUP): cada disco de los catálogos con código se busca por su EAN en cada una, primero
     los nunca consultados y luego los más antiguos. Lo encontrado (y lo no encontrado, para no repetir) se guarda en
@@ -446,7 +483,12 @@ def _lookup(pais, end, catalog, codes):
     folder = DATA / pais
     seen = _load(folder / "consultas.json", {})
     fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
-    eans = sorted(fmt_of, key=lambda e: (fmt_of[e] != "vinilo", e))  # los vinilos primero
+    n_of = {}
+    for s_, hs in codes.items():
+        for e in set(hs.values()):
+            if e:
+                n_of[e] = n_of.get(e, 0) + 1
+    eans = sorted(fmt_of, key=lambda e: (-min(n_of.get(e, 1), 3), fmt_of[e] != "vinilo", e))  # comparados y vinilos primero
     today = date.today().isoformat()
 
     def one_store(sid):
@@ -462,7 +504,7 @@ def _lookup(pais, end, catalog, codes):
                 return
             try:
                 r = f.get(url)
-                d = _ld_disc(r.text) if r.status_code == 200 else {}
+                d = (_cdgo_disc(r.text) if sid == "cdgo" else _ld_disc(r.text)) if r.status_code == 200 else {}
             except Exception:  # noqa: BLE001
                 continue
             done[e] = ([today, d["p"], d.get("st", True), r.url, d.get("t") or "", d.get("v") or "", d.get("img") or ""]
@@ -521,7 +563,8 @@ def _match_names(pais, catalog, by):
 def build_data(pais):
     """Discos agrupados por código de barras: [{ean, name, fmt, img, items: [{s, p, u, st}]}]."""
     folder = DATA / pais
-    catalog, codes = _load(folder / "tiendas.json", {}), _load(folder / "codigos.json", {})
+    src = SRC.get(pais, pais)  # Portugal: el catálogo y las consultas de las tiendas españolas
+    catalog, codes = _load(DATA / src / "tiendas.json", {}), _load(DATA / src / "codigos.json", {})
     if pais in LOOKUP:  # lo encontrado en las tiendas que se consultan por EAN, como si fuera su catálogo
         fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
         for sid, found in _load(folder / "consultas.json", {}).items():
@@ -530,9 +573,10 @@ def build_data(pais):
                     catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                       "st": row[2], "img": row[6], "u": row[3]}
                     codes.setdefault(sid, {})[e] = e
-    if pais in SITEMAP:  # tiendas leídas por su mapa del sitio: todos sus discos con formato (también los que solo tienen ellas)
-        found = _load(folder / "consultas.json", {})
-        for sid in SITEMAP[pais]:
+    catalog = {k: v for k, v in catalog.items() if k in STORES[pais]}  # Portugal: solo las tiendas que envían allí
+    if src in SITEMAP:  # tiendas leídas por su mapa del sitio: todos sus discos con formato (también los que solo tienen ellas)
+        found = _load(DATA / src / "consultas.json", {})
+        for sid in [k for k in SITEMAP[src] if k in STORES[pais]]:
             for e, row in found.get(sid, {}).items():
                 if len(row) >= 8 and row[7]:
                     catalog.setdefault(sid, {})[e] = {"t": row[4], "v": "", "ty": "", "f": row[7], "p": row[1], "st": row[2],
@@ -561,8 +605,8 @@ def build_data(pais):
     for d in by.values():  # el formato y el nombre, de las otras tiendas
         own = [n for n, i in zip(d["names"], d["items"]) if i["s"] not in ONLY_MATCH]
         d["names"] = own or d["names"]
-    if pais in WOO_NAME:
-        _match_names(pais, catalog, by)
+    if src in WOO_NAME:
+        _match_names(src, catalog, by)
     out = []
     for d in by.values():
         # El nombre más limpio: con "Artista - Título" y sin coletillas de formato o reserva
@@ -720,6 +764,32 @@ TXT["es"] = {
     "faqs": [("¿Dónde es más barato comprar vinilos en España?", "Depende del disco: la misma edición puede costar varios euros menos en una tienda que en otra. Compara la edición exacta (por su código de barras) en varias tiendas de discos antes de comprar."),
              ("¿Por qué el mismo vinilo tiene precios distintos en cada tienda?", "Cada tienda pone su precio y sus ofertas, y el stock cambia cada día, así que la tienda más barata de un disco va cambiando."),
              ("¿Merece la pena pagar más por un vinilo de color?", "Son coleccionables y a menudo limitados, pero la música es la misma: si solo quieres escucharlo, el vinilo negro normal suele ser más barato.")],
+}
+
+
+TXT["pt"] = {
+    "dir": "discos", "one": "disco", "home": "Discos", "promo": "Novo: compare preços de vinis, CD e cassetes",
+    "tile": "Vinis, CD e cassetes", "sfx": {"vinilo": "vinil", "cd": "cd", "casete": "cassete"},
+    "fmts": {"vinilo": ("Vinis", "vinis"), "cd": ("CD", "cd"), "casete": ("Cassetes", "cassetes")},
+    "fmt1": {"vinilo": "vinil", "cd": "CD", "casete": "cassete"},
+    "title": "{n} em {f}: comparador de preços",
+    "desc": "Compare o preço de {n} em {f} em {k} lojas de discos com envio para Portugal: preço de hoje, stock e a loja mais barata.",
+    "desc1": "{n} em {f}: preço de hoje na {s} e onde mais o comprar, incluindo na Amazon.", "where1": "na {s}",
+    "h_index": "Discos: compare preços de vinis, CD e cassetes",
+    "d_index": "Compare todos os dias o preço de vinis, CD e cassetes em lojas de discos com envio para Portugal.",
+    "in_stock": "Disponível", "out": "Esgotado", "shops": "lojas", "buy": "Ver na loja", "cheapest": "O mais barato hoje",
+    "more": "Os mais comparados", "note": "Preços com IVA; os portes dependem de cada loja (as lojas espanholas enviam para Portugal).",
+    "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Procurar este disco na Amazon",
+    "amazon_txt": "Prefere comprar na Amazon?",
+    "search_ph": "Procure um disco: artista ou álbum…", "search_res": "{n} discos encontrados", "search_none": "Nenhum disco encontrado",
+    "f_artist": "Artista ou banda", "f_format": "Formato", "f_all": "Todos os formatos", "f_sort": "Ordenar",
+    "s_price": "Mais baratos primeiro", "s_shops": "Mais comparados", "s_az": "A–Z",
+    "artist_t": "{a}: preços de vinis, CD e cassetes",
+    "artist_d": "Compare o preço de {n} discos de {a} em vinil, CD e cassete em lojas com envio para Portugal.",
+    "artist_all": "Todos os seus discos",
+    "deals": "Pechinchas de vinis e CD", "deals_file": "pechinchas", "save": "{m} menos do que na mais cara",
+    "deals_desc": "Os discos com maior diferença de preço entre lojas hoje (só com stock).",
+    "guitars": "Pechinchas de guitarras de hoje", "guitars_more": "Todas as pechinchas de guitarras",
 }
 
 def _pre(pais):

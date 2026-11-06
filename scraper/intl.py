@@ -1307,7 +1307,7 @@ def _vinyl_row(code):
     if not T or not (ROOT / "data" / "musica" / code / "discos.json").exists():
         return ""
     cards = "".join(f'<a class="card" href="/{code}/{T["dir"]}/{esc(d["slug"])}.html"><span class="badge">{esc(T["save"].format(m=money(save, code)))}</span>'
-                    f'<div class="img"><img src="{esc(d["img"])}&width=300" alt="" loading="lazy"></div><div class="body"><span class="name">'
+                    f'<div class="img"><img src="{esc(musica._img(d["img"], 300))}" alt="" loading="lazy"></div><div class="body"><span class="name">'
                     f'{esc(d["name"])}</span><span class="price"><strong>{money(low, code)}</strong></span></div></a>'
                     for d, save, low in musica.home_deals(code))
     return (f'\n  <section>\n    <div class="sec-head"><h2>{esc(T["deals"])}</h2><a href="/{code}/{T["dir"]}/{T["deals_file"]}.html">'
