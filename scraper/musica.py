@@ -31,6 +31,15 @@ STORES = {
     "fr": {"cultura": ("Cultura", "https://www.cultura.com"), "fnac": ("Fnac", "https://www.fnac.com"),
            "zavvi": ("Zavvi", "https://fr.zavvi.com")},
 }
+STORES["it"] = {"radiation": ("Radiation Records", "https://shop.radiationrecords.net"),
+                "umi": ("Universal Music Italia", "https://shop.universalmusic.it"),
+                "ibs": ("IBS", "https://www.ibs.it"), "feltrinelli": ("laFeltrinelli", "https://www.lafeltrinelli.it"),
+                "mondadori": ("Mondadori Store", "https://www.mondadoristore.it"),
+                "laziale": ("Discoteca Laziale", "https://www.discotecalaziale.com")}
+# Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
+# ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
+LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
+                 "mondadori": "https://www.mondadoristore.it/x/p/{ean}", "laziale": "https://www.discotecalaziale.com/{ean}_x"}}
 # Anunciantes de Awin de cada país: id de tienda → texto que lleva su nombre en Awin (en minúsculas).
 AWIN = {"fr": {"cultura": "cultura", "fnac": "fnac", "zavvi": "zavvi"}}
 # Formato por el título, el tipo o la variante; lo demás (camisetas, chapas, bolsas, tocadiscos…) no entra.
@@ -133,7 +142,8 @@ def read(pais, minutes):
     end = time.time() + minutes * 60
     fetcher = Fetcher(delay=(1.0, 2.0))
     fresh = (folder / "tiendas.json").exists() and time.time() - (folder / "tiendas.json").stat().st_mtime < 20 * 3600
-    for sid, (name, base) in ([] if fresh else STORES[pais].items()):  # catálogos: una vez al día
+    shops = {k: v for k, v in STORES[pais].items() if k not in LOOKUP.get(pais, {})}
+    for sid, (name, base) in ([] if fresh else shops.items()):  # catálogos: una vez al día
         if time.time() > end:
             break
         items, page = {}, 1
@@ -158,6 +168,10 @@ def read(pais, minutes):
                 except (TypeError, ValueError):
                     continue
                 img = ((p.get("images") or [{}])[0]).get("src")
+                # Tiendas cuya referencia es el código de barras (Universal Music Italia): sin pedir la ficha.
+                sku = re.sub(r"\D", "", str(v.get("sku") or v.get("barcode") or "")).lstrip("0")
+                if 11 <= len(sku) <= 13 and p["handle"] not in codes.get(sid, {}):
+                    codes.setdefault(sid, {})[p["handle"]] = sku.zfill(13)
                 items[p["handle"]] = {"t": p.get("title", ""), "v": p.get("vendor", ""), "ty": p.get("product_type", ""),
                                       "f": f, "p": price, "st": bool(v.get("available")), "img": img}
             page += 1
@@ -172,12 +186,16 @@ def read(pais, minutes):
     import threading
     lock, count = threading.Lock(), [0]
 
+    # Con tiendas que se consultan por EAN (LOOKUP), los códigos solo se piden la mitad del tiempo: la otra mitad es
+    # para consultar precios.
+    codes_end = (time.time() + (end - time.time()) / 2) if pais in LOOKUP else end
+
     def store_codes(sid):
         f = Fetcher(delay=(1.0, 2.0))
         base = STORES[pais][sid][1]
         todo = [h for h in catalog.get(sid, {}) if h not in codes.get(sid, {})]
         for h in todo:
-            if time.time() > end:
+            if time.time() > codes_end:
                 return
             url = f"{base}/products/{h}.json"
             if not f.allowed(url)[0]:
@@ -195,15 +213,93 @@ def read(pais, minutes):
                     _save(folder / "codigos.json", codes)
     print(f"códigos por pedir: {sum(len([h for h in its if h not in codes.get(sid, {})]) for sid, its in catalog.items())}", flush=True)
     with ThreadPoolExecutor(len(catalog) or 1) as ex:
-        list(ex.map(store_codes, list(catalog)))
+        list(ex.map(store_codes, [k for k in catalog if k in shops]))
     _save(folder / "codigos.json", codes)
     print(f"códigos nuevos: {count[0]}", flush=True)
+    if pais in LOOKUP:
+        _lookup(pais, end, catalog, codes)
+
+
+def _ld_disc(html_text):
+    """Precio, stock, nombre, artista y foto del JSON-LD de una ficha (Product o MusicAlbum, también dentro de @graph)."""
+    out = {}
+    for m in re.finditer(r'<script[^>]*ld\+json[^>]*>(.*?)</script>', html_text, re.S):
+        try:
+            d = json.loads(m.group(1))
+        except ValueError:
+            continue
+        nodes = d if isinstance(d, list) else d.get("@graph", [d]) if isinstance(d, dict) else []
+        for x in nodes:
+            if not isinstance(x, dict) or x.get("@type") not in ("Product", "MusicAlbum"):
+                continue
+            o = x.get("offers") or {}
+            o = o[0] if isinstance(o, list) and o else o
+            if not out.get("p") and isinstance(o, dict) and o.get("price"):
+                try:
+                    out["p"] = float(str(o["price"]).replace(",", "."))
+                except ValueError:
+                    pass
+                out["st"] = "InStock" in str(o.get("availability", "InStock"))
+            out.setdefault("t", x.get("name"))
+            img = x.get("image")
+            out.setdefault("img", img[0] if isinstance(img, list) and img else img)
+            a = x.get("byArtist")
+            if isinstance(a, dict) and a.get("name"):
+                out["v"] = a["name"]
+    return out
+
+
+def _lookup(pais, end, catalog, codes):
+    """Tiendas sin catálogo (LOOKUP): cada disco de los catálogos con código se busca por su EAN en cada una, primero
+    los nunca consultados y luego los más antiguos. Lo encontrado (y lo no encontrado, para no repetir) se guarda en
+    consultas.json (en git): {tienda: {ean: [fecha, precio, stock, url, nombre, artista, foto] o [fecha]}}."""
+    from concurrent.futures import ThreadPoolExecutor
+    from datetime import date
+    from .fetch import Fetcher
+    folder = DATA / pais
+    seen = _load(folder / "consultas.json", {})
+    fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
+    eans = sorted(fmt_of, key=lambda e: (fmt_of[e] != "vinilo", e))  # los vinilos primero
+    today = date.today().isoformat()
+
+    def one_store(sid):
+        f = Fetcher(delay=(1.0, 2.0))
+        done = seen.setdefault(sid, {})
+        todo = sorted(eans, key=lambda e: done.get(e, [""])[0])  # nunca consultados ("") y luego los más antiguos
+        n = 0
+        for e in todo:
+            if time.time() > end or done.get(e, [""])[0] == today:
+                break
+            url = LOOKUP[pais][sid].format(ean=e)
+            if not f.allowed(url)[0]:
+                return
+            try:
+                r = f.get(url)
+                d = _ld_disc(r.text) if r.status_code == 200 else {}
+            except Exception:  # noqa: BLE001
+                continue
+            done[e] = ([today, d["p"], d.get("st", True), r.url, d.get("t") or "", d.get("v") or "", d.get("img") or ""]
+                       if d.get("p") else [today])
+            n += 1
+        print(f"[{sid}] {n} discos consultados", flush=True)
+
+    with ThreadPoolExecutor(len(LOOKUP[pais])) as ex:
+        list(ex.map(one_store, LOOKUP[pais]))
+    _save(folder / "consultas.json", seen)
 
 
 def build_data(pais):
     """Discos agrupados por código de barras: [{ean, name, fmt, img, items: [{s, p, u, st}]}]."""
     folder = DATA / pais
     catalog, codes = _load(folder / "tiendas.json", {}), _load(folder / "codigos.json", {})
+    if pais in LOOKUP:  # lo encontrado en las tiendas que se consultan por EAN, como si fuera su catálogo
+        fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
+        for sid, found in _load(folder / "consultas.json", {}).items():
+            for e, row in found.items():
+                if len(row) >= 7 and e in fmt_of:
+                    catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
+                                                      "st": row[2], "img": row[6], "u": row[3]}
+                    codes.setdefault(sid, {})[e] = e
     by = {}
     for sid, its in catalog.items():
         base = STORES[pais][sid][1]
@@ -214,7 +310,7 @@ def build_data(pais):
             ean = ean.zfill(13)
             d = by.setdefault(ean, {"ean": ean, "names": [], "fmt": it["f"], "img": None, "items": []})
             artist = {"recordstore": it["v"], "sisterray": it["ty"], "cultura": it["v"], "fnac": it["v"],
-                      "zavvi": it["v"]}.get(sid, "")
+                      "zavvi": it["v"], "ibs": it["v"], "feltrinelli": it["v"]}.get(sid, "")
             title = it["t"]
             if artist and " - " not in title and not title.lower().startswith(artist.lower()):
                 title = f"{artist} - {re.sub(r':\s*(?:CD|Vinyl LP|Cassette)\s*$', '', title)}"
@@ -305,6 +401,31 @@ TXT["fr"] = {
     "deals": "Bons plans vinyles et CD", "deals_file": "bons-plans", "save": "{m} de moins qu'au plus cher",
     "deals_desc": "Les disques avec le plus grand écart de prix entre magasins aujourd'hui (en stock uniquement).",
     "guitars": "Les bons plans guitares du jour", "guitars_more": "Tous les bons plans guitares",
+}
+
+
+TXT["it"] = {
+    "dir": "dischi", "one": "disco", "home": "Dischi", "promo": "Novità: confronta i prezzi di vinili, CD e cassette",
+    "tile": "Vinili, CD e cassette",
+    "fmts": {"vinilo": ("Vinili", "vinili"), "cd": ("CD", "cd"), "casete": ("Cassette", "cassette")},
+    "fmt1": {"vinilo": "vinile", "cd": "CD", "casete": "cassetta"},
+    "title": "{n} in {f}: confronto prezzi",
+    "desc": "Confronta il prezzo di {n} in {f} in {k} negozi di dischi online in Italia: prezzo di oggi, disponibilità e il negozio più economico.",
+    "desc1": "{n} in {f}: il prezzo di oggi da {s}.", "where1": "da {s}",
+    "h_index": "Dischi: confronta i prezzi di vinili, CD e cassette",
+    "d_index": "Confronta ogni giorno il prezzo di vinili, CD e cassette nei negozi di dischi online in Italia.",
+    "in_stock": "Disponibile", "out": "Esaurito", "shops": "negozi", "buy": "Vai al negozio", "cheapest": "Il più economico oggi",
+    "more": "I più confrontati", "note": "Prezzi IVA inclusa; le spese di spedizione possono variare.",
+    "amazon": None, "amazon_btn": "Cerca questo disco su Amazon", "amazon_txt": "Preferisci Amazon?",
+    "search_ph": "Cerca: artista o album…", "search_res": "{n} dischi trovati", "search_none": "Nessun disco trovato",
+    "f_artist": "Artista o gruppo", "f_format": "Formato", "f_all": "Tutti i formati", "f_sort": "Ordina",
+    "s_price": "Prima i più economici", "s_shops": "I più confrontati", "s_az": "A–Z",
+    "artist_t": "{a}: prezzi di vinili, CD e cassette",
+    "artist_d": "Confronta il prezzo di {n} dischi di {a} in vinile, CD e cassetta nei negozi di dischi online in Italia.",
+    "artist_all": "Tutti i suoi dischi",
+    "deals": "Offerte vinili e CD", "deals_file": "offerte", "save": "{m} in meno del più caro",
+    "deals_desc": "I dischi con la maggiore differenza di prezzo tra negozi oggi (solo disponibili).",
+    "guitars": "Le offerte chitarre di oggi", "guitars_more": "Tutte le offerte chitarre",
 }
 
 

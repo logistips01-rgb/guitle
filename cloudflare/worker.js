@@ -59,7 +59,7 @@ async function fromBox(env, code, slug) {
 // Secciones enteras en cajas (scraper/cajas.py empaquetar_carpeta): la sección de discos de estos países. La clave es la
 // ruta dentro del país ("records/x.html", "records/artist/y.html", "records/index.html").
 const CAJAS_R = 512;
-const SECCIONES = { records: new Set(["uk"]), disques: new Set(["fr"]) };
+const SECCIONES = { records: new Set(["uk"]), disques: new Set(["fr"]), dischi: new Set(["it"]) };
 
 async function fromSectionBox(env, code, rel) {
   const box = await openBox(env, `${code}/_r/${(fnv(rel) % CAJAS_R).toString(16).padStart(4, "0")}.json.gz`);
@@ -84,7 +84,7 @@ export default {
     try { key = decodeURIComponent(url.pathname).replace(/^\/+/, ""); } catch { return notFound(); }
     if (key === "" || key.endsWith("/")) key += "index.html";
 
-    const sec = key.match(/^([a-z]{2})\/((records|disques)\/.+\.html)$/);
+    const sec = key.match(/^([a-z]{2})\/((records|disques|dischi)\/.+\.html)$/);
     if (sec && (SECCIONES[sec[3]]?.has(sec[1]) || url.searchParams.get("caja") === "1")) {
       let box = null;
       try { box = await fromSectionBox(env, sec[1], sec[2]); } catch { box = null; }
