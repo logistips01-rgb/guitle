@@ -55,7 +55,7 @@ def usage(acc, start, end):
     s, e = f"{start.isoformat()}T00:00:00Z", f"{(end + timedelta(days=1)).isoformat()}T00:00:00Z"
     d = q(f'{{viewer{{accounts(filter:{{accountTag:"{acc}"}}){{'
           f'r2OperationsAdaptiveGroups(limit:1000,filter:{{datetime_geq:"{s}",datetime_lt:"{e}"}}){{sum{{requests}} dimensions{{actionType date}}}}'
-          f' r2StorageAdaptiveGroups(limit:1,filter:{{datetime_geq:"{s}",datetime_lt:"{e}"}},orderBy:[datetime_DESC]){{max{{payloadSize}}}}'
+          f' r2StorageAdaptiveGroups(limit:1,filter:{{datetime_geq:"{s}",datetime_lt:"{e}"}},orderBy:[datetime_DESC]){{max{{payloadSize}} dimensions{{datetime}}}}'
           f' workersInvocationsAdaptive(limit:100,filter:{{datetime_geq:"{s}",datetime_lt:"{e}"}}){{sum{{requests}}}}}}}}}}')
     a, b, by_day = 0, 0, {}
     for g in d["r2OperationsAdaptiveGroups"]:
