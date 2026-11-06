@@ -14,7 +14,7 @@ ALL_SITES=$(python -c "from scraper.intl import SITES; print(' '.join(SITES))")
 in_r2() { case " $R2_SITES " in *" $1 "*) return 0 ;; esac; return 1; }
 # Países cuyas fichas sirve el Worker desde las cajas (scraper/cajas.py; la misma lista que CON_CAJAS en
 # cloudflare/worker.js): sus fichas sueltas (<país>/g/) ya no se suben, solo las cajas (<país>/_g/) que cambian.
-R2_CAJAS="lu fi pt fr it de pl se no dk"
+R2_CAJAS="lu fi pt fr it de pl se no dk uk br ie at nl be ch cz sk ro bg"
 in_cajas() { case " $R2_CAJAS " in *" $1 "*) return 0 ;; esac; return 1; }
 
 git_add() {
