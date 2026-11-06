@@ -1,0 +1,42 @@
+{
+ "tipo": "semana",
+ "cab": "Vinyl deal of the week",
+ "fmt": "vinyl",
+ "disco": {
+  "ean": "0888072745636",
+  "fmt": "vinilo",
+  "img": "https://cdn.shopify.com/s/files/1/1565/5653/files/712d3c66-783e-48c8-b561-7ef5e23d08a1.jpg?v=1776497552",
+  "items": [
+   {
+    "p": 117.99,
+    "s": "assai",
+    "st": true,
+    "u": "https://www.assai.co.uk/products/miles-davis-miles-56-vinyl-lp-due-out-19-06-26"
+   },
+   {
+    "p": 162.99,
+    "s": "recordstore",
+    "st": true,
+    "u": "https://www.recordstore.co.uk/products/miles-56-4lp-vinyl-box-set"
+   },
+   {
+    "p": 105.99,
+    "s": "crash",
+    "st": false,
+    "u": "https://www.crashrecords.co.uk/products/miles-davis-miles-56-pre-order"
+   }
+  ],
+  "name": "Miles Davis - Miles '56",
+  "slug": "miles-davis-miles-56-vinyl-0888072745636",
+  "artist": "Miles Davis",
+  "title": "Miles '56",
+  "lo": 117.99,
+  "hi": 162.99,
+  "ahorro": 45.0,
+  "tienda": "Assai Records",
+  "tiendas": 2,
+  "url": "https://guitle.com/uk/records/miles-davis-miles-56-vinyl-0888072745636.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-06"
+}
