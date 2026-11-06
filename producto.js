@@ -138,7 +138,8 @@ async function realPrices(bestDaily) {
   let ipc;
   try { ipc = await load("/data/ipc-ar.json"); } catch (e) { return; }
   const pts = bestDaily.filter(([, y]) => y != null);
-  if (pts.length < 2 || !ipc.meses || !ipc.ultimo) return;
+  // Con menos de un mes de historial la inflación apenas cambia nada: la gráfica no aportaría y despistaría.
+  if (pts.length < 30 || !ipc.meses || !ipc.ultimo) return;
   const monthsAfter = (a, b) => (+b.slice(0, 4) - +a.slice(0, 4)) * 12 + (+b.slice(5, 7) - +a.slice(5, 7));
   // Índice de un mes (publicado, o estimado con la última inflación) y, para un día, el interpolado entre la mitad de su
   // mes y la del mes de al lado: así la inflación se reparte día a día y la línea no salta al cambiar de mes.
