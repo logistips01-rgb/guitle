@@ -78,7 +78,7 @@ SHARED_LOOKUP = {"es": {"cdgo": "pt"}}
 EBAY = {"es": ("EBAY_ES", "https://www.ebay.es"), "fr": ("EBAY_FR", "https://www.ebay.fr"),
         "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk")}
 EBAY_CAMPID = "5339241544"
-EBAY_DAILY = 1100
+EBAY_DAILY = 1100  # 4 países: 4.400 de las 5.000 diarias de la API (si mootle usa las mismas claves, bajar)
 for _c, (_m, _base) in EBAY.items():
     STORES[_c]["ebay"] = ("eBay", _base)
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
