@@ -70,6 +70,73 @@ FAMOSOS = {unicodedata.normalize("NFKD", a).encode("ascii", "ignore").decode().l
            for a in FAMOSOS.split(";") if a.strip()}
 
 
+# Artistas conocidos de cada país (además de los internacionales de arriba)
+LOCALES = {
+    "es": """Rosalia; Estopa; Heroes del Silencio; Extremoduro; Fito y Fitipaldis; Vetusta Morla; Love of Lesbian; Joaquin Sabina;
+Joan Manuel Serrat; Mecano; Alejandro Sanz; Bunbury; Enrique Bunbury; Los Planetas; Leiva; Quevedo; C. Tangana; Aitana;
+Melendi; La Oreja de Van Gogh; Hombres G; Radio Futura; Loquillo; Los Secretos; Nacha Pop; Duncan Dhu; Camilo Sesto;
+Raphael; Rocio Jurado; Camaron de la Isla; Paco de Lucia; Lola Flores; Manolo Garcia; El Ultimo de la Fila; Ska-P;
+Platero y Tu; Marea; Barricada; Rosendo; Miguel Rios; Ana Belen; Victor Manuel; Mikel Erentxun; Amaral; Dani Martin;
+El Canto del Loco; Pereza; Supersubmarina; Izal; Sidonie; Lori Meyers; Dorian; Russian Red; Rocio Marquez; Silvia Perez Cruz;
+Bad Gyal; Lola Indigo; Nathy Peluso; Rels B; Morat; Sabina; Antonio Vega; Mclan; Triana; Medina Azahara; Mago de Oz;
+Baron Rojo; Obus; Siniestro Total; Los Suaves; Sopa de Cabra; Els Pets; Manel; Txarango; Estrella Morente; Enrique Morente""",
+    "it": """Vasco Rossi; Ligabue; Maneskin; Lucio Battisti; Fabrizio De Andre; Mina; Adriano Celentano; Zucchero; Pino Daniele;
+Franco Battiato; Lucio Dalla; Eros Ramazzotti; Laura Pausini; Jovanotti; Ultimo; Tiziano Ferro; Cesare Cremonini;
+Marco Mengoni; Elodie; Annalisa; Sfera Ebbasta; Lazza; Geolier; Negramaro; Subsonica; Afterhours; CCCP Fedeli Alla Linea;
+Litfiba; Pooh; Renato Zero; Claudio Baglioni; Francesco De Gregori; Antonello Venditti; Fiorella Mannoia; Gianna Nannini;
+Edoardo Bennato; Rino Gaetano; Paolo Conte; Ennio Morricone; Ludovico Einaudi; Andrea Bocelli; Il Volo; Mahmood; Blanco;
+Tananai; Angelina Mango; Salmo; Marracash; Guè; Fabri Fibra; Articolo 31; 883; Max Pezzali; Gemelli DiVersi; Elisa;
+Carmen Consoli; Caparezza; Baustelle; Verdena; Marlene Kuntz; I Cani; Calcutta; Coez; Thegiornalisti; Brunori Sas;
+Vinicio Capossela; Lucio Corsi; Loredana Berte; Mia Martini; Ornella Vanoni; Patty Pravo; Raffaella Carra; Gianni Morandi;
+Al Bano; Toto Cutugno; Umberto Tozzi; Nek; Biagio Antonacci; Modà; Pinguini Tattici Nucleari; Lo Stato Sociale; Gazzelle""",
+}
+
+# Textos, moneda y web de cada país (Reino Unido igual que siempre)
+PAIS = {
+    "uk": {"token": "INSTAGRAM_TOKEN_UK", "cuenta": "@guitle.uk", "web": "https://guitle.com/uk/records", "lang": "en",
+           "fmt": {"vinilo": "vinyl", "cd": "CD", "casete": "cassette"}, "tags": TAGS, "tope": (60, 150)},
+    "es": {"token": "INSTAGRAM_TOKEN_ES", "cuenta": "@guitle.es", "web": "https://guitle.com/discos", "lang": "es",
+           "fmt": {"vinilo": "vinilo", "cd": "CD", "casete": "casete"}, "tope": (60, 150),
+           "tags": "#vinilo #vinilos #discos #coleccionismo #coleccionvinilos #musica #ofertas",
+           "t": {"cab_same": "Mismo disco, {x} más barato", "cab_semana": "El chollo de vinilo de la semana",
+                 "pill_post": "💿 Chollo de disco", "pill_post_semana": "🏆 Chollo de la semana",
+                 "pill_story": "💿 Mismo disco, más barato", "pill_story_semana": "🏆 Vinilo de la semana",
+                 "cheapest": "Lo más barato hoy", "at": "en", "others": "Otras tiendas de discos", "upto": "hasta",
+                 "footer": "Comparamos precios de tiendas de discos de España · guitle.com/discos",
+                 "elsewhere": "Hasta {hi} en otras tiendas · ahorras {x}",
+                 "story_footer": "Precios y stock: enlace en la bio · guitle.com/discos"},
+           "cap": ("{head}\n\n{artist} – {title} ({fmt})\n✅ {lo} en {tienda}\n🔁 Hasta {hi} en otras tiendas de discos: "
+                   "ahorras {x}\n\nComparamos los precios de las tiendas de discos de España para que no tengas que hacerlo tú.\n"
+                   "🔎 Precios y stock de este disco: enlace en la bio → guitle.com/discos\nPrecios del {fecha}; pueden cambiar."
+                   "\n\n{tags}"),
+           "head": ("💿 Mismo disco, {x} más barato", "🏆 El chollo de vinilo de la semana")},
+    "it": {"token": "INSTAGRAM_TOKEN_IT", "cuenta": "@guitle.it", "web": "https://guitle.com/it/dischi", "lang": "it",
+           "fmt": {"vinilo": "vinile", "cd": "CD", "casete": "cassetta"}, "tope": (60, 150),
+           "tags": "#vinile #vinili #dischi #collezionismo #vinilecollection #musica #offerte",
+           "t": {"cab_same": "Stesso disco, {x} in meno", "cab_semana": "L’affare vinile della settimana",
+                 "pill_post": "💿 Offerta disco", "pill_post_semana": "🏆 Affare della settimana",
+                 "pill_story": "💿 Stesso disco, meno caro", "pill_story_semana": "🏆 Vinile della settimana",
+                 "cheapest": "Il più economico oggi", "at": "da", "others": "Altri negozi", "upto": "fino a",
+                 "footer": "Confrontiamo i prezzi dei negozi di musica in Italia · guitle.com/it/dischi",
+                 "elsewhere": "Fino a {hi} altrove · risparmi {x}",
+                 "story_footer": "Prezzi e disponibilità: link in bio · guitle.com/it/dischi"},
+           "cap": ("{head}\n\n{artist} – {title} ({fmt})\n✅ {lo} da {tienda}\n🔁 Fino a {hi} negli altri negozi: "
+                   "risparmi {x}\n\nConfrontiamo i prezzi dei negozi di musica in Italia, così non devi farlo tu.\n"
+                   "🔎 Prezzi e disponibilità di questo disco: link in bio → guitle.com/it/dischi\nPrezzi del {fecha}; "
+                   "possono cambiare.\n\n{tags}"),
+           "head": ("💿 Stesso disco, {x} in meno", "🏆 L’affare vinile della settimana")},
+}
+
+
+def eur(v):
+    s = f"{v:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    return (s[:-3] if s.endswith(",00") else s) + " €"
+
+
+def dinero(cc):
+    return gbp if cc == "uk" else eur
+
+
 def _norm(s):
     return unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower().strip()
 
@@ -82,21 +149,25 @@ def gbp(v):
     return f"£{v:,.2f}".replace(".00", "")
 
 
-def candidatos(recent):
+def candidatos(recent, cc="uk"):
     """Discos de artistas conocidos con 2+ tiendas en stock y una diferencia creíble, de más a menos ahorro."""
+    from .musica import STORES
+    tiendas = {k: v[0] for k, v in STORES.get(cc, {}).items()} or TIENDAS
+    famosos = FAMOSOS | {_norm(a) for a in LOCALES.get(cc, "").replace("\n", " ").split(";") if a.strip()}
+    web = PAIS[cc]["web"]
     out = []
-    for d in json.loads(DISCOS.read_text(encoding="utf-8")):
+    for d in json.loads((ROOT / "data" / "musica" / cc / "discos.json").read_text(encoding="utf-8")):
         live = sorted((i for i in d["items"] if i.get("st") and i.get("p")), key=lambda i: i["p"])
         if len({i["s"] for i in live}) < 2 or not d.get("img"):
             continue
         lo, hi = live[0], live[-1]
         ahorro = round(hi["p"] - lo["p"], 2)
         # Diferencias absurdas suelen ser ediciones distintas con el mismo código: fuera
-        if ahorro < 3 or hi["p"] > 1.45 * lo["p"] or _norm(artista(d["name"])) not in FAMOSOS or d["ean"] in recent:
+        if ahorro < 3 or hi["p"] > 1.45 * lo["p"] or _norm(artista(d["name"])) not in famosos or d["ean"] in recent:
             continue
         out.append({**d, "artist": artista(d["name"]), "title": d["name"].split(" - ", 1)[1].strip(),
-                    "lo": lo["p"], "hi": hi["p"], "ahorro": ahorro, "tienda": TIENDAS.get(lo["s"], lo["s"]),
-                    "tiendas": len({i["s"] for i in live}), "url": f"{WEB}/{d['slug']}.html"})
+                    "lo": lo["p"], "hi": hi["p"], "ahorro": ahorro, "tienda": tiendas.get(lo["s"], lo["s"]),
+                    "tiendas": len({i["s"] for i in live}), "url": f"{web}/{d['slug']}.html"})
     return sorted(out, key=lambda d: (d["fmt"] != "vinilo", -d["ahorro"]))
 
 
@@ -108,17 +179,23 @@ def portada(url, dest):
     return True
 
 
-def generar(day, tipo=None):
+def _hechos_path(cc):
+    return HECHOS if cc == "uk" else ROOT / "social" / f"discos-publicados-{cc}.json"
+
+
+def generar(day, tipo=None, cc="uk"):
     tipo = tipo or DIAS.get(day.weekday())
     if not tipo:
         print("hoy no toca disco")
         return None, None
-    hechos = json.loads(HECHOS.read_text(encoding="utf-8")) if HECHOS.exists() else {}
+    hp = _hechos_path(cc)
+    hechos = json.loads(hp.read_text(encoding="utf-8")) if hp.exists() else {}
     recent = {v["ean"] for v in hechos.values()}
-    folder = ig.OUT / day.isoformat() / "uk" / "discos"
+    folder = ig.OUT / day.isoformat() / cc / "discos"
     folder.mkdir(parents=True, exist_ok=True)
-    tope = 150 if tipo == "semana" else 60  # «same»: discos a precio normal; la del semana puede ser una edición especial
-    for d in [c for c in candidatos(recent) if c["lo"] <= tope][:15]:
+    tope = PAIS[cc]["tope"][tipo == "semana"]  # «same»: discos a precio normal; la del semana puede ser una edición especial
+    money = dinero(cc)
+    for d in [c for c in candidatos(recent, cc) if c["lo"] <= tope][:15]:
         img = folder / f"portada{'.png' if '.png' in d['img'].split('?')[0].lower() else '.jpg'}"
         try:
             ok = portada(d["img"], img)
@@ -127,6 +204,23 @@ def generar(day, tipo=None):
         if not ok:
             continue
         d["photo"] = img.name
+        if cc != "uk":
+            cfg = PAIS[cc]
+            fmt = cfg["fmt"].get(d["fmt"], d["fmt"])
+            t = {k: v.replace("{x}", money(d["ahorro"])).replace("{hi}", money(d["hi"])) for k, v in cfg["t"].items()}
+            cab = t["cab_semana"] if tipo == "semana" else t["cab_same"]
+            caption = cfg["cap"].format(head=cfg["head"][tipo == "semana"].format(x=money(d["ahorro"])), artist=d["artist"],
+                                        title=d["title"], fmt=fmt, lo=money(d["lo"]), hi=money(d["hi"]), x=money(d["ahorro"]),
+                                        tienda=d["tienda"], fecha=f"{day.day} de {MESES['it' if cc == 'it' else 'pt'][day.month - 1]}"
+                                        if cc == "it" else f"{day.day} de {['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][day.month - 1]}",
+                                        tags=cfg["tags"])
+            if cc == "it":
+                caption = caption.replace(f"Prezzi del {day.day} de ", f"Prezzi del {day.day} ")
+            plan = {"tipo": tipo, "cab": cab, "fmt": fmt, "disco": d, "fecha": day.isoformat(), "cc": cc, "t": t}
+            (folder / "plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+            (folder / "texto.txt").write_text(caption + "\n", encoding="utf-8")
+            subprocess.run(["node", str(ROOT / "brand" / "discos.js"), str(folder)], check=True, cwd=ROOT)
+            return folder, plan
         fmt = FORMATO.get(d["fmt"], d["fmt"])
         cab = "Vinyl deal of the week" if tipo == "semana" else f"Same record, {gbp(d['ahorro'])} cheaper"
         caption = (f"{'🏆 Vinyl deal of the week' if tipo == 'semana' else '💿 Same record, ' + gbp(d['ahorro']) + ' cheaper'}\n\n"
@@ -146,14 +240,16 @@ def generar(day, tipo=None):
     return None, None
 
 
-def publicar(day, folder, plan):
-    token = os.environ.get("INSTAGRAM_TOKEN_UK")
+def publicar(day, folder, plan, cc="uk"):
+    cfg = PAIS[cc]
+    token = os.environ.get(cfg["token"])
     if not token:
-        raise SystemExit("falta INSTAGRAM_TOKEN_UK")
+        raise SystemExit(f"falta {cfg['token']}")
     ig.TOKEN = token
+    hp = _hechos_path(cc)
     try:
         user = ig.api("GET", "me", fields="user_id")["user_id"]
-        hechos = json.loads(HECHOS.read_text(encoding="utf-8")) if HECHOS.exists() else {}
+        hechos = json.loads(hp.read_text(encoding="utf-8")) if hp.exists() else {}
         if day.isoformat() in hechos:
             print("ya publicado hoy:", hechos[day.isoformat()].get("post"))
             return
@@ -161,7 +257,7 @@ def publicar(day, folder, plan):
         branch = ig.git("rev-parse", "--abbrev-ref", "HEAD")
         ig.git("add", rel)
         if ig.git("diff", "--cached", "--name-only"):
-            ig.git("commit", "-q", "-m", f"social: disco de @guitle.uk {day.isoformat()}")
+            ig.git("commit", "-q", "-m", f"social: disco de {cfg['cuenta']} {day.isoformat()}")
         ig.git("push", "-q", "origin", f"HEAD:{branch}")
         base = f"{ig.REPO_RAW}/{ig.git('rev-parse', 'HEAD')}/{rel}/"
         for name in ("post.jpg", "story.jpg"):
@@ -174,9 +270,9 @@ def publicar(day, folder, plan):
         d = plan["disco"]
         hechos[day.isoformat()] = {"ean": d["ean"], "disco": d["name"], "tipo": plan["tipo"], "ahorro": d["ahorro"],
                                    "url": d["url"], "post": post, "story": story}
-        HECHOS.write_text(json.dumps(hechos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-        ig.git("add", rel, HECHOS.relative_to(ROOT).as_posix())
-        ig.git("commit", "-q", "-m", f"social: publicado el disco de @guitle.uk {day.isoformat()}")
+        hp.write_text(json.dumps(hechos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        ig.git("add", rel, hp.relative_to(ROOT).as_posix())
+        ig.git("commit", "-q", "-m", f"social: publicado el disco de {cfg['cuenta']} {day.isoformat()}")
         ig.git("push", "-q", "origin", f"HEAD:{branch}")
         print("post:", post, "| story:", story, "| página:", d["url"])
     finally:
@@ -188,14 +284,15 @@ def main(argv=None):
     ap.add_argument("--publish", action="store_true")
     ap.add_argument("--tipo", choices=["same", "semana"])
     ap.add_argument("--date")
+    ap.add_argument("--pais", default="uk", choices=sorted(PAIS), help="cuenta (uk, es, it); por defecto uk")
     a = ap.parse_args(argv)
     day = date.fromisoformat(a.date) if a.date else date.today()
-    folder, plan = generar(day, a.tipo)
+    folder, plan = generar(day, a.tipo, a.pais)
     if folder:
-        d = plan["disco"]
-        print(f"{plan['cab']}: {d['name']} ({plan['fmt']}) {gbp(d['lo'])} en {d['tienda']} frente a {gbp(d['hi'])} → {folder}")
+        d, money = plan["disco"], dinero(a.pais)
+        print(f"{plan['cab']}: {d['name']} ({plan['fmt']}) {money(d['lo'])} en {d['tienda']} frente a {money(d['hi'])} → {folder}")
         if a.publish:
-            publicar(day, folder, plan)
+            publicar(day, folder, plan, a.pais)
 
 
 if __name__ == "__main__":
