@@ -1,0 +1,152 @@
+{
+ "fecha": "6 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "ibanez-as53-tf-4515110921818",
+    "name": "Ibanez AS53-TF",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://audiosystem.fr/32503-product_zoom/ibanez-as53-tf.jpg",
+    "price": 299.0,
+    "store": "Audio System",
+    "stores": 4,
+    "median": 333.0,
+    "max": 333.0,
+    "next": 333.0,
+    "rows": [
+     [
+      "Audio System",
+      299.0
+     ],
+     [
+      "Woodbrass",
+      333.0
+     ],
+     [
+      "Stars Music",
+      333.0
+     ],
+     [
+      "Thomann",
+      333.0
+     ]
+    ],
+    "pvp": null,
+    "why": "34 € de moins que dans les autres magasins",
+    "pct": 10,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "squier-telecaster-thinline-affinity-lrl-olympic-white-885978134946",
+    "name": "Squier Telecaster Thinline Affinity Lrl Olympic White",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/2ba89363d1a8d21b52209b880a30b08024aa3b2d_FMIC_0378271505.jpg?height=1200&pad_color=ffffff&v=1793736015&width=1200",
+    "price": 269.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 301.0,
+    "max": 301.0,
+    "next": 299.0,
+    "rows": [
+     [
+      "Woodbrass",
+      269.0
+     ],
+     [
+      "Music City",
+      299.0
+     ],
+     [
+      "Stars Music",
+      301.0
+     ],
+     [
+      "Guitar Legend",
+      301.0
+     ]
+    ],
+    "pvp": null,
+    "why": "30 € de moins que dans les autres magasins",
+    "pct": 10,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "takamine-gd51-nat-natural-190262041535",
+    "name": "Takamine GD51-NAT Natural",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/407f54d417061ac4b4de2e72874971cdb137ac56_GTA_GD51NAT.png?height=1200&pad_color=ffffff&v=1793783829&width=1200",
+    "price": 299.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 354.0,
+    "max": 354.0,
+    "next": 354.0,
+    "rows": [
+     [
+      "Woodbrass",
+      299.0
+     ],
+     [
+      "Stars Music",
+      354.0
+     ],
+     [
+      "Hurricane Music",
+      354.0
+     ],
+     [
+      "Music 3000",
+      354.0
+     ],
+     [
+      "Michenaud",
+      354.0
+     ]
+    ],
+    "pvp": null,
+    "why": "55 € de moins que dans les autres magasins",
+    "pct": 16,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
