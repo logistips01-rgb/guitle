@@ -69,7 +69,6 @@ basso-straps-ecolt01-7898529536024
 basso-straps-ecolt03-7898529536048
 basso-straps-ecolt04-7898529536055
 basso-straps-endpin01-7898529533528
-basso-straps-endpinv-7898942136597
 basso-straps-ex01-7898529537526
 basso-straps-ex02-7898529537519
 basso-straps-ex03-7898529537533
@@ -1737,7 +1736,6 @@ ernie-ball-eb4235-slide-laton-plateado-dedo-corazon-749699142355
 ernie-ball-eb4287-slide-comfort-pequeno-749699110460
 ernie-ball-eb4288-slide-comfort-mediano-749699110477
 ernie-ball-eb4289-slide-comfort-grande-749699110484
-ernie-ball-eb4600-straplock-cromado-1-par-1parp37519
 ernie-ball-eb4602-strap-locks-dorado-749699146025
 ernie-ball-eb4603-straplock-4-749699101901
 ernie-ball-eb5346-correa-jacquard-red-king-749699111122
@@ -2874,7 +2872,7 @@ ibanez-universal-capo-icgc10-4549763029751
 jackson-cordas-jackson-soloisttm-strings-drop-medium-010-052-0052p30619
 jackson-cordas-jackson-soloisttm-strings-light-009-042-9042p30621
 jackson-cordas-jackson-soloisttm-strings-medium-010-046-0046p30617
-jackson-poly-strap-green-crackle-197955252056
+jackson-poly-strap-green-crackle-cklep45596
 jackson-poly-strap-red-crackle-cklep45597
 jackson-soloist-strings-drop-extra-heavy-012-058-2058p37682
 jackson-soloist-strings-extra-heavy-012-05-1205p37680
