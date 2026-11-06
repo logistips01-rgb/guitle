@@ -170,7 +170,11 @@ def read_awin(pais):
                 if not price or not (11 <= len(ean) <= 13):
                     continue
                 h = row.get("aw_product_id") or ean
-                items[h] = {"t": name, "v": row.get("brand_name") or "", "ty": row.get("merchant_category") or "", "f": fmt,
+                # Cultura: "Titre - Vinyle" sin artista (y "- PAS DE MARQUE -" como marca): el título limpio, sin artista
+                brand = row.get("brand_name") or ""
+                brand = "" if re.search(r"(?i)pas de marque|^\W*$", brand) or len(brand) < 2 else brand
+                name = re.sub(r"(?i)\s*-\s*(?:vinyle|vinyl|cd|cassette|k7|coffret|33 ?t(?:ours)?|45 ?t(?:ours)?|lp)\b.*$", "", name).strip()
+                items[h] = {"t": name, "v": brand, "ty": row.get("merchant_category") or "", "f": fmt,
                             "p": price, "st": (row.get("in_stock") or "1") not in ("0", "false", "no"),
                             "img": row.get("merchant_image_url") or row.get("aw_image_url"), "u": row.get("aw_deep_link")}
                 codes.setdefault(sid, {})[h] = ean.zfill(13)
@@ -188,7 +192,8 @@ def read_awin(pais):
 def read(pais, minutes):
     """Catálogo de cada tienda y códigos de barras que faltan, hasta agotar el tiempo."""
     if pais in AWIN:
-        return read_awin(pais)
+        read_awin(pais)
+        return _mb_artists(pais, time.time() + minutes * 60)
     if pais in SRC:  # Portugal: el catálogo de la lectura de España (mismo trabajo) y las tiendas que se consultan por EAN
         src = DATA / SRC[pais]
         catalog = _load(src / "tiendas.json", {})  # todos los discos de España: se buscan en CDGO
@@ -390,6 +395,52 @@ def _read_listing(fetcher, tpl, end, codes):
             break
         n += 1
     return items
+
+
+def _mb_artists(pais, end):
+    """Artista de los discos que llegan sin él (Cultura solo da el título): MusicBrainz, la base de datos libre de discos,
+    por su código de barras, a una consulta por segundo (lo que pide su API). Se guarda en artistas.json (en git):
+    {ean: [fecha, artista o ""]}; los no encontrados se reintentan a los 30 días."""
+    from datetime import date, timedelta
+    from .fetch import Fetcher
+    folder = DATA / pais
+    done = _load(folder / "artistas.json", {})
+    catalog, codes = _load(folder / "tiendas.json", {}), _load(folder / "codigos.json", {})
+    todo = []
+    for sid, its in catalog.items():
+        for h, it in its.items():
+            e = codes.get(sid, {}).get(h)
+            if e and " - " not in (it.get("t") or "") and not it.get("v") and e not in done:
+                todo.append((it["f"] != "vinilo", e))
+    retry = (date.today() - timedelta(days=30)).isoformat()
+    todo = [e for _, e in sorted(set(todo))] + [e for e, v in done.items() if not v[1] and v[0] < retry]
+    f = Fetcher(delay=(1.1, 1.4))
+    f.session.headers["User-Agent"] = "guitle/1.0 (+https://guitle.com)"
+    today, n, found = date.today().isoformat(), 0, 0
+    for e in todo:
+        if time.time() > end:
+            break
+        codes_q = " OR ".join(sorted({e, e.lstrip("0"), e[1:] if e.startswith("0") else e}))
+        url = f"https://musicbrainz.org/ws/2/release/?query=barcode:({codes_q})&fmt=json&limit=3"
+        try:
+            r = f.get(url)
+            if r.status_code == 503:  # demasiado deprisa: se sigue mañana
+                break
+            rels = (r.json().get("releases") or []) if r.status_code == 200 else None
+        except Exception:  # noqa: BLE001
+            continue
+        if rels is None:
+            continue
+        credit = (rels[0].get("artist-credit") or []) if rels else []
+        artist = "".join((c.get("name") or "") + (c.get("joinphrase") or "") for c in credit).strip()
+        artist = "" if artist.lower() in ("various artists", "[unknown]") else artist
+        done[e] = [today, artist]
+        n += 1
+        found += bool(artist)
+        if n % 500 == 0:
+            _save(folder / "artistas.json", done)
+    _save(folder / "artistas.json", done)
+    print(f"[musicbrainz] {n} discos consultados, {found} con artista; pendientes {max(0, len(todo) - n)}", flush=True)
 
 
 def _woo_name(name):
@@ -608,6 +659,7 @@ def build_data(pais):
                     catalog.setdefault(sid, {})[e] = {"t": row[4], "v": "", "ty": "", "f": row[7], "p": row[1], "st": row[2],
                                                       "img": row[6], "u": row[3]}
                     codes.setdefault(sid, {})[e] = e
+    mb = _load(folder / "artistas.json", {})  # artistas de MusicBrainz (discos que llegan sin él)
     by = {}
     for sid, its in catalog.items():
         base = STORES[pais][sid][1]
@@ -620,6 +672,8 @@ def build_data(pais):
             artist = {"recordstore": it["v"], "sisterray": it["ty"], "cultura": it["v"], "fnac": it["v"],
                       "zavvi": it["v"], "ibs": it["v"], "feltrinelli": it["v"]}.get(sid, "")
             title = it["t"]
+            if not artist and " - " not in title and mb.get(ean.zfill(13), [0, ""])[1]:
+                artist = mb[ean.zfill(13)][1]
             if artist and " - " not in title and not title.lower().startswith(artist.lower()):
                 title = f"{artist} - {re.sub(r':\s*(?:CD|Vinyl LP|Cassette)\s*$', '', title)}"
             d["names"].append(title)
@@ -869,7 +923,8 @@ def write_pages(pais, discs=None):
     # buscador enseñan todos los discos (con foto primero): cada uno con su tienda y el botón de Amazon.
     few = len(multi) < 200
     if few:
-        multi = sorted(discs, key=lambda d: (-len(d["items"]), not d.get("img"), d["fmt"] != "vinilo", d["name"]))
+        # orden: comparados, con foto, vinilos y, entre iguales, variado (por el código de barras, no por el nombre)
+        multi = sorted(discs, key=lambda d: (-len(d["items"]), not d.get("img"), d["fmt"] != "vinilo", d["ean"][::-1]))
     # Chollos de guitarras del día en cada disco (y discos en las fichas de guitarras): un público lleva al otro
     guitar_box = ""
     try:
