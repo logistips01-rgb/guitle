@@ -9,6 +9,11 @@ on:
     branches: [claude/friendly-fermat-yycain]
     paths: [".github/musica.txt"]
   workflow_dispatch:
+    inputs:
+      pais:
+        description: "Solo este país (uk, fr, it, es); vacío: todos"
+        type: string
+        default: ""
 
 concurrency:
   group: musica
@@ -25,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        pais: [uk, fr, it, es]
+        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || '["uk","fr","it","es"]') }}
     env:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
