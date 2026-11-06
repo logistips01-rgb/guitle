@@ -16,9 +16,21 @@ BUCKETS = [(0, 25, ("varios", "pedal", "micro")),
            (75, 200, ("ampli", "pedal", "clasica", "acustica", "micro", "teclado", "electrica")),
            (200, 600, ("electrica", "acustica", "ampli", "bajo", "teclado", "pack"))]
 PER_BUCKET = 8
+# Lo que da comisión va primero: tiendas afiliadas (Cultura, en Awin) y marcas que seguro están en Amazon (cada regalo
+# lleva su botón de Amazon con el código del país).
+AFFILIATE_STORES = {"cultura"}
+AMAZON_BRANDS = {"fender", "squier", "boss", "yamaha", "ibanez", "epiphone", "gibson", "d'addario", "daddario", "elixir",
+                 "ernie ball", "dunlop", "jim dunlop", "shure", "audio technica", "audio-technica", "rode", "korg",
+                 "marshall", "orange", "vox", "blackstar", "line 6", "zoom", "tc electronic", "electro-harmonix",
+                 "mxr", "behringer", "harley benton", "snark", "planet waves", "martinez", "cort", "takamine",
+                 "ortega", "alhambra", "admira", "kyser", "g7th", "fishman", "nux", "mooer", "joyo", "donner", "roland",
+                 "casio", "m-audio", "akg", "sennheiser", "samson", "positive grid", "valeton", "hotone", "jbl"}
+AMAZON = {"es": "https://www.amazon.es/s?k={q}&tag=guitle-21", "pt": "https://www.amazon.es/s?k={q}&tag=guitle-21",
+          "fr": "https://www.amazon.fr/s?k={q}&tag=guitle00-21", "it": "https://www.amazon.it/s?k={q}&tag=guitle0e-21",
+          "uk": "https://www.amazon.co.uk/s?k={q}&tag=guitle08-21", "ie": "https://www.amazon.co.uk/s?k={q}&tag=guitle08-21"}
 
 TXT = {
-    "es": {"dir": "navidad", "title": "Regalos de Navidad para músicos",
+    "es": {"amz": "Ver en Amazon", "dir": "navidad", "title": "Regalos de Navidad para músicos",
            "desc": "Ideas de regalo para guitarristas y músicos por presupuesto, con el precio más bajo de hoy en cada tienda: accesorios, pedales, amplis, guitarras y vinilos.",
            "intro": "¿No sabes qué regalar a un guitarrista? Aquí tienes ideas por presupuesto, con el mejor precio de hoy comparado entre tiendas. Los precios se actualizan cada día.",
            "b": ["Menos de 25 €", "De 25 a 75 €", "De 75 a 200 €", "Más de 200 €"],
@@ -29,7 +41,7 @@ TXT = {
                     "Mira la fecha de entrega de cada tienda: en diciembre los envíos tardan más.",
                     "Antes de comprar, compara: la misma guitarra puede costar bastante menos en otra tienda.",
                     "Para los que empiezan, un pack (guitarra + ampli + accesorios) suele salir más barato que por separado."]},
-    "fr": {"dir": "noel", "title": "Cadeaux de Noël pour musiciens",
+    "fr": {"amz": "Voir sur Amazon", "dir": "noel", "title": "Cadeaux de Noël pour musiciens",
            "desc": "Idées cadeaux pour guitaristes et musiciens par budget, au prix le plus bas du jour : accessoires, pédales, amplis, guitares et vinyles.",
            "intro": "Vous ne savez pas quoi offrir à un guitariste ? Voici des idées par budget, au meilleur prix du jour comparé entre magasins. Les prix sont mis à jour chaque jour.",
            "b": ["Moins de 25 €", "De 25 à 75 €", "De 75 à 200 €", "Plus de 200 €"],
@@ -40,7 +52,7 @@ TXT = {
                     "Vérifiez le délai de livraison de chaque magasin : en décembre, les envois sont plus longs.",
                     "Comparez avant d'acheter : la même guitare peut coûter bien moins cher ailleurs.",
                     "Pour un débutant, un pack (guitare + ampli + accessoires) revient souvent moins cher."]},
-    "it": {"dir": "natale", "title": "Regali di Natale per musicisti",
+    "it": {"amz": "Vedi su Amazon", "dir": "natale", "title": "Regali di Natale per musicisti",
            "desc": "Idee regalo per chitarristi e musicisti per budget, al prezzo più basso di oggi: accessori, pedali, amplificatori, chitarre e vinili.",
            "intro": "Non sai cosa regalare a un chitarrista? Ecco idee per budget, al miglior prezzo di oggi confrontato tra negozi. I prezzi si aggiornano ogni giorno.",
            "b": ["Meno di 25 €", "Da 25 a 75 €", "Da 75 a 200 €", "Più di 200 €"],
@@ -51,7 +63,7 @@ TXT = {
                     "Controlla i tempi di consegna di ogni negozio: a dicembre le spedizioni sono più lente.",
                     "Confronta prima di comprare: la stessa chitarra può costare molto meno in un altro negozio.",
                     "Per chi inizia, un pack (chitarra + ampli + accessori) di solito costa meno."]},
-    "pt": {"dir": "natal", "title": "Prendas de Natal para músicos",
+    "pt": {"amz": "Ver na Amazon", "dir": "natal", "title": "Prendas de Natal para músicos",
            "desc": "Ideias de prendas para guitarristas e músicos por orçamento, ao preço mais baixo de hoje: acessórios, pedais, amplificadores, guitarras e vinis.",
            "intro": "Não sabe o que oferecer a um guitarrista? Aqui tem ideias por orçamento, ao melhor preço de hoje comparado entre lojas. Os preços são atualizados todos os dias.",
            "b": ["Menos de 25 €", "De 25 a 75 €", "De 75 a 200 €", "Mais de 200 €"],
@@ -62,7 +74,7 @@ TXT = {
                     "Veja o prazo de entrega de cada loja: em dezembro os envios demoram mais.",
                     "Compare antes de comprar: a mesma guitarra pode custar bastante menos noutra loja.",
                     "Para quem começa, um pack (guitarra + amplificador + acessórios) costuma sair mais barato."]},
-    "en": {"dir": "christmas", "title": "Christmas gifts for musicians",
+    "en": {"amz": "View on Amazon", "dir": "christmas", "title": "Christmas gifts for musicians",
            "desc": "Gift ideas for guitarists and musicians by budget, at today's lowest price: accessories, pedals, amps, guitars and vinyl.",
            "intro": "Not sure what to get a guitarist? Here are ideas by budget, at today's best price compared across shops. Prices update every day.",
            "b": ["Under £25", "£25 to £75", "£75 to £200", "Over £200"],
@@ -92,7 +104,9 @@ def _pick(cats, lo, hi, kinds, used):
             if not best or not lo <= best["p"] < hi:
                 continue
             top = max(i["p"] for i in items)
-            cands.append((-(top - best["p"]) / top, p))
+            # primero lo que da comisión (tienda afiliada; marca que está en Amazon), luego el ahorro
+            paid = 0 if any(i["s"] in AFFILIATE_STORES for i in items) else 1 if (p.get("brand") or "").lower() in AMAZON_BRANDS else 2
+            cands.append(((paid, -(top - best["p"]) / top), p))
         cands.sort(key=lambda x: x[0])
         pools.append([p for _, p in cands])
     out, brands = [], {}
@@ -111,7 +125,8 @@ def _pick(cats, lo, hi, kinds, used):
     return out
 
 
-def _tile(code, p, names, money):
+def _tile(code, p, names, money, amazon_txt):
+    from urllib.parse import quote_plus
     items = sorted((i for i in p["items"] if i.get("p")), key=lambda i: (i.get("st") is False, i["p"]))
     best, n = items[0], len({i["s"] for i in items})
     pre = "" if code == "es" else f"/{code}"
@@ -119,7 +134,9 @@ def _tile(code, p, names, money):
     return (f'<a class="tile" href="{pre}/g/{e(p["slug"])}.html"><div class="img"><img loading="lazy" src="/img/p/{e(p["th"])}" alt="">'
             f'</div><div class="body"><span class="brand">{e(p.get("brand"))}</span><span class="name">{e(html.unescape(p["name"]))}</span>'
             f'<span class="price"><strong>{money(best["p"])}</strong></span><span class="foot"><span>{e(names.get(best["s"], best["s"]))}</span>'
-            f'<span class="stores-n">{n}</span></span></div></a>')
+            f'<span class="stores-n">{n}</span></span></div></a>'
+            + (f'<a class="amz" href="{e(AMAZON[code].format(q=quote_plus(html.unescape(p["name"]))))}" target="_blank" '
+               f'rel="sponsored noopener">{e(amazon_txt)} →</a>' if code in AMAZON else ""))
 
 
 def page(code, lang, cats, intl):
@@ -137,7 +154,7 @@ def page(code, lang, cats, intl):
         ps = _pick(cats, lo, hi, kinds, used)
         if ps:
             secs.append(f'  <section class="hub-sec"><h2>{e(label)}</h2><p class="hub-intro" style="color:var(--text-secondary)">{e(sub)}</p>'
-                        f'<div class="grid">{"".join(_tile(code, p, names, money) for p in ps)}</div></section>')
+                        f'<div class="grid">{"".join(f'<div class="gift">{_tile(code, p, names, money, T["amz"])}</div>' for p in ps)}</div></section>')
     # Discos, si el país tiene sección
     M = musica.TXT.get(code)
     if M:
@@ -153,7 +170,10 @@ def page(code, lang, cats, intl):
                       f'<meta property="og:title" content="{e(T["title"])}">\n<meta property="og:description" content="{e(T["desc"])}">\n'
                       '<link rel="stylesheet" href="/catalogo.css">\n<style>.hub-sec{margin-top:22px}.hub-sec h2{font-size:1.25rem}'
                       '.xmas{background:linear-gradient(135deg,#b3261e,#7a1a14);color:#fff;border-radius:16px;padding:22px 20px;margin-top:14px}'
-                      '.xmas h2{color:#fff;margin:0 0 6px;font-size:1.7rem;letter-spacing:-.03em}.xmas p{margin:0;opacity:.92}</style>\n'
+                      '.xmas h2{color:#fff;margin:0 0 6px;font-size:1.7rem;letter-spacing:-.03em}.xmas p{margin:0;opacity:.92}'
+                      '.gift{display:flex;flex-direction:column;gap:6px}.gift .tile{flex:1}.amz{display:block;text-align:center;padding:7px 10px;'
+                      'border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);font-weight:600;font-size:.88rem;'
+                      'text-decoration:none}.amz:hover{background:var(--accent);color:#fff}</style>\n'
                       f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>\n')
     return (head + "</head>\n<body>\n<main>\n"
             f'  <div class="topbar"><div class="row">{intl._logo(code, t)}<a class="navlink" href="{pre}/">{e(t["home"])}</a></div></div>\n'
