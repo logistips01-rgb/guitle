@@ -1,0 +1,191 @@
+{
+ "date": "2026-11-06",
+ "fecha": "6 November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "epiphone-broadway-wine-red-wineredhtm",
+   "name": "Epiphone Broadway Wine Red",
+   "brand": "Epiphone",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/567369.jpg",
+   "price": 555.0,
+   "store": "Thomann",
+   "stores": 5,
+   "median": 949.0,
+   "max": 999.0,
+   "next": 649.0,
+   "rows": [
+    [
+     "Thomann",
+     555.0
+    ],
+    [
+     "Peach Guitars",
+     649.0
+    ],
+    [
+     "A Strings",
+     899.0
+    ],
+    [
+     "The Music Bank",
+     999.0
+    ],
+    [
+     "Music Bros",
+     999.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£94 less than any other shop",
+   "pct": 14,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal of the day: Epiphone Broadway Wine Red\n💷 £555 at Thomann, compared across 5 shops.\n📉 £94 less than any other shop.\n\n🔎 Compare its price on guitle.com/uk (all today’s deals via the link in bio 👆).\nPrice on 6 November; it may change.\n\n#guitar #guitarist #guitardeals #ukguitar #electricguitar #epiphone"
+ },
+ "stories": [
+  {
+   "slug": "squier-classic-vibe-tele-thinline-mn-natural-885978064540",
+   "name": "Squier Classic Vibe Tele Thinline MN Natural",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/tg8r3jbm.png?v=1716392024",
+   "price": 339.0,
+   "store": "Reidys",
+   "stores": 8,
+   "median": 399.0,
+   "max": 449.0,
+   "next": 379.0,
+   "rows": [
+    [
+     "Reidys",
+     339.0
+    ],
+    [
+     "Dawsons",
+     379.0
+    ],
+    [
+     "Thomann",
+     385.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     394.0
+    ],
+    [
+     "The Guitar Store",
+     399.0
+    ],
+    [
+     "Andertons",
+     399.0
+    ],
+    [
+     "A Strings",
+     439.0
+    ],
+    [
+     "Music Street",
+     449.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£40 less than any other shop",
+   "pct": 11,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "cort-kx307ms-multi-scale-7-string-open-pore-black-nporeblack",
+   "name": "Cort KX307MS Multi Scale 7-String Open Pore Black",
+   "brand": "Cort",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/products/cort-kx307ms-multi-scale-7-string-open-pore-black-p11055-22481_image.png?v=1714571616",
+   "price": 339.0,
+   "store": "Reidys",
+   "stores": 3,
+   "median": 399.0,
+   "max": 399.0,
+   "next": 399.0,
+   "rows": [
+    [
+     "Reidys",
+     339.0
+    ],
+    [
+     "guitarguitar",
+     399.0
+    ],
+    [
+     "The Guitar Store",
+     399.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£60 less than any other shop",
+   "pct": 15,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "yamaha-apx700ii-electro-acoustic-guitar-natural-4957812489935",
+   "name": "Yamaha APX700II Electro-Acoustic Guitar, Natural",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0432/6024/8218/files/apx700n1.jpg?v=1684576646",
+   "price": 599.0,
+   "store": "A Strings",
+   "stores": 3,
+   "median": 714.0,
+   "max": 729.0,
+   "next": 699.0,
+   "rows": [
+    [
+     "A Strings",
+     599.0
+    ],
+    [
+     "Music Street",
+     699.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     729.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£100 less than any other shop",
+   "pct": 14,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
