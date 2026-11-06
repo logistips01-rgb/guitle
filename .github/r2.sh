@@ -77,9 +77,9 @@ publicar() {
     python -m scraper.cajas "$s" || echo "::warning::no se pudieron hacer las cajas de $s"
     # Las guías (y su curso) se suben solo el día 1 de cada mes (o con GUIAS=1): el resto de días se quedan como están
     # en R2, sin subirlas ni borrarlas. Sus precios cambian a diario, pero una guía no necesita estar al día.
-    # La sección de discos (<país>/records/ y sus cajas <país>/_r/) la sube su propia lectura (musica.yml): aquí ni se
+    # La sección de discos (<país>/records/, disques/, dischi/, discos/ y sus cajas <país>/_r/) la sube su propia lectura (musica.yml): aquí ni se
     # sube ni se borra, aunque esta lectura no la haya generado.
-    local excl=(--exclude "/records/**" --exclude "/_r/**")
+    local excl=(--exclude "/records/**" --exclude "/disques/**" --exclude "/dischi/**" --exclude "/discos/**" --exclude "/_r/**")
     if [ "$(date -u +%d)" != "01" ] && [ "${GUIAS:-0}" != "1" ]; then excl+=(--exclude "/guias/**"); fi
     if in_cajas "$s" && compgen -G "$s/_g/*.json.gz" >/dev/null; then
       # Las fichas sueltas se quedan en R2 como están (respaldo del Worker), sin subirlas ni borrarlas.
