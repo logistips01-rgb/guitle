@@ -4770,12 +4770,20 @@ _FENDER_PN = re.compile(r"(?<![\d-])(0\d{2})[-\s]?(\d{4})[-\s]?(\d{3})(?![\d-])"
 
 def _cluster_by_name(groups):
     """Une las fichas sin EAN de tiendas distintas que son el mismo modelo (marca igual y nombre casi igual)."""
+    def pn_of(o):
+        m = _FENDER_PN.search(o["name"] + " " + (o.get("sku") or ""))
+        return "".join(m.groups()) if m else None
+    # Primero los productos con EAN (Hermes en México) hacen de destino; luego se les unen las fichas sin EAN de otras
+    # tiendas con el mismo número de pieza, y entre sí las que no tienen EAN.
     by_pn = {}
+    for key in [k for k in groups if not k.startswith("url:")]:
+        pn = pn_of(groups[key][0])
+        if pn:
+            by_pn.setdefault(pn, key)
     for key in [k for k in groups if k.startswith("url:")]:
         o = groups[key][0]
-        m = _FENDER_PN.search(o["name"] + " " + (o.get("sku") or ""))
-        if m:
-            pn = "".join(m.groups())
+        pn = pn_of(o)
+        if pn:
             target = by_pn.get(pn)
             if target and target in groups and o["store"] not in {x["store"] for x in groups[target]}:
                 groups[target].append(groups.pop(key)[0])
