@@ -131,8 +131,9 @@ def read_awin(pais):
         print(f"[awin] lista de ficheros vacía: HTTP {r.status_code}, {len(key)} caracteres de clave, respuesta: "
               f"{r.text[:300].replace(key, '***')!r}", flush=True)
     cols = ("aw_deep_link,product_name,merchant_name,search_price,currency,merchant_category,category_name,ean,"
-            "product_GTIN,merchant_image_url,aw_image_url,in_stock,brand_name,aw_product_id")
-    catalog, codes, cats = {}, {}, {}
+            "product_GTIN,merchant_image_url,aw_image_url,in_stock,brand_name,aw_product_id,product_short_description,"
+            "keywords,specifications,custom_1,custom_2,custom_3")
+    catalog, codes, cats, sample = {}, {}, {}, []
     joined = sorted({(f.get("Advertiser Name"), f.get("Primary Region")) for f in feeds
                      if (f.get("Membership Status") or "").lower() in ("active", "joined")})
     print(f"[awin] {len(feeds)} ficheros en la cuenta; anunciantes aprobados: {joined}", flush=True)
@@ -154,6 +155,10 @@ def read_awin(pais):
                 name = row.get("product_name") or ""
                 c = f'{sid}: {row.get("category_name") or ""} / {row.get("merchant_category") or ""}'
                 cats[c] = cats.get(c, 0) + 1
+                if c.endswith("/ Musique") and len(sample) < 40 and cats[c] % 997 == 1:
+                    sample.append({k: (row.get(k) or "")[:160] for k in (
+                        "product_name", "brand_name", "merchant_category", "ean", "search_price", "in_stock",
+                        "product_short_description", "keywords", "specifications", "custom_1", "custom_2", "custom_3")})
                 fmt = _fmt(name, row.get("merchant_category"), row.get("category_name"))
                 if not fmt or NOT_MUSIC.search(name):
                     continue
@@ -174,6 +179,7 @@ def read_awin(pais):
             print(f"[awin] {sid}: {len(items)} discos con EAN", flush=True)
     # Qué hay en los ficheros (categorías y cuántos productos): para ver también instrumentos, guitarras, etc.
     _save(folder / "awin-categorias.json", dict(sorted(cats.items(), key=lambda x: -x[1])[:400]))
+    _save(folder / "awin-muestra.json", sample)
     if catalog:
         _save(folder / "tiendas.json", catalog)
         _save(folder / "codigos.json", codes)
