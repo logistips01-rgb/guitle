@@ -14,6 +14,11 @@
 - No usar voces sintéticas en los vídeos: texto y subtítulos en pantalla.
 - Precios reales del día, comprobados tienda por tienda; si una rebaja o una foto parecen raras, se cambia la guitarra.
 - Rango de precios de chollos y tops: 150–750 €.
+- **Amazon** (afiliados en Reino Unido y Francia; en la web, botón de Amazon en cada disco) se puede nombrar en redes, con
+  sus normas: 1) avisar de la afiliación en la publicación («Como afiliado de Amazon, obtenemos ingresos por las compras
+  que cumplen los requisitos» / «En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les
+  conditions requises» / «As an Amazon Associate we earn from qualifying purchases»); 2) nunca precios de Amazon en
+  imágenes ni textos (un post no se actualiza): solo «también en Amazon»; 3) nunca el logo de Amazon, solo el nombre.
 - **Nunca nombres de tiendas reales en las publicaciones de presentación** ("¿Cómo funciona guitle?", "¿Qué es guitle?",
   promoción, Reels sobre guitle): "Tienda A, B, C…" y "25 tiendas" sin lista. En los chollos y tops del día sí se dice
   dónde está más barata cada guitarra.
@@ -25,7 +30,7 @@
   diferencias creíbles (el caro ≤ 1,45 × el barato). Etiquetas: #vinyl #vinylrecords #vinylcollection #recordcollector
   #vinyldeals #ukvinyl.
 - Tono de comprador a comprador: «comparamos precios de las tiendas de discos de Reino Unido», nunca que leemos sus
-  webs. Solo «más barato en X», nunca «caro en Y». Todavía no se menciona Amazon.
+  webs. Solo «más barato en X», nunca «caro en Y».
 - La API no permite poner el sticker de enlace en las stories: dicen «link in bio».
 
 ## Pendiente: publicación de Instagram en GitHub Actions
