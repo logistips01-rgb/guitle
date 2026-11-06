@@ -126,7 +126,9 @@ def read_awin(pais):
                                                          timeout=120).text)))
     cols = ("aw_deep_link,product_name,merchant_name,search_price,currency,merchant_category,category_name,ean,"
             "product_GTIN,merchant_image_url,aw_image_url,in_stock,brand_name,aw_product_id")
-    catalog, codes = {}, {}
+    catalog, codes, cats = {}, {}, {}
+    print(f"[awin] {len(feeds)} ficheros en la cuenta: " + "; ".join(
+        f"{f.get('Advertiser Name')} ({f.get('Membership Status')}, {f.get('Primary Region')})" for f in feeds)[:3000], flush=True)
     for sid, needle in AWIN[pais].items():
         mine = [f for f in feeds if needle in (f.get("Advertiser Name") or "").lower()
                 and (f.get("Membership Status") or "").lower() in ("active", "joined")
@@ -143,6 +145,8 @@ def read_awin(pais):
                 continue
             for row in csv.DictReader(io.StringIO(raw)):
                 name = row.get("product_name") or ""
+                c = f'{sid}: {row.get("category_name") or ""} / {row.get("merchant_category") or ""}'
+                cats[c] = cats.get(c, 0) + 1
                 fmt = _fmt(name, row.get("merchant_category"), row.get("category_name"))
                 if not fmt or NOT_MUSIC.search(name):
                     continue
@@ -161,6 +165,8 @@ def read_awin(pais):
         if items:
             catalog[sid] = items
             print(f"[awin] {sid}: {len(items)} discos con EAN", flush=True)
+    # Qué hay en los ficheros (categorías y cuántos productos): para ver también instrumentos, guitarras, etc.
+    _save(folder / "awin-categorias.json", dict(sorted(cats.items(), key=lambda x: -x[1])[:400]))
     if catalog:
         _save(folder / "tiendas.json", catalog)
         _save(folder / "codigos.json", codes)
