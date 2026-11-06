@@ -52,7 +52,7 @@ SITES = {
            "kinds": {"electrica": "elettriche", "acustica": "acustiche", "clasica": "classiche", "bajo": "bassi",
                      "ampli": "amplificatori", "pedal": "pedali-effetto", "teclado": "tastiere", "micro": "microfoni",
                      "estuche": "custodie", "varios": "accessori"},
-           "amazon": None},
+           "amazon": "https://www.amazon.it/s?k={q}&tag=guitle0e-21"},
     # Equipo en otro catálogo ("demas", scraper.catalog.EQUIPO_COUNTRIES); sus páginas salen cuando tiene productos.
     "de": {"country": "Deutschland", "lang": "de-DE", "t": "de", "cur": "EUR", "catalog": "de", "extra_catalogs": ["demas"],
            "kinds": {"electrica": "e-gitarren", "acustica": "westerngitarren", "clasica": "konzertgitarren", "bajo": "baesse",
@@ -422,7 +422,8 @@ T = {
         "sections": "Sezioni", "searchAria": "Cerca",
         "bestPrice": "miglior prezzo", "inStock": "disponibile", "noStock": "non disponibile", "goLong": "Vai al negozio", "goShort": "Vai",
         "store": "negozio", "stores": "negozi", "lh": "mancina", "storesH3": "Negozi", "historyH3": "Storico dei prezzi",
-        "amazon": "", "titleFrom": "{name}: prezzo da {price} {where}", "inN": "in {n} negozi", "inS": "da {s}",
+        "amazon": "Preferisci comprare su Amazon? <a href=\"{u}\" target=\"_blank\" rel=\"sponsored noopener\">Cerca questo modello su Amazon</a>",
+        "amazonNote": "In qualità di Affiliato Amazon, guitle riceve un guadagno dagli acquisti idonei.", "titleFrom": "{name}: prezzo da {price} {where}", "inN": "in {n} negozi", "inS": "da {s}",
         "whereMany": "da {s} · {n} negozi", "whereDiff": ", fino a {d} di differenza",
         "desc": "{name} da {price} da {s}. Confronta il prezzo in {n} {stores} ({list}) e guarda lo storico per capire se è il momento "
                 "giusto per comprare.",
