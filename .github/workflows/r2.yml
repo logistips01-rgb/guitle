@@ -41,6 +41,9 @@ jobs:
           curl -fsSLO https://downloads.rclone.org/v1.68.2/rclone-v1.68.2-linux-amd64.zip
           unzip -q rclone-v1.68.2-linux-amd64.zip && sudo install rclone-v1.68.2-linux-amd64/rclone /usr/local/bin/
           rm -rf rclone-v1.68.2-linux-amd64* && rclone version
+      - name: Fotos de "Chollos de hoy"
+        # La sesión de redes elige la foto al publicar; si está marcada como cortada o de espaldas, la de su ficha.
+        run: python3 -m scraper.hoy --fotos || true
       - name: Subir a R2
         env:
           RCLONE_CONFIG_R2_TYPE: s3

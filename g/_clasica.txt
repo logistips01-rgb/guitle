@@ -3748,8 +3748,8 @@ yamaha-cadete-3-4-yamaha-cs40ii-46510nuevo
 yamaha-cg102-46560nuevo
 yamaha-cg102-natural-4957812496971
 yamaha-cg122-mc-122mcp7720
-yamaha-cg122mc-4957812472173
 yamaha-cg122mc-cedro-15810nuevo
+yamaha-cg122mc-natural-4957812472173
 yamaha-cg122ms-abeto-15800nuevo
 yamaha-cg142c-4957812472197
 yamaha-cg142c-cedro-15830nuevo
@@ -3808,6 +3808,7 @@ yamaha-estudio-c40-iii-4-4-iii4419549
 yamaha-estudio-gcx40-4-4-4044147687
 yamaha-gc12c-4957812517300
 yamaha-gc12c-cedar-top-20130nuevo
+yamaha-gc12s-s52922html
 yamaha-gc12s-spruce-top-20120nuevo
 yamaha-gc22c-4957812517317
 yamaha-gc22c-cedar-top-20150nuevo
@@ -3816,7 +3817,6 @@ yamaha-gc22s-spruce-top-20140nuevo
 yamaha-gc32c-cedro-gc32cnuevo
 yamaha-gc32s-abeto-gc32snuevo
 yamaha-gc82c-86792969565
-yamaha-gran-concierto-yamaha-gc12s-spruce-top-con-estuche-stuchehtml
 yamaha-gx122mc-22mcp29075
 yamaha-nc1xfm-natural-aturalhtml
 yamaha-ncx1-cedro-z9310nuevo

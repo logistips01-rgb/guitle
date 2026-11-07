@@ -29,6 +29,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Yamaha PACS+12M Pacifica Standard Plus Black",
+  "slug": "yamaha-pacs-12m-pacifica-standard-plus-black-4957812697699",
+  "price": 715.0,
+  "median": 966.245
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -88,15 +97,6 @@
   "slug": "yamaha-pacs-12-pacifica-standard-plus-black-4957812697682",
   "price": 715.0,
   "median": 1008.11
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicsales",
-  "name": "Yamaha PACS+12M Pacifica Standard Plus Black",
-  "slug": "yamaha-pacs-12m-pacifica-standard-plus-black-4957812697699",
-  "price": 715.0,
-  "median": 999.0
  },
  {
   "kind": "electrica",
@@ -1303,6 +1303,15 @@
   "slug": "universal-audio-uafx-galaxi-74-tape-echo-reverb-819937003592",
   "price": 299.0,
   "median": 1646.0
+ },
+ {
+  "kind": "bajo",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Squier Classic Vibe '60s Jazz Bass LRL Tahitian Coral",
+  "slug": "squier-classic-vibe-60s-jazz-bass-lrl-tahitian-coral-885978674985",
+  "price": 311.2,
+  "median": 462.0
  },
  {
   "kind": "bajo",

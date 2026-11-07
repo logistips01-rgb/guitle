@@ -53,5 +53,46 @@ def write_country(code, intl):
     return url
 
 
+def fix_fotos():
+    """Las fotos de data/hoy/<país>.json (las elige la sesión de redes al publicar) marcadas como cortadas o de espaldas
+    en la revisión de fotos (data/fotos-revisadas.json: 1 espalda, 2 cortada) se cambian por la miniatura actual de su
+    ficha en el catálogo. Solo usa la biblioteca estándar: lo lanza r2.yml antes de subir la web."""
+    import glob
+    root = pages.ROOT
+    try:
+        bad = {k for k, v in json.loads((root / "data" / "fotos-revisadas.json").read_text()).items() if v}
+    except (FileNotFoundError, json.JSONDecodeError):
+        return 0
+    files = sorted(glob.glob(str(root / "data" / "hoy" / "*.json")))
+    hoy = {f: json.loads(open(f, encoding="utf-8").read()) for f in files}
+    need = {i.get("slug") for d in hoy.values() for i in d.get("items", []) if i.get("img") in bad}
+    if not need:
+        return 0
+    th = {}
+    for cat in glob.glob(str(root / "data" / "catalog" / "**" / "*.json"), recursive=True):
+        try:
+            for prod in json.loads(open(cat, encoding="utf-8").read()).get("products", []):
+                if prod.get("slug") in need and prod.get("th") and prod["th"] not in bad:
+                    th.setdefault(prod["slug"], prod["th"])
+        except (json.JSONDecodeError, AttributeError, UnicodeDecodeError):
+            continue
+    n = 0
+    for f, d in hoy.items():
+        changed = False
+        for i in d.get("items", []):
+            if i.get("img") in bad and th.get(i.get("slug")):
+                i["img"] = th[i["slug"]]
+                changed = True
+                n += 1
+        if changed:
+            open(f, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False))
+    print(f"hoy: {n} fotos cortadas o de espaldas cambiadas por la de su ficha")
+    return n
+
+
 if __name__ == "__main__":
-    write_spain()
+    import sys
+    if sys.argv[1:2] == ["--fotos"]:
+        fix_fotos()
+    else:
+        write_spain()

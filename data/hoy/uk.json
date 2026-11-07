@@ -1,116 +1,46 @@
 {
- "fecha": "2026-11-05",
+ "fecha": "2026-11-07",
  "pais": "uk",
  "items": [
   {
-   "slug": "yamaha-apx600-electro-acoustic-guitar-black-4957812623902",
-   "name": "Yamaha APX600 Electro-Acoustic Guitar, Black",
-   "brand": "Yamaha",
-   "price": "£281",
-   "store": "Fair Deal Music",
-   "kind": "acustica",
-   "img": "a4e7f539f04d81d8.webp",
-   "why": ""
-  },
-  {
-   "slug": "sigma-15-series-000m-15-acoustic-guitar-4260279930019",
-   "name": "Sigma 15 Series 000M-15 Acoustic Guitar",
-   "brand": "Sigma",
-   "price": "£319",
-   "store": "Bonners Music",
-   "kind": "acustica",
-   "img": "26d463464aec864a.webp",
-   "why": ""
-  },
-  {
-   "slug": "taylor-baby-mahogany-bt2-ganybt2htm",
-   "name": "Taylor Baby Mahogany BT2",
-   "brand": "Taylor",
-   "price": "£338",
-   "store": "Thomann",
-   "kind": "acustica",
-   "img": "aeaf75080ab375f5.webp",
-   "why": ""
-  },
-  {
-   "slug": "epiphone-hummingbird-studio-ec-hcs-ioechcshtm",
-   "name": "Epiphone Hummingbird Studio EC HCS",
-   "brand": "Epiphone",
-   "price": "£395",
-   "store": "Thomann",
-   "kind": "acustica",
-   "img": "ba65a27d7f4f94a6.webp",
-   "why": ""
-  },
-  {
-   "slug": "martin-lx1e-acoustic-guitar-729789377553",
-   "name": "Martin LX1E - Acoustic guitar",
-   "brand": "Martin",
-   "price": "£529",
-   "store": "Music Street",
-   "kind": "acustica",
-   "img": "https://www.musicstreet.co.uk/cdn/shop/files/MartinLx1E-10.jpg?v=1727819656&width=1920",
-   "why": ""
-  },
-  {
-   "slug": "yamaha-revstar-rss02t-black-2tblackhtm",
-   "name": "Yamaha Revstar RSS02T Black",
-   "brand": "Yamaha",
-   "price": "£609",
-   "store": "Thomann",
+   "slug": "cort-kx307ms-multi-scale-7-string-open-pore-mahogany-remahogany",
+   "name": "Cort KX307MS Multi Scale 7-String Open Pore Mahogany",
+   "brand": "Cort",
+   "price": "£339",
+   "store": "Reidys",
    "kind": "electrica",
-   "img": "abaf22b3ca628702.webp",
-   "why": "£90 less than any other shop"
-  },
-  {
-   "slug": "jackson-x-series-soloist-sla6-dx-baritone-laurel-fingerboard-satin-black-717669560881",
-   "name": "Jackson X Series Soloist SLA6 DX Baritone, Laurel Fingerboard, Satin Black",
-   "brand": "Jackson",
-   "price": "£569",
-   "store": "A Strings",
-   "kind": "electrica",
-   "img": "9d3fd13de2207c0d.webp",
-   "why": "£90 less than any other shop"
-  },
-  {
-   "slug": "ibanez-aam340ce-rub-advanced-electro-acoustic-guitar-rustic-black-high-gloss-4549763366153",
-   "name": "Ibanez AAM340CE-RUB Advanced Electro-Acoustic Guitar, Rustic Black High Gloss",
-   "brand": "Ibanez",
-   "price": "£555",
-   "store": "Absolute Music",
-   "kind": "acustica",
-   "img": "https://cdn11.bigcommerce.com/s-hvzya2q3vy/images/stencil/1280x1280/products/55370/164478/ibaaam340cerub__84524.1759233456.jpg?c=1",
-   "why": "£94 less than any other shop"
-  },
-  {
-   "slug": "jackson-js22-series-dinky-series-arch-top-in-satin-black-885978986644",
-   "name": "Jackson JS22 Series Dinky Series Arch Top in Satin Black",
-   "brand": "Jackson",
-   "price": "£199",
-   "store": "The Guitar Store",
-   "kind": "electrica",
-   "img": "36c896b64d83cf08.webp",
-   "why": "£40 less than any other shop"
-  },
-  {
-   "slug": "epiphone-j-45-studio-solid-top-acoustic-in-vintage-sunburst-711106325644",
-   "name": "Epiphone J-45 Studio Solid Top Acoustic in Vintage Sunburst",
-   "brand": "Epiphone",
-   "price": "£269",
-   "store": "The Guitar Store",
-   "kind": "acustica",
-   "img": "aa5a03bff8b060e6.webp",
+   "img": "ff88d0b38cc296ee.webp",
    "why": "£60 less than any other shop"
   },
   {
-   "slug": "squier-sonic-mustang-electric-guitar-in-2-colour-sunburst-ursunburst",
-   "name": "Squier Sonic Mustang Electric Guitar in 2-Colour Sunburst",
+   "slug": "squier-classic-vibe-50s-strat-2-tone-sunburst-mn-885978063895",
+   "name": "Squier Classic Vibe 50s Strat 2-Tone Sunburst MN",
    "brand": "Squier",
-   "price": "£139",
-   "store": "Guitars Pedals Amps & Stuff",
+   "price": "£339",
+   "store": "Reidys",
    "kind": "electrica",
-   "img": "88532e5011d90316.webp",
-   "why": "£20 less than any other shop"
+   "img": "b384dc4bc09a251b.webp",
+   "why": "£40 less than any other shop"
+  },
+  {
+   "slug": "tr-pro-sfce-a-eb-electro-acoustic-guitar-819907023186",
+   "name": "TR Pro SFCE A EB Electro Acoustic Guitar",
+   "brand": "TR",
+   "price": "£299",
+   "store": "Ness Music",
+   "kind": "acustica",
+   "img": "cdeff69f1c4632e5.webp",
+   "why": "£49 less than any other shop"
+  },
+  {
+   "slug": "yamaha-cg-ta-classical-guitar-4957812640831",
+   "name": "Yamaha CG-TA Classical Guitar",
+   "brand": "Yamaha",
+   "price": "£619",
+   "store": "Andertons",
+   "kind": "clasica",
+   "img": "f84fea30dda26f65.webp",
+   "why": ""
   }
  ]
 }

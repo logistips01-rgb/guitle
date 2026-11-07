@@ -1,0 +1,46 @@
+name: hoy
+
+# "Chollos de hoy" de la web con lo que la sesión de redes ha publicado en Instagram (scraper/hoy_redes.py: lee
+# social/<fecha>/plan.json y published.json de su rama). Cada 2 horas de día; si cambia, el commit lanza r2.yml.
+on:
+  schedule:
+    - cron: "13 9-22/2 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: hoy
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  hoy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/friendly-fermat-yycain
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Chollos publicados → data/hoy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python -m scraper.hoy_redes
+          mkdir -p "$RUNNER_TEMP/hoy" && cp data/hoy/*.json "$RUNNER_TEMP/hoy/"
+          for attempt in $(seq 20); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            cp "$RUNNER_TEMP/hoy/"*.json data/hoy/
+            git add data/hoy
+            if git diff --cached --quiet; then echo "sin cambios"; break; fi
+            git commit -q -m "hoy: chollos publicados en Instagram $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep $(( 5 + RANDOM % 30 ))
+          done
