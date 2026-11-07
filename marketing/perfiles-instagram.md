@@ -16,7 +16,7 @@ Tipo de cuenta: **Profesional → Empresa**, categoría **Sitio web de compras**
 | Países Bajos | @guitle.nl | guitle · Gitaren Nederland | https://guitle.com/nl/ |
 | Brasil | @guitle.br | guitle · Guitarras Brasil | https://guitle.com/br/ |
 | México | (por crear) | guitle · Guitarras México | (sin web todavía) |
-| Argentina | (por crear) | guitle · Guitarras Argentina | (sin web todavía) |
+| Argentina | @guitle.ar | guitle · Guitarras Argentina | https://guitle.com/ar/ |
 
 ## Bios
 
@@ -30,10 +30,10 @@ Tipo de cuenta: **Profesional → Empresa**, categoría **Sitio web de compras**
 
 **Portugal** (portugués de Portugal)
 ```
-🎸 Guitarras ao melhor preço
-📉 15.000 guitarras em 9 lojas
+🎸 Guitarras e discos ao melhor preço
+📉 16.000 guitarras em 9 lojas
+💿 Vinis e CD: compara antes de comprar
 🔥 Promoções reais todos os dias
-👇 Compara antes de comprar
 ```
 
 **Francia**
@@ -100,12 +100,12 @@ Tipo de cuenta: **Profesional → Empresa**, categoría **Sitio web de compras**
 👇 Síguenos
 ```
 
-**Argentina** (todavía sin precios de tiendas argentinas)
+**Argentina**
 ```
 🎸 Guitarras al mejor precio
-🇦🇷 Muy pronto comparamos las tiendas de Argentina
-🔥 Mientras tanto: guitarras, trucos y ofertas
-👇 Seguinos
+📉 Comparamos 7 tiendas de Argentina
+🔥 Ofertas reales todos los días
+👇 Mirá dónde está más barata
 ```
 
 ## Reels de presentación

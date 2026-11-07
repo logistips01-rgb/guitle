@@ -66,5 +66,11 @@
  "se": {},
  "no": {},
  "dk": {},
- "bg": {}
+ "bg": {},
+ "ar": {
+  "handle": "@guitle.ar",
+  "token_env": "INSTAGRAM_TOKEN_AR",
+  "desde": "2026-11-07",
+  "creada": false
+ }
 }
