@@ -694,6 +694,9 @@ def reels_tarde(cc, day, recent):
         pool = sorted((p for p in fiables if p["kind"] == kind and p["name"] not in recent and p["stores"] >= 4),
                       key=lambda p: -p["stores"])
         got = ig.with_photos(pool, 1, fetcher, sub, "g")
+        if not got:  # pocos catálogos (Italia, Portugal): cualquier tipo de guitarra y desde 3 tiendas
+            pool = sorted((p for p in fiables if p["name"] not in recent and p["stores"] >= 3), key=lambda p: -p["stores"])
+            got = ig.with_photos(pool, 1, fetcher, sub, "g")
         if got:
             p = got[0]
             dias = T.get("dias_cap", (T["reel"]["bfDia"], T["reel"]["bfDias"]))[days != 1]
