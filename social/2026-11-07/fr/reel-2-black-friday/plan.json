@@ -1,0 +1,93 @@
+{
+ "fecha": "7 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "bf",
+  "days": 20,
+  "deal": {
+   "slug": "squier-telecaster-60s-custom-classic-vibe-lrl-sunburst-885978064489",
+   "name": "Squier Telecaster 60S Custom Classic Vibe Lrl Sunburst",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/7cd0242ffeb8578b38786502fcaa9dae5c484278_FMIC_0374040500.jpg?height=1200&pad_color=ffffff&v=1793735983&width=1200",
+   "th": "3ffac13e511022a2.webp",
+   "price": 409.0,
+   "store": "Woodbrass",
+   "stores": 7,
+   "median": 456.0,
+   "max": 499.0,
+   "next": 429.0,
+   "rows": [
+    [
+     "Woodbrass",
+     409.0
+    ],
+    [
+     "Guitar Maniac",
+     429.0
+    ],
+    [
+     "Stars Music",
+     443.0
+    ],
+    [
+     "Guitar Legend",
+     443.0
+    ],
+    [
+     "Scotto Musique",
+     469.0
+    ],
+    [
+     "Hurricane Music",
+     475.0
+    ],
+    [
+     "Ubico Musique",
+     499.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}
