@@ -260,13 +260,30 @@ async function loadHistory() {
     const snap = await getDocs(query(collection(db, "c"), where(documentId(), ">=", "resumen_"), where(documentId(), "<", "resumen_~")));
     hist = snap.docs.map(d => d.data()).sort((a, b) => b.fecha.localeCompare(a.fecha));
   } catch (e) { hist = []; }
+  // Los días que aún no tienen resumen (hoy y, hasta que pasa la tarea de la madrugada, ayer): al momento, con los
+  // contadores ya cargados, igual que los calcula scraper/resumen_visitas.py.
+  const have = new Set(hist.map(r => r.fecha));
+  const live = {};
+  for (const r of rows || []) {
+    if (have.has(r.day) || r.day < dayStr(new Date(Date.now() - 7 * 864e5))) continue;
+    const o = live[r.day] ||= { fecha: r.day, visitas: 0, clics: 0, google: 0, instagram: 0, directo: 0, otros_origenes: 0, provisional: true };
+    if (r.kind === "v") o.visitas += r.n;
+    else if (r.kind === "t") o.clics += r.n;
+    else if (r.kind === "r") {
+      if (r.key === "directo") o.directo += r.n;
+      else if (r.key.includes("google")) o.google += r.n;
+      else if (r.key.includes("instagram")) o.instagram += r.n;
+      else o.otros_origenes += r.n;
+    }
+  }
+  hist = [...Object.values(live), ...hist].sort((a, b) => b.fecha.localeCompare(a.fecha));
   const cols = ["visitas", "clics", "google", "instagram", "directo", "otros_origenes"];
   if (!hist.length) {
     $("histrows").innerHTML = `<tr><td colspan="7" class="empty">El primer resumen se guarda esta madrugada.</td></tr>`;
     $("histfoot").innerHTML = "";
     return;
   }
-  $("histrows").innerHTML = hist.map(r => `<tr><td>${esc(r.fecha)}</td>${cols.map(c => `<td class="n">${fmt(r[c] || 0)}</td>`).join("")}</tr>`).join("");
+  $("histrows").innerHTML = hist.map(r => `<tr><td>${esc(r.fecha)}${r.provisional ? ' <span class="muted" title="Calculado ahora; el resumen definitivo se guarda de madrugada">·</span>' : ""}</td>${cols.map(c => `<td class="n">${fmt(r[c] || 0)}</td>`).join("")}</tr>`).join("");
   const tot = c => hist.reduce((a, r) => a + (r[c] || 0), 0);
   $("histfoot").innerHTML = `<tr><th>Total (${hist.length} días)</th>${cols.map(c => `<th class="n">${fmt(tot(c))}</th>`).join("")}</tr>`;
 }
