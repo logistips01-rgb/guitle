@@ -3,7 +3,9 @@ en eBay Partner Network (por campaña/etiqueta: guitle, mootle), guardado en Fir
 "afil_AAAA-MM-DD", solo los lee el titular, como el resto de estadísticas) y enseñado en stats.html. Los lunes manda a
 hola@guitle.com el resumen de la semana y del mes, con el gasto de Cloudflare al lado.
 
-Amazon no tiene API de ganancias para afiliados: su informe se carga a mano (data de Manuel → "amazon_eur" del día).
+Amazon no tiene API de ganancias para afiliados: su informe se carga a mano (data de Manuel → "amazon_eur" del día),
+separando por ID de seguimiento: guitle-21, guitle00-21, guitle08-21, guitle0e-21 → guitle; mootle-21 → mootle (ya en
+producción en las fichas de motos de mootle).
 
 Claves (secretos de GitHub): AWIN_API_TOKEN (Awin → perfil → API credentials), EPN_ACCOUNT_SID y EPN_AUTH_TOKEN (eBay
 Partner Network → Tools → API), FIREBASE_SA y SMTP_* (ya están). Sin una clave, ese programa se salta.
