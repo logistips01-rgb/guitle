@@ -142,6 +142,24 @@ jobs:
               bash .github/r2.sh publicar  # la web generada que no va a git, al bucket R2
               exit 0
             fi
+            # Vía rápida: el mismo commit encima de lo último. Si nadie ha tocado los mismos ficheros, sube en segundos
+            # sin reconstruir el catálogo (cada vuelta completa son 15-20 min: con muchos trabajos guardando a la vez, la
+            # de Reino Unido se quedaba sin tiempo, 6-7 nov). Si choca, se deshace y se reconstruye como siempre.
+            for quick in 1 2 3; do
+              sleep $(( 3 + RANDOM % 15 ))
+              git fetch -q origin "${GITHUB_REF_NAME}"
+              if git rebase -q "origin/${GITHUB_REF_NAME}" >/dev/null 2>&1; then
+                if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then
+                  echo "subido por la vía rápida (reintento $attempt.$quick)"
+                  python -m scraper.indexnow || true
+                  bash .github/r2.sh publicar
+                  exit 0
+                fi
+              else
+                git rebase --abort >/dev/null 2>&1 || true
+                break
+              fi
+            done
             echo "push rechazado, reintento $attempt"; sleep $(( 5 + RANDOM % 40 ))
           done
           exit 1

@@ -1917,6 +1917,7 @@ eko-cs-10-4-4-violeta-satinado-nado436422
 eko-cs-2-1-2-blue-burst-funda-8056734495041
 eko-cs-2-1-2-natural-gigbag-usse344713
 eko-cs-2-1-2-sunburst-funda-8056734495058
+eko-cs-5-3-4-blue-burst-funda-8056734495065
 eko-cs-5-3-4-natural-gigbag-usse344716
 eko-cs-5-3-4-pink-satin-atin436408
 eko-cs-5-3-4-satinado-natural-ural436407
@@ -1929,7 +1930,7 @@ eko-cs12-nat-t74583html
 eko-cs2-nat-8033675657370
 eko-cs5-nat-8033675657387
 eko-espanola-1-2-eko-studio-2-natural-8033675656298
-eko-espanola-3-4-eko-studio-5-blue-burst-8056734495065
+eko-espanola-3-4-eko-studio-5-blue-burst-5blueburst
 eko-espanola-3-4-eko-studio-5-natural-8033675650999
 eko-espanola-amplificada-cutaway-eko-vibra-150-natural-8056734585339
 eko-espanola-eko-studio-10-blue-burst-con-funda-8033675657479
@@ -3340,9 +3341,8 @@ semiprofesional-prudencio-saez-2m-g9-iosaez2mg9
 semiprofesional-prudencio-saez-3m-28-iosaez3m28
 sigma-clasica-cmc-6e-4260279934925
 sigma-sb-c-funda-000-y-clasica-4260279930415
+sire-g5c-nats-larry-carlton-guitarra-espanola-electrificada-natural-satin-810046138700
 sire-g5c-tss-larry-carlton-guitarra-espanola-electrificada-tobacco-sunburst-sati-810046138717
-sire-larry-carlton-g5c-nts-ltong5cnts
-sire-larry-carlton-g5n-nt-s-natural-satin-810046138700
 sire-larry-carlton-g5n-tobacco-sunburst-elect-aelecthtml
 sire-larry-carlton-g5n-ts-s-sunburst-tabaco-baco398437
 stagg-1-2-icastagg12
@@ -3415,7 +3415,7 @@ takamine-gc1nat-799493251227
 takamine-gc2-cutaway-electro-negro-190262041214
 takamine-gc3-natural-gc3natural
 takamine-gc3ce-nat-190262041306
-takamine-gc3ce-nat-4582270040338
+takamine-gc3ce-nat-guitarra-espanola-electrificada-4582270040338
 takamine-gc3cenat-799493251258
 takamine-gc3cenat-natural-ural168122
 takamine-gc3nat-natural-190262041290

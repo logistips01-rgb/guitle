@@ -1609,10 +1609,10 @@ eko-fire-601-natural-8056734499124
 eko-fire-701-natural-8056734499155
 eko-fire-800-red-flamed-8056734499209
 eko-fire-801-grey-flamed-8056734499216
-eko-hollowbody-double-cut-rojo-cereza-8056734499032
-eko-hollowbody-double-cut-sunburst-8056734499025
-eko-hollowbody-jazz-single-cut-dorada-8056734499056
-eko-hollowbody-jazz-single-cut-sunburst-8056734499049
+eko-hollowbody-double-cut-rojo-cereza-rojocereza
+eko-hollowbody-double-cut-sunburst-utsunburst
+eko-hollowbody-jazz-single-cut-dorada-ecutdorada
+eko-hollowbody-jazz-single-cut-sunburst-utsunburst
 eko-lp480-cherry-sunburst-nbursthtml
 eko-ls-300-cherry-sunburst-8056734498554
 eko-ls-300-honey-burst-8056734498547
@@ -1671,7 +1671,8 @@ eko-tl-300-stealth-matte-black-mate436349
 eko-tl-300-sunburst-8056734498486
 eko-tl-400-butterscotch-8056734498509
 eko-tl-401-mn-butterscotch-8056734498516
-eko-tribute-st351-tipo-strat-vintage-hss-roja-8056734499797
+eko-tribute-st351-tipo-strat-vintage-hss-roja-agehssroja
+eko-type-hollowbody-jazz-single-cut-gold-8056734499056
 eko-vl-lp480-aged-gold-sparkle-parklehtml
 eko-vl-lp480-black-0blackhtml
 eko-vl480vsb-kovl480vsb
@@ -2454,6 +2455,7 @@ esp-ltd-james-hetfield-vulture-ow-ltureowhtm
 esp-ltd-jd-i-joe-duplantier-ssb-tierssbhtm
 esp-ltd-jeff-hanneman-jh-600ctm-bk-00ctmbkhtm
 esp-ltd-jl-600-black-satin-con-estuche-stuchehtml
+esp-ltd-jm-i-qm-deep-blood-moon-moonp39649
 esp-ltd-jm-ii-josh-middleton-bsb-etonbsbhtm
 esp-ltd-kh-202-blk-kirk-hammett-hammetthtm
 esp-ltd-kh-202-blk-kirk-hammett-mettp15838
@@ -2522,6 +2524,7 @@ esp-ltd-mk-ec-fr-mille-petrozza-signature-black-satin-con-estuche-stuchehtml
 esp-ltd-msv-1-blk-mike-schleibaum-baump39648
 esp-ltd-msv-1-blk-mike-schleibaum-leibaumhtm
 esp-ltd-mt-130-red-superstrato-840248014304
+esp-ltd-mt-130-snow-white-hitep40088
 esp-ltd-mt-i-mick-thomson-blks-msonsightm
 esp-ltd-mt-i-mick-thomson-obsm-sonobsmhtm
 esp-ltd-mv-1000-maverick-pw-erickpwhtm
@@ -3504,7 +3507,7 @@ fender-custom-tele-3tsb-sparkle-relic-lerelichtm
 fender-custom-telecaster-fmt-hh-am-il-thhamilhtm
 fender-custom-violet-strat-relic-mbam-licmbamhtm
 fender-customshop-2007-ltd-edition-57-relic-stratocaster-444412000725
-fender-dave-murray-strat-2tsb-2tsbp15509
+fender-dave-murray-strat-rw-2tsb-885978613229
 fender-edicion-limitada-75-aniversario-player-ii-tele-car-ecarp44802
 fender-edicion-limitada-75-aniversario-player-ii-tele-dnb-ednbp44800
 fender-edicion-limitada-75-aniversario-player-ii-tele-sfmg-sfmgp44801
@@ -6474,9 +6477,8 @@ ibanez-az26p1bk-negro-premium-mium411872
 ibanez-az41b1-bkf-black-flat-4549763377081
 ibanez-az41p1ew-ngt-4549763377050
 ibanez-az41p1ew-premium-natural-gray-burst-urstp43668
-ibanez-az41p1pb-degradado-gris-transparente-premium-4549763377074
 ibanez-az41p1pb-premium-transparent-gray-burst-urstp43669
-ibanez-az41p1pb-tgb-az-premiumtransparent-gray-burst-con-funda-nfundahtml
+ibanez-az41p1pb-tgb-4549763377074
 ibanez-az427p1pb-ckb-az-premium-7-cuerdas-charcoal-black-burst-4549763308825
 ibanez-az427p2qm-tub-4549763352927
 ibanez-az42p1-pbe-prussian-blue-metallic-4549763352910
@@ -7075,6 +7077,7 @@ ibanez-rgrtbb21-bkf-iron-label-black-flat-4549763346346
 ibanez-rgt1220pb-abs-antique-brown-stained-4549763308849
 ibanez-rgt1220pbabs-babsp27076
 ibanez-rgt1220pbk-col-cosmic-blue-low-gloss-4549763369086
+ibanez-rgt1220pbk-col-premium-cosmic-blue-cosmicblue
 ibanez-rgt1220pbkcol-0pbkcolhtm
 ibanez-rgt1220pbkcol-azul-cosmico-de-bajo-brillo-premium-mium411876
 ibanez-rgt1220pbkcol-kcolp41685
@@ -7310,8 +7313,8 @@ jackson-js32q-dka-ht-trans-purpleburst-lebursthtm
 jackson-js32q-dka-ht-trs-grn-brst-grnbrsthtm
 jackson-js32q-dka-trs-grn-brst-885978425150
 jackson-js32q-dka-trs-purp-brst-885978425044
-jackson-js32t-kelly-ah-fb-satin-black-885978976911
 jackson-js32t-kelly-ah-sbk-lyahsbkhtm
+jackson-js32t-kelly-satin-black-885978976911
 jackson-js32t-kelly-viola-burst-885978976942
 jackson-js32t-king-ah-fb-gloss-black-sblackhtml
 jackson-js32t-king-v-ah-bk-ngvahbkhtm
@@ -7970,7 +7973,7 @@ ltd-ec-256-vintage-natural-799493262360
 ltd-ec-256-vn-c256vnhtml
 ltd-ec-256fm-dark-brown-sunburst-799493256321
 ltd-ec-256fm-stpsb-799493258042
-ltd-ec-400-vintage-burst-719710629073
+ltd-ec-400qm-vintage-burst-719710629073
 ltd-ec-401-blk-840248021890
 ltd-ec-401-olympic-white-840248021906
 ltd-ec-model-10-ec-10kit-blue-799493258271
@@ -8032,7 +8035,6 @@ ltd-esp-ltd-mt-i-om-mick-thomson-obsidian-metallic-719710628144
 ltd-esp-ltd-mt130-bl-azul-ctricaazul
 ltd-esp-ltd-mt130-gr-gris-1100000552673
 ltd-esp-ltd-mt130-rd-roja-1100000552826
-ltd-esp-ltd-mt130-sw-snow-white-840248029346
 ltd-esp-ltd-mv1000-pw-pearl-white-719710629226
 ltd-esp-ltd-nv1000-blk-negra-719710629240
 ltd-esp-ltd-phoenix-1000-stbs-see-thru-black-sunburst-719710614635
@@ -8080,7 +8082,6 @@ ltd-iron-cross-lh-snow-white-hsnowwhite
 ltd-iron-cross-signature-james-hetfield-snow-white-840248029605
 ltd-jd-i-modelo-exclusivo-de-joe-duplantier-silver-sunburst-urst429130
 ltd-jh-200-ctm-jeff-hanneman-signature-black-719710629417
-ltd-jm-i-deep-blood-moon-josh-middleton-719710627451
 ltd-jm-ii-black-shadow-burst-c-estuche-799493269574
 ltd-josh-middleton-jm-i-quilted-maple-deep-blood-moon-moon404636
 ltd-jr-208-799493269567
@@ -9509,7 +9510,6 @@ prs-paul-reed-smith-prs-john-mayer-silver-sky-rw-polar-blue-1100000252672
 prs-paul-reed-smith-prs-mark-holcomb-hwb-holcomb-wraparound-burst-1100000638490
 prs-paul-reed-smith-prs-mccarty-594-wbl-faded-whale-blue-825362047049
 prs-paul-reed-smith-prs-modern-eagle-v-ldb-10350-laguna-dragon-breath-1100000608516
-prs-paul-reed-smith-prs-s2-custom-24-08-dcs-dark-cherry-sunburst-1100000611318
 prs-paul-reed-smith-prs-s2-custom-24-10th-anniversary-ltd-lb-lake-blue-825362134817
 prs-paul-reed-smith-prs-s2-special-semi-hollow-ba-black-amber-825362237389
 prs-paul-reed-smith-prs-s2-special-semi-hollow-dcs-dark-cherry-sunburst-825362237341
@@ -11280,7 +11280,9 @@ spira-s420-chm-chameleon-3831120936019
 spira-s420awh-blanco-antiguo-iguo411967
 spira-s420bk-negro-metalizado-zado411968
 spira-s450-tgr-transparent-green-3831120929011
+spira-s450-tgr-transparent-green-a29941html
 spira-s450-tpp-transparent-purple-3831120929028
+spira-s450-tpp-transparent-purple-a29901html
 spira-s450-trd-iras450trd
 spira-s450-trd-transparent-red-3831120929004
 spira-s450tgr-verde-transparente-ente410003

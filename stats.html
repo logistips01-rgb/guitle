@@ -112,6 +112,10 @@
       <div style="overflow-x:auto"><table class="ctable" style="min-width:560px"><thead><tr><th>País</th><th class="n">Guitarras</th><th class="n">Equipo</th><th class="n">Total</th><th class="n">Tiendas</th><th class="n">Últimas 24 h</th><th class="n">Desde el inicio</th></tr></thead><tbody id="grows"></tbody></table></div>
     </div>
     <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
+    <div class="card" id="afil"><h2>Afiliados: comisiones (guitle y mootle)</h2>
+      <p class="muted" style="margin:0 0 8px">Awin y eBay Partner Network, cada mañana (pendientes y aprobadas). Amazon no da sus ganancias por API: se suman a mano.</p>
+      <div style="overflow-x:auto;max-height:360px;overflow-y:auto"><table class="ctable" style="min-width:520px"><thead><tr><th>Día</th><th class="n">Amazon</th><th class="n">Awin</th><th class="n">eBay</th><th class="n">Total</th><th>Detalle</th></tr></thead><tbody id="afilrows"><tr><td colspan="6" class="empty">Cargando…</td></tr></tbody><tfoot id="afilfoot"></tfoot></table></div>
+    </div>
     <div class="card" id="hist"><h2 style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">Histórico diario (todas las webs)
       <span><button class="btn" id="histcsv" type="button">Descargar CSV</button></span></h2>
       <p class="empty" style="margin:0 0 10px">Un registro por día desde el primer día con visitas (hora de Madrid), guardado cada madrugada. Visitas = páginas vistas por personas (sin robots ni el equipo); clics = clics hacia las tiendas.</p>
@@ -226,6 +230,27 @@ async function load() {
   if (!world) await loadWorld();
   render();
   loadHistory();
+  loadAfil();
+}
+
+// Afiliados (scraper/afiliados.py): un documento "afil_AAAA-MM-DD" por día en la colección "c".
+async function loadAfil() {
+  let rs = [];
+  try {
+    const snap = await getDocs(query(collection(db, "c"), where(documentId(), ">=", "afil_"), where(documentId(), "<", "afil_~")));
+    rs = snap.docs.map(d => d.data()).sort((a, b) => b.fecha.localeCompare(a.fecha));
+  } catch (e) { rs = []; }
+  const eur = v => (v || 0).toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  if (!rs.length) {
+    $("afilrows").innerHTML = `<tr><td colspan="6" class="empty">Aún no hay comisiones (o faltan las claves de Awin y eBay).</td></tr>`;
+    return;
+  }
+  const det = r => { try { const d = JSON.parse(r.detalle || "{}"); return Object.entries(d).map(([p, v]) => Object.entries(v.por || {}).map(([k, n]) => `${p} ${k}: ${eur(n)}`).join(", ")).filter(Boolean).join(" · "); } catch (e) { return ""; } };
+  $("afilrows").innerHTML = rs.map(r => { const t = (r.amazon_eur || 0) + (r.awin_eur || 0) + (r.ebay_eur || 0);
+    return `<tr><td>${esc(r.fecha)}</td><td class="n">${eur(r.amazon_eur)}</td><td class="n">${eur(r.awin_eur)}</td><td class="n">${eur(r.ebay_eur)}</td><td class="n"><b>${eur(t)}</b></td><td class="muted">${esc(det(r))}</td></tr>`; }).join("");
+  const month = new Date().toISOString().slice(0, 7), mo = rs.filter(r => r.fecha.startsWith(month));
+  const sum = k => mo.reduce((a, r) => a + (r[k] || 0), 0);
+  $("afilfoot").innerHTML = `<tr><th>Este mes</th><th class="n">${eur(sum("amazon_eur"))}</th><th class="n">${eur(sum("awin_eur"))}</th><th class="n">${eur(sum("ebay_eur"))}</th><th class="n">${eur(sum("amazon_eur") + sum("awin_eur") + sum("ebay_eur"))}</th><th></th></tr>`;
 }
 
 // Histórico diario (scraper/resumen_visitas.py): un documento "resumen_AAAA-MM-DD" por día en la colección "c".
@@ -235,13 +260,30 @@ async function loadHistory() {
     const snap = await getDocs(query(collection(db, "c"), where(documentId(), ">=", "resumen_"), where(documentId(), "<", "resumen_~")));
     hist = snap.docs.map(d => d.data()).sort((a, b) => b.fecha.localeCompare(a.fecha));
   } catch (e) { hist = []; }
+  // Los días que aún no tienen resumen (hoy y, hasta que pasa la tarea de la madrugada, ayer): al momento, con los
+  // contadores ya cargados, igual que los calcula scraper/resumen_visitas.py.
+  const have = new Set(hist.map(r => r.fecha));
+  const live = {};
+  for (const r of rows || []) {
+    if (have.has(r.day) || r.day < dayStr(new Date(Date.now() - 7 * 864e5))) continue;
+    const o = live[r.day] ||= { fecha: r.day, visitas: 0, clics: 0, google: 0, instagram: 0, directo: 0, otros_origenes: 0, provisional: true };
+    if (r.kind === "v") o.visitas += r.n;
+    else if (r.kind === "t") o.clics += r.n;
+    else if (r.kind === "r") {
+      if (r.key === "directo") o.directo += r.n;
+      else if (r.key.includes("google")) o.google += r.n;
+      else if (r.key.includes("instagram")) o.instagram += r.n;
+      else o.otros_origenes += r.n;
+    }
+  }
+  hist = [...Object.values(live), ...hist].sort((a, b) => b.fecha.localeCompare(a.fecha));
   const cols = ["visitas", "clics", "google", "instagram", "directo", "otros_origenes"];
   if (!hist.length) {
     $("histrows").innerHTML = `<tr><td colspan="7" class="empty">El primer resumen se guarda esta madrugada.</td></tr>`;
     $("histfoot").innerHTML = "";
     return;
   }
-  $("histrows").innerHTML = hist.map(r => `<tr><td>${esc(r.fecha)}</td>${cols.map(c => `<td class="n">${fmt(r[c] || 0)}</td>`).join("")}</tr>`).join("");
+  $("histrows").innerHTML = hist.map(r => `<tr><td>${esc(r.fecha)}${r.provisional ? ' <span class="muted" title="Calculado ahora; el resumen definitivo se guarda de madrugada">·</span>' : ""}</td>${cols.map(c => `<td class="n">${fmt(r[c] || 0)}</td>`).join("")}</tr>`).join("");
   const tot = c => hist.reduce((a, r) => a + (r[c] || 0), 0);
   $("histfoot").innerHTML = `<tr><th>Total (${hist.length} días)</th>${cols.map(c => `<th class="n">${fmt(tot(c))}</th>`).join("")}</tr>`;
 }
