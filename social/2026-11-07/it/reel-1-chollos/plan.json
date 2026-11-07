@@ -1,0 +1,141 @@
+{
+ "fecha": "7 novembre",
+ "post": {
+  "type": "top",
+  "title": "offerte di oggi",
+  "hook": "Offerte di oggi",
+  "picks": [
+   {
+    "slug": "squier-telecaster-affinity-mn-biondo-butterscotch-885978722822",
+    "name": "Squier Telecaster Affinity Mn Biondo Butterscotch",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.it/cdn/shop/files/33d7bd24edcc08c7b6b8c35807fbc1b34d96ccc7_FMIC_0378203550.jpg?height=1200&pad_color=ffffff&v=1793727328&width=1200",
+    "price": 246.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 269.0,
+    "max": 275.0,
+    "next": 260.99,
+    "rows": [
+     [
+      "Woodbrass",
+      246.0
+     ],
+     [
+      "Di Santo Musica",
+      260.99
+     ],
+     [
+      "Global Net Shop",
+      269.0
+     ],
+     [
+      "Stralù",
+      275.0
+     ]
+    ],
+    "pvp": null,
+    "why": "14,99 € in meno che negli altri negozi",
+    "photo": "g0-1.webp",
+    "label": "Elettrica"
+   },
+   {
+    "slug": "ibanez-grgm21m-mpl-m21mmplhtm",
+    "name": "Ibanez GRGM21M-MPL",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/569419.jpg",
+    "price": 222.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 233.5,
+    "max": 239.0,
+    "next": 228.0,
+    "rows": [
+     [
+      "Thomann",
+      222.0
+     ],
+     [
+      "Woodbrass",
+      228.0
+     ],
+     [
+      "Di Santo Musica",
+      239.0
+     ]
+    ],
+    "pvp": null,
+    "why": "6 € in meno che negli altri negozi",
+    "photo": "g1-1.webp",
+    "label": "Elettrica"
+   },
+   {
+    "slug": "fender-cd-60sce-dreadnought-natural-chitarra-elettrificata-20t-modello-classic-885978875719",
+    "name": "Fender CD-60SCE Dreadnought Natural Chitarra elettrificata 20T modello Classic",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://www.globalnetshop.it/cdn/shop/files/01-0970113021_d789708a-000a-4019-99ee-f44672af595c_1024x.jpg?v=1755537442",
+    "price": 275.0,
+    "store": "Stralù",
+    "stores": 4,
+    "median": 299.0,
+    "max": 313.0,
+    "next": 285.0,
+    "rows": [
+     [
+      "Stralù",
+      275.0
+     ],
+     [
+      "Di Santo Musica",
+      285.0
+     ],
+     [
+      "Centro della Musica",
+      299.0
+     ],
+     [
+      "Woodbrass",
+      313.0
+     ]
+    ],
+    "pvp": null,
+    "why": "10 € in meno che negli altri negozi",
+    "photo": "g2-1.webp",
+    "label": "Acustica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}
