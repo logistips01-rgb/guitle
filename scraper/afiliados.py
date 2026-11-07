@@ -83,7 +83,9 @@ def ebay(start, end):
         print("[ebay] sin EPN_ACCOUNT_SID / EPN_AUTH_TOKEN: se salta", flush=True)
         return {}
     r = requests.get(f"https://api.partner.ebay.com/Mediapartners/{sid.strip()}/Reports/ebay_partner_transaction_detail.json",
-                     auth=(sid.strip(), tok.strip()), timeout=120, headers={"Accept": "application/json"},
+                     # Tokens de acceso nuevos: usuario = su propio SID (EPN_TOKEN_SID); los antiguos: el Account SID
+                     auth=((os.environ.get("EPN_TOKEN_SID") or sid).strip(), tok.strip()), timeout=120,
+                     headers={"Accept": "application/json"},
                      params={"STATUS": "ALL", "START_DATE": str(start), "END_DATE": str(end)})
     if not r.ok:
         print(f"[ebay] HTTP {r.status_code}: {r.text[:200]}", flush=True)
