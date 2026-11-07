@@ -769,6 +769,7 @@ marca/pickbandz.html
 marca/pigtronix.html
 marca/pirastro.html
 marca/pirate-midi.html
+marca/pirate-midi.html
 marca/planet-waves.html
 marca/plaschke.html
 marca/pleyel.html

@@ -56,6 +56,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "thomann",
+  "name": "PRS SE Silver Sky Maple LH Stone Blue",
+  "slug": "prs-se-silver-sky-maple-lh-stone-blue-825362248446",
+  "price": 715.0,
+  "median": 979.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "woodbrass",
   "name": "Sire X5 Trans Blue",
   "slug": "sire-x5-trans-blue-810046138984",
@@ -474,7 +483,7 @@
   "name": "Fender LTD American Vintage II 51 Telecaster Negra",
   "slug": "fender-ltd-american-vintage-ii-51-telecaster-negra-885978795239",
   "price": 2038.4,
-  "median": 2983.0
+  "median": 2805.0
  },
  {
   "kind": "electrica",
@@ -972,6 +981,24 @@
   "median": 482.0
  },
  {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Yamaha TAG1ENT TransAcoustic Segunda Generación Dreadnought con Funda",
+  "slug": "yamaha-tag1ent-transacoustic-segunda-generacion-dreadnought-con-funda-4957812722261",
+  "price": 588.0,
+  "median": 882.895
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Yamaha TAS1E Ultra Marine",
+  "slug": "yamaha-tas1e-ultra-marine-4957812722322",
+  "price": 643.0,
+  "median": 877.895
+ },
+ {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1104,7 +1131,7 @@
   "name": "Alesis Prestige",
   "slug": "alesis-prestige-694318025482",
   "price": 499.0,
-  "median": 1404.5
+  "median": 1609.0
  },
  {
   "kind": "teclado",
@@ -1113,7 +1140,7 @@
   "name": "Alesis Prestige",
   "slug": "alesis-prestige-694318025482",
   "price": 619.0,
-  "median": 1344.5
+  "median": 1549.0
  },
  {
   "kind": "pedal",

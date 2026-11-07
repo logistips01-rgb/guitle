@@ -700,6 +700,10 @@ oqan-qp100-wb-spk100-qhp10-bundle-hp10bundle
 oqan-qp88s-8435017328748
 oqan-qp88sw-8435017328892
 oqan-qp88sw-piano-digital-italp39155
+pirate-midi-polar-max-v2-controlador-midi-con-pantalla-tactil-para-tonex-one-gp5-egp5p45956
+pirate-midi-polar-plus-v2-controlador-midi-con-pantalla-para-tonex-one-gp5-egp5p45955
+pirate-midi-scribble-black-pantalla-compacta-y-controlador-midi-color-negro-egrop45962
+pirate-midi-scribble-white-pantalla-y-controlador-midi-compacto-de-color-blanco-ancop45961
 proel-volumen-stereo-2-in-2-out-gf14-8032496417675
 prokeys-k-125-rd-piano-digital-rojo-8434418050340
 prokeys-kd105-teclado-digital-6971406200131
