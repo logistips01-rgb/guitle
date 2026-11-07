@@ -4,48 +4,50 @@
   "desde": "2026-10-26",
   "publica": true,
   "token_env": "INSTAGRAM_TOKEN_ES",
-  "token_desde": "2026-11-01"
+  "token_desde": "2026-11-07"
  },
  "br": {
   "handle": "@guitle.br",
   "token_env": "INSTAGRAM_TOKEN_BR",
   "desde": "2026-11-01",
-  "token_desde": "2026-11-01",
+  "token_desde": "2026-11-07",
   "publica": true
  },
  "uk": {
   "handle": "@guitle.uk",
   "token_env": "INSTAGRAM_TOKEN_UK",
   "desde": "2026-11-01",
-  "token_desde": "2026-11-01",
+  "token_desde": "2026-11-07",
   "publica": true
  },
  "fr": {
   "handle": "@guitle.fr",
   "token_env": "INSTAGRAM_TOKEN_FR",
   "desde": "2026-11-01",
-  "token_desde": "2026-11-01",
+  "token_desde": "2026-11-07",
   "publica": true
  },
  "it": {
   "handle": "@guitle.it",
   "token_env": "INSTAGRAM_TOKEN_IT",
   "desde": "2026-11-01",
-  "token_desde": "2026-11-01",
+  "token_desde": "2026-11-07",
   "publica": true
  },
  "de": {
   "handle": "@guitle.de",
   "token_env": "INSTAGRAM_TOKEN_DE",
   "desde": "2026-11-01",
-  "token_desde": "2026-11-01",
+  "token_desde": "2026-11-07",
   "publica": true
  },
  "pt": {
   "handle": "@guitle.pt",
   "token_env": "INSTAGRAM_TOKEN_PT",
   "desde": "2026-11-04",
-  "creada": false
+  "token_desde": "2026-11-07",
+  "publica": false,
+  "nota": "Cuenta creada el 7-11; empieza con su Reel de presentación y ritmo suave la primera semana"
  },
  "nl": {
   "handle": "@guitle.nl",
@@ -71,6 +73,8 @@
   "handle": "@guitle.ar",
   "token_env": "INSTAGRAM_TOKEN_AR",
   "desde": "2026-11-07",
-  "creada": false
+  "token_desde": "2026-11-07",
+  "publica": false,
+  "nota": "Cuenta creada el 7-11; sin catálogo de Argentina todavía"
  }
 }
