@@ -1,1 +1,14 @@
-[]
+[
+ {
+  "id": "@guitle.pt-0",
+  "cuenta": "@guitle.pt",
+  "nivel": "Baja",
+  "aviso": "Publicación diaria aún sin programar."
+ },
+ {
+  "id": "@guitle.ar-1",
+  "cuenta": "@guitle.ar",
+  "nivel": "Baja",
+  "aviso": "Publicación diaria aún sin programar."
+ }
+]
