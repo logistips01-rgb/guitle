@@ -1,0 +1,348 @@
+{
+ "date": "2026-11-07",
+ "fecha": "7 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 clásicas de 300 € a 750 €",
+  "kind": "clasica",
+  "picks": [
+   {
+    "slug": "alhambra-1c-ht-4424079989039",
+    "name": "Alhambra 1C HT",
+    "brand": "Alhambra",
+    "kind": "clasica",
+    "img": "https://neomusica.es/cdn/shop/files/1cht.png?v=1781026149&width=1920",
+    "price": 324.0,
+    "store": "Neomúsica",
+    "stores": 5,
+    "median": 364.0,
+    "max": 548.0,
+    "next": 349.0,
+    "rows": [
+     [
+      "Neomúsica",
+      324.0
+     ],
+     [
+      "Partitura",
+      349.0
+     ],
+     [
+      "Musical Fusté",
+      364.0
+     ],
+     [
+      "Abrines Música",
+      364.0
+     ],
+     [
+      "Egitana",
+      548.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "admira-virtuoso-electrificada-fishman-cutaway-8436032350264",
+    "name": "Admira Virtuoso Electrificada Fishman Cutaway",
+    "brand": "Admira",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/4/049626_1_2ba4.jpg?store=nume_es&image-type=image",
+    "price": 341.0,
+    "store": "Drunkat",
+    "stores": 12,
+    "median": 387.0,
+    "max": 430.0,
+    "next": 350.0,
+    "rows": [
+     [
+      "Drunkat",
+      341.0
+     ],
+     [
+      "Musicopolix",
+      350.0
+     ],
+     [
+      "Auvisa",
+      385.0
+     ],
+     [
+      "Alfasoni",
+      387.0
+     ],
+     [
+      "MAT Guitars",
+      387.0
+     ],
+     [
+      "Musicsales",
+      387.0
+     ],
+     [
+      "Microfusa",
+      387.0
+     ],
+     [
+      "Neomúsica",
+      387.0
+     ],
+     [
+      "Musical San Francisco",
+      387.0
+     ],
+     [
+      "Alteisa",
+      387.0
+     ],
+     [
+      "Nume Music",
+      387.01
+     ],
+     [
+      "Pronorte",
+      430.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "ibanez-aeg74n-mhs-guitarra-espanola-electrificada-mahogany-sunburst-4549763349873",
+    "name": "Ibanez AEG74N Mhs Guitarra Española Electrificada Mahogany Sunburst",
+    "brand": "Ibanez",
+    "kind": "clasica",
+    "img": "https://auvisa.com/cdn/shop/files/89620.jpg?v=1719591638&width=2000",
+    "price": 365.0,
+    "store": "Auvisa",
+    "stores": 6,
+    "median": 427.0,
+    "max": 429.0,
+    "next": 365.0,
+    "rows": [
+     [
+      "Auvisa",
+      365.0
+     ],
+     [
+      "Musicsales",
+      365.0
+     ],
+     [
+      "Musicopolix",
+      427.0
+     ],
+     [
+      "Pronorte",
+      427.0
+     ],
+     [
+      "Woodbrass",
+      427.0
+     ],
+     [
+      "Session",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "jose-torres-jtc-30-8435017324979",
+    "name": "Jose Torres JTC-30",
+    "brand": "Jose Torres",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/3/031842_1c00.jpg?store=nume_es&image-type=image",
+    "price": 384.0,
+    "store": "Musicsales",
+    "stores": 6,
+    "median": 432.0,
+    "max": 459.0,
+    "next": 397.0,
+    "rows": [
+     [
+      "Musicsales",
+      384.0
+     ],
+     [
+      "Alfasoni",
+      397.0
+     ],
+     [
+      "Musicopolix",
+      415.0
+     ],
+     [
+      "MAT Guitars",
+      432.0
+     ],
+     [
+      "Musical San Francisco",
+      453.71
+     ],
+     [
+      "Nume Music",
+      459.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "lag-occitania-118-oc118ce-3700166363335",
+    "name": "LAG Occitania 118 OC118CE",
+    "brand": "LAG",
+    "kind": "clasica",
+    "img": "https://alfasoni.com/455357-home_default/lag-occitania-118-oc118ce.jpg",
+    "price": 403.0,
+    "store": "Alfasoni",
+    "stores": 6,
+    "median": 469.0,
+    "max": 549.0,
+    "next": 403.0,
+    "rows": [
+     [
+      "Alfasoni",
+      403.0
+     ],
+     [
+      "Pronorte",
+      403.0
+     ],
+     [
+      "MAT Guitars",
+      423.0
+     ],
+     [
+      "Musicopolix",
+      469.0
+     ],
+     [
+      "Musical San Francisco",
+      497.94
+     ],
+     [
+      "Woodbrass",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   }
+  ],
+  "caption": "🎸 5 clásicas de 300 € a 750 €: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n1️⃣ Alhambra 1C HT: 324 € en Neomúsica\n2️⃣ Admira Virtuoso Electrificada Fishman Cutaway: 341 € en Drunkat\n3️⃣ Ibanez AEG74N Mhs Guitarra Española Electrificada Mahogany Sunburst: 365 € en Auvisa\n4️⃣ Jose Torres JTC-30: 384 € en Musicsales\n5️⃣ LAG Occitania 118 OC118CE: 403 € en Alfasoni\n\n¿Con cuál te quedas? Te leemos en comentarios 💬\n👉 Todos los chollos de hoy, a un toque: enlace en la bio. Precios del 7 de noviembre.\n\n#guitarra #guitarraclasica #guitarristas #comprarguitarra #alhambra #admira #ibanez #josetorres #lag"
+ },
+ "stories": [
+  {
+   "slug": "mooer-gtrs-p800-white-6971889220442",
+   "name": "Mooer Gtrs P800 White",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/7/677788_8371.jpg?store=nume_es&image-type=image",
+   "price": 399.0,
+   "store": "Nume Music",
+   "stores": 3,
+   "median": 549.995,
+   "max": 577.0,
+   "next": 522.99,
+   "rows": [
+    [
+     "Nume Music",
+     399.0
+    ],
+    [
+     "Alteisa",
+     522.99
+    ],
+    [
+     "Pronorte",
+     577.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 28 % por debajo de su media",
+   "pct": 28,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "tanglewood-trx2e-rx2ep40582",
+   "name": "Tanglewood TRX2E",
+   "brand": "Tanglewood",
+   "kind": "acustica",
+   "img": "https://detalhes.egitana.es/tanglewood-trx2e_686682232ab13.jpg",
+   "price": 202.0,
+   "store": "Egitana",
+   "stores": 3,
+   "median": 298.365,
+   "max": 317.73,
+   "next": 279.0,
+   "rows": [
+    [
+     "Egitana",
+     202.0
+    ],
+    [
+     "Musical San Francisco",
+     279.0
+    ],
+    [
+     "Partitura",
+     317.73
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 25 % por debajo de su media",
+   "pct": 25,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "squier-affinity-telecaster-lrl-lake-placid-blue-885978722792",
+   "name": "Squier Affinity Telecaster LRL Lake Placid Blue",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/5/651211_1_cfa5.jpg?store=nume_es&image-type=image",
+   "price": 199.0,
+   "store": "Musicopolix",
+   "stores": 7,
+   "median": 249.0,
+   "max": 265.0,
+   "next": 243.0,
+   "rows": [
+    [
+     "Musicopolix",
+     199.0
+    ],
+    [
+     "Woodbrass",
+     243.0
+    ],
+    [
+     "Nume Music",
+     248.33
+    ],
+    [
+     "Session",
+     249.0
+    ],
+    [
+     "MAT Guitars",
+     249.0
+    ],
+    [
+     "Auvisa",
+     249.0
+    ],
+    [
+     "Alfasoni",
+     265.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 19 % por debajo de su media",
+   "pct": 19,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}
