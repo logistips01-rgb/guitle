@@ -1,0 +1,165 @@
+{
+ "fecha": "7 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "prs-se-silver-sky-derby-red-lh-byredlhhtm",
+    "name": "PRS SE Silver Sky Derby Red LH",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/651083.jpg",
+    "price": 699.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 877.435,
+    "max": 949.0,
+    "next": 805.87,
+    "rows": [
+     [
+      "Thomann",
+      699.0
+     ],
+     [
+      "Guitar Custom",
+      805.87
+     ],
+     [
+      "Egitana",
+      949.0
+     ]
+    ],
+    "pvp": null,
+    "why": "106,87 € a menos do que em qualquer outra loja",
+    "pct": 13,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "schecter-pt-standard-purple-burst-burl-pbb-rlpbb12140",
+    "name": "Schecter PT Standard Purple Burst Burl (PBB)",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://musifex.pt/web/image/245250-f1764dce/Schecter%20PT%20Standard%20BFBB.jpg",
+    "price": 379.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 476.5,
+    "max": 535.0,
+    "next": 418.0,
+    "rows": [
+     [
+      "Musifex",
+      379.0
+     ],
+     [
+      "Adagio",
+      418.0
+     ],
+     [
+      "Egitana",
+      535.0
+     ]
+    ],
+    "pvp": null,
+    "why": "39 € a menos do que em qualquer outra loja",
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "guild-m-240e-troubadour-westerly-sterly7300",
+    "name": "Guild M-240E Troubadour Westerly",
+    "brand": "Guild",
+    "kind": "acustica",
+    "img": "https://musifex.pt/web/image/product.template/7300/image_1024?unique=4482c09",
+    "price": 455.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 458.5,
+    "max": 459.0,
+    "next": 458.0,
+    "rows": [
+     [
+      "Musifex",
+      455.0
+     ],
+     [
+      "Egitana",
+      458.0
+     ],
+     [
+      "Thomann",
+      459.0
+     ]
+    ],
+    "pvp": null,
+    "why": "3 € a menos do que em qualquer outra loja",
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "ibanez-aeg50n-bkh-nylon-hnylon5527",
+    "name": "Ibanez AEG50N-BKH Nylon",
+    "brand": "Ibanez",
+    "kind": "clasica",
+    "img": "https://musifex.pt/web/image/product.template/5527/image_1024?unique=f9f6d03",
+    "price": 245.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 257.0,
+    "max": 258.0,
+    "next": 256.0,
+    "rows": [
+     [
+      "Musifex",
+      245.0
+     ],
+     [
+      "Egitana",
+      256.0
+     ],
+     [
+      "Thomann",
+      258.0
+     ]
+    ],
+    "pvp": null,
+    "why": "11 € a menos do que em qualquer outra loja",
+    "photo": "g3-1.webp",
+    "label": "Clássica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}
