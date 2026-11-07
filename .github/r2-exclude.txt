@@ -4,6 +4,7 @@
 /.claude/**
 /_interno/**
 /scraper/**
+/servidor/**
 /cloudflare/**
 /README.md
 /ROADMAP.md
