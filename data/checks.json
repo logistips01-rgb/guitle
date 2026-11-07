@@ -1307,6 +1307,15 @@
  {
   "kind": "bajo",
   "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Squier Classic Vibe '60s Jazz Bass LRL Tahitian Coral",
+  "slug": "squier-classic-vibe-60s-jazz-bass-lrl-tahitian-coral-885978674985",
+  "price": 311.2,
+  "median": 462.0
+ },
+ {
+  "kind": "bajo",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Cort Bajo Elec Action Junior Opbc",
   "slug": "cort-bajo-elec-action-junior-opbc-8809383838093",
