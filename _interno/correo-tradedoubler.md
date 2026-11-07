@@ -16,7 +16,7 @@ Hace unas semanas me di de alta como editor con el usuario **hola@guitle.com** y
 - **Amazon Afiliados** en España, Francia, Italia, Reino Unido e Irlanda.
 - **eBay Partner Network**, en todos los mercados de eBay.
 - **Awin**, con **Cultura** en Francia (discos e instrumentos).
-- **Albabike**, tienda de equipamiento de moto, para mootle.
+- **Albabike**, boutique de equipamiento de moto, para mootle.
 
 **Por qué Tradedoubler**
 Muchas de las tiendas que ya comparamos, o que nos gustaría comparar, trabajan con vosotros: tiendas de música, de discos y de motor en España, Italia y el resto de Europa. Sabemos que Tradedoubler puede aportarnos justo la pieza que nos falta para empezar a crecer: anunciantes de nuestro sector con **feeds de productos**, que es lo que mejor encaja con un comparador. Nosotros les ofrecemos tráfico muy cualificado: personas que ya han decidido qué comprar y solo buscan el mejor precio.
