@@ -96,7 +96,7 @@ def products(lo=MIN_PRICE, hi=MAX_PRICE, catalogs=None):
             prices = [i["p"] for i in items]
             ref = pvp.get(p.get("sku") or "", [])
             out.append({"slug": p["slug"], "name": tidy(p["name"]), "brand": p.get("brand") or "", "kind": kind,
-                        "img": p["img"], "price": best["p"], "store": stores.get(best["s"], best["s"]),
+                        "img": p["img"], "th": p.get("th"), "price": best["p"], "store": stores.get(best["s"], best["s"]),
                         "stores": len({i["s"] for i in items}), "median": median(prices[1:]), "max": prices[-1],
                         "next": min(i["p"] for i in items if i["s"] != best["s"]),
                         "rows": [[stores.get(i["s"], i["s"]), i["p"]] for i in {i["s"]: i for i in reversed(items)}.values()][::-1],
@@ -296,10 +296,29 @@ def photo(p, fetcher, dest):
     return data is not None
 
 
+_REVISADAS = None
+
+
+def foto_revisada(p):
+    """La foto de la tienda solo vale si es la misma que la web eligió y revisó como miniatura (campo th, que es el
+    sha1 de la dirección de esa foto): así nunca sale una guitarra cortada o de espaldas (data/fotos-revisadas.json:
+    1 = de espaldas, 2 = cortada). Sin th, o con una foto distinta de la revisada, la guitarra no se usa."""
+    global _REVISADAS
+    from .thumbs import name_for
+    th = p.get("th")
+    if not th or not p.get("img") or name_for(p["img"]) != th:
+        return False
+    if _REVISADAS is None:
+        _REVISADAS = load(ROOT / "data" / "fotos-revisadas.json", {})
+    return _REVISADAS.get(th) not in (1, 2)
+
+
 def with_photos(cands, n, fetcher, folder, prefix):
     from PIL import Image
     out = []
     for p in cands:
+        if not foto_revisada(p):
+            continue
         if any(o["brand"] == p["brand"] for o in out[-2:]):  # sin la misma marca seguida
             continue
         f = folder / f"{prefix}{len(out) + 1}.webp"
