@@ -430,6 +430,8 @@ def publicar(cc, day, folder, data, token):
                 user, handles, tries=100, media_type="REELS", caption=ig.menciones(caption, handles),
                 video_url=base + "reel-1-chollos/reel.mp4", share_to_feed="true"))
         for i, s in enumerate(sorted(folder.glob("story-*.jpg"))):
+            if cc in SUAVE:  # primera semana de una cuenta nueva: sin stories, para no parecer automática
+                break
             if i >= len(stories_activas):
                 done["stories"].append(ig.publish(user, ig.container_etiq(user, ig.cuentas(data["stories"][i:i + 1]),
                                                                           media_type="STORIES", image_url=base + s.name)))
@@ -796,6 +798,9 @@ def publicar_tarde(cc, day, names, token):
         ig.TOKEN = None
 
 
+SUAVE = set()  # cuentas en su primera semana (--suave)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("paises", nargs="+", choices=sorted(PAISES))
@@ -803,8 +808,10 @@ def main(argv=None):
     ap.add_argument("--date")
     ap.add_argument("--tarde", action="store_true", help="Reels de la tarde: cuenta atrás del Black Friday y Reel sobre guitle")
     ap.add_argument("--solo", choices=["reel-2", "reel-3"], help="con --tarde: publica solo ese Reel (reel-2: Black Friday o top; reel-3: guitle)")
+    ap.add_argument("--suave", default="", help="países en su primera semana (p. ej. pt): post y Reel, sin stories")
     ap.add_argument("--espera", type=int, default=0, help="minutos máximos de espera al azar entre cuentas (para no publicar en ráfaga)")
     args = ap.parse_args(argv)
+    SUAVE.update(x for x in args.suave.split(",") if x)
     day = datetime.fromisoformat(args.date).date() if args.date else datetime.now(timezone.utc).date()
     cuentas = load(ROOT / "social" / "cuentas.json", {})
     out = {}
