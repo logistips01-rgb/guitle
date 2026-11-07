@@ -1,0 +1,152 @@
+{
+ "fecha": "7 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "squier-mini-strat-laurel-black-guitar-885978884629",
+    "name": "Squier Mini Strat Laurel Black Guitar",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.bonnersmusic.co.uk/cdn/shop/products/KN8641-4449.png?v=1704199289&width=1920",
+    "price": 149.0,
+    "store": "Bonners Music",
+    "stores": 5,
+    "median": 169.0,
+    "max": 169.99,
+    "next": 169.0,
+    "rows": [
+     [
+      "Bonners Music",
+      149.0
+     ],
+     [
+      "Music Street",
+      169.0
+     ],
+     [
+      "A Strings",
+      169.0
+     ],
+     [
+      "Dawsons",
+      169.0
+     ],
+     [
+      "Guitarbitz",
+      169.99
+     ]
+    ],
+    "pvp": null,
+    "why": "£20 less than any other shop",
+    "pct": 12,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "gretsch-g2622t-streamliner-center-block-double-cut-with-bigsby-vintage-white-885978035625",
+    "name": "Gretsch G2622T Streamliner Center Block Double-Cut with Bigsby Vintage White",
+    "brand": "Gretsch",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/2807250505_gre_ins_frt_1_rr.png?v=1728724607",
+    "price": 479.0,
+    "store": "Reidys",
+    "stores": 4,
+    "median": 549.0,
+    "max": 579.0,
+    "next": 549.0,
+    "rows": [
+     [
+      "Reidys",
+      479.0
+     ],
+     [
+      "Fair Deal Music",
+      549.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      549.0
+     ],
+     [
+      "Guitarbitz",
+      579.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£70 less than any other shop",
+    "pct": 13,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "yamaha-storia-iii-acoustic-guitar-sticguitar",
+    "name": "Yamaha STORIA III | Acoustic Guitar",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/0934/6888/5372/files/STORIA-III_a_0001_tcm117-1739391.avif?v=1771160028",
+    "price": 308.0,
+    "store": "Parkland Music",
+    "stores": 4,
+    "median": 349.0,
+    "max": 359.0,
+    "next": 349.0,
+    "rows": [
+     [
+      "Parkland Music",
+      308.0
+     ],
+     [
+      "Music Street",
+      349.0
+     ],
+     [
+      "Wunjo Guitars",
+      349.0
+     ],
+     [
+      "A Strings",
+      359.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£41 less than any other shop",
+    "pct": 12,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

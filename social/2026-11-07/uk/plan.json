@@ -1,0 +1,181 @@
+{
+ "date": "2026-11-07",
+ "fecha": "7 November",
+ "post": {
+  "type": "top",
+  "title": "1 classical guitars from £250 to £650",
+  "kind": "clasica",
+  "picks": [
+   {
+    "slug": "yamaha-cg-ta-classical-guitar-4957812640831",
+    "name": "Yamaha CG-TA Classical Guitar",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://www.musicstreet.co.uk/cdn/shop/products/CGTA-06.jpg?v=1708904033&width=1920",
+    "price": 619.0,
+    "store": "Andertons",
+    "stores": 3,
+    "median": 634.0,
+    "max": 649.0,
+    "next": 619.0,
+    "rows": [
+     [
+      "Andertons",
+      619.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      619.0
+     ],
+     [
+      "guitarguitar",
+      649.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   }
+  ],
+  "caption": "🎸 1 classical guitars from £250 to £650: the best sellers in UK shops, with today’s best price 👇\n\n1️⃣ Yamaha CG-TA Classical Guitar: £619 at Andertons\n\nWhich one would you pick? Tell us in the comments 💬\n🔎 Compare prices on guitle.com/uk (all today’s deals via the link in bio 👆). Prices on 7 November.\n\n#guitar #guitarist #guitardeals #ukguitar #classicalguitar #yamaha"
+ },
+ "stories": [
+  {
+   "slug": "cort-kx307ms-multi-scale-7-string-open-pore-mahogany-remahogany",
+   "name": "Cort KX307MS Multi Scale 7-String Open Pore Mahogany",
+   "brand": "Cort",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/products/cort-kx307ms-multi-scale-7-string-open-pore-mahogany-p11907-26343_image.png?v=1714571646",
+   "price": 339.0,
+   "store": "Reidys",
+   "stores": 3,
+   "median": 399.0,
+   "max": 399.0,
+   "next": 399.0,
+   "rows": [
+    [
+     "Reidys",
+     339.0
+    ],
+    [
+     "guitarguitar",
+     399.0
+    ],
+    [
+     "The Guitar Store",
+     399.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£60 less than any other shop",
+   "pct": 15,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "squier-classic-vibe-50s-strat-2-tone-sunburst-mn-885978063895",
+   "name": "Squier Classic Vibe 50s Strat 2-Tone Sunburst MN",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/82sr7mud.png?v=1716384163",
+   "price": 339.0,
+   "store": "Reidys",
+   "stores": 7,
+   "median": 399.0,
+   "max": 419.0,
+   "next": 379.0,
+   "rows": [
+    [
+     "Reidys",
+     339.0
+    ],
+    [
+     "A Strings",
+     379.0
+    ],
+    [
+     "Dawsons",
+     379.0
+    ],
+    [
+     "guitarguitar",
+     399.0
+    ],
+    [
+     "Andertons",
+     399.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     399.0
+    ],
+    [
+     "Music Street",
+     419.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£40 less than any other shop",
+   "pct": 11,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "tr-pro-sfce-a-eb-electro-acoustic-guitar-819907023186",
+   "name": "TR Pro SFCE A EB Electro Acoustic Guitar",
+   "brand": "TR",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0570/0730/8961/files/trprosfceaeb.jpg?v=1698680994",
+   "price": 299.0,
+   "store": "Ness Music",
+   "stores": 3,
+   "median": 348.5,
+   "max": 349.0,
+   "next": 348.0,
+   "rows": [
+    [
+     "Ness Music",
+     299.0
+    ],
+    [
+     "Project Music",
+     348.0
+    ],
+    [
+     "Fair Deal Music",
+     349.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£49 less than any other shop",
+   "pct": 14,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
