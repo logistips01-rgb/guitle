@@ -2,37 +2,37 @@
  "es": {
   "country": "España",
   "path": "/",
-  "guitars": 23419,
+  "guitars": 23437,
   "stores": 25
  },
  "pt": {
   "country": "Portugal",
   "path": "/pt/",
-  "guitars": 16486,
+  "guitars": 16484,
   "stores": 9
  },
  "fr": {
   "country": "France",
   "path": "/fr/",
-  "guitars": 50289,
-  "stores": 27
+  "guitars": 50509,
+  "stores": 28
  },
  "it": {
   "country": "Italia",
   "path": "/it/",
-  "guitars": 64765,
+  "guitars": 64934,
   "stores": 26
  },
  "de": {
   "country": "Deutschland",
   "path": "/de/",
-  "guitars": 49821,
+  "guitars": 49833,
   "stores": 23
  },
  "br": {
   "country": "Brasil",
   "path": "/br/",
-  "guitars": 42625,
+  "guitars": 42633,
   "stores": 51
  },
  "ie": {
@@ -44,13 +44,13 @@
  "at": {
   "country": "Österreich",
   "path": "/at/",
-  "guitars": 15206,
+  "guitars": 15269,
   "stores": 8
  },
  "nl": {
   "country": "Nederland",
   "path": "/nl/",
-  "guitars": 31826,
+  "guitars": 31836,
   "stores": 13
  },
  "pl": {
@@ -62,37 +62,37 @@
  "cz": {
   "country": "Česko",
   "path": "/cz/",
-  "guitars": 13117,
+  "guitars": 15721,
   "stores": 2
  },
  "sk": {
   "country": "Slovensko",
   "path": "/sk/",
-  "guitars": 14305,
+  "guitars": 17224,
   "stores": 2
  },
  "hu": {
   "country": "Magyarország",
   "path": "/hu/",
-  "guitars": 13473,
+  "guitars": 16136,
   "stores": 2
  },
  "ro": {
   "country": "România",
   "path": "/ro/",
-  "guitars": 10392,
+  "guitars": 13015,
   "stores": 2
  },
  "bg": {
   "country": "България",
   "path": "/bg/",
-  "guitars": 5001,
+  "guitars": 6552,
   "stores": 1
  },
  "gr": {
   "country": "Ελλάδα",
   "path": "/gr/",
-  "guitars": 9152,
+  "guitars": 11554,
   "stores": 2
  },
  "mx": {
@@ -110,13 +110,13 @@
  "fi": {
   "country": "Suomi",
   "path": "/fi/",
-  "guitars": 4585,
+  "guitars": 5394,
   "stores": 1
  },
  "lu": {
   "country": "Luxembourg",
   "path": "/lu/",
-  "guitars": 3961,
+  "guitars": 4738,
   "stores": 1
  },
  "se": {
@@ -152,7 +152,7 @@
  "uk": {
   "country": "United Kingdom",
   "path": "/uk/",
-  "guitars": 64661,
+  "guitars": 64691,
   "stores": 34
  }
 }

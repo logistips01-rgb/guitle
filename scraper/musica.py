@@ -210,7 +210,12 @@ def read(pais, minutes):
     if pais in SRC:  # Portugal: el catálogo de la lectura de España (mismo trabajo) y las tiendas que se consultan por EAN
         src = DATA / SRC[pais]
         catalog = _load(src / "tiendas.json", {})  # todos los discos de España: se buscan en CDGO
-        codes = _load(src / "codigos.json", {})
+        if not catalog:  # lanzado solo (sin la lectura de España): los discos comparados de España, que están en git
+            ds = _load(src / "discos.json", [])
+            catalog = {"_es": {d["ean"]: {"f": d["fmt"]} for d in ds}}
+            codes = {"_es": {d["ean"]: d["ean"] for d in ds}}
+        else:
+            codes = _load(src / "codigos.json", {})
         for sid, found in _load(src / "consultas.json", {}).items():  # también los discos de Discos EGA
             if sid in SITEMAP.get(SRC[pais], {}):
                 for e, row in found.items():
@@ -696,7 +701,9 @@ def _lookup(pais, end, catalog, codes):
             if time.time() > end or done.get(e, [""])[0] == today:
                 break
             url = LOOKUP[pais][sid].format(ean=e)
-            if not f.allowed(url)[0]:
+            ok, why = f.allowed(url)
+            if not ok:
+                print(f"[{sid}] no se puede consultar ({why}): se para", flush=True)
                 return
             try:
                 r = f.get(url)
@@ -1301,6 +1308,11 @@ def main(argv=None):
     a = ap.parse_args(argv)
     if not a.build:
         read(a.pais, a.minutes)
+    if a.pais in SRC and not (DATA / SRC[a.pais] / "tiendas.json").exists():
+        # Portugal lanzado solo: sin el catálogo de España (no va a git) sus páginas saldrían a medias; se rehacen en la
+        # lectura de España de cada día, con lo consultado ahora.
+        print(f"música {a.pais}: sin el catálogo de {SRC[a.pais]}, solo se guardan las consultas", flush=True)
+        return 0
     write_pages(a.pais, build_data(a.pais))
     return 0
 

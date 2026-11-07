@@ -101,6 +101,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "PRS SE Silver Sky Maple LH Summit Purple",
+  "slug": "prs-se-silver-sky-maple-lh-summit-purple-825362248477",
+  "price": 598.0,
+  "median": 960.2
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "alteisa",
   "name": "Yamaha Pacifica Single Cut Standard Plus PACS+11S Desert Burst con Funda",
   "slug": "yamaha-pacifica-single-cut-standard-plus-pacs-11s-desert-burst-con-funda-4957812710657",
@@ -142,6 +151,15 @@
   "slug": "godin-stadium-ht-matte-black-mn-with-bag-623501049332",
   "price": 999.0,
   "median": 1333.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "thomann",
+  "name": "Mooer Gtrs SL810 Brown Burst",
+  "slug": "mooer-gtrs-sl810-brown-burst-6971889222927",
+  "price": 354.0,
+  "median": 498.0
  },
  {
   "kind": "electrica",
@@ -443,15 +461,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Charvel Pro-Mod So-Cal Style 1 HH FR E EB Satin Primer Gray",
-  "slug": "charvel-pro-mod-so-cal-style-1-hh-fr-e-eb-satin-primer-gray-717669550660",
-  "price": 729.9,
-  "median": 1145.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "ESP E-II Horizon FR BLK",
   "slug": "esp-e-ii-horizon-fr-blk-uperstrato",
@@ -556,6 +565,15 @@
   "slug": "maybach-lester-wild-cherry-59-aged-bachtipolp",
   "price": 1623.0,
   "median": 2199.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Mooer Gtrs P800 White",
+  "slug": "mooer-gtrs-p800-white-6971889220442",
+  "price": 399.0,
+  "median": 549.995
  },
  {
   "kind": "electrica",
@@ -929,20 +947,20 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
-  "store": "partitura",
-  "name": "Takamine GN75CE-TBK",
-  "slug": "takamine-gn75ce-tbk-040019html",
-  "price": 468.0,
-  "median": 625.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
   "store": "woodbrass",
   "name": "Takamine Gln12Ens 12 Nex Spruce-Mahogany",
   "slug": "takamine-gln12ens-12-nex-spruce-mahogany-190262060024",
   "price": 233.0,
   "median": 314.94
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "Tanglewood TRX2E",
+  "slug": "tanglewood-trx2e-rx2ep40582",
+  "price": 202.0,
+  "median": 298.365
  },
  {
   "kind": "acustica",
@@ -1220,7 +1238,7 @@
   "store": "pronorte",
   "name": "Joyo R-14 Atmosphere Reverb",
   "slug": "joyo-r-14-atmosphere-reverb-6972716320946",
-  "price": 72.0,
+  "price": 64.0,
   "median": 104.45
  },
  {
@@ -1285,15 +1303,6 @@
   "slug": "markbass-mb58r-cmd-151-p-combo-ombop34035",
   "price": 791.0,
   "median": 1089.0
- },
- {
-  "kind": "ampli",
-  "type": "fuera_de_lugar",
-  "store": "numemusic",
-  "name": "Mooer F15i Li Imperial Gold",
-  "slug": "mooer-f15i-li-imperial-gold-6971889223184",
-  "price": 119.0,
-  "median": 159.0
  },
  {
   "kind": "ampli",
@@ -1463,7 +1472,7 @@
   "store": "drunkat",
   "name": "Dunlop Cejilla Advanced Curved 11CD",
   "slug": "dunlop-cejilla-advanced-curved-11cd-710137000063",
-  "price": 6.07,
+  "price": 4.85,
   "median": 8.3
  },
  {
@@ -1559,6 +1568,15 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Elixir strings Nanoweb 80-20 M 13-56",
+  "slug": "elixir-strings-nanoweb-80-20-m-13-56-733132111022",
+  "price": 11.4,
+  "median": 18.5
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "mat",
   "name": "Ernie Ball EB2003 Earthwood 80/20 Bronze Medium-Light (12-54)",
   "slug": "ernie-ball-eb2003-earthwood-80-20-bronze-medium-light-12-54-749699120032",
@@ -1582,6 +1600,15 @@
   "slug": "ernie-ball-eb2844-slinky-stainless-steel-super-45-100-749699128441",
   "price": 22.3,
   "median": 31.795
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "Fender 2\" Pasadena Woven Strap Red Snowflake",
+  "slug": "fender-2-pasadena-woven-strap-red-snowflake-717669781460",
+  "price": 14.85,
+  "median": 21.145
  },
  {
   "kind": "varios",
