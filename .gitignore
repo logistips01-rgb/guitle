@@ -40,3 +40,6 @@ brand/__pycache__/
 /discos/
 /navidad/
 /_r/
+
+# Música libre de derechos de los Reels (scraper/musica_libre.py, rama de redes): se descarga, no va a git
+social/musica/
