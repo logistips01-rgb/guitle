@@ -32,7 +32,7 @@ jobs:
       fail-fast: false
       matrix:
         # A mano: un país (input) o, al tocar .github/musica.txt, "[solo es]" o "[solo fr]" en el mensaje del commit
-        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || contains(github.event.head_commit.message, '[solo es]') && '["es"]' || contains(github.event.head_commit.message, '[solo fr]') && '["fr"]' || '["uk","fr","it","es"]') }}
+        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || contains(github.event.head_commit.message, '[solo es]') && '["es"]' || contains(github.event.head_commit.message, '[solo fr]') && '["fr"]' || contains(github.event.head_commit.message, '[solo pt]') && '["pt"]' || '["uk","fr","it","es"]') }}
     env:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
