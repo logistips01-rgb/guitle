@@ -11,6 +11,11 @@ service cloud.firestore {
       allow read: if request.auth != null && request.auth.token.email == 'logisticaaldelis@gmail.com'
                   && request.auth.token.email_verified;
     }
+    // Afiliados subidos a mano en stats.html (informes de Amazon y eBay, que no tienen API): solo el titular.
+    match /afilm/{id} {
+      allow read, write: if request.auth != null && request.auth.token.email == 'logisticaaldelis@gmail.com'
+                         && request.auth.token.email_verified;
+    }
     // Avisos de precio (producto.js, alerta.html, scraper/alerts.py). Nadie puede leerlos desde la web: el id es un
     // código aleatorio que solo conoce quien se apunta y sirve para confirmar (ok = true) o borrar el aviso.
     match /alertas/{id} {

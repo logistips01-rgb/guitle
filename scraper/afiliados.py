@@ -140,14 +140,35 @@ def _load(start, end):
     return out
 
 
+def _manual():
+    """Informes de Amazon y eBay subidos a mano en stats.html (colección "afilm": {fecha, prog, eur, por})."""
+    from .alerts import DOCS, session
+    s, out, tok = session(), [], ""
+    while True:
+        r = s.get(f"{DOCS}/afilm", params={"pageSize": 300, **({"pageToken": tok} if tok else {})}, timeout=60)
+        if not r.ok:
+            return out
+        j = r.json()
+        for d in j.get("documents", []):
+            f = d.get("fields", {})
+            out.append({"fecha": f.get("fecha", {}).get("stringValue", ""), "prog": f.get("prog", {}).get("stringValue", ""),
+                        "eur": _num(f.get("eur", {}).get("doubleValue", f.get("eur", {}).get("integerValue")))})
+        tok = j.get("nextPageToken")
+        if not tok:
+            return out
+
+
 def email(today):
     """Resumen de la semana pasada y del mes, con el gasto de Cloudflare."""
     week0, month0 = today - timedelta(days=7), today.replace(day=1)
     rows = _load(min(week0, month0), today)
+    for m in _manual():  # Amazon y eBay subidos a mano
+        if m["fecha"] >= str(min(week0, month0)) and m["prog"] in ("amazon", "ebay"):
+            rows.append({"fecha": m["fecha"], f"{m['prog']}_eur": m["eur"]})
     tot = lambda rs, k: sum(r.get(k) or 0 for r in rs)
     wk = [r for r in rows if r["fecha"] >= str(week0)]
     mo = [r for r in rows if r["fecha"] >= str(month0)]
-    progs = [("Amazon (a mano)", "amazon_eur"), ("Awin", "awin_eur"), ("eBay", "ebay_eur")]
+    progs = [("Amazon", "amazon_eur"), ("Awin", "awin_eur"), ("eBay", "ebay_eur")]
     cf = ""
     try:
         from . import gasto
@@ -164,7 +185,7 @@ def email(today):
             f"<tr><th></th><th>Últimos 7 días</th><th>Este mes</th></tr>{tr}"
             f"<tr><th>Total</th><th style='text-align:right'>{week_eur:.2f} €</th><th style='text-align:right'>{month_eur:.2f} €</th></tr></table>"
             f"<p>Gasto de Cloudflare en el ciclo: {cf}. Detalle por día en guitle.com/stats.html.</p>"
-            "<p>Amazon no da sus ganancias por API: pásale a la sesión de guitle el informe del mes para sumarlo.</p>")
+            "<p>Amazon y eBay no dan sus ganancias por API: sube su informe (CSV) en stats.html, en el panel de afiliados.</p>")
     from .alerts import Mailer
     m = Mailer(dry_run=not os.environ.get("SMTP_PASS"))
     m.send(TO, subject, html, subject)

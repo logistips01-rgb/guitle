@@ -113,7 +113,8 @@
     </div>
     <div class="card"><h2>Páginas vistas por día</h2><div class="chart-wrap"><canvas id="chart" aria-label="Páginas vistas por día"></canvas></div></div>
     <div class="card" id="afil"><h2>Afiliados: comisiones (guitle y mootle)</h2>
-      <p class="muted" style="margin:0 0 8px">Awin y eBay Partner Network, cada mañana (pendientes y aprobadas). Amazon no da sus ganancias por API: se suman a mano.</p>
+      <p class="muted" style="margin:0 0 8px">Awin, automático cada mañana. Amazon y eBay no dan sus ganancias por API: sube aquí su informe (CSV) cuando quieras; se suma por día y por web (guitle / mootle).</p>
+      <p style="margin:0 0 10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center"><label class="btn" style="cursor:pointer">Subir informe de Amazon o eBay (CSV)<input id="afilfile" type="file" accept=".csv,text/csv" hidden></label><span id="afilmsg" class="muted"></span></p>
       <div style="overflow-x:auto;max-height:360px;overflow-y:auto"><table class="ctable" style="min-width:520px"><thead><tr><th>Día</th><th class="n">Amazon</th><th class="n">Awin</th><th class="n">eBay</th><th class="n">Total</th><th>Detalle</th></tr></thead><tbody id="afilrows"><tr><td colspan="6" class="empty">Cargando…</td></tr></tbody><tfoot id="afilfoot"></tfoot></table></div>
     </div>
     <div class="card" id="hist"><h2 style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">Histórico diario (todas las webs)
@@ -233,13 +234,27 @@ async function load() {
   loadAfil();
 }
 
-// Afiliados (scraper/afiliados.py): un documento "afil_AAAA-MM-DD" por día en la colección "c".
+// Afiliados (scraper/afiliados.py): un documento "afil_AAAA-MM-DD" por día en la colección "c" (Awin, automático) y
+// los informes de Amazon y eBay subidos a mano aquí (colección "afilm": "<programa>_<día>").
 async function loadAfil() {
   let rs = [];
   try {
     const snap = await getDocs(query(collection(db, "c"), where(documentId(), ">=", "afil_"), where(documentId(), "<", "afil_~")));
-    rs = snap.docs.map(d => d.data()).sort((a, b) => b.fecha.localeCompare(a.fecha));
+    rs = snap.docs.map(d => d.data());
   } catch (e) { rs = []; }
+  try {
+    const man = await getDocs(collection(db, "afilm"));
+    const byDay = Object.fromEntries(rs.map(r => [r.fecha, r]));
+    for (const d of man.docs) {
+      const m = d.data(), r = byDay[m.fecha] ||= { fecha: m.fecha };
+      r[m.prog + "_eur"] = (r[m.prog + "_eur"] || 0) + (m.eur || 0);
+      let det = {}; try { det = JSON.parse(r.detalle || "{}"); } catch (e) {}
+      det[m.prog] = { eur: m.eur, por: m.por || {} };
+      r.detalle = JSON.stringify(det);
+    }
+    rs = Object.values(byDay);
+  } catch (e) {}
+  rs.sort((a, b) => b.fecha.localeCompare(a.fecha));
   const eur = v => (v || 0).toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
   if (!rs.length) {
     $("afilrows").innerHTML = `<tr><td colspan="6" class="empty">Aún no hay comisiones (o faltan las claves de Awin y eBay).</td></tr>`;
@@ -252,6 +267,58 @@ async function loadAfil() {
   const sum = k => mo.reduce((a, r) => a + (r[k] || 0), 0);
   $("afilfoot").innerHTML = `<tr><th>Este mes</th><th class="n">${eur(sum("amazon_eur"))}</th><th class="n">${eur(sum("awin_eur"))}</th><th class="n">${eur(sum("ebay_eur"))}</th><th class="n">${eur(sum("amazon_eur") + sum("awin_eur") + sum("ebay_eur"))}</th><th></th></tr>`;
 }
+
+// Informe CSV de Amazon Afiliados o de eBay Partner Network → comisión por día y por web, en "afilm".
+function parseCsv(text) {
+  const rows = [], re = /("([^"]|"")*"|[^,;\t]*)([,;\t]|$)/g;
+  const sep = (text.split("\n").find(l => l.trim()) || "").match(/;|\t/) ? (text.includes("\t") ? "\t" : ";") : ",";
+  for (const line of text.replace(/\r/g, "").split("\n")) {
+    if (!line.trim()) continue;
+    const cells = []; let cur = "", q = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (q) { if (ch === '"' && line[i + 1] === '"') { cur += '"'; i++; } else if (ch === '"') q = false; else cur += ch; }
+      else if (ch === '"') q = true; else if (ch === sep) { cells.push(cur); cur = ""; } else cur += ch;
+    }
+    cells.push(cur); rows.push(cells.map(c => c.trim()));
+  }
+  return rows;
+}
+const num = v => { v = String(v || "").replace(/[^0-9,.-]/g, ""); if (v.includes(",") && v.lastIndexOf(",") > v.lastIndexOf(".")) v = v.replace(/\./g, "").replace(",", "."); else v = v.replace(/,/g, ""); return parseFloat(v) || 0; };
+const isoDay = v => { v = String(v || "").trim(); let m = v.match(/(\d{4})-(\d{2})-(\d{2})/); if (m) return m[0];
+  m = v.match(/(\d{1,2})[\/.-](\d{1,2})[\/.-](\d{2,4})/); if (m) { const y = m[3].length === 2 ? "20" + m[3] : m[3]; return `${y}-${m[2].padStart(2, "0")}-${m[1].padStart(2, "0")}`; }
+  const d = new Date(v); return isNaN(d) ? "" : d.toISOString().slice(0, 10); };
+document.addEventListener("change", async e => {
+  if (e.target.id !== "afilfile" || !e.target.files[0]) return;
+  const msg = $("afilmsg"); msg.textContent = "Leyendo…";
+  try {
+    const rows = parseCsv(await e.target.files[0].text());
+    const hi = rows.findIndex(r => r.some(c => /date|fecha/i.test(c)) && r.some(c => /earning|ingreso|comisi|commission|ad fee|tarifa/i.test(c)));
+    if (hi < 0) throw new Error("no encuentro las columnas de fecha y comisión");
+    const h = rows[hi].map(c => c.toLowerCase());
+    const col = (...w) => h.findIndex(c => w.some(x => c.includes(x)));
+    const cDate = col("event date", "fecha de envío", "date shipped", "fecha", "date");
+    const cEur = col("earnings", "ingresos por publicidad", "ad fees", "tarifas de publicidad", "comisi", "commission", "earning");
+    const cTag = col("tracking id", "id de seguimiento", "custom id", "customid", "campaign");
+    const prog = h.some(c => c.includes("asin")) || h.some(c => c.includes("seguimiento") || c.includes("tracking")) ? "amazon" : "ebay";
+    const days = {};
+    for (const r of rows.slice(hi + 1)) {
+      const day = isoDay(r[cDate]); if (!day) continue;
+      const eur = num(r[cEur]); const tag = (cTag >= 0 ? r[cTag] : "") || "";
+      const site = /mootle/i.test(tag) ? "mootle" : "guitle";
+      const o = days[day] ||= { eur: 0, por: {} };
+      o.eur += eur; o.por[site] = Math.round(((o.por[site] || 0) + eur) * 100) / 100;
+    }
+    const keys = Object.keys(days);
+    if (!keys.length) throw new Error("el informe no tiene filas con fecha");
+    const { doc, setDoc } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
+    for (const day of keys) await setDoc(doc(db, "afilm", `${prog}_${day}`), { fecha: day, prog, eur: Math.round(days[day].eur * 100) / 100, por: days[day].por });
+    const tot = keys.reduce((a, k) => a + days[k].eur, 0);
+    msg.textContent = `${prog === "amazon" ? "Amazon" : "eBay"}: ${keys.length} días, ${tot.toFixed(2)} € guardados.`;
+    loadAfil();
+  } catch (err) { msg.textContent = "No se pudo leer: " + err.message; }
+  e.target.value = "";
+});
 
 // Histórico diario (scraper/resumen_visitas.py): un documento "resumen_AAAA-MM-DD" por día en la colección "c".
 let hist = [];
