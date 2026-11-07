@@ -1,0 +1,144 @@
+{
+ "fecha": "7 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "tagima-super-smart-blspk-blue-sparkle-startocaster-passiva-7898569454173",
+    "name": "Tagima Super Smart BLSPK Blue Sparkle Startocaster Passiva",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-super-smart-blspk-blue-sparkle-startocaster-passiva-1133831/1354534.jpg?w=1000&h=1000&v=202510161626&qs=ignore",
+    "price": 2241.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 2710.8,
+    "max": 2722.5,
+    "next": 2699.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      2241.0
+     ],
+     [
+      "Mundomax",
+      2699.1
+     ],
+     [
+      "Destroyer",
+      2722.5
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 458,10 a menos que em qualquer outra loja",
+    "pct": 17,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "strinberg-sd200c-hbs-black-series-folk-de-aco-c-afinador-honeyburst-fosco-7899854521310",
+    "name": "Strinberg SD200C HBS Black Series Folk de Aço C/ Afinador Honeyburst Fosco",
+    "brand": "Strinberg",
+    "kind": "acustica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-sd200c-hbs-black-series-folk-de-aco-c-afinador-honeyburst-fosco-81068/268562.jpg?w=1000&h=1000&v=202508070352&qs=ignore",
+    "price": 854.1,
+    "store": "Akustica Musical",
+    "stores": 5,
+    "median": 1025.05,
+    "max": 1299.9,
+    "next": 998.0,
+    "rows": [
+     [
+      "Akustica Musical",
+      854.1
+     ],
+     [
+      "Música Center",
+      998.0
+     ],
+     [
+      "Destroyer",
+      998.1
+     ],
+     [
+      "Cheiro de Música",
+      1052.0
+     ],
+     [
+      "Duetto Musical",
+      1299.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 143,90 a menos que em qualquer outra loja",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "giannini-gsf1d-mini-jumbo-aco-mini-jumbo-natural-satin-7890443021747",
+    "name": "Giannini GSF1D Mini Jumbo Aço Mini Jumbo Natural Satin",
+    "brand": "Giannini",
+    "kind": "acustica",
+    "img": "https://static.mundomax.com.br/produtos/65709/1200/1.jpg",
+    "price": 809.1,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 994.575,
+    "max": 1019.25,
+    "next": 969.9,
+    "rows": [
+     [
+      "Mundomax",
+      809.1
+     ],
+     [
+      "Supersonora",
+      969.9
+     ],
+     [
+      "Tuner Music",
+      1019.25
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 160,80 a menos que em qualquer outra loja",
+    "pct": 17,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}
