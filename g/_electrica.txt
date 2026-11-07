@@ -1794,7 +1794,6 @@ epiphone-extura-prophecy-aged-jet-black-metallic-711106125480
 epiphone-extura-prophecy-fr-aqua-smoke-satin-711106246840
 epiphone-extura-prophecy-fr-obsidian-storm-satin-711106246833
 epiphone-fatoumata-diawara-sg-awarasghtm
-epiphone-fatoumata-diawara-sg-ember-red-711106173917
 epiphone-firebird-custom-futura-quicksilver-shift-ibgm-711106236100
 epiphone-firebird-i-1963-reissue-cherry-igc-ibgcs-bgcs426690
 epiphone-firebird-i-1963-silver-mist-ibgcs-bgcs386702
@@ -1975,7 +1974,7 @@ epiphone-sg-custom-eb-lh-tomeblhhtm
 epiphone-sg-custom-eb-ustomebhtm
 epiphone-sg-custom-futura-m-ember-shift-ershifthtm
 epiphone-sg-custom-futura-midnight-ember-shift-711106236056
-epiphone-sg-custom-futura-nitro-shift-711106236032
+epiphone-sg-custom-futura-nitro-shift-ibgm-711106236032
 epiphone-sg-custom-left-handed-ebony-711106156231
 epiphone-sg-modern-mojave-burst-vebursthtm
 epiphone-sg-modern-purple-burst-flameado-ibgcs-bgcs386708
@@ -1985,6 +1984,7 @@ epiphone-sg-prophecy-btag-711106040202
 epiphone-sg-prophecy-negro-azabache-envejecido-metalizado-zado392025
 epiphone-sg-prophecy-niebla-carmesi-satinado-711106246864
 epiphone-sg-prophecy-tormenta-de-obsidiana-satinado-711106246857
+epiphone-sg-signature-fatoumata-diawara-ember-red-ibg-711106173917
 epiphone-sg-special-p-90-amarillo-tv-711106166391
 epiphone-sg-special-p-90-cherry-711106225371
 epiphone-sg-standard-cherry-711106225326
@@ -2004,7 +2004,7 @@ epiphone-sheraton-frequensator-vs-711106128979
 epiphone-sheraton-iced-tea-711106144726
 epiphone-sheraton-masterbilt-lh-signature-gem-archer-cherry-red-711106178332
 epiphone-sheraton-nat-atonnathtm
-epiphone-sheraton-natural-711106128962
+epiphone-sheraton-natural-original-711106128962
 epiphone-sheraton-viper-blue-711106140445
 epiphone-sheraton-vsb-atonvsbhtm
 epiphone-tak-matsumoto-1955-les-paul-standard-antique-gold-exclusive-711106159683
@@ -7315,6 +7315,7 @@ jackson-js32-t-king-v-fr-ah-ngvfrahhtm
 jackson-js32-warrior-ah-sw-iorahswhtm
 jackson-js32-warrior-black-with-white-bevels-885978977079
 jackson-js32-warrior-sbk-ah-orsbkahhtm
+jackson-js32-warrior-snow-white-885978977086
 jackson-js32l-dinky-dka-ah-bbl-kaahbblhtm
 jackson-js32l-dinky-dka-bb-885978977222
 jackson-js32q-dka-dinky-ah-tpb-kyahtpbhtm
@@ -7386,6 +7387,7 @@ jackson-pro-phil-collen-pc1-e-wblk-c1ewblkhtm
 jackson-pro-plus-brandon-ellis-gld-crl-sgldcrlhtm
 jackson-pro-plus-brendon-ellis-kelly-ke-27-885978522927
 jackson-pro-plus-christian-andreu-rr24-reurr24htm
+jackson-pro-plus-dinky-mdk-evtn7-gold-sparkle-717669902520
 jackson-pro-plus-dinky-mdk-ht6-ms-gloss-bl-717669902513
 jackson-pro-plus-mdk-ht7-gs-dkht7gshtm
 jackson-pro-plus-pure-metal-limited-edition-rhoads-rr1a-gloss-black-885978527694
@@ -11452,6 +11454,7 @@ squier-cv-50s-tele-lh-mn-bb-elhmnbbhtm
 squier-cv-60s-custom-tele-3-sb-tele3sbhtm
 squier-cv-70s-strat-hss-mn-oxb-ssmnoxbhtm
 squier-cv-70s-strat-ht-hss-lrl-moc-slrlmochtm
+squier-cv-70s-strat-lrl-moc-tlrlmochtm
 squier-cv-custom-esquire-lrl-ppg-shw-lppgshwhtm
 squier-cv-custom-tele-bigs-mn-shw-gsmnshwhtm
 squier-cv-custom-tele-bigs-sh-ppg-azg-hppgazghtm
@@ -11483,7 +11486,6 @@ squier-ltd-classic-vibe-classic-vibe-50s-telecaster-sh-mn-bpg-shg-shmnbpgshg
 squier-ltd-classic-vibe-classic-vibe-60s-stratocaster-hss-lrl-ppg-shg-slrlppgshg
 squier-ltd-classic-vibe-classic-vibe-70s-jaguar-lrl-ppg-mh-shg-rlppgmhshg
 squier-ltd-fsr-affinity-jaguar-matching-headstock-metallic-black-885978883462
-squier-ltd-fsr-classic-vibe-70s-stratocaster-mocha-885978765607
 squier-mini-jazzmaster-hh-mn-daphne-blue-885978378395
 squier-mini-jazzmaster-hh-mn-surf-green-885978378388
 squier-mini-jazzmaster-mn-dbl-ermndblhtm
@@ -11682,11 +11684,8 @@ sterling-axis-ax50-rm-m-lava-burst-810002953439
 sterling-axis-ax50-rm-m-yucatan-blue-810002953446
 sterling-axis-ax50qm-yucatan-blue-producto-b-ctob413993
 sterling-by-music-man-axis-ax50-honey-pot-810002954320
-sterling-by-music-man-cutlass-ct20hss-bk-20hssbkhtm
 sterling-by-music-man-cutlass-plus-stm-plusstmhtm
 sterling-by-music-man-john-petrucci-majesty-maj200x-tiger-eye-81000293026
-sterling-by-music-man-majesty-200xfm-tiger-eye-igereyehtm
-sterling-by-music-man-richardson-7-kfr-son7kfrhtm
 sterling-by-music-man-sabre-deep-blue-burst-uebursthtm
 sterling-by-music-man-steve-lukather-lk100-hss-yucatan-blue-810002954351
 sterling-by-music-man-steve-lukather-lk100-purple-sparkle-810002953460
@@ -11708,6 +11707,7 @@ sterling-cutlass-classic-ct30-m-r-sherwood-green-810002953514
 sterling-cutlass-classic-ct50-rm-m-charging-green-810002954252
 sterling-cutlass-classic-ct50-rm-r-cashmere-810002954344
 sterling-cutlass-classic-ct50-rm-r-showtime-810002954337
+sterling-cutlass-ct20hss-bk-20hssbkhtm
 sterling-cutlass-ct20hss-canvas-white-aswhitehtm
 sterling-cutlass-ct20hss-electric-blue-ricbluehtm
 sterling-cutlass-ct20hss-sunrise-orange-eorangehtm
@@ -11733,6 +11733,7 @@ sterling-cutlass-plus-csh-pluscshhtm
 sterling-cutlass-plus-stm-plusstmhtm
 sterling-cutlass-ss30-hs-short-scale-shell-pink-810002950872
 sterling-fluff-stingray-abb-grayabbhtm
+sterling-fluff-stingray-rtr-grayrtrhtm
 sterling-fluff-stingray-rtr-grayrtrhtm
 sterling-golden-velvet-810002952319
 sterling-goldie-cashmere-810002952302
@@ -11790,6 +11791,7 @@ sterling-maj170-gris-tiza-810002952746
 sterling-maj270x-mn-tiger-eye-810002953033
 sterling-majesty-100-artic-dream-icdreamhtm
 sterling-majesty-200x-qm-cp-w-bag-mcpwbaghtm
+sterling-majesty-200xfm-tiger-eye-igereyehtm
 sterling-majesty-207xfm-tiger-eye-igereyehtm
 sterling-majesty-john-petrucci-signature-maj100-hh-m-r-chalk-grey-con-funda-810002952739
 sterling-majesty-john-petrucci-signature-maj170-hh-m-r-arctic-dream-de-7-cuerdas-810002953231
@@ -11807,6 +11809,7 @@ sterling-rabea-bfb-abeabfbhtm
 sterling-rabea-bfb-abeabfbhtm
 sterling-rabea-massaad-ashen-burst-810002953866
 sterling-rabea-massaad-blood-flame-burst-810002953873
+sterling-richardson-7-kfr-son7kfrhtm
 sterling-richardson-kfr-dsonkfrhtm
 sterling-sabre-deep-blue-burst-810002951985
 sterling-semi-hollow-valentine-jv60-hs-rm-m-bigsby-trem-butterscotch-con-funda-810002952524
@@ -12879,10 +12882,8 @@ yamaha-pacifica-sc-std-11sm-bm-d11smbmhtm
 yamaha-pacifica-sc-std-11sm-bm-smbmp42825
 yamaha-pacifica-sc-std-11sm-pmg-11smpmghtm
 yamaha-pacifica-sc-std-11sm-pmg-mpmgp42824
-yamaha-pacifica-single-cut-professional-pacp11s-black-metallic-con-estuche-4957812717793
 yamaha-pacifica-single-cut-professional-pacp11s-shell-white-con-estuche-4957812717816
 yamaha-pacifica-single-cut-professional-pacp11s-sunny-orange-con-estuche-4957812717779
-yamaha-pacifica-single-cut-professional-pacp11sm-ash-pink-con-estuche-4957812717755
 yamaha-pacifica-single-cut-standard-plus-pacs-11s-ash-pink-con-funda-4957812710619
 yamaha-pacifica-single-cut-standard-plus-pacs-11s-desert-burst-con-funda-4957812710657
 yamaha-pacifica-single-cut-standard-plus-pacs-11s-peppermint-green-con-funda-4957812710633
@@ -12913,6 +12914,8 @@ yamaha-pacifica1611ms-natural-1msnatural
 yamaha-pacifica212vqm-caramel-brown-vqm00nuevo
 yamaha-pacifica611vfm-negro-translucido-cido158067
 yamaha-pacp11s-ap-pacifica-professional-sc-rw-ash-pink-4957812717748
+yamaha-pacp11s-bm-pacifica-professional-sc-rw-black-metallic-4957812717793
+yamaha-pacp11sm-ap-pacifica-professional-sc-mn-ash-pink-4957812717755
 yamaha-pacp11sm-bm-pacifica-professional-sc-mn-black-metallic-4957812717809
 yamaha-pacp12-black-metallic-p1200nuevo
 yamaha-pacp12-pacifica-professional-black-metallic-4957812700924
@@ -12936,7 +12939,6 @@ yamaha-pacs-12m-pacifica-standard-plus-sparkle-blue-4957812697644
 yamaha-pacs-12m-sonic-blue-4957812724920
 yamaha-pacs-12m-tobacco-brown-sunburst-4957812724937
 yamaha-pacsp12-spb-pacifica-standard-plus-negro-p12mblhtml
-yamaha-pacsp12m-bl-pacifica-standard-plus-mn-negra-1100000276135
 yamaha-pacsp12m-bl-pacifica-standard-plus-negra-pm12blhtml
 yamaha-pacsp12m-spb-pacifica-standard-plus-sparkle-blue-12mspbhtml
 yamaha-para-zurdos-yamaha-pacifica-112jl-bl-black-2jl00nuevo

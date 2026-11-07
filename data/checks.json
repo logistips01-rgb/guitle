@@ -29,6 +29,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Yamaha PACS+12M Pacifica Standard Plus Black",
+  "slug": "yamaha-pacs-12m-pacifica-standard-plus-black-4957812697699",
+  "price": 715.0,
+  "median": 966.245
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -88,15 +97,6 @@
   "slug": "yamaha-pacs-12-pacifica-standard-plus-black-4957812697682",
   "price": 715.0,
   "median": 1008.11
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicsales",
-  "name": "Yamaha PACS+12M Pacifica Standard Plus Black",
-  "slug": "yamaha-pacs-12m-pacifica-standard-plus-black-4957812697699",
-  "price": 715.0,
-  "median": 999.0
  },
  {
   "kind": "electrica",
