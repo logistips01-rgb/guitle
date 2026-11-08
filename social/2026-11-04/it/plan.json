@@ -1,0 +1,163 @@
+{
+ "date": "2026-11-04",
+ "fecha": "4 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "fender-standard-stratocaster-candy-cola-chitarra-elettrica-21t-a2spalla-mancante-885978117871",
+   "name": "Fender Standard Stratocaster Candy Cola Chitarra Elettrica 21T a2spalla mancante",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.globalnetshop.it/cdn/shop/files/01-0266220571_1024x.jpg?v=1770982769",
+   "price": 525.0,
+   "store": "Global Net Shop",
+   "stores": 3,
+   "median": 589.0,
+   "max": 599.0,
+   "next": 579.0,
+   "rows": [
+    [
+     "Global Net Shop",
+     525.0
+    ],
+    [
+     "Woodbrass",
+     579.0
+    ],
+    [
+     "Di Santo Musica",
+     599.0
+    ]
+   ],
+   "pvp": null,
+   "why": "54 € in meno che negli altri negozi",
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Offerta del giorno: Fender Standard Stratocaster Candy Cola Chitarra Elettrica 21T a2spalla mancante\n💶 525 € da Global Net Shop, confrontata in 3 negozi.\n📉 54 € in meno che negli altri negozi.\n\n🔎 Confronta il prezzo su guitle.com/it (link in bio).\nPrezzo del 4 novembre; può cambiare.\n\n#chitarra #chitarrista #offerte #sconti #chitarraelettrica #fender"
+ },
+ "stories": [
+  {
+   "slug": "squier-stratocaster-sonic-lrl-blu-california-717669815660",
+   "name": "Squier Stratocaster Sonic Lrl Blu California",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.it/cdn/shop/files/778fbf4405f7948a898733b1fdcb1e400334ff03_FMIC_0373151526.jpg?height=1200&pad_color=ffffff&v=1793727325&width=1200",
+   "price": 172.0,
+   "store": "Woodbrass",
+   "stores": 4,
+   "median": 189.0,
+   "max": 189.0,
+   "next": 189.0,
+   "rows": [
+    [
+     "Woodbrass",
+     172.0
+    ],
+    [
+     "Di Santo Musica",
+     189.0
+    ],
+    [
+     "Global Net Shop",
+     189.0
+    ],
+    [
+     "Stralù",
+     189.0
+    ]
+   ],
+   "pvp": null,
+   "why": "17 € in meno che negli altri negozi",
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ibanez-aeg74n-mhs-mahogany-sunburst-high-gloss-chitarra-classica-elettrificata-4549763349873",
+   "name": "Ibanez AEG74N-MHS Mahogany Sunburst High Gloss Chitarra classica elettrificata",
+   "brand": "Ibanez",
+   "kind": "clasica",
+   "img": "https://www.disantomusica.it/cdn/shop/files/6860_--_000_9652_1024x1024.jpg?v=1772332721",
+   "price": 387.0,
+   "store": "Di Santo Musica",
+   "stores": 3,
+   "median": 425.5,
+   "max": 429.0,
+   "next": 422.0,
+   "rows": [
+    [
+     "Di Santo Musica",
+     387.0
+    ],
+    [
+     "Thomann",
+     422.0
+    ],
+    [
+     "Woodbrass",
+     429.0
+    ]
+   ],
+   "pvp": null,
+   "why": "35 € in meno che negli altri negozi",
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "fender-cd60s-black-chitarra-acustica-nera-885978875764",
+   "name": "Fender CD60S Black Chitarra acustica nera",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.disantomusica.it/cdn/shop/files/2031-fender-cd60s-black-chitarra-acustica-nera-new_1024x1024.jpg?v=1772224508",
+   "price": 205.0,
+   "store": "Global Net Shop",
+   "stores": 3,
+   "median": 221.5,
+   "max": 224.0,
+   "next": 219.0,
+   "rows": [
+    [
+     "Global Net Shop",
+     205.0
+    ],
+    [
+     "Stralù",
+     219.0
+    ],
+    [
+     "Woodbrass",
+     224.0
+    ]
+   ],
+   "pvp": null,
+   "why": "14 € in meno che negli altri negozi",
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}

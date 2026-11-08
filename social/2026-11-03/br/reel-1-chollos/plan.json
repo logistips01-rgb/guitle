@@ -1,0 +1,172 @@
+{
+ "fecha": "3 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "tagima-series-tw-61-woodstock-olympic-white-7898563976633",
+    "name": "Tagima Series TW-61 Woodstock Olympic White",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://static.mundomax.com.br/produtos/59236/1200/1.jpg",
+    "price": 1160.99,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 1489.27,
+    "max": 1551.14,
+    "next": 1427.4,
+    "rows": [
+     [
+      "Mundomax",
+      1160.99
+     ],
+     [
+      "Música Center",
+      1427.4
+     ],
+     [
+      "Ponto do Músico",
+      1551.14
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 266,41 a menos que em qualquer outra loja",
+    "pct": 19,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "seizi-vintage-budokan-hss-reinaldo-meirelles-satin-black-7898512905899",
+    "name": "Seizi Vintage Budokan HSS Reinaldo Meirelles Satin Black",
+    "brand": "Seizi",
+    "kind": "electrica",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_guitarra_seizi_vintage_budokan_hss_reinaldo_meirelles_satin_black_11051_1_d527b1e5fad11cd8e3f42b122e9710a6_20250721135740.jpg",
+    "price": 2834.99,
+    "store": "RCK Audio",
+    "stores": 3,
+    "median": 3369.5,
+    "max": 3449.0,
+    "next": 3290.0,
+    "rows": [
+     [
+      "RCK Audio",
+      2834.99
+     ],
+     [
+      "Soco Music",
+      3290.0
+     ],
+     [
+      "Royal Music",
+      3449.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 455,01 a menos que em qualquer outra loja",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "giannini-perform-ggc-plus-eletroacustico-aco-natural-satin-7890443023499",
+    "name": "Giannini Perform GGC Plus Eletroacústico Aço Natural Satin",
+    "brand": "Giannini",
+    "kind": "acustica",
+    "img": "https://static.mundomax.com.br/produtos/80770/1200/5.jpg",
+    "price": 807.3,
+    "store": "Mundomax",
+    "stores": 4,
+    "median": 1093.5,
+    "max": 1099.0,
+    "next": 998.0,
+    "rows": [
+     [
+      "Mundomax",
+      807.3
+     ],
+     [
+      "Super Som",
+      998.0
+     ],
+     [
+      "Destroyer",
+      1093.5
+     ],
+     [
+      "Rock Clube",
+      1099.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 190,70 a menos que em qualquer outra loja",
+    "pct": 19,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "strinberg-forest-fs3c-mgs-forest-series-classico-de-nylon-c-afinador-mahogany-fo-7899854523185",
+    "name": "Strinberg Forest FS3C MGS Forest Series Clássico de Nylon C/ Afinador Mahogany Fosco",
+    "brand": "Strinberg",
+    "kind": "clasica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-forest-fs3c-mgs-forest-series-classico-de-nylon-c-afinador-mahogany-fosco-81278/268773.jpg?w=1000&h=1000&v=202508070352&qs=ignore",
+    "price": 891.0,
+    "store": "Destroyer",
+    "stores": 3,
+    "median": 1119.9050000000002,
+    "max": 1159.9,
+    "next": 1079.91,
+    "rows": [
+     [
+      "Destroyer",
+      891.0
+     ],
+     [
+      "Luggi",
+      1079.91
+     ],
+     [
+      "Megasom",
+      1159.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 188,91 a menos que em qualquer outra loja",
+    "pct": 17,
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

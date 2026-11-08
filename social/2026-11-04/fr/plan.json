@@ -1,0 +1,183 @@
+{
+ "date": "2026-11-04",
+ "fecha": "4 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "lag-hyvibe-1-serie-30-dreadnought-ctw-3700166366411",
+   "name": "Lâg HyVibe 1 Série 30 Dreadnought Ctw",
+   "brand": "Lâg",
+   "kind": "acustica",
+   "img": "https://woodbrass.com/cdn/shop/files/9c74c473071d9d98705401303738f94fdd1337d1_GLH_THV30DCE.png?height=1200&pad_color=ffffff&v=1793290668&width=1200",
+   "price": 749.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 1249.0,
+   "max": 1249.0,
+   "next": 1249.0,
+   "rows": [
+    [
+     "Woodbrass",
+     749.0
+    ],
+    [
+     "Music 3000",
+     1249.0
+    ],
+    [
+     "Audio System",
+     1249.0
+    ]
+   ],
+   "pvp": null,
+   "why": "500 € de moins que dans les autres magasins",
+   "pct": 40,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Bon plan du jour : Lâg HyVibe 1 Série 30 Dreadnought Ctw\n💶 749 € chez Woodbrass, comparée dans 3 magasins.\n📉 500 € de moins que dans les autres magasins.\n\n🔎 Compare son prix sur guitle.com/fr (lien en bio).\nPrix du 4 novembre ; il peut changer.\n\n#guitare #guitariste #bonplan #promo #guitarefolk #lg"
+ },
+ "stories": [
+  {
+   "slug": "takamine-gd30cenat-gd30ce-nat-natural-799493251531",
+   "name": "Takamine GD30CENAT gd30ce-nat natural",
+   "brand": "Takamine",
+   "kind": "acustica",
+   "img": "https://www.music3000.fr/87316-home_default/takamine-gd30cenat-gd30ce-nat-natural.jpg",
+   "price": 379.0,
+   "store": "Music 3000",
+   "stores": 5,
+   "median": 451.5,
+   "max": 469.0,
+   "next": 444.0,
+   "rows": [
+    [
+     "Music 3000",
+     379.0
+    ],
+    [
+     "Woodbrass",
+     444.0
+    ],
+    [
+     "Michenaud",
+     444.0
+    ],
+    [
+     "Audio System",
+     459.0
+    ],
+    [
+     "Ferré Musique",
+     469.0
+    ]
+   ],
+   "pvp": null,
+   "why": "65 € de moins que dans les autres magasins",
+   "pct": 15,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "lag-t118abce-brs-auditorium-bevel-cutaway-electro-brown-shadow-3700166375789",
+   "name": "Lag T118ABCE-BRS auditorium bevel cutaway electro brown shadow",
+   "brand": "Lag",
+   "kind": "acustica",
+   "img": "https://www.music3000.fr/90059-home_default/lag-t118abce-brs-auditorium-bevel-cutaway-electro-brown-shadow.jpg",
+   "price": 569.0,
+   "store": "Music 3000",
+   "stores": 5,
+   "median": 679.0,
+   "max": 679.0,
+   "next": 659.0,
+   "rows": [
+    [
+     "Music 3000",
+     569.0
+    ],
+    [
+     "Audio System",
+     659.0
+    ],
+    [
+     "Woodbrass",
+     679.0
+    ],
+    [
+     "Stars Music",
+     679.0
+    ],
+    [
+     "Hurricane Music",
+     679.0
+    ]
+   ],
+   "pvp": null,
+   "why": "90 € de moins que dans les autres magasins",
+   "pct": 14,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "sigma-serie-standard-dt-28h-ddt28hhtml",
+   "name": "Sigma Serie Standard DT-28H",
+   "brand": "Sigma",
+   "kind": "acustica",
+   "img": "https://ubico-musique.com/15946-home_default/guitare-folk-sigma-serie-standard-dt-28h.jpg",
+   "price": 599.0,
+   "store": "Auditorium 4",
+   "stores": 4,
+   "median": 699.0,
+   "max": 699.0,
+   "next": 699.0,
+   "rows": [
+    [
+     "Auditorium 4",
+     599.0
+    ],
+    [
+     "Woodbrass",
+     699.0
+    ],
+    [
+     "Hurricane Music",
+     699.0
+    ],
+    [
+     "Scotto Musique",
+     699.0
+    ]
+   ],
+   "pvp": null,
+   "why": "100 € de moins que dans les autres magasins",
+   "pct": 14,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

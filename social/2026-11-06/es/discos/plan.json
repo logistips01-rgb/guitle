@@ -1,0 +1,58 @@
+{
+ "tipo": "semana",
+ "cab": "El chollo de vinilo de la semana",
+ "fmt": "vinilo",
+ "disco": {
+  "ean": "0602557589962",
+  "fmt": "vinilo",
+  "img": "https://discosaltafidelidad.es/wp-content/uploads/2020/10/Lana-Del-Rey-Lust-For-Life.jpg",
+  "items": [
+   {
+    "p": 32.95,
+    "s": "altafidelidad",
+    "st": true,
+    "u": "https://discosaltafidelidad.es/producto/lana-del-rey-lust-for-life-vinilo/"
+   },
+   {
+    "p": 45.0,
+    "s": "supersonic",
+    "st": true,
+    "u": "https://discossupersonicsantander.com/products/lana-del-rey-lust-for-life-1"
+   },
+   {
+    "p": 30.0,
+    "s": "ege",
+    "st": false,
+    "u": "https://egebotiga.com/tienda/genero/pop-rock-internacional/lana-del-rey-lust-for-life-2lp/"
+   }
+  ],
+  "name": "Lana Del Rey - Lust For Life",
+  "slug": "lana-del-rey-lust-for-life-vinilo-0602557589962",
+  "artist": "Lana Del Rey",
+  "title": "Lust For Life",
+  "lo": 32.95,
+  "hi": 45.0,
+  "ahorro": 12.05,
+  "tienda": "Alta Fidelidad",
+  "tiendas": 2,
+  "url": "https://guitle.com/discos/lana-del-rey-lust-for-life-vinilo-0602557589962.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-06",
+ "cc": "es",
+ "t": {
+  "cab_same": "Mismo disco, 12,05 € más barato",
+  "cab_semana": "El chollo de vinilo de la semana",
+  "pill_post": "💿 Chollo de disco",
+  "pill_post_semana": "🏆 Chollo de la semana",
+  "pill_story": "💿 Mismo disco, más barato",
+  "pill_story_semana": "🏆 Vinilo de la semana",
+  "cheapest": "Lo más barato hoy",
+  "at": "en",
+  "others": "Otras tiendas de discos",
+  "upto": "hasta",
+  "footer": "Comparamos precios de tiendas de discos de España · guitle.com/discos",
+  "elsewhere": "Hasta 45 € en otras tiendas · ahorras 12,05 €",
+  "story_footer": "Precios y stock: enlace en la bio · guitle.com/discos"
+ }
+}

@@ -1,0 +1,279 @@
+{
+ "fecha": "6 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "top",
+  "title": "5 electric guitars from £250 to £450",
+  "hook": "Today’s top",
+  "picks": [
+   {
+    "slug": "epiphone-sg-tribute-plus-vs-eplusvshtm",
+    "name": "Epiphone SG Tribute Plus VS",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/628874.jpg",
+    "price": 279.0,
+    "store": "Thomann",
+    "stores": 6,
+    "median": 319.0,
+    "max": 349.0,
+    "next": 299.0,
+    "rows": [
+     [
+      "Thomann",
+      279.0
+     ],
+     [
+      "Peach Guitars",
+      299.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      299.0
+     ],
+     [
+      "guitarguitar",
+      319.0
+     ],
+     [
+      "Project Music",
+      329.0
+     ],
+     [
+      "A Strings",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "schecter-c-1-standard-charcoal-satin-810051476149",
+    "name": "Schecter C-1 Standard - Charcoal Satin",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://images.platform2d.com/?uuid=ec9578cf-5a45-8af9-c184-80b39e4d5df8&database=mow_1066&width=600&height=895&format=webp&canvas=1&background=000000&watermark=&noimage=wood&signature=8451f544482f02305b0531e116bd6d24",
+    "price": 325.0,
+    "store": "Peach Guitars",
+    "stores": 6,
+    "median": 349.0,
+    "max": 349.0,
+    "next": 349.0,
+    "rows": [
+     [
+      "Peach Guitars",
+      325.0
+     ],
+     [
+      "Richtone Music",
+      349.0
+     ],
+     [
+      "Fair Deal Music",
+      349.0
+     ],
+     [
+      "guitarguitar",
+      349.0
+     ],
+     [
+      "Andertons",
+      349.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "squier-cv-60s-strat-lpb-tratlpbhtm",
+    "name": "Squier CV 60s Strat LPB",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/468417.jpg",
+    "price": 355.0,
+    "store": "Thomann",
+    "stores": 11,
+    "median": 399.0,
+    "max": 449.99,
+    "next": 369.0,
+    "rows": [
+     [
+      "Thomann",
+      355.0
+     ],
+     [
+      "Reidys",
+      369.0
+     ],
+     [
+      "Dawsons",
+      369.0
+     ],
+     [
+      "guitarguitar",
+      399.0
+     ],
+     [
+      "Bonners Music",
+      399.0
+     ],
+     [
+      "Fair Deal Music",
+      399.0
+     ],
+     [
+      "Peach Guitars",
+      399.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      399.0
+     ],
+     [
+      "Music Street",
+      419.0
+     ],
+     [
+      "A Strings",
+      429.0
+     ],
+     [
+      "Paisley Music",
+      449.99
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "yamaha-revstar-element-rse20-electric-guitar-swift-blue-4957812675154",
+    "name": "Yamaha Revstar Element RSE20 Electric Guitar, Swift Blue",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/RSE20_swiftblue_f_0001_06fa0331fe44697b5a2edf1b77e2a439.jpg?v=1747908547",
+    "price": 385.0,
+    "store": "Fair Deal Music",
+    "stores": 6,
+    "median": 399.0,
+    "max": 435.0,
+    "next": 399.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      385.0
+     ],
+     [
+      "Bonners Music",
+      399.0
+     ],
+     [
+      "guitarguitar",
+      399.0
+     ],
+     [
+      "Reidys",
+      399.0
+     ],
+     [
+      "Music Street",
+      399.0
+     ],
+     [
+      "R Guitars",
+      435.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "gretsch-electromatic-jettm-club-riviera-blue-ivierablue",
+    "name": "Gretsch Electromatic® Jet™ Club, Riviera Blue",
+    "brand": "Gretsch",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/1268/5375/files/2514102502_gre_ins_frt_1_rr.png?v=1772555381",
+    "price": 399.0,
+    "store": "Matchetts Music",
+    "stores": 7,
+    "median": 449.5,
+    "max": 549.0,
+    "next": 439.0,
+    "rows": [
+     [
+      "Matchetts Music",
+      399.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      439.0
+     ],
+     [
+      "Peach Guitars",
+      442.0
+     ],
+     [
+      "guitarguitar",
+      449.0
+     ],
+     [
+      "Reidys",
+      450.0
+     ],
+     [
+      "Music Street",
+      499.0
+     ],
+     [
+      "A Strings",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}

@@ -1,0 +1,191 @@
+{
+ "date": "2026-11-02",
+ "fecha": "2 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "sigma-serie-standard-000t-28s-00t28shtml",
+   "name": "Sigma Serie Standard 000T-28S",
+   "brand": "Sigma",
+   "kind": "acustica",
+   "img": "https://ubico-musique.com/12559-home_default/guitare-folk-sigma-serie-standard-000t-28s.jpg",
+   "price": 600.0,
+   "store": "Ubico Musique",
+   "stores": 4,
+   "median": 805.0,
+   "max": 845.0,
+   "next": 805.0,
+   "rows": [
+    [
+     "Ubico Musique",
+     600.0
+    ],
+    [
+     "Woodbrass",
+     805.0
+    ],
+    [
+     "Hurricane Music",
+     805.0
+    ],
+    [
+     "Stars Music",
+     845.0
+    ]
+   ],
+   "pvp": null,
+   "why": "205 € de moins que dans les autres magasins",
+   "pct": 25,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Bon plan du jour : Sigma Serie Standard 000T-28S\n💶 600 € chez Ubico Musique, comparée dans 4 magasins.\n📉 205 € de moins que dans les autres magasins.\n\n🔎 Compare son prix sur guitle.com/fr (lien en bio).\nPrix du 2 novembre ; il peut changer.\n\n#guitare #guitariste #bonplan #promo #guitarefolk #sigma"
+ },
+ "stories": [
+  {
+   "slug": "takamine-gn20-ns-guitare-folk-acoustique-nex-naturelle-satinee-atineehtml",
+   "name": "Takamine GN20-NS Guitare Folk Acoustique Nex Naturelle Satinee",
+   "brand": "Takamine",
+   "kind": "acustica",
+   "img": "https://www.music-privilege.fr/img/600/744/contains/catalog/product/g/d/gd20-ns_banner_0.jpg",
+   "price": 299.0,
+   "store": "Music Privilege",
+   "stores": 5,
+   "median": 369.0,
+   "max": 369.0,
+   "next": 369.0,
+   "rows": [
+    [
+     "Music Privilege",
+     299.0
+    ],
+    [
+     "Woodbrass",
+     369.0
+    ],
+    [
+     "Stars Music",
+     369.0
+    ],
+    [
+     "Music 3000",
+     369.0
+    ],
+    [
+     "Michenaud",
+     369.0
+    ]
+   ],
+   "pvp": null,
+   "why": "70 € de moins que dans les autres magasins",
+   "pct": 19,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "lag-lag-tramontane-travel-khaya-electro-3700166371156",
+   "name": "Lag Lâg - Tramontane Travel Khaya Electro",
+   "brand": "Lag",
+   "kind": "acustica",
+   "img": "https://audiosystem.fr/72451-product_zoom/lag-tramontane-travel-khaya-elec.jpg",
+   "price": 399.0,
+   "store": "Audio System",
+   "stores": 3,
+   "median": 489.0,
+   "max": 489.0,
+   "next": 489.0,
+   "rows": [
+    [
+     "Audio System",
+     399.0
+    ],
+    [
+     "Stars Music",
+     489.0
+    ],
+    [
+     "Music 3000",
+     489.0
+    ]
+   ],
+   "pvp": null,
+   "why": "90 € de moins que dans les autres magasins",
+   "pct": 18,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "c-f-martin-co-martin-co-dx-cash-729789591164",
+   "name": "C. F. Martin & Co. Martin & Co. DX-CASH",
+   "brand": "C. F. Martin & Co.",
+   "kind": "acustica",
+   "img": "https://ubico-musique.com/6142-home_default/martin-co-dx-cash.jpg",
+   "price": 649.0,
+   "store": "Ubico Musique",
+   "stores": 7,
+   "median": 744.0,
+   "max": 809.0,
+   "next": 739.0,
+   "rows": [
+    [
+     "Ubico Musique",
+     649.0
+    ],
+    [
+     "Woodbrass",
+     739.0
+    ],
+    [
+     "Stars Music",
+     739.0
+    ],
+    [
+     "Music 3000",
+     739.0
+    ],
+    [
+     "Michenaud",
+     749.0
+    ],
+    [
+     "Scotto Musique",
+     790.0
+    ],
+    [
+     "Hurricane Music",
+     809.0
+    ]
+   ],
+   "pvp": null,
+   "why": "90 € de moins que dans les autres magasins",
+   "pct": 12,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

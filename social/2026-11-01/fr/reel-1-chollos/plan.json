@@ -1,0 +1,140 @@
+{
+ "fecha": "1er novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "squier-classic-vibe-70s-stratocaster-ht-hss-owt-885978674527",
+    "name": "Squier Classic Vibe '70S Stratocaster HT HSS Owt",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://hurricanemusic.fr/181835-home_default/squier-classic-vibe-70s-stratocaster-ht-hss-owt.webp",
+    "price": 377.0,
+    "store": "Hurricane Music",
+    "stores": 3,
+    "median": 455.0,
+    "max": 455.0,
+    "next": 455.0,
+    "rows": [
+     [
+      "Hurricane Music",
+      377.0
+     ],
+     [
+      "Woodbrass",
+      455.0
+     ],
+     [
+      "Thomann",
+      455.0
+     ]
+    ],
+    "pvp": null,
+    "why": "78 € de moins que dans les autres magasins",
+    "pct": 17,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "fender-player-ii-telecaster-coral-red-885978111527",
+    "name": "Fender Player II Telecaster Coral Red",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://hurricanemusic.fr/160865-home_default/fender-player-ii-telecaster-coral-red.webp",
+    "price": 678.0,
+    "store": "Hurricane Music",
+    "stores": 4,
+    "median": 802.0,
+    "max": 929.0,
+    "next": 802.0,
+    "rows": [
+     [
+      "Hurricane Music",
+      678.0
+     ],
+     [
+      "Stars Music",
+      802.0
+     ],
+     [
+      "Guitar Legend",
+      802.0
+     ],
+     [
+      "Music 3000",
+      929.0
+     ]
+    ],
+    "pvp": null,
+    "why": "124 € de moins que dans les autres magasins",
+    "pct": 15,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "lag-bluewave-1-nylon-travel-electro-3700166373143",
+    "name": "LAG Bluewave 1 Nylon Travel Electro",
+    "brand": "LAG",
+    "kind": "acustica",
+    "img": "https://hurricanemusic.fr/169906-home_default/lag-bluewave-1-nylon-travel-electro.webp",
+    "price": 425.0,
+    "store": "Hurricane Music",
+    "stores": 3,
+    "median": 564.0,
+    "max": 579.0,
+    "next": 549.0,
+    "rows": [
+     [
+      "Hurricane Music",
+      425.0
+     ],
+     [
+      "Audio System",
+      549.0
+     ],
+     [
+      "Michenaud",
+      579.0
+     ]
+    ],
+    "pvp": null,
+    "why": "124 € de moins que dans les autres magasins",
+    "pct": 23,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

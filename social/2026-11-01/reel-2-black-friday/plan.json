@@ -1,0 +1,73 @@
+{
+ "fecha": "1 de noviembre",
+ "post": {
+  "type": "bf",
+  "days": 26,
+  "deal": {
+   "slug": "fender-cd-60sce-dreadnought-wn-black-885978875726",
+   "name": "Fender CD-60SCE Dreadnought WN Black",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/2/620574JPG_1_7756.jpg?store=nume_es&image-type=image",
+   "price": 265.0,
+   "store": "Session",
+   "stores": 12,
+   "median": 275.0,
+   "max": 345.65,
+   "next": 265.0,
+   "rows": [
+    [
+     "Session",
+     265.0
+    ],
+    [
+     "Musical San Francisco",
+     265.0
+    ],
+    [
+     "Woodbrass",
+     269.0
+    ],
+    [
+     "Auvisa",
+     269.0
+    ],
+    [
+     "Nume Music",
+     271.68
+    ],
+    [
+     "Alteisa",
+     272.75
+    ],
+    [
+     "Egitana",
+     275.0
+    ],
+    [
+     "MAT Guitars",
+     277.0
+    ],
+    [
+     "Drunkat",
+     293.0
+    ],
+    [
+     "Musicopolix",
+     298.87
+    ],
+    [
+     "Alfasoni",
+     315.0
+    ],
+    [
+     "Partitura",
+     345.65
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ },
+ "stories": []
+}

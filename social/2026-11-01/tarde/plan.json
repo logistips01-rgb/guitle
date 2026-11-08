@@ -1,0 +1,104 @@
+{
+ "date": "2026-11-01",
+ "fecha": "1 de noviembre",
+ "post": null,
+ "stories": [
+  {
+   "slug": "sigma-dt-42-4260685050851",
+   "name": "Sigma DT-42",
+   "brand": "Sigma",
+   "kind": "acustica",
+   "img": "https://drunkat.es/upload/productos/800x800/sigma_dt-42_1.jpg",
+   "price": 640.0,
+   "store": "Drunkat",
+   "stores": 4,
+   "median": 878.0,
+   "max": 878.0,
+   "next": 699.67,
+   "rows": [
+    [
+     "Drunkat",
+     640.0
+    ],
+    [
+     "Partitura",
+     699.67
+    ],
+    [
+     "Pronorte",
+     878.0
+    ],
+    [
+     "Madrid Musical Málaga 8",
+     878.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 133 € menos que ayer",
+   "pct": 17,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "fender-cn-60s-wn-negro-885978011582",
+   "name": "Fender CN-60s WN Negro",
+   "brand": "Fender",
+   "kind": "clasica",
+   "img": "https://woodbrass.es/cdn/shop/files/2504e90697384fdd310973997f1ae956a4c97008_FMIC_0970160506.jpg?height=1200&pad_color=ffffff&v=1792639307&width=1200",
+   "price": 194.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 212.0,
+   "max": 212.0,
+   "next": 212.0,
+   "rows": [
+    [
+     "Woodbrass",
+     194.0
+    ],
+    [
+     "Alfasoni",
+     212.0
+    ],
+    [
+     "Madrid Musical Málaga 8",
+     212.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 2 € menos que ayer",
+   "pct": 1,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "schecter-sun-valley-super-shredder-fr-wht-815447023228",
+   "name": "Schecter Sun Valley Super Shredder FR WHT",
+   "brand": "Schecter",
+   "kind": "electrica",
+   "img": "https://www.pronorte.es/_files/product/14885/gallery4/guitarra-electrica-schecter-sun-valley-super-shredder-fr-wht-4.jpg",
+   "price": 636.36,
+   "store": "Musical San Francisco",
+   "stores": 3,
+   "median": 1099.0,
+   "max": 1099.0,
+   "next": 1099.0,
+   "rows": [
+    [
+     "Musical San Francisco",
+     636.36
+    ],
+    [
+     "Session",
+     1099.0
+    ],
+    [
+     "Woodbrass",
+     1099.0
+    ]
+   ],
+   "pvp": null,
+   "why": "462,64 € menos que en cualquier otra tienda",
+   "pct": 42,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}

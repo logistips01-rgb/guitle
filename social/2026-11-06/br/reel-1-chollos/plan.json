@@ -1,0 +1,136 @@
+{
+ "fecha": "6 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "benson-telecaster-hardy-series-hs-905-black-gold-com-bag-7899701569939",
+    "name": "Benson Telecaster Hardy Series HS 905 Black Gold Com Bag",
+    "brand": "Benson",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-benson-telecaster-hardy-series-hs-905-black-gold-com-bag-1132762/1353409.jpg?w=1000&h=1000&v=202508062246&qs=ignore",
+    "price": 2151.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 2492.1,
+    "max": 2519.1,
+    "next": 2465.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      2151.0
+     ],
+     [
+      "Música Center",
+      2465.1
+     ],
+     [
+      "Mundomax",
+      2519.1
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 314,10 a menos que em qualquer outra loja",
+    "pct": 13,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "tagima-agathis-la-andes-bks-tagima-7898563976381",
+    "name": "Tagima Agathis LA Andes BKS - Tagima",
+    "brand": "Tagima",
+    "kind": "acustica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/191780/Violao-Eletroacustico-Folk-Aco-Agathis-LA-Andes-BKS---Tagima.png?v=638484432615070000",
+    "price": 945.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 1169.45,
+    "max": 1199.9,
+    "next": 1139.0,
+    "rows": [
+     [
+      "Akustica Musical",
+      945.0
+     ],
+     [
+      "Cheiro de Música",
+      1139.0
+     ],
+     [
+      "Megasom",
+      1199.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 194 a menos que em qualquer outra loja",
+    "pct": 17,
+    "photo": "g1-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "giannini-gnf-3-ceq-bk-nylon-7890443024748",
+    "name": "Giannini GNF-3 Ceq BK Nylon",
+    "brand": "Giannini",
+    "kind": "clasica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/violao_eletroacustico_giannini_gnf_3_ceq_bk_nylon_1_20260717085012_ee8b1c1526f8.jpg",
+    "price": 886.5,
+    "store": "Música Center",
+    "stores": 3,
+    "median": 1094.5,
+    "max": 1190.0,
+    "next": 999.0,
+    "rows": [
+     [
+      "Música Center",
+      886.5
+     ],
+     [
+      "Cheiro de Música",
+      999.0
+     ],
+     [
+      "Music Hall Center",
+      1190.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 112,50 a menos que em qualquer outra loja",
+    "pct": 11,
+    "photo": "g2-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

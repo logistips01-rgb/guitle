@@ -1,0 +1,38 @@
+{
+ "fecha": "4 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "10 países",
+  "slides": [
+   {
+    "hook": "¿Y fuera de España?",
+    "title": "Comparamos guitarras en 24 países"
+   },
+   {
+    "title": "Mira cuánto cuesta fuera",
+    "size": 100,
+    "visual": {
+     "type": "chips",
+     "items": [
+      "España",
+      "Italia",
+      "Reino Unido",
+      "Francia",
+      "Alemania",
+      "Brasil",
+      "Países Bajos",
+      "Irlanda",
+      "Portugal",
+      "Austria"
+     ]
+    }
+   },
+   {
+    "title": "Todo en guitle.com",
+    "sub": "Gratis y sin registrarte",
+    "size": 120
+   }
+  ]
+ },
+ "stories": []
+}

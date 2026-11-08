@@ -1,0 +1,184 @@
+{
+ "fecha": "1. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "spira-guitars-s-500-qab-trans-aqua-blue-e-gitarre-3831120929950",
+    "name": "Spira Guitars S-500 QAB Trans Aqua Blue E-Gitarre",
+    "brand": "Spira",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/134539/lg/spira-guitars-s-500-qab-trans-aqua-blue-e-gitarre.jpg",
+    "price": 409.0,
+    "store": "IMM Professional",
+    "stores": 3,
+    "median": 489.5,
+    "max": 490.0,
+    "next": 489.0,
+    "rows": [
+     [
+      "IMM Professional",
+      409.0
+     ],
+     [
+      "Musikhaus Korn",
+      489.0
+     ],
+     [
+      "Shop2Rock",
+      490.0
+     ]
+    ],
+    "pvp": null,
+    "why": "80 € günstiger als in allen anderen Shops",
+    "pct": 16,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "ibanez-am73g-bk-4549763375902",
+    "name": "Ibanez AM73G-BK",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/96/2c/c6/1765185683/ibanez-am73g-bk.webp?ts=1765185683",
+    "price": 499.0,
+    "store": "Session",
+    "stores": 4,
+    "median": 579.0,
+    "max": 579.0,
+    "next": 567.0,
+    "rows": [
+     [
+      "Session",
+      499.0
+     ],
+     [
+      "Shop2Rock",
+      567.0
+     ],
+     [
+      "Musikhaus Lange",
+      579.0
+     ],
+     [
+      "Music Town",
+      579.0
+     ]
+    ],
+    "pvp": null,
+    "why": "68 € günstiger als in allen anderen Shops",
+    "pct": 12,
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "taylor-gs-mini-e-mahogany-887766111788",
+    "name": "Taylor GS Mini-e Mahogany",
+    "brand": "Taylor",
+    "kind": "acustica",
+    "img": "https://www.markstein.de/media/2b/4c/d8/1787082832/taylor_gs_mini_e_mahogany_00053379_1.jpg",
+    "price": 739.0,
+    "store": "Musikhaus Markstein",
+    "stores": 6,
+    "median": 849.0,
+    "max": 899.0,
+    "next": 849.0,
+    "rows": [
+     [
+      "Session",
+      849.0
+     ],
+     [
+      "Zoundhouse",
+      849.0
+     ],
+     [
+      "Soundland",
+      849.0
+     ],
+     [
+      "Thomann",
+      849.0
+     ],
+     [
+      "Woodbrass",
+      891.0
+     ],
+     [
+      "Musikhaus Markstein",
+      739.0
+     ]
+    ],
+    "pvp": null,
+    "why": "110 € günstiger als in allen anderen Shops",
+    "pct": 13,
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "manuel-rodriguez-academia-ac40-c-konzert-gitarre-zebrano-zeder-501-180-4046662287928",
+    "name": "Manuel Rodriguez Academia AC40-C Konzert-Gitarre, Zebrano/Zeder (501.180)",
+    "brand": "Manuel Rodriguez",
+    "kind": "clasica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/manuelrodriguez_501180_1.jpg",
+    "price": 396.66,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 541.0,
+    "max": 603.0,
+    "next": 479.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      396.66
+     ],
+     [
+      "Musikhaus Markstein",
+      479.0
+     ],
+     [
+      "Woodbrass",
+      603.0
+     ]
+    ],
+    "pvp": null,
+    "why": "82,34 € günstiger als in allen anderen Shops",
+    "pct": 17,
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

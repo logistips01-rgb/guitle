@@ -1,0 +1,175 @@
+{
+ "date": "2026-11-06",
+ "fecha": "6 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "takamine-gd51lh-nat-natural-lh-190262042228",
+   "name": "Takamine GD51LH-NAT Natural LH",
+   "brand": "Takamine",
+   "kind": "acustica",
+   "img": "https://woodbrass.com/cdn/shop/files/604f58103c4d40fd096a407214e4a01e1171d099_GTA_GD51LH_NAT.png?height=1200&pad_color=ffffff&v=1792518350&width=1200",
+   "price": 399.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 499.0,
+   "max": 499.0,
+   "next": 499.0,
+   "rows": [
+    [
+     "Woodbrass",
+     399.0
+    ],
+    [
+     "Stars Music",
+     499.0
+    ],
+    [
+     "Music 3000",
+     499.0
+    ]
+   ],
+   "pvp": null,
+   "why": "100 € de moins que dans les autres magasins",
+   "pct": 20,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Bon plan du jour : Takamine GD51LH-NAT Natural LH\n💶 399 € chez Woodbrass, comparée dans 3 magasins.\n📉 100 € de moins que dans les autres magasins.\n\n🔎 Compare son prix sur guitle.com/fr (tous les bons plans du jour via le lien en bio 👆).\nPrix du 6 novembre ; il peut changer.\n\n#guitare #guitariste #bonplan #promo #guitarefolk #takamine"
+ },
+ "stories": [
+  {
+   "slug": "sigma-jm-sg45-jmsg45html",
+   "name": "Sigma JM-SG45",
+   "brand": "Sigma",
+   "kind": "acustica",
+   "img": "https://ubico-musique.com/13713-home_default/guitare-folk-sigma-serie-sg-jm-sg45.jpg",
+   "price": 749.0,
+   "store": "Macca Music",
+   "stores": 6,
+   "median": 870.0,
+   "max": 870.0,
+   "next": 870.0,
+   "rows": [
+    [
+     "Macca Music",
+     749.0
+    ],
+    [
+     "Woodbrass",
+     870.0
+    ],
+    [
+     "Stars Music",
+     870.0
+    ],
+    [
+     "Hurricane Music",
+     870.0
+    ],
+    [
+     "Scotto Musique",
+     870.0
+    ],
+    [
+     "West Music",
+     870.0
+    ]
+   ],
+   "pvp": null,
+   "why": "121 € de moins que dans les autres magasins",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ovation-celebrity-elite-mid-cutaway-reverse-blue-burst-ce44-rbb-g-4046662285290",
+   "name": "Ovation Celebrity Elite Mid Cutaway Reverse Blue Burst CE44-RBB-G",
+   "brand": "Ovation",
+   "kind": "acustica",
+   "img": "https://woodbrass.com/cdn/shop/files/12fd9b5591dc8064a7ca0d66bab872ad16950a73_GEWA_86908.jpg?height=1200&pad_color=ffffff&v=1792647769&width=1200",
+   "price": 439.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 514.0,
+   "max": 529.0,
+   "next": 499.0,
+   "rows": [
+    [
+     "Woodbrass",
+     439.0
+    ],
+    [
+     "Music Privilege",
+     499.0
+    ],
+    [
+     "Auditorium 4",
+     529.0
+    ]
+   ],
+   "pvp": null,
+   "why": "60 € de moins que dans les autres magasins",
+   "pct": 12,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "takamine-gf49ce-fx-cutaway-cosmic-black-sparkle-190262044741",
+   "name": "Takamine GF49CE FX Cutaway Cosmic Black Sparkle",
+   "brand": "Takamine",
+   "kind": "acustica",
+   "img": "https://woodbrass.com/cdn/shop/files/7a99f76505a2e66c7f18e37f846664eed26e9496_GTA_GF49CE_CB.jpg?height=1200&pad_color=ffffff&v=1793809906&width=1200",
+   "price": 469.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 529.0,
+   "max": 529.0,
+   "next": 529.0,
+   "rows": [
+    [
+     "Woodbrass",
+     469.0
+    ],
+    [
+     "Stars Music",
+     529.0
+    ],
+    [
+     "Music 3000",
+     529.0
+    ]
+   ],
+   "pvp": null,
+   "why": "60 € de moins que dans les autres magasins",
+   "pct": 11,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

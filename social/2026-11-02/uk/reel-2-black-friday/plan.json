@@ -1,0 +1,112 @@
+{
+ "fecha": "2 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "bf",
+  "days": 25,
+  "deal": {
+   "slug": "squier-classic-vibe-50s-tele-mn-butterscotch-blonde-885978064397",
+   "name": "Squier Classic Vibe 50s Tele MN Butterscotch Blonde",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/2r1deazh.png?v=1716385068",
+   "price": 359.0,
+   "store": "Reidys",
+   "stores": 12,
+   "median": 399.0,
+   "max": 449.0,
+   "next": 369.0,
+   "rows": [
+    [
+     "Reidys",
+     359.0
+    ],
+    [
+     "Dawsons",
+     369.0
+    ],
+    [
+     "guitarguitar",
+     399.0
+    ],
+    [
+     "Bonners Music",
+     399.0
+    ],
+    [
+     "Fair Deal Music",
+     399.0
+    ],
+    [
+     "Ness Music",
+     399.0
+    ],
+    [
+     "Andertons",
+     399.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     399.0
+    ],
+    [
+     "Music Street",
+     419.0
+    ],
+    [
+     "Sutton Music",
+     419.0
+    ],
+    [
+     "A Strings",
+     439.0
+    ],
+    [
+     "Project Music",
+     449.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

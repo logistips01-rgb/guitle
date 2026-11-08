@@ -1,0 +1,160 @@
+{
+ "fecha": "6 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "squier-sonic-strat-mn-black-mnblackhtm",
+    "name": "Squier Sonic Strat MN Black",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/560954.jpg",
+    "price": 143.0,
+    "store": "Thomann",
+    "stores": 8,
+    "median": 159.0,
+    "max": 189.99,
+    "next": 159.0,
+    "rows": [
+     [
+      "Thomann",
+      143.0
+     ],
+     [
+      "Bonners Music",
+      159.0
+     ],
+     [
+      "guitarguitar",
+      159.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      159.0
+     ],
+     [
+      "Wunjo Guitars",
+      159.0
+     ],
+     [
+      "Reidys",
+      179.0
+     ],
+     [
+      "Music Bros",
+      189.0
+     ],
+     [
+      "Guitarbitz",
+      189.99
+     ]
+    ],
+    "pvp": null,
+    "why": "£16 less than any other shop",
+    "pct": 10,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "prs-se-ce24-standard-satin-electric-guitar-in-turquoise-825362172581",
+    "name": "PRS SE CE24 Standard Satin Electric Guitar in Turquoise",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0550/7556/9815/files/Screenshot2025-04-19at16.56.07.png?v=1745078231",
+    "price": 429.0,
+    "store": "The Guitar Store",
+    "stores": 3,
+    "median": 499.0,
+    "max": 499.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "The Guitar Store",
+      429.0
+     ],
+     [
+      "A Strings",
+      499.0
+     ],
+     [
+      "Guitarbitz",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£70 less than any other shop",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "faith-nomad-mini-neptune-electro-acoustic-trembesi-5036678153149",
+    "name": "Faith Nomad Mini-Neptune Electro-Acoustic - Trembesi",
+    "brand": "Faith",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/fdnetb---front-angle-m.jpg?v=1772540335",
+    "price": 563.0,
+    "store": "Reidys",
+    "stores": 4,
+    "median": 659.0,
+    "max": 699.0,
+    "next": 649.0,
+    "rows": [
+     [
+      "Reidys",
+      563.0
+     ],
+     [
+      "A Strings",
+      649.0
+     ],
+     [
+      "The Music Bank",
+      659.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      699.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£86 less than any other shop",
+    "pct": 13,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

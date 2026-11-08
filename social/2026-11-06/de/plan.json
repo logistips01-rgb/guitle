@@ -1,0 +1,167 @@
+{
+ "date": "2026-11-06",
+ "fecha": "6. November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "fender-cd-60sce-12-nat-885978875528",
+   "name": "Fender CD-60SCE-12-NAT",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.session.de/media/be/54/9e/1779780021/fender-cd-60sce-12-nat.jpg?ts=1779780021",
+   "price": 295.0,
+   "store": "Session",
+   "stores": 3,
+   "median": 376.5,
+   "max": 379.0,
+   "next": 374.0,
+   "rows": [
+    [
+     "Session",
+     295.0
+    ],
+    [
+     "Woodbrass",
+     374.0
+    ],
+    [
+     "Musikhaus Markstein",
+     379.0
+    ]
+   ],
+   "pvp": null,
+   "why": "79 € günstiger als in allen anderen Shops",
+   "pct": 21,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal des Tages: Fender CD-60SCE-12-NAT\n💶 295 € bei Session, verglichen in 3 Shops.\n📉 79 € günstiger als in allen anderen Shops.\n\n🔎 Vergleiche den Preis auf guitle.com/de (alle Deals von heute über den Link in der Bio 👆).\nPreis vom 6. November; kann sich ändern.\n\n#gitarre #gitarrist #angebote #deals #westerngitarre #fender"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-aad51lce-dvs-4549763376947",
+   "name": "Ibanez AAD51LCE-DVS",
+   "brand": "Ibanez",
+   "kind": "acustica",
+   "img": "https://www.session.de/media/05/74/8e/1765539400/ibanez-aad51lce-dvs-02.webp?ts=1765539400",
+   "price": 293.0,
+   "store": "Session",
+   "stores": 3,
+   "median": 347.0,
+   "max": 349.0,
+   "next": 345.0,
+   "rows": [
+    [
+     "Session",
+     293.0
+    ],
+    [
+     "Shop2Rock",
+     345.0
+    ],
+    [
+     "Zoundhouse",
+     349.0
+    ]
+   ],
+   "pvp": null,
+   "why": "52 € günstiger als in allen anderen Shops",
+   "pct": 15,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ltd-esp-ltd-mt-130-red-840248014304",
+   "name": "LTD ESP Ltd MT-130 Red",
+   "brand": "LTD",
+   "kind": "electrica",
+   "img": "https://www.markstein.de/media/4c/5e/e4/1744623059/1da45f2704097d5b332df29caf7a66ec.jpg",
+   "price": 260.0,
+   "store": "Musikhaus Markstein",
+   "stores": 4,
+   "median": 289.0,
+   "max": 289.0,
+   "next": 289.0,
+   "rows": [
+    [
+     "Musikhaus Markstein",
+     260.0
+    ],
+    [
+     "Session",
+     289.0
+    ],
+    [
+     "Music Town",
+     289.0
+    ],
+    [
+     "Thomann",
+     289.0
+    ]
+   ],
+   "pvp": null,
+   "why": "29 € günstiger als in allen anderen Shops",
+   "pct": 10,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "fender-california-standard-redondo-mini-mit-tasche-sapele-decke-natur-sapele-885978857517",
+   "name": "Fender California Standard Redondo Mini mit Tasche Sapele-Decke Natur Sapele",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://woodbrass.de/cdn/shop/files/21784c60f6962e144a8226d4a71d312a65224698_FMIC_0974103121.jpg?height=1200&pad_color=ffffff&v=1793373009&width=1200",
+   "price": 151.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 179.0,
+   "max": 189.0,
+   "next": 169.0,
+   "rows": [
+    [
+     "Woodbrass",
+     151.0
+    ],
+    [
+     "Zoundhouse",
+     169.0
+    ],
+    [
+     "Musikhaus Markstein",
+     189.0
+    ]
+   ],
+   "pvp": null,
+   "why": "18 € günstiger als in allen anderen Shops",
+   "pct": 11,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

@@ -1,0 +1,96 @@
+{
+ "fecha": "1er novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "bf",
+  "days": 26,
+  "deal": {
+   "slug": "martin-co-c-f-martin-lx1-serie-little-729789507851",
+   "name": "Martin & co C. F. Martin - LX1 Serie Little",
+   "brand": "Martin & co",
+   "kind": "acustica",
+   "img": "https://audiosystem.fr/37029-product_zoom/c-f-martin-lx1-serie-little.jpg",
+   "price": 499.0,
+   "store": "Audio System",
+   "stores": 8,
+   "median": 589.0,
+   "max": 609.0,
+   "next": 579.0,
+   "rows": [
+    [
+     "Audio System",
+     499.0
+    ],
+    [
+     "Music City",
+     579.0
+    ],
+    [
+     "Woodbrass",
+     589.0
+    ],
+    [
+     "Stars Music",
+     589.0
+    ],
+    [
+     "Music 3000",
+     589.0
+    ],
+    [
+     "Michenaud",
+     589.0
+    ],
+    [
+     "Macca Music",
+     599.0
+    ],
+    [
+     "Hurricane Music",
+     609.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "date": "2026-10-30",
+ "fecha": "30 de octubre",
+ "post": null,
+ "stories": [
+  {
+   "slug": "yamaha-cg102-natural-4957812496971",
+   "name": "Yamaha CG102 Natural",
+   "brand": "Yamaha",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/6/662852_182c.jpg?store=nume_es&image-type=image",
+   "price": 216.6,
+   "store": "Nume Music",
+   "stores": 3,
+   "median": 227.8,
+   "max": 239.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 27,40 € menos que ayer",
+   "pct": 11,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "ibanez-ga3ece-oam-open-pore-amber-4549763353405",
+   "name": "Ibanez GA3ECE-OAM Open Pore Amber",
+   "brand": "Ibanez",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/737812_1_3bf9.jpg?store=nume_es&image-type=image",
+   "price": 138.04,
+   "store": "Nume Music",
+   "stores": 3,
+   "median": 147.5,
+   "max": 148.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 9,96 € menos que ayer",
+   "pct": 7,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "cort-cec7-nat-8809625361419",
+   "name": "Cort CEC7 Nat",
+   "brand": "Cort",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/4/747561_5e0d.jpg?store=nume_es&image-type=image",
+   "price": 395.0,
+   "store": "Pronorte",
+   "stores": 4,
+   "median": 406.64,
+   "max": 429.0,
+   "pvp": null,
+   "why": "Rebajada hoy: 12 € menos que ayer",
+   "pct": 3,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}

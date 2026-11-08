@@ -1,0 +1,180 @@
+{
+ "fecha": "2 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "squier-sonic-telecaster-electric-guitar-in-canary-yellow-naryyellow",
+    "name": "Squier Sonic Telecaster Electric Guitar in Canary Yellow",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://cdn11.bigcommerce.com/s-4hc0jwsnnq/images/stencil/1280x1280/products/49807/270186/0373450545_3__28966.1768429298.jpg?c=1",
+    "price": 149.99,
+    "store": "Andertons",
+    "stores": 5,
+    "median": 185.5,
+    "max": 189.99,
+    "next": 179.0,
+    "rows": [
+     [
+      "Andertons",
+      149.99
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      179.0
+     ],
+     [
+      "Peach Guitars",
+      182.0
+     ],
+     [
+      "Richtone Music",
+      189.0
+     ],
+     [
+      "Guitarbitz",
+      189.99
+     ]
+    ],
+    "pvp": null,
+    "why": "£29.01 less than any other shop",
+    "pct": 16,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "schecter-omen-extreme-6-gloss-natural-naturalhtm",
+    "name": "Schecter Omen Extreme 6 Gloss Natural",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/554489.jpg",
+    "price": 511.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 615.0,
+    "max": 615.0,
+    "next": 615.0,
+    "rows": [
+     [
+      "Thomann",
+      511.0
+     ],
+     [
+      "Fair Deal Music",
+      615.0
+     ],
+     [
+      "guitarguitar",
+      615.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      615.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£104 less than any other shop",
+    "pct": 17,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "sigma-omm-st-acoustic-4260279931191",
+    "name": "Sigma - Omm St Acoustic",
+    "brand": "Sigma",
+    "kind": "acustica",
+    "img": "https://www.musicstreet.co.uk/cdn/shop/files/0MMST-10.jpg?v=1793286451&width=1920",
+    "price": 209.0,
+    "store": "Music Street",
+    "stores": 3,
+    "median": 257.5,
+    "max": 259.0,
+    "next": 256.0,
+    "rows": [
+     [
+      "Music Street",
+      209.0
+     ],
+     [
+      "Peach Guitars",
+      256.0
+     ],
+     [
+      "guitarguitar",
+      259.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£47 less than any other shop",
+    "pct": 18,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   },
+   {
+    "slug": "cordoba-stage-guitar-black-burst-809870060141",
+    "name": "Cordoba Stage Guitar Black Burst",
+    "brand": "Cordoba",
+    "kind": "clasica",
+    "img": "https://www.musicstreet.co.uk/cdn/shop/files/stage-blkb-9.jpg?v=1729558734&width=1920",
+    "price": 599.0,
+    "store": "Music Street",
+    "stores": 3,
+    "median": 734.0,
+    "max": 769.0,
+    "next": 699.0,
+    "rows": [
+     [
+      "Music Street",
+      599.0
+     ],
+     [
+      "Thomann",
+      699.0
+     ],
+     [
+      "guitarguitar",
+      769.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£100 less than any other shop",
+    "pct": 14,
+    "photo": "g3-1.webp",
+    "label": "Classical"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

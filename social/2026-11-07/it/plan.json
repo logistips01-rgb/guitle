@@ -1,0 +1,196 @@
+{
+ "date": "2026-11-07",
+ "fecha": "7 novembre",
+ "post": {
+  "type": "top",
+  "title": "2 chitarre classiche da 300 € a 750 €",
+  "kind": "clasica",
+  "picks": [
+   {
+    "slug": "ibanez-aeg74n-mhs-mahogany-sunburst-high-gloss-chitarra-classica-elettrificata-4549763349873",
+    "name": "Ibanez AEG74N-MHS Mahogany Sunburst High Gloss Chitarra classica elettrificata",
+    "brand": "Ibanez",
+    "kind": "clasica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/6860_--_000_9652_1024x1024.jpg?v=1772332721",
+    "price": 387.0,
+    "store": "Di Santo Musica",
+    "stores": 3,
+    "median": 425.5,
+    "max": 429.0,
+    "next": 422.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      387.0
+     ],
+     [
+      "Thomann",
+      422.0
+     ],
+     [
+      "Woodbrass",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "yamaha-cg192s-cg192shtml",
+    "name": "Yamaha CG192S",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://www.cavallimusica.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/c/g/cg192s_1.jpg",
+    "price": 629.0,
+    "store": "Cavalli Musica",
+    "stores": 3,
+    "median": 634.0,
+    "max": 639.0,
+    "next": 629.0,
+    "rows": [
+     [
+      "Cavalli Musica",
+      629.0
+     ],
+     [
+      "S&M Strumenti",
+      629.0
+     ],
+     [
+      "Woodbrass",
+      639.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   }
+  ],
+  "caption": "🎸 2 chitarre classiche da 300 € a 750 €: le più vendute nei negozi, con il miglior prezzo di oggi 👇\n\n1️⃣ Ibanez AEG74N-MHS Mahogany Sunburst High Gloss Chitarra classica elettrificata: 387 € da Di Santo Musica\n2️⃣ Yamaha CG192S: 629 € da Cavalli Musica\n\nQuale scegli? Diccelo nei commenti 💬\n🔎 Confronta i prezzi su guitle.com/it (tutte le offerte di oggi nel link in bio 👆). Prezzi del 7 novembre.\n\n#chitarra #chitarrista #offerte #sconti #chitarraclassica #ibanez #yamaha"
+ },
+ "stories": [
+  {
+   "slug": "yamaha-apx600-nt-chitarra-acustica-elettrificata-cutaway-natural-4957812623896",
+   "name": "Yamaha APX600 NT Chitarra Acustica Elettrificata CutAway, Natural",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://www.globalnetshop.it/cdn/shop/files/01-APX600NT_1024x.jpg?v=1756039745",
+   "price": 299.0,
+   "store": "Global Net Shop",
+   "stores": 4,
+   "median": 345.0,
+   "max": 359.0,
+   "next": 345.0,
+   "rows": [
+    [
+     "Global Net Shop",
+     299.0
+    ],
+    [
+     "Woodbrass",
+     345.0
+    ],
+    [
+     "Di Santo Musica",
+     345.0
+    ],
+    [
+     "Direzione Musica",
+     359.0
+    ]
+   ],
+   "pvp": null,
+   "why": "46 € in meno che negli altri negozi",
+   "pct": 13,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "squier-stratocaster-sss-mini-mn-blu-california-197955143040",
+   "name": "Squier Stratocaster SSS Mini MN Blu California",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.it/cdn/shop/files/dd14a373f95ae951251f614ba4fb436a5937eea6_FMIC_0370122526.jpg?height=1200&pad_color=ffffff&v=1793727397&width=1200",
+   "price": 175.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 189.0,
+   "max": 189.0,
+   "next": 189.0,
+   "rows": [
+    [
+     "Woodbrass",
+     175.0
+    ],
+    [
+     "Di Santo Musica",
+     189.0
+    ],
+    [
+     "Global Net Shop",
+     189.0
+    ]
+   ],
+   "pvp": null,
+   "why": "14 € in meno che negli altri negozi",
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "fender-standard-stratocaster-mp-candy-cola-885978117871",
+   "name": "Fender Standard Stratocaster MP Candy Cola",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.disantomusica.it/cdn/shop/files/2156233_486_1024x1024.jpg?v=1772359679",
+   "price": 489.0,
+   "store": "Di Santo Musica",
+   "stores": 3,
+   "median": 552.0,
+   "max": 579.0,
+   "next": 525.0,
+   "rows": [
+    [
+     "Di Santo Musica",
+     489.0
+    ],
+    [
+     "Global Net Shop",
+     525.0
+    ],
+    [
+     "Woodbrass",
+     579.0
+    ]
+   ],
+   "pvp": null,
+   "why": "36 € in meno che negli altri negozi",
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}

@@ -1,0 +1,42 @@
+{
+ "tipo": "same",
+ "cab": "Same record, £24.01 cheaper",
+ "fmt": "vinyl",
+ "disco": {
+  "ean": "0881061826422",
+  "fmt": "vinilo",
+  "img": "https://cdn.shopify.com/s/files/1/1565/5653/files/884d1daddbcb4752bb82674c4d381d3a.jpg?v=1793380788",
+  "items": [
+   {
+    "p": 58.99,
+    "s": "crash",
+    "st": true,
+    "u": "https://www.crashrecords.co.uk/products/florence-the-machine-everybody-scream-tour-live-pre-order"
+   },
+   {
+    "p": 65.99,
+    "s": "assai",
+    "st": true,
+    "u": "https://www.assai.co.uk/products/florence-the-machine-everybody-scream-tour-live-vinyl-lp-clear-colour-due-out-19-03-26"
+   },
+   {
+    "p": 83.0,
+    "s": "sisterray",
+    "st": true,
+    "u": "https://www.sisterray.co.uk/products/everybody-scream-tour-live"
+   }
+  ],
+  "name": "Florence + The Machine - Everybody Scream Tour Live",
+  "slug": "florence-the-machine-everybody-scream-tour-live-vinyl-0881061826422",
+  "artist": "Florence + The Machine",
+  "title": "Everybody Scream Tour Live",
+  "lo": 58.99,
+  "hi": 83.0,
+  "ahorro": 24.01,
+  "tienda": "Crash Records",
+  "tiendas": 3,
+  "url": "https://guitle.com/uk/records/florence-the-machine-everybody-scream-tour-live-vinyl-0881061826422.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-05"
+}

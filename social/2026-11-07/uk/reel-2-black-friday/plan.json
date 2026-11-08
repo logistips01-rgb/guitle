@@ -1,0 +1,81 @@
+{
+ "fecha": "7 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "bf",
+  "days": 20,
+  "deal": {
+   "slug": "admira-alba-4-4-classical-guitar-5036678001167",
+   "name": "Admira Alba 4/4 Classical Guitar",
+   "brand": "Admira",
+   "kind": "clasica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/adm200_1.jpg?v=1714488331",
+   "th": "bc7e1747109c4025.webp",
+   "price": 139.0,
+   "store": "Reidys",
+   "stores": 4,
+   "median": 149.0,
+   "max": 176.0,
+   "next": 149.0,
+   "rows": [
+    [
+     "Reidys",
+     139.0
+    ],
+    [
+     "Fair Deal Music",
+     149.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     149.0
+    ],
+    [
+     "Millers Music",
+     176.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

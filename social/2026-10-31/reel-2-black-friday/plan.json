@@ -1,0 +1,77 @@
+{
+ "fecha": "31 de octubre",
+ "post": {
+  "type": "bf",
+  "days": 27,
+  "deal": {
+   "slug": "fender-standard-stratocaster-lr-3-color-sunburst-885978117901",
+   "name": "Fender Standard Stratocaster LR 3-Color Sunburst",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/734666_1_c744.jpg?store=nume_es&image-type=image",
+   "price": 499.0,
+   "store": "Auvisa",
+   "stores": 13,
+   "median": 526.0,
+   "max": 577.0,
+   "next": 499.0,
+   "rows": [
+    [
+     "Auvisa",
+     499.0
+    ],
+    [
+     "Musical San Francisco",
+     499.0
+    ],
+    [
+     "Nume Music",
+     499.98
+    ],
+    [
+     "Egitana",
+     509.0
+    ],
+    [
+     "MAT Guitars",
+     526.0
+    ],
+    [
+     "Pronorte",
+     526.0
+    ],
+    [
+     "Microfusa",
+     526.0
+    ],
+    [
+     "Alfasoni",
+     526.0
+    ],
+    [
+     "Drunkat",
+     535.0
+    ],
+    [
+     "Musicopolix",
+     560.07
+    ],
+    [
+     "Session",
+     569.0
+    ],
+    [
+     "Music Store (eBay)",
+     569.0
+    ],
+    [
+     "Woodbrass",
+     577.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ },
+ "stories": []
+}

@@ -1,0 +1,184 @@
+{
+ "fecha": "2 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "strinberg-tele-strinberg-tc120s-sunburst-7899854512653",
+    "name": "Strinberg Tele Strinberg TC120S Sunburst",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://static.mundomax.com.br/produtos/82003/1200/4.jpg",
+    "price": 809.1,
+    "store": "Mundomax",
+    "stores": 4,
+    "median": 1100.0,
+    "max": 1200.0,
+    "next": 1099.0,
+    "rows": [
+     [
+      "Mundomax",
+      809.1
+     ],
+     [
+      "Cheiro de Música",
+      1099.0
+     ],
+     [
+      "Só Som",
+      1100.0
+     ],
+     [
+      "Tuner Music",
+      1200.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 289,90 a menos que em qualquer outra loja",
+    "pct": 26,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "squier-stratocaster-fmt-hss-affinity-series-sienna-sunburst-0378152547-squier-by-885978723447",
+    "name": "Squier Stratocaster FMT HSS Affinity Series Sienna Sunburst 0378152547 - Squier By Fender",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/222241/Guitarra-Affinity-Series-Stratocaster-FMT-HSS-SB---Squier-By-Fender.png?v=639191401711800000",
+    "price": 2482.16,
+    "store": "Ninja Som",
+    "stores": 5,
+    "median": 3503.435,
+    "max": 4599.0,
+    "next": 3275.01,
+    "rows": [
+     [
+      "Ninja Som",
+      2482.16
+     ],
+     [
+      "Carneiro Music",
+      3275.01
+     ],
+     [
+      "Mundomax",
+      3298.5
+     ],
+     [
+      "RCK Audio",
+      3708.37
+     ],
+     [
+      "Cheiro de Música",
+      4599.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 792,85 a menos que em qualquer outra loja",
+    "pct": 24,
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "fender-redondo-player-candy-apple-red-717669621476",
+    "name": "Fender Redondo Player Candy Apple Red",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://static.mundomax.com.br/produtos/85681/1200/7.jpg",
+    "price": 3149.1,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 4244.5,
+    "max": 4499.0,
+    "next": 3990.0,
+    "rows": [
+     [
+      "Mundomax",
+      3149.1
+     ],
+     [
+      "Carneiro Music",
+      3990.0
+     ],
+     [
+      "Cheiro de Música",
+      4499.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 840,90 a menos que em qualquer outra loja",
+    "pct": 21,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "tagima-cartagena-eletroacustico-nylon-preto-satin-7898563976411",
+    "name": "Tagima Cartagena Eletroacústico Nylon Preto Satin",
+    "brand": "Tagima",
+    "kind": "clasica",
+    "img": "https://static.mundomax.com.br/produtos/82799/1200/1.jpg",
+    "price": 809.1,
+    "store": "Mundomax",
+    "stores": 4,
+    "median": 1013.0,
+    "max": 1249.0,
+    "next": 926.1,
+    "rows": [
+     [
+      "Mundomax",
+      809.1
+     ],
+     [
+      "Música Center",
+      926.1
+     ],
+     [
+      "Cheiro de Música",
+      1013.0
+     ],
+     [
+      "Casa da Música",
+      1249.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 117 a menos que em qualquer outra loja",
+    "pct": 13,
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

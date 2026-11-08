@@ -1,0 +1,172 @@
+{
+ "fecha": "5 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "squier-fender-affinity-series-telecaster-left-handed-butterscotch-blonde-885978722839",
+    "name": "Squier Fender Affinity Series Telecaster Left-Handed Butterscotch Blonde",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_guitarra_squier_fender_affinity_series_telecaster_1_20260213101215_9f8dd543648f.jpg",
+    "price": 2549.99,
+    "store": "RCK Audio",
+    "stores": 3,
+    "median": 3332.05,
+    "max": 3666.2,
+    "next": 2997.9,
+    "rows": [
+     [
+      "RCK Audio",
+      2549.99
+     ],
+     [
+      "Mundomax",
+      2997.9
+     ],
+     [
+      "Ninja Som",
+      3666.2
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 447,91 a menos que em qualquer outra loja",
+    "pct": 15,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "tagima-tw55-bs-c-bk-butterscotch-tw-series-telecaster-passiva-7898563976602",
+    "name": "Tagima TW55 BS C/BK Butterscotch TW Series Telecaster Passiva",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-tw55-bs-c-bk-butterscotch-tw-series-telecaster-passiva-80238/267728-1.jpg?w=1000&h=1000&v=202511051437&qs=ignore",
+    "price": 1093.49,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 1309.9,
+    "max": 1359.9,
+    "next": 1259.9,
+    "rows": [
+     [
+      "Mundomax",
+      1093.49
+     ],
+     [
+      "Luggi",
+      1259.9
+     ],
+     [
+      "Megasom",
+      1359.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 166,41 a menos que em qualquer outra loja",
+    "pct": 13,
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "strinberg-diamond-dd2sc-n-folk-7899854525509",
+    "name": "Strinberg Diamond DD2SC N Folk",
+    "brand": "Strinberg",
+    "kind": "acustica",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_violao_eletroacustico_strinberg_diamond_dd2sc_n_folk_9035_1_e8f41510e387dc97fb4abfe770f72872_20250721132258.jpg",
+    "price": 1937.99,
+    "store": "RCK Audio",
+    "stores": 4,
+    "median": 2354.34,
+    "max": 2699.9,
+    "next": 2339.1,
+    "rows": [
+     [
+      "RCK Audio",
+      1937.99
+     ],
+     [
+      "Mundomax",
+      2339.1
+     ],
+     [
+      "Ponto do Músico",
+      2354.34
+     ],
+     [
+      "Megasom",
+      2699.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 401,11 a menos que em qualquer outra loja",
+    "pct": 17,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "giannini-performance-plus-gny-7890443025646",
+    "name": "Giannini Performance Plus GNY",
+    "brand": "Giannini",
+    "kind": "clasica",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_violo_eletroacstico_nylon_giannini_performance_plu_1_20251021103659_0fc6aa9ddfef.jpeg",
+    "price": 982.59,
+    "store": "RCK Audio",
+    "stores": 3,
+    "median": 1163.25,
+    "max": 1165.5,
+    "next": 1161.0,
+    "rows": [
+     [
+      "RCK Audio",
+      982.59
+     ],
+     [
+      "Akustica Musical",
+      1161.0
+     ],
+     [
+      "Destroyer",
+      1165.5
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 178,41 a menos que em qualquer outra loja",
+    "pct": 15,
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

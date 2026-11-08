@@ -1,0 +1,239 @@
+{
+ "fecha": "4 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "5 guitares folk à moins de 300 €",
+  "hook": "Top du jour",
+  "picks": [
+   {
+    "slug": "cort-ap550-acajou-natural-open-pores-8809625364779",
+    "name": "Cort AP550 Acajou Natural Open Pores",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/a13e5d3ef0da53704f20aed5daa8964b0c762f7f_MUSICO_AP550MOP.jpg?height=1200&pad_color=ffffff&v=1792597386&width=1200",
+    "price": 179.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 179.0,
+    "max": 179.0,
+    "next": 179.0,
+    "rows": [
+     [
+      "Woodbrass",
+      179.0
+     ],
+     [
+      "Stars Music",
+      179.0
+     ],
+     [
+      "Music 3000",
+      179.0
+     ],
+     [
+      "Guitar Maniac",
+      179.0
+     ],
+     [
+      "Hurricane Music",
+      179.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "takamine-gln12ens-12-nex-epica-acajou-190262060024",
+    "name": "Takamine Gln12Ens 12 Nex Epica-Acajou",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/7b2f4c4f8d27a086879fbca891d4ff4d789da177_GTA_GLN12ENS.png?height=1200&pad_color=ffffff&v=1793752438&width=1200",
+    "price": 233.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 314.0,
+    "max": 349.0,
+    "next": 233.0,
+    "rows": [
+     [
+      "Woodbrass",
+      233.0
+     ],
+     [
+      "Hurricane Music",
+      233.0
+     ],
+     [
+      "Audio System",
+      299.0
+     ],
+     [
+      "Scotto Musique",
+      329.0
+     ],
+     [
+      "Music 3000",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "yamaha-apxt2-old-violin-sunburst-4957812520157",
+    "name": "Yamaha Apxt2 Old Violin Sunburst",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/cb4822abdf4d9aed02832c69c9ad5da4ced45855_GAPXT2OVS.jpg?height=1200&pad_color=ffffff&v=1792644075&width=1200",
+    "price": 252.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 259.0,
+    "max": 289.0,
+    "next": 252.0,
+    "rows": [
+     [
+      "Woodbrass",
+      252.0
+     ],
+     [
+      "Stars Music",
+      252.0
+     ],
+     [
+      "Scotto Musique",
+      259.0
+     ],
+     [
+      "Michenaud",
+      259.0
+     ],
+     [
+      "Audio System",
+      289.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "lag-tramontane-t70a-nat-auditorium-natural-3700166371842",
+    "name": "Lâg Tramontane T70A-Nat Auditorium Natural",
+    "brand": "Lâg",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/39a5125cd6d9e897ad45c3d3c9c82d9644b66e85_GLA_T70A_NAT_2.png?height=1200&pad_color=ffffff&v=1793725773&width=1200",
+    "price": 279.0,
+    "store": "Woodbrass",
+    "stores": 6,
+    "median": 279.0,
+    "max": 279.0,
+    "next": 279.0,
+    "rows": [
+     [
+      "Woodbrass",
+      279.0
+     ],
+     [
+      "Stars Music",
+      279.0
+     ],
+     [
+      "Hurricane Music",
+      279.0
+     ],
+     [
+      "Music 3000",
+      279.0
+     ],
+     [
+      "Ubico Musique",
+      279.0
+     ],
+     [
+      "Audio System",
+      279.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "lag-lag-t70d-nat-dreadnought-naturelle-3700166371798",
+    "name": "LAG LÂG - T70D-NAT Dreadnought Naturelle",
+    "brand": "LAG",
+    "kind": "acustica",
+    "img": "https://ubico-musique.com/14594-home_default/guitare-folk-lâg-t70d-nat-dreadnought-naturelle.jpg",
+    "price": 279.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 279.0,
+    "max": 299.0,
+    "next": 279.0,
+    "rows": [
+     [
+      "Woodbrass",
+      279.0
+     ],
+     [
+      "Stars Music",
+      279.0
+     ],
+     [
+      "Hurricane Music",
+      279.0
+     ],
+     [
+      "Music 3000",
+      279.0
+     ],
+     [
+      "Audio System",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   }
+  ]
+ }
+}

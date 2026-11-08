@@ -1,0 +1,161 @@
+{
+ "date": "2026-11-06",
+ "fecha": "6 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "mooer-msc20-pro-guitar-ocean-blue-eanbluehtm",
+   "name": "Mooer MSC20 Pro Guitar Ocean Blue",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/602807.jpg",
+   "price": 252.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 307.0,
+   "max": 329.0,
+   "next": 285.0,
+   "rows": [
+    [
+     "Thomann",
+     252.0
+    ],
+    [
+     "Zecchini Musica",
+     285.0
+    ],
+    [
+     "Woodbrass",
+     329.0
+    ]
+   ],
+   "pvp": null,
+   "why": "33 € in meno che negli altri negozi",
+   "pct": 12,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Offerta del giorno: Mooer MSC20 Pro Guitar Ocean Blue\n💶 252 € da Thomann, confrontata in 3 negozi.\n📉 33 € in meno che negli altri negozi.\n\n🔎 Confronta il prezzo su guitle.com/it (tutte le offerte di oggi nel link in bio 👆).\nPrezzo del 6 novembre; può cambiare.\n\n#chitarra #chitarrista #offerte #sconti #chitarraelettrica #mooer"
+ },
+ "stories": [
+  {
+   "slug": "fender-cp-60s-parlor-wn-natural-120021html",
+   "name": "Fender CP-60S Parlor wn natural",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.cavallimusica.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/0/9/0970120021_1.jpg",
+   "price": 195.0,
+   "store": "Cavalli Musica",
+   "stores": 3,
+   "median": 221.0,
+   "max": 222.0,
+   "next": 220.0,
+   "rows": [
+    [
+     "Cavalli Musica",
+     195.0
+    ],
+    [
+     "Woodbrass",
+     220.0
+    ],
+    [
+     "Thomann",
+     222.0
+    ]
+   ],
+   "pvp": null,
+   "why": "25 € in meno che negli altri negozi",
+   "pct": 11,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "squier-stratocaster-h-ht-sonic-lrl-nero-717669815882",
+   "name": "Squier Stratocaster H Ht Sonic Lrl Nero",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.it/cdn/shop/files/a33e721803055ab675022eb8f9e61f19864bb28d_FMIC_0373301506.jpg?height=1200&pad_color=ffffff&v=1793727290&width=1200",
+   "price": 166.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 184.0,
+   "max": 189.0,
+   "next": 179.0,
+   "rows": [
+    [
+     "Woodbrass",
+     166.0
+    ],
+    [
+     "Di Santo Musica",
+     179.0
+    ],
+    [
+     "Stralù",
+     189.0
+    ]
+   ],
+   "pvp": null,
+   "why": "13 € in meno che negli altri negozi",
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "yamaha-apx600m-nero-fume-4957812676281",
+   "name": "Yamaha APX600M Nero Fumé",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://woodbrass.it/cdn/shop/files/f1481f7d61c957611f33913324bf5f5fdb6da97d_image__1.jpg?height=1200&pad_color=ffffff&v=1793895204&width=1200",
+   "price": 333.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 352.0,
+   "max": 355.0,
+   "next": 349.0,
+   "rows": [
+    [
+     "Woodbrass",
+     333.0
+    ],
+    [
+     "Direzione Musica",
+     349.0
+    ],
+    [
+     "Di Santo Musica",
+     355.0
+    ]
+   ],
+   "pvp": null,
+   "why": "16 € in meno che negli altri negozi",
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}

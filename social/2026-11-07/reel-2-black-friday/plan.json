@@ -1,0 +1,81 @@
+{
+ "fecha": "7 de noviembre",
+ "post": {
+  "type": "bf",
+  "days": 20,
+  "deal": {
+   "slug": "admira-triana-8436032358437",
+   "name": "Admira Triana",
+   "brand": "Admira",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/3/638724_1_1ded.jpg?store=nume_es&image-type=image",
+   "price": 165.65,
+   "store": "Partitura",
+   "stores": 14,
+   "median": 176.0,
+   "max": 195.0,
+   "next": 175.0,
+   "rows": [
+    [
+     "Partitura",
+     165.65
+    ],
+    [
+     "Musicopolix",
+     175.0
+    ],
+    [
+     "Alfasoni",
+     176.0
+    ],
+    [
+     "MAT Guitars",
+     176.0
+    ],
+    [
+     "Drunkat",
+     176.0
+    ],
+    [
+     "Auvisa",
+     176.0
+    ],
+    [
+     "Microfusa",
+     176.0
+    ],
+    [
+     "Neomúsica",
+     176.0
+    ],
+    [
+     "Alteisa",
+     176.0
+    ],
+    [
+     "Musical San Francisco",
+     176.0
+    ],
+    [
+     "Nume Music",
+     176.01
+    ],
+    [
+     "Pronorte",
+     195.0
+    ],
+    [
+     "Musical Fusté",
+     195.0
+    ],
+    [
+     "Abrines Música",
+     195.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ },
+ "stories": []
+}

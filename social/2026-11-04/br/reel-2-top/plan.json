@@ -1,0 +1,177 @@
+{
+ "fecha": "4 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "top",
+  "title": "3 violões até R$ 1.500",
+  "hook": "Top do dia",
+  "picks": [
+   {
+    "slug": "michael-aco-folk-cutaway-vmf400-st-sitka-7899091120994",
+    "name": "Michael Aco Folk Cutaway VMF400 ST - Sitka",
+    "brand": "Michael",
+    "kind": "acustica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/violao_michael_aco_folk_cutaway_vmf400_st_sitka_18886_1_7635a279bc0892db69cd94222edb1517.jpg",
+    "price": 809.1,
+    "store": "Música Center",
+    "stores": 3,
+    "median": 999.4549999999999,
+    "max": 1099.0,
+    "next": 899.91,
+    "rows": [
+     [
+      "Música Center",
+      809.1
+     ],
+     [
+      "Luggi",
+      899.91
+     ],
+     [
+      "Cheiro de Música",
+      1099.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "strinberg-sf200c-ns-black-series-super-flat-de-aco-c-afinador-natural-fosco-7899854521488",
+    "name": "Strinberg SF200C NS Black Series Super Flat De Aço C/ Afinador Natural Fosco",
+    "brand": "Strinberg",
+    "kind": "acustica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-sf200c-ns-black-series-super-flat-de-aco-c-afinador-natural-fosco-81076/268570.jpg?w=1000&h=1000&v=202508070823&qs=ignore",
+    "price": 863.1,
+    "store": "Akustica Musical",
+    "stores": 8,
+    "median": 1079.91,
+    "max": 1401.6,
+    "next": 953.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      863.1
+     ],
+     [
+      "Mundomax",
+      953.1
+     ],
+     [
+      "Ninja Som",
+      983.48
+     ],
+     [
+      "Cheiro de Música",
+      999.0
+     ],
+     [
+      "Luggi",
+      1079.91
+     ],
+     [
+      "Soco Music",
+      1290.0
+     ],
+     [
+      "Duetto Musical",
+      1299.9
+     ],
+     [
+      "Tuner Music",
+      1401.6
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "tagima-juninho-afram-folk-dkmop-dark-mahogany-open-pore-7898563978101",
+    "name": "Tagima Juninho Afram Folk ((dkmop) Dark Mahogany Open Pore)",
+    "brand": "Tagima",
+    "kind": "acustica",
+    "img": "https://images.tcdn.com.br/img/img_prod/669432/violao_tagima_juninho_afram_folk_dkmop_dark_mahogany_open_pore_6722_1_f1d380825a8c606333d2868082cf3378.jpg",
+    "price": 1142.23,
+    "store": "Destroyer",
+    "stores": 8,
+    "median": 1339.9,
+    "max": 1599.0,
+    "next": 1161.0,
+    "rows": [
+     [
+      "Destroyer",
+      1142.23
+     ],
+     [
+      "Akustica Musical",
+      1161.0
+     ],
+     [
+      "RCK Audio",
+      1229.39
+     ],
+     [
+      "Mundomax",
+      1259.1
+     ],
+     [
+      "Supersonora",
+      1339.9
+     ],
+     [
+      "Megasom",
+      1489.9
+     ],
+     [
+      "Soco Music",
+      1570.0
+     ],
+     [
+      "Casa da Música",
+      1599.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}

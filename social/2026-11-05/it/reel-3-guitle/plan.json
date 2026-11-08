@@ -1,0 +1,74 @@
+{
+ "fecha": "5 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "guitle",
+  "topic": "que",
+  "slides": [
+   {
+    "hook": "guitle",
+    "title": "Cos’è guitle?",
+    "sub": "Il comparatore di prezzi di chitarre",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "64.652 chitarre in 26 negozi",
+    "sub": "Controlliamo tutti i prezzi, ogni giorno",
+    "size": 120
+   },
+   {
+    "title": "Ti diciamo dove costa meno",
+    "sub": "Gratis e senza registrazione",
+    "size": 120
+   }
+  ]
+ }
+}

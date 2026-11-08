@@ -1,0 +1,151 @@
+{
+ "fecha": "1 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "sterling-axis-ax50-rm-m-lava-burst-810002953439",
+    "name": "Sterling Axis AX50 RM/M Lava Burst",
+    "brand": "Sterling",
+    "kind": "electrica",
+    "img": "https://drunkat.es/upload/productos/800x800/sterling_guitarra-el-ctrica-axis-ax50-rm-2_1.jpg",
+    "price": 692.0,
+    "store": "Drunkat",
+    "stores": 3,
+    "median": 767.21,
+    "max": 777.0,
+    "next": 757.42,
+    "rows": [
+     [
+      "Drunkat",
+      692.0
+     ],
+     [
+      "Musical San Francisco",
+      757.42
+     ],
+     [
+      "Woodbrass",
+      777.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 85 € menos que ayer",
+    "pct": 11,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "ltd-ec-201-ft-black-719710620223",
+    "name": "LTD EC-201 FT Black",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://drunkat.es/upload/productos/800x800/ltd_ec-201-ft_1.jpg",
+    "price": 463.0,
+    "store": "Drunkat",
+    "stores": 5,
+    "median": 549.0,
+    "max": 559.0,
+    "next": 541.0,
+    "rows": [
+     [
+      "Drunkat",
+      463.0
+     ],
+     [
+      "Alteisa",
+      541.0
+     ],
+     [
+      "Auvisa",
+      549.0
+     ],
+     [
+      "Musicsales",
+      549.0
+     ],
+     [
+      "Pronorte",
+      559.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 96 € menos que ayer",
+    "pct": 17,
+    "photo": "g1b-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sigma-000mc-1e-4260279937445",
+    "name": "Sigma 000MC-1E",
+    "brand": "Sigma",
+    "kind": "acustica",
+    "img": "https://drunkat.es/upload/productos/800x800/sigma_000mc-1e_1.jpg",
+    "price": 369.0,
+    "store": "Drunkat",
+    "stores": 3,
+    "median": 507.995,
+    "max": 508.0,
+    "next": 507.99,
+    "rows": [
+     [
+      "Drunkat",
+      369.0
+     ],
+     [
+      "Madrid Musical Málaga 8",
+      507.99
+     ],
+     [
+      "Pronorte",
+      508.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 85 € menos que ayer",
+    "pct": 19,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "antonio-de-toledo-at-15s-8434418055826",
+    "name": "Antonio de Toledo AT-15S",
+    "brand": "Antonio de Toledo",
+    "kind": "clasica",
+    "img": "https://drunkat.es/upload/productos/800x800/antonio-de-toledo_at-15s_1.jpg",
+    "price": 346.0,
+    "store": "Drunkat",
+    "stores": 4,
+    "median": 359.0,
+    "max": 420.0,
+    "next": 357.0,
+    "rows": [
+     [
+      "Drunkat",
+      346.0
+     ],
+     [
+      "Musical San Francisco",
+      357.0
+     ],
+     [
+      "MAT Guitars",
+      359.0
+     ],
+     [
+      "Alteisa",
+      420.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 9 € menos que ayer",
+    "pct": 3,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

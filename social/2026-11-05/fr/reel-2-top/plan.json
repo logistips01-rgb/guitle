@@ -1,0 +1,206 @@
+{
+ "fecha": "5 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "4 guitares électriques à moins de 300 €",
+  "hook": "Top du jour",
+  "picks": [
+   {
+    "slug": "eko-st-300-cream-8056734498370",
+    "name": "Eko ST 300 Cream",
+    "brand": "Eko",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/a26b5ffe3c2aaab6f40df880da56ad22a1655334_GEE_ST300_CRM.png?height=1200&pad_color=ffffff&v=1793799155&width=1200",
+    "price": 169.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 169.0,
+    "max": 169.0,
+    "next": 169.0,
+    "rows": [
+     [
+      "Woodbrass",
+      169.0
+     ],
+     [
+      "Hurricane Music",
+      169.0
+     ],
+     [
+      "Music 3000",
+      169.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "squier-stratocaster-hss-sonic-mn-black-717669815691",
+    "name": "Squier Stratocaster HSS Sonic Mn Black",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/3856aea539f970533fabb3b66867d49d2dd5db1c_FMIC_0373203506.jpg?height=1200&pad_color=ffffff&v=1793735951&width=1200",
+    "price": 174.0,
+    "store": "Woodbrass",
+    "stores": 8,
+    "median": 178.0,
+    "max": 219.0,
+    "next": 174.0,
+    "rows": [
+     [
+      "Woodbrass",
+      174.0
+     ],
+     [
+      "Thomann",
+      174.0
+     ],
+     [
+      "Guitar Maniac",
+      175.0
+     ],
+     [
+      "Stars Music",
+      178.0
+     ],
+     [
+      "Guitar Legend",
+      178.0
+     ],
+     [
+      "Music City",
+      189.0
+     ],
+     [
+      "Hurricane Music",
+      196.0
+     ],
+     [
+      "Azema Musique",
+      219.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "cort-x100-open-pore-black-cherry-8809625368166",
+    "name": "Cort X100 Open Pore Black Cherry",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/43e5dfa4dae57bc20ff31ea841679c37a45b1def_MUSICO_X100OPBC.jpg?height=1200&pad_color=ffffff&v=1793727209&width=1200",
+    "price": 224.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 227.0,
+    "max": 230.0,
+    "next": 224.0,
+    "rows": [
+     [
+      "Woodbrass",
+      224.0
+     ],
+     [
+      "Stars Music",
+      224.0
+     ],
+     [
+      "Scotto Musique",
+      230.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "ibanez-gsa60-bkn-black-night-4515110324039",
+    "name": "Ibanez GSA60-BKN - black night",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://audiosystem.fr/35863-product_zoom/ibanez-gsa60-bkn-black-night.jpg",
+    "price": 229.0,
+    "store": "Audio System",
+    "stores": 8,
+    "median": 232.0,
+    "max": 269.0,
+    "next": 232.0,
+    "rows": [
+     [
+      "Audio System",
+      229.0
+     ],
+     [
+      "Woodbrass",
+      232.0
+     ],
+     [
+      "Stars Music",
+      232.0
+     ],
+     [
+      "Music 3000",
+      232.0
+     ],
+     [
+      "Thomann",
+      232.0
+     ],
+     [
+      "Scotto Musique",
+      259.0
+     ],
+     [
+      "Music Privilege",
+      259.0
+     ],
+     [
+      "Macca Music",
+      269.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}

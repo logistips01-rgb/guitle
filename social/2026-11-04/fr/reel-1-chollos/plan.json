@@ -1,0 +1,192 @@
+{
+ "fecha": "4 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "epiphone-sg-standard-cherry-ibg-lh-ryibglhhtm",
+    "name": "Epiphone SG Standard Cherry IBG LH",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/655521.jpg",
+    "price": 569.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 645.0,
+    "max": 645.0,
+    "next": 645.0,
+    "rows": [
+     [
+      "Thomann",
+      569.0
+     ],
+     [
+      "Woodbrass",
+      645.0
+     ],
+     [
+      "Stars Music",
+      645.0
+     ],
+     [
+      "Guitar Legend",
+      645.0
+     ]
+    ],
+    "pvp": null,
+    "why": "76 € de moins que dans les autres magasins",
+    "pct": 12,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "squier-stratocaster-ht-sonic-mn-arctic-white-717669815738",
+    "name": "Squier Stratocaster HT Sonic MN Arctic White",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/bd2504ac5201fa2d7d18f54a6c4d5459007c7c5c_FMIC_0373252580.jpg?height=1200&pad_color=ffffff&v=1793727427&width=1200",
+    "price": 156.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 175.0,
+    "max": 175.0,
+    "next": 175.0,
+    "rows": [
+     [
+      "Woodbrass",
+      156.0
+     ],
+     [
+      "Stars Music",
+      175.0
+     ],
+     [
+      "Guitar Maniac",
+      175.0
+     ],
+     [
+      "Guitar Legend",
+      175.0
+     ]
+    ],
+    "pvp": null,
+    "why": "19 € de moins que dans les autres magasins",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "takamine-gd30-799493251456",
+    "name": "Takamine GD30",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://hurricanemusic.fr/82380-home_default/takamine-dreadnought-acoustique-noire.jpg",
+    "price": 302.0,
+    "store": "Hurricane Music",
+    "stores": 5,
+    "median": 359.0,
+    "max": 399.0,
+    "next": 349.0,
+    "rows": [
+     [
+      "Hurricane Music",
+      302.0
+     ],
+     [
+      "Woodbrass",
+      349.0
+     ],
+     [
+      "Michenaud",
+      349.0
+     ],
+     [
+      "Music 3000",
+      369.0
+     ],
+     [
+      "Stars Music",
+      399.0
+     ]
+    ],
+    "pvp": null,
+    "why": "47 € de moins que dans les autres magasins",
+    "pct": 13,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   },
+   {
+    "slug": "lag-bluewave-1-tnbw1te-travel-nylon-3700166373143",
+    "name": "Lâg Bluewave 1 TNBW1TE Travel Nylon",
+    "brand": "Lâg",
+    "kind": "clasica",
+    "img": "https://woodbrass.com/cdn/shop/files/6e670aa33d4a4b63ad49f2fe8dd201996cafe410_GLH_TNBW1TE_bag.png?height=1200&pad_color=ffffff&v=1793554324&width=1200",
+    "price": 399.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 553.5,
+    "max": 579.0,
+    "next": 502.0,
+    "rows": [
+     [
+      "Woodbrass",
+      399.0
+     ],
+     [
+      "Stars Music",
+      502.0
+     ],
+     [
+      "West Music",
+      549.0
+     ],
+     [
+      "Musique Matos",
+      558.0
+     ],
+     [
+      "Music 3000",
+      579.0
+     ]
+    ],
+    "pvp": null,
+    "why": "103 € de moins que dans les autres magasins",
+    "pct": 21,
+    "photo": "g3-1.webp",
+    "label": "Classique"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

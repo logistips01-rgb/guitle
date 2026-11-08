@@ -1,0 +1,191 @@
+{
+ "fecha": "4 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "fender-player-ii-stratocaster-mn-aquatone-blue-885978109319",
+    "name": "Fender Player II Stratocaster MN Aquatone Blue",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/1/716373_48c3.jpg?store=nume_es&image-type=image",
+    "price": 635.5,
+    "store": "Musicopolix",
+    "stores": 11,
+    "median": 776.0,
+    "max": 836.0,
+    "next": 769.0,
+    "rows": [
+     [
+      "Musicopolix",
+      635.5
+     ],
+     [
+      "Session",
+      769.0
+     ],
+     [
+      "Music Store (eBay)",
+      769.0
+     ],
+     [
+      "Drunkat",
+      774.0
+     ],
+     [
+      "Nume Music",
+      776.0
+     ],
+     [
+      "MAT Guitars",
+      776.0
+     ],
+     [
+      "Alfasoni",
+      776.0
+     ],
+     [
+      "Egitana",
+      777.0
+     ],
+     [
+      "Thomann",
+      777.0
+     ],
+     [
+      "Woodbrass",
+      799.0
+     ],
+     [
+      "Pronorte",
+      836.0
+     ]
+    ],
+    "pvp": 799.0,
+    "why": "Mínimo histórico: 16 % por debajo de su media",
+    "pct": 16,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "charvel-pro-mod-so-cal-style-1-hh-fr-e-eb-satin-primer-gray-717669550660",
+    "name": "Charvel Pro-Mod So-Cal Style 1 HH FR E EB Satin Primer Gray",
+    "brand": "Charvel",
+    "kind": "electrica",
+    "img": "https://musicopolix.com/276307-large_default/charvel-pro-mod-so-cal-style-1-hh-fr-e-ebony-fingerboard-satin-primer-gray.jpg",
+    "price": 729.9,
+    "store": "Musicopolix",
+    "stores": 3,
+    "median": 1145.0,
+    "max": 1249.0,
+    "next": 1041.0,
+    "rows": [
+     [
+      "Musicopolix",
+      729.9
+     ],
+     [
+      "MAT Guitars",
+      1041.0
+     ],
+     [
+      "Session",
+      1249.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Bajada real: 24 % por debajo de su media",
+    "pct": 24,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "ibanez-aw8412ce-wk-weathered-black-open-pore-4549763265364",
+    "name": "Ibanez AW8412CE-WK Weathered Black Open Pore",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/738016_1_851f.jpg?store=nume_es&image-type=image",
+    "price": 329.0,
+    "store": "Session",
+    "stores": 6,
+    "median": 370.0,
+    "max": 385.74,
+    "next": 340.35,
+    "rows": [
+     [
+      "Session",
+      329.0
+     ],
+     [
+      "Alteisa",
+      340.35
+     ],
+     [
+      "Partitura",
+      359.2
+     ],
+     [
+      "Woodbrass",
+      370.0
+     ],
+     [
+      "Musicopolix",
+      381.25
+     ],
+     [
+      "Nume Music",
+      385.74
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 4 % por debajo de su media",
+    "pct": 4,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "alvarez-rs26n-regent-812309025895",
+    "name": "Alvarez RS26N Regent",
+    "brand": "Alvarez",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/657966_cc85.jpg?store=nume_es&image-type=image",
+    "price": 156.82,
+    "store": "Musicsales",
+    "stores": 5,
+    "median": 188.5,
+    "max": 189.0,
+    "next": 160.0,
+    "rows": [
+     [
+      "Musicsales",
+      156.82
+     ],
+     [
+      "Pronorte",
+      160.0
+     ],
+     [
+      "Alteisa",
+      188.0
+     ],
+     [
+      "Nume Music",
+      189.0
+     ],
+     [
+      "Drunkat",
+      189.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 6 % por debajo de su media",
+    "pct": 6,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

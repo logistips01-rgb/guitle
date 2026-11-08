@@ -1,0 +1,329 @@
+{
+ "date": "2026-11-01",
+ "fecha": "1 de novembro",
+ "post": {
+  "type": "top",
+  "title": "5 guitarras elétricas até R$ 2.000",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "tagima-stratocaster-2s-1h-escudo-pw-tg-520-ca-tagima-7898651948559",
+    "name": "Tagima Stratocaster 2S 1H Escudo PW TG-520 CA - Tagima",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/215281/Guitarra-Stratocaster-2S-1H-Escudo-PW-TG-520-CA---Tagima.jpg?v=639024513282270000",
+    "price": 918.16,
+    "store": "Ninja Som",
+    "stores": 7,
+    "median": 1072.8,
+    "max": 1390.0,
+    "next": 953.1,
+    "rows": [
+     [
+      "Ninja Som",
+      918.16
+     ],
+     [
+      "Mundomax",
+      953.1
+     ],
+     [
+      "Akustica Musical",
+      1026.0
+     ],
+     [
+      "Destroyer",
+      1057.5
+     ],
+     [
+      "Música Center",
+      1088.1
+     ],
+     [
+      "Luggi",
+      1259.9
+     ],
+     [
+      "Soco Music",
+      1390.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "michael-stratocaster-michael-rocker-gms250-sunburst-black-7899091123438",
+    "name": "Michael Stratocaster Michael Rocker GMS250 Sunburst Black",
+    "brand": "Michael",
+    "kind": "electrica",
+    "img": "https://www.supersonora.com.br/cdn/shop/files/i9gOZ4.jpg?v=1783624897&width=1920",
+    "price": 1019.9,
+    "store": "Supersonora",
+    "stores": 4,
+    "median": 1357.5,
+    "max": 1529.9,
+    "next": 1294.2,
+    "rows": [
+     [
+      "Supersonora",
+      1019.9
+     ],
+     [
+      "Música Center",
+      1294.2
+     ],
+     [
+      "Cheiro de Música",
+      1299.0
+     ],
+     [
+      "Luggi",
+      1529.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "strinberg-lps230-gd-lps-series-les-paul-dourada-c-escudo-ivory-e-escala-escura-7899854510369",
+    "name": "Strinberg LPS230 GD LPS Series Les Paul Dourada C/ Escudo Ivory e Escala Escura",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-strinberg-lps230-gd-lps-series-les-paul-dourada-c-escudo-ivory-e-escala-escura-724292/944939.jpg?w=1000&h=1000&v=202508070657&qs=ignore",
+    "price": 1223.1,
+    "store": "Akustica Musical",
+    "stores": 6,
+    "median": 1399.0,
+    "max": 1559.0,
+    "next": 1259.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      1223.1
+     ],
+     [
+      "Mundomax",
+      1259.1
+     ],
+     [
+      "Ninja Som",
+      1378.16
+     ],
+     [
+      "Conca Music",
+      1399.0
+     ],
+     [
+      "Cheiro de Música",
+      1506.0
+     ],
+     [
+      "Casa da Música",
+      1559.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "sx-stratocaster-sst-swamp-ash-trans-black-7899153072599",
+    "name": "SX Stratocaster SST Swamp Ash Trans Black",
+    "brand": "SX",
+    "kind": "electrica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/guitarra_sx_stratocaster_sst_swamp_ash_trans_black_1069_1_6cc2a1abfee52b1858ff1e5959459180.jpg",
+    "price": 1926.9,
+    "store": "Música Center",
+    "stores": 4,
+    "median": 2294.99,
+    "max": 2308.5,
+    "next": 2099.0,
+    "rows": [
+     [
+      "Música Center",
+      1926.9
+     ],
+     [
+      "Cheiro de Música",
+      2099.0
+     ],
+     [
+      "RCK Audio",
+      2294.99
+     ],
+     [
+      "Destroyer",
+      2308.5
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "squier-stratocaster-sonic-2-color-sunburst-0373152503-squier-by-fender-717669815653",
+    "name": "Squier Stratocaster Sonic 2-Color Sunburst 0373152503 - Squier By Fender",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/193664/Guitarra-Stratocaster-Sonic-MN-WPG-2TS---Squier-By-Fender.jpg?v=638582053726930000",
+    "price": 1977.08,
+    "store": "Ninja Som",
+    "stores": 4,
+    "median": 2690.0,
+    "max": 2699.0,
+    "next": 2398.5,
+    "rows": [
+     [
+      "Ninja Som",
+      1977.08
+     ],
+     [
+      "Mundomax",
+      2398.5
+     ],
+     [
+      "Cheiro de Música",
+      2690.0
+     ],
+     [
+      "Carneiro Music",
+      2699.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   }
+  ],
+  "caption": "🎸 5 guitarras elétricas até R$ 2.000: as mais vendidas nas lojas, com o melhor preço de hoje 👇\n\n1️⃣ Tagima Stratocaster 2S 1H Escudo PW TG-520 CA - Tagima: R$ 918,16 em Ninja Som\n2️⃣ Michael Stratocaster Michael Rocker GMS250 Sunburst Black: R$ 1.019,90 em Supersonora\n3️⃣ Strinberg LPS230 GD LPS Series Les Paul Dourada C/ Escudo Ivory e Escala Escura: R$ 1.223,10 em Akustica Musical\n4️⃣ SX Stratocaster SST Swamp Ash Trans Black: R$ 1.926,90 em Música Center\n5️⃣ Squier Stratocaster Sonic 2-Color Sunburst 0373152503 - Squier By Fender: R$ 1.977,08 em Ninja Som\n\nCom qual você fica? Conta pra gente nos comentários 💬\n🔎 Compare preços em guitle.com/br (link na bio). Preços de 1 de novembro.\n\n#guitarra #guitarrista #promoção #ofertas #guitarraeletrica #tagima #michael #strinberg #sx #squier"
+ },
+ "stories": [
+  {
+   "slug": "strinberg-canhoto-strinberg-sc200c-ns-lh-black-series-natural-satin-eletroacusti-7899854521402",
+   "name": "Strinberg Canhoto Strinberg SC200C NS LH Black Series Natural Satin Eletroacústico Nylon",
+   "brand": "Strinberg",
+   "kind": "clasica",
+   "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-canhoto-strinberg-sc200c-ns-lh-black-series-natural-satin-eletroacustico-nylon-81205/268699-1.jpg?w=1000&h=1000&v=202604301429&qs=ignore",
+   "price": 899.1,
+   "store": "Akustica Musical",
+   "stores": 3,
+   "median": 1399.95,
+   "max": 1409.9,
+   "next": 1390.0,
+   "rows": [
+    [
+     "Akustica Musical",
+     899.1
+    ],
+    [
+     "Casa da Música",
+     1390.0
+    ],
+    [
+     "Megasom",
+     1409.9
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 490,90 a menos que em qualquer outra loja",
+   "pct": 35,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "tagima-grace-700-honey-burst-signature-7898651946968",
+   "name": "Tagima GRACE 700 Honey Burst Signature",
+   "brand": "Tagima",
+   "kind": "electrica",
+   "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-grace-700-honey-burst-signature-80233/267723.jpg?w=1000&h=1000&v=202508070601&qs=ignore",
+   "price": 2584.8,
+   "store": "Akustica Musical",
+   "stores": 4,
+   "median": 3949.99,
+   "max": 3999.9,
+   "next": 3571.2,
+   "rows": [
+    [
+     "Akustica Musical",
+     2584.8
+    ],
+    [
+     "Música Center",
+     3571.2
+    ],
+    [
+     "RCK Audio",
+     3949.99
+    ],
+    [
+     "Luggi",
+     3999.9
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 986,40 a menos que em qualquer outra loja",
+   "pct": 28,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "squier-stratocaster-affinity-series-black-0378002506-squier-by-fender-885978722716",
+   "name": "Squier Stratocaster Affinity Series Black 0378002506 - Squier By Fender",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/189348/Guitarra-Affinity-Series-Stratocaster-BLK---Fender.png?v=638409395157130000",
+   "price": 2207.08,
+   "store": "Ninja Som",
+   "stores": 4,
+   "median": 3384.0,
+   "max": 3690.0,
+   "next": 2997.9,
+   "rows": [
+    [
+     "Ninja Som",
+     2207.08
+    ],
+    [
+     "Mundomax",
+     2997.9
+    ],
+    [
+     "Carneiro Music",
+     3078.0
+    ],
+    [
+     "Cheiro de Música",
+     3690.0
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 790,82 a menos que em qualquer outra loja",
+   "pct": 26,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

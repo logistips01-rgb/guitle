@@ -1,0 +1,100 @@
+{
+ "fecha": "2 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "bf",
+  "days": 25,
+  "deal": {
+   "slug": "squier-stratocaster-70s-hss-classic-vibe-mn-black-885978064335",
+   "name": "Squier Stratocaster 70S Hss Classic Vibe Mn Black",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/262ac136d0ea5ea3fad80057a93c78f501e069c5_FMIC_0374023506.jpg?height=1200&pad_color=ffffff&v=1792566444&width=1200",
+   "price": 419.0,
+   "store": "Woodbrass",
+   "stores": 9,
+   "median": 424.0,
+   "max": 475.0,
+   "next": 419.0,
+   "rows": [
+    [
+     "Woodbrass",
+     419.0
+    ],
+    [
+     "Music 3000",
+     419.0
+    ],
+    [
+     "Scotto Musique",
+     419.0
+    ],
+    [
+     "Thomann",
+     419.0
+    ],
+    [
+     "Paul Beuscher",
+     419.0
+    ],
+    [
+     "Guitar Maniac",
+     429.0
+    ],
+    [
+     "Stars Music",
+     447.0
+    ],
+    [
+     "Guitar Legend",
+     447.0
+    ],
+    [
+     "Hurricane Music",
+     475.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

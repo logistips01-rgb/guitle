@@ -1,0 +1,280 @@
+{
+ "fecha": "3 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 eléctricas de 150 € a 300 €",
+  "hook": "Top por precio",
+  "picks": [
+   {
+    "slug": "cort-g110-opbc-8809625369613",
+    "name": "Cort G110 Opbc",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/657764_0017.jpg?store=nume_es&image-type=image",
+    "price": 158.0,
+    "store": "Alteisa",
+    "stores": 8,
+    "median": 167.46,
+    "max": 175.0,
+    "next": 159.0,
+    "rows": [
+     [
+      "Alteisa",
+      158.0
+     ],
+     [
+      "Musicsales",
+      159.0
+     ],
+     [
+      "Auvisa",
+      165.0
+     ],
+     [
+      "MAT Guitars",
+      167.0
+     ],
+     [
+      "Nume Music",
+      167.46
+     ],
+     [
+      "Musicopolix",
+      169.0
+     ],
+     [
+      "Pronorte",
+      175.0
+     ],
+     [
+      "Woodbrass",
+      175.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "fender-squier-sonic-telecaster-black-maple-fingerboard-717669815912",
+    "name": "Fender Squier Sonic Telecaster Black, Maple Fingerboard",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://musicalsanfrancisco.es/wp-content/uploads/2025/04/Squier-Sonic®-Telecaster-Black-Maple-Fingerboard-Poplar.webp",
+    "price": 159.0,
+    "store": "Musical San Francisco",
+    "stores": 8,
+    "median": 174.0,
+    "max": 198.0,
+    "next": 160.0,
+    "rows": [
+     [
+      "Musical San Francisco",
+      159.0
+     ],
+     [
+      "Thomann",
+      160.0
+     ],
+     [
+      "Woodbrass",
+      168.0
+     ],
+     [
+      "Microfusa",
+      169.0
+     ],
+     [
+      "MAT Guitars",
+      174.0
+     ],
+     [
+      "Auvisa",
+      179.0
+     ],
+     [
+      "Musicopolix",
+      183.41
+     ],
+     [
+      "Pronorte",
+      198.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "squier-sonic-stratocaster-mn-2-color-sunburst-717669815653",
+    "name": "Squier Sonic Stratocaster MN 2-Color Sunburst",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/7/677410_e743.jpg?store=nume_es&image-type=image",
+    "price": 165.99,
+    "store": "Musical San Francisco",
+    "stores": 10,
+    "median": 174.0,
+    "max": 198.0,
+    "next": 169.0,
+    "rows": [
+     [
+      "Musical San Francisco",
+      165.99
+     ],
+     [
+      "Nume Music",
+      169.0
+     ],
+     [
+      "Microfusa",
+      169.0
+     ],
+     [
+      "Woodbrass",
+      169.0
+     ],
+     [
+      "Auvisa",
+      169.0
+     ],
+     [
+      "Musicopolix",
+      174.0
+     ],
+     [
+      "MAT Guitars",
+      174.0
+     ],
+     [
+      "Session",
+      175.0
+     ],
+     [
+      "Drunkat",
+      180.0
+     ],
+     [
+      "Pronorte",
+      198.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "ibanez-pgmm31-wh-paul-gilbert-white-4515276967378",
+    "name": "Ibanez PGMM31-WH Paul Gilbert White",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/1/618620_9bbd.jpg?store=nume_es&image-type=image",
+    "price": 207.2,
+    "store": "Partitura",
+    "stores": 11,
+    "median": 220.195,
+    "max": 239.0,
+    "next": 216.0,
+    "rows": [
+     [
+      "Partitura",
+      207.2
+     ],
+     [
+      "Auvisa",
+      216.0
+     ],
+     [
+      "Alfasoni",
+      216.6
+     ],
+     [
+      "Alteisa",
+      216.6
+     ],
+     [
+      "Pronorte",
+      217.0
+     ],
+     [
+      "Musicopolix",
+      219.95
+     ],
+     [
+      "Nume Music",
+      220.44
+     ],
+     [
+      "MAT Guitars",
+      222.0
+     ],
+     [
+      "Woodbrass",
+      228.0
+     ],
+     [
+      "Thomann",
+      228.0
+     ],
+     [
+      "Egitana",
+      239.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "esp-ltd-mt-130-blue-superstrato-799493263305",
+    "name": "ESP/LTD MT-130 Blue Superstrato",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://alteisa.com/154390-large_default/esp-ltd-mt-130-blue-guitarra-electrica-superstrato.jpg",
+    "price": 244.0,
+    "store": "Alteisa",
+    "stores": 9,
+    "median": 289.0,
+    "max": 299.0,
+    "next": 244.0,
+    "rows": [
+     [
+      "Alteisa",
+      244.0
+     ],
+     [
+      "Egitana",
+      244.0
+     ],
+     [
+      "Drunkat",
+      256.0
+     ],
+     [
+      "Auvisa",
+      262.0
+     ],
+     [
+      "Session",
+      289.0
+     ],
+     [
+      "Musicopolix",
+      289.0
+     ],
+     [
+      "Pronorte",
+      289.0
+     ],
+     [
+      "Thomann",
+      289.0
+     ],
+     [
+      "Hazen",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   }
+  ]
+ },
+ "stories": []
+}

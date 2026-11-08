@@ -1,0 +1,177 @@
+{
+ "fecha": "6. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "3 E-Gitarren von 300 € bis 500 €",
+  "hook": "Top des Tages",
+  "picks": [
+   {
+    "slug": "eko-fire-400-aurora-flamed-amber-burst-e-gitarre-inkl-gigbag-8056734499247",
+    "name": "Eko Fire 400 Aurora Flamed Amber Burst E-Gitarre inkl. Gigbag",
+    "brand": "Eko",
+    "kind": "electrica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/eko_fire400aurafab_1.jpg",
+    "price": 365.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 394.0,
+    "max": 399.0,
+    "next": 389.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      365.0
+     ],
+     [
+      "Zoundhouse",
+      389.0
+     ],
+     [
+      "Woodbrass",
+      399.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "cort-cr200-schwarz-e-gitarre-8809625361884",
+    "name": "Cort CR200 Schwarz E-Gitarre",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/131186/lg/cort-cr200-schwarz-e-gitarre.jpg",
+    "price": 418.0,
+    "store": "IMM Professional",
+    "stores": 4,
+    "median": 447.0,
+    "max": 499.0,
+    "next": 439.0,
+    "rows": [
+     [
+      "IMM Professional",
+      418.0
+     ],
+     [
+      "Zoundhouse",
+      439.0
+     ],
+     [
+      "Shop2Rock",
+      447.0
+     ],
+     [
+      "Musikhaus Lange",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "ibanez-az24s1f-txb-e-gitarre-4549763363534",
+    "name": "Ibanez AZ24S1F-TXB E-Gitarre",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/133850/lg/ibanez-az22s1f-txb.jpg",
+    "price": 483.0,
+    "store": "IMM Professional",
+    "stores": 12,
+    "median": 534.0,
+    "max": 549.0,
+    "next": 509.0,
+    "rows": [
+     [
+      "IMM Professional",
+      483.0
+     ],
+     [
+      "Session",
+      509.0
+     ],
+     [
+      "Musikhaus Markstein",
+      509.0
+     ],
+     [
+      "Thomann",
+      509.0
+     ],
+     [
+      "Musikhaus Korn",
+      519.0
+     ],
+     [
+      "Soundland",
+      519.0
+     ],
+     [
+      "Woodbrass",
+      534.0
+     ],
+     [
+      "Shop2Rock",
+      538.0
+     ],
+     [
+      "Musikhaus Lange",
+      549.0
+     ],
+     [
+      "Music Town",
+      549.0
+     ],
+     [
+      "Musikhaus am Dornbusch",
+      549.0
+     ],
+     [
+      "Soundaktuell Guitars",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   }
+  ]
+ }
+}

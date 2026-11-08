@@ -1,0 +1,84 @@
+{
+ "fecha": "1 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "bf",
+  "days": 26,
+  "deal": {
+   "slug": "fender-cd-60s-chitarra-acustica-20t-con-forma-del-manico-easy-to-play-mogano-885978875740",
+   "name": "Fender CD-60S Chitarra acustica 20T con forma del manico\"Easy-to-Play\", Mogano",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.globalnetshop.it/cdn/shop/files/01-0970110022_1024x.jpg?v=1761581659",
+   "price": 195.0,
+   "store": "Global Net Shop",
+   "stores": 5,
+   "median": 209.0,
+   "max": 219.0,
+   "next": 198.99,
+   "rows": [
+    [
+     "Global Net Shop",
+     195.0
+    ],
+    [
+     "Di Santo Musica",
+     198.99
+    ],
+    [
+     "Woodbrass",
+     199.0
+    ],
+    [
+     "Stralù",
+     219.0
+    ],
+    [
+     "Centro della Musica",
+     219.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

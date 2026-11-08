@@ -1,0 +1,167 @@
+{
+ "fecha": "6 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "cort-mbm-2h-sblk-8809817985775",
+    "name": "Cort MBM-2H Sblk",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/735397_9c9e.jpg?store=nume_es&image-type=image",
+    "price": 469.0,
+    "store": "Drunkat",
+    "stores": 4,
+    "median": 690.0,
+    "max": 865.0,
+    "next": 570.25,
+    "rows": [
+     [
+      "Drunkat",
+      469.0
+     ],
+     [
+      "Musical San Francisco",
+      570.25
+     ],
+     [
+      "Nume Music",
+      690.0
+     ],
+     [
+      "Woodbrass",
+      865.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Bajada real: 19 % por debajo de su media",
+    "pct": 19,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
+    "name": "LTD SN-200HT Charcoal Metallic Satin",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/662347JPG_1_ec04.jpg?store=nume_es&image-type=image",
+    "price": 349.0,
+    "store": "Auvisa",
+    "stores": 7,
+    "median": 489.0,
+    "max": 579.0,
+    "next": 481.0,
+    "rows": [
+     [
+      "Auvisa",
+      349.0
+     ],
+     [
+      "Drunkat",
+      481.0
+     ],
+     [
+      "Nume Music",
+      489.0
+     ],
+     [
+      "Alfasoni",
+      489.0
+     ],
+     [
+      "MAT Guitars",
+      489.0
+     ],
+     [
+      "Alteisa",
+      489.0
+     ],
+     [
+      "Pronorte",
+      579.0
+     ]
+    ],
+    "pvp": null,
+    "why": "132 € menos que en cualquier otra tienda",
+    "pct": 27,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "lag-bluewave-2-tbw2te-de-viaje-3700166373136",
+    "name": "Lâg Bluewave 2 Tbw2Te de viaje",
+    "brand": "Lâg",
+    "kind": "acustica",
+    "img": "https://woodbrass.es/cdn/shop/files/ba5a77403c253767d04aa83c31c56bc9d50f45a1_GLH_TBW2TE_5.png?height=1200&pad_color=ffffff&v=1793629937&width=1200",
+    "price": 469.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 729.0,
+    "max": 729.0,
+    "next": 661.18,
+    "rows": [
+     [
+      "Woodbrass",
+      469.0
+     ],
+     [
+      "Musical San Francisco",
+      661.18
+     ],
+     [
+      "MAT Guitars",
+      729.0
+     ],
+     [
+      "Pronorte",
+      729.0
+     ],
+     [
+      "Musicsales",
+      729.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 14 % por debajo de su media",
+    "pct": 14,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "ortega-r221bk-7-8-840553070019",
+    "name": "Ortega R221BK-7/8",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/4/048641_b5ac.jpg?store=nume_es&image-type=image",
+    "price": 239.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 316.01,
+    "max": 353.57,
+    "next": 278.45,
+    "rows": [
+     [
+      "Session",
+      239.0
+     ],
+     [
+      "Alteisa",
+      278.45
+     ],
+     [
+      "Nume Music",
+      353.57
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 9 % por debajo de su media",
+    "pct": 9,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

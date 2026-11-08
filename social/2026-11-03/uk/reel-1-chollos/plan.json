@@ -1,0 +1,192 @@
+{
+ "fecha": "3 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "jackson-js-series-dinky-arch-top-js32q-dka-hardtail-transparent-purple-burst-ama-ransparent",
+    "name": "Jackson JS Series Dinky Arch Top JS32Q DKA Hardtail Transparent Purple Burst Amaranth Fingerboard",
+    "brand": "Jackson",
+    "kind": "electrica",
+    "img": "https://images.guitarguitar.co.uk/cdn/large/170/201118364135025f.jpg",
+    "price": 299.0,
+    "store": "guitarguitar",
+    "stores": 3,
+    "median": 374.0,
+    "max": 389.0,
+    "next": 359.0,
+    "rows": [
+     [
+      "guitarguitar",
+      299.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      359.0
+     ],
+     [
+      "A Strings",
+      389.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£60 less than any other shop",
+    "pct": 17,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "squier-classic-vibe-70s-strat-olympic-white-885978064311",
+    "name": "Squier Classic Vibe 70s Strat Olympic White",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/ipkombbd.png?v=1716388947",
+    "price": 304.0,
+    "store": "Reidys",
+    "stores": 9,
+    "median": 389.0,
+    "max": 419.0,
+    "next": 339.0,
+    "rows": [
+     [
+      "Reidys",
+      304.0
+     ],
+     [
+      "Thomann",
+      339.0
+     ],
+     [
+      "Dawsons",
+      369.0
+     ],
+     [
+      "James Music",
+      369.0
+     ],
+     [
+      "A Strings",
+      379.0
+     ],
+     [
+      "Andertons",
+      399.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      399.0
+     ],
+     [
+      "guitarguitar",
+      419.0
+     ],
+     [
+      "Music Street",
+      419.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£35 less than any other shop",
+    "pct": 10,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "brunswick-btk60wn-grand-auditorium-electro-acoustic-guitar-walnut-5036678153996",
+    "name": "Brunswick BTK60WN Grand Auditorium Electro Acoustic Guitar, Walnut",
+    "brand": "Brunswick",
+    "kind": "acustica",
+    "img": "https://cdn11.bigcommerce.com/s-hvzya2q3vy/images/stencil/1280x1280/products/58240/178779/brunbtk60__86848.1790773432.jpg?c=1",
+    "price": 149.0,
+    "store": "Absolute Music",
+    "stores": 3,
+    "median": 192.0,
+    "max": 205.0,
+    "next": 179.0,
+    "rows": [
+     [
+      "Absolute Music",
+      149.0
+     ],
+     [
+      "Reidys",
+      179.0
+     ],
+     [
+      "Millers Music",
+      205.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£30 less than any other shop",
+    "pct": 17,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   },
+   {
+    "slug": "admira-a2-classical-2classical",
+    "name": "Admira A2 Classical",
+    "brand": "Admira",
+    "kind": "clasica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/a2.jpg?v=1715180802",
+    "price": 345.0,
+    "store": "Reidys",
+    "stores": 3,
+    "median": 434.5,
+    "max": 470.0,
+    "next": 399.0,
+    "rows": [
+     [
+      "Reidys",
+      345.0
+     ],
+     [
+      "Music Street",
+      399.0
+     ],
+     [
+      "Matchetts Music",
+      470.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£54 less than any other shop",
+    "pct": 14,
+    "photo": "g3-1.webp",
+    "label": "Classical"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

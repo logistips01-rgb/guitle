@@ -1,0 +1,184 @@
+{
+ "fecha": "7 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "ibanez-sa260fm-tgb-60fmtgbhtm",
+    "name": "Ibanez SA260FM-TGB",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/430447.jpg",
+    "price": 319.0,
+    "store": "Thomann",
+    "stores": 5,
+    "median": 409.0,
+    "max": 449.0,
+    "next": 360.0,
+    "rows": [
+     [
+      "Thomann",
+      319.0
+     ],
+     [
+      "Woodbrass",
+      360.0
+     ],
+     [
+      "Stars Music",
+      399.0
+     ],
+     [
+      "Music Privilege",
+      419.0
+     ],
+     [
+      "Music & Co",
+      449.0
+     ]
+    ],
+    "pvp": null,
+    "why": "41 € de moins que dans les autres magasins",
+    "pct": 11,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "gretsch-ltd-electromatic-black-limba-jet-ebo-sunburst-197955147888",
+    "name": "Gretsch LTD Electromatic Black Limba Jet Ebo Sunburst",
+    "brand": "Gretsch",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/266aac1a6c1601e8821445c589c104ba1f33ccb8_FMIC_2514103559.jpg?height=1200&pad_color=ffffff&v=1793375834&width=1200",
+    "price": 658.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 739.0,
+    "max": 739.0,
+    "next": 739.0,
+    "rows": [
+     [
+      "Woodbrass",
+      658.0
+     ],
+     [
+      "Stars Music",
+      739.0
+     ],
+     [
+      "Guitar Legend",
+      739.0
+     ]
+    ],
+    "pvp": null,
+    "why": "81 € de moins que dans les autres magasins",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "takamine-gd20-ns-guitare-folk-dreadnought-naturelle-satinee-atineehtml",
+    "name": "Takamine GD20-NS Guitare Folk Dreadnought Naturelle Satinee",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://www.music-privilege.fr/img/600/744/contains/catalog/product/g/d/gd20ns.jpg",
+    "price": 299.0,
+    "store": "Music Privilege",
+    "stores": 5,
+    "median": 339.0,
+    "max": 389.0,
+    "next": 339.0,
+    "rows": [
+     [
+      "Music Privilege",
+      299.0
+     ],
+     [
+      "Woodbrass",
+      339.0
+     ],
+     [
+      "Stars Music",
+      339.0
+     ],
+     [
+      "Michenaud",
+      339.0
+     ],
+     [
+      "Music 3000",
+      389.0
+     ]
+    ],
+    "pvp": null,
+    "why": "40 € de moins que dans les autres magasins",
+    "pct": 12,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   },
+   {
+    "slug": "yamaha-cg102-gloss-4957812496971",
+    "name": "Yamaha cg102 gloss",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://woodbrass.com/cdn/shop/files/5df4b074393317fa69983fdd30a3b45a5324cb7a_CG101A.jpg?height=1200&pad_color=ffffff&v=1792547230&width=1200",
+    "price": 199.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 234.0,
+    "max": 239.0,
+    "next": 229.0,
+    "rows": [
+     [
+      "Woodbrass",
+      199.0
+     ],
+     [
+      "Scotto Musique",
+      229.0
+     ],
+     [
+      "Stars Music",
+      239.0
+     ]
+    ],
+    "pvp": null,
+    "why": "30 € de moins que dans les autres magasins",
+    "pct": 13,
+    "photo": "g3-1.webp",
+    "label": "Classique"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

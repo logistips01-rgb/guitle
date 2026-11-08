@@ -1,0 +1,223 @@
+{
+ "fecha": "5. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "5 E-Gitarren unter 300 €",
+  "hook": "Top des Tages",
+  "picks": [
+   {
+    "slug": "squier-sonic-stratocaster-mn-wpg-2ts-717669815653",
+    "name": "Squier Sonic Stratocaster MN WPG 2TS",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/55/e5/87/1679330204/squier-by-fender-sonic-stratocaster-mn-wpg-2ts.png.jpg?ts=1679330204",
+    "price": 175.0,
+    "store": "Session",
+    "stores": 4,
+    "median": 179.0,
+    "max": 183.0,
+    "next": 179.0,
+    "rows": [
+     [
+      "Session",
+      175.0
+     ],
+     [
+      "Musikhaus Markstein",
+      179.0
+     ],
+     [
+      "Soundaktuell Guitars",
+      179.0
+     ],
+     [
+      "Woodbrass",
+      183.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "jackson-ltd-js-series-dinky-minion-js1x-safety-orange-885978919277",
+    "name": "Jackson LTD JS Series Dinky Minion JS1X Safety Orange",
+    "brand": "Jackson",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/77/d5/7f/1749623910/jackson-ltd-js-series-dinky-minion-js1x-safety-orange-04.webp?ts=1749623910",
+    "price": 189.0,
+    "store": "Session",
+    "stores": 4,
+    "median": 198.0,
+    "max": 209.0,
+    "next": 189.0,
+    "rows": [
+     [
+      "Session",
+      189.0
+     ],
+     [
+      "Musikhaus Markstein",
+      189.0
+     ],
+     [
+      "Woodbrass",
+      198.0
+     ],
+     [
+      "Shop2Rock",
+      209.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "yamaha-pacifica-112j-black-4957812688147",
+    "name": "Yamaha Pacifica 112J Black",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/03/94/d7/1678704667/yamaha-pacifica-112j-black.jpg?ts=1678704667",
+    "price": 219.0,
+    "store": "Session",
+    "stores": 5,
+    "median": 248.5,
+    "max": 270.0,
+    "next": 229.0,
+    "rows": [
+     [
+      "Session",
+      219.0
+     ],
+     [
+      "Woodbrass",
+      229.0
+     ],
+     [
+      "Zoundhouse",
+      248.0
+     ],
+     [
+      "Musik Wittl",
+      249.0
+     ],
+     [
+      "Shop2Rock",
+      270.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "ltd-esp-ltd-mt-130-blk-840248029339",
+    "name": "LTD ESP Ltd MT-130 Blk",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://www.markstein.de/media/26/fc/ae/1744621630/026034e4729d8748d56c5cb2cfd93f1e.jpg",
+    "price": 285.0,
+    "store": "Musikhaus Markstein",
+    "stores": 5,
+    "median": 289.0,
+    "max": 299.0,
+    "next": 289.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      285.0
+     ],
+     [
+      "Shop2Rock",
+      289.0
+     ],
+     [
+      "Music Town",
+      289.0
+     ],
+     [
+      "Thomann",
+      289.0
+     ],
+     [
+      "Musikhaus Korn",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "cort-cr100-cherry-red-sunburst-e-gitarre-8809383837577",
+    "name": "Cort CR100 Cherry Red Sunburst E-Gitarre",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/131185/lg/cort-cr100-cherry-red-sunburst-e-gitarre.jpg",
+    "price": 299.0,
+    "store": "IMM Professional",
+    "stores": 4,
+    "median": 329.0,
+    "max": 355.0,
+    "next": 323.0,
+    "rows": [
+     [
+      "IMM Professional",
+      299.0
+     ],
+     [
+      "Shop2Rock",
+      323.0
+     ],
+     [
+      "Musikhaus Lange",
+      329.0
+     ],
+     [
+      "Woodbrass",
+      355.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   }
+  ]
+ }
+}

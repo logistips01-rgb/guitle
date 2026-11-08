@@ -1,0 +1,101 @@
+{
+ "guitars": 23311,
+ "stores": [
+  "Abrines Música",
+  "Alfasoni",
+  "Alteisa",
+  "Auvisa",
+  "Drunkat",
+  "Egitana",
+  "Hazen",
+  "Kirstein",
+  "MAT Guitars",
+  "Madrid Musical Málaga 8",
+  "Microfusa",
+  "Multiocio",
+  "Music Store",
+  "Musical Fusté",
+  "Musical San Francisco",
+  "Musicopolix",
+  "Musicsales",
+  "Neomúsica",
+  "Nume Music",
+  "Partitura",
+  "Pronorte",
+  "Session",
+  "Thomann",
+  "Woodbrass",
+  "Zingla Música"
+ ],
+ "countries": [
+  "Reino Unido",
+  "Italia",
+  "Francia",
+  "Alemania",
+  "Brasil",
+  "Países Bajos",
+  "Irlanda",
+  "Portugal",
+  "Austria"
+ ],
+ "showcase": [
+  "g0.webp",
+  "g1.webp",
+  "g2.webp",
+  "g3.webp",
+  "g4.webp",
+  "g5.webp"
+ ],
+ "example": {
+  "name": "Fender Player II Stratocaster RW Polar White",
+  "brand": "Fender",
+  "img": "ejemplo.webp",
+  "items": [
+   {
+    "store": "Musicopolix",
+    "price": 721.41
+   },
+   {
+    "store": "Drunkat",
+    "price": 758.0
+   },
+   {
+    "store": "Session",
+    "price": 769.0
+   },
+   {
+    "store": "Music Store (eBay)",
+    "price": 769.0
+   },
+   {
+    "store": "Egitana",
+    "price": 771.0
+   },
+   {
+    "store": "Nume Music",
+    "price": 777.0
+   },
+   {
+    "store": "MAT Guitars",
+    "price": 777.0
+   },
+   {
+    "store": "Woodbrass",
+    "price": 777.0
+   },
+   {
+    "store": "Thomann",
+    "price": 777.0
+   },
+   {
+    "store": "Pronorte",
+    "price": 799.0
+   },
+   {
+    "store": "Alfasoni",
+    "price": 799.0
+   }
+  ]
+ },
+ "day": "2 de noviembre de 2026"
+}

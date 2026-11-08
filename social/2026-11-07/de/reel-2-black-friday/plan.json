@@ -1,0 +1,101 @@
+{
+ "fecha": "7. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "bf",
+  "days": 20,
+  "deal": {
+   "slug": "ibanez-grx120sp-ngm-20spngmhtm",
+   "name": "Ibanez GRX120SP-NGM",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/633015.jpg",
+   "th": "490bad15ba1c598c.webp",
+   "price": 199.0,
+   "store": "Thomann",
+   "stores": 9,
+   "median": 220.5,
+   "max": 229.0,
+   "next": 209.0,
+   "rows": [
+    [
+     "Thomann",
+     199.0
+    ],
+    [
+     "Session",
+     209.0
+    ],
+    [
+     "Musikhaus Markstein",
+     209.0
+    ],
+    [
+     "Shop2Rock",
+     219.0
+    ],
+    [
+     "IMM Professional",
+     219.0
+    ],
+    [
+     "Zoundhouse",
+     222.0
+    ],
+    [
+     "Musikhaus Korn",
+     229.0
+    ],
+    [
+     "Music Town",
+     229.0
+    ],
+    [
+     "Musikhaus am Dornbusch",
+     229.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

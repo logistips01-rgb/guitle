@@ -1,0 +1,200 @@
+{
+ "fecha": "4 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "tagima-woodstock-tw-61-p90-jazzmaster-fiesta-red-7898563976640",
+    "name": "Tagima Woodstock TW-61 P90 Jazzmaster Fiesta Red",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/guitarra_tagima_woodstock_tw_61_p90_jazzmaster_fie_1_20261019170243_3bdc894eba4b.jpg",
+    "price": 1210.5,
+    "store": "Música Center",
+    "stores": 6,
+    "median": 1499.0,
+    "max": 1899.0,
+    "next": 1376.1,
+    "rows": [
+     [
+      "Música Center",
+      1210.5
+     ],
+     [
+      "Akustica Musical",
+      1376.1
+     ],
+     [
+      "Destroyer",
+      1417.5
+     ],
+     [
+      "Cheiro de Música",
+      1499.0
+     ],
+     [
+      "Mundomax",
+      1529.1
+     ],
+     [
+      "Duetto Musical",
+      1899.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 165,60 a menos que em qualquer outra loja",
+    "pct": 12,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "squier-starcaster-affinity-series-deluxe-olympic-white-885978135721",
+    "name": "Squier Starcaster Affinity Series Deluxe Olympic White",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://static.mundomax.com.br/produtos/84514/1200/6.jpg",
+    "price": 4319.1,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 5097.5,
+    "max": 5196.0,
+    "next": 4999.0,
+    "rows": [
+     [
+      "Mundomax",
+      4319.1
+     ],
+     [
+      "Cheiro de Música",
+      4999.0
+     ],
+     [
+      "Carneiro Music",
+      5196.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 679,90 a menos que em qualquer outra loja",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "strinberg-sd200c-ns-black-series-folk-de-aco-c-afinador-natural-fosco-7899854521297",
+    "name": "Strinberg SD200C NS Black Series Folk de Aço C/ Afinador Natural Fosco",
+    "brand": "Strinberg",
+    "kind": "acustica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-sd200c-ns-black-series-folk-de-aco-c-afinador-natural-fosco-81071/268565.jpg?w=1000&h=1000&v=202508070822&qs=ignore",
+    "price": 854.1,
+    "store": "Akustica Musical",
+    "stores": 8,
+    "median": 1259.9,
+    "max": 1430.14,
+    "next": 989.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      854.1
+     ],
+     [
+      "Mundomax",
+      989.1
+     ],
+     [
+      "Música Center",
+      998.0
+     ],
+     [
+      "Destroyer",
+      1008.0
+     ],
+     [
+      "Megasom",
+      1259.9
+     ],
+     [
+      "Luggi",
+      1259.91
+     ],
+     [
+      "Duetto Musical",
+      1299.9
+     ],
+     [
+      "Tuner Music",
+      1430.14
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 135 a menos que em qualquer outra loja",
+    "pct": 14,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "takamine-gc1ce-classico-pre-tp-4t-etp4t81294",
+    "name": "Takamine GC1CE Clássico - Pré TP-4T",
+    "brand": "Takamine",
+    "kind": "clasica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-takamine-gc1ce-classico-pre-tp-4t-81294/268789.jpg?w=1000&h=1000&v=202508070648&qs=ignore",
+    "price": 2691.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 3239.5,
+    "max": 3280.0,
+    "next": 3199.0,
+    "rows": [
+     [
+      "Akustica Musical",
+      2691.0
+     ],
+     [
+      "Duetto Musical",
+      3199.0
+     ],
+     [
+      "Elo Musical",
+      3280.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 508 a menos que em qualquer outra loja",
+    "pct": 16,
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

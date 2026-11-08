@@ -1,0 +1,171 @@
+{
+ "fecha": "5 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "fender-player-ii-telecaster-rw-transparent-cherry-885978112432",
+    "name": "Fender Player II Telecaster RW Transparent Cherry",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/1/716392_87db.jpg?store=nume_es&image-type=image",
+    "price": 747.0,
+    "store": "Egitana",
+    "stores": 8,
+    "median": 911.0,
+    "max": 930.51,
+    "next": 869.0,
+    "rows": [
+     [
+      "Egitana",
+      747.0
+     ],
+     [
+      "Nume Music",
+      869.0
+     ],
+     [
+      "Session",
+      899.0
+     ],
+     [
+      "MAT Guitars",
+      911.0
+     ],
+     [
+      "Drunkat",
+      911.0
+     ],
+     [
+      "Woodbrass",
+      911.0
+     ],
+     [
+      "Pronorte",
+      926.0
+     ],
+     [
+      "Musicopolix",
+      930.51
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 12 % por debajo de su media",
+    "pct": 12,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "ibanez-s520ah-abs-antique-brown-stained-4549763369109",
+    "name": "Ibanez S520AH-ABS Antique Brown Stained",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/5/754156_1_1e42.jpg?store=nume_es&image-type=image",
+    "price": 513.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 698.0,
+    "max": 698.0,
+    "next": 698.0,
+    "rows": [
+     [
+      "Egitana",
+      513.0
+     ],
+     [
+      "Nume Music",
+      698.0
+     ],
+     [
+      "Thomann",
+      698.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Bajada real: 24 % por debajo de su media",
+    "pct": 24,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sigma-dm-1-4260279937469",
+    "name": "Sigma DM-1",
+    "brand": "Sigma",
+    "kind": "acustica",
+    "img": "https://drunkat.es/upload/productos/800x800/sigma_dm-1_1.jpg",
+    "price": 283.0,
+    "store": "Drunkat",
+    "stores": 5,
+    "median": 370.0,
+    "max": 380.0,
+    "next": 308.68,
+    "rows": [
+     [
+      "Drunkat",
+      283.0
+     ],
+     [
+      "Partitura",
+      308.68
+     ],
+     [
+      "Woodbrass",
+      360.0
+     ],
+     [
+      "Pronorte",
+      380.0
+     ],
+     [
+      "Madrid Musical Málaga 8",
+      380.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 8 % por debajo de su media",
+    "pct": 8,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "ortega-r221snbk-840553023084",
+    "name": "Ortega R221SNBK",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/4/044529_9732.jpg?store=nume_es&image-type=image",
+    "price": 221.96,
+    "store": "Musicopolix",
+    "stores": 4,
+    "median": 285.0,
+    "max": 353.57,
+    "next": 242.12,
+    "rows": [
+     [
+      "Musicopolix",
+      221.96
+     ],
+     [
+      "Alteisa",
+      242.12
+     ],
+     [
+      "Session",
+      285.0
+     ],
+     [
+      "Nume Music",
+      353.57
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 16 % por debajo de su media",
+    "pct": 16,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

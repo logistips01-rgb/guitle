@@ -1,0 +1,53 @@
+{
+ "fecha": "7 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "Descuentos inflados",
+  "slides": [
+   {
+    "hook": "Ojo en Black Friday",
+    "title": "Hay descuentos que son mentira"
+   },
+   {
+    "title": "Suben el precio… y luego lo «rebajan»",
+    "sub": "Ejemplo",
+    "size": 96,
+    "visual": {
+     "type": "chart",
+     "points": [
+      899,
+      899,
+      899,
+      999,
+      999,
+      999,
+      899,
+      899
+     ],
+     "marks": [
+      [
+       1,
+       "899 €",
+       "#1f9d55"
+      ],
+      [
+       4,
+       "999 €",
+       "#d64545"
+      ],
+      [
+       7,
+       "«−10 %»",
+       "#d64545"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "guitle lo detecta con el histórico de precios",
+    "sub": "Míralo antes de comprar en guitle.com"
+   }
+  ]
+ },
+ "stories": []
+}

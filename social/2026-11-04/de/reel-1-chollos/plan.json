@@ -1,0 +1,180 @@
+{
+ "fecha": "4. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "epiphone-bonehead-riviera-dark-tobacco-burst-711106178349",
+    "name": "Epiphone Bonehead Riviera Dark Tobacco Burst",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/e1/30/a0/1753795132/epiphone-bonehead-riviera-dark-tobacco-burst-02.webp?ts=1753795132",
+    "price": 739.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 939.0,
+    "max": 999.0,
+    "next": 879.0,
+    "rows": [
+     [
+      "Session",
+      739.0
+     ],
+     [
+      "Zoundhouse",
+      879.0
+     ],
+     [
+      "Woodbrass",
+      999.0
+     ]
+    ],
+    "pvp": null,
+    "why": "140 € günstiger als in allen anderen Shops",
+    "pct": 16,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "ibanez-sa260fm-tgb-e-gitarre-4515110489868",
+    "name": "Ibanez SA260FM-TGB E-Gitarre",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/135195/lg/ibanez-sa260fm-tgb-e-gitarre.jpg",
+    "price": 319.0,
+    "store": "IMM Professional",
+    "stores": 6,
+    "median": 399.0,
+    "max": 441.0,
+    "next": 360.0,
+    "rows": [
+     [
+      "IMM Professional",
+      319.0
+     ],
+     [
+      "Thomann",
+      360.0
+     ],
+     [
+      "Woodbrass",
+      378.0
+     ],
+     [
+      "Music Town",
+      399.0
+     ],
+     [
+      "Soundland",
+      399.0
+     ],
+     [
+      "Shop2Rock",
+      441.0
+     ]
+    ],
+    "pvp": null,
+    "why": "41 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "lag-t170d-tramontane-170-dreadnought-akustikgitarre-natur-satin-3700166311954",
+    "name": "Lag T170D Tramontane 170 Dreadnought Akustikgitarre, natur satin",
+    "brand": "Lag",
+    "kind": "acustica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/lag_t170d_01.jpg",
+    "price": 336.66,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 404.0,
+    "max": 429.0,
+    "next": 379.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      336.66
+     ],
+     [
+      "Musik Dressler",
+      379.0
+     ],
+     [
+      "Woodbrass",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "why": "42,34 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "pro-arte-gc-210-a-konzertgitarre-4046662243740",
+    "name": "Pro Arte GC-210 A Konzertgitarre",
+    "brand": "Pro Arte",
+    "kind": "clasica",
+    "img": "https://www.markstein.de/media/66/1c/5c/1744217190/634005b1f53fbe8cd50659b3d723de3c.jpg",
+    "price": 269.0,
+    "store": "Musikhaus Markstein",
+    "stores": 3,
+    "median": 331.5,
+    "max": 359.0,
+    "next": 304.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      269.0
+     ],
+     [
+      "Shop2Rock",
+      304.0
+     ],
+     [
+      "Woodbrass",
+      359.0
+     ]
+    ],
+    "pvp": null,
+    "why": "35 € günstiger als in allen anderen Shops",
+    "pct": 12,
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

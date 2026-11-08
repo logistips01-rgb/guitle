@@ -1,0 +1,202 @@
+{
+ "date": "2026-11-01",
+ "fecha": "1 novembre",
+ "post": {
+  "type": "top",
+  "title": "2 chitarre classiche sotto i 300 €",
+  "kind": "clasica",
+  "picks": [
+   {
+    "slug": "eko-vibra-150-cw-eq-natural-chitarra-classica-elettrificata-8056734495331",
+    "name": "Eko Vibra 150 CW EQ Natural Chitarra classica elettrificata",
+    "brand": "Eko",
+    "kind": "clasica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/1620894991_1024x1024.jpg?v=1772208450",
+    "price": 169.0,
+    "store": "Di Santo Musica",
+    "stores": 4,
+    "median": 169.0,
+    "max": 179.0,
+    "next": 169.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      169.0
+     ],
+     [
+      "Global Net Shop",
+      169.0
+     ],
+     [
+      "Stralù",
+      169.0
+     ],
+     [
+      "Woodbrass",
+      179.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "ibanez-ga6ce-am-ambra-4515110153097",
+    "name": "Ibanez GA6CE-AM Ambra",
+    "brand": "Ibanez",
+    "kind": "clasica",
+    "img": "https://woodbrass.it/cdn/shop/files/9e4fb522b11f012622ff75fa3d8cb0bc3e22af0f_HOSHINO_GA6CE_AM.jpg?height=1200&pad_color=ffffff&v=1792556730&width=1200",
+    "price": 229.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 242.0,
+    "max": 245.0,
+    "next": 239.0,
+    "rows": [
+     [
+      "Woodbrass",
+      229.0
+     ],
+     [
+      "Suono Store",
+      239.0
+     ],
+     [
+      "Di Santo Musica",
+      245.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   }
+  ],
+  "caption": "🎸 2 chitarre classiche sotto i 300 €: le più vendute nei negozi, con il miglior prezzo di oggi 👇\n\n1️⃣ Eko Vibra 150 CW EQ Natural Chitarra classica elettrificata: 169 € da Di Santo Musica\n2️⃣ Ibanez GA6CE-AM Ambra: 229 € da Woodbrass\n\nQuale scegli? Diccelo nei commenti 💬\n🔎 Confronta i prezzi su guitle.com/it (link in bio). Prezzi del 1 novembre.\n\n#chitarra #chitarrista #offerte #sconti #chitarraclassica #eko #ibanez"
+ },
+ "stories": [
+  {
+   "slug": "yamaha-apx600-natural-chitarra-acustica-elettrificata-4957812623896",
+   "name": "Yamaha APX600 Natural Chitarra acustica elettrificata",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://www.disantomusica.it/cdn/shop/files/3100-yamaha-apx600-natural-chitarra-acustica-elettrificata_1024x1024.jpg?v=1772244948",
+   "price": 299.0,
+   "store": "Di Santo Musica",
+   "stores": 4,
+   "median": 345.0,
+   "max": 359.0,
+   "next": 344.0,
+   "rows": [
+    [
+     "Di Santo Musica",
+     299.0
+    ],
+    [
+     "Global Net Shop",
+     344.0
+    ],
+    [
+     "Woodbrass",
+     345.0
+    ],
+    [
+     "Direzione Musica",
+     359.0
+    ]
+   ],
+   "pvp": null,
+   "why": "45 € in meno che negli altri negozi",
+   "pct": 13,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "mooer-msc10-pro-guitar-black-arblackhtm",
+   "name": "Mooer MSC10 Pro Guitar Black",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/593090.jpg",
+   "price": 171.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 214.0,
+   "max": 229.0,
+   "next": 199.0,
+   "rows": [
+    [
+     "Thomann",
+     171.0
+    ],
+    [
+     "Zecchini Musica",
+     199.0
+    ],
+    [
+     "Woodbrass",
+     229.0
+    ]
+   ],
+   "pvp": null,
+   "why": "28 € in meno che negli altri negozi",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ibanez-aeg50-ibh-sfumato-blu-indaco-4549763230942",
+   "name": "Ibanez AEG50-IBH Sfumato blu indaco",
+   "brand": "Ibanez",
+   "kind": "acustica",
+   "img": "https://woodbrass.it/cdn/shop/files/91ea71c1d333a18ea9a8ad7f4eb26e564701ac2e_HOSHINO_AEG50_IBH.jpg?height=1200&pad_color=ffffff&v=1792551939&width=1200",
+   "price": 259.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 296.45,
+   "max": 299.0,
+   "next": 293.9,
+   "rows": [
+    [
+     "Woodbrass",
+     259.0
+    ],
+    [
+     "Direzione Musica",
+     293.9
+    ],
+    [
+     "Di Santo Musica",
+     299.0
+    ]
+   ],
+   "pvp": null,
+   "why": "34,90 € in meno che negli altri negozi",
+   "pct": 12,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}

@@ -1,0 +1,48 @@
+{
+ "fecha": "3 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "¿Es buen momento?",
+  "slides": [
+   {
+    "hook": "Antes de comprar",
+    "title": "¿Es buen momento para comprarla?"
+   },
+   {
+    "title": "Mira su histórico de precios",
+    "sub": "Ejemplo",
+    "size": 100,
+    "visual": {
+     "type": "chart",
+     "points": [
+      829,
+      829,
+      799,
+      829,
+      789,
+      789,
+      769,
+      749
+     ],
+     "marks": [
+      [
+       0,
+       "829 €",
+       "#52514e"
+      ],
+      [
+       7,
+       "Hoy: mínimo",
+       "#1f9d55"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "En guitle tienes el histórico de cada guitarra",
+    "sub": "Gratis, en su ficha de guitle.com"
+   }
+  ]
+ },
+ "stories": []
+}

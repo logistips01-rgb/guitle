@@ -1,0 +1,215 @@
+{
+ "fecha": "5 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "top",
+  "title": "5 chitarre elettriche sotto i 300 €",
+  "hook": "Top del giorno",
+  "picks": [
+   {
+    "slug": "squier-stratocaster-ht-sonic-lrl-torino-red-717669815851",
+    "name": "Squier Stratocaster HT Sonic LRL Torino Red",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.it/cdn/shop/files/a4b211c3a6917744765084255403a30e76913a8a_FMIC_0373250558.jpg?height=1200&pad_color=ffffff&v=1793735945&width=1200",
+    "price": 159.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 179.0,
+    "max": 199.0,
+    "next": 161.0,
+    "rows": [
+     [
+      "Woodbrass",
+      159.0
+     ],
+     [
+      "Thomann",
+      161.0
+     ],
+     [
+      "Stralù",
+      179.0
+     ],
+     [
+      "S&M Strumenti",
+      179.0
+     ],
+     [
+      "Guitar Shop",
+      199.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "yamaha-pacifica-012-ii-dbm-dark-blue-metallic-chitarra-elettrica-blu-4957812667180",
+    "name": "Yamaha Pacifica 012 II DBM Dark Blue Metallic Chitarra elettrica blu",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/2594-yamaha-pacifica-012-dbm-dark-blue-metallic-chitarra-elettrica-blu_1024x1024.jpg?v=1772235011",
+    "price": 199.0,
+    "store": "Di Santo Musica",
+    "stores": 3,
+    "median": 212.5,
+    "max": 226.0,
+    "next": 199.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      199.0
+     ],
+     [
+      "Global Net Shop",
+      199.0
+     ],
+     [
+      "Woodbrass",
+      226.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "eko-ls-300-cherry-sunburst-chitarra-elettrica-a-22-tasti-con-pickup-h-h-8056734498554",
+    "name": "Eko LS-300 CHERRY SUNBURST Chitarra Elettrica a 22 Tasti con pickup H-H",
+    "brand": "Eko",
+    "kind": "electrica",
+    "img": "https://www.globalnetshop.it/cdn/shop/files/01-LS300-CSB_58de2602-5438-43fa-930a-b0e5b7e10798_1024x.jpg?v=1751194919",
+    "price": 225.0,
+    "store": "Global Net Shop",
+    "stores": 3,
+    "median": 239.0,
+    "max": 249.0,
+    "next": 229.0,
+    "rows": [
+     [
+      "Global Net Shop",
+      225.0
+     ],
+     [
+      "Guitar Shop",
+      229.0
+     ],
+     [
+      "Woodbrass",
+      249.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "ibanez-grg140-wh-rg140whhtm",
+    "name": "Ibanez GRG140-WH",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/331816.jpg",
+    "price": 235.0,
+    "store": "Thomann",
+    "stores": 5,
+    "median": 248.95,
+    "max": 254.0,
+    "next": 239.0,
+    "rows": [
+     [
+      "Thomann",
+      235.0
+     ],
+     [
+      "Woodbrass",
+      239.0
+     ],
+     [
+      "Direzione Musica",
+      248.9
+     ],
+     [
+      "Stralù",
+      249.0
+     ],
+     [
+      "Di Santo Musica",
+      254.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "fender-squier-affinity-telecaster-mn-bpg-butterscotch-blonde-chitarra-elettrica-885978722822",
+    "name": "Fender Squier Affinity Telecaster MN BPG Butterscotch Blonde Chitarra elettrica",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/5228-fender-squier-affinity-telecaster-mn-bpg-butterscotch-blonde-chitarra-elettrica_1024x1024.jpg?v=1772186648",
+    "price": 260.99,
+    "store": "Di Santo Musica",
+    "stores": 4,
+    "median": 274.0,
+    "max": 275.0,
+    "next": 269.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      260.99
+     ],
+     [
+      "Global Net Shop",
+      269.0
+     ],
+     [
+      "Woodbrass",
+      274.0
+     ],
+     [
+      "Stralù",
+      275.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   }
+  ]
+ }
+}

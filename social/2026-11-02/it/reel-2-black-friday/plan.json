@@ -1,0 +1,84 @@
+{
+ "fecha": "2 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "bf",
+  "days": 25,
+  "deal": {
+   "slug": "squier-affinity-series-stratocaster-lake-placid-blue-placidblue",
+   "name": "Squier Affinity Series Stratocaster Lake Placid Blue",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://shop.lenzotti.it/wp-content/uploads/2021/10/Squier-Affinity-Series-Stratocaster-Lake-Placid-Blue.png",
+   "price": 244.0,
+   "store": "Woodbrass",
+   "stores": 5,
+   "median": 246.5,
+   "max": 259.0,
+   "next": 244.0,
+   "rows": [
+    [
+     "Woodbrass",
+     244.0
+    ],
+    [
+     "Global Net Shop",
+     244.0
+    ],
+    [
+     "Thomann",
+     244.0
+    ],
+    [
+     "Stralù",
+     249.0
+    ],
+    [
+     "Di Santo Musica",
+     259.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "fecha": "6 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "guitle",
+  "topic": "momento",
+  "slides": [
+   {
+    "hook": "Before you buy",
+    "title": "Is now a good time to buy it?"
+   },
+   {
+    "title": "Check its price history",
+    "sub": "Example",
+    "size": 100,
+    "visual": {
+     "type": "chart",
+     "points": [
+      699,
+      699,
+      679,
+      699,
+      669,
+      669,
+      649,
+      639
+     ],
+     "marks": [
+      [
+       0,
+       "£699",
+       "#52514e"
+      ],
+      [
+       7,
+       "Today: lowest",
+       "#1f9d55"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "guitle shows the price history of every guitar",
+    "sub": "Free, on its page at guitle.com/uk"
+   }
+  ]
+ }
+}

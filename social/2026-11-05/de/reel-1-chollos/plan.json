@@ -1,0 +1,172 @@
+{
+ "fecha": "5. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "ibanez-as73-ttf-as73ttfhtm",
+    "name": "Ibanez AS73-TTF",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/607122.jpg",
+    "price": 439.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 519.0,
+    "max": 529.0,
+    "next": 489.0,
+    "rows": [
+     [
+      "Woodbrass",
+      439.0
+     ],
+     [
+      "Session",
+      489.0
+     ],
+     [
+      "Shop2Rock",
+      519.0
+     ],
+     [
+      "Music Town",
+      529.0
+     ]
+    ],
+    "pvp": null,
+    "why": "50 € günstiger als in allen anderen Shops",
+    "pct": 10,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "epiphone-emperor-swingster-fgm-711106045238",
+    "name": "Epiphone Emperor Swingster FGM",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/64/3d/27/1662629862/epiphone_-_epiphone_emperor_swingster_fgm_-_0.jpg?ts=1741946354",
+    "price": 699.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 792.5,
+    "max": 799.0,
+    "next": 786.0,
+    "rows": [
+     [
+      "Session",
+      699.0
+     ],
+     [
+      "Woodbrass",
+      786.0
+     ],
+     [
+      "Musikhaus Markstein",
+      799.0
+     ]
+    ],
+    "pvp": null,
+    "why": "87 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "cort-core-dc-amh-8809625369811",
+    "name": "Cort CORE-DC AMH",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://www.session.de/media/91/9e/d8/1779878135/cort-core-dc-amh.jpg?ts=1779878135",
+    "price": 479.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 564.0,
+    "max": 589.0,
+    "next": 539.0,
+    "rows": [
+     [
+      "Session",
+      479.0
+     ],
+     [
+      "Woodbrass",
+      539.0
+     ],
+     [
+      "Musik Beck",
+      589.0
+     ]
+    ],
+    "pvp": null,
+    "why": "60 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-r121l3-4-840553025828",
+    "name": "Ortega R121L3/4",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.session.de/media/3a/dd/0a/1779799709/ortega-r121l3-4.jpg?ts=1779799709",
+    "price": 185.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 216.0,
+    "max": 225.0,
+    "next": 207.0,
+    "rows": [
+     [
+      "Session",
+      185.0
+     ],
+     [
+      "Shop2Rock",
+      207.0
+     ],
+     [
+      "Woodbrass",
+      225.0
+     ]
+    ],
+    "pvp": null,
+    "why": "22 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

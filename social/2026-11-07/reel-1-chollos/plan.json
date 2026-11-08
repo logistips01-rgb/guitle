@@ -1,0 +1,171 @@
+{
+ "fecha": "7 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "mooer-gtrs-sl810-brown-burst-6971889222927",
+    "name": "Mooer Gtrs SL810 Brown Burst",
+    "brand": "Mooer",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/1/0/1005399_1_1_cf3e.jpg?store=nume_es&image-type=image",
+    "price": 354.0,
+    "store": "Thomann",
+    "stores": 6,
+    "median": 498.0,
+    "max": 523.9,
+    "next": 401.28,
+    "rows": [
+     [
+      "Thomann",
+      354.0
+     ],
+     [
+      "Nume Music",
+      401.28
+     ],
+     [
+      "Drunkat",
+      498.0
+     ],
+     [
+      "Musical San Francisco",
+      498.0
+     ],
+     [
+      "Pronorte",
+      498.0
+     ],
+     [
+      "Alteisa",
+      523.9
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 18 % por debajo de su media",
+    "pct": 18,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sire-t7-new-gen-wh-m-white-810187571855",
+    "name": "Sire T7 New Gen WH (M) White",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/735305_e343.jpg?store=nume_es&image-type=image",
+    "price": 507.0,
+    "store": "Woodbrass",
+    "stores": 6,
+    "median": 657.0,
+    "max": 695.7,
+    "next": 602.0,
+    "rows": [
+     [
+      "Woodbrass",
+      507.0
+     ],
+     [
+      "Drunkat",
+      602.0
+     ],
+     [
+      "Nume Music",
+      649.0
+     ],
+     [
+      "Pronorte",
+      657.0
+     ],
+     [
+      "Musical San Francisco",
+      657.03
+     ],
+     [
+      "Alteisa",
+      695.7
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 17 % por debajo de su media",
+    "pct": 17,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "ashton-cutaway-ashton-sl29-12ceqtsb-12-cuerdas-tabaco-sunburst-9356790021093",
+    "name": "Ashton cutaway Ashton SL29/12CEQTSB 12 cuerdas tabaco sunburst",
+    "brand": "Ashton",
+    "kind": "acustica",
+    "img": "https://musicalsanfrancisco.es/wp-content/uploads/2026/10/sl29_12ceqtsb.webp",
+    "price": 211.65,
+    "store": "Musical San Francisco",
+    "stores": 4,
+    "median": 225.0,
+    "max": 311.0,
+    "next": 224.1,
+    "rows": [
+     [
+      "Musical San Francisco",
+      211.65
+     ],
+     [
+      "Partitura",
+      224.1
+     ],
+     [
+      "Neomúsica",
+      225.0
+     ],
+     [
+      "Musicopolix",
+      311.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 12 % por debajo de su media",
+    "pct": 12,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "lag-bluewave-2-cbw2e-classical-4-4-3700166373105",
+    "name": "Lâg Bluewave 2 Cbw2E Classical 4/4",
+    "brand": "Lâg",
+    "kind": "clasica",
+    "img": "https://woodbrass.es/cdn/shop/files/02c2bc77e9e0554b97138353ee9e126af34f430e_GLH_CBW2E_bag.png?height=1200&pad_color=ffffff&v=1793217711&width=1200",
+    "price": 469.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 767.0,
+    "max": 778.0,
+    "next": 661.18,
+    "rows": [
+     [
+      "Woodbrass",
+      469.0
+     ],
+     [
+      "Musical San Francisco",
+      661.18
+     ],
+     [
+      "MAT Guitars",
+      767.0
+     ],
+     [
+      "Pronorte",
+      778.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 15 % por debajo de su media",
+    "pct": 15,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

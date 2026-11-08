@@ -1,0 +1,148 @@
+{
+ "date": "2026-11-02",
+ "fecha": "2 de noviembre",
+ "post": null,
+ "stories": [
+  {
+   "slug": "yamaha-pacifica-112vm-ice-blue-rl-4013175230178",
+   "name": "Yamaha Pacifica 112VM Ice Blue RL",
+   "brand": "Yamaha",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/6/662870_fcd6.jpg?store=nume_es&image-type=image",
+   "price": 263.0,
+   "store": "Egitana",
+   "stores": 4,
+   "median": 270.0,
+   "max": 284.51,
+   "next": 269.0,
+   "rows": [
+    [
+     "Egitana",
+     263.0
+    ],
+    [
+     "Microfusa",
+     269.0
+    ],
+    [
+     "Madrid Musical Málaga 8",
+     270.0
+    ],
+    [
+     "Nume Music",
+     284.51
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 9 % por debajo de su media",
+   "pct": 9,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "ibanez-rg470pb-reb-red-eclipse-burst-4549763353047",
+   "name": "Ibanez RG470PB-REB Red Eclipse Burst",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/737894_1_3fbc.jpg?store=nume_es&image-type=image",
+   "price": 468.0,
+   "store": "Alteisa",
+   "stores": 7,
+   "median": 543.5,
+   "max": 569.0,
+   "next": 468.0,
+   "rows": [
+    [
+     "Alteisa",
+     468.0
+    ],
+    [
+     "Egitana",
+     468.0
+    ],
+    [
+     "Nume Music",
+     497.42
+    ],
+    [
+     "MAT Guitars",
+     528.0
+    ],
+    [
+     "Musicopolix",
+     559.0
+    ],
+    [
+     "Woodbrass",
+     566.0
+    ],
+    [
+     "Session",
+     569.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 6 % por debajo de su media",
+   "pct": 6,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "fender-standard-stratocaster-hss-mn-aqua-marine-metallic-885978118052",
+   "name": "Fender Standard Stratocaster HSS MN Aqua Marine Metallic",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/734668_1_21da.jpg?store=nume_es&image-type=image",
+   "price": 550.0,
+   "store": "Drunkat",
+   "stores": 10,
+   "median": 605.64,
+   "max": 639.0,
+   "next": 569.0,
+   "rows": [
+    [
+     "Drunkat",
+     550.0
+    ],
+    [
+     "Auvisa",
+     569.0
+    ],
+    [
+     "Nume Music",
+     572.0
+    ],
+    [
+     "MAT Guitars",
+     572.0
+    ],
+    [
+     "Pronorte",
+     572.0
+    ],
+    [
+     "Musicopolix",
+     605.64
+    ],
+    [
+     "Musical San Francisco",
+     625.0
+    ],
+    [
+     "Session",
+     629.0
+    ],
+    [
+     "Microfusa",
+     629.0
+    ],
+    [
+     "Woodbrass",
+     639.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Bajada real: 7 % por debajo de su media",
+   "pct": 7,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}

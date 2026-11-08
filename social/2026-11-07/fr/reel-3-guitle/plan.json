@@ -1,0 +1,83 @@
+{
+ "fecha": "7 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "guitle",
+  "topic": "misma",
+  "slides": [
+   {
+    "hook": "Le savais-tu ?",
+    "title": "La même guitare peut coûter bien plus cher selon le magasin"
+   },
+   {
+    "title": "Fender Player II Stratocaster Blk",
+    "size": 76,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Magasin A",
+       690.0
+      ],
+      [
+       "Magasin B",
+       775.0
+      ],
+      [
+       "Magasin C",
+       799.0
+      ],
+      [
+       "Magasin D",
+       929.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "239 € d’écart",
+    "sub": "Compare avant d’acheter",
+    "size": 130
+   }
+  ]
+ }
+}

@@ -1,0 +1,140 @@
+{
+ "fecha": "5 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "squier-mustang-sonic-mn-2-color-sunburst-717669816018",
+    "name": "Squier Mustang Sonic Mn 2-Color Sunburst",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/5d6ee49e97bc0ded4f0fb3b96c9e24b785f89862_FMIC_0373652503.jpg?height=1200&pad_color=ffffff&v=1793727238&width=1200",
+    "price": 157.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 178.0,
+    "max": 178.0,
+    "next": 178.0,
+    "rows": [
+     [
+      "Woodbrass",
+      157.0
+     ],
+     [
+      "Stars Music",
+      178.0
+     ],
+     [
+      "Guitar Legend",
+      178.0
+     ]
+    ],
+    "pvp": null,
+    "why": "21 € de moins que dans les autres magasins",
+    "pct": 12,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "cort-ibanez-grx40-ca-4515110159204",
+    "name": "Cort Ibanez GRX40-CA",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://audiosystem.fr/66051-product_zoom/ibanez-grx40-ca.jpg",
+    "price": 169.0,
+    "store": "Audio System",
+    "stores": 4,
+    "median": 189.0,
+    "max": 199.0,
+    "next": 189.0,
+    "rows": [
+     [
+      "Audio System",
+      169.0
+     ],
+     [
+      "Woodbrass",
+      189.0
+     ],
+     [
+      "Thomann",
+      189.0
+     ],
+     [
+      "Stars Music",
+      199.0
+     ]
+    ],
+    "pvp": null,
+    "why": "20 € de moins que dans les autres magasins",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "takamine-gn75ce-wr-wine-red-190262040026",
+    "name": "Takamine GN75CE-WR Wine Red",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/d2fdeaeaec327315a4efbfb4f835984c9db4085f_GTA_GN75CEWR_00.jpg?height=1200&pad_color=ffffff&v=1793019695&width=1200",
+    "price": 555.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 699.0,
+    "max": 699.0,
+    "next": 699.0,
+    "rows": [
+     [
+      "Woodbrass",
+      555.0
+     ],
+     [
+      "Stars Music",
+      699.0
+     ],
+     [
+      "Music Privilege",
+      699.0
+     ]
+    ],
+    "pvp": null,
+    "why": "144 € de moins que dans les autres magasins",
+    "pct": 21,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

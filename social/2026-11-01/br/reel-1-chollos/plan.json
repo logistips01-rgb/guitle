@@ -1,0 +1,176 @@
+{
+ "fecha": "1 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "squier-stratocaster-sonic-black-0373152506-squier-by-fender-717669815646",
+    "name": "Squier Stratocaster Sonic Black 0373152506 - Squier By Fender",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/193670/Guitarra-Stratocaster-Sonic-MN-WPG-BLK---Squier-By-Fender.jpg?v=638582067276470000",
+    "price": 1977.08,
+    "store": "Ninja Som",
+    "stores": 3,
+    "median": 2694.5,
+    "max": 2699.0,
+    "next": 2690.0,
+    "rows": [
+     [
+      "Ninja Som",
+      1977.08
+     ],
+     [
+      "Cheiro de Música",
+      2690.0
+     ],
+     [
+      "Carneiro Music",
+      2699.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 712,92 a menos que em qualquer outra loja",
+    "pct": 27,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "tagima-jazzmaster-strato-duosmart-candy-apple-7898569449377",
+    "name": "Tagima Jazzmaster Strato DuoSmart Candy Apple",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://static.mundomax.com.br/produtos/86300/1200/4.jpg",
+    "price": 1146.6,
+    "store": "Mundomax",
+    "stores": 4,
+    "median": 1599.0,
+    "max": 1890.0,
+    "next": 1437.3,
+    "rows": [
+     [
+      "Mundomax",
+      1146.6
+     ],
+     [
+      "Música Center",
+      1437.3
+     ],
+     [
+      "Cheiro de Música",
+      1599.0
+     ],
+     [
+      "Casa da Música",
+      1890.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 290,70 a menos que em qualquer outra loja",
+    "pct": 20,
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "giannini-gf1d-ceq-eletroacustico-aco-3-tone-sunburst-stgiannini",
+    "name": "Giannini GF1D CEQ Eletroacústico Aço 3 Tone Sunburst",
+    "brand": "Giannini",
+    "kind": "acustica",
+    "img": "https://static.mundomax.com.br/produtos/63246/1200/8.jpg",
+    "price": 809.1,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 1123.1750000000002,
+    "max": 1159.9,
+    "next": 1086.45,
+    "rows": [
+     [
+      "Mundomax",
+      809.1
+     ],
+     [
+      "Tuner Music",
+      1086.45
+     ],
+     [
+      "Supersonora",
+      1159.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 277,35 a menos que em qualquer outra loja",
+    "pct": 26,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "strinberg-sl200c-ns-flat-de-nylon-natural-c-afinador-7899854521501",
+    "name": "Strinberg SL200C NS Flat De Nylon Natural C/ Afinador",
+    "brand": "Strinberg",
+    "kind": "clasica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-sl200c-ns-flat-de-nylon-natural-c-afinador-1132912/1353559.jpg?w=1000&h=1000&v=202508070703&qs=ignore",
+    "price": 809.1,
+    "store": "Akustica Musical",
+    "stores": 4,
+    "median": 1079.91,
+    "max": 1299.9,
+    "next": 989.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      809.1
+     ],
+     [
+      "Mundomax",
+      989.1
+     ],
+     [
+      "Luggi",
+      1079.91
+     ],
+     [
+      "Duetto Musical",
+      1299.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 180 a menos que em qualquer outra loja",
+    "pct": 18,
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

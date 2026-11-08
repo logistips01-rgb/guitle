@@ -1,0 +1,141 @@
+{
+ "fecha": "4 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "top",
+  "title": "3 chitarre acustiche sotto i 300 €",
+  "hook": "Top del giorno",
+  "picks": [
+   {
+    "slug": "yamaha-apxt2-ovs-chitarra-acustica-elettrificata-3-4-travel-old-violin-burst-4957812520157",
+    "name": "Yamaha APXT2 OVS Chitarra Acustica Elettrificata 3/4 Travel, Old Violin Burst",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://www.globalnetshop.it/cdn/shop/files/01-APXT2-OVS_1024x.jpg?v=1752169619",
+    "price": 245.0,
+    "store": "Global Net Shop",
+    "stores": 4,
+    "median": 252.0,
+    "max": 255.0,
+    "next": 249.0,
+    "rows": [
+     [
+      "Global Net Shop",
+      245.0
+     ],
+     [
+      "S&M Strumenti",
+      249.0
+     ],
+     [
+      "Woodbrass",
+      252.0
+     ],
+     [
+      "Di Santo Musica",
+      255.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "d-angelico-premier-gramercy-ls-aged-mahogany-chitarra-acustica-elettrificata-684753088555",
+    "name": "D'Angelico Premier Gramercy LS Aged Mahogany Chitarra acustica elettrificata",
+    "brand": "D'Angelico",
+    "kind": "acustica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/6430_--_000_9214_1024x1024.jpg?v=1772321681",
+    "price": 245.0,
+    "store": "Di Santo Musica",
+    "stores": 3,
+    "median": 252.0,
+    "max": 259.0,
+    "next": 245.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      245.0
+     ],
+     [
+      "Firefly Audio",
+      245.0
+     ],
+     [
+      "Woodbrass",
+      259.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "eko-one-s150e-folk-silenziosa-8056734499261",
+    "name": "Eko One S150e Folk silenziosa",
+    "brand": "Eko",
+    "kind": "acustica",
+    "img": "https://woodbrass.it/cdn/shop/files/7322cfc7db19047a91fbb46f8246f07241641e34_GEA_ONE_S150E_FOLK.jpg?height=1200&pad_color=ffffff&v=1793731586&width=1200",
+    "price": 259.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 259.0,
+    "max": 259.0,
+    "next": 259.0,
+    "rows": [
+     [
+      "Woodbrass",
+      259.0
+     ],
+     [
+      "Di Santo Musica",
+      259.0
+     ],
+     [
+      "Global Net Shop",
+      259.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   }
+  ]
+ }
+}

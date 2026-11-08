@@ -1,0 +1,81 @@
+{
+ "fecha": "7 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "bf",
+  "days": 20,
+  "deal": {
+   "slug": "tagima-classic-nylon-vesperata-nt-tagima-7898651949341",
+   "name": "Tagima Classic Nylon Vesperata NT - Tagima",
+   "brand": "Tagima",
+   "kind": "clasica",
+   "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/217758/Violao-Classic-Nylon-Vesperata-NT---Tagima.png?v=639106720335900000",
+   "th": "5b4f089dfc8cc616.webp",
+   "price": 1139.88,
+   "store": "Ninja Som",
+   "stores": 4,
+   "median": 1274.99,
+   "max": 1287.0,
+   "next": 1219.5,
+   "rows": [
+    [
+     "Ninja Som",
+     1139.88
+    ],
+    [
+     "Destroyer",
+     1219.5
+    ],
+    [
+     "RCK Audio",
+     1274.99
+    ],
+    [
+     "Akustica Musical",
+     1287.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

@@ -1,0 +1,44 @@
+{
+ "fecha": "6 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "Misma guitarra, distinto precio",
+  "slides": [
+   {
+    "hook": "¿Sabías que…?",
+    "title": "La misma guitarra puede costar mucho más según la tienda"
+   },
+   {
+    "title": "Cort Space G6TR SGLG w/bag",
+    "size": 76,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Tienda A",
+       517.3
+      ],
+      [
+       "Tienda B",
+       549.0
+      ],
+      [
+       "Tienda C",
+       555.0
+      ],
+      [
+       "Tienda D",
+       869.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "351,70 € de diferencia",
+    "sub": "Compara antes de comprar",
+    "size": 130
+   }
+  ]
+ },
+ "stories": []
+}

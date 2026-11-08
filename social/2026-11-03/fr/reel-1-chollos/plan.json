@@ -1,0 +1,148 @@
+{
+ "fecha": "3 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "epiphone-casino-vintage-sunburst-original-711106097367",
+    "name": "Epiphone Casino Vintage Sunburst Original",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/ac054b21b3fcb0403a1199fc3998cc634b6b6b5b_GEP_EOCAVSNH1.png?height=1200&pad_color=ffffff&v=1792245431&width=1200",
+    "price": 625.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 725.0,
+    "max": 725.0,
+    "next": 725.0,
+    "rows": [
+     [
+      "Woodbrass",
+      625.0
+     ],
+     [
+      "Stars Music",
+      725.0
+     ],
+     [
+      "Guitar Legend",
+      725.0
+     ]
+    ],
+    "pvp": null,
+    "why": "100 € de moins que dans les autres magasins",
+    "pct": 14,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "eko-ibanez-grx40-mlb-4515276836544",
+    "name": "Eko Ibanez GRX40-MLB",
+    "brand": "Eko",
+    "kind": "electrica",
+    "img": "https://audiosystem.fr/66053-product_zoom/ibanez-grx40-mlb.jpg",
+    "price": 169.0,
+    "store": "Audio System",
+    "stores": 5,
+    "median": 195.0,
+    "max": 209.0,
+    "next": 191.0,
+    "rows": [
+     [
+      "Audio System",
+      169.0
+     ],
+     [
+      "Woodbrass",
+      191.0
+     ],
+     [
+      "Thomann",
+      191.0
+     ],
+     [
+      "Stars Music",
+      199.0
+     ],
+     [
+      "Music Privilege",
+      209.0
+     ]
+    ],
+    "pvp": null,
+    "why": "22 € de moins que dans les autres magasins",
+    "pct": 12,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "cort-luce-l100-oc-8809383832688",
+    "name": "Cort Luce L100-OC",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://ubico-musique.com/2656-home_default/guitare-cort-luce-l100-oc.jpg",
+    "price": 369.0,
+    "store": "Scotto Musique",
+    "stores": 4,
+    "median": 433.0,
+    "max": 459.0,
+    "next": 433.0,
+    "rows": [
+     [
+      "Scotto Musique",
+      369.0
+     ],
+     [
+      "Stars Music",
+      433.0
+     ],
+     [
+      "Music 3000",
+      433.0
+     ],
+     [
+      "Audio System",
+      459.0
+     ]
+    ],
+    "pvp": null,
+    "why": "64 € de moins que dans les autres magasins",
+    "pct": 15,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

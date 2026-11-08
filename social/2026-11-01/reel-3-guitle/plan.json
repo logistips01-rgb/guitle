@@ -1,0 +1,44 @@
+{
+ "fecha": "1 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "Misma guitarra, distinto precio",
+  "slides": [
+   {
+    "hook": "¿Sabías que…?",
+    "title": "La misma guitarra puede costar mucho más según la tienda"
+   },
+   {
+    "title": "PRS SE NF3 Ice Blue Metallic",
+    "size": 76,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Session",
+       739.0
+      ],
+      [
+       "Auvisa",
+       979.0
+      ],
+      [
+       "MAT Guitars",
+       985.0
+      ],
+      [
+       "Woodbrass",
+       1086.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "347 € de diferencia",
+    "sub": "Compara antes de comprar",
+    "size": 130
+   }
+  ]
+ },
+ "stories": []
+}

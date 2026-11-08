@@ -1,0 +1,165 @@
+{
+ "date": "2026-11-07",
+ "fecha": "7 de novembro",
+ "post": {
+  "type": "top",
+  "title": "1 guitarras clássicas de 300 € a 750 €",
+  "kind": "clasica",
+  "picks": [
+   {
+    "slug": "ibanez-tod10n-tkf-tim-henson-signature-ature10345",
+    "name": "Ibanez TOD10N TKF Tim Henson Signature",
+    "brand": "Ibanez",
+    "kind": "clasica",
+    "img": "https://musifex.pt/web/image/product.template/10345/image_1024?unique=8ad5878",
+    "price": 574.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 576.0,
+    "max": 577.0,
+    "next": 575.0,
+    "rows": [
+     [
+      "Musifex",
+      574.0
+     ],
+     [
+      "Egitana",
+      575.0
+     ],
+     [
+      "Thomann",
+      577.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   }
+  ],
+  "caption": "🎸 1 guitarras clássicas de 300 € a 750 €: as mais vendidas nas lojas, com o melhor preço de hoje 👇\n\n1️⃣ Ibanez TOD10N TKF Tim Henson Signature: 574 € na Musifex\n\nCom qual ficas? Diz-nos nos comentários 💬\n🔎 Compara preços em guitle.com/pt (todas as promoções de hoje no link da bio 👆). Preços de 7 de novembro.\n\n#guitarra #guitarrista #promoção #portugal #guitarraclassica #ibanez"
+ },
+ "stories": [
+  {
+   "slug": "prs-se-silver-sky-trad-blue-lh-dbluelhhtm",
+   "name": "PRS SE Silver Sky Trad Blue LH",
+   "brand": "PRS",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/653097.jpg",
+   "price": 666.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 915.24,
+   "max": 949.0,
+   "next": 881.48,
+   "rows": [
+    [
+     "Thomann",
+     666.0
+    ],
+    [
+     "Guitar Custom",
+     881.48
+    ],
+    [
+     "Egitana",
+     949.0
+    ]
+   ],
+   "pvp": null,
+   "why": "215,48 € a menos do que em qualquer outra loja",
+   "pct": 24,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "ibanez-pgmm31-wh-ezpgmm31wh",
+   "name": "Ibanez PGMM31-WH",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://discosom.pt/wp/wp-content/uploads/2021/08/Guitarra-Ibanez-PGMM31WH.png",
+   "price": 179.0,
+   "store": "Discosom",
+   "stores": 3,
+   "median": 213.0,
+   "max": 218.0,
+   "next": 208.0,
+   "rows": [
+    [
+     "Discosom",
+     179.0
+    ],
+    [
+     "Thomann",
+     208.0
+    ],
+    [
+     "Egitana",
+     218.0
+    ]
+   ],
+   "pvp": null,
+   "why": "29 € a menos do que em qualquer outra loja",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "schecter-sgr-c-1-walnut-satin-815447022184",
+   "name": "Schecter SGR C-1 Walnut Satin",
+   "brand": "Schecter",
+   "kind": "electrica",
+   "img": "https://detalhes.egitana.pt/schecter-sgr-c-1-walnut-satin_695b96c6dfce4.jpg",
+   "price": 247.0,
+   "store": "Egitana",
+   "stores": 3,
+   "median": 275.0,
+   "max": 275.0,
+   "next": 275.0,
+   "rows": [
+    [
+     "Egitana",
+     247.0
+    ],
+    [
+     "Musifex",
+     275.0
+    ],
+    [
+     "Adagio",
+     275.0
+    ]
+   ],
+   "pvp": null,
+   "why": "28 € a menos do que em qualquer outra loja",
+   "pct": 10,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}

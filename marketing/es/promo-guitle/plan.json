@@ -1,0 +1,109 @@
+{
+ "fecha": "2 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "Promo",
+  "slides": [
+   {
+    "hook": "¿Vas a comprar una guitarra?",
+    "title": "Espera un momento",
+    "size": 130,
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "hook": "Precios reales de hoy",
+    "title": "PRS SE CE24 Charcoal Burst",
+    "size": 80,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Tienda A",
+       699.0
+      ],
+      [
+       "Tienda B",
+       749.0
+      ],
+      [
+       "Tienda C",
+       749.0
+      ],
+      [
+       "Tienda D",
+       950.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "251 € de diferencia",
+    "sub": "La misma guitarra, según la tienda",
+    "size": 140,
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "prs1.webp"
+     ]
+    }
+   },
+   {
+    "hook": "Y ojo con las rebajas",
+    "title": "Suben el precio… y luego lo «rebajan»",
+    "sub": "Ejemplo",
+    "size": 96,
+    "visual": {
+     "type": "chart",
+     "points": [
+      899,
+      899,
+      899,
+      999,
+      999,
+      999,
+      899,
+      899
+     ],
+     "marks": [
+      [
+       1,
+       "899 €",
+       "#1f9d55"
+      ],
+      [
+       4,
+       "999 €",
+       "#d64545"
+      ],
+      [
+       7,
+       "«−10 %»",
+       "#d64545"
+      ]
+     ]
+    }
+   },
+   {
+    "hook": "guitle",
+    "title": "Comparamos 23.311 guitarras en 25 tiendas",
+    "sub": "Cada día, con el histórico de precios de cada una",
+    "size": 104
+   },
+   {
+    "title": "Busca la tuya y mira dónde está más barata",
+    "sub": "Gratis y sin registrarte",
+    "size": 110
+   }
+  ]
+ },
+ "stories": []
+}

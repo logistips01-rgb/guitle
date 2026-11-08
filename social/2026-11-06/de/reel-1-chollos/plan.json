@@ -1,0 +1,148 @@
+{
+ "fecha": "6. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "gretsch-electromatic-jet-rw-club-druid-green-885978720231",
+    "name": "Gretsch Electromatic Jet RW Club Druid Green",
+    "brand": "Gretsch",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/8d/d7/eb/1751453299/gretsch-electromatic-jet-rw-club-druid-green-04.webp?ts=1751453299",
+    "price": 445.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 498.5,
+    "max": 499.0,
+    "next": 498.0,
+    "rows": [
+     [
+      "Session",
+      445.0
+     ],
+     [
+      "Woodbrass",
+      498.0
+     ],
+     [
+      "Musikhaus Korn",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "why": "53 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "ibanez-ae3007fmh-tbh-elektro-akustik-gitarre-7-string-tobacco-edge-bur-4549763365378",
+    "name": "Ibanez AE3007FMH-TBH Elektro-Akustik-Gitarre 7-string, tobacco edge bur",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/ibanez_ae3007fmhtbh_1.jpg",
+    "price": 749.0,
+    "store": "Shop2Rock",
+    "stores": 6,
+    "median": 839.0,
+    "max": 849.0,
+    "next": 839.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      749.0
+     ],
+     [
+      "Session",
+      839.0
+     ],
+     [
+      "Musikhaus Markstein",
+      839.0
+     ],
+     [
+      "Thomann",
+      839.0
+     ],
+     [
+      "Woodbrass",
+      849.0
+     ],
+     [
+      "Music Town",
+      849.0
+     ]
+    ],
+    "pvp": null,
+    "why": "90 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "caballero-ca-eucm-senorita-zeder-mahagoni-7-8-konzert-gitarre-made-in-europe-500-4046662299426",
+    "name": "Caballero CA-EUCM Senorita Zeder/Mahagoni 7/8 Konzert-Gitarre (Made in Europe, 500.600)",
+    "brand": "Caballero",
+    "kind": "clasica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/caballero_caeucmsenorita_1.jpg",
+    "price": 339.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 395.5,
+    "max": 412.0,
+    "next": 379.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      339.0
+     ],
+     [
+      "Musik Beck",
+      379.0
+     ],
+     [
+      "Woodbrass",
+      412.0
+     ]
+    ],
+    "pvp": null,
+    "why": "40 € günstiger als in allen anderen Shops",
+    "pct": 11,
+    "photo": "g2-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}
