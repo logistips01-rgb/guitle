@@ -1,0 +1,132 @@
+{
+ "date": "2026-11-08",
+ "fecha": "8 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "squier-stratocaster-hss-sonic-mn-nero-717669815691",
+   "name": "Squier Stratocaster HSS Sonic MN Nero",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.it/cdn/shop/files/3856aea539f970533fabb3b66867d49d2dd5db1c_FMIC_0373203506.jpg?height=1200&pad_color=ffffff&v=1793735951&width=1200",
+   "th": "ec0537b52802fba2.webp",
+   "price": 174.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 186.5,
+   "max": 189.0,
+   "next": 184.0,
+   "rows": [
+    [
+     "Woodbrass",
+     174.0
+    ],
+    [
+     "Di Santo Musica",
+     184.0
+    ],
+    [
+     "Stralù",
+     189.0
+    ]
+   ],
+   "pvp": null,
+   "why": "10 € in meno che negli altri negozi",
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Offerta del giorno: Squier Stratocaster HSS Sonic MN Nero\n💶 174 € da Woodbrass, confrontata in 3 negozi.\n📉 10 € in meno che negli altri negozi.\n\n🔎 Confronta il prezzo su guitle.com/it (tutte le offerte di oggi nel link in bio 👆).\nPrezzo del 8 novembre; può cambiare.\n\n#chitarra #chitarrista #offerte #sconti #chitarraelettrica #squier"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-sa360nqm-bmg-0nqmbmghtm",
+   "name": "Ibanez SA360NQM-BMG",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/481520.jpg",
+   "th": "edea6fc56efa44ce.webp",
+   "price": 444.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 471.0,
+   "max": 485.0,
+   "next": 457.0,
+   "rows": [
+    [
+     "Thomann",
+     444.0
+    ],
+    [
+     "Woodbrass",
+     457.0
+    ],
+    [
+     "Cavalli Musica",
+     485.0
+    ]
+   ],
+   "pvp": null,
+   "why": "13 € in meno che negli altri negozi",
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "fender-squier-mini-stratocaster-black-chitarra-elettrica-3-4-885978884629",
+   "name": "Fender Squier Mini Stratocaster Black Chitarra elettrica 3/4",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.disantomusica.it/cdn/shop/files/4768-fender-squier-mini-stratocaster-black-chitarra-elettrica-3-4_1024x1024.jpg?v=1772188850",
+   "th": "aa8e2816c9facd3e.webp",
+   "price": 155.0,
+   "store": "Di Santo Musica",
+   "stores": 3,
+   "median": 159.5,
+   "max": 160.0,
+   "next": 159.0,
+   "rows": [
+    [
+     "Di Santo Musica",
+     155.0
+    ],
+    [
+     "Global Net Shop",
+     159.0
+    ],
+    [
+     "Woodbrass",
+     160.0
+    ]
+   ],
+   "pvp": null,
+   "why": "4 € in meno che negli altri negozi",
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}
