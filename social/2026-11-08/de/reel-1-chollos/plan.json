@@ -1,0 +1,176 @@
+{
+ "fecha": "8. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "mooer-gtrs-standard-800-white-6971889220121",
+    "name": "Mooer Gtrs Standard 800 White",
+    "brand": "Mooer",
+    "kind": "electrica",
+    "img": "https://woodbrass.de/cdn/shop/files/e6f45b363ab748006092edc8c401faf51e32e093_MUSICO_GTRS_S800WH.jpg?height=1200&pad_color=ffffff&v=1792524114&width=1200",
+    "th": "7c417951735cda82.webp",
+    "price": 304.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 329.0,
+    "max": 330.0,
+    "next": 328.0,
+    "rows": [
+     [
+      "Woodbrass",
+      304.0
+     ],
+     [
+      "Zoundhouse",
+      328.0
+     ],
+     [
+      "Musikhaus Zölch",
+      329.0
+     ],
+     [
+      "Shop2Rock",
+      330.0
+     ]
+    ],
+    "pvp": null,
+    "why": "24 € günstiger als in allen anderen Shops",
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "squier-cv-duo-sonic-hs-lrl-ppg-lpb-lppglpbhtm",
+    "name": "Squier CV Duo Sonic HS LRL PPG LPB",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/619726.jpg",
+    "th": "364693e3f3e813f8.webp",
+    "price": 350.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 375.0,
+    "max": 396.0,
+    "next": 372.0,
+    "rows": [
+     [
+      "Thomann",
+      350.0
+     ],
+     [
+      "Session",
+      372.0
+     ],
+     [
+      "Woodbrass",
+      375.0
+     ],
+     [
+      "Zoundhouse",
+      396.0
+     ]
+    ],
+    "pvp": null,
+    "why": "22 € günstiger als in allen anderen Shops",
+    "photo": "g3-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "yamaha-fg-800-brown-sunburst-westerngitarre-4957812641685",
+    "name": "Yamaha FG 800 Brown Sunburst Westerngitarre",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/0063/3559/4578/files/yamaha_westerngitarre_fg800_bsii_brown_sunburst.jpg?v=1732622059",
+    "th": "755825154de4548a.webp",
+    "price": 299.0,
+    "store": "Musik Ebert",
+    "stores": 3,
+    "median": 341.5,
+    "max": 354.0,
+    "next": 329.0,
+    "rows": [
+     [
+      "Musik Ebert",
+      299.0
+     ],
+     [
+      "Session",
+      329.0
+     ],
+     [
+      "Shop2Rock",
+      354.0
+     ]
+    ],
+    "pvp": null,
+    "why": "30 € günstiger als in allen anderen Shops",
+    "photo": "g1-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-grandsuite-ce-4-4-konzertgitarre-inkl-gigbag-842960186215",
+    "name": "Ortega Grandsuite-CE 4/4 Konzertgitarre inkl. Gigbag",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.markstein.de/media/19/fd/aa/1740754877/057340c5e07dc63209f114f478da9615.jpg",
+    "th": "e16d8806e4e77810.webp",
+    "price": 686.0,
+    "store": "Musikhaus Markstein",
+    "stores": 3,
+    "median": 746.5,
+    "max": 749.0,
+    "next": 744.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      686.0
+     ],
+     [
+      "Woodbrass",
+      744.0
+     ],
+     [
+      "Musik Beck",
+      749.0
+     ]
+    ],
+    "pvp": null,
+    "why": "58 € günstiger als in allen anderen Shops",
+    "photo": "g2-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}
