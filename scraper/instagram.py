@@ -26,7 +26,7 @@ import subprocess
 import sys
 import time
 import unicodedata
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from statistics import median
 
@@ -88,11 +88,14 @@ def products(lo=MIN_PRICE, hi=MAX_PRICE, catalogs=None):
     """Guitarras del catálogo con foto, en stock en varias tiendas y con su mejor precio (España por defecto)."""
     pvp = load(ROOT / "data/catalog/pvp.json", {}).get("prices", {}) if catalogs is None else {}
     out = []
+    fresco = (datetime.now(timezone.utc).date() - timedelta(days=1)).isoformat()
     for kind, path in (catalogs or CATALOGS).items():
         cat = load(path, {})
         stores = cat.get("stores", {})
         for p in cat.get("products", []):
-            items = sorted((i for i in p.get("items", []) if i.get("p") and i.get("st") is not False), key=lambda i: i["p"])
+            # Solo ofertas en stock y leídas hoy o ayer: un stock de hace días puede haberse agotado (Alteisa, 8-11)
+            items = sorted((i for i in p.get("items", []) if i.get("p") and i.get("st") is not False
+                            and str(i.get("d") or fresco)[:10] >= fresco), key=lambda i: i["p"])
             if not p.get("img") or len({i["s"] for i in items}) < MIN_STORES or not lo <= items[0]["p"] <= hi:
                 continue
             best = items[0]
