@@ -1,0 +1,143 @@
+{
+ "date": "2026-11-08",
+ "fecha": "8 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "lag-t118abce-blk-auditorium-bevel-cutaway-electro-black-3700166375772",
+   "name": "Lag T118ABCE-BLK auditorium bevel cutaway electro black",
+   "brand": "Lag",
+   "kind": "acustica",
+   "img": "https://www.music3000.fr/88858-home_default/lag-t118abce-blk-auditorium-bevel-cutaway-electro-black.jpg",
+   "th": "d4270e1fd4bd36b0.webp",
+   "price": 589.0,
+   "store": "Music 3000",
+   "stores": 4,
+   "median": 679.0,
+   "max": 679.0,
+   "next": 679.0,
+   "rows": [
+    [
+     "Music 3000",
+     589.0
+    ],
+    [
+     "Woodbrass",
+     679.0
+    ],
+    [
+     "Stars Music",
+     679.0
+    ],
+    [
+     "Hurricane Music",
+     679.0
+    ]
+   ],
+   "pvp": null,
+   "why": "90 € de moins que dans les autres magasins",
+   "pct": 13,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Bon plan du jour : Lag T118ABCE-BLK auditorium bevel cutaway electro black\n💶 589 € chez Music 3000, comparée dans 4 magasins.\n📉 90 € de moins que dans les autres magasins.\n\n🔎 Compare son prix sur guitle.com/fr (tous les bons plans du jour via le lien en bio 👆).\nPrix du 8 novembre ; il peut changer.\n\n#guitare #guitariste #bonplan #promo #guitarefolk #lag"
+ },
+ "stories": [
+  {
+   "slug": "sigma-dm-18-esigmadm18",
+   "name": "Sigma Dm 18",
+   "brand": "Sigma",
+   "kind": "acustica",
+   "img": "https://paul-beuscher.com/cdn/shop/files/Guitare_Folk_Acoustique_Sigma_Dm_18-1_7e5ea688-7e1d-40f5-9747-e81de359793a.jpg?v=1781864875&width=1200",
+   "th": "aa20dd389e7daf62.webp",
+   "price": 609.0,
+   "store": "Paul Beuscher",
+   "stores": 4,
+   "median": 689.0,
+   "max": 689.0,
+   "next": 689.0,
+   "rows": [
+    [
+     "Paul Beuscher",
+     609.0
+    ],
+    [
+     "Woodbrass",
+     689.0
+    ],
+    [
+     "Stars Music",
+     689.0
+    ],
+    [
+     "Hurricane Music",
+     689.0
+    ]
+   ],
+   "pvp": null,
+   "why": "80 € de moins que dans les autres magasins",
+   "pct": 12,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "squier-jaguar-fsr-affinity-lrl-metallic-black-885978883462",
+   "name": "Squier Jaguar FSR Affinity LRL Metallic Black",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/cf73377ac3c8e826c8e7dfb3a178ca5dfc79776d_FMIC_0378401965.jpg?height=1200&pad_color=ffffff&v=1793382091&width=1200",
+   "th": "2d8fc6c772a2ca5a.webp",
+   "price": 332.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 369.0,
+   "max": 369.0,
+   "next": 369.0,
+   "rows": [
+    [
+     "Woodbrass",
+     332.0
+    ],
+    [
+     "Stars Music",
+     369.0
+    ],
+    [
+     "Guitar Legend",
+     369.0
+    ]
+   ],
+   "pvp": null,
+   "why": "37 € de moins que dans les autres magasins",
+   "pct": 10,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
