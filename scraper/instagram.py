@@ -81,6 +81,9 @@ def tag(s):
 
 # --- Datos ---------------------------------------------------------------------------------------------------
 
+MAX_SALTO = 1.35  # la siguiente tienda puede costar como mucho un 35 % más que la más barata
+
+
 def products(lo=MIN_PRICE, hi=MAX_PRICE, catalogs=None):
     """Guitarras del catálogo con foto, en stock en varias tiendas y con su mejor precio (España por defecto)."""
     pvp = load(ROOT / "data/catalog/pvp.json", {}).get("prices", {}) if catalogs is None else {}
@@ -94,6 +97,10 @@ def products(lo=MIN_PRICE, hi=MAX_PRICE, catalogs=None):
                 continue
             best = items[0]
             prices = [i["p"] for i in items]
+            # Rebaja increíble (la más barata, más de un 35 % por debajo de la siguiente tienda): suele ser un precio de
+            # reclamo sin stock real (Alteisa, Pacifica, 8-11); se cambia la guitarra
+            if min(i["p"] for i in items if i["s"] != best["s"]) > MAX_SALTO * best["p"]:
+                continue
             ref = pvp.get(p.get("sku") or "", [])
             out.append({"slug": p["slug"], "name": tidy(p["name"]), "brand": p.get("brand") or "", "kind": kind,
                         "img": p["img"], "th": p.get("th"), "price": best["p"], "store": stores.get(best["s"], best["s"]),
