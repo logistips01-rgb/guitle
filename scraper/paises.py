@@ -354,6 +354,25 @@ def plan_pais(cc, day, recent):
     (folder / "plan.json").write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     subprocess.run(["node", str(ROOT / "brand" / "social.js"), str(folder)], check=True, cwd=ROOT)
 
+    reel_chollos(cc, day, folder, deals, prods, recent, post, stories, fetcher, fecha, t)
+    return folder, data
+
+
+def extras_baratas(cfg, prods, recent, ya):
+    """Guitarras que hoy están más baratas en una tienda que en todas las demás (diferencia creíble), con ese dato real
+    como motivo; sirven para completar cuando hay pocos chollos."""
+    money = dinero(cfg)
+    extra = sorted((p for p in prods if p["slug"] not in ya and p["name"] not in recent and p["next"] > p["price"]
+                    and p["max"] <= 1.45 * p["price"]), key=lambda p: -(p["next"] - p["price"]) / p["price"])
+    return [{**p, "why": cfg["menos"].format(x=money(p["next"] - p["price"]))} for p in extra]
+
+
+def reel_chollos(cc, day, folder, deals, prods, recent, post, stories, fetcher, fecha, t):
+    """Reel de chollos de mediodía: 2 eléctricas, 1 acústica y 1 clásica (sin repetir las del post ni las stories). Si no
+    hay bastantes con foto revisada, se repiten las de las stories y, por último, vale cualquier tipo de guitarra (también
+    las que hoy están más baratas en una tienda que en todas las demás), nunca la del post."""
+    cfg = PAISES[cc]
+    money = dinero(cfg)
     # Reel: 2 eléctricas, 1 acústica y 1 clásica (sin repetir las del post ni las stories)
     usados = {p["slug"] for p in stories} | {p["slug"] for p in post.get("picks", [])} | ({post["deal"]["slug"]} if post.get("deal") else set())
     sub = folder / "reel-1-chollos"
@@ -368,15 +387,24 @@ def plan_pais(cc, day, recent):
                         picks.append({**got[0], "label": cfg["kinds"][k]})
                         break
     elegir(usados, ["electrica", "electrica", "acustica", "clasica"])
+    sin_post = {p["slug"] for p in post.get("picks", [])} | ({post["deal"]["slug"]} if post.get("deal") else set())
     if len(picks) < 3:  # pocos chollos ese día: se pueden repetir las guitarras de las stories, nunca la del post
-        sin_post = {p["slug"] for p in post.get("picks", [])} | ({post["deal"]["slug"]} if post.get("deal") else set())
         elegir(sin_post, ["electrica", "acustica", "electrica", "clasica"][: 4 - len(picks)])
+    if len(picks) < 3:  # aún pocos (fotos sin revisar): cualquier tipo, ampliando con las más baratas que en otras tiendas
+        deals = deals + extras_baratas(cfg, prods, recent, {p["slug"] for p in deals})
+        for _ in range(4 - len(picks)):
+            antes = len(picks)
+            for k in ("electrica", "acustica", "clasica"):
+                if len(picks) < 4:
+                    elegir(sin_post, [k])
+            if len(picks) == antes:
+                break
     orden = {"electrica": 0, "acustica": 1, "clasica": 2}
     picks.sort(key=lambda p: orden[next(k for k, v in cfg["kinds"].items() if v == p["label"])])
     if len(picks) >= 3:
         icons = ["🎸", "⚡", "🪵", "🎼"]
         lines = "\n".join(cfg["linea_reel"].format(icon=icons[i], kind=p["label"], name=p["name"], price=money(p["price"]),
-                                                   store=p["store"], why=p["why"][0].lower() + p["why"][1:]) for i, p in enumerate(picks))
+                                                   store=p["store"], why=(p["why"][0].lower() if p["why"][1:2].islower() else p["why"][0]) + p["why"][1:]) for i, p in enumerate(picks))
         caption = cfg["cap_reel"].format(lines=lines, web=cfg["web"], fecha=fecha,
                                          tags=f"{cfg['base_tags']} " + " ".join(dict.fromkeys(ig.tag(p["brand"]) for p in picks)))
         reel = {"fecha": fecha, "post": {"type": "top", "title": cfg["hook"].lower(), "hook": cfg["hook"], "picks": picks},
@@ -385,7 +413,55 @@ def plan_pais(cc, day, recent):
         subprocess.run(["node", str(ROOT / "brand" / "reel.js"), str(sub)], check=True, cwd=ROOT)
         credito = musica.poner(sub / "reel.mp4", day.toordinal() + list(PAISES).index(cc), cfg["temas"])
         (sub / "texto.txt").write_text(f"{caption}\n\n{credito}\n", encoding="utf-8")
-    return folder, data
+
+
+def rehacer_reel_chollos(cc, day, recent, token=None):
+    """Si el Reel de chollos de mediodía no se generó (pocas fotos revisadas), lo rehace con el plan ya publicado
+    (mismo post y stories) y, con token, lo publica solo a él."""
+    folder = ig.OUT / day.isoformat() / cc
+    hecho = load(folder / "published.json", {})
+    if str(hecho.get("reel") or "").startswith("https://"):
+        return "ya publicado"
+    cfg = PAISES[cc]
+    money = dinero(cfg)
+    data = load(folder / "plan.json", {})
+    lo, hi = cfg["rango"]
+    prods = ig.products(lo, hi, catalogs={k: ROOT / v for k, v in cfg["catalogs"].items()})
+    deals = ig.rank_deals(prods, recent, menos=lambda x: cfg["menos"].format(x=money(x)))
+    sub = folder / "reel-1-chollos"
+    for f in sub.glob("*"):
+        f.unlink()
+    reel_chollos(cc, day, folder, deals, prods, recent, data["post"], data["stories"], Fetcher(delay=(0.5, 1.0)),
+                 data["fecha"], data["t"])
+    if not (sub / "reel.mp4").exists():
+        return "sin reel: pocas guitarras con foto revisada"
+    if not token:
+        return str(sub / "reel.mp4")
+    ig.TOKEN = token
+    try:
+        user = ig.api("GET", "me", fields="user_id")["user_id"]
+        rel = folder.relative_to(ROOT).as_posix()
+        ig.git("add", rel)
+        ig.git("commit", "-q", "-m", f"social: Reel de chollos {cc} {day.isoformat()}")
+        branch = ig.git("rev-parse", "--abbrev-ref", "HEAD")
+        ig.git("push", "-q", "origin", f"HEAD:{branch}")
+        base = f"{ig.REPO_RAW}/{ig.git('rev-parse', 'HEAD')}/{rel}/"
+        for _ in range(20):
+            if requests.head(base + "reel-1-chollos/reel.mp4", timeout=30).status_code == 200:
+                break
+            time.sleep(5)
+        caption = (sub / "texto.txt").read_text(encoding="utf-8").strip()
+        handles = ig.cuentas(ig.marcas_reel(sub))
+        hecho["reel"] = ig.publish(user, ig.container_etiq(user, handles, tries=100, media_type="REELS",
+                                   caption=ig.menciones(caption, handles), video_url=base + "reel-1-chollos/reel.mp4",
+                                   share_to_feed="true"))
+        (folder / "published.json").write_text(json.dumps(hecho, indent=1) + "\n", encoding="utf-8")
+        ig.git("add", rel)
+        ig.git("commit", "-q", "-m", f"social: publicado Reel de chollos {cc} {day.isoformat()}")
+        ig.git("push", "-q", "origin", f"HEAD:{branch}")
+        return hecho["reel"]
+    finally:
+        ig.TOKEN = None
 
 
 def publicar(cc, day, folder, data, token):
@@ -811,6 +887,8 @@ def main(argv=None):
     ap.add_argument("--date")
     ap.add_argument("--tarde", action="store_true", help="Reels de la tarde: cuenta atrás del Black Friday y Reel sobre guitle")
     ap.add_argument("--solo", choices=["reel-2", "reel-3"], help="con --tarde: publica solo ese Reel (reel-2: Black Friday o top; reel-3: guitle)")
+    ap.add_argument("--reel-chollos", action="store_true",
+                    help="rehace y publica solo el Reel de chollos de mediodía si no salió (sin tocar post ni stories)")
     ap.add_argument("--suave", default="", help="países en su primera semana (p. ej. pt): post y Reel, sin stories")
     ap.add_argument("--espera", type=int, default=0, help="minutos máximos de espera al azar entre cuentas (para no publicar en ráfaga)")
     args = ap.parse_args(argv)
@@ -820,7 +898,7 @@ def main(argv=None):
     out = {}
     for n, cc in enumerate(args.paises):
         folder = ig.OUT / day.isoformat() / cc
-        ya = not args.tarde and (folder / "published.json").exists()
+        ya = not args.tarde and not args.reel_chollos and (folder / "published.json").exists()
         if args.publish and ya:
             out[cc] = "ya publicado"
             continue
@@ -836,6 +914,9 @@ def main(argv=None):
             recent = recientes(cc, user)
         finally:
             ig.TOKEN = None
+        if args.reel_chollos:
+            out[cc] = rehacer_reel_chollos(cc, day, recent, token if args.publish else None)
+            continue
         if args.tarde:
             hechos = load(folder / "published-tarde.json", {})
             names = [x for x in reels_tarde(cc, day, recent) if (not args.solo or x.startswith(args.solo + "-"))

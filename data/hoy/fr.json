@@ -1,86 +1,26 @@
 {
- "fecha": "2026-11-07",
+ "fecha": "2026-11-08",
  "pais": "fr",
  "items": [
   {
-   "slug": "prs-se-nf3-ice-blue-metallic-m-tallicmhtm",
-   "name": "PRS SE NF3 Ice Blue Metallic M",
-   "brand": "PRS",
-   "price": "745 €",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "4af70565ffac5e5f.webp",
-   "why": "341 € de moins que dans les autres magasins"
+   "slug": "sigma-dm-18-esigmadm18",
+   "name": "Sigma Dm 18",
+   "brand": "Sigma",
+   "price": "609 €",
+   "store": "Paul Beuscher",
+   "kind": "acustica",
+   "img": "aa20dd389e7daf62.webp",
+   "why": "80 € de moins que dans les autres magasins"
   },
   {
-   "slug": "epiphone-sheraton-natural-original-711106128962",
-   "name": "Epiphone Sheraton Natural Original",
-   "brand": "Epiphone",
-   "price": "599 €",
+   "slug": "squier-jaguar-fsr-affinity-lrl-metallic-black-885978883462",
+   "name": "Squier Jaguar FSR Affinity LRL Metallic Black",
+   "brand": "Squier",
+   "price": "332 €",
    "store": "Woodbrass",
    "kind": "electrica",
-   "img": "b411d6670e39c338.webp",
-   "why": "274 € de moins que dans les autres magasins"
-  },
-  {
-   "slug": "ibanez-rg460dx-blh-60dxblhhtm",
-   "name": "Ibanez RG460DX-BLH",
-   "brand": "Ibanez",
-   "price": "399 €",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "5ef323b7f4aed507.webp",
-   "why": "90 € de moins que dans les autres magasins"
-  },
-  {
-   "slug": "takamine-gc3ce-nat-natural-190262041306",
-   "name": "Takamine Gc3Ce-Nat Natural",
-   "brand": "Takamine",
-   "price": "369 €",
-   "store": "Woodbrass",
-   "kind": "clasica",
-   "img": "9a004348fd2013d2.webp",
-   "why": ""
-  },
-  {
-   "slug": "lag-oc88ce-occitania-3700166363311",
-   "name": "LAG OC88CE Occitania",
-   "brand": "LAG",
-   "price": "439 €",
-   "store": "Woodbrass",
-   "kind": "clasica",
-   "img": "454d6efbf6741185.webp",
-   "why": ""
-  },
-  {
-   "slug": "martinez-crossover-mp14-mh-rn-housse-6973106760489",
-   "name": "Martinez Crossover Mp14-Mh Rn + Housse",
-   "brand": "Martinez",
-   "price": "513 €",
-   "store": "Woodbrass",
-   "kind": "clasica",
-   "img": "7d73a76b71d9959a.webp",
-   "why": ""
-  },
-  {
-   "slug": "lag-lag-sauvage-nylon-3700166373044",
-   "name": "Lag Lâg - Sauvage Nylon",
-   "brand": "Lag",
-   "price": "569 €",
-   "store": "Audio System",
-   "kind": "clasica",
-   "img": "2b7d4c0882bea16e.webp",
-   "why": ""
-  },
-  {
-   "slug": "cordoba-stage-guitar-edge-burst-ebursthtml",
-   "name": "Cordoba Stage Guitar Edge Burst",
-   "brand": "Cordoba",
-   "price": "699 €",
-   "store": "Hall de la Musique",
-   "kind": "clasica",
-   "img": "0bd6e9fc05957a32.webp",
-   "why": ""
+   "img": "a2b21ea781ae75be.webp",
+   "why": "37 € de moins que dans les autres magasins"
   }
  ]
 }

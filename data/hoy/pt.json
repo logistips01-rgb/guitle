@@ -1,46 +1,36 @@
 {
- "fecha": "2026-11-07",
+ "fecha": "2026-11-08",
  "pais": "pt",
  "items": [
   {
-   "slug": "prs-se-silver-sky-trad-blue-lh-dbluelhhtm",
-   "name": "PRS SE Silver Sky Trad Blue LH",
-   "brand": "PRS",
-   "price": "666 €",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "66c5066c75fdbeae.webp",
-   "why": "215,48 € a menos do que em qualquer outra loja"
-  },
-  {
-   "slug": "ibanez-pgmm31-wh-ezpgmm31wh",
-   "name": "Ibanez PGMM31-WH",
+   "slug": "ibanez-azes31-vm-es31vm7702",
+   "name": "Ibanez AZES31-VM",
    "brand": "Ibanez",
-   "price": "179 €",
-   "store": "Discosom",
-   "kind": "electrica",
-   "img": "07e357ce6c14835a.webp",
-   "why": "29 € a menos do que em qualquer outra loja"
-  },
-  {
-   "slug": "schecter-sgr-c-1-walnut-satin-815447022184",
-   "name": "Schecter SGR C-1 Walnut Satin",
-   "brand": "Schecter",
-   "price": "247 €",
-   "store": "Egitana",
-   "kind": "electrica",
-   "img": "https://detalhes.egitana.pt/schecter-sgr-c-1-walnut-satin_695b96c6dfce4.jpg",
-   "why": "28 € a menos do que em qualquer outra loja"
-  },
-  {
-   "slug": "ibanez-tod10n-tkf-tim-henson-signature-ature10345",
-   "name": "Ibanez TOD10N TKF Tim Henson Signature",
-   "brand": "Ibanez",
-   "price": "574 €",
+   "price": "226 €",
    "store": "Musifex",
-   "kind": "clasica",
-   "img": "66990d92de87bcab.webp",
-   "why": ""
+   "kind": "electrica",
+   "img": "c4f300b835f91265.webp",
+   "why": "19 € a menos do que em qualquer outra loja"
+  },
+  {
+   "slug": "fender-player-ii-strat-hss-mn-blk-ssmnblkhtm",
+   "name": "Fender Player II Strat HSS MN BLK",
+   "brand": "Fender",
+   "price": "715 €",
+   "store": "Musifex",
+   "kind": "electrica",
+   "img": "f10023cb24bfb9df.webp",
+   "why": "50 € a menos do que em qualquer outra loja"
+  },
+  {
+   "slug": "guild-d-240e-westerly-sterly1823",
+   "name": "Guild D-240E Westerly",
+   "brand": "Guild",
+   "price": "439 €",
+   "store": "Musifex",
+   "kind": "acustica",
+   "img": "e69f61637bff6f43.webp",
+   "why": "1 € a menos do que em qualquer outra loja"
   }
  ]
 }
