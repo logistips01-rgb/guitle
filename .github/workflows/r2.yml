@@ -1,0 +1,81 @@
+name: r2
+
+# Copia la web al bucket R2 "guitle" de Cloudflare, de donde la sirve el Worker (cloudflare/worker.js).
+# Sin listar el bucket (cada listado es una operación de pago de clase A, y antes eran ~600 por vuelta, ~65 vueltas al
+# día): se guarda en el bucket la lista de lo publicado con su MD5 (_sync/manifest.txt); cada vuelta compara la lista
+# del repositorio con esa, sube solo lo nuevo o cambiado y borra lo que ya no está. Sin lista guardada (la primera vez)
+# o a mano con "completo", sync de siempre. Lo que no se publica: .github/r2-exclude.txt.
+on:
+  push:
+    branches: [claude/friendly-fermat-yycain]
+  # Los commits de los workflows (lecturas, crecimiento) no lanzan push: catalog y scrape lo lanzan desde .github/r2.sh.
+  workflow_run:
+    workflows: [crecimiento]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      completo:
+        description: "Sync completo (lista el bucket entero)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: r2-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/friendly-fermat-yycain  # la última versión, también si lo lanza otro workflow
+          fetch-depth: 1
+      - name: Instalar rclone
+        # La versión de Ubuntu (1.60) manda cabeceras que R2 no admite (501 NotImplemented).
+        run: |
+          curl -fsSLO https://downloads.rclone.org/v1.68.2/rclone-v1.68.2-linux-amd64.zip
+          unzip -q rclone-v1.68.2-linux-amd64.zip && sudo install rclone-v1.68.2-linux-amd64/rclone /usr/local/bin/
+          rm -rf rclone-v1.68.2-linux-amd64* && rclone version
+      - name: Fotos de "Chollos de hoy"
+        # La sesión de redes elige la foto al publicar; si está marcada como cortada o de espaldas, la de su ficha.
+        run: python3 -m scraper.hoy --fotos || true
+      - name: Subir a R2
+        env:
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+          ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+        run: |
+          export RCLONE_CONFIG_R2_ENDPOINT="https://${ACCOUNT,,}.r2.cloudflarestorage.com"
+          # Prueba con un archivo: si R2 lo rechaza, el log enseña lo que se ha enviado y se para aquí.
+          if ! rclone copyto robots.txt r2:guitle/robots.txt --checksum -v; then
+            rclone copyto robots.txt r2:guitle/robots.txt -vv --dump headers --retries 1 2>&1 | grep -iv "authorization\|x-amz-security\|credential" | tail -80
+            exit 1
+          fi
+          rclone md5sum . --exclude-from .github/r2-exclude.txt | LC_ALL=C sort > "$RUNNER_TEMP/new.txt"
+          rm -f "$RUNNER_TEMP/old.txt"
+          rclone copyto r2:guitle/_sync/manifest.txt "$RUNNER_TEMP/old.txt" 2>/dev/null || true
+          if [ "${{ inputs.completo }}" != "true" ] && [ -s "$RUNNER_TEMP/old.txt" ]; then
+            LC_ALL=C sort -o "$RUNNER_TEMP/old.txt" "$RUNNER_TEMP/old.txt"
+            # Nuevos o cambiados: líneas (md5 + ruta) que no estaban; borrados: rutas que ya no están.
+            LC_ALL=C comm -13 "$RUNNER_TEMP/old.txt" "$RUNNER_TEMP/new.txt" | sed 's/^[0-9a-f]*  //' > "$RUNNER_TEMP/up.txt"
+            LC_ALL=C comm -23 <(sed "s/^[0-9a-f]*  //" "$RUNNER_TEMP/old.txt" | LC_ALL=C sort) <(sed "s/^[0-9a-f]*  //" "$RUNNER_TEMP/new.txt" | LC_ALL=C sort) > "$RUNNER_TEMP/gone.txt"
+            echo "Cambiados: $(wc -l < "$RUNNER_TEMP/up.txt") · borrados: $(wc -l < "$RUNNER_TEMP/gone.txt")"
+            if [ -s "$RUNNER_TEMP/up.txt" ]; then
+              rclone copy . r2:guitle --files-from-raw "$RUNNER_TEMP/up.txt" --no-check-dest --no-traverse --transfers 32 \
+                --stats 1m --stats-one-line --stats-log-level NOTICE
+            fi
+            while IFS= read -r f; do rclone deletefile "r2:guitle/$f" || true; done < "$RUNNER_TEMP/gone.txt"
+          else
+            echo "Sin lista guardada (o completo): sync de todo"
+            rclone sync . r2:guitle --checksum --transfers 32 --checkers 32 --exclude "/_sync/**" \
+              --exclude-from .github/r2-exclude.txt --stats 1m --stats-one-line --stats-log-level NOTICE
+          fi
+          rclone copyto "$RUNNER_TEMP/new.txt" r2:guitle/_sync/manifest.txt

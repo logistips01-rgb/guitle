@@ -1,0 +1,36 @@
+name: gasto
+
+# Vigilancia diaria del gasto de Cloudflare (scraper/gasto.py): tope de infraestructura 10 € al mes. Avisa por correo a
+# hola@guitle.com si el gasto se dispara, y el día 1 manda el informe del mes. Solo lee la analítica de Cloudflare.
+on:
+  schedule:
+    - cron: "47 6 * * *"
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [.github/gasto.txt]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gasto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scraper
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: Consultar y avisar
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: python -m scraper.gasto

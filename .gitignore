@@ -1,0 +1,45 @@
+__pycache__/
+*.pyc
+brand/.cache/
+brand/__pycache__/
+# La web generada va directa al bucket R2 (.github/r2.sh); en git solo quedan los datos.
+/pt/
+/fr/
+/it/
+/uk/
+/de/
+/br/
+/ie/
+/at/
+/nl/
+/be/
+/ch/
+/pl/
+/se/
+/no/
+/dk/
+/cz/
+/sk/
+/hu/
+/ro/
+/bg/
+/gr/
+/fi/
+/lu/
+/g/*.html
+/marca/
+/tipo/
+/presupuesto/
+/guias/
+/marcas.html
+/sitemap.xml
+/sitemap-*.xml
+/img/p/
+/data/musica/*/tiendas.json
+# Discos de España (guitle.com/discos/) y sus cajas: los sube la lectura de discos (musica.yml)
+/discos/
+/navidad/
+/_r/
+
+# Música libre de derechos de los Reels (scraper/musica_libre.py, rama de redes): se descarga, no va a git
+social/musica/

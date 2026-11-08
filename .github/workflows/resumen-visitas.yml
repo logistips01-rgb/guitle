@@ -1,0 +1,35 @@
+name: resumen-visitas
+
+# Histórico diario de visitas y clics (scraper/resumen_visitas.py): cada madrugada guarda en Firestore el resumen de los
+# días que faltan; stats.html lo enseña y lo descarga en CSV. Se lanza también tocando .github/resumen-visitas.txt.
+on:
+  schedule:
+    - cron: "43 3 * * *"
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [.github/resumen-visitas.txt]
+  workflow_dispatch:
+
+concurrency:
+  group: resumen-visitas
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  resumen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Resumir los días que faltan
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+        timeout-minutes: 20
+        run: python -u -m scraper.resumen_visitas

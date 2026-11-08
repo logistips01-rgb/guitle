@@ -1,0 +1,97 @@
+// Contador de visitas de guitle (solo personas: 3 s visible y algún gesto), sin cookies ni datos personales: suma 1 a unos contadores en
+// Firestore (proyecto guitle-d48d8). Las reglas de Firestore solo permiten sumar de 1 en 1, nunca leer ni borrar.
+//   AAAA-MM-DD_v           visitas (páginas vistas) del día
+//   AAAA-MM-DD_p_<página>  vistas de cada página
+//   AAAA-MM-DD_r_<origen>  llegadas desde fuera (google.com, instagram.com…; "directo" sin origen)
+//   AAAA-MM-DD_t_<tienda>~<país>  clics hacia cada tienda, desde la web de cada país (antes del 2/11/2026, sin país)
+// Copia de emergencia en guitle.es (cortes de LaLiga a Cloudflare en España): en guitle.com se registra sw.js, que abre
+// guitle.es si la web no responde, y en el pie de las páginas españolas se avisa de que existe.
+(() => {
+  if (location.hostname !== "guitle.com") return;
+  try { if ("serviceWorker" in navigator) navigator.serviceWorker.register("/sw.js").catch(() => {}); } catch (e) {}
+  if (/^\/(?:pt|fr|it|uk|de|br|ie|at|nl|be|ch|pl|se|no|dk|cz|sk|hu|ro|bg|gr|fi|lu|mx|ar)(?:\/|$)/.test(location.pathname)) return;
+  const note = () => {
+    const foot = document.querySelector("footer.site-foot, footer");
+    if (!foot || foot.querySelector(".guitle-es")) return;
+    const s = document.createElement("span");
+    s.className = "guitle-es";
+    s.innerHTML = '¿guitle.com no carga durante el fútbol? Entra en <a href="https://guitle.es' + location.pathname + '">guitle.es</a>';
+    foot.appendChild(s);
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", note); else note();
+})();
+
+(() => {
+  // Las visitas del propio equipo no cuentan: guitle.com/?nocontar lo apaga en ese navegador; ?contar lo vuelve a encender.
+  try {
+    const q = new URLSearchParams(location.search);
+    if (q.has("nocontar")) localStorage.setItem("guitle_nocontar", "1");
+    if (q.has("contar")) localStorage.removeItem("guitle_nocontar");
+    if (localStorage.getItem("guitle_nocontar")) return;
+  } catch (e) {}
+  // guitle.es (copia de emergencia de la web española) también cuenta: sus páginas, como "guitle.es~<ruta>".
+  const espejo = location.hostname === "guitle.es";
+  if ((location.hostname !== "guitle.com" && !espejo) || navigator.webdriver
+      || /bot|crawl|spider|slurp|headless|lighthouse|preview|facebookexternalhit/i.test(navigator.userAgent)) return;
+  const DOCS = "projects/guitle-d48d8/databases/(default)/documents/c/";
+  const day = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Madrid" });
+  const clean = s => s.toLowerCase().replace(/^www\./, "").replace(/\.html$/, "").replace(/\//g, "~")
+    .replace(/[^a-z0-9.~_-]/g, "").slice(0, 150) || "~";
+  const add = keys => {
+    try {
+      fetch("https://firestore.googleapis.com/v1/" + DOCS.split("/c/")[0] + ":commit", {
+        method: "POST", keepalive: true, headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ writes: keys.map(k => ({ transform: {
+          document: DOCS + day + "_" + k, fieldTransforms: [{ fieldPath: "n", increment: { integerValue: "1" } }] } })) }),
+      }).catch(() => {});
+    } catch (e) {}
+  };
+
+  // Búsquedas en el catálogo (catalogo.js): se cuentan como páginas "buscar~<texto>", sin nada más.
+  const searched = new Set();
+  window.guitleSearch = q => {
+    const term = q.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim().replace(/\s+/g, "-").slice(0, 60);
+    if (term.length < 3 || searched.has(term)) return;
+    searched.add(term);
+    add(["p_buscar~" + clean(term)]);
+  };
+
+  const keys = ["v", "p_" + (espejo ? "guitle.es~" : "") + clean(location.pathname.replace(/^\//, "") || "inicio")];
+  let from = "";
+  try { from = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) {}
+  // Promociones: un enlace con ?utm_source=… (o ?ref=…) cuenta con ese origen ("r_promo-navidad-fr"), venga de donde venga
+  let promo = "";
+  try { const q = new URLSearchParams(location.search); promo = q.get("utm_source") || q.get("ref") || ""; } catch (e) {}
+  if (promo) keys.push("r_promo-" + promo.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").slice(0, 50));
+  else if (from !== location.hostname) keys.push("r_" + (from ? clean(from) : "directo"));
+  // Solo cuentan las personas: la visita se suma cuando la página lleva 3 s visible y ha habido un gesto (ratón,
+  // scroll, toque o tecla). Los robots que se hacen pasar por navegador cargan y se van sin tocar nada.
+  let human = false, done = false, shown = 0, since = document.visibilityState === "visible" ? Date.now() : 0;
+  const check = () => {
+    if (done || !human || !since) return;
+    const t = shown + Date.now() - since;
+    if (t >= 3000) { done = true; add(keys); } else setTimeout(check, 3000 - t);
+  };
+  ["pointermove", "pointerdown", "scroll", "wheel", "touchstart", "keydown"].forEach(ev =>
+    addEventListener(ev, () => { if (!human) { human = true; check(); } }, { passive: true, capture: true }));
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") since = Date.now();
+    else if (since) { shown += Date.now() - since; since = 0; }
+    check();
+  });
+
+  // Clics hacia las tiendas (enlaces patrocinados). Awin y similares llevan la URL de la tienda dentro.
+  document.addEventListener("click", e => {
+    const a = e.target.closest && e.target.closest('a[rel~="sponsored"]');
+    if (!a) return;
+    try {
+      const u = new URL(a.href);
+      const inner = u.searchParams.get("ued") || u.searchParams.get("url");
+      const host = inner ? new URL(inner).hostname : u.hostname;
+      // Con el país de la web desde la que se pincha (guitle.com/pt/… → pt; la raíz, España): t_<tienda>~<país>.
+      const seg = location.pathname.split("/")[1] || "";
+      const country = /^[a-z]{2}$/.test(seg) ? seg : "es";
+      add(["t_" + clean(host.replace(/^(es|m)\./, "")) + "~" + country]);
+    } catch (err) {}
+  }, true);
+})();

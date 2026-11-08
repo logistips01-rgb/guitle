@@ -1,0 +1,46 @@
+{
+ "fecha": "2026-11-07",
+ "pais": "uk",
+ "items": [
+  {
+   "slug": "cort-kx307ms-multi-scale-7-string-open-pore-mahogany-remahogany",
+   "name": "Cort KX307MS Multi Scale 7-String Open Pore Mahogany",
+   "brand": "Cort",
+   "price": "£339",
+   "store": "Reidys",
+   "kind": "electrica",
+   "img": "ff88d0b38cc296ee.webp",
+   "why": "£60 less than any other shop"
+  },
+  {
+   "slug": "squier-classic-vibe-50s-strat-2-tone-sunburst-mn-885978063895",
+   "name": "Squier Classic Vibe 50s Strat 2-Tone Sunburst MN",
+   "brand": "Squier",
+   "price": "£339",
+   "store": "Reidys",
+   "kind": "electrica",
+   "img": "b384dc4bc09a251b.webp",
+   "why": "£40 less than any other shop"
+  },
+  {
+   "slug": "tr-pro-sfce-a-eb-electro-acoustic-guitar-819907023186",
+   "name": "TR Pro SFCE A EB Electro Acoustic Guitar",
+   "brand": "TR",
+   "price": "£299",
+   "store": "Ness Music",
+   "kind": "acustica",
+   "img": "cdeff69f1c4632e5.webp",
+   "why": "£49 less than any other shop"
+  },
+  {
+   "slug": "yamaha-cg-ta-classical-guitar-4957812640831",
+   "name": "Yamaha CG-TA Classical Guitar",
+   "brand": "Yamaha",
+   "price": "£619",
+   "store": "Andertons",
+   "kind": "clasica",
+   "img": "f84fea30dda26f65.webp",
+   "why": ""
+  }
+ ]
+}

@@ -1,0 +1,56 @@
+{
+ "fecha": "2026-11-07",
+ "pais": "it",
+ "items": [
+  {
+   "slug": "yamaha-apx600-nt-chitarra-acustica-elettrificata-cutaway-natural-4957812623896",
+   "name": "Yamaha APX600 NT Chitarra Acustica Elettrificata CutAway, Natural",
+   "brand": "Yamaha",
+   "price": "299 €",
+   "store": "Global Net Shop",
+   "kind": "acustica",
+   "img": "https://www.globalnetshop.it/cdn/shop/files/01-APX600NT_1024x.jpg?v=1756039745",
+   "why": "46 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "squier-stratocaster-sss-mini-mn-blu-california-197955143040",
+   "name": "Squier Stratocaster SSS Mini MN Blu California",
+   "brand": "Squier",
+   "price": "175 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "fe2a7b7ec6ff3d1c.webp",
+   "why": "14 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "fender-standard-stratocaster-mp-candy-cola-885978117871",
+   "name": "Fender Standard Stratocaster MP Candy Cola",
+   "brand": "Fender",
+   "price": "489 €",
+   "store": "Di Santo Musica",
+   "kind": "electrica",
+   "img": "3f93977c5f96a4a6.webp",
+   "why": "36 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "ibanez-aeg74n-mhs-mahogany-sunburst-high-gloss-chitarra-classica-elettrificata-4549763349873",
+   "name": "Ibanez AEG74N-MHS Mahogany Sunburst High Gloss Chitarra classica elettrificata",
+   "brand": "Ibanez",
+   "price": "387 €",
+   "store": "Di Santo Musica",
+   "kind": "clasica",
+   "img": "b05c1bd56cd9465c.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-cg192s-cg192shtml",
+   "name": "Yamaha CG192S",
+   "brand": "Yamaha",
+   "price": "629 €",
+   "store": "Cavalli Musica",
+   "kind": "clasica",
+   "img": "2368189f53a04361.webp",
+   "why": ""
+  }
+ ]
+}

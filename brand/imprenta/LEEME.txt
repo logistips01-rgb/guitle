@@ -1,0 +1,18 @@
+guitle · archivos para imprenta
+
+PDF  = vectorial (nítido a cualquier tamaño): es lo que hay que dar a la imprenta.
+PNG  = alta resolución con fondo transparente (4000 px de ancho), por si la imprenta lo pide en imagen.
+
+Camiseta BLANCA
+  - Pecho izquierdo (8-9 cm):           icono.pdf
+  - Espalda o centro (22-28 cm ancho):  logo-color.pdf
+  - Versión sin lema:                   logo-sin-lema.pdf
+  - Solo la palabra (sin cuadrado azul): nombre.pdf
+Camiseta NEGRA u oscura
+  - logo-blanco.pdf (letras blancas)
+Pegatinas (troqueladas, con borde blanco)
+  - pegatina-icono.pdf  (cuadrada, 5-8 cm)
+  - pegatina-logo.pdf   (alargada, 8-12 cm de ancho)
+
+Color corporativo: azul #2A78D6 (aprox. Pantone 2184 C / 2727 C; pedir prueba de color a la imprenta).
+Negro de las letras: #0B0B0B.

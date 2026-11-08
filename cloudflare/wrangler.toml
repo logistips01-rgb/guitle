@@ -1,0 +1,16 @@
+# Worker que sirve guitle.com desde R2 (lo despliega .github/workflows/cloudflare.yml con CLOUDFLARE_API_TOKEN).
+name = "guitle"
+main = "worker.js"
+compatibility_date = "2025-06-15"
+workers_dev = false
+# prueba.guitle.com: dominio propio del Worker (Cloudflare crea el DNS y el certificado).
+# guitle.com y www: rutas que solo actúan con la nube naranja en sus registros DNS; en gris, sigue sirviendo GitHub Pages.
+routes = [
+  { pattern = "prueba.guitle.com", custom_domain = true },
+  { pattern = "guitle.com/*", zone_name = "guitle.com" },
+  { pattern = "www.guitle.com/*", zone_name = "guitle.com" },
+]
+
+[[r2_buckets]]
+binding = "SITE"
+bucket_name = "guitle"

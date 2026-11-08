@@ -1,0 +1,94 @@
+name: copia-es
+
+# Copia de emergencia de la web española en guitle.es (GitHub Pages, fuera de Cloudflare) para los cortes de LaLiga, que
+# bloquean las IP de Cloudflare en España durante los partidos. guitle.com sigue siendo la web: la copia no se indexa
+# (robots.txt la cierra y cada página lleva noindex y su canonical a guitle.com) y guitle.com no redirige a ella.
+# Se rehace cada 2 horas (de 10:33 a 00:33 en Madrid), o a mano. Baja de R2 solo lo que ha cambiado (la carpeta
+# se guarda en la caché de Actions) y solo las fotos que usan las páginas españolas (GitHub Pages: máximo 1 GB).
+on:
+  schedule:
+    - cron: "33 9-23/2 * * *"  # cada 2 horas, 20 min después de "Mejores precios de hoy" (hoy.yml, :13): coinciden con Instagram
+  workflow_dispatch:
+  push:  # a mano: tocar .github/copia-es.txt
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/copia-es.txt"]
+
+concurrency:
+  group: copia-es
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  copia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      RCLONE_CONFIG_R2_TYPE: s3
+      RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+      ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            scraper/copia_es.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/cache/restore@v4
+        with:
+          path: espejo
+          key: copia-es-${{ github.run_id }}
+          restore-keys: copia-es-
+      - name: Bajar de R2 la web española
+        run: |
+          export RCLONE_CONFIG_R2_ENDPOINT="https://${ACCOUNT,,}.r2.cloudflarestorage.com"
+          curl -fsSLO https://downloads.rclone.org/v1.68.2/rclone-v1.68.2-linux-amd64.zip
+          unzip -q rclone-v1.68.2-linux-amd64.zip && sudo install rclone-v1.68.2-linux-amd64/rclone /usr/local/bin/
+          mkdir -p espejo/web espejo/cajas
+          # Todo menos los países (carpetas de dos letras), las fotos, las cajas de discos (se abren aparte) y los datos
+          # que la web española no usa: catálogos y discos de los demás países (solo los lee stats.html) y listas internas.
+          rclone sync r2:guitle espejo/web --checksum --transfers 32 --checkers 32 --delete-excluded \
+            --filter "- /[a-z][a-z]/**" --filter "- /img/p/**" --filter "- /_r/**" --filter "- /cajas/**" \
+            --filter "- /data/catalog/[a-z][a-z]/**" --filter "- /data/catalog/[a-z][a-z]mas/**" \
+            --filter "- /data/musica/[a-df-z][a-z]/**" --filter "- /data/musica/e[a-rt-z]/**" \
+            --filter "- /data/thumbs.json" --filter "- /data/fotos-*" --filter "- /_sync/**" \
+            --stats-log-level NOTICE
+          rclone sync r2:guitle/_r espejo/cajas --checksum --transfers 32 --stats-log-level NOTICE
+      - name: Montar la copia
+        run: python3 scraper/copia_es.py espejo/web espejo/cajas sitio fotos.txt
+      - name: Fotos de las páginas españolas
+        run: |
+          export RCLONE_CONFIG_R2_ENDPOINT="https://${ACCOUNT,,}.r2.cloudflarestorage.com"
+          mkdir -p espejo/img
+          # Solo las que aún no están en la caché: rclone pregunta a R2 por cada foto de la lista, aunque ya la tenga
+          while IFS= read -r f; do [ -f "espejo/img/$f" ] || echo "$f"; done < fotos.txt > faltan.txt
+          echo "fotos nuevas: $(wc -l < faltan.txt)"
+          if [ -s faltan.txt ]; then
+            rclone copy r2:guitle espejo/img --files-from faltan.txt --no-traverse --transfers 64 --stats-log-level NOTICE || true
+          fi
+          # Solo las fotos que usan hoy las páginas (en la caché se quedan también las de días anteriores)
+          while IFS= read -r f; do
+            [ -f "espejo/img/$f" ] && mkdir -p "sitio/$(dirname "$f")" && ln -f "espejo/img/$f" "sitio/$f"
+          done < fotos.txt
+          du -sh sitio; du -sh sitio/* | sort -h | tail -12
+          size=$(du -sb sitio | cut -f1)
+          if [ "$size" -gt 1000000000 ]; then echo "::error::la copia pasa de 1 GB ($size bytes)"; exit 1; fi
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: espejo
+          key: copia-es-${{ github.run_id }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio
+      - id: deploy
+        uses: actions/deploy-pages@v4

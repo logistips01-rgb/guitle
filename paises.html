@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#2a78d6">
+<title>guitle en el mundo · guitle</title>
+<meta name="description" content="Países en los que guitle compara precios de guitarras. Cada país que se enciende se pinta de azul en el mapa.">
+<link rel="canonical" href="https://guitle.com/paises.html">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+<link rel="stylesheet" href="/fonts/inter.css">
+<link rel="stylesheet" href="/catalogo.css">
+<style>
+  .intro { color: var(--text-secondary); margin: 4px 0 16px; max-width: 720px; }
+  .maps { display: grid; grid-template-columns: 1.75fr 1fr; gap: 10px; }
+  @media (max-width: 860px) { .maps { grid-template-columns: 1fr; } }
+  .map { background: #eef3f9; border: 1px solid var(--border); border-radius: 14px; padding: 8px; position: relative; min-height: 120px; }
+  .map h3 { position: absolute; margin: 0; left: 12px; top: 8px; font-size: .8rem; color: var(--text-muted); font-weight: 600; }
+  .map svg { width: 100%; height: auto; display: block; }
+  .map path { fill: #fff; stroke: #d6d5cf; stroke-width: .5; }
+  .map path.on { fill: var(--accent); stroke: #fff; }
+  .map path.next { fill: #d3e2f4; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .map { background: #172a40; } }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; color: var(--text-muted); font-size: .85rem; margin: 10px 2px 4px; }
+  .legend i { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 1px solid #d6d5cf; }
+  .countries { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 14px; }
+  .country { background: var(--surface-1); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; text-decoration: none; }
+  a.country:hover { border-color: var(--accent); }
+  .country b { display: block; font-size: 1.02rem; }
+  .country span { color: var(--text-muted); font-size: .85rem; }
+  .country.next { opacity: .6; }
+  h2.sec { font-size: 1.1rem; margin: 26px 0 0; }
+</style>
+</head>
+<body>
+<main>
+  <div class="topbar">
+    <div class="row">
+      <h1 style="flex:1;margin:0"><a class="logo" href="/" aria-label="guitle, inicio"><img src="/icons/icon.svg" alt=""><span class="stack"><span class="word">gu<span class="i">ı</span>tle</span><span class="tag">guitarras al mejor precio</span></span></a></h1>
+      <a class="navlink" href="/catalogo.html">Catálogo</a>
+    </div>
+  </div>
+  <h2 style="font-size:1.6rem;margin:18px 0 6px;letter-spacing:-.03em">guitle en el mundo</h2>
+  <p class="intro" id="intro">Comparamos precios de guitarras en las tiendas de cada país. Cada país que se enciende se pinta de azul.</p>
+  <div class="maps"><div class="map" id="map-world"><h3>Mundo</h3></div><div class="map" id="map-europe"><h3>Europa</h3></div></div>
+  <div class="legend"><span><i style="background:var(--accent)"></i>Con guitle</span><span><i style="background:#d3e2f4"></i>Próximamente</span></div>
+  <h2 class="sec">Países con guitle</h2>
+  <div class="countries" id="on"></div>
+  <h2 class="sec">Próximamente</h2>
+  <div class="countries" id="next"></div>
+  <footer class="site-foot">
+    <span>Algunos enlaces a tiendas son de afiliado: si compras, guitle puede recibir una comisión, sin coste para ti.</span>
+    <span><a href="/legal.html#aviso">Aviso legal</a> · <a href="/legal.html#privacidad">Privacidad</a> · <a href="/legal.html#cookies">Cookies</a></span>
+  </footer>
+</main>
+<script>
+// Países con web (data/catalog/paises.json, lo escribe scraper/intl.py) en azul; los previstos, en azul claro.
+// ISO numérico de cada país = id de su forma en los mapas (img/mapa/).
+const ISO = { es: "724", pt: "620", fr: "250", it: "380", uk: "826", de: "276", at: "040", nl: "528", be: "056", ie: "372",
+              mx: "484", br: "076", us: "840", ca: "124", ar: "032", co: "170", cl: "152" };
+const NEXT = { de: "Deutschland", at: "Österreich", nl: "Nederland", be: "Belgique / België", ie: "Ireland", mx: "México",
+               br: "Brasil", us: "United States", ca: "Canada", ar: "Argentina", co: "Colombia", cl: "Chile" };
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const fmt = n => n.toLocaleString("es-ES", { useGrouping: "always" });
+(async () => {
+  const [w, e, live] = await Promise.all([
+    fetch("/img/mapa/mundo.svg").then(r => r.text()).catch(() => ""),
+    fetch("/img/mapa/europa.svg").then(r => r.text()).catch(() => ""),
+    fetch("/data/catalog/paises.json", { cache: "no-store" }).then(r => r.json()).catch(() => ({ es: { country: "España", path: "/" } })),
+  ]);
+  document.getElementById("map-world").insertAdjacentHTML("beforeend", w);
+  document.getElementById("map-europe").insertAdjacentHTML("beforeend", e);
+  const next = Object.fromEntries(Object.entries(NEXT).filter(([c]) => !live[c]));
+  const cls = Object.fromEntries([...Object.keys(next).map(c => [ISO[c], "next"]), ...Object.keys(live).map(c => [ISO[c], "on"])]);
+  document.querySelectorAll(".map path").forEach(p => { if (cls[p.dataset.id]) p.setAttribute("class", cls[p.dataset.id]); });
+  const n = Object.keys(live).length;
+  document.getElementById("intro").textContent =
+    `Comparamos precios de guitarras en ${n} ${n === 1 ? "país" : "países"}, con las tiendas y los precios de cada uno. Cada país que se enciende se pinta de azul.`;
+  document.getElementById("on").innerHTML = Object.values(live).map(c =>
+    `<a class="country" href="${esc(c.path)}"><b>${esc(c.country)}</b><span>${c.guitars ? `${fmt(c.guitars)} guitarras · ${c.stores} tiendas` : ""}</span></a>`).join("");
+  document.getElementById("next").innerHTML = Object.values(next).map(name =>
+    `<div class="country next"><b>${esc(name)}</b><span>próximamente</span></div>`).join("");
+})();
+</script>
+<script src="/c.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+# Tocar este fichero relanza la copia de guitle.es (.github/workflows/copia-es.yml). 2026-11-07T22:47:29Z

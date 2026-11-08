@@ -1,0 +1,45 @@
+name: afiliados
+
+# Comisiones de afiliados de guitle y mootle (Awin, eBay Partner Network) cada mañana en Firestore (stats.html) y, los
+# lunes, resumen a hola@guitle.com con el gasto de Cloudflare (scraper/afiliados.py). Tocando .github/afiliados.txt se
+# lanza y manda el correo.
+on:
+  schedule:
+    - cron: "37 6 * * *"
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [.github/afiliados.txt]
+  workflow_dispatch:
+
+concurrency:
+  group: afiliados
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  afiliados:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -q -r requirements.txt
+      - name: Comisiones
+        env:
+          FIREBASE_SA: ${{ secrets.FIREBASE_SA }}
+          AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
+          EPN_ACCOUNT_SID: ${{ secrets.EPN_ACCOUNT_SID }}
+          EPN_AUTH_TOKEN: ${{ secrets.EPN_AUTH_TOKEN }}
+          EPN_TOKEN_SID: ${{ secrets.EPN_TOKEN_SID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: python -u -m scraper.afiliados $([ "${{ github.event_name }}" = push ] && echo --correo)

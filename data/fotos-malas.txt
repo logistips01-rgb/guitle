@@ -1,0 +1,23 @@
+# Miniaturas cortadas o partidas: no salen en los chollos de portada (pages._thumbs_ok) hasta rehacerlas.
+03ae24e084976c07.webp
+2a7dacb85508b959.webp
+2d1c495c060b1c59.webp
+2f0e4c05bfe2a9f4.webp
+37b924042546ec76.webp
+40da3851744c5408.webp
+5126b53102a5b98b.webp
+5252ff7e4c03fd5c.webp
+590c742dcb7c2d8b.webp
+71f3fb13c17130b3.webp
+92d233731089d062.webp
+9524df96330817c2.webp
+b45c991a10a5e200.webp
+ba8534fa2905c6a9.webp
+c260ab33e98b8475.webp
+c900e9665e2d0c81.webp
+c9c633b3f1087dcc.webp
+df59b48e011931ea.webp
+e59cee8ffe33e486.webp
+e9f62d4abd4da964.webp
+ebadf269b56428bf.webp
+ed4dff6ebe67011f.webp

@@ -1,0 +1,94 @@
+name: musica
+
+# Discos (vinilo, CD y casete) de las tiendas de discos de cada país (scraper/musica.py): catálogo, códigos de barras
+# nuevos y páginas de cada disco. Una vez al día, fuera de las horas de la lectura de guitarras.
+on:
+  schedule:
+    - cron: "41 15 * * *"
+  push:  # tocar .github/musica.txt la lanza a mano
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/musica.txt"]
+  workflow_dispatch:
+    inputs:
+      pais:
+        description: "Solo este país (uk, fr, it, es); vacío: todos"
+        type: string
+        default: ""
+
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  musica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    # Cada país espera solo a su propia lectura (lanzar España no espera a la de Italia, que dura horas)
+    concurrency:
+      group: musica-${{ matrix.pais }}
+      cancel-in-progress: false
+    strategy:
+      fail-fast: false
+      matrix:
+        # A mano: un país (input) o, al tocar .github/musica.txt, "[solo es]" o "[solo fr]" en el mensaje del commit
+        pais: ${{ fromJSON(inputs.pais && format('["{0}"]', inputs.pais) || contains(github.event.head_commit.message, '[solo es]') && '["es"]' || contains(github.event.head_commit.message, '[solo fr]') && '["fr"]' || contains(github.event.head_commit.message, '[solo pt]') && '["pt"]' || '["uk","fr","it","es"]') }}
+    env:
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+      GH_TOKEN: ${{ github.token }}
+      AWIN_FEED_KEY: ${{ secrets.AWIN_FEED_KEY }}
+      EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}  # eBay: discos por código de barras (API oficial)
+      EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
+      EBAY_MAX_CALLS: ${{ vars.EBAY_MAX_CALLS }}  # consultas de eBay al día por país (vacío: 900)  # Francia: ficheros de productos de las tiendas afiliadas en Awin
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: claude/friendly-fermat-yycain
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Leer y generar
+        run: timeout 165m python -m scraper.musica --pais "${{ matrix.pais }}" --minutes 150 || true
+      - name: Guardar y publicar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p "data/musica/${{ matrix.pais }}" "$RUNNER_TEMP/musica"
+          cp -r "data/musica/${{ matrix.pais }}/." "$RUNNER_TEMP/musica/"
+          for attempt in $(seq 40); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            mkdir -p "data/musica/${{ matrix.pais }}" && cp -r "$RUNNER_TEMP/musica/." "data/musica/${{ matrix.pais }}/"
+            git add -A "data/musica/${{ matrix.pais }}"  # codigos.json y discos.json (tiendas.json no va a git)
+            if git diff --cached --quiet; then break; fi
+            git commit -q -m "data: música ${{ matrix.pais }} $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep $(( 5 + RANDOM % 40 ))
+          done
+          python -m scraper.musica --pais "${{ matrix.pais }}" --build
+          dir=$(python -c "from scraper.musica import TXT; print(TXT['${{ matrix.pais }}']['dir'])")
+          if [ "${{ matrix.pais }}" = es ]; then bash .github/r2.sh carpeta "$dir"; else bash .github/r2.sh carpeta "${{ matrix.pais }}/$dir"; fi
+      # Portugal: con el catálogo de España recién leído (tiendas.json no va a git), las tiendas que envían a Portugal y
+      # CDGO consultada disco a disco.
+      - name: Portugal (con el catálogo de España)
+        if: matrix.pais == 'es'
+        run: |
+          timeout 160m python -m scraper.musica --pais pt --minutes 150 || true
+          mkdir -p data/musica/pt "$RUNNER_TEMP/musica-pt" && cp -r data/musica/pt/. "$RUNNER_TEMP/musica-pt/"
+          for attempt in $(seq 40); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            mkdir -p data/musica/pt && cp -r "$RUNNER_TEMP/musica-pt/." data/musica/pt/
+            git add -A data/musica/pt
+            if git diff --cached --quiet; then break; fi
+            git commit -q -m "data: música pt $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then break; fi
+            sleep $(( 5 + RANDOM % 40 ))
+          done
+          cp "$RUNNER_TEMP/musica/tiendas.json" data/musica/es/ 2>/dev/null || true
+          python -m scraper.musica --pais pt --build
+          bash .github/r2.sh carpeta pt/discos

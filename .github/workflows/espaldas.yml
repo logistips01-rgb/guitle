@@ -1,0 +1,59 @@
+name: espaldas
+
+# Mira con un modelo de visión libre (CLIP, en la máquina, sin coste) las miniaturas de guitarra que aún no se han
+# mirado y apunta las de espaldas (o que no enseñan la guitarra: fundas, estuches…) o cortadas en data/fotos-revisadas.json
+# (scraper/espaldas.py). El catálogo y la portada dejan de usarlas en su siguiente vuelta.
+# La primera vez hay ~250.000 fotos: se reparte en varios días (5 h cada vez); luego solo las nuevas.
+on:
+  schedule:
+    - cron: "23 9 * * *"
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [.github/espaldas.txt]
+  workflow_dispatch:
+
+concurrency:
+  group: espaldas
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  mirar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar dependencias y el modelo
+        run: |
+          pip install -q -r requirements.txt
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch torchvision
+          pip install -q open_clip_torch
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: clip-vit-b-32-laion2b
+      - name: Mirar las fotos
+        run: |
+          python -m scraper.espaldas --minutes 290 || echo "::warning::espaldas con error; se guarda lo mirado"
+          cp data/fotos-revisadas.json "$RUNNER_TEMP/revisadas.json"
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in $(seq 30); do
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            cp "$RUNNER_TEMP/revisadas.json" data/fotos-revisadas.json
+            git add data/fotos-revisadas.json
+            if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+            git commit -q -m "data: fotos revisadas $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            echo "push rechazado, reintento $attempt"; sleep $(( 5 + RANDOM % 30 ))
+          done
+          exit 1
