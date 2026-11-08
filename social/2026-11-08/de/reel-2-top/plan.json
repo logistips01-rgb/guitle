@@ -1,0 +1,148 @@
+{
+ "fecha": "8. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "3 E-Gitarren von 500 € bis 750 €",
+  "hook": "Top des Tages",
+  "picks": [
+   {
+    "slug": "squier-jazzmaster-paranormal-baritone-hh-lrl-oxblood-197955143422",
+    "name": "Squier Jazzmaster Paranormal Baritone HH, LRL Oxblood",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.de/cdn/shop/files/62373f5daec012477a2db319d89a268639ac7003_FMIC_0377075593.jpg?height=1200&pad_color=ffffff&v=1793727479&width=1200",
+    "th": "5f1919bc5c692ae0.webp",
+    "price": 509.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 534.0,
+    "max": 549.0,
+    "next": 519.0,
+    "rows": [
+     [
+      "Woodbrass",
+      509.0
+     ],
+     [
+      "Session",
+      519.0
+     ],
+     [
+      "Musikhaus Markstein",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "epiphone-les-paul-standard-50s-goldtop-711106178257",
+    "name": "Epiphone Les Paul Standard 50s Goldtop",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://www.markstein.de/media/cd/91/e2/1792076830/epiphone_les_paul_standard_50s_goldtop_00055146_1.jpg",
+    "th": "44586f9cd3aa4747.webp",
+    "price": 645.0,
+    "store": "Musikhaus Markstein",
+    "stores": 4,
+    "median": 659.0,
+    "max": 699.0,
+    "next": 659.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      645.0
+     ],
+     [
+      "Session",
+      659.0
+     ],
+     [
+      "Thomann",
+      659.0
+     ],
+     [
+      "Woodbrass",
+      699.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "ltd-m-200fr-gloss-black-limited-e-gitarre-mit-floyd-rose-tremolo-719710629417",
+    "name": "LTD M-200FR Gloss Black Limited E-Gitarre mit Floyd Rose Tremolo",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/ltd_m200frblk_01.jpg",
+    "th": "817199df920e8143.webp",
+    "price": 726.99,
+    "store": "Shop2Rock",
+    "stores": 4,
+    "median": 799.0,
+    "max": 819.0,
+    "next": 744.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      726.99
+     ],
+     [
+      "Zoundhouse",
+      744.0
+     ],
+     [
+      "Session",
+      799.0
+     ],
+     [
+      "Musikhaus Markstein",
+      819.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}
