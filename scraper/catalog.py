@@ -1280,8 +1280,57 @@ _parse_pln = lambda soup, text: _parse_ld_loose(soup, text, cur="PLN")
 PL_SOURCES = _thomann_only("https://www.thomann.pl/", ("cat_allProducts_GF_gitary_elektryczne.html",
                                                        "cat_allProducts_GF_gitary_akustyczne.html",
                                                        "cat_allProducts_GF_gitary_klasyczne.html"), pl_kind)
+MUZYCZNY_ROOTS = ("118903g_Gitary-Gitary-elektryczne.html", "118905g_Gitary-Gitary-klasyczne.html",
+                  "118906g_Gitary-Gitary-akustyczne.html", "118907g_Gitary-Gitary-elektroakustyczne.html",
+                  "198142g_Gitary-Gitary-akustyczne-leworeczne.html", "198144g_Gitary-Gitary-elektroakustyczne-leworeczne.html",
+                  "198145g_Gitary-Gitary-elektryczne-leworeczne.html", "198146g_Gitary-Gitary-klasyczne-leworeczne.html")
+
+
+def _muzyczny_listing(fetcher, max_pages=600):
+    """{ficha: (precio, disponible)} de los listados de guitarras de Muzyczny.pl (100 por página). Las categorías
+    con subcategorías no traen productos: se baja a sus subcategorías (el nombre empieza por el de la madre) y en las
+    finales se siguen las páginas ("…_101-200.html?od=101…")."""
+    base, out, seen, queue, pages = "https://muzyczny.pl/", {}, set(), list(MUZYCZNY_ROOTS), 0
+    while queue and pages < max_pages:
+        name = queue.pop(0)
+        if name in seen:
+            continue
+        seen.add(name)
+        url = base + name
+        if not fetcher.allowed(url)[0]:
+            continue
+        resp = fetcher.get(url)
+        pages += 1
+        if resp.status_code != 200:
+            continue
+        text = resp.text
+        items = {}
+        for chunk in text.split("uk-card-muzyczny")[1:]:
+            h = re.search(r'href="(https://muzyczny\.pl/\d+_[^"]+\.html)"', chunk)
+            pr = re.search(r'uk-text-lead uk-text-left">\s*([\d\s\xa0.,]+?)\s*z', chunk)
+            if h and pr:
+                try:
+                    price = float(re.sub(r"[\s\xa0]", "", pr.group(1)).replace(",", "."))
+                except ValueError:
+                    continue
+                items.setdefault(h.group(1), (price, "Towar dost" in chunk or None))
+        out.update({u: v for u, v in items.items() if v[0] > 0})
+        stem = re.sub(r"_\d+-\d+$", "", name.split(".html")[0])  # 132430g_Gitary-…-44
+        key = re.sub(r"^\d+g_", "", stem)
+        for link in re.findall(r'https://muzyczny\.pl/(\d+g_[^"\'?\s]+\.html(?:\?od=[^"\'\s]*)?)', text):
+            link = html.unescape(link)
+            lstem = link.split(".html")[0]
+            if items and re.fullmatch(re.escape(stem) + r"_\d+-\d+", lstem) and lstem not in seen:
+                seen.add(lstem)  # la misma página sale con y sin "?od=…"
+                queue.append(link)  # página siguiente de esta categoría
+            elif not items and "?" not in link and re.sub(r"^\d+g_", "", lstem).startswith(key + "-"):
+                queue.append(link)  # subcategoría
+    return out
+
+
 PL_SOURCES["muzyczny"] = {"name": "Muzyczny.pl", "sitemap": "https://muzyczny.pl/sitemap.xml.gz",
                           "sub": lambda l: "produkty" in l, "parse": _parse_pln, "kind_url": pl_kind,
+                          "listing": lambda f: _muzyczny_listing(f),
                           "pick": lambda u: bool(re.search(r"gitara-(?:elektryczna|akustyczna|elektroakustyczna|klasyczna)", u)),
                           "shop": {"base": "https://muzyczny.pl", "path": None, "lang": "pl+en"}}
 PL_SOURCES["kytary"] = {"name": "Kytary", "sitemap": "https://kytary.pl/sitemap.xml", "sub": lambda l: "pdp" in l,
@@ -3319,6 +3368,32 @@ def _ror_fix(data, text):
     return data
 
 
+def _shopify_listing(base, max_pages=200):
+    """{ficha: (precio, disponible)} de todo el catálogo de una tienda Shopify (/products.json, 250 por página, en su
+    moneda). La ficha va como /products/<handle> y como /<handle>.html (Everest: su sitemap da las URL antiguas)."""
+    def run(fetcher):
+        out = {}
+        for pg in range(1, max_pages + 1):
+            url = f"{base}/products.json?limit=250&page={pg}"
+            if not fetcher.allowed(url)[0]:
+                break
+            resp = fetcher.get(url)
+            if resp.status_code != 200:
+                break
+            prods = resp.json().get("products") or []
+            if not prods:
+                break
+            for p in prods:
+                prices = [float(v["price"]) for v in p.get("variants", []) if v.get("price")]
+                if not prices or min(prices) <= 0:
+                    continue
+                val = (round(min(prices), 2), any(v.get("available") for v in p.get("variants", [])))
+                out[f"{base}/products/{p['handle']}"] = val
+                out[f"{base}/{p['handle']}.html"] = val
+        return out
+    return run
+
+
 def _en_store(name, sitemap, cur, shopify=False, path=None, sub=None, json_feed=True, **extra):
     src = {"name": name, "sitemap": sitemap, "kind_url": en_kind, "pick": _pick_en(shopify, path),
            # dónde están las fichas, para el equipo (equipo_sources)
@@ -3380,7 +3455,7 @@ for _id, _name, _sm, _kw in [
         ("someneck", "Some Neck Guitars", "https://www.someneckguitars.com/sitemap.xml", {"shopify": True}),
         ("promusica", "Pro Musica", "https://promusica.ie/sitemap_index.xml", {"path": r"/product/"}),
         ("soundshop", "Sound Shop", "https://www.soundshop.ie/sitemap_index.xml", {"path": r"/shop/"}),
-        ("everest", "Everest Music", "https://everestmusic.com/sitemap.xml", {}),
+        ("everest", "Everest Music", "https://everestmusic.com/sitemap.xml", {"listing": _shopify_listing("https://everestmusic.com")}),
         ("musicoutlet", "The Music Outlet", "https://themusicoutlet.ie/wp-sitemap.xml", {"path": r"/product/"}),
         ("ror", "ROR Music", "https://www.ror.ie/sitemap.xml", {"fix": _ror_fix}),
         ("itmusic", "IT Music", "https://itmusic.ie/sitemap.xml", {"shopify": True})]:
