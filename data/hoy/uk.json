@@ -1,46 +1,36 @@
 {
- "fecha": "2026-11-07",
+ "fecha": "2026-11-08",
  "pais": "uk",
  "items": [
   {
-   "slug": "cort-kx307ms-multi-scale-7-string-open-pore-mahogany-remahogany",
-   "name": "Cort KX307MS Multi Scale 7-String Open Pore Mahogany",
-   "brand": "Cort",
-   "price": "£339",
-   "store": "Reidys",
+   "slug": "esp-ltd-ec-10-blk-ec10blkhtm",
+   "name": "ESP LTD EC-10 Blk",
+   "brand": "LTD",
+   "price": "£211",
+   "store": "Thomann",
    "kind": "electrica",
-   "img": "ff88d0b38cc296ee.webp",
-   "why": "£60 less than any other shop"
+   "img": "88690895fdfc1122.webp",
+   "why": "£33 less than any other shop"
   },
   {
-   "slug": "squier-classic-vibe-50s-strat-2-tone-sunburst-mn-885978063895",
-   "name": "Squier Classic Vibe 50s Strat 2-Tone Sunburst MN",
-   "brand": "Squier",
-   "price": "£339",
-   "store": "Reidys",
+   "slug": "gretsch-g2622t-streamlinertm-center-block-double-cut-with-bigsby-laurel-fingerbo-885978035717",
+   "name": "Gretsch G2622T Streamliner™ Center Block Double-Cut with Bigsby®, Laurel Fingerboard, Broad’Tron™ BT-3S Pickups, Arctic Blue",
+   "brand": "Gretsch",
+   "price": "£479",
+   "store": "Fair Deal Music",
    "kind": "electrica",
-   "img": "b384dc4bc09a251b.webp",
-   "why": "£40 less than any other shop"
+   "img": "0d7acc1b212efe98.webp",
+   "why": "£70 less than any other shop"
   },
   {
-   "slug": "tr-pro-sfce-a-eb-electro-acoustic-guitar-819907023186",
-   "name": "TR Pro SFCE A EB Electro Acoustic Guitar",
-   "brand": "TR",
-   "price": "£299",
-   "store": "Ness Music",
-   "kind": "acustica",
-   "img": "cdeff69f1c4632e5.webp",
-   "why": "£49 less than any other shop"
-  },
-  {
-   "slug": "yamaha-cg-ta-classical-guitar-4957812640831",
-   "name": "Yamaha CG-TA Classical Guitar",
-   "brand": "Yamaha",
-   "price": "£619",
-   "store": "Andertons",
-   "kind": "clasica",
-   "img": "f84fea30dda26f65.webp",
-   "why": ""
+   "slug": "schecter-c-1-standard-plus-ember-burst-electric-guitar-emberburst",
+   "name": "Schecter C-1 Standard Plus Ember Burst Electric Guitar",
+   "brand": "Schecter",
+   "price": "£419",
+   "store": "Fair Deal Music",
+   "kind": "electrica",
+   "img": "44fb684299fd15c2.webp",
+   "why": "£50 less than any other shop"
   }
  ]
 }

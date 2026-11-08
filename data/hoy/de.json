@@ -1,75 +1,15 @@
 {
- "fecha": "2026-11-07",
+ "fecha": "2026-11-08",
  "pais": "de",
  "items": [
   {
-   "slug": "yamaha-cg102-hochglanz-4957812496971",
-   "name": "Yamaha cg102 hochglanz",
-   "brand": "Yamaha",
-   "price": "208 €",
-   "store": "Woodbrass",
-   "kind": "clasica",
-   "img": "b39396438c783249.webp",
-   "why": "31 € günstiger als in allen anderen Shops"
-  },
-  {
-   "slug": "ibanez-aw54l-opn-linkshander-akustikgitarre-massive-mahagonidecke-4515276902379",
-   "name": "Ibanez AW54L-OPN Linkshänder Akustikgitarre, massive Mahagonidecke",
-   "brand": "Ibanez",
-   "price": "259 €",
-   "store": "Musikhaus Markstein",
-   "kind": "acustica",
-   "img": "648eae693cc8a00e.webp",
-   "why": "29 € günstiger als in allen anderen Shops"
-  },
-  {
-   "slug": "manuel-rodriguez-tradicion-t-62-7-8-konzertgitarre-4046662287904",
-   "name": "Manuel Rodriguez Tradicion T-62 7/8 Konzertgitarre",
-   "brand": "Manuel Rodriguez",
-   "price": "329 €",
-   "store": "Musikhaus Markstein",
-   "kind": "clasica",
-   "img": "5eab4c9791399e95.webp",
-   "why": ""
-  },
-  {
-   "slug": "la-mancha-cereza-4250771307914",
-   "name": "La Mancha Cereza",
-   "brand": "La Mancha",
-   "price": "379 €",
-   "store": "Soundland",
-   "kind": "clasica",
-   "img": "592f0b46dd40a8bf.webp",
-   "why": ""
-  },
-  {
-   "slug": "cort-sunset-nylectric-dlx-tricdlxhtm",
-   "name": "Cort Sunset Nylectric DLX",
+   "slug": "cort-g110-opbk-e-gitarre-open-pore-black-8809625369606",
+   "name": "Cort G110-OPBK E-Gitarre, open pore black",
    "brand": "Cort",
-   "price": "585 €",
-   "store": "Thomann",
-   "kind": "clasica",
-   "img": "e90d54a967c44480.webp",
-   "why": ""
-  },
-  {
-   "slug": "duke-student-f-konzert-gitarre-4-4-fichte-palisander-4250771310327",
-   "name": "Duke Student F Konzert-Gitarre 4/4 (Fichte/Palisander)",
-   "brand": "Duke",
-   "price": "590,52 €",
+   "price": "199 €",
    "store": "Shop2Rock",
-   "kind": "clasica",
-   "img": "https://www.shop2rock.de/shop/images/products/main/duke_studentf_1.jpg",
-   "why": ""
-  },
-  {
-   "slug": "ibanez-tod10n-tkf-tim-henson-signature-e-konzertgitarre-4549763334558",
-   "name": "Ibanez TOD10N-TKF Tim Henson Signature E-Konzertgitarre",
-   "brand": "Ibanez",
-   "price": "630 €",
-   "store": "IMM Professional",
-   "kind": "clasica",
-   "img": "https://imm-professional.de/media/image/product/132541/lg/ibanez-tod10n-tkf.jpg",
+   "kind": "electrica",
+   "img": "6c01753dac754da0.webp",
    "why": ""
   }
  ]

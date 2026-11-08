@@ -1,5 +1,5 @@
 {
- "fecha": "2026-11-07",
+ "fecha": "2026-11-08",
  "pais": "es",
  "items": [
   {
@@ -10,77 +10,27 @@
    "store": "Nume Music",
    "kind": "electrica",
    "img": "375ef4261a01ccda.webp",
-   "why": "Mínimo histórico: 28 % por debajo de su media"
+   "why": "Mínimo histórico: 27 % por debajo de su media"
   },
   {
-   "slug": "tanglewood-trx2e-rx2ep40582",
-   "name": "Tanglewood TRX2E",
-   "brand": "Tanglewood",
-   "price": "202 €",
-   "store": "Egitana",
-   "kind": "acustica",
-   "img": "5a9add968ff82661.webp",
-   "why": "Mínimo histórico: 25 % por debajo de su media"
-  },
-  {
-   "slug": "squier-affinity-telecaster-lrl-lake-placid-blue-885978722792",
-   "name": "Squier Affinity Telecaster LRL Lake Placid Blue",
-   "brand": "Squier",
-   "price": "199 €",
-   "store": "Musicopolix",
-   "kind": "electrica",
-   "img": "c54ab07e4b75545e.webp",
-   "why": "Mínimo histórico: 19 % por debajo de su media"
-  },
-  {
-   "slug": "alhambra-1c-ht-4424079989039",
-   "name": "Alhambra 1C HT",
-   "brand": "Alhambra",
-   "price": "324 €",
-   "store": "Neomúsica",
+   "slug": "ortega-r16s-842960185133",
+   "name": "Ortega R16S",
+   "brand": "Ortega",
+   "price": "306,40 €",
+   "store": "Alteisa",
    "kind": "clasica",
-   "img": "f57d1044e53740e3.webp",
-   "why": ""
+   "img": "d11db04930a9a1e0.webp",
+   "why": "Mínimo histórico: 10 % por debajo de su media"
   },
   {
-   "slug": "admira-virtuoso-electrificada-fishman-cutaway-8436032350264",
-   "name": "Admira Virtuoso Electrificada Fishman Cutaway",
+   "slug": "admira-a-20-8436032350325",
+   "name": "Admira A-20",
    "brand": "Admira",
-   "price": "341 €",
-   "store": "Drunkat",
+   "price": "697 €",
+   "store": "Microfusa",
    "kind": "clasica",
-   "img": "8973c8d7d2771880.webp",
-   "why": ""
-  },
-  {
-   "slug": "ibanez-aeg74n-mhs-guitarra-espanola-electrificada-mahogany-sunburst-4549763349873",
-   "name": "Ibanez AEG74N Mhs Guitarra Española Electrificada Mahogany Sunburst",
-   "brand": "Ibanez",
-   "price": "365 €",
-   "store": "Auvisa",
-   "kind": "clasica",
-   "img": "ee40c69a087cedc6.webp",
-   "why": ""
-  },
-  {
-   "slug": "jose-torres-jtc-30-8435017324979",
-   "name": "Jose Torres JTC-30",
-   "brand": "Jose Torres",
-   "price": "384 €",
-   "store": "Musicsales",
-   "kind": "clasica",
-   "img": "c8bcc3878bff18b4.webp",
-   "why": ""
-  },
-  {
-   "slug": "lag-occitania-118-oc118ce-3700166363335",
-   "name": "LAG Occitania 118 OC118CE",
-   "brand": "LAG",
-   "price": "403 €",
-   "store": "Alfasoni",
-   "kind": "clasica",
-   "img": "a1e9c69c69f535b7.webp",
-   "why": ""
+   "img": "1505a480e6c7f2b3.webp",
+   "why": "Bajada real: 19 % por debajo de su media"
   }
  ]
 }

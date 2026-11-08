@@ -1,76 +1,36 @@
 {
- "fecha": "2026-11-07",
+ "fecha": "2026-11-08",
  "pais": "br",
  "items": [
   {
-   "slug": "tagima-rio-negro-ntabs-natural-satin-grand-auditorium-aco-eletroacustico-7898563976183",
-   "name": "Tagima Rio Negro NTABS Natural Satin Grand Auditorium Aço Eletroacústico",
-   "brand": "Tagima",
-   "price": "R$ 809,10",
+   "slug": "benson-exd900ce-exodus-series-folk-koa-burst-pre-fishman-aco-c-bag-7899701570126",
+   "name": "Benson EXD900CE Exodus Series Folk Koa Burst Pré Fishman Aço C/ Bag",
+   "brand": "Benson",
+   "price": "R$ 2.331,00",
    "store": "Akustica Musical",
    "kind": "acustica",
-   "img": "70699d42ecb46bf4.webp",
-   "why": "R$ 180 a menos que em qualquer outra loja"
+   "img": "3b69209687a39685.webp",
+   "why": "R$ 368,10 a menos que em qualquer outra loja"
   },
   {
-   "slug": "strinberg-diamond-dd4sc-rt-n-folk-7899854525523",
-   "name": "Strinberg Diamond DD4SC RT N Folk",
+   "slug": "tagima-kansas-gran-reserva-ntop-tagima-7898563970068",
+   "name": "Tagima Kansas Gran Reserva NTOP - Tagima",
+   "brand": "Tagima",
+   "price": "R$ 909,88",
+   "store": "Ninja Som",
+   "kind": "acustica",
+   "img": "5bc65f954650e4a1.webp",
+   "why": "R$ 122,83 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "strinberg-sd201hc-mgs-folk-7899854523857",
+   "name": "Strinberg SD201HC Mgs Folk",
    "brand": "Strinberg",
-   "price": "R$ 2.209,99",
+   "price": "R$ 1.062,49",
    "store": "RCK Audio",
    "kind": "acustica",
-   "img": "ab0b3545696bc436.webp",
-   "why": "R$ 445,01 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "giannini-gsf1d-mini-jumbo-aco-mini-jumbo-natural-satin-7890443021747",
-   "name": "Giannini GSF1D Mini Jumbo Aço Mini Jumbo Natural Satin",
-   "brand": "Giannini",
-   "price": "R$ 809,10",
-   "store": "Mundomax",
-   "kind": "acustica",
-   "img": "432a43b1b15a70d9.webp",
-   "why": "R$ 160,80 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "yamaha-c40mii-acustico-nylon-natural-4957812496841",
-   "name": "Yamaha C40MII Acústico Nylon Natural",
-   "brand": "Yamaha",
-   "price": "R$ 809,10",
-   "store": "Mundomax",
-   "kind": "clasica",
-   "img": "f790a68f6e90315b.webp",
-   "why": ""
-  },
-  {
-   "slug": "tagima-america-vegas-gran-reserva-eletroacustico-nylon-ntop-7898563970075",
-   "name": "Tagima América Vegas Gran Reserva Eletroacustico Nylon NTOP",
-   "brand": "Tagima",
-   "price": "R$ 809,10",
-   "store": "Akustica Musical",
-   "kind": "clasica",
-   "img": "89825ce358f933e5.webp",
-   "why": ""
-  },
-  {
-   "slug": "giannini-gnf3-ceq-natural-satin-7890443020641",
-   "name": "Giannini GNF3 CEQ Natural Satin",
-   "brand": "Giannini",
-   "price": "R$ 899,00",
-   "store": "Cheiro de Música",
-   "kind": "clasica",
-   "img": "e3e09cae7328caf9.webp",
-   "why": ""
-  },
-  {
-   "slug": "strinberg-sl200c-mgs-flat-de-nylon-mahogany-c-afinador-7899854521518",
-   "name": "Strinberg SL200C MGS Flat De Nylon Mahogany C/ Afinador",
-   "brand": "Strinberg",
-   "price": "R$ 989,10",
-   "store": "Mundomax",
-   "kind": "clasica",
-   "img": "58ad4c377be0f0e8.webp",
-   "why": ""
+   "img": "9d18e926639de068.webp",
+   "why": "R$ 134,51 a menos que em qualquer outra loja"
   }
  ]
 }
