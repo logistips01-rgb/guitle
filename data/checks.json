@@ -657,24 +657,6 @@
   "median": 244.35
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez AZES40-PPK",
-  "slug": "ibanez-azes40-ppk-4549763289568"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez KIKO100T-RR",
-  "slug": "ibanez-kiko100t-rr-606559998005"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez RG421HPAM-ABL",
-  "slug": "ibanez-rg421hpam-abl-4549763229694"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicsales",
@@ -1042,12 +1024,6 @@
   "slug": "yamaha-tas1e-ultra-marine-4957812722322",
   "price": 643.0,
   "median": 877.895
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Takamine Cutaway Auditorium Takamine EF508 Natural",
-  "slug": "takamine-cutaway-auditorium-takamine-ef508-natural-190262011835"
  },
  {
   "kind": "clasica",
