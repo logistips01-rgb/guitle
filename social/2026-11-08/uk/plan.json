@@ -1,0 +1,187 @@
+{
+ "date": "2026-11-08",
+ "fecha": "8 November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "squier-sonic-esquire-h-arctic-white-icwhitehtm",
+   "name": "Squier Sonic Esquire H Arctic White",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/561065.jpg",
+   "th": "845539136e880a86.webp",
+   "price": 133.0,
+   "store": "Thomann",
+   "stores": 6,
+   "median": 169.0,
+   "max": 179.0,
+   "next": 149.0,
+   "rows": [
+    [
+     "Thomann",
+     133.0
+    ],
+    [
+     "Reidys",
+     149.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     159.0
+    ],
+    [
+     "Fair Deal Music",
+     169.0
+    ],
+    [
+     "Guitarbitz",
+     169.99
+    ],
+    [
+     "Ness Music",
+     179.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£16 less than any other shop",
+   "pct": 11,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal of the day: Squier Sonic Esquire H Arctic White\n💷 £133 at Thomann, compared across 6 shops.\n📉 £16 less than any other shop.\n\n🔎 Compare its price on guitle.com/uk (all today’s deals via the link in bio 👆).\nPrice on 8 November; it may change.\n\n#guitar #guitarist #guitardeals #ukguitar #electricguitar #squier"
+ },
+ "stories": [
+  {
+   "slug": "esp-ltd-ec-10-blk-ec10blkhtm",
+   "name": "ESP LTD EC-10 Blk",
+   "brand": "LTD",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/250889.jpg",
+   "th": "88690895fdfc1122.webp",
+   "price": 211.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 246.0,
+   "max": 248.0,
+   "next": 244.0,
+   "rows": [
+    [
+     "Thomann",
+     211.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     244.0
+    ],
+    [
+     "Parkland Music",
+     248.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£33 less than any other shop",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "gretsch-g2622t-streamlinertm-center-block-double-cut-with-bigsby-laurel-fingerbo-885978035717",
+   "name": "Gretsch G2622T Streamliner™ Center Block Double-Cut with Bigsby®, Laurel Fingerboard, Broad’Tron™ BT-3S Pickups, Arctic Blue",
+   "brand": "Gretsch",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/2807250583_gre_ins_frt_1_rr.png?v=1788949974",
+   "th": "0d7acc1b212efe98.webp",
+   "price": 479.0,
+   "store": "Fair Deal Music",
+   "stores": 3,
+   "median": 574.0,
+   "max": 599.0,
+   "next": 549.0,
+   "rows": [
+    [
+     "Fair Deal Music",
+     479.0
+    ],
+    [
+     "The Guitar Store",
+     549.0
+    ],
+    [
+     "Absolute Music",
+     599.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£70 less than any other shop",
+   "pct": 13,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "schecter-c-1-standard-plus-ember-burst-electric-guitar-emberburst",
+   "name": "Schecter C-1 Standard Plus Ember Burst Electric Guitar",
+   "brand": "Schecter",
+   "kind": "electrica",
+   "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/Jhr8AqGFCxhH-3__46134.jpg?v=1767362857",
+   "th": "44fb684299fd15c2.webp",
+   "price": 419.0,
+   "store": "Fair Deal Music",
+   "stores": 5,
+   "median": 469.0,
+   "max": 469.0,
+   "next": 469.0,
+   "rows": [
+    [
+     "Fair Deal Music",
+     419.0
+    ],
+    [
+     "Peach Guitars",
+     469.0
+    ],
+    [
+     "Andertons",
+     469.0
+    ],
+    [
+     "guitarguitar",
+     469.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     469.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£50 less than any other shop",
+   "pct": 11,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

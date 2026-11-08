@@ -1,0 +1,151 @@
+{
+ "fecha": "8 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "charvel-standard-series-san-dimas-style-2-sd2-hh-ht-gloss-black-glossblack",
+    "name": "Charvel Standard Series San Dimas Style 2 SD2 HH HT Gloss Black",
+    "brand": "Charvel",
+    "kind": "electrica",
+    "img": "https://images.guitarguitar.co.uk/cdn/large/170/260109452438008f.jpg",
+    "th": "c9c722241dadc009.webp",
+    "price": 442.0,
+    "store": "Peach Guitars",
+    "stores": 4,
+    "median": 499.0,
+    "max": 509.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "Peach Guitars",
+      442.0
+     ],
+     [
+      "Andertons",
+      499.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      499.0
+     ],
+     [
+      "A Strings",
+      509.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£57 less than any other shop",
+    "pct": 11,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "squier-classic-vibe-70s-jaguar-black-885978064861",
+    "name": "Squier Classic Vibe 70s Jaguar Black",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/qkmctrto.png?v=1716387438",
+    "th": "7e6d1867e5399909.webp",
+    "price": 359.0,
+    "store": "Reidys",
+    "stores": 5,
+    "median": 409.5,
+    "max": 469.99,
+    "next": 399.0,
+    "rows": [
+     [
+      "Reidys",
+      359.0
+     ],
+     [
+      "A Strings",
+      399.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      409.0
+     ],
+     [
+      "Gig Gear",
+      410.0
+     ],
+     [
+      "Paisley Music",
+      469.99
+     ]
+    ],
+    "pvp": null,
+    "why": "£40 less than any other shop",
+    "pct": 10,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "fender-california-standard-redondo-black-dondoblack",
+    "name": "Fender California Standard Redondo, Black",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/0609/3655/2655/files/CalSTDRedondoBLK.jpg?v=1758388274",
+    "th": "48b8c7b3b4fc7122.webp",
+    "price": 149.0,
+    "store": "Wunjo Guitars",
+    "stores": 3,
+    "median": 169.0,
+    "max": 169.0,
+    "next": 169.0,
+    "rows": [
+     [
+      "Wunjo Guitars",
+      149.0
+     ],
+     [
+      "A Strings",
+      169.0
+     ],
+     [
+      "guitarguitar",
+      169.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£20 less than any other shop",
+    "pct": 12,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
