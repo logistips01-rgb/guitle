@@ -174,7 +174,23 @@ def _discover_thomann(fetcher, codes, base=THOMANN):
             if not found - urls:
                 break
             urls |= found
+            fetcher.listed.update(_thomann_listing_prices(resp.text, base))
     return sorted(urls)
+
+
+def _thomann_listing_prices(text, base):
+    """{ficha: (precio, disponible)} de un listado de Thomann: el JSON de la página trae el precio de hoy (con las ofertas
+    ya aplicadas) de sus 100 guitarras. Así el precio de todas se renueva en cada vuelta, aunque su ficha se lea días
+    después (con 8-14 s por ficha no da para las 4.000 cada día, y en las rebajas el precio cambia de un día a otro)."""
+    out = {}
+    links = list(re.finditer(r'"relativeLink":"([^"?]+\.htm)', text))
+    for i, m in enumerate(links):
+        seg = text[m.end():links[i + 1].start() if i + 1 < len(links) else m.end() + 20000]
+        price = re.search(r'"price":\{"primary":\{"rawPrice":"([\d.]+)"', seg)
+        avail = re.search(r'"isAvailable":(true|false)', seg)
+        if price and float(price.group(1)) > 0:
+            out.setdefault(base + m.group(1), (round(float(price.group(1)), 2), avail.group(1) == "true" if avail else None))
+    return out
 
 
 def _parse_thomann(soup, text):
@@ -5107,10 +5123,10 @@ def due_urls(store_id, urls, offers, now):
             continue
         elif o.get("status") == "no_price" and o["checked"] > no_price_before:
             continue
-        elif o["checked"] > recent:
+        elif o.get("page_checked", o["checked"]) > recent:
             continue
         else:
-            old.append((o["checked"], url))
+            old.append((o.get("page_checked", o["checked"]), url))  # precio del listado (Thomann): la ficha sigue su turno
     return fresh + [u for _, u in sorted(old)]
 
 
@@ -5144,6 +5160,7 @@ def scan_store(store_id, offers, minutes, limit):
             stats[r["status"]] = stats.get(r["status"], 0) + 1
         print(f"[{store_id}] fichero: {len(out['records'])} productos {stats}", flush=True)
         return out
+    fetcher.listed = {}  # precios vistos en los listados (Thomann), {ficha: (precio, disponible)}
     try:
         urls = src["discover"](fetcher) if "discover" in src else sitemap_urls(fetcher, src["sitemap"], src.get("sub"))
         picked = sorted({u for u in urls if src["pick"](u)})
@@ -5153,6 +5170,19 @@ def scan_store(store_id, offers, minutes, limit):
         print(f"[{store_id}] sitemap con error ({type(exc).__name__}); se usan las conocidas", flush=True)
         picked = sorted(u for u, o in offers.items() if o["store"] == store_id)
     queue = due_urls(store_id, picked, offers, now)
+    # Las guitarras ya conocidas que salen en los listados se renuevan con su precio de hoy sin leer la ficha (nombre,
+    # foto y tipo, los de la última lectura; "page_checked" guarda cuándo se leyó la ficha, que sigue su turno).
+    changed, picked_set = 0, set(picked)
+    for url, (price, avail) in fetcher.listed.items():
+        prev = offers.get(url)
+        if not prev or prev.get("status") != "ok" or url not in picked_set:
+            continue
+        changed += abs(prev["price"] - price) > 0.005
+        out["records"].append({**prev, "price": price, "in_stock": avail if avail is not None else prev.get("in_stock"),
+                               "checked": now, "page_checked": prev.get("page_checked", prev["checked"])})
+    if fetcher.listed:
+        print(f"[{store_id}] listados: {len(fetcher.listed)} precios, {changed} cambiados", flush=True)
+    listed_recs = len(out["records"])
     deadline = time.monotonic() + minutes * 60
     for n, url in enumerate(queue[:limit] if limit else queue, 1):
         if time.monotonic() > deadline:
@@ -5168,7 +5198,7 @@ def scan_store(store_id, offers, minutes, limit):
     stats = {}
     for r in out["records"]:
         stats[r["status"]] = stats.get(r["status"], 0) + 1
-    print(f"[{store_id}] fin: {len(out['records'])} fichas {stats}; pendientes {max(0, len(queue) - len(out['records']))}", flush=True)
+    print(f"[{store_id}] fin: {len(out['records'])} fichas {stats}; pendientes {max(0, len(queue) - len(out['records']) + listed_recs)}", flush=True)
     return out
 
 
