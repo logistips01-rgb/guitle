@@ -1,0 +1,61 @@
+name: congruencia
+
+# Cada día, una ficha de cada tienda de cada país se abre en un navegador y se mira si el precio de guitle sale en la
+# página tal como la ve el cliente (scraper/congruencia.py y .js). Lo que no cuadra va a data/congruencia.json y a
+# los avisos de stats.html. A mano: tocar .github/congruencia.txt.
+on:
+  schedule:
+    - cron: "23 9 * * *"  # 10:23 / 11:23 en Madrid, con la lectura de la noche ya guardada
+  workflow_dispatch:
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/congruencia.txt"]
+
+concurrency:
+  group: congruencia
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            data/catalog
+            data/musica/pt
+            data/congruencia.json
+            scraper
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Navegador
+        run: |
+          npm install --no-save --no-package-lock playwright@1.48.2
+          npx playwright install --with-deps chromium
+      - name: Probar una ficha por tienda
+        run: |
+          python -m scraper.congruencia --pick "$RUNNER_TEMP/filas.json"
+          node scraper/congruencia.js "$RUNNER_TEMP/filas.json" "$RUNNER_TEMP/congruencia.json"
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin "${GITHUB_REF_NAME}" && git reset -q --hard "origin/${GITHUB_REF_NAME}"
+            cp "$RUNNER_TEMP/congruencia.json" data/congruencia.json
+            git add data/congruencia.json
+            if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+            git commit -q -m "data: congruencia de precios $(TZ=Europe/Madrid date +%F)"
+            if git push -q origin "HEAD:${GITHUB_REF_NAME}"; then exit 0; fi
+            sleep $((i * 15))
+          done
+          exit 1

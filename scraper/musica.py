@@ -679,7 +679,7 @@ def _lookup(pais, end, catalog, codes):
     los nunca consultados y luego los más antiguos. Lo encontrado (y lo no encontrado, para no repetir) se guarda en
     consultas.json (en git): {tienda: {ean: [fecha, precio, stock, url, nombre, artista, foto] o [fecha]}}."""
     from concurrent.futures import ThreadPoolExecutor
-    from datetime import date
+    from datetime import date, timedelta
     from .fetch import Fetcher
     folder = DATA / pais
     seen = _load(folder / "consultas.json", {})
@@ -695,7 +695,18 @@ def _lookup(pais, end, catalog, codes):
     def one_store(sid):
         f = Fetcher(delay=(1.0, 2.0))
         done = seen.setdefault(sid, {})
-        todo = sorted(eans, key=lambda e: done.get(e, [""])[0])  # nunca consultados ("") y luego los más antiguos
+        # Primero se revisan los que la tienda tiene (los que salen en la web: su precio cambia, Back to Black en CDGO
+        # subió de 29,88 a 36,78 € en un día), del más antiguo al más nuevo; luego los nunca consultados, y los que la
+        # tienda no tenía se vuelven a mirar cada 14 días por si los ha traído.
+        old_nf = (date.today() - timedelta(days=14)).isoformat()
+        def prio(e):
+            row = done.get(e)
+            if row and len(row) > 2:
+                return (0, row[0])
+            if not row:
+                return (1, "")
+            return (2, row[0]) if row[0] < old_nf else (3, row[0])
+        todo = [e for e in sorted(eans, key=prio) if prio(e)[0] < 3]
         n = 0
         for e in todo:
             if time.time() > end or done.get(e, [""])[0] == today:
@@ -768,18 +779,21 @@ def build_data(pais):
     folder = DATA / pais
     src = SRC.get(pais, pais)  # Portugal: el catálogo y las consultas de las tiendas españolas
     catalog, codes = _load(DATA / src / "tiendas.json", {}), _load(DATA / src / "codigos.json", {})
+    # Precio consultado (CDGO): solo si es de los últimos 3 días; uno más viejo puede no ser el de la tienda
+    from datetime import date, timedelta
+    fresh = (date.today() - timedelta(days=3)).isoformat()
     if pais in LOOKUP:  # lo encontrado en las tiendas que se consultan por EAN, como si fuera su catálogo
         fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
         for sid, found in _load(folder / "consultas.json", {}).items():
             for e, row in found.items():
-                if len(row) >= 7 and e in fmt_of:
+                if len(row) >= 7 and e in fmt_of and row[0] >= fresh:
                     catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                       "st": row[2], "img": row[6], "u": row[3]}
                     codes.setdefault(sid, {})[e] = e
     for sid, other in SHARED_LOOKUP.get(pais, {}).items():  # tiendas consultadas para otro país (CDGO, para Portugal)
         fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
         for e, row in _load(DATA / other / "consultas.json", {}).get(sid, {}).items():
-            if len(row) >= 7 and e in fmt_of:
+            if len(row) >= 7 and e in fmt_of and row[0] >= fresh:
                 catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                   "st": row[2], "img": row[6], "u": row[3]}
                 codes.setdefault(sid, {})[e] = e
@@ -953,6 +967,7 @@ TXT["es"] = {
     "in_stock": "Disponible", "out": "Agotado", "shops": "tiendas", "buy": "Ver en la tienda", "cheapest": "El más barato hoy",
     "more": "Los más comparados", "note": "Precios con IVA; los gastos de envío dependen de cada tienda.",
     "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Buscar este disco en Amazon",
+    "amazon_none": "¿No lo tenemos? Búscalo en Amazon", "amazon_more": "¿No es ninguno? Búscalo en Amazon",
     "amazon_txt": "¿Prefieres comprarlo en Amazon?",
     "search_ph": "Busca un disco: artista o álbum…", "search_res": "{n} discos encontrados", "search_none": "No hay discos con esa búsqueda",
     "f_artist": "Artista o grupo", "f_format": "Formato", "f_all": "Todos los formatos", "f_sort": "Ordenar",
@@ -1000,6 +1015,7 @@ TXT["pt"] = {
     "in_stock": "Disponível", "out": "Esgotado", "shops": "lojas", "buy": "Ver na loja", "cheapest": "O mais barato hoje",
     "more": "Os mais comparados", "note": "Preços com IVA; os portes dependem de cada loja (as lojas espanholas enviam para Portugal).",
     "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Procurar este disco na Amazon",
+    "amazon_none": "Não o temos? Procure na Amazon", "amazon_more": "Nenhum destes? Procure na Amazon",
     "amazon_txt": "Prefere comprar na Amazon?",
     "search_ph": "Procure um disco: artista ou álbum…", "search_res": "{n} discos encontrados", "search_none": "Nenhum disco encontrado",
     "f_artist": "Artista ou banda", "f_format": "Formato", "f_all": "Todos os formatos", "f_sort": "Ordenar",
@@ -1107,7 +1123,9 @@ def write_pages(pais, discs=None):
         pages._write(path, page(url, label, T["d_index"], f'  <div class="grid">{items}</div>'))
         urls.append(url)
         keep.add(path)
-        links.append(f'<a class="chip" href="{url}">{_e(label)} <span class="muted">({len([d for d in multi if d["fmt"] == fk])})</span></a>')
+        # El número, de todos los discos con página (también los de una sola tienda): el listado enseña los comparados
+        n_fmt = sum(d["fmt"] == fk for d in discs)
+        links.append(f'<a class="chip" href="{url}">{_e(label)} <span class="muted">({n_fmt})</span></a>')
     # Mayores diferencias entre tiendas (solo ofertas con stock): para la portada, Instagram y quien busca chollos
     def gap(d):
         live = [i["p"] for i in d["items"] if i["st"]]
@@ -1151,8 +1169,10 @@ def write_pages(pais, discs=None):
             f.unlink()
     artists_pages = {a for a, ds in by_artist.items() if len(ds) >= 2 and slug(a)}
     # Buscador con filtros: índice ligero [nombre, página, formato, precio, tiendas, foto, artista] y todo en el navegador
+    # Todos los discos (también los de una sola tienda, con su página y el botón de Amazon): los comparados primero
+    in_multi = {id(d) for d in multi}
     idx = [[d["name"], d["slug"], T["fmt1"][d["fmt"]], min(i["p"] for i in d["items"]), len(d["items"]), d.get("img") or "", artist(d)]
-           for d in multi]
+           for d in multi + [d for d in discs if id(d) not in in_multi]]
     (out / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     top_artists = sorted(by_artist, key=lambda a: -len(by_artist[a]))[:400]
     datalist = "".join(f'<option value="{_e(a)}">' for a in sorted(top_artists, key=str.lower))
@@ -1171,15 +1191,20 @@ def write_pages(pais, discs=None):
               + r"""  <script>(()=>{let idx=null;const $=i=>document.getElementById(i),q=$('q'),fa=$('fa'),ff=$('ff'),fs=$('fs'),sec=$('results'),g=$('rg'),h=$('rh');
 const n=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const money=v=>new Intl.NumberFormat(document.documentElement.lang,{style:'currency',currency:'__CUR__',minimumFractionDigits:v%1?2:0}).format(v);
-const im=u=>/cdn\.shopify\.com|\/cdn\/shop\//.test(u)?u+(u.includes('?')?'&':'?')+'width=300':u;const AP=__AP__;
+const im=u=>/cdn\.shopify\.com|\/cdn\/shop\//.test(u)?u+(u.includes('?')?'&':'?')+'width=300':u;const AP=__AP__;const AMZ=__AMZ__;
 async function run(){const t=n(q.value.trim()),a=n(fa.value.trim()),f=ff.value;if(t.length<2&&!a&&!f){sec.hidden=true;return}
-if(!idx)idx=await (await fetch('search.json')).json();const w=t.length>=2?t.split(/\s+/):[];
+if(!idx)idx=await (await fetch('search.json')).json();const w=t.length>=2?t.replace(/[^a-z0-9]+/g,' ').trim().split(' ').filter(Boolean):[];
 let r=idx.filter(d=>{const x=' '+n(d[0]).replace(/[^a-z0-9]+/g,' ');return w.every(k=>x.includes(' '+k))&&(!a||(' '+n(d[6]).replace(/[^a-z0-9]+/g,' ')).includes(' '+a.replace(/[^a-z0-9]+/g,' ').trim()))&&(!f||d[2]===f)});
 const s=fs.value;r.sort((x,y)=>s==='n'?y[4]-x[4]||x[3]-y[3]:s==='a'?x[0].localeCompare(y[0]):x[3]-y[3]);const tot=r.length;r=r.slice(0,120);
-const ap=fa.value.trim()&&AP[fa.value.trim()];h.innerHTML=(tot?'__RES__'.replace('{n}',tot):'__NONE__')+(ap?` · <a href="artist/${ap}.html">__ALL__ →</a>`:'');
+const ap=fa.value.trim()&&AP[fa.value.trim()];const qa=[q.value.trim(),fa.value.trim()].filter(Boolean).join(' ');
+h.innerHTML=(tot?'__RES__'.replace('{n}',tot):'__NONE__')+(ap?` · <a href="artist/${ap}.html">__ALL__ →</a>`:'')
++(AMZ&&qa?` · <a href="${e(AMZ.replace('__Q__',encodeURIComponent(qa)))}" target="_blank" rel="sponsored noopener">${tot?'__AMZ2__':'__AMZ1__'} →</a>`:'');
 g.innerHTML=r.map(d=>`<a class="tile" href="${e(d[1])}.html"><div class="img">${d[5]?`<img loading="lazy" src="${e(im(d[5]))}" alt="">`:''}</div><div class="body"><span class="brand">${e(d[2])}</span><span class="name">${e(d[0])}</span><span class="price"><strong>${money(d[3])}</strong></span><span class="foot"><span>${e(d[6])}</span><span class="stores-n">${d[4]}</span></span></div></a>`).join('');sec.hidden=false}
 let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>x.addEventListener('input',go));[ff,fs].forEach(x=>x.addEventListener('change',run));})();</script>
 """.replace("__CUR__", intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR").replace("__AP__", json.dumps({a: slug(a) for a in artists_pages}, ensure_ascii=False))
+                 .replace("__AMZ__", json.dumps(T["amazon"].replace("{ean}", "__Q__") if T.get("amazon") else ""))
+                 .replace("__AMZ1__", _e(T.get("amazon_none", T.get("amazon_btn", ""))))
+                 .replace("__AMZ2__", _e(T.get("amazon_more", T.get("amazon_btn", ""))))
                  .replace("__RES__", _e(T["search_res"])).replace("__NONE__", _e(T["search_none"])).replace("__ALL__", _e(T["artist_all"])))
     body = (f'  <p class="hub-intro" style="color:var(--text-secondary)">{_e(T["d_index"])}</p>\n' + search + f'  <div class="links">{"".join(links)}</div>\n'
             f'  <section class="hub-sec"><h2>{_e(T["tile"] if few else T["more"])}</h2><div class="grid">{best}</div></section>')

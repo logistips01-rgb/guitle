@@ -231,6 +231,10 @@ def _mat_vat(data, text):
     """MAT (PrestaShop) da el precio sin IVA a algunas visitas de fuera de la UE (el lector corre en EE. UU.): si el
     precio leído coincide con su "price_tax_exc", se le suma el IVA español (21 %)."""
     m = re.search(r"price_tax_exc&quot;:([0-9.]+)", text) or re.search(r'"price_tax_exc":([0-9.]+)', text)
+    # Partitura guarda el precio con IVA también en "price_tax_exc" (los dos iguales) y la ficha dice "Impuestos
+    # incluidos": sumarle el 21 % lo dejaba un 21 % más caro (8/11/2026). Solo se suma si la ficha no lo dice.
+    if re.search(r"(?i)impuestos incluidos|iva incluido", text):
+        return data
     if m and data.get("price") and abs(float(m.group(1)) - data["price"]) < 0.02:
         data["price"] = round(float(m.group(1)) * 1.21, 2)
     return data
@@ -1280,12 +1284,69 @@ _parse_pln = lambda soup, text: _parse_ld_loose(soup, text, cur="PLN")
 PL_SOURCES = _thomann_only("https://www.thomann.pl/", ("cat_allProducts_GF_gitary_elektryczne.html",
                                                        "cat_allProducts_GF_gitary_akustyczne.html",
                                                        "cat_allProducts_GF_gitary_klasyczne.html"), pl_kind)
+MUZYCZNY_ROOTS = ("118903g_Gitary-Gitary-elektryczne.html", "118905g_Gitary-Gitary-klasyczne.html",
+                  "118906g_Gitary-Gitary-akustyczne.html", "118907g_Gitary-Gitary-elektroakustyczne.html",
+                  "198142g_Gitary-Gitary-akustyczne-leworeczne.html", "198144g_Gitary-Gitary-elektroakustyczne-leworeczne.html",
+                  "198145g_Gitary-Gitary-elektryczne-leworeczne.html", "198146g_Gitary-Gitary-klasyczne-leworeczne.html")
+
+
+def _muzyczny_listing(fetcher, max_pages=600):
+    """{ficha: (precio, disponible)} de los listados de guitarras de Muzyczny.pl (100 por página). Las categorías
+    con subcategorías no traen productos: se baja a sus subcategorías (el nombre empieza por el de la madre) y en las
+    finales se siguen las páginas ("…_101-200.html?od=101…")."""
+    base, out, seen, queue, pages = "https://muzyczny.pl/", {}, set(), list(MUZYCZNY_ROOTS), 0
+    while queue and pages < max_pages:
+        name = queue.pop(0)
+        if name in seen:
+            continue
+        seen.add(name)
+        url = base + name
+        if not fetcher.allowed(url)[0]:
+            continue
+        resp = fetcher.get(url)
+        pages += 1
+        if resp.status_code != 200:
+            continue
+        text = resp.text
+        items = {}
+        for chunk in text.split("uk-card-muzyczny")[1:]:
+            h = re.search(r'href="(https://muzyczny\.pl/\d+_[^"]+\.html)"', chunk)
+            pr = re.search(r'uk-text-lead uk-text-left">\s*([\d\s\xa0.,]+?)\s*z', chunk)
+            if h and pr:
+                try:
+                    price = float(re.sub(r"[\s\xa0]", "", pr.group(1)).replace(",", "."))
+                except ValueError:
+                    continue
+                items.setdefault(h.group(1), (price, "Towar dost" in chunk or None))
+        out.update({u: v for u, v in items.items() if v[0] > 0})
+        stem = re.sub(r"_\d+-\d+$", "", name.split(".html")[0])  # 132430g_Gitary-…-44
+        key = re.sub(r"^\d+g_", "", stem)
+        for link in re.findall(r'https://muzyczny\.pl/(\d+g_[^"\'?\s]+\.html(?:\?od=[^"\'\s]*)?)', text):
+            link = html.unescape(link)
+            lstem = link.split(".html")[0]
+            if items and re.fullmatch(re.escape(stem) + r"_\d+-\d+", lstem) and lstem not in seen:
+                seen.add(lstem)  # la misma página sale con y sin "?od=…"
+                queue.append(link)  # página siguiente de esta categoría
+            elif not items and "?" not in link and re.sub(r"^\d+g_", "", lstem).startswith(key + "-"):
+                queue.append(link)  # subcategoría
+    return out
+
+
+def _muzyczny_fix(data, text):
+    """Producto retirado: la ficha avisa ("Wybrany przez Ciebie produkt…") y no enseña precio, aunque sus datos sí."""
+    if "Wybrany przez Ciebie produkt" in text:
+        data["price"] = None
+    return data
+
+
 PL_SOURCES["muzyczny"] = {"name": "Muzyczny.pl", "sitemap": "https://muzyczny.pl/sitemap.xml.gz",
-                          "sub": lambda l: "produkty" in l, "parse": _parse_pln, "kind_url": pl_kind,
+                          "sub": lambda l: "produkty" in l, "parse": _parse_pln, "kind_url": pl_kind, "fix": _muzyczny_fix,
+                          "listing": lambda f: _muzyczny_listing(f),
                           "pick": lambda u: bool(re.search(r"gitara-(?:elektryczna|akustyczna|elektroakustyczna|klasyczna)", u)),
                           "shop": {"base": "https://muzyczny.pl", "path": None, "lang": "pl+en"}}
 PL_SOURCES["kytary"] = {"name": "Kytary", "sitemap": "https://kytary.pl/sitemap.xml", "sub": lambda l: "pdp" in l,
                         "parse": _parse_pln, "kind_url": pl_kind,
+                        "listing": lambda f: _kytary_listing("https://kytary.pl", KYTARY_CATS["pl"])(f),
                         "pick": lambda u: bool(re.search(r"/HN\d+/?$", u))
                         and u.split("/")[-3].split("-")[0] in {b.split("-")[0] for b in _UK_BRANDS},
                         "shop": {"base": "https://kytary.pl", "path": r"/HN\d+/?$", "lang": "pl+en"}}
@@ -1353,9 +1414,40 @@ DK_SOURCES["akustikken"] = {"name": "Akustikken", "sitemap": "https://akustikken
 # --- Europa del este y el sur (solo guitarras de momento) ---------------------------------------------------------
 # Kytary (grupo checo, ya en Polonia): la misma web en cada país. Sound Creation (cadena rumana): una web por país con
 # su moneda e IVA; la categoría va en la URL con un número ("…-cid488/…") que es el mismo en todos los idiomas.
+# Listados de guitarras de Kytary en cada país (24 por página, con el precio en el JSON de analítica de cada producto).
+KYTARY_CATS = {"cz": ("/kytary/elektricke-kytary/", "/kytary/akusticke-kytary/", "/kytary/elektroakusticke-kytary/", "/kytary/klasicke-kytary/"),
+               "sk": ("/gitary/elektricke-gitary/", "/gitary/akusticke-gitary/", "/gitary/elektroakusticke-gitary/", "/gitary/klasicke-gitary/"),
+               "hu": ("/gitarok/elektromos-gitarok/", "/gitarok/akusztikus-gitarok/", "/gitarok/elektroakusztikus-gitarok/", "/gitarok/klasszikus-gitarok/"),
+               "pl": ("/gitary/gitary-elektryczne/", "/gitary/gitary-akustyczne/", "/gitary/gitary-elektroakustyczne/", "/gitary/gitary-klasyczne/")}
+LISTING_MAX_PAGES = 250  # por categoría: tope de seguridad
+
+
+def _kytary_listing(base, cats):
+    """{ficha: (precio, None)} de los listados de Kytary: el precio con IVA ("fullPrice", el mismo de la ficha)."""
+    def run(fetcher):
+        out = {}
+        for cat in cats:
+            for pg in range(1, LISTING_MAX_PAGES + 1):
+                url = f"{base}{cat}" + (f"?page={pg}" if pg > 1 else "")
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                if resp.status_code != 200:
+                    break
+                hrefs = {hn: base + h for h, hn in re.findall(r'href="(/[^"/]+/(HN\d+)/)"', resp.text)}
+                prices = {hn: float(p) for hn, p in re.findall(r"\{'id':'(HN\d+)'[^{}]*?'fullPrice':([\d.]+)", resp.text)}
+                found = {hrefs[hn]: (round(p, 2), None) for hn, p in prices.items() if hn in hrefs and p > 0}
+                if not set(found) - set(out):
+                    break
+                out.update(found)
+        return out
+    return run
+
+
 def _kytary(base, lang, cur):
     return {"name": "Kytary", "sitemap": f"{base}/sitemap.xml", "sub": lambda l: "pdp" in l, "parse": _ld(cur),
             "kind_url": _kind_for(lang), "pick": lambda u: bool(re.search(r"/HN\d+/?$", u)) and u.split("/")[-3].split("-")[0] in _GUITAR_BRAND_HEAD,
+            "listing": _kytary_listing(base, KYTARY_CATS[base.rsplit(".", 1)[-1]]),
             "shop": {"base": base, "path": r"/HN\d+/?$", "lang": lang}}
 
 
@@ -2374,9 +2466,18 @@ _es_store("neomusica", "Neomúsica", "https://www.neomusica.es/sitemap.xml", sub
           pick=lambda u: bool(re.search(r"/products/guitarra-(electro)?(ac[uú]stica|cl[aá]sica|flamenca|el[eé]ctrica)-", u))
           and _pick_es(u))
 # WooCommerce (Fusté, Zingla): solo los sitemaps de producto (fuera entradas del blog y categorías) y fichas /producto/.
+def _woo_ask_price(data, text):
+    """WooCommerce sin precio a la vista (Zingla: "Consultar" en vez del precio; el precio solo está en los datos de la
+    ficha): no se enseña, el cliente vería otra cosa en la tienda."""
+    i = text.find("summary entry-summary")
+    if i >= 0 and "price-empty" in text[i:i + 4000]:  # su tema pone "Consultar" en lugar del precio vacío
+        data["price"] = None
+    return data
+
+
 for _id, _name, _sm in [("fuste", "Musical Fusté", "https://www.musicalfuste.com/sitemap_index.xml"),
                         ("zingla", "Zingla Música", "https://www.zinglamusica.com/sitemap_index.xml")]:
-    _es_store(_id, _name, _sm, lambda u: "/producto/" in u and _pick_es(u), sub=_WOO_PRODUCTS)
+    _es_store(_id, _name, _sm, lambda u: "/producto/" in u and _pick_es(u), sub=_WOO_PRODUCTS, fix=_woo_ask_price)
 
 # PrestaShop con la categoría en la URL (/<categoría>/<id>-<nombre>): la categoría manda. Se corrige el precio sin IVA si
 # lo diera (como en MAT).
@@ -3287,6 +3388,32 @@ def _ror_fix(data, text):
     return data
 
 
+def _shopify_listing(base, max_pages=200):
+    """{ficha: (precio, disponible)} de todo el catálogo de una tienda Shopify (/products.json, 250 por página, en su
+    moneda). La ficha va como /products/<handle> y como /<handle>.html (Everest: su sitemap da las URL antiguas)."""
+    def run(fetcher):
+        out = {}
+        for pg in range(1, max_pages + 1):
+            url = f"{base}/products.json?limit=250&page={pg}"
+            if not fetcher.allowed(url)[0]:
+                break
+            resp = fetcher.get(url)
+            if resp.status_code != 200:
+                break
+            prods = resp.json().get("products") or []
+            if not prods:
+                break
+            for p in prods:
+                prices = [float(v["price"]) for v in p.get("variants", []) if v.get("price")]
+                if not prices or min(prices) <= 0:
+                    continue
+                val = (round(min(prices), 2), any(v.get("available") for v in p.get("variants", [])))
+                out[f"{base}/products/{p['handle']}"] = val
+                out[f"{base}/{p['handle']}.html"] = val
+        return out
+    return run
+
+
 def _en_store(name, sitemap, cur, shopify=False, path=None, sub=None, json_feed=True, **extra):
     src = {"name": name, "sitemap": sitemap, "kind_url": en_kind, "pick": _pick_en(shopify, path),
            # dónde están las fichas, para el equipo (equipo_sources)
@@ -3348,7 +3475,7 @@ for _id, _name, _sm, _kw in [
         ("someneck", "Some Neck Guitars", "https://www.someneckguitars.com/sitemap.xml", {"shopify": True}),
         ("promusica", "Pro Musica", "https://promusica.ie/sitemap_index.xml", {"path": r"/product/"}),
         ("soundshop", "Sound Shop", "https://www.soundshop.ie/sitemap_index.xml", {"path": r"/shop/"}),
-        ("everest", "Everest Music", "https://everestmusic.com/sitemap.xml", {}),
+        ("everest", "Everest Music", "https://everestmusic.com/sitemap.xml", {"listing": _shopify_listing("https://everestmusic.com")}),
         ("musicoutlet", "The Music Outlet", "https://themusicoutlet.ie/wp-sitemap.xml", {"path": r"/product/"}),
         ("ror", "ROR Music", "https://www.ror.ie/sitemap.xml", {"fix": _ror_fix}),
         ("itmusic", "IT Music", "https://itmusic.ie/sitemap.xml", {"shopify": True})]:
@@ -5094,6 +5221,11 @@ def read_page(fetcher, store_id, url, now):
         if data.get("price") is None:
             rec["status"] = "no_price"
             return rec
+        # Agotado y sin precio a la vista ("No disponible", "Call for price", producto retirado): la tienda no lo
+        # enseña y guitle tampoco (prueba de congruencia del 8/11/2026: 11 tiendas así). Solo con la ficha en HTML.
+        if data.get("in_stock") is False and page == url and not _price_visible(resp.text, data["price"]):
+            rec["status"] = "no_price"
+            return rec
         brand = canonical_brand(data["brand_raw"])
         rec.update(status="ok" if data["currency"] == CATALOG.get("cur", "EUR") else "wrong_currency",
                    ean=data["ean"].lstrip("0") if data.get("ean") else None, brand=brand,
@@ -5106,6 +5238,34 @@ def read_page(fetcher, store_id, url, now):
     except Exception as exc:  # noqa: BLE001 - una ficha rara no para el lote
         rec["note"] = f"{type(exc).__name__}: {exc}"[:200]
     return rec
+
+
+_NUM = re.compile(r"\d{1,3}(?:[ .,'\u00a0\u202f]\d{3})+(?:[.,]\d{1,2})?|\d+(?:[.,]\d{1,2})?")
+
+
+def _numbers(text):
+    """Números de un texto en cualquier formato (1.299,00 · 1,299.00 · 1 299 zł · 8 290 Kč)."""
+    out = set()
+    for m in _NUM.finditer(text):
+        s = re.sub(r"[ '\u00a0\u202f]", "", m.group(0))
+        dec = max(s.rfind("."), s.rfind(","))
+        if dec >= 0 and len(s) - dec - 1 <= 2:
+            s = s[:dec].replace(".", "").replace(",", "") + "." + s[dec + 1:]
+        else:
+            s = s.replace(".", "").replace(",", "")
+        try:
+            out.add(round(float(s), 2))
+        except ValueError:
+            pass
+    return out
+
+
+def _price_visible(page_html, price):
+    """¿Sale el precio a la vista en la página (sin scripts ni estilos)? También con los céntimos aparte (434⁴⁶ €)."""
+    text = re.sub(r"(?is)<(script|style|noscript)\b.*?</\1>", " ", page_html)
+    text = html.unescape(re.sub(r"<[^>]+>", " ", text))
+    nums = _numbers(text)
+    return round(price, 2) in nums or (price % 1 and round(price * 100) in nums)
 
 
 def due_urls(store_id, urls, offers, now):
@@ -5169,6 +5329,11 @@ def scan_store(store_id, offers, minutes, limit):
     except Exception as exc:  # noqa: BLE001 - sin sitemap se revisan las ya conocidas
         print(f"[{store_id}] sitemap con error ({type(exc).__name__}); se usan las conocidas", flush=True)
         picked = sorted(u for u, o in offers.items() if o["store"] == store_id)
+    if "listing" in src:  # precios de hoy desde los listados de la tienda (Kytary…), además de las fichas
+        try:
+            fetcher.listed.update(src["listing"](fetcher))
+        except Exception as exc:  # noqa: BLE001 - sin listados, las fichas como siempre
+            print(f"[{store_id}] listados con error ({type(exc).__name__})", flush=True)
     queue = due_urls(store_id, picked, offers, now)
     # Las guitarras ya conocidas que salen en los listados se renuevan con su precio de hoy sin leer la ficha (nombre,
     # foto y tipo, los de la última lectura; "page_checked" guarda cuándo se leyó la ficha, que sigue su turno).
@@ -5178,6 +5343,7 @@ def scan_store(store_id, offers, minutes, limit):
         if not prev or prev.get("status") != "ok" or url not in picked_set:
             continue
         changed += abs(prev["price"] - price) > 0.005
+        prev = {k: v for k, v in prev.items() if k not in ("last_error", "down_since")}
         out["records"].append({**prev, "price": price, "in_stock": avail if avail is not None else prev.get("in_stock"),
                                "checked": now, "page_checked": prev.get("page_checked", prev["checked"])})
     if fetcher.listed:
@@ -5215,6 +5381,19 @@ def merge(batches):
     offers = load(DIR / "offers.json", {})
     history = load(DIR / "history.json", {})
     for batch in batches:
+        # Tienda caída (Session, "Wir renovieren": 503 en toda la web): ninguna ficha buena y muchos errores. Sus precios
+        # dejan de salir en la web (build) hasta la primera vuelta en que responda, en vez de mandar a una página de obras.
+        n_ok = sum(r["status"] == "ok" for r in batch["records"])
+        n_err = sum(r["status"] in ("error", "blocked_403") for r in batch["records"])
+        if n_ok or n_err >= 20:
+            for o in offers.values():
+                if o.get("store") == batch["store"]:
+                    if n_ok:
+                        o.pop("down_since", None)
+                    else:
+                        o.setdefault("down_since", now_iso())
+            if not n_ok:
+                print(f"[{batch['store']}] tienda caída: {n_err} errores y ninguna ficha buena; sus precios no salen", flush=True)
         for rec in batch["records"]:
             prev = offers.get(rec["url"], {})
             if rec["status"] in ("error", "blocked_403") and prev.get("status") == "ok":
@@ -5447,7 +5626,7 @@ def build(offers=None, history=None):
     # Las que tienen EAN se quedan (traen la foto); la de seguimiento no se repite en la misma tienda.
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
-        mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind
+        mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind and not o.get("down_since")
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
                 and (kind in GUITAR_KINDS | PACK_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))

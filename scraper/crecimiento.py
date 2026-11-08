@@ -139,6 +139,33 @@ def backfill():
     return out
 
 
+def frescura():
+    """Tiendas con problemas, para los avisos de stats.html: {país: {tienda: [precios, con más de 2 días, caída]}}.
+    Solo las que importan: caídas (catalog.py marca "down_since" cuando no responde ninguna ficha) o con más de la
+    mitad de sus precios sin revisar en 2 días (Thomann en las rebajas de 2026: la mitad pasaba de 3 días)."""
+    limit = (datetime.now(timezone.utc) - timedelta(hours=48)).isoformat()
+    acc = {}
+    for p in CAT.rglob("offers.json"):
+        rel = str(p.relative_to(CAT))
+        es = "/" not in rel or rel.split("/")[0] in ("acusticas", "equipo", "mas")
+        g = ("es", "g") if es else group(rel.replace("offers.json", "x.json"))
+        if not g:
+            continue
+        try:
+            offers = json.loads(p.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        for o in offers.values():
+            if o.get("status") != "ok":
+                continue
+            a = acc.setdefault(g[0], {}).setdefault(o["store"], [0, 0, False])
+            a[0] += 1
+            a[1] += o.get("checked", "") < limit
+            a[2] = a[2] or bool(o.get("down_since"))
+    return {c: {s: a for s, a in st.items() if a[2] or (a[0] >= 20 and a[1] > a[0] / 2)}
+            for c, st in acc.items() if any(a[2] or (a[0] >= 20 and a[1] > a[0] / 2) for a in st.values())}
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--backfill", action="store_true")
@@ -150,7 +177,7 @@ def main():
         new = now()
         data = [r for r in data if r[0] != new[0][0]] + new if new else data
     OUT.write_text(json.dumps({"cols": ["momento", "pais", "guitarras", "equipo", "tiendas"], "rows": data,
-                               "actualizado": updated()},
+                               "actualizado": updated(), "frescura": frescura()},
                               ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"crecimiento: {len(data)} filas, {len({r[0] for r in data})} momentos", flush=True)
     resumen()

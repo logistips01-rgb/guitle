@@ -2955,6 +2955,7 @@ lag-bluewave-2-tbw2ace-auditorium-ctw-3700166373099
 lag-bluewave-2-tbw2dce-dreadnought-ctw-3700166373112
 lag-bluewave-2-tbw2te-de-viaje-3700166373136
 lag-bluewave-2-tlbw2dce-dreadnought-cutaway-zurda-3700166373150
+lag-cutaway-audiorium-zurdos-lag-tramontane-88-natural-8aecutaway
 lag-cutaway-auditorium-lag-tramontane-318-natural-iumcutaway
 lag-cutaway-auditorium-zurdos-lag-sauvage-3700166372986
 lag-cutaway-dreadnought-lag-blue-burst-edicion-limitada-3700166372627
@@ -3052,7 +3053,6 @@ lag-tramontane-170-t170ace-auditorium-3700166311893
 lag-tramontane-218-auditorium-electro-cutaway-3700166378223
 lag-tramontane-218-dreadnought-electro-cutaway-3700166378230
 lag-tramontane-70-travel-natural-satinado-3700166376953
-lag-tramontane-88-tl88ace-zurda-a16967html
 lag-tramontane-98-t98pe-3700166363397
 lag-tramontane-special-t-blue-ace-auditorium-3700166372603
 lag-tramontane-t118abce-blk-auditorium-bevel-3700166375772
@@ -4803,7 +4803,6 @@ sx-tg1-guitarra-traveller-natural-6971047519746
 sx-tg1-guitarra-traveller-natural-electrificada-6940651408883
 taburete-cf-martin-cromado-con-logo-729789677691
 taburete-cf-martin-negro-con-logo-729789677707
-takamine-auditorium-cutaway-electro-noire-gn30ceblk-0ceblkhtml
 takamine-auditorium-cutaway-electro-p3nc-lh-con-estuche-zurdos-190262010357
 takamine-auditorium-gn10ns-riumgn10ns
 takamine-auditorium-gn30-black-lackp34849
@@ -4811,18 +4810,22 @@ takamine-cp3nyk-190262010142
 takamine-cp5dco-ad-d82184html
 takamine-cp5dco-ad-dreadnought-readnought
 takamine-cutaway-auditorium-takamine-ef450-thermal-top-legacy-black-burst-190262011828
-takamine-cutaway-auditorium-takamine-ef508-natural-ayelectro5
+takamine-cutaway-auditorium-takamine-ef508-natural-190262011835
+takamine-cutaway-auditorium-takamine-gn30-negra-ectronoire
+takamine-cutaway-auditorium-takamine-gn51ce-brown-sunburst-190262041597
 takamine-cutaway-auditorium-takamine-p5-natural-190262012108
 takamine-cutaway-auditorium-zurdos-takamine-p3-natural-190262012023
 takamine-cutaway-dreadnought-takamine-ef381-negra-12-cuerdas-190262011781
+takamine-cutaway-dreadnought-takamine-gd20-natural-satin-tinnatural
 takamine-cutaway-dreadnought-takamine-gd30-negra-tawaynegra
 takamine-cutaway-dreadnought-takamine-gd38-negra-12-cuerdas-190262041252
 takamine-cutaway-dreadnought-takamine-gd51-natural-waynatural
 takamine-cutaway-dreadnought-takamine-gd71-brown-sunburst-wnsunburst
+takamine-cutaway-dreadnought-takamine-gd71-natural-waynatural
 takamine-cutaway-dreadnought-takamine-p7-natural-ayelectro6
 takamine-cutaway-dreadnought-takamine-thermal-top-ef400-natural-12-cuerdas-190262011804
 takamine-cutaway-dreadnought-zurdos-takamine-ef341sc-legacy-negra-190262011712
-takamine-cutaway-jumbo-zurdos-takamine-p1-natural-4582270030872
+takamine-cutaway-takamine-auditorium-gn75-transparent-black-190262043164
 takamine-cutaway-takamine-p7-auditorium-natural-waynatural
 takamine-cutaway-takamine-thinline-tsp178-fx-arched-faded-cherry-burst-herryburst
 takamine-de-12-cuerdas-takamine-dreadnought-ef400-e-a-thermal-top-cutway-natural-stuchehtml
@@ -4843,6 +4846,7 @@ takamine-dreadnought-electro-garth-brooks-gb7c-con-estuche-190262011859
 takamine-dreadnought-gd10ns-satin-natural-tinnatural
 takamine-dreadnought-takamine-cp5-ad-natural-readnought
 takamine-dreadnought-takamine-ef360-glenn-frey-natural-ysignature
+takamine-dreadnought-takamine-gd51-natural-190262041535
 takamine-dreadnought-takamine-p3-natural-12-cuerdas-190262011941
 takamine-dreadnought-zurdos-takamine-p3-natural-190262011965
 takamine-dsf48c-nex-santa-fe-cw-natural-gloss-190262012580
@@ -4873,7 +4877,6 @@ takamine-electro-acustica-takamine-gx11me-mini-auditorium-con-funda-1mensnuevo
 takamine-electro-acustica-takamine-gy11me-new-yorker-natural-satin-1mensnuevo
 takamine-electro-acustica-takamine-gy11me-new-yorker-natural-satin-1mensnuevo
 takamine-electro-acustica-takamine-gy51a-e-new-yorker-sunburst-1ebsbnuevo
-takamine-electroacustica-gn75-transparent-black-cutaway-gn75cetbk-190262043164
 takamine-electroacustica-takamine-gc6ce-natural-uralp37714
 takamine-en20-190262010487
 takamine-fn15ar-fn15arhtml
@@ -4896,7 +4899,6 @@ takamine-gd11mns-dreadnought-799493251364
 takamine-gd15ce-blk-799493251388
 takamine-gd15cenat-natural-717070413288
 takamine-gd20-ce-dreadnought-cut-natural-717070413295
-takamine-gd20-e-a-dreadnought-cutaway-satin-natural-gd20cens-20censhtml
 takamine-gd20-ns-20nsp17364
 takamine-gd20-ns-799493251418
 takamine-gd20ce-n-0cenp21338
@@ -4921,7 +4923,6 @@ takamine-gd34ce-black-190262041245
 takamine-gd37ce-pw-dreadnought-cw-blanco-perla-192026204347
 takamine-gd38ce-blk-black-usse373044
 takamine-gd51-e-a-dreadnought-cutway-zurdos-natural-gd51celh-nat-190262042211
-takamine-gd51-nat-190262041535
 takamine-gd51-nat-d51nathtml
 takamine-gd51-nat-dreadnought-4582270040017
 takamine-gd51-natural-lh-190262042228
@@ -4932,7 +4933,6 @@ takamine-gd51ce-nat-t41082html
 takamine-gd51cenat-190262041528
 takamine-gd51lh-nat-799493251616
 takamine-gd51nat-dreadnought-799493251623
-takamine-gd71-e-a-dreadnought-cutaway-natural-gd71cenat-1cenathtml
 takamine-gd71ce-bsb-190262040903
 takamine-gd71ce-nat-190262041542
 takamine-gd71ce-nat-4582270040130
@@ -4993,7 +4993,6 @@ takamine-gn37ce-blanco-perlado-190262044680
 takamine-gn51ce-bsb-nex-brown-sunburst-wnsunburst
 takamine-gn51ce-nat-799493251937
 takamine-gn51ce-natural-041603html
-takamine-gn51ce-sunburst-190262041597
 takamine-gn51cebsb-auditorium-799493251913
 takamine-gn51cenat-auditorium-190262041603
 takamine-gn71ce-brown-sunburst-urst162572
@@ -5051,7 +5050,7 @@ takamine-gy93nat-new-yorker-799493252064
 takamine-gy93nat-y93nathtml
 takamine-japan-e-p3ny-new-yorker-4582270030421
 takamine-japan-ec-p3fcn-fcx-cutaway-nylon-799493250725
-takamine-japan-ef508kc-190262011835
+takamine-japan-ef508kc-loss195401
 takamine-japan-lh-handed-ec-p3nc-nex-cutaway-inlh225735
 takamine-japan-lh-handed-ef341sc-lh-799493250404
 takamine-japan-natural-ctro304557
@@ -5074,6 +5073,7 @@ takamine-p10nc-natural-190262012801
 takamine-p1dc-dreadnought-1100000611929
 takamine-p1dc-dreadnought-5550132114007
 takamine-p1dc-lh-dreadnought-zurdos-1100000786719
+takamine-p1jc-lh-jumbo-zurdos-4582270030872
 takamine-p1nc-5550132115004
 takamine-p1nc-auditorium-799493250640
 takamine-p3d-inep3dhtml
