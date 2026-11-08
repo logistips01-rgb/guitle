@@ -1,0 +1,163 @@
+{
+ "fecha": "8 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "cort-g250-lh-bk-zurdos-8809292921084",
+    "name": "Cort G250 LH BK (zurdos)",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/1/0/100c4045_8935.jpg?store=nume_es&image-type=image",
+    "th": "417a9dde6ac6a0c3.webp",
+    "price": 221.0,
+    "store": "Thomann",
+    "stores": 8,
+    "median": 310.79,
+    "max": 351.0,
+    "next": 309.0,
+    "rows": [
+     [
+      "Thomann",
+      221.0
+     ],
+     [
+      "Auvisa",
+      309.0
+     ],
+     [
+      "Musicsales",
+      309.0
+     ],
+     [
+      "Nume Music",
+      310.79
+     ],
+     [
+      "Alfasoni",
+      310.79
+     ],
+     [
+      "Alteisa",
+      310.8
+     ],
+     [
+      "Microfusa",
+      311.0
+     ],
+     [
+      "Pronorte",
+      351.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 27 % por debajo de su media",
+    "pct": 27,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "yamaha-pacs-12-pacifica-standard-plus-black-4957812697682",
+    "name": "Yamaha PACS+12 Pacifica Standard Plus Black",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/708170_eb1c.jpg?store=nume_es&image-type=image",
+    "th": "2baa276461b1bb91.webp",
+    "price": 715.0,
+    "store": "Alteisa",
+    "stores": 3,
+    "median": 1043.555,
+    "max": 1079.0,
+    "next": 1008.11,
+    "rows": [
+     [
+      "Alteisa",
+      715.0
+     ],
+     [
+      "Nume Music",
+      1008.11
+     ],
+     [
+      "Woodbrass",
+      1079.0
+     ]
+    ],
+    "pvp": null,
+    "why": "293,11 € menos que en cualquier otra tienda",
+    "pct": 29,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "art-luthier-art-luthier-americana-natural-eq-623501050703",
+    "name": "Art Luthier ART & LUTHIER Americana Natural EQ",
+    "brand": "Art Luthier",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/1/0/1017890_1_a874.jpg?store=nume_es&image-type=image",
+    "th": "03b1ea28b6784e24.webp",
+    "price": 317.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 467.41499999999996,
+    "max": 481.58,
+    "next": 453.25,
+    "rows": [
+     [
+      "Woodbrass",
+      317.0
+     ],
+     [
+      "Nume Music",
+      453.25
+     ],
+     [
+      "Musical San Francisco",
+      481.58
+     ]
+    ],
+    "pvp": null,
+    "why": "136,25 € menos que en cualquier otra tienda",
+    "pct": 30,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "ortega-rce138-t4bk-840553080476",
+    "name": "Ortega RCE138-T4BK",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/4/046746_ddb3.jpg?store=nume_es&image-type=image",
+    "th": "dcfccfb640db62fb.webp",
+    "price": 449.0,
+    "store": "Alteisa",
+    "stores": 3,
+    "median": 548.9549999999999,
+    "max": 599.91,
+    "next": 498.0,
+    "rows": [
+     [
+      "Alteisa",
+      449.0
+     ],
+     [
+      "Woodbrass",
+      498.0
+     ],
+     [
+      "Nume Music",
+      599.91
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 9 % por debajo de su media",
+    "pct": 9,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

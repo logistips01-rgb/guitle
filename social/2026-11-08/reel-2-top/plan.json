@@ -1,0 +1,215 @@
+{
+ "fecha": "8 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "4 eléctricas de 500 € a 750 €",
+  "hook": "Top por precio",
+  "picks": [
+   {
+    "slug": "danelectro-59m-nos-deep-blue-metalflake-611820027285",
+    "name": "Danelectro 59M Nos+ Deep Blue Metalflake",
+    "brand": "Danelectro",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/3/638731_722f.jpg?store=nume_es&image-type=image",
+    "th": "c97e9a0c134e8d26.webp",
+    "price": 511.0,
+    "store": "Drunkat",
+    "stores": 8,
+    "median": 583.99,
+    "max": 611.0,
+    "next": 531.0,
+    "rows": [
+     [
+      "Drunkat",
+      511.0
+     ],
+     [
+      "MAT Guitars",
+      531.0
+     ],
+     [
+      "Alteisa",
+      531.6
+     ],
+     [
+      "Musicopolix",
+      569.0
+     ],
+     [
+      "Nume Music",
+      583.99
+     ],
+     [
+      "Alfasoni",
+      583.99
+     ],
+     [
+      "Pronorte",
+      611.0
+     ],
+     [
+      "Woodbrass",
+      611.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "sire-s7-hss-new-gen-blk-m-810187571367",
+    "name": "Sire S7 HSS New Gen BLK (M)",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/735283_d4da.jpg?store=nume_es&image-type=image",
+    "th": "6d0f3bf8fa369801.webp",
+    "price": 550.0,
+    "store": "Drunkat",
+    "stores": 10,
+    "median": 649.0,
+    "max": 794.62,
+    "next": 550.0,
+    "rows": [
+     [
+      "Drunkat",
+      550.0
+     ],
+     [
+      "Alteisa",
+      550.0
+     ],
+     [
+      "Musicopolix",
+      599.0
+     ],
+     [
+      "MAT Guitars",
+      599.0
+     ],
+     [
+      "Auvisa",
+      639.0
+     ],
+     [
+      "Nume Music",
+      649.0
+     ],
+     [
+      "Pronorte",
+      657.0
+     ],
+     [
+      "Musical San Francisco",
+      657.03
+     ],
+     [
+      "Woodbrass",
+      659.0
+     ],
+     [
+      "Partitura",
+      794.62
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "mooer-gtrs-w900-aurora-green-6971889221517",
+    "name": "Mooer Gtrs W900 Aurora Green",
+    "brand": "Mooer",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/737695_4433.jpg?store=nume_es&image-type=image",
+    "th": "bc14040b784d1eda.webp",
+    "price": 689.0,
+    "store": "Drunkat",
+    "stores": 8,
+    "median": 733.7,
+    "max": 900.0,
+    "next": 689.0,
+    "rows": [
+     [
+      "Drunkat",
+      689.0
+     ],
+     [
+      "Woodbrass",
+      689.0
+     ],
+     [
+      "Alteisa",
+      689.0
+     ],
+     [
+      "Musicopolix",
+      724.4
+     ],
+     [
+      "Musical San Francisco",
+      733.7
+     ],
+     [
+      "Partitura",
+      798.62
+     ],
+     [
+      "Nume Music",
+      900.0
+     ],
+     [
+      "Pronorte",
+      900.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "nick-johnston-traditional-hss-a-ink-guitarra-electrica-810051471410",
+    "name": "Nick JOHNSTON Traditional HSS A. INK Guitarra Electrica",
+    "brand": "Nick",
+    "kind": "electrica",
+    "img": "https://musicsales.es/2604982-home_default/nick-johnston-traditional-hss-a-ink-guitarra-electrica--23803.jpg",
+    "th": "b830990b60e5427f.webp",
+    "price": 749.0,
+    "store": "Musicsales",
+    "stores": 7,
+    "median": 792.48,
+    "max": 832.0,
+    "next": 754.35,
+    "rows": [
+     [
+      "Musicsales",
+      749.0
+     ],
+     [
+      "Musicopolix",
+      754.35
+     ],
+     [
+      "Pronorte",
+      785.0
+     ],
+     [
+      "Musical San Francisco",
+      785.06
+     ],
+     [
+      "Alteisa",
+      799.9
+     ],
+     [
+      "Auvisa",
+      819.0
+     ],
+     [
+      "Alfasoni",
+      832.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   }
+  ]
+ },
+ "stories": []
+}
