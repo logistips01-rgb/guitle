@@ -5243,7 +5243,7 @@ def read_page(fetcher, store_id, url, now):
 _NUM = re.compile(r"\d{1,3}(?:[ .,'\u00a0\u202f]\d{3})+(?:[.,]\d{1,2})?|\d+(?:[.,]\d{1,2})?")
 
 
-def _numbers(text):
+def _page_numbers(text):
     """Números de un texto en cualquier formato (1.299,00 · 1,299.00 · 1 299 zł · 8 290 Kč)."""
     out = set()
     for m in _NUM.finditer(text):
@@ -5264,7 +5264,7 @@ def _price_visible(page_html, price):
     """¿Sale el precio a la vista en la página (sin scripts ni estilos)? También con los céntimos aparte (434⁴⁶ €)."""
     text = re.sub(r"(?is)<(script|style|noscript)\b.*?</\1>", " ", page_html)
     text = html.unescape(re.sub(r"<[^>]+>", " ", text))
-    nums = _numbers(text)
+    nums = _page_numbers(text)
     return round(price, 2) in nums or (price % 1 and round(price * 100) in nums)
 
 
