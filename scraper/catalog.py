@@ -5178,6 +5178,7 @@ def scan_store(store_id, offers, minutes, limit):
         if not prev or prev.get("status") != "ok" or url not in picked_set:
             continue
         changed += abs(prev["price"] - price) > 0.005
+        prev = {k: v for k, v in prev.items() if k not in ("last_error", "down_since")}
         out["records"].append({**prev, "price": price, "in_stock": avail if avail is not None else prev.get("in_stock"),
                                "checked": now, "page_checked": prev.get("page_checked", prev["checked"])})
     if fetcher.listed:
@@ -5215,6 +5216,19 @@ def merge(batches):
     offers = load(DIR / "offers.json", {})
     history = load(DIR / "history.json", {})
     for batch in batches:
+        # Tienda caída (Session, "Wir renovieren": 503 en toda la web): ninguna ficha buena y muchos errores. Sus precios
+        # dejan de salir en la web (build) hasta la primera vuelta en que responda, en vez de mandar a una página de obras.
+        n_ok = sum(r["status"] == "ok" for r in batch["records"])
+        n_err = sum(r["status"] in ("error", "blocked_403") for r in batch["records"])
+        if n_ok or n_err >= 20:
+            for o in offers.values():
+                if o.get("store") == batch["store"]:
+                    if n_ok:
+                        o.pop("down_since", None)
+                    else:
+                        o.setdefault("down_since", now_iso())
+            if not n_ok:
+                print(f"[{batch['store']}] tienda caída: {n_err} errores y ninguna ficha buena; sus precios no salen", flush=True)
         for rec in batch["records"]:
             prev = offers.get(rec["url"], {})
             if rec["status"] in ("error", "blocked_403") and prev.get("status") == "ok":
@@ -5447,7 +5461,7 @@ def build(offers=None, history=None):
     # Las que tienen EAN se quedan (traen la foto); la de seguimiento no se repite en la misma tienda.
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
     for kind, fname in CATALOG["files"].items():
-        mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind
+        mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind and not o.get("down_since")
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
                 and (kind in GUITAR_KINDS | PACK_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))
