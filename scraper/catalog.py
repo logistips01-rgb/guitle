@@ -5221,6 +5221,11 @@ def read_page(fetcher, store_id, url, now):
         if data.get("price") is None:
             rec["status"] = "no_price"
             return rec
+        # Agotado y sin precio a la vista ("No disponible", "Call for price", producto retirado): la tienda no lo
+        # enseña y guitle tampoco (prueba de congruencia del 8/11/2026: 11 tiendas así). Solo con la ficha en HTML.
+        if data.get("in_stock") is False and page == url and not _price_visible(resp.text, data["price"]):
+            rec["status"] = "no_price"
+            return rec
         brand = canonical_brand(data["brand_raw"])
         rec.update(status="ok" if data["currency"] == CATALOG.get("cur", "EUR") else "wrong_currency",
                    ean=data["ean"].lstrip("0") if data.get("ean") else None, brand=brand,
@@ -5233,6 +5238,34 @@ def read_page(fetcher, store_id, url, now):
     except Exception as exc:  # noqa: BLE001 - una ficha rara no para el lote
         rec["note"] = f"{type(exc).__name__}: {exc}"[:200]
     return rec
+
+
+_NUM = re.compile(r"\d{1,3}(?:[ .,'\u00a0\u202f]\d{3})+(?:[.,]\d{1,2})?|\d+(?:[.,]\d{1,2})?")
+
+
+def _numbers(text):
+    """Números de un texto en cualquier formato (1.299,00 · 1,299.00 · 1 299 zł · 8 290 Kč)."""
+    out = set()
+    for m in _NUM.finditer(text):
+        s = re.sub(r"[ '\u00a0\u202f]", "", m.group(0))
+        dec = max(s.rfind("."), s.rfind(","))
+        if dec >= 0 and len(s) - dec - 1 <= 2:
+            s = s[:dec].replace(".", "").replace(",", "") + "." + s[dec + 1:]
+        else:
+            s = s.replace(".", "").replace(",", "")
+        try:
+            out.add(round(float(s), 2))
+        except ValueError:
+            pass
+    return out
+
+
+def _price_visible(page_html, price):
+    """¿Sale el precio a la vista en la página (sin scripts ni estilos)? También con los céntimos aparte (434⁴⁶ €)."""
+    text = re.sub(r"(?is)<(script|style|noscript)\b.*?</\1>", " ", page_html)
+    text = html.unescape(re.sub(r"<[^>]+>", " ", text))
+    nums = _numbers(text)
+    return round(price, 2) in nums or (price % 1 and round(price * 100) in nums)
 
 
 def due_urls(store_id, urls, offers, now):

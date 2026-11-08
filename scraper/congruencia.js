@@ -46,7 +46,12 @@ function numbers(text) {
           res.estado = 'sin_comprobar';  // la tienda no deja ver la página a GitHub (403, captcha…)
         } else {
           const nums = numbers(text);
-          res.estado = nums.some(v => Math.abs(v - r.precio) < 0.011) ? 'ok' : 'distinto';
+          // También con los céntimos aparte (434⁴⁶ € → 43446) y en cuotas de Brasil (10x de R$ 399,00 = 3.990)
+          const cents = r.precio % 1 ? Math.round(r.precio * 100) : null;
+          const cuotas = [...text.matchAll(/(\d{1,2})\s?x\s?(?:de\s)?R\$\s?([\d.]+,\d{2})/g)]
+            .map(m => +m[1] * parseFloat(m[2].replace(/\./g, '').replace(',', '.')));
+          res.estado = nums.some(v => Math.abs(v - r.precio) < 0.011 || (cents && v === cents))
+            || cuotas.some(v => Math.abs(v - r.precio) < 0.11) ? 'ok' : 'distinto';
           if (res.estado === 'distinto') {
             const t = text.replace(/\s+/g, ' ');
             res.visibles = [...t.matchAll(/(?:€|£|\$|zł|Kč|kr|Ft|lei|лв|CHF|R\$)\s?[\d.,  ]{2,12}|[\d.,  ]{2,12}\s?(?:€|£|zł|Kč|kr|Ft|lei|лв|CHF)/g)]
