@@ -1,0 +1,83 @@
+{
+ "fecha": "8 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "guitle",
+  "topic": "misma",
+  "slides": [
+   {
+    "hook": "Você sabia?",
+    "title": "A mesma guitarra pode custar bem mais dependendo da loja"
+   },
+   {
+    "title": "Tagima Olive Grace Signature Cacau Santos C/ Case NTOP Eletroacustico Aço",
+    "size": 76,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Loja A",
+       2961.0
+      ],
+      [
+       "Loja B",
+       3393.88
+      ],
+      [
+       "Loja C",
+       3569.99
+      ],
+      [
+       "Loja D",
+       3999.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "R$ 1.038 de diferença",
+    "sub": "Compare antes de comprar",
+    "size": 130
+   }
+  ]
+ }
+}
