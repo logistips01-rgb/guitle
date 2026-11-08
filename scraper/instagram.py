@@ -164,7 +164,8 @@ def rank_deals(prods, recent, menos=None):
 def top_of(prods, kind, lo, hi, recent, n=15):
     """Guitarras populares (más tiendas) del rango, como mucho una por marca, de más a menos popular. Se piden de
     sobra porque algunas fotos no se pueden descargar; el post se queda con las 5 primeras que tienen foto."""
-    pool = sorted((p for p in prods if p["kind"] == kind and lo <= p["price"] < hi),
+    # Solo las de foto revisada (las demás se descartan luego en with_photos y harían perder su marca entera)
+    pool = sorted((p for p in prods if p["kind"] == kind and lo <= p["price"] < hi and foto_revisada(p)),
                   key=lambda p: (p["name"] in recent, -p["stores"], p["price"]))
     out, brands = [], set()
     for p in pool:

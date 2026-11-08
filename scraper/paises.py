@@ -746,10 +746,20 @@ def reels_tarde(cc, day, recent):
         else:
             sub.mkdir(parents=True, exist_ok=True)
             j = (day.toordinal() + 4) % len(cfg["tops"])  # cada día otro, y nunca el del post
-            if j == (day.toordinal() // 2) % len(cfg["tops"]):
-                j = (j + 1) % len(cfg["tops"])
-            kind, tlo, thi = cfg["tops"][j]
-            picks = sorted(ig.with_photos(ig.top_of(fiables, kind, tlo, thi, recent), 5, fetcher, sub, "g"), key=lambda p: p["price"])
+            del_post = (day.toordinal() // 2) % len(cfg["tops"])
+            picks = []
+            # Si el rango del día no tiene 3 guitarras con foto revisada, se prueban los siguientes
+            for k in range(len(cfg["tops"])):
+                jj = (j + k) % len(cfg["tops"])
+                if jj == del_post:
+                    continue
+                for f in sub.glob("g*.webp"):
+                    f.unlink()
+                kind, tlo, thi = cfg["tops"][jj]
+                picks = sorted(ig.with_photos(ig.top_of(fiables, kind, tlo, thi, recent), 5, fetcher, sub, "g"),
+                               key=lambda p: p["price"])
+                if len(picks) >= 3:
+                    break
             if len(picks) >= 3:
                 rango = (cfg["rango_txt"][0] if tlo <= lo else cfg["rango_txt"][1]).format(lo=money(tlo), hi=money(thi))
                 title = f"{len(picks)} {cfg['plural'][kind]} {rango}"
