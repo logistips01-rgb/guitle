@@ -953,6 +953,7 @@ TXT["es"] = {
     "in_stock": "Disponible", "out": "Agotado", "shops": "tiendas", "buy": "Ver en la tienda", "cheapest": "El más barato hoy",
     "more": "Los más comparados", "note": "Precios con IVA; los gastos de envío dependen de cada tienda.",
     "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Buscar este disco en Amazon",
+    "amazon_none": "¿No lo tenemos? Búscalo en Amazon", "amazon_more": "¿No es ninguno? Búscalo en Amazon",
     "amazon_txt": "¿Prefieres comprarlo en Amazon?",
     "search_ph": "Busca un disco: artista o álbum…", "search_res": "{n} discos encontrados", "search_none": "No hay discos con esa búsqueda",
     "f_artist": "Artista o grupo", "f_format": "Formato", "f_all": "Todos los formatos", "f_sort": "Ordenar",
@@ -1000,6 +1001,7 @@ TXT["pt"] = {
     "in_stock": "Disponível", "out": "Esgotado", "shops": "lojas", "buy": "Ver na loja", "cheapest": "O mais barato hoje",
     "more": "Os mais comparados", "note": "Preços com IVA; os portes dependem de cada loja (as lojas espanholas enviam para Portugal).",
     "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Procurar este disco na Amazon",
+    "amazon_none": "Não o temos? Procure na Amazon", "amazon_more": "Nenhum destes? Procure na Amazon",
     "amazon_txt": "Prefere comprar na Amazon?",
     "search_ph": "Procure um disco: artista ou álbum…", "search_res": "{n} discos encontrados", "search_none": "Nenhum disco encontrado",
     "f_artist": "Artista ou banda", "f_format": "Formato", "f_all": "Todos os formatos", "f_sort": "Ordenar",
@@ -1175,15 +1177,20 @@ def write_pages(pais, discs=None):
               + r"""  <script>(()=>{let idx=null;const $=i=>document.getElementById(i),q=$('q'),fa=$('fa'),ff=$('ff'),fs=$('fs'),sec=$('results'),g=$('rg'),h=$('rh');
 const n=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();const e=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const money=v=>new Intl.NumberFormat(document.documentElement.lang,{style:'currency',currency:'__CUR__',minimumFractionDigits:v%1?2:0}).format(v);
-const im=u=>/cdn\.shopify\.com|\/cdn\/shop\//.test(u)?u+(u.includes('?')?'&':'?')+'width=300':u;const AP=__AP__;
+const im=u=>/cdn\.shopify\.com|\/cdn\/shop\//.test(u)?u+(u.includes('?')?'&':'?')+'width=300':u;const AP=__AP__;const AMZ=__AMZ__;
 async function run(){const t=n(q.value.trim()),a=n(fa.value.trim()),f=ff.value;if(t.length<2&&!a&&!f){sec.hidden=true;return}
-if(!idx)idx=await (await fetch('search.json')).json();const w=t.length>=2?t.split(/\s+/):[];
+if(!idx)idx=await (await fetch('search.json')).json();const w=t.length>=2?t.replace(/[^a-z0-9]+/g,' ').trim().split(' ').filter(Boolean):[];
 let r=idx.filter(d=>{const x=' '+n(d[0]).replace(/[^a-z0-9]+/g,' ');return w.every(k=>x.includes(' '+k))&&(!a||(' '+n(d[6]).replace(/[^a-z0-9]+/g,' ')).includes(' '+a.replace(/[^a-z0-9]+/g,' ').trim()))&&(!f||d[2]===f)});
 const s=fs.value;r.sort((x,y)=>s==='n'?y[4]-x[4]||x[3]-y[3]:s==='a'?x[0].localeCompare(y[0]):x[3]-y[3]);const tot=r.length;r=r.slice(0,120);
-const ap=fa.value.trim()&&AP[fa.value.trim()];h.innerHTML=(tot?'__RES__'.replace('{n}',tot):'__NONE__')+(ap?` · <a href="artist/${ap}.html">__ALL__ →</a>`:'');
+const ap=fa.value.trim()&&AP[fa.value.trim()];const qa=[q.value.trim(),fa.value.trim()].filter(Boolean).join(' ');
+h.innerHTML=(tot?'__RES__'.replace('{n}',tot):'__NONE__')+(ap?` · <a href="artist/${ap}.html">__ALL__ →</a>`:'')
++(AMZ&&qa?` · <a href="${e(AMZ.replace('__Q__',encodeURIComponent(qa)))}" target="_blank" rel="sponsored noopener">${tot?'__AMZ2__':'__AMZ1__'} →</a>`:'');
 g.innerHTML=r.map(d=>`<a class="tile" href="${e(d[1])}.html"><div class="img">${d[5]?`<img loading="lazy" src="${e(im(d[5]))}" alt="">`:''}</div><div class="body"><span class="brand">${e(d[2])}</span><span class="name">${e(d[0])}</span><span class="price"><strong>${money(d[3])}</strong></span><span class="foot"><span>${e(d[6])}</span><span class="stores-n">${d[4]}</span></span></div></a>`).join('');sec.hidden=false}
 let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>x.addEventListener('input',go));[ff,fs].forEach(x=>x.addEventListener('change',run));})();</script>
 """.replace("__CUR__", intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR").replace("__AP__", json.dumps({a: slug(a) for a in artists_pages}, ensure_ascii=False))
+                 .replace("__AMZ__", json.dumps(T["amazon"].replace("{ean}", "__Q__") if T.get("amazon") else ""))
+                 .replace("__AMZ1__", _e(T.get("amazon_none", T.get("amazon_btn", ""))))
+                 .replace("__AMZ2__", _e(T.get("amazon_more", T.get("amazon_btn", ""))))
                  .replace("__RES__", _e(T["search_res"])).replace("__NONE__", _e(T["search_none"])).replace("__ALL__", _e(T["artist_all"])))
     body = (f'  <p class="hub-intro" style="color:var(--text-secondary)">{_e(T["d_index"])}</p>\n' + search + f'  <div class="links">{"".join(links)}</div>\n'
             f'  <section class="hub-sec"><h2>{_e(T["tile"] if few else T["more"])}</h2><div class="grid">{best}</div></section>')
