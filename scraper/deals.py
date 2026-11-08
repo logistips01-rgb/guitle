@@ -69,6 +69,10 @@ def build(kind, products, history, curated_records=(), names=None, today=None):
                 series.setdefault(store, pts)
         stores = {i["s"] for i in p["items"]}
         best = p["items"][0]
+        # Un chollo tiene que poder comprarse hoy: la tienda más barata, con stock y leída en los últimos 2 días
+        # (Pacifica PACS+12 de Alteisa, 8/11/2026: salió como chollo con un stock de la víspera y ya estaba agotada).
+        if best.get("st") is False or (best.get("d") and best["d"] < (date.fromisoformat(today) - timedelta(days=2)).isoformat()):
+            continue
         # Solo tiendas con histórico propio: una tienda que entra hoy más barata no es una "bajada".
         cutoff = (date.fromisoformat(today) - timedelta(days=MIN_DAYS)).isoformat()
         known = {s for s in stores if series.get(s) and series[s][0][0] <= cutoff}
