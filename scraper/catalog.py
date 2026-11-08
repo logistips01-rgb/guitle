@@ -1286,6 +1286,7 @@ PL_SOURCES["muzyczny"] = {"name": "Muzyczny.pl", "sitemap": "https://muzyczny.pl
                           "shop": {"base": "https://muzyczny.pl", "path": None, "lang": "pl+en"}}
 PL_SOURCES["kytary"] = {"name": "Kytary", "sitemap": "https://kytary.pl/sitemap.xml", "sub": lambda l: "pdp" in l,
                         "parse": _parse_pln, "kind_url": pl_kind,
+                        "listing": lambda f: _kytary_listing("https://kytary.pl", KYTARY_CATS["pl"])(f),
                         "pick": lambda u: bool(re.search(r"/HN\d+/?$", u))
                         and u.split("/")[-3].split("-")[0] in {b.split("-")[0] for b in _UK_BRANDS},
                         "shop": {"base": "https://kytary.pl", "path": r"/HN\d+/?$", "lang": "pl+en"}}
@@ -1353,9 +1354,40 @@ DK_SOURCES["akustikken"] = {"name": "Akustikken", "sitemap": "https://akustikken
 # --- Europa del este y el sur (solo guitarras de momento) ---------------------------------------------------------
 # Kytary (grupo checo, ya en Polonia): la misma web en cada país. Sound Creation (cadena rumana): una web por país con
 # su moneda e IVA; la categoría va en la URL con un número ("…-cid488/…") que es el mismo en todos los idiomas.
+# Listados de guitarras de Kytary en cada país (24 por página, con el precio en el JSON de analítica de cada producto).
+KYTARY_CATS = {"cz": ("/kytary/elektricke-kytary/", "/kytary/akusticke-kytary/", "/kytary/elektroakusticke-kytary/", "/kytary/klasicke-kytary/"),
+               "sk": ("/gitary/elektricke-gitary/", "/gitary/akusticke-gitary/", "/gitary/elektroakusticke-gitary/", "/gitary/klasicke-gitary/"),
+               "hu": ("/gitarok/elektromos-gitarok/", "/gitarok/akusztikus-gitarok/", "/gitarok/elektroakusztikus-gitarok/", "/gitarok/klasszikus-gitarok/"),
+               "pl": ("/gitary/gitary-elektryczne/", "/gitary/gitary-akustyczne/", "/gitary/gitary-elektroakustyczne/", "/gitary/gitary-klasyczne/")}
+LISTING_MAX_PAGES = 250  # por categoría: tope de seguridad
+
+
+def _kytary_listing(base, cats):
+    """{ficha: (precio, None)} de los listados de Kytary: el precio con IVA ("fullPrice", el mismo de la ficha)."""
+    def run(fetcher):
+        out = {}
+        for cat in cats:
+            for pg in range(1, LISTING_MAX_PAGES + 1):
+                url = f"{base}{cat}" + (f"?page={pg}" if pg > 1 else "")
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                if resp.status_code != 200:
+                    break
+                hrefs = {hn: base + h for h, hn in re.findall(r'href="(/[^"/]+/(HN\d+)/)"', resp.text)}
+                prices = {hn: float(p) for hn, p in re.findall(r"\{'id':'(HN\d+)'[^{}]*?'fullPrice':([\d.]+)", resp.text)}
+                found = {hrefs[hn]: (round(p, 2), None) for hn, p in prices.items() if hn in hrefs and p > 0}
+                if not set(found) - set(out):
+                    break
+                out.update(found)
+        return out
+    return run
+
+
 def _kytary(base, lang, cur):
     return {"name": "Kytary", "sitemap": f"{base}/sitemap.xml", "sub": lambda l: "pdp" in l, "parse": _ld(cur),
             "kind_url": _kind_for(lang), "pick": lambda u: bool(re.search(r"/HN\d+/?$", u)) and u.split("/")[-3].split("-")[0] in _GUITAR_BRAND_HEAD,
+            "listing": _kytary_listing(base, KYTARY_CATS[base.rsplit(".", 1)[-1]]),
             "shop": {"base": base, "path": r"/HN\d+/?$", "lang": lang}}
 
 
@@ -5169,6 +5201,11 @@ def scan_store(store_id, offers, minutes, limit):
     except Exception as exc:  # noqa: BLE001 - sin sitemap se revisan las ya conocidas
         print(f"[{store_id}] sitemap con error ({type(exc).__name__}); se usan las conocidas", flush=True)
         picked = sorted(u for u, o in offers.items() if o["store"] == store_id)
+    if "listing" in src:  # precios de hoy desde los listados de la tienda (Kytary…), además de las fichas
+        try:
+            fetcher.listed.update(src["listing"](fetcher))
+        except Exception as exc:  # noqa: BLE001 - sin listados, las fichas como siempre
+            print(f"[{store_id}] listados con error ({type(exc).__name__})", flush=True)
     queue = due_urls(store_id, picked, offers, now)
     # Las guitarras ya conocidas que salen en los listados se renuevan con su precio de hoy sin leer la ficha (nombre,
     # foto y tipo, los de la última lectura; "page_checked" guarda cuándo se leyó la ficha, que sigue su turno).
