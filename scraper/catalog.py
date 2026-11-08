@@ -1332,8 +1332,15 @@ def _muzyczny_listing(fetcher, max_pages=600):
     return out
 
 
+def _muzyczny_fix(data, text):
+    """Producto retirado: la ficha avisa ("Wybrany przez Ciebie produkt…") y no enseña precio, aunque sus datos sí."""
+    if "Wybrany przez Ciebie produkt" in text:
+        data["price"] = None
+    return data
+
+
 PL_SOURCES["muzyczny"] = {"name": "Muzyczny.pl", "sitemap": "https://muzyczny.pl/sitemap.xml.gz",
-                          "sub": lambda l: "produkty" in l, "parse": _parse_pln, "kind_url": pl_kind,
+                          "sub": lambda l: "produkty" in l, "parse": _parse_pln, "kind_url": pl_kind, "fix": _muzyczny_fix,
                           "listing": lambda f: _muzyczny_listing(f),
                           "pick": lambda u: bool(re.search(r"gitara-(?:elektryczna|akustyczna|elektroakustyczna|klasyczna)", u)),
                           "shop": {"base": "https://muzyczny.pl", "path": None, "lang": "pl+en"}}
