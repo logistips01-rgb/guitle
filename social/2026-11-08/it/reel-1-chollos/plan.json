@@ -1,0 +1,136 @@
+{
+ "fecha": "8 novembre",
+ "post": {
+  "type": "top",
+  "title": "offerte di oggi",
+  "hook": "Offerte di oggi",
+  "picks": [
+   {
+    "slug": "ibanez-grx40-mlb-rx40mlbhtm",
+    "name": "Ibanez GRX40-MLB",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/484465.jpg",
+    "th": "894a313d2c9eb608.webp",
+    "price": 187.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 193.0,
+    "max": 195.0,
+    "next": 191.0,
+    "rows": [
+     [
+      "Thomann",
+      187.0
+     ],
+     [
+      "Woodbrass",
+      191.0
+     ],
+     [
+      "Di Santo Musica",
+      195.0
+     ]
+    ],
+    "pvp": null,
+    "why": "4 € in meno che negli altri negozi",
+    "photo": "g0-1.webp",
+    "label": "Elettrica"
+   },
+   {
+    "slug": "fender-squier-sonic-telecaster-butterscotch-blonde-chitarra-elettrica-21-tasti-717669815936",
+    "name": "Fender Squier Sonic Telecaster Butterscotch Blonde Chitarra Elettrica 21 Tasti",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.globalnetshop.it/cdn/shop/files/01-0373453550_1024x.jpg?v=1748447911",
+    "th": "14658d0d8236ed44.webp",
+    "price": 169.0,
+    "store": "Global Net Shop",
+    "stores": 3,
+    "median": 175.5,
+    "max": 179.0,
+    "next": 172.0,
+    "rows": [
+     [
+      "Global Net Shop",
+      169.0
+     ],
+     [
+      "Woodbrass",
+      172.0
+     ],
+     [
+      "Di Santo Musica",
+      179.0
+     ]
+    ],
+    "pvp": null,
+    "why": "3 € in meno che negli altri negozi",
+    "photo": "g2-1.webp",
+    "label": "Elettrica"
+   },
+   {
+    "slug": "yamaha-apxt2-naturale-4957812520140",
+    "name": "Yamaha Apxt2 Naturale",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://woodbrass.it/cdn/shop/files/59a296f25b7a698c909bfd2365ef3b90b7f2fc9b_GAPXT2NT.jpg?height=1200&pad_color=ffffff&v=1792639339&width=1200",
+    "th": "64ec93202a288b79.webp",
+    "price": 242.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 248.5,
+    "max": 254.0,
+    "next": 243.0,
+    "rows": [
+     [
+      "Woodbrass",
+      242.0
+     ],
+     [
+      "Di Santo Musica",
+      243.0
+     ],
+     [
+      "Global Net Shop",
+      254.0
+     ]
+    ],
+    "pvp": null,
+    "why": "1 € in meno che negli altri negozi",
+    "photo": "g1-1.webp",
+    "label": "Acustica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}
