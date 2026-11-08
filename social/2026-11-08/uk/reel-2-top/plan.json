@@ -1,0 +1,222 @@
+{
+ "fecha": "8 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "top",
+  "title": "4 electric guitars from £450 to £650",
+  "hook": "Today’s top",
+  "picks": [
+   {
+    "slug": "fender-standard-tele-lrl-wpg-owt-lwpgowthtm",
+    "name": "Fender Standard Tele Lrl Wpg Owt",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/608519.jpg",
+    "th": "1bec8d81056913a0.webp",
+    "price": 469.0,
+    "store": "Fair Deal Music",
+    "stores": 9,
+    "median": 499.0,
+    "max": 539.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      469.0
+     ],
+     [
+      "Project Music",
+      499.0
+     ],
+     [
+      "Reidys",
+      499.0
+     ],
+     [
+      "A Strings",
+      499.0
+     ],
+     [
+      "Dawsons",
+      499.0
+     ],
+     [
+      "guitarguitar",
+      499.0
+     ],
+     [
+      "Matchetts Music",
+      499.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      499.0
+     ],
+     [
+      "Guitarbitz",
+      539.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "charvel-standard-series-san-dimas-style-2-sd2-hh-ht-satin-gray-tsatingray",
+    "name": "Charvel Standard Series San Dimas Style 2 SD2 HH HT Satin Gray",
+    "brand": "Charvel",
+    "kind": "electrica",
+    "img": "https://images.guitarguitar.co.uk/cdn/large/170/260109452439008f.jpg",
+    "th": "170f6bea21e91773.webp",
+    "price": 499.0,
+    "store": "Andertons",
+    "stores": 3,
+    "median": 504.0,
+    "max": 509.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "Andertons",
+      499.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      499.0
+     ],
+     [
+      "A Strings",
+      509.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "schecter-omen-extreme-6-electric-guitar-see-thru-black-839212001419",
+    "name": "Schecter Omen Extreme-6 Electric Guitar, See-Thru Black",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/45755-tmpB272__19301.jpg?v=1763984945",
+    "th": "d7b52c3d8c039257.webp",
+    "price": 512.0,
+    "store": "Fair Deal Music",
+    "stores": 5,
+    "median": 565.5,
+    "max": 569.0,
+    "next": 555.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      512.0
+     ],
+     [
+      "Richtone Music",
+      555.0
+     ],
+     [
+      "Peach Guitars",
+      562.0
+     ],
+     [
+      "Andertons",
+      569.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      569.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "gretsch-limited-edition-electromatic-black-limba-jettm-ebony-fingerboard-sunburs-197955147888",
+    "name": "Gretsch Limited Edition Electromatic® Black Limba Jet™, Ebony Fingerboard, Sunburst",
+    "brand": "Gretsch",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/2514103559_gre_ins_frt_1_rr.png?v=1786888217",
+    "th": "538c5a6bb99f1543.webp",
+    "price": 549.0,
+    "store": "Fair Deal Music",
+    "stores": 8,
+    "median": 629.0,
+    "max": 629.0,
+    "next": 602.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      549.0
+     ],
+     [
+      "Peach Guitars",
+      602.0
+     ],
+     [
+      "Richtone Music",
+      629.0
+     ],
+     [
+      "A Strings",
+      629.0
+     ],
+     [
+      "Andertons",
+      629.0
+     ],
+     [
+      "guitarguitar",
+      629.0
+     ],
+     [
+      "Gig Gear",
+      629.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      629.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}
