@@ -1,0 +1,216 @@
+{
+ "fecha": "8 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "5 guitares électriques de 500 € à 750 €",
+  "hook": "Top du jour",
+  "picks": [
+   {
+    "slug": "sire-s7-3ts-dc-mn-855159008847",
+    "name": "Sire S7 3TS DC MN",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/d3a40e05a4ae53cc21321dd388de2af6e2afa61b_GSIR_S7_3TS_1.jpg?height=1200&pad_color=ffffff&v=1793735995&width=1200",
+    "th": "b61a706f90cc7339.webp",
+    "price": 531.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 580.0,
+    "max": 629.0,
+    "next": 531.0,
+    "rows": [
+     [
+      "Woodbrass",
+      531.0
+     ],
+     [
+      "Stars Music",
+      531.0
+     ],
+     [
+      "Music 3000",
+      629.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "larry-carlton-h7v-bk-touche-ebene-black-810046134764",
+    "name": "Larry carlton H7V BK touche ebene Black",
+    "brand": "Larry carlton",
+    "kind": "electrica",
+    "img": "https://www.music3000.fr/55642-home_default/larry-carlton-h7v-bk-touche-ebene-black.jpg",
+    "th": "3e504f56fb4a7fd2.webp",
+    "price": 636.0,
+    "store": "Music 3000",
+    "stores": 3,
+    "median": 698.0,
+    "max": 698.0,
+    "next": 698.0,
+    "rows": [
+     [
+      "Music 3000",
+      636.0
+     ],
+     [
+      "Woodbrass",
+      698.0
+     ],
+     [
+      "Stars Music",
+      698.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "prs-ce24-se-black-cherry-825362243915",
+    "name": "PRS CE24 SE Black Cherry",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/ac7abd20fe9dddb0e856286e4cdfa53f321cba5e_ADAGIO_1006624.jpg?height=1200&pad_color=ffffff&v=1793727262&width=1200",
+    "th": "960b85c30fb3955e.webp",
+    "price": 679.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 815.0,
+    "max": 949.0,
+    "next": 684.0,
+    "rows": [
+     [
+      "Woodbrass",
+      679.0
+     ],
+     [
+      "Stars Music",
+      684.0
+     ],
+     [
+      "Hurricane Music",
+      815.0
+     ],
+     [
+      "Paul Beuscher",
+      949.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "gretsch-electromatic-premier-jet-ebo-robusto-burst-885978998012",
+    "name": "Gretsch Electromatic Premier Jet EBO Robusto Burst",
+    "brand": "Gretsch",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/307534da3807a5165cfa59091207b7c3d006d152_FMIC_2515103552.jpg?height=1200&pad_color=ffffff&v=1792556830&width=1200",
+    "th": "391323b157527b50.webp",
+    "price": 698.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 698.0,
+    "max": 698.0,
+    "next": 698.0,
+    "rows": [
+     [
+      "Woodbrass",
+      698.0
+     ],
+     [
+      "Stars Music",
+      698.0
+     ],
+     [
+      "Guitar Legend",
+      698.0
+     ],
+     [
+      "Michenaud",
+      698.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "yamaha-revstar-standard-rss20-flash-green-4957812675086",
+    "name": "Yamaha Revstar Standard Rss20 Flash Green",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/5ee35db806b122dffcacdd7e90dca10cd5bb57aa_YAMAHA_GRSS20FLG.jpg?height=1200&pad_color=ffffff&v=1793727326&width=1200",
+    "th": "d95418511cc75644.webp",
+    "price": 712.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 730.5,
+    "max": 769.0,
+    "next": 712.0,
+    "rows": [
+     [
+      "Woodbrass",
+      712.0
+     ],
+     [
+      "Stars Music",
+      712.0
+     ],
+     [
+      "Thomann",
+      712.0
+     ],
+     [
+      "Scotto Musique",
+      749.0
+     ],
+     [
+      "Azema Musique",
+      769.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   }
+  ]
+ }
+}
