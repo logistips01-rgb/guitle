@@ -43,3 +43,6 @@ brand/__pycache__/
 
 # Música libre de derechos de los Reels (scraper/musica_libre.py, rama de redes): se descarga, no va a git
 social/musica/
+
+# Llave privada del servidor: va a los secretos de GitHub (SERVIDOR_SSH_KEY), nunca a git
+_interno/llave/

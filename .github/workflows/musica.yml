@@ -4,7 +4,11 @@ name: musica
 # nuevos y páginas de cada disco. Una vez al día, fuera de las horas de la lectura de guitarras.
 on:
   schedule:
+    # GitHub retrasa a veces los cron horas (8/11/2026: la de las 15:41 no había salido a las 19:00). Las de después
+    # son de respaldo: el paso "¿Toca?" las salta si ese país ya se leyó hoy.
     - cron: "41 15 * * *"
+    - cron: "41 17 * * *"
+    - cron: "41 19 * * *"
   push:  # tocar .github/musica.txt la lanza a mano
     branches: [claude/friendly-fermat-yycain]
     paths: [".github/musica.txt"]
@@ -46,14 +50,28 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: claude/friendly-fermat-yycain
+          fetch-depth: 50
+      - name: ¿Toca?
+        id: gate
+        run: |
+          today=$(TZ=Europe/Madrid date +%F)
+          if [ "${{ github.event_name }}" = "schedule" ] && git log --since="36 hours ago" --format=%s | grep -q "^data: música ${{ matrix.pais }} $today"; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Discos ${{ matrix.pais }} ya leídos hoy: se omite."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+        if: steps.gate.outputs.run == 'true'
       - name: Leer y generar
+        if: steps.gate.outputs.run == 'true'
         run: timeout 165m python -m scraper.musica --pais "${{ matrix.pais }}" --minutes 150 || true
       - name: Guardar y publicar
+        if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -75,7 +93,7 @@ jobs:
       # Portugal: con el catálogo de España recién leído (tiendas.json no va a git), las tiendas que envían a Portugal y
       # CDGO consultada disco a disco.
       - name: Portugal (con el catálogo de España)
-        if: matrix.pais == 'es'
+        if: steps.gate.outputs.run == 'true' && matrix.pais == 'es'
         run: |
           timeout 160m python -m scraper.musica --pais pt --minutes 150 || true
           mkdir -p data/musica/pt "$RUNNER_TEMP/musica-pt" && cp -r data/musica/pt/. "$RUNNER_TEMP/musica-pt/"

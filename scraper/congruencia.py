@@ -38,7 +38,9 @@ def pick(seed=None):
             continue
         by = {}
         for o in offers.values():
-            if (o.get("status") == "ok" and o.get("price") and not o.get("down_since")
+            # Solo con stock: los agotados se enseñan con su último precio (decisión de Manuel, 8/11/2026) y muchas
+            # tiendas no ponen precio a lo agotado; saldrían como "distintos" cada día.
+            if (o.get("status") == "ok" and o.get("price") and not o.get("down_since") and o.get("in_stock") is not False
                     and o.get("checked", "") >= since and o.get("url", "").startswith("http")):
                 by.setdefault(o["store"], []).append(o)
         for store, os_ in sorted(by.items()):
