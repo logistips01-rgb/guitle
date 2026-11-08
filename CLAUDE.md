@@ -44,6 +44,8 @@
   cambiarán. Cuando las tenga: añadir cada país a `scraper/paises.py` (PAISES) y a `social/cuentas.json`, que Manuel
   ponga todos los secretos en GitHub (Settings → Secrets and variables → Actions; nunca por el chat) y también en el
   entorno de Claude, y entonces montar y probar el workflow.
+- **@guitle.ie y @guitle.nl: aplazadas** (Manuel, 8-11: «de momento no las vamos a crear»). No pedir sus tokens ni
+  contarlas como pendientes; sus Reels de presentación se quedan guardados en `social/pendientes.json`.
 - Cuentas nuevas previstas (aún sin crear el 4-11; nombres por confirmar; en `social/cuentas.json` llevan `"creada": false`, que hay que quitar al crearlas): @guitle.pt, @guitle.ie y @guitle.nl ya están en `scraper/paises.py` y `social/cuentas.json`;
   sus Reels de presentación esperan en `social/pendientes.json`. Faltan sus tokens y añadirlas a las franjas diarias.
   Irlanda: el catálogo casi no tiene guitarras en 3+ tiendas, así que no salen chollos ni tops hasta mejorar el
