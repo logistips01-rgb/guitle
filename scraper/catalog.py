@@ -231,6 +231,10 @@ def _mat_vat(data, text):
     """MAT (PrestaShop) da el precio sin IVA a algunas visitas de fuera de la UE (el lector corre en EE. UU.): si el
     precio leído coincide con su "price_tax_exc", se le suma el IVA español (21 %)."""
     m = re.search(r"price_tax_exc&quot;:([0-9.]+)", text) or re.search(r'"price_tax_exc":([0-9.]+)', text)
+    # Partitura guarda el precio con IVA también en "price_tax_exc" (los dos iguales) y la ficha dice "Impuestos
+    # incluidos": sumarle el 21 % lo dejaba un 21 % más caro (8/11/2026). Solo se suma si la ficha no lo dice.
+    if re.search(r"(?i)impuestos incluidos|iva incluido", text):
+        return data
     if m and data.get("price") and abs(float(m.group(1)) - data["price"]) < 0.02:
         data["price"] = round(float(m.group(1)) * 1.21, 2)
     return data
@@ -2455,9 +2459,18 @@ _es_store("neomusica", "Neomúsica", "https://www.neomusica.es/sitemap.xml", sub
           pick=lambda u: bool(re.search(r"/products/guitarra-(electro)?(ac[uú]stica|cl[aá]sica|flamenca|el[eé]ctrica)-", u))
           and _pick_es(u))
 # WooCommerce (Fusté, Zingla): solo los sitemaps de producto (fuera entradas del blog y categorías) y fichas /producto/.
+def _woo_ask_price(data, text):
+    """WooCommerce sin precio a la vista (Zingla: "Consultar" en vez del precio; el precio solo está en los datos de la
+    ficha): no se enseña, el cliente vería otra cosa en la tienda."""
+    i = text.find("summary entry-summary")
+    if i >= 0 and "price-empty" in text[i:i + 4000]:  # su tema pone "Consultar" en lugar del precio vacío
+        data["price"] = None
+    return data
+
+
 for _id, _name, _sm in [("fuste", "Musical Fusté", "https://www.musicalfuste.com/sitemap_index.xml"),
                         ("zingla", "Zingla Música", "https://www.zinglamusica.com/sitemap_index.xml")]:
-    _es_store(_id, _name, _sm, lambda u: "/producto/" in u and _pick_es(u), sub=_WOO_PRODUCTS)
+    _es_store(_id, _name, _sm, lambda u: "/producto/" in u and _pick_es(u), sub=_WOO_PRODUCTS, fix=_woo_ask_price)
 
 # PrestaShop con la categoría en la URL (/<categoría>/<id>-<nombre>): la categoría manda. Se corrige el precio sin IVA si
 # lo diera (como en MAT).

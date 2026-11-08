@@ -679,7 +679,7 @@ def _lookup(pais, end, catalog, codes):
     los nunca consultados y luego los más antiguos. Lo encontrado (y lo no encontrado, para no repetir) se guarda en
     consultas.json (en git): {tienda: {ean: [fecha, precio, stock, url, nombre, artista, foto] o [fecha]}}."""
     from concurrent.futures import ThreadPoolExecutor
-    from datetime import date
+    from datetime import date, timedelta
     from .fetch import Fetcher
     folder = DATA / pais
     seen = _load(folder / "consultas.json", {})
@@ -695,7 +695,18 @@ def _lookup(pais, end, catalog, codes):
     def one_store(sid):
         f = Fetcher(delay=(1.0, 2.0))
         done = seen.setdefault(sid, {})
-        todo = sorted(eans, key=lambda e: done.get(e, [""])[0])  # nunca consultados ("") y luego los más antiguos
+        # Primero se revisan los que la tienda tiene (los que salen en la web: su precio cambia, Back to Black en CDGO
+        # subió de 29,88 a 36,78 € en un día), del más antiguo al más nuevo; luego los nunca consultados, y los que la
+        # tienda no tenía se vuelven a mirar cada 14 días por si los ha traído.
+        old_nf = (date.today() - timedelta(days=14)).isoformat()
+        def prio(e):
+            row = done.get(e)
+            if row and len(row) > 2:
+                return (0, row[0])
+            if not row:
+                return (1, "")
+            return (2, row[0]) if row[0] < old_nf else (3, row[0])
+        todo = [e for e in sorted(eans, key=prio) if prio(e)[0] < 3]
         n = 0
         for e in todo:
             if time.time() > end or done.get(e, [""])[0] == today:
@@ -768,18 +779,21 @@ def build_data(pais):
     folder = DATA / pais
     src = SRC.get(pais, pais)  # Portugal: el catálogo y las consultas de las tiendas españolas
     catalog, codes = _load(DATA / src / "tiendas.json", {}), _load(DATA / src / "codigos.json", {})
+    # Precio consultado (CDGO): solo si es de los últimos 3 días; uno más viejo puede no ser el de la tienda
+    from datetime import date, timedelta
+    fresh = (date.today() - timedelta(days=3)).isoformat()
     if pais in LOOKUP:  # lo encontrado en las tiendas que se consultan por EAN, como si fuera su catálogo
         fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
         for sid, found in _load(folder / "consultas.json", {}).items():
             for e, row in found.items():
-                if len(row) >= 7 and e in fmt_of:
+                if len(row) >= 7 and e in fmt_of and row[0] >= fresh:
                     catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                       "st": row[2], "img": row[6], "u": row[3]}
                     codes.setdefault(sid, {})[e] = e
     for sid, other in SHARED_LOOKUP.get(pais, {}).items():  # tiendas consultadas para otro país (CDGO, para Portugal)
         fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
         for e, row in _load(DATA / other / "consultas.json", {}).get(sid, {}).items():
-            if len(row) >= 7 and e in fmt_of:
+            if len(row) >= 7 and e in fmt_of and row[0] >= fresh:
                 catalog.setdefault(sid, {})[e] = {"t": row[4], "v": row[5], "ty": "", "f": fmt_of[e], "p": row[1],
                                                   "st": row[2], "img": row[6], "u": row[3]}
                 codes.setdefault(sid, {})[e] = e
