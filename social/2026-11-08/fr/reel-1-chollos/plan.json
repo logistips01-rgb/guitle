@@ -1,0 +1,176 @@
+{
+ "fecha": "8 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "epiphone-sg-custom-2p-alpine-white-ibgm-711106156835",
+    "name": "Epiphone SG Custom 2P Alpine White IBGM",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/6e09c85702e935db5694fa4011388ae8db39f948_GBI_EIGSGCAWGH1_45c489f8-9eb8-43f2-a74f-a9d098835800.jpg?height=1200&pad_color=ffffff&v=1787420134&width=1200",
+    "th": "8030ac7fbec37d5c.webp",
+    "price": 579.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 639.0,
+    "max": 639.0,
+    "next": 639.0,
+    "rows": [
+     [
+      "Woodbrass",
+      579.0
+     ],
+     [
+      "Stars Music",
+      639.0
+     ],
+     [
+      "Guitar Legend",
+      639.0
+     ]
+    ],
+    "pvp": null,
+    "why": "60 € de moins que dans les autres magasins",
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "yamaha-pa212vfm-tbl-pacifica-4957812473583",
+    "name": "Yamaha PA212VFM TBL Pacifica",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://audiosystem.fr/66500-product_zoom/yamaha-pa212vfm-tbl-pacifica.jpg",
+    "th": "189c23ff2e6b9c3a.webp",
+    "price": 389.0,
+    "store": "Audio System",
+    "stores": 3,
+    "median": 429.0,
+    "max": 429.0,
+    "next": 429.0,
+    "rows": [
+     [
+      "Audio System",
+      389.0
+     ],
+     [
+      "Stars Music",
+      429.0
+     ],
+     [
+      "Scotto Musique",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "why": "40 € de moins que dans les autres magasins",
+    "photo": "g3-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "takamine-gn30ce-nat-guitare-folk-electro-nex-naturelle-urellehtml",
+    "name": "Takamine GN30CE-NAT Guitare Folk Electro Nex Naturelle",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://www.music-privilege.fr/img/600/744/contains/catalog/product/t/g/tgn30cena-p.jpg",
+    "th": "1d75645815e3593a.webp",
+    "price": 479.0,
+    "store": "Music Privilege",
+    "stores": 5,
+    "median": 519.0,
+    "max": 539.0,
+    "next": 519.0,
+    "rows": [
+     [
+      "Music Privilege",
+      479.0
+     ],
+     [
+      "Woodbrass",
+      519.0
+     ],
+     [
+      "Stars Music",
+      519.0
+     ],
+     [
+      "Michenaud",
+      519.0
+     ],
+     [
+      "Music 3000",
+      539.0
+     ]
+    ],
+    "pvp": null,
+    "why": "40 € de moins que dans les autres magasins",
+    "photo": "g1-1.webp",
+    "label": "Folk"
+   },
+   {
+    "slug": "lag-oc118-3700166363328",
+    "name": "Lag OC118",
+    "brand": "LAG",
+    "kind": "clasica",
+    "img": "https://ubico-musique.com/16264-home_default/guitare-lag-oc118.jpg",
+    "th": "bf8fea9799bb710f.webp",
+    "price": 415.0,
+    "store": "Audio System",
+    "stores": 3,
+    "median": 429.0,
+    "max": 429.0,
+    "next": 429.0,
+    "rows": [
+     [
+      "Audio System",
+      415.0
+     ],
+     [
+      "Woodbrass",
+      429.0
+     ],
+     [
+      "Stars Music",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "why": "14 € de moins que dans les autres magasins",
+    "photo": "g2-1.webp",
+    "label": "Classique"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
