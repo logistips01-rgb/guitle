@@ -1107,7 +1107,9 @@ def write_pages(pais, discs=None):
         pages._write(path, page(url, label, T["d_index"], f'  <div class="grid">{items}</div>'))
         urls.append(url)
         keep.add(path)
-        links.append(f'<a class="chip" href="{url}">{_e(label)} <span class="muted">({len([d for d in multi if d["fmt"] == fk])})</span></a>')
+        # El número, de todos los discos con página (también los de una sola tienda): el listado enseña los comparados
+        n_fmt = sum(d["fmt"] == fk for d in discs)
+        links.append(f'<a class="chip" href="{url}">{_e(label)} <span class="muted">({n_fmt})</span></a>')
     # Mayores diferencias entre tiendas (solo ofertas con stock): para la portada, Instagram y quien busca chollos
     def gap(d):
         live = [i["p"] for i in d["items"] if i["st"]]
@@ -1151,8 +1153,10 @@ def write_pages(pais, discs=None):
             f.unlink()
     artists_pages = {a for a, ds in by_artist.items() if len(ds) >= 2 and slug(a)}
     # Buscador con filtros: índice ligero [nombre, página, formato, precio, tiendas, foto, artista] y todo en el navegador
+    # Todos los discos (también los de una sola tienda, con su página y el botón de Amazon): los comparados primero
+    in_multi = {id(d) for d in multi}
     idx = [[d["name"], d["slug"], T["fmt1"][d["fmt"]], min(i["p"] for i in d["items"]), len(d["items"]), d.get("img") or "", artist(d)]
-           for d in multi]
+           for d in multi + [d for d in discs if id(d) not in in_multi]]
     (out / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     top_artists = sorted(by_artist, key=lambda a: -len(by_artist[a]))[:400]
     datalist = "".join(f'<option value="{_e(a)}">' for a in sorted(top_artists, key=str.lower))
