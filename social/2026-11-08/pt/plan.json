@@ -1,0 +1,163 @@
+{
+ "date": "2026-11-08",
+ "fecha": "8 de novembro",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "prs-se-dgt-standard-moons-mts-oonsmtshtm",
+   "name": "PRS Se Dgt Standard Moons Mts",
+   "brand": "PRS",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/627465.jpg",
+   "th": "481a66e9499d6764.webp",
+   "price": 698.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 766.3050000000001,
+   "max": 775.61,
+   "next": 757.0,
+   "rows": [
+    [
+     "Thomann",
+     698.0
+    ],
+    [
+     "Egitana",
+     757.0
+    ],
+    [
+     "Guitar Custom",
+     775.61
+    ]
+   ],
+   "pvp": null,
+   "why": "59 € a menos do que em qualquer outra loja",
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Promoção do dia: PRS Se Dgt Standard Moons Mts\n💶 698 € na Thomann, comparada em 3 lojas.\n📉 59 € a menos do que em qualquer outra loja.\n\n🔎 Compara o preço em guitle.com/pt (todas as promoções de hoje no link da bio 👆).\nPreço de 8 de novembro; pode mudar.\n\n#guitarra #guitarrista #promoção #portugal #guitarraeletrica #prs"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-azes31-vm-es31vm7702",
+   "name": "Ibanez AZES31-VM",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://musifex.pt/web/image/product.template/7702/image_1024?unique=f9f6d03",
+   "th": "c4f300b835f91265.webp",
+   "price": 226.0,
+   "store": "Musifex",
+   "stores": 3,
+   "median": 253.5,
+   "max": 262.0,
+   "next": 245.0,
+   "rows": [
+    [
+     "Musifex",
+     226.0
+    ],
+    [
+     "Thomann",
+     245.0
+    ],
+    [
+     "Egitana",
+     262.0
+    ]
+   ],
+   "pvp": null,
+   "why": "19 € a menos do que em qualquer outra loja",
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "fender-player-ii-strat-hss-mn-blk-ssmnblkhtm",
+   "name": "Fender Player II Strat HSS MN BLK",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/595289.jpg",
+   "th": "f10023cb24bfb9df.webp",
+   "price": 715.0,
+   "store": "Musifex",
+   "stores": 3,
+   "median": 776.5,
+   "max": 788.0,
+   "next": 765.0,
+   "rows": [
+    [
+     "Musifex",
+     715.0
+    ],
+    [
+     "Discosom",
+     765.0
+    ],
+    [
+     "Egitana",
+     788.0
+    ]
+   ],
+   "pvp": null,
+   "why": "50 € a menos do que em qualquer outra loja",
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "guild-d-240e-westerly-sterly1823",
+   "name": "Guild D-240E Westerly",
+   "brand": "Guild",
+   "kind": "acustica",
+   "img": "https://musifex.pt/web/image/product.template/1823/image_1024?unique=c251b79",
+   "th": "e69f61637bff6f43.webp",
+   "price": 439.0,
+   "store": "Musifex",
+   "stores": 3,
+   "median": 440.5,
+   "max": 441.0,
+   "next": 440.0,
+   "rows": [
+    [
+     "Musifex",
+     439.0
+    ],
+    [
+     "Egitana",
+     440.0
+    ],
+    [
+     "Thomann",
+     441.0
+    ]
+   ],
+   "pvp": null,
+   "why": "1 € a menos do que em qualquer outra loja",
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}

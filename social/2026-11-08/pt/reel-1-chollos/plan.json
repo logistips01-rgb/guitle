@@ -1,0 +1,136 @@
+{
+ "fecha": "8 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "ibanez-grg170dx-bkn-gitarrehtm",
+    "name": "Ibanez GRG170DX-BKN",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/167572.jpg",
+    "th": "a282795ae267923d.webp",
+    "price": 231.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 245.0,
+    "max": 245.0,
+    "next": 245.0,
+    "rows": [
+     [
+      "Thomann",
+      231.0
+     ],
+     [
+      "Egitana",
+      245.0
+     ],
+     [
+      "Musifex",
+      245.0
+     ]
+    ],
+    "pvp": null,
+    "why": "14 € a menos do que em qualquer outra loja",
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "fender-player-ii-strat-hss-mn-blk-ssmnblkhtm",
+    "name": "Fender Player II Strat HSS MN BLK",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/595289.jpg",
+    "th": "f10023cb24bfb9df.webp",
+    "price": 715.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 776.5,
+    "max": 788.0,
+    "next": 765.0,
+    "rows": [
+     [
+      "Musifex",
+      715.0
+     ],
+     [
+      "Discosom",
+      765.0
+     ],
+     [
+      "Egitana",
+      788.0
+     ]
+    ],
+    "pvp": null,
+    "why": "50 € a menos do que em qualquer outra loja",
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "guild-d-240e-westerly-sterly1823",
+    "name": "Guild D-240E Westerly",
+    "brand": "Guild",
+    "kind": "acustica",
+    "img": "https://musifex.pt/web/image/product.template/1823/image_1024?unique=c251b79",
+    "th": "e69f61637bff6f43.webp",
+    "price": 439.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 440.5,
+    "max": 441.0,
+    "next": 440.0,
+    "rows": [
+     [
+      "Musifex",
+      439.0
+     ],
+     [
+      "Egitana",
+      440.0
+     ],
+     [
+      "Thomann",
+      441.0
+     ]
+    ],
+    "pvp": null,
+    "why": "1 € a menos do que em qualquer outra loja",
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}
