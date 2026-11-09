@@ -1,0 +1,210 @@
+{
+ "fecha": "9 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "top",
+  "title": "5 deals on amps",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "ampeg-rocket-bass-108-ketbass108",
+    "name": "Ampeg Rocket Bass 108",
+    "brand": "Ampeg",
+    "kind": "amplis",
+    "img": "https://guitarspedalsampsandstuff.co.uk/wp-content/uploads/2026/08/ampeg-rocket-bass-108.jpg",
+    "th": "8075711362d9e560.webp",
+    "price": 142.5,
+    "store": "Guitars Pedals Amps & Stuff",
+    "stores": 3,
+    "median": 179.0,
+    "max": 179.0,
+    "next": 179.0,
+    "rows": [
+     [
+      "Guitars Pedals Amps & Stuff",
+      142.5
+     ],
+     [
+      "Music Street",
+      179.0
+     ],
+     [
+      "Wunjo Guitars",
+      179.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "£36.50 less than anywhere else"
+   },
+   {
+    "slug": "marshall-code-50-1x12-combo-amp-5030463387320",
+    "name": "Marshall CODE 50 1x12\" Combo Amp",
+    "brand": "Marshall",
+    "kind": "amplis",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/Code50.jpg?v=1763643632",
+    "th": "a5af8302315269bb.webp",
+    "price": 205.0,
+    "store": "Fair Deal Music",
+    "stores": 3,
+    "median": 254.0,
+    "max": 269.0,
+    "next": 239.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      205.0
+     ],
+     [
+      "Project Music",
+      239.0
+     ],
+     [
+      "Music Street",
+      269.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "£34 less than anywhere else"
+   },
+   {
+    "slug": "boss-katana-head-gen-3-4957054520656",
+    "name": "Boss Katana Head Gen 3",
+    "brand": "Boss",
+    "kind": "amplis",
+    "img": "https://cdn11.bigcommerce.com/s-qzsvj0y9o3/images/stencil/1280x1280/products/63321/421017/BOSSKTN-HEAD3__86300.1724154573.jpg?c=1",
+    "th": "653cf92b0e32202a.webp",
+    "price": 359.0,
+    "store": "Richtone Music",
+    "stores": 3,
+    "median": 419.0,
+    "max": 419.0,
+    "next": 419.0,
+    "rows": [
+     [
+      "Richtone Music",
+      359.0
+     ],
+     [
+      "Fair Deal Music",
+      419.0
+     ],
+     [
+      "guitarguitar",
+      419.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "£60 less than anywhere else"
+   },
+   {
+    "slug": "blackstar-sonnet-120-black-845644005703",
+    "name": "Blackstar Sonnet 120 Black",
+    "brand": "Blackstar",
+    "kind": "amplis",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/sonnet-120-black-front.jpg?v=1718093303",
+    "th": "96dcb1a40d6474ce.webp",
+    "price": 409.0,
+    "store": "Reidys",
+    "stores": 4,
+    "median": 552.0,
+    "max": 556.0,
+    "next": 549.0,
+    "rows": [
+     [
+      "Reidys",
+      409.0
+     ],
+     [
+      "Absolute Music",
+      549.0
+     ],
+     [
+      "Richtone Music",
+      552.0
+     ],
+     [
+      "Peach Guitars",
+      556.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "£140 less than anywhere else"
+   },
+   {
+    "slug": "orange-rocker-15-5060299176447",
+    "name": "Orange Rocker 15",
+    "brand": "Orange",
+    "kind": "amplis",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/orange-rocker-15-p6263-6090_image.jpg?v=1714510149",
+    "th": "69d9e0f16b6ecda0.webp",
+    "price": 559.0,
+    "store": "Reidys",
+    "stores": 3,
+    "median": 744.5,
+    "max": 750.0,
+    "next": 739.0,
+    "rows": [
+     [
+      "Reidys",
+      559.0
+     ],
+     [
+      "Richtone Music",
+      739.0
+     ],
+     [
+      "Gig Gear",
+      750.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "£180 less than anywhere else"
+   }
+  ],
+  "rama": "amplis"
+ }
+}

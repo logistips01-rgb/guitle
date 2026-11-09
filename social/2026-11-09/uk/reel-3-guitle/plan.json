@@ -1,0 +1,102 @@
+{
+ "fecha": "9 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "guitle",
+  "topic": "inflados",
+  "slides": [
+   {
+    "hook": "Black Friday warning",
+    "title": "Some discounts are fake",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "They raise the price… then “cut” it",
+    "sub": "Example",
+    "size": 96,
+    "visual": {
+     "type": "chart",
+     "points": [
+      759,
+      759,
+      759,
+      849,
+      849,
+      849,
+      759,
+      759
+     ],
+     "marks": [
+      [
+       1,
+       "£759",
+       "#1f9d55"
+      ],
+      [
+       4,
+       "£849",
+       "#d64545"
+      ],
+      [
+       7,
+       "«−10%»",
+       "#d64545"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "guitle spots it with the price history",
+    "sub": "Check before you buy on guitle.com/uk"
+   }
+  ]
+ }
+}
