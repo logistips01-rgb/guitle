@@ -1,0 +1,136 @@
+{
+ "date": "2026-11-09",
+ "fecha": "9 de novembro",
+ "post": {
+  "type": "top",
+  "title": "1 guitarras elétricas até 300 €",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "ibanez-azes40-mgr-es40mgrhtm",
+    "name": "Ibanez AZES40-MGR",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/524946.jpg",
+    "th": "14e9295f6f436509.webp",
+    "price": 257.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 279.0,
+    "max": 297.0,
+    "next": 261.0,
+    "rows": [
+     [
+      "Thomann",
+      257.0
+     ],
+     [
+      "Musifex",
+      261.0
+     ],
+     [
+      "Egitana",
+      297.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   }
+  ],
+  "caption": "🎸 1 guitarras elétricas até 300 €: as mais vendidas nas lojas, com o melhor preço de hoje 👇\n\n1️⃣ Ibanez AZES40-MGR: 257 € na Thomann\n\nCom qual ficas? Diz-nos nos comentários 💬\n🔎 Compara preços em guitle.com/pt (todas as promoções de hoje no link da bio 👆). Preços de 9 de novembro.\n\n#guitarra #guitarrista #promoção #portugal #guitarraeletrica #ibanez"
+ },
+ "stories": [
+  {
+   "slug": "fender-cc-60s-concert-all-mahogany-hogany6920",
+   "name": "Fender CC-60S Concert All Mahogany",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://musifex.pt/web/image/product.template/6920/image_1024?unique=f9f6d03",
+   "th": "8f90e42f10dcf384.webp",
+   "price": 184.0,
+   "store": "Musifex",
+   "stores": 3,
+   "median": 205.0,
+   "max": 205.0,
+   "next": 205.0,
+   "rows": [
+    [
+     "Musifex",
+     184.0
+    ],
+    [
+     "Egitana",
+     205.0
+    ],
+    [
+     "Thomann",
+     205.0
+    ]
+   ],
+   "pvp": null,
+   "why": "21 € a menos do que em qualquer outra loja",
+   "pct": 10,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "ibanez-azes40-mgr-es40mgrhtm",
+   "name": "Ibanez AZES40-MGR",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/524946.jpg",
+   "th": "14e9295f6f436509.webp",
+   "price": 257.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 279.0,
+   "max": 297.0,
+   "next": 261.0,
+   "rows": [
+    [
+     "Thomann",
+     257.0
+    ],
+    [
+     "Musifex",
+     261.0
+    ],
+    [
+     "Egitana",
+     297.0
+    ]
+   ],
+   "pvp": null,
+   "why": "4 € a menos do que em qualquer outra loja",
+   "photo": "chollo-2.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}
