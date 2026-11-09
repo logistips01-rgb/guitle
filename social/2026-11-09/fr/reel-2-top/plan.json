@@ -1,0 +1,218 @@
+{
+ "fecha": "9 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "5 bons plans amplis",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "boss-dual-cube-lx-4957054518462",
+    "name": "Boss DUAL-CUBE-LX",
+    "brand": "Boss",
+    "kind": "amplis",
+    "img": "https://www.music3000.fr/95421-home_default/boss-dual-cube-lx.jpg",
+    "th": "695840dbf3432a63.webp",
+    "price": 169.19,
+    "store": "Music 3000",
+    "stores": 4,
+    "median": 241.0,
+    "max": 241.0,
+    "next": 225.0,
+    "rows": [
+     [
+      "Music 3000",
+      169.19
+     ],
+     [
+      "Scotto Musique",
+      225.0
+     ],
+     [
+      "Stars Music",
+      241.0
+     ],
+     [
+      "Guitar Legend",
+      241.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "55,81 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "nux-mighty-space-6936257208934",
+    "name": "Nux Mighty Space",
+    "brand": "Nux",
+    "kind": "amplis",
+    "img": "https://www.guitar-legend.com/medias/products/nux/mighty-space-combo-hd-196360.png",
+    "th": "2affa0ad40b08446.webp",
+    "price": 299.0,
+    "store": "Guitar Legend",
+    "stores": 3,
+    "median": 379.0,
+    "max": 379.0,
+    "next": 379.0,
+    "rows": [
+     [
+      "Guitar Legend",
+      299.0
+     ],
+     [
+      "Music 3000",
+      379.0
+     ],
+     [
+      "Hurricane Music",
+      379.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "80 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "blackstar-debut-100r-2x12-combo-black-845644008537",
+    "name": "Blackstar debut 100r 2x12 combo - black",
+    "brand": "Blackstar",
+    "kind": "amplis",
+    "img": "https://www.music3000.fr/95129-home_default/blackstar-debut-100r-2x12-combo---black.jpg",
+    "th": "18b0688acb07f5a4.webp",
+    "price": 321.0,
+    "store": "Music 3000",
+    "stores": 4,
+    "median": 415.0,
+    "max": 415.0,
+    "next": 415.0,
+    "rows": [
+     [
+      "Music 3000",
+      321.0
+     ],
+     [
+      "Stars Music",
+      415.0
+     ],
+     [
+      "Guitar Legend",
+      415.0
+     ],
+     [
+      "Hurricane Music",
+      415.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "94 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "orange-ppc112-2ppc112php",
+    "name": "Orange PPC112",
+    "brand": "Orange",
+    "kind": "amplis",
+    "img": "https://www.michenaud.com/upDATA/p/6000/5783/img1628606170-jpHnwdS2/500medium.jpg",
+    "th": "41bafd5f0b663624.webp",
+    "price": 345.0,
+    "store": "Michenaud",
+    "stores": 3,
+    "median": 424.0,
+    "max": 429.0,
+    "next": 419.0,
+    "rows": [
+     [
+      "Michenaud",
+      345.0
+     ],
+     [
+      "Music City",
+      419.0
+     ],
+     [
+      "Scotto Musique",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "74 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "laney-cub-super-10-5060109456882",
+    "name": "Laney Cub Super 10",
+    "brand": "Laney",
+    "kind": "amplis",
+    "img": "https://scottomusique.com/19536-home_default/laney-cub-super-10.jpg",
+    "th": "7b5ece54c7287914.webp",
+    "price": 419.0,
+    "store": "Scotto Musique",
+    "stores": 4,
+    "median": 500.0,
+    "max": 500.0,
+    "next": 500.0,
+    "rows": [
+     [
+      "Scotto Musique",
+      419.0
+     ],
+     [
+      "Hurricane Music",
+      500.0
+     ],
+     [
+      "Guitar Legend",
+      500.0
+     ],
+     [
+      "Stars Music",
+      500.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "81 € de moins qu'ailleurs"
+   }
+  ],
+  "rama": "amplis"
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "fecha": "9 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "guitle",
+  "topic": "momento",
+  "slides": [
+   {
+    "hook": "Avant d’acheter",
+    "title": "C’est le bon moment pour l’acheter ?",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "Regarde son historique de prix",
+    "sub": "Exemple",
+    "size": 100,
+    "visual": {
+     "type": "chart",
+     "points": [
+      829,
+      829,
+      799,
+      829,
+      789,
+      789,
+      769,
+      749
+     ],
+     "marks": [
+      [
+       0,
+       "829 €",
+       "#52514e"
+      ],
+      [
+       7,
+       "Auj. : minimum",
+       "#1f9d55"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Sur guitle, chaque guitare a son historique",
+    "sub": "Gratuit, sur sa fiche guitle.com/fr"
+   }
+  ]
+ }
+}
