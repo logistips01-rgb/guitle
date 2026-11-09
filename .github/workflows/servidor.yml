@@ -37,6 +37,8 @@ jobs:
         run: |
           if grep -q '^espera' .github/servidor.txt; then exit 0; fi
           if [ -z "$KEY" ]; then echo "::error::falta el secreto SERVIDOR_SSH_KEY"; exit 1; fi
+          # Diagnóstico sin enseñar la llave: su forma (líneas, longitud, cabecera)
+          printf '%s' "$KEY" | python3 -c "import sys; k=sys.stdin.read(); print('lineas', k.count(chr(10))+1, 'caracteres', len(k), 'cabecera', k.lstrip()[:11]=='-----BEGIN ', 'openssh', 'OPENSSH PRIVATE KEY' in k, 'retornos', chr(13) in k)"
           mkdir -p ~/.ssh
           # La llave pegada a mano en GitHub puede perder los saltos de línea o traer los de Windows: se rehace con su
           # cabecera, el cuerpo en líneas de 70 y su pie, que es como la quiere OpenSSH.
@@ -50,7 +52,8 @@ jobs:
           print("-----END OPENSSH PRIVATE KEY-----")
           PY
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keygen -y -f ~/.ssh/id_ed25519 | cut -c1-40 || { echo "::error::la llave guardada en SERVIDOR_SSH_KEY no se puede leer"; exit 1; }
+          if ! ssh-keygen -y -f ~/.ssh/id_ed25519 > /tmp/pub; then echo "::error::la llave guardada en SERVIDOR_SSH_KEY no se puede leer"; exit 1; fi
+          cut -c1-40 /tmp/pub
           ssh-keyscan -T 20 "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
       - name: Paso
         run: |
