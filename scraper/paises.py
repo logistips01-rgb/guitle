@@ -27,6 +27,7 @@ from pathlib import Path
 
 import requests
 
+from . import equipo
 from . import instagram as ig
 from . import musica_libre as musica
 from .catalog import load
@@ -745,11 +746,19 @@ def reels_tarde(cc, day, recent):
             hechos.append(sub.name)
         else:
             sub.mkdir(parents=True, exist_ok=True)
+            # Ciclo de categorías (scraper/equipo.py): un día guitarras, otro amplis, bajos, teclados, pedales, micrófonos…
+            rama = equipo.rama_del_dia(day)
+            hecho = equipo.plan(cc, rama, day, recent, fetcher, sub, money, cfg["rango"], fecha) if rama != "guitarras" else None
+            if hecho:
+                _render(sub, {**base, "post": hecho[0]}, hecho[1], cfg, musica_n + 1)
+                hechos.append(sub.name)
+            for f in ([] if hecho else sub.glob("g*.webp")):
+                f.unlink()
             j = (day.toordinal() + 4) % len(cfg["tops"])  # cada día otro, y nunca el del post
             del_post = (day.toordinal() // 2) % len(cfg["tops"])
             picks = []
             # Si el rango del día no tiene 3 guitarras con foto revisada, se prueban los siguientes
-            for k in range(len(cfg["tops"])):
+            for k in range(0 if hecho else len(cfg["tops"])):
                 jj = (j + k) % len(cfg["tops"])
                 if jj == del_post:
                     continue
@@ -760,7 +769,7 @@ def reels_tarde(cc, day, recent):
                                key=lambda p: p["price"])
                 if len(picks) >= 3:
                     break
-            if len(picks) >= 3:
+            if len(picks) >= 3 and not hecho:
                 rango = (cfg["rango_txt"][0] if tlo <= lo else cfg["rango_txt"][1]).format(lo=money(tlo), hi=money(thi))
                 title = f"{len(picks)} {cfg['plural'][kind]} {rango}"
                 lines = "\n".join(cfg["linea_top"].format(i=i, name=p["name"], price=money(p["price"]), store=p["store"])

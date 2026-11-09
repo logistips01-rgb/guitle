@@ -293,14 +293,14 @@ def container_etiq(user, handles, **params):
 
 # --- Plan del día ----------------------------------------------------------------------------------------------
 
-def photo(p, fetcher, dest):
+def photo(p, fetcher, dest, rotate=True):
     """Foto en alta resolución, recortada y en vertical (como las miniaturas de la web)."""
     data = None
     for url in dict.fromkeys([p["img"], p["img"].split("?")[0]]):  # sin parámetros si robots.txt los prohíbe
         try:
             if fetcher.allowed(url)[0]:
                 resp = fetcher.get(url)
-                data = normalize(resp.content, True, 1400) if resp.status_code == 200 else None
+                data = normalize(resp.content, rotate, 1400) if resp.status_code == 200 else None
         except Exception:
             data = None
         if data:
@@ -330,7 +330,10 @@ def foto_revisada(p):
     return _REVISADAS.get(th) not in (1, 2)
 
 
-def with_photos(cands, n, fetcher, folder, prefix):
+def with_photos(cands, n, fetcher, folder, prefix, forma="vertical"):
+    """Las n primeras con foto revisada y descargada. forma: "vertical" (guitarras y bajos: se gira a vertical y se
+    descartan las que no lo son), "ancho" (amplis, teclados: sin girar y descartando las verticales, que suelen ser
+    guitarras o bajos mal clasificados) o "libre" (pedales, micrófonos: sin girar)."""
     from PIL import Image
     out = []
     for p in cands:
@@ -339,9 +342,9 @@ def with_photos(cands, n, fetcher, folder, prefix):
         if any(o["brand"] == p["brand"] for o in out[-2:]):  # sin la misma marca seguida
             continue
         f = folder / f"{prefix}{len(out) + 1}.webp"
-        if photo(p, fetcher, f):
+        if photo(p, fetcher, f, rotate=forma == "vertical"):
             w, h = Image.open(f).size
-            if w / h > 0.7:  # foto torcida o mal recortada (la guitarra no queda en vertical): se descarta
+            if (forma == "vertical" and w / h > 0.7) or (forma == "ancho" and w / h < 0.8):  # foto torcida o mal recortada (la guitarra no queda en vertical): se descarta
                 f.unlink()
                 continue
             out.append({**p, "photo": f.name})
@@ -497,6 +500,16 @@ def reel_top(day, folder, prods, recent, fetcher, fecha):
     kind, lo, hi = TOPS[i]
     sub = folder / "reel-2-top"
     sub.mkdir(parents=True, exist_ok=True)
+    # Ciclo de categorías (scraper/equipo.py): un día guitarras, otro amplis, bajos, teclados, pedales, micrófonos…
+    from . import equipo
+    rama = equipo.rama_del_dia(day)
+    if rama != "guitarras":
+        hecho = equipo.plan("es", rama, day, recent, fetcher, sub, eur, (MIN_PRICE, MAX_PRICE), fecha)
+        if hecho:
+            _reel(folder, "reel-2-top", hecho[0], fecha, hecho[1])
+            return
+        for f in sub.glob("g*.webp"):  # sin 3 buenas ofertas en la rama: top de guitarras
+            f.unlink()
     picks = sorted(with_photos(top_of(prods, kind, lo, hi, recent), 5, fetcher, sub, "g"), key=lambda p: p["price"])
     if len(picks) < 3:
         return

@@ -108,8 +108,12 @@ if (post.type === "chollo") {
   const n = post.picks.length;
   scenes.push([2.8, t => `${hook(t, post.hook || "Top " + n)}
     <p class="d" style="font-size:128px;margin-top:60px;text-wrap:balance;${a("up", t + .2)}">${esc(post.title[0].toUpperCase() + post.title.slice(1))}</p>
-    <div class="card" style="width:100%;height:760px;margin-top:70px;display:flex;justify-content:space-evenly;align-items:center;padding:30px 20px;${a("rise", t + .4, .7)}">
-      ${post.picks.map(p => `<img src="${img(p)}" style="height:100%;max-width:${Math.floor(900 / n)}px;object-fit:contain">`).join("")}</div>`]);
+    ${post.rama && post.rama !== "bajos"
+      // Amplis, teclados, pedales, micros (scraper/equipo.py): apaisados, en cuadrícula para que se vean grandes en la portada
+      ? `<div class="card" style="width:100%;height:860px;margin-top:60px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:24px;padding:30px;${a("rise", t + .4, .7)}">
+      ${post.picks.map(p => `<img src="${img(p)}" style="width:${n > 4 && post.rama !== "teclados" ? 30 : 46}%;height:${post.rama === "teclados" ? (n > 4 ? 30 : 46) : n > 2 ? 46 : 90}%;object-fit:contain">`).join("")}</div>`
+      : `<div class="card" style="width:100%;height:760px;margin-top:70px;display:flex;justify-content:space-evenly;align-items:center;padding:30px 20px;${a("rise", t + .4, .7)}">
+      ${post.picks.map(p => `<img src="${img(p)}" style="height:100%;max-width:${Math.floor(900 / n)}px;object-fit:contain">`).join("")}</div>`}`]);
   post.picks.forEach((p, i) => scenes.push([p.why ? 2.8 : 2.3, t => `<div style="display:flex;width:100%;justify-content:space-between;align-items:center">
       <span class="d" style="font-size:${p.label ? 96 : 150}px;color:${YELLOW};${a("pop", t + .05, .4)}">${p.label ? esc(p.label) : "#" + (i + 1)}</span>
       <span style="font-size:36px;opacity:.85">${i + 1} / ${n}</span></div>
