@@ -5866,7 +5866,8 @@ def build(offers=None, history=None):
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra (baterías: sus accesorios).
                 and (kind in GUITAR_KINDS | PACK_KINDS
-                     or (_drum_name_kit(o.get("name")) is not False if kind == "bateria"
+                     or (_drum_name_kit(o.get("name")) is not False and not _DRUM_NOT.search(_drum_head(o.get("name")))
+                         if kind == "bateria"
                          else not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or "")))
                 and (o.get("price") or 0) <= CATALOG.get("max_price", MAX_PRICE).get(kind, float("inf"))
                 and not (kind == "estuche" and WITH_CASE.search(o.get("name") or ""))
