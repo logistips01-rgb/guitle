@@ -6,32 +6,32 @@ from datetime import date
 
 from . import instagram as ig
 
-RAMAS = ["guitarras", "amplis", "bajos", "teclados", "pedales", "micros"]
+RAMAS = ["guitarras", "amplis", "bajos", "teclados", "baterias", "pedales", "micros"]
 # Forma de la foto (ig.with_photos): los bajos, en vertical como las guitarras; amplis y teclados, apaisados
-FORMA = {"amplis": "ancho", "bajos": "vertical", "teclados": "ancho", "pedales": "libre", "micros": "libre"}
+FORMA = {"amplis": "ancho", "bajos": "vertical", "teclados": "ancho", "pedales": "libre", "micros": "libre", "baterias": "libre"}
 
 # Catálogo de cada rama por país (España, en data/catalog/mas y data/catalog/equipo; los demás, en <país>mas)
 ARCHIVOS = {
     "es": {"amplis": "mas/amplis", "bajos": "mas/bajos", "teclados": "equipo/teclados", "pedales": "equipo/pedales",
-           "micros": "mas/micros"},
+           "micros": "mas/micros", "baterias": "mas/baterias"},
     "fr": {"amplis": "frmas/amplis", "bajos": "frmas/basses", "teclados": "frmas/claviers", "pedales": "frmas/pedales-effets",
-           "micros": "frmas/micros"},
+           "micros": "frmas/micros", "baterias": "frmas/batteries"},
     "it": {"amplis": "itmas/amplificatori", "bajos": "itmas/bassi", "teclados": "itmas/tastiere",
-           "pedales": "itmas/pedali-effetto", "micros": "itmas/microfoni"},
+           "pedales": "itmas/pedali-effetto", "micros": "itmas/microfoni", "baterias": "itmas/batterie"},
     "de": {"amplis": "demas/verstaerker", "bajos": "demas/baesse", "teclados": "demas/keyboards",
-           "pedales": "demas/effektpedale", "micros": "demas/mikrofone"},
+           "pedales": "demas/effektpedale", "micros": "demas/mikrofone", "baterias": "demas/schlagzeuge"},
     "uk": {"amplis": "ukmas/amps", "bajos": "ukmas/basses", "teclados": "ukmas/keyboards", "pedales": "ukmas/effects-pedals",
-           "micros": "ukmas/microphones"},
+           "micros": "ukmas/microphones", "baterias": "ukmas/drum-kits"},
     "br": {"amplis": "brmas/amplificadores", "bajos": "brmas/baixos", "teclados": "brmas/teclados", "pedales": "brmas/pedais",
-           "micros": "brmas/microfones"},
+           "micros": "brmas/microfones", "baterias": "brmas/baterias"},
     "pt": {"amplis": "ptmas/amplificadores", "bajos": "ptmas/baixos", "teclados": "ptmas/teclados", "pedales": "ptmas/pedais",
-           "micros": "ptmas/microfones"},
+           "micros": "ptmas/microfones", "baterias": "ptmas/baterias"},
 }
 
 # Textos: nombre de la rama (título del Reel), etiqueta de la portada, plantilla del texto y etiquetas
 TXT = {
     "es": {"nombre": {"amplis": "amplis", "bajos": "bajos", "teclados": "teclados", "pedales": "pedales",
-                      "micros": "micrófonos"},
+                      "micros": "micrófonos", "baterias": "baterías"},
            "hook": "Chollos de hoy", "titulo": "{n} chollos en {rama}",
            "linea": "{i}️⃣ {name}: {price} en {store} ({why})",
            "cap": "🔥 {titulo}: los más baratos hoy frente al resto de tiendas 👇\n\n{lines}\n\n¿Con cuál te quedas? 💬\n"
@@ -39,60 +39,60 @@ TXT = {
            "menos": "{x} menos que en cualquier otra tienda",
            "tags": {"amplis": "#amplificador #amplificadorguitarra", "bajos": "#bajo #bajoelectrico #bajistas",
                     "teclados": "#teclado #sintetizador #pianodigital", "pedales": "#pedales #pedalesdeguitarra #pedalboard",
-                    "micros": "#microfono #homestudio"}, "base": "#chollos #ofertas #musica #musicos"},
+                    "micros": "#microfono #homestudio", "baterias": "#bateria #bateriaelectronica #bateristas"}, "base": "#chollos #ofertas #musica #musicos"},
     "fr": {"nombre": {"amplis": "amplis", "bajos": "basses", "teclados": "claviers", "pedales": "pédales d'effet",
-                      "micros": "micros"},
+                      "micros": "micros", "baterias": "batteries"},
            "hook": "Bons plans du jour", "titulo": "{n} bons plans {rama}",
            "linea": "{i}️⃣ {name} : {price} chez {store} ({why})",
            "cap": "🔥 {titulo} : les moins chers aujourd'hui par rapport aux autres magasins 👇\n\n{lines}\n\nTu prendrais lequel ? 💬\n"
                   "🔎 Compare les prix sur guitle.com/fr (tous les bons plans du jour via le lien en bio 👆). Prix du {fecha} ; ils peuvent changer.",
            "tags": {"amplis": "#ampli #ampliguitare", "bajos": "#basse #bassiste", "teclados": "#clavier #synthe #pianonumerique",
-                    "pedales": "#pedale #pedaleguitare #pedalboard", "micros": "#micro #homestudio"},
+                    "pedales": "#pedale #pedaleguitare #pedalboard", "micros": "#micro #homestudio", "baterias": "#batterie #batteur #batterieelectronique"},
            "base": "#bonplan #promo #musique #musicien"},
     "it": {"nombre": {"amplis": "amplificatori", "bajos": "bassi", "teclados": "tastiere", "pedales": "pedali",
-                      "micros": "microfoni"},
+                      "micros": "microfoni", "baterias": "batterie"},
            "hook": "Offerte di oggi", "titulo": "{n} offerte: {rama}",
            "linea": "{i}️⃣ {name}: {price} da {store} ({why})",
            "cap": "🔥 {titulo}, i più convenienti oggi rispetto agli altri negozi 👇\n\n{lines}\n\nQuale prenderesti? 💬\n"
                   "🔎 Confronta i prezzi su guitle.com/it (tutte le offerte di oggi nel link in bio 👆). Prezzi del {fecha}; possono cambiare.",
            "tags": {"amplis": "#amplificatore #ampli", "bajos": "#basso #bassista", "teclados": "#tastiera #synth #pianodigitale",
-                    "pedales": "#pedali #pedaliera #pedalboard", "micros": "#microfono #homestudio"},
+                    "pedales": "#pedali #pedaliera #pedalboard", "micros": "#microfono #homestudio", "baterias": "#batteria #batterista #batteriaelettronica"},
            "base": "#offerte #sconti #musica #musicisti"},
     "de": {"nombre": {"amplis": "Verstärker", "bajos": "Bässe", "teclados": "Keyboards", "pedales": "Effektpedale",
-                      "micros": "Mikrofone"},
+                      "micros": "Mikrofone", "baterias": "Schlagzeuge"},
            "hook": "Deals von heute", "titulo": "{n} Deals: {rama}",
            "linea": "{i}️⃣ {name}: {price} bei {store} ({why})",
            "cap": "🔥 {titulo}, heute am günstigsten im Vergleich zu den anderen Shops 👇\n\n{lines}\n\nWelches würdest du nehmen? 💬\n"
                   "🔎 Preise vergleichen auf guitle.com/de (alle Deals von heute über den Link in der Bio 👆). Preise vom {fecha}; können sich ändern.",
            "tags": {"amplis": "#verstärker #gitarrenverstärker", "bajos": "#bass #bassist", "teclados": "#keyboard #synthesizer #digitalpiano",
-                    "pedales": "#effektpedal #pedalboard", "micros": "#mikrofon #homestudio"},
+                    "pedales": "#effektpedal #pedalboard", "micros": "#mikrofon #homestudio", "baterias": "#schlagzeug #schlagzeuger #edrums"},
            "base": "#angebote #deals #musik #musiker"},
     "uk": {"nombre": {"amplis": "amps", "bajos": "basses", "teclados": "keyboards", "pedales": "pedals",
-                      "micros": "microphones"},
+                      "micros": "microphones", "baterias": "drum kits"},
            "hook": "Today’s deals", "titulo": "{n} deals on {rama}",
            "linea": "{i}️⃣ {name}: {price} at {store} ({why})",
            "cap": "🔥 {titulo}: cheapest today compared with every other UK shop 👇\n\n{lines}\n\nWhich one would you pick? 💬\n"
                   "🔎 Compare prices on guitle.com/uk (all today’s deals via the link in bio 👆). Prices on {fecha}; they may change.",
            "tags": {"amplis": "#guitaramp #amp", "bajos": "#bassguitar #bassist", "teclados": "#keyboard #synth #digitalpiano",
-                    "pedales": "#guitarpedals #pedalboard", "micros": "#microphone #homestudio"},
+                    "pedales": "#guitarpedals #pedalboard", "micros": "#microphone #homestudio", "baterias": "#drums #drumkit #edrums"},
            "base": "#deals #ukdeals #music #musician"},
     "br": {"nombre": {"amplis": "amplificadores", "bajos": "baixos", "teclados": "teclados", "pedales": "pedais",
-                      "micros": "microfones"},
+                      "micros": "microfones", "baterias": "baterias"},
            "hook": "Promoções de hoje", "titulo": "{n} promoções em {rama}",
            "linea": "{i}️⃣ {name}: {price} em {store} ({why})",
            "cap": "🔥 {titulo}: os mais baratos hoje em comparação com as outras lojas 👇\n\n{lines}\n\nQual você levaria? 💬\n"
                   "🔎 Compare preços em guitle.com/br (todas as promoções de hoje no link da bio 👆). Preços de {fecha}; podem mudar.",
            "tags": {"amplis": "#amplificador #amplificadordeguitarra", "bajos": "#baixo #baixista", "teclados": "#teclado #sintetizador",
-                    "pedales": "#pedais #pedalboard", "micros": "#microfone #homestudio"},
+                    "pedales": "#pedais #pedalboard", "micros": "#microfone #homestudio", "baterias": "#bateria #baterista #bateriaeletronica"},
            "base": "#promoção #ofertas #musica #musicos"},
     "pt": {"nombre": {"amplis": "amplificadores", "bajos": "baixos", "teclados": "teclados", "pedales": "pedais",
-                      "micros": "microfones"},
+                      "micros": "microfones", "baterias": "baterias"},
            "hook": "Promoções de hoje", "titulo": "{n} promoções em {rama}",
            "linea": "{i}️⃣ {name}: {price} na {store} ({why})",
            "cap": "🔥 {titulo}: os mais baratos hoje face às outras lojas 👇\n\n{lines}\n\nQual escolhias? 💬\n"
                   "🔎 Compara preços em guitle.com/pt (todas as promoções de hoje no link da bio 👆). Preços de {fecha}; podem mudar.",
            "tags": {"amplis": "#amplificador #amplificadordeguitarra", "bajos": "#baixo #baixista", "teclados": "#teclado #sintetizador",
-                    "pedales": "#pedais #pedalboard", "micros": "#microfone #homestudio"},
+                    "pedales": "#pedais #pedalboard", "micros": "#microfone #homestudio", "baterias": "#bateria #baterista #bateriaeletronica"},
            "base": "#promoções #ofertas #musica #musicos"},
 }
 

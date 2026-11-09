@@ -18,8 +18,8 @@
 - Precios reales del día, comprobados tienda por tienda; si una rebaja o una foto parecen raras, se cambia la guitarra.
 - Rango de precios de chollos y tops: 150–750 €.
 - **Ciclo de categorías** (Manuel, 9-11): el Reel de las 17:37 de los días sin cuenta atrás va rotando por guitarras,
-  amplis, bajos, teclados, pedales y micrófonos (`scraper/equipo.py`), con las ofertas del día de esa rama (pedales
-  desde 80 €). Si una rama no tiene 3 ofertas buenas, sale el top de guitarras. Baterías: aún no hay catálogo.
+  amplis, bajos, teclados, baterías, pedales y micrófonos (`scraper/equipo.py`), con las ofertas del día de esa rama (pedales
+  desde 80 €). Si una rama no tiene 3 ofertas buenas, sale el top de guitarras. Baterías: catálogo añadido el 9-11 (kits completos).
 - **Amazon** (afiliados en Reino Unido y Francia; en la web, botón de Amazon en cada disco) se puede nombrar en redes, con
   sus normas: 1) avisar de la afiliación en la publicación («Como afiliado de Amazon, obtenemos ingresos por las compras
   que cumplen los requisitos» / «En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les
