@@ -1,0 +1,79 @@
+name: servidor
+
+# Servidor propio de guitle.com (IONOS, VPS S+, Ubuntu) fuera de Cloudflare, por los bloqueos de LaLiga.
+# Se entra con la llave SERVIDOR_SSH_KEY (secreto de GitHub; la pública está en el servidor). Se lanza tocando
+# .github/servidor.txt; el paso que se ejecuta lo dice la primera línea de ese fichero (prueba, montar…).
+on:
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/servidor.txt"]
+  workflow_dispatch:
+
+concurrency:
+  group: servidor
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  HOST: 31.70.175.136
+
+jobs:
+  servidor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github
+            servidor
+          sparse-checkout-cone-mode: false
+      - name: Llave
+        if: hashFiles('.github/servidor.txt') != ''
+        env:
+          KEY: ${{ secrets.SERVIDOR_SSH_KEY }}
+        run: |
+          if grep -q '^espera' .github/servidor.txt; then exit 0; fi
+          if [ -z "$KEY" ]; then echo "::error::falta el secreto SERVIDOR_SSH_KEY"; exit 1; fi
+          # Diagnóstico sin enseñar la llave: su forma (líneas, longitud, cabecera)
+          printf '%s' "$KEY" | python3 -c "import sys; k=sys.stdin.read(); print('lineas', k.count(chr(10))+1, 'caracteres', len(k), 'cabecera', k.lstrip()[:11]=='-----BEGIN ', 'openssh', 'OPENSSH PRIVATE KEY' in k, 'retornos', chr(13) in k)"
+          mkdir -p ~/.ssh
+          # La llave pegada a mano en GitHub puede perder los saltos de línea o traer los de Windows: se rehace con su
+          # cabecera, el cuerpo en líneas de 70 y su pie, que es como la quiere OpenSSH.
+          python3 - "$KEY" > ~/.ssh/id_ed25519 <<'PY'
+          import re, sys, textwrap
+          k = sys.argv[1].replace("\r", "")
+          m = re.search(r"-----BEGIN OPENSSH PRIVATE KEY-----(.*?)-----END OPENSSH PRIVATE KEY-----", k, re.S)
+          body = re.sub(r"\s+", "", m.group(1)) if m else re.sub(r"\s+", "", k)
+          print("-----BEGIN OPENSSH PRIVATE KEY-----")
+          print("\n".join(textwrap.wrap(body, 70)))
+          print("-----END OPENSSH PRIVATE KEY-----")
+          PY
+          chmod 600 ~/.ssh/id_ed25519
+          if ! ssh-keygen -y -f ~/.ssh/id_ed25519 > /tmp/pub; then echo "::error::la llave guardada en SERVIDOR_SSH_KEY no se puede leer"; exit 1; fi
+          cut -c1-40 /tmp/pub
+          ssh-keyscan -T 20 "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
+      - name: Paso
+        env:
+          R2_KEY: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+        run: |
+          paso=$(head -1 .github/servidor.txt | tr -d '\r' | awk '{print $1}')
+          echo "paso: $paso"
+          case "$paso" in
+            espera) echo "Nada que hacer todavía." ;;
+            prueba)
+              ssh -o BatchMode=yes -o ConnectTimeout=20 root@"$HOST" 'hostname; cat /etc/os-release | head -2; uname -r; nproc; free -m; df -h /; ss -tlnp | head -20' ;;
+            *)
+              [ -f "servidor/$paso.sh" ] || { echo "::error::no existe servidor/$paso.sh"; exit 1; }
+              scp -o BatchMode=yes -q servidor/* root@"$HOST":/root/
+              if [ "$paso" = sincronizar ]; then
+                # Credenciales de R2 para rclone en el servidor (solo root las puede leer)
+                printf '[r2]\ntype = s3\nprovider = Cloudflare\naccess_key_id = %s\nsecret_access_key = %s\nendpoint = https://%s.r2.cloudflarestorage.com\nno_check_bucket = true\n' \
+                  "$R2_KEY" "$R2_SECRET" "${R2_ACCOUNT,,}" | ssh -o BatchMode=yes root@"$HOST" 'mkdir -p /root/.config/rclone && umask 077 && cat > /root/.config/rclone/rclone.conf'
+              fi
+              ssh -o BatchMode=yes root@"$HOST" "bash /root/$paso.sh" ;;
+          esac

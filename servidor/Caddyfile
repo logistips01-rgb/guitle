@@ -1,0 +1,40 @@
+# guitle.com en el servidor propio (IONOS). Caddy sirve la copia de R2 (/srv/guitle/r2) y le pasa a fichas.py
+# (127.0.0.1:8081) las fichas, los discos en cajas y lo que no exista. De momento, solo por la IP y en http, para
+# probar; el día del cambio de DNS se añade guitle.com (Caddy saca solo el certificado https de Let's Encrypt).
+{
+	admin off
+}
+
+:80 {
+	@www host www.guitle.com
+	redir @www https://guitle.com{uri} 301
+
+	root * /srv/guitle/r2
+	encode zstd gzip
+
+	# Fichas de España (solo las de hoy), de los países (en cajas) y discos en cajas: las decide fichas.py
+	@fichas path_regexp ^/(([a-z]{2}/)?g/[^/]+\.html|([a-z]{2}/)?(records|disques|dischi|discos)/.+\.html)$
+	reverse_proxy @fichas 127.0.0.1:8081
+
+	# "/fr" → "/fr/" (como el Worker)
+	@carpeta {
+		not path */
+		file {
+			try_files {path}/index.html
+		}
+	}
+	redir @carpeta {path}/ 301
+
+	header /img/p/* Cache-Control "public, max-age=2592000, immutable"
+	header /data/* Cache-Control "public, max-age=60"
+	header ?Cache-Control "public, max-age=600"
+	header X-Content-Type-Options nosniff
+
+	try_files {path} {path}.html {path}/index.html
+	file_server
+
+	handle_errors {
+		@nf expression {err.status_code} == 404
+		reverse_proxy @nf 127.0.0.1:8081
+	}
+}

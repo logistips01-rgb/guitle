@@ -1,29 +1,10 @@
 {
- "actualizado": "2026-11-09T11:03",
- "total": 260,
- "ok": 238,
- "distinto": 5,
- "sin_comprobar": 17,
+ "actualizado": "2026-11-09T20:05",
+ "total": 276,
+ "ok": 249,
+ "distinto": 6,
+ "sin_comprobar": 21,
  "distintos": [
-  {
-   "pais": "bg",
-   "tienda": "soundcreation",
-   "url": "https://www.soundcreation.eu/bg/t-model-electric-guitars-cid489/fender-american-professional-hot-shot-telecaster-maple-fingerboard-butterscotch-blonde-id88771.html",
-   "precio": 2283.26,
-   "moneda": "EUR",
-   "leido": "2026-11-08T20:11",
-   "nombre": "Fender American Professional Hot Shot Telecaster Maple Fingerboard Butterscotch Blonde",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "2 28326 €",
-    "2 00175 €",
-    "1 45764 €",
-    "1 45764 €",
-    "2 00175 €",
-    "99 €"
-   ]
-  },
   {
    "pais": "br",
    "tienda": "ajoiamusical",
@@ -45,6 +26,20 @@
   },
   {
    "pais": "br",
+   "tienda": "destroyer",
+   "url": "https://www.destroyer.com.br/cordas/guitarras/guitarra-tagima-modern-2h-escala-escura-stella-h2-dpsk",
+   "precio": 4738.5,
+   "moneda": "BRL",
+   "leido": "2026-11-09T00:16",
+   "nombre": "Tagima Modern 2H Escala Escura Stella H2 (dpsk)",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "R$ 379"
+   ]
+  },
+  {
+   "pais": "br",
    "tienda": "mundomax",
    "url": "https://www.mundomax.com.br/guitarra-seizi-katana-kabuto-tl-purple-sparkle-com-bag-deluxe",
    "precio": 3149.1,
@@ -54,10 +49,10 @@
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 2.322,00 12",
-    "R$ 193,50",
-    "R$ 1.720,00 12",
-    "R$ 143,33",
+    "R$ 2.903,00 12",
+    "R$ 241,92",
+    "R$ 2.150,00 12",
+    "R$ 179,17",
     "R$ 7.699,00 12",
     "R$ 641,58"
    ]
@@ -83,35 +78,63 @@
   },
   {
    "pais": "ro",
-   "tienda": "soundcreation",
-   "url": "https://www.soundcreation.ro/chitare-electro-acustice-cid10/dimavery-aw-400-redburst-id40631.html",
-   "precio": 749,
+   "tienda": "thomann",
+   "url": "https://www.thomann.ro/furch_rainbow_om_rainbow_dr.htm",
+   "precio": 26890,
    "moneda": "RON",
-   "leido": "2026-11-08T21:27",
-   "nombre": "Dimavery AW-400 - Redburst",
+   "leido": "2026-11-08T19:53",
+   "nombre": "Furch Rainbow OM Rainbow-DR",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "499 lei"
+    "26.790 lei",
+    "27.890 lei",
+    "53 lei",
+    "23,90 lei",
+    "133 lei",
+    "53 lei"
+   ]
+  },
+  {
+   "pais": "se",
+   "tienda": "soundstorexl",
+   "url": "https://www.soundstorexl.se/products/epiphone-aj-100ce-western-guitar-natural",
+   "precio": 3319,
+   "moneda": "SEK",
+   "leido": "2026-11-09T15:16",
+   "nombre": "Epiphone AJ-100CE Western Gitarrer (Natural)",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "2499 kr",
+    "2499 kr",
+    "2499 kr",
+    "2499 kr",
+    "3 322 kr",
+    "3 951 kr"
    ]
   }
  ],
  "sin_comprobar_tiendas": [
   "es·alteisa",
+  "es·mat",
+  "at·danys",
   "br·multisom",
   "br·supersom",
   "de·soundaktuell",
-  "de·wittl",
+  "dk·gear4music",
   "fr·azemamusique",
   "fr·cultura",
   "ie·musicoutlet",
   "ie·soundshop",
-  "ie·waltons",
   "it·emusicstore",
   "it·fireflyaudio",
+  "nl·gear4music",
+  "nl·vanderzwaag",
   "es·partitura",
-  "uk·absolutemusic",
+  "pl·gear4music",
   "uk·andertons",
+  "uk·absolutemusic",
   "uk·richtone",
   "pt·cdgo"
  ]
