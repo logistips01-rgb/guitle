@@ -1,0 +1,168 @@
+{
+ "fecha": "9 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "ibanez-grg140-sb-sunburst-4515110777286",
+    "name": "Ibanez GRG140-SB - sunburst",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://audiosystem.fr/35873-product_zoom/ibanez-grg140-sb-sunburst.jpg",
+    "th": "3000e54d3ab56cce.webp",
+    "price": 229.0,
+    "store": "Audio System",
+    "stores": 3,
+    "median": 253.0,
+    "max": 253.0,
+    "next": 253.0,
+    "rows": [
+     [
+      "Audio System",
+      229.0
+     ],
+     [
+      "Woodbrass",
+      253.0
+     ],
+     [
+      "Stars Music",
+      253.0
+     ]
+    ],
+    "pvp": null,
+    "why": "24 € de moins que dans les autres magasins",
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "yamaha-pacifica-tobacco-brown-sb-4957812473576",
+    "name": "Yamaha Pacifica Tobacco Brown SB",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://audiosystem.fr/67840-product_zoom/yamaha-pacifica-tobacco-brown-sb.jpg",
+    "th": "adf03a197d105a0d.webp",
+    "price": 389.0,
+    "store": "Audio System",
+    "stores": 3,
+    "median": 429.0,
+    "max": 429.0,
+    "next": 429.0,
+    "rows": [
+     [
+      "Audio System",
+      389.0
+     ],
+     [
+      "Stars Music",
+      429.0
+     ],
+     [
+      "Scotto Musique",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "why": "40 € de moins que dans les autres magasins",
+    "photo": "g3-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "sigma-dm-1-naturel-brillant-4260279937469",
+    "name": "Sigma Dm-1 Naturel Brillant",
+    "brand": "Sigma",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/86a8053ea5a21be9304d9dfc9f78400d68808af8_MUSICO_DM_1.jpg?height=1200&pad_color=ffffff&v=1792634330&width=1200",
+    "th": "f99d43e33a03ff86.webp",
+    "price": 360.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 432.0,
+    "max": 465.0,
+    "next": 399.0,
+    "rows": [
+     [
+      "Woodbrass",
+      360.0
+     ],
+     [
+      "Hurricane Music",
+      399.0
+     ],
+     [
+      "Stars Music",
+      465.0
+     ]
+    ],
+    "pvp": null,
+    "why": "39 € de moins que dans les autres magasins",
+    "photo": "g1-1.webp",
+    "label": "Folk"
+   },
+   {
+    "slug": "esteve-4st-table-cedre-brillant-illanthtml",
+    "name": "Esteve 4ST Table Cedre Brillant",
+    "brand": "Esteve",
+    "kind": "clasica",
+    "img": "https://azemamusique.fr/11114-home_default/esteve-4st-table-cedre-brillant.jpg",
+    "th": "fa1210e98d2f4041.webp",
+    "price": 649.0,
+    "store": "Azema Musique",
+    "stores": 3,
+    "median": 744.0,
+    "max": 789.0,
+    "next": 699.0,
+    "rows": [
+     [
+      "Azema Musique",
+      649.0
+     ],
+     [
+      "Audio System",
+      699.0
+     ],
+     [
+      "Ubico Musique",
+      789.0
+     ]
+    ],
+    "pvp": null,
+    "why": "50 € de moins que dans les autres magasins",
+    "photo": "g2-1.webp",
+    "label": "Classique"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
