@@ -12,6 +12,9 @@
   (línea `🎵 "<tema>" Kevin MacLeod (incompetech.com) · CC BY 4.0`). Nunca un Reel sin audio ni con música con derechos.
 - Todo lo publica Claude de forma automática; al usuario no se le mandan Reels ni publicaciones para subir a mano.
 - No usar voces sintéticas en los vídeos: texto y subtítulos en pantalla.
+- **Portada siempre con guitarra** (Manuel, 9-11): ninguna publicación empieza con fondo de color y solo texto. La
+  primera escena de cada Reel lleva la guitarra de la que se habla (o una fila de guitarras) y la portada del Reel es
+  el fotograma de 1,5 s (`thumb_offset`), con la escena ya entera.
 - Precios reales del día, comprobados tienda por tienda; si una rebaja o una foto parecen raras, se cambia la guitarra.
 - Rango de precios de chollos y tops: 150–750 €.
 - **Amazon** (afiliados en Reino Unido y Francia; en la web, botón de Amazon en cada disco) se puede nombrar en redes, con
