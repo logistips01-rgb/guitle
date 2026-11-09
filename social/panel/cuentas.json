@@ -3,15 +3,15 @@
   "pais": "España",
   "cuenta": "@guitle.es",
   "web": "guitle.com/",
-  "guitarras": 23380,
+  "guitarras": 23350,
   "tiendas": 25,
   "estado": "Activa",
   "seguidores": 129,
-  "publicaciones": 44,
-  "alcance_7d": 5682,
-  "visualizaciones_7d": 8964,
+  "publicaciones": 46,
+  "alcance_7d": 5736,
+  "visualizaciones_7d": 9080,
   "visitas_7d": 271,
-  "actualizado": "2026-11-09T12:48+00:00"
+  "actualizado": "2026-11-09T20:41+00:00"
  },
  {
   "pais": "Brasil",
@@ -21,11 +21,11 @@
   "tiendas": 51,
   "estado": "Activa",
   "seguidores": 2,
-  "publicaciones": 33,
-  "alcance_7d": 268,
-  "visualizaciones_7d": 346,
+  "publicaciones": 35,
+  "alcance_7d": 274,
+  "visualizaciones_7d": 353,
   "visitas_7d": 2,
-  "actualizado": "2026-11-09T12:48+00:00"
+  "actualizado": "2026-11-09T20:41+00:00"
  },
  {
   "pais": "Reino Unido",
@@ -35,11 +35,11 @@
   "tiendas": 34,
   "estado": "Activa",
   "seguidores": 2,
-  "publicaciones": 36,
-  "alcance_7d": 280,
-  "visualizaciones_7d": 358,
+  "publicaciones": 38,
+  "alcance_7d": 302,
+  "visualizaciones_7d": 381,
   "visitas_7d": 3,
-  "actualizado": "2026-11-09T12:49+00:00"
+  "actualizado": "2026-11-09T20:42+00:00"
  },
  {
   "pais": "Francia",
@@ -49,11 +49,11 @@
   "tiendas": 28,
   "estado": "Activa",
   "seguidores": 0,
-  "publicaciones": 33,
-  "alcance_7d": 545,
-  "visualizaciones_7d": 669,
+  "publicaciones": 35,
+  "alcance_7d": 595,
+  "visualizaciones_7d": 734,
   "visitas_7d": 3,
-  "actualizado": "2026-11-09T12:49+00:00"
+  "actualizado": "2026-11-09T20:42+00:00"
  },
  {
   "pais": "Italia",
@@ -63,11 +63,11 @@
   "tiendas": 26,
   "estado": "Activa",
   "seguidores": 0,
-  "publicaciones": 30,
-  "alcance_7d": 448,
-  "visualizaciones_7d": 479,
+  "publicaciones": 32,
+  "alcance_7d": 486,
+  "visualizaciones_7d": 518,
   "visitas_7d": 0,
-  "actualizado": "2026-11-09T12:49+00:00"
+  "actualizado": "2026-11-09T20:42+00:00"
  },
  {
   "pais": "Alemania",
@@ -76,12 +76,12 @@
   "guitarras": 46371,
   "tiendas": 23,
   "estado": "Activa",
-  "seguidores": 1,
-  "publicaciones": 32,
-  "alcance_7d": 291,
-  "visualizaciones_7d": 352,
+  "seguidores": 2,
+  "publicaciones": 34,
+  "alcance_7d": 311,
+  "visualizaciones_7d": 378,
   "visitas_7d": 1,
-  "actualizado": "2026-11-09T12:50+00:00"
+  "actualizado": "2026-11-09T20:43+00:00"
  },
  {
   "pais": "Portugal",
@@ -95,14 +95,14 @@
   "alcance_7d": 21,
   "visualizaciones_7d": 21,
   "visitas_7d": 0,
-  "actualizado": "2026-11-09T12:50+00:00"
+  "actualizado": "2026-11-09T20:43+00:00"
  },
  {
   "pais": "Países Bajos",
   "cuenta": "@guitle.nl",
   "web": "guitle.com/nl/",
-  "guitarras": 24260,
-  "tiendas": 12,
+  "guitarras": 31781,
+  "tiendas": 13,
   "estado": "Por crear",
   "seguidores": null,
   "publicaciones": null,
@@ -166,8 +166,8 @@
   "pais": "Polonia",
   "cuenta": "Por crear",
   "web": "guitle.com/pl/",
-  "guitarras": 33687,
-  "tiendas": 3,
+  "guitarras": 36445,
+  "tiendas": 5,
   "estado": "Por crear",
   "seguidores": null,
   "publicaciones": null,
@@ -179,8 +179,8 @@
   "pais": "Suecia",
   "cuenta": "Por crear",
   "web": "guitle.com/se/",
-  "guitarras": 16936,
-  "tiendas": 3,
+  "guitarras": 18818,
+  "tiendas": 4,
   "estado": "Por crear",
   "seguidores": null,
   "publicaciones": null,
@@ -192,7 +192,7 @@
   "pais": "Noruega",
   "cuenta": "Por crear",
   "web": "guitle.com/no/",
-  "guitarras": 22180,
+  "guitarras": 23513,
   "tiendas": 4,
   "estado": "Por crear",
   "seguidores": null,
@@ -205,8 +205,8 @@
   "pais": "Dinamarca",
   "cuenta": "Por crear",
   "web": "guitle.com/dk/",
-  "guitarras": 8034,
-  "tiendas": 2,
+  "guitarras": 10804,
+  "tiendas": 4,
   "estado": "Por crear",
   "seguidores": null,
   "publicaciones": null,
@@ -239,6 +239,6 @@
   "alcance_7d": 0,
   "visualizaciones_7d": 0,
   "visitas_7d": 0,
-  "actualizado": "2026-11-09T12:50+00:00"
+  "actualizado": "2026-11-09T20:43+00:00"
  }
 ]
