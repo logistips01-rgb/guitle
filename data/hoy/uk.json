@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-08",
+ "fecha": "2026-11-09",
  "pais": "uk",
  "items": [
   {
-   "slug": "esp-ltd-ec-10-blk-ec10blkhtm",
-   "name": "ESP LTD EC-10 Blk",
-   "brand": "LTD",
-   "price": "£211",
+   "slug": "fender-player-ii-strat-hss-mn-blk-ssmnblkhtm",
+   "name": "Fender Player II Strat HSS MN BLK",
+   "brand": "Fender",
+   "price": "£635",
    "store": "Thomann",
    "kind": "electrica",
-   "img": "88690895fdfc1122.webp",
-   "why": "£33 less than any other shop"
+   "img": "f10023cb24bfb9df.webp",
+   "why": "£104 less than any other shop"
   },
   {
-   "slug": "gretsch-g2622t-streamlinertm-center-block-double-cut-with-bigsby-laurel-fingerbo-885978035717",
-   "name": "Gretsch G2622T Streamliner™ Center Block Double-Cut with Bigsby®, Laurel Fingerboard, Broad’Tron™ BT-3S Pickups, Arctic Blue",
-   "brand": "Gretsch",
-   "price": "£479",
-   "store": "Fair Deal Music",
+   "slug": "squier-mini-jazzmaster-hh-mn-surf-green-885978378388",
+   "name": "Squier Mini Jazzmaster HH MN Surf Green",
+   "brand": "Squier",
+   "price": "£149",
+   "store": "Reidys",
    "kind": "electrica",
-   "img": "0d7acc1b212efe98.webp",
-   "why": "£70 less than any other shop"
+   "img": "452c7969180bca24.webp",
+   "why": "£20 less than any other shop"
   },
   {
-   "slug": "schecter-c-1-standard-plus-ember-burst-electric-guitar-emberburst",
-   "name": "Schecter C-1 Standard Plus Ember Burst Electric Guitar",
-   "brand": "Schecter",
-   "price": "£419",
+   "slug": "hagstrom-adina-dark-storm-rkstormhtm",
+   "name": "Hagstrom Adina Dark Storm",
+   "brand": "Hagstrom",
+   "price": "£565",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "74890f92f0ab8d7d.webp",
+   "why": "£63 less than any other shop"
+  },
+  {
+   "slug": "squier-sonic-strat-hss-black-ssblackhtm",
+   "name": "Squier Sonic Strat HSS Black",
+   "brand": "Squier",
+   "price": "£148",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "178dda50ae4750b1.webp",
+   "why": ""
+  },
+  {
+   "slug": "jackson-js-series-dinky-js12-amaranth-fingerboard-metallic-blue-electric-guitar-885978976782",
+   "name": "Jackson JS Series Dinky® JS12, Amaranth Fingerboard, Metallic Blue Electric Guitar",
+   "brand": "Jackson",
+   "price": "£155",
    "store": "Fair Deal Music",
    "kind": "electrica",
-   "img": "44fb684299fd15c2.webp",
-   "why": "£50 less than any other shop"
+   "img": "94ee2686abe3f234.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-grx70qa-transparent-blue-burst-4515110752399",
+   "name": "Ibanez GRX70QA Transparent Blue Burst",
+   "brand": "Ibanez",
+   "price": "£199",
+   "store": "guitarguitar",
+   "kind": "electrica",
+   "img": "5897da04ddb35a22.webp",
+   "why": ""
+  },
+  {
+   "slug": "ge40wnt-sg-type-electric-guitar-5036678153798",
+   "name": "Ge40Wnt SG Type Electric Guitar",
+   "brand": "Ge40Wnt",
+   "price": "£209",
+   "store": "Ness Music",
+   "kind": "electrica",
+   "img": "b33ae482987ea1f7.webp",
+   "why": ""
+  },
+  {
+   "slug": "esp-ltd-mt-130-red-t130redhtm",
+   "name": "ESP LTD MT-130 Red",
+   "brand": "LTD",
+   "price": "£245",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "5d40e5fe46f271de.webp",
+   "why": ""
   }
  ]
 }

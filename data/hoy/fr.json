@@ -1,26 +1,56 @@
 {
- "fecha": "2026-11-08",
+ "fecha": "2026-11-09",
  "pais": "fr",
  "items": [
   {
-   "slug": "sigma-dm-18-esigmadm18",
-   "name": "Sigma Dm 18",
-   "brand": "Sigma",
-   "price": "609 €",
-   "store": "Paul Beuscher",
-   "kind": "acustica",
-   "img": "aa20dd389e7daf62.webp",
-   "why": "80 € de moins que dans les autres magasins"
-  },
-  {
-   "slug": "squier-jaguar-fsr-affinity-lrl-metallic-black-885978883462",
-   "name": "Squier Jaguar FSR Affinity LRL Metallic Black",
-   "brand": "Squier",
-   "price": "332 €",
+   "slug": "eko-st-300-cream-8056734498370",
+   "name": "Eko ST 300 Cream",
+   "brand": "Eko",
+   "price": "169 €",
    "store": "Woodbrass",
    "kind": "electrica",
-   "img": "2d8fc6c772a2ca5a.webp",
-   "why": "37 € de moins que dans les autres magasins"
+   "img": "2b95fd97d0d47fb1.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-sonictm-stratocaster-2ts-717669815653",
+   "name": "Squier Sonic™ Stratocaster 2TS",
+   "brand": "Squier",
+   "price": "175 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "f69fea79ef4889f5.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-lh-pacifica-pa112jlbl-black-4957812688222",
+   "name": "Yamaha Lh Pacifica Pa112Jlbl Black",
+   "brand": "Yamaha",
+   "price": "219 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "a902c09f528b1256.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-grg121sp-bmc-blue-metal-chameleon-gio-4549763305626",
+   "name": "Ibanez GRG121SP-BMC Blue Metal Chameleon Gio",
+   "brand": "Ibanez",
+   "price": "262 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "2c645aeafaa84a2b.webp",
+   "why": ""
+  },
+  {
+   "slug": "gretsch-streamliner-cvt-lrl-jet-black-197955147925",
+   "name": "Gretsch Streamliner CVT LRL Jet Black",
+   "brand": "Gretsch",
+   "price": "279 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "1f4b29b93342d9f8.webp",
+   "why": ""
   }
  ]
 }

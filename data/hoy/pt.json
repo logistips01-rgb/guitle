@@ -1,36 +1,26 @@
 {
- "fecha": "2026-11-08",
+ "fecha": "2026-11-09",
  "pais": "pt",
  "items": [
   {
-   "slug": "ibanez-azes31-vm-es31vm7702",
-   "name": "Ibanez AZES31-VM",
-   "brand": "Ibanez",
-   "price": "226 €",
-   "store": "Musifex",
-   "kind": "electrica",
-   "img": "c4f300b835f91265.webp",
-   "why": "19 € a menos do que em qualquer outra loja"
-  },
-  {
-   "slug": "fender-player-ii-strat-hss-mn-blk-ssmnblkhtm",
-   "name": "Fender Player II Strat HSS MN BLK",
+   "slug": "fender-cc-60s-concert-all-mahogany-hogany6920",
+   "name": "Fender CC-60S Concert All Mahogany",
    "brand": "Fender",
-   "price": "715 €",
-   "store": "Musifex",
-   "kind": "electrica",
-   "img": "f10023cb24bfb9df.webp",
-   "why": "50 € a menos do que em qualquer outra loja"
-  },
-  {
-   "slug": "guild-d-240e-westerly-sterly1823",
-   "name": "Guild D-240E Westerly",
-   "brand": "Guild",
-   "price": "439 €",
+   "price": "184 €",
    "store": "Musifex",
    "kind": "acustica",
-   "img": "e69f61637bff6f43.webp",
-   "why": "1 € a menos do que em qualquer outra loja"
+   "img": "8f90e42f10dcf384.webp",
+   "why": "21 € a menos do que em qualquer outra loja"
+  },
+  {
+   "slug": "ibanez-azes40-mgr-es40mgrhtm",
+   "name": "Ibanez AZES40-MGR",
+   "brand": "Ibanez",
+   "price": "257 €",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "14e9295f6f436509.webp",
+   "why": "4 € a menos do que em qualquer outra loja"
   }
  ]
 }

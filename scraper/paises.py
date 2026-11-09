@@ -323,13 +323,13 @@ def plan_pais(cc, day, recent):
     prods = ig.products(lo, hi, catalogs=cats)
     fetcher = Fetcher(delay=(0.5, 1.0))
     deals = ig.rank_deals(prods, recent, menos=lambda x: cfg["menos"].format(x=money(x)))
-    if len(deals) < 12:
+    if sum(1 for p in deals if ig.foto_revisada(p)) < 12:  # cuentan solo los que tienen foto revisada (los publicables)
         # Pocos chollos (p. ej. Italia): se completan con guitarras que hoy están más baratas en una tienda que en todas
         # las demás, con ese dato real como motivo
         ya = {p["slug"] for p in deals}
         extra = sorted((p for p in prods if p["slug"] not in ya and p["name"] not in recent and p["next"] > p["price"]
                         and p["max"] <= 1.45 * p["price"]), key=lambda p: -(p["next"] - p["price"]) / p["price"])
-        deals += [{**p, "why": cfg["menos"].format(x=money(p["next"] - p["price"]))} for p in extra[:20]]
+        deals += [{**p, "why": cfg["menos"].format(x=money(p["next"] - p["price"]))} for p in extra if ig.foto_revisada(p)][:20]
     stories = ig.with_photos(deals, ig.STORIES + 1, fetcher, folder, "chollo-")
     fecha = cfg["fecha"](day)
     n = day.toordinal()
