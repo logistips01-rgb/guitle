@@ -1,0 +1,159 @@
+{
+ "fecha": "9 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "squier-sonic-strat-lrl-ultraviolet-aviolethtm",
+    "name": "Squier Sonic Strat LRL Ultraviolet",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/560949.jpg",
+    "th": "97e7c1a47a81b05f.webp",
+    "price": 148.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 169.99,
+    "max": 179.0,
+    "next": 169.0,
+    "rows": [
+     [
+      "Thomann",
+      148.0
+     ],
+     [
+      "Reidys",
+      169.0
+     ],
+     [
+      "Guitarbitz",
+      169.99
+     ],
+     [
+      "Ness Music",
+      179.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£21 less than any other shop",
+    "pct": 12,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "fender-player-ii-strat-hss-mn-blk-ssmnblkhtm",
+    "name": "Fender Player II Strat HSS MN BLK",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/595289.jpg",
+    "th": "f10023cb24bfb9df.webp",
+    "price": 635.0,
+    "store": "Thomann",
+    "stores": 7,
+    "median": 739.0,
+    "max": 779.0,
+    "next": 739.0,
+    "rows": [
+     [
+      "Thomann",
+      635.0
+     ],
+     [
+      "Peach Guitars",
+      739.0
+     ],
+     [
+      "Andertons",
+      739.0
+     ],
+     [
+      "guitarguitar",
+      739.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      739.0
+     ],
+     [
+      "A Strings",
+      759.0
+     ],
+     [
+      "The Guitar Store",
+      779.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£104 less than any other shop",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "hagstrom-adina-dark-storm-rkstormhtm",
+    "name": "Hagstrom Adina Dark Storm",
+    "brand": "Hagstrom",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/600824.jpg",
+    "th": "74890f92f0ab8d7d.webp",
+    "price": 565.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 778.5,
+    "max": 929.0,
+    "next": 628.0,
+    "rows": [
+     [
+      "Thomann",
+      565.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      628.0
+     ],
+     [
+      "guitarguitar",
+      929.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£63 less than any other shop",
+    "pct": 10,
+    "photo": "g2-1.webp",
+    "label": "Electric"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
