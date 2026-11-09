@@ -5459,7 +5459,7 @@ def read_page(fetcher, store_id, url, now):
             return rec
         # Agotado y sin precio a la vista ("No disponible", "Call for price", producto retirado): la tienda no lo
         # enseña y guitle tampoco (prueba de congruencia del 8/11/2026: 11 tiendas así). Solo con la ficha en HTML.
-        if data.get("in_stock") is False and page == url and not _price_visible(resp.text, data["price"]):
+        if page == url and _hidden_price(resp.text, data):
             rec["status"] = "no_price"
             return rec
         brand = canonical_brand(data["brand_raw"])
@@ -5496,12 +5496,48 @@ def _page_numbers(text):
     return out
 
 
-def _price_visible(page_html, price):
-    """¿Sale el precio a la vista en la página (sin scripts ni estilos)? También con los céntimos aparte (434⁴⁶ €)."""
+def _visible_text(page_html):
     text = re.sub(r"(?is)<(script|style|noscript)\b.*?</\1>", " ", page_html)
-    text = html.unescape(re.sub(r"<[^>]+>", " ", text))
-    nums = _page_numbers(text)
-    return round(price, 2) in nums or (price % 1 and round(price * 100) in nums)
+    return html.unescape(re.sub(r"<[^>]+>", " ", text))
+
+
+def _price_visible(page_html, price):
+    """¿Sale el precio a la vista en la página (sin scripts ni estilos)? También con los céntimos aparte y pegados
+    (434⁴⁶ € → "43446", 749⁰⁰ lei → "74900", "2 283²⁶" → "228326")."""
+    text = _visible_text(page_html)
+    nums = _page_numbers(text) | _page_numbers(re.sub(r"(?<=\d)[ \u00a0\u202f](?=\d)", "", text))
+    return round(price, 2) in nums or round(price * 100) in nums
+
+
+# "Precio a consultar" y "sin stock" en los idiomas de las tiendas: con eso y sin el precio a la vista, la tienda no da
+# precio y guitle tampoco (prueba de congruencia del 9/11/2026: A Jóia, Zecchini, Mundomax).
+NO_PRICE_SHOWN = re.compile(r"(?i)pre[cç]o sob consulta|sob consulta|precio a consultar|consultar precio|prix sur demande"
+                            r"|sur demande|prezzo su richiesta|per informazioni,? disponibilit|price on request|call for price"
+                            r"|preis auf anfrage|prijs op aanvraag|cena na zapytanie|sem estoque|esgotad|indispon[ií]vel"
+                            r"|non disponibile|agotad|sin stock|out of stock|sold out|ausverkauft|nicht verf[uü]gbar|[ée]puis[ée]"
+                            r"|niet op voorraad|niedost[eę]pn")
+ON_REQUEST = re.compile(r"(?i)pre[cç]o sob consulta|sob consulta|precio a consultar|consultar precio|prix sur demande"
+                        r"|prezzo su richiesta|per informazioni,? disponibilit[aà] e prezzo|price on request|call for price"
+                        r"|preis auf anfrage|prijs op aanvraag|cena na zapytanie")
+
+
+_MONEY = re.compile(r"(?:€|£|\$|zł|Kč|kr\.?|Ft|lei|лв|CHF|R\$)\s?\d|\d[\d.,\u00a0 ]*\s?(?:€|£|zł|Kč|kr|Ft|lei|лв|CHF)\b", re.I)
+
+
+def _hidden_price(page_html, data):
+    """La tienda no enseña precio para este producto aunque sus datos lo tengan (agotado sin precio, "precio a
+    consultar", retirado). Solo en páginas que pintan sus precios en el HTML (con otros importes a la vista): en las
+    que los pintan con JavaScript (Fender Brasil) no se puede saber y se deja como está."""
+    text = _visible_text(page_html)
+    # "Precio a consultar" justo después del nombre del producto (no en los relacionados): no hay precio, sin más.
+    flat = " ".join(text.split())
+    low, name = flat.lower(), " ".join((data.get("name") or "").lower().split())
+    for m in (re.finditer(re.escape(name), low) if len(name) > 5 else ()):
+        if ON_REQUEST.search(flat[m.end():m.end() + 400]):
+            return True
+    if not _MONEY.search(text) or _price_visible(page_html, data["price"]):
+        return False
+    return data.get("in_stock") is False or bool(NO_PRICE_SHOWN.search(text))
 
 
 def due_urls(store_id, urls, offers, now):
