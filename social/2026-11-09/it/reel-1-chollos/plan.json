@@ -1,0 +1,136 @@
+{
+ "fecha": "9 novembre",
+ "post": {
+  "type": "top",
+  "title": "offerte di oggi",
+  "hook": "Offerte di oggi",
+  "picks": [
+   {
+    "slug": "ibanez-grg170dx-bkn-gitarrehtm",
+    "name": "Ibanez GRG170DX-BKN",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/167572.jpg",
+    "th": "a282795ae267923d.webp",
+    "price": 249.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 259.0,
+    "max": 264.0,
+    "next": 254.0,
+    "rows": [
+     [
+      "Thomann",
+      249.0
+     ],
+     [
+      "Woodbrass",
+      254.0
+     ],
+     [
+      "Di Santo Musica",
+      264.0
+     ]
+    ],
+    "pvp": null,
+    "why": "5 € in meno che negli altri negozi",
+    "photo": "g0-1.webp",
+    "label": "Elettrica"
+   },
+   {
+    "slug": "fender-cd-60sce-dreadnought-wn-all-mahogany-885978875702",
+    "name": "Fender Cd-60Sce Dreadnought Wn All-Mahogany",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://woodbrass.it/cdn/shop/files/4bee98dbd50648f26a9f8a8691e3bf45246d88fe_FMIC_0970113022.jpg?height=1200&pad_color=ffffff&v=1792629612&width=1200",
+    "th": "a06db2e588d7f991.webp",
+    "price": 289.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 297.0,
+    "max": 299.0,
+    "next": 295.0,
+    "rows": [
+     [
+      "Woodbrass",
+      289.0
+     ],
+     [
+      "Di Santo Musica",
+      295.0
+     ],
+     [
+      "Stralù",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "why": "6 € in meno che negli altri negozi",
+    "photo": "g1-1.webp",
+    "label": "Acustica"
+   },
+   {
+    "slug": "yamaha-fgx800c-ntii-chitarra-acustica-elettrificata-natural-atanatural",
+    "name": "Yamaha Fgx800C Ntii Chitarra Acustica Elettrificata Natural",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://yourmusiconline.it/cdn/shop/files/2aee10f27baa85d573884976ba8816977163ccac.jpg?v=1778187290&width=1920",
+    "th": "a7dbb9fee16429bf.webp",
+    "price": 435.0,
+    "store": "Your Music Online",
+    "stores": 3,
+    "median": 444.0,
+    "max": 449.0,
+    "next": 439.0,
+    "rows": [
+     [
+      "Your Music Online",
+      435.0
+     ],
+     [
+      "Di Santo Musica",
+      439.0
+     ],
+     [
+      "Biasin",
+      449.0
+     ]
+    ],
+    "pvp": null,
+    "why": "4 € in meno che negli altri negozi",
+    "photo": "g2-1.webp",
+    "label": "Acustica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}
