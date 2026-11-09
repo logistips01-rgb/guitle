@@ -1,0 +1,194 @@
+{
+ "fecha": "9 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "top",
+  "title": "4 violões até R$ 1.500",
+  "hook": "Top do dia",
+  "picks": [
+   {
+    "slug": "michael-aco-folk-cutaway-vmf400-st-sitka-7899091120994",
+    "name": "Michael Aco Folk Cutaway VMF400 ST - Sitka",
+    "brand": "Michael",
+    "kind": "acustica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/violao_michael_aco_folk_cutaway_vmf400_st_sitka_18886_1_7635a279bc0892db69cd94222edb1517.jpg",
+    "th": "8afa22e42345b984.webp",
+    "price": 809.1,
+    "store": "Música Center",
+    "stores": 3,
+    "median": 999.4549999999999,
+    "max": 1099.0,
+    "next": 899.91,
+    "rows": [
+     [
+      "Música Center",
+      809.1
+     ],
+     [
+      "Luggi",
+      899.91
+     ],
+     [
+      "Cheiro de Música",
+      1099.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "giannini-folk-preto-gf1d-bk-7890443020047",
+    "name": "Giannini Folk Preto GF1D BK",
+    "brand": "Giannini",
+    "kind": "acustica",
+    "img": "https://cdn.dooca.store/440/products/2-150.jpg?v=1631279090&webp=0",
+    "th": "3113fdc03996a4fb.webp",
+    "price": 898.0,
+    "store": "Super Som",
+    "stores": 4,
+    "median": 1086.45,
+    "max": 1159.9,
+    "next": 899.1,
+    "rows": [
+     [
+      "Super Som",
+      898.0
+     ],
+     [
+      "Mundomax",
+      899.1
+     ],
+     [
+      "Tuner Music",
+      1086.45
+     ],
+     [
+      "Supersonora",
+      1159.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "tagima-dallas-ntop-jumbo-aco-natural-cutaway-7898563970044",
+    "name": "Tagima Dallas NTOP Jumbo Aço Natural Cutaway",
+    "brand": "Tagima",
+    "kind": "acustica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/violao_tagima_dallas_gran_reserva_natural_open_pore_15463_2_475322f7ce9300ac186da1f171834a55.jpg",
+    "th": "ef1e7cf16cf48ac2.webp",
+    "price": 898.2,
+    "store": "Música Center",
+    "stores": 6,
+    "median": 1149.0,
+    "max": 1259.91,
+    "next": 950.4,
+    "rows": [
+     [
+      "Música Center",
+      898.2
+     ],
+     [
+      "Destroyer",
+      950.4
+     ],
+     [
+      "Ninja Som",
+      1010.16
+     ],
+     [
+      "Cheiro de Música",
+      1149.0
+     ],
+     [
+      "Só Som",
+      1259.0
+     ],
+     [
+      "Luggi",
+      1259.91
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "strinberg-fs4d-folk-forest-tos-kforesttos",
+    "name": "Strinberg Fs4d Folk Forest Tos",
+    "brand": "Strinberg",
+    "kind": "acustica",
+    "img": "https://dcdn-us.mitiendanube.com/stores/006/589/607/products/d_774375-mla95374194351_102025-o-01fd4ef64ae61f089717617382404545-480-0.webp",
+    "th": "d30102b1d4828295.webp",
+    "price": 949.99,
+    "store": "RCK Audio",
+    "stores": 5,
+    "median": 1211.33,
+    "max": 1360.0,
+    "next": 1100.0,
+    "rows": [
+     [
+      "RCK Audio",
+      949.99
+     ],
+     [
+      "A Joia Musical",
+      1100.0
+     ],
+     [
+      "China Som",
+      1200.0
+     ],
+     [
+      "X5 Music",
+      1222.66
+     ],
+     [
+      "Tuner Music",
+      1360.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   }
+  ]
+ }
+}
