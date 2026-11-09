@@ -1,0 +1,178 @@
+{
+ "fecha": "9 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "tagima-sixmart-sc-mdsv-metalic-deep-silver-e-bk-les-paul-c-efeitos-7898563977883",
+    "name": "Tagima Sixmart SC MDSV Metalic Deep Silver E/BK Les Paul C/ Efeitos",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-sixmart-sc-mdsv-metalic-deep-silver-e-bk-les-paul-c-efeitos-1133293/1353940.jpg?w=1000&h=1000&v=202508070450&qs=ignore",
+    "th": "8890fd394043fff8.webp",
+    "price": 1458.0,
+    "store": "Destroyer",
+    "stores": 4,
+    "median": 1799.91,
+    "max": 1990.0,
+    "next": 1619.1,
+    "rows": [
+     [
+      "Destroyer",
+      1458.0
+     ],
+     [
+      "Mundomax",
+      1619.1
+     ],
+     [
+      "Luggi",
+      1799.91
+     ],
+     [
+      "Casa da Música",
+      1990.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 161,10 a menos que em qualquer outra loja",
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "strinberg-sd301hcr-ks-galaxy-series-folk-de-aco-koa-fosco-c-efeitos-e-bag-7899854524090",
+    "name": "Strinberg SD301HCR KS Galaxy Series Folk de Aço Koa Fosco C/ Efeitos e Bag",
+    "brand": "Strinberg",
+    "kind": "acustica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-sd301hcr-ks-galaxy-series-folk-de-aco-koa-fosco-c-efeitos-e-bag-460697/681344.jpg?w=1000&h=1000&v=202508070822&qs=ignore",
+    "th": "a20f2f5e5e7612f5.webp",
+    "price": 1881.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 2236.65,
+    "max": 2274.3,
+    "next": 2199.0,
+    "rows": [
+     [
+      "Akustica Musical",
+      1881.0
+     ],
+     [
+      "Cheiro de Música",
+      2199.0
+     ],
+     [
+      "Mundomax",
+      2274.3
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 318 a menos que em qualquer outra loja",
+    "pct": 14,
+    "photo": "g0-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "takamine-gd21ce-sm-satin-molasses-eletroacustico-aco-190262044642",
+    "name": "Takamine GD21CE SM Satin Molasses Eletroacustico Aço",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-takamine-gd21ce-sm-satin-molasses-eletroacustico-aco-1133583/1354270.jpg?w=1000&h=1000&v=202508070732&qs=ignore",
+    "th": "260bb10b24edafa8.webp",
+    "price": 3591.0,
+    "store": "Akustica Musical",
+    "stores": 4,
+    "median": 4175.1,
+    "max": 5226.0,
+    "next": 4049.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      3591.0
+     ],
+     [
+      "Mundomax",
+      4049.1
+     ],
+     [
+      "Música Center",
+      4175.1
+     ],
+     [
+      "Carneiro Music",
+      5226.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 458,10 a menos que em qualquer outra loja",
+    "pct": 11,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "yamaha-eletroacustico-nylon-ncx1c-nt-4957812657624",
+    "name": "Yamaha Eletroacústico Nylon NCX1C NT",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://cdn.dooca.store/440/products/1-81.jpg?v=1710763730&webp=0",
+    "th": "8366fb577726e04e.webp",
+    "price": 3149.1,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 3515.0,
+    "max": 3799.0,
+    "next": 3231.0,
+    "rows": [
+     [
+      "Mundomax",
+      3149.1
+     ],
+     [
+      "Akustica Musical",
+      3231.0
+     ],
+     [
+      "Casa da Música",
+      3799.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 81,90 a menos que em qualquer outra loja",
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}
