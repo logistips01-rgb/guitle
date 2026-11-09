@@ -56,6 +56,10 @@ jobs:
           cut -c1-40 /tmp/pub
           ssh-keyscan -T 20 "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
       - name: Paso
+        env:
+          R2_KEY: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
         run: |
           paso=$(head -1 .github/servidor.txt | tr -d '\r' | awk '{print $1}')
           echo "paso: $paso"
@@ -65,6 +69,11 @@ jobs:
               ssh -o BatchMode=yes -o ConnectTimeout=20 root@"$HOST" 'hostname; cat /etc/os-release | head -2; uname -r; nproc; free -m; df -h /; ss -tlnp | head -20' ;;
             *)
               [ -f "servidor/$paso.sh" ] || { echo "::error::no existe servidor/$paso.sh"; exit 1; }
-              scp -o BatchMode=yes -q servidor/*.sh servidor/*.conf root@"$HOST":/root/ 2>/dev/null || scp -o BatchMode=yes -q servidor/*.sh root@"$HOST":/root/
+              scp -o BatchMode=yes -q servidor/* root@"$HOST":/root/
+              if [ "$paso" = sincronizar ]; then
+                # Credenciales de R2 para rclone en el servidor (solo root las puede leer)
+                printf '[r2]\ntype = s3\nprovider = Cloudflare\naccess_key_id = %s\nsecret_access_key = %s\nendpoint = https://%s.r2.cloudflarestorage.com\nno_check_bucket = true\n' \
+                  "$R2_KEY" "$R2_SECRET" "${R2_ACCOUNT,,}" | ssh -o BatchMode=yes root@"$HOST" 'mkdir -p /root/.config/rclone && umask 077 && cat > /root/.config/rclone/rclone.conf'
+              fi
               ssh -o BatchMode=yes root@"$HOST" "bash /root/$paso.sh" ;;
           esac
