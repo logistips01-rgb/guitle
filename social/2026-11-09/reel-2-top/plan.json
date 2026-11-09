@@ -1,0 +1,175 @@
+{
+ "fecha": "9 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 chollos en amplis",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "yamaha-thr5-4957812502283",
+    "name": "Yamaha THR5",
+    "brand": "Yamaha",
+    "kind": "amplis",
+    "img": "https://www.numemusic.es/media/catalog/product/0/1/011644_e6fe.jpg?store=nume_es&image-type=image",
+    "th": "35fe0c29db29a14e.webp",
+    "price": 199.0,
+    "store": "Alfasoni",
+    "stores": 3,
+    "median": 236.55,
+    "max": 249.0,
+    "next": 224.1,
+    "rows": [
+     [
+      "Alfasoni",
+      199.0
+     ],
+     [
+      "Nume Music",
+      224.1
+     ],
+     [
+      "MAT Guitars",
+      249.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "25,10 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "fender-rumble-40-885978288090",
+    "name": "Fender Rumble 40",
+    "brand": "Fender",
+    "kind": "amplis",
+    "img": "https://www.numemusic.es/media/catalog/product/0/2/027389_1_cbcb.jpg?store=nume_es&image-type=image",
+    "th": "248e47e4e5180665.webp",
+    "price": 269.0,
+    "store": "Musicopolix",
+    "stores": 5,
+    "median": 338.3,
+    "max": 346.95,
+    "next": 333.0,
+    "rows": [
+     [
+      "Musicopolix",
+      269.0
+     ],
+     [
+      "Drunkat",
+      333.0
+     ],
+     [
+      "Nume Music",
+      337.6
+     ],
+     [
+      "MAT Guitars",
+      339.0
+     ],
+     [
+      "Alfasoni",
+      346.95
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "64 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "vox-adio-air-bs-4959112160316",
+    "name": "VOX Adio Air BS",
+    "brand": "VOX",
+    "kind": "amplis",
+    "img": "https://www.numemusic.es/media/catalog/product/0/5/055410_9794.jpg?store=nume_es&image-type=image",
+    "th": "864893ad48fa8fc4.webp",
+    "price": 285.0,
+    "store": "Musicopolix",
+    "stores": 3,
+    "median": 322.0,
+    "max": 329.0,
+    "next": 315.0,
+    "rows": [
+     [
+      "Musicopolix",
+      285.0
+     ],
+     [
+      "Pronorte",
+      315.0
+     ],
+     [
+      "Nume Music",
+      329.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "30 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "markbass-cmb-121-black-line-8059307424271",
+    "name": "Markbass CMB 121 Black Line",
+    "brand": "Markbass",
+    "kind": "amplis",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/734706_7122.jpg?store=nume_es&image-type=image",
+    "th": "cf7ab9d907465df3.webp",
+    "price": 336.0,
+    "store": "Drunkat",
+    "stores": 3,
+    "median": 378.65,
+    "max": 388.3,
+    "next": 369.0,
+    "rows": [
+     [
+      "Drunkat",
+      336.0
+     ],
+     [
+      "Musicopolix",
+      369.0
+     ],
+     [
+      "Nume Music",
+      388.3
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "33 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "blackstar-unity-250-845644004119",
+    "name": "Blackstar Unity 250",
+    "brand": "Blackstar",
+    "kind": "amplis",
+    "img": "https://www.numemusic.es/media/catalog/product/0/5/057211_890a.jpg?store=nume_es&image-type=image",
+    "th": "971119c6a6588de4.webp",
+    "price": 499.0,
+    "store": "Nume Music",
+    "stores": 3,
+    "median": 599.0,
+    "max": 599.0,
+    "next": 599.0,
+    "rows": [
+     [
+      "Nume Music",
+      499.0
+     ],
+     [
+      "Alfasoni",
+      599.0
+     ],
+     [
+      "Drunkat",
+      599.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "100 € menos que en cualquier otra tienda"
+   }
+  ],
+  "rama": "amplis"
+ },
+ "stories": []
+}

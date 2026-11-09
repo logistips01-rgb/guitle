@@ -1,0 +1,159 @@
+{
+ "fecha": "9 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "yamaha-revstar-rss02t-sonic-blue-4957812712163",
+    "name": "Yamaha Revstar RSS02T Sonic Blue",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.pronorte.es/_files/product/29071/gallery3/guitarra-electrica-yamaha-revstar-rss02t-sonic-blue-3.jpg",
+    "th": "59f57d5f7e46e67b.webp",
+    "price": 627.0,
+    "store": "Alteisa",
+    "stores": 3,
+    "median": 811.0,
+    "max": 811.0,
+    "next": 811.0,
+    "rows": [
+     [
+      "Alteisa",
+      627.0
+     ],
+     [
+      "Woodbrass",
+      811.0
+     ],
+     [
+      "Thomann",
+      811.0
+     ]
+    ],
+    "pvp": null,
+    "why": "184 € menos que en cualquier otra tienda",
+    "pct": 23,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "squier-affinity-telecaster-lrl-lake-placid-blue-885978722792",
+    "name": "Squier Affinity Telecaster LRL Lake Placid Blue",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/651211_1_cfa5.jpg?store=nume_es&image-type=image",
+    "th": "c54ab07e4b75545e.webp",
+    "price": 199.0,
+    "store": "Musicopolix",
+    "stores": 6,
+    "median": 249.0,
+    "max": 265.0,
+    "next": 243.0,
+    "rows": [
+     [
+      "Musicopolix",
+      199.0
+     ],
+     [
+      "Woodbrass",
+      243.0
+     ],
+     [
+      "Nume Music",
+      248.33
+     ],
+     [
+      "MAT Guitars",
+      249.0
+     ],
+     [
+      "Auvisa",
+      249.0
+     ],
+     [
+      "Alfasoni",
+      265.0
+     ]
+    ],
+    "pvp": null,
+    "why": "44 € menos que en cualquier otra tienda",
+    "pct": 18,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sigma-00m-1s-sb-0m1ssbhtml",
+    "name": "Sigma 00M-1S-SB",
+    "brand": "Sigma",
+    "kind": "acustica",
+    "img": "https://partituraonline.com/83700-home_default/sigma-00m-1s-sb.jpg",
+    "th": "a1fccd4af0df1f9a.webp",
+    "price": 320.0,
+    "store": "Drunkat",
+    "stores": 4,
+    "median": 421.0,
+    "max": 479.0,
+    "next": 421.0,
+    "rows": [
+     [
+      "Drunkat",
+      320.0
+     ],
+     [
+      "Pronorte",
+      421.0
+     ],
+     [
+      "Madrid Musical Málaga 8",
+      421.0
+     ],
+     [
+      "Woodbrass",
+      479.0
+     ]
+    ],
+    "pvp": null,
+    "why": "101 € menos que en cualquier otra tienda",
+    "pct": 24,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "ortega-grandsuite-842960186208",
+    "name": "Ortega Grandsuite",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/733862_1_988e.jpg?store=nume_es&image-type=image",
+    "th": "b93427708e3e9c84.webp",
+    "price": 542.6,
+    "store": "Alteisa",
+    "stores": 3,
+    "median": 699.0,
+    "max": 709.0,
+    "next": 689.0,
+    "rows": [
+     [
+      "Alteisa",
+      542.6
+     ],
+     [
+      "Nume Music",
+      689.0
+     ],
+     [
+      "Woodbrass",
+      709.0
+     ]
+    ],
+    "pvp": null,
+    "why": "146,40 € menos que en cualquier otra tienda",
+    "pct": 21,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}

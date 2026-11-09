@@ -1,0 +1,376 @@
+{
+ "date": "2026-11-09",
+ "fecha": "9 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 eléctricas de 150 € a 300 €",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "squier-sonic-stratocaster-ht-mn-sea-foam-green-197955143149",
+    "name": "Squier Sonic Stratocaster HT MN Sea Foam Green",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/1/0/1019609_1_8560.jpg?store=nume_es&image-type=image",
+    "th": "1f46680e3efe6580.webp",
+    "price": 165.0,
+    "store": "Alteisa",
+    "stores": 7,
+    "median": 174.0,
+    "max": 180.19,
+    "next": 172.0,
+    "rows": [
+     [
+      "Alteisa",
+      165.0
+     ],
+     [
+      "Musical San Francisco",
+      172.0
+     ],
+     [
+      "Nume Music",
+      174.0
+     ],
+     [
+      "MAT Guitars",
+      174.0
+     ],
+     [
+      "Auvisa",
+      174.0
+     ],
+     [
+      "Woodbrass",
+      179.0
+     ],
+     [
+      "Musicopolix",
+      180.19
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "cort-g110-opbk-8809625369606",
+    "name": "Cort G110 Opbk",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/657763_e5c8.jpg?store=nume_es&image-type=image",
+    "th": "ff9cf5472ccd6ff6.webp",
+    "price": 167.0,
+    "store": "Musicsales",
+    "stores": 6,
+    "median": 175.0,
+    "max": 189.0,
+    "next": 169.0,
+    "rows": [
+     [
+      "Musicsales",
+      167.0
+     ],
+     [
+      "Musicopolix",
+      169.0
+     ],
+     [
+      "MAT Guitars",
+      169.0
+     ],
+     [
+      "Auvisa",
+      175.0
+     ],
+     [
+      "Nume Music",
+      179.0
+     ],
+     [
+      "Pronorte",
+      189.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "jet-js400-sfg-hss-sea-foam-green-3831120907866",
+    "name": "JET JS400-SFG-HSS Sea Foam Green",
+    "brand": "JET",
+    "kind": "electrica",
+    "img": "https://neomusica.es/cdn/shop/files/5307023.jpg?v=1792059766&width=1920",
+    "th": "62c4c2a560e214e1.webp",
+    "price": 207.0,
+    "store": "Neomúsica",
+    "stores": 7,
+    "median": 230.0,
+    "max": 239.0,
+    "next": 207.0,
+    "rows": [
+     [
+      "Neomúsica",
+      207.0
+     ],
+     [
+      "Musical San Francisco",
+      207.0
+     ],
+     [
+      "Musicsales",
+      225.0
+     ],
+     [
+      "Musicopolix",
+      230.0
+     ],
+     [
+      "Auvisa",
+      230.0
+     ],
+     [
+      "Alteisa",
+      230.0
+     ],
+     [
+      "Abrines Música",
+      239.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "ibanez-grg140-sb-sunburst-4515110777286",
+    "name": "Ibanez GRG140-SB Sunburst",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/0/2/029777_1_1bb6.jpg?store=nume_es&image-type=image",
+    "th": "0b674a6c4df5267b.webp",
+    "price": 223.2,
+    "store": "Partitura",
+    "stores": 9,
+    "median": 236.85000000000002,
+    "max": 253.0,
+    "next": 236.0,
+    "rows": [
+     [
+      "Partitura",
+      223.2
+     ],
+     [
+      "Drunkat",
+      236.0
+     ],
+     [
+      "Auvisa",
+      236.0
+     ],
+     [
+      "Nume Music",
+      236.8
+     ],
+     [
+      "Alfasoni",
+      236.8
+     ],
+     [
+      "Musicopolix",
+      236.9
+     ],
+     [
+      "Pronorte",
+      237.0
+     ],
+     [
+      "MAT Guitars",
+      239.0
+     ],
+     [
+      "Woodbrass",
+      253.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "esp-ltd-mt-130-snow-white-superstrato-840248029346",
+    "name": "ESP/LTD MT-130 Snow White Superstrato",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://alteisa.com/154394-large_default/esp-ltd-mt-130-snow-white-guitarra-electrica-superstrato.jpg",
+    "th": "55a7d79c1bedb660.webp",
+    "price": 244.0,
+    "store": "Alteisa",
+    "stores": 8,
+    "median": 289.0,
+    "max": 289.0,
+    "next": 244.0,
+    "rows": [
+     [
+      "Alteisa",
+      244.0
+     ],
+     [
+      "Egitana",
+      244.0
+     ],
+     [
+      "Partitura",
+      247.2
+     ],
+     [
+      "Auvisa",
+      285.0
+     ],
+     [
+      "Musicopolix",
+      289.0
+     ],
+     [
+      "Drunkat",
+      289.0
+     ],
+     [
+      "Pronorte",
+      289.0
+     ],
+     [
+      "Thomann",
+      289.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   }
+  ],
+  "caption": "🎸 5 eléctricas de 150 € a 300 €: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n1️⃣ Squier Sonic Stratocaster HT MN Sea Foam Green: 165 € en Alteisa\n2️⃣ Cort G110 Opbk: 167 € en Musicsales\n3️⃣ JET JS400-SFG-HSS Sea Foam Green: 207 € en Neomúsica\n4️⃣ Ibanez GRG140-SB Sunburst: 223,20 € en Partitura\n5️⃣ ESP/LTD MT-130 Snow White Superstrato: 244 € en Alteisa\n\n¿Con cuál te quedas? Te leemos en comentarios 💬\n👉 Todos los chollos de hoy, a un toque: enlace en la bio. Precios del 9 de noviembre.\n\n#guitarra #guitarraelectrica #guitarristas #comprarguitarra #squier #cort #jet #ibanez #ltd"
+ },
+ "stories": [
+  {
+   "slug": "ortega-r16s-842960185133",
+   "name": "Ortega R16S",
+   "brand": "Ortega",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/0/706438_c273.jpg?store=nume_es&image-type=image",
+   "th": "d11db04930a9a1e0.webp",
+   "price": 306.4,
+   "store": "Alteisa",
+   "stores": 3,
+   "median": 389.0,
+   "max": 389.0,
+   "next": 389.0,
+   "rows": [
+    [
+     "Alteisa",
+     306.4
+    ],
+    [
+     "Nume Music",
+     389.0
+    ],
+    [
+     "Musicopolix",
+     389.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 9 % por debajo de su media",
+   "pct": 9,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "admira-a-20-8436032350325",
+   "name": "Admira A-20",
+   "brand": "Admira",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/1/617492_611b.jpg?store=nume_es&image-type=image",
+   "th": "1505a480e6c7f2b3.webp",
+   "price": 697.0,
+   "store": "Microfusa",
+   "stores": 6,
+   "median": 896.0,
+   "max": 896.01,
+   "next": 895.0,
+   "rows": [
+    [
+     "Microfusa",
+     697.0
+    ],
+    [
+     "Musicopolix",
+     895.0
+    ],
+    [
+     "Musicsales",
+     895.0
+    ],
+    [
+     "MAT Guitars",
+     896.0
+    ],
+    [
+     "Alteisa",
+     896.0
+    ],
+    [
+     "Nume Music",
+     896.01
+    ]
+   ],
+   "pvp": null,
+   "why": "Bajada real: 18 % por debajo de su media",
+   "pct": 18,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "lag-t118dce-tramontane-118-dreadnought-cutaway-natural-3700166363120",
+   "name": "LAG T118DCE Tramontane 118 Dreadnought Cutaway Natural",
+   "brand": "LAG",
+   "kind": "acustica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/1/718717_1_000e.jpg?store=nume_es&image-type=image",
+   "th": "09c5439b3f30a495.webp",
+   "price": 385.47,
+   "store": "Musical San Francisco",
+   "stores": 7,
+   "median": 547.5,
+   "max": 549.0,
+   "next": 410.1,
+   "rows": [
+    [
+     "Musical San Francisco",
+     385.47
+    ],
+    [
+     "Alteisa",
+     410.1
+    ],
+    [
+     "Musicopolix",
+     435.0
+    ],
+    [
+     "MAT Guitars",
+     546.0
+    ],
+    [
+     "Nume Music",
+     549.0
+    ],
+    [
+     "Alfasoni",
+     549.0
+    ],
+    [
+     "Pronorte",
+     549.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 112,47 € menos que ayer",
+   "pct": 23,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}
