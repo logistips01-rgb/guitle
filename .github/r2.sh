@@ -94,6 +94,8 @@ publicar() {
     if python -m scraper.navidad >/dev/null 2>&1 && [ -f navidad/index.html ]; then up copy navidad navidad; fi
     # Fichas: cada trabajo genera solo las de sus categorías, así que se copian (nunca se borran, como en git).
     if compgen -G "g/*.html" >/dev/null; then up copy g g --include "*.html"; fi
+    # Las fichas de hoy de España (todas las categorías, de las listas de git), para que el Worker no sirva las retiradas
+    if python -m scraper.cajas --indice-es; then one g/_indice.txt.gz; fi
     for d in marca tipo presupuesto; do  # se generan enteras en cada lectura de España
       n=$( { find "$d" -name '*.html' 2>/dev/null || true; } | wc -l)  # sin la carpeta (trabajo de otro país): 0
       if [ "$n" -ge 10 ]; then up sync "$d" "$d" --max-delete 500; fi

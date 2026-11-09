@@ -73,6 +73,23 @@ def indice(out, slugs):
         path.write_bytes(data)
 
 
+def indice_es():
+    """g/_indice.txt.gz: las fichas de España de hoy (las listas g/_*.txt de todas las categorías, en git) para el Worker.
+    Las fichas de España se copian a R2 y nunca se borran: una guitarra retirada seguiría saliendo con su último precio.
+    Con esto el Worker la lleva a la ficha de hoy del mismo producto (301) o responde "ya no está disponible" (410)."""
+    from datetime import datetime, timezone
+    slugs = sorted({line.strip() for lst in (ROOT / "g").glob("_*.txt") for line in lst.read_text(encoding="utf-8").split()
+                    if line.strip()})
+    if len(slugs) < 20000:  # listas a medias: mejor sin índice (el Worker sirve como antes) que tapar fichas buenas
+        print(f"índice de España: solo {len(slugs)} fichas, no se escribe", flush=True)
+        return 0
+    # Una ficha por línea (la primera, la fecha), comprimido: unos cientos de KB. El Worker monta el resto al cargarlo.
+    text = datetime.now(timezone.utc).isoformat(timespec="seconds") + "\n" + "\n".join(slugs) + "\n"
+    (ROOT / "g" / "_indice.txt.gz").write_bytes(gzip.compress(text.encode("utf-8"), compresslevel=9, mtime=0))
+    print(f"índice de España: {len(slugs)} fichas", flush=True)
+    return len(slugs)
+
+
 CAJAS_R = 512  # secciones como la de discos (<país>/records/): todas sus páginas, en 512 cajas (<país>/_r/)
 
 
@@ -103,6 +120,8 @@ def empaquetar_carpeta(code, sub):
 
 
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["--indice-es"]:
+        sys.exit(0 if indice_es() else 1)
     if sys.argv[1:2] == ["--carpeta"]:
         n, changed = empaquetar_carpeta(sys.argv[2], sys.argv[3])
         print(f"cajas {sys.argv[2]}/{sys.argv[3]}: {n} páginas ({changed} cajas escritas)", flush=True)
