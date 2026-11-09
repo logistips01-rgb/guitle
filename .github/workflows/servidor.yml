@@ -31,9 +31,11 @@ jobs:
             servidor
           sparse-checkout-cone-mode: false
       - name: Llave
+        if: hashFiles('.github/servidor.txt') != ''
         env:
           KEY: ${{ secrets.SERVIDOR_SSH_KEY }}
         run: |
+          if grep -q '^espera' .github/servidor.txt; then exit 0; fi
           if [ -z "$KEY" ]; then echo "::error::falta el secreto SERVIDOR_SSH_KEY"; exit 1; fi
           mkdir -p ~/.ssh && printf '%s\n' "$KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
           ssh-keyscan -T 20 "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
@@ -42,6 +44,7 @@ jobs:
           paso=$(head -1 .github/servidor.txt | tr -d '\r' | awk '{print $1}')
           echo "paso: $paso"
           case "$paso" in
+            espera) echo "Nada que hacer todavía." ;;
             prueba)
               ssh -o BatchMode=yes -o ConnectTimeout=20 root@"$HOST" 'hostname; cat /etc/os-release | head -2; uname -r; nproc; free -m; df -h /; ss -tlnp | head -20' ;;
             *)
