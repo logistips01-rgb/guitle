@@ -1,36 +1,76 @@
 {
- "fecha": "2026-11-08",
+ "fecha": "2026-11-09",
  "pais": "br",
  "items": [
   {
-   "slug": "benson-exd900ce-exodus-series-folk-koa-burst-pre-fishman-aco-c-bag-7899701570126",
-   "name": "Benson EXD900CE Exodus Series Folk Koa Burst Pré Fishman Aço C/ Bag",
-   "brand": "Benson",
-   "price": "R$ 2.331,00",
+   "slug": "yamaha-stratocaster-pacifica-pac012-branca-4957812667197",
+   "name": "Yamaha Stratocaster Pacifica PAC012 Branca",
+   "brand": "Yamaha",
+   "price": "R$ 1.480,50",
+   "store": "Destroyer",
+   "kind": "electrica",
+   "img": "5d7294902757a3b4.webp",
+   "why": "R$ 318,60 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "strinberg-sd301hcr-ks-galaxy-series-folk-de-aco-koa-fosco-c-efeitos-e-bag-7899854524090",
+   "name": "Strinberg SD301HCR KS Galaxy Series Folk de Aço Koa Fosco C/ Efeitos e Bag",
+   "brand": "Strinberg",
+   "price": "R$ 1.881,00",
    "store": "Akustica Musical",
    "kind": "acustica",
-   "img": "3b69209687a39685.webp",
-   "why": "R$ 368,10 a menos que em qualquer outra loja"
+   "img": "a20f2f5e5e7612f5.webp",
+   "why": "R$ 318 a menos que em qualquer outra loja"
   },
   {
-   "slug": "tagima-kansas-gran-reserva-ntop-tagima-7898563970068",
-   "name": "Tagima Kansas Gran Reserva NTOP - Tagima",
+   "slug": "takamine-gd21ce-sm-satin-molasses-eletroacustico-aco-190262044642",
+   "name": "Takamine GD21CE SM Satin Molasses Eletroacustico Aço",
+   "brand": "Takamine",
+   "price": "R$ 3.591,00",
+   "store": "Akustica Musical",
+   "kind": "acustica",
+   "img": "260bb10b24edafa8.webp",
+   "why": "R$ 458,10 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "tagima-black-hss-tg510bk-7898651948351",
+   "name": "Tagima Black HSS TG510BK",
    "brand": "Tagima",
-   "price": "R$ 909,88",
-   "store": "Ninja Som",
-   "kind": "acustica",
-   "img": "5bc65f954650e4a1.webp",
-   "why": "R$ 122,83 a menos que em qualquer outra loja"
+   "price": "R$ 989,10",
+   "store": "Super Som",
+   "kind": "electrica",
+   "img": "077d745602d96766.webp",
+   "why": ""
   },
   {
-   "slug": "strinberg-sd201hc-mgs-folk-7899854523857",
-   "name": "Strinberg SD201HC Mgs Folk",
+   "slug": "michael-stratocaster-michael-rocker-gms250-amber-7899091123452",
+   "name": "Michael Stratocaster Michael Rocker GMS250 Amber",
+   "brand": "Michael",
+   "price": "R$ 1.019,90",
+   "store": "Supersonora",
+   "kind": "electrica",
+   "img": "7b1ca293e0ec8eaa.webp",
+   "why": ""
+  },
+  {
+   "slug": "strinberg-sg-gss400-bk-passiva-preta-7899854500124",
+   "name": "Strinberg SG GSS400 BK Passiva Preta",
    "brand": "Strinberg",
-   "price": "R$ 1.062,49",
-   "store": "RCK Audio",
-   "kind": "acustica",
-   "img": "9d18e926639de068.webp",
-   "why": "R$ 134,51 a menos que em qualquer outra loja"
+   "price": "R$ 1.161,00",
+   "store": "Akustica Musical",
+   "kind": "electrica",
+   "img": "bc902245500b3847.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-stratocaster-sonic-2-color-sunburst-0373152503-squier-by-fender-717669815653",
+   "name": "Squier Stratocaster Sonic 2-Color Sunburst 0373152503 - Squier By Fender",
+   "brand": "Squier",
+   "price": "R$ 1.977,08",
+   "store": "Ninja Som",
+   "kind": "electrica",
+   "img": "8cfc1c6a28a2462f.webp",
+   "why": ""
   }
  ]
 }

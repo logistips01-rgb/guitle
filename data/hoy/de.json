@@ -1,15 +1,75 @@
 {
- "fecha": "2026-11-08",
+ "fecha": "2026-11-09",
  "pais": "de",
  "items": [
   {
-   "slug": "cort-g110-opbk-e-gitarre-open-pore-black-8809625369606",
-   "name": "Cort G110-OPBK E-Gitarre, open pore black",
-   "brand": "Cort",
-   "price": "199 €",
+   "slug": "ortega-r-121-1-2-wh-konzertgitarre-incl-tasche-840553065312",
+   "name": "Ortega R-121-1/2 WH Konzertgitarre incl. Tasche",
+   "brand": "Ortega",
+   "price": "169 €",
+   "store": "Musikhaus Markstein",
+   "kind": "clasica",
+   "img": "8ef7b247c6c7a6a5.webp",
+   "why": "38 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "ibanez-aad50-lg-westerngitarre-4549763304414",
+   "name": "Ibanez AAD50-LG Westerngitarre",
+   "brand": "Ibanez",
+   "price": "210 €",
+   "store": "IMM Professional",
+   "kind": "acustica",
+   "img": "5a87d55c2072f8ee.webp",
+   "why": "39 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "vox-sdc1-mini-wh-e-gitarre-weiss-inkl-tasche-4959112192102",
+   "name": "Vox SDC1 Mini WH E-Gitarre, weiss, inkl. Tasche",
+   "brand": "Vox",
+   "price": "178 €",
    "store": "Shop2Rock",
    "kind": "electrica",
-   "img": "6c01753dac754da0.webp",
+   "img": "133f571795096692.webp",
+   "why": ""
+  },
+  {
+   "slug": "mooer-msc-18-pro-da-pro-guitar-e-gitarre-inkl-gigbag-dark-aurora-6971889222644",
+   "name": "Mooer MSC 18 PRO DA Pro Guitar E-Gitarre inkl. Gigbag, dark aurora",
+   "brand": "Mooer",
+   "price": "187 €",
+   "store": "Shop2Rock",
+   "kind": "electrica",
+   "img": "798dd6f92f01f59e.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-grg131dx-bkf-31dxbkfhtm",
+   "name": "Ibanez GRG131DX-BKF",
+   "brand": "Ibanez",
+   "price": "214 €",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "133860a1ae4648e0.webp",
+   "why": ""
+  },
+  {
+   "slug": "jet-js-400-mbk-r-e-gitarre-matte-black-3831120917698",
+   "name": "Jet JS-400 MBK R E-Gitarre, matte black",
+   "brand": "Jet",
+   "price": "280 €",
+   "store": "Shop2Rock",
+   "kind": "electrica",
+   "img": "3cc9ff80e7752a80.webp",
+   "why": ""
+  },
+  {
+   "slug": "cort-cr100-cherry-red-sunburst-e-gitarre-8809383837577",
+   "name": "Cort CR100 Cherry Red Sunburst E-Gitarre",
+   "brand": "Cort",
+   "price": "299 €",
+   "store": "IMM Professional",
+   "kind": "electrica",
+   "img": "16f477b7105df37c.webp",
    "why": ""
   }
  ]
