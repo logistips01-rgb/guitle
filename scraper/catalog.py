@@ -45,7 +45,8 @@ RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se
 RECHECK_MIN_HOURS = 20  # ninguna ficha se relee antes: con todo al día, la lectura acaba antes en vez de repetir
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35,  # por debajo no es una guitarra (ni infantil)
-             "teclado": 40, "pedal": 20, "portuguesa": 150, "bajo": 80, "ampli": 30, "estuche": 12, "micro": 15, "varios": 3}
+             "teclado": 40, "pedal": 20, "portuguesa": 150, "bajo": 80, "ampli": 30, "estuche": 12, "micro": 15, "varios": 3,
+             "bateria": 150}  # una batería (aun infantil) no baja de 150 €: lo de menos es un pad, una caja o un juguete
 GUITAR_KINDS = {"electrica", "acustica", "clasica", "portuguesa"}
 # Packs (guitarra con ampli, funda, accesorios…): sección propia. "packac": los de acústicas y clásicas de España, que van
 # en otro catálogo (acusticas/) con su histórico; en la web se juntan con los de eléctricas (packs.html).
@@ -561,6 +562,175 @@ _MIC_ACC = re.compile(r"soporte|\bpie\b|\bstand|pinza|\bclip|anti-?pop|pop ?filt
                       r"|cachimbo|canopla|c[aá]psula|arara|expositor|pedestal|globo|garra|haste|\bpara micr", re.I)
 
 
+# --- Baterías (acústicas y electrónicas, completas o en set de cascos) -------------------------------------------------
+# Solo el instrumento: ni platillos, ni cajas, ni bombos o toms sueltos, ni herrajes, baquetas, parches, pedales,
+# banquetas, pads de práctica, módulos, amplis, fundas o alfombras. Se mira el texto en el idioma de la tienda (sin
+# traducir: _to_es convierte "drum head" o "Schlagzeughocker" en "batería") y "batería" también es la de litio o de 9 V.
+# Palabras que dicen que es una batería (o un set de cascos), en español, portugués, francés, italiano, inglés y alemán.
+_DRUM_WORD = re.compile(
+    r"bater[ií]?as?\b|batteri[ae]\b|batteries? (?:acoustiques?|[eé]lectroniques?|compl[eè]tes?|junior|enfant|fusion|rock|jazz)"
+    r"|^batterie\b|\bkit (?:de )?batterie|\bpack batterie|schlagzeug\w*|\bdrum[- ]?(?:kit|set)s?\b|\bdrumkits?\b|\bdrumsets?\b"
+    r"|\be[- ]?drum(?:[- ]?(?:kit|set)s?)?\b|\b(?:electronic|acoustic|digital|electric) drums?\b|\bv-?drums\b|\bshell ?(?:set|pack|kit)s?\b"
+    r"|\bshellsets?\b|juegos? de cascos|sets? de cascos|kit de f[uû]ts|set di fusti|kesselsatz", re.I)
+# Modelos de batería que se venden sin decirlo en el nombre ("Roland TD-07KV", "Alesis Nitro Max Kit", "Yamaha DTX402K").
+_DRUM_MODEL = re.compile(
+    r"\btd[- ]?\d{1,2} ?(?:k\w*|dmk|sc)\b|\bdtx ?\d{3}k\w*|\bdtx ?\d+ ?k\w*\b|\bnitro (?:max|mesh|pro)\b|\bsurge mesh\b|\bcommand mesh\b"
+    r"|\bstrike (?:pro|mesh)\b|\bcrimson ii\b|\bturbo mesh\b|\bdebut kit\b|\bmps-?\d{3,4}\b|\befnote ?\d\b|\bsimmons (?:titan|sd\d{3,4})\b"
+    r"|\bmx ?222\b|\broadshow\b|\bexport ex[xl]\b|\bstage custom\b|\brydeen\b|\bimperialstar\b|\bstagestar\b|\bclub-?jam\b"
+    r"|\bmapex (?:tornado|mars|armory|venus|prodigy|comet)\b|\btornado (?:\w+ ){0,3}(?:kit|set|22|20|18)\b|\bdecade maple\b|\bmidtown\b"
+    r"|\bbreakbeats\b|\b(?:aq1|aq2|sq1|sq2) (?:\w+ )?(?:set|kit|stage|studio|fusion|rock)\b", re.I)
+# Lo que va con la batería ("… con banqueta y auriculares", "… inkl. Becken", "… w/ Throne"): se corta ahí.
+_DRUM_CUT = re.compile(r"\s(?:con|with|w/|c/?|incl\w*|inkl\w*|mit|avec|com|comprenant|including|includes?|incluye|plus|and|y|e(?!\sdrum)|et|und)\.?\s"
+                       r"|\s?\+|\s\(|\s*,\s", re.I)
+# Accesorios, piezas sueltas y otras cosas que llevan la palabra (en la parte del nombre antes del corte).
+_DRUM_NOT = re.compile(
+    # platillos, caja, bombo y toms sueltos
+    r"platillos?|\bplatos?\b|cymbal\w*|\bbecken\w*|cymbales?|piatt[oi]\b|\bpratos?\b|\bcrash\b|\bride\b|\bsplash\b|hi-?hats?\b|charleston"
+    r"|\bcajas?\b|\bsnares?\b|redoblante|caisse claire|rullante|kleine trommel|\btarolas?\b|\bcaixas?\b|\bbombos?\b|bass ?drums?\b"
+    r"|bassdrums?|grosse caisse|grancassa|\bcassa\b|\bbumbos?\b|\bkick\b|\btoms?\b|tom-?toms?|floor ?toms?|stand ?toms?|timbal\b|surdos?\b"
+    # baquetas, banquetas, parches, pedales, pads de práctica, módulos y triggers
+    r"|baquetas?|\bsticks?\b|drumsticks?|baguettes?|bacchett\w*|schl[aä]gel|escobillas|brushes|\bbalais|spazzol\w*|vassourinh\w*"
+    r"|mallets?|\bmazas?\b|banquetas?|taburetes?|sill[ií]n|thrones?\b|hocker|\bsi[eè]ges?\b|tabourets?|sgabell\w*|seggiolin\w*"
+    r"|\bbancos?\b|banquinhos?|parches?\b|\bheads?\b|\bfell(?:e|satz)?\b|\bpeaux?\b|\bpelli\b|\bpeles?\b|\bpedal\w*|p[eé]dales?\b"
+    r"|fu(?:ß|ss)maschine|\bpads?\b|übungspad|m[oó]?dul[oe]s?\b|\bmodul\b|triggers?\b|sampl\w*|multipad|guantes|gloves?\b"
+    r"|\bspd[- ]?\w*|\bsp[- ]?404|octapad|\bfgdp|\bpd[- ]?\d{2,3}\b|\bkd[- ]?\d|\bvh[- ]?\d|\bcy[- ]?\d|\bpdx|\bpm[- ]?\d{2,3}\b"
+    r"|sourdines?|att[eé]nuateurs?|handschuh\w*|\bgants\b|\bguanti\b|\bluvas\b|goliat\w*|\bp[uú]as?\b|\bde pas\b|plectr\w*|plettr\w*|palhetas?|\bpicks?\b|tortoise"
+    # herrajes, soportes, fundas, alfombras
+    r"|hardware(?!\W*(?:incl|inkl))|herrajes?|ferragens?|soportes?|suportes?|supports?\b|support[oi]\b|\bstands?\b|st[aä]nder|\brack\b"
+    r"|clamps?\b|abrazaderas?|halter(?:ung)?|holders?\b|fundas?\b|estuches?|\bbolsas?\b|\bbags?\b|\bcases?\b|taschen?\b|housses?"
+    r"|custodi[ae]\b|\bcapas?\b|hardcase|softbag|koffer|maletas?|alfombras?|tapetes?|\bmats?\b|teppich|\btapis\b|tappet[oi]"
+    r"|(?<=\w)matte\b|\brugs?\b|carpet|cubiertas?|\bcovers?\b|protector|skins?\b"
+    # amplis, monitores, auriculares, micros y sonido
+    r"|amplificad\w*|amplificat\w*|\bamps?\b|\bampli\b|verst[aä]rker|monitor\w*|auricular\w*|headphones?|kopfh[oö]rer|\bcasques?\b"
+    r"|cuffi[ae]|\bfones?\b|altavo\w*|speakers?|micr[oó]?fon\w*|microphones?|mikrofon\w*|\bmics?\b|\bmicros?\b|in-?ears?"
+    r"|verst(?:ae|[aä])rker|\bcombos?\b|\d+ ?watt|\d+ ?zoll|bluetooth"
+    # otros instrumentos y aparatos que funcionan "a batería"
+    r"|guitarr\w*|guitars?\b|gitarr\w*|guitares?\b|chitarr\w*|viol[aã]o|\bbass\b(?! ?drum)|\bbajos?\b|\bbaixos?\b|piano|teclado"
+    r"|keyboards?|tastier\w*|claviers?|telefon\w*|t[eé]l[eé]phone|\bphones?\b|celular|notebook|laptop|radio|lanterna|linterna"
+    r"|inal[aá]?mbric|wireless|sem fio|sans fil|senza fili|drahtlos|transformador\w*|\bakg\b|\bshure\b|sennheiser|audix"
+    r"|beyerdynamic|\brode\b|superlux"
+    # percusión de mano, juguetes, repuestos y lo que no es un instrumento
+    r"|caj[oó]?n\b|bong[oó]s?\b|congas?\b|djemb[eé]|darbuka|pandero|pandeiro|tambourin\w*|tamburell\w*|handpan|marching|orff"
+    r"|xil[oó]fono|glockenspiel|metal[oó]fono|cencerro|cowbell|\btoys?\b|juguete|spielzeug|jouet|giocattol\w*|brinquedo"
+    r"|\bllaves?\b|\bchaves?\b|afina[cç][aã]o|\bkeys?\b|schl[uü]ssel|\bcl[eé]s?\b|chiav[ei]\b|sordinas?|dampers?|d[aä]mpf\w*|\bmutes?\b|silenciador|moongel"
+    r"|o-?rings?|\baros?\b|\breifen\b|repuestos?|recambios?|ersatz\w*|ricambi\w*|\bspares?\b|tornillos?|\bscrews?\b|tension rods?"
+    r"|beaters?|\blibros?\b|\bbooks?\b|m[eé]todos?\b|method\b|\bdvd\b|t-?shirts?|camisetas?|gorras?|posters?|gutschein|\bvales?\b"
+    r"|cables?\b|kabel\w*|c[aâ]bles?\b|\bcav[oi]\b|\bcabos?\b|adaptador\w*|adapters?\b|netzteil|power supply|alimenta\w*"
+    r"|software|stickers?|pegatinas?|aufkleber|tuning|afinador|stimm\w*", re.I)
+# "Batería" de litio, de 9 V, recargable…: una pila, no un instrumento.
+_DRUM_BATTERY = re.compile(r"litio|lithium|li-?ion|li-?po|recargable|rechargeable|ricaricabil\w*|recarreg\w*|wiederaufladbar|\bmah\b"
+                           r"|\b\d+(?:[.,]\d+)? ?v\b|\baaa?\b|\bpilas?\b|\bakku|power ?bank|cargador|chargeur|charger|caricabatteri\w*"
+                           r"|carregador|\bbattery\b|batterie (?:de rechange|externe|interne|pour)|batteri[ae] (?:al|di ricambio|per)\b"
+                           r"|bateria (?:de|para) (?:celular|notebook|carro)|\bsolar\b|\ba bater[ií]as?\b|\b[àa] batterie|\ba batteria"
+                           r"|batterie(?:fach|betrieb\w*|clip|box|halter|-?combo)|\bbattery[- ]powered|\bbatteriebetrieben", re.I)
+# "Funda para batería", "Pedal for Drum Kit", "Housse pour batterie": algo para la batería (salvo "para niños").
+_DRUM_FOR = re.compile(r"\b(?:para|pra|for|pour|f[uü]r|fuer|per|p/|voor)\s+(?:(?:la|el|una?|une|le|les|die|das|den|il|lo|o|a)\s+)?"
+                       r"(?:\w+\s+)?(?:bater|batter|drum|schlagzeug|e-?drum)", re.I)
+# "Batería para Boss Katana", "Baterías para sistema inalámbrico": la palabra seguida de "para" es una pila para algo.
+_DRUM_FOR_WHAT = re.compile(r"\b(?:bater[ií]?as?|batteri[ae]s?|battery|batteries)\s+(?:para|pra|for|pour|f[uü]r|per|p/)\b", re.I)
+# Categoría de la tienda con baterías (y no sus accesorios): "Baterías electrónicas", "Sets de batería", "E-Drum Sets",
+# "Akustik-Schlagzeuge", "Batteries électroniques", "Batterie acustiche", "Baterias Eletrônicas", "Shell Sets"…
+_DRUM_CAT = re.compile(
+    r"bater[ií]as? (?:ac[uú]stic|electr[oó]nic|el[eé]ctric|eletr[oô]nic|completa|digital|infantil|junior|de gama)"
+    r"|sets? de bater[ií]a|kits? de bater[ií]a|juegos? de cascos|sets? de cascos|batteries? (?:acoustique|[eé]lectronique|compl[eè]te)"
+    r"|kits? batterie|batteri[ae] (?:acustic|elettronic)|drum ?kits?|drum ?sets?|e-?drum[- ]?(?:sets?|kits?)|electronic drums?"
+    r"|acoustic drums?|akustik-?(?:drums|schlagzeug)|e-?schlagzeug|schlagzeuge\b|shell ?sets?|shellsets?|kesselsätze", re.I)
+_DRUM_CAT_NOT = re.compile(r"accesori|accessor|acess[oó]ri|zubeh|parche|platill|cymbal|becken|cymbale|piatt|prato|\bpads?\b|m[oó]dul"
+                           r"|module|hardware|herraje|ferrage|funda|bolsa|\bcases?\b|\bbags?\b|tasche|housse|custodi|baqueta|stick"
+                           r"|baguette|bacchett|pedal|p[eé]dale|banqueta|throne|hocker|si[eè]ge|amplif|monitor|repuesto|ersatz|recambi"
+                           r"|ricambi|pi[eè]ces|spare|\bparts\b|cable|micr[oó]f|mikrof|soporte|suporte|\bstands?\b|st[aä]nder|\brack"
+                           r"|alfombra|\bmats?\b|teppich|\btapis|\bcajas?\b|snare|caisse claire|rullante|bombo|bass ?drum|grosse caisse"
+                           r"|\btoms?\b|percus|caj[oó]n|\bplatos?\b|libro|book|m[eé]todo|partitur|bloc|\bpilas?\b|bateria(?:s)? (?:de|para) ", re.I)
+
+
+# Tramos de la ruta de la URL que son de accesorios ("/accesorios-de-percusion-y-baterias/platos/…"); "percusión" sí vale
+# ("/instrumentos-de-percusion/baterias/bateria-acustica/…").
+_DRUM_PATH_NOT = re.compile(_DRUM_CAT_NOT.pattern.replace("|percus|", "|"), re.I)
+
+
+def _drum_head(text):
+    """El nombre hasta lo que se le añade ("… con banqueta", "… inkl. Hocker"), sin "sin herrajes" (es un set de cascos)."""
+    text = re.sub(r"\b(?:sin|without|ohne|sans|senza|sem)\s+(?:hardware|herrajes|ferragens|platillos|cymbals|becken|cymbales"
+                  r"|piatti|pratos)\b", " ", text or "", flags=re.I)
+    return _DRUM_CUT.split(text, 1)[0]
+
+
+def _drum_name_kit(text):
+    """True si el texto (nombre o URL de la ficha) es el de una batería; False si es un accesorio, una pila u otra cosa
+    para la batería; None si no lo dice."""
+    text = " ".join(re.sub(r"[_/]+", " ", html.unescape(text or "")).split())
+    if not text or _DRUM_BATTERY.search(text) or NOT_PRODUCT.search(text):
+        return False
+    head = _drum_head(text)
+    said = _DRUM_WORD.search(head) or _DRUM_MODEL.search(head)
+    if not said:
+        return None
+    if _DRUM_NOT.search(head):
+        return False
+    # "para niños": una batería infantil; "para batería": un accesorio
+    if (_DRUM_FOR.search(head) or _DRUM_FOR_WHAT.search(head)) and not re.search(r"\b(?:para|for|pour|f[uü]r|per)\s+(?:ni[nñ]os|kids|children|enfants?|kinder"
+                                               r"|bambini|crian[cç]as|principiantes|beginners?|d[eé]butants?|anf[aä]nger)", head, re.I):
+        return False
+    return True
+
+
+def drum_kind(crumbs, url="", name=""):
+    """'bateria' si la ficha es una batería (acústica o electrónica, completa o set de cascos), si no None. Por el nombre
+    (o el de la URL) y, si el nombre no lo dice ("Roland TD-07KV"), por la categoría de la tienda."""
+    by_name = _drum_name_kit(name)
+    if by_name is False:
+        return None
+    by_url = _drum_name_kit(_drum_slug(url)[1]) if url else None
+    if by_name:
+        return "bateria"
+    if by_url is False and name:
+        return None
+    cats = [c for c in (crumbs or [])[-3:] if c and c.strip().lower() != (name or "").strip().lower()]
+    in_cat = any(_DRUM_CAT.search(c) and not _DRUM_CAT_NOT.search(c) and not _DRUM_BATTERY.search(c) for c in cats[-2:])
+    # Sin palabra de batería en el nombre: hace falta la categoría (o la URL) y que el nombre no sea de un accesorio
+    if (in_cat or by_url) and name and not _DRUM_NOT.search(_drum_head(name)) and not _DRUM_FOR.search(name):
+        return "bateria"
+    return None
+
+
+def _drum_slug(url):
+    """(categoría, nombre) de la URL de una ficha, con espacios: el último tramo con letras ("/pearl-roadshow/p/123" de
+    Egitana) sin "-p-123", "_123456", el EAN del final ni el número de PrestaShop delante ("41948-pearl-…"), y el anterior."""
+    parts = [p for p in unquote(urlsplit(url or "").path).split("/") if p]
+    named = [i for i, p in enumerate(parts) if re.search(r"[a-zA-Z]{2}", p) and p not in ("p", "products", "produto", "produtos")]
+    if not named:
+        return "", ""
+    i = named[-1]
+    slug = re.sub(r"\.(html?|php|htm)$", "", parts[i])
+    slug = re.sub(r"-p-\d+$|_\d{5,}$|-\d{5,}$|^p\d+_|^\d{3,}-(?=\D)", "", slug).replace("-", " ").replace("_", " ")
+    cat = parts[i - 1].replace("-", " ").replace("_", " ") if i > 0 else ""
+    return cat, slug
+
+
+def drum_url(url):
+    """¿Parece por la URL una batería? Para elegir fichas en las tiendas (la ficha lo confirma con drum_kind)."""
+    cat, slug = _drum_slug(url)
+    path = [p.replace("-", " ").replace("_", " ") for p in unquote(urlsplit(url or "").path).split("/")[1:-1]]
+    if any(_DRUM_PATH_NOT.search(p) for p in path):
+        return False
+    kit = _drum_name_kit(slug)
+    if kit is None and cat:  # la categoría delante ("/baterias-electronicas/1234-roland-td-07kv.html")
+        kit = bool(_DRUM_CAT.search(cat) and not _DRUM_CAT_NOT.search(cat)) and not _DRUM_NOT.search(_drum_head(slug)) \
+            and not _DRUM_FOR.search(slug) and not _DRUM_BATTERY.search(slug)
+    return bool(kit)
+
+
+# Tipos de batería (nombre, URL y última categoría en el idioma de la tienda).
+DRUM_TYPES = [("Electrónicas", r"electr[oóô]?nic|eletr[oô]nic|elettronic|[eé]lectronique|e-?drum|e-?schlagzeug|digital|\bmesh\b"
+                               r"|\btd-?\d|\bdtx|nitro|surge|strike|turbo|crimson|debut|command|efnote|\bsd ?\d{3}|\bmps-?\d|v-?drums"
+                               r"|elektron|simmons|\bddrum dd|aerodrums"),
+              ("Sets de cascos", r"shell ?(?:set|pack|kit)|shellset|sin (?:hardware|herrajes)|juegos? de cascos|sets? de cascos"
+                                 r"|kit de f[uû]ts|f[uû]ts seuls|senza hardware|ohne hardware|without hardware|sans hardware"
+                                 r"|sem ferragens|set di fusti|kesselsatz"),
+              ("Infantiles", r"junior|infantil|ni[nñ]os|\bkids?\b|enfants?|bambin|kinder|crian[cç]a|\bjr\b|pocket"),
+              ("Acústicas", r".")]
+
+
 WITH_CASE = re.compile(r"\+ ?(g \+ )?(funda|estuche)|con (funda|estuche)|\bw/? ?case|incl", re.I)
 MAX_PRICE = {"estuche": 800, "varios": 500}  # un "estuche" más caro es un instrumento con su estuche
 
@@ -598,8 +768,15 @@ def varios_kind(crumbs, url="", name=""):
 
 
 def mas_kind(crumbs, url="", name=""):
-    """'bajo', 'ampli', 'estuche', 'micro', 'varios' o None, por la categoría, la URL y el nombre."""
-    # Primero accesorio: "D'Addario EXL170 cuerdas bajo" son cuerdas, no un bajo.
+    """'bateria', 'bajo', 'ampli', 'estuche', 'micro', 'varios' o None, por la categoría, la URL y el nombre."""
+    # Primero la batería (sus accesorios no entran: drum_kind los descarta y después nadie los coge); luego el accesorio:
+    # "D'Addario EXL170 cuerdas bajo" son cuerdas, no un bajo.
+    return drum_kind(crumbs, url, name) or _mas_kind_equipo(crumbs, url, name)
+
+
+def _mas_kind_equipo(crumbs, url="", name=""):
+    """mas_kind sin baterías: para el texto traducido al español (equipo_kind_for, br_mas_kind), que ya han mirado la
+    batería con el texto original ("Plettri … Shell Set" traducido no dice que sean púas)."""
     return varios_kind(crumbs, url, name) or _mas_kind(crumbs, url, name)
 
 
@@ -685,25 +862,53 @@ _MAS_URL_SKIP = (r"valvula|tube|pedalboard|footswitch|individual|ukelele|ukulele
                  r"|pie-de|pinza|suspensor|supensor|brazo|bolsas?-para|estuches?-para-micro|reflexion|jirafa|anti-?pop|paravientos"
                  r"|arco-|contrabajo|xil|conmutador|pedal|cabassa|mazas")
 
+def _or_drums(pick, where):
+    """La selección de fichas de la tienda y, además, las que por la URL parecen una batería (where: la forma de la URL
+    de sus fichas). Los filtros de equipo dejan fuera "bateria" y "drum" para no leer sus accesorios."""
+    rx = re.compile(where, re.I)
+    return lambda u: bool(pick(u)) or (bool(rx.search(u)) and drum_url(u) and not NOT_PRODUCT.search(u))
+
+
+# Thomann: sus baterías salen de sus listados (los códigos valen en todas sus webs): sets de batería acústica (dradkd),
+# sets de cascos sin herrajes (dradkf), baterías de gama alta (dradpd) y sets de batería electrónica (dredse).
+THOMANN_DRUMS = ("dradkd", "dradkf", "dradpd", "dredse")
+
+
+def _thomann_drums(base):
+    """Thomann en un catálogo de equipo: solo sus baterías (listados THOMANN_DRUMS); la ficha descarta lo que no lo es."""
+    return {"name": "Thomann", "delay": (8.0, 14.0), "parse": _parse_thomann,
+            "discover": lambda f: _discover_thomann(f, THOMANN_DRUMS, base),
+            # (sus listados son de baterías: si el nombre no lo dice, basta con que no sea un accesorio)
+            "kind_url": lambda c, u="", n="": "bateria" if _drum_name_kit(n) is not False and (
+                drum_kind(c, u, n) or not _DRUM_NOT.search(_drum_head(n))) else None,
+            "pick": lambda u: not NOT_PRODUCT.search(u) and not re.search(r"b_stock|bstock", u)}
+
+
 MAS_SOURCES = {
     "numemusic": {**SOURCES["numemusic"], "kind_url": mas_kind,
-                  "pick": _pick_equipo(r"/\d+-[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
+                  "pick": _or_drums(_pick_equipo(r"/\d+-[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP), r"numemusic\.es/\d+-[^/]+$")},
     "musicopolix": {**SOURCES["musicopolix"], "kind_url": mas_kind,
-                    "pick": _pick_equipo(r"/cat/([^/]*(bajo|amplific|estuche|funda)[^/]*|produccion-musical/microfonos"
-                                         r"|accesorios/accesorios-de-(guitarra|bajo)|pro-audio/cables-de-audio/cables-para-instrumentos)"
-                                         r"/(.+/)?\d+-[^/]+\.html$",
-                                         _MAS_URL_SKIP)},
+                    "pick": _or_drums(_pick_equipo(r"/cat/([^/]*(bajo|amplific|estuche|funda)[^/]*|produccion-musical/microfonos"
+                                                   r"|accesorios/accesorios-de-(guitarra|bajo)|pro-audio/cables-de-audio/cables-para-instrumentos)"
+                                                   r"/(.+/)?\d+-[^/]+\.html$",
+                                                   _MAS_URL_SKIP), r"/cat/(.+/)?\d+-[^/]+\.html$")},
     "alfasoni": {**SOURCES["alfasoni"], "kind_url": mas_kind,
-                 "pick": _pick_equipo(r"alfasoni\.com/([^/]*(bajo|amplificador|combo|cabezal|pantalla|estuche|funda|microfono)[^/]*"
-                                      r"|cuerdas-para-(guitarra|bajo)[^/]*|correas[^/]*|cables-de-guitarra|cables-para-patch-de-guitarra"
-                                      r"|puas[^/]*|pastillas-para-(guitarra|bajo)[^/]*|cejillas|accesorios-para-correas[^/]*"
-                                      r"|soportes-(de|para)-guitarra[^/]*|afinadores[^/]*)/[^/]+\.html$",
-                                      _MAS_URL_SKIP)},
-    "drunkat": {**SOURCES["drunkat"], "kind_url": mas_kind, "pick": _pick_equipo(r"drunkat\.es/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
-    "pronorte": {**SOURCES["pronorte"], "kind_url": mas_kind, "pick": _pick_equipo(r"/p/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
-    "egitana": {**SOURCES["egitana"], "kind_url": mas_kind, "pick": _pick_equipo(r"egitana\.es/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
-    "session": {**SOURCES["session"], "kind_url": mas_kind, "pick": _pick_equipo(r"/products/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
+                 "pick": _or_drums(_pick_equipo(r"alfasoni\.com/([^/]*(bajo|amplificador|combo|cabezal|pantalla|estuche|funda|microfono)[^/]*"
+                                                r"|cuerdas-para-(guitarra|bajo)[^/]*|correas[^/]*|cables-de-guitarra|cables-para-patch-de-guitarra"
+                                                r"|puas[^/]*|pastillas-para-(guitarra|bajo)[^/]*|cejillas|accesorios-para-correas[^/]*"
+                                                r"|soportes-(de|para)-guitarra[^/]*|afinadores[^/]*)/[^/]+\.html$",
+                                                _MAS_URL_SKIP), r"alfasoni\.com/[^/]+/[^/]+\.html$")},
+    "drunkat": {**SOURCES["drunkat"], "kind_url": mas_kind,
+                "pick": _or_drums(_pick_equipo(r"drunkat\.es/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP), r"drunkat\.es/[^/]+$")},
+    "pronorte": {**SOURCES["pronorte"], "kind_url": mas_kind,
+                 "pick": _or_drums(_pick_equipo(r"/p/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP), r"/p/[^/]+$")},
+    "egitana": {**SOURCES["egitana"], "kind_url": mas_kind,
+                "pick": _or_drums(_pick_equipo(r"egitana\.es/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP), r"egitana\.es/[^/]+/p/\d+$")},
+    "session": {**SOURCES["session"], "kind_url": mas_kind,
+                "pick": _or_drums(_pick_equipo(r"/products/[^/]*(" + _MAS_URL + ")", _MAS_URL_SKIP), r"/products/[^/]+/?$")},
     "mat": {**SOURCES["mat"], "kind_url": mas_kind, "pick": _pick_equipo(r"matguitars\.com/[^?]*(" + _MAS_URL + ")", _MAS_URL_SKIP)},
+    # Thomann, solo sus baterías
+    "thomann": _thomann_drums(THOMANN),
 }
 
 
@@ -2897,11 +3102,14 @@ def _pt_es(text):
 
 
 def br_mas_kind(crumbs, url="", name=""):
-    """'bajo', 'ampli', 'pedal', 'teclado', 'micro', 'estuche', 'varios' o None, para las tiendas brasileñas."""
+    """'bateria', 'bajo', 'ampli', 'pedal', 'teclado', 'micro', 'estuche', 'varios' o None, para las tiendas brasileñas."""
+    # La bateria, con el texto sin traducir (y antes del "kit" de abajo: "Kit Bateria Eletrônica…")
+    if drum_kind(crumbs, url, name):
+        return "bateria"
     crumbs, url, name = [_pt_es(c) for c in crumbs or []], _pt_es(url.rsplit("/", 1)[-1].replace("-", " ")), _pt_es(name)
     if re.search(r"\bkit\b|usad|seminov|outlet|mostru", name):
         return None
-    return mas_kind(crumbs, url, name) or equipo_kind(crumbs, url, name)
+    return _mas_kind_equipo(crumbs, url, name) or equipo_kind(crumbs, url, name)
 
 
 def _br_mas_fix(data, text):
@@ -2921,7 +3129,8 @@ def _pick_br_mas(u):
     u = u.rstrip("/")
     slug = (u[:-2] if u.endswith("/p") else u).rsplit("/", 1)[-1].replace("-", " ")
     return bool(_BR_MAS_URL.search(slug)) and not NOT_PRODUCT.search(u) \
-        and not re.search(r"(?i)\bkit\b|usad|seminov|outlet|mostru|bateria eletr|ac[uú]stica (bateria|tambor)", slug)
+        and not re.search(r"(?i)\bkit\b|usad|seminov|outlet|mostru|bateria eletr|ac[uú]stica (bateria|tambor)", slug) \
+        or drum_url(u) and not NOT_PRODUCT.search(u) and not re.search(r"(?i)usad|seminov|outlet|mostru", u)
 
 
 # Fender Brasil (fender.com.br, la lleva Pride Music, importador y distribuidor oficial, São Paulo): vende directamente y a veces más barato que las
@@ -4194,14 +4403,15 @@ def _eq_cat(url):
     return parts[-1].replace("-", " ").replace("_", " ") if parts else ""
 
 
-def _pick_equipo_for(lang, base, path=None, shopify=False, cat=False, cat_path=None, cat_also=False):
+def _pick_equipo_for(lang, base, path=None, shopify=False, cat=False, cat_path=None, cat_also=False, drums=False):
     """Fichas de equipo de una tienda: de su dominio (base), con la ruta de sus fichas (path) y que por la URL parezcan
     equipo (en español tras _to_es) o empiecen por una marca que solo hace equipo. cat: la categoría de la URL también
     cuenta (PrestaShop: "/pedale-distortion/1153-mxr-m116-fullbore-metal.html", sin palabra de equipo en el nombre).
     cat_path: tiendas cuya URL lleva la categoría y no el nombre ("/loja/acessorios-cordas/DADAREJ27H/"): todas las fichas
     de esas categorías, y solo esas (Lenzotti: "/negozio/bassi/…", "/negozio/chitarre/pedalini-singoli-chitarre/…", aunque
     el nombre no lo diga: "eko-vpj-280-relic-sunburst"); el clasificador decide. cat_also: además de esas, las que por
-    la URL parezcan equipo (E-Musicstore deja muchas fichas sin categoría: "/shop/chitarre/strymon-bluesky-…/")."""
+    la URL parezcan equipo (E-Musicstore deja muchas fichas sin categoría: "/shop/chitarre/strymon-bluesky-…/").
+    drums: también las que por la URL parezcan una batería (drum_url; el filtro de equipo deja fuera "drum" y "batería")."""
     base = base.rstrip("/")
     rx = re.compile(path) if path else None
     cat_rx = re.compile(cat_path) if cat_path else None
@@ -4212,6 +4422,8 @@ def _pick_equipo_for(lang, base, path=None, shopify=False, cat=False, cat_path=N
         where = u[len(base):]  # sin el dominio ("themusicoutlet.ie" no es un outlet)
         if NOT_PRODUCT.search(where) or _GEN_NOT_PRODUCT.search(where.replace("/products/", "/")):
             return False
+        if drums and drum_url(u):
+            return True
         if cat_rx and (cat_rx.search(u) or not cat_also):
             return bool(cat_rx.search(u))
         slug = _to_es(_eq_slug(u), lang, equipo=True)
@@ -4227,10 +4439,17 @@ def _eq_name(name, lang):
     return re.sub(r"(?<=[^\W\d])-(?=[^\W\d])", " ", _to_es(html.unescape(html.unescape(name or "")), lang, equipo=True))  # "&amp;" no es "amp"
 
 
-def equipo_kind_for(lang, guitar=None):
-    """'bajo', 'ampli', 'pedal', 'teclado', 'micro', 'estuche', 'varios' o None, en el idioma de la tienda (lang: "de+en").
-    guitar(crumbs, url, name): el clasificador de guitarras de la tienda; si dice que es una guitarra, no es equipo."""
+def equipo_kind_for(lang, guitar=None, drums=False):
+    """'bajo', 'ampli', 'pedal', 'teclado', 'micro', 'estuche', 'varios', 'bateria' (solo con drums) o None, en el idioma de
+    la tienda (lang: "de+en"). guitar(crumbs, url, name): el clasificador de guitarras de la tienda; si dice que es una
+    guitarra, no es equipo."""
     def kind(crumbs, url="", name=""):
+        # La batería, antes que nada y con el texto sin traducir (los filtros de abajo la descartan): drum_kind
+        if drum_kind(_eq_crumbs(crumbs, name), url, html.unescape(name or "")):
+            return "bateria" if drums else None
+        return _kind(crumbs, url, name)
+
+    def _kind(crumbs, url="", name=""):
         # "… pour guitare et basse": no es de bajo; "Fender Squier Affinity Jazz Bass, LRL, Black Pickguard": el golpeador
         # es parte del bajo, no un recambio
         es_name = " ".join(_EQ_GROUP.sub(" guitarra ", _eq_name(name, lang)).split())
@@ -4255,7 +4474,7 @@ def equipo_kind_for(lang, guitar=None):
         bass_things = bool(cats and re.search(r"pedal|efecto|amplificador|cubo|cabezal|pantalla|^cuerdas|cuerdas (?:para|de)"
                                               r"|juego de cuerdas|accesorio|estuche|funda|pastilla|soporte", cats[-1]))
         bass_cat = bool(cats and re.search(r"\bbajos?\b", cats[-1])) and not bass_things
-        found = mas_kind(cats, slug, es_name) or equipo_kind(cats, slug, es_name)
+        found = _mas_kind_equipo(cats, slug, es_name) or equipo_kind(cats, slug, es_name)
         # "Pedale effetto MXR M233 Micro Amp": el nombre empieza diciendo que es un pedal
         # (no en una categoría de guitarras: "Pédale G.C DW 3000" en "Guitares classiques" es un reposapiés)
         if not found and re.match(r"(?:pedal|efecto|multiefectos)\b", es_name) \
@@ -4265,10 +4484,10 @@ def equipo_kind_for(lang, guitar=None):
         if not found and cats:
             # El nombre a secas no lo dice ("Ernie Ball 2090 Paradigm .010-.050"); las categorías sí ("E-Gitarrensaiten").
             said = " ".join(cats[-3:] + [es_name])
-            found = mas_kind(cats, slug, said) or equipo_kind(cats, slug, said)
+            found = _mas_kind_equipo(cats, slug, said) or equipo_kind(cats, slug, said)
         if not found and (_EQ_AMP_HINT.search(es_name) or re.search(r"cabezal|pantalla", " / ".join(cats[-2:]))) and not _EQ_AMP_NOT.search(" / ".join(cats + [es_name])):
             # Un ampli de una marca pequeña sin "guitarra" en ninguna parte ("Hiwatt Super-Hi 50w Valve Amp Head")
-            found = mas_kind(cats, slug, es_name + " / guitarra") if _AMP.search(es_name) else None
+            found = _mas_kind_equipo(cats, slug, es_name + " / guitarra") if _AMP.search(es_name) else None
         if not found and not re.search(r"teclado|piano|bater[ií]a|\bpa\b|monitor|cable|alimentador|funda|estuche|soporte"
                                        r"|cubierta|\bcover|pedalboard|interfa|preamp|studio", " / ".join(cats[-1:] + [es_name])) \
                 and not (guitar and guitar(crumbs, url, name)):
@@ -4459,8 +4678,9 @@ def _eq_url_crumbs(kind, crumbs_of, lang):
     return k
 
 
-def equipo_sources(sources, lang, shops=None, exclude=None):
-    """Fuentes del catálogo de equipo de un país a partir de las de sus guitarras (ver EQUIPO_COUNTRIES)."""
+def equipo_sources(sources, lang, shops=None, exclude=None, drums=False):
+    """Fuentes del catálogo de equipo de un país a partir de las de sus guitarras (ver EQUIPO_COUNTRIES). drums: el
+    catálogo tiene baterías (si no, una batería no entra: ni se eligen sus fichas ni se clasifica como tal)."""
     out = {}
     for sid, src in sources.items():
         if sid in (exclude or {}):
@@ -4471,10 +4691,10 @@ def equipo_sources(sources, lang, shops=None, exclude=None):
         lang_ = shop.get("lang", lang)
         guitar = shop.get("guitar") or src.get("kind_url") or (lambda c, u, n, k=src["kind"]: k(c))
         new = {k: v for k, v in src.items() if k not in ("kind", "crumbs", "discover", "shop")}
-        new.update(kind_url=equipo_kind_for(lang_, guitar), fix=_equipo_fix(shop.get("fix", src.get("fix")), lang_,
-                                                                         shop.get("crumbs") is not False),
+        new.update(kind_url=equipo_kind_for(lang_, guitar, drums), fix=_equipo_fix(shop.get("fix", src.get("fix")), lang_,
+                                                                                shop.get("crumbs") is not False),
                    pick=_pick_equipo_for(lang_, shop["base"], shop.get("path"), shop.get("shopify"), shop.get("cat"),
-                                              shop.get("cat_path"), shop.get("cat_also", False)))
+                                              shop.get("cat_path"), shop.get("cat_also", False), drums))
         if callable(shop.get("crumbs")):
             new["kind_url"] = _eq_url_crumbs(new["kind_url"], shop["crumbs"], lang_)
         for key in ("sitemap", "sub", "discover", "parse"):
@@ -4490,12 +4710,15 @@ def equipo_sources(sources, lang, shops=None, exclude=None):
 # página: intl.SITES[país]["kinds"]); "max_price": tope por categoría en la moneda del país (un "estuche" más caro es un
 # instrumento con su estuche); "shops": dónde están las fichas de cada tienda si no lo dice su "shop" o si la ruta de
 # sus guitarras no vale para el equipo (path None: todo el dominio); "exclude": tiendas que no entran, y por qué; "cur" (si
-# no es el euro) y "headers" (Reino Unido e Irlanda: en inglés), como en el catálogo de guitarras del país.
+# no es el euro) y "headers" (Reino Unido e Irlanda: en inglés), como en el catálogo de guitarras del país. Con "bateria"
+# en "files", el país tiene baterías (drum_kind; sus tiendas eligen también las fichas que por la URL lo parecen) y
+# "drums" es la web de Thomann del país, que entra solo con sus listados de baterías (THOMANN_DRUMS).
 EQUIPO_COUNTRIES = {
     "de": {"sources": DE_SOURCES, "lang": "de+en", "site": "de", "max_price": {"estuche": 800, "varios": 500},
            "files": {"bajo": "baesse.json", "ampli": "verstaerker.json", "pedal": "effektpedale.json",
                      "teclado": "keyboards.json", "micro": "mikrofone.json", "estuche": "koffer-taschen.json",
-                     "varios": "zubehoer.json"},
+                     "varios": "zubehoer.json", "bateria": "schlagzeuge.json"},
+           "drums": THOMANN_DE,
            "shops": {"session": {"base": "https://www.session.de", "path": r"/products/[^/]+/?$"},
                      "hermann": {"base": "https://www.musikhaus-hermann.de", "path": r"-\d{4,6}/$"},
                      # sus guitarras salen de una sección; el equipo está en otras
@@ -4509,7 +4732,8 @@ EQUIPO_COUNTRIES = {
     "it": {"sources": IT_SOURCES, "lang": "it+en", "site": "it", "max_price": {"estuche": 800, "varios": 500},
            "files": {"bajo": "bassi.json", "ampli": "amplificatori.json", "pedal": "pedali-effetto.json",
                      "teclado": "tastiere.json", "micro": "microfoni.json", "estuche": "custodie.json",
-                     "varios": "accessori.json"},
+                     "varios": "accessori.json", "bateria": "batterie.json"},
+           "drums": THOMANN_IT,
            "shops": {"guitarshop": {"base": "https://guitarshop.it", "path": "/prodotto/"},
                      # sus guitarras: solo las fichas con "chitarr" en la URL; el equipo, todo /shop/
                      "fireflyaudio": {"path": r"/shop/"},
@@ -4528,7 +4752,8 @@ EQUIPO_COUNTRIES = {
     "pt": {"sources": PT_SOURCES, "lang": "pt+en", "site": "pt", "max_price": {"estuche": 800, "varios": 500},
            "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json",
                      "teclado": "teclados.json", "micro": "microfones.json", "estuche": "estojos.json",
-                     "varios": "acessorios.json"},
+                     "varios": "acessorios.json", "bateria": "baterias.json"},
+           "drums": THOMANN_PT,
            # pt_kind da por guitarra lo que cuelga de "Captadores para guitarra elétrica" o "Transpositor para guitarra…"
            "shops": {"egitana": {"base": "https://www.egitana.pt", "path": r"/p/\d+$", "parse": _parse_egitana_pt_equipo,
                                  "guitar": lambda c, u, n: None if any(
@@ -4550,7 +4775,9 @@ EQUIPO_COUNTRIES = {
     # y Michenaud; sus fichas, en el mismo sitemap que las guitarras.
     "fr": {"sources": FR_SOURCES, "lang": "fr+en", "site": "fr", "max_price": {"estuche": 800, "varios": 500},
            "files": {"bajo": "basses.json", "ampli": "amplis.json", "pedal": "pedales-effets.json", "teclado": "claviers.json",
-                     "micro": "micros.json", "estuche": "etuis-housses.json", "varios": "accessoires.json"},
+                     "micro": "micros.json", "estuche": "etuis-housses.json", "varios": "accessoires.json",
+                     "bateria": "batteries.json"},
+           "drums": THOMANN_FR,
            "shops": {**{sid: {"base": base, "path": r"/\d+-[^/]+\.html$", "cat": True} for sid, base in [
                          ("hurricanemusic", "https://hurricanemusic.fr"), ("azemamusique", "https://azemamusique.fr"),
                          ("maccamusic", "https://maccamusic.com"), ("music3000", "https://www.music3000.fr"),
@@ -4580,7 +4807,9 @@ EQUIPO_COUNTRIES = {
     "uk": {"sources": UK_SOURCES, "lang": "en", "site": "uk", "cur": "GBP", "headers": EN_HEADERS,
            "max_price": {"estuche": 700, "varios": 450},
            "files": {"bajo": "basses.json", "ampli": "amps.json", "pedal": "effects-pedals.json", "teclado": "keyboards.json",
-                     "micro": "microphones.json", "estuche": "cases-bags.json", "varios": "accessories.json"},
+                     "micro": "microphones.json", "estuche": "cases-bags.json", "varios": "accessories.json",
+                     "bateria": "drum-kits.json"},
+           "drums": THOMANN_UK,
            "shops": {"guitarguitar": {"base": "https://www.guitarguitar.co.uk"},
                      "andertons": {"base": "https://www.andertons.co.uk"},
                      # sus guitarras salen de una sección; el equipo está en otras (lo demás son partituras y libros)
@@ -4704,10 +4933,12 @@ NAME_TYPES = [("T", r"tele(caster)?\b|\btl\b"),
 TYPES_BY_KIND = {"electrica": TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
                  "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES, "portuguesa": PORTUGUESE_TYPES,
                  # Sin el "resto" del final: si la categoría no lo dice, el tipo sale del nombre (NAME_TYPES_BY_KIND).
-                 "bajo": BASS_TYPES[:-1], "ampli": AMP_TYPES[:-1], "estuche": CASE_TYPES[:-1], "micro": MICRO_TYPES[:-1], "varios": VARIOS_TYPES[:-1]}
+                 "bajo": BASS_TYPES[:-1], "ampli": AMP_TYPES[:-1], "estuche": CASE_TYPES[:-1], "micro": MICRO_TYPES[:-1], "varios": VARIOS_TYPES[:-1],
+                 "bateria": DRUM_TYPES[:-1]}
 NAME_TYPES_BY_KIND = {"electrica": NAME_TYPES, "acustica": ACOUSTIC_TYPES, "clasica": CLASSICAL_TYPES,
                       "teclado": KEYBOARD_TYPES, "pedal": PEDAL_TYPES, "portuguesa": PORTUGUESE_TYPES,
-                      "bajo": BASS_TYPES, "ampli": AMP_TYPES, "estuche": CASE_TYPES, "micro": MICRO_TYPES, "varios": VARIOS_TYPES}
+                      "bajo": BASS_TYPES, "ampli": AMP_TYPES, "estuche": CASE_TYPES, "micro": MICRO_TYPES, "varios": VARIOS_TYPES,
+                      "bateria": DRUM_TYPES}
 
 # Catálogos: carpeta, fuentes y fichero de la web por categoría.
 CATALOGS = {
@@ -4716,10 +4947,10 @@ CATALOGS = {
                  "files": {"acustica": "acusticas.json", "clasica": "clasicas.json", "packac": "packs.json"}},
     "equipo": {"dir": DIR / "equipo", "sources": EQUIPO_SOURCES,
                "files": {"teclado": "teclados.json", "pedal": "pedales.json"}},
-    # Bajos, amplificadores, estuches y micrófonos (España).
+    # Bajos, amplificadores, estuches, micrófonos, accesorios y baterías (España).
     "mas": {"dir": DIR / "mas", "sources": MAS_SOURCES,
             "files": {"bajo": "bajos.json", "ampli": "amplis.json", "estuche": "estuches.json", "micro": "micros.json",
-                      "varios": "varios.json"}},
+                      "varios": "varios.json", "bateria": "baterias.json"}},
     # Portugal: aún sin páginas propias (guitle.com/pt/ llegará después); solo los JSON del catálogo.
     "pt": {"dir": DIR / "pt", "sources": PT_SOURCES, "site": "pt",
            "files": {"electrica": "eletricas.json", "acustica": "acusticas.json", "clasica": "classicas.json",
@@ -4738,8 +4969,10 @@ CATALOGS = {
     "brmas": {"dir": DIR / "brmas", "sources": BRMAS_SOURCES, "site": "br", "cur": "BRL", "min_price": 10, "name_skip": None,
               # En reales: un "case" de más de R$ 3.000 o un "acessório" de más de R$ 2.500 es un instrumento con su case.
               "max_price": {"estuche": 3000, "varios": 2500},
+              # una bateria de menos de R$ 800 es de brinquedo (o un pad, uma caixa…)
+              "min_kind": {"bateria": 800},
               "files": {"bajo": "baixos.json", "ampli": "amplificadores.json", "pedal": "pedais.json", "teclado": "teclados.json",
-                        "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie", "headers": EN_HEADERS,
+                        "micro": "microfones.json", "estuche": "cases.json", "varios": "acessorios.json", "bateria": "baterias.json"}},    "ie": {"dir": DIR / "ie", "sources": IE_SOURCES, "site": "ie", "headers": EN_HEADERS,
            "files": {"electrica": "electric.json", "acustica": "acoustic.json", "clasica": "classical.json", "pack": "packs.json"}},
     # México: en pesos. Sin guitarras de menos de 1.500 pesos (cuerdas, fundas y accesorios que se cuelan).
     # Argentina: en pesos argentinos (mínimo 100.000: con la inflación, hoy una guitarra de estudio cuesta más).
@@ -4791,11 +5024,14 @@ CATALOGS = {
 # Equipo de cada país de EQUIPO_COUNTRIES: "demas" → data/catalog/demas/, en la web del país (intl.SITES[...]["extra_catalogs"]).
 for _code, _eq in EQUIPO_COUNTRIES.items():
     CATALOGS[_code + "mas"] = {"dir": DIR / f"{_code}mas", "site": _eq["site"], "cur": _eq.get("cur", "EUR"),
-                               "sources": equipo_sources(_eq["sources"], _eq["lang"], _eq.get("shops"), _eq.get("exclude")),
+                               "sources": equipo_sources(_eq["sources"], _eq["lang"], _eq.get("shops"), _eq.get("exclude"),
+                                                         drums="bateria" in _eq["files"]),
                                # sin el filtro de nombres de las guitarras (aquí los accesorios sí entran)
                                "name_skip": None, "max_price": _eq.get("max_price", MAX_PRICE), "files": _eq["files"],
                                **({"min_price": _eq["min_price"]} if _eq.get("min_price") else {}),
                                **({"headers": _eq["headers"]} if _eq.get("headers") else {})}
+    if _eq.get("drums"):  # Thomann (excluido por sus guitarras): sus listados de baterías
+        CATALOGS[_code + "mas"]["sources"]["thomann"] = _thomann_drums(_eq["drums"])
 # Sound Creation y Musicland: el equipo por su número o carpeta de categoría, no por las palabras de la URL.
 CATALOGS["skmas"]["sources"]["soundcreation"] = _soundcreation_eq("https://www.soundcreation.eu/sitemap-sk-index.xml",
                                                                   "sitemap-sk-pagini-produs", "EUR", "sk+en")
@@ -5492,7 +5728,7 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
         # (la URL también: reacondicionadas y "Stock B" leídas antes de filtrarlas al elegir las fichas)
         if o.get("status") != "ok" or o.get("price") is None or NOT_PRODUCT.search(o["name"]) or NOT_PRODUCT.search(o["url"]):
             continue
-        if o["price"] < MIN_PRICE.get(kind, 0):
+        if o["price"] < CATALOG.get("min_kind", {}).get(kind, MIN_PRICE.get(kind, 0)):
             continue  # accesorio colado (cejillas, armónicas…) cuyo nombre no dice lo que es
         o = tidy(o)
         if CATALOG.get("cluster_names"):  # México: también las fichas leídas antes de limpiar el nombre
@@ -5628,8 +5864,10 @@ def build(offers=None, history=None):
     for kind, fname in CATALOG["files"].items():
         mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind and not o.get("down_since")
                 and (o.get("ean") or o["url"] not in followed)
-                # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra.
-                and (kind in GUITAR_KINDS | PACK_KINDS or not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or ""))
+                # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra (baterías: sus accesorios).
+                and (kind in GUITAR_KINDS | PACK_KINDS
+                     or (_drum_name_kit(o.get("name")) is not False if kind == "bateria"
+                         else not (MAS_DROP if kind in MAS_KINDS else EQUIPO_SKIP).search(o.get("name") or "")))
                 and (o.get("price") or 0) <= CATALOG.get("max_price", MAX_PRICE).get(kind, float("inf"))
                 and not (kind == "estuche" and WITH_CASE.search(o.get("name") or ""))
                 and not (kind == "micro" and _MIC_ACC.search(o.get("name") or ""))

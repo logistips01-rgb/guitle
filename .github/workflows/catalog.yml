@@ -36,10 +36,11 @@ jobs:
   catalog:
     # Un trabajo por país, en paralelo (cada uno lee webs distintas). España ("es") lee sus tres catálogos seguidos
     # en un solo trabajo, porque comparten tiendas: electrica → data/catalog/ ; acustica → data/catalog/acusticas/ ;
-    # equipo → data/catalog/equipo/. "mas" (bajos, amplis, fundas y estuches de España → data/catalog/mas/) va en su propio
-    # trabajo para no alargar el de España. Países: pt, fr, it, uk, de, br, ie, at, nl, be → data/catalog/<país>/; su equipo
-    # (bajos, amplis, pedales, teclados, micros, estuches y accesorios), en "<país>mas" (brmas, demas, ptmas, frmas, itmas, ukmas,
-    # iemas, atmas, nlmas, bemas → data/catalog/<país>mas/).
+    # equipo → data/catalog/equipo/. "mas" (bajos, amplis, fundas y estuches, micros, accesorios y baterías de España →
+    # data/catalog/mas/; las baterías también de Thomann) va en su propio trabajo para no alargar el de España. Países: pt,
+    # fr, it, uk, de, br, ie, at, nl, be → data/catalog/<país>/; su equipo (bajos, amplis, pedales, teclados, micros, estuches
+    # y accesorios; y baterías en pt, fr, it, uk, de y br), en "<país>mas" (brmas, demas, ptmas, frmas, itmas, ukmas, iemas,
+    # atmas, nlmas, bemas → data/catalog/<país>mas/).
     # Cada tienda recibe como mucho una petición cada 3-6 s.
     strategy:
       fail-fast: false
