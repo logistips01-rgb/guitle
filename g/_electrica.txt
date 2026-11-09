@@ -6095,7 +6095,6 @@ harley-benton-st-modern-plus-hss-fblb-hssfblbhtm
 harley-benton-st-modern-plus-hss-lh-lpb-sslhlpbhtm
 harley-benton-st-modern-plus-hss-lpb-shsslpbhtm
 harley-benton-st-modern-plus-hss-lpb-w-safe-pbwsafehtm
-harley-benton-st-modern-plus-hss-mod-shssmodhtm
 harley-benton-st-modern-plus-hss-mod-w-safe-odwsafehtm
 harley-benton-st-modern-plus-hss-sbbl-hsssbblhtm
 harley-benton-st-modern-plus-hss-sbk-w-safe-bkwsafehtm
@@ -6124,8 +6123,6 @@ harley-benton-te-20mn-bm-standard-w-bag-dbundlehtm
 harley-benton-te-20mn-ca-standard-series-dserieshtm
 harley-benton-te-20mn-ca-standard-w-bag-dbundlehtm
 harley-benton-te-30-be-standard-series-gitarrehtm
-harley-benton-te-40-lh-tbk-d-series-w-bag-sbundlehtm
-harley-benton-te-40-lh-tbk-deluxe-series-eserieshtm
 harley-benton-te-40-tbk-deluxe-series-gitarrehtm
 harley-benton-te-52-na-lh-vintage-series-eserieshtm
 harley-benton-te-52-na-vintage-series-hbt1952htm
@@ -13035,8 +13032,6 @@ yamaha-rsp20-revstar-profesional-swb-guit-elec-20tswbhtml
 yamaha-rsp20-revstar-profesional-tcrg-guit-elec-20tcrghtml
 yamaha-rsp20-revstar-profesional-tssb-guit-elec-20tssbhtml
 yamaha-rsp20-revstar-profesional-xrbc-guit-elec-20xrbchtml
-yamaha-rsp20-revstar-sunset-burst-con-estuche-stuchehtml
-yamaha-rsp20-revstar-sunset-burst-con-estuche-stuchehtml
 yamaha-rss02t-sb-revstar-standard-ss-sonic-blue-1100000640660
 yamaha-rss20-revstar-standard-lh-swb-guit-elec-20lswbhtml
 yamaha-sa-2200c-bs-brown-sunburst-a2200nuevo

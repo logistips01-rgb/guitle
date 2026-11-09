@@ -258,7 +258,6 @@ harley-benton-te-20mn-ca-standard-bundle-ebundlehtm
 harley-benton-te-20mn-ca-standard-bundle-ndlesethtm
 harley-benton-te-20mn-ca-standard-bundle-packagehtm
 harley-benton-te-20sb-standard-series-bundle-ebundlehtm
-harley-benton-te-40-lh-tbk-d-series-bundle-ndlesethtm
 harley-benton-te-52na-lh-vint-series-bundle-sbundlehtm
 harley-benton-te-53kr-bl-tribute-seri-bundle-ndlesethtm
 harley-benton-te-62cc-is-bundle-ebundlehtm
