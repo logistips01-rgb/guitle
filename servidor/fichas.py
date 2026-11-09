@@ -151,6 +151,8 @@ class H(BaseHTTPRequestHandler):
             key = unquote(self.path.split("?", 1)[0]).lstrip("/")
         except Exception:  # noqa: BLE001
             return self.not_found()
+        if key == "" or key.endswith("/"):  # "/discos/" → "discos/index.html" (las portadas de sección van en cajas)
+            key += "index.html"
         # Secciones en cajas (discos)
         m = re.match(r"^(?:([a-z]{2})/)?((records|disques|dischi|discos)/.+\.html)$", key)
         if m and (m.group(1) or "") in SECCIONES[m.group(3)]:
