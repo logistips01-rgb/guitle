@@ -1198,12 +1198,6 @@
  },
  {
   "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Lâg Bluewave 1 TNBW1TE Viaje Nylon",
-  "slug": "lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143"
- },
- {
-  "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "session",
   "name": "Ortega R122SN-L",
