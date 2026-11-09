@@ -6,6 +6,9 @@ name: congruencia
 on:
   schedule:
     - cron: "23 9 * * *"  # 10:23 / 11:23 en Madrid, con la lectura de la noche ya guardada
+    # Respaldo: GitHub a veces no arranca la programada (9/11/2026). Se saltan si ya se hizo hoy.
+    - cron: "23 13 * * *"
+    - cron: "23 17 * * *"
   workflow_dispatch:
   push:
     branches: [claude/friendly-fermat-yycain]
@@ -25,27 +28,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 30
           sparse-checkout: |
             data/catalog
             data/musica/pt
             data/congruencia.json
             scraper
           sparse-checkout-cone-mode: false
+      - name: ¿Toca?
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && git log --since="20 hours ago" --format=%s | grep -q "congruencia de precios $(TZ=Europe/Madrid date +%F)"; then
+            echo "run=false" >> "$GITHUB_OUTPUT"; echo "Ya probado hoy: se omite."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
         with:
           python-version: "3.12"
       - uses: actions/setup-node@v4
+        if: steps.gate.outputs.run == 'true'
         with:
           node-version: "20"
       - name: Navegador
+        if: steps.gate.outputs.run == 'true'
         run: |
           npm install --no-save --no-package-lock playwright@1.48.2
           npx playwright install --with-deps chromium
       - name: Probar una ficha por tienda
+        if: steps.gate.outputs.run == 'true'
         run: |
           python -m scraper.congruencia --pick "$RUNNER_TEMP/filas.json"
           node scraper/congruencia.js "$RUNNER_TEMP/filas.json" "$RUNNER_TEMP/congruencia.json"
       - name: Guardar
+        if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

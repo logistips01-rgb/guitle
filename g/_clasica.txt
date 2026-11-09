@@ -134,7 +134,6 @@ admira-alba-8408480004228
 admira-alba-admiraalba
 admira-alba-ec-miraalbaec
 admira-alba-ec-utawayhtml
-admira-alba-electrificada-con-cutaway-concutaway
 admira-alba-electrificada-con-cutaway-ctrificada
 admira-alba-natural-raalbahtml
 admira-alba-raalbahtml
@@ -333,7 +332,6 @@ admira-malaga-7-8-laga78html
 admira-malaga-8436032350165
 admira-malaga-a62690html
 admira-malaga-clasica-zurdos-359953html
-admira-malaga-conservatorio-rraclasica
 admira-malaga-ec-servatorio
 admira-malaga-ect-ctrificada
 admira-malaga-ect-fishman-ishmanhtml
@@ -356,7 +354,6 @@ admira-malaga-natural-8436032350172
 admira-malaga-serie-conservatorio-p27345html
 admira-malaga-zurda-8436032359953
 admira-malaga-zurda-conservatorio-atoriohtml
-admira-mod-luna-4-4-black-satin-blacksatin
 admira-paloma-769923295343
 admira-paloma-8436032350080
 admira-paloma-estudio-studiohtml
@@ -466,10 +463,8 @@ alhambra-11p-clasica-p19077html
 alhambra-11p-con-estuche-h0825nuevo
 alhambra-11p-con-estuche-stuchehtml
 alhambra-11p-lhambra11p
-alhambra-1c-3-4-hybrid-terra-tamano-cadete-manocadete
 alhambra-1c-black-satin-626715011997
 alhambra-1c-black-satin-8436623081607
-alhambra-1c-black-satin-blacksatin
 alhambra-1c-black-satin-blacksatin
 alhambra-1c-black-satin-blacksatin
 alhambra-1c-black-satin-ksatinhtml
@@ -524,7 +519,6 @@ alhambra-2c-funda-acolchada-25-mm-afunda9738
 alhambra-2c-funda-blanda-10-mm-3711180042663
 alhambra-2c-mbra2chtml
 alhambra-2c-natural-8436623080839
-alhambra-2c-tapa-maciza-gama-estudio-amaestudio
 alhambra-2ca-funda-acolchada-25-mm-afunda9738
 alhambra-2ca-funda-blanda-10-mm-afunda9730
 alhambra-2f-alhambra2f
@@ -548,7 +542,6 @@ alhambra-3-c-a-lhambra3ca
 alhambra-3-c-ct-e1-mbra3ccte1
 alhambra-3-c-cw-e1-mbra3ccwe1
 alhambra-3-c-lh-hambra3clh
-alhambra-3-c-serie-estudio-tapa-maciza-tapamaciza
 alhambra-3-f-alhambra3f
 alhambra-3-f-ct-e1-cutaway-cuerpo-estrecho-electrificada-con-funda-9738-25-mm-3825mmhtml
 alhambra-3-f-ct-e1-mbra3fcte1
@@ -574,7 +567,6 @@ alhambra-3c-ct-e1-8436623080877
 alhambra-3c-ct-e1-caja-estrecha-jaestrecha
 alhambra-3c-ct-e1-cedro-wbag-8436623082611
 alhambra-3c-ct-e1-cutaway-cuerpo-estrecho-electrificada-con-funda-9738-25-mm-3825mmhtml
-alhambra-3c-ct-e1-electrificada-con-funda-h6856nuevo
 alhambra-3c-ct-e1-estrecha-electrificada-con-funda-325542353254
 alhambra-3c-cw-e1-8436623080884
 alhambra-3c-cw-e1-cedro-wbag-8436623082697
@@ -625,8 +617,6 @@ alhambra-4-p-a-lhambra4pa
 alhambra-4-p-a-lhambra4pa
 alhambra-4-p-e1-hambra4pe1
 alhambra-4-p-lh-hambra4plh
-alhambra-4-p-tapa-maciza-abeto-gama-conservatorio-servatorio
-alhambra-4-p-tapa-maciza-cedro-gama-conservatorio-servatorio
 alhambra-4f-con-golpeador-nt-8436623080952
 alhambra-4f-e1-fishman-ishmanhtml
 alhambra-4f-electrificada-ez-fishman-clasica-ii-flamenca-8434418063210
@@ -751,7 +741,6 @@ alhambra-7c-clasica-con-funda-p27279html
 alhambra-7c-classic-a7cclassic
 alhambra-7c-classic-lassichtml
 alhambra-7c-classic-lassichtml
-alhambra-7c-classic-maciza-serie-conservatorio-servatorio
 alhambra-7c-classic-nat-8436623081065
 alhambra-7c-con-funda-h2304nuevo
 alhambra-7c-con-funda-h2304nuevo
@@ -775,7 +764,6 @@ alhambra-7p-a-nat-8436623081102
 alhambra-7p-clasica-p27278html
 alhambra-7p-classic-funda-acolchada-25-mm-afunda9738
 alhambra-7p-classic-lassichtml
-alhambra-7p-classic-maciza-tapa-cedro-serie-conservatorio-servatorio
 alhambra-7p-classic-nat-8436623081126
 alhambra-7pa-abeto-wbag-g29933html
 alhambra-7pa-classic-funda-acolchada-25-mm-afunda9738
@@ -817,7 +805,6 @@ alhambra-9p-cw-e8-cedro-wcase-8436623082581
 alhambra-9p-cw-e8-electrificada-8436623081171
 alhambra-9p-estuche-rigido-4208335021271
 alhambra-9p-mbra9phtml
-alhambra-9p-tapa-cedro-con-estuche-premium-chepremium
 alhambra-9p-zurdo-8436623081188
 alhambra-9pa-estuche-rigido-stuche9557
 alhambra-a00-sksp-e9-csticahtml
@@ -880,7 +867,6 @@ alhambra-crossover-cs-1-cw-e1-cutaway-electrificada-con-funda-9738-25-mm-3825mmh
 alhambra-crossover-cs-1-cw-e8-cutaway-electrificada-con-funda-9738-25-mm-525874002542
 alhambra-crossover-cs-3-cw-e8-cutaway-electrificada-con-funda-9738-25-mm-3825mmhtml
 alhambra-crossover-cs-lr-cw-e1-cutaway-electrificada-con-funda-9738-25-mm-3825mmhtml
-alhambra-crossover-css-3-cw-e9-electrificada-fishman-adafishman
 alhambra-crossover-cwe8-8436623081256
 alhambra-cs-1-cw-e1-bracs1cwe1
 alhambra-cs-1-cw-e1-crossover-p24732html
@@ -961,7 +947,6 @@ alhambra-espanola-zurda-alhambra-9-p-lh-hambra9plh
 alhambra-flamenco-alhambra-vilaplana-cipres-con-estuche-stuchehtml
 alhambra-green-sustain-gs-classical-maciza-icalmaciza
 alhambra-green-sustain-gs-cutaway-e8-electrificada-maciza-cadamaciza
-alhambra-green-sustain-gs-flamenco-maciza-encomaciza
 alhambra-green-sustain-gsc-sustaingsc
 alhambra-green-sustain-gsf-sustaingsf
 alhambra-gs-classical-green-sustain-con-funda-alhambra-9738-de-25mm-lasicahtml
@@ -1007,7 +992,6 @@ alhambra-iberia-ziricote-iaziricote
 alhambra-iberia-ziricote-ib-z-cw-e8-cutaway-electrificada-con-funda-9738-25-mm-3825mmhtml
 alhambra-iberia-ziricote-natural-8436623081294
 alhambra-iberia-ziricote-ricotehtml
-alhambra-iberia-ziricote-serie-estudio-rieestudio
 alhambra-iberia-ziricote-wbag-8436623082628
 alhambra-india-montcabrer-abrernitro
 alhambra-j-m-moreno-8436623081317
@@ -1041,10 +1025,8 @@ alhambra-mengual-margarit-serie-c-con-estuche-stuchehtml
 alhambra-mengual-margarit-serie-c-rofesional
 alhambra-mengual-margarit-serie-nt-con-estuche-stuchehtml
 alhambra-mengual-margarit-serie-nt-rofesional
-alhambra-modelo-6-olivo-serie-conservatorio-servatorio
 alhambra-open-pore-z-cw-ez-natural-8436623081461
 alhambra-open-pore-z-nature-8436623081447
-alhambra-premier-pro-exotic-profesional-rofesional
 alhambra-premier-pro-madagascar-8436623081393
 alhambra-premier-pro-madagascar-con-estuche-modelo-9650-lo9650html
 alhambra-premier-pro-madagascar-javier-mengual-con-estuche-conestuche
@@ -1094,8 +1076,6 @@ alhambra-z-nature-ct-ez-electrificada-cutaway-cuerpo-estrecho-con-funda-9738-25-
 alhambra-z-nature-ct-ez-guitarra-espanola-electrificada-4250503852583
 alhambra-z-nature-ct-ez-rectezhtml
 alhambra-z-nature-ct-ez-wbag-8436623082642
-alhambra-z-nature-cw-ez-elec-caja-estrecha-jaestrecha
-alhambra-z-nature-cw-ez-electrificada-ancho-standar-chostandar
 alhambra-z-nature-cw-ez-electrificada-con-funda-9738-25-mm-3825mmhtml
 alhambra-z-nature-cw-ez-funda-acolchada-10-mm-ofunda9730
 alhambra-z-nature-cw-ez-funda-acolchada-25-mm-ofunda9738
@@ -1359,8 +1339,6 @@ apc-lusitana-gc-200-3-4-5600918908778
 apc-lusitana-gc-200-5600918907399
 apc-lusitana-gc-s-wen-op-5600918907511
 apc-negra-1n-5600918900215
-appalachian-by-alhambra-w-300-cw-black-brillo-previo-e7-loprevioe7
-appalachian-by-alhambra-w300-brillo-black-fishman-e9-kfishmane9
 applause-ab24cii-mid-cutaway-nylon-natural-mate-ab24cs-4s-4046662281094
 applause-electroacustica-applause-ab24cii-mid-cutaway-nylon-natural-mate-4046662305998
 aranjuez-201-guitarra-espanola-1100000344261
@@ -1450,7 +1428,6 @@ caballero-by-manuel-rodriguez-principio-p-ca-pm-3-4-4046662291123
 caballero-by-manuel-rodriguez-principio-series-flamenco-ca-pm-fe-4046662310923
 caballero-by-manuel-rodriguez-principio-series-stage-ca-pm-sb-4046662310954
 caballero-by-manuel-rodriguez-principio-series-stage-ca-pm-se-4046662310930
-caballero-by-manuel-rodriguez-serie-principio-rraclasica
 caballero-by-mr-amplificada-caballero-by-mr-principio-p-be-abeto-y-sapelli-negro-4046662291147
 caballero-by-mr-amplificada-caballero-by-mr-principio-stage-caoba-sombreado-negr-4046662310947
 caballero-by-mr-ca-cm-1-2-4046662291062
@@ -1989,6 +1966,7 @@ espanola-amplificada-manuel-rodriguez-signature-legacy-cafe-ole-cutaway-40466622
 espanola-amplificada-manuel-rodriguez-slimline-cedro-negro-mate-cutaway-4046662337470
 espanola-amplificada-manuel-rodriguez-superior-estadio-es-cc-cutaway-alto-brillo-4046662318349
 espanola-amplificada-manuel-rodriguez-superior-estadio-es-sc-cutaway-laca-mate-4-4046662318332
+espanola-cadete-rocio-c16-all-natural-terocioc16
 espanola-cordoba-protege-c1-matiz-aqua-1matizaqua
 espanola-cordoba-protege-c1-matiz-coral-matizcoral
 espanola-manuel-rodriguez-abeto-brilloso-1-2-4046662337289
@@ -2038,6 +2016,7 @@ espanola-manuel-rodriguez-tradicion-clasico-7-8-4046662337814
 espanola-para-zurdos-manuel-rodriguez-abeto-brilloso-3-4-4046662337340
 espanola-para-zurdos-manuel-rodriguez-abeto-brilloso-4-4-4046662337418
 espanola-para-zurdos-manuel-rodriguez-cedro-satinado-4-4-4046662337449
+espanola-rocio-r10-natural-larocior10
 esteve-3st53-1-2-tapa-de-cedro-brillante-ante410110
 esteve-5f-spruce-top-blackstar-star410109
 esteve-6f-spruce-top-169926784996
@@ -2301,7 +2280,6 @@ jose-gomez-f20-abeto-y-sicomoro-oysicomoro
 jose-gomez-f80-ceq-omezf80ceq
 jose-gomez-f80-con-funda-8434418041874
 jose-gomez-f80-eq-amplificada-cutaway-jose-gomez-sicomoro-modelo-2021-lo2021html
-jose-gomez-f80-eq-previo-double-cw-iodoublecw
 jose-gomez-f80-jose-gomez-sicomoro-modelo-2021-lo2021html
 jose-gomez-f80-mezf80html
 jose-gomez-f80-segomezf80
@@ -2451,7 +2429,6 @@ luna-art-vintage-nylon-solid-top-a-e-distressed-810036855624
 m5s-lamencam5s
 manuel-rodriguez-a-c-serie-superior-4046662287966
 manuel-rodriguez-a-s-serie-superior-4046662287812
-manuel-rodriguez-ac-40-serie-academia-40-c-clasica40c
 manuel-rodriguez-ac40-c-serie-academia-4046662287928
 manuel-rodriguez-ac40-s-serie-academia-4046662287935
 manuel-rodriguez-ac60-c-serie-academia-4046662287942
@@ -2515,21 +2492,14 @@ manuel-rodriguez-serie-academia-santos-pavo-real-cedro-brillo-01354nuevo
 manuel-rodriguez-serie-academia-santos-pavo-real-cedro-mate-01350nuevo
 manuel-rodriguez-serie-academia-santos-pavo-real-cedro-mate-01350nuevo
 manuel-rodriguez-serie-academia-santos-pavo-real-cedro-mate-01350nuevo
-manuel-rodriguez-serie-magistral-d-c-maciza-sicamaciza
 manuel-rodriguez-serie-magistral-e-nogal-4-4-01422nuevo
 manuel-rodriguez-serie-magistral-e-nogal-4-4-01422nuevo
 manuel-rodriguez-serie-superior-a-bubinga-4-4-01300nuevo
 manuel-rodriguez-serie-superior-a-bubinga-4-4-01300nuevo
 manuel-rodriguez-serie-superior-a-bubinga-4-4-01300nuevo
-manuel-rodriguez-serie-superior-b-eucalipto-01322nuevo
-manuel-rodriguez-serie-superior-b-eucalipto-01322nuevo
-manuel-rodriguez-serie-superior-b-eucalipto-01322nuevo
 manuel-rodriguez-serie-superior-c-c-palisandro-01340nuevo
 manuel-rodriguez-serie-superior-c-c-palisandro-01340nuevo
 manuel-rodriguez-serie-superior-c-c-palisandro-01340nuevo
-manuel-rodriguez-serie-tradicion-t-65-4-4-01095nuevo
-manuel-rodriguez-serie-tradicion-t-65-4-4-01095nuevo
-manuel-rodriguez-serie-tradicion-t-65-4-4-01095nuevo
 manuel-rodriguez-superior-flamenco-gipsy-kings-gk-ro-r-roja-4046662338279
 manuel-rodriguez-superior-flamenco-gipsy-kings-gk-ro-y-amarilla-4046662338286
 manuel-rodriguez-superior-flamenco-sabicas-c3-fr-abeto-macizo-y-arce-flameado-4046662315478
@@ -3018,7 +2988,6 @@ paco-castillo-guitarra-232te-232te32100
 paco-castillo-guitarra-233fte-33fte32108
 paco-castillo-guitarra-234te-234te32101
 paco-castillo-guitarra-235te-235te32102
-paco-castillo-guitarra-tipo-manouche-gipsy-jazz-egipsyjazz
 paco-de-lucia-scores-book-2-fantasia-flamenca-20984nuevo
 palosanto-t-maciza-jose-rincon-rs-pro-con-funda-tinezrspro
 plaschke-ocarina-plaschke-clasica-en-do-16-cm-4046662253121
@@ -3234,7 +3203,9 @@ rocio-cadete-3-4-c16-all-natural-8435732404888
 rocio-cadete-3-4-c16-amarilla-8435732404819
 rocio-cadete-3-4-c16-blanca-8435732404772
 rocio-cadete-3-4-c16-roja-8435732404833
+rocio-espanola-cadete-rocio-c16-all-natural-llnatural2
 rocio-espanola-rocio-r10-blanca-8436032350851
+rocio-espanola-rocio-r10-natural-anolarocio
 rocio-espanola-rocio-r10-negra-8436032350868
 rocio-espanola-rocio-r20-con-funda-larocior20
 rocio-infantil-1-2-c7-blanca-8435732404789
@@ -3487,9 +3458,9 @@ valencia-vc102bus-1-2-blue-burst-6940651402300
 valencia-vc102pks-1-2-pink-burst-6940651402317
 valencia-vc102pps-purple-1-2-6940651402324
 valencia-vc102rds-red-burst-1-2-6940651402331
+valencia-vc103-3-4-nat-4natp15785
 valencia-vc103-3-4-pksb-pksbp15786
 valencia-vc103-3-4-ppsb-ppsbp15787
-valencia-vc103-natural-3-4-6940651402348
 valencia-vc103bk-black-3-4-6940651402355
 valencia-vc103bus-blue-burst-3-4-6940651402362
 valencia-vc103l-zurda-negra-3-4-cadete-6940651402614
@@ -3630,9 +3601,7 @@ veelah-3-4-veelah-cs-con-funda-incluida-cadete3436
 veelah-cctm-cutaway-electrificada-ficadahtml
 veelah-ccts-cutaway-electrificada-ficadahtml
 veelah-ccts-veelahccts
-veelah-cctsn-cutaway-sin-electrificar-ectrificar
 veelah-cctsn-cutaway-utawayhtml
-veelah-cs-3-4-cadete-36-cacadete36
 veelah-cs-cadete-3-4-36-con-funda-nfundahtml
 veelah-cs-caveelahcs
 veelah-cs-elahcshtml
@@ -3740,7 +3709,6 @@ yamaha-cadete-3-4-yamaha-cs40ii-46510nuevo
 yamaha-cg102-46560nuevo
 yamaha-cg102-natural-4957812496971
 yamaha-cg122-mc-122mcp7720
-yamaha-cg122mc-cedro-15810nuevo
 yamaha-cg122mc-natural-4957812472173
 yamaha-cg122ms-abeto-15800nuevo
 yamaha-cg142c-4957812472197
@@ -3756,7 +3724,6 @@ yamaha-cg162s-abeto-15840nuevo
 yamaha-cg182c-4957812472364
 yamaha-cg182c-cedro-15870nuevo
 yamaha-cg182s-abeto-15860nuevo
-yamaha-cg182sf-flamenco-57700nuevo
 yamaha-cg192s-4957812472272
 yamaha-cgs-103aii-clasica-cadete-3-4-p13634html
 yamaha-cgs102a-102ap32456

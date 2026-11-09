@@ -112,6 +112,31 @@ export default {
         return res;
       }
       if (probar) return new Response("sin caja", { status: 404, headers: { "x-guitle-caja": "0" } });
+      if (CON_CAJAS.has(ficha[1])) {
+        // Ficha que ya no existe con esa dirección: la de hoy del mismo producto (301) o "ya no está" (410). Nunca la
+        // ficha suelta vieja de R2: tendría precios de hace semanas.
+        let to = null;
+        try { to = await moved(env, ficha[1], ficha[2]); } catch { to = null; }
+        if (to) return Response.redirect(`${url.origin}/${ficha[1]}/g/${to}.html`, 301);
+        return gone(ficha[1]);
+      }
+    }
+
+    // España: sus fichas sueltas (g/) nunca se borran de R2; una guitarra retirada saldría con su último precio. Si no
+    // está entre las fichas de hoy (g/_indice.txt.gz), a la de hoy del mismo producto (301) o "ya no está" (410).
+    const fichaEs = key.match(/^g\/([^/]+)\.html$/);
+    if (fichaEs) {
+      let es = null;
+      try { es = await indiceEs(env); } catch { es = null; }
+      if (es && !es.s.has(fichaEs[1])) {
+        const head = await env.SITE.head(key);
+        // Publicada después del índice (el índice se guarda 1 h en memoria): es de hoy, se sirve.
+        if (!head || head.uploaded < es.t) {
+          const to = lookup(es, fichaEs[1]);
+          if (to) return Response.redirect(`${url.origin}/g/${to}.html`, 301);
+          return gone("es");
+        }
+      }
     }
 
     let obj = await env.SITE.get(key, { onlyIf: req.headers });
@@ -142,6 +167,76 @@ export default {
     return res;
   },
 };
+
+// Direcciones viejas de fichas (scraper/cajas.py, indice()): por el código de barras del final o por la dirección sin él.
+const INDICES = new Map();
+async function moved(env, code, slug) {
+  const now = Date.now();
+  if (!INDICES.has(code) || now - INDICES.get(code).t > 3600000) {  // se rehace en cada lectura: como mucho, de hace 1 h
+    const obj = await env.SITE.get(`${code}/_g/indice.json`);
+    INDICES.set(code, { t: now, idx: obj ? await obj.json() : { e: {}, n: {} } });
+  }
+  return lookup(INDICES.get(code).idx, slug);
+}
+
+// La ficha de hoy de un producto por su dirección vieja: por el código de barras del final o por la dirección sin él
+// (o sin su última palabra: "…-sunburst-unburstphp" era basura del nombre que luego se limpió).
+function lookup(idx, slug) {
+  const get = (m, k) => (m instanceof Map ? m.get(k) : m[k]);
+  const ean = (slug.match(/-(\d{8,14})$/) || [])[1];
+  const base = slug.replace(/-\d{8,14}$/, "");
+  const found = (ean && get(idx.e, ean.replace(/^0+/, ""))) || get(idx.n, base) || get(idx.n, base.replace(/-[^-]+$/, ""));
+  return found && found !== slug ? found : null;
+}
+
+// Fichas de hoy de España (scraper/cajas.py, indice_es): fecha en la primera línea y una ficha por línea; en memoria 1 h.
+let ES = null;
+async function indiceEs(env) {
+  if (ES && Date.now() - ES.loaded < 3600000) return ES.idx;
+  const obj = await env.SITE.get("g/_indice.txt.gz");
+  if (!obj) { ES = { loaded: Date.now(), idx: null }; return null; }
+  const text = await new Response(obj.body.pipeThrough(new DecompressionStream("gzip"))).text();
+  const lines = text.split("\n").filter(Boolean);
+  const t = new Date(lines.shift());
+  const s = new Set(lines), e = new Map(), n = new Map();
+  for (const slug of lines) {
+    const m = slug.match(/-(\d{8,14})$/);
+    if (m && !e.has(m[1].replace(/^0+/, ""))) e.set(m[1].replace(/^0+/, ""), slug);
+    const b = slug.replace(/-\d{8,14}$/, "");
+    if (!n.has(b)) n.set(b, slug);
+  }
+  // Una lista a medias taparía fichas buenas: con menos de 20.000, como si no hubiera índice
+  const idx = s.size >= 20000 ? { t, s, e, n } : null;
+  ES = { loaded: Date.now(), idx };
+  return idx;
+}
+
+const GONE = {
+  pt: ["Este produto já não está disponível", "Ver outros preços"], br: ["Este produto não está mais disponível", "Ver outros preços"],
+  fr: ["Ce produit n'est plus disponible", "Voir d'autres prix"], lu: ["Ce produit n'est plus disponible", "Voir d'autres prix"],
+  it: ["Questo prodotto non è più disponibile", "Vedi altri prezzi"], de: ["Dieses Produkt ist nicht mehr erhältlich", "Weitere Preise ansehen"],
+  at: ["Dieses Produkt ist nicht mehr erhältlich", "Weitere Preise ansehen"], ch: ["Dieses Produkt ist nicht mehr erhältlich", "Weitere Preise ansehen"],
+  nl: ["Dit product is niet meer verkrijgbaar", "Bekijk andere prijzen"], be: ["Dit product is niet meer verkrijgbaar", "Bekijk andere prijzen"],
+  pl: ["Ten produkt nie jest już dostępny", "Zobacz inne ceny"], se: ["Den här produkten finns inte längre", "Se andra priser"],
+  no: ["Dette produktet er ikke lenger tilgjengelig", "Se andre priser"], dk: ["Dette produkt findes ikke længere", "Se andre priser"],
+  cz: ["Tento produkt už není k dispozici", "Zobrazit další ceny"], sk: ["Tento produkt už nie je k dispozícii", "Zobraziť ďalšie ceny"],
+  hu: ["Ez a termék már nem elérhető", "További árak"], ro: ["Acest produs nu mai este disponibil", "Vezi alte prețuri"],
+  bg: ["Този продукт вече не е наличен", "Вижте други цени"], gr: ["Αυτό το προϊόν δεν είναι πλέον διαθέσιμο", "Δείτε άλλες τιμές"],
+  fi: ["Tämä tuote ei ole enää saatavilla", "Katso muita hintoja"], mx: ["Este producto ya no está disponible", "Ver otros precios"],
+  ar: ["Este producto ya no está disponible", "Ver otros precios"],
+};
+function gone(code) {
+  const [msg, link] = code === "es" ? ["Esta guitarra ya no está disponible", "Ver otros precios"]
+    : GONE[code] || ["This product is no longer available", "See other prices"];
+  const home = code === "es" ? "/" : `/${code}/`;
+  // 410: Google la quita de su lista enseguida; la persona tiene a mano el resto de la web de su país.
+  return new Response(`<!doctype html><html lang="${code}"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">` +
+    `<meta name="robots" content="noindex"><title>${msg} · guitle</title>` +
+    `<div style="font-family:system-ui,sans-serif;max-width:560px;margin:60px auto;padding:0 20px;text-align:center">` +
+    `<p style="font-size:1.3rem;font-weight:700">${msg}</p><p><a href="${home}" style="display:inline-block;padding:10px 18px;` +
+    `border-radius:999px;background:#2a78d6;color:#fff;text-decoration:none">${link} →</a></p></div></html>`,
+    { status: 410, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, max-age=3600" } });
+}
 
 function notFound() {
   return new Response('<!doctype html><meta charset="utf-8"><title>No encontrado · guitle</title>' +

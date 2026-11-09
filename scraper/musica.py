@@ -1230,8 +1230,11 @@ let tm;const go=()=>{clearTimeout(tm);tm=setTimeout(run,200)};[q,fa].forEach(x=>
         urls.insert(1, url)
         keep.add(path)
     # Mapa propio de discos para Google (uk/records/sitemap.xml, en robots.txt)
-    sm = "".join(f"  <url><loc>https://guitle.com{u}</loc></url>\n" for u in urls)
-    (out / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{sm}</urlset>\n', encoding="utf-8")
+    # En trozos de 45.000 (Google no lee más de 50.000 por sitemap): sitemap.xml y sitemap-2.xml, siempre los dos.
+    for i, part in enumerate(intl.sitemap_parts(urls), 1):
+        sm = "".join(f"  <url><loc>https://guitle.com{u}</loc></url>\n" for u in part)
+        (out / ("sitemap.xml" if i == 1 else f"sitemap-{i}.xml")).write_text(
+            f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{sm}</urlset>\n', encoding="utf-8")
     for f in out.glob("*.html"):
         if f not in keep:
             f.unlink()

@@ -539,6 +539,8 @@ function renderAlerts(codes, at, moments, upd, name, frescura = {}, cong = null)
     const r = at[c][last], p = prev && at[c][prev], n = esc(name[c] || c);
     if (!r) { add("bad", "Sin datos", `${n}: no aparece en la última lectura.`); continue; }
     for (const [i, k, label] of kinds) {
+      // Finlandia y Luxemburgo no tienen tiendas de equipo propias (solo Thomann, que se lee por guitarras): no es un fallo
+      if (!r[i] && k === "e" && (c === "fi" || c === "lu")) continue;
       if (!r[i]) { add("bad", "Sin datos", `${n}: no hay ${label} en el catálogo.`); continue; }
       if (p && p[i] && r[i] < p[i] * 0.8)
         add("bad", "Caída brusca", `${n}: ${label} de ${fmt(p[i])} a ${fmt(r[i])} (−${Math.round((1 - r[i] / p[i]) * 100)} %) en la última lectura.`);

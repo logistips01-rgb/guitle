@@ -19,7 +19,8 @@ FILES = {"electrica": "data/catalog/products.json", "acustica": "data/catalog/ac
          "clasica": "data/catalog/acusticas/clasicas.json", "teclado": "data/catalog/equipo/teclados.json",
          "pedal": "data/catalog/equipo/pedales.json", "bajo": "data/catalog/mas/bajos.json",
          "ampli": "data/catalog/mas/amplis.json", "estuche": "data/catalog/mas/estuches.json",
-         "micro": "data/catalog/mas/micros.json", "varios": "data/catalog/mas/varios.json"}
+         "micro": "data/catalog/mas/micros.json", "varios": "data/catalog/mas/varios.json",
+         "bateria": "data/catalog/mas/baterias.json"}
 LOW = 0.75  # por debajo del 75 % de la mediana de las demás tiendas, se revisa
 
 

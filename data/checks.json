@@ -28,6 +28,15 @@
  },
  {
   "kind": "electrica",
+  "type": "sin_iva",
+  "store": "partitura",
+  "name": "Sire Q3 Tobacco Sunburst",
+  "slug": "sire-q3-tobacco-sunburst-810187571022",
+  "price": 338.84,
+  "median": 407.56
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "Yamaha PACS+12M Pacifica Standard Plus Black",
@@ -88,24 +97,6 @@
   "slug": "sire-x5-trans-blue-810046138984",
   "price": 339.0,
   "median": 466.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicsales",
-  "name": "Yamaha PACS+12 Pacifica Standard Plus Black",
-  "slug": "yamaha-pacs-12-pacifica-standard-plus-black-4957812697682",
-  "price": 715.0,
-  "median": 1008.11
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "alteisa",
-  "name": "Yamaha PACS+12 Pacifica Standard Plus Black",
-  "slug": "yamaha-pacs-12-pacifica-standard-plus-black-4957812697682",
-  "price": 715.0,
-  "median": 1008.11
  },
  {
   "kind": "electrica",
@@ -263,6 +254,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "Ibanez RGMS8PB-CBS Cosmic Blue Starburst",
+  "slug": "ibanez-rgms8pb-cbs-cosmic-blue-starburst-4549763369758",
+  "price": 559.0,
+  "median": 958.585
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "thomann",
   "name": "Ibanez RGMS8PB-CBS Cosmic Blue Starburst",
   "slug": "ibanez-rgms8pb-cbs-cosmic-blue-starburst-4549763369758",
@@ -272,20 +272,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "Ibanez RGMS8PB-CBS Cosmic Blue Starburst",
-  "slug": "ibanez-rgms8pb-cbs-cosmic-blue-starburst-4549763369758",
-  "price": 602.0,
-  "median": 958.585
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Ibanez RGMS8PB-CBS Cosmic Blue Starburst",
   "slug": "ibanez-rgms8pb-cbs-cosmic-blue-starburst-4549763369758",
   "price": 624.17,
-  "median": 947.5
+  "median": 946.0
  },
  {
   "kind": "electrica",
@@ -385,6 +376,15 @@
   "slug": "godin-radium-matte-green-623501050406",
   "price": 999.0,
   "median": 1452.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez GRX20 BKN Black Night",
+  "slug": "ibanez-grx20-bkn-black-night-4515110324756",
+  "price": 164.0,
+  "median": 219.0
  },
  {
   "kind": "electrica",
@@ -560,15 +560,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "alteisa",
-  "name": "Ibanez GRX20 BKN Black Night",
-  "slug": "ibanez-grx20-bkn-black-night-4515110324756",
-  "price": 164.0,
-  "median": 219.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "LTD EC-256 Vintage Gold Satin",
   "slug": "ltd-ec-256-vintage-gold-satin-719710620155",
@@ -657,22 +648,13 @@
   "median": 244.35
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez AZES40-PPK",
-  "slug": "ibanez-azes40-ppk-4549763289568"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez KIKO100T-RR",
-  "slug": "ibanez-kiko100t-rr-606559998005"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez RG421HPAM-ABL",
-  "slug": "ibanez-rg421hpam-abl-4549763229694"
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "musicalsanfrancisco",
+  "name": "LAG T118DCE Tramontane 118 Dreadnought Cutaway Natural",
+  "slug": "lag-t118dce-tramontane-118-dreadnought-cutaway-natural-3700166363120",
+  "price": 385.47,
+  "median": 547.5
  },
  {
   "kind": "acustica",
@@ -694,12 +676,21 @@
  },
  {
   "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "alteisa",
+  "type": "sin_iva",
+  "store": "mat",
   "name": "LAG T118DCE-BRS Tramontane 118 Dreadnought Cutaway Natural",
   "slug": "lag-t118dce-brs-tramontane-118-dreadnought-cutaway-natural-3700166363137",
-  "price": 410.1,
-  "median": 547.5
+  "price": 451.24,
+  "median": 545.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "LAG T118ASCE-BLK Tramontane 118 Auditorium Slim Cutaway Black",
+  "slug": "lag-t118asce-blk-tramontane-118-auditorium-slim-cutaway-black-3700166363229",
+  "price": 354.55,
+  "median": 486.53
  },
  {
   "kind": "acustica",
@@ -709,6 +700,24 @@
   "slug": "lag-tramontane-t177jce-jumbo-3700166370241",
   "price": 311.0,
   "median": 519.0
+ },
+ {
+  "kind": "acustica",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "LAG T118ACE-BLK Tramontane 118 Auditorium Cutaway Black",
+  "slug": "lag-t118ace-blk-tramontane-118-auditorium-cutaway-black-3700166363212",
+  "price": 350.41,
+  "median": 424.95
+ },
+ {
+  "kind": "acustica",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "LAG T170DCE Tramontane 170 Dreadnought Cutaway Natural",
+  "slug": "lag-t170dce-tramontane-170-dreadnought-cutaway-natural-3700166312043",
+  "price": 371.07,
+  "median": 449.0
  },
  {
   "kind": "acustica",
@@ -736,6 +745,15 @@
   "slug": "ibanez-aad400ce-lgs-4549763283306",
   "price": 1499.0,
   "median": 2064.1
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "musicalsanfrancisco",
+  "name": "LAG SAUVAGE-D Sauvage Dreadnought",
+  "slug": "lag-sauvage-d-sauvage-dreadnought-3700166373006",
+  "price": 301.31,
+  "median": 443.45
  },
  {
   "kind": "acustica",
@@ -991,6 +1009,15 @@
  },
  {
   "kind": "acustica",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "Martin D-10E Dreadnought",
+  "slug": "martin-d-10e-dreadnought-729789573986",
+  "price": 890.08,
+  "median": 1100.47
+ },
+ {
+  "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Sigma 00M-15",
@@ -1013,7 +1040,7 @@
   "store": "egitana",
   "name": "Tanglewood TRX2E",
   "slug": "tanglewood-trx2e-rx2ep40582",
-  "price": 202.0,
+  "price": 184.0,
   "median": 298.365
  },
  {
@@ -1044,12 +1071,6 @@
   "median": 877.895
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Takamine Cutaway Auditorium Takamine EF508 Natural",
-  "slug": "takamine-cutaway-auditorium-takamine-ef508-natural-190262011835"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1066,6 +1087,24 @@
   "slug": "cort-cec1-op-w-bag-8809383838659",
   "price": 178.16,
   "median": 238.055
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez GA360TCE TBK Transparent Black Electrificada de Cuerpo Estrecho",
+  "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
+  "price": 460.0,
+  "median": 655.0
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "Ibanez GA360TCE TBK Transparent Black Electrificada de Cuerpo Estrecho",
+  "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
+  "price": 460.0,
+  "median": 655.0
  },
  {
   "kind": "clasica",
@@ -1645,12 +1684,21 @@
  },
  {
   "kind": "varios",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "Elixir 11002 Nanoweb 10-47 Acustica",
+  "slug": "elixir-11002-nanoweb-10-47-acustica-733132110025",
+  "price": 14.88,
+  "median": 18.465
+ },
+ {
+  "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Elixir strings Nanoweb 80-20 M 13-56",
   "slug": "elixir-strings-nanoweb-80-20-m-13-56-733132111022",
   "price": 11.4,
-  "median": 18.5
+  "median": 16.94
  },
  {
   "kind": "varios",
@@ -1658,8 +1706,17 @@
   "store": "mat",
   "name": "Ernie Ball EB2003 Earthwood 80/20 Bronze Medium-Light (12-54)",
   "slug": "ernie-ball-eb2003-earthwood-80-20-bronze-medium-light-12-54-749699120032",
-  "price": 6.3,
+  "price": 5.21,
   "median": 9.435
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Ernie Ball EB2006 Earthwood 80/20 Bronze Extra Light (010-050)",
+  "slug": "ernie-ball-eb2006-earthwood-80-20-bronze-extra-light-010-050-749699120063",
+  "price": 6.53,
+  "median": 9.585
  },
  {
   "kind": "varios",

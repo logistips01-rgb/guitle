@@ -42,8 +42,16 @@ def main(web, cajas, out, fotos_file):
     if out.exists():
         shutil.rmtree(out)
     fotos, n_html, n_other = set(), 0, 0
+    # Fichas de hoy (g/_indice.txt.gz, scraper/cajas.py): las retiradas se quedan en R2 con su último precio y aquí no van
+    hoy = None
+    idx = web / "g" / "_indice.txt.gz"
+    if idx.exists():
+        hoy = set(gzip.decompress(idx.read_bytes()).decode("utf-8").split("\n")[1:]) - {""}
+        hoy = hoy if len(hoy) >= 20000 else None
     for src in web.rglob("*"):
         if not src.is_file():
+            continue
+        if hoy is not None and src.parent == web / "g" and src.suffix == ".html" and src.stem not in hoy:
             continue
         dst = out / src.relative_to(web)
         dst.parent.mkdir(parents=True, exist_ok=True)

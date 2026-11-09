@@ -11,6 +11,7 @@ Uso: python -m scraper.cajas uk [fr …]   (lo lanza .github/r2.sh antes de subi
 """
 import gzip
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -49,7 +50,44 @@ def empaquetar(code):
     for old in out.glob("*.json.gz"):  # cajas que se han quedado sin fichas
         if old.name[:-8] not in boxes:
             old.unlink()
+    indice(out, [slug for pages in boxes.values() for slug in pages])
     return sum(len(p) for p in boxes.values()), changed
+
+
+EAN_TAIL = re.compile(r"-(\d{8,14})$")
+
+
+def indice(out, slugs):
+    """<país>/_g/indice.json: para las direcciones viejas de fichas que ya no existen (Google las tenía: 1.089 errores 404
+    en noviembre de 2026). El Worker busca la ficha de hoy por el código de barras del final de la dirección ("e") o por
+    la dirección sin él ("n"), y redirige (301); si no, responde "ya no está disponible" (410)."""
+    e, n = {}, {}
+    for slug in sorted(slugs):
+        m = EAN_TAIL.search(slug)
+        if m:
+            e.setdefault(m.group(1).lstrip("0"), slug)
+        n.setdefault(EAN_TAIL.sub("", slug), slug)
+    data = json.dumps({"e": e, "n": n}, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    path = out / "indice.json"
+    if not path.exists() or path.read_bytes() != data:
+        path.write_bytes(data)
+
+
+def indice_es():
+    """g/_indice.txt.gz: las fichas de España de hoy (las listas g/_*.txt de todas las categorías, en git) para el Worker.
+    Las fichas de España se copian a R2 y nunca se borran: una guitarra retirada seguiría saliendo con su último precio.
+    Con esto el Worker la lleva a la ficha de hoy del mismo producto (301) o responde "ya no está disponible" (410)."""
+    from datetime import datetime, timezone
+    slugs = sorted({line.strip() for lst in (ROOT / "g").glob("_*.txt") for line in lst.read_text(encoding="utf-8").split()
+                    if line.strip()})
+    if len(slugs) < 20000:  # listas a medias: mejor sin índice (el Worker sirve como antes) que tapar fichas buenas
+        print(f"índice de España: solo {len(slugs)} fichas, no se escribe", flush=True)
+        return 0
+    # Una ficha por línea (la primera, la fecha), comprimido: unos cientos de KB. El Worker monta el resto al cargarlo.
+    text = datetime.now(timezone.utc).isoformat(timespec="seconds") + "\n" + "\n".join(slugs) + "\n"
+    (ROOT / "g" / "_indice.txt.gz").write_bytes(gzip.compress(text.encode("utf-8"), compresslevel=9, mtime=0))
+    print(f"índice de España: {len(slugs)} fichas", flush=True)
+    return len(slugs)
 
 
 CAJAS_R = 512  # secciones como la de discos (<país>/records/): todas sus páginas, en 512 cajas (<país>/_r/)
@@ -82,6 +120,8 @@ def empaquetar_carpeta(code, sub):
 
 
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["--indice-es"]:
+        sys.exit(0 if indice_es() else 1)
     if sys.argv[1:2] == ["--carpeta"]:
         n, changed = empaquetar_carpeta(sys.argv[2], sys.argv[3])
         print(f"cajas {sys.argv[2]}/{sys.argv[3]}: {n} páginas ({changed} cajas escritas)", flush=True)

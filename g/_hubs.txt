@@ -28,7 +28,6 @@ marca/ac340l-opn.html
 marca/aclam.html
 marca/acoustic-music-books.html
 marca/acus.html
-marca/acustica.html
 marca/adam-hall.html
 marca/adamas.html
 marca/admira.html
@@ -91,7 +90,6 @@ marca/apc.html
 marca/apc.html
 marca/apg.html
 marca/apogee.html
-marca/appalachian.html
 marca/applause.html
 marca/apx600.html
 marca/apx600fm.html
@@ -366,6 +364,7 @@ marca/escapade.html
 marca/esi.html
 marca/esp.html
 marca/espanola.html
+marca/espanola.html
 marca/esteve.html
 marca/ev-electro-voice.html
 marca/eve-audio.html
@@ -539,7 +538,6 @@ marca/jose-rincon.html
 marca/jose-torres.html
 marca/jose-torres.html
 marca/jose.html
-marca/jose.html
 marca/journey-instruments.html
 marca/joyo.html
 marca/js2gd.html
@@ -676,10 +674,8 @@ marca/mesa-boogie.html
 marca/mesa-boogie.html
 marca/mh-200.html
 marca/michael-kelly.html
-marca/michael.html
 marca/micw.html
 marca/miguel.html
-marca/mini.html
 marca/modal-electronics.html
 marca/modesto-malla.html
 marca/moeck.html
@@ -818,7 +814,6 @@ marca/rapsody.html
 marca/rathbone.html
 marca/real-mission.html
 marca/recording-king.html
-marca/recording.html
 marca/red-panda.html
 marca/red-witch.html
 marca/redwood.html
@@ -1121,7 +1116,6 @@ marca/way-huge.html
 marca/way.html
 marca/wingo.html
 marca/woodbrass.html
-marca/work.html
 marca/xotic.html
 marca/xvive.html
 marca/xvive.html
