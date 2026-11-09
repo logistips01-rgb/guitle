@@ -24,7 +24,8 @@ eko-starter-st300-sunburst-8056734498363
 eko-starter-st350-negra-8056734498929
 eko-starter-st350-sunburst-8056734498912
 eko-starter-st351-tipo-strat-vintage-hss-diapason-de-arce-daphne-azul-8056734498936
-eko-starter-st401-negra-8056734498455
+eko-starter-st401-negra-arterst401
+eko-starter-st401-negra-earcenegra
 eko-starter-st401-sunburst-8056734498462
 eko-starter-tl300-butterscotch-8056734498493
 eko-starter-tl300-negra-8056734498479

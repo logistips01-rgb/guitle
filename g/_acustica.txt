@@ -1350,7 +1350,6 @@ eastman-dm2-v-antique-varnish-846940041358
 eastman-dm3-grande-bouche-846940076909
 eastman-dm3-ndm3431790
 eastman-dt30d-natural-846940042317
-eastman-dt30gace-double-top-nat-gran-auditorio-natural-846940042386
 eastman-e1-om-846940040597
 eastman-e10-00-ss-v-846940034497
 eastman-e10-oo-ss-v-traditional-antique-doble-o-1000000007541
@@ -4270,7 +4269,7 @@ seagull-entourage-folk-rustic-burst-623501052547
 seagull-entourage-mj-rustic-burst-623501032914
 seagull-entourage-rustic-burst-ch-cw-eq-623501052653
 seagull-entourage-rustic-burst-grand-623501052523
-seagull-m6-ruby-red-ch-eq-623501052424
+seagull-m6-limited-rojo-rubi-ch-eq-623501052424
 seagull-maritime-sws-ch-cw-natural-presys-ii-623501051946
 seagull-maritime-sws-cw-gt-presys-ii-623501051953
 seagull-maritime-sws-cw-gt-qit-stica27832

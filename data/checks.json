@@ -56,6 +56,24 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Danelectro 57 Jade",
+  "slug": "danelectro-57-jade-611820027988",
+  "price": 486.78,
+  "median": 666.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "ESP LTD JM-I QM Deep Blood Moon",
+  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
+  "price": 1421.0,
+  "median": 1895.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -1213,6 +1231,12 @@
   "slug": "ortega-espanola-amplificada-cutaway-ortega-tourplayer-rtpg-ls2-842960187359",
   "price": 577.69,
   "median": 708.5
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Takamine electroacústica Takamine GC2CE negra",
+  "slug": "takamine-electroacustica-takamine-gc2ce-negra-190262041214"
  },
  {
   "kind": "teclado",

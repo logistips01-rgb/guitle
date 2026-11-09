@@ -105,9 +105,9 @@ boss-ad-10-acoustic-preamp-4957054511661
 boss-ad-2-acoustic-preamp-4957054509828
 boss-aw-3-pedal-compacto-4957054053048
 boss-aw3-316730html
-boss-bb-1x-bass-driver-4957054506551
+boss-bb-1x-bass-driver-bassdriver
 boss-bb-1x-bass-driver-special-edition-itionp4493
-boss-bb1x-pedal-bajo-ssbb1xhtml
+boss-bb1x-pedal-bajo-4957054506551
 boss-bc-1x-bass-compressor-4957054508678
 boss-bc-1x-bass-compressor-special-edition-itionp5109
 boss-bc1x-compresor-debajohtml
@@ -2108,12 +2108,12 @@ source-audio-sa167-pedal-tap-tempo-8907290015146
 source-audio-sa241-one-series-lunar-phaser-aserp18352
 source-audio-sa244-l-a-lady-overdrive-rivep18354
 source-audio-sa246-after-shock-bass-distortion-8907290014842
-source-audio-sa248-spectrum-intelligent-filter-8907290015764
 source-audio-sa249-c4-synth-8907290015832
 source-audio-sa252-atlas-compressor-8907290016518
 source-audio-sa260-nemesis-delay-8907290015078
 source-audio-sa260a-nemesis-adt-delay-890729001644
 source-audio-sa270-eq2-programmable-eq-8907290016068
+source-audio-spectrum-intelligent-filter-8907290015764
 source-audio-true-spring-reverb-8907290015450
 source-audio-ultrawave-multiband-bass-8907290016204
 source-audio-ultrawave-multiband-processor-8907290016136
