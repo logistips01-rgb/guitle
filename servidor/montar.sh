@@ -23,6 +23,7 @@ systemctl enable --now guitle-fichas
 systemctl restart guitle-fichas
 # Copia desde R2: cada 2 horas (a y 45), solo lo que cambia. Lo nuevo de cada lectura llega como mucho en 2 horas.
 cp /root/guitle-sync.sh /opt/guitle/guitle-sync.sh && chmod +x /opt/guitle/guitle-sync.sh
+cp /root/fotos.py /opt/guitle/fotos.py
 cat > /etc/systemd/system/guitle-copia.service <<'EOF'
 [Unit]
 Description=guitle: copia de la web desde R2

@@ -5,7 +5,10 @@
 # (2 GB) y el sistema lo mataba. Las fichas sueltas de los países (<país>/g/) no se copian: en R2 son viejas.
 # Credenciales de R2: en /root/.config/rclone/rclone.conf (solo root), puestas por el paso desde los secretos.
 set -euo pipefail
-if systemctl is-active --quiet guitle-sync guitle-copia; then echo "ya hay una copia en marcha"; exit 0; fi
+# Una copia en marcha se para y se vuelve a lanzar con lo nuevo (rehace la lista: no repite lo ya copiado)
+systemctl stop guitle-copia.service guitle-sync.service 2>/dev/null || true
+pkill -f "rclone copy r2:guitle" 2>/dev/null || true
 cp /root/guitle-sync.sh /opt/guitle/guitle-sync.sh && chmod +x /opt/guitle/guitle-sync.sh
+cp /root/fotos.py /opt/guitle/fotos.py
 systemctl start --no-block guitle-copia.service
 echo "copia lanzada (log: /var/log/guitle-sync.log)"
