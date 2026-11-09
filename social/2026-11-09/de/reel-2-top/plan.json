@@ -1,0 +1,218 @@
+{
+ "fecha": "9. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "5 Deals: Verstärker",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "ampeg-rb-108-30-watt-e-basscombo-614252317054",
+    "name": "Ampeg RB-108 30 Watt E-Basscombo",
+    "brand": "Ampeg",
+    "kind": "amplis",
+    "img": "https://www.markstein.de/media/56/d1/64/1761552015/00050388_3-Rocket-Bass-108.jpg",
+    "th": "f6b8b610edc57216.webp",
+    "price": 168.0,
+    "store": "Musikhaus Markstein",
+    "stores": 3,
+    "median": 207.0,
+    "max": 215.0,
+    "next": 199.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      168.0
+     ],
+     [
+      "Zoundhouse",
+      199.0
+     ],
+     [
+      "Shop2Rock",
+      215.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "31 € günstiger als anderswo"
+   },
+   {
+    "slug": "vox-mini-go-50-4959112227798",
+    "name": "Vox Mini GO 50",
+    "brand": "Vox",
+    "kind": "amplis",
+    "img": "https://www.markstein.de/media/8b/43/68/1762360338/00049821_VXVMG50_front_web_original.jpg",
+    "th": "a6da6153a2dafc9d.webp",
+    "price": 247.0,
+    "store": "Musikhaus Markstein",
+    "stores": 6,
+    "median": 299.0,
+    "max": 319.0,
+    "next": 289.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      247.0
+     ],
+     [
+      "Musikhaus Lange",
+      289.0
+     ],
+     [
+      "Musik Beck",
+      299.0
+     ],
+     [
+      "Music Town",
+      299.0
+     ],
+     [
+      "Musik Dressler",
+      319.0
+     ],
+     [
+      "Shop2Rock",
+      319.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "42 € günstiger als anderswo"
+   },
+   {
+    "slug": "nux-ac60-stageman-ii-studio-combo-60watt-6-5zoll-akustikverstarker-6936257208972",
+    "name": "Nux AC60 Stageman II Studio Combo 60Watt/6,5Zoll Akustikverstärker",
+    "brand": "Nux",
+    "kind": "amplis",
+    "img": "https://www.shop2rock.de/shop/images/products/main/nux_ac60stagemanii_1.jpg",
+    "th": "971a15121600cf53.webp",
+    "price": 281.22,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 337.0,
+    "max": 355.0,
+    "next": 319.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      281.22
+     ],
+     [
+      "Musikhaus Lange",
+      319.0
+     ],
+     [
+      "Music Town",
+      355.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "37,78 € günstiger als anderswo"
+   },
+   {
+    "slug": "orange-crush-acoustic-30-combo-30w-8zoll-solid-state-akustikverstarker-orange-5060299177666",
+    "name": "Orange Crush Acoustic 30 Combo 30W/8Zoll Solid-State Akustikverstärker, orange",
+    "brand": "Orange",
+    "kind": "amplis",
+    "img": "https://www.shop2rock.de/shop/images/products/main/orange_crushac30_01.jpg",
+    "th": "e511bc6c2e8df759.webp",
+    "price": 346.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 414.0,
+    "max": 429.0,
+    "next": 399.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      346.0
+     ],
+     [
+      "Musikhaus Lange",
+      399.0
+     ],
+     [
+      "Soundland",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "53 € günstiger als anderswo"
+   },
+   {
+    "slug": "blackstar-sonnet-60-black-combo-60watt-6-5zoll-akustik-gitarrenverstarker-845644005697",
+    "name": "Blackstar Sonnet 60 black Combo 60Watt/6,5Zoll Akustik-Gitarrenverstärker",
+    "brand": "Blackstar",
+    "kind": "amplis",
+    "img": "https://www.shop2rock.de/shop/images/products/main/blackstar_sonnet60black_1.jpg",
+    "th": "8bcc8562343bf589.webp",
+    "price": 357.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 454.0,
+    "max": 489.0,
+    "next": 419.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      357.0
+     ],
+     [
+      "Musik Dressler",
+      419.0
+     ],
+     [
+      "Music Town",
+      489.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "62 € günstiger als anderswo"
+   }
+  ],
+  "rama": "amplis"
+ }
+}
