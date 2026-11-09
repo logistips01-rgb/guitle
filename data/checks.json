@@ -1621,12 +1621,21 @@
  },
  {
   "kind": "varios",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "Elixir 11002 Nanoweb 10-47 Acustica",
+  "slug": "elixir-11002-nanoweb-10-47-acustica-733132110025",
+  "price": 14.88,
+  "median": 18.465
+ },
+ {
+  "kind": "varios",
   "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Elixir strings Nanoweb 80-20 M 13-56",
   "slug": "elixir-strings-nanoweb-80-20-m-13-56-733132111022",
   "price": 11.4,
-  "median": 18.5
+  "median": 16.94
  },
  {
   "kind": "varios",
@@ -1634,8 +1643,17 @@
   "store": "mat",
   "name": "Ernie Ball EB2003 Earthwood 80/20 Bronze Medium-Light (12-54)",
   "slug": "ernie-ball-eb2003-earthwood-80-20-bronze-medium-light-12-54-749699120032",
-  "price": 6.3,
+  "price": 5.21,
   "median": 9.435
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Ernie Ball EB2006 Earthwood 80/20 Bronze Extra Light (010-050)",
+  "slug": "ernie-ball-eb2006-earthwood-80-20-bronze-extra-light-010-050-749699120063",
+  "price": 6.53,
+  "median": 9.585
  },
  {
   "kind": "varios",

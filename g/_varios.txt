@@ -937,7 +937,7 @@ duesenberg-drop-stop-straplocks-black-444412004122
 duesenberg-drop-stop-straplocks-gold-444412004123
 duesenberg-drop-stop-straplocks-nickel-737713504074
 dunlop-09-42-pure-niquel-710137058026
-dunlop-09-46-niquel-030664html
+dunlop-09-46-niquel-710137030664
 dunlop-10-48-phosphor-bronce-710137030725
 dunlop-10-52-niquel-710137030688
 dunlop-105-bass-string-710137030596
@@ -1248,7 +1248,8 @@ dunlop-johnny-cash-bold-pick-tin-heavy-710137053687
 dunlop-johnny-cash-legend-pick-tin-heavy-710137053649
 dunlop-jph-01t-james-hetfield-lata-6-puas-710137040588
 dunlop-juego-10-46-niquel-wound-710137030671
-dunlop-juego-11-50-niquel-030695html
+dunlop-juego-10-48-bronce-710137030763
+dunlop-juego-11-50-niquel-710137030695
 dunlop-juego-40-120-acero-710137030886
 dunlop-juego-45-105-robert-trujillo-signature-710137134881
 dunlop-juego-45-105-steel-robert-trujillo-signature-710137137622
@@ -1397,9 +1398,13 @@ dv-mark-strap-s-dv-brown-8033829138373
 egitana-afinador-et61gb-et61gbp804
 electro-harmonix-2020-v2-tuner-683274032146
 electro-harmonix-x9-clip-on-tuner-683274032122
+elixir-11002-nanoweb-10-47-acustica-733132110025
 elixir-11027-nanoweb-11-52-acustica-733132110278
+elixir-12152-nanoweb-12-52-electrica-733132121526
 elixir-14087-cuerdas-bajo-medium-extra-045105html
+elixir-14677-nanoweb-45-105-acero-bajo-733132146772
 elixir-14782-cuerdas-bajo-5c-light-medium-l45135html
+elixir-16077-phosphor-bronze-lt-12-56-acustica-733132160778
 elixir-19002-juego-cuerdas-opti-ctricahtml
 elixir-19027-juego-cuerdas-opti-733132190270
 elixir-19077-optiweb-nickel-plated-steel-010-052-733132190775
@@ -1408,7 +1413,6 @@ elixir-cuerda-bajo-085-733132153855
 elixir-cuerda-bajo-125-733132154258
 elixir-cuerda-bajo-130xl-733132154333
 elixir-cuerda-para-phos-br13-56-br1356html
-elixir-cuerdas-de-12152-12-52-a12152html
 elixir-cuerdas-light-012-053-ze1253html
 elixir-cuerdas-light-heavy-010-052-733132120772
 elixir-cuerdas-super-light-009-042-009042html
@@ -1427,15 +1431,12 @@ elixir-strings-juego-acustica-nanoweb-80-20-bronze-cl-11-733132110261
 elixir-strings-juego-acustica-nanoweb-80-20-bronze-cl-12-733132110575
 elixir-strings-juego-acustica-nanoweb-80-20-bronze-hd-light-13-53-733132111824
 elixir-strings-juego-acustica-nanoweb-80-20-bronze-l-12-53-733132110520
-elixir-strings-juego-acustica-nanoweb-80-20-bronze-xl-10-47-733132110025
 elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-12-st-10-47-733132161522
 elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-custom-light-11-52-733132160273
 elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-hd-light-13-53-733132161829
 elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-l-12-53-733132160525
 elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-l-12-53-pack-25-733132160570
-elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-m-13-56-733132161027
 elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-m-13-56-pack-25-733132161058
-elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-ml-12-56-733132160778
 elixir-strings-juego-acustica-nanoweb-92-8-phosphor-bz-xl-10-47-733132160020
 elixir-strings-juego-acustica-polywe-80-20-bronze-12st-light-10-47-733132111503
 elixir-strings-juego-acustica-polyweb-80-20-bronze-cl-11-52-733132110254
@@ -1453,7 +1454,6 @@ elixir-strings-juego-bajo-nanoweb-5st-s-steel-ml-45-130-733132147779
 elixir-strings-juego-bajo-nanoweb-heavy-50-105-733132141029
 elixir-strings-juego-bajo-nanoweb-l-45-100-733132140527
 elixir-strings-juego-bajo-nanoweb-s-steel-cl-45-100-733132146529
-elixir-strings-juego-bajo-nanoweb-s-steel-m-45-105-733132146772
 elixir-strings-juego-bajo-nanoweb-s-steel-m-50-105-733132147021
 elixir-strings-juego-bajo-nanoweb-xl-40-95-733132140022
 elixir-strings-juego-bajo-nanoweb-xls-m-45-105-733132140879
@@ -1464,7 +1464,6 @@ elixir-strings-juego-electrica-nanoweb-7st-super-light-09-52-733132120079
 elixir-strings-juego-electrica-nanoweb-7st-super-light-10-59-733132120741
 elixir-strings-juego-electrica-nanoweb-8st-l-10-74-733132120628
 elixir-strings-juego-electrica-nanoweb-baritone-733132123025
-elixir-strings-juego-electrica-nanoweb-h-733132121526
 elixir-strings-juego-electrica-nanoweb-l-10-46-pack-25-733132120550
 elixir-strings-juego-electrica-nanoweb-l-10-46-pack-50-733132120543
 elixir-strings-juego-electrica-nanoweb-m-nowebm1149
@@ -1494,10 +1493,10 @@ elixir-strings-optiweb-super-light-09-42-733132190027
 elixir-strings-polyweb-custom-light-09-46-733132120253
 elixir-strings-polyweb-l-10-46-733132120505
 elixir-strings-polyweb-super-light-09-42-733132120000
+elixir16102-nanoweb-phosphor-bronze-medium-13-56-acustica-733132161027
 emg-40-dc-red-e-bass-40-dc-humbucker-dual-coil-ceramic-red-654330403873
 emg-rt-rip-tide-set-e-bass-rt-set-single-coil-set-black-brushed-chrome-654330405518
 epiphone-apre1274h-heavy-pack-12-puas-711106534886
-ernie-ball-2004-earthwood-bronze-11-52-749699120049
 ernie-ball-2005-earthwood-bz-cuerdas-medium-12-5-56-749699105848
 ernie-ball-2007-earthwood-bz-cuerdas-light-11-5-54-749699105855
 ernie-ball-2143-earthwood-phos-bz-medium-cuerdas-12-5-56-749699105862
@@ -1591,7 +1590,6 @@ ernie-ball-cuerda-bajo-115-749699116158
 ernie-ball-cuerda-bajo-125-749699116257
 ernie-ball-cuerda-bajo-130-749699116134
 ernie-ball-cuerdas-9-42-2723-ll2723html
-ernie-ball-cuerdas-earthwood-13-56-749699120025
 ernie-ball-cuerdas-paradigm-80-20-bronze-10-50-749699120902
 ernie-ball-cuerdas-paradigm-med-light-ph-12-54-749699120766
 ernie-ball-cuerdas-slinky-stain-749699122470
@@ -1602,7 +1600,9 @@ ernie-ball-eb-9601-axis-capo-silver-749699100744
 ernie-ball-eb-9602-axis-capo-bronze-749699100751
 ernie-ball-eb1535-cuerda-silver-ernesto-palla-5th-749699115359
 ernie-ball-eb1536-cuerda-silver-ernesto-palla-6th-749699115366
+ernie-ball-eb2002-earthwood-13-56-749699120025
 ernie-ball-eb2003-earthwood-80-20-bronze-medium-light-12-54-749699120032
+ernie-ball-eb2004-earthwood-11-52-749699120049
 ernie-ball-eb2004-earthwood-80-20-bronze-light-11-52-74969912004
 ernie-ball-eb2006-earthwood-80-20-bronze-extra-light-010-050-749699120063
 ernie-ball-eb2008-earthwood-rock-blues-80-20-bronze-10-52-749699120087
@@ -1652,6 +1652,7 @@ ernie-ball-eb2242-slinky-11-48-749699122425
 ernie-ball-eb2246-regular-slinky-10-46-749699122463
 ernie-ball-eb2248-super-slinky-09-42-749699122487
 ernie-ball-eb2249-extra-slinky-08-38-749699122494
+ernie-ball-eb2250-slinky-pure-nickel-power-11-48-749699122500
 ernie-ball-eb2251-regular-slinky-pure-nickel-10-46-749699122517
 ernie-ball-eb2251-slinky-rock-n-roll-regular-10-46-74969912251
 ernie-ball-eb2252-slinky-rock-n-roll-hybrid-009-046-749699122524
@@ -1818,7 +1819,6 @@ ernie-ball-slinky-cobalt-super-45-100-cuerdas-bajo-749699127345
 ernie-ball-slinky-entorchada-9-52-cuerdas-749699126232
 ernie-ball-slinky-flatwound-short-scale-45-105-749699117063
 ernie-ball-slinky-mondo-cuerdas-10-5-52-749699105015
-ernie-ball-slinky-pure-nickel-11-48-cuerdas-749699122500
 ernie-ball-slinky-skinny-top-heavy-cuerdas-10-749699104001
 ernie-ball-slinky-zippy-cuerdas-para-7-36-749699101505
 ernie-ball-strap-blocks-4pcs-4pcsp37506
@@ -2575,6 +2575,7 @@ gibson-box-50-picks-standard-heavy-711106560724
 gibson-box-50-picks-standard-medium-711106560731
 gibson-cbrw11-coated-ultra-light-11-52-711106006871
 gibson-coated-phosphor-bronze-11-52-cuerdas-guitarra-711106535241
+gibson-fwls-flatwound-long-scale-light-40-95-711106007090
 gibson-fwssl-flatwound-short-scale-light-40-95-711106007069
 gibson-gamuza-limpiadora-545264html
 gibson-gear-59-les-paul-historic-pickguard-cream-711106551203
@@ -2618,7 +2619,7 @@ gibson-lsul-large-scale-ultra-light-45-100-711106007014
 gibson-pack-12-puas-pearly-tortoise-medium-711106534787
 gibson-pack-12-puas-pearly-white-medium-711106534756
 gibson-pack-12-puas-pearly-white-thin-711106534749
-gibson-pb11-ultra-light-11-52-006697html
+gibson-pb11-ultra-light-11-52-711106006697
 gibson-pb12-light-12-53-006703html
 gibson-pb12l-medium-12-st-light-12-53-711106007120
 gibson-pickguard-bracket-nickel-711106550473
@@ -2629,14 +2630,13 @@ gibson-sagbrw12-acoustic-light-cuerdas-12-53-711106006772
 gibson-sagcbrw13-acoustic-light-cuerdas-13-56-711106006901
 gibson-sagcpb12-phosphor-bronze-cuerdas-light-711106534855
 gibson-sagcpb13-acoustic-light-cuerdas-13-56-711106535258
-gibson-sagpb11-phosphor-bronze-cuerdas-711106006697
+gibson-sagpb11-phosphor-bronze-cuerdas-agpb11html
 gibson-sagpb12-phosphor-bronze-cuerdas-012-711106006703
 gibson-sagpb13-acoustic-light-cuerdas-13-56-711106006734
 gibson-saiten-e-gitarre-gibson-brite-wire-reinforced-ligh-010-046-e-gitarre-12-s-711106007113
-gibson-sbgfwls-cuerdas-bajo-electrico-40-95-711106007090
 gibson-sbglsl-long-scale-cuerdas-bajo-electrico-45-105-711106007021
-gibson-sbgssl-short-scale-cuerdas-bajo-electrico-45-105-711106006918
 gibson-segles-premium-silk-wrapped-cuerdas-9-46-segleshtml
+gibson-ssl-short-scale-light-45-105-711106006918
 gibson-strap-premium-adams-jones-1979-711106073668
 gibson-strap-slash-premium-gold-711106074108
 gibson-strap-the-ember-711106535449
@@ -2923,7 +2923,6 @@ jim-dunlop-d07-01br-poly-strap-p56733html
 jim-dunlop-d07-01nv-poly-strap-p56732html
 jim-dunlop-d07-01rd-poly-strap-p56734html
 jim-dunlop-d6718-jacquard-riad-strap-710137125087
-jim-dunlop-extra-lt-bronce-10-48-710137030763
 jim-dunlop-formula-65-guitar-polish-and-cleaner-30ml-710137137295
 jim-dunlop-fretboard-65-ultimate-lemon-oil-30ml-710137137462
 jim-dunlop-heavy-core-10-48-710137046320
@@ -2933,8 +2932,8 @@ jim-dunlop-light-009-042-710137030657
 jim-dunlop-light-bronce-12-54-710137030770
 jim-dunlop-light-phosphor-bronce-12-54-710137030732
 jim-dunlop-lt-heavy-010-052-242234html
-jim-dunlop-lthb-009-046-710137030664
-jim-dunlop-med-heavy-011-050-710137030695
+jim-dunlop-lthb-009-046-642232html
+jim-dunlop-med-heavy-011-050-048614html
 jim-dunlop-med-lt-bronce-11-52-710137030787
 jim-dunlop-med-lt-phosphor-bronce-11-52-710137030749
 jim-dunlop-medium-010-046-642233html
