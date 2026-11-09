@@ -1517,9 +1517,19 @@ def _alerta(code):
 
 # --- Sitemap del país ------------------------------------------------------------------------------------------------
 
+SITEMAP_MAX = 45000  # Google no lee más de 50.000 direcciones por sitemap (uk, it y fr se pasaban en noviembre de 2026)
+
+
 def _sitemap(code, urls):
     body = "\n".join(f"  <url><loc>{SITE}{u}</loc></url>" for u in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
+
+
+def sitemap_parts(urls, size=SITEMAP_MAX):
+    """Trozos de como mucho SITEMAP_MAX direcciones; siempre dos como mínimo (el segundo puede ir vacío): así
+    sitemap_index.xml puede apuntar a "-2" de todos sin que ninguno dé error."""
+    parts = [urls[i:i + size] for i in range(0, len(urls), size)] or [[]]
+    return parts + [[]] * (2 - len(parts)) if len(parts) < 2 else parts
 
 
 def write_site(code):
@@ -1564,7 +1574,10 @@ def write_site(code):
     for f in list(out.glob("g/*.html")):
         if f not in keep:
             f.unlink()
-    written += pages._write(ROOT / f"sitemap-{code}.xml", _sitemap(code, urls))
+    for i, part in enumerate(sitemap_parts(urls), 1):  # sitemap-uk.xml, sitemap-uk-2.xml…
+        written += pages._write(ROOT / (f"sitemap-{code}.xml" if i == 1 else f"sitemap-{code}-{i}.xml"), _sitemap(code, part))
+    if len(urls) > 2 * SITEMAP_MAX:
+        print(f"::warning::sitemap de {code} en {len(urls) // SITEMAP_MAX + 1} trozos: añadir los nuevos a sitemap_index.xml", flush=True)
     print(f"web {code}: {len(urls)} páginas ({written} nuevas o cambiadas)", flush=True)
     write_world()
 

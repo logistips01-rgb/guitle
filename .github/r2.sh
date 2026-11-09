@@ -87,6 +87,7 @@ publicar() {
     fi
     up sync "$s" "$s" --max-delete 3000 "${excl[@]}"
     one "sitemap-$s.xml"
+    for f in sitemap-"$s"-*.xml; do [ -f "$f" ] && one "$f"; done  # trozos de más (scraper/intl.py, sitemap_parts)
   done
   if [ "$R2_ES" = 1 ]; then
     # Regalos de Navidad (guitle.com/navidad/): con los catálogos de España de este trabajo
