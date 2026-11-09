@@ -1,0 +1,170 @@
+{
+ "fecha": "9 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "top",
+  "title": "4 chitarre acustiche sotto i 300 €",
+  "hook": "Top del giorno",
+  "picks": [
+   {
+    "slug": "fender-cd-60-v3-ds-dreadnought-wn-sunburst-885978158621",
+    "name": "Fender CD-60 V3 DS Dreadnought WN Sunburst",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://woodbrass.it/cdn/shop/files/4bd76f62d12211d6c1733443be33f2ba9892408d_FMIC_0970110532.jpg?height=1200&pad_color=ffffff&v=1792537559&width=1200",
+    "th": "e820db6eec1e9f1f.webp",
+    "price": 150.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 158.5,
+    "max": 159.0,
+    "next": 158.0,
+    "rows": [
+     [
+      "Woodbrass",
+      150.0
+     ],
+     [
+      "Di Santo Musica",
+      158.0
+     ],
+     [
+      "Stralù",
+      159.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "yamaha-apxt2-naturale-4957812520140",
+    "name": "Yamaha Apxt2 Naturale",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://woodbrass.it/cdn/shop/files/59a296f25b7a698c909bfd2365ef3b90b7f2fc9b_GAPXT2NT.jpg?height=1200&pad_color=ffffff&v=1792639339&width=1200",
+    "th": "64ec93202a288b79.webp",
+    "price": 242.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 248.5,
+    "max": 254.0,
+    "next": 243.0,
+    "rows": [
+     [
+      "Woodbrass",
+      242.0
+     ],
+     [
+      "Di Santo Musica",
+      243.0
+     ],
+     [
+      "Global Net Shop",
+      254.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "eko-one-s150e-folk-silenziosa-8056734499261",
+    "name": "Eko One S150e Folk silenziosa",
+    "brand": "Eko",
+    "kind": "acustica",
+    "img": "https://woodbrass.it/cdn/shop/files/7322cfc7db19047a91fbb46f8246f07241641e34_GEA_ONE_S150E_FOLK.jpg?height=1200&pad_color=ffffff&v=1794098364&width=1200",
+    "th": "54d566dafaa3b3ba.webp",
+    "price": 259.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 259.0,
+    "max": 259.0,
+    "next": 259.0,
+    "rows": [
+     [
+      "Woodbrass",
+      259.0
+     ],
+     [
+      "Di Santo Musica",
+      259.0
+     ],
+     [
+      "Global Net Shop",
+      259.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   },
+   {
+    "slug": "ibanez-aewc11-tcb-transparent-charcoal-burst-c11tcbhtml",
+    "name": "Ibanez AEWC11-TCB transparent charcoal burst",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.cavallimusica.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/a/e/aewc11tcb.jpg",
+    "th": "54d6904efb66743b.webp",
+    "price": 269.0,
+    "store": "Cavalli Musica",
+    "stores": 3,
+    "median": 273.5,
+    "max": 276.0,
+    "next": 271.0,
+    "rows": [
+     [
+      "Cavalli Musica",
+      269.0
+     ],
+     [
+      "Thomann",
+      271.0
+     ],
+     [
+      "Woodbrass",
+      276.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   }
+  ]
+ }
+}
