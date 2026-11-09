@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Paso "estado": cómo va la copia y el servidor.
-systemctl is-active guitle-sync guitle-fichas caddy || true
+systemctl is-active guitle-sync guitle-copia guitle-fichas caddy || true; systemctl list-timers guitle-copia.timer --no-pager | head -3
 tail -6 /var/log/guitle-sync.log 2>/dev/null || true
 cat /srv/guitle/ultima-copia 2>/dev/null || echo "sin copia completa todavía"
 du -sh /srv/guitle/r2 2>/dev/null; df -h / | tail -1
