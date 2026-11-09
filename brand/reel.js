@@ -65,10 +65,10 @@ if (post.type === "chollo") {
 } else if (post.type === "bf") {
   // Cuenta atrás para el Black Friday: el precio de hoy de una guitarra popular, para comprobar luego si la rebaja es real
   const p = post.deal;
-  scenes.push([2.6, t => `${hook(t, "Black Friday")}
-    <p class="d" style="font-size:170px;margin-top:330px;${a("up", t + .2)}">${L.bfFaltan}</p>
-    <p class="d" style="font-size:420px;color:${YELLOW};margin-top:10px;${a("pop", t + .45, .5)}">${post.days}</p>
-    <p class="d" style="font-size:150px;margin-top:10px;${a("up", t + .7)}">${post.days === 1 ? L.bfDia : L.bfDias}</p>`]);
+  // Primera escena (y portada) con la guitarra: nunca solo texto
+  scenes.push([2.8, t => `${hook(t, "Black Friday")}
+    <p class="d" style="font-size:130px;margin-top:50px;${a("up", t + .2)}">${L.bfFaltan} <span style="color:${YELLOW};font-size:200px">${post.days}</span> ${post.days === 1 ? L.bfDia : L.bfDias}</p>
+    ${photoCard(p, t + .3, 1000)}`]);
   scenes.push([2.8, t => `<p class="d" style="font-size:96px;text-wrap:balance;${a("up", t + .05)}">${L.bfApunta}</p>
     ${photoCard(p, t + .2, 840)}${nameBlock(p, t + .6)}`]);
   scenes.push([3.4, t => `<p style="font-size:50px;opacity:.85;margin-top:300px;${a("up", t + .05)}">${L.bfHoy.replace("{fecha}", plan.fecha)}</p>
@@ -82,8 +82,10 @@ if (post.type === "chollo") {
   // Sobre guitle: diapositivas de texto con un elemento visual (fila de guitarras, precios, gráfica…)
   const visual = (v, t) => {
     if (!v) return "";
-    if (v.type === "guitars") return `<div class="card" style="width:100%;height:640px;margin-top:80px;display:flex;justify-content:space-evenly;align-items:center;padding:30px 20px;${a("rise", t + .4, .7)}">
+    if (v.type === "guitars") return `<div class="card" style="width:100%;height:820px;margin-top:70px;display:flex;justify-content:space-evenly;align-items:center;padding:30px 20px;${a("rise", t + .4, .7)}">
       ${v.photos.map(f => `<img src="data:image/webp;base64,${b64(path.join(DIR, f))}" style="height:100%;max-width:${Math.floor(900 / v.photos.length)}px;object-fit:contain">`).join("")}</div>`;
+    if (v.type === "photo") return `<div class="card" style="width:100%;height:900px;margin-top:70px;display:flex;align-items:center;justify-content:center;padding:40px;${a("rise", t + .3, .7)}">
+      <img src="data:image/webp;base64,${b64(path.join(DIR, v.photo))}" style="max-height:100%;max-width:100%;object-fit:contain"></div>`;
     if (v.type === "prices") return `<div class="card" style="width:100%;margin-top:70px;padding:30px 40px;text-align:left;${a("up", t + .4)}">
       ${v.rows.map((r, i) => `<div style="display:flex;justify-content:space-between;padding:18px 24px;border-radius:18px;font-size:42px;
         ${i === 0 ? `background:${GREEN};color:#fff` : i === v.rows.length - 1 ? `background:#fde8e8;color:${RED}` : ""}"><span>${esc(r[0])}</span><b class="d" style="letter-spacing:-.02em">${eur(r[1])}</b></div>`).join("")}</div>`;

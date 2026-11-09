@@ -88,12 +88,15 @@ def products(lo=MIN_PRICE, hi=MAX_PRICE, catalogs=None):
     """Guitarras del catálogo con foto, en stock en varias tiendas y con su mejor precio (España por defecto)."""
     pvp = load(ROOT / "data/catalog/pvp.json", {}).get("prices", {}) if catalogs is None else {}
     out = []
-    fresco = (datetime.now(timezone.utc).date() - timedelta(days=1)).isoformat()
     for kind, path in (catalogs or CATALOGS).items():
         cat = load(path, {})
+        # Frescura: el último día con lecturas en el catálogo y el anterior (como los chollos de la web)
+        ultima = max((str(i.get("d"))[:10] for p in cat.get("products", []) for i in p.get("items", []) if i.get("d")),
+                     default=datetime.now(timezone.utc).date().isoformat())
+        fresco = (date.fromisoformat(ultima) - timedelta(days=1)).isoformat()
         stores = cat.get("stores", {})
         for p in cat.get("products", []):
-            # Solo ofertas en stock y leídas hoy o ayer: un stock de hace días puede haberse agotado (Alteisa, 8-11)
+            # Solo ofertas en stock y leídas en los 2 últimos días: un stock de hace días puede haberse agotado (Alteisa, 8-11)
             items = sorted((i for i in p.get("items", []) if i.get("p") and i.get("st") is not False
                             and str(i.get("d") or fresco)[:10] >= fresco), key=lambda i: i["p"])
             if not p.get("img") or len({i["s"] for i in items}) < MIN_STORES or not lo <= items[0]["p"] <= hi:
@@ -203,6 +206,9 @@ def recent_captions(user, limit=60):
 
 
 def container(user, tries=40, **params):
+    if params.get("media_type") == "REELS":
+        # Portada: el fotograma de 1,5 s (la primera escena ya entera, con su guitarra), no el primero, que sale casi vacío
+        params.setdefault("thumb_offset", "1500")
     cid = api("POST", f"{user}/media", **params)["id"]
     for _ in range(tries):
         status = api("GET", cid, fields="status_code").get("status_code")
@@ -585,7 +591,11 @@ def daily_reels(day, folder, recent, prods, fetcher):
     n = f"{paises.get('es', {}).get('guitars', 0):,}".replace(",", ".")
     stores = sorted({x.replace(" (eBay)", "") for path in CATALOGS.values() for x in load(path, {}).get("stores", {}).values()})
     showcase = with_photos(sorted(prods, key=lambda p: -p["stores"]), 5, fetcher, folder / "reel-3-guitle", "g")
-    ex = max((p for p in prods if p["stores"] >= 5), key=lambda p: p["max"] - p["price"])
+    ex = max((p for p in prods if p["stores"] >= 5 and p["max"] <= 1.45 * p["price"] and foto_revisada(p)), key=lambda p: p["max"] - p["price"])
+    # Portada con guitarra (nunca solo texto): la comparada en «misma guitarra», y la fila de guitarras en los demás
+    foto_ex = with_photos([ex], 1, fetcher, folder / "reel-3-guitle", "ex")
+    fila = {"type": "guitars", "photos": [p["photo"] for p in showcase]} if showcase else None
+    portada_ex = {"type": "photo", "photo": foto_ex[0]["photo"]} if foto_ex else fila
     rows = ex["rows"][:3] + ex["rows"][-1:] if len(ex["rows"]) > 4 else ex["rows"]
     rows = [[f"Tienda {'ABCD'[i]}", r[1]] for i, r in enumerate(rows)]  # en los Reels sobre guitle, tiendas sin nombre
     topics = [
@@ -598,14 +608,14 @@ def daily_reels(day, folder, recent, prods, fetcher):
          "Busca la tuya y mira dónde está más barata. Gratis y sin registrarte.\n🔎 guitle.com (enlace en la bio)\n\n"
          "#guitarra #guitarraelectrica #guitarristas #comparadordeprecios #musica"),
         ("Misma guitarra, distinto precio", [
-            {"hook": "¿Sabías que…?", "title": "La misma guitarra puede costar mucho más según la tienda"},
+            {"hook": "¿Sabías que…?", "title": "La misma guitarra puede costar mucho más según la tienda", "visual": portada_ex},
             {"title": ex["name"], "size": 76, "visual": {"type": "prices", "rows": rows}},
             {"title": f"{eur(ex['max'] - ex['price'])} de diferencia", "sub": "Compara antes de comprar", "size": 130}],
          f"😮 La misma guitarra, {eur(ex['max'] - ex['price'])} de diferencia según la tienda: {ex['name']}, de {eur(ex['price'])} a {eur(ex['max'])} hoy.\n"
          "Por eso existe guitle: comparamos cada guitarra en todas las tiendas, cada día.\n🔎 guitle.com (enlace en la bio)\n\n"
          f"#guitarra {HASHTAGS[ex['kind']]} {tag(ex['brand'])} #comparadordeprecios #guitarristas"),
         ("Descuentos inflados", [
-            {"hook": "Ojo en Black Friday", "title": "Hay descuentos que son mentira"},
+            {"hook": "Ojo en Black Friday", "title": "Hay descuentos que son mentira", "visual": fila},
             {"title": "Suben el precio… y luego lo «rebajan»", "sub": "Ejemplo", "size": 96,
              "visual": {"type": "chart", "points": [899, 899, 899, 999, 999, 999, 899, 899],
                         "marks": [[1, "899 €", "#1f9d55"], [4, "999 €", "#d64545"], [7, "«−10 %»", "#d64545"]]}},
@@ -614,7 +624,7 @@ def daily_reels(day, folder, recent, prods, fetcher):
          "En guitle guardamos el precio de cada guitarra cada día, así que lo ves al momento.\n🔎 guitle.com (enlace en la bio)\n\n"
          "#blackfriday #guitarra #guitarristas #chollos #descuentos"),
         ("¿Es buen momento?", [
-            {"hook": "Antes de comprar", "title": "¿Es buen momento para comprarla?"},
+            {"hook": "Antes de comprar", "title": "¿Es buen momento para comprarla?", "visual": fila},
             {"title": "Mira su histórico de precios", "sub": "Ejemplo", "size": 100,
              "visual": {"type": "chart", "points": [829, 829, 799, 829, 789, 789, 769, 749],
                         "marks": [[0, "829 €", "#52514e"], [7, "Hoy: mínimo", "#1f9d55"]]}},
@@ -623,7 +633,7 @@ def daily_reels(day, folder, recent, prods, fetcher):
          "En guitle lo tienes gratis en la ficha de cada guitarra.\n🔎 guitle.com (enlace en la bio)\n\n"
          "#guitarra #guitarristas #comprarguitarra #chollos"),
         ("10 países", [
-            {"hook": "¿Y fuera de España?", "title": f"Comparamos guitarras en {len(paises)} países"},
+            {"hook": "¿Y fuera de España?", "title": f"Comparamos guitarras en {len(paises)} países", "visual": fila},
             {"title": "Mira cuánto cuesta fuera", "size": 100,
              "visual": {"type": "chips", "items": ["España"] + [PAISES[c] for c in sorted(paises, key=lambda c: -paises[c].get('guitars', 0)) if c in PAISES]}},
             {"title": "Todo en guitle.com", "sub": "Gratis y sin registrarte", "size": 120}],

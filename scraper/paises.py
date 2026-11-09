@@ -808,33 +808,37 @@ def reels_tarde(cc, day, recent):
     topics = []
     q = T["que"]
     showcase = ig.with_photos(sorted(fiables, key=lambda p: -p["stores"]), 5, fetcher, sub, "g")
+    # Portada con guitarra (nunca solo texto): fila de guitarras, o la comparada en «misma guitarra»
+    fila = {"type": "guitars", "photos": [p["photo"] for p in showcase]} if showcase else None
     if showcase:
         topics.append(("que", [
             {"hook": "guitle", "title": q[0], "sub": q[1], "visual": {"type": "guitars", "photos": [p["photo"] for p in showcase]}},
             {"title": q[2].format(n=n, s=s), "sub": q[3], "size": 120},
             {"title": q[4], "sub": q[5], "size": 120}], q[6].format(n=n, s=s, web=web) + f"\n\n{tags}"))
-    cands = [p for p in fiables if p["stores"] >= 5 and p["max"] <= 1.45 * p["price"]]  # diferencias creíbles
+    cands = [p for p in fiables if p["stores"] >= 5 and p["max"] <= 1.45 * p["price"]  # diferencias creíbles
+             and ig.foto_revisada(p)]  # y con foto: la guitarra comparada va en la portada
     if cands:
         ex = max(cands, key=lambda p: p["max"] - p["price"])
+        foto_ex = ig.with_photos([ex], 1, fetcher, sub, "ex")
         rows = ex["rows"][:3] + ex["rows"][-1:] if len(ex["rows"]) > 4 else ex["rows"]
         tienda = {"pt": "Loja", "fr": "Magasin", "it": "Negozio", "de": "Shop", "en": "Shop"}[cfg["lang"]]
         rows = [[f"{tienda} {'ABCD'[i]}", r[1]] for i, r in enumerate(rows)]  # en los Reels sobre guitle, tiendas sin nombre
         m, d = T["misma"], money(ex["max"] - ex["price"])
         topics.append(("misma", [
-            {"hook": m[0], "title": m[1]},
+            {"hook": m[0], "title": m[1], "visual": {"type": "photo", "photo": foto_ex[0]["photo"]} if foto_ex else fila},
             {"title": ex["name"], "size": 76, "visual": {"type": "prices", "rows": rows}},
             {"title": m[2].format(d=d), "sub": m[3], "size": 130}],
             m[4].format(d=d, name=ex["name"], lo=money(ex["price"]), hi=money(ex["max"]), web=web)
             + f"\n\n{tags} {cfg['hashtags'][ex['kind']]} {ig.tag(ex['brand'])}"))
     f, c = T["inflados"], pts([899, 899, 899, 999, 999, 999, 899, 899])
     topics.append(("inflados", [
-        {"hook": f[0], "title": f[1]},
+        {"hook": f[0], "title": f[1], "visual": fila},
         {"title": f[2], "sub": f[3], "size": 96, "visual": {"type": "chart", "points": c,
          "marks": [[1, money(c[1]), "#1f9d55"], [4, money(c[4]), "#d64545"], [7, f"«{T['desc']}»", "#d64545"]]}},
         {"title": f[4], "sub": f[5].format(web=web)}], f[6].format(web=web) + f"\n\n#blackfriday {tags}"))
     h, c = T["momento"], pts([829, 829, 799, 829, 789, 789, 769, 749])
     topics.append(("momento", [
-        {"hook": h[0], "title": h[1]},
+        {"hook": h[0], "title": h[1], "visual": fila},
         {"title": h[2], "sub": h[3], "size": 100, "visual": {"type": "chart", "points": c,
          "marks": [[0, money(c[0]), "#52514e"], [7, h[4], "#1f9d55"]]}},
         {"title": h[5], "sub": h[6].format(web=web)}], h[7].format(web=web) + f"\n\n{tags}"))
