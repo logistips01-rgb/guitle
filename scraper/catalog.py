@@ -42,6 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DIR = ROOT / "data" / "catalog"
 RECHECK_SKIPPED_DAYS = 60  # fichas que no son guitarra: no se vuelven a pedir en este tiempo
 RECHECK_NO_PRICE_DAYS = 14  # fichas de guitarra sin precio (no disponibles): se miran cada dos semanas
+STALE_DAYS = 10  # un precio que no se ha podido confirmar en la tienda en estos días deja de salir (tienda que bloquea)
 RECHECK_MIN_HOURS = 20  # ninguna ficha se relee antes: con todo al día, la lectura acaba antes en vez de repetir
 DROP_AFTER_DAYS = 30       # ofertas que desaparecen del sitemap y no se han leído en este tiempo
 MIN_PRICE = {"electrica": 60, "acustica": 40, "clasica": 35,  # por debajo no es una guitarra (ni infantil)
@@ -5555,10 +5556,10 @@ def due_urls(store_id, urls, offers, now):
             continue
         elif o.get("status") == "no_price" and o["checked"] > no_price_before:
             continue
-        elif o.get("page_checked", o["checked"]) > recent:
+        elif max(o.get("page_checked", o["checked"]), o.get("tried", "")) > recent:  # leída o intentada hace poco
             continue
-        else:
-            old.append((o.get("page_checked", o["checked"]), url))  # precio del listado (Thomann): la ficha sigue su turno
+        else:  # precio del listado (Thomann): la ficha sigue su turno; un intento fallido también cuenta como turno
+            old.append((max(o.get("page_checked", o["checked"]), o.get("tried", "")), url))
     return fresh + [u for _, u in sorted(old)]
 
 
@@ -5655,21 +5656,27 @@ def merge(batches):
     for batch in batches:
         # Tienda caída (Session, "Wir renovieren": 503 en toda la web): ninguna ficha buena y muchos errores. Sus precios
         # dejan de salir en la web (build) hasta la primera vuelta en que responda, en vez de mandar a una página de obras.
+        # Solo cuenta como caída un error del servidor de la tienda (5xx). Un 403 o una conexión cortada suele ser que
+        # bloquea a GitHub, no que esté caída (e-Musicstore, Musicis, Guitar Custom, 9/11/2026): para el cliente funciona.
+        # Esas siguen saliendo hasta que su precio se haga viejo (STALE_DAYS, en build).
         n_ok = sum(r["status"] == "ok" for r in batch["records"])
-        n_err = sum(r["status"] in ("error", "blocked_403") for r in batch["records"])
-        if n_ok or n_err >= 20:
+        n_err = sum(r["status"] == "error" and (r.get("http_status") or 0) >= 500 for r in batch["records"])
+        down = not n_ok and n_err >= 20
+        if batch["records"]:
             for o in offers.values():
                 if o.get("store") == batch["store"]:
-                    if n_ok:
-                        o.pop("down_since", None)
-                    else:
+                    if down:
                         o.setdefault("down_since", now_iso())
-            if not n_ok:
+                    else:
+                        o.pop("down_since", None)
+            if down:
                 print(f"[{batch['store']}] tienda caída: {n_err} errores y ninguna ficha buena; sus precios no salen", flush=True)
         for rec in batch["records"]:
             prev = offers.get(rec["url"], {})
             if rec["status"] in ("error", "blocked_403") and prev.get("status") == "ok":
-                prev.update(checked=rec["checked"], last_error=rec["status"])  # se conserva el último precio bueno
+                # Se conserva el último precio bueno, pero "checked" sigue siendo el de la última lectura buena: el intento
+                # fallido va en "tried" (antes se apuntaba como lectura y una tienda bloqueada parecía al día).
+                prev.update(tried=rec["checked"], last_error=rec["status"])
                 continue
             offers[rec["url"]] = rec
             if rec["status"] == "ok" and rec.get("price") is not None:
@@ -5897,8 +5904,10 @@ def build(offers=None, history=None):
     # Una ficha sin EAN que ya está en seguimiento (Thomann) saldría duplicada: se deja solo la de seguimiento.
     # Las que tienen EAN se quedan (traen la foto); la de seguimiento no se repite en la misma tienda.
     followed = {i["url"] for s in load(ROOT / "stores.json", []) for i in s.get("items", [])}
+    stale_cut = (datetime.now(timezone.utc) - timedelta(days=STALE_DAYS)).isoformat()
     for kind, fname in CATALOG["files"].items():
         mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind and not o.get("down_since")
+                and o.get("checked", "") >= stale_cut  # precio sin confirmar en STALE_DAYS días: no se enseña
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra (baterías: sus accesorios).
                 and (kind in GUITAR_KINDS | PACK_KINDS
