@@ -9,3 +9,5 @@ echo "== Diagnóstico de la copia"
 ls -la /root/.config/rclone/ 2>&1 | tail -2
 journalctl -u guitle-sync --no-pager -n 25 2>/dev/null | tail -25
 timeout 60 rclone lsd r2:guitle 2>&1 | head -5
+echo "== Configuración con dominio (sin activar): ¿es válida?"
+caddy validate --config /root/Caddyfile.dominio --adapter caddyfile 2>&1 | tail -2
