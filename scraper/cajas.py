@@ -11,6 +11,7 @@ Uso: python -m scraper.cajas uk [fr …]   (lo lanza .github/r2.sh antes de subi
 """
 import gzip
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -49,7 +50,27 @@ def empaquetar(code):
     for old in out.glob("*.json.gz"):  # cajas que se han quedado sin fichas
         if old.name[:-8] not in boxes:
             old.unlink()
+    indice(out, [slug for pages in boxes.values() for slug in pages])
     return sum(len(p) for p in boxes.values()), changed
+
+
+EAN_TAIL = re.compile(r"-(\d{8,14})$")
+
+
+def indice(out, slugs):
+    """<país>/_g/indice.json: para las direcciones viejas de fichas que ya no existen (Google las tenía: 1.089 errores 404
+    en noviembre de 2026). El Worker busca la ficha de hoy por el código de barras del final de la dirección ("e") o por
+    la dirección sin él ("n"), y redirige (301); si no, responde "ya no está disponible" (410)."""
+    e, n = {}, {}
+    for slug in sorted(slugs):
+        m = EAN_TAIL.search(slug)
+        if m:
+            e.setdefault(m.group(1).lstrip("0"), slug)
+        n.setdefault(EAN_TAIL.sub("", slug), slug)
+    data = json.dumps({"e": e, "n": n}, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    path = out / "indice.json"
+    if not path.exists() or path.read_bytes() != data:
+        path.write_bytes(data)
 
 
 CAJAS_R = 512  # secciones como la de discos (<país>/records/): todas sus páginas, en 512 cajas (<país>/_r/)
