@@ -11,8 +11,6 @@ akg-c214-st-9002761025842
 akg-c214st-set-025849html
 akg-c314-st-9002761038262
 akg-c314st-set-038269html
-akg-c411-l-rrayviolin
-akg-c411-pp-rrayviolin
 akg-c411l-885038003809
 akg-c411pp-885038006251
 akg-c414xlii-i19535html

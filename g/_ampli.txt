@@ -441,14 +441,14 @@ electro-harmonix-abrams100-guitar-amplifier-head-683274012605
 electro-harmonix-battalion-683274011943
 electro-harmonix-dirt-road-special-683274011929
 electro-harmonix-op-amp-big-muff-683274012087
-engl-e-112-vb-4260278520389
+engl-e-112-vb-b57719html
 engl-e-212-vb-4260278520365
 engl-e-212-vhb-4260278520358
 engl-e-412-vgb-4260278520303
 engl-e-412-vsb-4260278520297
 engl-e-412-xxlb-4260278520280
 engl-e112sb-cabinet-v-type-4251694202973
-engl-e112vb-pro-cabinet-520389html
+engl-e112vb-pro-cabinet-4260278520389
 engl-e112vsb-pro-cabinet-sl-4251694200689
 engl-e212vh-pro-cabinet-4251694200399
 engl-e412vgb-cabinet-straight-4251694200429

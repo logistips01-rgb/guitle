@@ -27,7 +27,7 @@ git_add() {
     git add g/ marca/ tipo/ presupuesto/ marcas.html sitemap.xml
   fi
   for d in sitemap-*.xml $ALL_SITES; do
-    s=${d#sitemap-}; s=${s%.xml}
+    s=${d#sitemap-}; s=${s%.xml}; s=${s%-[0-9]*}  # sitemap-uk-2.xml (trozos, scraper/intl.py) es de "uk"
     if in_r2 "$s" || [ ! -e "$d" ]; then continue; fi
     git add "$d"
   done

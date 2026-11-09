@@ -765,7 +765,6 @@ jet-jjb300-lpb-lake-blue-bajo-electrico-3831120928588
 jet-jjb300-pk-shell-pink-bajo-electrico-3831120928540
 jet-jjb300-sb-sunburst-bajo-electrico-3831120914864
 jupiter-jtb-1180-bajo-tb1180bajo
-keller-ek-sistema-inalambrico-guitarra-y-bajo-8436032359014
 kingsman-01-j-bass-tsb-01jbasstsb
 kingsman-10-p-bass-tsb-10pbasstsb
 kingsman-12-p-bass-rd-n12pbassrd
@@ -1060,7 +1059,6 @@ marcus-miller-v6-5-car-candy-apple-red-850060114458
 marcus-miller-v6-5-otb-ocean-turquoise-blue-850060114427
 marcus-miller-v7-4-alder-2nd-gen-lake-placid-blue-810046130056
 marcus-miller-v7-4-vintage-swamp-ash-2nd-gen-tobacco-sunburst-810046130339
-marcus-miller-v7-4-vintage-swamp-ash-lefthand-2nd-gen-natural-810046131374
 marcus-miller-v7-4-vintage-swamp-ash-natural-set-de4cuerdas
 marcus-miller-v7-5-alder-2nd-gen-burgundy-810046130100
 marcus-miller-v7-5-alder-2nd-gen-lake-placid-blue-810046130117
@@ -1129,6 +1127,7 @@ marcus-miller-v7-vintage-alder-5-new-gen-ts-tobacco-sunburst-810187573279
 marcus-miller-v7-vintage-swamp-ash-4-2nd-gen-bmr-metallic-red-810046130353
 marcus-miller-v7-vintage-swamp-ash-4-2nd-gen-nat-natural-810046130322
 marcus-miller-v7-vintage-swamp-ash-4-2nd-gen-white-blonde-810046130346
+marcus-miller-v7-vintage-swamp-ash-4-natural-left-hand-810046131374
 marcus-miller-v7-vintage-swamp-ash-4-new-gen-nat-810187573293
 marcus-miller-v7-vintage-swamp-ash-4-ts-2-4ts2p24763
 marcus-miller-v7-vintage-swamp-ash-5-2nd-gen-bmr-bright-metallic-red-810046130391
@@ -1536,7 +1535,7 @@ yamaha-trbx-174ew-tbk-de4cuerdas
 yamaha-trbx-204-brm-4957812639705
 yamaha-trbx-204-glb-b50056html
 yamaha-trbx-204-grm-4957812594530
-yamaha-trbx-204-ovs-s50057html
+yamaha-trbx-204-ovs-4957812639729
 yamaha-trbx-304-bl-de4cuerdas
 yamaha-trbx-304-car-de4cuerdas
 yamaha-trbx-305car-de5cuerdas
@@ -1553,7 +1552,6 @@ yamaha-trbx174ew-tobacco-brown-sunburst-4957812579537
 yamaha-trbx174ew-translucent-black-4957812578592
 yamaha-trbx204-galaxy-black-4957812639699
 yamaha-trbx204-gray-metallic-4957812639712
-yamaha-trbx204-old-violin-sunburst-bajo-electrico-4957812639729
 yamaha-trbx304-black-4957812535519
 yamaha-trbx304-candy-apple-red-4957812535526
 yamaha-trbx304-factory-blue-4957812660136

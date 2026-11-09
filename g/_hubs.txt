@@ -36,6 +36,7 @@ marca/ae240jr-mhs.html
 marca/aeg74-mhs.html
 marca/aer.html
 marca/aer.html
+marca/aerodrums.html
 marca/af55-tf.html
 marca/af75-trs.html
 marca/af95-da.html
@@ -131,6 +132,7 @@ marca/aulos-nacional.html
 marca/aulos.html
 marca/austin.html
 marca/austrian-audio.html
+marca/avatar.html
 marca/aw1040ce-opn.html
 marca/aw1040ce-wk.html
 marca/aw247ce-opn.html
@@ -204,6 +206,7 @@ marca/capitol-59-ab.html
 marca/capitol-59-bk.html
 marca/capitol-59-ch.html
 marca/capitol-59-nv.html
+marca/carlsbro.html
 marca/carry-on.html
 marca/casio.html
 marca/catalinbread.html
@@ -288,6 +291,7 @@ marca/delacrus.html
 marca/denis-wick.html
 marca/denon.html
 marca/dgz-dime-guitarz.html
+marca/dialtune.html
 marca/diamond.html
 marca/diezel.html
 marca/digitech-dod.html
@@ -299,11 +303,13 @@ marca/dino-baffetti.html
 marca/ditson-by-sigma.html
 marca/ditson.html
 marca/divitone.html
+marca/dixon.html
 marca/djr-10e.html
 marca/djr.html
 marca/donner.html
 marca/dophix.html
 marca/dpa.html
+marca/dr-customs.html
 marca/dr-liston-s.html
 marca/dr-liston-s.html
 marca/dr-parts.html
@@ -313,11 +319,14 @@ marca/dr-strings.html
 marca/dragao.html
 marca/dreadbox.html
 marca/dreadnought.html
+marca/drumcraft.html
+marca/drums-dw.html
 marca/duesenberg.html
 marca/duke.html
 marca/dunlop.html
 marca/dv-mark.html
 marca/dv-mark.html
+marca/dw.html
 marca/dx.html
 marca/dynacord.html
 marca/e-ii.html
@@ -331,6 +340,7 @@ marca/ebs.html
 marca/ec-1000.html
 marca/ec-401.html
 marca/edwards-guitars-basses.html
+marca/efnote.html
 marca/egitana.html
 marca/egmond.html
 marca/eich-amplification.html
@@ -527,6 +537,7 @@ marca/jhs-pedals.html
 marca/jhs-pedals.html
 marca/jhs.html
 marca/jim-dunlop.html
+marca/jinbao.html
 marca/jn.html
 marca/jo-ral.html
 marca/john.html
@@ -546,6 +557,7 @@ marca/jupiter.html
 marca/justin.html
 marca/k-gear.html
 marca/karl-s.html
+marca/kat.html
 marca/kawai.html
 marca/keeley.html
 marca/keller.html
@@ -628,6 +640,7 @@ marca/lr-baggs.html
 marca/lsl.html
 marca/ltc-audio.html
 marca/ltd.html
+marca/ludwig.html
 marca/luke.html
 marca/luna.html
 marca/luthier.html
@@ -648,6 +661,7 @@ marca/majesty.html
 marca/mammoth.html
 marca/manuel-rodriguez.html
 marca/manuel.html
+marca/mapex.html
 marca/marantz.html
 marca/marcus-miller-sire.html
 marca/marcus-miller.html
@@ -676,6 +690,7 @@ marca/mh-200.html
 marca/michael-kelly.html
 marca/micw.html
 marca/miguel.html
+marca/millenium.html
 marca/modal-electronics.html
 marca/modesto-malla.html
 marca/moeck.html
@@ -709,13 +724,16 @@ marca/next.html
 marca/nick.html
 marca/nik-huber.html
 marca/nobels.html
+marca/noble-cooley.html
 marca/nord.html
 marca/norman.html
 marca/novation.html
 marca/npdrums.html
 marca/ntx1.html
+marca/nuvo.html
 marca/nux.html
 marca/nux.html
+marca/odery.html
 marca/odisei-music.html
 marca/offshore.html
 marca/old-blood-noise-endeavors.html
@@ -746,6 +764,8 @@ marca/partsland.html
 marca/patina.html
 marca/pc12mh-opn.html
 marca/pd-connex.html
+marca/pdp.html
+marca/pearl.html
 marca/peavey.html
 marca/pedaltrain.html
 marca/pensa.html
@@ -913,6 +933,7 @@ marca/simon-patrick.html
 marca/sire-larry-carlton.html
 marca/sire.html
 marca/skb.html
+marca/slingerland.html
 marca/sml721-rgc.html
 marca/snark.html
 marca/snark.html
@@ -974,6 +995,7 @@ marca/t-rex.html
 marca/taburete.html
 marca/tagima.html
 marca/takamine.html
+marca/tama.html
 marca/tambor.html
 marca/tanglewood.html
 marca/tascam.html
@@ -1139,6 +1161,9 @@ presupuesto/ampli-menos-de-600.html
 presupuesto/bajo-menos-de-200.html
 presupuesto/bajo-menos-de-400.html
 presupuesto/bajo-menos-de-800.html
+presupuesto/bateria-menos-de-1000.html
+presupuesto/bateria-menos-de-300.html
+presupuesto/bateria-menos-de-500.html
 presupuesto/clasica-menos-de-100.html
 presupuesto/clasica-menos-de-200.html
 presupuesto/clasica-menos-de-400.html
@@ -1182,6 +1207,10 @@ tipo/bajo-6-cuerdas-o-mas.html
 tipo/bajo-acustico.html
 tipo/bajo-escala-corta.html
 tipo/bajo-fretless.html
+tipo/bateria-acusticas.html
+tipo/bateria-electronicas.html
+tipo/bateria-infantiles.html
+tipo/bateria-sets-de-cascos.html
 tipo/clasica-clasica.html
 tipo/clasica-electroclasica.html
 tipo/clasica-flamenca.html
