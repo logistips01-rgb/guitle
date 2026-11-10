@@ -3579,7 +3579,7 @@ martin-gpc-13-a28098html
 martin-gpc-13-e-road-series-abeto-sitka-ziricote-a28104html
 martin-gpc-13e-modern-abeto-koa-729789704618
 martin-gpc-13e-ziricote-producto-b-ctob413929
-martin-gpc-16-a-e-cutaway-abeto-sitka-palisandro-sandrohtml
+martin-gpc-16-a-e-cutaway-abeto-sitka-palisandro-729789671811
 martin-gpc-16e-caoba-157977994259
 martin-gpc-16e-palisandro-zurdo-729789584401
 martin-gpc-16e-rosewood-gran-performance-729789584388
@@ -3605,7 +3605,7 @@ martin-gpcx2e-cocobolo-cobolohtml
 martin-gpe-inception-maple-gloss-grand-performance-amber-fade-sunburst-729789691772
 martin-grand-j16-e-abeto-sitka-ziricote-12-cuerdas-e28070html
 martin-grand-jumbo-16-12-lh-729789604277
-martin-grand-performance-gpc-16e-rosewood-729789671811
+martin-grand-performance-gpc-16e-rosewood-671811html
 martin-grand-performance-gpx2-a-e-sapele-ziricote-hpl-696180html
 martin-grand-performance-gpx2-a-e-zurda-sapele-ziricote-hpl-729789696197
 martin-grand-performance-x1-a-e-remastered-hpl-negra-raacustica
@@ -4767,7 +4767,6 @@ takamine-cutaway-auditorium-takamine-ef450-thermal-top-legacy-black-burst-190262
 takamine-cutaway-auditorium-takamine-ef508-natural-190262011835
 takamine-cutaway-auditorium-takamine-gn30-negra-ectronoire
 takamine-cutaway-auditorium-takamine-gn51ce-brown-sunburst-190262041597
-takamine-cutaway-auditorium-takamine-p5-natural-190262012108
 takamine-cutaway-auditorium-zurdos-takamine-p3-natural-190262012023
 takamine-cutaway-dreadnought-takamine-ef381-negra-12-cuerdas-190262011781
 takamine-cutaway-dreadnought-takamine-gd20-natural-satin-tinnatural
@@ -4779,6 +4778,7 @@ takamine-cutaway-dreadnought-takamine-gd71-natural-waynatural
 takamine-cutaway-dreadnought-takamine-p7-natural-ayelectro6
 takamine-cutaway-dreadnought-takamine-thermal-top-ef400-natural-12-cuerdas-190262011804
 takamine-cutaway-dreadnought-zurdos-takamine-ef341sc-legacy-negra-190262011712
+takamine-cutaway-jumbo-zurdos-takamine-p1-natural-4582270030872
 takamine-cutaway-takamine-auditorium-gn75-transparent-black-190262043164
 takamine-cutaway-takamine-p7-auditorium-natural-waynatural
 takamine-cutaway-takamine-thinline-tsp178-fx-arched-faded-cherry-burst-herryburst
@@ -4985,7 +4985,7 @@ takamine-gx18ce-ns-190262041696
 takamine-gx18ce-ns-4582270060503
 takamine-gx18cens-censp43958
 takamine-gx18cens-mini-nex-natural-nexnatural
-takamine-gx31ce-natural-satinada-alsatinada
+takamine-gx31ce-natural-satinada-190262044840
 takamine-gy11-natural-043386html
 takamine-gy11me-nat-satin-lsatinhtml
 takamine-gy11mens-11menshtml
@@ -5006,6 +5006,7 @@ takamine-japan-ef508kc-loss195401
 takamine-japan-lh-handed-ec-p3nc-nex-cutaway-inlh225735
 takamine-japan-lh-handed-ef341sc-lh-799493250404
 takamine-japan-natural-ctro304557
+takamine-japan-p5nc-nex-cutaway-190262012108
 takamine-japan-p6n-nex-brown-sunburst-799493250855
 takamine-jj325src-roja-325srcroja
 takamine-ltd-2021-blue-rose-190262011439
@@ -5025,7 +5026,6 @@ takamine-p10nc-natural-190262012801
 takamine-p1dc-dreadnought-1100000611929
 takamine-p1dc-dreadnought-5550132114007
 takamine-p1dc-lh-dreadnought-zurdos-1100000786719
-takamine-p1jc-lh-jumbo-zurdos-4582270030872
 takamine-p1nc-5550132115004
 takamine-p1nc-auditorium-799493250640
 takamine-p3d-inep3dhtml
@@ -5052,7 +5052,7 @@ takamine-p7nc-190262012214
 takamine-p7nc-auditorium-799493250909
 takamine-para-zurdos-takamine-gn51ce-natural-10262042280
 takamine-pro-series-p7dc-190262012184
-takamine-rnv460c-natural-190262013044
+takamine-rnv460c-natural-190262012818
 takamine-signature-john-jorgenson-jj325srcl-190262012689
 takamine-tep3-proj-fn15ar-electrificada-dreadnought-natural-con-funda-190262011576
 takamine-tep3-proj-ft341-dreadnought-blk-ghtblkhtml
@@ -5956,7 +5956,7 @@ yamaha-f310-folk-tobacco-brown-sunburst-4957812668224
 yamaha-f310-natural-310natural
 yamaha-f310-natural-e4640nuevo
 yamaha-f310-nt-ii-folk-natural-4957812306775
-yamaha-f310-tbs-10tbsp7717
+yamaha-f310-tbs-4957812306799
 yamaha-f310-tobacco-brown-sunburst-31000nuevo
 yamaha-f310tbsii-sombreada-da3824html
 yamaha-f370-folk-4957812314701

@@ -202,7 +202,7 @@ boss-ga-fc-foot-controller-pedaleira-para-combos-boss-katana-e-acoustic-singer-s
 boss-gafc-pedalera-control-4957054503093
 boss-gafcex-interruptor-de-pedal-4957054519452
 boss-ge-7-4957054024888
-boss-ge-7-equalizer-7-band-boss-legend-1983-emiump4278
+boss-ge-7-equalizer-boss-legend-1981-emiump4278
 boss-ge7-716719html
 boss-geb-7-bass-equalizer-ecualizador-grafico-de-7-bandas-para-bajo-baixop4294
 boss-geb-7-pedal-bajo-4957054036881
@@ -877,7 +877,7 @@ elektron-analog-heat-fx-7350049240831
 elektron-analog-heat-mkii-7350049240824
 empress-effects-bass-compressor-850040850222
 empress-effects-bass-compressor-blue-ressorblue
-empress-effects-bass-compressor-silver-850040850239
+empress-effects-bass-compressor-silver-ssorsilver
 empress-effects-buffer-850040850185
 empress-effects-buffer-850040850192
 empress-effects-compressor-mkii-850040850208
@@ -1797,7 +1797,6 @@ mxr-csp041-hybrid-fuzz-710137128972
 mxr-distortion-evh-modern-high-gain-710137144125
 mxr-dookie-drive-distortion-30th-anniversary-710137139169
 mxr-duke-of-tone-overdrive-rivep29122
-mxr-dunlop-m251-fod-drive-710137117426
 mxr-eg74-raw-dawg-710137125704
 mxr-evh-5150-overdrive-710137085923
 mxr-evh117-flanger-710137029651
@@ -1817,6 +1816,7 @@ mxr-m-135-smartgate-e34972html
 mxr-m-222-talk-box-710137062146
 mxr-m-228-dyna-comp-deluxe-710137101210
 mxr-m-236-super-badass-variac-fuzz-710137094932
+mxr-m-251-fod-710137117426
 mxr-m-267-octavio-fuzz-710137118591
 mxr-m-280-vintage-bass-octave-710137110335
 mxr-m-281-thump-710137120600
@@ -2517,7 +2517,6 @@ waves-abbey-road-reverb-plates-native-atesnative
 way-huge-electronics-way-huge-geisha-drive-blue-ltd-overdrive-710137140035
 way-huge-electronics-way-huge-whe205od-overdrive-710137131149
 way-huge-electronics-way-huge-whe207-green-rhino-overdrive-mkiv-710137089792
-way-huge-electronics-way-huge-whe401-swollen-pickle-mkii-710137089778
 way-huge-electronics-way-huge-whe407-jumbo-fuzz-swollen-pickle-710137144743
 way-huge-electronics-way-huge-whe702s-echo-puss-710137066069
 way-huge-electronics-way-huge-whe707-supa-puss-710137054141
@@ -2527,9 +2526,10 @@ way-huge-electronics-way-huge-wm23-red-llama-mkiii-710137130241
 way-huge-electronics-way-huge-wm25-smalls-sto-710137118713
 way-huge-electronics-way-huge-wm31-supa-lead-710137104242
 way-huge-electronics-way-huge-wm41-mini-swollen-pickle-710137104303
-way-huge-electronics-way-huge-wm61-blue-hippo-analoge-chorus-710137104426
 way-huge-electronics-way-huge-wm71-aqua-puss-small-710137104488
+way-huge-whe-401s-swollen-pickle-jumbo-fuzz-mkiis-710137089778
 way-huge-whe-900-atreides-analog-werding-module-710137122734
+way-huge-wm-61-blue-hippo-analog-chorus-mkiii-710137104426
 way-huge-wm20-conspiracy-theory-professional-overdrive-710137112254
 xvive-transmisor-inalambrico-de-guitarra-xvive-a58t-para-sistemas-de-pedales-a58-yp58p44462
 xvive-v21-pedal-de-efectos-echoman-6943050418552

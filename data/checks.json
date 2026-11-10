@@ -28,6 +28,15 @@
  },
  {
   "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "mat",
+  "name": "Danelectro 59M Nos+ Orange Metalflake",
+  "slug": "danelectro-59m-nos-orange-metalflake-611820027247",
+  "price": 445.45,
+  "median": 618.0
+ },
+ {
+  "kind": "electrica",
   "type": "sin_iva",
   "store": "partitura",
   "name": "Sire Q3 Tobacco Sunburst",
@@ -61,15 +70,6 @@
   "slug": "danelectro-57-jade-611820027988",
   "price": 486.78,
   "median": 666.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "ESP LTD JM-I QM Deep Blood Moon",
-  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
-  "price": 1421.0,
-  "median": 1895.0
  },
  {
   "kind": "electrica",
@@ -406,15 +406,6 @@
  },
  {
   "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "Ibanez S520AH-ABS Antique Brown Stained",
-  "slug": "ibanez-s520ah-abs-antique-brown-stained-4549763369109",
-  "price": 513.0,
-  "median": 698.0
- },
- {
-  "kind": "electrica",
   "type": "sin_iva",
   "store": "musicalsanfrancisco",
   "name": "Mooer MHL100 Dreamy Blue",
@@ -577,6 +568,15 @@
  },
  {
   "kind": "electrica",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "Ibanez AG75G-GBS Brown Sunburst",
+  "slug": "ibanez-ag75g-gbs-brown-sunburst-4549763307828",
+  "price": 435.54,
+  "median": 532.0
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "LTD EC-256 Vintage Gold Satin",
@@ -667,6 +667,24 @@
  },
  {
   "kind": "acustica",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "Admira Indiana Azul Satinada",
+  "slug": "admira-indiana-azul-satinada-8436032365817",
+  "price": 131.41,
+  "median": 158.995
+ },
+ {
+  "kind": "acustica",
+  "type": "sin_iva",
+  "store": "mat",
+  "name": "Ibanez AEG70-TCH Transparent Charcoal Burst High Gloss",
+  "slug": "ibanez-aeg70-tch-transparent-charcoal-burst-high-gloss-4549763231048",
+  "price": 280.17,
+  "median": 339.15
+ },
+ {
+  "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
   "name": "LAG T118DCE Tramontane 118 Dreadnought Cutaway Natural",
@@ -694,21 +712,12 @@
  },
  {
   "kind": "acustica",
-  "type": "sin_iva",
-  "store": "mat",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
   "name": "LAG T118DCE-BRS Tramontane 118 Dreadnought Cutaway Natural",
   "slug": "lag-t118dce-brs-tramontane-118-dreadnought-cutaway-natural-3700166363137",
-  "price": 451.24,
-  "median": 545.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "mat",
-  "name": "LAG T118ASCE-BLK Tramontane 118 Auditorium Slim Cutaway Black",
-  "slug": "lag-t118asce-blk-tramontane-118-auditorium-slim-cutaway-black-3700166363229",
-  "price": 354.55,
-  "median": 486.53
+  "price": 410.1,
+  "median": 547.5
  },
  {
   "kind": "acustica",
@@ -718,24 +727,6 @@
   "slug": "lag-tramontane-t177jce-jumbo-3700166370241",
   "price": 311.0,
   "median": 519.0
- },
- {
-  "kind": "acustica",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "LAG T118ACE-BLK Tramontane 118 Auditorium Cutaway Black",
-  "slug": "lag-t118ace-blk-tramontane-118-auditorium-cutaway-black-3700166363212",
-  "price": 350.41,
-  "median": 424.95
- },
- {
-  "kind": "acustica",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "LAG T170DCE Tramontane 170 Dreadnought Cutaway Natural",
-  "slug": "lag-t170dce-tramontane-170-dreadnought-cutaway-natural-3700166312043",
-  "price": 371.07,
-  "median": 449.0
  },
  {
   "kind": "acustica",
@@ -920,6 +911,15 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Yamaha FSX400 Smb Concierto Smoky Black",
+  "slug": "yamaha-fsx400-smb-concierto-smoky-black-4957812718547",
+  "price": 205.0,
+  "median": 280.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
   "name": "Applause Jump Slope Shoulder Dreadnought melocotón",
   "slug": "applause-jump-slope-shoulder-dreadnought-melocoton-4046662295350",
@@ -1027,15 +1027,6 @@
  },
  {
   "kind": "acustica",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "Martin D-10E Dreadnought",
-  "slug": "martin-d-10e-dreadnought-729789573986",
-  "price": 890.08,
-  "median": 1100.47
- },
- {
-  "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Sigma 00M-15",
@@ -1087,6 +1078,24 @@
   "slug": "yamaha-tas1e-ultra-marine-4957812722322",
   "price": 643.0,
   "median": 877.895
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Eko Dreadnought Eko Ranger 6 Azul Sunburst",
+  "slug": "eko-dreadnought-eko-ranger-6-azul-sunburst-8033675650104"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Eko Dreadnought Eko Ranger 6 Rojo Sunburst",
+  "slug": "eko-dreadnought-eko-ranger-6-rojo-sunburst-8033675650098"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Martin GPC-16 A/E Cutaway - Abeto Sitka / Palisandro",
+  "slug": "martin-gpc-16-a-e-cutaway-abeto-sitka-palisandro-729789671811"
  },
  {
   "kind": "clasica",
@@ -1231,6 +1240,12 @@
   "slug": "ortega-espanola-amplificada-cutaway-ortega-tourplayer-rtpg-ls2-842960187359",
   "price": 577.69,
   "median": 708.5
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Takamine Cutaway Takamine Grand Auditorium",
+  "slug": "takamine-cutaway-takamine-grand-auditorium-190262011972"
  },
  {
   "kind": "teclado",

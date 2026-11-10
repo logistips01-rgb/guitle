@@ -2259,7 +2259,7 @@ jose-gomez-amplificada-cutaway-jose-gomez-f80r-eq-roja-previo-joyo-con-funda-843
 jose-gomez-amplificada-cutaway-jose-gomez-f80rs-ceq-8434418062756
 jose-gomez-amplificada-cutaway-jose-gomez-f90-eq-previo-fishman-psy-301-con-fund-rofesional
 jose-gomez-amplificada-cutaway-jose-gomez-f90r-eq-roja-previo-fishman-presys-301-modelo2025
-jose-gomez-amplificada-cutaway-jose-gomez-f90rs-eq-previo-fishman-psy-301-con-es-8434418041829
+jose-gomez-amplificada-cutaway-jose-gomez-f90rs-eq-previo-fishman-psy-301-con-es-tayf90rseq
 jose-gomez-amplificada-jose-gomez-f80nac-ceq-caja-estrecha-roja-8434418062763
 jose-gomez-c-30-segomezc30
 jose-gomez-c-40-segomezc40
@@ -2302,13 +2302,13 @@ jose-gomez-f90rs-con-funda-ezf90rspro
 jose-gomez-f90rs-eq-amplificada-cutaway-jose-gomez-palosanto-tapa-solida-modelo-lo2021html
 jose-gomez-f90rs-palosanto-modelo-2021-tapa-solida-8434418041836
 jose-gomez-f90rs-zf90rshtml
-jose-gomez-f90rseq-amplificada-natur-lo2021html
 jose-gomez-jose-gomez-f80-ceq-roja-flamenca-amencahtml
 jose-gomez-jose-gomez-f80eq-flamenca-041867html
 jose-gomez-jose-gomez-f80r-flamenca-8412345148996
 jose-gomez-jose-gomez-f90r-eq-flamenca-amencahtml
 jose-gomez-jose-gomez-f90r-flamenca-8412345149016
 jose-gomez-jose-gomez-f90rs-flamenca-041836html
+jose-gomez-jose-gomez-f90rseq-flamenca-8434418041829
 jose-rincon-4-4-jose-rincon-tapa-maciza-abeto-caoba-brillo-mm4-abrillomm4
 jose-rincon-amplificada-cutaway-jose-rincon-mf7-ceq-previo-double-m1-con-funda-iodoublem1
 jose-rincon-amplificada-jose-rincon-mf3-ceq-cipres-previo-double-m1-iodoublem1
@@ -3354,6 +3354,7 @@ sulayr-lattice-cutaway-tapa-de-cedro-8434418064095
 sulayr-lattice-pino-sl-100sp-inosl100sp
 takamine-classique-cutaway-electro-gc5cenat-5cenathtml
 takamine-classique-natural-gc1nat-190262041481
+takamine-cutaway-takamine-grand-auditorium-190262011972
 takamine-e-a-cutaway-gc1celh-nat-zurdos-190262042174
 takamine-eh5-classic-hirade-cutaway-natural-aturalhtml
 takamine-electroacustica-takamine-dh90-190262012566
@@ -3390,7 +3391,7 @@ takamine-gc6-cutaway-electro-negro-egro372167
 takamine-gc6ce-blk-guitarra-espanola-electrificada-negra-190262041238
 takamine-gc6ce-nat-guitarra-espanola-electrificada-190262041221
 takamine-grand-auditorium-nylon-cutaway-electro-p3fcn-con-estuche-4582270030438
-takamine-p3fcn-190262011972
+takamine-p3fcn-ep3fcnhtml
 takamine-tc132sc-5550008087008
 tambor-cadete-33x12-ref-05420-quadura-420quadura
 tambor-cadete-33x12-ref-05420-quadura-negro-remo-8400030181427
@@ -3710,7 +3711,7 @@ yamaha-cadete-3-4-yamaha-cs40ii-46510nuevo
 yamaha-cg102-46560nuevo
 yamaha-cg102-natural-4957812496971
 yamaha-cg122-mc-122mcp7720
-yamaha-cg122mc-natural-4957812472173
+yamaha-cg122mc-4957812472173
 yamaha-cg122ms-abeto-15800nuevo
 yamaha-cg142c-4957812472197
 yamaha-cg142c-cedro-15830nuevo
