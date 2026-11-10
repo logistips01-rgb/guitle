@@ -57,7 +57,7 @@ def ebay_url(code, query):
             f"&customid=guitle-{code}&toolid=10001&mkevt=1")
 
 
-ACTIVO = False  # hasta que Manuel dé el visto bueno a la vista previa: mientras, el enlace pequeño de Amazon de antes
+ACTIVO = True  # visto bueno de Manuel a la vista previa (10/11/2026)
 
 
 def buttons(code, lang, query, amazon_tpl):
