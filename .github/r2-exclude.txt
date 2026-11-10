@@ -40,6 +40,7 @@
 # Discos de España y sus cajas: los sube la lectura de discos (musica.yml, r2.sh carpeta)
 /discos/**
 /navidad/**
+/coleccionista/**
 /_r/**
 /ar/**
 /sitemap.xml

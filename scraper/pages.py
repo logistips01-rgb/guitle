@@ -216,7 +216,7 @@ def write_sitemap():
     """sitemap.xml con las páginas principales y las de todas las guitarras (listas g/_<categoría>.txt)."""
     urls = ["", "catalogo.html", "acusticas.html", "clasicas.html", "packs.html", "teclados.html", "pedales.html", "bajos.html",
             "amplificadores.html", "estuches.html", "micros.html", "varios.html", "baterias.html", "chollos.html",
-            "black-friday.html", "guitarras.html", "paises.html", "curso/"]
+            "black-friday.html", "guitarras.html", "paises.html", "curso/", "coleccionista/"]
     hubs = PAGES / "_hubs.txt"
     if hubs.exists():
         urls += hubs.read_text(encoding="utf-8").split()

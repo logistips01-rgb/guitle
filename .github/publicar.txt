@@ -1,4 +1,4 @@
 # Tocar este fichero genera y sube a R2 la web de estos países con lo que ya hay en data/ (publicar.yml).
 # Ojo: solo queda una tanda en espera; la nueva sustituye a la anterior, así que hay que poner todos los países pendientes.
-mx ar
-# 08:20:23 estreno de México y Argentina
+es
+# 2026-11-10 estreno de guitle.com/coleccionista/

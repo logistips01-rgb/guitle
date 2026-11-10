@@ -101,6 +101,8 @@ publicar() {
   if [ "$R2_ES" = 1 ]; then
     # Regalos de Navidad (guitle.com/navidad/): con los catálogos de España de este trabajo
     if python -m scraper.navidad >/dev/null 2>&1 && [ -f navidad/index.html ]; then up copy navidad navidad; fi
+    # Guitarras de coleccionista (guitle.com/coleccionista/): también con los catálogos de España de este trabajo
+    if python -m scraper.coleccion >/dev/null 2>&1 && [ -f coleccionista/index.html ]; then up copy coleccionista coleccionista; fi
     # Fichas: cada trabajo genera solo las de sus categorías, así que se copian (nunca se borran, como en git).
     if compgen -G "g/*.html" >/dev/null; then up copy g g --include "*.html"; fi
     # Las fichas de hoy de España (todas las categorías, de las listas de git), para que el Worker no sirva las retiradas
