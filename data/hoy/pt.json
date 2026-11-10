@@ -1,26 +1,16 @@
 {
- "fecha": "2026-11-09",
+ "fecha": "2026-11-10",
  "pais": "pt",
  "items": [
   {
-   "slug": "fender-cc-60s-concert-all-mahogany-hogany6920",
-   "name": "Fender CC-60S Concert All Mahogany",
-   "brand": "Fender",
-   "price": "184 €",
-   "store": "Musifex",
-   "kind": "acustica",
-   "img": "8f90e42f10dcf384.webp",
-   "why": "21 € a menos do que em qualquer outra loja"
-  },
-  {
-   "slug": "ibanez-azes40-mgr-es40mgrhtm",
-   "name": "Ibanez AZES40-MGR",
+   "slug": "ibanez-as53-tf-zas53tfhtm",
+   "name": "Ibanez AS53-TF",
    "brand": "Ibanez",
-   "price": "257 €",
+   "price": "299 €",
    "store": "Thomann",
    "kind": "electrica",
-   "img": "14e9295f6f436509.webp",
-   "why": "4 € a menos do que em qualquer outra loja"
+   "img": "d80af3fa03be8f68.webp",
+   "why": "6 € a menos do que em qualquer outra loja"
   }
  ]
 }

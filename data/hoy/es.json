@@ -1,5 +1,5 @@
 {
- "fecha": "2026-11-09",
+ "fecha": "2026-11-10",
  "pais": "es",
  "items": [
   {
@@ -13,14 +13,14 @@
    "why": "Mínimo histórico: 9 % por debajo de su media"
   },
   {
-   "slug": "admira-a-20-8436032350325",
-   "name": "Admira A-20",
-   "brand": "Admira",
-   "price": "697 €",
-   "store": "Microfusa",
-   "kind": "clasica",
-   "img": "1505a480e6c7f2b3.webp",
-   "why": "Bajada real: 18 % por debajo de su media"
+   "slug": "prs-se-parlor-20-piezo-dg-dog-hair-825362273196",
+   "name": "PRS SE PARLOR 20 PIEZO DG Dog Hair",
+   "brand": "PRS",
+   "price": "607,94 €",
+   "store": "Musical San Francisco",
+   "kind": "acustica",
+   "img": "9eade8d4f8172fc2.webp",
+   "why": "Rebajada hoy: 191,06 € menos que ayer"
   },
   {
    "slug": "lag-t118dce-tramontane-118-dreadnought-cutaway-natural-3700166363120",
@@ -31,56 +31,6 @@
    "kind": "acustica",
    "img": "09c5439b3f30a495.webp",
    "why": "Rebajada hoy: 112,47 € menos que ayer"
-  },
-  {
-   "slug": "squier-sonic-stratocaster-ht-mn-sea-foam-green-197955143149",
-   "name": "Squier Sonic Stratocaster HT MN Sea Foam Green",
-   "brand": "Squier",
-   "price": "165 €",
-   "store": "Alteisa",
-   "kind": "electrica",
-   "img": "1f46680e3efe6580.webp",
-   "why": ""
-  },
-  {
-   "slug": "cort-g110-opbk-8809625369606",
-   "name": "Cort G110 Opbk",
-   "brand": "Cort",
-   "price": "167 €",
-   "store": "Musicsales",
-   "kind": "electrica",
-   "img": "ff9cf5472ccd6ff6.webp",
-   "why": ""
-  },
-  {
-   "slug": "jet-js400-sfg-hss-sea-foam-green-3831120907866",
-   "name": "JET JS400-SFG-HSS Sea Foam Green",
-   "brand": "JET",
-   "price": "207 €",
-   "store": "Neomúsica",
-   "kind": "electrica",
-   "img": "62c4c2a560e214e1.webp",
-   "why": ""
-  },
-  {
-   "slug": "ibanez-grg140-sb-sunburst-4515110777286",
-   "name": "Ibanez GRG140-SB Sunburst",
-   "brand": "Ibanez",
-   "price": "223,20 €",
-   "store": "Partitura",
-   "kind": "electrica",
-   "img": "0b674a6c4df5267b.webp",
-   "why": ""
-  },
-  {
-   "slug": "esp-ltd-mt-130-snow-white-superstrato-840248029346",
-   "name": "ESP/LTD MT-130 Snow White Superstrato",
-   "brand": "LTD",
-   "price": "244 €",
-   "store": "Alteisa",
-   "kind": "electrica",
-   "img": "https://alteisa.com/154394-large_default/esp-ltd-mt-130-snow-white-guitarra-electrica-superstrato.jpg",
-   "why": ""
   }
  ]
 }
