@@ -1103,6 +1103,8 @@ FR_SOURCES = {
     "woodbrass": {"name": "Woodbrass", "kind": fr_kind, "fix": _woodbrass_fix,
                   "discover": lambda f: _discover_shopify(f, "https://woodbrass.com",
                                                           ("guitares-electriques", "guitares-folk", "guitares-classiques")),
+                  "listing": lambda f: _shopify_collections_listing(
+                      "https://woodbrass.com", ("guitares-electriques", "guitares-folk", "guitares-classiques"))(f),
                   "pick": lambda u: not NOT_PRODUCT.search(u)},
     "starsmusic": {"name": "Stars Music", "sitemap": "https://www.stars-music.fr/sitemap_sm/sitemap_prod_fr.xml.gz",
                    "kind": fr_kind,
@@ -1456,7 +1458,9 @@ WOODBRASS_ALL = {"guitares-electriques": "electrica", "guitares-folk": "acustica
 
 def _woodbrass(base, collections=WOODBRASS_ALL):
     return {"name": "Woodbrass", "kind_url": lambda c, u, n: _shop_kind(u, n), "fix": _woodbrass_fix,
-            "discover": lambda f: _discover_shopify(f, base, collections), "pick": lambda u: not NOT_PRODUCT.search(u)}
+            "discover": lambda f: _discover_shopify(f, base, collections), "pick": lambda u: not NOT_PRODUCT.search(u),
+            # precios de hoy de las mismas colecciones (en Bélgica, Suiza y Austria el 58-66 % pasaba de 2 días)
+            "listing": lambda f: _shopify_collections_listing(base, collections)(f)}
 
 
 SOURCES["woodbrass"] = _woodbrass("https://woodbrass.es", {"guitares-electriques": "electrica"})
@@ -3647,6 +3651,98 @@ def _shopify_listing(base, max_pages=200):
     return run
 
 
+def _shopify_collections_listing(base, collections, max_pages=40):
+    """Como _shopify_listing, solo con unas colecciones (las mismas de "discover"; Woodbrass): /products/<handle>, con el
+    precio en la moneda de esa web (woodbrass.ch, en francos: comprobado ficha a ficha el 10/11/2026)."""
+    def run(fetcher):
+        out = {}
+        for col in collections:
+            for pg in range(1, max_pages + 1):
+                url = f"{base}/collections/{col}/products.json?limit=250&page={pg}"
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                prods = (resp.json().get("products") or []) if resp.status_code == 200 else []
+                if not prods:
+                    break
+                for p in prods:
+                    prices = [float(v["price"]) for v in p.get("variants", []) if v.get("price")]
+                    if prices and min(prices) > 0:
+                        out[f"{base}/products/{p['handle']}"] = (round(min(prices), 2),
+                                                                 any(v.get("available") for v in p.get("variants", [])))
+        return out
+    return run
+
+
+def _stars_listing(base, sections, max_pages=400):
+    """{ficha: (precio, None)} de los listados de Stars Music (30 por página, "/<sección>/<n>/"): cada producto es un
+    <a class="pdtHolder" data-price="…" href="/…_<id>.html"> con el precio de la ficha (con IVA)."""
+    def run(fetcher):
+        out = {}
+        for sec in sections:
+            for pg in range(1, max_pages + 1):
+                url = f"{base}/{sec}/" + (f"{pg}/" if pg > 1 else "")
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                if resp.status_code != 200:
+                    break
+                found = {}
+                for tag in re.findall(r'<a\b[^>]*class="pdtHolder"[^>]*>', resp.text):
+                    p = re.search(r'data-price="([\d.]+)"', tag)
+                    h = re.search(r'href="(/[^"]+_\d+\.html)"', tag)
+                    if p and h and float(p.group(1)) > 0:
+                        found[base + h.group(1)] = (round(float(p.group(1)), 2), None)
+                if not set(found) - set(out):
+                    break
+                out.update(found)
+        return out
+    return run
+
+
+def _nop_price(text):
+    """"kr 1&#xA0;999,00" → 1999.0 (nopCommerce, Noruega)."""
+    digits = re.sub(r"[^\d,]", "", html.unescape(text)).replace(",", ".")
+    try:
+        return round(float(digits), 2) if digits else None
+    except ValueError:
+        return None
+
+
+def _nop_listing(base, roots, max_cats=600, max_pages=200):
+    """{ficha: (precio, None)} de una tienda nopCommerce (4Sound): las categorías del menú y sus subcategorías (los
+    productos solo salen en las de abajo del todo), 21 por página ("?pagenumber=n")."""
+    def run(fetcher):
+        out, seen, queue = {}, set(), list(roots)
+        while queue and len(seen) < max_cats:
+            cat = queue.pop(0)
+            if cat in seen:
+                continue
+            seen.add(cat)
+            for pg in range(1, max_pages + 1):
+                url = f"{base}{cat}?pagesize=21" + (f"&pagenumber={pg}" if pg > 1 else "")
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                if resp.status_code != 200:
+                    break
+                if pg == 1:
+                    queue += [s for s in re.findall(r'class="sub-category-item"><h2 class="title"><a href="(/[^"]+)"',
+                                                    resp.text) if s not in seen]
+                found = {}
+                for box in resp.text.split('class="product-item"')[1:]:
+                    h = re.search(r'class="product-title"><a href="(/[^"]+)"', box)
+                    p = re.search(r'class="price actual-price">([^<]+)<', box)
+                    v = _nop_price(p.group(1)) if p else None
+                    if h and v:
+                        found[base + h.group(1)] = (v, None)
+                if not set(found) - set(out):
+                    break
+                out.update(found)
+        return out
+    return run
+
+
 def _en_store(name, sitemap, cur, shopify=False, path=None, sub=None, json_feed=True, **extra):
     src = {"name": name, "sitemap": sitemap, "kind_url": en_kind, "pick": _pick_en(shopify, path),
            # dónde están las fichas, para el equipo (equipo_sources)
@@ -5064,6 +5160,22 @@ CATALOGS["romas"]["sources"]["soundcreation"] = _soundcreation_eq("https://www.s
 CATALOGS["bgmas"]["sources"]["soundcreation"] = _soundcreation_eq("https://www.soundcreation.eu/sitemap-bg-index.xml",
                                                                   "sitemap-bg-pagini-produs", "EUR", "en")
 CATALOGS["grmas"]["sources"]["musicland"] = GR_MUSICLAND_EQ
+# Precios de hoy desde los listados (el 50-87 % de sus precios pasaba de 2 días, 10/11/2026): Stars Music en Bélgica
+# (guitarras; el equipo, con sus secciones), 4Sound en Noruega y Your Music Online (Shopify, todo el catálogo) en Italia.
+STARS_EQ_SECTIONS = ("guitares-basses", "ampli-effets", "batteries-percus", "cables-accessoires", "home-studio", "piano",
+                     "synthe-sampleur", "sono", "micro-systeme-sans-fil", "casque")
+_STARS_BE = "https://www.stars-music.be"
+CATALOGS["be"]["sources"]["starsmusic"]["listing"] = _stars_listing(_STARS_BE, ("guitares-basses",))
+CATALOGS["bemas"]["sources"]["starsmusic"]["listing"] = _stars_listing(_STARS_BE, STARS_EQ_SECTIONS)
+FOURSOUND_ROOTS = ("/gitar-og-bass", "/effekter-2", "/forsterkere-4", "/bass-2", "/bagger-kofferter", "/tangenter-2",
+                   "/digitalpiano", "/slagverk-og-perkusjon", "/akustiske-trommer", "/digitale-trommer", "/mikrofoner",
+                   "/stativer-2", "/hodetelefoner-og-forsterkere", "/gitarstrenger-2", "/basstrenger-2", "/instrumentkabler",
+                   "/lyd-og-lys", "/pa", "/studiomonitorer-og-kontrollere", "/usb-og-midi-kontrollere", "/opptakere",
+                   "/miksere", "/andre-instrumenter")
+CATALOGS["no"]["sources"]["4sound"]["listing"] = _nop_listing("https://www.4sound.no", ("/gitar-og-bass",))
+CATALOGS["nomas"]["sources"]["4sound"]["listing"] = _nop_listing("https://www.4sound.no", FOURSOUND_ROOTS)
+for _cat in ("it", "itmas"):
+    CATALOGS[_cat]["sources"]["yourmusiconline"]["listing"] = _shopify_listing("https://yourmusiconline.it")
 for _code, _secs in KYTARY_EQ_SECTIONS.items():  # equipo de Kytary: precios de hoy desde sus listados
     _src = CATALOGS.get(_code + "mas", {}).get("sources", {}).get("kytary")
     if _src is not None:
