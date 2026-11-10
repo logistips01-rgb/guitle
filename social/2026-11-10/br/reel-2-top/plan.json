@@ -1,0 +1,206 @@
+{
+ "fecha": "10 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "top",
+  "title": "5 promoções em baixos",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "strinberg-contra-baixo-precision-strinberg-pbs40-nbergpbs40",
+    "name": "Strinberg Contra Baixo Precision Strinberg PBS40",
+    "brand": "Strinberg",
+    "kind": "bajos",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_contra_baixo_precision_strinberg_pbs40_10059_1_0f9f04785399fdc6a7cfa95087fb59de_20250721140502.jpg",
+    "th": "532859b85ea8d75d.webp",
+    "price": 1079.99,
+    "store": "RCK Audio",
+    "stores": 3,
+    "median": 1230.7,
+    "max": 1259.9,
+    "next": 1201.5,
+    "rows": [
+     [
+      "RCK Audio",
+      1079.99
+     ],
+     [
+      "Destroyer",
+      1201.5
+     ],
+     [
+      "Luggi",
+      1259.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "R$ 121,51 a menos que nas outras lojas"
+   },
+   {
+    "slug": "giannini-baixo-ativo-5-cordas-giannini-gb-205a-metallic-red-mr-7890443018488",
+    "name": "Giannini Baixo Ativo 5 Cordas Giannini GB-205A Metallic Red (MR)",
+    "brand": "Giannini",
+    "kind": "bajos",
+    "img": "https://images.tcdn.com.br/img/img_prod/477617/baixo_ativo_5_cordas_giannini_gb_205a_metallic_red_mr_53345_1_c4734465c66edc0aab3ec2173414cab0_20241203145058.jpg",
+    "th": "11e80adad376d9ec.webp",
+    "price": 1259.9,
+    "store": "Luggi",
+    "stores": 3,
+    "median": 1605.55,
+    "max": 1772.0,
+    "next": 1439.1,
+    "rows": [
+     [
+      "Luggi",
+      1259.9
+     ],
+     [
+      "Mundomax",
+      1439.1
+     ],
+     [
+      "Cheiro de Música",
+      1772.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "R$ 179,20 a menos que nas outras lojas"
+   },
+   {
+    "slug": "tagima-contrabaixo-tagima-millenium-5-cordas-classic-series-ativo-preto-7898651946098",
+    "name": "Tagima Contrabaixo Tagima Millenium 5 Cordas Classic Series Ativo Preto",
+    "brand": "Tagima",
+    "kind": "bajos",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/contrabaixo-tagima-millenium-5-cordas-classic-series-ativo-preto-1133043/1353690.jpg?w=1000&h=1000&v=202508062041&qs=ignore",
+    "th": "d4cc8c2bd487a646.webp",
+    "price": 1791.0,
+    "store": "Destroyer",
+    "stores": 3,
+    "median": 2324.95,
+    "max": 2349.9,
+    "next": 2300.0,
+    "rows": [
+     [
+      "Destroyer",
+      1791.0
+     ],
+     [
+      "Elo Musical",
+      2300.0
+     ],
+     [
+      "Megasom",
+      2349.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "R$ 509 a menos que nas outras lojas"
+   },
+   {
+    "slug": "sx-baixo-sx-jb-4-cordas-escudo-tortoise-sjb75-tor-3ts-7899153069650",
+    "name": "SX Baixo SX JB 4 Cordas Escudo Tortoise SJB75 TOR_3TS",
+    "brand": "SX",
+    "kind": "bajos",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_baixo_sx_sjb75_4_cordas_em_ash_sunburst_com_escuto_1_20251223101758_f013154e307a.jpeg",
+    "th": "c0ff520fa3b2d361.webp",
+    "price": 2347.2,
+    "store": "Destroyer",
+    "stores": 3,
+    "median": 2531.995,
+    "max": 2599.0,
+    "next": 2464.99,
+    "rows": [
+     [
+      "Destroyer",
+      2347.2
+     ],
+     [
+      "RCK Audio",
+      2464.99
+     ],
+     [
+      "Cheiro de Música",
+      2599.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "R$ 117,79 a menos que nas outras lojas"
+   },
+   {
+    "slug": "yamaha-contrabaixo-yamaha-trbx504-tbl-4-cordas-ativo-4957812535564",
+    "name": "Yamaha Contrabaixo Yamaha TRBX504 TBL 4 Cordas Ativo",
+    "brand": "Yamaha",
+    "kind": "bajos",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/contrabaixo-yamaha-trbx504-tbl-4-cordas-ativo-1130178/1350825.jpg?w=1000&h=1000&v=202508062050&qs=ignore",
+    "th": "4339222dda015626.webp",
+    "price": 3850.19,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 4994.95,
+    "max": 4999.9,
+    "next": 4990.0,
+    "rows": [
+     [
+      "Mundomax",
+      3850.19
+     ],
+     [
+      "Cheiro de Música",
+      4990.0
+     ],
+     [
+      "Megasom",
+      4999.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "R$ 1.139,81 a menos que nas outras lojas"
+   }
+  ],
+  "rama": "bajos"
+ }
+}
