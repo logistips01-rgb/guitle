@@ -1,0 +1,167 @@
+{
+ "date": "2026-11-10",
+ "fecha": "10. November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "fender-standard-strat-mn-wpg-cnd-nwpgcndhtm",
+   "name": "Fender Standard Strat MN WPG CND",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/608523.jpg",
+   "th": "f26fd77661b92baa.webp",
+   "price": 489.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 591.0,
+   "max": 607.0,
+   "next": 575.0,
+   "rows": [
+    [
+     "Thomann",
+     489.0
+    ],
+    [
+     "Musikhaus Markstein",
+     575.0
+    ],
+    [
+     "Woodbrass",
+     607.0
+    ]
+   ],
+   "pvp": null,
+   "why": "86 € günstiger als in allen anderen Shops",
+   "pct": 15,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal des Tages: Fender Standard Strat MN WPG CND\n💶 489 € bei Thomann, verglichen in 3 Shops.\n📉 86 € günstiger als in allen anderen Shops.\n\n🔎 Vergleiche den Preis auf guitle.com/de (alle Deals von heute über den Link in der Bio 👆).\nPreis vom 10. November; kann sich ändern.\n\n#gitarre #gitarrist #angebote #deals #egitarre #fender"
+ },
+ "stories": [
+  {
+   "slug": "yamaha-apx-600-natural-westerngitarre-4957812623896",
+   "name": "Yamaha APX 600 Natural Westerngitarre",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://imm-professional.de/media/image/product/133720/lg/yamaha-apx-600-natural.jpg",
+   "th": "7fc1f02ff07b1d35.webp",
+   "price": 309.0,
+   "store": "IMM Professional",
+   "stores": 3,
+   "median": 367.0,
+   "max": 389.0,
+   "next": 345.0,
+   "rows": [
+    [
+     "IMM Professional",
+     309.0
+    ],
+    [
+     "Musikhaus Markstein",
+     345.0
+    ],
+    [
+     "Shop2Rock",
+     389.0
+    ]
+   ],
+   "pvp": null,
+   "why": "36 € günstiger als in allen anderen Shops",
+   "pct": 10,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ibanez-azes31-aoc-e-gitarre-purist-blue-4549763352491",
+   "name": "Ibanez AZES31-AOC E-Gitarre, purist blue",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.shop2rock.de/shop/images/products/main/ibanez_azes31aoc_1.jpg",
+   "th": "5b3a2b3be2265ee2.webp",
+   "price": 261.96,
+   "store": "Shop2Rock",
+   "stores": 3,
+   "median": 295.5,
+   "max": 299.0,
+   "next": 292.0,
+   "rows": [
+    [
+     "Shop2Rock",
+     261.96
+    ],
+    [
+     "Woodbrass",
+     292.0
+    ],
+    [
+     "Musikhaus am Dornbusch",
+     299.0
+    ]
+   ],
+   "pvp": null,
+   "why": "30,04 € günstiger als in allen anderen Shops",
+   "pct": 10,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "fender-california-standard-redondo-mini-ib-blk-885978857456",
+   "name": "Fender California Standard Redondo Mini IB BLK",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.session.de/media/d0/50/74/1749655885/fender-california-standard-redondo-mini-ib-blk.webp?ts=1749655885",
+   "th": "4f027ac419a866ae.webp",
+   "price": 159.0,
+   "store": "Zoundhouse",
+   "stores": 3,
+   "median": 183.0,
+   "max": 189.0,
+   "next": 177.0,
+   "rows": [
+    [
+     "Zoundhouse",
+     159.0
+    ],
+    [
+     "Shop2Rock",
+     177.0
+    ],
+    [
+     "Woodbrass",
+     189.0
+    ]
+   ],
+   "pvp": null,
+   "why": "18 € günstiger als in allen anderen Shops",
+   "pct": 10,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

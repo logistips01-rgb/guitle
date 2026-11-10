@@ -1,0 +1,172 @@
+{
+ "fecha": "10. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "ibanez-gio-grg121dx-mgs-e-gitarre-4515110821309",
+    "name": "Ibanez Gio GRG121DX-MGS E-Gitarre",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/132946/lg/ibanez-gio-grg121dx-mgs.jpg",
+    "th": "02c100762bbb5a11.webp",
+    "price": 229.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 249.0,
+    "max": 249.0,
+    "next": 249.0,
+    "rows": [
+     [
+      "Thomann",
+      229.0
+     ],
+     [
+      "Musikhaus Lange",
+      249.0
+     ],
+     [
+      "Music Town",
+      249.0
+     ]
+    ],
+    "pvp": null,
+    "why": "20 € günstiger als in allen anderen Shops",
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "mooer-gtrs-standard-801-pink-6971889220145",
+    "name": "Mooer Gtrs Standard 801 Pink",
+    "brand": "Mooer",
+    "kind": "electrica",
+    "img": "https://woodbrass.de/cdn/shop/files/4877f0c1aa4ea5702a5c6398b8e276bbe9bee40d_MUSICO_GTRS_S801PK.jpg?height=1200&pad_color=ffffff&v=1793727258&width=1200",
+    "th": "93b056658be83066.webp",
+    "price": 304.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 329.0,
+    "max": 330.0,
+    "next": 328.0,
+    "rows": [
+     [
+      "Woodbrass",
+      304.0
+     ],
+     [
+      "Zoundhouse",
+      328.0
+     ],
+     [
+      "Shop2Rock",
+      330.0
+     ]
+    ],
+    "pvp": null,
+    "why": "24 € günstiger als in allen anderen Shops",
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "lag-t177jce-tramontane-177-jumbo-elektro-akustik-gitarre-3700166370241",
+    "name": "Lag T177JCE Tramontane 177 Jumbo Elektro-Akustik Gitarre",
+    "brand": "Lag",
+    "kind": "acustica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/lag_t177jce.jpg",
+    "th": "227cec2c72b4b409.webp",
+    "price": 473.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 519.0,
+    "max": 519.0,
+    "next": 519.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      473.0
+     ],
+     [
+      "Woodbrass",
+      519.0
+     ],
+     [
+      "Musik Beck",
+      519.0
+     ]
+    ],
+    "pvp": null,
+    "why": "46 € günstiger als in allen anderen Shops",
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-r55dlx-bft-konzertgitarre-842960181364",
+    "name": "Ortega R55DLX-BFT Konzertgitarre",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://imm-professional.de/media/image/product/135084/lg/ortega-r55dlx-bft-konzertgitarre.jpg",
+    "th": "041e84d9ce78081a.webp",
+    "price": 222.0,
+    "store": "IMM Professional",
+    "stores": 4,
+    "median": 259.0,
+    "max": 299.9,
+    "next": 259.0,
+    "rows": [
+     [
+      "IMM Professional",
+      222.0
+     ],
+     [
+      "Music Town",
+      259.0
+     ],
+     [
+      "Musikhaus Markstein",
+      259.0
+     ],
+     [
+      "Musik Beck",
+      299.9
+     ]
+    ],
+    "pvp": null,
+    "why": "37 € günstiger als in allen anderen Shops",
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}
