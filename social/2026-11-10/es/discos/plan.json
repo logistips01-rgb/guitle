@@ -1,0 +1,76 @@
+{
+ "tipo": "same",
+ "cab": "Mismo disco, 13 € más barato",
+ "fmt": "vinilo",
+ "disco": {
+  "ean": "0886978431110",
+  "fmt": "vinilo",
+  "img": "https://discosaltafidelidad.es/wp-content/uploads/2020/04/Pearl-Jam-Vitalogy.jpg",
+  "items": [
+   {
+    "p": 30.88,
+    "s": "ebay",
+    "st": true,
+    "u": "https://www.ebay.es/itm/298288976416?hash=item4573689220%3Ag%3A-D0AAeSwe2lqyLD2&mkevt=1&mkcid=1&mkrid=1185-53479-19255-0&campid=5339241544&customid=guitle-es&toolid=10049"
+   },
+   {
+    "p": 36.95,
+    "s": "altafidelidad",
+    "st": true,
+    "u": "https://discosaltafidelidad.es/producto/pearl-jam-vitalogy-vinilo/"
+   },
+   {
+    "p": 45.64,
+    "s": "cdgo",
+    "st": true,
+    "u": "https://cdgo.com/detalhe/0886978431110/x"
+   },
+   {
+    "p": 49.95,
+    "s": "ega",
+    "st": true,
+    "u": "https://discosega.es/musica-vinilo-cd/2787-pearl-jam-vitalogy-2lps-vinilo-0886978431110.html"
+   },
+   {
+    "p": 32.0,
+    "s": "ege",
+    "st": false,
+    "u": "https://egebotiga.com/tienda/genero/indie-rock-alternativo/pearl-jam-vitalogy-2lp/"
+   },
+   {
+    "p": 37.99,
+    "s": "borabora",
+    "st": false,
+    "u": "https://discosborabora.com/disco/pearl-jam-vitalogy-2xlp"
+   }
+  ],
+  "name": "Pearl Jam - Vitalogy",
+  "slug": "pearl-jam-vitalogy-vinilo-0886978431110",
+  "artist": "Pearl Jam",
+  "title": "Vitalogy",
+  "lo": 36.95,
+  "hi": 49.95,
+  "ahorro": 13.0,
+  "tienda": "Alta Fidelidad",
+  "tiendas": 2,
+  "url": "https://guitle.com/discos/pearl-jam-vitalogy-vinilo-0886978431110.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-10",
+ "cc": "es",
+ "t": {
+  "cab_same": "Mismo disco, 13 € más barato",
+  "cab_semana": "El chollo de vinilo de la semana",
+  "pill_post": "💿 Chollo de disco",
+  "pill_post_semana": "🏆 Chollo de la semana",
+  "pill_story": "💿 Mismo disco, más barato",
+  "pill_story_semana": "🏆 Vinilo de la semana",
+  "cheapest": "Lo más barato hoy",
+  "at": "en",
+  "others": "Otras tiendas de discos",
+  "upto": "hasta",
+  "footer": "Comparamos precios de tiendas de discos de España · guitle.com/discos",
+  "elsewhere": "Hasta 49,95 € en otras tiendas · ahorras 13 €",
+  "story_footer": "Precios y stock: enlace en la bio · guitle.com/discos"
+ }
+}
