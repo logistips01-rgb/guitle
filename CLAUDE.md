@@ -42,6 +42,8 @@
   week» (post y story, tarea de las 18:52). Solo artistas conocidos (lista FAMOSOS), discos con stock en 2+ tiendas y
   diferencias creíbles (el caro ≤ 1,45 × el barato). Etiquetas: #vinyl #vinylrecords #vinylcollection #recordcollector
   #vinyldeals #ukvinyl.
+- **eBay y Amazon cuentan siempre** (Manuel monetiza con ellos, 10-11): nunca se descarta un disco porque el más barato
+  esté en eBay o Amazon; al contrario, mejor. (Amazon, con sus normas de arriba: sin su precio en imagen ni texto.)
 - Tono de comprador a comprador: «comparamos precios de las tiendas de discos de Reino Unido», nunca que leemos sus
   webs. Solo «más barato en X», nunca «caro en Y».
 - La API no permite poner el sticker de enlace en las stories: dicen «link in bio».
