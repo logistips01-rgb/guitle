@@ -1631,6 +1631,15 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "session",
+  "name": "DR Strings Neon Multi-Color NMCE-10 Medium .010-.046",
+  "slug": "dr-strings-neon-multi-color-nmce-10-medium-010-046-600781004718",
+  "price": 11.9,
+  "median": 16.0
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Daddario EJ11 - 80/20 Bronze Light [12-53]",
   "slug": "daddario-ej11-80-20-bronze-light-12-53-19954122126",
@@ -1820,11 +1829,11 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
-  "store": "alfasoni",
-  "name": "Fender Correa Weightless Running Logo",
-  "slug": "fender-correa-weightless-running-logo-885978067176",
-  "price": 20.99,
-  "median": 28.06
+  "store": "session",
+  "name": "Fender Gitarrengurt Weighless 2 Monogrammed Strap White/Brown/Yellow",
+  "slug": "fender-gitarrengurt-weighless-2-monogrammed-strap-white-brown-yellow-885978381906",
+  "price": 17.5,
+  "median": 23.64
  },
  {
   "kind": "varios",
@@ -1843,6 +1852,15 @@
   "slug": "fender-super-deluxe-vintage-style-strap-black-717669446222",
   "price": 28.9,
   "median": 39.6
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Fender Weighless 2\" Monogrammed Correa Guitarra Red",
+  "slug": "fender-weighless-2-monogrammed-correa-guitarra-red-885978381913",
+  "price": 18.51,
+  "median": 24.9
  },
  {
   "kind": "varios",

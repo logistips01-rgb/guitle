@@ -267,7 +267,6 @@ dw-pdp-cm5-standard-twisted-ivory-edivoryhtm
 dw-pdp-cm5-std-white-shell-kit-hellkithtm
 dw-pdp-cm7-pearlescent-white-e467376htm
 dw-pdp-cm7-red-to-black-toblackhtm
-dw-pdp-cm7-satin-black-inblackhtm
 dw-pdp-cm7-satin-charcoal-b-arcoalbhtm
 dw-pdp-cm7-satin-seafoam-seafoamhtm
 dw-pdp-cm7-silver-to-black-toblackhtm
@@ -961,6 +960,7 @@ millenium-mps-150x-e-drum-mesh-bundle-hbundlehtm
 millenium-mps-150x-e-drum-mesh-jr-bundle-rbundlehtm
 millenium-mps-150x-e-drum-mesh-set-meshsethtm
 millenium-mps-350-e-drum-bundle-mbundlehtm
+millenium-mps-350-e-drum-junior-bundle-rbundlehtm
 millenium-mps-350-e-drum-set-drumsethtm
 millenium-mps-450-e-drum-set-bundle-tbundlehtm
 millenium-mps-450-e-drum-set-drumsethtm
@@ -1341,7 +1341,6 @@ sonor-aq2-martini-set-whp-isetwhphtm
 sonor-aq2-safari-set-brf-isetbrfhtm
 sonor-aq2-safari-set-transparent-black-829193503415
 sonor-aq2-safari-set-tsb-isettsbhtm
-sonor-aq2-safari-set-whp-isetwhphtm
 sonor-aq2-stage-set-brf-esetbrfhtm
 sonor-aq2-stage-set-tqz-esettqzhtm
 sonor-aq2-stage-set-tsb-esettsbhtm
