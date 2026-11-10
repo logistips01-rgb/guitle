@@ -1,0 +1,101 @@
+{
+ "date": "2026-11-10",
+ "fecha": "10 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "ibanez-grx70qa-tbb-gio-atbbgiohtm",
+   "name": "Ibanez GRX70QA-TBB GIO",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/407824.jpg",
+   "th": "5897da04ddb35a22.webp",
+   "price": 209.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 213.0,
+   "max": 213.0,
+   "next": 213.0,
+   "rows": [
+    [
+     "Thomann",
+     209.0
+    ],
+    [
+     "Woodbrass",
+     213.0
+    ],
+    [
+     "Di Santo Musica",
+     213.0
+    ]
+   ],
+   "pvp": null,
+   "why": "4 € in meno che negli altri negozi",
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Offerta del giorno: Ibanez GRX70QA-TBB GIO\n💶 209 € da Thomann, confrontata in 3 negozi.\n📉 4 € in meno che negli altri negozi.\n\n🔎 Confronta il prezzo su guitle.com/it (tutte le offerte di oggi nel link in bio 👆).\nPrezzo del 10 novembre; può cambiare.\n\n#chitarra #chitarrista #offerte #sconti #chitarraelettrica #ibanez"
+ },
+ "stories": [
+  {
+   "slug": "yamaha-apx600-oriental-blue-burst-4957812623933",
+   "name": "Yamaha APX600 Oriental Blue Burst",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://woodbrass.it/cdn/shop/files/a33332f929794da4ec98dceca9790f1360dbf71c_APX600_BLUE.jpg?height=1200&pad_color=ffffff&v=1793810842&width=1200",
+   "th": "8b02e4747ce98dbc.webp",
+   "price": 338.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 342.0,
+   "max": 345.0,
+   "next": 339.0,
+   "rows": [
+    [
+     "Woodbrass",
+     338.0
+    ],
+    [
+     "S&M Strumenti",
+     339.0
+    ],
+    [
+     "Di Santo Musica",
+     345.0
+    ]
+   ],
+   "pvp": null,
+   "why": "1 € in meno che negli altri negozi",
+   "photo": "chollo-2.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}
