@@ -1,127 +1,75 @@
 {
- "actualizado": "2026-11-09T23:11",
- "total": 276,
- "ok": 249,
- "distinto": 7,
- "sin_comprobar": 20,
+ "actualizado": "2026-11-10T17:19",
+ "total": 279,
+ "ok": 259,
+ "distinto": 4,
+ "sin_comprobar": 16,
  "distintos": [
   {
    "pais": "br",
    "tienda": "ajoiamusical",
-   "url": "https://www.ajoiamusical.com.br/violao-nylon-myth-mt39nce-cutaway-natural-light-coffe",
-   "precio": 525,
+   "url": "https://www.ajoiamusical.com.br/guitarra-tagima-duosmart-s-2s-1h-com-efeito-preta",
+   "precio": 1375,
    "moneda": "BRL",
-   "leido": "2026-11-09T00:44",
-   "nombre": "Myth MT39NCE Cutaway Natural + Light Coffe",
+   "leido": "2026-11-09T21:29",
+   "nombre": "Tagima Duosmart-S 2S 1H Com Efeito Preta",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 51,00 10",
-    "R$ 5,10",
-    "R$ 48,45",
-    "R$ 51,00 10",
-    "R$ 5,10",
-    "R$ 48,45"
-   ]
-  },
-  {
-   "pais": "br",
-   "tienda": "destroyer",
-   "url": "https://www.destroyer.com.br/cordas/guitarras/guitarra-tagima-modern-2h-escala-escura-stella-h2-dpsk",
-   "precio": 4738.5,
-   "moneda": "BRL",
-   "leido": "2026-11-09T00:16",
-   "nombre": "Tagima Modern 2H Escala Escura Stella H2 (dpsk)",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "R$ 379"
+    "R$ 680,00",
+    "R$ 812,00 12",
+    "R$ 56,67",
+    "R$ 646,00",
+    "R$ 21.663,00 12",
+    "R$ 1.805,25"
    ]
   },
   {
    "pais": "br",
    "tienda": "fenderbr",
-   "url": "https://www.fender.com.br/produto/10173355/guitarras/guitarra-fender-custom-deluxe-roasted-telecaster-ltd-ed-923-1017-038-red-sparkle",
-   "precio": 43590,
+   "url": "https://www.fender.com.br/produto/10173359/guitarras/guitarra-fender-1962-stratocaster-relic-923-5700-039-aged-olympic-white",
+   "precio": 35990,
    "moneda": "BRL",
-   "leido": "2026-11-09T00:09",
-   "nombre": "Fender Custom Deluxe Roasted Telecaster LTD ED RED Sparkle",
+   "leido": "2026-11-09T21:30",
+   "nombre": "Fender 1962 Stratocaster Relic Aged Olympic White",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 24,3",
-    "$ 60",
-    "R$ 24",
-    "R$ 157",
-    "R$ 300",
-    "R$ 79"
+    "R$ 209",
+    "$ 7,5",
+    "R$ 149",
+    "R$ 460",
+    "$ 502,4",
+    "$ 7"
    ]
   },
   {
    "pais": "br",
    "tienda": "mundomax",
-   "url": "https://www.mundomax.com.br/guitarra-seizi-katana-kabuto-tl-purple-sparkle-com-bag-deluxe",
-   "precio": 3149.1,
+   "url": "https://www.mundomax.com.br/violao-ressonador-acustico-sdb30-sunburst-strinberg",
+   "precio": 1574.1,
    "moneda": "BRL",
-   "leido": "2026-11-09T00:08",
-   "nombre": "Seizi Katana Kabuto TL Purple Sparkle com Bag Deluxe",
+   "leido": "2026-11-09T22:21",
+   "nombre": "Strinberg Ressonador Strinberg Sdb30 Sunburst",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 2.903,00 12",
-    "R$ 241,92",
-    "R$ 2.150,00 12",
-    "R$ 179,17",
-    "R$ 7.699,00 12",
-    "R$ 641,58"
-   ]
-  },
-  {
-   "pais": "it",
-   "tienda": "zecchini",
-   "url": "https://www.zecchinimusica.it/fender/chitarra-elettrica-squier-40th-ann-stratocaster-76546",
-   "precio": 569,
-   "moneda": "EUR",
-   "leido": "2026-11-09T00:50",
-   "nombre": "Fender Squier 40th Ann.Stratocaster",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "189,00 €",
-    "199,00 €",
-    "199,00 €",
-    "299,00 €",
-    "299,00 €",
-    "445,00 €"
-   ]
-  },
-  {
-   "pais": "ro",
-   "tienda": "thomann",
-   "url": "https://www.thomann.ro/furch_rainbow_om_rainbow_dr.htm",
-   "precio": 26890,
-   "moneda": "RON",
-   "leido": "2026-11-08T19:53",
-   "nombre": "Furch Rainbow OM Rainbow-DR",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "26.790 lei",
-    "27.890 lei",
-    "53 lei",
-    "23,90 lei",
-    "133 lei",
-    "53 lei"
+    "R$ 1.127,00 12",
+    "R$ 93,92",
+    "R$ 467,00 10",
+    "R$ 46,70",
+    "R$ 539,00 10",
+    "R$ 53,90"
    ]
   },
   {
    "pais": "se",
    "tienda": "soundstorexl",
-   "url": "https://www.soundstorexl.se/products/epiphone-aj-100ce-western-guitar-natural",
-   "precio": 3319,
+   "url": "https://www.soundstorexl.se/products/gewa-classical-guitar-student-cedar-4-4-size-lefthanded",
+   "precio": 1673,
    "moneda": "SEK",
-   "leido": "2026-11-09T15:16",
-   "nombre": "Epiphone AJ-100CE Western Gitarrer (Natural)",
+   "leido": "2026-11-10T13:52",
+   "nombre": "Gewa VGS Student Cedar klassisk gitarr 4/4, cederlock, vänsterhänt",
    "http": 200,
    "estado": "distinto",
    "visibles": [
@@ -129,30 +77,26 @@
     "2499 kr",
     "2499 kr",
     "2499 kr",
-    "3 320 kr",
-    "3 951 kr"
+    "1 681 kr",
+    "69 kr"
    ]
   }
  ],
  "sin_comprobar_tiendas": [
   "es·alteisa",
-  "at·danys",
   "br·multisom",
   "br·supersom",
-  "de·soundaktuell",
   "dk·gear4music",
   "fr·azemamusique",
   "fr·cultura",
-  "fr·musicandco",
   "ie·musicoutlet",
   "ie·soundshop",
   "it·emusicstore",
   "it·fireflyaudio",
-  "nl·gear4music",
-  "es·partitura",
   "pl·gear4music",
-  "uk·andertons",
   "uk·absolutemusic",
+  "uk·andertons",
+  "pt·guitarcustom",
   "uk·richtone",
   "pt·cdgo"
  ]
