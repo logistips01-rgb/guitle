@@ -1,0 +1,102 @@
+{
+ "fecha": "10. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "guitle",
+  "topic": "inflados",
+  "slides": [
+   {
+    "hook": "Vorsicht am Black Friday",
+    "title": "Manche Rabatte sind gelogen",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "Erst Preis rauf … dann „reduziert“",
+    "sub": "Beispiel",
+    "size": 96,
+    "visual": {
+     "type": "chart",
+     "points": [
+      899,
+      899,
+      899,
+      999,
+      999,
+      999,
+      899,
+      899
+     ],
+     "marks": [
+      [
+       1,
+       "899 €",
+       "#1f9d55"
+      ],
+      [
+       4,
+       "999 €",
+       "#d64545"
+      ],
+      [
+       7,
+       "«−10 %»",
+       "#d64545"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "guitle erkennt es am Preisverlauf",
+    "sub": "Vor dem Kauf prüfen auf guitle.com/de"
+   }
+  ]
+ }
+}

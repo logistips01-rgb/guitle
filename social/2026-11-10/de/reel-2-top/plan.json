@@ -1,0 +1,148 @@
+{
+ "fecha": "10. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "3 Deals: Bässe",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "cort-action-junior-black-e-bass-8809383838086",
+    "name": "Cort Action Junior Black E-Bass",
+    "brand": "Cort",
+    "kind": "bajos",
+    "img": "https://musikhaus-lange.de/media/file/artikel/0171765.jpg",
+    "th": "ebb883b3c629ad16.webp",
+    "price": 195.0,
+    "store": "Musikhaus Lange",
+    "stores": 3,
+    "median": 229.0,
+    "max": 229.0,
+    "next": 229.0,
+    "rows": [
+     [
+      "Musikhaus Lange",
+      195.0
+     ],
+     [
+      "Musikhaus Zölch",
+      229.0
+     ],
+     [
+      "Musik Beck",
+      229.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "34 € günstiger als anderswo"
+   },
+   {
+    "slug": "ibanez-aeb8e-bk-akustikbass-4515110325999",
+    "name": "Ibanez AEB8E-BK Akustikbass",
+    "brand": "Ibanez",
+    "kind": "bajos",
+    "img": "https://www.markstein.de/media/b4/c6/b0/1618534193/90b9b587e0dda9eb7cf79b69c08b462f.jpg",
+    "th": "8ec240039f16131a.webp",
+    "price": 313.0,
+    "store": "Musikhaus Markstein",
+    "stores": 4,
+    "median": 359.0,
+    "max": 369.0,
+    "next": 355.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      313.0
+     ],
+     [
+      "Shop2Rock",
+      355.0
+     ],
+     [
+      "Musik Beck",
+      359.0
+     ],
+     [
+      "Musikhaus am Dornbusch",
+      369.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "42 € günstiger als anderswo"
+   },
+   {
+    "slug": "orange-o-bass-lenn-hughes-ltd-purple-e-bass-violett-inkl-gigbag-5060299178663",
+    "name": "Orange O-Bass lenn Hughes Ltd, Purple E-Bass, violett, inkl. Gigbag",
+    "brand": "Orange",
+    "kind": "bajos",
+    "img": "https://www.shop2rock.de/shop/images/products/main/orange_obassglenhughesltd_01.jpg",
+    "th": "3c3b1b6e3ee05bf1.webp",
+    "price": 489.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 564.0,
+    "max": 579.0,
+    "next": 549.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      489.0
+     ],
+     [
+      "Musikhaus Lange",
+      549.0
+     ],
+     [
+      "Soundland",
+      579.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "60 € günstiger als anderswo"
+   }
+  ],
+  "rama": "bajos"
+ }
+}
