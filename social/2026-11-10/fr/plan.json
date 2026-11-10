@@ -1,0 +1,176 @@
+{
+ "date": "2026-11-10",
+ "fecha": "10 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "fender-malibu-signature-joe-strummer-campfire-wn-black-matte-885978598465",
+   "name": "Fender Malibu Signature Joe Strummer Campfire WN Black Matte",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://woodbrass.com/cdn/shop/files/a7b350d9bc0cacf4eec094a5e9073eea1540c165_FMIC_0971722106.jpg?height=1200&pad_color=ffffff&v=1792587642&width=1200",
+   "th": "834c362de7502096.webp",
+   "price": 439.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 535.5,
+   "max": 569.0,
+   "next": 502.0,
+   "rows": [
+    [
+     "Woodbrass",
+     439.0
+    ],
+    [
+     "Stars Music",
+     502.0
+    ],
+    [
+     "Music 3000",
+     569.0
+    ]
+   ],
+   "pvp": null,
+   "why": "63 € de moins que dans les autres magasins",
+   "pct": 13,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Bon plan du jour : Fender Malibu Signature Joe Strummer Campfire WN Black Matte\n💶 439 € chez Woodbrass, comparée dans 3 magasins.\n📉 63 € de moins que dans les autres magasins.\n\n🔎 Compare son prix sur guitle.com/fr (tous les bons plans du jour via le lien en bio 👆).\nPrix du 10 novembre ; il peut changer.\n\n#guitare #guitariste #bonplan #promo #guitarefolk #fender"
+ },
+ "stories": [
+  {
+   "slug": "squier-classic-vibe-60s-stratocaster-sunburst-885978064212",
+   "name": "Squier Classic Vibe ‘60s Stratocaster sunburst",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://ubico-musique.com/12737-home_default/squier-classic-vibe-60s-stratocaster-sunburst.jpg",
+   "th": "ad57d75c4428fcbc.webp",
+   "price": 429.0,
+   "store": "Woodbrass",
+   "stores": 5,
+   "median": 469.5,
+   "max": 470.0,
+   "next": 469.0,
+   "rows": [
+    [
+     "Woodbrass",
+     429.0
+    ],
+    [
+     "Hurricane Music",
+     469.0
+    ],
+    [
+     "Scotto Musique",
+     469.0
+    ],
+    [
+     "Stars Music",
+     470.0
+    ],
+    [
+     "Guitar Legend",
+     470.0
+    ]
+   ],
+   "pvp": null,
+   "why": "40 € de moins que dans les autres magasins",
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "prs-se-ce24-charcoal-burst-lbursthtml",
+   "name": "PRS SE CE24 Charcoal Burst",
+   "brand": "PRS",
+   "kind": "electrica",
+   "img": "https://www.music3000.fr/99858-home_default/prs-guitars-se-ce24-charcoal-burst.jpg",
+   "th": "2420be97b6afb444.webp",
+   "price": 689.0,
+   "store": "Music 3000",
+   "stores": 4,
+   "median": 799.0,
+   "max": 799.0,
+   "next": 749.0,
+   "rows": [
+    [
+     "Music 3000",
+     689.0
+    ],
+    [
+     "Ferré Musique",
+     749.0
+    ],
+    [
+     "Woodbrass",
+     799.0
+    ],
+    [
+     "Stars Music",
+     799.0
+    ]
+   ],
+   "pvp": null,
+   "why": "60 € de moins que dans les autres magasins",
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "cort-mbm1-noir-satine-manson-8809625365639",
+   "name": "Cort MBM1 Noir Satine Manson",
+   "brand": "Cort",
+   "kind": "electrica",
+   "img": "https://audiosystem.fr/68446-product_zoom/cort-mbm1-noir-satine-manson.jpg",
+   "th": "c7d5c5d19e6865dc.webp",
+   "price": 659.0,
+   "store": "Audio System",
+   "stores": 3,
+   "median": 716.0,
+   "max": 716.0,
+   "next": 716.0,
+   "rows": [
+    [
+     "Audio System",
+     659.0
+    ],
+    [
+     "Woodbrass",
+     716.0
+    ],
+    [
+     "Music 3000",
+     716.0
+    ]
+   ],
+   "pvp": null,
+   "why": "57 € de moins que dans les autres magasins",
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

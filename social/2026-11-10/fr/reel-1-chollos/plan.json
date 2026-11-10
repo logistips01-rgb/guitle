@@ -1,0 +1,184 @@
+{
+ "fecha": "10 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "fender-standard-telecaster-mn-black-pickguard-butterscotch-blonde-885978118137",
+    "name": "Fender Standard Telecaster MN Black Pickguard Butterscotch Blonde",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/3e8f4445814e852aa3cdd943e7ca470c449d0b8e_FMIC_0266021550.jpg?height=1200&pad_color=ffffff&v=1793736000&width=1200",
+    "th": "93ae45f90f9e4d14.webp",
+    "price": 549.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 599.0,
+    "max": 629.0,
+    "next": 599.0,
+    "rows": [
+     [
+      "Woodbrass",
+      549.0
+     ],
+     [
+      "Stars Music",
+      599.0
+     ],
+     [
+      "Guitar Legend",
+      599.0
+     ],
+     [
+      "Music 3000",
+      629.0
+     ]
+    ],
+    "pvp": null,
+    "why": "50 € de moins que dans les autres magasins",
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "squier-stratocaster-lh-sonic-mn-black-717669815684",
+    "name": "Squier Stratocaster Lh Sonic Mn Black",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/bd169581eb737b5775b1ba501939914737612df9_FMIC_0373162506.jpg?height=1200&pad_color=ffffff&v=1793735931&width=1200",
+    "th": "cb4384d5d7f6f1c9.webp",
+    "price": 169.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 184.0,
+    "max": 196.0,
+    "next": 184.0,
+    "rows": [
+     [
+      "Woodbrass",
+      169.0
+     ],
+     [
+      "Stars Music",
+      184.0
+     ],
+     [
+      "Guitar Legend",
+      184.0
+     ],
+     [
+      "Hurricane Music",
+      196.0
+     ]
+    ],
+    "pvp": null,
+    "why": "15 € de moins que dans les autres magasins",
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "lag-lag-t-blue-d-special-edition-3700166372610",
+    "name": "Lag Lâg - T-BLUE-D Special Edition",
+    "brand": "Lag",
+    "kind": "acustica",
+    "img": "https://audiosystem.fr/77410-product_zoom/lag-t-blue-d-special-edition.jpg",
+    "th": "17b241e26ba569de.webp",
+    "price": 399.0,
+    "store": "Audio System",
+    "stores": 5,
+    "median": 429.0,
+    "max": 429.0,
+    "next": 429.0,
+    "rows": [
+     [
+      "Audio System",
+      399.0
+     ],
+     [
+      "Woodbrass",
+      429.0
+     ],
+     [
+      "Stars Music",
+      429.0
+     ],
+     [
+      "Hurricane Music",
+      429.0
+     ],
+     [
+      "Music 3000",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "why": "30 € de moins que dans les autres magasins",
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   },
+   {
+    "slug": "takamine-gc2-cutaway-electro-black-190262041214",
+    "name": "Takamine GC2 Cutaway Electro Black",
+    "brand": "Takamine",
+    "kind": "clasica",
+    "img": "https://woodbrass.com/cdn/shop/files/20d0f9dddd5e496d123e5512cd4217119792fdb7_GTA_GC2CEBLK.png?height=1200&pad_color=ffffff&v=1794244624&width=1200",
+    "th": "c618771fe7791b5f.webp",
+    "price": 299.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 324.0,
+    "max": 324.0,
+    "next": 324.0,
+    "rows": [
+     [
+      "Woodbrass",
+      299.0
+     ],
+     [
+      "Stars Music",
+      324.0
+     ],
+     [
+      "Hurricane Music",
+      324.0
+     ]
+    ],
+    "pvp": null,
+    "why": "25 € de moins que dans les autres magasins",
+    "photo": "g3-1.webp",
+    "label": "Classique"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
