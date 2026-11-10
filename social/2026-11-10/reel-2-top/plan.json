@@ -1,0 +1,167 @@
+{
+ "fecha": "10 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 chollos en bajos",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "cort-c4-deluxe-bk-8809817983634",
+    "name": "Cort C4 Deluxe BK",
+    "brand": "Cort",
+    "kind": "bajos",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/706130_1_415e.jpg?store=nume_es&image-type=image",
+    "th": "f1e9b49a226b0f22.webp",
+    "price": 268.0,
+    "store": "Nume Music",
+    "stores": 3,
+    "median": 356.5,
+    "max": 357.0,
+    "next": 356.0,
+    "rows": [
+     [
+      "Nume Music",
+      268.0
+     ],
+     [
+      "Musicopolix",
+      356.0
+     ],
+     [
+      "Drunkat",
+      357.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "88 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "ortega-d7ce-5-842960184990",
+    "name": "Ortega D7CE-5",
+    "brand": "Ortega",
+    "kind": "bajos",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/706447_82de.jpg?store=nume_es&image-type=image",
+    "th": "5e6207605da30929.webp",
+    "price": 283.0,
+    "store": "MAT Guitars",
+    "stores": 3,
+    "median": 359.9,
+    "max": 359.9,
+    "next": 359.9,
+    "rows": [
+     [
+      "MAT Guitars",
+      283.0
+     ],
+     [
+      "Nume Music",
+      359.9
+     ],
+     [
+      "Musicopolix",
+      359.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "76,90 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "marcus-miller-v6-5-car-candy-apple-red-850060114458",
+    "name": "Marcus Miller V6-5 CAR Candy Apple Red",
+    "brand": "Marcus Miller",
+    "kind": "bajos",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/735243_7e14.jpg?store=nume_es&image-type=image",
+    "th": "5b24357993161615.webp",
+    "price": 485.0,
+    "store": "Nume Music",
+    "stores": 3,
+    "median": 645.0,
+    "max": 668.0,
+    "next": 622.0,
+    "rows": [
+     [
+      "Nume Music",
+      485.0
+     ],
+     [
+      "Drunkat",
+      622.0
+     ],
+     [
+      "MAT Guitars",
+      668.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "137 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "yamaha-trbx504-translucent-black-4957812535564",
+    "name": "Yamaha TRBX504 Translucent Black",
+    "brand": "Yamaha",
+    "kind": "bajos",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/662397_d8ea.jpg?store=nume_es&image-type=image",
+    "th": "57879f595b8adf01.webp",
+    "price": 516.04,
+    "store": "Alfasoni",
+    "stores": 3,
+    "median": 644.585,
+    "max": 652.17,
+    "next": 637.0,
+    "rows": [
+     [
+      "Alfasoni",
+      516.04
+     ],
+     [
+      "MAT Guitars",
+      637.0
+     ],
+     [
+      "Nume Music",
+      652.17
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "120,96 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "ibanez-sr605e-bkt-black-stained-burst-4549763285393",
+    "name": "Ibanez SR605E-BKT Black Stained Burst",
+    "brand": "Ibanez",
+    "kind": "bajos",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/732452_1_275a.jpg?store=nume_es&image-type=image",
+    "th": "56cdcb9381829ead.webp",
+    "price": 684.3,
+    "store": "MAT Guitars",
+    "stores": 3,
+    "median": 835.0,
+    "max": 835.0,
+    "next": 835.0,
+    "rows": [
+     [
+      "MAT Guitars",
+      684.3
+     ],
+     [
+      "Nume Music",
+      835.0
+     ],
+     [
+      "Alfasoni",
+      835.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "150,70 € menos que en cualquier otra tienda"
+   }
+  ],
+  "rama": "bajos"
+ },
+ "stories": []
+}

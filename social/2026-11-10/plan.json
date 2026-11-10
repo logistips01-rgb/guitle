@@ -1,0 +1,186 @@
+{
+ "date": "2026-11-10",
+ "fecha": "10 de noviembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "admira-a-20-8436032350325",
+   "name": "Admira A-20",
+   "brand": "Admira",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/6/1/617492_611b.jpg?store=nume_es&image-type=image",
+   "th": "1505a480e6c7f2b3.webp",
+   "price": 697.0,
+   "store": "Microfusa",
+   "stores": 6,
+   "median": 896.0,
+   "max": 896.01,
+   "next": 895.0,
+   "rows": [
+    [
+     "Microfusa",
+     697.0
+    ],
+    [
+     "Musicopolix",
+     895.0
+    ],
+    [
+     "Musicsales",
+     895.0
+    ],
+    [
+     "MAT Guitars",
+     896.0
+    ],
+    [
+     "Alteisa",
+     896.0
+    ],
+    [
+     "Nume Music",
+     896.01
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 17 % por debajo de su media",
+   "pct": 17,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Chollo de hoy: Admira A-20\n💶 697 € en Microfusa, comparada en 6 tiendas.\n📉 Mínimo histórico: 17 % por debajo de su media.\n\n👉 Todos los chollos de hoy, a un toque: enlace en la bio.\nPrecio del 10 de noviembre; puede cambiar.\n\n#guitarra #guitarraclasica #admira #chollos #guitarristas #ofertas"
+ },
+ "stories": [
+  {
+   "slug": "ortega-r16s-842960185133",
+   "name": "Ortega R16S",
+   "brand": "Ortega",
+   "kind": "clasica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/0/706438_c273.jpg?store=nume_es&image-type=image",
+   "th": "d11db04930a9a1e0.webp",
+   "price": 306.4,
+   "store": "Alteisa",
+   "stores": 3,
+   "median": 389.0,
+   "max": 389.0,
+   "next": 389.0,
+   "rows": [
+    [
+     "Alteisa",
+     306.4
+    ],
+    [
+     "Nume Music",
+     389.0
+    ],
+    [
+     "Musicopolix",
+     389.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 9 % por debajo de su media",
+   "pct": 9,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "prs-se-parlor-20-piezo-dg-dog-hair-825362273196",
+   "name": "PRS SE PARLOR 20 PIEZO DG Dog Hair",
+   "brand": "PRS",
+   "kind": "acustica",
+   "img": "https://www.numemusic.es/media/catalog/product/1/0/1006645_47e9.jpg?store=nume_es&image-type=image",
+   "th": "9eade8d4f8172fc2.webp",
+   "price": 607.94,
+   "store": "Musical San Francisco",
+   "stores": 7,
+   "median": 649.0,
+   "max": 792.0,
+   "next": 629.3,
+   "rows": [
+    [
+     "Musical San Francisco",
+     607.94
+    ],
+    [
+     "Alteisa",
+     629.3
+    ],
+    [
+     "Nume Music",
+     649.0
+    ],
+    [
+     "MAT Guitars",
+     649.0
+    ],
+    [
+     "Drunkat",
+     649.0
+    ],
+    [
+     "Microfusa",
+     649.0
+    ],
+    [
+     "Woodbrass",
+     792.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 191,06 € menos que ayer",
+   "pct": 24,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "lag-t118dce-tramontane-118-dreadnought-cutaway-natural-3700166363120",
+   "name": "LAG T118DCE Tramontane 118 Dreadnought Cutaway Natural",
+   "brand": "LAG",
+   "kind": "acustica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/1/718717_1_000e.jpg?store=nume_es&image-type=image",
+   "th": "09c5439b3f30a495.webp",
+   "price": 385.47,
+   "store": "Musical San Francisco",
+   "stores": 8,
+   "median": 549.0,
+   "max": 549.0,
+   "next": 410.1,
+   "rows": [
+    [
+     "Musical San Francisco",
+     385.47
+    ],
+    [
+     "Alteisa",
+     410.1
+    ],
+    [
+     "Musicopolix",
+     435.0
+    ],
+    [
+     "MAT Guitars",
+     546.0
+    ],
+    [
+     "Nume Music",
+     549.0
+    ],
+    [
+     "Alfasoni",
+     549.0
+    ],
+    [
+     "Pronorte",
+     549.0
+    ],
+    [
+     "Woodbrass",
+     549.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 112,47 € menos que ayer",
+   "pct": 23,
+   "photo": "chollo-4.webp"
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+ "fecha": "10 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "¿Qué es guitle?",
+  "slides": [
+   {
+    "hook": "guitle",
+    "title": "¿Qué es guitle?",
+    "sub": "El comparador de precios de guitarras",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "23.050 guitarras en 25 tiendas",
+    "sub": "Revisamos todos los precios, cada día",
+    "size": 120
+   },
+   {
+    "title": "Te decimos dónde está más barata",
+    "sub": "Gratis y sin registrarte",
+    "size": 120
+   }
+  ]
+ },
+ "stories": []
+}

@@ -1,0 +1,175 @@
+{
+ "fecha": "10 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "mooer-gtrs-p800-white-6971889220442",
+    "name": "Mooer Gtrs P800 White",
+    "brand": "Mooer",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/7/677788_8371.jpg?store=nume_es&image-type=image",
+    "th": "375ef4261a01ccda.webp",
+    "price": 399.0,
+    "store": "Nume Music",
+    "stores": 3,
+    "median": 549.995,
+    "max": 577.0,
+    "next": 522.99,
+    "rows": [
+     [
+      "Nume Music",
+      399.0
+     ],
+     [
+      "Alteisa",
+      522.99
+     ],
+     [
+      "Pronorte",
+      577.0
+     ]
+    ],
+    "pvp": null,
+    "why": "123,99 € menos que en cualquier otra tienda",
+    "pct": 24,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sire-l3-hh-gold-top-810046138656",
+    "name": "Sire L3 HH Gold Top",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/707071_8e9f.jpg?store=nume_es&image-type=image",
+    "th": "9c1bf010b33d1934.webp",
+    "price": 326.45,
+    "store": "MAT Guitars",
+    "stores": 8,
+    "median": 395.0,
+    "max": 529.0,
+    "next": 395.0,
+    "rows": [
+     [
+      "MAT Guitars",
+      326.45
+     ],
+     [
+      "Musicopolix",
+      395.0
+     ],
+     [
+      "Auvisa",
+      395.0
+     ],
+     [
+      "Musicsales",
+      395.0
+     ],
+     [
+      "Alteisa",
+      395.0
+     ],
+     [
+      "Pronorte",
+      403.0
+     ],
+     [
+      "Nume Music",
+      403.37
+     ],
+     [
+      "Woodbrass",
+      529.0
+     ]
+    ],
+    "pvp": null,
+    "why": "68,55 € menos que en cualquier otra tienda",
+    "pct": 17,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "sigma-dsme-4260279937070",
+    "name": "Sigma Dsme",
+    "brand": "Sigma",
+    "kind": "acustica",
+    "img": "https://drunkat.es/upload/productos/800x800/sigma_dsme_1.jpg",
+    "th": "14d83b49687c6021.webp",
+    "price": 260.0,
+    "store": "Drunkat",
+    "stores": 3,
+    "median": 345.0,
+    "max": 345.0,
+    "next": 345.0,
+    "rows": [
+     [
+      "Drunkat",
+      260.0
+     ],
+     [
+      "Pronorte",
+      345.0
+     ],
+     [
+      "Madrid Musical Málaga 8",
+      345.0
+     ]
+    ],
+    "pvp": null,
+    "why": "85 € menos que en cualquier otra tienda",
+    "pct": 25,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "admira-a-20-8436032350325",
+    "name": "Admira A-20",
+    "brand": "Admira",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/1/617492_611b.jpg?store=nume_es&image-type=image",
+    "th": "1505a480e6c7f2b3.webp",
+    "price": 697.0,
+    "store": "Microfusa",
+    "stores": 6,
+    "median": 896.0,
+    "max": 896.01,
+    "next": 895.0,
+    "rows": [
+     [
+      "Microfusa",
+      697.0
+     ],
+     [
+      "Musicopolix",
+      895.0
+     ],
+     [
+      "Musicsales",
+      895.0
+     ],
+     [
+      "MAT Guitars",
+      896.0
+     ],
+     [
+      "Alteisa",
+      896.0
+     ],
+     [
+      "Nume Music",
+      896.01
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 17 % por debajo de su media",
+    "pct": 17,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}
