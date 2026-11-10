@@ -1080,24 +1080,6 @@
   "median": 877.895
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Azul Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-azul-sunburst-8033675650104"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Rojo Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-rojo-sunburst-8033675650098"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Martin GPC-16 A/E Cutaway - Abeto Sitka / Palisandro",
-  "slug": "martin-gpc-16-a-e-cutaway-abeto-sitka-palisandro-729789671811"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1240,12 +1222,6 @@
   "slug": "ortega-espanola-amplificada-cutaway-ortega-tourplayer-rtpg-ls2-842960187359",
   "price": 577.69,
   "median": 708.5
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Takamine Cutaway Takamine Grand Auditorium",
-  "slug": "takamine-cutaway-takamine-grand-auditorium-190262011972"
  },
  {
   "kind": "teclado",
