@@ -29,6 +29,13 @@
   promoción, Reels sobre guitle): "Tienda A, B, C…" y "25 tiendas" sin lista. En los chollos y tops del día sí se dice
   dónde está más barata cada guitarra.
 
+## Enlaces de la bio de Instagram (cuando salga la app de guitle)
+
+- Orden acordado con Manuel (10-11): 1) «Chollos de hoy» (guitle.com/hoy/ o /<país>/hoy/); 2) la app, con un solo
+  enlace guitle.com/app que mande a App Store o Google Play según el móvil; 3) la web del país; 4) los discos del país
+  si los tiene. Las primeras semanas tras el lanzamiento, la app va la primera. Cuando haya app: crear guitle.com/app y
+  pasarle a Manuel los enlaces de cada cuenta para copiar y pegar.
+
 ## Discos en @guitle.uk (guitle.com/uk/records)
 
 - `scraper/discos_ig.py` + `brand/discos.js`: martes y jueves «Same record, £X cheaper», viernes «Vinyl deal of the
