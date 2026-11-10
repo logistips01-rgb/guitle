@@ -1653,6 +1653,26 @@ def _kytary_listing(base, cats):
     return run
 
 
+# Equipo de Kytary (amplis, pedales, bajos, teclados, baterías, micros…): sus listados por las secciones del menú. Sin
+# esto, solo se leían las fichas una a una y el 73-76 % de sus precios de equipo pasaba de 2 días (10/11/2026).
+KYTARY_EQ_SECTIONS = {"pl": ("gitary", "basy", "keyboardy", "perkusje", "studio"),
+                      "cz": ("kytary", "baskytary", "klavesy", "bici", "studio"),
+                      "sk": ("gitary", "basgitary", "klavesy", "bicie", "studio"),
+                      "hu": ("gitarok", "basszusgitarok", "billentyuk", "utos", "studio")}
+
+
+def _kytary_eq_listing(base, sections):
+    """Como _kytary_listing, con las categorías de esas secciones sacadas del menú de la portada de la tienda."""
+    def run(fetcher):
+        resp = fetcher.get(base + "/")
+        if resp.status_code != 200:
+            return {}
+        cats = sorted({h for h, s in re.findall(r'href="(/([a-z0-9-]+)/[a-z0-9-]+/)"', resp.text) if s in sections})
+        print(f"[kytary] {base}: {len(cats)} categorías de equipo", flush=True)
+        return _kytary_listing(base, cats)(fetcher)
+    return run
+
+
 def _kytary(base, lang, cur):
     return {"name": "Kytary", "sitemap": f"{base}/sitemap.xml", "sub": lambda l: "pdp" in l, "parse": _ld(cur),
             "kind_url": _kind_for(lang), "pick": lambda u: bool(re.search(r"/HN\d+/?$", u)) and u.split("/")[-3].split("-")[0] in _GUITAR_BRAND_HEAD,
@@ -5044,6 +5064,10 @@ CATALOGS["romas"]["sources"]["soundcreation"] = _soundcreation_eq("https://www.s
 CATALOGS["bgmas"]["sources"]["soundcreation"] = _soundcreation_eq("https://www.soundcreation.eu/sitemap-bg-index.xml",
                                                                   "sitemap-bg-pagini-produs", "EUR", "en")
 CATALOGS["grmas"]["sources"]["musicland"] = GR_MUSICLAND_EQ
+for _code, _secs in KYTARY_EQ_SECTIONS.items():  # equipo de Kytary: precios de hoy desde sus listados
+    _src = CATALOGS.get(_code + "mas", {}).get("sources", {}).get("kytary")
+    if _src is not None:
+        _src["listing"] = _kytary_eq_listing(f"https://kytary.{_code}", _secs)
 for _cat in ("skmas", "romas", "bgmas", "grmas"):
     for _src in CATALOGS[_cat]["sources"].values():
         if "eq_lang" in _src:
