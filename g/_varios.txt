@@ -937,7 +937,7 @@ duesenberg-drop-stop-straplocks-black-444412004122
 duesenberg-drop-stop-straplocks-gold-444412004123
 duesenberg-drop-stop-straplocks-nickel-737713504074
 dunlop-09-42-pure-niquel-710137058026
-dunlop-09-46-niquel-710137030664
+dunlop-09-46-niquel-030664html
 dunlop-10-48-phosphor-bronce-710137030725
 dunlop-10-52-niquel-710137030688
 dunlop-105-bass-string-710137030596
@@ -1248,7 +1248,7 @@ dunlop-johnny-cash-bold-pick-tin-heavy-710137053687
 dunlop-johnny-cash-legend-pick-tin-heavy-710137053649
 dunlop-jph-01t-james-hetfield-lata-6-puas-710137040588
 dunlop-juego-10-46-niquel-wound-710137030671
-dunlop-juego-11-50-niquel-710137030695
+dunlop-juego-11-50-niquel-030695html
 dunlop-juego-40-120-acero-710137030886
 dunlop-juego-45-105-robert-trujillo-signature-710137134881
 dunlop-juego-45-105-steel-robert-trujillo-signature-710137137622
@@ -1398,7 +1398,6 @@ egitana-afinador-et61gb-et61gbp804
 electro-harmonix-2020-v2-tuner-683274032146
 electro-harmonix-x9-clip-on-tuner-683274032122
 elixir-11027-nanoweb-11-52-acustica-733132110278
-elixir-12152-nanoweb-12-52-electrica-733132121526
 elixir-14087-cuerdas-bajo-medium-extra-045105html
 elixir-14782-cuerdas-bajo-5c-light-medium-l45135html
 elixir-19002-juego-cuerdas-opti-ctricahtml
@@ -1409,6 +1408,7 @@ elixir-cuerda-bajo-085-733132153855
 elixir-cuerda-bajo-125-733132154258
 elixir-cuerda-bajo-130xl-733132154333
 elixir-cuerda-para-phos-br13-56-br1356html
+elixir-cuerdas-de-12152-12-52-a12152html
 elixir-cuerdas-light-012-053-ze1253html
 elixir-cuerdas-light-heavy-010-052-733132120772
 elixir-cuerdas-super-light-009-042-009042html
@@ -1464,6 +1464,7 @@ elixir-strings-juego-electrica-nanoweb-7st-super-light-09-52-733132120079
 elixir-strings-juego-electrica-nanoweb-7st-super-light-10-59-733132120741
 elixir-strings-juego-electrica-nanoweb-8st-l-10-74-733132120628
 elixir-strings-juego-electrica-nanoweb-baritone-733132123025
+elixir-strings-juego-electrica-nanoweb-h-733132121526
 elixir-strings-juego-electrica-nanoweb-l-10-46-pack-25-733132120550
 elixir-strings-juego-electrica-nanoweb-l-10-46-pack-50-733132120543
 elixir-strings-juego-electrica-nanoweb-m-nowebm1149
@@ -1496,6 +1497,7 @@ elixir-strings-polyweb-super-light-09-42-733132120000
 emg-40-dc-red-e-bass-40-dc-humbucker-dual-coil-ceramic-red-654330403873
 emg-rt-rip-tide-set-e-bass-rt-set-single-coil-set-black-brushed-chrome-654330405518
 epiphone-apre1274h-heavy-pack-12-puas-711106534886
+ernie-ball-10-46-cuerdas-3221-749699132219
 ernie-ball-2004-earthwood-bronze-11-52-749699120049
 ernie-ball-2005-earthwood-bz-cuerdas-medium-12-5-56-749699105848
 ernie-ball-2007-earthwood-bz-cuerdas-light-11-5-54-749699105855
@@ -1503,11 +1505,12 @@ ernie-ball-2143-earthwood-phos-bz-medium-cuerdas-12-5-56-749699105862
 ernie-ball-2145-earthwood-phos-bz-light-cuerdas-11-5-54-749699105879
 ernie-ball-2152-earthwood-phos-bz-light-cuerdas-10-48-749699107385
 ernie-ball-2213-cuerdas-10-50-48-749699103141
+ernie-ball-2214-cuerdas-12-62-749699103158
 ernie-ball-2215-10-52-cuerdas-om1052html
 ernie-ball-2223-9-42-cuerdas-ink942html
 ernie-ball-2227-cuerdas-10-48-ra1048html
 ernie-ball-2229-ultra-slinky-cuerdas-para-10-48-749699103998
-ernie-ball-2251-cuerdas-ar1046html
+ernie-ball-2251-cuerdas-749699122517
 ernie-ball-2833-cuerdas-bajo-ll2833html
 ernie-ball-2843-cuerdas-bajo-d45105html
 ernie-ball-4039-pickholder-strap-trapp37521
@@ -1611,7 +1614,7 @@ ernie-ball-eb2015-paradigm-10-52-749699120155
 ernie-ball-eb2016-paradigm-burly-11-52-749699116882
 ernie-ball-eb2016-paradigm-ultra-10-48-749699116899
 ernie-ball-eb2020-paradigm-11-48-749699120209
-ernie-ball-eb2021-paradigm-10-46-749699120216
+ernie-ball-eb2021-cuerdas-paradigm-regular-slinky-10-46-749699120216
 ernie-ball-eb2022-cuerdas-paradigm-regular-slinky-9-46-749699120223
 ernie-ball-eb2023-cuerdas-paradigm-regular-slinky-9-42-749699120230
 ernie-ball-eb2026-paradigm-12-56-749699120261
@@ -1634,7 +1637,6 @@ ernie-ball-eb2150-extra-slinky-acoust-cuerdas-749699121503
 ernie-ball-eb2151-earthwood-rock-blues-phosphor-bronze-10-52-749699121510
 ernie-ball-eb2151-set-cuerdas-slinky-bronce-fosf-id1052html
 ernie-ball-eb2210-extra-light-custom-10-50-749699122104
-ernie-ball-eb2214-mammoth-slinky-12-62-749699103158
 ernie-ball-eb2215-slinky-skinny-top-heavy-botton-010-052-749699122159
 ernie-ball-eb2216-top-beefy-bottom-heavy-10-54-749699103967
 ernie-ball-eb2220-slinky-power-011-048-749699122203
@@ -1651,8 +1653,7 @@ ernie-ball-eb2242-slinky-11-48-749699122425
 ernie-ball-eb2246-regular-slinky-10-46-749699122463
 ernie-ball-eb2248-super-slinky-09-42-749699122487
 ernie-ball-eb2249-extra-slinky-08-38-749699122494
-ernie-ball-eb2250-slinky-pure-nickel-power-11-48-749699122500
-ernie-ball-eb2251-regular-slinky-pure-nickel-10-46-749699122517
+ernie-ball-eb2251-slinky-p-nickel-regular-10-46-aelectrica
 ernie-ball-eb2251-slinky-rock-n-roll-regular-10-46-74969912251
 ernie-ball-eb2252-slinky-rock-n-roll-hybrid-009-046-749699122524
 ernie-ball-eb2253-slinky-rock-n-roll-super-009-042-74969912253
@@ -1700,7 +1701,7 @@ ernie-ball-eb2838-cuerdas-bajo-6-32-130-749699128380
 ernie-ball-eb2843-slinky-stainless-steel-45-105-749699128434
 ernie-ball-eb2844-slinky-stainless-steel-super-45-100-749699128441
 ernie-ball-eb2850-juegos-cuerdas-bajo-45-105-escala-corta-749699128502
-ernie-ball-eb2852-slinky-short-scale-regular-45-105-749699128526
+ernie-ball-eb2852-juegos-cuerdas-bajo-45-105-escala-corta-749699128526
 ernie-ball-eb2915-m-steel-10-52-749699129158
 ernie-ball-eb2920-m-steel-11-48-749699129202
 ernie-ball-eb2921-m-steel-10-46-749699129219
@@ -1798,7 +1799,6 @@ ernie-ball-juego-bajo-electrico-slinky-extra-40-95-749699128359
 ernie-ball-juego-bajo-electrico-slinky-regular-escala-media-45-105-749699108962
 ernie-ball-juego-bajo-electrico-slinky-short-scale-regular-40-100-749699128540
 ernie-ball-juego-cuerdas-guitarrar-electrica-slinky-entorcha-lue838html
-ernie-ball-pack-3-eb3221-super-slinky-10-46-749699132219
 ernie-ball-papa-het-s-hardwired-master-cores-11-50-749699129691
 ernie-ball-papa-het-s-signature-strings-ingsp43705
 ernie-ball-peg-winder-plus-plusp35006
@@ -1818,6 +1818,7 @@ ernie-ball-slinky-cobalt-super-45-100-cuerdas-bajo-749699127345
 ernie-ball-slinky-entorchada-9-52-cuerdas-749699126232
 ernie-ball-slinky-flatwound-short-scale-45-105-749699117063
 ernie-ball-slinky-mondo-cuerdas-10-5-52-749699105015
+ernie-ball-slinky-pure-nickel-11-48-cuerdas-749699122500
 ernie-ball-slinky-skinny-top-heavy-cuerdas-10-749699104001
 ernie-ball-slinky-zippy-cuerdas-para-7-36-749699101505
 ernie-ball-strap-blocks-4pcs-4pcsp37506
@@ -2673,7 +2674,6 @@ hannabach-815-ht-cuerdas-4250442803004
 hannabach-8151mt-1o-cuerda-suelta-4250442803516
 hannabach-cuerda-2-clasica-negra-tension-media-4250442803523
 hannabach-cuerda-2a-hannabach-negra-flamenco-8272-mt-4250442809525
-hannabach-cuerda-3-clasica-azul-tension-alta-4250442803035
 hannabach-cuerda-3-clasica-negra-tension-media-4250442803530
 hannabach-cuerda-4-amarilla-tension-super-baja-4250442804544
 hannabach-cuerda-4-clasica-azul-tension-alta-4250442803042
@@ -2932,8 +2932,8 @@ jim-dunlop-light-009-042-710137030657
 jim-dunlop-light-bronce-12-54-710137030770
 jim-dunlop-light-phosphor-bronce-12-54-710137030732
 jim-dunlop-lt-heavy-010-052-242234html
-jim-dunlop-lthb-009-046-642232html
-jim-dunlop-med-heavy-011-050-048614html
+jim-dunlop-lthb-009-046-710137030664
+jim-dunlop-med-heavy-011-050-710137030695
 jim-dunlop-med-lt-bronce-11-52-710137030787
 jim-dunlop-med-lt-phosphor-bronce-11-52-710137030749
 jim-dunlop-medium-010-046-642233html

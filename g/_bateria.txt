@@ -921,6 +921,7 @@ millenium-focus-22-drum-bundle-white-lewhitehtm
 millenium-focus-22-drum-set-black-etblackhtm
 millenium-focus-22-drum-set-red-msetredhtm
 millenium-focus-22-drum-set-white-etwhitehtm
+millenium-focus-junior-black-bundle-kbundlehtm
 millenium-focus-junior-drum-set-black-etblackhtm
 millenium-focus-junior-drum-set-red-msetredhtm
 millenium-focus-junior-red-bundle-dbundlehtm
@@ -931,6 +932,8 @@ millenium-hybrid-practice-drum-set-rl-umsetrlhtm
 millenium-md-100-mobile-drum-iledrumhtm
 millenium-mps-1000-d2-e-drum-set-nt-umsetnthtm
 millenium-mps-1000-d2-e-drum-set-pw-umsetpwhtm
+millenium-mps-1000-e-drum-complete-bundl-tebundlhtm
+millenium-mps-1000-e-drum-set-bundle-tbundlehtm
 millenium-mps-1000-e-drum-set-drumsethtm
 millenium-mps-1000-e-drum-set-nt-bundle-tbundlehtm
 millenium-mps-1000-e-drum-set-pw-bundle-wbundlehtm
@@ -946,6 +949,8 @@ millenium-mps-350-e-drum-bundle-mbundlehtm
 millenium-mps-350-e-drum-set-drumsethtm
 millenium-mps-450-e-drum-set-bundle-tbundlehtm
 millenium-mps-450-e-drum-set-drumsethtm
+millenium-mps-750x-e-drum-complete-bundl-tebundlhtm
+millenium-mps-750x-e-drum-mesh-se-bundle-ebundlehtm
 millenium-mps-750x-e-drum-mesh-set-meshsethtm
 millenium-mps-750x-pro-e-drum-mesh-set-meshsethtm
 millenium-mps-750x-pro-mesh-bundle-hbundlehtm
@@ -957,6 +962,8 @@ millenium-mx422-standard-set-bl-rdsetblhtm
 millenium-mx422-standard-set-rl-rdsetrlhtm
 millenium-rookie-e-drum-set-bundle-tbundlehtm
 millenium-rookie-e-drum-set-drumsethtm
+millenium-rookie-school-set-english-englishhtm
+millenium-rookie-school-set-german-tgermanhtm
 noble-cooley-cd-maple-cairo-blue-spkl-kit-spklkithtm
 noble-cooley-cd-maple-cool-mint-sparkle-kit-rklekithtm
 nuvo-zip-kit-essential-drum-kit-drumkithtm
@@ -1627,6 +1634,7 @@ tama-stagestar-22-5-pcs-kit-cds-skitcdshtm
 tama-stagestar-22-5-pcs-kit-cds-tcdsp33501
 tama-stagestar-22-5-pcs-kit-sem-skitsemhtm
 tama-stagestar-22-5-pcs-plus-bns-plusbnshtm
+tama-stagestar-22-5-pcs-plus-cds-pluscdshtm
 tama-stagestar-22-5-pcs-plus-sem-plussemhtm
 tama-stagestar-entry-drum-kits-st50h6-bns-fusion-20-black-night-sparkle-rklep41498
 tama-stagestar-entry-drum-kits-st50h6-sem-fusion-20-sea-blue-mist-mistp41500
