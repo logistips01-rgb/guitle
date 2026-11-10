@@ -1,56 +1,36 @@
 {
- "fecha": "2026-11-09",
+ "fecha": "2026-11-10",
  "pais": "fr",
  "items": [
   {
-   "slug": "eko-st-300-cream-8056734498370",
-   "name": "Eko ST 300 Cream",
-   "brand": "Eko",
-   "price": "169 €",
-   "store": "Woodbrass",
-   "kind": "electrica",
-   "img": "36143920bb06b6c7.webp",
-   "why": ""
-  },
-  {
-   "slug": "squier-sonictm-stratocaster-2ts-717669815653",
-   "name": "Squier Sonic™ Stratocaster 2TS",
+   "slug": "squier-classic-vibe-60s-stratocaster-sunburst-885978064212",
+   "name": "Squier Classic Vibe ‘60s Stratocaster sunburst",
    "brand": "Squier",
-   "price": "175 €",
+   "price": "429 €",
    "store": "Woodbrass",
    "kind": "electrica",
-   "img": "f69fea79ef4889f5.webp",
-   "why": ""
+   "img": "ad57d75c4428fcbc.webp",
+   "why": "40 € de moins que dans les autres magasins"
   },
   {
-   "slug": "yamaha-lh-pacifica-pa112jlbl-black-4957812688222",
-   "name": "Yamaha Lh Pacifica Pa112Jlbl Black",
-   "brand": "Yamaha",
-   "price": "219 €",
-   "store": "Woodbrass",
+   "slug": "prs-se-ce24-charcoal-burst-lbursthtml",
+   "name": "PRS SE CE24 Charcoal Burst",
+   "brand": "PRS",
+   "price": "689 €",
+   "store": "Music 3000",
    "kind": "electrica",
-   "img": "01d49400a0a41c2e.webp",
-   "why": ""
+   "img": "2420be97b6afb444.webp",
+   "why": "60 € de moins que dans les autres magasins"
   },
   {
-   "slug": "ibanez-grg121sp-bmc-blue-metal-chameleon-gio-4549763305626",
-   "name": "Ibanez GRG121SP-BMC Blue Metal Chameleon Gio",
-   "brand": "Ibanez",
-   "price": "262 €",
-   "store": "Woodbrass",
+   "slug": "cort-mbm1-noir-satine-manson-8809625365639",
+   "name": "Cort MBM1 Noir Satine Manson",
+   "brand": "Cort",
+   "price": "659 €",
+   "store": "Audio System",
    "kind": "electrica",
-   "img": "9f7b079b28a372fd.webp",
-   "why": ""
-  },
-  {
-   "slug": "gretsch-streamliner-cvt-lrl-jet-black-197955147925",
-   "name": "Gretsch Streamliner CVT LRL Jet Black",
-   "brand": "Gretsch",
-   "price": "279 €",
-   "store": "Woodbrass",
-   "kind": "electrica",
-   "img": "1f4b29b93342d9f8.webp",
-   "why": ""
+   "img": "c7d5c5d19e6865dc.webp",
+   "why": "57 € de moins que dans les autres magasins"
   }
  ]
 }

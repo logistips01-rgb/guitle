@@ -1,86 +1,36 @@
 {
- "fecha": "2026-11-09",
+ "fecha": "2026-11-10",
  "pais": "uk",
  "items": [
   {
-   "slug": "fender-player-ii-strat-hss-mn-blk-ssmnblkhtm",
-   "name": "Fender Player II Strat HSS MN BLK",
-   "brand": "Fender",
-   "price": "£635",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "f10023cb24bfb9df.webp",
-   "why": "£104 less than any other shop"
-  },
-  {
-   "slug": "squier-mini-jazzmaster-hh-mn-surf-green-885978378388",
-   "name": "Squier Mini Jazzmaster HH MN Surf Green",
-   "brand": "Squier",
-   "price": "£149",
-   "store": "Reidys",
-   "kind": "electrica",
-   "img": "452c7969180bca24.webp",
-   "why": "£20 less than any other shop"
-  },
-  {
-   "slug": "hagstrom-adina-dark-storm-rkstormhtm",
-   "name": "Hagstrom Adina Dark Storm",
-   "brand": "Hagstrom",
-   "price": "£565",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "74890f92f0ab8d7d.webp",
-   "why": "£63 less than any other shop"
-  },
-  {
-   "slug": "squier-sonic-strat-hss-black-ssblackhtm",
-   "name": "Squier Sonic Strat HSS Black",
-   "brand": "Squier",
-   "price": "£148",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "178dda50ae4750b1.webp",
-   "why": ""
-  },
-  {
-   "slug": "jackson-js-series-dinky-js12-amaranth-fingerboard-metallic-blue-electric-guitar-885978976782",
-   "name": "Jackson JS Series Dinky® JS12, Amaranth Fingerboard, Metallic Blue Electric Guitar",
+   "slug": "jackson-js-series-dinky-arch-top-js32-dkam-snow-white-maple-fingerboard-emaplefing",
+   "name": "Jackson JS Series Dinky Arch Top JS32 DKAM Snow White Maple Fingerboard",
    "brand": "Jackson",
-   "price": "£155",
-   "store": "Fair Deal Music",
-   "kind": "electrica",
-   "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/2910112527_gtr_frt_001_rr.png?v=1776957054",
-   "why": ""
-  },
-  {
-   "slug": "ibanez-grx70qa-transparent-blue-burst-4515110752399",
-   "name": "Ibanez GRX70QA Transparent Blue Burst",
-   "brand": "Ibanez",
-   "price": "£199",
+   "price": "£299",
    "store": "guitarguitar",
    "kind": "electrica",
-   "img": "6999ae69bd204f9f.webp",
-   "why": ""
+   "img": "dd1c2f2a7ad9fc27.webp",
+   "why": "£50 less than any other shop"
   },
   {
-   "slug": "ge40wnt-sg-type-electric-guitar-5036678153798",
-   "name": "Ge40Wnt SG Type Electric Guitar",
-   "brand": "Ge40Wnt",
-   "price": "£209",
-   "store": "Ness Music",
-   "kind": "electrica",
-   "img": "b33ae482987ea1f7.webp",
-   "why": ""
-  },
-  {
-   "slug": "esp-ltd-mt-130-red-t130redhtm",
-   "name": "ESP LTD MT-130 Red",
-   "brand": "LTD",
-   "price": "£245",
+   "slug": "yamaha-revstar-rss20-sonic-blue-nicbluehtm",
+   "name": "Yamaha Revstar RSS20 Sonic Blue",
+   "brand": "Yamaha",
+   "price": "£619",
    "store": "Thomann",
    "kind": "electrica",
-   "img": "5d40e5fe46f271de.webp",
-   "why": ""
+   "img": "ca05fd71a441ef26.webp",
+   "why": "£80 less than any other shop"
+  },
+  {
+   "slug": "squier-sonic-mustang-hh-lrl-blk-hlrlblkhtm",
+   "name": "Squier Sonic Mustang HH LRL BLK",
+   "brand": "Squier",
+   "price": "£152",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "8e22c6465a039fd8.webp",
+   "why": "£17 less than any other shop"
   }
  ]
 }

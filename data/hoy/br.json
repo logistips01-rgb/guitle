@@ -1,76 +1,36 @@
 {
- "fecha": "2026-11-09",
+ "fecha": "2026-11-10",
  "pais": "br",
  "items": [
   {
-   "slug": "yamaha-stratocaster-pacifica-pac012-branca-4957812667197",
-   "name": "Yamaha Stratocaster Pacifica PAC012 Branca",
-   "brand": "Yamaha",
-   "price": "R$ 1.480,50",
-   "store": "Destroyer",
-   "kind": "electrica",
-   "img": "5d7294902757a3b4.webp",
-   "why": "R$ 318,60 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "strinberg-sd301hcr-ks-galaxy-series-folk-de-aco-koa-fosco-c-efeitos-e-bag-7899854524090",
-   "name": "Strinberg SD301HCR KS Galaxy Series Folk de Aço Koa Fosco C/ Efeitos e Bag",
-   "brand": "Strinberg",
-   "price": "R$ 1.881,00",
-   "store": "Akustica Musical",
+   "slug": "giannini-gf1d-ceq-tdw-translucent-dark-wine-aco-7890443020092",
+   "name": "Giannini GF1D Ceq Tdw Translucent Dark Wine Aço",
+   "brand": "Giannini",
+   "price": "R$ 899,10",
+   "store": "Mundomax",
    "kind": "acustica",
-   "img": "a20f2f5e5e7612f5.webp",
-   "why": "R$ 318 a menos que em qualquer outra loja"
+   "img": "bba8fa0a8de5bdae.webp",
+   "why": "R$ 187,35 a menos que em qualquer outra loja"
   },
   {
-   "slug": "takamine-gd21ce-sm-satin-molasses-eletroacustico-aco-190262044642",
-   "name": "Takamine GD21CE SM Satin Molasses Eletroacustico Aço",
-   "brand": "Takamine",
-   "price": "R$ 3.591,00",
-   "store": "Akustica Musical",
-   "kind": "acustica",
-   "img": "260bb10b24edafa8.webp",
-   "why": "R$ 458,10 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "tagima-black-hss-tg510bk-7898651948351",
-   "name": "Tagima Black HSS TG510BK",
+   "slug": "tagima-nylon-cartagena-lpbs-latin-america-semi-flat-7898563976367",
+   "name": "Tagima Nylon Cartagena LPBS Latin America Semi Flat",
    "brand": "Tagima",
-   "price": "R$ 989,10",
-   "store": "Super Som",
-   "kind": "electrica",
-   "img": "077d745602d96766.webp",
-   "why": ""
-  },
-  {
-   "slug": "michael-stratocaster-michael-rocker-gms250-amber-7899091123452",
-   "name": "Michael Stratocaster Michael Rocker GMS250 Amber",
-   "brand": "Michael",
-   "price": "R$ 1.019,90",
-   "store": "Supersonora",
-   "kind": "electrica",
-   "img": "7b1ca293e0ec8eaa.webp",
-   "why": ""
-  },
-  {
-   "slug": "strinberg-sg-gss400-bk-passiva-preta-7899854500124",
-   "name": "Strinberg SG GSS400 BK Passiva Preta",
-   "brand": "Strinberg",
-   "price": "R$ 1.161,00",
+   "price": "R$ 927,00",
    "store": "Akustica Musical",
-   "kind": "electrica",
-   "img": "bc902245500b3847.webp",
-   "why": ""
+   "kind": "clasica",
+   "img": "2f10b8fb0bb77a84.webp",
+   "why": "R$ 152,10 a menos que em qualquer outra loja"
   },
   {
-   "slug": "squier-stratocaster-sonic-2-color-sunburst-0373152503-squier-by-fender-717669815653",
-   "name": "Squier Stratocaster Sonic 2-Color Sunburst 0373152503 - Squier By Fender",
-   "brand": "Squier",
-   "price": "R$ 1.977,08",
+   "slug": "strinberg-forest-fs-4d-tos-strinberg-strinbergp",
+   "name": "Strinberg Forest FS-4D TOS - Strinberg",
+   "brand": "Strinberg",
+   "price": "R$ 946,68",
    "store": "Ninja Som",
-   "kind": "electrica",
-   "img": "8cfc1c6a28a2462f.webp",
-   "why": ""
+   "kind": "acustica",
+   "img": "7854244956a345b1.webp",
+   "why": "R$ 153,32 a menos que em qualquer outra loja"
   }
  ]
 }

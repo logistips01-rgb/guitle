@@ -1,76 +1,16 @@
 {
- "fecha": "2026-11-09",
+ "fecha": "2026-11-10",
  "pais": "it",
  "items": [
   {
-   "slug": "fender-cd-60-v3-ds-dreadnought-wn-sunburst-885978158621",
-   "name": "Fender CD-60 V3 DS Dreadnought WN Sunburst",
-   "brand": "Fender",
-   "price": "150 €",
+   "slug": "yamaha-apx600-oriental-blue-burst-4957812623933",
+   "name": "Yamaha APX600 Oriental Blue Burst",
+   "brand": "Yamaha",
+   "price": "338 €",
    "store": "Woodbrass",
    "kind": "acustica",
-   "img": "0ff71258b8983072.webp",
-   "why": "8 € in meno che negli altri negozi"
-  },
-  {
-   "slug": "ibanez-grx70qa-trb-gio-atrbgiohtm",
-   "name": "Ibanez GRX70QA-TRB GIO",
-   "brand": "Ibanez",
-   "price": "225 €",
-   "store": "Woodbrass",
-   "kind": "electrica",
-   "img": "2a3260f8bdc0caf4.webp",
-   "why": "6 € in meno che negli altri negozi"
-  },
-  {
-   "slug": "fender-squier-mini-stratocaster-black-chitarra-elettrica-3-4-885978884629",
-   "name": "Fender Squier Mini Stratocaster Black Chitarra elettrica 3/4",
-   "brand": "Fender",
-   "price": "155 €",
-   "store": "Di Santo Musica",
-   "kind": "electrica",
-   "img": "aa8e2816c9facd3e.webp",
-   "why": ""
-  },
-  {
-   "slug": "mooer-msc10-pro-guitar-black-arblackhtm",
-   "name": "Mooer MSC10 Pro Guitar Black",
-   "brand": "Mooer",
-   "price": "171 €",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "e817fe087b44592a.webp",
-   "why": ""
-  },
-  {
-   "slug": "yamaha-pacifica-012-ii-dbm-dark-blue-metallic-chitarra-elettrica-blu-4957812667180",
-   "name": "Yamaha Pacifica 012 II DBM Dark Blue Metallic Chitarra elettrica blu",
-   "brand": "Yamaha",
-   "price": "199 €",
-   "store": "Di Santo Musica",
-   "kind": "electrica",
-   "img": "61ed080952fb9f32.webp",
-   "why": ""
-  },
-  {
-   "slug": "ibanez-grg131dx-bkf-31dxbkfhtm",
-   "name": "Ibanez GRG131DX-BKF",
-   "brand": "Ibanez",
-   "price": "210 €",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "133860a1ae4648e0.webp",
-   "why": ""
-  },
-  {
-   "slug": "squier-affinity-stratocaster-laurel-brown-sunburst-wnsunburst",
-   "name": "Squier Affinity Stratocaster Laurel Brown Sunburst",
-   "brand": "Squier",
-   "price": "249 €",
-   "store": "Di Santo Musica",
-   "kind": "electrica",
-   "img": "1ea2b722e85ff718.webp",
-   "why": ""
+   "img": "8d5b92f73caaa30b.webp",
+   "why": "1 € in meno che negli altri negozi"
   }
  ]
 }
