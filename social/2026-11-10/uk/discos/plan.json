@@ -1,0 +1,54 @@
+{
+ "tipo": "same",
+ "cab": "Same record, £23.01 cheaper",
+ "fmt": "vinyl",
+ "disco": {
+  "ean": "0199957791069",
+  "fmt": "vinilo",
+  "img": "https://cdn.shopify.com/s/files/1/1565/5653/files/a6b5cd3ef49b4486a046e3b0f35970e8.jpg?v=1791482375",
+  "items": [
+   {
+    "p": 56.99,
+    "s": "crash",
+    "st": true,
+    "u": "https://www.crashrecords.co.uk/products/stereophonics-tune-pre-order"
+   },
+   {
+    "p": 59.99,
+    "s": "ebay",
+    "st": true,
+    "u": "https://www.ebay.co.uk/itm/940011457667?hash=itemdadd0c8c83%3Ag%3AizQAAeSwl2RqzkO9&mkevt=1&mkcid=1&mkrid=710-53481-19255-0&campid=5339241544&customid=guitle-uk&toolid=10049"
+   },
+   {
+    "p": 62.99,
+    "s": "assai",
+    "st": true,
+    "u": "https://www.assai.co.uk/products/stereophonics-tune-vinyl-lp-due-out-20-11-26"
+   },
+   {
+    "p": 71.99,
+    "s": "recordstore",
+    "st": true,
+    "u": "https://www.recordstore.co.uk/products/tune-3lp-black-vinyl"
+   },
+   {
+    "p": 80.0,
+    "s": "sisterray",
+    "st": true,
+    "u": "https://www.sisterray.co.uk/products/tune"
+   }
+  ],
+  "name": "Stereophonics - Tune!",
+  "slug": "stereophonics-tune-vinyl-0199957791069",
+  "artist": "Stereophonics",
+  "title": "Tune!",
+  "lo": 56.99,
+  "hi": 80.0,
+  "ahorro": 23.01,
+  "tienda": "Crash Records",
+  "tiendas": 4,
+  "url": "https://guitle.com/uk/records/stereophonics-tune-vinyl-0199957791069.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-10"
+}
