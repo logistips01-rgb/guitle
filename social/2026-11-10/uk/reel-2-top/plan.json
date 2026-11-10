@@ -1,0 +1,246 @@
+{
+ "fecha": "10 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "top",
+  "title": "5 deals on basses",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "gould-jefferson-bass-natural-5036678132472",
+    "name": "Gould Jefferson Bass Natural",
+    "brand": "Gould",
+    "kind": "bajos",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/gb60nat_1.jpg?v=1782503883",
+    "th": "c28204f3308ce872.webp",
+    "price": 149.0,
+    "store": "Reidys",
+    "stores": 4,
+    "median": 179.0,
+    "max": 189.0,
+    "next": 169.0,
+    "rows": [
+     [
+      "Reidys",
+      149.0
+     ],
+     [
+      "The Music Bank",
+      169.0
+     ],
+     [
+      "Sutton Music",
+      179.0
+     ],
+     [
+      "Matchetts Music",
+      189.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "£20 less than anywhere else"
+   },
+   {
+    "slug": "cort-action-v-plus-electric-bass-5-string-in-black-8809383837997",
+    "name": "Cort Action V Plus Electric Bass 5 String in Black",
+    "brand": "Cort",
+    "kind": "bajos",
+    "img": "https://cdn.shopify.com/s/files/1/0550/7556/9815/products/actionv.jpg?v=1639150583",
+    "th": "e475db8ed164136b.webp",
+    "price": 239.0,
+    "store": "The Guitar Store",
+    "stores": 3,
+    "median": 289.0,
+    "max": 289.0,
+    "next": 289.0,
+    "rows": [
+     [
+      "The Guitar Store",
+      239.0
+     ],
+     [
+      "R Guitars",
+      289.0
+     ],
+     [
+      "guitarguitar",
+      289.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "£50 less than anywhere else"
+   },
+   {
+    "slug": "gretsch-streamliner-jet-club-single-cut-bass-guitar-in-vintage-white-ntagewhite",
+    "name": "Gretsch Streamliner Jet Club Single-Cut Bass Guitar in Vintage White",
+    "brand": "Gretsch",
+    "kind": "bajos",
+    "img": "https://guitarspedalsampsandstuff.co.uk/wp-content/uploads/2025/12/2814304505_gre_ins_frt_1_rr-hero__40648.1719589918.386.513.jpg",
+    "th": "1625ab900d6b6349.webp",
+    "price": 299.0,
+    "store": "Guitars Pedals Amps & Stuff",
+    "stores": 6,
+    "median": 359.0,
+    "max": 399.0,
+    "next": 349.0,
+    "rows": [
+     [
+      "Guitars Pedals Amps & Stuff",
+      299.0
+     ],
+     [
+      "Reidys",
+      349.0
+     ],
+     [
+      "Andertons",
+      349.0
+     ],
+     [
+      "Fair Deal Music",
+      359.0
+     ],
+     [
+      "The Guitar Store",
+      379.0
+     ],
+     [
+      "A Strings",
+      399.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "£50 less than anywhere else"
+   },
+   {
+    "slug": "squier-classic-vibe-60s-mustang-bass-surf-green-885978064809",
+    "name": "Squier Classic Vibe '60s Mustang Bass Surf Green",
+    "brand": "Squier",
+    "kind": "bajos",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/vcx778zk.png?v=1716383918",
+    "th": "89a231b2aad57f7a.webp",
+    "price": 329.0,
+    "store": "Reidys",
+    "stores": 6,
+    "median": 419.0,
+    "max": 459.0,
+    "next": 409.0,
+    "rows": [
+     [
+      "Reidys",
+      329.0
+     ],
+     [
+      "guitarguitar",
+      409.0
+     ],
+     [
+      "Absolute Music",
+      419.0
+     ],
+     [
+      "Music Street",
+      419.0
+     ],
+     [
+      "Project Music",
+      439.0
+     ],
+     [
+      "A Strings",
+      459.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "£80 less than anywhere else"
+   },
+   {
+    "slug": "fender-standard-series-jazz-bass-guitar-in-aqua-marine-metallic-nemetallic",
+    "name": "Fender Standard Series Jazz Bass Guitar in Aqua Marine Metallic",
+    "brand": "Fender",
+    "kind": "bajos",
+    "img": "https://cdn11.bigcommerce.com/s-4hc0jwsnnq/images/stencil/1280x1280/products/35912/266582/0266820560%2520%284%29__83211.1767932502.jpg?c=1",
+    "th": "384c142137a213db.webp",
+    "price": 439.0,
+    "store": "Andertons",
+    "stores": 6,
+    "median": 549.0,
+    "max": 549.0,
+    "next": 539.0,
+    "rows": [
+     [
+      "Andertons",
+      439.0
+     ],
+     [
+      "Fair Deal Music",
+      539.0
+     ],
+     [
+      "Peach Guitars",
+      542.0
+     ],
+     [
+      "Music Street",
+      549.0
+     ],
+     [
+      "A Strings",
+      549.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "£100 less than anywhere else"
+   }
+  ],
+  "rama": "bajos"
+ }
+}
