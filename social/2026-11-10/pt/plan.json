@@ -1,0 +1,101 @@
+{
+ "date": "2026-11-10",
+ "fecha": "10 de novembro",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "prs-se-dgt-standard-moons-vc-825362244240",
+   "name": "PRS SE DGT Standard Moons VC",
+   "brand": "PRS",
+   "kind": "electrica",
+   "img": "https://detalhes.egitana.pt/prs-se-dgt-standard-moons-vc_68f90454dc651.jpg",
+   "th": "69ac24be09606ff3.webp",
+   "price": 718.0,
+   "store": "Egitana",
+   "stores": 3,
+   "median": 796.23,
+   "max": 833.0,
+   "next": 759.46,
+   "rows": [
+    [
+     "Egitana",
+     718.0
+    ],
+    [
+     "Guitar Custom",
+     759.46
+    ],
+    [
+     "Thomann",
+     833.0
+    ]
+   ],
+   "pvp": null,
+   "why": "41,46 € a menos do que em qualquer outra loja",
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Promoção do dia: PRS SE DGT Standard Moons VC\n💶 718 € na Egitana, comparada em 3 lojas.\n📉 41,46 € a menos do que em qualquer outra loja.\n\n🔎 Compara o preço em guitle.com/pt (todas as promoções de hoje no link da bio 👆).\nPreço de 10 de novembro; pode mudar.\n\n#guitarra #guitarrista #promoção #portugal #guitarraeletrica #prs"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-as53-tf-zas53tfhtm",
+   "name": "Ibanez AS53-TF",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/331815.jpg",
+   "th": "d80af3fa03be8f68.webp",
+   "price": 299.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 308.0,
+   "max": 311.0,
+   "next": 305.0,
+   "rows": [
+    [
+     "Thomann",
+     299.0
+    ],
+    [
+     "Egitana",
+     305.0
+    ],
+    [
+     "Musifex",
+     311.0
+    ]
+   ],
+   "pvp": null,
+   "why": "6 € a menos do que em qualquer outra loja",
+   "photo": "chollo-2.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}
