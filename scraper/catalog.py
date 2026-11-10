@@ -233,9 +233,12 @@ def _mat_vat(data, text):
     """MAT (PrestaShop) da el precio sin IVA a algunas visitas de fuera de la UE (el lector corre en EE. UU.): si el
     precio leído coincide con su "price_tax_exc", se le suma el IVA español (21 %)."""
     m = re.search(r"price_tax_exc&quot;:([0-9.]+)", text) or re.search(r'"price_tax_exc":([0-9.]+)', text)
-    # Partitura guarda el precio con IVA también en "price_tax_exc" (los dos iguales) y la ficha dice "Impuestos
-    # incluidos": sumarle el 21 % lo dejaba un 21 % más caro (8/11/2026). Solo se suma si la ficha no lo dice.
-    if re.search(r"(?i)impuestos incluidos|iva incluido", text):
+    # Partitura guarda el precio con IVA también en "price_tax_exc" (los dos iguales) y lo dice en la etiqueta que va
+    # junto al precio ("Impuestos incluidos"): sumarle el 21 % lo dejaba un 21 % más caro (8/11/2026). Solo cuenta esa
+    # etiqueta: MAT pone "Impuestos incluidos" en otras partes de la página (el carrito) aunque dé el precio sin IVA, y
+    # mirar toda la página dejó sus precios un 21 % más baratos (10/11/2026).
+    label = re.search(r'tax-shipping-delivery-label[^>]*>\s*([^<]{0,80})', text)
+    if label and re.search(r"(?i)impuestos incluidos|iva incluido", label.group(1)):
         return data
     if m and data.get("price") and abs(float(m.group(1)) - data["price"]) < 0.02:
         data["price"] = round(float(m.group(1)) * 1.21, 2)
@@ -5691,7 +5694,17 @@ def merge(batches):
             # Lo que ya no está en el sitemap se olvida pasado un tiempo (producto retirado).
             alive = set(batch["sitemap"])
             cutoff = (datetime.now(timezone.utc) - timedelta(days=DROP_AFTER_DAYS)).isoformat()
-            for url in [u for u, o in offers.items() if o["store"] == batch["store"] and u not in alive]:
+            mine = [u for u, o in offers.items() if o["store"] == batch["store"]]
+            # Retirado de la tienda (ya no está en su sitemap): ya no se relee, así que tampoco se enseña su último
+            # precio (build) — dos Fujigen de Musical San Francisco seguían "en stock" 5 días después (10/11/2026).
+            # Solo con un sitemap entero: si trae menos de la mitad de lo que había, es que se ha leído a medias.
+            whole = len(alive & set(mine)) >= 0.5 * len(mine)
+            for url in mine:
+                if url in alive:
+                    offers[url].pop("retirado", None)
+                elif whole:
+                    offers[url].setdefault("retirado", now_iso()[:10])
+            for url in [u for u in mine if u not in alive]:
                 if offers[url]["checked"] < cutoff:
                     del offers[url]
     write(DIR / "offers.json", offers)
@@ -5907,6 +5920,7 @@ def build(offers=None, history=None):
     stale_cut = (datetime.now(timezone.utc) - timedelta(days=STALE_DAYS)).isoformat()
     for kind, fname in CATALOG["files"].items():
         mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind and not o.get("down_since")
+                and not o.get("retirado")  # ya no está en el sitemap de la tienda (merge)
                 and o.get("checked", "") >= stale_cut  # precio sin confirmar en STALE_DAYS días: no se enseña
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra (baterías: sus accesorios).
