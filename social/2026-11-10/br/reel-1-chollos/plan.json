@@ -1,0 +1,136 @@
+{
+ "fecha": "10 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "tagima-t640-super-owh-lf-wh-branca-vintage-classic-series-hss-7898563973748",
+    "name": "Tagima T640 Super OWH LF/WH Branca Vintage Classic Series HSS",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-t640-super-owh-lf-wh-branca-vintage-classic-series-hss-1133158/1353805.jpg?w=1000&h=1000&v=202508062332&qs=ignore",
+    "th": "197a53616c103daf.webp",
+    "price": 1683.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 1961.55,
+    "max": 2061.0,
+    "next": 1862.1,
+    "rows": [
+     [
+      "Akustica Musical",
+      1683.0
+     ],
+     [
+      "Mundomax",
+      1862.1
+     ],
+     [
+      "Destroyer",
+      2061.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 179,10 a menos que em qualquer outra loja",
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "strinberg-stratocaster-10884-sts-100-mws-strinberg-7899854510284",
+    "name": "Strinberg Stratocaster 10884 STS-100 MWS - Strinberg",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/173416/guitarrra-sts-100-mwr-strinberg.jpg?v=637430316182500000",
+    "th": "b3000cc96c860a91.webp",
+    "price": 826.16,
+    "store": "Ninja Som",
+    "stores": 3,
+    "median": 903.405,
+    "max": 906.9,
+    "next": 899.91,
+    "rows": [
+     [
+      "Ninja Som",
+      826.16
+     ],
+     [
+      "Luggi",
+      899.91
+     ],
+     [
+      "Conca Music",
+      906.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 73,75 a menos que em qualquer outra loja",
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "fender-cc-140sce-concert-walnut-sunburst-0970253332-fender-885978875450",
+    "name": "Fender CC-140SCE Concert Walnut Sunburst 0970253332 - Fender",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/215960/Violao-Acustico-CC-140SCE-Concert-Walnut-Sunburst-0970253332---Fender.png?v=639044446253500000",
+    "th": "720c09bf5c85d56c.webp",
+    "price": 3706.68,
+    "store": "Ninja Som",
+    "stores": 3,
+    "median": 3990.0,
+    "max": 3990.0,
+    "next": 3990.0,
+    "rows": [
+     [
+      "Ninja Som",
+      3706.68
+     ],
+     [
+      "Cheiro de Música",
+      3990.0
+     ],
+     [
+      "Carneiro Music",
+      3990.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 283,32 a menos que em qualquer outra loja",
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}
