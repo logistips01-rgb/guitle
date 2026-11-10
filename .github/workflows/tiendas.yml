@@ -15,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: pip install -q -r requirements.txt
@@ -33,7 +33,7 @@ jobs:
           echo > t3.md
           cat t1.md t2.md t3.md > informe-tiendas.md
           cat informe-tiendas.md >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: informe-tiendas
           path: informe-tiendas.md

@@ -1,0 +1,7 @@
+# Miniaturas que no enseñan la guitarra (foto de la tienda: un concierto, una pared…): fuera de guitle.com/coleccionista/
+# (scraper/coleccion.py). A diferencia de data/fotos-malas.txt, rehacerlas no sirve: la foto de la tienda es así.
+c2416e5ed0006bd7.webp
+0af34eaa14846bee.webp
+174e7a7f80d7205c.webp
+65f758179d318481.webp
+ca6716d680a0971e.webp

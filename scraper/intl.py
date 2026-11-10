@@ -1180,8 +1180,8 @@ def _product(code, kind, product, names, alternates):
     history = "/" + _history_path(code, kind)
     typ = product.get("type")
     typ = t["js"]["types"].get(typ, typ) if typ and typ != "Otras" else ""
-    amazon = (f'\n    <p class="muted small amazon">{t["amazon"].format(u=esc(s["amazon"].format(q=quote_plus(name))))}</p>'
-              if s.get("amazon") and t.get("amazon") else "")
+    from . import mercados  # Amazon y eBay, bien visibles: ahí cobra guitle
+    amazon = "\n    " + mercados.buttons(code, s["t"], name, s.get("amazon"))
     alt = _hreflang(alternates.get(product.get("ean"), {})) if product.get("ean") else ""
     head = _head(code, f"{title} · guitle", desc, url, f"""{alt + chr(10) if alt else ''}<meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc)}">

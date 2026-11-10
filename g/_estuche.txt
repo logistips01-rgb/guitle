@@ -5,7 +5,6 @@ admira-adm5-para-8436032358185
 admira-cadm5-para-guitarra-cadete-8436032358758
 admira-fgcadm10-funda-10-mm-cadm10html
 admira-fgcadm15-funda-15-mm-cadm15html
-admira-fgcadm30-estojo-para-30mm-30mmp39040
 admira-fgcadm30-funda-30-mm-cadm30html
 admira-fgcadm5-rraclasica
 aguilar-hdb210-funda-para-db210-824599400016
@@ -78,7 +77,7 @@ armour-arm350c-funda-de-5mm-acolchado-ashton-armour-para-9356790024704
 armour-arm350c75-para-guitarra-cadete-9356790024711
 armour-arm350g-funda-de-5mm-acolchado-ashton-armour-para-9356790025473
 armour-arm350jnr-funda-3-4-9356790024735
-armour-arm350w-funda-acustica-9356790024698
+armour-arm350w-funda-de-5mm-acolchado-ashton-armour-para-9356790024698
 armour-arm650b-funda-de-10mm-acolchado-ashton-armour-para-bajo-electrico-9356790024766
 armour-arm650c-10-mm-9356790024780
 armour-arm650g-funda-electrica-9356790024759
@@ -532,7 +531,6 @@ fender-expositor-de-pared-tweed-885978073412
 fender-fa405-dreadnought-gig-bag-black-885978822157
 fender-fa610-dreadnought-black-885978806232
 fender-fab405-funda-bajo-acustico-escala-larga-885978889662
-fender-fab405-long-scale-acoustic-bass-gig-bag-gbagp41069
 fender-fac610-885978984787
 fender-fas405-black-885978699056
 fender-fb1225-black-885978806324
@@ -1041,11 +1039,9 @@ mammoth-mam-15g-9357909000145
 mammoth-mam-15w-raacustica
 mammoth-mam-7b-9357909000190
 mammoth-mam-7c-9357909000213
-mammoth-mam-7c-grey-9357909001685
 mammoth-mam-7c75-9357909000220
 mammoth-mam-7g-9357909000183
 mammoth-mam-7w-9357909000206
-mammoth-mam07cgrey-funda-premium-7mm-clasica-c7greyhtml
 mammoth-mam10b-funda-bajo-10mm-000251html
 mammoth-mam10c-grey-funda-clasica-10mm-001609html
 mammoth-mam10cgrey-funda-premium-10mm-clasica-9357909001609
@@ -1062,6 +1058,7 @@ mammoth-mam15w-funda-acustica-15mm-9357909000169
 mammoth-mam7b-funda-bajo-7mm-000190html
 mammoth-mam7c-funda-clasica-7mm-000213html
 mammoth-mam7c-funda-clasica-cadete-7mm-000220html
+mammoth-mam7c-grey-funda-clasica-7mm-9357909001685
 mammoth-mam7g-funda-electrica-7mm-000183html
 mammoth-mam7w-funda-acustica-7mm-000206html
 mammoth-royal-b-9357909001586

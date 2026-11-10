@@ -1404,7 +1404,7 @@ sterling-ray-pete-wentz-signature-h-rm-rm-negro-810002952463
 sterling-ray25-classic-olympic-white-810002952760
 sterling-ray35-bk-810002950360
 sterling-ray35-vintage-sunburst-810002952654
-sterling-ss4-fiesta-red-952944html
+sterling-ss4-fiesta-red-810002952944
 sterling-sting-ray-34-negro-bajo-electrico-34bkr2html
 sterling-sting-ray-35-5-cuerdas-psk-bajo-electrico-810002952647
 sterling-stingray-ray-ss4-short-scale-verde-810002954399
@@ -1416,7 +1416,7 @@ sterling-stingray-ray34-poplar-burl-hh-rm-m-amber-810002952616
 sterling-stingray-ray34-poplar-burl-hh-rm-r-trans-black-satin-810002951725
 sterling-stingray-ray34-rm-r-negro-810002952586
 sterling-stingray-ray4-short-scale-m-m-black-810002951961
-sterling-stingray-ray4-short-scale-m-m-fiesta-red-810002952944
+sterling-stingray-ray4-short-scale-m-m-fiesta-red-dbajocorta
 sterling-stingray-ray4-short-scale-m-m-toluca-lake-blue-810002952951
 sterling-stingray-ray4-zurdos-m-m-handed-chopper-blue-810002952883
 sterling-stingray-ray5-hh-m-r-olive-810002950926

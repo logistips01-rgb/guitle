@@ -233,9 +233,12 @@ def _mat_vat(data, text):
     """MAT (PrestaShop) da el precio sin IVA a algunas visitas de fuera de la UE (el lector corre en EE. UU.): si el
     precio leído coincide con su "price_tax_exc", se le suma el IVA español (21 %)."""
     m = re.search(r"price_tax_exc&quot;:([0-9.]+)", text) or re.search(r'"price_tax_exc":([0-9.]+)', text)
-    # Partitura guarda el precio con IVA también en "price_tax_exc" (los dos iguales) y la ficha dice "Impuestos
-    # incluidos": sumarle el 21 % lo dejaba un 21 % más caro (8/11/2026). Solo se suma si la ficha no lo dice.
-    if re.search(r"(?i)impuestos incluidos|iva incluido", text):
+    # Partitura guarda el precio con IVA también en "price_tax_exc" (los dos iguales) y lo dice en la etiqueta que va
+    # junto al precio ("Impuestos incluidos"): sumarle el 21 % lo dejaba un 21 % más caro (8/11/2026). Solo cuenta esa
+    # etiqueta: MAT pone "Impuestos incluidos" en otras partes de la página (el carrito) aunque dé el precio sin IVA, y
+    # mirar toda la página dejó sus precios un 21 % más baratos (10/11/2026).
+    label = re.search(r'tax-shipping-delivery-label[^>]*>\s*([^<]{0,80})', text)
+    if label and re.search(r"(?i)impuestos incluidos|iva incluido", label.group(1)):
         return data
     if m and data.get("price") and abs(float(m.group(1)) - data["price"]) < 0.02:
         data["price"] = round(float(m.group(1)) * 1.21, 2)
@@ -1100,6 +1103,8 @@ FR_SOURCES = {
     "woodbrass": {"name": "Woodbrass", "kind": fr_kind, "fix": _woodbrass_fix,
                   "discover": lambda f: _discover_shopify(f, "https://woodbrass.com",
                                                           ("guitares-electriques", "guitares-folk", "guitares-classiques")),
+                  "listing": lambda f: _shopify_collections_listing(
+                      "https://woodbrass.com", ("guitares-electriques", "guitares-folk", "guitares-classiques"))(f),
                   "pick": lambda u: not NOT_PRODUCT.search(u)},
     "starsmusic": {"name": "Stars Music", "sitemap": "https://www.stars-music.fr/sitemap_sm/sitemap_prod_fr.xml.gz",
                    "kind": fr_kind,
@@ -1453,7 +1458,9 @@ WOODBRASS_ALL = {"guitares-electriques": "electrica", "guitares-folk": "acustica
 
 def _woodbrass(base, collections=WOODBRASS_ALL):
     return {"name": "Woodbrass", "kind_url": lambda c, u, n: _shop_kind(u, n), "fix": _woodbrass_fix,
-            "discover": lambda f: _discover_shopify(f, base, collections), "pick": lambda u: not NOT_PRODUCT.search(u)}
+            "discover": lambda f: _discover_shopify(f, base, collections), "pick": lambda u: not NOT_PRODUCT.search(u),
+            # precios de hoy de las mismas colecciones (en Bélgica, Suiza y Austria el 58-66 % pasaba de 2 días)
+            "listing": lambda f: _shopify_collections_listing(base, collections)(f)}
 
 
 SOURCES["woodbrass"] = _woodbrass("https://woodbrass.es", {"guitares-electriques": "electrica"})
@@ -1647,6 +1654,26 @@ def _kytary_listing(base, cats):
                     break
                 out.update(found)
         return out
+    return run
+
+
+# Equipo de Kytary (amplis, pedales, bajos, teclados, baterías, micros…): sus listados por las secciones del menú. Sin
+# esto, solo se leían las fichas una a una y el 73-76 % de sus precios de equipo pasaba de 2 días (10/11/2026).
+KYTARY_EQ_SECTIONS = {"pl": ("gitary", "basy", "keyboardy", "perkusje", "studio"),
+                      "cz": ("kytary", "baskytary", "klavesy", "bici", "studio"),
+                      "sk": ("gitary", "basgitary", "klavesy", "bicie", "studio"),
+                      "hu": ("gitarok", "basszusgitarok", "billentyuk", "utos", "studio")}
+
+
+def _kytary_eq_listing(base, sections):
+    """Como _kytary_listing, con las categorías de esas secciones sacadas del menú de la portada de la tienda."""
+    def run(fetcher):
+        resp = fetcher.get(base + "/")
+        if resp.status_code != 200:
+            return {}
+        cats = sorted({h for h, s in re.findall(r'href="(/([a-z0-9-]+)/[a-z0-9-]+/)"', resp.text) if s in sections})
+        print(f"[kytary] {base}: {len(cats)} categorías de equipo", flush=True)
+        return _kytary_listing(base, cats)(fetcher)
     return run
 
 
@@ -3624,6 +3651,98 @@ def _shopify_listing(base, max_pages=200):
     return run
 
 
+def _shopify_collections_listing(base, collections, max_pages=40):
+    """Como _shopify_listing, solo con unas colecciones (las mismas de "discover"; Woodbrass): /products/<handle>, con el
+    precio en la moneda de esa web (woodbrass.ch, en francos: comprobado ficha a ficha el 10/11/2026)."""
+    def run(fetcher):
+        out = {}
+        for col in collections:
+            for pg in range(1, max_pages + 1):
+                url = f"{base}/collections/{col}/products.json?limit=250&page={pg}"
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                prods = (resp.json().get("products") or []) if resp.status_code == 200 else []
+                if not prods:
+                    break
+                for p in prods:
+                    prices = [float(v["price"]) for v in p.get("variants", []) if v.get("price")]
+                    if prices and min(prices) > 0:
+                        out[f"{base}/products/{p['handle']}"] = (round(min(prices), 2),
+                                                                 any(v.get("available") for v in p.get("variants", [])))
+        return out
+    return run
+
+
+def _stars_listing(base, sections, max_pages=400):
+    """{ficha: (precio, None)} de los listados de Stars Music (30 por página, "/<sección>/<n>/"): cada producto es un
+    <a class="pdtHolder" data-price="…" href="/…_<id>.html"> con el precio de la ficha (con IVA)."""
+    def run(fetcher):
+        out = {}
+        for sec in sections:
+            for pg in range(1, max_pages + 1):
+                url = f"{base}/{sec}/" + (f"{pg}/" if pg > 1 else "")
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                if resp.status_code != 200:
+                    break
+                found = {}
+                for tag in re.findall(r'<a\b[^>]*class="pdtHolder"[^>]*>', resp.text):
+                    p = re.search(r'data-price="([\d.]+)"', tag)
+                    h = re.search(r'href="(/[^"]+_\d+\.html)"', tag)
+                    if p and h and float(p.group(1)) > 0:
+                        found[base + h.group(1)] = (round(float(p.group(1)), 2), None)
+                if not set(found) - set(out):
+                    break
+                out.update(found)
+        return out
+    return run
+
+
+def _nop_price(text):
+    """"kr 1&#xA0;999,00" → 1999.0 (nopCommerce, Noruega)."""
+    digits = re.sub(r"[^\d,]", "", html.unescape(text)).replace(",", ".")
+    try:
+        return round(float(digits), 2) if digits else None
+    except ValueError:
+        return None
+
+
+def _nop_listing(base, roots, max_cats=600, max_pages=200):
+    """{ficha: (precio, None)} de una tienda nopCommerce (4Sound): las categorías del menú y sus subcategorías (los
+    productos solo salen en las de abajo del todo), 21 por página ("?pagenumber=n")."""
+    def run(fetcher):
+        out, seen, queue = {}, set(), list(roots)
+        while queue and len(seen) < max_cats:
+            cat = queue.pop(0)
+            if cat in seen:
+                continue
+            seen.add(cat)
+            for pg in range(1, max_pages + 1):
+                url = f"{base}{cat}?pagesize=21" + (f"&pagenumber={pg}" if pg > 1 else "")
+                if not fetcher.allowed(url)[0]:
+                    break
+                resp = fetcher.get(url)
+                if resp.status_code != 200:
+                    break
+                if pg == 1:
+                    queue += [s for s in re.findall(r'class="sub-category-item"><h2 class="title"><a href="(/[^"]+)"',
+                                                    resp.text) if s not in seen]
+                found = {}
+                for box in resp.text.split('class="product-item"')[1:]:
+                    h = re.search(r'class="product-title"><a href="(/[^"]+)"', box)
+                    p = re.search(r'class="price actual-price">([^<]+)<', box)
+                    v = _nop_price(p.group(1)) if p else None
+                    if h and v:
+                        found[base + h.group(1)] = (v, None)
+                if not set(found) - set(out):
+                    break
+                out.update(found)
+        return out
+    return run
+
+
 def _en_store(name, sitemap, cur, shopify=False, path=None, sub=None, json_feed=True, **extra):
     src = {"name": name, "sitemap": sitemap, "kind_url": en_kind, "pick": _pick_en(shopify, path),
            # dónde están las fichas, para el equipo (equipo_sources)
@@ -5041,6 +5160,26 @@ CATALOGS["romas"]["sources"]["soundcreation"] = _soundcreation_eq("https://www.s
 CATALOGS["bgmas"]["sources"]["soundcreation"] = _soundcreation_eq("https://www.soundcreation.eu/sitemap-bg-index.xml",
                                                                   "sitemap-bg-pagini-produs", "EUR", "en")
 CATALOGS["grmas"]["sources"]["musicland"] = GR_MUSICLAND_EQ
+# Precios de hoy desde los listados (el 50-87 % de sus precios pasaba de 2 días, 10/11/2026): Stars Music en Bélgica
+# (guitarras; el equipo, con sus secciones), 4Sound en Noruega y Your Music Online (Shopify, todo el catálogo) en Italia.
+STARS_EQ_SECTIONS = ("guitares-basses", "ampli-effets", "batteries-percus", "cables-accessoires", "home-studio", "piano",
+                     "synthe-sampleur", "sono", "micro-systeme-sans-fil", "casque")
+_STARS_BE = "https://www.stars-music.be"
+CATALOGS["be"]["sources"]["starsmusic"]["listing"] = _stars_listing(_STARS_BE, ("guitares-basses",))
+CATALOGS["bemas"]["sources"]["starsmusic"]["listing"] = _stars_listing(_STARS_BE, STARS_EQ_SECTIONS)
+FOURSOUND_ROOTS = ("/gitar-og-bass", "/effekter-2", "/forsterkere-4", "/bass-2", "/bagger-kofferter", "/tangenter-2",
+                   "/digitalpiano", "/slagverk-og-perkusjon", "/akustiske-trommer", "/digitale-trommer", "/mikrofoner",
+                   "/stativer-2", "/hodetelefoner-og-forsterkere", "/gitarstrenger-2", "/basstrenger-2", "/instrumentkabler",
+                   "/lyd-og-lys", "/pa", "/studiomonitorer-og-kontrollere", "/usb-og-midi-kontrollere", "/opptakere",
+                   "/miksere", "/andre-instrumenter")
+CATALOGS["no"]["sources"]["4sound"]["listing"] = _nop_listing("https://www.4sound.no", ("/gitar-og-bass",))
+CATALOGS["nomas"]["sources"]["4sound"]["listing"] = _nop_listing("https://www.4sound.no", FOURSOUND_ROOTS)
+for _cat in ("it", "itmas"):
+    CATALOGS[_cat]["sources"]["yourmusiconline"]["listing"] = _shopify_listing("https://yourmusiconline.it")
+for _code, _secs in KYTARY_EQ_SECTIONS.items():  # equipo de Kytary: precios de hoy desde sus listados
+    _src = CATALOGS.get(_code + "mas", {}).get("sources", {}).get("kytary")
+    if _src is not None:
+        _src["listing"] = _kytary_eq_listing(f"https://kytary.{_code}", _secs)
 for _cat in ("skmas", "romas", "bgmas", "grmas"):
     for _src in CATALOGS[_cat]["sources"].values():
         if "eq_lang" in _src:
@@ -5691,7 +5830,17 @@ def merge(batches):
             # Lo que ya no está en el sitemap se olvida pasado un tiempo (producto retirado).
             alive = set(batch["sitemap"])
             cutoff = (datetime.now(timezone.utc) - timedelta(days=DROP_AFTER_DAYS)).isoformat()
-            for url in [u for u, o in offers.items() if o["store"] == batch["store"] and u not in alive]:
+            mine = [u for u, o in offers.items() if o["store"] == batch["store"]]
+            # Retirado de la tienda (ya no está en su sitemap): ya no se relee, así que tampoco se enseña su último
+            # precio (build) — dos Fujigen de Musical San Francisco seguían "en stock" 5 días después (10/11/2026).
+            # Solo con un sitemap entero: si trae menos de la mitad de lo que había, es que se ha leído a medias.
+            whole = len(alive & set(mine)) >= 0.5 * len(mine)
+            for url in mine:
+                if url in alive:
+                    offers[url].pop("retirado", None)
+                elif whole:
+                    offers[url].setdefault("retirado", now_iso()[:10])
+            for url in [u for u in mine if u not in alive]:
                 if offers[url]["checked"] < cutoff:
                     del offers[url]
     write(DIR / "offers.json", offers)
@@ -5907,6 +6056,7 @@ def build(offers=None, history=None):
     stale_cut = (datetime.now(timezone.utc) - timedelta(days=STALE_DAYS)).isoformat()
     for kind, fname in CATALOG["files"].items():
         mine = [o for o in offers.values() if route(o, CATALOG["files"]) == kind and not o.get("down_since")
+                and not o.get("retirado")  # ya no está en el sitemap de la tienda (merge)
                 and o.get("checked", "") >= stale_cut  # precio sin confirmar en STALE_DAYS días: no se enseña
                 and (o.get("ean") or o["url"] not in followed)
                 # Teclados y pedales: un accesorio leído antes de afinar el filtro tampoco entra (baterías: sus accesorios).

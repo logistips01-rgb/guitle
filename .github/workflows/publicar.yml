@@ -23,7 +23,7 @@ jobs:
     outputs:
       paises: ${{ steps.lista.outputs.paises }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           sparse-checkout: .github
       - id: lista
@@ -44,12 +44,13 @@ jobs:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+      SERVIDOR_SSH_KEY: ${{ secrets.SERVIDOR_SSH_KEY }}  # lo publicado, también al servidor propio (.github/servidor-envio.sh)
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: claude/friendly-fermat-yycain
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip

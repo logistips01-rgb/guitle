@@ -39,6 +39,7 @@ brand/__pycache__/
 # Discos de España (guitle.com/discos/) y sus cajas: los sube la lectura de discos (musica.yml)
 /discos/
 /navidad/
+/coleccionista/
 /_r/
 
 # Música libre de derechos de los Reels (scraper/musica_libre.py, rama de redes): se descarga, no va a git

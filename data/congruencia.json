@@ -1,9 +1,9 @@
 {
- "actualizado": "2026-11-09T20:05",
+ "actualizado": "2026-11-09T23:11",
  "total": 276,
  "ok": 249,
- "distinto": 6,
- "sin_comprobar": 21,
+ "distinto": 7,
+ "sin_comprobar": 20,
  "distintos": [
   {
    "pais": "br",
@@ -36,6 +36,25 @@
    "estado": "distinto",
    "visibles": [
     "R$ 379"
+   ]
+  },
+  {
+   "pais": "br",
+   "tienda": "fenderbr",
+   "url": "https://www.fender.com.br/produto/10173355/guitarras/guitarra-fender-custom-deluxe-roasted-telecaster-ltd-ed-923-1017-038-red-sparkle",
+   "precio": 43590,
+   "moneda": "BRL",
+   "leido": "2026-11-09T00:09",
+   "nombre": "Fender Custom Deluxe Roasted Telecaster LTD ED RED Sparkle",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "R$ 24,3",
+    "$ 60",
+    "R$ 24",
+    "R$ 157",
+    "R$ 300",
+    "R$ 79"
    ]
   },
   {
@@ -110,14 +129,13 @@
     "2499 kr",
     "2499 kr",
     "2499 kr",
-    "3 322 kr",
+    "3 320 kr",
     "3 951 kr"
    ]
   }
  ],
  "sin_comprobar_tiendas": [
   "es·alteisa",
-  "es·mat",
   "at·danys",
   "br·multisom",
   "br·supersom",
@@ -125,12 +143,12 @@
   "dk·gear4music",
   "fr·azemamusique",
   "fr·cultura",
+  "fr·musicandco",
   "ie·musicoutlet",
   "ie·soundshop",
   "it·emusicstore",
   "it·fireflyaudio",
   "nl·gear4music",
-  "nl·vanderzwaag",
   "es·partitura",
   "pl·gear4music",
   "uk·andertons",

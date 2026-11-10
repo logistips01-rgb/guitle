@@ -8,11 +8,7 @@ eko-starter-dv300-roja-8056734498592
 eko-starter-ls300-azul-quilted-8056734498820
 eko-starter-ls300-cherry-sunburst-8056734498554
 eko-starter-ls300-dorada-8056734498530
-eko-starter-ls300-dorada-para-zurdos-8056734498561
 eko-starter-ls300-honey-burst-8056734498547
-eko-starter-st100-3-4-azul-metalico-8056734498325
-eko-starter-st100-3-4-negra-8056734498301
-eko-starter-st100-3-4-roja-cromo-8056734498318
 eko-starter-st100-negra-8056734498332
 eko-starter-st100-sunburst-8056734498349
 eko-starter-st300-azul-daphne-8056734498394
@@ -24,15 +20,12 @@ eko-starter-st300-sunburst-8056734498363
 eko-starter-st350-negra-8056734498929
 eko-starter-st350-sunburst-8056734498912
 eko-starter-st351-tipo-strat-vintage-hss-diapason-de-arce-daphne-azul-8056734498936
-eko-starter-st401-negra-arterst401
-eko-starter-st401-negra-earcenegra
-eko-starter-st401-sunburst-8056734498462
+eko-starter-st401-negra-8056734498455
 eko-starter-tl300-butterscotch-8056734498493
 eko-starter-tl300-negra-8056734498479
 eko-starter-tl300-sunburst-8056734498486
 eko-starter-tl400-butterscotch-8056734498509
 eko-starter-tl401-butterscotch-8056734498516
-eko-zurdos-eko-starter-st300-negra-8056734498417
 eko-zurdos-eko-starter-st300-sunburst-8056734498424
 esp-ltd-kh-202-blk-kirk-ham-bundle-ndlesethtm
 fender-affinity-series-stratocaster-mustang-micro-pack-laurel-fingerboard-black-lackp36972
@@ -258,7 +251,6 @@ harley-benton-te-20mn-ca-standard-bundle-ebundlehtm
 harley-benton-te-20mn-ca-standard-bundle-ndlesethtm
 harley-benton-te-20mn-ca-standard-bundle-packagehtm
 harley-benton-te-20sb-standard-series-bundle-ebundlehtm
-harley-benton-te-40-lh-tbk-d-series-bundle-ndlesethtm
 harley-benton-te-52na-lh-vint-series-bundle-sbundlehtm
 harley-benton-te-53kr-bl-tribute-seri-bundle-ndlesethtm
 harley-benton-te-62cc-is-bundle-ebundlehtm
@@ -339,5 +331,4 @@ vox-apache-2-with-amp-2-white-4959112247925
 vox-apache-2-with-amp-aqua-green-4959112247949
 vox-apache-2-with-amp-black-4959112247932
 vox-apache-blue-with-amp-4959112227644
-vox-apache-orange-with-amp-4959112227651
 vox-apache-red-with-amp-4959112234406

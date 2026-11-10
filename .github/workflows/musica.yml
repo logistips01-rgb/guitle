@@ -41,13 +41,14 @@ jobs:
       RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
       RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
       R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+      SERVIDOR_SSH_KEY: ${{ secrets.SERVIDOR_SSH_KEY }}  # lo publicado, también al servidor propio (.github/servidor-envio.sh)
       GH_TOKEN: ${{ github.token }}
       AWIN_FEED_KEY: ${{ secrets.AWIN_FEED_KEY }}
       EBAY_CLIENT_ID: ${{ secrets.EBAY_CLIENT_ID }}  # eBay: discos por código de barras (API oficial)
       EBAY_CLIENT_SECRET: ${{ secrets.EBAY_CLIENT_SECRET }}
       EBAY_MAX_CALLS: ${{ vars.EBAY_MAX_CALLS }}  # consultas de eBay al día por país (vacío: 900)  # Francia: ficheros de productos de las tiendas afiliadas en Awin
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: claude/friendly-fermat-yycain
           fetch-depth: 50
@@ -60,7 +61,7 @@ jobs:
           else
             echo "run=true" >> "$GITHUB_OUTPUT"
           fi
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         if: steps.gate.outputs.run == 'true'
         with:
           python-version: "3.12"
