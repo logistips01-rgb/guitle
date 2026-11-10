@@ -738,12 +738,6 @@
   "median": 244.35
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Jet JT350-SGR-HHS Sparkling Green",
-  "slug": "jet-jt350-sgr-hhs-sparkling-green-3831120928663"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
@@ -1210,18 +1204,6 @@
   "slug": "yamaha-tas1e-ultra-marine-4957812722322",
   "price": 643.0,
   "median": 877.895
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Azul Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-azul-sunburst-8033675650104"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Rojo Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-rojo-sunburst-8033675650098"
  },
  {
   "kind": "clasica",
