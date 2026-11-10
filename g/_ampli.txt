@@ -170,7 +170,6 @@ blackstar-artist-fr-standard-50w-1x12-845644009213
 blackstar-beam-mini-845644009169
 blackstar-beam-mini-combo-wireless-rig-2x12w-845644009435
 blackstar-beam-solo-simulador-amplificadores-845644009060
-blackstar-combo-guitarra-blackstar-debut-10e-preto-retop28604
 blackstar-combo-guitarra-blackstar-debut-15e-preto-retop28603
 blackstar-debut-100r-1x12-combo-black-845644008513
 blackstar-debut-100r-1x12-combo-cream-845644008506
@@ -832,7 +831,7 @@ laney-lx10-5060109453805
 laney-lx10b-5060109453829
 laney-lx15-5060109454369
 laney-lx15b-combo-para-bajo-15w-2x5-5060109454383
-laney-lx20r-combo-5060109451290
+laney-lx20r-5060109451290
 laney-lx35r-5060109451306
 laney-mini-bass-nx-ssnxp24695
 laney-mini-lion-combo-5060109455649

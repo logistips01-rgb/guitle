@@ -322,15 +322,15 @@ fender-player-ii-mod-j-bass-rw-dsk-wdskp40232
 fender-player-ii-mod-p-bass-mn-dsk-ndskp39897
 fender-player-ii-mod-p-bass-rw-olp-wolpp39899
 fender-player-ii-modified-active-jazz-bass-mn-3-tone-sunburst-885978398942
+fender-player-ii-modified-active-jazz-bass-mn-elb-885978398973
 fender-player-ii-modified-active-jazz-bass-mn-olympic-pearl-885978777662
 fender-player-ii-modified-active-jazz-bass-rw-dusk-885978398959
 fender-player-ii-modified-active-jazz-bass-rw-harvest-green-metallic-bajo-electr-885978509683
+fender-player-ii-modified-active-jazz-bass-v-rw-3ts-885978400065
 fender-player-ii-modified-active-precision-bass-mn-dusk-885978398911
 fender-player-ii-modified-active-precision-bass-rw-olympic-pearl-885978777655
-fender-player-ii-modified-jazz-bass-mn-elb-885978398973
 fender-player-ii-modified-jazz-bass-v-mn-dsk-885978400072
 fender-player-ii-modified-jazz-bass-v-mn-olp-885978777716
-fender-player-ii-modified-jazz-bass-v-rw-3ts-885978400065
 fender-player-ii-modified-jazz-bass-v-rw-elb-885978400119
 fender-player-ii-modified-precision-bass-mn-3ts-885978398904
 fender-player-ii-modified-precision-bass-mn-ssy-885978398935
@@ -490,8 +490,8 @@ hagstrom-super-swede-bass-natural-mahogany-7340071902920
 hagstrom-swede-bass-black-gloss-7340071902036
 hagstrom-swede-bass-left-hand-wild-cherry-transparent-7340071902050
 hagstrom-swede-bass-tobacco-sunburst-7340071902425
+hagstrom-swede-bass-wct-7340071902029
 hagstrom-swede-bass-white-gloss-7340071902012
-hagstrom-swede-bass-wild-cherry-transparent-7340071902029
 hagstrom-viking-bass-black-gloss-8809179805407
 hagstrom-viking-bass-left-hand-tobacco-sunburst-7340071901152
 hagstrom-viking-bass-tobacco-sunburst-8809179805414
@@ -1202,6 +1202,7 @@ nik-huber-rietbergen-standard-bass-wob-2-444410037606
 nik-huber-rietbergen-standard-bass-wob-24230-444410019167
 novation-bass-station-ii-815301000181
 novation-bass-station-ii-swifty-edition-815301001775
+oqan-agc-advance-bass-8435017325945
 oqan-qbe-jb35-bk-bass-pack-8435017324139
 oqan-qbe-pb35-sb-bass-pack-8435017324122
 orange-o-bass-black-5060299178199

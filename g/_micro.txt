@@ -1794,8 +1794,7 @@ yamaha-ydm707-white-4957812696555
 zildjian-gen16-ae-buffed-bronze-china-16-microfono-di-642388311349
 zildjian-gen16-ae-buffed-bronze-hi-hat-13-microfono-di-642388311370
 zildjian-gen16-ae-buffed-bronze-splash-12-microfono-di-642388311325
-zoom-am7-microfono-estereo-para-android-ndroidhtml
-zoom-am7-ms-stereo-micro-usb-c-4515260023868
+zoom-am7-4515260023868
 zoom-iq6-4515260013272
 zoom-iq6-4515260013395
 zoom-iq6-microfono-unidireccional-estereo-4515260024438

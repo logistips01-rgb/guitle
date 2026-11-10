@@ -132,7 +132,6 @@ bam-estuche-de-dreadnought-classic-8003s-gray-gris-3760280265489
 bam-estuche-de-dreadnought-classic-8003s-red-rojo-3760280265502
 bam-estuche-de-dreadnought-hightech-8003xl-carbon-3760277053433
 bam-estuche-de-dreadnought-hightech-8003xl-tweed-3760277053440
-bam-estuche-de-dreadnought-panther-hightech-pant8003xl-black-negro-3760277057646
 bam-estuche-de-guitarra-000-hightech-8007xl-carbon-3760277053532
 bam-estuche-de-guitarra-000-hightech-8007xl-tweed-3760277053549
 bam-estuche-de-guitarra-arch-top-16-hightech-8004xl-carbon-3760277053464
@@ -141,13 +140,9 @@ bam-estuche-de-guitarra-arch-top-17-hightech-8006xl-carbon-3760277053518
 bam-estuche-de-guitarra-arch-top-17-hightech-8006xl-tweed-3760277053525
 bam-estuche-de-guitarra-grand-concert-hightech-8009xl-carbon-3760277053570
 bam-estuche-de-guitarra-grand-concert-hightech-8009xl-tweed-3760277053587
-bam-estuche-de-guitarra-grand-concert-panther-hightech-pant8009xl-black-negro-3760277057844
 bam-estuche-de-guitarra-manouche-tipo-selmer-hightech-8005xl-carbon-3760277053495
 bam-estuche-de-guitarra-manouche-tipo-selmer-hightech-8005xl-tweed-3760277053501
-bam-estuche-de-guitarra-manouche-tipo-selmer-panther-hightech-pant8005xl-black-n-3760277057684
 bam-estuche-de-guitarra-manouche-tipo-selmer-panther-hightech-pant8005xl-gray-gr-3760277057677
-bam-estuche-de-guitarra-manouche-tipo-selmer-panther-hightech-pant8007xl-black-n-3760277057806
-bam-estuche-de-guitarra-om-panther-hightech-pant8008xl-black-negro-3760277057820
 bam-estuche-de-hightech-8002xl-carbon-3760277053365
 bam-estuche-de-hightech-8002xl-silver-carbon-3760277053396
 bam-estuche-de-hightech-8002xl-tweed-3760277053402
@@ -543,7 +538,7 @@ fender-fb620-black-885978806256
 fender-fbss-610-short-scale-bass-gig-bag-885978984817
 fender-fbss610-escala-corta-funda-bajo-electrico-521206html
 fender-fbt-610-e-bass-gig-bag-tweed-weedp17022
-fender-fbt610-bass-tweed-885978984824
+fender-fbt610-funda-bajo-tweed-885978984824
 fender-fe1225-black-885978806317
 fender-fe1225-e-guitar-gig-bag-gbagp22209
 fender-fe405-electric-gig-bag-885978822133
@@ -802,7 +797,6 @@ gewa-es335-semi-acustica-4046662027715
 gewa-estojo-110-black-lackp33614
 gewa-estojo-rigido-112-a112p33196
 gewa-estuche-para-bajo-acustico-gewa-523116-flat-top-negro-egrop44703
-gewa-saco-para-baixo-eletrico-bass-bag-sbagp11120
 gibson-as335case-mdr-r72854html
 gibson-as339case-mdr-r72853html
 gibson-as339case-org-g72836html
