@@ -28,15 +28,6 @@
  },
  {
   "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "mat",
-  "name": "Danelectro 59M Nos+ Orange Metalflake",
-  "slug": "danelectro-59m-nos-orange-metalflake-611820027247",
-  "price": 445.45,
-  "median": 618.0
- },
- {
-  "kind": "electrica",
   "type": "sin_iva",
   "store": "partitura",
   "name": "Sire Q3 Tobacco Sunburst",
@@ -61,6 +52,15 @@
   "slug": "cort-g250-lh-bk-zurdos-8809292921084",
   "price": 221.0,
   "median": 310.79
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "ESP LTD JM-I QM Deep Blood Moon",
+  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
+  "price": 1421.0,
+  "median": 1895.0
  },
  {
   "kind": "electrica",
@@ -106,6 +106,15 @@
   "slug": "sire-x5-trans-blue-810046138984",
   "price": 339.0,
   "median": 466.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort Space G6TR SGLG w/bag",
+  "slug": "cort-space-g6tr-sglg-w-bag-8809817986970",
+  "price": 517.3,
+  "median": 695.9300000000001
  },
  {
   "kind": "electrica",
@@ -187,6 +196,24 @@
   "slug": "mooer-gtrs-sl810-brown-burst-6971889222927",
   "price": 354.0,
   "median": 498.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "PRS 40th Anniv. McCarty SC56 Limited Edition Faded Blue Jean",
+  "slug": "prs-40th-anniv-mccarty-sc56-limited-edition-faded-blue-jean-825362167471",
+  "price": 4499.0,
+  "median": 5999.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "PRS 40th Anniv. McCarty SC56 Limited Edition Faded Blue Jean",
+  "slug": "prs-40th-anniv-mccarty-sc56-limited-edition-faded-blue-jean-825362167471",
+  "price": 4499.0,
+  "median": 5999.0
  },
  {
   "kind": "electrica",
@@ -303,7 +330,7 @@
   "name": "Mooer GTRS S800 Pink",
   "slug": "mooer-gtrs-s800-pink-6971889220107",
   "price": 259.51,
-  "median": 321.0
+  "median": 308.38
  },
  {
   "kind": "electrica",
@@ -334,39 +361,39 @@
  },
  {
   "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "Schecter Sun Valley Super Shredder FR WHT",
-  "slug": "schecter-sun-valley-super-shredder-fr-wht-815447023228",
-  "price": 636.0,
-  "median": 874.35
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Schecter Omen ELITE-6 Char",
+  "slug": "schecter-omen-elite-6-char-810051470093",
+  "price": 504.13,
+  "median": 605.5
  },
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
-  "name": "Schecter Sun Valley Super Shredder FR WHT",
-  "slug": "schecter-sun-valley-super-shredder-fr-wht-815447023228",
+  "name": "Schecter Sun Valley Super Shredder FR blanco brillo",
+  "slug": "schecter-sun-valley-super-shredder-fr-blanco-brillo-815447023228",
   "price": 636.36,
-  "median": 874.35
+  "median": 934.5
  },
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
-  "name": "Schecter Sun Valley Super Shredder FR WHT",
-  "slug": "schecter-sun-valley-super-shredder-fr-wht-815447023228",
+  "name": "Schecter Sun Valley Super Shredder FR blanco brillo",
+  "slug": "schecter-sun-valley-super-shredder-fr-blanco-brillo-815447023228",
   "price": 649.7,
-  "median": 867.6800000000001
+  "median": 934.5
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "alteisa",
-  "name": "Sire T7 FM New Gen TBL (M) Trans Blue",
-  "slug": "sire-t7-fm-new-gen-tbl-m-trans-blue-810187571947",
-  "price": 599.19,
-  "median": 711.0
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Sire T7 FM New Gen NT (R) Natural",
+  "slug": "sire-t7-fm-new-gen-nt-r-natural-810187571954",
+  "price": 582.0,
+  "median": 787.0
  },
  {
   "kind": "electrica",
@@ -376,6 +403,24 @@
   "slug": "austin-as6probk-super-6-pro-black-812309025475",
   "price": 169.0,
   "median": 275.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Cort CR200 GT Gold Top",
+  "slug": "cort-cr200-gt-gold-top-icagoldtop",
+  "price": 369.0,
+  "median": 519.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Cort CR200 GT Gold Top",
+  "slug": "cort-cr200-gt-gold-top-icagoldtop",
+  "price": 379.0,
+  "median": 519.0
  },
  {
   "kind": "electrica",
@@ -451,12 +496,21 @@
  },
  {
   "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "microfusa",
-  "name": "PRS SE Custom 24 SEMI-HOLLOW Piezo Charcoal Burst",
-  "slug": "prs-se-custom-24-semi-hollow-piezo-charcoal-burst-825362186502",
-  "price": 1099.0,
-  "median": 1593.0
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "PRS double cut PRS CE22 LTD McCarty Sunburst",
+  "slug": "prs-double-cut-prs-ce22-ltd-mccarty-sunburst-825362247883",
+  "price": 2809.09,
+  "median": 3370.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Schecter Nick Johnston PT A. Frost",
+  "slug": "schecter-nick-johnston-pt-a-frost-810051472578",
+  "price": 822.32,
+  "median": 995.0
  },
  {
   "kind": "electrica",
@@ -515,6 +569,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort G280 Select TCP Trans Chameleon Purple",
+  "slug": "cort-g280-select-tcp-trans-chameleon-purple-8809817080944",
+  "price": 511.2,
+  "median": 707.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "ESP E-II Horizon FR BLK",
   "slug": "esp-e-ii-horizon-fr-blk-uperstrato",
@@ -559,15 +622,6 @@
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "Ibanez AG75G-GBS Brown Sunburst",
-  "slug": "ibanez-ag75g-gbs-brown-sunburst-4549763307828",
-  "price": 435.54,
-  "median": 532.0
- },
- {
-  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "LTD EC-256 Vintage Gold Satin",
@@ -605,6 +659,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Mooer GTRS M800 Blue Chameleon",
+  "slug": "mooer-gtrs-m800-blue-chameleon-6971889222224",
+  "price": 507.0,
+  "median": 699.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Mooer Gtrs P800 White",
   "slug": "mooer-gtrs-p800-white-6971889220442",
@@ -628,6 +691,15 @@
   "slug": "prs-se-custom-24-sh-semi-hollow-piezo-lake-blue-con-funda-825362186472",
   "price": 1055.0,
   "median": 1843.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "partitura",
+  "name": "PRS SE Mccarty 594 Turquoise",
+  "slug": "prs-se-mccarty-594-turquoise-quoisehtml",
+  "price": 816.0,
+  "median": 1167.185
  },
  {
   "kind": "electrica",
@@ -666,22 +738,10 @@
   "median": 244.35
  },
  {
-  "kind": "acustica",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "Admira Indiana Azul Satinada",
-  "slug": "admira-indiana-azul-satinada-8436032365817",
-  "price": 131.41,
-  "median": 158.995
- },
- {
-  "kind": "acustica",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "Ibanez AEG70-TCH Transparent Charcoal Burst High Gloss",
-  "slug": "ibanez-aeg70-tch-transparent-charcoal-burst-high-gloss-4549763231048",
-  "price": 280.17,
-  "median": 339.15
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Jet JT350-SGR-HHS Sparkling Green",
+  "slug": "jet-jt350-sgr-hhs-sparkling-green-3831120928663"
  },
  {
   "kind": "acustica",
@@ -731,11 +791,29 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Cort Cut Craft Lmited Nat W/ Case",
+  "slug": "cort-cut-craft-lmited-nat-w-case-8809625364328",
+  "price": 799.0,
+  "median": 1090.955
+ },
+ {
+  "kind": "acustica",
+  "type": "sin_iva",
+  "store": "numemusic",
+  "name": "Cort Cut Craft Lmited Nat W/ Case",
+  "slug": "cort-cut-craft-lmited-nat-w-case-8809625364328",
+  "price": 927.27,
+  "median": 1090.955
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "alteisa",
   "name": "Cort GA-MEDX M OP W/bag",
   "slug": "cort-ga-medx-m-op-w-bag-8809625365240",
   "price": 203.47,
-  "median": 272.0
+  "median": 295.91999999999996
  },
  {
   "kind": "acustica",
@@ -826,6 +904,15 @@
   "slug": "art-luthier-art-luthier-americana-natural-eq-623501050703",
   "price": 317.0,
   "median": 466.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Furch Vintage 1 OOM-SR a",
+  "slug": "furch-vintage-1-oom-sr-a-8596387005223",
+  "price": 1499.0,
+  "median": 2241.0
  },
  {
   "kind": "acustica",
@@ -974,15 +1061,6 @@
  {
   "kind": "acustica",
   "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Cort GA-DAO Nat",
-  "slug": "cort-ga-dao-nat-8809817984617",
-  "price": 223.14,
-  "median": 262.75
- },
- {
-  "kind": "acustica",
-  "type": "sin_iva",
   "store": "alfasoni",
   "name": "Epiphone Texan Masterbilt Antique Natural Aged Original",
   "slug": "epiphone-texan-masterbilt-antique-natural-aged-original-711106477510",
@@ -1006,6 +1084,24 @@
   "slug": "furch-red-dlx-gc-lr-ant-8596387002567",
   "price": 2765.0,
   "median": 4288.85
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Furch Vintage 1 OMc-SR",
+  "slug": "furch-vintage-1-omc-sr-8596387003229",
+  "price": 1499.0,
+  "median": 2145.5
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Furch Vintage 3 Dc-SR",
+  "slug": "furch-vintage-3-dc-sr-8596387001249",
+  "price": 2049.0,
+  "median": 2913.08
  },
  {
   "kind": "acustica",
@@ -1051,6 +1147,15 @@
   "slug": "lag-hyvibe-1-serie-20-dreadnought-ctw-3700166366374",
   "price": 499.0,
   "median": 883.31
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Oqan QGA-41CE BL",
+  "slug": "oqan-qga-41ce-bl-8435017324016",
+  "price": 142.61,
+  "median": 197.2
  },
  {
   "kind": "acustica",
@@ -1107,6 +1212,18 @@
   "median": 877.895
  },
  {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Eko Dreadnought Eko Ranger 6 Azul Sunburst",
+  "slug": "eko-dreadnought-eko-ranger-6-azul-sunburst-8033675650104"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Eko Dreadnought Eko Ranger 6 Rojo Sunburst",
+  "slug": "eko-dreadnought-eko-ranger-6-rojo-sunburst-8033675650098"
+ },
+ {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1122,25 +1239,7 @@
   "name": "Cort CEC1 OP W/bag",
   "slug": "cort-cec1-op-w-bag-8809383838659",
   "price": 178.16,
-  "median": 238.055
- },
- {
-  "kind": "clasica",
-  "type": "fuera_de_lugar",
-  "store": "alteisa",
-  "name": "Ibanez GA360TCE TBK Transparent Black Electrificada de Cuerpo Estrecho",
-  "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
-  "price": 460.0,
-  "median": 655.0
- },
- {
-  "kind": "clasica",
-  "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "Ibanez GA360TCE TBK Transparent Black Electrificada de Cuerpo Estrecho",
-  "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
-  "price": 460.0,
-  "median": 655.0
+  "median": 263.925
  },
  {
   "kind": "clasica",
@@ -1177,15 +1276,6 @@
   "slug": "ortega-r55-842960181333",
   "price": 149.0,
   "median": 252.53
- },
- {
-  "kind": "clasica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Ortega española amplificada cutaway Ortega TourPlayer RTP-LTD",
-  "slug": "ortega-espanola-amplificada-cutaway-ortega-tourplayer-rtp-ltd-842960187410",
-  "price": 495.04,
-  "median": 589.0
  },
  {
   "kind": "clasica",
@@ -1231,15 +1321,6 @@
   "slug": "ortega-r122sn-l-842960180374",
   "price": 189.0,
   "median": 269.37
- },
- {
-  "kind": "clasica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Ortega española amplificada cutaway Ortega TourPlayer RTPG-LS2",
-  "slug": "ortega-espanola-amplificada-cutaway-ortega-tourplayer-rtpg-ls2-842960187359",
-  "price": 577.69,
-  "median": 708.5
  },
  {
   "kind": "teclado",
@@ -1370,6 +1451,15 @@
  {
   "kind": "pedal",
   "type": "fuera_de_lugar",
+  "store": "alfasoni",
+  "name": "Electro-Harmonix Mainframe",
+  "slug": "electro-harmonix-mainframe-683274012315",
+  "price": 163.43,
+  "median": 220.385
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Electro-Harmonix Soul Preacher",
   "slug": "electro-harmonix-soul-preacher-683274010663",
@@ -1402,6 +1492,24 @@
   "slug": "joyo-r-14-atmosphere-reverb-6972716320946",
   "price": 64.0,
   "median": 104.45
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Korg Pitchblack X",
+  "slug": "korg-pitchblack-x-4959112199798",
+  "price": 85.0,
+  "median": 128.5
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Korg Pitchblack X",
+  "slug": "korg-pitchblack-x-4959112199798",
+  "price": 88.0,
+  "median": 127.0
  },
  {
   "kind": "pedal",
