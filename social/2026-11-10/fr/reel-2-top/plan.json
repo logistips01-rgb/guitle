@@ -1,0 +1,179 @@
+{
+ "fecha": "10 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "4 bons plans basses",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "cort-basse-action-jj-p-ouvert-noir-actjjopb-8809383831933",
+    "name": "Cort Basse Action JJ P. Ouvert Noir - ACTJJOPB",
+    "brand": "Cort",
+    "kind": "bajos",
+    "img": "https://scottomusique.com/24165-home_default/cort-basse-action-jj-p-ouvert-noir-actjjopb.jpg",
+    "th": "4ac95808f379e44f.webp",
+    "price": 249.0,
+    "store": "Scotto Musique",
+    "stores": 4,
+    "median": 299.0,
+    "max": 299.0,
+    "next": 289.0,
+    "rows": [
+     [
+      "Scotto Musique",
+      249.0
+     ],
+     [
+      "Audio System",
+      289.0
+     ],
+     [
+      "Stars Music",
+      299.0
+     ],
+     [
+      "Hurricane Music",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "40 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "sire-marcus-miller-v3p-4-snb-rn-810046133996",
+    "name": "Sire Marcus Miller V3P-4 Snb RN",
+    "brand": "Sire",
+    "kind": "bajos",
+    "img": "https://maccamusic.com/6388-home_default/sire-marcus-miller-v3p-4-snb.jpg",
+    "th": "ba91df3cc07cc1b2.webp",
+    "price": 369.0,
+    "store": "Scotto Musique",
+    "stores": 3,
+    "median": 412.5,
+    "max": 429.0,
+    "next": 396.0,
+    "rows": [
+     [
+      "Scotto Musique",
+      369.0
+     ],
+     [
+      "Music 3000",
+      396.0
+     ],
+     [
+      "Ferré Musique",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "27 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "yamaha-basse-electrique-bb234-yellow-natural-satin-gbb234yns-4957812619233",
+    "name": "Yamaha Basse Electrique BB234 Yellow Natural Satin - GBB234YNS",
+    "brand": "Yamaha",
+    "kind": "bajos",
+    "img": "https://scottomusique.com/23651-home_default/yamaha-basse-electrique-bb234-yellow-natural-satin-gbb234yns.jpg",
+    "th": "16a5d7c9bf91dabc.webp",
+    "price": 429.0,
+    "store": "Scotto Musique",
+    "stores": 3,
+    "median": 520.0,
+    "max": 551.0,
+    "next": 489.0,
+    "rows": [
+     [
+      "Scotto Musique",
+      429.0
+     ],
+     [
+      "Audio System",
+      489.0
+     ],
+     [
+      "Music 3000",
+      551.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "60 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "squier-classic-vibe-70s-jazz-bass-maple-fingerboard-black-boardblack",
+    "name": "Squier Classic Vibe '70S Jazz Bass Maple Fingerboard Black",
+    "brand": "Squier",
+    "kind": "bajos",
+    "img": "https://seveneant.com/wp-content/uploads/2025/03/squier-classic-vibe-70s-jazz-bass-maple-fingerboard-black-6.png",
+    "th": "df5fb3d0d2e65681.webp",
+    "price": 429.0,
+    "store": "Stars Music",
+    "stores": 3,
+    "median": 484.0,
+    "max": 489.0,
+    "next": 479.0,
+    "rows": [
+     [
+      "Stars Music",
+      429.0
+     ],
+     [
+      "Michenaud",
+      479.0
+     ],
+     [
+      "Hurricane Music",
+      489.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "50 € de moins qu'ailleurs"
+   }
+  ],
+  "rama": "bajos"
+ }
+}
