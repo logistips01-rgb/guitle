@@ -79,3 +79,9 @@ jobs:
               --exclude-from .github/r2-exclude.txt --stats 1m --stats-one-line --stats-log-level NOTICE
           fi
           rclone copyto "$RUNNER_TEMP/new.txt" r2:guitle/_sync/manifest.txt
+      - name: Al servidor propio
+        # Lo mismo que se acaba de subir o borrar en R2, directo al servidor de guitle.com (sin esperar a su copia de
+        # cada 2 horas). En un sync completo no hay lista: lo recoge esa copia.
+        env:
+          SERVIDOR_SSH_KEY: ${{ secrets.SERVIDOR_SSH_KEY }}
+        run: bash .github/servidor-envio.sh "$RUNNER_TEMP/up.txt" "$RUNNER_TEMP/gone.txt"

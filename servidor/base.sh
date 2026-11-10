@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 echo "== Actualizaciones y programas"
 apt-get update -qq
 apt-get -y -qq upgrade
-apt-get -y -qq install ufw unattended-upgrades fail2ban caddy rclone python3 curl jq >/dev/null
+apt-get -y -qq install ufw unattended-upgrades fail2ban caddy rclone rsync python3 curl jq >/dev/null
 dpkg-reconfigure -f noninteractive unattended-upgrades >/dev/null 2>&1 || true
 
 echo "== Memoria de intercambio (1 GB: el servidor tiene 2 GB)"

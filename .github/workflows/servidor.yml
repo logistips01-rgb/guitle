@@ -57,6 +57,7 @@ jobs:
           ssh-keyscan -T 20 "$HOST" >> ~/.ssh/known_hosts 2>/dev/null || true
       - name: Paso
         env:
+          KEY: ${{ secrets.SERVIDOR_SSH_KEY }}
           R2_KEY: ${{ secrets.R2_ACCESS_KEY_ID }}
           R2_SECRET: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
@@ -65,6 +66,14 @@ jobs:
           echo "paso: $paso"
           case "$paso" in
             espera) echo "Nada que hacer todavía." ;;
+            envio)
+              # Prueba de .github/servidor-envio.sh: manda un fichero, mira que llega con su dueño y lo vuelve a borrar.
+              date -u +%FT%TZ > prueba-envio.txt; echo prueba-envio.txt > "$RUNNER_TEMP/l.txt"
+              SERVIDOR_SSH_KEY="$KEY" bash .github/servidor-envio.sh "$RUNNER_TEMP/l.txt"
+              ssh -o BatchMode=yes root@"$HOST" 'ls -l /srv/guitle/r2/prueba-envio.txt && cat /srv/guitle/r2/prueba-envio.txt'
+              curl -s -o /dev/null -w "https://guitle.com/prueba-envio.txt: %{http_code}\n" https://guitle.com/prueba-envio.txt
+              SERVIDOR_SSH_KEY="$KEY" bash .github/servidor-envio.sh /dev/null "$RUNNER_TEMP/l.txt"
+              ssh -o BatchMode=yes root@"$HOST" 'ls /srv/guitle/r2/prueba-envio.txt 2>&1 | tail -1' ;;
             prueba)
               ssh -o BatchMode=yes -o ConnectTimeout=20 root@"$HOST" 'hostname; cat /etc/os-release | head -2; uname -r; nproc; free -m; df -h /; ss -tlnp | head -20' ;;
             *)

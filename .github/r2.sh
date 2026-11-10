@@ -43,6 +43,11 @@ rclone_ready() {
   export RCLONE_CONFIG_R2_ENDPOINT="https://${R2_ACCOUNT,,}.r2.cloudflarestorage.com"
 }
 
+# Lo que se sube o se borra en R2 se apunta también aquí, para mandarlo luego al servidor (.github/servidor-envio.sh).
+SRV_UP="${RUNNER_TEMP:-/tmp}/servidor-subidos.txt"; SRV_DEL="${RUNNER_TEMP:-/tmp}/servidor-borrados.txt"
+: > "$SRV_UP"; : > "$SRV_DEL"
+servidor() { bash .github/servidor-envio.sh "$SRV_UP" "$SRV_DEL" || true; }
+
 # up MODO ORIGEN DESTINO [opciones]: solo sube lo que cambia (MD5); anota las .html nuevas o cambiadas.
 up() {
   local mode=$1 src=$2 dst=$3 log="$RUNNER_TEMP/r2-log.txt"; shift 3
@@ -52,10 +57,13 @@ up() {
     rclone sync "$src" "r2:guitle/$dst" --checksum --transfers 32 --checkers 32 \
       --combined "$RUNNER_TEMP/r2-comb.txt" --stats-log-level NOTICE "$@"
     { grep -E '^[+*] .*\.html$' "$RUNNER_TEMP/r2-comb.txt" || true; } | cut -c3- | sed "s#^#$dst/#" >> "$URLS"
+    { grep -E '^[+*] ' "$RUNNER_TEMP/r2-comb.txt" || true; } | cut -c3- | sed "s#^#$dst/#" >> "$SRV_UP"
+    { grep -E '^- ' "$RUNNER_TEMP/r2-comb.txt" || true; } | cut -c3- | sed "s#^#$dst/#" >> "$SRV_DEL"
   else  # copy no admite --combined: lo copiado sale del registro
     rclone copy "$src" "r2:guitle/$dst" --checksum --fast-list --transfers 32 --checkers 32 \
       -v --log-file "$log" --stats 0 "$@"
     { grep -oE 'INFO  : [^:]+\.html: Copied' "$log" || true; } | sed -E "s#^INFO  : (.*): Copied#$dst/\1#" >> "$URLS"
+    { grep -oE 'INFO  : [^:]+: Copied' "$log" || true; } | sed -E "s#^INFO  : (.*): Copied#$dst/\1#" >> "$SRV_UP"
     rm -f "$log"
   fi
 }
@@ -63,6 +71,7 @@ up() {
 one() {  # un fichero suelto de la raíz
   if [ ! -f "$1" ]; then return 0; fi
   rclone copyto "$1" "r2:guitle/$1" --checksum
+  echo "$1" >> "$SRV_UP"
   case $1 in *.html) echo "$1" >> "$URLS" ;; esac
 }
 
@@ -110,8 +119,10 @@ publicar() {
   if [ "$R2_IMG" = 1 ] && compgen -G "img/p/*.webp" >/dev/null; then
     # Solo hay en disco las de esta lectura (las demás están ya en R2): sin listar el bucket, una a una.
     rclone copy img/p r2:guitle/img/p --no-traverse --checksum --transfers 32 --stats-log-level NOTICE
+    find img/p -name '*.webp' >> "$SRV_UP"
   fi
   echo "R2: $(wc -l < "$URLS") páginas nuevas o cambiadas"
+  servidor  # lo mismo, al servidor propio, sin esperar a su copia de cada 2 horas
   python -m scraper.indexnow --files "$URLS" || true
   # Lo que sigue en git (datos, portada…) lo sube r2.yml; un commit hecho desde un workflow no lo lanza solo.
   gh workflow run r2.yml --ref "$GITHUB_REF_NAME" || echo "::warning::no se pudo lanzar r2.yml"
@@ -160,6 +171,7 @@ carpeta() {
     up copy "$home" "$home" --include "*.json.gz"
     up copy "$1" "$1" --include "*.xml" --include "*.json"
   fi
+  servidor
   python -m scraper.indexnow --files "$URLS" || true
 }
 
