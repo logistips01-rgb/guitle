@@ -65,15 +65,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "ESP LTD JM-I QM Deep Blood Moon",
-  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
-  "price": 1421.0,
-  "median": 1895.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
