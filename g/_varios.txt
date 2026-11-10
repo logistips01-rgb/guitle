@@ -2524,7 +2524,6 @@ franklin-strap-cognac-jackson-hole-leather-contrast-stich-69593017130
 franklin-strap-oxblood-glove-leather-natural-stiching-2-5-69593018861
 franklin-strap-snake-skin-glove-black-2-69593017758
 franklin-strap-snake-skin-glove-cognac-2-69593017765
-furch-leather-strap-brown-strapbrown
 g7th-c31020-cejilla-para-negra-5060079200126
 g7th-capo-g7th-performance-3-art-black-para-guitarra-acustica-eletrica-ricap36156
 g7th-nashville-capo-fur-western-und-e-gitarre-5060079200058
@@ -3193,7 +3192,10 @@ mammoth-g20-flex-jack-jack-6-m-9357909000626
 mammoth-g20r-flex-jack-jack-6-m-a-r-9357909000640
 mammoth-mam-capo2a-cejilla-acustica-electrica-002071html
 mammoth-mam-capo2c-cejilla-clasica-9357909002088
+markbass-4s-energy-stainless-steel-basssaiten-40-100-8033829138786
+markbass-4s-energy-stainless-steel-basssaiten-45-105-8033829138809
 markbass-4s-groove-nickel-plated-steel-basssaiten-40-100-8033829138724
+markbass-4s-groove-nickel-plated-steel-basssaiten-45-105-8033829138748
 markbass-5s-energy-stainless-steel-basssaiten-45-130-8033829138830
 markbass-5s-groove-nickel-plated-steel-basssaiten-45-130-8033829138779
 markbass-balanced-4-045-105-5105p33946
@@ -3203,7 +3205,6 @@ markbass-energy-5-045-130-5130p33943
 markbass-energy-5-045-130-5130p33945
 markbass-groove-ns-4-045-100-5100p42875
 markbass-groove-ns-4-045-105-5105p33942
-markbass-groove-strings-045-105-8033829138748
 markbass-longevo-ns-4-045-105-5105p33951
 markbass-longevo-ss-4-045-105-5105p33949
 markbass-longevo-ss-5-045-130-5130p33950
@@ -3782,7 +3783,6 @@ righton-straps-standard-plus-hotrod-orange-8401080110078
 righton-straps-standard-plus-laurel-black-8436612540658
 righton-straps-standard-plus-laurel-purple-8436612540665
 righton-straps-standard-plus-roskilde-ii-8419612000308
-righton-straps-stardust-silver-8404000020723
 righton-straps-straplink-brown-8406010060355
 righton-straps-straplink-canyon-8406010060379
 righton-straps-straplink-woody-8406010060386
@@ -3898,6 +3898,7 @@ sadowsky-metro-express-21-hybrid-p-j-solid-black-high-polish-bajo-electrico-4033
 sadowsky-metroexpress-21-fret-hyprid-pj-morado-5-fretless-zurdo-solid-black-high-4061688034981
 sadowsky-metroexpress-21-fret-hyprid-pj-morado-5-zurdo-solid-black-high-polish-4061688035025
 sadowsky-metroexpress-21-hybrid-p-j-morado-4-cuerdas-solid-ocean-blue-metallic-h-4061688034936
+sadowsky-metroexpress-21-vintage-j-j-arce-4-cuerdas-tobacco-burst-transparent-hi-4033685197822
 sadowsky-metroline-genuine-leather-bass-strap-brown-silver-4061688049060
 sadowsky-nw-blue-label-5-set-40-125-cuerdas-bajo-4061688038743
 sadowsky-nylon-bass-strap-black-correa-bajo-4033685234565

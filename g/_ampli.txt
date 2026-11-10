@@ -441,14 +441,14 @@ electro-harmonix-abrams100-guitar-amplifier-head-683274012605
 electro-harmonix-battalion-683274011943
 electro-harmonix-dirt-road-special-683274011929
 electro-harmonix-op-amp-big-muff-683274012087
-engl-e-112-vb-b57719html
+engl-e-112-vb-4260278520389
 engl-e-212-vb-4260278520365
 engl-e-212-vhb-4260278520358
 engl-e-412-vgb-4260278520303
 engl-e-412-vsb-4260278520297
 engl-e-412-xxlb-4260278520280
 engl-e112sb-cabinet-v-type-4251694202973
-engl-e112vb-pro-cabinet-4260278520389
+engl-e112vb-pro-cabinet-520389html
 engl-e112vsb-pro-cabinet-sl-4251694200689
 engl-e212vh-pro-cabinet-4251694200399
 engl-e412vgb-cabinet-straight-4251694200429
@@ -807,8 +807,7 @@ laney-irf112-cabinet-5414428287397
 laney-irf120-212-combo-5414428287373
 laney-irf212-cabinet-5414428287403
 laney-irf60-110-combo-5414428287359
-laney-irf60-112-combo-60112combo
-laney-irf60-112-combo-60112combo
+laney-irf60-112-combo-5414428287366
 laney-l20h-head-5060109451542
 laney-l20t-212-combo-5060109454017
 laney-l5-studio-head-5060109454253
@@ -932,7 +931,6 @@ markbass-marcus-miller-cmd-101-micro-60-ro60p11538
 markbass-mark-bass-mb58r-102-xl-p-4-pantalla-bajo-8059307422659
 markbass-mark-bass-mb58r-102-xl-p-pantalla-bajo-8059307422642
 markbass-mark-bass-mb58r-102-xl-pure-pantalla-bajo-805930742261
-markbass-mark-bass-mb58r-104-energy-pantalla-bajo-electrico-8059307421911
 markbass-mark-bass-mb58r-cmd-151-p-combo-bajo-electrico-8059307422215
 markbass-mb-4-3-tone-sunburst-jb-bajo-electrico-3-tone-sunburst-8059307425377
 markbass-mb-4-black-pb-bajo-electrico-black-8059307425346
@@ -979,11 +977,14 @@ markbass-mb58r-102-xl-energy-8059307422598
 markbass-mb58r-102-xl-pure-8059307422628
 markbass-mb58r-103-energy-8059307422604
 markbass-mb58r-103-pure-8059307422635
+markbass-mb58r-104-energy-8-8059307421911
 markbass-mb58r-104-energy-8059307421928
 markbass-mb58r-104-energy-box-8-coluna-passiva-800w-baixo-ixobp32269
 markbass-mb58r-104-p-4-8059307422086
 markbass-mb58r-104-p-8059307422079
 markbass-mb58r-104-pure-4-8059307422000
+markbass-mb58r-104-pure-4-8r104pure4
+markbass-mb58r-104-pure-4-ohm-04pure4ohm
 markbass-mb58r-104-pure-8-ohm-8059307421997
 markbass-mb58r-104-pure-box-4-box4p40647
 markbass-mb58r-104-pure-box-8-box8p45315
@@ -1161,8 +1162,6 @@ mooer-f40i-gold-6971889223870
 mooer-f40i-li-black-6971889223856
 mooer-f40i-li-gold-6971889223863
 mooer-f40i-li-smart-amp-black-pblackhtml
-mooer-f40i-li-smart-amp-gold-223863html
-mooer-f40i-li-smart-amp-gold-mpgoldhtml
 mooer-f40i-li-snowfall-w-6971889223849
 mooer-f40i-snowfall-w-6971889223603
 mooer-ge1000-amp-modelling-multi-ultip35611
@@ -1224,7 +1223,7 @@ offshore-aa40-amplificador-3700166379398
 offshore-aeg10-amplificador-guitarra-combo-3700166379404
 offshore-aeg20-amplificador-guitarra-combo-3700166379411
 offshore-aeg40-amplificador-guitarra-combo-40w-1x10-3700166379428
-offshore-amplificador-guitarra-combo-mini-usb-recargable-10w-le10wnegro
+offshore-amplificador-guitarra-combo-mini-usb-recargable-10w-3700166379046
 offshore-amplificador-guitarra-combo-mini-usb-recargable-5w-3700166379022
 offshore-amplificador-guitarra-combo-mini-usb-recargable-5w-3700166379039
 orange-ad200-5060299178670

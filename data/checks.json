@@ -1441,24 +1441,6 @@
  },
  {
   "kind": "bajo",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "Ibanez PCBE12MH-OPN Open Pore Natural",
-  "slug": "ibanez-pcbe12mh-opn-open-pore-natural-4515276638780",
-  "price": 228.93,
-  "median": 277.505
- },
- {
-  "kind": "bajo",
-  "type": "sin_iva",
-  "store": "mat",
-  "name": "Marcus Miller Z7-4 Antique White",
-  "slug": "marcus-miller-z7-4-antique-white-810046138304",
-  "price": 400.83,
-  "median": 485.0
- },
- {
-  "kind": "bajo",
   "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Cort Bajo Elec Action Junior Opbc",
@@ -1938,10 +1920,19 @@
   "kind": "bateria",
   "type": "fuera_de_lugar",
   "store": "alfasoni",
+  "name": "Yamaha DTX432K",
+  "slug": "yamaha-dtx432k-k59089html",
+  "price": 368.0,
+  "median": 493.0
+ },
+ {
+  "kind": "bateria",
+  "type": "fuera_de_lugar",
+  "store": "alfasoni",
   "name": "Yamaha DTX6K2-X E-DRUM Set",
   "slug": "yamaha-dtx6k2-x-e-drum-set-4957812651714",
   "price": 1009.0,
-  "median": 1420.0
+  "median": 1498.0
  },
  {
   "kind": "bateria",

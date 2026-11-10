@@ -184,6 +184,7 @@ marca/bose-pro.html
 marca/bose.html
 marca/boss.html
 marca/boston.html
+marca/bounce.html
 marca/bourbon-strap.html
 marca/bourbon.html
 marca/bourgeois.html
@@ -874,6 +875,7 @@ marca/rockstrap.html
 marca/rocktuner.html
 marca/rode.html
 marca/rodex.html
+marca/rogers.html
 marca/roland.html
 marca/ron.html
 marca/ross.html
