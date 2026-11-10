@@ -759,7 +759,6 @@ alhambra-7p-a-cw-e8-electrificada-con-funda-h7017nuevo
 alhambra-7p-a-espanola-con-funda-h0813nuevo
 alhambra-7p-a-espanola-con-funda-h0813nuevo
 alhambra-7p-a-lhambra7pa
-alhambra-7p-a-lhambra7pa
 alhambra-7p-a-nat-8436623081102
 alhambra-7p-clasica-p27278html
 alhambra-7p-classic-funda-acolchada-25-mm-afunda9738
@@ -1332,9 +1331,7 @@ apc-barroca-apc-brrcyp-gcnk-5600918912836
 apc-caipira-apc-cai-1s-5600918904657
 apc-euc-cp-gtc-5600918915349
 apc-euc-s-gtc-5600918915332
-apc-gc-200-op-cw-slim-5600918913994
 apc-koa-1-koakoa-op-5600918906118
-apc-koa-1-koakoa-op-cw-slim-14th-5600918914113
 apc-lusitana-gc-200-1-2-5600918909355
 apc-lusitana-gc-200-3-4-5600918908778
 apc-lusitana-gc-200-5600918907399
@@ -1878,10 +1875,7 @@ cort-sunset-nylectric-ii-black-8809817083051
 cort-sunset-nylectric-ii-nat-8809817983061
 cort-sunset-nylectric-ii-natural-8809817083068
 crafter-snt-20ce-pro-8806383270892
-cuenca-5-cutaway-away405208
 cutaway-tatay-c320-580ce-fishman-os1-fishmanos1
-delacrus-espanola-cadete-3-4-delacrus-36-g0036-8435258230282
-delacrus-espanola-infantil-1-4-delacrus-30-g0030-8435258230671
 donner-espanola-amplificada-de-viaje-donner-hush-c-negro-6975626386477
 donner-espanola-amplificada-de-viaje-donner-hush-c-sunburst-6975626389980
 duke-basic-c-4250771310242
@@ -1914,9 +1908,10 @@ eko-espanola-eko-studio-10-red-burst-con-funda-8033675657486
 eko-espanola-eko-studio-10-sunburst-con-funda-8033675657462
 eko-espanola-eko-studio-12-natural-8033675651019
 eko-espanola-eko-vibra-100-natural-100natural
-eko-mia-n400ce-e-a-cutway-natural-8056734497106
+eko-mia-n400ce-nylon-cutaway-electro-natural-8056734497106
 eko-nxt-n100ce-blk-8056734496475
 eko-nxt-n100ce-natural-8056734496468
+eko-one-s150e-nylon-silenciosa-8056734499278
 eko-silent-one-s150e-folk-es150efolk
 eko-silent-one-s150e-nylon-s150enylon
 eko-vibra-300-4-4-natural-8056734496338
@@ -1967,7 +1962,6 @@ espanola-amplificada-manuel-rodriguez-signature-legacy-cafe-ole-cutaway-40466622
 espanola-amplificada-manuel-rodriguez-slimline-cedro-negro-mate-cutaway-4046662337470
 espanola-amplificada-manuel-rodriguez-superior-estadio-es-cc-cutaway-alto-brillo-4046662318349
 espanola-amplificada-manuel-rodriguez-superior-estadio-es-sc-cutaway-laca-mate-4-4046662318332
-espanola-cadete-rocio-c16-all-natural-terocioc16
 espanola-cordoba-protege-c1-matiz-aqua-1matizaqua
 espanola-cordoba-protege-c1-matiz-coral-matizcoral
 espanola-manuel-rodriguez-abeto-brilloso-1-2-4046662337289
@@ -2017,7 +2011,6 @@ espanola-manuel-rodriguez-tradicion-clasico-7-8-4046662337814
 espanola-para-zurdos-manuel-rodriguez-abeto-brilloso-3-4-4046662337340
 espanola-para-zurdos-manuel-rodriguez-abeto-brilloso-4-4-4046662337418
 espanola-para-zurdos-manuel-rodriguez-cedro-satinado-4-4-4046662337449
-espanola-rocio-r10-natural-larocior10
 esteve-3st53-1-2-tapa-de-cedro-brillante-ante410110
 esteve-5f-spruce-top-blackstar-star410109
 esteve-6f-spruce-top-169926784996
@@ -2059,9 +2052,6 @@ filtro-profesional-anti-pop-nylon-8025534008614
 frank-gambale-luxe-nylon-br-w-8809817080241
 frh10n-bsf-electrificada-a26363html
 frh10n-ntf-electrificada-4549763335678
-furch-gnc-2-sw-a-eas-vtc-8596387010265
-furch-gnc-4-cr-a-eas-vtc-8596387010272
-furch-gnc-4-sr-a-eas-vtc-8596387010289
 ga11ce-bk-electrificada-negra-a26089html
 ga6ce-am-electrificada-da5683html
 garrido-cadete-clasica-3-4-sica34html
@@ -2260,7 +2250,6 @@ jose-gomez-amplificada-cutaway-jose-gomez-f80rs-ceq-8434418062756
 jose-gomez-amplificada-cutaway-jose-gomez-f90-eq-previo-fishman-psy-301-con-fund-rofesional
 jose-gomez-amplificada-cutaway-jose-gomez-f90r-eq-roja-previo-fishman-presys-301-modelo2025
 jose-gomez-amplificada-cutaway-jose-gomez-f90rs-eq-previo-fishman-psy-301-con-es-tayf90rseq
-jose-gomez-amplificada-jose-gomez-f80nac-ceq-caja-estrecha-roja-8434418062763
 jose-gomez-c-30-segomezc30
 jose-gomez-c-40-segomezc40
 jose-gomez-c20-cedro-y-sapelly-roysapelly
@@ -2619,7 +2608,6 @@ npdrums-tambor-cofradia-npdrums-cadete-33-x-14-cm-rojo-vino-aros-grafito-con-ran
 npdrums-tambor-cofradia-npdrums-cadete-33-x-14-cm-rojo-vino-aros-grafito-lisos-8435288142531
 ntx1-bl-guitarra-crossover-negra-a21569html
 ntx1-nt-guitarra-crossover-natural-4957812657587
-one-s150e-nylon-bluetooth-fx-8056734499278
 oqan-by-jose-torres-qgc-25-pack-8435017323903
 oqan-qgc-10-cadet-8435017323880
 oqan-qgc-15-gb-8435017323897
@@ -3153,7 +3141,9 @@ rapsodia-espanola-ravel-orquesta-maurice-ravel-b5530nuevo
 rocio-10-all-natural-8435732404871
 rocio-10-amarilla-8435732404802
 rocio-10-azul-8436032350844
+rocio-10-blanca-8436032350851
 rocio-10-natural-8436032350837
+rocio-10-negra-8436032350868
 rocio-10-roja-8435732404826
 rocio-10-rosa-8436032350875
 rocio-20-icarocio20
@@ -3204,10 +3194,6 @@ rocio-cadete-3-4-c16-all-natural-8435732404888
 rocio-cadete-3-4-c16-amarilla-8435732404819
 rocio-cadete-3-4-c16-blanca-8435732404772
 rocio-cadete-3-4-c16-roja-8435732404833
-rocio-espanola-cadete-rocio-c16-all-natural-llnatural2
-rocio-espanola-rocio-r10-blanca-8436032350851
-rocio-espanola-rocio-r10-natural-anolarocio
-rocio-espanola-rocio-r10-negra-8436032350868
 rocio-espanola-rocio-r20-con-funda-larocior20
 rocio-infantil-1-2-c7-blanca-8435732404789
 rocio-infantil-1-4-c6-blanca-8435732404796
@@ -3269,7 +3255,6 @@ salvador-espanola-1-2-bambino-salvador-abeto-sapeli-satinada-8719147438608
 salvador-espanola-4-4-salvador-abeto-sapeli-satinada-8719147422324
 salvador-espanola-amplificada-salvador-abeto-sapeli-satinada-cutaway-8719147438592
 salvador-espanola-junior-3-4-salvador-acabado-brillante-cedro-sapeli-8719147518546
-salvador-espanola-senorita-7-8-salvador-acabado-brillante-cedro-sapeli-8719147518539
 samba-tambor-cadete-samba-30-5-cm-12-aluminio-8435040795234
 samba-tambor-cadete-samba-30-5-cm-12-aluminio-8435040795258
 samba-tambor-cadete-samba-35-6-cm-14-acero-8435040789837
@@ -3393,13 +3378,8 @@ takamine-gc6ce-nat-guitarra-espanola-electrificada-190262041221
 takamine-grand-auditorium-nylon-cutaway-electro-p3fcn-con-estuche-4582270030438
 takamine-p3fcn-ep3fcnhtml
 takamine-tc132sc-5550008087008
-tambor-cadete-33x12-ref-05420-quadura-420quadura
-tambor-cadete-33x12-ref-05420-quadura-negro-remo-8400030181427
-tambor-cadete-33x12-ref-05420-quadura-verororemo
-tambor-cadete-33x12-ref-05470-standar-470standar
-tambor-cadete-33x12-ref-05470-standar-70standar2
-tambor-cadete-33x12-ref-05470-standar-amarillo-8400030271395
-tambor-cadete-33x12-ref-05470-standar-negro-8400030271432
+tambor-cadete-33x12-ref-05420-quadura-8400030181380
+tambor-cadete-33x12-ref-05470-standar-8400030271357
 tambor-cadete-33x9cm-db5470-gc0130-c-amarillo-21139nuevo
 tambor-cadete-33x9cm-db5470-gc0180-c-azul-21144nuevo
 tambor-cadete-35-5-x-18-cm-14-x-7-varillas-de-cromo-casco-de-aluminio-ealuminio2

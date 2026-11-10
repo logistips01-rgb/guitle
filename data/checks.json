@@ -74,6 +74,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "ESP LTD JM-I QM Deep Blood Moon",
+  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
+  "price": 1421.0,
+  "median": 1895.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -267,7 +276,16 @@
   "name": "Hagstrom Adina Blue Sky",
   "slug": "hagstrom-adina-blue-sky-7340071904269",
   "price": 685.13,
-  "median": 820.5
+  "median": 825.49
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Hagstrom Adina Cre Crema",
+  "slug": "hagstrom-adina-cre-crema-7340071904238",
+  "price": 549.0,
+  "median": 774.0899999999999
  },
  {
   "kind": "electrica",
@@ -397,12 +415,48 @@
  },
  {
   "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Hagstrom Fantomen Wht Blanca",
+  "slug": "hagstrom-fantomen-wht-blanca-7340071902814",
+  "price": 825.62,
+  "median": 999.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Hagstrom Megin negro brillo",
+  "slug": "hagstrom-megin-negro-brillo-7340071904191",
+  "price": 602.48,
+  "median": 722.0
+ },
+ {
+  "kind": "electrica",
+  "type": "sin_iva",
+  "store": "musicalsanfrancisco",
+  "name": "Hagstrom Tremar Viking Baritone Deluxe DLX TSB Tobacco Sunburst",
+  "slug": "hagstrom-tremar-viking-baritone-deluxe-dlx-tsb-tobacco-sunburst-7340071904177",
+  "price": 974.38,
+  "median": 1169.0
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
   "name": "Ibanez GRX20 BKN Black Night",
   "slug": "ibanez-grx20-bkn-black-night-4515110324756",
   "price": 164.0,
   "median": 219.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez JBBM40PW JB Brubaker Signature Pearl White",
+  "slug": "ibanez-jbbm40pw-jb-brubaker-signature-pearl-white-4549763377128",
+  "price": 857.0,
+  "median": 1144.0
  },
  {
   "kind": "electrica",
@@ -520,24 +574,6 @@
   "slug": "fender-ltd-american-vintage-ii-51-telecaster-negra-885978795239",
   "price": 2038.4,
   "median": 2805.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicalsanfrancisco",
-  "name": "Fujigen de 7 cuerdas Fujigen J-Standard Mythic JMY73ASHE negro poro abierto",
-  "slug": "fujigen-de-7-cuerdas-fujigen-j-standard-mythic-jmy73ashe-negro-poro-abierto-4537239897638",
-  "price": 1763.75,
-  "median": 2510.75
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicalsanfrancisco",
-  "name": "Fujigen zurda Fujigen Expert Odyssey EOS2-ASH azul burst translúcido",
-  "slug": "fujigen-zurda-fujigen-expert-odyssey-eos2-ash-azul-burst-translucido-4537239899304",
-  "price": 1572.5,
-  "median": 2238.5
  },
  {
   "kind": "electrica",
@@ -1078,6 +1114,12 @@
   "slug": "yamaha-tas1e-ultra-marine-4957812722322",
   "price": 643.0,
   "median": 877.895
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Furch Vintage 3 OOM-SR",
+  "slug": "furch-vintage-3-oom-sr-8596387005247"
  },
  {
   "kind": "clasica",

@@ -2580,7 +2580,6 @@ zoom-fp02m-4515260011445
 zoom-g1-four-4515260020188
 zoom-g1-four-4515260020195
 zoom-g1-four-multi-effect-pedal-edalp11464
-zoom-g11-4515260022762
 zoom-g1x-four-4515260020287
 zoom-g1x-four-multi-effect-pedal-edalp11448
 zoom-g1x-four-multi-effects-processor-4515260020294
@@ -2589,7 +2588,7 @@ zoom-g2-four-4515260028252
 zoom-g2x-four-4515260027392
 zoom-g2x-four-4515260028177
 zoom-g3xn-pedalera-multiefectos-4515260017232
-zoom-g6-4515260023608
+zoom-g6-pedalera-multiefectos-guitarra-4515260023608
 zoom-ms-200d-4515260029570
 zoom-ms-50g-4515260029549
 zoom-ms-50g-pedaleira-guitarra-eletrica-ricap34359
