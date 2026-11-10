@@ -17,6 +17,8 @@
   el fotograma de 1,5 s (`thumb_offset`), con la escena ya entera.
 - Precios reales del día, comprobados tienda por tienda; si una rebaja o una foto parecen raras, se cambia la guitarra.
 - Rango de precios de chollos y tops: 150–750 €.
+- **Prioridad eBay y Amazon** (Manuel, 10-11; cobra comisión por sus ventas): si un chollo (guitarras, equipo o discos)
+  es más barato en eBay o Amazon, se anuncia primero (`ig.monetiza`). Nunca se descarta por estar en eBay o Amazon.
 - **Ciclo de categorías** (Manuel, 9-11): el Reel de las 17:37 de los días sin cuenta atrás va rotando por guitarras,
   amplis, bajos, teclados, baterías, pedales y micrófonos (`scraper/equipo.py`), con las ofertas del día de esa rama (pedales
   desde 80 €). Si una rama no tiene 3 ofertas buenas, sale el top de guitarras. Baterías: catálogo añadido el 9-11 (kits completos).

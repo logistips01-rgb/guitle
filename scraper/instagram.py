@@ -132,6 +132,12 @@ def deals_by_slug():
     return out
 
 
+def monetiza(tienda):
+    """eBay y Amazon: Manuel cobra comisión por sus ventas, así que sus chollos se anuncian primero (10-11)."""
+    t = (tienda or "").lower()
+    return "ebay" in t or "amazon" in t
+
+
 def rank_deals(prods, recent, menos=None):
     """Chollos del día de mejor a peor, sin guitarras ya publicadas y sin repetir marca seguida.
     menos(diferencia) da el texto de "X menos que en cualquier otra tienda" en otro idioma y moneda (solo hay
@@ -153,7 +159,8 @@ def rank_deals(prods, recent, menos=None):
             continue
         if pct > 60:  # rebajas tan grandes suelen ser un error de emparejamiento, no un chollo
             continue
-        scored.append(((prio, pct + min(p["stores"], 10)), {**p, "why": why, "pct": round(pct)}))
+        # Primero los chollos de eBay y Amazon (comisión), luego el resto
+        scored.append(((monetiza(p["store"]), prio, pct + min(p["stores"], 10)), {**p, "why": why, "pct": round(pct)}))
     scored.sort(key=lambda x: x[0], reverse=True)
     out, brands = [], []
     for _, p in scored:

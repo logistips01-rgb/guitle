@@ -115,7 +115,7 @@ def plan(cc, rama, day, recent, fetcher, sub, money, rango, fecha):
     # Ofertas: la más barata frente a todas las demás tiendas, con diferencia creíble (≤ 1,45 × la más cara)
     cands = sorted((p for p in prods if p["next"] > p["price"] and p["max"] <= 1.45 * p["price"]
                     and p["name"] not in recent and ig.foto_revisada(p)),
-                   key=lambda p: -(p["next"] - p["price"]) / p["price"])
+                   key=lambda p: (not ig.monetiza(p["store"]), -(p["next"] - p["price"]) / p["price"]))  # eBay/Amazon primero
     elegidos, marcas = [], set()
     for p in cands:
         if p["brand"] in marcas or (p["next"] - p["price"]) / p["price"] < 0.03:  # sin marcas repetidas ni rebajas de calderilla

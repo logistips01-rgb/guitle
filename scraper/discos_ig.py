@@ -173,7 +173,9 @@ def candidatos(recent, cc="uk"):
         out.append({**d, "artist": artista(d["name"]), "title": d["name"].split(" - ", 1)[1].strip(),
                     "lo": lo["p"], "hi": hi["p"], "ahorro": ahorro, "tienda": tiendas.get(lo["s"], lo["s"]),
                     "tiendas": len({i["s"] for i in live}), "url": f"{web}/{d['slug']}.html"})
-    return sorted(out, key=lambda d: (d["fmt"] != "vinilo", -d["ahorro"]))
+    # Primero los de eBay y Amazon (Manuel cobra comisión por sus ventas), luego los vinilos con más ahorro
+    return sorted(out, key=lambda d: ("ebay" not in d["tienda"].lower() and "amazon" not in d["tienda"].lower(),
+                                      d["fmt"] != "vinilo", -d["ahorro"]))
 
 
 def portada(url, dest):
