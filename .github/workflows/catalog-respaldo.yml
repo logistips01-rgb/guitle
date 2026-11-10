@@ -1,0 +1,78 @@
+name: catalog-respaldo
+
+# Respaldo de las lecturas de catálogo: GitHub retrasa o se salta a veces las tandas programadas de catalog.yml. Cada 4
+# horas se mira cuándo se guardó por última vez cada catálogo ("data: catálogo <cat> …" en git) y se relanzan solo los
+# que pasan de su plazo y no se están leyendo ya: los grandes (es…nl, tres veces al día) a las 14 horas, los demás
+# (una vez al día) a las 30. Van por catalog.yml con la entrada "lista", en su propia cola (catalog-respaldo), para no
+# sustituir a la tanda programada que espera turno.
+on:
+  schedule:
+    - cron: "41 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: catalog-respaldo-mirar
+  cancel-in-progress: false
+
+jobs:
+  mirar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: claude/friendly-fermat-yycain
+          fetch-depth: 600
+      - name: Catálogos atrasados
+        run: |
+          python3 - <<'PY'
+          import json, os, subprocess, time
+          BIG = "es mas pt ptmas fr frmas it itmas uk ukmas de demas br brmas nl nlmas".split()
+          SMALL = ("at atmas ie iemas be bemas ch chmas mx ar pl plmas se semas no nomas dk dkmas "
+                   "cz czmas sk skmas hu humas ro romas bg bgmas gr grmas fi lu").split()
+          now = time.time()
+          last = {}
+          for line in subprocess.run(["git", "log", "--since=4 days ago", "--format=%ct %s"], capture_output=True,
+                                     text=True).stdout.splitlines():
+              ts, _, subj = line.partition(" ")
+              if subj.startswith("data: catálogo "):
+                  cat = subj.split()[2]
+                  last.setdefault(cat, int(ts))  # el log va del más nuevo al más viejo
+          gh = lambda *a: json.loads(subprocess.run(["gh", "api", *a], capture_output=True, text=True, check=True).stdout)
+          runs = gh(f"repos/{os.environ['REPO']}/actions/workflows/catalog.yml/runs?per_page=20")["workflow_runs"]
+          busy, pending_sched = set(), False
+          for r in runs:
+              if r["status"] not in ("queued", "in_progress", "waiting", "requested", "pending"):
+                  continue
+              jobs = gh(f"repos/{os.environ['REPO']}/actions/runs/{r['id']}/jobs?per_page=100")["jobs"]
+              if not jobs:
+                  pending_sched = True  # una tanda en espera, aún sin trabajos
+              for j in jobs:
+                  if j["status"] != "completed" and "(" in j["name"]:
+                      busy.add(j["name"].split("(")[1].rstrip(")"))
+          if pending_sched:
+              # No se sabe qué catálogos traerá, y un respaldo nuevo sustituiría a otro que espera: mejor a la próxima.
+              print("Hay una tanda de catalog.yml esperando turno: no se lanza nada ahora.")
+              raise SystemExit(0)
+          late = []
+          for cat in BIG + SMALL:
+              limit = (14 if cat in BIG else 30) * 3600
+              age = now - last.get(cat, 0)
+              if age > limit and cat not in busy:
+                  late.append(cat)
+              print(f"{cat:7} guardado hace {age / 3600:5.1f} h{'  · leyendo' if cat in busy else ''}"
+                    f"{'  → RESPALDO' if cat in late else ''}")
+          if late:
+              subprocess.run(["gh", "workflow", "run", "catalog.yml", "--ref", "claude/friendly-fermat-yycain",
+                              "-f", "lista=" + json.dumps(late)], check=True)
+              print(f"::notice::respaldo lanzado para {len(late)} catálogos: {' '.join(late)}")
+          else:
+              print("Todo al día.")
+          PY
