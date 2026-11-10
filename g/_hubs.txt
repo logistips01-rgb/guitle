@@ -488,6 +488,7 @@ marca/heritage.html
 marca/hermanos-bros.html
 marca/hils.html
 marca/hipshot.html
+marca/hitman.html
 marca/hiwatt.html
 marca/hk-audio.html
 marca/hofner.html
@@ -963,6 +964,7 @@ marca/st309wh.html
 marca/stage-line.html
 marca/stagg.html
 marca/stanford.html
+marca/startone.html
 marca/steinberger.html
 marca/sterling.html
 marca/steyner-straps.html
@@ -1048,6 +1050,7 @@ marca/tomsline.html
 marca/tontrager.html
 marca/trace-elliot.html
 marca/tramontane.html
+marca/traps.html
 marca/travel.html
 marca/traveler.html
 marca/trdhr.html
@@ -1102,6 +1105,7 @@ marca/valentine.html
 marca/valeriano.html
 marca/valeton.html
 marca/vantage.html
+marca/varus.html
 marca/vater.html
 marca/veelah.html
 marca/vemuram.html
@@ -1146,6 +1150,7 @@ marca/yamaha-drums.html
 marca/yamaha.html
 marca/yellow-parts.html
 marca/yuer.html
+marca/zebra-drums.html
 marca/zemaitis.html
 marca/zildjian.html
 marca/zivix.html
