@@ -44,7 +44,9 @@ WantedBy=timers.target
 EOF
 systemctl daemon-reload
 systemctl enable --now guitle-copia.timer
-cp /root/Caddyfile /etc/caddy/Caddyfile
+# Con el dominio ya activo (paso "dominio"), su configuración: la de solo IP lo dejaría sin https.
+if grep -q "guitle.com, www.guitle.com" /etc/caddy/Caddyfile 2>/dev/null; then cp /root/Caddyfile.dominio /etc/caddy/Caddyfile
+else cp /root/Caddyfile /etc/caddy/Caddyfile; fi
 caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
 systemctl reload caddy || systemctl restart caddy
 sleep 2

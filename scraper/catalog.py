@@ -5176,6 +5176,11 @@ CATALOGS["no"]["sources"]["4sound"]["listing"] = _nop_listing("https://www.4soun
 CATALOGS["nomas"]["sources"]["4sound"]["listing"] = _nop_listing("https://www.4sound.no", FOURSOUND_ROOTS)
 for _cat in ("it", "itmas"):
     CATALOGS[_cat]["sources"]["yourmusiconline"]["listing"] = _shopify_listing("https://yourmusiconline.it")
+# Evenstad (Noruega): sus listados se pintan con JavaScript, así que se leen las fichas; con la pausa normal (3-6 s) eran
+# ~2.000 por lectura y su equipo (17.000) tardaba más de una semana en dar la vuelta. Su robots.txt no pide pausa.
+for _cat in ("no", "nomas"):
+    if "evenstad" in CATALOGS.get(_cat, {}).get("sources", {}):
+        CATALOGS[_cat]["sources"]["evenstad"]["delay"] = (1.0, 2.0)
 for _code, _secs in KYTARY_EQ_SECTIONS.items():  # equipo de Kytary: precios de hoy desde sus listados
     _src = CATALOGS.get(_code + "mas", {}).get("sources", {}).get("kytary")
     if _src is not None:

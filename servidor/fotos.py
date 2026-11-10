@@ -1,5 +1,6 @@
-"""Baja al servidor las fotos (img/p/) que le faltan, desde https://guitle.com/img/p/ (la caché de Cloudflare: rápido y
-sin gastar operaciones de R2). Con rclone, foto a foto desde R2, iban 13 por segundo: 676.000 fotos eran 14 horas.
+"""Baja al servidor las fotos (img/p/) que le faltan, desde https://prueba.guitle.com/img/p/ (el Worker de Cloudflare,
+que las sirve de R2 con caché: rápido y casi sin operaciones de R2). Antes era guitle.com, pero desde el cambio de DNS
+(10/11/2026) guitle.com es este mismo servidor: se pedía las fotos a sí mismo y la copia acababa con error. Con rclone, foto a foto desde R2, iban 13 por segundo: 676.000 fotos eran 14 horas.
 Aquí, 48 a la vez con conexiones que se reutilizan.
 
     python3 fotos.py LISTA RAIZ        (LISTA: "img/p/<nombre>" por línea; RAIZ: /srv/guitle/r2)
@@ -21,7 +22,7 @@ lock = threading.Lock()
 def conn():
     c = getattr(local, "c", None)
     if c is None:
-        c = local.c = http.client.HTTPSConnection("guitle.com", timeout=30)
+        c = local.c = http.client.HTTPSConnection("prueba.guitle.com", timeout=30)
     return c
 
 
