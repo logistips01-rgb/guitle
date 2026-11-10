@@ -675,12 +675,6 @@
   "median": 244.35
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez AR625FMSP-CML",
-  "slug": "ibanez-ar625fmsp-cml-625fmspcml"
- },
- {
   "kind": "acustica",
   "type": "sin_iva",
   "store": "mat",
