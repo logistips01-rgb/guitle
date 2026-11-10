@@ -10,6 +10,7 @@ import re
 import unicodedata
 from pathlib import Path
 from urllib.parse import quote_plus
+from . import mercados
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / "g"
@@ -175,7 +176,7 @@ def _render(product, kind, store_names, colors):
     </div>
   </article>
   <section><h3>Tiendas</h3><div class="table-wrap"><table id="stores">{_rows(product, store_names, colors)}</table></div>
-    {f'<p class="amazon-cta"><a class="go" href="https://www.amazon.es/s?k={quote_plus(name)}&amp;tag={AMAZON_TAG}" target="_blank" rel="sponsored noopener">Buscar en Amazon</a></p>' if kind == "varios" else f'<p class="muted small amazon">¿Prefieres comprar en Amazon? <a href="https://www.amazon.es/s?k={quote_plus(name)}&amp;tag={AMAZON_TAG}" target="_blank" rel="sponsored noopener">Buscar este modelo en Amazon</a></p>'}</section>
+    {mercados.buttons("es", "es", name, f"https://www.amazon.es/s?k={{q}}&tag={AMAZON_TAG}")}</section>
   <section><h3>Histórico de precios</h3>
     <div class="stats" id="stats"></div>
     <div class="chart-box"><canvas id="chart"></canvas></div>
