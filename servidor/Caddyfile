@@ -30,6 +30,13 @@
 	header ?Cache-Control "public, max-age=600"
 	header X-Content-Type-Options nosniff
 
+	# Parte de salud del servidor (salud.sh, cada 5 minutos), fuera de la copia de R2
+	handle /salud-servidor.json {
+		root * /srv/guitle/salud
+		header Cache-Control "no-store"
+		file_server
+	}
+
 	try_files {path} {path}.html {path}/index.html
 	file_server
 
