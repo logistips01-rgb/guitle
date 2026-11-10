@@ -1,0 +1,183 @@
+{
+ "date": "2026-11-10",
+ "fecha": "10 November",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "squier-cv-60s-thinline-tele-mn-nt-elemnnthtm",
+   "name": "Squier CV 60s Thinline Tele MN NT",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/468477.jpg",
+   "th": "a1233d584143697c.webp",
+   "price": 295.0,
+   "store": "Thomann",
+   "stores": 6,
+   "median": 379.0,
+   "max": 399.0,
+   "next": 358.0,
+   "rows": [
+    [
+     "Thomann",
+     295.0
+    ],
+    [
+     "Fair Deal Music",
+     358.0
+    ],
+    [
+     "Reidys",
+     375.0
+    ],
+    [
+     "A Strings",
+     379.0
+    ],
+    [
+     "Dawsons",
+     379.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     399.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£63 less than any other shop",
+   "pct": 18,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Deal of the day: Squier CV 60s Thinline Tele MN NT\n💷 £295 at Thomann, compared across 6 shops.\n📉 £63 less than any other shop.\n\n🔎 Compare its price on guitle.com/uk (all today’s deals via the link in bio 👆).\nPrice on 10 November; it may change.\n\n#guitar #guitarist #guitardeals #ukguitar #electricguitar #squier"
+ },
+ "stories": [
+  {
+   "slug": "jackson-js-series-dinky-arch-top-js32-dkam-snow-white-maple-fingerboard-emaplefing",
+   "name": "Jackson JS Series Dinky Arch Top JS32 DKAM Snow White Maple Fingerboard",
+   "brand": "Jackson",
+   "kind": "electrica",
+   "img": "https://images.guitarguitar.co.uk/cdn/large/150/14110516451277f.jpg",
+   "th": "dd1c2f2a7ad9fc27.webp",
+   "price": 299.0,
+   "store": "guitarguitar",
+   "stores": 4,
+   "median": 349.0,
+   "max": 369.0,
+   "next": 349.0,
+   "rows": [
+    [
+     "guitarguitar",
+     299.0
+    ],
+    [
+     "Music Street",
+     349.0
+    ],
+    [
+     "A Strings",
+     349.0
+    ],
+    [
+     "Guitarbitz",
+     369.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£50 less than any other shop",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "yamaha-revstar-rss20-sonic-blue-nicbluehtm",
+   "name": "Yamaha Revstar RSS20 Sonic Blue",
+   "brand": "Yamaha",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/625747.jpg",
+   "th": "ca05fd71a441ef26.webp",
+   "price": 619.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 699.0,
+   "max": 699.0,
+   "next": 699.0,
+   "rows": [
+    [
+     "Thomann",
+     619.0
+    ],
+    [
+     "guitarguitar",
+     699.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     699.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£80 less than any other shop",
+   "pct": 11,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "squier-sonic-mustang-hh-lrl-blk-hlrlblkhtm",
+   "name": "Squier Sonic Mustang HH LRL BLK",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/634162.jpg",
+   "th": "8e22c6465a039fd8.webp",
+   "price": 152.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 179.495,
+   "max": 189.99,
+   "next": 169.0,
+   "rows": [
+    [
+     "Thomann",
+     152.0
+    ],
+    [
+     "R&T Music",
+     169.0
+    ],
+    [
+     "Guitarbitz",
+     189.99
+    ]
+   ],
+   "pvp": null,
+   "why": "£17 less than any other shop",
+   "pct": 10,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

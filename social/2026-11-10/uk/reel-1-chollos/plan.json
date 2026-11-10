@@ -1,0 +1,157 @@
+{
+ "fecha": "10 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "schecter-omen-elite-6-fr-electric-guitar-see-thru-blue-burst-810051470130",
+    "name": "Schecter Omen Elite-6 FR Electric Guitar, See-Thru Blue Burst",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/16578701_800.jpg?v=1755168410",
+    "th": "2d15336601de6d47.webp",
+    "price": 602.0,
+    "store": "Fair Deal Music",
+    "stores": 3,
+    "median": 669.0,
+    "max": 669.0,
+    "next": 669.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      602.0
+     ],
+     [
+      "guitarguitar",
+      669.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      669.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£67 less than any other shop",
+    "pct": 10,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "fender-standard-strat-lrl-wpg-amm-lwpgammhtm",
+    "name": "Fender Standard Strat Lrl Wpg Amm",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/608525.jpg",
+    "th": "b09d2578e252755f.webp",
+    "price": 411.0,
+    "store": "Thomann",
+    "stores": 7,
+    "median": 499.0,
+    "max": 539.0,
+    "next": 469.0,
+    "rows": [
+     [
+      "Thomann",
+      411.0
+     ],
+     [
+      "Fair Deal Music",
+      469.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      469.0
+     ],
+     [
+      "Music Street",
+      499.0
+     ],
+     [
+      "Reidys",
+      499.0
+     ],
+     [
+      "A Strings",
+      499.0
+     ],
+     [
+      "Guitarbitz",
+      539.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£58 less than any other shop",
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "taylor-24ce-lor24cehtm",
+    "name": "Taylor 24ce",
+    "brand": "Taylor",
+    "kind": "acustica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/621313.jpg",
+    "th": "e7ccbf23c5a4c141.webp",
+    "price": 499.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 599.0,
+    "max": 599.0,
+    "next": 549.0,
+    "rows": [
+     [
+      "Thomann",
+      499.0
+     ],
+     [
+      "Matchetts Music",
+      549.0
+     ],
+     [
+      "Richtone Music",
+      599.0
+     ],
+     [
+      "A Strings",
+      599.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£50 less than any other shop",
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
