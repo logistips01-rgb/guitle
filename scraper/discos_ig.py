@@ -159,7 +159,11 @@ def candidatos(recent, cc="uk"):
     web = PAIS[cc]["web"]
     out = []
     for d in json.loads((ROOT / "data" / "musica" / cc / "discos.json").read_text(encoding="utf-8")):
-        live = sorted((i for i in d["items"] if i.get("st") and i.get("p")), key=lambda i: i["p"])
+        # eBay no es una tienda de discos (vendedores particulares, ediciones dudosas): no cuenta
+        live = sorted((i for i in d["items"] if i.get("st") and i.get("p") and "ebay" not in i["s"].lower()
+                       and "ebay" not in tiendas.get(i["s"], "").lower()
+                       # tiendas de otro país (p. ej. «CDGO (Portugal)»): el post dice «tiendas de discos de <país>»
+                       and "(" not in tiendas.get(i["s"], "")), key=lambda i: i["p"])
         if len({i["s"] for i in live}) < 2 or not d.get("img"):
             continue
         lo, hi = live[0], live[-1]
