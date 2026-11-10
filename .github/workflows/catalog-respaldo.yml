@@ -3,8 +3,8 @@ name: catalog-respaldo
 # Respaldo de las lecturas de catálogo: GitHub retrasa o se salta a veces las tandas programadas de catalog.yml. Cada 4
 # horas se mira cuándo se guardó por última vez cada catálogo ("data: catálogo <cat> …" en git) y se relanzan solo los
 # que pasan de su plazo y no se están leyendo ya: los grandes (es…nl, tres veces al día) a las 14 horas, los demás
-# (una vez al día) a las 30. Van por catalog.yml con la entrada "lista", en su propia cola (catalog-respaldo), para no
-# sustituir a la tanda programada que espera turno.
+# (una vez al día) a las 30. Van por catalog.yml con la entrada "lista"; la cola es por catálogo, así que no
+# chocan con una lectura del mismo catálogo que ya esté en marcha.
 on:
   schedule:
     - cron: "41 */4 * * *"
