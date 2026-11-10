@@ -7,7 +7,7 @@ name: catalog-respaldo
 # chocan con una lectura del mismo catálogo que ya esté en marcha.
 on:
   schedule:
-    - cron: "41 */4 * * *"
+    - cron: "43 */4 * * *"
   workflow_dispatch:
 
 permissions:
