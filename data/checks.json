@@ -65,15 +65,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "mat",
-  "name": "Danelectro 57 Jade",
-  "slug": "danelectro-57-jade-611820027988",
-  "price": 486.78,
-  "median": 666.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "egitana",
   "name": "ESP LTD JM-I QM Deep Blood Moon",
   "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
@@ -213,7 +204,7 @@
   "name": "PRS SE Custom 24 Semi-Hollow Piezo Lake Blue",
   "slug": "prs-se-custom-24-semi-hollow-piezo-lake-blue-825362244158",
   "price": 1269.0,
-  "median": 1789.0
+  "median": 1799.0
  },
  {
   "kind": "electrica",
@@ -379,6 +370,15 @@
  },
  {
   "kind": "electrica",
+  "type": "sin_iva",
+  "store": "alteisa",
+  "name": "Sire T7 FM New Gen TBL (M) Trans Blue",
+  "slug": "sire-t7-fm-new-gen-tbl-m-trans-blue-810187571947",
+  "price": 599.19,
+  "median": 711.0
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "Austin AS6PROBK Super 6 Pro Black",
@@ -457,42 +457,6 @@
   "slug": "ibanez-jbbm40pw-jb-brubaker-signature-pearl-white-4549763377128",
   "price": 857.0,
   "median": 1144.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Mooer MHL100 Dreamy Blue",
-  "slug": "mooer-mhl100-dreamy-blue-6971889223764",
-  "price": 313.22,
-  "median": 369.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Mooer MHL100 Green Grad.",
-  "slug": "mooer-mhl100-green-grad-6971889223733",
-  "price": 313.22,
-  "median": 369.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Mooer MHL100 Purple Burst",
-  "slug": "mooer-mhl100-purple-burst-6971889223771",
-  "price": 313.22,
-  "median": 369.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Mooer MHL100 Purple Grad.",
-  "slug": "mooer-mhl100-purple-grad-6971889223757",
-  "price": 313.22,
-  "median": 369.0
  },
  {
   "kind": "electrica",
@@ -695,11 +659,26 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Squier Starcaster Affinity Dlx Mn Sienna Sunburst",
+  "slug": "squier-starcaster-affinity-dlx-mn-sienna-sunburst-885978136308",
+  "price": 259.0,
+  "median": 362.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "musicopolix",
   "name": "Sx SST Alder H Vintage White",
   "slug": "sx-sst-alder-h-vintage-white-6940651408777",
   "price": 118.68,
   "median": 244.35
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Ibanez AR625FMSP-CML",
+  "slug": "ibanez-ar625fmsp-cml-625fmspcml"
  },
  {
   "kind": "acustica",
@@ -763,6 +742,15 @@
   "slug": "lag-tramontane-t177jce-jumbo-3700166370241",
   "price": 311.0,
   "median": 519.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort GA-MEDX M OP W/bag",
+  "slug": "cort-ga-medx-m-op-w-bag-8809625365240",
+  "price": 203.47,
+  "median": 272.0
  },
  {
   "kind": "acustica",
@@ -893,6 +881,15 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Martin D-18 Dreadnought Satin Amberburst",
+  "slug": "martin-d-18-dreadnought-satin-amberburst-729789648233",
+  "price": 1966.4,
+  "median": 2959.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Seagull Artist Mosaic Anthem EQ",
   "slug": "seagull-artist-mosaic-anthem-eq-623501050536",
@@ -979,6 +976,15 @@
   "slug": "carry-on-co-mini-a-gtr-mini-acoustic-guitar-845644008575",
   "price": 123.96,
   "median": 148.995
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Cort Earth100 NAT",
+  "slug": "cort-earth100-nat-8809383839229",
+  "price": 202.59,
+  "median": 291.195
  },
  {
   "kind": "acustica",
@@ -1212,16 +1218,7 @@
   "name": "Cort AC200 3/4 OP w/bag",
   "slug": "cort-ac200-3-4-op-w-bag-8809625362560",
   "price": 121.51,
-  "median": 175.345
- },
- {
-  "kind": "clasica",
-  "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "Cort AC200 3/4 OP w/bag",
-  "slug": "cort-ac200-3-4-op-w-bag-8809625362560",
-  "price": 122.0,
-  "median": 175.1
+  "median": 187.845
  },
  {
   "kind": "clasica",
@@ -1266,7 +1263,7 @@
   "name": "Alesis Prestige",
   "slug": "alesis-prestige-694318025482",
   "price": 499.0,
-  "median": 1609.0
+  "median": 1304.5
  },
  {
   "kind": "teclado",
@@ -1275,7 +1272,25 @@
   "name": "Alesis Prestige",
   "slug": "alesis-prestige-694318025482",
   "price": 619.0,
-  "median": 1549.0
+  "median": 1244.5
+ },
+ {
+  "kind": "teclado",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Casio Privia PX-S1100WE",
+  "slug": "casio-privia-px-s1100we-4971850362630",
+  "price": 476.99,
+  "median": 701.0
+ },
+ {
+  "kind": "teclado",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Casio Privia PX-S1100WE",
+  "slug": "casio-privia-px-s1100we-4971850362630",
+  "price": 487.0,
+  "median": 695.995
  },
  {
   "kind": "pedal",

@@ -207,7 +207,6 @@ alvarez-ad60cespb-espb401870
 alvarez-ad60cespb12-pb12404672
 alvarez-ad60cespb12shb-2shb400818
 alvarez-ad60cespbshb-bshb400816
-alvarez-ad60l-varezad60l
 alvarez-ad60shb-artist-812309021774
 alvarez-ad66-ce-spbshb-677523001793
 alvarez-ad66ce-spb-shb-artist-66-dreadnought-noughthtml
@@ -302,6 +301,7 @@ alvarez-delta00e-tsb-a-blues-812309021927
 alvarez-delta00e-tsb-blues-machine-achinehtml
 alvarez-dreadnought-electrificada-alvarez-adm66cear-artist-elite-con-funda-812309027431
 alvarez-dreadnought-electrificada-alvarez-adws77ceshb-artist-elite-shadowburst-812309027387
+alvarez-dreadnought-para-zurdos-alvarez-ad60l-artist-natural-gloss-lglosshtml
 alvarez-ld70e-hfdb-daybreak-laureate-677523002424
 alvarez-ld70e-laureate-677523002417
 alvarez-ld70ehf-0ehf400787
@@ -2022,19 +2022,15 @@ gbpc-backpacker-folk-de-viaje-729789062008
 gewa-applause-guitare-electro-acoustique-jump-blank-canvas-nvasp41063
 gewa-cataluna-black-4046662224589
 gibraltar-mampara-barrera-acustica-gibraltar-gds-5-717070301554
-gibson-1929-nick-lucas-spec-argentine-grey-light-aged-murphy-lab-21875008-ab21875008
-gibson-1929-nick-lucas-spec-argentine-grey-light-aged-murphy-lab-21875008-murphylab1
+gibson-1929-nick-lucas-spec-argentine-grey-light-aged-murphy-lab-21875008-711106167558
 gibson-1936-advanced-jumbo-vintage-sunburst-711106037356
 gibson-1936-j-35-711106037332
 gibson-1942-banner-j-45-vintage-sunburst-711106037318
 gibson-1942-banner-lg-2-vintage-sunburst-711106037301
 gibson-1942-banner-southern-jumbo-vintage-sunburst-711106037370
-gibson-1955-j-45-vintage-sunburst-murphy-lab-light-aged-21525047-ed21525047
-gibson-1955-j-45-vintage-sunburst-murphy-lab-light-aged-21525047-lightaged1
 gibson-1960-hummingbird-fixed-bridge-heritage-cherry-sunburst-711106037394
 gibson-1960-hummingbird-murphy-lab-heavy-aged-1-711106157719
-gibson-1960-hummingbird-murphy-lab-light-aged-22754008-blightaged
-gibson-1960-hummingbird-murphy-lab-light-aged-22754008-ed22754008
+gibson-1960-hummingbird-murphy-lab-light-aged-22754008-711106129525
 gibson-1963-country-western-murphy-lab-heavy-aged-20715032-711106157726
 gibson-50-s-j-45-original-ebony-711106036953
 gibson-60s-j-45-original-ebony-711106036984
@@ -2058,8 +2054,7 @@ gibson-elvis-sj-200-ebony-711106056388
 gibson-everly-brothers-j-180-22994072-711106139456
 gibson-g-45-natural-lh-711106056449
 gibson-hummingbird-anni-edicion-limitada-cremona-burst-modern-711106233673
-gibson-hummingbird-custom-22513019-birdcustom
-gibson-hummingbird-custom-22513019-om22513019
+gibson-hummingbird-custom-22513019-711106135236
 gibson-hummingbird-custom-koa-natural-antiguo-csm-711106044224
 gibson-hummingbird-elegante-koa-sunburst-miel-moderno-711106233550
 gibson-hummingbird-especial-satinado-rojo-vino-moderna-erna403688
@@ -2077,7 +2072,7 @@ gibson-hummingbird-standard-sunburst-cereza-vintage-moderno-711106246093
 gibson-hummingbird-standard-translucent-teal-modern-711106175218
 gibson-hummingbird-standard-turquesa-del-sudoeste-moderno-711106233611
 gibson-hummingbird-standard-vintage-sunburst-moderno-711106056302
-gibson-hummingbird-studio-rosewood-711106139357
+gibson-hummingbird-studio-rosewood-711106096230
 gibson-hummingbird-studio-walnut-burst-711106170299
 gibson-hummingbird-studio-walnut-satin-natural-711106139333
 gibson-j-160e-original-vintage-sunburst-711106174419
@@ -2144,8 +2139,7 @@ gibson-lg-2-50s-sunburst-vintage-original-711106246253
 gibson-lg-2-all-mahogany-faded-natural-711106174365
 gibson-lg-2-all-mahogany-faded-vintage-sunburst-711106174372
 gibson-nathaniel-rateliff-lg-2-western-vs-711106056340
-gibson-pre-war-sj-200-rosewood-faded-vintage-sunburst-murphy-lab-light-aged-2166-ed21665069
-gibson-pre-war-sj-200-rosewood-faded-vintage-sunburst-murphy-lab-light-aged-2166-lightaged1
+gibson-pre-war-sj-200-rosewood-faded-vintage-sunburst-murphy-lab-light-aged-2166-711106167510
 gibson-sj-100-1939-muy-envejecido-sunburst-vintage-descolorido-cshr-711106157672
 gibson-sj-200-1957-ligeramente-envejecido-sunburst-vintage-cshr-169390199692
 gibson-sj-200-1957-murphy-lab-ligeramente-envejecido-natural-oscuro-curo403731
@@ -3226,8 +3220,6 @@ martin-000-42-l-ge-standard-golden-era-zurdos-729789683258
 martin-000-42-modern-deluxe-729789586368
 martin-000-ec-30th-eric-clapton-signature-729789677745
 martin-000-ec-eric-clapton-30th-aniversario-729789667517
-martin-000-ec-eric-clapton-signature-30th-anniversary-2-niversary2
-martin-000-ec-eric-clapton-signature-30th-anniversary-2948816-ary2948816
 martin-000-jr-e-sapele-junior-auditorium-729789689090
 martin-000-jr-e-signature-jeff-tweedy-eedy425303
 martin-000-junior-a-e-cutway-streetmaster-zurdo-729789687225
@@ -3275,7 +3267,6 @@ martin-00l-16e-black-smoke-729789711814
 martin-00l-16e-blue-denim-729789712330
 martin-00l-oliver-729789681827
 martin-012-28-modern-deluxe-deluxehtml
-martin-012-28-modern-deluxe-derndeluxe
 martin-018-standard-natural-icanatural
 martin-0xk-729789400527
 martin-1-a-e-x-series-caoba-hpl-caoba-hpl-ahplp29204
@@ -3367,8 +3358,6 @@ martin-d-28-1935-sunburst-729789686518
 martin-d-28-amb-ge-standard-golden-era-1933-dreadnought-ambertone-729789686464
 martin-d-28-amb-l-ge-standard-golden-era-1933-zurdos-dreadnought-ambertone-729789686488
 martin-d-28-authentic-1937-156812536234
-martin-d-28-authentic-1937-aged-2885303-ged2885303
-martin-d-28-authentic-1937-aged-2885303-ic1937aged
 martin-d-28-billy-strings-dreadnought-729789648073
 martin-d-28-custom-alpine-spruce-2764616-444410032477
 martin-d-28-dreadnought-authentic-1937-729789483278
@@ -3582,8 +3571,7 @@ martin-j-16e-1935-burst-729789712484
 martin-j-16e-black-smoke-729789711869
 martin-j-16e-cream-729789712538
 martin-j-40-2025-729789680899
-martin-j-40-j402793347
-martin-j-40-smartinj40
+martin-j-40-729789680905
 martin-limited-edition-gp-x2e-ziricote-729789696180
 martin-little-lx1-standar-a-e-raacustica
 martin-little-martin-koa-emartinkoa
@@ -3620,8 +3608,7 @@ martin-om-21-standard-729789549554
 martin-om-28-729789682893
 martin-om-28-amb-ge-standard-golden-era-1933-orquesta-ambertone-729789686365
 martin-om-28-amb-l-ge-standard-golden-era-1933-zurdos-orquesta-ambertone-729789686389
-martin-om-28-authentic-1931-1863309-9311863309
-martin-om-28-authentic-1931-1863309-hentic1931
+martin-om-28-authentic-1931-1863309-729789460866
 martin-om-28-l-gaucher-orchestra-zurdos-729789549615
 martin-om-28-l-ge-standard-golden-era-zurdos-orquesta-729789682916
 martin-om-28-l-orchestra-modern-deluxe-para-zurdos-729789572781
@@ -5288,7 +5275,6 @@ taylor-412ce-natural-next-generation-887766146483
 taylor-412ce-r-tsb-887766119012
 taylor-414ce-baritone-8-special-edition-887766146810
 taylor-414ce-next-generation-2026-887766143352
-taylor-414ce-r-natural-top-887766120322
 taylor-414ce-r-v-class-grand-auditorium-887766089254
 taylor-414ce-studio-natural-887766134596
 taylor-414ce-studio-shaded-edgeburst-887766134602
@@ -5346,10 +5332,7 @@ taylor-builder-s-edition-514ce-kona-burst-next-generatio-887766144861
 taylor-builder-s-edition-514ce-natural-next-generation-887766144854
 taylor-builder-s-edition-524ce-next-generation-887766144878
 taylor-builder-s-edition-814ce-blacktop-next-generation-887766144106
-taylor-builder-s-edition-814ce-honduran-adirondack-next-generation-1211185043
-taylor-builder-s-edition-814ce-honduran-adirondack-next-generation-generation
 taylor-builder-s-edition-814ce-honduran-rosewood-redwood-887766135722
-taylor-builder-s-edition-814ce-honduran-sinker-redwood-next-generation-generation
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-adirondack-shad-887766144205
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-sinker-redwood-887766144083
 taylor-builder-s-edition-814ce-next-generation-indian-rosewood-adirondack-natura-887766144090
@@ -5384,7 +5367,6 @@ taylor-gold-label-717e-sunburst-firestripe-pg-887766139324
 taylor-gold-label-810e-honduran-rosewood-natural-887766143451
 taylor-gold-label-814e-1202045005
 taylor-gold-label-814e-887766135739
-taylor-gold-label-814e-dlabel814e
 taylor-gold-label-814e-koa-887766135746
 taylor-gold-label-814e-koa-sunburst-887766135753
 taylor-gold-label-814e-sunburst-887766135760
