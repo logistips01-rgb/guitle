@@ -1,0 +1,61 @@
+name: papelera
+
+# Papelera de fotos (scraper/papelera.py): cada día apunta las miniaturas que ya no usa ninguna ficha y borra de R2 y del
+# servidor propio las que llevan 30 días sin que nadie las use. El informe (data/papelera-informe.json) sale en stats.html.
+on:
+  schedule:
+    - cron: "13 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: papelera
+  cancel-in-progress: false
+
+jobs:
+  papelera:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      RCLONE_CONFIG_R2_TYPE: s3
+      RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      RCLONE_CONFIG_R2_NO_CHECK_BUCKET: "true"
+      R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+      SERVIDOR_SSH_KEY: ${{ secrets.SERVIDOR_SSH_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: claude/friendly-fermat-yycain
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Apuntar y borrar
+        run: |
+          python -m scraper.papelera
+          n=$(wc -l < BORRAR.txt)
+          echo "A borrar hoy: $n"
+          if [ "$n" -gt 0 ]; then
+            # Topes en scraper/papelera.py (40.000 al día; nada si la papelera pasa del 60 % de las fotos).
+            curl -fsSLO https://downloads.rclone.org/v1.68.2/rclone-v1.68.2-linux-amd64.zip
+            unzip -q rclone-v1.68.2-linux-amd64.zip && sudo install rclone-v1.68.2-linux-amd64/rclone /usr/local/bin/
+            export RCLONE_CONFIG_R2_ENDPOINT="https://${R2_ACCOUNT,,}.r2.cloudflarestorage.com"
+            rclone delete r2:guitle --files-from-raw BORRAR.txt --no-traverse --transfers 32 --stats-log-level NOTICE
+            bash .github/servidor-envio.sh /dev/null BORRAR.txt || true
+            python -m scraper.papelera --confirmar BORRAR.txt
+          fi
+          rm -f BORRAR.txt
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/papelera.json data/papelera-borradas.json data/papelera-informe.json data/thumbs.json
+          git diff --cached --quiet && exit 0
+          git commit -qm "data: papelera de fotos $(date -u +%F)"
+          for i in 1 2 3 4; do git pull -q --rebase origin claude/friendly-fermat-yycain && git push -q origin HEAD:claude/friendly-fermat-yycain && exit 0; sleep $((i * 15)); done
+          exit 1

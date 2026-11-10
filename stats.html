@@ -504,7 +504,8 @@ async function renderGrowth() {
     [fmt(Math.round((Date.parse(last) - Date.parse(first)) / 864e5)), `días desde el ${shortM(first).split(" ")[0]}`],
   ].map(([b, s]) => `<div class="tile-s"><b>${b}</b><span>${s}</span></div>`).join("");
   const cong = await fetch("data/congruencia.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
-  renderAlerts(codes, at, moments, upd, name, frescura, cong);
+  const pap = await fetch("data/papelera-informe.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).catch(() => null);
+  renderAlerts(codes, at, moments, upd, name, frescura, cong, pap);
   if (growthChart) growthChart.destroy();
   growthChart = new Chart($("gchart"), {
     type: "line",
@@ -531,7 +532,7 @@ async function renderGrowth() {
 }
 
 // Avisos: lo raro en la última lectura frente a la anterior (mismos datos que el crecimiento).
-function renderAlerts(codes, at, moments, upd, name, frescura = {}, cong = null) {
+function renderAlerts(codes, at, moments, upd, name, frescura = {}, cong = null, pap = null) {
   const last = moments.at(-1), prev = moments.at(-2), out = [];
   const add = (cls, tag, text) => out.push(`<div class="alert ${cls}"><b>${tag}</b><span>${text}</span></div>`);
   const kinds = [[2, "g", "guitarras"], [3, "e", "equipo"]];
@@ -563,6 +564,12 @@ function renderAlerts(codes, at, moments, upd, name, frescura = {}, cong = null)
       add("bad", "Precio distinto", `${esc(name[r.pais] || r.pais)} · ${esc(r.tienda)}: guitle ${fmt(r.precio)}, en la tienda ${esc((r.visibles || []).slice(0, 3).join(" / ") || "otro")} · <a href="${esc(r.url)}" target="_blank" rel="noopener">ver ficha</a>`);
     if (!(cong.distintos || []).length)
       add("ok", "Precios comprobados", `${fmt(cong.ok)} de ${fmt(cong.total)} tiendas cuadran con su web (${esc(cong.actualizado.replace("T", " "))}); ${fmt(cong.sin_comprobar)} no se pudieron abrir.`);
+  }
+  // Papelera de fotos (scraper/papelera.py): las que no usa nadie se borran a los 30 días; aquí, si alguna ficha pidió una ya borrada
+  if (pap) {
+    for (const r of (pap.pedidas || []).slice(0, 20))
+      add("warn", "Foto borrada pedida", `${esc(r.nombre || r.ficha)} pidió ${esc(r.foto)}, borrada el ${esc(r.borrada)}; se rehace sola (${esc(r.catalogo)}).`);
+    add("ok", "Papelera de fotos", `${fmt(pap.en_papelera)} fotos sin usar en la papelera (de ${fmt(pap.fotos)}); ${fmt(pap.rescatadas_hoy || 0)} rescatadas hoy, ${fmt(pap.borradas_hoy || 0)} borradas hoy, ${fmt(pap.borradas_90_dias || 0)} en 90 días.`);
   }
   $("alerts").innerHTML = out.length ? out.join("")
     : `<div class="alert ok"><b>Todo en orden</b><span>Todos los países tienen guitarras y equipo, al día y sin caídas.</span></div>`;
