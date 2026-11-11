@@ -1,0 +1,210 @@
+{
+ "fecha": "11 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "5 bons plans claviers",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "roland-e-x10-4957054518240",
+    "name": "roland E-X10",
+    "brand": "roland",
+    "kind": "teclados",
+    "img": "https://www.musicmatos.com/14267-large_default/claviers-arrangeurs-roland-ex10.jpg",
+    "th": "ffbc0068961357a5.webp",
+    "price": 195.0,
+    "store": "Musique Matos",
+    "stores": 3,
+    "median": 220.0,
+    "max": 221.0,
+    "next": 219.0,
+    "rows": [
+     [
+      "Musique Matos",
+      195.0
+     ],
+     [
+      "Scotto Musique",
+      219.0
+     ],
+     [
+      "Cultura",
+      221.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "24 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "novation-launchkey-88-mk3-815301001461",
+    "name": "Novation Launchkey 88 MK3",
+    "brand": "Novation",
+    "kind": "teclados",
+    "img": "https://www.stars-music.fr/medias/novation/launchkey-88-mk3-hd-188425.webp",
+    "th": "869557915ad834cf.webp",
+    "price": 319.0,
+    "store": "Stars Music",
+    "stores": 3,
+    "median": 414.495,
+    "max": 449.99,
+    "next": 379.0,
+    "rows": [
+     [
+      "Stars Music",
+      319.0
+     ],
+     [
+      "Audio System",
+      379.0
+     ],
+     [
+      "Music 3000",
+      449.99
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "60 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "arturia-clavier-sequenceur-keystep-pro-chroma-3760033532028",
+    "name": "Arturia Clavier Séquenceur Keystep Pro Chroma",
+    "brand": "Arturia",
+    "kind": "teclados",
+    "img": "https://scottomusique.com/22051-home_default/arturia-clavier-sequenceur-keystep-pro-chroma.jpg",
+    "th": "05c2d344c003d294.webp",
+    "price": 397.0,
+    "store": "Scotto Musique",
+    "stores": 4,
+    "median": 499.0,
+    "max": 499.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "Scotto Musique",
+      397.0
+     ],
+     [
+      "Stars Music",
+      499.0
+     ],
+     [
+      "Music 3000",
+      499.0
+     ],
+     [
+      "Michenaud",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "102 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "korg-i3-workstation-61-touches-noir-mat-4959112193307",
+    "name": "Korg I3 - Workstation - 61 touches - Noir mat",
+    "brand": "Korg",
+    "kind": "teclados",
+    "img": "https://cdn.cultura.com/media/pim/355933_image_type_product_shot_ALGAM_SGF2_0_FR_d8385",
+    "th": "2fbb3f6017700ccc.webp",
+    "price": 416.0,
+    "store": "Cultura",
+    "stores": 3,
+    "median": 522.0,
+    "max": 549.0,
+    "next": 495.0,
+    "rows": [
+     [
+      "Cultura",
+      416.0
+     ],
+     [
+      "Music 3000",
+      495.0
+     ],
+     [
+      "Audio System",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "79 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "korg-b2-spbk-4959112248441",
+    "name": "korg B2+ Spbk",
+    "brand": "korg",
+    "kind": "teclados",
+    "img": "https://www.musicmatos.com/17836-large_default/pianos-numeriques-korg-b2-plus-spbk.jpg",
+    "th": "1dc42880b97fc6d2.webp",
+    "price": 543.0,
+    "store": "Musique Matos",
+    "stores": 3,
+    "median": 703.495,
+    "max": 707.0,
+    "next": 699.99,
+    "rows": [
+     [
+      "Musique Matos",
+      543.0
+     ],
+     [
+      "Cultura",
+      699.99
+     ],
+     [
+      "Stars Music",
+      707.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "156,99 € de moins qu'ailleurs"
+   }
+  ],
+  "rama": "teclados"
+ }
+}
