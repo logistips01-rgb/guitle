@@ -291,7 +291,6 @@ fender-ltd-american-ultra-ii-jazz-bass-v-rfmn-gdst-197955197906
 fender-ltd-american-vintage-ii-66-jazz-bass-rw-blk-197955161075
 fender-ltd-player-ii-jazz-bass-rw-shp-197955259987
 fender-ltd-player-ii-precision-bass-rw-shp-197955259970
-fender-ltd-vintera-ii-road-worn-60s-precision-bass-fiesta-red-bajo-electrico-885978464579
 fender-made-in-japan-hybrid-ii-2026-collection-jazz-bass-rw-matte-aero-blue-197955135083
 fender-made-in-japan-hybrid-ii-2026-collection-jazz-bass-rw-matte-champagne-mira-197955135120
 fender-made-in-japan-hybrid-ii-2026-collection-jazz-bass-rw-matte-inferno-red-197955135106
@@ -325,10 +324,10 @@ fender-player-ii-modified-active-jazz-bass-mn-3-tone-sunburst-885978398942
 fender-player-ii-modified-active-jazz-bass-mn-elb-885978398973
 fender-player-ii-modified-active-jazz-bass-mn-olympic-pearl-885978777662
 fender-player-ii-modified-active-jazz-bass-rw-dusk-885978398959
-fender-player-ii-modified-active-jazz-bass-rw-harvest-green-metallic-bajo-electr-885978509683
 fender-player-ii-modified-active-jazz-bass-v-rw-3ts-885978400065
 fender-player-ii-modified-active-precision-bass-mn-dusk-885978398911
 fender-player-ii-modified-active-precision-bass-rw-olympic-pearl-885978777655
+fender-player-ii-modified-jazz-bass-rw-hgm-885978509683
 fender-player-ii-modified-jazz-bass-v-mn-dsk-885978400072
 fender-player-ii-modified-jazz-bass-v-mn-olp-885978777716
 fender-player-ii-modified-jazz-bass-v-rw-elb-885978400119
@@ -423,6 +422,7 @@ fender-vintera-ii-60s-jazz-bass-rw-fiesta-red-717669920401
 fender-vintera-ii-60s-precision-bass-rw-owt-717669592134
 fender-vintera-ii-70s-telecaster-bass-mn-sfg-717669920449
 fender-vintera-ii-rdwn-60s-p-bass-frd-sfrdp44046
+fender-vintera-ii-road-worn-60s-precision-bass-rw-frd-885978464579
 fender-vintera-iii-early-60s-bass-vi-owh-sbassviowh
 fender-vintera-iii-early-60s-bass-vi-rw-3-color-sunburst-885978960859
 fender-vintera-iii-early-60s-bass-vi-rw-candy-apple-red-885978960873
