@@ -454,7 +454,7 @@ korg-microkorg-crystal-4959112238541
 korg-microkorg-mk-1s-4959112154322
 korg-microkorg-xl-4959112101944
 korg-minikorg-700fs-4959112227859
-korg-minikorg-700sm-4959112227873
+korg-minikorg-700sm-sintetizador-37-teclas-4959112227873
 korg-minilogue-4959112147331
 korg-minilogue-xd-4959112187979
 korg-minilogue-xd-module-4959112192218

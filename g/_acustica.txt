@@ -29,10 +29,6 @@
 012-28-modern-deluxe-a28137html
 a-l-americana-faded-black-q1t-623501042470
 a-l-americana-light-burst-gt-eq-623501051540
-a-l-legacy-12-bourbon-burst-cw-qit-stica27813
-a-l-legacy-left-bourbon-burst-cw-qit-stica27818
-a-l-roadhouse-bourbon-burst-stica27821
-a-l-roadhouse-faded-black-stica27820
 a1rii-vn-ica800html
 aad50-lg-dreadnought-natural-l25009html
 aad50-tcb-dreadnought-4549763336491
@@ -453,7 +449,6 @@ applause-ae48-1i-honeyburst-satin-4046662281308
 applause-aeo96-m-orchestra-wood-classics-naturel-mat-4046662307428
 applause-guitarra-acustica-jump-slope-shoulder-dreadnought-celeste-4046662295343
 applause-guitarra-acustica-jump-slope-shoulder-dreadnought-lagoon-4046662295367
-applause-guitarra-acustica-jump-slope-shoulder-dreadnought-lipstick-4046662295329
 applause-guitarra-electro-acustica-jump-om-cutaway-electro-peach-4046662295398
 applause-jump-blank-canvas-aeo-69-6p-vasaeo696p
 applause-jump-dark-matter-12-cuerdas-aes12-69-5s-4046662329420
@@ -471,6 +466,7 @@ applause-jump-slope-shoulder-d-honey-burst-mate-4046662324258
 applause-jump-slope-shoulder-d-peach-burst-mate-4046662324234
 applause-jump-slope-shoulder-d-tobacco-burst-brillante-4046662324302
 applause-jump-slope-shoulder-d-vintage-cherry-brillante-4046662324319
+applause-jump-slope-shoulder-dreadnought-lipstick-aas-69-r-4046662295329
 applause-jump-slope-shoulder-dreadnought-melocoton-4046662295350
 applause-wood-classics-aad96-4-natural-brillante-4046662295213
 applause-wood-classics-aaj96-1-jumbo-12-cuerdas-sunburst-4046662295299
@@ -893,7 +889,6 @@ cort-ga5fbw-natural-049152html
 cort-gapf-bv-natural-fbvnatural
 cort-gold-a10-nat-w-case-8809817984044
 cort-gold-a6-bocote-nat-w-case-8809625369798
-cort-gold-a6-lh-natural-brillante-8809383831506
 cort-gold-a6-nat-8809383830806
 cort-gold-a6-nat-8809625360818
 cort-gold-a8-black-gloss-top-8809625363130
@@ -1691,7 +1686,6 @@ fender-cd-60sce-12-nat-885978875528
 fender-cd-60sce-all-mah-lmahp13844
 fender-cd-60sce-all-mahogany-885978875702
 fender-cd-60sce-blk-ceblkp5660
-fender-cd-60sce-dreadnought-natural-wn-zurdo-885978875689
 fender-cd-60sce-dreadnought-wn-black-885978875726
 fender-cd-60sce-dreadnought-wn-natural-885978875719
 fender-cd-60sce-nat-cenatp5659
@@ -1703,7 +1697,6 @@ fender-cn-140sce-thinline-wn-natural-885978875436
 fender-cp-60s-parlor-885978875672
 fender-cp-60s-parlor-natural-wn-alwn672822
 fender-cp-60s-parlor-wn-sunburst-885978875665
-fender-cypress-single-coil-acustica-885978908769
 fender-dreadnought-classic-design-wn-natural-etui306338
 fender-fa-125-blk-wn-lkwnp10573
 fender-fa-125-dreadnought-walnut-black-885978082278
@@ -1718,7 +1711,6 @@ fender-fa-15-3-5-wn-moonlight-burst-885978693467
 fender-fa-235e-concert-natural-turalp6463
 fender-fa-325-ce-mnlght-brst-wn-moonlight-burst-885978876075
 fender-fa-345ce-auditorium-lrl-natural-885978902200
-fender-fa-345ce-auditorium-natural-885978930807
 fender-fa-345ce-auditorium-tea-bst-eabstp7979
 fender-fa125-natural-885978993123
 fender-fa235e-concert-nat-885978902248
@@ -1764,14 +1756,10 @@ fender-newporter-player-wn-gold-pickguard-sunburst-717669621469
 fender-newporter-player-wn-white-pickguard-surf-green-717669621438
 fender-palomino-vintage-aged-natural-717669923808
 fender-palomino-vintage-ov-aged-white-pickguard-sienna-sunburst-717669923815
-fender-pd-220e-dreadnought-acb-885978742851
 fender-pd-220e-dreadnought-electrificada-3tvs-885978742837
 fender-pd-220e-dreadnought-nat-885978742813
 fender-po-220e-orchestra-ov-3-tone-sunburst-urstp26599
 fender-po-220e-orchestra-ov-nat-885978742875
-fender-ps-220e-parlor-3t-vsb-885978742936
-fender-ps-220e-parlor-caoba-acb-885978742943
-fender-ps-220e-parlor-natural-885978742929
 fender-ps220e-ov-parlor-natural-uralp26601
 fender-redondo-classic-acb-885978405268
 fender-redondo-player-wn-gold-pickguard-natural-717669621483
@@ -2021,7 +2009,6 @@ gadstn-mini-jumbo-natural-l15270html
 gadstsb-mini-jumbo-sombreada-a15272html
 gbpc-backpacker-folk-de-viaje-729789062008
 gewa-applause-guitare-electro-acoustique-jump-blank-canvas-nvasp41063
-gewa-cataluna-black-4046662224589
 gibraltar-mampara-barrera-acustica-gibraltar-gds-5-717070301554
 gibson-1929-nick-lucas-spec-argentine-grey-light-aged-murphy-lab-21875008-711106167558
 gibson-1936-advanced-jumbo-vintage-sunburst-711106037356
@@ -2038,7 +2025,6 @@ gibson-60s-j-45-original-ebony-711106036984
 gibson-60s-j-45-wine-red-711106036991
 gibson-accessories-j-45-standard-palisandro-palisandro-burst-moderno-711106120232
 gibson-advanced-jumbo-anni-edicion-limitada-cremona-burst-moderno-711106233703
-gibson-cantautor-signature-dave-mustaine-ebano-cs-mc-711106083056
 gibson-country-western-60s-antique-natural-original-711106246369
 gibson-country-western-studio-natural-satin-711106168951
 gibson-cs-1942-banner-southern-jumbo-light-aged-htagedhtml
@@ -2094,7 +2080,6 @@ gibson-j-45-century-12f-ebano-original-711106233451
 gibson-j-45-century-12f-vintage-sunburst-original-711106233437
 gibson-j-45-faded-50s-711106096155
 gibson-j-45-gold-top-23035034-op23035034
-gibson-j-45-keb-mo-3-0-12-fret-vintage-sunburst-signature-cs-mc-23003008-3008425286
 gibson-j-45-light-aged-1955-1955403693
 gibson-j-45-margo-price-signature-heritage-cherry-sunburst-urst408283
 gibson-j-45-rosewood-red-spruce-711106135151
@@ -2196,8 +2181,8 @@ godin-connaisseur-mj-rw-natural-con-estuche-623501053926
 godin-connaisseur-negro-623501053353
 godin-connaisseur-satina-grey-623501053360
 godin-connaisseur-sunburst-623501053377
-godin-fairmount-ch-ltd-rosewood-hg-eq-with-tric-stica27864
 godin-fairmount-ch-natural-hg-eq-with-tric-623501047949
+godin-fairmount-composer-a-e-csticahtml
 godin-fairmount-composer-l-r-baggs-element-623501050130
 godin-fairmount-concert-hall-limited-edition-rosewood-hg-eq-6235001051618
 godin-fairmount-cw-flame-maple-gt-eq-con-funda-623501052868
@@ -2210,13 +2195,11 @@ godin-lh-handed-multiac-nylon-encore-natural-623501035878
 godin-mahogany-folk-12-rustic-burst-623501053148
 godin-mahogany-parlor-ltd-black-burst-blackburst
 godin-metropolis-classic-dreadnought-l-r-baggs-element-6235001051649
-godin-metropolis-classic-qit-with-tric-stica27871
 godin-metropolis-composer-a-e-623501050147
 godin-metropolis-dreadnought-limited-edition-havana-burst-hg-eq-6235001051656
 godin-metropolis-dreadnought-limited-edition-natural-hg-eq-6235001051663
 godin-metropolis-dreadnought-natural-rn-gt-eq-623501051526
 godin-metropolis-electrificada-dreadnought-ltd-havana-burst-hg-eq-con-estuche-tr-623501047918
-godin-metropolis-natural-cedar-eq-with-tric-stica27858
 godin-montreal-premiere-ht-laguna-blue-623501050215
 godin-montreal-premiere-ht-trans-white-623501050222
 godin-multiac-acs-cedar-slim-natural-623501032167
@@ -2279,7 +2262,6 @@ gretsch-drums-snare-usa-custom-14-x-6-5-bronze-onzep42037
 gretsch-g5013ce-rancher-jr-black-885978519156
 gretsch-g5021e-black-717669554071
 gretsch-g5021e-mint-metallic-717669554040
-gretsch-g5021e-rancher-penguin-parlor-acoustic-electric-shell-pink-717669554064
 gretsch-g5021e-rancher-penguin-white-885978655083
 gretsch-g5022cbfe-rancher-falcon-jumbo-cutaway-lrl-black-885978655069
 gretsch-g5022ce-rancher-jumbo-cutaway-rw-savannah-sunset-885978132676
@@ -2288,11 +2270,9 @@ gretsch-g5022cwfe-falcon-rancher-cherp16172
 gretsch-g5022cwfe-rancher-jumbo-white-885978460236
 gretsch-g5031ft-rancher-dreadnought-sunburst-885978132683
 gretsch-g5034tft-rancher-savannah-sunset-885978132706
-gretsch-g9200-boxcar-round-neck-resonator-guitar-natural-885978872381
 gretsch-g9201-honeydipper-metal-r-neck-885978872435
 gretsch-g9220-bobtail-r-neck-2sb-885978872404
 gretsch-g9221-bobtail-steel-r-neck-885978872411
-gretsch-g9230-bobtail-square-neck-resonator-guitar-2-color-sunburst-885978872428
 gretsch-jd-concert-delto-denm-denmp42428
 gretsch-jd-concert-delto-tspg-blkt-blktp35088
 gretsch-jd-concert-mah-wpg-chry-brst-brstp40542
@@ -2312,10 +2292,8 @@ gretsch-jim-dandy-concert-mah-wpg-frstn-271-1120-579-120579html
 gretsch-jim-dandy-concert-rex-burst-raacustica
 gretsch-jim-dandy-concert-wn-deep-cherry-burst-885978680658
 gretsch-jim-dandy-concert-wn-rex-burst-717669567231
-gretsch-jim-dandy-dreadnought-frontier-stain-717669567101
 gretsch-jim-dandy-dreadnought-mah-wpg-dp-chry-brst-885978680672
 gretsch-jim-dandy-dreadnought-wn-rex-burst-717669566906
-gretsch-jim-dandy-parlor-frontier-stain-717669567217
 gretsch-jim-dandy-parlor-heritage-burst-885978396054
 gretsch-jim-dandy-parlor-ltd-golpeador-tortoise-blanco-vintage-tagep45120
 gretsch-jim-dandy-parlor-walnut-fingerboard-deep-cherry-burst-guitarra-parlor-885978680696
@@ -2779,9 +2757,10 @@ ibanez-tcy10e-sfh-sea-foam-green-4549763285041
 ibanez-tcy10esfh-electrificada-ficadahtml
 ibanez-tcy10le-bk-515796html
 ibanez-tcy10lebk-electrificada-left-para-zurdos-negra-4549763285829
-ibanez-tcy10pa-bkb-series-talman-transparent-brown-black-burst-high-gloss-4549763377005
+ibanez-tcy10pa-bkb-abkbp42718
 ibanez-tcy10pa-cbs-acbsp42719
 ibanez-tcy10pabkb-talman-degradado-negro-sobre-marron-transparente-ente428209
+ibanez-tcy10pabkb-transparent-brown-black-burst-high-gloss-377005html
 ibanez-tcy10pacbs-cosmic-blue-starburst-high-gloss-4549763377012
 ibanez-tcy12e-opn-open-pore-natural-4515276838531
 ibanez-tcy621-bot-black-out-4549763365248
@@ -3108,9 +3087,6 @@ luna-art-vintage-dreadnought-cutaway-a-e-solid-top-818896022170
 luna-art-vintage-folk-solid-top-distressed-814064029873
 luna-flora-lotus-quilt-maple-a-e-trans-shiraz-814064029385
 luna-flora-rode-quilt-maple-a-e-gloss-natural-814064029408
-luna-gypsy-exotic-spalt-acoustic-guitar-819998084752
-luna-gypsy-quilt-ash-a-e-a-e-gloss-natural-814064020412
-luna-gypsy-quilt-ash-a-e-teal-814064020429
 luna-high-tide-exotic-mahogany-gc-caw-a-e-818896022583
 luna-wabi-sabi-grand-concert-solid-top-a-e-814064021303
 m36-abeto-sitka-palisandro-de-la-india-a27868html
@@ -3402,7 +3378,7 @@ martin-d-42-729789680790
 martin-d-42-ge-standard-golden-era-dreadnought-729789680783
 martin-d-42-l-ge-standard-golden-era-zurdos-dreadnought-729789680813
 martin-d-42-modern-deluxe-729789586115
-martin-d-42-od42309264
+martin-d-42-p25287html
 martin-d-42-special-dick-boak-2751215-729789613859
 martin-d-42-special-dick-boak-729789620109
 martin-d-45-156812544994
@@ -3466,7 +3442,6 @@ martin-djre-streetmaster-l-dreadnought-zurdos-junior-729789687287
 martin-dread-djr-junior-a-e-streetlegend-burst-lh-stlh767713
 martin-dread-djr-junior-a-e-streetmaster-zurdo-urdo767706
 martin-dreadnough-junior-djr-10e-djr10ehtml
-martin-dreadnought-16-a-e-abet-abet683850
 martin-dreadnought-18-standard-ge-1935-sunburst-729789419857
 martin-dreadnought-custom-shop-d-c19073256-p36081html
 martin-dreadnought-d-16e-rosewood-zurda-abeto-palisandro-729789584357
@@ -3639,7 +3614,6 @@ martin-omjm-l-orchestra-john-maye-para-zurdos-729789382212
 martin-omjm-orchestra-john-mayer-729789382205
 martin-pick-up-thinline-332-729789462860
 martin-pick-up-thinline-332-plus-729789462877
-martin-road-series-d12-e-729789584296
 martin-sc-10e-modern-picea-satinada-sapeli-729789705479
 martin-sc-10e-modern-sapeli-satinado-sapeli-729789705493
 martin-sc-10e-sure-align-system-koa-usticahtml
@@ -4186,7 +4160,6 @@ seagull-artist-mosaic-ch-cw-bourbon-burst-gt-eq-con-funda-623501050567
 seagull-artist-mosaic-cw-hg-eq-dreadnought-natural-623501050543
 seagull-artist-peppino-anniversary-623501053971
 seagull-coastline-ch-momentum-a-e-hg-623501045372
-seagull-coastline-momentum-a-e-hg-623501042494
 seagull-coastline-slim-cw-spruce-presys-ii-con-funda-623501051908
 seagull-entourage-autumn-burst-623501046492
 seagull-entourage-autumn-burst-cw-presys-ii-gigbag-169470124552
@@ -4201,16 +4174,13 @@ seagull-maritime-sws-ch-cw-natural-presys-ii-623501051946
 seagull-maritime-sws-cw-gt-presys-ii-623501051953
 seagull-maritime-sws-cw-gt-qit-stica27832
 seagull-maritime-sws-maho-burnt-umber-gt-presys-ii-623501051939
-seagull-maritime-sws-mahogany-burnt-umber-gt-qit-stica27794
 seagull-maritime-sws-natural-sg-a-e-623501048090
 seagull-peppino-signature-cw-bourbon-burst-con-anthem-623501050581
 seagull-performer-cw-arce-flameado-presys-ii-623501052103
 seagull-performer-cw-ch-burnt-umber-presys-ii-con-funda-623501051977
 seagull-performer-cw-mini-jumbo-hg-presys-ii-con-funda-623501051960
-seagull-performer-cw-mini-jumbo-hg-qit-with-bag-stica27768
 seagull-performer-mini-jumbo-cw-hg-qit-623501032471
 seagull-s12-ch-cw-spruce-de-12-cuerdas-sunburst-gt-presys-ii-623501051984
-seagull-s12-ch-cw-spruce-sunburst-gt-qit-stica27800
 seagull-s12-sunburst-ch-cw-gt-presys-ii-gigbag-169470126600
 seagull-s6-classic-black-a-e-623501048595
 seagull-s6-collection-1982-623501052431
@@ -4525,7 +4495,6 @@ sigma-tm15-4260279934048
 sigma-tw-16e-bkw-4260685054705
 simon-patrick-simon-and-patrick-amber-trail-sg-623501036387
 simon-patrick-simon-and-patrick-woodland-pro-folk-hg-sunburst-623501034598
-simon-patrick-woodland-pro-folk-sunburst-hg-rsthg27771
 sire-a3-d-dreadnought-natural-855159008724
 sire-a3-d-dreadnought-vintage-sunburst-855159008731
 sire-a3-g-cutaway-natural-855159008748
@@ -5297,7 +5266,6 @@ taylor-714ce-next-generation-887766144540
 taylor-722ce-koa-gloss-887766134183
 taylor-724ce-grand-auditorium-brillo-887766134176
 taylor-724ce-koa-grand-auditorium-887766114772
-taylor-810e-legacy-ltd-887766134695
 taylor-812ce-grand-concert-887766107323
 taylor-812ce-next-generation-887766146490
 taylor-814ce-builder-s-edition-grand-auditorium-887766118862
@@ -5595,20 +5563,18 @@ vintage-mahogany-el-cw-grand-auditorium-5051548037992
 vintage-mahogany-elec-dreadnought-guitar-5051548037985
 vintage-mahogany-series-electro-folk-guitar-5051548038012
 vintage-pacific-coast-cappuccino-burst-5051548043115
+vintage-pacific-coast-cherryburst-5051548043108
 vintage-pacific-coast-claret-red-5051548043061
 vintage-pacific-coast-claret-red-5051548043122
+vintage-pacific-coast-denim-blue-5051548043085
 vintage-pacific-coast-denim-blue-5051548043146
+vintage-pacific-coast-midnite-black-5051548043078
 vintage-pacific-coast-midnite-black-5051548043139
-vintage-pacific-coast-series-acoustic-guitar-cherryburst-5051548043108
-vintage-pacific-coast-series-acoustic-guitar-denim-blue-5051548043085
-vintage-pacific-coast-series-acoustic-guitar-midnite-black-5051548043078
-vintage-pacific-coast-series-acoustic-guitar-natural-spruce-5051548043092
 vintage-raven-by-paul-brett-negro-satinado-5051548035769
 vintage-revo-elektra-acacia-silk-5051548042385
 vintage-revo-elektra-black-silk-5051548042392
 vintage-revo-elektra-natural-silk-5051548042408
 vintage-revo-elektra-sunburst-silk-5051548042415
-vintage-semi-acoustic-guitar-cherry-red-5051548032546
 vintage-semi-acoustic-sunburst-5051548032553
 vintage-stage-series-folk-cutaway-electro-guitar-natural-5051548041487
 vintage-stage-series-grand-cutaway-electro-guitar-natural-5051548041500

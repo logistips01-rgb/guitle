@@ -802,7 +802,6 @@ marca/proel.html
 marca/profesional.html
 marca/prokeys.html
 marca/promark.html
-marca/promark.html
 marca/pronorte.html
 marca/protection-racket.html
 marca/providence.html
@@ -1139,6 +1138,7 @@ marca/way-huge.html
 marca/way.html
 marca/wingo.html
 marca/woodbrass.html
+marca/wylde-audio.html
 marca/xotic.html
 marca/xvive.html
 marca/xvive.html
