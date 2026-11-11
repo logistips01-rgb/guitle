@@ -56,25 +56,7 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "ESP LTD JM-I QM Deep Blood Moon",
-  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
-  "price": 1421.0,
-  "median": 1895.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "session",
-  "name": "LTD SN-200HT Charcoal Metallic Satin",
-  "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
-  "price": 349.0,
-  "median": 489.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "auvisa",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
   "price": 349.0,
@@ -182,6 +164,24 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Hagstrom Fantomen Custom Blk Negra",
+  "slug": "hagstrom-fantomen-custom-blk-negra-7340071903682",
+  "price": 1383.0,
+  "median": 1884.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Hagstrom Fantomen Custom Blk Negra",
+  "slug": "hagstrom-fantomen-custom-blk-negra-7340071903682",
+  "price": 1383.0,
+  "median": 1884.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
   "name": "Mooer Gtrs SL810 Brown Burst",
   "slug": "mooer-gtrs-sl810-brown-burst-6971889222927",
@@ -236,6 +236,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Schecter Sun Valley SS FR-S R.blue",
+  "slug": "schecter-sun-valley-ss-fr-s-r-blue-815447024461",
+  "price": 799.0,
+  "median": 1149.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "alteisa",
   "name": "Yamaha Pacifica Single Cut Professional PACP11S Sunny Orange con Estuche",
   "slug": "yamaha-pacifica-single-cut-professional-pacp11s-sunny-orange-con-estuche-4957812717779",
@@ -250,15 +259,6 @@
   "slug": "yamaha-pacifica-single-cut-standard-plus-pacs-11sm-black-metallic-con-funda-4957812710664",
   "price": 703.0,
   "median": 949.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Cort X700 Duality II PIB c/Funda",
-  "slug": "cort-x700-duality-ii-pib-c-funda-8809817080029",
-  "price": 1189.26,
-  "median": 1439.0
  },
  {
   "kind": "electrica",
@@ -280,21 +280,12 @@
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Hagstrom Adina Blue Sky",
-  "slug": "hagstrom-adina-blue-sky-7340071904269",
-  "price": 685.13,
-  "median": 825.49
- },
- {
-  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "auvisa",
   "name": "Hagstrom Adina Cre Crema",
   "slug": "hagstrom-adina-cre-crema-7340071904238",
   "price": 549.0,
-  "median": 774.0899999999999
+  "median": 777.5899999999999
  },
  {
   "kind": "electrica",
@@ -425,6 +416,24 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Cort G260CS BK Negra.",
+  "slug": "cort-g260cs-bk-negra-8809625363802",
+  "price": 359.0,
+  "median": 537.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort X700 Triality OPBB w/bag",
+  "slug": "cort-x700-triality-opbb-w-bag-8809817983573",
+  "price": 1096.2,
+  "median": 1499.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "EVH LTD Frankenstein Relic Series MN SVB",
   "slug": "evh-ltd-frankenstein-relic-series-mn-svb-717669905415",
@@ -451,21 +460,21 @@
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Hagstrom Fantomen Wht Blanca",
-  "slug": "hagstrom-fantomen-wht-blanca-7340071902814",
-  "price": 825.62,
-  "median": 999.0
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Hagstrom SUSWEMK3-DSM SUPER SWEDE DARK STORM",
+  "slug": "hagstrom-suswemk3-dsm-super-swede-dark-storm-7340071903644",
+  "price": 887.99,
+  "median": 1249.0
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Hagstrom Megin negro brillo",
-  "slug": "hagstrom-megin-negro-brillo-7340071904191",
-  "price": 602.48,
-  "median": 722.0
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Hagstrom SWEMK3-DSM SWEDE DARK STORM",
+  "slug": "hagstrom-swemk3-dsm-swede-dark-storm-7340071903613",
+  "price": 864.0,
+  "median": 1249.0
  },
  {
   "kind": "electrica",
@@ -475,6 +484,15 @@
   "slug": "hagstrom-tremar-viking-baritone-deluxe-dlx-tsb-tobacco-sunburst-7340071904177",
   "price": 974.38,
   "median": 1169.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicsales",
+  "name": "Hagstrom ULTRA MAX SCB Satin Cosmic Black Burst Tipo LP",
+  "slug": "hagstrom-ultra-max-scb-satin-cosmic-black-burst-tipo-lp-7340071902845",
+  "price": 598.0,
+  "median": 799.0
  },
  {
   "kind": "electrica",
@@ -493,15 +511,6 @@
   "slug": "ibanez-jbbm40pw-jb-brubaker-signature-pearl-white-4549763377128",
   "price": 857.0,
   "median": 1144.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "PRS double cut PRS CE22 LTD McCarty Sunburst",
-  "slug": "prs-double-cut-prs-ce22-ltd-mccarty-sunburst-825362247883",
-  "price": 2809.09,
-  "median": 3370.0
  },
  {
   "kind": "electrica",
@@ -556,15 +565,6 @@
   "slug": "austin-as6progt-super-6-gold-top-812309025482",
   "price": 261.0,
   "median": 358.5
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Carry On ST Guitar negra",
-  "slug": "carry-on-st-guitar-negra-845644007042",
-  "price": 197.52,
-  "median": 238.0
  },
  {
   "kind": "electrica",
@@ -722,6 +722,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Schecter C-8 Deluxe Sbk",
+  "slug": "schecter-c-8-deluxe-sbk-81544708799",
+  "price": 547.6,
+  "median": 740.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "woodbrass",
   "name": "Squier Starcaster Affinity Dlx Mn Sienna Sunburst",
   "slug": "squier-starcaster-affinity-dlx-mn-sienna-sunburst-885978136308",
@@ -817,6 +826,24 @@
   "slug": "martin-d-15m-dreadnought-729789399630",
   "price": 1346.3,
   "median": 1890.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "microfusa",
+  "name": "Cort EARTH70 BR",
+  "slug": "cort-earth70-br-8809383832749",
+  "price": 249.0,
+  "median": 346.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Cort EARTH70 BR",
+  "slug": "cort-earth70-br-8809383832749",
+  "price": 259.0,
+  "median": 346.0
  },
  {
   "kind": "acustica",
@@ -1036,21 +1063,12 @@
  },
  {
   "kind": "acustica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Carry On CO-MINI-A-GTR - Mini Acoustic Guitar",
-  "slug": "carry-on-co-mini-a-gtr-mini-acoustic-guitar-845644008575",
-  "price": 123.96,
-  "median": 148.995
- },
- {
-  "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Cort Earth100 NAT",
   "slug": "cort-earth100-nat-8809383839229",
   "price": 202.59,
-  "median": 291.195
+  "median": 318.85
  },
  {
   "kind": "acustica",
@@ -1415,6 +1433,15 @@
  {
   "kind": "pedal",
   "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Boss SDE-3 Dual Digital Delay",
+  "slug": "boss-sde-3-dual-digital-delay-4957054520953",
+  "price": 139.0,
+  "median": 194.5
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
   "store": "alfasoni",
   "name": "Electro-Harmonix Bad Stone",
   "slug": "electro-harmonix-bad-stone-683274011639",
@@ -1510,6 +1537,15 @@
   "slug": "prs-wind-through-the-trees-dual-flanger-825362083511",
   "price": 250.0,
   "median": 354.0
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "pronorte",
+  "name": "Sheeran Looper +",
+  "slug": "sheeran-looper-694318025888",
+  "price": 233.0,
+  "median": 314.005
  },
  {
   "kind": "pedal",
