@@ -1,0 +1,321 @@
+{
+ "date": "2026-11-11",
+ "fecha": "11 novembre",
+ "post": {
+  "type": "top",
+  "title": "5 guitares folk à moins de 300 €",
+  "kind": "acustica",
+  "picks": [
+   {
+    "slug": "fender-cd-60-v3-ds-dreadnought-wn-sunburst-885978158621",
+    "name": "Fender CD-60 V3 DS Dreadnought WN Sunburst",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/4bd76f62d12211d6c1733443be33f2ba9892408d_FMIC_0970110532.jpg?height=1200&pad_color=ffffff&v=1792537559&width=1200",
+    "th": "0ff71258b8983072.webp",
+    "price": 150.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 160.5,
+    "max": 199.99,
+    "next": 150.0,
+    "rows": [
+     [
+      "Woodbrass",
+      150.0
+     ],
+     [
+      "Stars Music",
+      150.0
+     ],
+     [
+      "Guitar Maniac",
+      155.0
+     ],
+     [
+      "Cultura",
+      166.0
+     ],
+     [
+      "Music 3000",
+      199.99
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "epiphone-hummingbird-tribute-antique-natural-ibgm-711106228495",
+    "name": "Epiphone Hummingbird Tribute Antique Natural IBGM",
+    "brand": "Epiphone",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/12dae5115ea119594a1b9943a9a5c1776a2e142f_GBI_ETHBANNH.jpg?height=1200&pad_color=ffffff&v=1792661619&width=1200",
+    "th": "9fbc8fe4f492976f.webp",
+    "price": 189.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 229.0,
+    "max": 259.0,
+    "next": 191.0,
+    "rows": [
+     [
+      "Woodbrass",
+      189.0
+     ],
+     [
+      "Stars Music",
+      191.0
+     ],
+     [
+      "Michenaud",
+      229.0
+     ],
+     [
+      "Azema Musique",
+      259.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "gretsch-dreadnought-signature-jim-dandy-wn-rex-burst-717669566906",
+    "name": "Gretsch Dreadnought Signature Jim Dandy WN Rex Burst",
+    "brand": "Gretsch",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/0b56570e9dc05378323b136319b1ff8d47918de3_FMIC_2711200535.jpg?height=1200&pad_color=ffffff&v=1792666637&width=1200",
+    "th": "991c130025db8f4d.webp",
+    "price": 199.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 217.0,
+    "max": 219.0,
+    "next": 199.0,
+    "rows": [
+     [
+      "Woodbrass",
+      199.0
+     ],
+     [
+      "Stars Music",
+      199.0
+     ],
+     [
+      "Cultura",
+      217.0
+     ],
+     [
+      "Hurricane Music",
+      219.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "yamaha-apxt2-black-4957812520171",
+    "name": "Yamaha Apxt2 Black",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/cfc3f60279c275a90272fe6743fb5b19948378fc_GAPXT2BL.jpg?height=1200&pad_color=ffffff&v=1792561778&width=1200",
+    "th": "2f721378401976b5.webp",
+    "price": 241.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 253.0,
+    "max": 289.0,
+    "next": 241.0,
+    "rows": [
+     [
+      "Woodbrass",
+      241.0
+     ],
+     [
+      "Stars Music",
+      241.0
+     ],
+     [
+      "Cultura",
+      247.0
+     ],
+     [
+      "Scotto Musique",
+      259.0
+     ],
+     [
+      "Audio System",
+      289.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "lag-tramontane-t70d-b-b-dreadnought-black-brown-3700166371873",
+    "name": "Lâg Tramontane T70D-B&B Dreadnought Black & Brown",
+    "brand": "Lâg",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/1c0dc8698fdbda0bf2ca088f352725943a72810a_GLA_T70D_B_B.png?height=1200&pad_color=ffffff&v=1793981801&width=1200",
+    "th": "f11d4a47345132c0.webp",
+    "price": 299.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 299.0,
+    "max": 299.0,
+    "next": 299.0,
+    "rows": [
+     [
+      "Woodbrass",
+      299.0
+     ],
+     [
+      "Stars Music",
+      299.0
+     ],
+     [
+      "Hurricane Music",
+      299.0
+     ],
+     [
+      "Music 3000",
+      299.0
+     ],
+     [
+      "Audio System",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   }
+  ],
+  "caption": "🎸 5 guitares folk à moins de 300 € : les plus vendues en magasin, avec leur meilleur prix du jour 👇\n\n1️⃣ Fender CD-60 V3 DS Dreadnought WN Sunburst : 150 € chez Woodbrass\n2️⃣ Epiphone Hummingbird Tribute Antique Natural IBGM : 189 € chez Woodbrass\n3️⃣ Gretsch Dreadnought Signature Jim Dandy WN Rex Burst : 199 € chez Woodbrass\n4️⃣ Yamaha Apxt2 Black : 241 € chez Woodbrass\n5️⃣ Lâg Tramontane T70D-B&B Dreadnought Black & Brown : 299 € chez Woodbrass\n\nLaquelle tu choisis ? Dis-le-nous en commentaire 💬\n🔎 Compare les prix sur guitle.com/fr (tous les bons plans du jour via le lien en bio 👆). Prix du 11 novembre.\n\n#guitare #guitariste #bonplan #promo #guitarefolk #fender #epiphone #gretsch #yamaha #lg"
+ },
+ "stories": [
+  {
+   "slug": "mooer-gtrs-pro-800-vert-6971889220411",
+   "name": "Mooer Gtrs Pro 800 Vert",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/cb0d68a8e49b9c927953f3acfb8c8ec81ff8184b_MUSICO_GTRS_P800GR.jpg?height=1200&pad_color=ffffff&v=1793735920&width=1200",
+   "th": "9e6162795663fccb.webp",
+   "price": 659.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 880.5,
+   "max": 932.0,
+   "next": 829.0,
+   "rows": [
+    [
+     "Woodbrass",
+     659.0
+    ],
+    [
+     "Cultura",
+     829.0
+    ],
+    [
+     "Stars Music",
+     932.0
+    ]
+   ],
+   "pvp": null,
+   "why": "170 € de moins que dans les autres magasins",
+   "pct": 21,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "epiphone-les-paul-standard-50s-cardinal-red-ibgcs-711106156293",
+   "name": "Epiphone Les Paul Standard 50S Cardinal Red Ibgcs",
+   "brand": "Epiphone",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/49fe8b2f7e3a5e2aec9bae6c5177b7bebc6dfe9b_GBI_EIGLP5CRNH1.jpg?height=1200&pad_color=ffffff&v=1791292228&width=1200",
+   "th": "92805ec079dde55e.webp",
+   "price": 599.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 749.0,
+   "max": 799.0,
+   "next": 699.0,
+   "rows": [
+    [
+     "Woodbrass",
+     599.0
+    ],
+    [
+     "Azema Musique",
+     699.0
+    ],
+    [
+     "Cultura",
+     799.0
+    ]
+   ],
+   "pvp": null,
+   "why": "100 € de moins que dans les autres magasins",
+   "pct": 14,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "yamaha-csf1m-tbs-tobacco-brown-4957812628099",
+   "name": "Yamaha CSF1M-TBS Tobacco Brown",
+   "brand": "Yamaha",
+   "kind": "acustica",
+   "img": "https://audiosystem.fr/72118-product_zoom/yamaha-csf1m-tbs-tobacco-brown.jpg",
+   "th": "1ed3bb1233d9cb56.webp",
+   "price": 599.0,
+   "store": "Audio System",
+   "stores": 3,
+   "median": 696.0,
+   "max": 696.0,
+   "next": 696.0,
+   "rows": [
+    [
+     "Audio System",
+     599.0
+    ],
+    [
+     "Woodbrass",
+     696.0
+    ],
+    [
+     "Cultura",
+     696.0
+    ]
+   ],
+   "pvp": null,
+   "why": "97 € de moins que dans les autres magasins",
+   "pct": 14,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

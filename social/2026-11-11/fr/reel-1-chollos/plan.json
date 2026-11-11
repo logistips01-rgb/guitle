@@ -1,0 +1,139 @@
+{
+ "fecha": "11 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "sire-larry-carlton-t7-lh-bk-810187571923",
+    "name": "Sire Larry Carlton T7 LH BK",
+    "brand": "Sire Larry Carlton",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/a40495b77203e7765dfdaecc8e17ce1713cb3de9_IMS_T7_NEW_GEN_LH_BK.jpg?height=1200&pad_color=ffffff&v=1792508860&width=1200",
+    "th": "0775bf7bff90c6d7.webp",
+    "price": 698.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 796.0,
+    "max": 796.0,
+    "next": 796.0,
+    "rows": [
+     [
+      "Woodbrass",
+      698.0
+     ],
+     [
+      "Stars Music",
+      796.0
+     ],
+     [
+      "Cultura",
+      796.0
+     ]
+    ],
+    "pvp": null,
+    "why": "98 € de moins que dans les autres magasins",
+    "pct": 12,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "squier-stratocaster-affinity-mn-black-885978722716",
+    "name": "Squier Stratocaster Affinity Mn Black",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/299b09295706682a74e013fd0bc2851a06e21473_FMIC_0378002506.jpg?height=1200&pad_color=ffffff&v=1793727374&width=1200",
+    "th": "ba5f985395712b8f.webp",
+    "price": 249.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 314.0,
+    "max": 349.0,
+    "next": 279.0,
+    "rows": [
+     [
+      "Woodbrass",
+      249.0
+     ],
+     [
+      "Scotto Musique",
+      279.0
+     ],
+     [
+      "Cultura",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "why": "30 € de moins que dans les autres magasins",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "gretsch-g5021e-penguin-parlor-rancher-black-717669554071",
+    "name": "Gretsch G5021e Penguin Parlor Rancher Black",
+    "brand": "Gretsch",
+    "kind": "acustica",
+    "img": "https://woodbrass.com/cdn/shop/files/0c42c2ff27445be45ebd2e67626ad0cf69673446_FMIC_2714015506.jpg?height=1200&pad_color=ffffff&v=1792561650&width=1200",
+    "th": "e8412997e67a525a.webp",
+    "price": 527.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 604.0,
+    "max": 609.0,
+    "next": 599.0,
+    "rows": [
+     [
+      "Woodbrass",
+      527.0
+     ],
+     [
+      "Cultura",
+      599.0
+     ],
+     [
+      "Hurricane Music",
+      609.0
+     ]
+    ],
+    "pvp": null,
+    "why": "72 € de moins que dans les autres magasins",
+    "pct": 12,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
