@@ -1,0 +1,206 @@
+{
+ "fecha": "11. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "5 Deals: Keyboards",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "casio-ct-s1-keyboard-61-tasten-aix-klangerzeugung-mit-61-klangfarben-24-hallarte-4971850315094",
+    "name": "Casio CT-S1 Keyboard – 61 Tasten, AiX-Klangerzeugung mit 61 Klangfarben, 24 Hallarten",
+    "brand": "Casio",
+    "kind": "teclados",
+    "img": "https://cdn.shopify.com/s/files/1/0063/3559/4578/products/ct-s1_red_1.jpg?v=1773137270",
+    "th": "239de645a5534031.webp",
+    "price": 209.0,
+    "store": "Musik Ebert",
+    "stores": 3,
+    "median": 229.0,
+    "max": 229.0,
+    "next": 229.0,
+    "rows": [
+     [
+      "Musik Ebert",
+      209.0
+     ],
+     [
+      "Music Town",
+      229.0
+     ],
+     [
+      "Musik Wittl",
+      229.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "20 € günstiger als anderswo"
+   },
+   {
+    "slug": "arturia-keylab-essential-88-mk3-black-3760033532042",
+    "name": "Arturia KeyLab Essential 88 mk3 Black",
+    "brand": "Arturia",
+    "kind": "teclados",
+    "img": "https://www.session.de/media/57/ac/3f/1758264646/arturia-keylab-essential-88-mk3-black.webp?ts=1758264646",
+    "th": "cd94b42d7409c74f.webp",
+    "price": 349.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 397.5,
+    "max": 399.0,
+    "next": 396.0,
+    "rows": [
+     [
+      "Session",
+      349.0
+     ],
+     [
+      "Music Town",
+      396.0
+     ],
+     [
+      "Shop2Rock",
+      399.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "47 € günstiger als anderswo"
+   },
+   {
+    "slug": "korg-wavestate-mkii-4959112239005",
+    "name": "Korg Wavestate MKII",
+    "brand": "Korg",
+    "kind": "teclados",
+    "img": "https://www.session.de/media/fe/01/42/1687445138/korg-wavestate-mkii.jpg?ts=1687445138",
+    "th": "ebbeaf8722df870c.webp",
+    "price": 567.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 750.5,
+    "max": 776.0,
+    "next": 725.0,
+    "rows": [
+     [
+      "Session",
+      567.0
+     ],
+     [
+      "Shop2Rock",
+      725.0
+     ],
+     [
+      "Zoundhouse",
+      776.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "158 € günstiger als anderswo"
+   },
+   {
+    "slug": "roland-fp-40-wh-digitalpiano-88-tasten-mit-hammermechanik-wei-4957054522773",
+    "name": "Roland FP-40 WH Digitalpiano – 88 Tasten mit Hammermechanik, Weiß",
+    "brand": "Roland",
+    "kind": "teclados",
+    "img": "https://cdn.shopify.com/s/files/1/0063/3559/4578/files/FP-40_WH_FRONT_w_MUSIC_REST.jpg?v=1785418068",
+    "th": "c14d6c0977877bde.webp",
+    "price": 729.0,
+    "store": "Musik Ebert",
+    "stores": 3,
+    "median": 819.0,
+    "max": 879.0,
+    "next": 759.0,
+    "rows": [
+     [
+      "Musik Ebert",
+      729.0
+     ],
+     [
+      "Session",
+      759.0
+     ],
+     [
+      "Shop2Rock",
+      879.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "30 € günstiger als anderswo"
+   },
+   {
+    "slug": "kurzweil-kap1-kb-stage-piano-hammermechanik-dunkelblau-elblauhtml",
+    "name": "Kurzweil KAP1-KB Stage Piano (Hammermechanik), dunkelblau",
+    "brand": "Kurzweil",
+    "kind": "teclados",
+    "img": "https://www.shop2rock.de/shop/images/products/main/kurzweil_kap1kb_1.jpg",
+    "th": "d6db5fb75287c6dc.webp",
+    "price": 749.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 899.0,
+    "max": 999.0,
+    "next": 799.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      749.0
+     ],
+     [
+      "Musikhaus Markstein",
+      799.0
+     ],
+     [
+      "Musik Beck",
+      999.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "50 € günstiger als anderswo"
+   }
+  ],
+  "rama": "teclados"
+ }
+}
