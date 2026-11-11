@@ -1,84 +1,84 @@
 {
- "actualizado": "2026-11-10T17:19",
+ "actualizado": "2026-11-11T09:33",
  "total": 279,
- "ok": 259,
+ "ok": 258,
  "distinto": 4,
- "sin_comprobar": 16,
+ "sin_comprobar": 17,
  "distintos": [
   {
    "pais": "br",
    "tienda": "ajoiamusical",
-   "url": "https://www.ajoiamusical.com.br/guitarra-tagima-duosmart-s-2s-1h-com-efeito-preta",
-   "precio": 1375,
+   "url": "https://www.ajoiamusical.com.br/guitarra-michael-lp-gml300-special-hs",
+   "precio": 1336,
    "moneda": "BRL",
-   "leido": "2026-11-09T21:29",
-   "nombre": "Tagima Duosmart-S 2S 1H Com Efeito Preta",
+   "leido": "2026-11-10T18:42",
+   "nombre": "Michael LP GML300 Special HS",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 680,00",
-    "R$ 812,00 12",
-    "R$ 56,67",
-    "R$ 646,00",
-    "R$ 21.663,00 12",
-    "R$ 1.805,25"
-   ]
-  },
-  {
-   "pais": "br",
-   "tienda": "fenderbr",
-   "url": "https://www.fender.com.br/produto/10173359/guitarras/guitarra-fender-1962-stratocaster-relic-923-5700-039-aged-olympic-white",
-   "precio": 35990,
-   "moneda": "BRL",
-   "leido": "2026-11-09T21:30",
-   "nombre": "Fender 1962 Stratocaster Relic Aged Olympic White",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "R$ 209",
-    "$ 7,5",
-    "R$ 149",
-    "R$ 460",
-    "$ 502,4",
-    "$ 7"
+    "R$ 15,00 3",
+    "R$ 5,00",
+    "R$ 14,25",
+    "R$ 120,00 12",
+    "R$ 10,00",
+    "R$ 114,00"
    ]
   },
   {
    "pais": "br",
    "tienda": "mundomax",
-   "url": "https://www.mundomax.com.br/violao-ressonador-acustico-sdb30-sunburst-strinberg",
-   "precio": 1574.1,
+   "url": "https://www.mundomax.com.br/violao-yamaha-a3r-are-eletroacustico-aco-natural",
+   "precio": 6749.1,
    "moneda": "BRL",
-   "leido": "2026-11-09T22:21",
-   "nombre": "Strinberg Ressonador Strinberg Sdb30 Sunburst",
+   "leido": "2026-11-10T19:31",
+   "nombre": "Yamaha A3R ARE Eletroacústico Aço Natural",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 1.127,00 12",
-    "R$ 93,92",
-    "R$ 467,00 10",
-    "R$ 46,70",
-    "R$ 539,00 10",
-    "R$ 53,90"
+    "R$ 3.299,00 12",
+    "R$ 274,92",
+    "R$ 949,00 10",
+    "R$ 94,90",
+    "R$ 5.923,00 12",
+    "R$ 493,58"
    ]
   },
   {
-   "pais": "se",
-   "tienda": "soundstorexl",
-   "url": "https://www.soundstorexl.se/products/gewa-classical-guitar-student-cedar-4-4-size-lefthanded",
-   "precio": 1673,
-   "moneda": "SEK",
-   "leido": "2026-11-10T13:52",
-   "nombre": "Gewa VGS Student Cedar klassisk gitarr 4/4, cederlock, vänsterhänt",
+   "pais": "ch",
+   "tienda": "woodbrass",
+   "url": "https://woodbrass.ch/products/gibson-acoustic-l-00-original-ebony-314870",
+   "precio": 2293,
+   "moneda": "CHF",
+   "leido": "2026-11-11T02:04",
+   "nombre": "Gibson L-00 Original Ebony",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "2499 kr",
-    "2499 kr",
-    "2499 kr",
-    "2499 kr",
-    "1 681 kr",
-    "69 kr"
+    "CHF 2,302",
+    ". CHF",
+    "CHF 10",
+    "CHF 84",
+    "CHF 23",
+    "CHF 93"
+   ]
+  },
+  {
+   "pais": "hu",
+   "tienda": "kytary",
+   "url": "https://kytary.hu/sigma-guitars-sdr-45/HN227472/",
+   "precio": 610900,
+   "moneda": "HUF",
+   "leido": "2026-11-10T20:31",
+   "nombre": "Sigma SDR-45",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "608 900 Ft",
+    "897 900 Ft",
+    "717 900 Ft",
+    "895 900 Ft",
+    "793 900 Ft",
+    "630 900 Ft"
    ]
   }
  ],
@@ -98,6 +98,7 @@
   "uk·andertons",
   "pt·guitarcustom",
   "uk·richtone",
-  "pt·cdgo"
+  "pt·cdgo",
+  "uk·londonguitarstudio"
  ]
 }
