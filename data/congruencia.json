@@ -1,104 +1,119 @@
 {
- "actualizado": "2026-11-11T09:33",
- "total": 279,
- "ok": 258,
- "distinto": 4,
- "sin_comprobar": 17,
+ "actualizado": "2026-11-11T18:17",
+ "total": 256,
+ "ok": 235,
+ "distinto": 6,
+ "sin_comprobar": 15,
  "distintos": [
   {
-   "pais": "br",
-   "tienda": "ajoiamusical",
-   "url": "https://www.ajoiamusical.com.br/guitarra-michael-lp-gml300-special-hs",
-   "precio": 1336,
-   "moneda": "BRL",
-   "leido": "2026-11-10T18:42",
-   "nombre": "Michael LP GML300 Special HS",
+   "pais": "es",
+   "tienda": "abrines",
+   "url": "https://abrinesmusica.com/guitarras-clasicas/15546-guitarra-rocio-r10-natural",
+   "precio": 63.7,
+   "moneda": "EUR",
+   "leido": "2026-11-10T19:54",
+   "nombre": "Rocio R10RD roja",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 15,00 3",
-    "R$ 5,00",
-    "R$ 14,25",
-    "R$ 120,00 12",
-    "R$ 10,00",
-    "R$ 114,00"
+    "99 €",
+    "75,00 €",
+    "415,01 €",
+    "4.753,00 €",
+    "364,00 €",
+    "1.559,00 €"
+   ]
+  },
+  {
+   "pais": "be",
+   "tienda": "musicallin",
+   "url": "https://musicallin.nl/products/cuenca-50r-klassieke-gotaar",
+   "precio": 550,
+   "moneda": "EUR",
+   "leido": "2026-11-11T01:12",
+   "nombre": "Cuenca 50R Klassieke Gotaar",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "€ 10",
+    "€ 10",
+    "€ 75."
    ]
   },
   {
    "pais": "br",
-   "tienda": "mundomax",
-   "url": "https://www.mundomax.com.br/violao-yamaha-a3r-are-eletroacustico-aco-natural",
-   "precio": 6749.1,
+   "tienda": "x5music",
+   "url": "https://www.x5music.com.br/guitarra-ibanez-pgmm21-mikro-metallic-light-green-paul-gilbert-signature/p",
+   "precio": 1516.25,
    "moneda": "BRL",
-   "leido": "2026-11-10T19:31",
-   "nombre": "Yamaha A3R ARE Eletroacústico Aço Natural",
+   "leido": "2026-11-10T18:47",
+   "nombre": "Ibanez PGMM21 MIKRO Metallic Light Green Paul Gilbert Signature",
    "http": 200,
    "estado": "distinto",
-   "visibles": [
-    "R$ 3.299,00 12",
-    "R$ 274,92",
-    "R$ 949,00 10",
-    "R$ 94,90",
-    "R$ 5.923,00 12",
-    "R$ 493,58"
-   ]
+   "visibles": []
   },
   {
    "pais": "ch",
    "tienda": "woodbrass",
-   "url": "https://woodbrass.ch/products/gibson-acoustic-l-00-original-ebony-314870",
-   "precio": 2293,
+   "url": "https://woodbrass.ch/products/ibanez-rgms8pbcbs-kosmisches-blau-sternenverlauf-411879",
+   "precio": 570,
    "moneda": "CHF",
    "leido": "2026-11-11T02:04",
-   "nombre": "Gibson L-00 Original Ebony",
+   "nombre": "Ibanez RGMS8PBCBS Kosmisches Blau Sternenverlauf",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "CHF 2,302",
+    "CHF 572",
     ". CHF",
-    "CHF 10",
-    "CHF 84",
-    "CHF 23",
-    "CHF 93"
+    "CHF 75",
+    "CHF 6",
+    "CHF 8",
+    "CHF 15"
    ]
   },
   {
-   "pais": "hu",
-   "tienda": "kytary",
-   "url": "https://kytary.hu/sigma-guitars-sdr-45/HN227472/",
-   "precio": 610900,
-   "moneda": "HUF",
-   "leido": "2026-11-10T20:31",
-   "nombre": "Sigma SDR-45",
+   "pais": "fr",
+   "tienda": "musicmatos",
+   "url": "https://www.musicmatos.com/5859-guitares-acoustiques-folk-lag-sauvage-d.html",
+   "precio": 426,
+   "moneda": "EUR",
+   "leido": "2026-11-10T18:43",
+   "nombre": "lag SAUVAGE-D",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "608 900 Ft",
-    "897 900 Ft",
-    "717 900 Ft",
-    "895 900 Ft",
-    "793 900 Ft",
-    "630 900 Ft"
+    "250 €",
+    "0 0,00 €"
    ]
+  },
+  {
+   "pais": "it",
+   "tienda": "musicis",
+   "url": "https://www.musicis.it/fender-supersoft-strap-toffee-2-.1.0.1207.gp.171109.uw",
+   "precio": 23.99,
+   "moneda": "EUR",
+   "leido": "2026-11-11T11:47",
+   "nombre": "Fender supersoft strap toffee 2\"",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": []
   }
  ],
  "sin_comprobar_tiendas": [
   "es·alteisa",
   "br·multisom",
+  "br·harmoniamusical",
   "br·supersom",
+  "de·hermann",
   "dk·gear4music",
   "fr·azemamusique",
   "fr·cultura",
-  "ie·musicoutlet",
-  "ie·soundshop",
   "it·emusicstore",
   "it·fireflyaudio",
   "pl·gear4music",
   "uk·absolutemusic",
   "uk·andertons",
-  "pt·guitarcustom",
   "uk·richtone",
-  "pt·cdgo",
-  "uk·londonguitarstudio"
+  "pt·cdgo"
  ]
 }
