@@ -377,6 +377,7 @@ d-addario-ej43-light-juego-cuerdas-guitarra-espanola-19954952198
 d-addario-ej45-juego-cuerdas-guitarra-espanola-19954121266
 d-addario-ej45ff-pro-arte-cuerdas-19954909413
 d-addario-ej45tt-juego-cuerdas-guitarra-espanola-19954971793
+d-addario-ej46-juego-cuerdas-19954121273
 d-addario-ej46f-cuerdas-carbon-19954910471
 d-addario-ej46tt-proarte-dynacore-cuerdas-guitarra-cla-19954971809
 d-addario-ej47-80-20-bronze-pro-arte-nylon-cuerdas-19954952204
@@ -563,7 +564,6 @@ daddario-ej40-silk-steel-011-047-19954952167
 daddario-ej42-resophonic-guitar-16-56-19954122171
 daddario-ej44c-29-47-composite-19954920289
 daddario-ej45c-28-43-composite-normal-tension-19954121280
-daddario-ej46-28-44-high-tension-19954121273
 daddario-ej46c-28-44-composite-high-tension-19954121297
 daddario-ej46lp-28-44-composite-high-tension-19954924720
 daddario-ej49-black-28-43-normal-tension-19954952228
@@ -2367,7 +2367,6 @@ fender-stainless-7350-bass-strings-stainless-steel-roundwound-long-scale-7350m-0
 fender-stainless-7350s-bass-strings-stainless-steel-roundwound-long-scale-7350ml-5100p43462
 fender-steel-slide-chrome-717669994211
 fender-strap-2-zion-black-aztec-717669604615
-fender-strap-2-zion-gray-aztec-717669604592
 fender-strap-block-4-pack-black-2-and-daphne-blue-2-885978638567
 fender-strap-block-4-pack-black-2-and-surf-green-2-885978638581
 fender-strap-blocks-4-pack-black-885978638598
@@ -2488,6 +2487,7 @@ fender-x-wrangler-riveted-denim-strap-black-lackp31319
 fender-x-wrangler-riveted-denim-strap-indigo-digop31316
 fender-yjm-yngwie-malmsteen-signature-electric-guitar-strings-008-046-885978461127
 fender-zion-strap-purple-aztec-717669558499
+fender-zion-stratocaster-gray-aztec-correa-guitarra-717669604592
 ferrer-golpeador-adhesivo-blanco-07x17-8425391006615
 ferrer-golpeador-adhesivo-transparente-07x17-8425391003034
 fire-stone-strap-cotton-black-red-4046662016290
