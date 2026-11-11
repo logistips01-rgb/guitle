@@ -1,0 +1,102 @@
+{
+ "fecha": "11 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "guitle",
+  "topic": "inflados",
+  "slides": [
+   {
+    "hook": "Attenzione al Black Friday",
+    "title": "Ci sono sconti finti",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "Alzano il prezzo… e poi lo «scontano»",
+    "sub": "Esempio",
+    "size": 96,
+    "visual": {
+     "type": "chart",
+     "points": [
+      899,
+      899,
+      899,
+      999,
+      999,
+      999,
+      899,
+      899
+     ],
+     "marks": [
+      [
+       1,
+       "899 €",
+       "#1f9d55"
+      ],
+      [
+       4,
+       "999 €",
+       "#d64545"
+      ],
+      [
+       7,
+       "«−10%»",
+       "#d64545"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "guitle lo scopre con lo storico dei prezzi",
+    "sub": "Controlla prima di comprare su guitle.com/it"
+   }
+  ]
+ }
+}
