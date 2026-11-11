@@ -1,0 +1,180 @@
+{
+ "fecha": "11. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "jackson-x-serie-surfcaster-sfht7-lrl-metallic-schwarz-885978526802",
+    "name": "Jackson X-Serie Surfcaster Sfht7 Lrl Metallic-Schwarz",
+    "brand": "Jackson",
+    "kind": "electrica",
+    "img": "https://woodbrass.de/cdn/shop/files/f43aa576c47f3ef3cb72c7c5da1894f1f7cfa7ec_FMIC_2919907568.jpg?height=1200&pad_color=ffffff&v=1794322338&width=1200",
+    "th": "87c153b27db87f81.webp",
+    "price": 711.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 762.5,
+    "max": 766.0,
+    "next": 759.0,
+    "rows": [
+     [
+      "Woodbrass",
+      711.0
+     ],
+     [
+      "Musikhaus Korn",
+      759.0
+     ],
+     [
+      "Zoundhouse",
+      766.0
+     ]
+    ],
+    "pvp": null,
+    "why": "48 € günstiger als in allen anderen Shops",
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "ibanez-azes40b-rom-e-gitarre-4549763381606",
+    "name": "Ibanez AZES40B-ROM E-Gitarre",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/134954/lg/ibanez-azes40b-rom-e-gitarre.jpg",
+    "th": "fb2389d9de72d560.webp",
+    "price": 297.0,
+    "store": "IMM Professional",
+    "stores": 5,
+    "median": 319.0,
+    "max": 329.0,
+    "next": 315.0,
+    "rows": [
+     [
+      "IMM Professional",
+      297.0
+     ],
+     [
+      "Zoundhouse",
+      315.0
+     ],
+     [
+      "Session",
+      319.0
+     ],
+     [
+      "Thomann",
+      319.0
+     ],
+     [
+      "Woodbrass",
+      329.0
+     ]
+    ],
+    "pvp": null,
+    "why": "18 € günstiger als in allen anderen Shops",
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "lag-t88ace-tramontane-88-auditorium-elektro-akustikgitarre-natur-hochglanz-3700166363083",
+    "name": "Lag T88ACE Tramontane 88 Auditorium Elektro-Akustikgitarre, natur hochglanz",
+    "brand": "Lag",
+    "kind": "acustica",
+    "img": "https://www.shop2rock.de/shop/images/products/main/lag_lgt88a.jpg",
+    "th": "f8ee9c704242d051.webp",
+    "price": 401.0,
+    "store": "Shop2Rock",
+    "stores": 3,
+    "median": 459.0,
+    "max": 479.0,
+    "next": 439.0,
+    "rows": [
+     [
+      "Shop2Rock",
+      401.0
+     ],
+     [
+      "Woodbrass",
+      439.0
+     ],
+     [
+      "Musik Beck",
+      479.0
+     ]
+    ],
+    "pvp": null,
+    "why": "38 € günstiger als in allen anderen Shops",
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-ranger-series-rra-srt-7-8-842960184907",
+    "name": "Ortega Ranger Series RRA-SRT 7/8",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.session.de/media/ec/d6/0c/1720622585/ortega-ranger-series-rra-srt-4-4-19.jpg?ts=1720622585",
+    "th": "2542e7eabef87fe4.webp",
+    "price": 228.0,
+    "store": "Session",
+    "stores": 4,
+    "median": 269.0,
+    "max": 271.0,
+    "next": 251.0,
+    "rows": [
+     [
+      "Session",
+      228.0
+     ],
+     [
+      "Shop2Rock",
+      251.0
+     ],
+     [
+      "Music Town",
+      269.0
+     ],
+     [
+      "Woodbrass",
+      271.0
+     ]
+    ],
+    "pvp": null,
+    "why": "23 € günstiger als in allen anderen Shops",
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}
