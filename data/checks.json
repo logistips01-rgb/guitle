@@ -702,12 +702,6 @@
   "median": 362.0
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Fender AM Artist Lincoln Brewster Strat (EXPO)",
-  "slug": "fender-am-artist-lincoln-brewster-strat-expo-885978110131"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
@@ -1167,24 +1161,6 @@
   "median": 877.895
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Adamas 2087GT Reverse Brown Burst",
-  "slug": "adamas-2087gt-reverse-brown-burst-4046662303390"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Fender PD-220E Dreadnought NAT",
-  "slug": "fender-pd-220e-dreadnought-nat-885978742813"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Godin Multiac Steel natural",
-  "slug": "godin-multiac-steel-natural-623501050598"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1300,36 +1276,6 @@
   "slug": "ortega-r122sn-l-842960180374",
   "price": 189.0,
   "median": 269.37
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Encore Godin Multiac Encore Nylon 7 with Bag",
-  "slug": "encore-godin-multiac-encore-nylon-7-with-bag-623501041374"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Gewa Pro Natura Silver 3/4 mate satinado",
-  "slug": "gewa-pro-natura-silver-3-4-mate-satinado-4046662036274"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Gewa Student Solid Top 1/4 natural",
-  "slug": "gewa-student-solid-top-1-4-natural-4046662292779"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Gewa Student Solid Top 3/4 natural",
-  "slug": "gewa-student-solid-top-3-4-natural-4046662292793"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Godin española amplificada Godin ACS Grand Concert natural con funda",
-  "slug": "godin-espanola-amplificada-godin-acs-grand-concert-natural-con-funda-623501047352"
  },
  {
   "kind": "teclado",
