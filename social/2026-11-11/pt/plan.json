@@ -1,0 +1,166 @@
+{
+ "date": "2026-11-11",
+ "fecha": "11 de novembro",
+ "post": {
+  "type": "top",
+  "title": "2 guitarras acústicas até 300 €",
+  "kind": "acustica",
+  "picks": [
+   {
+    "slug": "fender-ca-std-redondo-ce-bpg-nat-ebpgnathtm",
+    "name": "Fender CA STD Redondo CE BPG NAT",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/619829.jpg",
+    "th": "bcbaf3f39248e63a.webp",
+    "price": 179.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 208.5,
+    "max": 217.0,
+    "next": 200.0,
+    "rows": [
+     [
+      "Thomann",
+      179.0
+     ],
+     [
+      "Salão Musical",
+      200.0
+     ],
+     [
+      "Egitana",
+      217.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "ibanez-pf15ece-tbs-ecetbs6709",
+    "name": "Ibanez PF15ECE TBS",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://musifex.pt/web/image/product.template/6709/image_1024?unique=eb4de26",
+    "th": "38c0a63c33296d9e.webp",
+    "price": 214.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 216.0,
+    "max": 217.0,
+    "next": 215.0,
+    "rows": [
+     [
+      "Musifex",
+      214.0
+     ],
+     [
+      "Egitana",
+      215.0
+     ],
+     [
+      "Thomann",
+      217.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   }
+  ],
+  "caption": "🎸 2 guitarras acústicas até 300 €: as mais vendidas nas lojas, com o melhor preço de hoje 👇\n\n1️⃣ Fender CA STD Redondo CE BPG NAT: 179 € na Thomann\n2️⃣ Ibanez PF15ECE TBS: 214 € na Musifex\n\nCom qual ficas? Diz-nos nos comentários 💬\n🔎 Compara preços em guitle.com/pt (todas as promoções de hoje no link da bio 👆). Preços de 11 de novembro.\n\n#guitarra #guitarrista #promoção #portugal #guitarraacustica #fender #ibanez"
+ },
+ "stories": [
+  {
+   "slug": "fender-ca-std-redondo-ce-bpg-nat-ebpgnathtm",
+   "name": "Fender CA STD Redondo CE BPG NAT",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/619829.jpg",
+   "th": "bcbaf3f39248e63a.webp",
+   "price": 179.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 208.5,
+   "max": 217.0,
+   "next": 200.0,
+   "rows": [
+    [
+     "Thomann",
+     179.0
+    ],
+    [
+     "Salão Musical",
+     200.0
+    ],
+    [
+     "Egitana",
+     217.0
+    ]
+   ],
+   "pvp": null,
+   "why": "21 € a menos do que em qualquer outra loja",
+   "pct": 10,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "ibanez-pf15ece-tbs-ecetbs6709",
+   "name": "Ibanez PF15ECE TBS",
+   "brand": "Ibanez",
+   "kind": "acustica",
+   "img": "https://musifex.pt/web/image/product.template/6709/image_1024?unique=eb4de26",
+   "th": "38c0a63c33296d9e.webp",
+   "price": 214.0,
+   "store": "Musifex",
+   "stores": 3,
+   "median": 216.0,
+   "max": 217.0,
+   "next": 215.0,
+   "rows": [
+    [
+     "Musifex",
+     214.0
+    ],
+    [
+     "Egitana",
+     215.0
+    ],
+    [
+     "Thomann",
+     217.0
+    ]
+   ],
+   "pvp": null,
+   "why": "1 € a menos do que em qualquer outra loja",
+   "photo": "chollo-2.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}
