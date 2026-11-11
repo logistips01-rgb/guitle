@@ -1,36 +1,66 @@
 {
- "fecha": "2026-11-10",
+ "fecha": "2026-11-11",
  "pais": "br",
  "items": [
   {
-   "slug": "giannini-gf1d-ceq-tdw-translucent-dark-wine-aco-7890443020092",
-   "name": "Giannini GF1D Ceq Tdw Translucent Dark Wine Aço",
-   "brand": "Giannini",
-   "price": "R$ 899,10",
-   "store": "Mundomax",
-   "kind": "acustica",
-   "img": "bba8fa0a8de5bdae.webp",
-   "why": "R$ 187,35 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "tagima-nylon-cartagena-lpbs-latin-america-semi-flat-7898563976367",
-   "name": "Tagima Nylon Cartagena LPBS Latin America Semi Flat",
-   "brand": "Tagima",
-   "price": "R$ 927,00",
-   "store": "Akustica Musical",
-   "kind": "clasica",
-   "img": "2f10b8fb0bb77a84.webp",
-   "why": "R$ 152,10 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "strinberg-forest-fs-4d-tos-strinberg-strinbergp",
-   "name": "Strinberg Forest FS-4D TOS - Strinberg",
+   "slug": "strinberg-sd301hcr-ws-galaxy-series-folk-de-aco-walnut-fosco-c-efeitos-e-bag-7899854524120",
+   "name": "Strinberg SD301HCR WS Galaxy Series Folk de Aço Walnut Fosco C/ Efeitos e Bag",
    "brand": "Strinberg",
-   "price": "R$ 946,68",
-   "store": "Ninja Som",
+   "price": "R$ 1.665,00",
+   "store": "Akustica Musical",
    "kind": "acustica",
-   "img": "7854244956a345b1.webp",
-   "why": "R$ 153,32 a menos que em qualquer outra loja"
+   "img": "9ec3aaf0d4e0d4f3.webp",
+   "why": "R$ 224,10 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "tagima-tw-61-jazzmaster-fiesta-red-7898563976640",
+   "name": "Tagima TW-61 Jazzmaster Fiesta Red",
+   "brand": "Tagima",
+   "price": "R$ 1.376,10",
+   "store": "Akustica Musical",
+   "kind": "electrica",
+   "img": "85e9fc375d415d3e.webp",
+   "why": "R$ 122,90 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "takamine-gd11mce-mahogany-tp-4t-190262041498",
+   "name": "Takamine GD11MCE Mahogany & TP-4T",
+   "brand": "Takamine",
+   "price": "R$ 2.699,10",
+   "store": "Akustica Musical",
+   "kind": "acustica",
+   "img": "760729a2bf3a13fe.webp",
+   "why": "R$ 180 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "giannini-cutway-giannini-gf1d-ceq-3ts-sb-7890443020054",
+   "name": "Giannini Cutway Giannini Gf1d Ceq 3TS Sb",
+   "brand": "Giannini",
+   "price": "R$ 899,00",
+   "store": "Cheiro de Música",
+   "kind": "acustica",
+   "img": "365ead611d5add43.webp",
+   "why": ""
+  },
+  {
+   "slug": "tagima-andes-latin-america-bks-folk-black-satin-7898563976381",
+   "name": "Tagima Andes Latin America BKS Folk Black Satin",
+   "brand": "Tagima",
+   "price": "R$ 945,00",
+   "store": "Akustica Musical",
+   "kind": "acustica",
+   "img": "597b0658d96c6d47.webp",
+   "why": ""
+  },
+  {
+   "slug": "strinberg-dobro-resonator-acustico-strinberg-sdb30-sb-7899854510840",
+   "name": "Strinberg Dobro Resonator Acústico Strinberg SDB30 SB",
+   "brand": "Strinberg",
+   "price": "R$ 1.444,99",
+   "store": "RCK Audio",
+   "kind": "acustica",
+   "img": "7ebb33a1b7185537.webp",
+   "why": ""
   }
  ]
 }

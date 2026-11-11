@@ -1,16 +1,26 @@
 {
- "fecha": "2026-11-10",
+ "fecha": "2026-11-11",
  "pais": "pt",
  "items": [
   {
-   "slug": "ibanez-as53-tf-zas53tfhtm",
-   "name": "Ibanez AS53-TF",
-   "brand": "Ibanez",
-   "price": "299 €",
+   "slug": "fender-ca-std-redondo-ce-bpg-nat-ebpgnathtm",
+   "name": "Fender CA STD Redondo CE BPG NAT",
+   "brand": "Fender",
+   "price": "179 €",
    "store": "Thomann",
-   "kind": "electrica",
-   "img": "d80af3fa03be8f68.webp",
-   "why": "6 € a menos do que em qualquer outra loja"
+   "kind": "acustica",
+   "img": "bcbaf3f39248e63a.webp",
+   "why": "21 € a menos do que em qualquer outra loja"
+  },
+  {
+   "slug": "ibanez-pf15ece-tbs-ecetbs6709",
+   "name": "Ibanez PF15ECE TBS",
+   "brand": "Ibanez",
+   "price": "214 €",
+   "store": "Musifex",
+   "kind": "acustica",
+   "img": "38c0a63c33296d9e.webp",
+   "why": "1 € a menos do que em qualquer outra loja"
   }
  ]
 }

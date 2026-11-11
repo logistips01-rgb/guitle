@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-10",
+ "fecha": "2026-11-11",
  "pais": "de",
  "items": [
   {
-   "slug": "yamaha-apx-600-natural-westerngitarre-4957812623896",
-   "name": "Yamaha APX 600 Natural Westerngitarre",
-   "brand": "Yamaha",
-   "price": "309 €",
-   "store": "IMM Professional",
-   "kind": "acustica",
-   "img": "7fc1f02ff07b1d35.webp",
-   "why": "36 € günstiger als in allen anderen Shops"
-  },
-  {
-   "slug": "ibanez-azes31-aoc-e-gitarre-purist-blue-4549763352491",
-   "name": "Ibanez AZES31-AOC E-Gitarre, purist blue",
-   "brand": "Ibanez",
-   "price": "261,96 €",
-   "store": "Shop2Rock",
+   "slug": "gretsch-ltd-edition-electromatic-black-limba-cvt-rw-sunburst-197955147864",
+   "name": "Gretsch LTD Edition Electromatic Black Limba CVT RW Sunburst",
+   "brand": "Gretsch",
+   "price": "539 €",
+   "store": "Session",
    "kind": "electrica",
-   "img": "5b3a2b3be2265ee2.webp",
-   "why": "30,04 € günstiger als in allen anderen Shops"
+   "img": "a01073f9ffdbdc1c.webp",
+   "why": "60 € günstiger als in allen anderen Shops"
   },
   {
-   "slug": "fender-california-standard-redondo-mini-ib-blk-885978857456",
-   "name": "Fender California Standard Redondo Mini IB BLK",
-   "brand": "Fender",
-   "price": "159 €",
-   "store": "Zoundhouse",
+   "slug": "ibanez-iceman-ic420-gd-e-gitarre-gdegitarre",
+   "name": "Ibanez Iceman IC420-GD E-Gitarre",
+   "brand": "Ibanez",
+   "price": "629 €",
+   "store": "IMM Professional",
+   "kind": "electrica",
+   "img": "275823f40fc1dcf2.webp",
+   "why": "70 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "cort-pure-o-natural-satin-8809817983337",
+   "name": "Cort PURE-O Natural Satin",
+   "brand": "Cort",
+   "price": "349 €",
+   "store": "Session",
    "kind": "acustica",
-   "img": "4f027ac419a866ae.webp",
-   "why": "18 € günstiger als in allen anderen Shops"
+   "img": "4f4663a4c8770ced.webp",
+   "why": "50 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "fender-cd-60s-all-mahogany-885978875740",
+   "name": "Fender CD-60S All Mahogany",
+   "brand": "Fender",
+   "price": "199 €",
+   "store": "Musikhaus Markstein",
+   "kind": "acustica",
+   "img": "1199c59493dd3586.webp",
+   "why": ""
+  },
+  {
+   "slug": "gretsch-jim-dandy-parlor-wn-wpg-rxb-717669567194",
+   "name": "Gretsch Jim Dandy Parlor WN WPG RXB",
+   "brand": "Gretsch",
+   "price": "199 €",
+   "store": "Session",
+   "kind": "acustica",
+   "img": "d213e661c10ebada.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-t70dnat-tramontane-70-dreadnought-akustik-gitarre-3700166371798",
+   "name": "Lag T70DNAT Tramontane 70 Dreadnought Akustik Gitarre",
+   "brand": "Lag",
+   "price": "258 €",
+   "store": "Shop2Rock",
+   "kind": "acustica",
+   "img": "e2795eb5d9038a78.webp",
+   "why": ""
+  },
+  {
+   "slug": "cort-earth-70-br2-dreadnought-akustik-gitarre-braun-hochglanz-8809383839304",
+   "name": "Cort Earth 70 BR2 Dreadnought Akustik-Gitarre, braun hochglanz",
+   "brand": "Cort",
+   "price": "266 €",
+   "store": "Shop2Rock",
+   "kind": "acustica",
+   "img": "821f4aa613ee8947.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-aad70ce-tbn-4549763376961",
+   "name": "Ibanez AAD70CE-TBN",
+   "brand": "Ibanez",
+   "price": "299 €",
+   "store": "Session",
+   "kind": "acustica",
+   "img": "5805931e4517f662.webp",
+   "why": ""
   }
  ]
 }
