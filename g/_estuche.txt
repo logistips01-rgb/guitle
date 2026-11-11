@@ -504,11 +504,11 @@ fender-cd-140sce-all-mahogany-wn-w-case-885978875504
 fender-cd-140sce-wn-nat-w-case-885978875511
 fender-cd-140sce-wn-sb-w-case-885978875498
 fender-classic-series-case-jazz-jaguar-estuche-blk-885978073382
-fender-classic-series-case-mstng-duo-estuche-black-885978073399
 fender-classic-series-case-pj-bass-estuche-negro-enegrohtml
 fender-classic-series-strat-tele-galaxy-wood-885978987115
 fender-classic-series-wood-case-p-j-bass-tweed-885978073375
 fender-classic-series-wood-case-strat-tele-navy-blue-885978750504
+fender-classic-srs-case-mustang-duo-sonic-black-885978073399
 fender-classic-wood-case-jazzmaster-jaguar-black-996116306
 fender-clsc-srs-case-strat-tele-blk-885978073344
 fender-clsc-srs-case-strat-tele-twd-885978073351
@@ -1031,9 +1031,11 @@ mammoth-mam-15g-9357909000145
 mammoth-mam-15w-raacustica
 mammoth-mam-7b-9357909000190
 mammoth-mam-7c-9357909000213
+mammoth-mam-7c-grey-9357909001685
 mammoth-mam-7c75-9357909000220
 mammoth-mam-7g-9357909000183
 mammoth-mam-7w-9357909000206
+mammoth-mam07cgrey-funda-premium-7mm-clasica-c7greyhtml
 mammoth-mam10b-funda-bajo-10mm-000251html
 mammoth-mam10c-grey-funda-clasica-10mm-001609html
 mammoth-mam10cgrey-funda-premium-10mm-clasica-9357909001609
@@ -1050,7 +1052,6 @@ mammoth-mam15w-funda-acustica-15mm-9357909000169
 mammoth-mam7b-funda-bajo-7mm-000190html
 mammoth-mam7c-funda-clasica-7mm-000213html
 mammoth-mam7c-funda-clasica-cadete-7mm-000220html
-mammoth-mam7c-grey-funda-clasica-7mm-9357909001685
 mammoth-mam7g-funda-electrica-7mm-000183html
 mammoth-mam7w-funda-acustica-7mm-000206html
 mammoth-royal-b-9357909001586

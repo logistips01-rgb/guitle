@@ -753,7 +753,6 @@ jackson-spectra-bass-js2p-il-bkb-717669560935
 jackson-spectra-bass-sbxm-iv-snw-885978428359
 jackson-x-rrb-iv-rhoads-bass-bk-pin-kpinp45663
 jackson-x-series-concert-bass-cbxdx-iv-m-mn-icb-717669902292
-jackson-x-series-concert-bass-cbxnt-dx-iv-matte-army-drab-717669902285
 jackson-x-series-concert-bass-cbxnt-dx-iv-rocket-red-885978751716
 jackson-x-series-signature-david-ellefson-kelly-bird-iv-bass-885978341238
 jet-jb300-ow-white-mini-bajo-electrico-3831120936194
@@ -1266,6 +1265,7 @@ sandberg-california-tt-4-basstheworld-hardcore-reserve-tbc-47988-444410038229
 sandberg-california-tt-4-basstheworld-hardcore-reserve-tbc-47994-444410038227
 sandberg-california-tt-4-birdseye-mn-swamp-ash-nature-49712-444410035943
 sandberg-california-tt-4-rrw-swamp-ash-nature-444410035942
+sandberg-california-tt5-3-tsb-hg-vgreenline
 sandberg-california-vs-4-rmn-swamp-ash-nature-444410035941
 sandberg-california-vs-4-rw-swamp-ash-nature-444410035939
 sandberg-e-bass-sandberg-california-ii-grand-dark-4-mbk-matte-black-444412010766
@@ -1273,7 +1273,6 @@ sandberg-e-bass-sandberg-california-ii-tm-4-hca-altrose-altrosa-hardcore-aged-44
 sandberg-e-bass-sandberg-california-tt-4-basstheworld-hardc-tt-4-basstheworld-ha-444412010773
 sandberg-e-bass-sandberg-california-tt4-3ts-3tone-sunburst-short-scale-4-saitig-444412010771
 sandberg-e-bass-sandberg-california-tt4-nature-hg-natur-hg-4-saitig-aktiv-greenl-vgreenline
-sandberg-e-bass-sandberg-california-tt5-3-tsb-hg-3-tsb-hg-5-saitig-aktiv-greenli-vgreenline
 sandberg-e-bass-sandberg-classic-special-5-edition-natural-444412010787
 sandberg-e-bass-sandberg-forty-eight-mip-hcr-mn-midnight-purp-mn-hardcore-aged-r-444412010795
 schecter-c-5-gt-810051470741
@@ -1527,7 +1526,6 @@ yamaha-beyond-classic-bb434m-tobaco-brown-sunburst-4957812619288
 yamaha-beyond-classic-bb435-black-5-cuerdas-4957812619424
 yamaha-beyond-classic-bb734a-dark-coffee-sunburst-4957812619332
 yamaha-beyond-classic-bb735a-translucent-matte-black-5-cuerdas-4957812619363
-yamaha-drums-yamaha-trbx204-bright-red-metallic-639705html
 yamaha-trb-jp2-john-patitucci-am-4960693220993
 yamaha-trb-jp2-john-patitucci-trd-4960693221006
 yamaha-trbx-174ew-nat-de4cuerdas
@@ -1550,6 +1548,7 @@ yamaha-trbx174ew-natural-4957812578608
 yamaha-trbx174ew-root-beer-4957812578615
 yamaha-trbx174ew-tobacco-brown-sunburst-4957812579537
 yamaha-trbx174ew-translucent-black-4957812578592
+yamaha-trbx204-bright-red-metallic-639705html
 yamaha-trbx204-galaxy-black-4957812639699
 yamaha-trbx204-gray-metallic-4957812639712
 yamaha-trbx304-black-4957812535519
