@@ -1157,7 +1157,7 @@ alvarez-ac65-spb-ce-677523002011
 alvarez-ac65ce-artist-natural-gloss-814295012033
 alvarez-ac65cespb-espb401871
 alvarez-ac65hce-artist-814295012040
-alvarez-cc7-cadiz-cacc7cadiz
+alvarez-cc7-cadiz-natural-gloss-lglosshtml
 alvarez-mga70wcearshb-812309025772
 alvarez-rc26-regent-814295015928
 alvarez-rc26hce-6hcep11560
@@ -2318,6 +2318,7 @@ jose-rincon-mm4-caoba-maciza-brillo-cizabrillo
 jose-rincon-mm4-caoba-maciza-satinada-zasatinada
 jose-rincon-mm6-palosanto-tapa-maciza-tapamaciza
 jose-rincon-mr5-palosanto-rojo-osantorojo
+jose-torres-jose-torres-jtf-30cet-electrificada-8435017329158
 jose-torres-jose-torres-jtg-11-0-guitarra-gypsy-brillante-8435017329141
 jose-torres-jtb-100-b100p43726
 jose-torres-jtc-10-8435017324955
@@ -2371,7 +2372,6 @@ jose-torres-jtc5s-zurdos-nat-tc5slhhtml
 jose-torres-jtc5sce-natura-tc5scehtml
 jose-torres-jtf-30-8435017324993
 jose-torres-jtf-30ce-8435017328519
-jose-torres-jtf-30cet-cutaway-8435017329158
 jose-torres-jtf-50-8435017325068
 jose-torres-jtf-50-flamenca-amencahtml
 jose-torres-jtf-50ce-8435017325075
@@ -2619,7 +2619,6 @@ ortega-4-4-r131-cedro-macizo-mastil-estrecho-burdeos-deos210757
 ortega-4-4-r221-abeto-negro-egro210762
 ortega-bwsm-2-840553027808
 ortega-bywsm-842960184099
-ortega-de-nailon-ortega-tourplayer-rtpdlx-fma-de-arce-flameado-842960184945
 ortega-dssuite-c-e-840553025248
 ortega-espanola-amplificada-ortega-rce180g-842960182941
 ortega-espanola-amplificada-ortega-rce180gt-842960182958
@@ -2814,6 +2813,7 @@ ortega-rtp-ltd-tourplayer-series-guitarra-espanola-electrificada-4-4-con-funda-e
 ortega-rtpdlx-aca-l-842960186123
 ortega-rtpdlx-aca-tourplayer-electrificada-842960184938
 ortega-rtpdlx-fma-l-842960186130
+ortega-rtpdlx-fma-tourplayer-electrificada-842960184945
 ortega-rtpfe-1-tourplayer-deluxe-maple-able399040
 ortega-rtpg-ls1-tourplayer-series-guitarra-espanola-electrificada-4-4-con-funda-842960187342
 ortega-rtpg-ls2-tourplayer-series-guitarra-espanola-electrificada-4-4-con-funda-842960187359

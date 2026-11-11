@@ -21,6 +21,7 @@ alesis-nitro-mesh-kit-694318023808
 alesis-nitro-mesh-kit-se-694318024966
 alesis-nitro-pro-drum-kit-bundle-tbundlehtm
 alesis-nitro-pro-kit-694318026410
+alesis-nitro-pro-kit-694318027325
 alesis-nitro-pro-xl-kit-694318026540
 alesis-nitro-ultimate-694318026878
 alesis-nitro-ultimate-drum-kit-bundle-tbundlehtm
@@ -816,6 +817,8 @@ mapex-mars-birch-rock-shell-set-or-r564246htm
 mapex-mars-birch-rock-shell-set-yd-llsetydhtm
 mapex-mars-birch-stage-shell-set-or-llsetorhtm
 mapex-mars-birch-stage-shell-set-yd-llsetydhtm
+mapex-mars-black-maple-double-b-set-blebsethtm
+mapex-mars-black-maple-rock-plerockhtm
 mapex-mars-maple-bebop-kd-bundle-dbundlehtm
 mapex-mars-maple-bebop-od-bundle-dbundlehtm
 mapex-mars-maple-bebop-og-bundle-gbundlehtm
@@ -980,6 +983,7 @@ millenium-rookie-e-drum-set-bundle-tbundlehtm
 millenium-rookie-e-drum-set-drumsethtm
 millenium-rookie-school-set-english-englishhtm
 millenium-rookie-school-set-german-tgermanhtm
+monkey-loop-bateria-electronica-monkey-loop-ml-edrum-10-um10p46018
 noble-cooley-cd-maple-cairo-blue-spkl-kit-spklkithtm
 noble-cooley-cd-maple-cool-mint-sparkle-kit-rklekithtm
 nuvo-zip-kit-essential-drum-kit-drumkithtm
@@ -1088,7 +1092,6 @@ pearl-decade-maple-standard-dfb-bateria-acustica-4515295495036
 pearl-decade-maple-standard-r-red-ardrredhtm
 pearl-decade-maple-standard-rock-bateria-acustica-uv-4515295498723
 pearl-decade-maple-standard-s-black-dsblackhtm
-pearl-decade-maple-standard-s-brown-dsbrownhtm
 pearl-decade-maple-standard-uv-bateria-acustica-4515295498716
 pearl-decade-maple-standard-walnut-dwalnuthtm
 pearl-decade-maple-studio-bb-bateria-acustica-4515295488274
@@ -1253,7 +1256,7 @@ proel-freeonex-sistema-pa-ate-10h-de-bateria-com-bluetooth-white-hitep41174
 pure-gewa-drum-set-basix-dynamic-amicp41430
 rogers-covington-20-red-ripple-shell-pack-3-pcs-444412001264
 roland-bty-fr-bateria-interna-para-acordeoes-fr-8x-fr-8xb-fr-7-fr-5-efr5p29597
-roland-pack-roland-td07dmk-bateria-electronica-pedal-bombo-d07dmkhtml
+roland-pack-roland-td07dmk-bateria-electronica-pedal-bombo-4957054518776
 roland-td-02k-4957054519049
 roland-td-02k-lite-gt-e-drum-kit-inclui-rack-3-apoios-pro-quality-eriap30406
 roland-td-02k-v-drums-kit-bundle-tbundlehtm
@@ -1261,7 +1264,7 @@ roland-td-02k-v-drums-kit-rumskithtm
 roland-td-02kv-4957054519056
 roland-td-02kv-v-drums-kit-bundle-tbundlehtm
 roland-td-02kv-v-drums-kit-rumskithtm
-roland-td-07dmk-4957054518776
+roland-td-07dmk-andtd07dmk
 roland-td-07dmk-turbo-gt-143-sons-50-drum-kits-dtd1kp3065
 roland-td-07dmk-turbo-gt-143-sons-50-drum-kits-mkitp24934
 roland-td-07dmk2-v-drum-set-bundle-tbundlehtm
@@ -1279,7 +1282,6 @@ roland-td-513-4957054521066
 roland-td-516-4957054521073
 roland-td02k-bateria-electronica-2td02khtml
 roland-td02kv-bateria-electronica-td02kvhtml
-roland-td07dmk-bateria-electronica-d07dmkhtml
 roland-td07kv-bateria-electronica-4957054516871
 roland-td313-v-drum-kit-4957054521110
 roland-td313-v-drum-kit-bundle-tbundlehtm

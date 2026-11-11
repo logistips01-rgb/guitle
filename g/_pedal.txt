@@ -85,7 +85,6 @@ behringer-tu300-chromatic-tuner-4033653052030
 behringer-uc200-ultra-chorus-4033653052177
 behringer-um300-ultra-metal-4033653052276
 behringer-ut300-ultra-tremolo-4033653052191
-behringer-uv300-ultra-vibrato-4033653052603
 behringer-vd400-vintage-delay-4033653053570
 behringer-vt999-vintage-tube-monster-4033653053037
 blackstar-dept-10-amped-2-pedal-preamp-845644006861
@@ -272,12 +271,12 @@ boss-od3-316600html
 boss-odb-3-bass-overdrive-distorcao-para-baixo-baixop4312
 boss-odb3-pedal-overdrive-4957054035471
 boss-os-2-overdrive-distortion-2-in-1-boss-legend-1988-rcaobp4302
-boss-os-2-pedal-de-efectos-4957054018290
 boss-os2-216603html
+boss-overdrive-distortion-os-2-4957054018290
 boss-ph-3-pedal-guitarra-4957054053031
 boss-ph3-316662html
 boss-ps-6-harmonist-pitch-shifter-tricap4297
-boss-ps6-4957054413293
+boss-ps6-pedal-guitarra-4957054413293
 boss-pw-3-4957054507183
 boss-pw-3-wah-pedal-hpedalhtml
 boss-px-1-plugout-fx-4957054521578
@@ -916,8 +915,8 @@ eventide-blackhole-840694001835
 eventide-blackhole-reverb-pedal-edalp20035
 eventide-h9-harmonizer-840694001156
 eventide-h9-harmonizer-gen2-840694003112
+eventide-h9-max-840694001217
 eventide-h9-max-harmonizer-3eh9axhtml
-eventide-h9-max-harmonizer-840694001217
 eventide-h9-max-pedal-multiefecto-umentohtml
 eventide-h90-dark-harmonizer-pedal-edalp41943
 eventide-h90-harmonizer-840694001842
@@ -1118,7 +1117,7 @@ ik-multimedia-amplitube-x-drive-8025813832039
 ik-multimedia-amplitube-x-time-8025813833036
 ik-multimedia-amplitube-x-vibe-8025813830035
 ik-multimedia-irig-blueturn-8025813645035
-ik-multimedia-tonex-board-8025813011267
+ik-multimedia-tonex-board-pedalera-multiefectos-8025813011267
 ik-multimedia-tonex-one-8025813936034
 ik-multimedia-tonex-pedal-8025813837034
 ik-multimedia-tonex-pedal-bass-edition-8025813990036

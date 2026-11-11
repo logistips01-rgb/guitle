@@ -926,6 +926,7 @@ cort-goldd8-natural-8809625363079
 cort-goldoc6-natural-glos-620396html
 cort-guit-acus-ga-medx-12-op-8809625361396
 cort-guit-acust-ac70-nt-gloss-top-ch-3-4-8809817985041
+cort-guit-acust-pure-dcf-ns-w-bag-8809817983153
 cort-guit-acust-pure-dcmf-ns-w-bag-8809817983160
 cort-guit-acust-pure-ocf-ns-w-bag-8809817983177
 cort-guit-acust-pure-ocmf-ns-w-bag-8809817083181
@@ -1005,7 +1006,6 @@ cort-ndx20-nat-8809383838956
 cort-pure-d-natural-satin-8809817983313
 cort-pure-d-satinado-natural-8809817983078
 cort-pure-dc-satin-light-burst-8809817983252
-cort-pure-dcf-natural-satinado-con-funda-8809817983153
 cort-pure-ga-black-top-8809817985089
 cort-pure-o-caoba-satinado-natural-8809817983108
 cort-pure-o-natural-satin-8809817983337
@@ -1932,7 +1932,7 @@ furch-indigo-g-cy-master-s-choice-spe-electrificada-ficadahtml
 furch-indigo-plus-d-cy-8596387008194
 furch-indigo-plus-g-cy-8596387009191
 furch-ldt-dread-cw-lr-8596387001034
-furch-little-jane-de-viaje-10-mm-8596387000938
+furch-little-jane-10-mm-8596387000938
 furch-little-jane-de-viaje-lh-10-cm-lrb1-3701027300384
 furch-little-jane-lj-10-cutaway-guitarra-ac-zurda-8596387000297
 furch-lj-10-cm-vtc-8596387010296
@@ -2077,7 +2077,6 @@ gibson-hummingbird-studio-rosewood-711106096230
 gibson-hummingbird-studio-walnut-burst-711106170299
 gibson-hummingbird-studio-walnut-satin-natural-711106139333
 gibson-j-160e-original-vintage-sunburst-711106174419
-gibson-j-180-everly-brothers-signature-ebony-21074060-4060425287
 gibson-j-185-1952-antique-natural-cs-hrc-shrc411826
 gibson-j-185-1952-antique-natural-cshr-711106037417
 gibson-j-185-1952-vintage-sunburst-cshr-711106037400
@@ -2392,7 +2391,7 @@ guild-f-512e-antique-burst-de-12-cuerdas-con-estuche-stuchehtml
 guild-f-512e-maple-antique-burst-de-12-cuerdas-con-estuche-stuchehtml
 guild-f-512e-maple-blonde-de-12-cuerdas-con-estuche-stuchehtml
 guild-f-512e-natural-de-12-cuerdas-con-estuche-stuchehtml
-guild-f-55-natural-809870303538
+guild-f-55-natural-con-estuche-stuchehtml
 guild-f-55e-antique-burst-con-estuche-stuchehtml
 guild-f-55e-maple-antique-burst-con-estuche-stuchehtml
 guild-f-55e-maple-blonde-con-estuche-stuchehtml
@@ -5397,7 +5396,6 @@ taylor-jacob-collier-signature-model-academy-22e-de-5-cuerdas-natural-grand-conc
 taylor-jacob-collier-signature-model-jcsm-de-5-cuerdas-natural-grand-concert-887766135302
 taylor-k14ce-builder-s-edition-887766102946
 taylor-k14ce-builder-s-edition-koa-grand-auditorium-1206184060-4060408875
-taylor-k24ce-builder-s-edition-koa-grand-auditorium-887766102182
 taylor-k24ce-grand-auditorium-887766094784
 taylor-k24ce-special-edition-887766146414
 taylor-legacy-514ce-887766135111

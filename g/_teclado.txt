@@ -932,7 +932,7 @@ yamaha-montage-8-4957812590341
 yamaha-mx49-v2-azul-4957812606493
 yamaha-mx49-v2-negro-de49teclas
 yamaha-mx49ii-black-4957812606417
-yamaha-mx61-blue-sintetizador-4957812606257
+yamaha-mx61-v2-azul-4957812606257
 yamaha-mx61-v2-negro-de61teclas
 yamaha-mx61ii-black-4957812606172
 yamaha-mx88-de88teclas

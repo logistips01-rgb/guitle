@@ -554,6 +554,7 @@ marca/jumbo.html
 marca/jupiter.html
 marca/k-gear.html
 marca/karl-s.html
+marca/karma.html
 marca/kat.html
 marca/kawai.html
 marca/keeley.html
@@ -693,6 +694,7 @@ marca/modesto-malla.html
 marca/moeck.html
 marca/monacor.html
 marca/monkey-banana.html
+marca/monkey-loop.html
 marca/mono.html
 marca/mooer.html
 marca/moog.html
@@ -799,6 +801,7 @@ marca/proel-sound.html
 marca/proel.html
 marca/profesional.html
 marca/prokeys.html
+marca/promark.html
 marca/promark.html
 marca/pronorte.html
 marca/protection-racket.html
@@ -1140,7 +1143,6 @@ marca/xotic.html
 marca/xvive.html
 marca/xvive.html
 marca/xvive.html
-marca/yamaha-drums.html
 marca/yamaha.html
 marca/yellow-parts.html
 marca/yuer.html
