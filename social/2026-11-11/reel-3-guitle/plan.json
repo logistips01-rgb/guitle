@@ -1,0 +1,48 @@
+{
+ "fecha": "11 de noviembre",
+ "post": {
+  "type": "guitle",
+  "topic": "Misma guitarra, distinto precio",
+  "slides": [
+   {
+    "hook": "¿Sabías que…?",
+    "title": "La misma guitarra puede costar mucho más según la tienda",
+    "visual": {
+     "type": "photo",
+     "photo": "ex1.webp"
+    }
+   },
+   {
+    "title": "Ibanez AM93QA Jbb Artcore Expressionist Jet Blue Burst",
+    "size": 76,
+    "visual": {
+     "type": "prices",
+     "rows": [
+      [
+       "Tienda A",
+       695.0
+      ],
+      [
+       "Tienda B",
+       698.0
+      ],
+      [
+       "Tienda C",
+       698.0
+      ],
+      [
+       "Tienda D",
+       959.0
+      ]
+     ]
+    }
+   },
+   {
+    "title": "264 € de diferencia",
+    "sub": "Compara antes de comprar",
+    "size": 130
+   }
+  ]
+ },
+ "stories": []
+}

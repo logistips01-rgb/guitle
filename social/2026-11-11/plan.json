@@ -1,0 +1,364 @@
+{
+ "date": "2026-11-11",
+ "fecha": "11 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 acústicas de 150 € a 300 €",
+  "kind": "acustica",
+  "picks": [
+   {
+    "slug": "fender-california-standard-redondo-ce-spruce-top-natural-885978679584",
+    "name": "Fender California Standard Redondo CE Spruce Top Natural",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/4/748328_1_3d8c.jpg?store=nume_es&image-type=image",
+    "th": "7bfc630492686b91.webp",
+    "price": 192.0,
+    "store": "Drunkat",
+    "stores": 7,
+    "median": 203.41500000000002,
+    "max": 249.99,
+    "next": 192.0,
+    "rows": [
+     [
+      "Drunkat",
+      192.0
+     ],
+     [
+      "Woodbrass",
+      192.0
+     ],
+     [
+      "Musicopolix",
+      194.4
+     ],
+     [
+      "Auvisa",
+      199.0
+     ],
+     [
+      "Musical San Francisco",
+      207.83
+     ],
+     [
+      "MAT Guitars",
+      213.0
+     ],
+     [
+      "Nume Music",
+      249.99
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "cort-ga-medx-m-op-w-bag-8809625365240",
+    "name": "Cort GA-MEDX M OP W/bag",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/4/747552_0386.jpg?store=nume_es&image-type=image",
+    "th": "144522705e61394a.webp",
+    "price": 203.47,
+    "store": "Alteisa",
+    "stores": 6,
+    "median": 272.0,
+    "max": 320.0,
+    "next": 239.0,
+    "rows": [
+     [
+      "Alteisa",
+      203.47
+     ],
+     [
+      "Musicopolix",
+      239.0
+     ],
+     [
+      "Nume Music",
+      272.0
+     ],
+     [
+      "Drunkat",
+      272.0
+     ],
+     [
+      "Pronorte",
+      320.0
+     ],
+     [
+      "Musical San Francisco",
+      320.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "ibanez-tcy12e-opn-open-pore-natural-4515276838531",
+    "name": "Ibanez TCY12E-OPN Open Pore Natural",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/737920_1_5960.jpg?store=nume_es&image-type=image",
+    "th": "444b9e8db3491136.webp",
+    "price": 218.0,
+    "store": "Pronorte",
+    "stores": 8,
+    "median": 223.0,
+    "max": 248.28,
+    "next": 218.0,
+    "rows": [
+     [
+      "Pronorte",
+      218.0
+     ],
+     [
+      "Auvisa",
+      218.0
+     ],
+     [
+      "Alteisa",
+      218.0
+     ],
+     [
+      "MAT Guitars",
+      219.0
+     ],
+     [
+      "Woodbrass",
+      223.0
+     ],
+     [
+      "Session",
+      230.0
+     ],
+     [
+      "Musicopolix",
+      245.4
+     ],
+     [
+      "Nume Music",
+      248.28
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "gretsch-deltoluxe-dreadnought-wn-black-top-717669567170",
+    "name": "Gretsch Deltoluxe Dreadnought WN Black Top",
+    "brand": "Gretsch",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/707831_6174.jpg?store=nume_es&image-type=image",
+    "th": "190e09536c9e9342.webp",
+    "price": 275.0,
+    "store": "Woodbrass",
+    "stores": 7,
+    "median": 288.5,
+    "max": 301.35,
+    "next": 275.0,
+    "rows": [
+     [
+      "Woodbrass",
+      275.0
+     ],
+     [
+      "Microfusa",
+      275.0
+     ],
+     [
+      "Session",
+      279.0
+     ],
+     [
+      "Drunkat",
+      288.0
+     ],
+     [
+      "MAT Guitars",
+      289.0
+     ],
+     [
+      "Nume Music",
+      291.83
+     ],
+     [
+      "Musicopolix",
+      301.35
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "yamaha-apx600-oriental-blue-burst-4957812623933",
+    "name": "Yamaha APX600 Oriental Blue Burst",
+    "brand": "Yamaha",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/662824_7501.jpg?store=nume_es&image-type=image",
+    "th": "acef98fb57540898.webp",
+    "price": 294.0,
+    "store": "Pronorte",
+    "stores": 7,
+    "median": 336.5,
+    "max": 390.93,
+    "next": 300.0,
+    "rows": [
+     [
+      "Pronorte",
+      294.0
+     ],
+     [
+      "Microfusa",
+      300.0
+     ],
+     [
+      "Nume Music",
+      310.15
+     ],
+     [
+      "Musical San Francisco",
+      335.0
+     ],
+     [
+      "Woodbrass",
+      338.0
+     ],
+     [
+      "MAT Guitars",
+      373.0
+     ],
+     [
+      "Hazen",
+      390.93
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   }
+  ],
+  "caption": "🎸 5 acústicas de 150 € a 300 €: las más vendidas en las tiendas, con su mejor precio de hoy 👇\n\n1️⃣ Fender California Standard Redondo CE Spruce Top Natural: 192 € en Drunkat\n2️⃣ Cort GA-MEDX M OP W/bag: 203,47 € en Alteisa\n3️⃣ Ibanez TCY12E-OPN Open Pore Natural: 218 € en Pronorte\n4️⃣ Gretsch Deltoluxe Dreadnought WN Black Top: 275 € en Woodbrass\n5️⃣ Yamaha APX600 Oriental Blue Burst: 294 € en Pronorte\n\n¿Con cuál te quedas? Te leemos en comentarios 💬\n👉 Todos los chollos de hoy, a un toque: enlace en la bio. Precios del 11 de noviembre.\n\n#guitarra #guitarraacustica #guitarristas #comprarguitarra #fender #cort #ibanez #gretsch #yamaha"
+ },
+ "stories": [
+  {
+   "slug": "jackson-x-series-soloist-slx-dx-lrl-gold-bullion-885978052189",
+   "name": "Jackson X Series Soloist SLX DX LRL Gold Bullion",
+   "brand": "Jackson",
+   "kind": "electrica",
+   "img": "https://www.session.de/media/c9/65/3c/1768928071/jackson-x-series-soloist-slx-dx-lrl-gold-bullion.webp?ts=1768928071",
+   "th": "f911108946977a33.webp",
+   "price": 639.0,
+   "store": "Session",
+   "stores": 3,
+   "median": 800.645,
+   "max": 810.0,
+   "next": 791.29,
+   "rows": [
+    [
+     "Session",
+     639.0
+    ],
+    [
+     "Musicopolix",
+     791.29
+    ],
+    [
+     "Woodbrass",
+     810.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Mínimo histórico: 18 % por debajo de su media",
+   "pct": 18,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "prs-se-parlor-20-piezo-dg-dog-hair-825362273196",
+   "name": "PRS SE PARLOR 20 PIEZO DG Dog Hair",
+   "brand": "PRS",
+   "kind": "acustica",
+   "img": "https://www.numemusic.es/media/catalog/product/1/0/1006645_47e9.jpg?store=nume_es&image-type=image",
+   "th": "9eade8d4f8172fc2.webp",
+   "price": 607.94,
+   "store": "Musical San Francisco",
+   "stores": 7,
+   "median": 649.0,
+   "max": 792.0,
+   "next": 629.3,
+   "rows": [
+    [
+     "Musical San Francisco",
+     607.94
+    ],
+    [
+     "Alteisa",
+     629.3
+    ],
+    [
+     "Nume Music",
+     649.0
+    ],
+    [
+     "MAT Guitars",
+     649.0
+    ],
+    [
+     "Drunkat",
+     649.0
+    ],
+    [
+     "Microfusa",
+     649.0
+    ],
+    [
+     "Woodbrass",
+     792.0
+    ]
+   ],
+   "pvp": null,
+   "why": "Rebajada hoy: 191,06 € menos que ayer",
+   "pct": 24,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "cort-ad880ce-ns-w-bag-8809383838406",
+   "name": "Cort AD880CE NS w/bag",
+   "brand": "Cort",
+   "kind": "acustica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/4/747528_9e0d.jpg?store=nume_es&image-type=image",
+   "th": "54f1aee8c8425b8e.webp",
+   "price": 194.0,
+   "store": "Alteisa",
+   "stores": 5,
+   "median": 254.15,
+   "max": 299.0,
+   "next": 249.0,
+   "rows": [
+    [
+     "Alteisa",
+     194.0
+    ],
+    [
+     "Musicopolix",
+     249.0
+    ],
+    [
+     "Nume Music",
+     254.15
+    ],
+    [
+     "Drunkat",
+     254.15
+    ],
+    [
+     "Musical San Francisco",
+     299.0
+    ]
+   ],
+   "pvp": null,
+   "why": "55 € menos que en cualquier otra tienda",
+   "pct": 22,
+   "photo": "chollo-3.webp"
+  }
+ ]
+}

@@ -1,0 +1,175 @@
+{
+ "fecha": "11 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 chollos en teclados",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "ik-multimedia-irig-keys-i-o-25-8025813706033",
+    "name": "Ik Multimedia iRig Keys I/O 25",
+    "brand": "Ik Multimedia",
+    "kind": "teclados",
+    "img": "https://www.numemusic.es/media/catalog/product/7/3/734729_1_50c6.jpg?store=nume_es&image-type=image",
+    "th": "60392db87a4a079b.webp",
+    "price": 165.0,
+    "store": "Alfasoni",
+    "stores": 3,
+    "median": 177.0,
+    "max": 177.0,
+    "next": 177.0,
+    "rows": [
+     [
+      "Alfasoni",
+      165.0
+     ],
+     [
+      "Nume Music",
+      177.0
+     ],
+     [
+      "Drunkat",
+      177.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "12 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "casio-ct-s1bk-casiotone-4971850315070",
+    "name": "Casio CT-S1BK Casiotone",
+    "brand": "Casio",
+    "kind": "teclados",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/651482_f822.jpg?store=nume_es&image-type=image",
+    "th": "ea510f9b4dd0d8ef.webp",
+    "price": 189.9,
+    "store": "Nume Music",
+    "stores": 4,
+    "median": 215.0,
+    "max": 215.0,
+    "next": 215.0,
+    "rows": [
+     [
+      "Nume Music",
+      189.9
+     ],
+     [
+      "Drunkat",
+      215.0
+     ],
+     [
+      "Musicopolix",
+      215.0
+     ],
+     [
+      "Alfasoni",
+      215.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "25,10 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "yamaha-psr-e483-4957812711753",
+    "name": "Yamaha PSR-E483",
+    "brand": "Yamaha",
+    "kind": "teclados",
+    "img": "https://www.numemusic.es/media/catalog/product/1/0/1019133_1_eeb3.jpg?store=nume_es&image-type=image",
+    "th": "9cfc38e411254d5d.webp",
+    "price": 289.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 347.87,
+    "max": 359.0,
+    "next": 336.74,
+    "rows": [
+     [
+      "Egitana",
+      289.0
+     ],
+     [
+      "Nume Music",
+      336.74
+     ],
+     [
+      "Drunkat",
+      359.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "47,74 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "novation-mininova-815301000136",
+    "name": "Novation Mininova",
+    "brand": "Novation",
+    "kind": "teclados",
+    "img": "https://www.numemusic.es/media/catalog/product/0/1/014398_7087.jpg?store=nume_es&image-type=image",
+    "th": "a8641f1e0619e153.webp",
+    "price": 359.0,
+    "store": "Alfasoni",
+    "stores": 4,
+    "median": 389.0,
+    "max": 390.0,
+    "next": 388.0,
+    "rows": [
+     [
+      "Alfasoni",
+      359.0
+     ],
+     [
+      "Musicopolix",
+      388.0
+     ],
+     [
+      "Nume Music",
+      389.0
+     ],
+     [
+      "Drunkat",
+      390.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "29 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "korg-opsix-mkii-4959112239012",
+    "name": "Korg Opsix Mkii",
+    "brand": "Korg",
+    "kind": "teclados",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/707157_4864.jpg?store=nume_es&image-type=image",
+    "th": "216814e68b48bb08.webp",
+    "price": 545.0,
+    "store": "Nume Music",
+    "stores": 3,
+    "median": 663.0,
+    "max": 707.0,
+    "next": 619.0,
+    "rows": [
+     [
+      "Nume Music",
+      545.0
+     ],
+     [
+      "Drunkat",
+      619.0
+     ],
+     [
+      "Musicopolix",
+      707.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "74 € menos que en cualquier otra tienda"
+   }
+  ],
+  "rama": "teclados"
+ },
+ "stories": []
+}

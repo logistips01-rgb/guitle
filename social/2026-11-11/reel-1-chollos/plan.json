@@ -1,0 +1,167 @@
+{
+ "fecha": "11 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "austin-as6pgt-super-6-gold-top-814295019230",
+    "name": "Austin AS6PGT Super 6 Gold Top",
+    "brand": "Austin",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/6/663797_3d54.jpg?store=nume_es&image-type=image",
+    "th": "6ccf63e246fa62c9.webp",
+    "price": 209.0,
+    "store": "Drunkat",
+    "stores": 3,
+    "median": 261.25,
+    "max": 261.25,
+    "next": 261.25,
+    "rows": [
+     [
+      "Drunkat",
+      209.0
+     ],
+     [
+      "Nume Music",
+      261.25
+     ],
+     [
+      "Musicsales",
+      261.25
+     ]
+    ],
+    "pvp": null,
+    "why": "52,25 € menos que en cualquier otra tienda",
+    "pct": 20,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "squier-classic-vibe-70s-stratocaster-ht-hss-lrl-olympic-white-885978674527",
+    "name": "Squier Classic Vibe '70s Stratocaster HT HSS LRL Olympic White",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/4/748301_1_ea47.jpg?store=nume_es&image-type=image",
+    "th": "1e292a238c1ea10d.webp",
+    "price": 369.0,
+    "store": "Session",
+    "stores": 7,
+    "median": 443.5,
+    "max": 463.05,
+    "next": 437.0,
+    "rows": [
+     [
+      "Session",
+      369.0
+     ],
+     [
+      "MAT Guitars",
+      437.0
+     ],
+     [
+      "Musical San Francisco",
+      442.0
+     ],
+     [
+      "Drunkat",
+      443.0
+     ],
+     [
+      "Nume Music",
+      444.0
+     ],
+     [
+      "Pronorte",
+      455.0
+     ],
+     [
+      "Musicopolix",
+      463.05
+     ]
+    ],
+    "pvp": null,
+    "why": "68 € menos que en cualquier otra tienda",
+    "pct": 16,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "art-luthier-art-luthier-roadhouse-bourbon-burst-a-e-623501042395",
+    "name": "Art Luthier ART & LUTHIER Roadhouse Bourbon Burst A/E",
+    "brand": "Art Luthier",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/1/0/1017915_1_4567.jpg?store=nume_es&image-type=image",
+    "th": "73950bfff516894d.webp",
+    "price": 749.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 931.85,
+    "max": 932.0,
+    "next": 931.7,
+    "rows": [
+     [
+      "Woodbrass",
+      749.0
+     ],
+     [
+      "Nume Music",
+      931.7
+     ],
+     [
+      "Musical San Francisco",
+      931.7
+     ],
+     [
+      "Alfasoni",
+      932.0
+     ],
+     [
+      "Microfusa",
+      932.0
+     ]
+    ],
+    "pvp": null,
+    "why": "182,70 € menos que en cualquier otra tienda",
+    "pct": 20,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "ortega-r16s-842960185133",
+    "name": "Ortega R16S",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/706438_c273.jpg?store=nume_es&image-type=image",
+    "th": "d11db04930a9a1e0.webp",
+    "price": 306.4,
+    "store": "Alteisa",
+    "stores": 3,
+    "median": 389.0,
+    "max": 389.0,
+    "next": 389.0,
+    "rows": [
+     [
+      "Alteisa",
+      306.4
+     ],
+     [
+      "Nume Music",
+      389.0
+     ],
+     [
+      "Musicopolix",
+      389.0
+     ]
+    ],
+    "pvp": null,
+    "why": "82,60 € menos que en cualquier otra tienda",
+    "pct": 21,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}
