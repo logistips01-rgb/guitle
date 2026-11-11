@@ -1,4 +1,5 @@
 name: catalog
+run-name: "catalog ${{ inputs.tanda || (inputs.lista && 'respaldo') || github.event.schedule || github.event_name }}"
 
 on:
   schedule:
@@ -18,6 +19,9 @@ on:
       minutes:
         description: "Minutos de lectura por tienda en los países (España: 50 por catálogo)"
         default: "150"
+      tanda:
+        description: "Tanda como su cron (\"17 3 * * *\"…): la usa reloj.yml para lanzarla en hora"
+        default: ""
       lista:
         description: "Lista JSON de catálogos (la usa catalog-respaldo.yml para recuperar los que GitHub se saltó)"
         default: ""
@@ -38,7 +42,29 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Programación de GitHub que llega tarde: si reloj.yml ya lanzó esta tanda (mismo título), esta no hace nada.
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      saltar: ${{ steps.mirar.outputs.saltar }}
+    steps:
+      - id: mirar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          saltar=false
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            desde=$(date -u -d '-8 hours' +%FT%TZ)
+            n=$(gh api "repos/${{ github.repository }}/actions/workflows/catalog.yml/runs?per_page=30&created=>=$desde" \
+                  --jq '[.workflow_runs[] | select(.id != ${{ github.run_id }} and .display_title == "catalog ${{ github.event.schedule }}")] | length' || echo 0)
+            [ "$n" -gt 0 ] && saltar=true
+          fi
+          echo "saltar=$saltar" >> "$GITHUB_OUTPUT"; echo "saltar=$saltar"
+
   catalog:
+    needs: plan
+    if: needs.plan.outputs.saltar != 'true'
     # Un trabajo por país, en paralelo (cada uno lee webs distintas). España ("es") lee sus tres catálogos seguidos
     # en un solo trabajo, porque comparten tiendas: electrica → data/catalog/ ; acustica → data/catalog/acusticas/ ;
     # equipo → data/catalog/equipo/. "mas" (bajos, amplis, fundas y estuches, micros, accesorios y baterías de España →
@@ -56,7 +82,7 @@ jobs:
       matrix:
         # Programada: los grandes en cada vuelta; los pequeños, una vez al día (20 máquinas no dan para todos tres veces).
         # A mano, uno solo (p. ej. equipo = pedales y teclados). NUEVOS: los del push.
-        cat: ${{ fromJSON(inputs.lista || github.event_name == 'push' && '["pl","plmas","se","semas","no","nomas","dk","dkmas"]' || inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || format('[{0}{1}]', '"es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","nl","nlmas"', github.event.schedule == '17 19 * * *' && ',"at","atmas","ie","iemas","be","bemas","ch","chmas","mx","ar"' || github.event.schedule == '17 3 * * *' && ',"pl","plmas","se","semas","no","nomas","dk","dkmas"' || github.event.schedule == '17 11 * * *' && ',"cz","czmas","sk","skmas","hu","humas","ro","romas","bg","bgmas","gr","grmas","fi","lu"' || '')) }}
+        cat: ${{ fromJSON(inputs.lista || github.event_name == 'push' && '["pl","plmas","se","semas","no","nomas","dk","dkmas"]' || inputs.solo && inputs.solo != 'todos' && format('["{0}"]', inputs.solo) || format('[{0}{1}]', '"es","mas","pt","ptmas","fr","frmas","it","itmas","uk","ukmas","de","demas","br","brmas","nl","nlmas"', (github.event.schedule || inputs.tanda) == '17 19 * * *' && ',"at","atmas","ie","iemas","be","bemas","ch","chmas","mx","ar"' || (github.event.schedule || inputs.tanda) == '17 3 * * *' && ',"pl","plmas","se","semas","no","nomas","dk","dkmas"' || (github.event.schedule || inputs.tanda) == '17 11 * * *' && ',"cz","czmas","sk","skmas","hu","humas","ro","romas","bg","bgmas","gr","grmas","fi","lu"' || '')) }}
     # Cola por catálogo: el mismo catálogo nunca se lee dos veces a la vez; los demás no esperan.
     concurrency:
       group: catalog-cat-${{ matrix.cat }}

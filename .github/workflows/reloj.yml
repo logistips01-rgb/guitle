@@ -1,0 +1,93 @@
+name: reloj
+
+# Reloj puntual: GitHub retrasa sus tareas programadas de minutos a horas, y alguna no la lanza nunca (10/11/2026:
+# catalog-respaldo no arrancó en todo el día). Este trabajo está siempre encendido, mira la hora cada 30 segundos y
+# lanza cada tarea a su hora (GitHub arranca en segundos lo que se le pide así). Antes de lanzar mira que no se haya
+# lanzado ya desde su hora (por GitHub o por un reloj anterior): nada se duplica. Las programaciones de cada tarea se
+# quedan de reserva. GitHub no deja vivir un trabajo más de 6 horas: a las 5 h 45 min se relanza a sí mismo, y la
+# programación de abajo (cada hora) lo vuelve a encender si algo lo parara (espera en la cola "reloj").
+# Más adelante el reloj puede pasar al servidor propio (necesita un permiso de GitHub para lanzar tareas).
+on:
+  schedule:
+    - cron: "11 * * * *"
+  workflow_dispatch:
+  push:  # tocar .github/reloj.txt lo arranca en el momento (la programación de GitHub puede tardar horas)
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/reloj.txt"]
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: reloj
+  cancel-in-progress: false
+
+jobs:
+  reloj:
+    runs-on: ubuntu-latest
+    timeout-minutes: 358
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      RAMA: claude/friendly-fermat-yycain
+    steps:
+      - name: Reloj
+        run: |
+          python3 -u - <<'PY'
+          import json, os, subprocess, time
+          from datetime import datetime, timedelta, timezone
+
+          REPO, RAMA = os.environ["REPO"], os.environ["RAMA"]
+          # (hora UTC "HH:MM", workflow, entradas, título del run que cuenta como "ya hecho" o None = cualquiera)
+          TAREAS = [
+              ("03:17", "catalog.yml", {"tanda": "17 3 * * *"}, "catalog 17 3 * * *"),
+              ("11:17", "catalog.yml", {"tanda": "17 11 * * *"}, "catalog 17 11 * * *"),
+              ("19:17", "catalog.yml", {"tanda": "17 19 * * *"}, "catalog 17 19 * * *"),
+              ("04:13", "papelera.yml", {}, None),
+              ("09:23", "congruencia.yml", {}, None),
+              ("15:41", "musica.yml", {}, None),
+          ] + [(f"{h:02d}:43", "catalog-respaldo.yml", {}, None) for h in range(0, 24, 4)]
+          VENTANA = timedelta(hours=3)  # pasada su hora, se lanza si aún no se ha hecho en estas 3 horas
+
+          def gh(*a):
+              r = subprocess.run(["gh", *a], capture_output=True, text=True)
+              if r.returncode:
+                  raise RuntimeError(r.stderr.strip()[:300])
+              return r.stdout
+
+          def ya_hecha(wf, desde, titulo):
+              runs = json.loads(gh("api", f"repos/{REPO}/actions/workflows/{wf}/runs?per_page=30&created=>={desde:%Y-%m-%dT%H:%M:%SZ}"))["workflow_runs"]
+              return any(r["event"] in ("schedule", "workflow_dispatch") and (titulo is None or r.get("display_title") == titulo)
+                         for r in runs)
+
+          inicio = time.time()
+          print(f"reloj en marcha {datetime.now(timezone.utc):%F %T} UTC; {len(TAREAS)} tareas", flush=True)
+          lanzadas = set()
+          while time.time() - inicio < 345 * 60:
+              ahora = datetime.now(timezone.utc)
+              for hhmm, wf, entradas, titulo in TAREAS:
+                  h, m = map(int, hhmm.split(":"))
+                  hora = ahora.replace(hour=h, minute=m, second=0, microsecond=0)
+                  if hora > ahora:
+                      hora -= timedelta(days=1)  # la de ayer, por si quedó pendiente
+                  clave = (wf, hora.isoformat(), titulo)
+                  if clave in lanzadas or not (hora <= ahora < hora + VENTANA):
+                      continue
+                  try:
+                      if ya_hecha(wf, hora, titulo):
+                          lanzadas.add(clave)
+                          continue
+                      args = ["workflow", "run", wf, "--repo", REPO, "--ref", RAMA]
+                      for k, v in entradas.items():
+                          args += ["-f", f"{k}={v}"]
+                      gh(*args)
+                      lanzadas.add(clave)
+                      retraso = (ahora - hora).total_seconds() / 60
+                      print(f"{ahora:%H:%M:%S} lanzada {wf} {entradas or ''} (hora {hhmm} UTC, {retraso:.0f} min después)", flush=True)
+                  except Exception as e:  # noqa: BLE001 - la API falló: se reintenta en la próxima vuelta
+                      print(f"{ahora:%H:%M:%S} {wf}: {e}", flush=True)
+              time.sleep(30)
+          print("5 h 45 min: el reloj se relanza", flush=True)
+          gh("workflow", "run", "reloj.yml", "--repo", REPO, "--ref", RAMA)
+          PY
