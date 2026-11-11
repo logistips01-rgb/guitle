@@ -2318,7 +2318,7 @@ jose-rincon-mm4-caoba-maciza-brillo-cizabrillo
 jose-rincon-mm4-caoba-maciza-satinada-zasatinada
 jose-rincon-mm6-palosanto-tapa-maciza-tapamaciza
 jose-rincon-mr5-palosanto-rojo-osantorojo
-jose-torres-gypsy-jtg-11-0-natural-8435017329141
+jose-torres-jose-torres-jtg-11-0-guitarra-gypsy-brillante-8435017329141
 jose-torres-jtb-100-b100p43726
 jose-torres-jtc-10-8435017324955
 jose-torres-jtc-100-8435017325044
@@ -3338,7 +3338,6 @@ sulayr-lattice-cutaway-tapa-de-cedro-8434418064095
 sulayr-lattice-pino-sl-100sp-inosl100sp
 takamine-classique-cutaway-electro-gc5cenat-5cenathtml
 takamine-classique-natural-gc1nat-190262041481
-takamine-cutaway-takamine-grand-auditorium-190262011972
 takamine-e-a-cutaway-gc1celh-nat-zurdos-190262042174
 takamine-eh5-classic-hirade-cutaway-natural-190262012603
 takamine-electroacustica-takamine-dh90-190262012566
@@ -3375,7 +3374,7 @@ takamine-gc6-cutaway-electro-negro-egro372167
 takamine-gc6ce-blk-guitarra-espanola-electrificada-negra-190262041238
 takamine-gc6ce-nat-guitarra-espanola-electrificada-190262041221
 takamine-grand-auditorium-nylon-cutaway-electro-p3fcn-con-estuche-4582270030438
-takamine-p3fcn-ep3fcnhtml
+takamine-p3fcn-190262011972
 takamine-tc132sc-5550008087008
 tambor-cadete-33x12-ref-05420-quadura-8400030181380
 tambor-cadete-33x12-ref-05470-standar-8400030271357

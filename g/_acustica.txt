@@ -1562,6 +1562,7 @@ epiphone-usa-texan-antique-natural-711106036939
 esp-de-7-cuerdas-esp-ltd-tl-7-black-7blackhtml
 esp-ltd-tl-6-aqua-marine-burst-ebursthtml
 esp-ltd-tl-6-natural-aturalhtml
+esp-ltd-tl-6-qm-charcoal-burst-lbursthtml
 esp-ltd-tombstone-a-300e-9610013000001
 esp-para-zurdos-esp-ltd-tl-6-lh-black-hblackhtml
 ewp12ewb-opn-piccolo-o26360html
@@ -3783,7 +3784,7 @@ mayson-esd10-aysonesd10
 mayson-esm50-dreadnought-mate-910807077332
 meinl-djembe-jumbo-meinl-jd12da-dh-day-of-the-dead-de-12-842960147124
 meinl-djembe-jumbo-meinl-jd14da-dh-day-of-the-dead-de-14-842960147131
-meinl-maracas-de-cuero-meinl-msm4-jumbo-840553052336
+meinl-maracas-meinl-msm4-rawhide-jumbo-840553052336
 meinl-parche-meinl-jumbo-dj-head-jd12da-de-12-842960147223
 meinl-parche-meinl-jumbo-dj-head-jd12si-de-12-842960147230
 meinl-parche-meinl-jumbo-dj-head-jd12wh-de-12-842960147209
@@ -4692,6 +4693,7 @@ takamine-cutaway-auditorium-takamine-ef450-thermal-top-legacy-black-burst-190262
 takamine-cutaway-auditorium-takamine-ef508-natural-190262011835
 takamine-cutaway-auditorium-takamine-gn30-negra-ectronoire
 takamine-cutaway-auditorium-takamine-gn51ce-brown-sunburst-190262041597
+takamine-cutaway-auditorium-takamine-p5-natural-190262012108
 takamine-cutaway-auditorium-zurdos-takamine-p3-natural-190262012023
 takamine-cutaway-dreadnought-takamine-ef381-negra-12-cuerdas-190262011781
 takamine-cutaway-dreadnought-takamine-gd20-natural-satin-tinnatural
@@ -4931,7 +4933,6 @@ takamine-japan-ef508kc-loss195401
 takamine-japan-lh-handed-ec-p3nc-nex-cutaway-inlh225735
 takamine-japan-lh-handed-ef341sc-lh-799493250404
 takamine-japan-natural-ctro304557
-takamine-japan-p5nc-nex-cutaway-190262012108
 takamine-japan-p6n-nex-brown-sunburst-799493250855
 takamine-jj325src-roja-325srcroja
 takamine-ltd-2021-blue-rose-190262011439
@@ -6339,7 +6340,7 @@ yamaha-tas1e-sand-burst-4957812722315
 yamaha-tas1e-ultra-marine-4957812722322
 yamaha-tas1ent-transacoustic-segunda-generacion-concert-con-funda-4957812722308
 yamaha-tas1esdb-transacoustic-segunda-generacion-concert-con-funda-nfundahtml
-yamaha-tas3-c-natural-4957812712255
+yamaha-tas3-c-natural-uralp42318
 yamaha-tas3-c-sand-burst-urstp42319
 yamaha-tas3-c-sandburst-4957812712262
 yamaha-tas3c-sb-transacoustic-concierto-sand-burst-osandburst
