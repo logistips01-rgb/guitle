@@ -1,0 +1,136 @@
+{
+ "fecha": "11 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "strinberg-tc-120s-bk-telecaster-preta-c-escudo-branco-e-escala-clara-7899854512639",
+    "name": "Strinberg TC-120S BK Telecaster Preta C/ Escudo Branco e Escala Clara",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-strinberg-tc-120s-bk-telecaster-preta-c-escudo-branco-e-escala-clara-80240/267730.jpg?w=1000&h=1000&v=202508062320&qs=ignore",
+    "th": "2d188dcdb6a34c64.webp",
+    "price": 840.0,
+    "store": "China Som",
+    "stores": 3,
+    "median": 974.55,
+    "max": 1050.0,
+    "next": 899.1,
+    "rows": [
+     [
+      "China Som",
+      840.0
+     ],
+     [
+      "Mundomax",
+      899.1
+     ],
+     [
+      "Tango Music",
+      1050.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 59,10 a menos que em qualquer outra loja",
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "tagima-tw55-sb-c-hw-sunburst-tw-series-telecaster-passiva-7898563976565",
+    "name": "Tagima TW55 SB C/HW Sunburst TW Series Telecaster Passiva",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-tw55-sb-c-hw-sunburst-tw-series-telecaster-passiva-80248/267738-1.jpg?w=1000&h=1000&v=202511051437&qs=ignore",
+    "th": "6dd59c58e50a875f.webp",
+    "price": 1161.0,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 1229.45,
+    "max": 1259.9,
+    "next": 1199.0,
+    "rows": [
+     [
+      "Mundomax",
+      1161.0
+     ],
+     [
+      "Cheiro de Música",
+      1199.0
+     ],
+     [
+      "Luggi",
+      1259.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 38 a menos que em qualquer outra loja",
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "takamine-gd11mce-mgs-fosco-tp4t-799493251357",
+    "name": "Takamine GD11MCE Mgs Fosco TP4T",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1037000/violao_takamine_gd11mce_mgs_fosco_tp4t_4247_1_56a7a4900a900397fe0a42a79248d6a8.jpg",
+    "th": "2b8094627ab17c92.webp",
+    "price": 3290.0,
+    "store": "Só Som",
+    "stores": 3,
+    "median": 3935.0,
+    "max": 4380.0,
+    "next": 3490.0,
+    "rows": [
+     [
+      "Só Som",
+      3290.0
+     ],
+     [
+      "Soco Music",
+      3490.0
+     ],
+     [
+      "China Som",
+      4380.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 200 a menos que em qualquer outra loja",
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}
