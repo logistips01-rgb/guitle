@@ -59,6 +59,12 @@ jobs:
             n=$(gh api "repos/${{ github.repository }}/actions/workflows/catalog.yml/runs?per_page=30&created=>=$desde" \
                   --jq '[.workflow_runs[] | select(.id != ${{ github.run_id }} and .display_title == "catalog ${{ github.event.schedule }}")] | length' || echo 0)
             [ "$n" -gt 0 ] && saltar=true
+            # Llegada con más de 3 h de retraso (11/11: la de las 03:17 llegó a las 11:07, justo antes de la de las
+            # 11:17, y se leía todo dos veces): sobra. Hasta 3 h la lanza el reloj; después, el respaldo.
+            set -f; set -- ${{ github.event.schedule }}
+            hora=$(date -u -d "$(date -u +%F) $2:$1" +%s); ahora=$(date -u +%s)
+            [ "$hora" -gt "$ahora" ] && hora=$((hora - 86400))
+            [ $((ahora - hora)) -gt 10800 ] && { echo "llega $(( (ahora - hora) / 60 )) min tarde"; saltar=true; }
           fi
           echo "saltar=$saltar" >> "$GITHUB_OUTPUT"; echo "saltar=$saltar"
 
