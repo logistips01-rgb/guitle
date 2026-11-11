@@ -1,0 +1,176 @@
+{
+ "fecha": "11 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "yamaha-revstar-rss20-vintage-white-gewhitehtm",
+    "name": "Yamaha Revstar RSS20 Vintage White",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/539402.jpg",
+    "th": "29b18acefbbac4ac.webp",
+    "price": 635.0,
+    "store": "Thomann",
+    "stores": 4,
+    "median": 699.0,
+    "max": 699.0,
+    "next": 699.0,
+    "rows": [
+     [
+      "Thomann",
+      635.0
+     ],
+     [
+      "guitarguitar",
+      699.0
+     ],
+     [
+      "R Guitars",
+      699.0
+     ],
+     [
+      "Music Street",
+      699.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£64 less than any other shop",
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "jackson-js-series-dinky-arch-top-js32q-dka-ht-transparent-purple-burst-electric-885978762422",
+    "name": "Jackson JS Series Dinky® Arch Top JS32Q DKA HT Transparent Purple Burst Electric Guitar",
+    "brand": "Jackson",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/2918809592_jac_ins_frt_01_rr.png?v=1775141393",
+    "th": "d44bd769119d8e4d.webp",
+    "price": 299.0,
+    "store": "Fair Deal Music",
+    "stores": 3,
+    "median": 334.0,
+    "max": 339.0,
+    "next": 329.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      299.0
+     ],
+     [
+      "A Strings",
+      329.0
+     ],
+     [
+      "Music Street",
+      339.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£30 less than any other shop",
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "fender-cp-60s-parlor-natural-lornatural",
+    "name": "Fender CP-60S Parlor, Natural",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/0609/3655/2655/files/CP-60SParlor_WalnutFingerboard_Natural_1.png?v=1732468386",
+    "th": "773022223beb6ed7.webp",
+    "price": 189.0,
+    "store": "Wunjo Guitars",
+    "stores": 4,
+    "median": 209.0,
+    "max": 219.99,
+    "next": 209.0,
+    "rows": [
+     [
+      "Wunjo Guitars",
+      189.0
+     ],
+     [
+      "A Strings",
+      209.0
+     ],
+     [
+      "The Guitar Store",
+      209.0
+     ],
+     [
+      "Project Music",
+      219.99
+     ]
+    ],
+    "pvp": null,
+    "why": "£20 less than any other shop",
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   },
+   {
+    "slug": "admira-virtuoso-electro-cutaway-5036678095982",
+    "name": "Admira Virtuoso Electro Cutaway",
+    "brand": "Admira",
+    "kind": "clasica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/2147ec-newb.jpg?v=1714490213",
+    "th": "e0758e53b4afe416.webp",
+    "price": 459.0,
+    "store": "Reidys",
+    "stores": 3,
+    "median": 504.0,
+    "max": 509.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "Reidys",
+      459.0
+     ],
+     [
+      "Bonners Music",
+      499.0
+     ],
+     [
+      "The Music Bank",
+      509.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£40 less than any other shop",
+    "photo": "g3-1.webp",
+    "label": "Classical"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
