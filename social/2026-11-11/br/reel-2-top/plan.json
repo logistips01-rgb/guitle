@@ -1,0 +1,183 @@
+{
+ "fecha": "11 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "top",
+  "title": "4 promoções em teclados",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "custom-sound-teclado-arranjador-custom-sound-cst-3000-61-teclas-7898672372531",
+    "name": "Custom Sound Teclado Arranjador Custom Sound CST 3000 61 Teclas",
+    "brand": "Custom Sound",
+    "kind": "teclados",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/teclado_arranjador_custom_sound_cst_3000_61_teclas_13751_1_336b046d64fa0be0787359b4d1280d79.jpg",
+    "th": "1558e6af248f5e56.webp",
+    "price": 1116.0,
+    "store": "Música Center",
+    "stores": 3,
+    "median": 1249.0,
+    "max": 1299.0,
+    "next": 1199.0,
+    "rows": [
+     [
+      "Música Center",
+      1116.0
+     ],
+     [
+      "Duetto Musical",
+      1199.0
+     ],
+     [
+      "Cheiro de Música",
+      1299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "R$ 83 a menos que nas outras lojas"
+   },
+   {
+    "slug": "roland-piano-digital-roland-go-piano-go-61p-61-teclas-go-piano-4957054510053",
+    "name": "Roland Piano Digital Roland Go Piano GO-61P 61 Teclas Go:Piano",
+    "brand": "Roland",
+    "kind": "teclados",
+    "img": "https://images.tcdn.com.br/img/img_prod/1033692/piano_digital_roland_go_piano_61k_61_teclas_8909_1_c596bf2f1ee9e981dd8f7daac82a082b.jpg",
+    "th": "76a56de42daf1c68.webp",
+    "price": 1964.84,
+    "store": "Música Center",
+    "stores": 3,
+    "median": 2689.275,
+    "max": 2763.55,
+    "next": 2615.0,
+    "rows": [
+     [
+      "Música Center",
+      1964.84
+     ],
+     [
+      "Casa da Música",
+      2615.0
+     ],
+     [
+      "Cheiro de Música",
+      2763.55
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "R$ 650,16 a menos que nas outras lojas"
+   },
+   {
+    "slug": "casio-piano-digital-casio-stage-cdp-s160-vermelho-4971850362715",
+    "name": "Casio Piano Digital Casio Stage CDP-S160 Vermelho",
+    "brand": "Casio",
+    "kind": "teclados",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_piano_digital_casio_stage_cdp_s160_1_20251112120549_a1046ebcf23c.jpg",
+    "th": "11f77e89ab7e41f3.webp",
+    "price": 2524.49,
+    "store": "RCK Audio",
+    "stores": 3,
+    "median": 3199.5,
+    "max": 3299.0,
+    "next": 3100.0,
+    "rows": [
+     [
+      "RCK Audio",
+      2524.49
+     ],
+     [
+      "Elo Musical",
+      3100.0
+     ],
+     [
+      "Cheiro de Música",
+      3299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "R$ 575,51 a menos que nas outras lojas"
+   },
+   {
+    "slug": "yamaha-piano-yamaha-p145bt-digital-bluetooth-preto-4957812710855",
+    "name": "Yamaha Piano Yamaha P145BT Digital Bluetooth Preto",
+    "brand": "Yamaha",
+    "kind": "teclados",
+    "img": "https://static.mundomax.com.br/produtos/86799/1200/6.jpg",
+    "th": "91a98e28c1b2a854.webp",
+    "price": 3014.1,
+    "store": "Mundomax",
+    "stores": 5,
+    "median": 3774.5,
+    "max": 3959.9,
+    "next": 3599.0,
+    "rows": [
+     [
+      "Mundomax",
+      3014.1
+     ],
+     [
+      "Cheiro de Música",
+      3599.0
+     ],
+     [
+      "Casa da Música",
+      3659.0
+     ],
+     [
+      "Carneiro Music",
+      3890.0
+     ],
+     [
+      "Supersonora",
+      3959.9
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "R$ 584,90 a menos que nas outras lojas"
+   }
+  ],
+  "rama": "teclados"
+ }
+}
