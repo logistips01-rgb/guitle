@@ -67,7 +67,6 @@ dixon-20-artisan-walnut-map-set-rf-apsetrfhtm
 dixon-20-cornerstone-hybrid-set-mst-dsetmsthtm
 dixon-20-cornerstone-hybrid-set-n-ridsetnhtm
 dixon-20-cornerstone-hybrid-set-nm-idsetnmhtm
-dixon-20-cornerstone-hybrid-set-scg-dsetscghtm
 dixon-22-artisan-walnut-map-set-rf-apsetrfhtm
 dixon-22-cornerstone-hybrid-set-nm-idsetnmhtm
 dixon-22-cornerstone-hybrid-set-pb-idsetpbhtm
@@ -407,7 +406,6 @@ gretsch-drums-brooklyn-studio-shell-set-scr-lsetscrhtm
 gretsch-drums-brooklyn-studio-shell-set-sm-llsetsmhtm
 gretsch-drums-brooklyn-studio-shell-set-ss-llsetsshtm
 gretsch-drums-catalina-bubinga-maple-std-aplestdhtm
-gretsch-drums-catalina-bubinga-maple-studio-estudiohtm
 gretsch-drums-catalina-club-jazz-bronze-spkl-nzespklhtm
 gretsch-drums-catalina-club-jazz-crimson-bst-msonbsthtm
 gretsch-drums-catalina-club-jazz-saf-jazzsafhtm
