@@ -133,6 +133,7 @@ harley-benton-rg-junior-bk-rock-serie-bundle-ebundlehtm
 harley-benton-s-620-tb-rock-series-bundle-ebundlehtm
 harley-benton-s-620-tb-rock-series-bundle-ndlesethtm
 harley-benton-sc-1000-sbk-dnafx-amp20-set-mp20sethtm
+harley-benton-sc-1000-sbk-progressive-bundle-ebundlehtm
 harley-benton-sc-1000-sbk-progressive-bundle-ndlesethtm
 harley-benton-sc-1000-sbk-progressive-set-ndlesethtm
 harley-benton-sc-1000-wh-progressive-bundle-ebundlehtm
@@ -173,6 +174,7 @@ harley-benton-sc-450pluslh-gt-vintage-bundle-ebundlehtm
 harley-benton-sc-500-bk-vintage-serie-bundle-ebundlehtm
 harley-benton-sc-500-bk-vintage-serie-bundle-ndlesethtm
 harley-benton-sc-500-bk-vintage-serie-bundle-packagehtm
+harley-benton-sc-500-wh-vintage-serie-bundle-ebundlehtm
 harley-benton-sc-500-wh-vintage-serie-bundle-ndlesethtm
 harley-benton-sc-special-tv-yellow-bundle-ndlesethtm
 harley-benton-st-20-bk-st-series-bundle-ebundlehtm
@@ -218,6 +220,7 @@ harley-benton-st-62sb-vintage-series-bundle-sbundlehtm
 harley-benton-st-62sb-vintage-series-set-ndlesethtm
 harley-benton-st-70-rosewood-deluxe-s-bundle-sbundlehtm
 harley-benton-st-70rw-deluxe-s-bundle-riessethtm
+harley-benton-st-90sa-swamp-ash-dlx-s-bundle-sbundlehtm
 harley-benton-st-junior-bk-standard-s-bundle-packagehtm
 harley-benton-st-junior-hss-sbk-bundle-ebundlehtm
 harley-benton-st-lh-diy-kit-hdiykithtm

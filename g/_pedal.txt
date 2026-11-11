@@ -104,7 +104,6 @@ boss-ab-2-pedal-selector-2-vias-4957054082116
 boss-ac3-pedal-efectos-simulator-4957054401399
 boss-ad-10-acoustic-preamp-4957054511661
 boss-ad-2-acoustic-preamp-4957054509828
-boss-aw-3-pedal-compacto-4957054053048
 boss-aw3-316730html
 boss-bb-1x-bass-driver-bassdriver
 boss-bb-1x-bass-driver-special-edition-itionp4493
@@ -139,7 +138,7 @@ boss-cp-1x-compressor-4957054510046
 boss-cp-1x-compressor-special-edition-itionp4480
 boss-cp1x-pedal-guitarra-itarrahtml
 boss-cs-3-4957054012854
-boss-cs3-pedal-compressor-guitarra-osscs3html
+boss-cs3-316741html
 boss-dc-2w-dimension-c-4957054513528
 boss-dc-2w-dimension-c-chorus-edicion-especial-waza-craft-made-in-japan-raftbp9429
 boss-dd-200-4957054514600
@@ -173,9 +172,10 @@ boss-ds1w-waza-distortion-pedal-guitarra-4957054519322
 boss-ds1wh-pedal-de-guitarra-legendary-distorsion-edicion-limitada-blanco-blancohtml
 boss-ds1x-pedal-distorsion-guitarra-ssds1xhtml
 boss-ds2-pedal-distorsion-guitarra-ossds2html
+boss-dynamic-wah-aw-3-4957054053048
 boss-eq-200-graphic-eq-equalizador-grafico-10-bandas-talbp13369
-boss-eq-200-graphic-equalizer-r63887html
-boss-eq200-ecualizador-grafico-4957054514617
+boss-eq-200-graphic-equalizer-4957054514617
+boss-eq200-ecualizador-grafico-raficohtml
 boss-es-5-effects-switching-system-4957054508647
 boss-es-8-effects-switching-system-4957054507190
 boss-ev-1-wl-primeiro-pedal-de-expressao-wireless-bluetooth-midi-do-mundo-x100p25422
@@ -235,17 +235,17 @@ boss-lmb-3-bass-limiter-enhacer-036874html
 boss-lmb3-pedal-limitador-4957054036874
 boss-ls-2-line-selector-selector-de-linea-2-canales-booster-volume-inhabp4334
 boss-ls2-4957054022846
-boss-md-2-pedal-mega-distorsion-guitarra-4957054057527
-boss-md-200-modulation-4957054514624
 boss-md-200-modulation-multi-fx-modelacao-32-bits-cerbp13370
 boss-md-500-modulation-12-modos-28-tipos-modulacao-32-bits-p-guitarra-eletrica-licerp5151
-boss-md-500-modulation-4957054511272
-boss-md2-216601html
+boss-md2-4957054057527
+boss-md200-modulation-4957054514624
+boss-md500-modulation-pedal-4957054511272
 boss-me-90-4957054520267
 boss-me-90-guitar-procesador-multi-effectos-guitarra-hersbp1005
 boss-me-90-guitar-procesador-multi-effectos-guitarra-irdbp32802
 boss-me-90b-pedalera-multiefectos-bajo-4957054520687
 boss-me90-pedalera-multiefectos-37me90html
+boss-mega-distortion-md-2-tortionmd2
 boss-ml-2-4957054403553
 boss-ml2-216602html
 boss-mo-2-4957054503765
@@ -259,7 +259,7 @@ boss-mt2-216598html
 boss-mt2-3a-pedal-guitarra-metal-zone-4957054518615
 boss-ns-2-noise-suppressor-boss-legend-1987-uidobp4341
 boss-ns1x-pedal-noise-compressor-4957054520373
-boss-ns2-pedal-puerta-ruido-4957054017835
+boss-ns2-4957054017835
 boss-oc-5-octave-4957054516932
 boss-oc5-pedal-guitarra-octavador-353oc5html
 boss-od-1x-pedal-guitarra-overdrive-4957054505981
@@ -330,11 +330,11 @@ boss-sl2-slider-pedal-guitarra-096sl2html
 boss-st-2-power-stack-4957054413309
 boss-st2-pedal-guitarra-ossst2html
 boss-sy-1-synthesizer-121-sons-11-categorias-sons-icobp13653
-boss-sy-1-synthesizer-4957054514389
 boss-sy-1000-guitar-synthesizer-200-sons-150-efeitos-modo-gr-300-aixop15508
 boss-sy-1000-guitar-synthesizer-4957054514310
 boss-sy-200-guitar-synth-171-sons-12-categorias-sons-nicop25333
 boss-sy-200-guitar-synthesizer-ynthesizer
+boss-sy1-synthesizer-pedal-4957054514389
 boss-sy200-pedal-sintetizador-guitarra-4957054518226
 boss-te-2-4957054503291
 boss-te-2-tera-echo-delay-para-guitarra-eletrica-emiump4523
@@ -878,7 +878,7 @@ elektron-analog-heat-fx-7350049240831
 elektron-analog-heat-mkii-7350049240824
 empress-effects-bass-compressor-850040850222
 empress-effects-bass-compressor-blue-ressorblue
-empress-effects-bass-compressor-silver-ssorsilver
+empress-effects-bass-compressor-silver-850040850239
 empress-effects-buffer-850040850185
 empress-effects-buffer-850040850192
 empress-effects-compressor-mkii-850040850208
@@ -925,8 +925,8 @@ eventide-micropitch-delay-840694002078
 eventide-mixing-link-mic-preamp-840694001170
 eventide-mod-factor-r81749html
 eventide-modfactor-840694001057
-eventide-pitch-factor-840694001064
-eventide-pitchfactor-rmonizador
+eventide-pitch-factor-r81748html
+eventide-pitchfactor-840694001064
 eventide-rose-delay-840694001286
 eventide-space-840694001095
 eventide-time-factor-r82025html
@@ -976,7 +976,7 @@ fender-the-bends-compressor-v2-885978983964
 fender-the-pelt-fuzz-859789451462
 fender-the-pelt-fuzz-pedal-885978945146
 fender-the-pelt-fuzz-v2-885978984565
-fender-the-trapper-dual-fuzz-pedal-guitarra-885978054725
+fender-the-trapper-dual-fuzz-885978054725
 fender-tone-master-pro-885978738953
 fender-trapper-bass-distortion-885978429592
 fender-tre-verb-tremolo-reverb-885978909070
@@ -1049,7 +1049,7 @@ gamechanger-audio-bigsby-pedal-750258555233
 gamechanger-audio-light-pedal-lightpedal
 gamechanger-audio-motor-pedal-750258555295
 gamechanger-audio-plasma-coil-750258555219
-gamechanger-audio-plasma-pedal-lasmapedal
+gamechanger-audio-plasma-pedal-750258555172
 gamechanger-audio-plus-pedal-ii-674026885349
 gurus-echosex-3-steve-lukather-signature-8057733069554
 hamstead-soundworks-hamstead-odyssey-intergalactic-driver-cticdriver
@@ -1943,7 +1943,6 @@ nux-mod-core-deluxe-mkii-6936257209313
 nux-nap-5-stageman-pedal-previo-para-6936257207036
 nux-ndo-6-queen-of-tone-overdrive-pedal-edalp35276
 nux-nml-3dls-dual-loop-stereo-6936257213242
-nux-nol-1-a-b-roll-octave-loop-pedal-edalp43548
 nux-npo-2-tutti-polyphonic-octave-pedal-edalp43549
 nux-nrn-1-huminator-noise-gate-pedal-edalp43551
 nux-nro-7-59-bassguy-pedal-overdrive-6936257210982
@@ -2400,6 +2399,7 @@ valeton-gp-5-6959473983102
 valeton-gp-50-6959473983157
 valeton-surge-ep-1-6959473984017
 valeton-surge-ep-2-6959473984024
+valeton-vds-1d-delay-reverb-yandreverb
 vemuram-jan-ray-overdrive-4560479550032
 vemuram-myriad-fuzz-myriadfuzz
 vemuram-shanks-ods-1-overdrive-4560479550308

@@ -846,7 +846,6 @@ cort-earth60ce-nat-8809817985423
 cort-earth60ce-natural-glossy-lant410277
 cort-earth60ce-natural-open-pore-pore410266
 cort-earth60ce-negro-brillante-obrillante
-cort-earth60ce-poro-abierto-8809817080579
 cort-earth60m-ce-poro-abierto-oroabierto
 cort-earth60m-op-8809625369934
 cort-earth60m-op-w-bag-8809625369941
@@ -910,7 +909,7 @@ cort-gold-edge-nat-c-estuche-8809625365721
 cort-gold-edge-natural-8809625368449
 cort-gold-mc6-light-burst-8809817987113
 cort-gold-mc6-ovangkol-gloss-8809817987045
-cort-gold-mini-w-case-8809625363871
+cort-gold-mini-8809625363871
 cort-gold-o8-nat-8809625363093
 cort-gold-oc6-bocote-nat-w-case-8809625369804
 cort-gold-oc6-elect-nat-gloss-8809625364052
@@ -927,14 +926,18 @@ cort-goldd8-natural-8809625363079
 cort-goldoc6-natural-glos-620396html
 cort-guit-acus-ga-medx-12-op-8809625361396
 cort-guit-acust-ac70-nt-gloss-top-ch-3-4-8809817985041
+cort-guit-acust-pure-dcmf-ns-w-bag-8809817983160
+cort-guit-acust-pure-ocf-ns-w-bag-8809817983177
+cort-guit-acust-pure-ocmf-ns-w-bag-8809817083181
 cort-guitar-cort-gold-o8-naturel-urel391765
 cort-guitar-cort-mr710f-ziricote-brillant-ntlh391766
 cort-guitarra-acus-gold-o8-lb-light-bur-8809625363109
 cort-guitarra-core-pe-caoba-black-burst-8809625369965
+cort-guitarra-earth60ce-natural-open-pore-8809817080579
 cort-guitarra-earth60m-degradado-negro-egro380638
 cort-guitarra-earth60m-natural-169235065595
 cort-guitarra-luce-l60mf-natural-fishman-8809817082054
-cort-jade-classic-pastel-yellow-op-8809625365042
+cort-jade-classic-pyop-p-8809625365042
 cort-jade-classic-sky-blue-op-8809625365059
 cort-l-100c-ns-8809625369736
 cort-l-300vf-nat-8809383830516
@@ -1003,13 +1006,10 @@ cort-pure-d-natural-satin-8809817983313
 cort-pure-d-satinado-natural-8809817983078
 cort-pure-dc-satin-light-burst-8809817983252
 cort-pure-dcf-natural-satinado-con-funda-8809817983153
-cort-pure-dcmf-natural-satinado-con-funda-8809817983160
 cort-pure-ga-black-top-8809817985089
 cort-pure-o-caoba-satinado-natural-8809817983108
 cort-pure-o-natural-satin-8809817983337
 cort-pure-o-satinado-natural-8809817983092
-cort-pure-ocf-natural-satinado-con-funda-8809817983177
-cort-pure-ocmf-natural-satinado-con-funda-8809817083181
 cort-roselyn-redux-nat-natural-con-funda-8809817081132
 cort-roselyn-redux-nat-w-case-uxnatwcase
 cort-sfx-1f-ns-ortsfx1fns
@@ -1018,10 +1018,10 @@ cort-sfx-bright-flame-maple-8809817986079
 cort-sfx-ced-ns-8809383831575
 cort-sfx-ced-ns-natural-satin-8809383839052
 cort-sfx-dao-nat-8809292924016
-cort-sfx-e-3tss-8809292924894
 cort-sfx-e-3tss-8809383839021
 cort-sfx-e-ns-8809292924917
 cort-sfx-e-ns-8809383839014
+cort-sfx-e-sunburst-satinado-8809292924894
 cort-sfx-me-bks-8809383833036
 cort-sfx-me-bks-8809383838185
 cort-sfx-me-bks-ebksp32679
@@ -1562,6 +1562,7 @@ epiphone-usa-texan-antique-natural-711106036939
 esp-de-7-cuerdas-esp-ltd-tl-7-black-7blackhtml
 esp-ltd-tl-6-aqua-marine-burst-ebursthtml
 esp-ltd-tl-6-natural-aturalhtml
+esp-ltd-tl-6-qm-charcoal-burst-lbursthtml
 esp-ltd-tombstone-a-300e-9610013000001
 esp-para-zurdos-esp-ltd-tl-6-lh-black-hblackhtml
 ewp12ewb-opn-piccolo-o26360html
@@ -2327,9 +2328,9 @@ guild-200-ds-240-memoir-natural-usticahtml
 guild-a20-bob-marley-signature-dreadnought-614252350112
 guild-bt-258e-deluxe-baritone-tonep45855
 guild-d-120-nat-westerly-614252346986
-guild-d-120ce-natural-614252346993
+guild-d-120ce-nat-westerly-614252346993
 guild-d-140-antique-sunburst-809870300803
-guild-d-140-nt-westerly-614252347006
+guild-d-140-nat-westerly-erlyp44726
 guild-d-140-sb-westerly-614252350044
 guild-d-140ce-nat-westerly-erlyp14711
 guild-d-140ce-sb-westerly-614252347099
@@ -3141,7 +3142,7 @@ martin-00-15m-729789402088
 martin-00-18-729789516648
 martin-00-18-joe-bonamassa-729789712811
 martin-00-18-l-ge-standard-golden-era-zurdos-729789683067
-martin-00-18-standard-729789683036
+martin-00-18-standard-golden-era-729789683036
 martin-00-28-2025-729789683081
 martin-00-28-729789683098
 martin-00-28-l-ge-standard-golden-era-zurdos-729789683104
@@ -3783,7 +3784,7 @@ mayson-esd10-aysonesd10
 mayson-esm50-dreadnought-mate-910807077332
 meinl-djembe-jumbo-meinl-jd12da-dh-day-of-the-dead-de-12-842960147124
 meinl-djembe-jumbo-meinl-jd14da-dh-day-of-the-dead-de-14-842960147131
-meinl-maracas-de-cuero-meinl-msm4-jumbo-840553052336
+meinl-maracas-meinl-msm4-rawhide-jumbo-840553052336
 meinl-parche-meinl-jumbo-dj-head-jd12da-de-12-842960147223
 meinl-parche-meinl-jumbo-dj-head-jd12si-de-12-842960147230
 meinl-parche-meinl-jumbo-dj-head-jd12wh-de-12-842960147209
@@ -4692,6 +4693,7 @@ takamine-cutaway-auditorium-takamine-ef450-thermal-top-legacy-black-burst-190262
 takamine-cutaway-auditorium-takamine-ef508-natural-190262011835
 takamine-cutaway-auditorium-takamine-gn30-negra-ectronoire
 takamine-cutaway-auditorium-takamine-gn51ce-brown-sunburst-190262041597
+takamine-cutaway-auditorium-takamine-p5-natural-190262012108
 takamine-cutaway-auditorium-zurdos-takamine-p3-natural-190262012023
 takamine-cutaway-dreadnought-takamine-ef381-negra-12-cuerdas-190262011781
 takamine-cutaway-dreadnought-takamine-gd20-natural-satin-tinnatural
@@ -4758,7 +4760,7 @@ takamine-en20-190262010487
 takamine-fn15ar-fn15arhtml
 takamine-folk-cutaway-electro-sunburst-gf15cebsb-5cebsbhtml
 takamine-fsf40-santa-fe-e-a-electrificada-nex-cutway-para-zurdos-natural-con-fun-190262012634
-takamine-fsf40c-natural-190262012573
+takamine-fsf40c-santa-fe-nex-cutway-natural-190262012573
 takamine-ft340bs-dreadnought-natural-190262011583
 takamine-fx-natural-e-a-cutaway-d65c-dn65c-con-estuche-stuchehtml
 takamine-fxcfolk-gf30-e-a-brown-sunburst-nbursthtml
@@ -4910,7 +4912,7 @@ takamine-gx18ce-ns-190262041696
 takamine-gx18ce-ns-4582270060503
 takamine-gx18cens-censp43958
 takamine-gx18cens-mini-nex-natural-nexnatural
-takamine-gx31ce-natural-satinada-190262044840
+takamine-gx31ce-natural-satinada-alsatinada
 takamine-gy11-natural-043386html
 takamine-gy11me-nat-satin-lsatinhtml
 takamine-gy11mens-11menshtml
@@ -4931,7 +4933,6 @@ takamine-japan-ef508kc-loss195401
 takamine-japan-lh-handed-ec-p3nc-nex-cutaway-inlh225735
 takamine-japan-lh-handed-ef341sc-lh-799493250404
 takamine-japan-natural-ctro304557
-takamine-japan-p5nc-nex-cutaway-190262012108
 takamine-japan-p6n-nex-brown-sunburst-799493250855
 takamine-jj325src-roja-325srcroja
 takamine-ltd-2021-blue-rose-190262011439
@@ -4976,7 +4977,7 @@ takamine-p7jc-799493250893
 takamine-p7nc-190262012214
 takamine-p7nc-auditorium-799493250909
 takamine-pro-series-p7dc-190262012184
-takamine-rnv460c-natural-190262012818
+takamine-rnv460c-natural-190262013044
 takamine-signature-john-jorgenson-jj325srcl-190262012689
 takamine-tep3-proj-fn15ar-electrificada-dreadnought-natural-con-funda-190262011576
 takamine-tep3-proj-ft341-dreadnought-blk-ghtblkhtml
@@ -5869,7 +5870,7 @@ yamaha-f310-folk-tobacco-brown-sunburst-4957812668224
 yamaha-f310-natural-310natural
 yamaha-f310-natural-e4640nuevo
 yamaha-f310-nt-ii-folk-natural-4957812306775
-yamaha-f310-tbs-4957812306799
+yamaha-f310-tbs-10tbsp7717
 yamaha-f310-tobacco-brown-sunburst-31000nuevo
 yamaha-f310tbsii-sombreada-da3824html
 yamaha-f370-folk-4957812314701
@@ -6339,7 +6340,7 @@ yamaha-tas1e-sand-burst-4957812722315
 yamaha-tas1e-ultra-marine-4957812722322
 yamaha-tas1ent-transacoustic-segunda-generacion-concert-con-funda-4957812722308
 yamaha-tas1esdb-transacoustic-segunda-generacion-concert-con-funda-nfundahtml
-yamaha-tas3-c-natural-4957812712255
+yamaha-tas3-c-natural-uralp42318
 yamaha-tas3-c-sand-burst-urstp42319
 yamaha-tas3-c-sandburst-4957812712262
 yamaha-tas3c-sb-transacoustic-concierto-sand-burst-osandburst
