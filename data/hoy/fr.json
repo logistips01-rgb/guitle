@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-10",
+ "fecha": "2026-11-11",
  "pais": "fr",
  "items": [
   {
-   "slug": "squier-classic-vibe-60s-stratocaster-sunburst-885978064212",
-   "name": "Squier Classic Vibe ‘60s Stratocaster sunburst",
-   "brand": "Squier",
-   "price": "429 €",
+   "slug": "mooer-gtrs-pro-800-vert-6971889220411",
+   "name": "Mooer Gtrs Pro 800 Vert",
+   "brand": "Mooer",
+   "price": "659 €",
    "store": "Woodbrass",
    "kind": "electrica",
-   "img": "ad57d75c4428fcbc.webp",
-   "why": "40 € de moins que dans les autres magasins"
+   "img": "e5b58c449cdad8c8.webp",
+   "why": "170 € de moins que dans les autres magasins"
   },
   {
-   "slug": "prs-se-ce24-charcoal-burst-lbursthtml",
-   "name": "PRS SE CE24 Charcoal Burst",
-   "brand": "PRS",
-   "price": "689 €",
-   "store": "Music 3000",
+   "slug": "epiphone-les-paul-standard-50s-cardinal-red-ibgcs-711106156293",
+   "name": "Epiphone Les Paul Standard 50S Cardinal Red Ibgcs",
+   "brand": "Epiphone",
+   "price": "599 €",
+   "store": "Woodbrass",
    "kind": "electrica",
-   "img": "2420be97b6afb444.webp",
-   "why": "60 € de moins que dans les autres magasins"
+   "img": "27b2f7a183dfd7d5.webp",
+   "why": "100 € de moins que dans les autres magasins"
   },
   {
-   "slug": "cort-mbm1-noir-satine-manson-8809625365639",
-   "name": "Cort MBM1 Noir Satine Manson",
-   "brand": "Cort",
-   "price": "659 €",
+   "slug": "yamaha-csf1m-tbs-tobacco-brown-4957812628099",
+   "name": "Yamaha CSF1M-TBS Tobacco Brown",
+   "brand": "Yamaha",
+   "price": "599 €",
    "store": "Audio System",
-   "kind": "electrica",
-   "img": "c7d5c5d19e6865dc.webp",
-   "why": "57 € de moins que dans les autres magasins"
+   "kind": "acustica",
+   "img": "1ed3bb1233d9cb56.webp",
+   "why": "97 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "fender-cd-60-v3-ds-dreadnought-wn-sunburst-885978158621",
+   "name": "Fender CD-60 V3 DS Dreadnought WN Sunburst",
+   "brand": "Fender",
+   "price": "150 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "0ac1ea83655a0487.webp",
+   "why": ""
+  },
+  {
+   "slug": "epiphone-hummingbird-tribute-antique-natural-ibgm-711106228495",
+   "name": "Epiphone Hummingbird Tribute Antique Natural IBGM",
+   "brand": "Epiphone",
+   "price": "189 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "1c74642c19033c15.webp",
+   "why": ""
+  },
+  {
+   "slug": "gretsch-dreadnought-signature-jim-dandy-wn-rex-burst-717669566906",
+   "name": "Gretsch Dreadnought Signature Jim Dandy WN Rex Burst",
+   "brand": "Gretsch",
+   "price": "199 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "f4123930eda010b0.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-apxt2-black-4957812520171",
+   "name": "Yamaha Apxt2 Black",
+   "brand": "Yamaha",
+   "price": "241 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "b135900a7cfebc5f.webp",
+   "why": ""
+  },
+  {
+   "slug": "lag-tramontane-t70d-b-b-dreadnought-black-brown-3700166371873",
+   "name": "Lâg Tramontane T70D-B&B Dreadnought Black & Brown",
+   "brand": "Lâg",
+   "price": "299 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "a17eb99b8461da05.webp",
+   "why": ""
   }
  ]
 }

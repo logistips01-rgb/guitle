@@ -1,16 +1,56 @@
 {
- "fecha": "2026-11-10",
+ "fecha": "2026-11-11",
  "pais": "it",
  "items": [
   {
-   "slug": "yamaha-apx600-oriental-blue-burst-4957812623933",
-   "name": "Yamaha APX600 Oriental Blue Burst",
+   "slug": "ibanez-grx70qa-sb-gio-qasbgiohtm",
+   "name": "Ibanez GRX70QA-SB GIO",
+   "brand": "Ibanez",
+   "price": "213 €",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "e2d93e1cc9eb71ba.webp",
+   "why": "4 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "ibanez-pf12mhce-opn-chitarra-acustica-elettrificata-natural-4515276967439",
+   "name": "Ibanez PF12MHCE OPN Chitarra acustica elettrificata Natural",
+   "brand": "Ibanez",
+   "price": "195 €",
+   "store": "Di Santo Musica",
+   "kind": "acustica",
+   "img": "1198455946519776.webp",
+   "why": ""
+  },
+  {
+   "slug": "fender-cd60s-black-chitarra-acustica-nera-885978875764",
+   "name": "Fender CD60S Black Chitarra acustica nera",
+   "brand": "Fender",
+   "price": "205 €",
+   "store": "Global Net Shop",
+   "kind": "acustica",
+   "img": "39ad6bacc16eaa1d.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-apxt2-naturale-4957812520140",
+   "name": "Yamaha Apxt2 Naturale",
    "brand": "Yamaha",
-   "price": "338 €",
+   "price": "242 €",
    "store": "Woodbrass",
    "kind": "acustica",
-   "img": "acef98fb57540898.webp",
-   "why": "1 € in meno che negli altri negozi"
+   "img": "64ec93202a288b79.webp",
+   "why": ""
+  },
+  {
+   "slug": "eko-one-s150e-folk-silenziosa-8056734499261",
+   "name": "Eko One S150e Folk silenziosa",
+   "brand": "Eko",
+   "price": "259 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "7ad85f0ac06a539a.webp",
+   "why": ""
   }
  ]
 }

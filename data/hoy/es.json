@@ -1,16 +1,16 @@
 {
- "fecha": "2026-11-10",
+ "fecha": "2026-11-11",
  "pais": "es",
  "items": [
   {
-   "slug": "ortega-r16s-842960185133",
-   "name": "Ortega R16S",
-   "brand": "Ortega",
-   "price": "306,40 €",
-   "store": "Alteisa",
-   "kind": "clasica",
-   "img": "d11db04930a9a1e0.webp",
-   "why": "Mínimo histórico: 9 % por debajo de su media"
+   "slug": "jackson-x-series-soloist-slx-dx-lrl-gold-bullion-885978052189",
+   "name": "Jackson X Series Soloist SLX DX LRL Gold Bullion",
+   "brand": "Jackson",
+   "price": "639 €",
+   "store": "Session",
+   "kind": "electrica",
+   "img": "f911108946977a33.webp",
+   "why": "Mínimo histórico: 18 % por debajo de su media"
   },
   {
    "slug": "prs-se-parlor-20-piezo-dg-dog-hair-825362273196",
@@ -23,14 +23,64 @@
    "why": "Rebajada hoy: 191,06 € menos que ayer"
   },
   {
-   "slug": "lag-t118dce-tramontane-118-dreadnought-cutaway-natural-3700166363120",
-   "name": "LAG T118DCE Tramontane 118 Dreadnought Cutaway Natural",
-   "brand": "LAG",
-   "price": "385,47 €",
-   "store": "Musical San Francisco",
+   "slug": "cort-ad880ce-ns-w-bag-8809383838406",
+   "name": "Cort AD880CE NS w/bag",
+   "brand": "Cort",
+   "price": "194 €",
+   "store": "Alteisa",
    "kind": "acustica",
-   "img": "09c5439b3f30a495.webp",
-   "why": "Rebajada hoy: 112,47 € menos que ayer"
+   "img": "54f1aee8c8425b8e.webp",
+   "why": "55 € menos que en cualquier otra tienda"
+  },
+  {
+   "slug": "fender-california-standard-redondo-ce-spruce-top-natural-885978679584",
+   "name": "Fender California Standard Redondo CE Spruce Top Natural",
+   "brand": "Fender",
+   "price": "192 €",
+   "store": "Drunkat",
+   "kind": "acustica",
+   "img": "7bfc630492686b91.webp",
+   "why": ""
+  },
+  {
+   "slug": "cort-ga-medx-m-op-w-bag-8809625365240",
+   "name": "Cort GA-MEDX M OP W/bag",
+   "brand": "Cort",
+   "price": "203,47 €",
+   "store": "Alteisa",
+   "kind": "acustica",
+   "img": "144522705e61394a.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-tcy12e-opn-open-pore-natural-4515276838531",
+   "name": "Ibanez TCY12E-OPN Open Pore Natural",
+   "brand": "Ibanez",
+   "price": "218 €",
+   "store": "Pronorte",
+   "kind": "acustica",
+   "img": "444b9e8db3491136.webp",
+   "why": ""
+  },
+  {
+   "slug": "gretsch-deltoluxe-dreadnought-wn-black-top-717669567170",
+   "name": "Gretsch Deltoluxe Dreadnought WN Black Top",
+   "brand": "Gretsch",
+   "price": "275 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "190e09536c9e9342.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-apx600-oriental-blue-burst-4957812623933",
+   "name": "Yamaha APX600 Oriental Blue Burst",
+   "brand": "Yamaha",
+   "price": "294 €",
+   "store": "Pronorte",
+   "kind": "acustica",
+   "img": "8d5b92f73caaa30b.webp",
+   "why": ""
   }
  ]
 }
