@@ -168,7 +168,6 @@ altamira-md-with-case-3701230904515
 alvarez-ab60-ce-spbshb-roacustica
 alvarez-ab60ce-ab60cehtml
 alvarez-abt60-artist-814295012927
-alvarez-abt60ce-8bk-677523002073
 alvarez-abt60ce-8bk-artist-spb-812309028223
 alvarez-abt60ce-8shb-artist-812309028216
 alvarez-abt60ce-8shb-ce8shbhtml
@@ -447,7 +446,6 @@ applause-ae44-7s-vintage-varnish-satin-4046662281148
 applause-ae44ii-mid-cutaway-negro-satinado-rosatinado
 applause-ae48-1i-honeyburst-satin-4046662281308
 applause-aeo96-m-orchestra-wood-classics-naturel-mat-4046662307428
-applause-guitarra-acustica-jump-slope-shoulder-dreadnought-lagoon-4046662295367
 applause-guitarra-electro-acustica-jump-om-cutaway-electro-peach-4046662295398
 applause-jump-blank-canvas-aeo-69-6p-vasaeo696p
 applause-jump-dark-matter-12-cuerdas-aes12-69-5s-4046662329420
@@ -466,6 +464,7 @@ applause-jump-slope-shoulder-d-peach-burst-mate-4046662324234
 applause-jump-slope-shoulder-d-tobacco-burst-brillante-4046662324302
 applause-jump-slope-shoulder-d-vintage-cherry-brillante-4046662324319
 applause-jump-slope-shoulder-dreadnought-celeste-aas-69-t-4046662295343
+applause-jump-slope-shoulder-dreadnought-lagoon-aas-69-b-4046662295367
 applause-jump-slope-shoulder-dreadnought-lipstick-aas-69-r-4046662295329
 applause-jump-slope-shoulder-dreadnought-melocoton-4046662295350
 applause-wood-classics-aad96-4-natural-brillante-4046662295213
@@ -1500,7 +1499,6 @@ epiphone-dr-100-songmaker-e1-ebony-711106260013
 epiphone-dr-100-songmaker-e1-natural-711106260020
 epiphone-dr100-para-zurdos-natural-711106043975
 epiphone-frontier-antique-natural-original-711106056395
-epiphone-hummingbird-12-aged-cherry-sunburst-ibgcs-711106045320
 epiphone-hummingbird-1960-reedicion-lh-heritage-cherry-sunburst-ibgcs-711106170084
 epiphone-hummingbird-signature-eric-church-cobra-burst-oscuro-ibg-711106237671
 epiphone-hummingbird-standard-cherry-sunburst-711106166407
@@ -2060,21 +2058,19 @@ gibson-hummingbird-studio-rosewood-711106096230
 gibson-hummingbird-studio-walnut-burst-711106170299
 gibson-hummingbird-studio-walnut-satin-natural-711106139333
 gibson-j-160e-original-vintage-sunburst-711106174419
-gibson-j-185-1952-antique-natural-cs-hrc-shrc411826
-gibson-j-185-1952-antique-natural-cshr-711106037417
 gibson-j-185-century-12-fret-an-711106233536
 gibson-j-185-century-12f-ebony-original-711106233512
 gibson-j-185-century-12f-vintage-sunburst-original-711106233499
 gibson-j-185-ec-modern-walnut-antique-natural-711106044149
 gibson-j-185-original-vintage-sunburst-711106037073
 gibson-j-45-1942-banner-envejecido-ligero-sunburst-vintage-cshr-169383253936
-gibson-j-45-50s-descolorido-descolorido-sunburst-original-711106096155
 gibson-j-45-50s-original-sunburst-vintage-711106036960
 gibson-j-45-anni-edicion-limitada-cremona-burst-modern-711106233666
 gibson-j-45-century-12-fret-natural-711106233475
 gibson-j-45-century-12-fret-vs-711106318349
 gibson-j-45-century-12f-ebano-original-711106233451
 gibson-j-45-century-12f-vintage-sunburst-original-711106233437
+gibson-j-45-faded-50s-711106096155
 gibson-j-45-gold-top-23035034-op23035034
 gibson-j-45-light-aged-1955-1955403693
 gibson-j-45-margo-price-signature-heritage-cherry-sunburst-urst408283
@@ -2128,12 +2124,10 @@ gibson-sj-200-60s-original-vintage-sunburst-711106174396
 gibson-sj-200-anni-edicion-limitada-cremona-burst-modern-711106233680
 gibson-sj-200-elegant-koa-burst-miel-modern-711106233574
 gibson-sj-200-elegant-koa-lh-burst-miel-modern-711106233581
-gibson-sj-200-firma-elvis-ebano-cs-mc-csmc411825
 gibson-sj-200-firma-orianthi-cereza-cs-711106056364
 gibson-sj-200-original-left-handed-711106037608
 gibson-sj-200-original-vintage-sunburst-711106037097
 gibson-sj-200-palisandro-de-preguerra-murphy-lab-envejecido-ligero-vintage-sunbu-rido403728
-gibson-sj-200-palisandro-de-preguerra-vintage-sunburst-cshr-711106037448
 gibson-sj-200-standard-arce-tri-burst-moderno-erno403734
 gibson-sj-200-standard-blanco-clasico-moderno-711106233598
 gibson-sj-200-studio-rosewood-satin-natural-711106139395
@@ -2148,7 +2142,6 @@ gibson-songwriter-recording-artist-antique-natural-modern-711106174464
 gibson-songwriter-recording-artist-ec-antique-natural-modern-711106174501
 gibson-songwriter-recording-artist-ec-rosewood-burst-711106174525
 gibson-songwriter-recording-artist-rosewood-burst-711106174488
-gibson-southern-jumbo-1942-banner-ligeramente-envejecido-vintage-sunburst-cshr-169383254049
 gibson-southern-jumbo-original-vintage-sunburst-711106037011
 gibson-southern-jumbo-vintage-sunburst-original-711106246208
 gibson-special-1929-signature-nick-lucas-murphy-lab-gris-argentino-ligeramente-e-cido403727
@@ -2721,7 +2714,6 @@ ibanez-pc12mh-opn-open-pore-natural-4515276639374
 ibanez-pc12mhce-opn-open-pore-natural-4515276967422
 ibanez-pc14mhce-wk-weathered-black-open-pore-4549763266330
 ibanez-pc34ce-nt-natural-high-gloss-4549763367723
-ibanez-pc34mhce-nt-4549763367730
 ibanez-pf12mhce-opn-open-pore-natural-4515276967439
 ibanez-pf14jr-opn-4549763349361
 ibanez-pf15-bk-black-high-gloss-4515110851139
@@ -2738,7 +2730,6 @@ ibanez-pf16mwce-opn-open-pore-natural-4549763349385
 ibanez-pf16mwce-wk-weathered-black-open-pore-4549763349392
 ibanez-pf16wce-nt-natural-high-gloss-4549763349408
 ibanez-pf16wce-wk-weathered-black-349392html
-ibanez-pf34mhe-nt-4549763367747
 ibanez-pft2-nt-mini-dreadnought-4515276694069
 ibanez-pj50e-oah-open-pore-vintage-amber-sunburst-top-4549763366085
 ibanez-tcm50-gbo-galaxy-black-open-pore-4549763175588
@@ -2751,10 +2742,9 @@ ibanez-tcy10e-sfh-sea-foam-green-4549763285041
 ibanez-tcy10esfh-electrificada-ficadahtml
 ibanez-tcy10le-bk-515796html
 ibanez-tcy10lebk-electrificada-left-para-zurdos-negra-4549763285829
-ibanez-tcy10pa-bkb-abkbp42718
+ibanez-tcy10pa-bkb-series-talman-transparent-brown-black-burst-high-gloss-4549763377005
 ibanez-tcy10pa-cbs-acbsp42719
 ibanez-tcy10pabkb-talman-degradado-negro-sobre-marron-transparente-ente428209
-ibanez-tcy10pabkb-transparent-brown-black-burst-high-gloss-377005html
 ibanez-tcy10pacbs-cosmic-blue-starburst-high-gloss-4549763377012
 ibanez-tcy12e-opn-open-pore-natural-4515276838531
 ibanez-tcy621-bot-black-out-4549763365248
@@ -2774,7 +2764,6 @@ ibanez-v44mini-opn-open-pore-natural-4549763322005
 ibanez-v44minie-opn-open-pore-natural-4549763350442
 ibanez-v50lnjp-opn-open-pore-natural-lh-4549763353481
 ibanez-v50njp-opn-natural-4549763353498
-ibanez-v54njp-opn-natural-4549763265814
 ibanez-v54njp-wk-4549763366146
 ibanez-vc40wsce-opb-open-pore-brown-4549763366108
 ibanez-vc44-opn-open-pore-natural-4549763321985
@@ -2837,14 +2826,16 @@ lag-auditorium-hyvibe-h2-10-a-e-cutaway-3700166376861
 lag-auditorium-lag-tramontane-318-natural-auditorium
 lag-auditorium-tramontane-170-natural-3700166366428
 lag-auditorium-tramontane-t70-a-e-cutaway-3700166308350
-lag-bluewave-tlbw2dce-dreadnought-readnought
+lag-bluewave-1-tbw1te-viaje-3700166373082
+lag-bluewave-1-travel-marron-3700166374966
+lag-bluewave-2-tbw2ace-auditorium-ctw-3700166373099
+lag-bluewave-2-tbw2dce-dreadnought-ctw-3700166373112
+lag-bluewave-2-tbw2te-de-viaje-3700166373136
+lag-bluewave-2-tlbw2dce-dreadnought-cutaway-zurda-3700166373150
 lag-cutaway-audiorium-zurdos-lag-tramontane-88-natural-8aecutaway
-lag-cutaway-auditorium-lag-blue-wave-2-natural-3700166373099
 lag-cutaway-auditorium-lag-tramontane-318-natural-iumcutaway
 lag-cutaway-dreadnought-lag-blue-burst-edicion-limitada-3700166372627
-lag-cutaway-dreadnought-lag-blue-wave-2-natural-3700166373112
 lag-cutaway-dreadnought-lag-red-burst-edicion-limitada-3700166372580
-lag-cutaway-dreadnougth-zurdos-lag-natural-3700166373150
 lag-cutaway-jumbo-lag-sauvage-3700166373037
 lag-dreadnought-hyvibe-h2-30-a-e-cutaway-3700166376915
 lag-dreadnought-lag-blue-burst-edicion-limitada-3700166372610
@@ -2859,6 +2850,7 @@ lag-escapade-nylon-cedro-rojo-electroacustica-3700166373198
 lag-gypsy-swing-sl-100-natural-3700166378636
 lag-gypsy-swing-sl-200-natural-3700166378643
 lag-hyvibe-1-serie-1-dreadnought-ctw-3700166371576
+lag-hyvibe-1-serie-20-dreadnought-ctw-3700166366374
 lag-hyvibe-1-serie-30-auditorium-ctw-3700166369108
 lag-hyvibe-1-serie-30-dreadnought-ctw-3700166366411
 lag-hyvibe-15-dreadnought-ctw-lh-3700166371385
@@ -2870,7 +2862,6 @@ lag-hyvibe-2-serie-30-auditorium-zurdo-cw-3700166376892
 lag-hyvibe-2-serie-50-auditorium-bevel-cw-3700166376939
 lag-hyvibe-2-serie-50-auditorium-nylon-bevel-cw-3700166376922
 lag-hyvibe-2-serie-50-dreadnought-bevel-3700166376946
-lag-hyvibe-20-thv20dce-dreadnought-3700166366374
 lag-lag-travel-nylon-a-e-blue-wave-1-marron-3700166374973
 lag-parlor-lag-sauvage-3700166373051
 lag-parlor-lag-signature-vianney-natural-3700166374980
@@ -2949,9 +2940,6 @@ lag-tramontane-tl118dce-dreadnought-left-handed-3700166363250
 lag-tramontane-tl70d-nat-dreadnought-left-handed-3700166371804
 lag-tramontane-tn170asce-folk-nylon-slim-ctw-3700166312302
 lag-travel-kae-tamano-viaje-3700166370302
-lag-travel-lag-blue-wave-1-black-natural-3700166373082
-lag-travel-lag-blue-wave-1-brown-3700166374966
-lag-travel-lag-blue-wave-2-natural-3700166373136
 lag-travel-rc-tamano-viaje-e21607html
 lag-travel-signature-vianney-a-e-natural-glavian-001-ian001html
 lag-travel-sp-natural-3700166371149
@@ -2968,7 +2956,6 @@ lagdreadnought-cutaway-natural-glat70dce-0dcep27015
 lagdreadnought-sauvage-vagep35828
 lagglat170dce-0dcep27019
 lagtramontane-177-a-e-cutaway-natural-uralp27020
-lakewood-a-14-cp-63-natural-4260381430957
 lakewood-a-15-edition-2022-444410026987
 lakewood-a-15-edition-2024-444410032480
 lakewood-a-24-custom-35250-444410031078
@@ -3137,9 +3124,9 @@ martin-000-13e-retro-walnut-729789576260
 martin-000-13e-retro-walnut-auditorium-729789703284
 martin-000-14-om-20th-a-e-signature-john-mayer-nmayerhtml
 martin-000-14-om-45-platinum-signature-john-mayer-nmayerhtml
+martin-000-15-a-e-caoba-sapele-729789674591
 martin-000-15-m-l-auditorium-para-zurdos-729789399685
 martin-000-15-m-l-auditorium-streetmaster-para-zurdos-729789540629
-martin-000-15e-729789674591
 martin-000-15m-auditorium-729789399678
 martin-000-15m-caoba-mcaobahtml
 martin-000-15m-l-streetmaster-zurdo-rzurdohtml
@@ -5258,7 +5245,6 @@ taylor-712ce-12-fret-next-generation-887766149859
 taylor-712ce-next-generation-887766147756
 taylor-714ce-next-generation-887766144540
 taylor-722ce-koa-gloss-887766134183
-taylor-724ce-grand-auditorium-brillo-887766134176
 taylor-724ce-koa-grand-auditorium-887766114772
 taylor-812ce-grand-concert-887766107323
 taylor-812ce-next-generation-887766146490
@@ -5294,7 +5280,6 @@ taylor-builder-s-edition-514ce-kona-burst-next-generatio-887766144861
 taylor-builder-s-edition-514ce-natural-next-generation-887766144854
 taylor-builder-s-edition-524ce-next-generation-887766144878
 taylor-builder-s-edition-814ce-blacktop-next-generation-887766144106
-taylor-builder-s-edition-814ce-honduran-rosewood-redwood-887766135722
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-adirondack-shad-887766144205
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-sinker-redwood-887766144083
 taylor-builder-s-edition-814ce-next-generation-indian-rosewood-adirondack-natura-887766144090
@@ -5327,6 +5312,7 @@ taylor-gold-label-714e-887766140603
 taylor-gold-label-717e-natural-887766139164
 taylor-gold-label-717e-sunburst-firestripe-pg-887766139324
 taylor-gold-label-810e-honduran-rosewood-natural-887766143451
+taylor-gold-label-814e-1202045005
 taylor-gold-label-814e-887766135739
 taylor-gold-label-814e-koa-887766135746
 taylor-gold-label-814e-koa-sunburst-887766135753
@@ -5338,7 +5324,7 @@ taylor-gs-mini-e-koa-lefty-zurdos-887766055372
 taylor-gs-mini-e-koa-lh-887766111771
 taylor-gs-mini-e-koa-plus-887766105428
 taylor-gs-mini-e-koa-plus-lh-para-zurdos-887766105701
-taylor-gs-mini-e-ltd-olive-887766146285
+taylor-gs-mini-e-ltd-oliva-887766146285
 taylor-gs-mini-e-mahogany-887766069775
 taylor-gs-mini-e-mahogany-887766111825
 taylor-gs-mini-e-rosewood-plus-887766118381

@@ -1035,7 +1035,6 @@ alhambra-satin-black-plus-8434418047753
 alhambra-satin-cw-ez-electrificada-cutaway-con-funda-9738-25-mm-3825mmhtml
 alhambra-student-1c-7-8-senorita-9736-25mm-gigbag-162730010497
 alhambra-student-1c-ht-9738-25mm-gigbag-162730012019
-alhambra-student-1c-op-3-4-cadette-9736-25mm-gigbag-162730010817
 alhambra-student-2c-9738-25mm-gigbag-156224239679
 alhambra-student-2c-a-9738-25mm-gigbag-156224239884
 alhambra-student-2f-flamenco-9738-25mm-gigbag-156224240910
@@ -1417,7 +1416,6 @@ bromo-espanola-hibrida-cutaway-amplificada-bromo-ben2c-fusion-craft-natural-8997
 bromo-espanola-hibrida-cutaway-amplificada-bromo-ben2c-fusion-craft-trans-black-8997032898557
 c-f-martin-co-martin-guitars-000c12-nylon-16-series-cutaway-729789671965
 caballero-by-manuel-rodriguez-principio-p-ca-pm-3-4-4046662291123
-caballero-by-manuel-rodriguez-principio-series-flamenco-ca-pm-fe-4046662310923
 caballero-by-manuel-rodriguez-principio-series-stage-ca-pm-sb-4046662310954
 caballero-by-manuel-rodriguez-principio-series-stage-ca-pm-se-4046662310930
 caballero-by-mr-amplificada-caballero-by-mr-principio-p-be-abeto-y-sapelli-negro-4046662291147
@@ -1862,7 +1860,6 @@ cort-luxe-nylon-ii-bkb-frank-gambale-signature-2026-8809817987502
 cort-sol-encanto-wbl-w-case-8809817983733
 cort-solencanto-white-blonde-onde391767
 cort-sunset-nylectric-dlx-tsb-8809817082429
-cort-sunset-nylectric-dlx-tsb-8809817083044
 cort-sunset-nylectric-ii-bk-8809817983054
 cort-sunset-nylectric-ii-black-8809817083051
 cort-sunset-nylectric-ii-nat-8809817983061
@@ -2015,7 +2012,6 @@ esteve-alegria-tapa-de-cedro-edro397361
 esteve-crossover-cw-eq-spruce-top-icea410107
 esteve-crossover-cw-eq-tapa-de-cedro-edro410106
 esteve-fusion-cedar-top-edre410108
-esteve-guitarra-conservatory-tapa-de-abeto-169235060446
 esteve-guitarra-conservatory-tapa-de-cedro-169235060347
 esteve-guitarra-mod-5-tapa-de-cedro-169235064048
 esteve-mod-1-tapa-de-cedro-brillante-ante410111
@@ -2373,9 +2369,11 @@ korg-kronos-3-88-workstation-88-teclas-4959112244450
 la-bella-750n-dtb-50-105-black-nylon-wound-p33803html
 la-bella-750t-dtb-50-105-white-nylon-wound-65629508863
 lag-auditorium-lag-black-brown-3700166371910
+lag-bluewave-1-nailon-de-viaje-marron-3700166374973
 lag-bluewave-1-tnbw1te-brw-travel-nylon-n27197html
+lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143
 lag-bluewave-2-cbw2e-classical-4-4-3700166373105
-lag-bluewave-tnbw1te-nylon-bw1tenylon
+lag-bluewave-tnbw1te-brw-travel-nylon-ravelnylon
 lag-cutaway-auditorium-slim-lag-tramontane-170natural-3700166312302
 lag-electroacustica-lag-escapade-natural-3700166373198
 lag-espanola-amplificada-auditorium-lag-occitania-170-natural-maenatural
@@ -2395,11 +2393,8 @@ lag-tramontane-oc170ce-classical-cutaway-4-4-lcutaway44
 lag-tramontane-oc88-classical-4-4-lassical44
 lag-tramontane-tn70a-b-b-nylon-auditorium-negro-y-marron-rron366868
 lag-tramontane-tn70a-natural-3700166371866
-lag-travel-lag-blue-wave-1-black-natural-3700166373143
-lag-travel-nylon-a-e-blue-wave-1-marron-3700166374973
 lakewood-a-31-cp-crossover-cedar-custom-444410036987
 lakewood-a-36-cp-crossover-4260381430520
-lakewood-m-32-cp-classic-crossover-deluxe-4262405530100
 lp-cencerro-lp-lp008-n-rock-nylon-731201483582
 ltd-tl-6n-nylon-natural-799493247855
 luna-art-vintage-nylon-solid-top-a-e-distressed-810036855624
@@ -2500,6 +2495,7 @@ martinez-crossover-mp14-zi-zn-gigbag-6973106760564
 martinez-de-cipres-mfg-as-con-funda-ipresmfgas
 martinez-edicion-especial-espana-es-08-rtinezes08
 martinez-es-08s-ce-fishman-psy-301-psy301html
+martinez-es-12c-tinezes12c
 martinez-es08sce-blanca-nezes08sce
 martinez-espanola-amplificada-de-escenario-martinez-hispania-azul-enarioazul
 martinez-espanola-amplificada-de-escenario-martinez-hispania-blanco-arioblanco
@@ -2600,7 +2596,6 @@ oqan-qgc-15-gb-8435017323897
 oqan-qgc-20-8435017323910
 oqan-qgc-20ce-8435017323934
 oqan-qgc-5-kids-8435017323873
-ortega-4-4-r121-abeto-mastil-estrecho-natural-ural210792
 ortega-4-4-r131-cedro-macizo-mastil-estrecho-burdeos-deos210757
 ortega-4-4-r221-abeto-negro-egro210762
 ortega-bwsm-2-840553027808
@@ -3523,7 +3518,6 @@ valencia-vc314-antique-sunburst-8997032896553
 valencia-vc314-valencia-natural-8997032896546
 valencia-vc314ce-valencia-natural-eq-8997032896560
 valencia-vc354-4-4-black-8997032896140
-valencia-vc354-4-4-wine-red-8997032896096
 valencia-vc354-naranja-8997032896089
 valencia-vc364-ivory-8997032897116
 valencia-vc364-wine-red-8997032897055

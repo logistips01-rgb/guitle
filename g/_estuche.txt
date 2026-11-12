@@ -1363,9 +1363,9 @@ rapsody-estuche-armonia-clasica-azul-8412345001987
 rapsody-estuche-armonia-clasica-crema-8412345069895
 rapsody-estuche-armonia-clasica-gris-8412345002007
 rapsody-estuche-armonia-clasica-negro-8412345069888
-rapsody-estuche-armonia-clasica-negro-rayas-orayashtml
+rapsody-estuche-armonia-clasica-negro-rayas-8412345122576
 rapsody-estuche-armonia-clasica-plateado-8412345001994
-rapsody-estuche-armonia-clasica-rojo-carojohtml
+rapsody-estuche-armonia-clasica-rojo-8412345069901
 rapsody-estuche-csg002a-black-blue-negro-azul-enegroazul
 rapsody-estuche-csg002a-black-burgundy-negro-burdeos-groburdeos
 rapsody-estuche-csg002a-black-golden-negro-dorado-egrodorado
@@ -1494,7 +1494,6 @@ tobago-funda-acolchada-para-3700166322349
 tobago-htoagb30j-funda-jumbo-3700166373570
 tobago-htoesb-n-3700166311367
 tontrager-tg-10-ch-gb-konzertgitarrentasche-1-2-grau-schwarz-4250771300007
-tontrager-tg25c-gb-konzertgitarren-tasche-grau-4250771303787
 turbosound-ip1000-tb-4033653104111
 turbosound-ip2000-tb-4033653104135
 turbosound-ip3000-pc-4033653107136

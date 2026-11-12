@@ -996,8 +996,6 @@ markbass-mb58r-104-energy-box-8-coluna-passiva-800w-baixo-ixobp32269
 markbass-mb58r-104-p-4-8059307422086
 markbass-mb58r-104-p-8059307422079
 markbass-mb58r-104-pure-4-8059307422000
-markbass-mb58r-104-pure-4-8r104pure4
-markbass-mb58r-104-pure-4-ohm-04pure4ohm
 markbass-mb58r-104-pure-8-ohm-8059307421997
 markbass-mb58r-104-pure-box-4-box4p40647
 markbass-mb58r-104-pure-box-8-box8p45315
@@ -1057,7 +1055,6 @@ markbass-traveler-151p-8033829130612
 marshall-1922-5030463001844
 marshall-1936-5030463009031
 marshall-1936v-5030463092941
-marshall-1959-amp-series-5030463585474
 marshall-1959-modified-5030463631553
 marshall-1959hw-handwired-5030463149614
 marshall-1960a-5030463039595
@@ -1100,7 +1097,6 @@ marshall-dsl20-5030463472682
 marshall-dsl20cr-5030463472507
 marshall-dsl40cr-5030463429426
 marshall-dsl5cr-5030463428719
-marshall-jcm-800-amp-series-5030463585733
 marshall-jcm800-2203-vintage-5030463125724
 marshall-jcm900-4100-vintage-5030463024218
 marshall-jtm45-2245-vintage-5030463125601
@@ -1444,6 +1440,7 @@ sx-amplificador-de-bajo-10w-6971047519609
 sx-ba1565-amplificador-bajo-15w-6971047519616
 synergy-bman-preamp-module-763815130101
 synergy-bogner-ecstasy-preamp-module-763815131573
+synergy-bogner-uberschall-preamp-module-763815131566
 synergy-diezel-herbert-preamp-module-763815132921
 synergy-diezel-vh-4-preamp-module-763815130118
 synergy-drect-preamp-module-763815134222

@@ -198,7 +198,6 @@ dw-bateria-performance-chrome-shadow-rock-202619061742
 dw-birch-classic-grey-marine-ymarinehtm
 dw-collectors-series-bateria-acustica-aztec-gold-metallic-lacquer-200720260952
 dw-design-4-piece-exotic-burl-ltd-burlltdhtm
-dw-design-6-piece-exotic-burl-ltd-burlltdhtm
 dw-design-frequent-flyer-black-erblackhtm
 dw-design-mini-pro-16-satin-black-inblackhtm
 dw-design-mini-pro-18-satin-black-inblackhtm
@@ -214,7 +213,6 @@ dw-design-titanium-satin-3pcs-kit-3pcskithtm
 dw-dwe-e33-5pcs-set-finish-ply-dn-shplydnhtm
 dw-dwe-e33-5pcs-set-midnight-blue-ghtbluehtm
 dw-dwe-e33-drum-kit-black-galaxy-kgalaxyhtm
-dw-dwe-e33-drum-kit-exotic-ltd-oticltdhtm
 dw-dwe-e33-drum-kit-finish-ply-dn-shplydnhtm
 dw-dwe-e33-drum-kit-midnight-blue-ghtbluehtm
 dw-exotic-giant-quilted-sapele-dsapelehtm
@@ -1275,8 +1273,6 @@ roland-td-07kv-landtd07kv
 roland-td-07kv2-bateria-electronica-4957054524364
 roland-td-07kv2-e-drum-set-bundle-tbundlehtm
 roland-td-07kv2-v-drum-set-drumsethtm
-roland-td-07kv2-v-drums-kit-new-model-mkitp20600
-roland-td-07kv2-v-drums-kit-new-model-odelp45644
 roland-td-2k-e-drums-pack-roland-dap-2x-auriculares-roland-rh-5-p2xbp39679
 roland-td-50kv-v-drums-kit-4957054509170
 roland-td-513-4957054521066
@@ -1330,7 +1326,6 @@ slingerland-22-studio-king-3pc-kit-vts-ckitvtshtm
 slingerland-22-studio-king-4pc-w-sn-rcr-cwsnrcrhtm
 slingerland-studio-king-4-piece-shell-pack-del-norte-black-lacquer-lackp44178
 sonor-150th-craftsmen-s-set-afm-ssetafmhtm
-sonor-150th-lite-shell-set-sbi-4044661745418
 sonor-aq1-20-studio-drumset-caribbean-blue-4044661742127
 sonor-aq2-14-aqua-silver-burst-martini-drumset-4044661503377
 sonor-aq2-20-brown-fade-studio-drumset-4044661503285
