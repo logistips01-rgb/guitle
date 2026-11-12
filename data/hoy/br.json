@@ -1,66 +1,36 @@
 {
- "fecha": "2026-11-11",
+ "fecha": "2026-11-12",
  "pais": "br",
  "items": [
   {
-   "slug": "strinberg-sd301hcr-ws-galaxy-series-folk-de-aco-walnut-fosco-c-efeitos-e-bag-7899854524120",
-   "name": "Strinberg SD301HCR WS Galaxy Series Folk de Aço Walnut Fosco C/ Efeitos e Bag",
-   "brand": "Strinberg",
-   "price": "R$ 1.665,00",
-   "store": "Akustica Musical",
-   "kind": "acustica",
-   "img": "9ec3aaf0d4e0d4f3.webp",
-   "why": "R$ 224,10 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "tagima-tw-61-jazzmaster-fiesta-red-7898563976640",
-   "name": "Tagima TW-61 Jazzmaster Fiesta Red",
-   "brand": "Tagima",
-   "price": "R$ 1.376,10",
-   "store": "Akustica Musical",
+   "slug": "squier-fender-squier-sonic-telecaster-lr-torino-red-717669815943",
+   "name": "Squier Fender Squier Sonic Telecaster LR - Torino RED",
+   "brand": "Squier",
+   "price": "R$ 1.726,09",
+   "store": "Fender Brasil (Pride Music)",
    "kind": "electrica",
-   "img": "85e9fc375d415d3e.webp",
-   "why": "R$ 122,90 a menos que em qualquer outra loja"
+   "img": "ca2aa4d3a96e8b03.webp",
+   "why": "R$ 563,79 a menos que em qualquer outra loja"
   },
   {
-   "slug": "takamine-gd11mce-mahogany-tp-4t-190262041498",
-   "name": "Takamine GD11MCE Mahogany & TP-4T",
-   "brand": "Takamine",
-   "price": "R$ 2.699,10",
-   "store": "Akustica Musical",
-   "kind": "acustica",
-   "img": "760729a2bf3a13fe.webp",
-   "why": "R$ 180 a menos que em qualquer outra loja"
+   "slug": "jackson-series-dinky-js12-metallic-red-885978976799",
+   "name": "Jackson Series Dinky JS12 Metallic Red",
+   "brand": "Jackson",
+   "price": "R$ 1.889,10",
+   "store": "Mundomax",
+   "kind": "electrica",
+   "img": "1e42736b9927f79e.webp",
+   "why": "R$ 500,90 a menos que em qualquer outra loja"
   },
   {
-   "slug": "giannini-cutway-giannini-gf1d-ceq-3ts-sb-7890443020054",
-   "name": "Giannini Cutway Giannini Gf1d Ceq 3TS Sb",
-   "brand": "Giannini",
-   "price": "R$ 899,00",
-   "store": "Cheiro de Música",
-   "kind": "acustica",
-   "img": "365ead611d5add43.webp",
-   "why": ""
-  },
-  {
-   "slug": "tagima-andes-latin-america-bks-folk-black-satin-7898563976381",
-   "name": "Tagima Andes Latin America BKS Folk Black Satin",
+   "slug": "tagima-ws30-jumbo-aco-eletroacustico-natural-7898651946333",
+   "name": "Tagima WS30 Jumbo Aço Eletroacústico Natural",
    "brand": "Tagima",
-   "price": "R$ 945,00",
-   "store": "Akustica Musical",
+   "price": "R$ 989,91",
+   "store": "Luggi",
    "kind": "acustica",
-   "img": "597b0658d96c6d47.webp",
-   "why": ""
-  },
-  {
-   "slug": "strinberg-dobro-resonator-acustico-strinberg-sdb30-sb-7899854510840",
-   "name": "Strinberg Dobro Resonator Acústico Strinberg SDB30 SB",
-   "brand": "Strinberg",
-   "price": "R$ 1.444,99",
-   "store": "RCK Audio",
-   "kind": "acustica",
-   "img": "7ebb33a1b7185537.webp",
-   "why": ""
+   "img": "1c0783c2cb04303e.webp",
+   "why": "R$ 259,58 a menos que em qualquer outra loja"
   }
  ]
 }

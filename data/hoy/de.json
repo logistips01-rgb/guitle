@@ -1,86 +1,36 @@
 {
- "fecha": "2026-11-11",
+ "fecha": "2026-11-12",
  "pais": "de",
  "items": [
   {
-   "slug": "gretsch-ltd-edition-electromatic-black-limba-cvt-rw-sunburst-197955147864",
-   "name": "Gretsch LTD Edition Electromatic Black Limba CVT RW Sunburst",
-   "brand": "Gretsch",
-   "price": "539 €",
+   "slug": "ortega-r221bk-7-8-840553070019",
+   "name": "Ortega R221BK-7/8",
+   "brand": "Ortega",
+   "price": "239 €",
    "store": "Session",
-   "kind": "electrica",
-   "img": "a01073f9ffdbdc1c.webp",
+   "kind": "clasica",
+   "img": "d26af8154790b324.webp",
    "why": "60 € günstiger als in allen anderen Shops"
   },
   {
-   "slug": "ibanez-iceman-ic420-gd-e-gitarre-gdegitarre",
-   "name": "Ibanez Iceman IC420-GD E-Gitarre",
-   "brand": "Ibanez",
-   "price": "629 €",
-   "store": "IMM Professional",
-   "kind": "electrica",
-   "img": "275823f40fc1dcf2.webp",
-   "why": "70 € günstiger als in allen anderen Shops"
-  },
-  {
-   "slug": "cort-pure-o-natural-satin-8809817983337",
-   "name": "Cort PURE-O Natural Satin",
-   "brand": "Cort",
-   "price": "349 €",
-   "store": "Session",
-   "kind": "acustica",
-   "img": "4f4663a4c8770ced.webp",
-   "why": "50 € günstiger als in allen anderen Shops"
-  },
-  {
-   "slug": "fender-cd-60s-all-mahogany-885978875740",
-   "name": "Fender CD-60S All Mahogany",
-   "brand": "Fender",
-   "price": "199 €",
-   "store": "Musikhaus Markstein",
-   "kind": "acustica",
-   "img": "1199c59493dd3586.webp",
-   "why": ""
-  },
-  {
-   "slug": "gretsch-jim-dandy-parlor-wn-wpg-rxb-717669567194",
-   "name": "Gretsch Jim Dandy Parlor WN WPG RXB",
-   "brand": "Gretsch",
-   "price": "199 €",
-   "store": "Session",
-   "kind": "acustica",
-   "img": "d213e661c10ebada.webp",
-   "why": ""
-  },
-  {
-   "slug": "lag-t70dnat-tramontane-70-dreadnought-akustik-gitarre-3700166371798",
-   "name": "Lag T70DNAT Tramontane 70 Dreadnought Akustik Gitarre",
-   "brand": "Lag",
-   "price": "258 €",
+   "slug": "manuel-rodriguez-academia-ac40-s-zebrano-fichte-konzert-gitarre-4-4-501-182-4046662287935",
+   "name": "Manuel Rodriguez Academia AC40-S Zebrano/Fichte Konzert-Gitarre 4/4 (501.182)",
+   "brand": "Manuel Rodriguez",
+   "price": "396,66 €",
    "store": "Shop2Rock",
-   "kind": "acustica",
-   "img": "e2795eb5d9038a78.webp",
-   "why": ""
+   "kind": "clasica",
+   "img": "7c6f902cab2f882d.webp",
+   "why": "98,34 € günstiger als in allen anderen Shops"
   },
   {
-   "slug": "cort-earth-70-br2-dreadnought-akustik-gitarre-braun-hochglanz-8809383839304",
-   "name": "Cort Earth 70 BR2 Dreadnought Akustik-Gitarre, braun hochglanz",
-   "brand": "Cort",
-   "price": "266 €",
-   "store": "Shop2Rock",
-   "kind": "acustica",
-   "img": "821f4aa613ee8947.webp",
-   "why": ""
-  },
-  {
-   "slug": "ibanez-aad70ce-tbn-4549763376961",
-   "name": "Ibanez AAD70CE-TBN",
+   "slug": "ibanez-ae170-tbk-westerngitarre-4549763365958",
+   "name": "Ibanez AE170-TBK Westerngitarre",
    "brand": "Ibanez",
-   "price": "299 €",
-   "store": "Session",
+   "price": "397 €",
+   "store": "Zoundhouse",
    "kind": "acustica",
-   "img": "5805931e4517f662.webp",
-   "why": ""
+   "img": "659e62b911d38506.webp",
+   "why": "88 € günstiger als in allen anderen Shops"
   }
  ]
 }
