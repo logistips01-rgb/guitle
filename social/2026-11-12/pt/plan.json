@@ -1,0 +1,167 @@
+{
+ "date": "2026-11-12",
+ "fecha": "12 de novembro",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "prs-se-custom-24-bg-825362072096",
+   "name": "PRS SE Custom 24 BG",
+   "brand": "PRS",
+   "kind": "electrica",
+   "img": "https://detalhes.egitana.pt/prs-se-custom-24-bg_60892831c6f64.jpg",
+   "th": "73168901543a0eaf.webp",
+   "thimg": "https://guitarcustom.pt/wp-content/uploads/2022/12/647577-scaled.jpg",
+   "price": 655.0,
+   "store": "Egitana",
+   "stores": 3,
+   "median": 724.5,
+   "max": 725.0,
+   "next": 724.0,
+   "rows": [
+    [
+     "Egitana",
+     655.0
+    ],
+    [
+     "Musifex",
+     724.0
+    ],
+    [
+     "Thomann",
+     725.0
+    ]
+   ],
+   "pvp": null,
+   "why": "69 € a menos do que em qualquer outra loja",
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Promoção do dia: PRS SE Custom 24 BG\n💶 655 € na Egitana, comparada em 3 lojas.\n📉 69 € a menos do que em qualquer outra loja.\n\n🔎 Compara o preço em guitle.com/pt (todas as promoções de hoje no link da bio 👆).\nPreço de 12 de novembro; pode mudar.\n\n#guitarra #guitarrista #promoção #portugal #guitarraeletrica #prs"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-grgr221pa-aqb-4549763280879",
+   "name": "Ibanez GRGR221PA-AQB",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://detalhes.egitana.pt/ibanez-grgr221pa-aqb_6042605a9ab95.jpg",
+   "th": "fbb170b38237b5f8.webp",
+   "thimg": "https://musifex.pt/web/image/product.template/10755/image_1024?unique=e8a22d0",
+   "price": 220.0,
+   "store": "Egitana",
+   "stores": 3,
+   "median": 238.5,
+   "max": 245.0,
+   "next": 232.0,
+   "rows": [
+    [
+     "Egitana",
+     220.0
+    ],
+    [
+     "Musifex",
+     232.0
+    ],
+    [
+     "Thomann",
+     245.0
+    ]
+   ],
+   "pvp": null,
+   "why": "12 € a menos do que em qualquer outra loja",
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "schecter-omen-extreme-6-bch-remebchhtm",
+   "name": "Schecter Omen Extreme 6 BCH",
+   "brand": "Schecter",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/109717.jpg",
+   "th": "76288cdccde0451e.webp",
+   "thimg": "https://musifex.pt/web/image/product.template/5791/image_1024?unique=70af23c",
+   "price": 555.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 585.0,
+   "max": 585.0,
+   "next": 585.0,
+   "rows": [
+    [
+     "Thomann",
+     555.0
+    ],
+    [
+     "Egitana",
+     585.0
+    ],
+    [
+     "Musifex",
+     585.0
+    ]
+   ],
+   "pvp": null,
+   "why": "30 € a menos do que em qualquer outra loja",
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "fender-standard-stratocaster-mn-wpg-owt-885978117857",
+   "name": "Fender Standard Stratocaster MN WPG OWT",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://detalhes.egitana.pt/fender-standard-strat-mn-wpg-owt_67927eef6b4d8.jpg",
+   "th": "0ba63144b1fdabe1.webp",
+   "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/608521.jpg",
+   "price": 507.0,
+   "store": "Egitana",
+   "stores": 3,
+   "median": 529.0,
+   "max": 539.0,
+   "next": 519.0,
+   "rows": [
+    [
+     "Egitana",
+     507.0
+    ],
+    [
+     "Musifex",
+     519.0
+    ],
+    [
+     "Thomann",
+     539.0
+    ]
+   ],
+   "pvp": null,
+   "why": "12 € a menos do que em qualquer outra loja",
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}

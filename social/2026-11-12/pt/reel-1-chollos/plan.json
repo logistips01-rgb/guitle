@@ -1,0 +1,139 @@
+{
+ "fecha": "12 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "ibanez-grg220pa1-bkb-0pa1bkbhtm",
+    "name": "Ibanez GRG220PA1-BKB",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/557518.jpg",
+    "th": "43a8dadefd71f5f9.webp",
+    "thimg": "https://musifex.pt/web/image/product.template/11155/image_1024?unique=e8a22d0",
+    "price": 272.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 292.0,
+    "max": 299.0,
+    "next": 285.0,
+    "rows": [
+     [
+      "Thomann",
+      272.0
+     ],
+     [
+      "Musifex",
+      285.0
+     ],
+     [
+      "Egitana",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "why": "13 € a menos do que em qualquer outra loja",
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "fender-standard-series-telecaster-mn-btb-mnbtb11621",
+    "name": "Fender Standard Series Telecaster MN BTB",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://musifex.pt/web/image/product.template/11621/image_1024?unique=e8a22d0",
+    "th": "3f05a2d667b95946.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/608517.jpg",
+    "price": 495.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 510.0,
+    "max": 515.0,
+    "next": 505.0,
+    "rows": [
+     [
+      "Musifex",
+      495.0
+     ],
+     [
+      "Egitana",
+      505.0
+     ],
+     [
+      "Thomann",
+      515.0
+     ]
+    ],
+    "pvp": null,
+    "why": "10 € a menos do que em qualquer outra loja",
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "takamine-gn71ce-bsb-190262041610",
+    "name": "Takamine GN71CE-BSB",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://detalhes.egitana.pt/takamine-gn71ce-bsb_5b3e460eeb586.jpg",
+    "th": "d5c29db92798b0a1.webp",
+    "thimg": "https://musifex.pt/web/image/product.template/10934/image_1024?unique=06dd04a",
+    "price": 418.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 460.5,
+    "max": 499.0,
+    "next": 422.0,
+    "rows": [
+     [
+      "Egitana",
+      418.0
+     ],
+     [
+      "Thomann",
+      422.0
+     ],
+     [
+      "Musifex",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "why": "4 € a menos do que em qualquer outra loja",
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}
