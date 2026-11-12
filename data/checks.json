@@ -1721,6 +1721,15 @@
  {
   "kind": "varios",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Daddario NYXL45105 Long Scale [45-105]",
+  "slug": "daddario-nyxl45105-long-scale-45-105-19954176846",
+  "price": 30.0,
+  "median": 41.105000000000004
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
   "store": "mat",
   "name": "Dunlop Pack 6 Puas Max Grip Jazz III Stiffo 1,38mm",
   "slug": "dunlop-pack-6-puas-max-grip-jazz-iii-stiffo-1-38mm-710137043589",
