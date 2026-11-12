@@ -1,0 +1,75 @@
+{
+ "fecha": "12 de noviembre",
+ "post": {
+  "type": "bf",
+  "days": 15,
+  "deal": {
+   "slug": "fender-standard-telecaster-mn-butterscotch-blonde-885978118137",
+   "name": "Fender Standard Telecaster MN Butterscotch Blonde",
+   "brand": "Fender",
+   "kind": "electrica",
+   "img": "https://www.numemusic.es/media/catalog/product/7/3/734661_1_13db.jpg?store=nume_es&image-type=image",
+   "th": "d9b5daa414a7c40d.webp",
+   "thimg": "https://woodbrass.es/cdn/shop/files/3e8f4445814e852aa3cdd943e7ca470c449d0b8e_FMIC_0266021550.jpg?height=1200&pad_color=ffffff&v=1793736000&width=1200",
+   "price": 508.0,
+   "store": "Egitana",
+   "stores": 12,
+   "median": 514.1,
+   "max": 629.0,
+   "next": 509.0,
+   "rows": [
+    [
+     "Egitana",
+     508.0
+    ],
+    [
+     "Auvisa",
+     509.0
+    ],
+    [
+     "MAT Guitars",
+     514.0
+    ],
+    [
+     "Pronorte",
+     514.0
+    ],
+    [
+     "Nume Music",
+     514.1
+    ],
+    [
+     "Alteisa",
+     514.1
+    ],
+    [
+     "Alfasoni",
+     514.1
+    ],
+    [
+     "Session",
+     545.0
+    ],
+    [
+     "Woodbrass",
+     555.0
+    ],
+    [
+     "Thomann",
+     555.0
+    ],
+    [
+     "Musicopolix",
+     560.07
+    ],
+    [
+     "Microfusa",
+     629.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ },
+ "stories": []
+}

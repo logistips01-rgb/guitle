@@ -1,0 +1,191 @@
+{
+ "fecha": "12 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "prs-se-silver-sky-maple-lh-summit-purple-825362248477",
+    "name": "PRS SE Silver Sky Maple LH Summit Purple",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://www.numemusic.es/media/catalog/product/1/0/1006649_a948.jpg?store=nume_es&image-type=image",
+    "th": "80e7bc22b28ee5ad.webp",
+    "thimg": "https://www.pronorte.es/_files/product/30338/gallery3/guitarra-electrica-zurda-prs-se-silver-sky-maple-lh-summit-purple-3.jpg",
+    "price": 597.0,
+    "store": "Woodbrass",
+    "stores": 7,
+    "median": 960.2,
+    "max": 995.0,
+    "next": 753.0,
+    "rows": [
+     [
+      "Woodbrass",
+      597.0
+     ],
+     [
+      "Thomann",
+      753.0
+     ],
+     [
+      "MAT Guitars",
+      869.0
+     ],
+     [
+      "Alteisa",
+      925.4
+     ],
+     [
+      "Nume Music",
+      995.0
+     ],
+     [
+      "Pronorte",
+      995.0
+     ],
+     [
+      "Microfusa",
+      995.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 19 % por debajo de su media",
+    "pct": 19,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "ibanez-grx20-bkn-black-night-4515110324756",
+    "name": "Ibanez GRX20 BKN Black Night",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://alteisa.com/157472-large_default/ibanez-grx20-guitarra-electrica-bkn-black-night.jpg",
+    "th": "985ab992888a15d1.webp",
+    "thimg": "https://partituraonline.com/146548-home_default/ibanez-grx20-bkn.jpg",
+    "price": 164.0,
+    "store": "Alteisa",
+    "stores": 3,
+    "median": 219.0,
+    "max": 219.0,
+    "next": 219.0,
+    "rows": [
+     [
+      "Alteisa",
+      164.0
+     ],
+     [
+      "Woodbrass",
+      219.0
+     ],
+     [
+      "Musicsales",
+      219.0
+     ]
+    ],
+    "pvp": null,
+    "why": "55 € menos que en cualquier otra tienda",
+    "pct": 25,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "fender-california-standard-redondo-spruce-top-natural-885978677856",
+    "name": "Fender California Standard Redondo Spruce Top Natural",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/4/748324_1_8952.jpg?store=nume_es&image-type=image",
+    "th": "eb246c170ce0c1d4.webp",
+    "thimg": null,
+    "price": 150.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 170.0,
+    "max": 199.99,
+    "next": 168.0,
+    "rows": [
+     [
+      "Woodbrass",
+      150.0
+     ],
+     [
+      "Musicopolix",
+      168.0
+     ],
+     [
+      "Musical San Francisco",
+      170.0
+     ],
+     [
+      "Nume Music",
+      199.99
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 12 % por debajo de su media",
+    "pct": 12,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "admira-luna-electrificada-fishman-cutaway-8436032377674",
+    "name": "Admira Luna Electrificada Fishman Cutaway",
+    "brand": "Admira",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/7/0/709100_1_3cb1.jpg?store=nume_es&image-type=image",
+    "th": "a4a483e0ab0953d9.webp",
+    "thimg": "https://auvisa.com/cdn/shop/files/95304.jpg?v=1730371955&width=2000",
+    "price": 221.0,
+    "store": "Microfusa",
+    "stores": 9,
+    "median": 293.0,
+    "max": 325.01,
+    "next": 293.0,
+    "rows": [
+     [
+      "Microfusa",
+      221.0
+     ],
+     [
+      "Nume Music",
+      293.0
+     ],
+     [
+      "Musicopolix",
+      293.0
+     ],
+     [
+      "MAT Guitars",
+      293.0
+     ],
+     [
+      "Auvisa",
+      293.0
+     ],
+     [
+      "Neomúsica",
+      293.0
+     ],
+     [
+      "Musical San Francisco",
+      293.0
+     ],
+     [
+      "Alteisa",
+      293.0
+     ],
+     [
+      "Abrines Música",
+      325.01
+     ]
+    ],
+    "pvp": null,
+    "why": "Bajada real: 19 % por debajo de su media",
+    "pct": 19,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}
