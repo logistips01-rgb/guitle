@@ -1,0 +1,114 @@
+{
+ "fecha": "12 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "bf",
+  "days": 15,
+  "deal": {
+   "slug": "squier-sonic-telecaster-maple-butterscotch-blonde-guitar-717669815936",
+   "name": "Squier Sonic Telecaster Maple Butterscotch Blonde Guitar",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://www.bonnersmusic.co.uk/cdn/shop/products/Untitled-2_c64e2c77-ff23-4796-8f34-8f1c0b160b0b.jpg?v=1704198294&width=1920",
+   "th": "9011c97780402923.webp",
+   "thimg": "https://images.guitarguitar.co.uk/cdn/large/170/230126399451008f.jpg",
+   "price": 149.0,
+   "store": "Bonners Music",
+   "stores": 12,
+   "median": 169.0,
+   "max": 189.99,
+   "next": 159.0,
+   "rows": [
+    [
+     "Bonners Music",
+     149.0
+    ],
+    [
+     "guitarguitar",
+     159.0
+    ],
+    [
+     "Fair Deal Music",
+     159.99
+    ],
+    [
+     "Paisley Music",
+     159.99
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     165.0
+    ],
+    [
+     "R&T Music",
+     169.0
+    ],
+    [
+     "Wunjo Guitars",
+     169.0
+    ],
+    [
+     "Reidys",
+     179.0
+    ],
+    [
+     "Ness Music",
+     179.0
+    ],
+    [
+     "Project Music",
+     189.0
+    ],
+    [
+     "Music Bros",
+     189.0
+    ],
+    [
+     "Guitarbitz",
+     189.99
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}
