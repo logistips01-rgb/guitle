@@ -1,0 +1,184 @@
+{
+ "fecha": "12 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "strinberg-telecaster-tc120s-iv-9734p22361",
+    "name": "Strinberg Telecaster TC120S IV",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://d3inm8bow7n5hy.cloudfront.net/Custom/Content/Products/22/36/22361_guitarra-strinberg-telecaster-tc120s-iv-ps-12815-9734_l1_638676114218797270.webp",
+    "th": "2d80a50ee06b0301.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1037000/guitarra_tc120s_iv_telecaster_strinberg_3769_1_ce61b08414398eb125002a370e631f84.jpg",
+    "price": 860.0,
+    "store": "China Som",
+    "stores": 3,
+    "median": 1075.0,
+    "max": 1100.0,
+    "next": 1050.0,
+    "rows": [
+     [
+      "China Som",
+      860.0
+     ],
+     [
+      "Tango Music",
+      1050.0
+     ],
+     [
+      "Só Som",
+      1100.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 190 a menos que em qualquer outra loja",
+    "pct": 18,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "tagima-tg-520-metallic-gold-yellow-7898651948511",
+    "name": "Tagima TG-520 Metallic Gold Yellow",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://static.mundomax.com.br/produtos/73321/1200/4.jpg",
+    "th": "80712b2fb2c61a09.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1139574/guitarra_tagima_tg520_woodstock_metallic_gold_yellow_16861_1_a1bd09d2bdebb9f9f1599124bf33e0a1.jpg",
+    "price": 1034.1,
+    "store": "Mundomax",
+    "stores": 5,
+    "median": 1229.9,
+    "max": 1299.0,
+    "next": 1199.0,
+    "rows": [
+     [
+      "Mundomax",
+      1034.1
+     ],
+     [
+      "Cheiro de Música",
+      1199.0
+     ],
+     [
+      "Megasom",
+      1199.9
+     ],
+     [
+      "Luggi",
+      1259.9
+     ],
+     [
+      "Casa da Música",
+      1299.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 164,90 a menos que em qualquer outra loja",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "takamine-gc1ce-n-tp-4t-4432p20179",
+    "name": "Takamine GC1CE N & TP-4T",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://d3inm8bow7n5hy.cloudfront.net/Custom/Content/Products/20/17/20179_violao-takamine-gc1ce-n-ps-12815-4432_l1_638858537274168383.webp",
+    "th": "cf641454d526bbba.webp",
+    "thimg": "https://x5music.vtexassets.com/arquivos/ids/187170/violao-takamine-gc1ce-_-tp4t-lh.jpg?v=637365641936930000",
+    "price": 2900.0,
+    "store": "China Som",
+    "stores": 3,
+    "median": 3546.5699999999997,
+    "max": 3550.0,
+    "next": 3543.14,
+    "rows": [
+     [
+      "China Som",
+      2900.0
+     ],
+     [
+      "X5 Music",
+      3543.14
+     ],
+     [
+      "Tuner Music",
+      3550.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 643,14 a menos que em qualquer outra loja",
+    "pct": 18,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "giannini-grmn-bk-roadman-eletrico-portatil-nylon-bag-7890443024847",
+    "name": "Giannini GRMN Bk Roadman Eletrico Portatil Nylon Bag",
+    "brand": "Giannini",
+    "kind": "clasica",
+    "img": "https://images.tcdn.com.br/img/img_prod/1402804/violao_giannini_grmn_bk_roadman_eletrico_portatil_nylon_bag_5609_1_cfba9b321b068a8a5f1126ccb7847e36.jpeg",
+    "th": "6c6a2b7ab480c6ed.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1175919/violao_eletrico_giannini_roadman_grmn_bk_nylon_c_bag_25391_1_544c92e23fe0e4fba146225fdbdd93ab.jpeg",
+    "price": 1799.0,
+    "store": "Cheiro de Música",
+    "stores": 3,
+    "median": 2263.35,
+    "max": 2499.0,
+    "next": 2027.7,
+    "rows": [
+     [
+      "Cheiro de Música",
+      1799.0
+     ],
+     [
+      "Mundomax",
+      2027.7
+     ],
+     [
+      "Casa da Música",
+      2499.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 228,70 a menos que em qualquer outra loja",
+    "pct": 11,
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}
