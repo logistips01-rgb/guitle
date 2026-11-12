@@ -56,6 +56,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "ESP LTD JM-I QM Deep Blood Moon",
+  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
+  "price": 1421.0,
+  "median": 1895.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -124,15 +133,6 @@
   "slug": "yamaha-pacifica-single-cut-standard-plus-pacs-11s-desert-burst-con-funda-4957812710657",
   "price": 703.0,
   "median": 949.5
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "auvisa",
-  "name": "Cort G290 Fat II Avb Antique Violin Burst.",
-  "slug": "cort-g290-fat-ii-avb-antique-violin-burst-8809625369569",
-  "price": 529.0,
-  "median": 719.0
  },
  {
   "kind": "electrica",
@@ -329,7 +329,7 @@
   "store": "woodbrass",
   "name": "Sire T7 FM New Gen NT (R) Natural",
   "slug": "sire-t7-fm-new-gen-nt-r-natural-810187571954",
-  "price": 582.0,
+  "price": 575.0,
   "median": 787.0
  },
  {
@@ -484,15 +484,6 @@
   "slug": "super-viking-wct-semi-hollow-body-7340071901947",
   "price": 675.0,
   "median": 948.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Vox Bobcat V90 Bigsby Blue",
-  "slug": "vox-bobcat-v90-bigsby-blue-4959112227576",
-  "price": 1099.0,
-  "median": 1647.97
  },
  {
   "kind": "electrica",
@@ -693,6 +684,27 @@
   "median": 362.0
  },
  {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Sx ED1 White",
+  "slug": "sx-ed1-white-6971047510965",
+  "price": 125.4,
+  "median": 186.275
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Epiphone Casino USA Vintage Burst Original",
+  "slug": "epiphone-casino-usa-vintage-burst-original-711106030975"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Jet JT300-CAR P90 Candy Red",
+  "slug": "jet-jt300-car-p90-candy-red-90candyred"
+ },
+ {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
@@ -830,6 +842,33 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 1 TBW1TE Viaje",
+  "slug": "lag-bluewave-1-tbw1te-viaje-3700166373082",
+  "price": 399.0,
+  "median": 579.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 1 Travel Marrón",
+  "slug": "lag-bluewave-1-travel-marron-3700166374966",
+  "price": 399.0,
+  "median": 611.495
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 Tbw2Te de viaje",
+  "slug": "lag-bluewave-2-tbw2te-de-viaje-3700166373136",
+  "price": 469.0,
+  "median": 729.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Alvarez AEG95 Shb Elite",
   "slug": "alvarez-aeg95-shb-elite-677523002134",
@@ -875,10 +914,19 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
-  "store": "musicalsanfrancisco",
-  "name": "LÂG Cutaway Dreadnought LÂG Blue Wave 2 Natural",
-  "slug": "lag-cutaway-dreadnought-lag-blue-wave-2-natural-3700166373112",
-  "price": 511.83,
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TBW2ACE Auditorium Ctw",
+  "slug": "lag-bluewave-2-tbw2ace-auditorium-ctw-3700166373099",
+  "price": 469.0,
+  "median": 729.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 TLBW2DCE Dreadnought Cutaway Zurda",
+  "slug": "lag-bluewave-2-tlbw2dce-dreadnought-cutaway-zurda-3700166373150",
+  "price": 469.0,
   "median": 729.0
  },
  {
@@ -1046,6 +1094,15 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg HyVibe 1 Serie 20 Dreadnought Ctw",
+  "slug": "lag-hyvibe-1-serie-20-dreadnought-ctw-3700166366374",
+  "price": 499.0,
+  "median": 883.31
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "Oqan QGA-41CE BL",
   "slug": "oqan-qga-41ce-bl-8435017324016",
@@ -1107,6 +1164,12 @@
   "median": 877.895
  },
  {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Martin 000-28-L Modern Deluxe Lh",
+  "slug": "martin-000-28-l-modern-deluxe-lh-156812542051"
+ },
+ {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1141,6 +1204,15 @@
   "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
   "price": 460.0,
   "median": 647.5
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 2 Cbw2E Classical 4/4",
+  "slug": "lag-bluewave-2-cbw2e-classical-4-4-3700166373105",
+  "price": 469.0,
+  "median": 776.0
  },
  {
   "kind": "clasica",
@@ -1199,11 +1271,50 @@
  {
   "kind": "clasica",
   "type": "fuera_de_lugar",
+  "store": "woodbrass",
+  "name": "Lâg Bluewave 1 TNBW1TE Viaje Nylon",
+  "slug": "lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143",
+  "price": 399.0,
+  "median": 578.0
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Lâg Bluewave 1 TNBW1TE Viaje Nylon",
+  "slug": "lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143"
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "Ortega R122SN-L",
   "slug": "ortega-r122sn-l-842960180374",
   "price": 189.0,
   "median": 269.37
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Caballero by MR Europa 4/4 abeto y caoba mate",
+  "slug": "caballero-by-mr-europa-4-4-abeto-y-caoba-mate-4046662299457"
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Caballero by MR Europa 4/4 cedro y caoba mate",
+  "slug": "caballero-by-mr-europa-4-4-cedro-y-caoba-mate-4046662299440"
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Gewa Pro Natura Silver 1/2 semibrillante",
+  "slug": "gewa-pro-natura-silver-1-2-semibrillante-4046662036229"
+ },
+ {
+  "kind": "clasica",
+  "type": "foto_perdida",
+  "name": "Gewa electroacústica GEWA Student 4/4 negra",
+  "slug": "gewa-electroacustica-gewa-student-4-4-negra-4046662252483"
  },
  {
   "kind": "teclado",
@@ -1212,7 +1323,7 @@
   "name": "Alesis Prestige",
   "slug": "alesis-prestige-694318025482",
   "price": 499.0,
-  "median": 1304.5
+  "median": 1609.0
  },
  {
   "kind": "teclado",
@@ -1221,25 +1332,7 @@
   "name": "Alesis Prestige",
   "slug": "alesis-prestige-694318025482",
   "price": 619.0,
-  "median": 1244.5
- },
- {
-  "kind": "teclado",
-  "type": "fuera_de_lugar",
-  "store": "numemusic",
-  "name": "Casio Privia PX-S1100WE",
-  "slug": "casio-privia-px-s1100we-4971850362630",
-  "price": 476.99,
-  "median": 701.0
- },
- {
-  "kind": "teclado",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Casio Privia PX-S1100WE",
-  "slug": "casio-privia-px-s1100we-4971850362630",
-  "price": 487.0,
-  "median": 695.995
+  "median": 1549.0
  },
  {
   "kind": "pedal",

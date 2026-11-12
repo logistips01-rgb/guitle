@@ -350,7 +350,7 @@ boss-ve-1-vocal-echo-4957054506889
 boss-ve-2-4957054504496
 boss-ve-22-vocal-performer-4957054520410
 boss-ve-5-white-4957054501792
-boss-ve-500-vocal-performer-512354html
+boss-ve-500-vocal-performer-r59506html
 boss-ve-8-851934html
 boss-ve500-4957054512354
 boss-ve8-acoustic-singer-4957054508821
@@ -2502,12 +2502,12 @@ warm-audio-ringerbringer-850031640382
 warm-audio-silver-centavo-850031640443
 warm-audio-wa-1b-compressor-true-270-volts-oltsp33929
 warm-audio-wa-76-p-pedal76-860010169148
+warm-audio-wa-c1-860010169155
 warm-audio-wa-c1-chorus-vibrato-ratop40470
-warm-audio-wa-c1-warm-chorus-vibrato-860010169155
 warm-audio-wa-ftb-foxy-tone-box-850016400543
 warm-audio-wa-pf-the-black-keys-peach-fuzz-850031640962
 warm-audio-wa-tot-throne-of-tone-850031640825
-warm-audio-wa-ts-tube-squealer-overdrive-rivep41643
+warm-audio-wa-ts-tube-squealer-850031640832
 warm-audio-warm-bender-850031640375
 warm-audio-warmdrive-overdrive-850031640153
 waves-abbey-road-reverb-plates-native-atesnative
