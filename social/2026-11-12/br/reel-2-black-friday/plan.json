@@ -1,0 +1,94 @@
+{
+ "fecha": "12 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Anota este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai baixar de verdade na Black Friday?",
+  "bfDecimos": "Em 27 de novembro a gente te conta, com o histórico de preços.",
+  "bfGuarda": "Salve 📌"
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/",
+ "post": {
+  "type": "bf",
+  "days": 15,
+  "deal": {
+   "slug": "tagima-stratocaster-2s-1h-fx-sixmart-ca-tagima-7898563970815",
+   "name": "Tagima Stratocaster 2S 1H FX Sixmart CA - Tagima",
+   "brand": "Tagima",
+   "kind": "electrica",
+   "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/191766/Guitarra-Stratocaster-Sixmart-CA-2S-1H---Tagima.png?v=638483681491930000",
+   "th": "efb40cc5e5b744f7.webp",
+   "thimg": "https://images.tcdn.com.br/img/img_prod/1033692/guitarra_stratocaster_tagima_2s_1h_fx_escala_escura_escudo_bk_sixmart_ca_17353_1_57ec293834eb028325dca3f10e32ecea.jpg",
+   "price": 1369.88,
+   "store": "Ninja Som",
+   "stores": 7,
+   "median": 1694.5,
+   "max": 1859.85,
+   "next": 1439.1,
+   "rows": [
+    [
+     "Ninja Som",
+     1369.88
+    ],
+    [
+     "Mundomax",
+     1439.1
+    ],
+    [
+     "Música Center",
+     1458.0
+    ],
+    [
+     "Cheiro de Música",
+     1599.0
+    ],
+    [
+     "Só Som",
+     1790.0
+    ],
+    [
+     "Music Hall Center",
+     1790.0
+    ],
+    [
+     "Tuner Music",
+     1859.85
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}
