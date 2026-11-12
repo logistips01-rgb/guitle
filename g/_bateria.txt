@@ -1608,7 +1608,6 @@ tama-imperialstar-22-5pcs-hbk-shbkp12449
 tama-imperialstar-22-5pcs-hlb-b575863htm
 tama-imperialstar-22-5pcs-slm-5pcsslmhtm
 tama-imperialstar-22-6-piezas-brm-sbrmp45074
-tama-imperialstar-22-6pcs-brm-m576001htm
 tama-imperialstar-22-6pcs-hbk-k575862htm
 tama-imperialstar-22-6pcs-hlb-b575864htm
 tama-imperialstar-22-burlp41053
@@ -1722,7 +1721,6 @@ tama-starcl-performer-5pcs-dcf-5pcsdcfhtm
 tama-starcl-performer-5pcs-dro-5pcsdrohtm
 tama-starcl-performer-5pcs-fbk-5pcsfbkhtm
 tama-starcl-performer-5pcs-msl-5pcsmslhtm
-tama-starcl-performer-5pcs-pbk-5pcspbkhtm
 tama-starcl-performer-5pcs-sgr-5pcssgrhtm
 tama-starcl-performer-5pcs-ska-5pcsskahtm
 tama-starcl-walnut-birch-20-cco-ch20ccohtm

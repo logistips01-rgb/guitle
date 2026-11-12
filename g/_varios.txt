@@ -784,9 +784,9 @@ dr-liston-s-dr-gs-grgp-guitar-remedy-gig-polish-cloth-hclothhtml
 dr-liston-s-dr-gs-grlo-guitar-remedy-lemon-oil-cloth-5065017275402
 dr-liston-s-dr-lgp-150-luxury-guitar-polish-150-ml-5065017275167
 dr-liston-s-luxury-chrome-polish-5065017275013
-dr-parts-gcp50a-cejilla-para-6940651406230
 dr-parts-gcp50c-cejilla-guitarra-6940651406285
 dr-parts-sld60-slide-metalico-6971047518367
+dr-parts-sp-3-strap-lock-chrome-romep34208
 dr-string-dr-bkb6-30-black-beauties-30-125-600781001748
 dr-strings-black-beauties-bka-12-phosphor-bronze-light-012-054-600781001519
 dr-strings-black-beauties-bkb-40-040-100-600781003032
@@ -2079,7 +2079,6 @@ fender-classic-core-010-046-885978198436
 fender-classic-core-255r-nickel-010-046-cuerdas-885978198757
 fender-clavija-standard-885978546565
 fender-correa-de-cuero-negro-de-2-fender-essentials-ialsp45521
-fender-correa-de-cuero-negro-desgastado-de-2-5-de25p45527
 fender-correa-de-guitarra-fender-monogram-negro-gris-claro-azul-azulp45519
 fender-correa-de-poliester-negra-fender-gris-de-2-sde2p45426
 fender-correa-supersoft-black-2-885978984916
@@ -2142,8 +2141,6 @@ fender-golpeador-precableado-strato-sss-vintage-noiseless-tortoise-shell-11-8859
 fender-golpeador-precision-bass-tortoise-shell-13-agujeros-885978031382
 fender-golpeador-standard-strato-hss-717669510060
 fender-golpeador-standard-strato-sss-aged-white-moto-717669975692
-fender-golpeador-standard-strato-sss-negro-717669446987
-fender-golpeador-standard-strato-sss-tortoise-717669447151
 fender-golpeador-standard-tele-negro-717669447083
 fender-golpeador-standard-tele-white-pearl-717669447175
 fender-golpeador-standard-telecaster-blanco-717669447090
@@ -2189,7 +2186,6 @@ fender-laurel-electric-capo-885978067275
 fender-level-up-strat-wall-hanger-885978239177
 fender-level-up-tele-wall-hanger-885978239153
 fender-limpiador-cuerpo-custom-shop-885978293384
-fender-locking-tuner-bk-erbkp45424
 fender-locking-tuner-ch-erchp45532
 fender-locking-tuner-ch-nerchp8883
 fender-logo-standard-guitar-tuner-strat-tele-tuning-key-machinehead-headp26159
@@ -2262,9 +2258,8 @@ fender-pickguard-57-precision-bass-1-ply-gold-anodized-717669447045
 fender-pickguard-57-strat-black-3-ply-tblack3ply
 fender-pickguard-62-precision-bass-tortoise-shell-4-ply-717669447052
 fender-pickguard-american-standard-jazz-bass-3-ply-black-717669447137
-fender-pickguard-american-standard-precision-bass-3-ply-black-717669447120
-fender-pickguard-american-standard-strat-wh-717669446994
 fender-pickguard-control-plate-mounting-screws-24-chrome-717669507275
+fender-pickguard-p-bass-bk-717669447120
 fender-pickguard-precision-bass-ams-td-parchment-717669524098
 fender-pickguard-screws-24-stuck-885978973989
 fender-pickguard-screws-black-12-pack-717669069117
@@ -2421,6 +2416,9 @@ fender-strap-wild-animal-print-leopard-885978569434
 fender-strap-wild-animal-print-tiger-885978569427
 fender-strap-wrangler-indigo-717669629113
 fender-strap-wrangler-light-indigo-717669558444
+fender-strat-pickguard-sss-std-bk-717669446987
+fender-strat-pickguard-sss-std-tortoise-shell-717669447151
+fender-strat-pickguard-sss-std-wh-717669446994
 fender-strat-pickguard-sss-std-white-pearl-717669447144
 fender-stratocaster-s-s-s-pickguard-rw-197955138916
 fender-string-bushing-bass-american-vintage-series-set-of-4-717669612122
