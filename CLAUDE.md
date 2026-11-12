@@ -46,6 +46,8 @@
   #vinyldeals #ukvinyl.
 - **eBay y Amazon cuentan siempre** (Manuel monetiza con ellos, 10-11): nunca se descarta un disco porque el más barato
   esté en eBay o Amazon; al contrario, mejor. (Amazon, con sus normas de arriba: sin su precio en imagen ni texto.)
+- **El post del disco es un Reel con música** (Manuel, 12-11): `discos_ig.reel` hace ~9 s a partir de story.jpg (zoom sobre
+  la portada que se abre al precio) con un tema de Kevin MacLeod y su crédito en el texto. La story sigue siendo imagen.
 - Tono de comprador a comprador: «comparamos precios de las tiendas de discos de Reino Unido», nunca que leemos sus
   webs. Solo «más barato en X», nunca «caro en Y».
 - La API no permite poner el sticker de enlace en las stories: dicen «link in bio».

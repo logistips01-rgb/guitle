@@ -227,6 +227,7 @@ def generar(day, tipo=None, cc="uk"):
             (folder / "plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
             (folder / "texto.txt").write_text(caption + "\n", encoding="utf-8")
             subprocess.run(["node", str(ROOT / "brand" / "discos.js"), str(folder)], check=True, cwd=ROOT)
+            reel(folder, day, cc)
             return folder, plan
         fmt = FORMATO.get(d["fmt"], d["fmt"])
         cab = "Vinyl deal of the week" if tipo == "semana" else f"Same record, {gbp(d['ahorro'])} cheaper"
@@ -242,9 +243,26 @@ def generar(day, tipo=None, cc="uk"):
         (folder / "plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         (folder / "texto.txt").write_text(caption + "\n", encoding="utf-8")
         subprocess.run(["node", str(ROOT / "brand" / "discos.js"), str(folder)], check=True, cwd=ROOT)
+        reel(folder, day, cc)
         return folder, plan
     print("no hay disco que publicar hoy")
     return None, None
+
+
+def reel(folder, day, cc):
+    """Reel del disco (Manuel, 12-11: «en reel con música»): la imagen de la story (1080×1920) empieza con zoom sobre la
+    portada y se abre hasta verse entera; ~9 s con música libre de derechos (scraper/musica_libre.py) y su crédito al
+    final del texto."""
+    from . import musica_libre
+    video = folder / "reel.mp4"
+    zoom = "if(lte(on,90),1.3-0.3*on/90,1)"  # 3 s de zoom sobre la portada y luego quieto
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", "30", "-t", "9", "-i", str(folder / "story.jpg"),
+                    "-vf", f"scale=2160:3840,zoompan=z='{zoom}':x='iw/2-(iw/zoom/2)':y='max(0,min(ih-ih/zoom,ih*0.27-ih/zoom/2))'"
+                    ":d=1:s=1080x1920:fps=30,fade=t=in:st=0:d=0.3,format=yuv420p",
+                    "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-movflags", "+faststart", str(video)], check=True)
+    credito = musica_libre.poner(video, day.toordinal() + sorted(PAIS).index(cc))
+    texto = (folder / "texto.txt").read_text(encoding="utf-8").strip()
+    (folder / "texto.txt").write_text(f"{texto}\n\n{credito}\n", encoding="utf-8")
 
 
 def publicar(day, folder, plan, cc="uk"):
@@ -267,12 +285,16 @@ def publicar(day, folder, plan, cc="uk"):
             ig.git("commit", "-q", "-m", f"social: disco de {cfg['cuenta']} {day.isoformat()}")
         ig.git("push", "-q", "origin", f"HEAD:{branch}")
         base = f"{ig.REPO_RAW}/{ig.git('rev-parse', 'HEAD')}/{rel}/"
-        for name in ("post.jpg", "story.jpg"):
+        for name in ("reel.mp4", "story.jpg"):
             for _ in range(20):
                 if requests.head(base + name, timeout=30).status_code == 200:
                     break
         caption = (folder / "texto.txt").read_text(encoding="utf-8").strip()
-        post = ig.publish(user, ig.container(user, image_url=base + "post.jpg", caption=caption))
+        if (folder / "reel.mp4").exists():  # Reel con música (desde el 13-11); si no hay vídeo, la imagen de siempre
+            post = ig.publish(user, ig.container(user, tries=100, media_type="REELS", video_url=base + "reel.mp4",
+                                                 caption=caption, share_to_feed="true"))
+        else:
+            post = ig.publish(user, ig.container(user, image_url=base + "post.jpg", caption=caption))
         story = ig.publish(user, ig.container(user, image_url=base + "story.jpg", media_type="STORIES"))
         d = plan["disco"]
         hechos[day.isoformat()] = {"ean": d["ean"], "disco": d["name"], "tipo": plan["tipo"], "ahorro": d["ahorro"],
