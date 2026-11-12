@@ -1,0 +1,196 @@
+{
+ "fecha": "12 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "fender-player-ii-telecaster-hh-in-cactus-gray-cactusgray",
+    "name": "Fender Player II Telecaster HH in Cactus Gray",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://guitarspedalsampsandstuff.co.uk/wp-content/uploads/2026/08/0140570597252520252812529__19020.1781707014.386.513.jpg",
+    "th": "3e1158f5790ba909.webp",
+    "thimg": "https://images.guitarguitar.co.uk/cdn/large/170/260107452279008f.jpg",
+    "price": 639.0,
+    "store": "Guitars Pedals Amps & Stuff",
+    "stores": 5,
+    "median": 769.0,
+    "max": 789.0,
+    "next": 749.0,
+    "rows": [
+     [
+      "Guitars Pedals Amps & Stuff",
+      639.0
+     ],
+     [
+      "Andertons",
+      749.0
+     ],
+     [
+      "guitarguitar",
+      749.0
+     ],
+     [
+      "Project Music",
+      789.0
+     ],
+     [
+      "A Strings",
+      789.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£110 less than any other shop",
+    "pct": 15,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "prs-se-ce24-standard-stoptail-metallic-gold-tallicgold",
+    "name": "PRS SE CE24 Standard Stoptail Metallic Gold",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://guitarspedalsampsandstuff.co.uk/wp-content/uploads/2026/08/prs-se-ce24-standard-stoptail-metallic-gold.jpg",
+    "th": "04b053ee16c0c1d9.webp",
+    "thimg": "https://www.dawsons.co.uk/cdn/shop/files/products_2FP13-115976-MD-CS4HBRXN1MD_2FP13-115976-MD-CS4HBRXN1MD_1763182783430_1200x1200.jpg?v=1785222644",
+    "price": 389.0,
+    "store": "Guitars Pedals Amps & Stuff",
+    "stores": 6,
+    "median": 449.0,
+    "max": 499.0,
+    "next": 449.0,
+    "rows": [
+     [
+      "Guitars Pedals Amps & Stuff",
+      389.0
+     ],
+     [
+      "The Guitar Store",
+      449.0
+     ],
+     [
+      "Dawsons",
+      449.0
+     ],
+     [
+      "Music Street",
+      449.0
+     ],
+     [
+      "Guitarbitz",
+      469.0
+     ],
+     [
+      "A Strings",
+      499.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£60 less than any other shop",
+    "pct": 13,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "tanglewood-trs5se-smart-rosewood-solid-cedar-slope-shoulder-dreadnought-acoustic-819907025173",
+    "name": "Tanglewood TRS5SE Smart Rosewood Solid Cedar Slope Shoulder Dreadnought Acoustic Guitar",
+    "brand": "Tanglewood",
+    "kind": "acustica",
+    "img": "https://cdn.shopify.com/s/files/1/3005/0144/files/E72AC6E5-32A2-446C-8A85-9ACB29930683.jpg?v=1775226908",
+    "th": "d111b13698bab11b.webp",
+    "thimg": "https://cdn.shopify.com/s/files/1/0285/3460/3810/files/TRS5SE-scaled.jpg?v=1766490583",
+    "price": 399.0,
+    "store": "Sutton Music",
+    "stores": 3,
+    "median": 522.0,
+    "max": 549.0,
+    "next": 495.0,
+    "rows": [
+     [
+      "Sutton Music",
+      399.0
+     ],
+     [
+      "Project Music",
+      495.0
+     ],
+     [
+      "The Music Bank",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£96 less than any other shop",
+    "pct": 19,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   },
+   {
+    "slug": "yamaha-cg142c-acg142chtm",
+    "name": "Yamaha CG142C",
+    "brand": "Yamaha",
+    "kind": "clasica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/245535.jpg",
+    "th": "0852fca5bc25ecdb.webp",
+    "thimg": "https://images.guitarguitar.co.uk/cdn/large/105/11051214010717f.jpg",
+    "price": 297.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 349.0,
+    "max": 349.0,
+    "next": 349.0,
+    "rows": [
+     [
+      "Thomann",
+      297.0
+     ],
+     [
+      "guitarguitar",
+      349.0
+     ],
+     [
+      "A Strings",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£52 less than any other shop",
+    "pct": 15,
+    "photo": "g3-1.webp",
+    "label": "Classical"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
