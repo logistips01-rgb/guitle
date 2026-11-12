@@ -56,6 +56,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "ESP LTD JM-I QM Deep Blood Moon",
+  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
+  "price": 1421.0,
+  "median": 1895.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -263,15 +272,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "numemusic",
-  "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
-  "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
-  "price": 2459.0,
-  "median": 3529.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "microfusa",
   "name": "Godin Stadium HT Trans White RN with Bag",
   "slug": "godin-stadium-ht-trans-white-rn-with-bag-623501049349",
@@ -325,55 +325,10 @@
  },
  {
   "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Mooer Gtrs S901 RW Pearl Black",
-  "slug": "mooer-gtrs-s901-rw-pearl-black-6971889221616",
-  "price": 577.69,
-  "median": 699.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Mooer Gtrs S901 RW Pearl White",
-  "slug": "mooer-gtrs-s901-rw-pearl-white-6971889221630",
-  "price": 577.69,
-  "median": 699.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Mooer Gtrs S901 RW Racing Green",
-  "slug": "mooer-gtrs-s901-rw-racing-green-6971889221623",
-  "price": 577.69,
-  "median": 699.0
- },
- {
-  "kind": "electrica",
-  "type": "sin_iva",
-  "store": "musicalsanfrancisco",
-  "name": "Schecter Omen ELITE-6 Char",
-  "slug": "schecter-omen-elite-6-char-810051470093",
-  "price": 504.13,
-  "median": 605.5
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicalsanfrancisco",
-  "name": "Schecter Sun Valley Super Shredder FR blanco brillo",
-  "slug": "schecter-sun-valley-super-shredder-fr-blanco-brillo-815447023228",
-  "price": 636.36,
-  "median": 934.5
- },
- {
-  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
-  "name": "Schecter Sun Valley Super Shredder FR blanco brillo",
-  "slug": "schecter-sun-valley-super-shredder-fr-blanco-brillo-815447023228",
+  "name": "Schecter Sun Valley SS FR WHT",
+  "slug": "schecter-sun-valley-ss-fr-wht-815447023228",
   "price": 649.7,
   "median": 934.5
  },
@@ -452,6 +407,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "numemusic",
+  "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
+  "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
+  "price": 2459.0,
+  "median": 3359.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "microfusa",
   "name": "Godin Radium Matte Green",
   "slug": "godin-radium-matte-green-623501050406",
@@ -524,11 +488,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "woodbrass",
-  "name": "Vox Bobcat V90 Bigsby Black",
-  "slug": "vox-bobcat-v90-bigsby-black-4959112227583",
-  "price": 1099.0,
-  "median": 1647.97
+  "store": "musicsales",
+  "name": "Super VIKING WCT Semi Hollow Body",
+  "slug": "super-viking-wct-semi-hollow-body-7340071901947",
+  "price": 675.0,
+  "median": 948.0
  },
  {
   "kind": "electrica",
@@ -677,20 +641,20 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "PRS 40th Anniversary Custom 24-08 SH Limited Edition Charcoal Cherry Burst",
+  "slug": "prs-40th-anniversary-custom-24-08-sh-limited-edition-charcoal-cherry-burst-825362236030",
+  "price": 6999.0,
+  "median": 9361.005000000001
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "partitura",
   "name": "PRS JM Silver Sky Frost John Mayer",
   "slug": "prs-jm-silver-sky-frost-john-mayer-nmayerhtml",
   "price": 2028.0,
   "median": 2999.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "alteisa",
-  "name": "PRS SE Custom 24 SH Semi-Hollow Piezo Lake Blue con Funda",
-  "slug": "prs-se-custom-24-sh-semi-hollow-piezo-lake-blue-con-funda-825362186472",
-  "price": 1055.0,
-  "median": 1843.5
  },
  {
   "kind": "electrica",
@@ -736,15 +700,6 @@
   "slug": "squier-starcaster-affinity-dlx-mn-sienna-sunburst-885978136308",
   "price": 259.0,
   "median": 362.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Sx SST Alder H Vintage White",
-  "slug": "sx-sst-alder-h-vintage-white-6940651408777",
-  "price": 118.68,
-  "median": 244.35
  },
  {
   "kind": "acustica",
@@ -1046,24 +1001,6 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
-  "store": "musicalsanfrancisco",
-  "name": "Applause Jump Slope Shoulder Dreadnought melocotón",
-  "slug": "applause-jump-slope-shoulder-dreadnought-melocoton-4046662295350",
-  "price": 168.49,
-  "median": 241.1
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "hazen",
-  "name": "Art & Lutherie Roadhouse / Tennessee Red",
-  "slug": "art-lutherie-roadhouse-tennessee-red-52500nuevo",
-  "price": 514.3,
-  "median": 865.5
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Cort Earth100 NAT",
   "slug": "cort-earth100-nat-8809383839229",
@@ -1235,11 +1172,29 @@
  {
   "kind": "clasica",
   "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Cort AC200 Nat W/bag",
+  "slug": "cort-ac200-nat-w-bag-8809625369453",
+  "price": 145.79,
+  "median": 198.27
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Cort CEC1 OP W/bag",
   "slug": "cort-cec1-op-w-bag-8809383838659",
   "price": 178.16,
   "median": 263.925
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez GA360TCE TBK Transparent Black Electrificada de Cuerpo Estrecho",
+  "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
+  "price": 460.0,
+  "median": 647.5
  },
  {
   "kind": "clasica",
@@ -1456,15 +1411,6 @@
   "slug": "electro-harmonix-battalion-683274011943",
   "price": 129.0,
   "median": 185.66500000000002
- },
- {
-  "kind": "pedal",
-  "type": "fuera_de_lugar",
-  "store": "alfasoni",
-  "name": "Electro-Harmonix Mainframe",
-  "slug": "electro-harmonix-mainframe-683274012315",
-  "price": 163.43,
-  "median": 220.385
  },
  {
   "kind": "pedal",

@@ -245,7 +245,6 @@ admira-granada-electrificada-fishman-cutaway-estrecha-serie-conservatorio-843573
 admira-granada-electrificada-fishman-cutaway-serie-conservatorio-8435732400903
 admira-granada-serie-conservatorio-o21278html
 admira-guit-cl-flamenca-admira-f4-raf4760676
-admira-guit-cl-flamenca-elec-admira-triana-e-fishman-hman671054
 admira-guitarlele-admira-8436032358079
 admira-indiana-ce-natural-satinada-tinadahtml
 admira-indiana-morado-brillo-8436032365985
@@ -303,7 +302,6 @@ admira-luna-electrificada-eq-6-8436032367880
 admira-luna-electrificada-eq-6-cutaway-8436032377896
 admira-luna-electrificada-fishman-8436032377247
 admira-luna-electrificada-fishman-cutaway-8436032377674
-admira-luna-negra-mate-anegramate
 admira-luna-zurda-8436032367216
 admira-luna-zurda-estudio-o23455html
 admira-macarena-8436032351001
@@ -964,9 +962,7 @@ alhambra-guit-cl-alhambra-2c-con-funda-unda671082
 alhambra-guit-cl-alhambra-2f-ra2f767403
 alhambra-guit-cl-alhambra-3c-con-funda-4711190055744
 alhambra-guit-cl-alhambra-3f-con-funda-unda671085
-alhambra-guit-cl-alhambra-4f-con-funda-unda671086
 alhambra-guit-cl-alhambra-4p-3-4-cadete-dete671087
-alhambra-guit-cl-alhambra-5f-con-funda-unda671088
 alhambra-guit-cl-alhambra-5p-e8-5pe8671091
 alhambra-guit-cl-alhambra-6p-ra6p671093
 alhambra-guit-cl-alhambra-7c-classic-ssic671094
@@ -976,7 +972,6 @@ alhambra-guit-cl-alhambra-z-nature-con-funda-unda671100
 alhambra-guit-cl-elec-alhambra-5p-cw-e2-cwe2671090
 alhambra-guit-cl-elec-alhambra-5p-cw-e8-fishman-fl-anfl687065
 alhambra-guit-cl-elect-alhambra-black-satin-cw-ez-con-funda-unda671099
-alhambra-guitarra-z-nature-ez-611
 alhambra-iberia-ziricote-50-aniversario-h8806nuevo
 alhambra-iberia-ziricote-50-aniversario-h8806nuevo
 alhambra-iberia-ziricote-5604006244106
@@ -1080,9 +1075,9 @@ alhambra-z-nature-cw-ez-electrificada-con-funda-9738-25-mm-3825mmhtml
 alhambra-z-nature-cw-ez-funda-acolchada-10-mm-ofunda9730
 alhambra-z-nature-cw-ez-funda-acolchada-25-mm-ofunda9738
 alhambra-z-nature-cw-ez-recwezhtml
-alhambra-z-nature-cw-ez-wbag-8436623082857
 alhambra-z-nature-electrificada-ct-ez-con-funda-h8010nuevo
 alhambra-z-nature-electrificada-ct-ez-con-funda-h8010nuevo
+alhambra-z-nature-electrificada-cw-ez-con-funda-h8000nuevo
 alhambra-z-nature-electrificada-cw-ez-con-funda-h8000nuevo
 alhambra-z-nature-funda-acolchada-10-mm-afunda9730
 alhambra-z-nature-funda-acolchada-25-mm-afunda9738
@@ -1100,7 +1095,6 @@ alhambra-zurda-4-p-lh-azurda4plh
 alhambra-zurda-5-p-lh-azurda5plh
 alhambra-zurda-9-p-lh-azurda9plh
 almeria-1-4-aalmeria14
-almeria-totalmente-maciza-europe-tamano-4-4-4046662180106
 altamira-basico-45645680
 altamira-basico-cadete-3-4-4564568034
 altamira-basico-cadete-3-4-cocadete34
@@ -1864,7 +1858,6 @@ cort-electroacustica-cort-cec3-ns-natural-satin-con-funda-8809625369781
 cort-frank-gambale-luxe-nylon-br-con-funda-8809817980244
 cort-gold-oc8-nylon-nat-w-case-8809625365318
 cort-guitarra-cla-cec3-ns-8809383839472
-cort-guitarra-cla-sunset-nylectric-bk-8809383832411
 cort-luxe-nylon-ii-bkb-frank-gambale-signature-2026-8809817987502
 cort-sol-encanto-wbl-w-case-8809817983733
 cort-solencanto-white-blonde-onde391767
@@ -1914,9 +1907,9 @@ eko-nxt-n100ce-natural-8056734496468
 eko-one-s150e-nylon-silenciosa-8056734499278
 eko-silent-one-s150e-folk-es150efolk
 eko-silent-one-s150e-nylon-s150enylon
-eko-vibra-300-4-4-natural-8056734496338
 eko-vibra100-8056734495324
 eko-vibra150cw-8056734495331
+encore-godin-multiac-encore-nylon-7-with-bag-623501041374
 enrique-palacios-c320202-8434418044899
 enrique-palacios-ep-c320-102c-202506201307
 enrique-palacios-ep-c320-102f-8434418059268
@@ -2059,7 +2052,6 @@ gc12s-artesanal-4957812517294
 gc22c-grand-concert-rt5416html
 gewa-3-4-basic-class-basicclass
 gewa-basic-class-basicclass
-gewa-basic-e-natural-4046662269399
 gewa-electroacustica-gewa-pro-natura-silver-samba-4-4-4046662243498
 gewa-electroacustica-gewa-student-4-4-natural-4046662252438
 gewa-electroacustica-gewa-student-4-4-negra-4046662252483
@@ -2096,7 +2088,6 @@ gewa-student-solid-top-3-4-natural-4046662292793
 gipsy-guitar-rumbas-flamencas-y-mas-rumba-styles-of-the-d8396nuevo
 godin-acs-cedar-natural-sg-ralsgp5955
 godin-acs-cedar-natural-sg-with-bag-guitarra-de-concierto-electroclasica-asica27763
-godin-acs-koa-extreme-figure-hg-with-bag-623501038046
 godin-arena-cw-clasica-ii-rn-623501051793
 godin-arena-cw-clasica-ii-wclasicaii
 godin-arena-cw-electrificada-ii-6235001051793
@@ -2125,7 +2116,6 @@ godin-g-tour-electroacustica-nylon-matte-black-eq-con-funda-623501051458
 godin-motif-049738-guitarra-espanola-3-4-623501049738
 godin-motif-clasica-ii-623501051878
 godin-multiac-acs-slim-nylon-cedar-natural-sg-623501032167
-godin-multiac-encore-nylon-7-with-bag-623501041374
 godin-multiac-grand-concert-dlx-nt-623501049479
 godin-multiac-grand-concert-encore-nat-sg-623501041756
 godin-multiac-grand-concert-hg-natural-623501012817
@@ -2140,11 +2130,9 @@ godin-multiac-nylon-deluxe-deluxehtml
 godin-multiac-nylon-encore-natural-p10389html
 godin-multiac-nylon-encore-sg-623501035045
 godin-multiac-nylon-natural-aturalhtml
-godin-multiac-nylon-natural-hg-sa-left-with-bag-guitarra-clasica-623501036073
 godin-multiac-nylon-natural-hg-with-bag-623501004690
 godin-multiac-nylon-natural-hg-with-bag-asica27747
 godin-multiac-nylon-oceanburst-ltd-623501053391
-godin-multioud-encore-nylon-natural-sg-with-bag-oud-623501037414
 godin-presentation-049752-guitarra-espanola-623501049752
 godin-presentation-clasica-ii-623501051885
 guion-de-banda-gran-fantasia-espanola-ricardo-villa-a3-9790350501814
@@ -2412,7 +2400,6 @@ lag-tramontane-tn70a-b-b-nylon-auditorium-negro-y-marron-rron366868
 lag-tramontane-tn70a-natural-3700166371866
 lakewood-a-31-cp-crossover-cedar-custom-444410036987
 lakewood-a-36-cp-crossover-4260381430520
-lakewood-m-32-cp-classic-crossover-deluxe-4262405530100
 lp-cencerro-lp-lp008-n-rock-nylon-731201483582
 ltd-tl-6n-nylon-natural-799493247855
 luna-art-vintage-nylon-solid-top-a-e-distressed-810036855624
@@ -2963,7 +2950,6 @@ paco-castillo-cutaway-paco-castillo-222ce-odelo222ce
 paco-castillo-cutaway-paco-castillo-223fce-delo223fce
 paco-castillo-cutaway-paco-castillo-224ce-odelo224ce
 paco-castillo-guitarra-201-brillo-rillo20214
-paco-castillo-guitarra-202-ra20220216
 paco-castillo-guitarra-203-ra20320215
 paco-castillo-guitarra-211-f-a211f20233
 paco-castillo-guitarra-213-f-a213f20234
@@ -3157,11 +3143,11 @@ rocio-c16-3-4-tamano-cadete-90-cms-negro-8436032350707
 rocio-c16-3-4-tamano-cadete-90-cms-rosa-8436032350714
 rocio-c16-cioc16html
 rocio-c16-negra-6negrahtml
-rocio-c16an-rocioc16an
 rocio-c16bk-cadete-3-4-negra-6666666666276
 rocio-c16bl-cadete-3-4-azul-6666666666277
 rocio-c16bl-guitarra-3-4-tamano-cadete-90-cms-azul-msazulhtml
 rocio-c16n-cadete-3-4-natural-6666666666278
+rocio-c16n-natural-oscuro-3-4-c16natural
 rocio-c16pk-cadete-3-4-rosa-6666666666275
 rocio-c6-1-4-azul-8436032350721
 rocio-c6-1-4-natural-8436032350738
@@ -3339,10 +3325,10 @@ sulayr-lattice-pino-sl-100sp-inosl100sp
 takamine-classique-cutaway-electro-gc5cenat-5cenathtml
 takamine-classique-natural-gc1nat-190262041481
 takamine-e-a-cutaway-gc1celh-nat-zurdos-190262042174
-takamine-eh5-classic-hirade-cutaway-natural-190262012603
+takamine-eh5-classic-hirade-cutaway-natural-aturalhtml
 takamine-electroacustica-takamine-dh90-190262012566
 takamine-electroacustica-takamine-ec132sc-190262012597
-takamine-electroacustica-takamine-eh5c-kamineeh5c
+takamine-electroacustica-takamine-eh5c-190262012603
 takamine-electroacustica-takamine-gc2ce-negra-190262041214
 takamine-espanola-amplificada-cutaway-takamine-gc1-natural-ayelectro2
 takamine-espanola-amplificada-cutaway-takamine-gc3-natural-wayelectro
@@ -3438,9 +3424,9 @@ valencia-vc102bus-1-2-blue-burst-6940651402300
 valencia-vc102pks-1-2-pink-burst-6940651402317
 valencia-vc102pps-purple-1-2-6940651402324
 valencia-vc102rds-red-burst-1-2-6940651402331
-valencia-vc103-3-4-nat-4natp15785
 valencia-vc103-3-4-pksb-pksbp15786
 valencia-vc103-3-4-ppsb-ppsbp15787
+valencia-vc103-natural-3-4-6940651402348
 valencia-vc103bk-black-3-4-6940651402355
 valencia-vc103bus-blue-burst-3-4-6940651402362
 valencia-vc103l-zurda-negra-3-4-cadete-6940651402614
@@ -3537,7 +3523,6 @@ valencia-vc304t-natural-8997032893804
 valencia-vc314-antique-sunburst-8997032896553
 valencia-vc314-valencia-natural-8997032896546
 valencia-vc314ce-valencia-natural-eq-8997032896560
-valencia-vc354-4-4-aqua-blue-8997032896126
 valencia-vc354-4-4-black-8997032896140
 valencia-vc354-4-4-wine-red-8997032896096
 valencia-vc354-naranja-8997032896089

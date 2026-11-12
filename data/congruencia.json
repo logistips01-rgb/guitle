@@ -1,27 +1,27 @@
 {
- "actualizado": "2026-11-11T18:17",
- "total": 256,
- "ok": 235,
- "distinto": 6,
- "sin_comprobar": 15,
+ "actualizado": "2026-11-11T23:41",
+ "total": 263,
+ "ok": 248,
+ "distinto": 3,
+ "sin_comprobar": 12,
  "distintos": [
   {
-   "pais": "es",
-   "tienda": "abrines",
-   "url": "https://abrinesmusica.com/guitarras-clasicas/15546-guitarra-rocio-r10-natural",
-   "precio": 63.7,
+   "pais": "at",
+   "tienda": "musikpaul",
+   "url": "https://musikpaul.at/produkt/fender-vintera-ii-60s-tele-thnl-mn-3ts-402118/",
+   "precio": 1299,
    "moneda": "EUR",
-   "leido": "2026-11-10T19:54",
-   "nombre": "Rocio R10RD roja",
+   "leido": "2026-11-11T19:36",
+   "nombre": "Fender Vintera II 60S Tele THNL MN 3TS",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "99 €",
-    "75,00 €",
-    "415,01 €",
-    "4.753,00 €",
-    "364,00 €",
-    "1.559,00 €"
+    "1.199,00 €",
+    "129,00 €",
+    "2.249,00 €",
+    "89,00 €",
+    "32,50 €",
+    "689,00 €"
    ]
   },
   {
@@ -41,59 +41,13 @@
    ]
   },
   {
-   "pais": "br",
-   "tienda": "x5music",
-   "url": "https://www.x5music.com.br/guitarra-ibanez-pgmm21-mikro-metallic-light-green-paul-gilbert-signature/p",
-   "precio": 1516.25,
-   "moneda": "BRL",
-   "leido": "2026-11-10T18:47",
-   "nombre": "Ibanez PGMM21 MIKRO Metallic Light Green Paul Gilbert Signature",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": []
-  },
-  {
-   "pais": "ch",
-   "tienda": "woodbrass",
-   "url": "https://woodbrass.ch/products/ibanez-rgms8pbcbs-kosmisches-blau-sternenverlauf-411879",
-   "precio": 570,
-   "moneda": "CHF",
-   "leido": "2026-11-11T02:04",
-   "nombre": "Ibanez RGMS8PBCBS Kosmisches Blau Sternenverlauf",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "CHF 572",
-    ". CHF",
-    "CHF 75",
-    "CHF 6",
-    "CHF 8",
-    "CHF 15"
-   ]
-  },
-  {
-   "pais": "fr",
-   "tienda": "musicmatos",
-   "url": "https://www.musicmatos.com/5859-guitares-acoustiques-folk-lag-sauvage-d.html",
-   "precio": 426,
-   "moneda": "EUR",
-   "leido": "2026-11-10T18:43",
-   "nombre": "lag SAUVAGE-D",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "250 €",
-    "0 0,00 €"
-   ]
-  },
-  {
    "pais": "it",
    "tienda": "musicis",
-   "url": "https://www.musicis.it/fender-supersoft-strap-toffee-2-.1.0.1207.gp.171109.uw",
-   "precio": 23.99,
+   "url": "https://www.musicis.it/traveler-chitarra-elettrica-eg-1-standard-nero-opaco.1.0.6917.gp.168302.uw",
+   "precio": 519,
    "moneda": "EUR",
-   "leido": "2026-11-11T11:47",
-   "nombre": "Fender supersoft strap toffee 2\"",
+   "leido": "2026-11-11T15:49",
+   "nombre": "Traveler Chitarra Elettrica EG-1 Standard Nero Opaco",
    "http": 200,
    "estado": "distinto",
    "visibles": []
@@ -102,17 +56,14 @@
  "sin_comprobar_tiendas": [
   "es·alteisa",
   "br·multisom",
-  "br·harmoniamusical",
   "br·supersom",
-  "de·hermann",
-  "dk·gear4music",
   "fr·azemamusique",
   "fr·cultura",
   "it·emusicstore",
   "it·fireflyaudio",
-  "pl·gear4music",
   "uk·absolutemusic",
   "uk·andertons",
+  "pt·guitarcustom",
   "uk·richtone",
   "pt·cdgo"
  ]
