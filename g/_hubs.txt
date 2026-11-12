@@ -680,6 +680,7 @@ marca/maybach.html
 marca/mayones.html
 marca/mayson.html
 marca/medeli.html
+marca/meinl-sonic-energy.html
 marca/meinl.html
 marca/memphis.html
 marca/mesa-boogie.html
