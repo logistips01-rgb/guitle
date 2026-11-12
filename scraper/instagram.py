@@ -109,7 +109,7 @@ def products(lo=MIN_PRICE, hi=MAX_PRICE, catalogs=None):
                 continue
             ref = pvp.get(p.get("sku") or "", [])
             out.append({"slug": p["slug"], "name": tidy(p["name"]), "brand": p.get("brand") or "", "kind": kind,
-                        "img": p["img"], "th": p.get("th"), "price": best["p"], "store": stores.get(best["s"], best["s"]),
+                        "img": p["img"], "th": p.get("th"), "thimg": p.get("thimg"), "price": best["p"], "store": stores.get(best["s"], best["s"]),
                         "stores": len({i["s"] for i in items}), "median": median(prices[1:]), "max": prices[-1],
                         "next": min(i["p"] for i in items if i["s"] != best["s"]),
                         "rows": [[stores.get(i["s"], i["s"]), i["p"]] for i in {i["s"]: i for i in reversed(items)}.values()][::-1],
@@ -303,7 +303,8 @@ def container_etiq(user, handles, **params):
 def photo(p, fetcher, dest, rotate=True):
     """Foto en alta resolución, recortada y en vertical (como las miniaturas de la web)."""
     data = None
-    for url in dict.fromkeys([p["img"], p["img"].split("?")[0]]):  # sin parámetros si robots.txt los prohíbe
+    src = foto_src(p) or p["img"]
+    for url in dict.fromkeys([src, src.split("?")[0]]):  # sin parámetros si robots.txt los prohíbe
         try:
             if fetcher.allowed(url)[0]:
                 resp = fetcher.get(url)
@@ -312,7 +313,7 @@ def photo(p, fetcher, dest, rotate=True):
             data = None
         if data:
             break
-    thumb = ROOT / "img" / "p" / name_for(p["img"])
+    thumb = ROOT / "img" / "p" / name_for(src)
     if not data and thumb.exists():  # miniatura de la web (360 px): peor calidad, pero mejor que nada
         data = thumb.read_bytes()
     if data:
@@ -323,18 +324,27 @@ def photo(p, fetcher, dest, rotate=True):
 _REVISADAS = None
 
 
-def foto_revisada(p):
-    """La foto de la tienda solo vale si es la misma que la web eligió y revisó como miniatura (campo th, que es el
-    sha1 de la dirección de esa foto): así nunca sale una guitarra cortada o de espaldas (data/fotos-revisadas.json:
-    1 = de espaldas, 2 = cortada). Sin th, o con una foto distinta de la revisada, la guitarra no se usa."""
-    global _REVISADAS
+def foto_src(p):
+    """Dirección de la foto en grande que corresponde a la miniatura revisada (th = sha1 de esa dirección): la de la
+    ficha (img) o, si la web eligió la foto de otra tienda, la de esa tienda (thimg). None si no hay ninguna."""
     from .thumbs import name_for
     th = p.get("th")
-    if not th or not p.get("img") or name_for(p["img"]) != th:
+    for url in (p.get("img"), p.get("thimg")):
+        if th and url and name_for(url) == th:
+            return url
+    return None
+
+
+def foto_revisada(p):
+    """La foto solo vale si es la que la web eligió y revisó como miniatura (campo th): así nunca sale una guitarra
+    cortada o de espaldas (data/fotos-revisadas.json: 1 = de espaldas, 2 = cortada). La foto en grande es la de la
+    ficha (img) o la de la tienda de la que sale la miniatura (thimg, cuando el catálogo la da)."""
+    global _REVISADAS
+    if not foto_src(p):
         return False
     if _REVISADAS is None:
         _REVISADAS = load(ROOT / "data" / "fotos-revisadas.json", {})
-    return _REVISADAS.get(th) not in (1, 2)
+    return _REVISADAS.get(p["th"]) not in (1, 2)
 
 
 def with_photos(cands, n, fetcher, folder, prefix, forma="vertical"):
