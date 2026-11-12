@@ -1,56 +1,36 @@
 {
- "fecha": "2026-11-11",
+ "fecha": "2026-11-12",
  "pais": "it",
  "items": [
   {
-   "slug": "ibanez-grx70qa-sb-gio-qasbgiohtm",
-   "name": "Ibanez GRX70QA-SB GIO",
-   "brand": "Ibanez",
-   "price": "213 €",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "e2d93e1cc9eb71ba.webp",
-   "why": "4 € in meno che negli altri negozi"
-  },
-  {
-   "slug": "ibanez-pf12mhce-opn-chitarra-acustica-elettrificata-natural-4515276967439",
-   "name": "Ibanez PF12MHCE OPN Chitarra acustica elettrificata Natural",
-   "brand": "Ibanez",
-   "price": "195 €",
-   "store": "Di Santo Musica",
+   "slug": "martin-lx1re-little-martin-ttlemartin",
+   "name": "Martin LX1RE Little Martin",
+   "brand": "Martin",
+   "price": "649 €",
+   "store": "S&M Strumenti",
    "kind": "acustica",
-   "img": "1198455946519776.webp",
-   "why": ""
+   "img": "fd26b766bbf3c10c.webp",
+   "why": "40 € in meno che negli altri negozi"
   },
   {
-   "slug": "fender-cd60s-black-chitarra-acustica-nera-885978875764",
-   "name": "Fender CD60S Black Chitarra acustica nera",
+   "slug": "fender-cd-60-sb-v3-dreadnought-ds-sb-wn-chitarra-acustica-raacustica",
+   "name": "Fender CD-60 SB V3 DREADNOUGHT DS SB WN - CHITARRA ACUSTICA",
    "brand": "Fender",
-   "price": "205 €",
-   "store": "Global Net Shop",
-   "kind": "acustica",
-   "img": "39ad6bacc16eaa1d.webp",
-   "why": ""
-  },
-  {
-   "slug": "yamaha-apxt2-naturale-4957812520140",
-   "name": "Yamaha Apxt2 Naturale",
-   "brand": "Yamaha",
-   "price": "242 €",
+   "price": "150 €",
    "store": "Woodbrass",
    "kind": "acustica",
-   "img": "64ec93202a288b79.webp",
-   "why": ""
+   "img": "3feed1d8c463d415.webp",
+   "why": "8 € in meno che negli altri negozi"
   },
   {
-   "slug": "eko-one-s150e-folk-silenziosa-8056734499261",
-   "name": "Eko One S150e Folk silenziosa",
-   "brand": "Eko",
-   "price": "259 €",
-   "store": "Woodbrass",
-   "kind": "acustica",
-   "img": "617b8f096d7713c5.webp",
-   "why": ""
+   "slug": "squier-fender-squier-classic-vibe-60s-stratocaster-lrl-lake-placid-blue-placidblue",
+   "name": "Squier FENDER Squier Classic Vibe 60s Stratocaster LRL Lake Placid Blue",
+   "brand": "Squier",
+   "price": "399 €",
+   "store": "Checcacci",
+   "kind": "electrica",
+   "img": "1a52d379834be9c1.webp",
+   "why": "20 € in meno che negli altri negozi"
   }
  ]
 }

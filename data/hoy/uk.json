@@ -1,76 +1,36 @@
 {
- "fecha": "2026-11-11",
+ "fecha": "2026-11-12",
  "pais": "uk",
  "items": [
   {
-   "slug": "fender-acoustasonic-standard-tele-blk-teleblkhtm",
-   "name": "Fender Acoustasonic Standard Tele BLK",
-   "brand": "Fender",
-   "price": "£495",
-   "store": "Thomann",
+   "slug": "tanglewood-trs1e-smart-rosewood-solid-cedar-mini-folk-acoustic-guitar-819907025159",
+   "name": "Tanglewood TRS1E Smart Rosewood Solid Cedar Mini Folk Acoustic Guitar",
+   "brand": "Tanglewood",
+   "price": "£399",
+   "store": "Sutton Music",
    "kind": "acustica",
-   "img": "1086381053433d0f.webp",
-   "why": "£54 less than any other shop"
+   "img": "19f771067c15ff23.webp",
+   "why": "£100 less than any other shop"
   },
   {
-   "slug": "cort-g300-pro-metallic-gold-licgoldhtm",
-   "name": "Cort G300 PRO Metallic Gold",
-   "brand": "Cort",
-   "price": "£632",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "e2dfdeb7b310240b.webp",
-   "why": "£67 less than any other shop"
-  },
-  {
-   "slug": "prs-se-studio-standard-pearl-white-rlwhitehtm",
-   "name": "PRS SE Studio Standard Pearl White",
-   "brand": "PRS",
-   "price": "£635",
-   "store": "Thomann",
-   "kind": "electrica",
-   "img": "394c75ad72a287c5.webp",
-   "why": "£64 less than any other shop"
-  },
-  {
-   "slug": "fender-cd-60-dreadnought-v3-acoustic-guitar-sunburst-885978158621",
-   "name": "Fender CD-60 Dreadnought V3 Acoustic Guitar Sunburst",
-   "brand": "Fender",
-   "price": "£139",
-   "store": "Fair Deal Music",
-   "kind": "acustica",
-   "img": "c8bb2438d651d24f.webp",
-   "why": ""
-  },
-  {
-   "slug": "chord-n6-dzb-nomad-series-grand-auditorium-electro-acoustic-deep-zebrano-5015972232293",
-   "name": "Chord N6-DZB Nomad Series Grand Auditorium Electro-Acoustic - Deep Zebrano",
-   "brand": "Chord",
-   "price": "£169",
-   "store": "Reidys",
-   "kind": "acustica",
-   "img": "dcd7fc8e689bf710.webp",
-   "why": ""
-  },
-  {
-   "slug": "gretsch-jim-dandy-dreadnought-rex-burst-717669566906",
-   "name": "Gretsch Jim Dandy Dreadnought, Rex Burst",
+   "slug": "gretsch-streamliner-cvt-olive-drab-tolivedrab",
+   "name": "Gretsch Streamliner CVT Olive Drab",
    "brand": "Gretsch",
-   "price": "£185",
-   "store": "Fair Deal Music",
-   "kind": "acustica",
-   "img": "048a64618613e7b6.webp",
-   "why": ""
+   "price": "£249",
+   "store": "Guitars Pedals Amps & Stuff",
+   "kind": "electrica",
+   "img": "6f0318362d2936da.webp",
+   "why": "£50 less than any other shop"
   },
   {
-   "slug": "cort-ga-medx-grand-regal-series-open-pore-acoustic-guitar-8809383831667",
-   "name": "Cort GA MEDX Grand Regal Series Open Pore Acoustic Guitar",
-   "brand": "Cort",
-   "price": "£192",
-   "store": "A Strings",
-   "kind": "acustica",
-   "img": "648492d6424f13ec.webp",
-   "why": ""
+   "slug": "takamine-gc1ce-nat-c1cenathtm",
+   "name": "Takamine GC1CE-Nat",
+   "brand": "Takamine",
+   "price": "£233",
+   "store": "Thomann",
+   "kind": "clasica",
+   "img": "04b8ac6f614decbe.webp",
+   "why": "£46 less than any other shop"
   }
  ]
 }

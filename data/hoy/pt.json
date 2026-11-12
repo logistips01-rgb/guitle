@@ -1,26 +1,36 @@
 {
- "fecha": "2026-11-11",
+ "fecha": "2026-11-12",
  "pais": "pt",
  "items": [
   {
-   "slug": "fender-ca-std-redondo-ce-bpg-nat-ebpgnathtm",
-   "name": "Fender CA STD Redondo CE BPG NAT",
-   "brand": "Fender",
-   "price": "179 €",
-   "store": "Thomann",
-   "kind": "acustica",
-   "img": "bcbaf3f39248e63a.webp",
-   "why": "21 € a menos do que em qualquer outra loja"
+   "slug": "ibanez-grgr221pa-aqb-4549763280879",
+   "name": "Ibanez GRGR221PA-AQB",
+   "brand": "Ibanez",
+   "price": "220 €",
+   "store": "Egitana",
+   "kind": "electrica",
+   "img": "3abc69a5aad5a020.webp",
+   "why": "12 € a menos do que em qualquer outra loja"
   },
   {
-   "slug": "ibanez-pf15ece-tbs-ecetbs6709",
-   "name": "Ibanez PF15ECE TBS",
-   "brand": "Ibanez",
-   "price": "214 €",
-   "store": "Musifex",
-   "kind": "acustica",
-   "img": "38c0a63c33296d9e.webp",
-   "why": "1 € a menos do que em qualquer outra loja"
+   "slug": "schecter-omen-extreme-6-bch-remebchhtm",
+   "name": "Schecter Omen Extreme 6 BCH",
+   "brand": "Schecter",
+   "price": "555 €",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "d31a1da0eab7473d.webp",
+   "why": "30 € a menos do que em qualquer outra loja"
+  },
+  {
+   "slug": "fender-standard-stratocaster-mn-wpg-owt-885978117857",
+   "name": "Fender Standard Stratocaster MN WPG OWT",
+   "brand": "Fender",
+   "price": "507 €",
+   "store": "Egitana",
+   "kind": "electrica",
+   "img": "0ba63144b1fdabe1.webp",
+   "why": "12 € a menos do que em qualquer outra loja"
   }
  ]
 }
