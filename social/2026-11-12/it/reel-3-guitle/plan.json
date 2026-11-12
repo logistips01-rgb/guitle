@@ -1,0 +1,97 @@
+{
+ "fecha": "12 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "guitle",
+  "topic": "momento",
+  "slides": [
+   {
+    "hook": "Prima di comprare",
+    "title": "È il momento giusto per comprarla?",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "Guarda lo storico dei prezzi",
+    "sub": "Esempio",
+    "size": 100,
+    "visual": {
+     "type": "chart",
+     "points": [
+      829,
+      829,
+      799,
+      829,
+      789,
+      789,
+      769,
+      749
+     ],
+     "marks": [
+      [
+       0,
+       "829 €",
+       "#52514e"
+      ],
+      [
+       7,
+       "Oggi: minimo",
+       "#1f9d55"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Su guitle trovi lo storico di ogni chitarra",
+    "sub": "Gratis, nella sua scheda su guitle.com/it"
+   }
+  ]
+ }
+}

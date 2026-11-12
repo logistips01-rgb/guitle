@@ -1,0 +1,86 @@
+{
+ "fecha": "12 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "bf",
+  "days": 15,
+  "deal": {
+   "slug": "ibanez-gsa60-bs-brown-sunburst-sabre-gio-4515110324046",
+   "name": "Ibanez GSA60-BS Brown Sunburst Sabre Gio",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://woodbrass.it/cdn/shop/files/9303de6858bb7c5137da5e8c68549d481e9cd212_HOSHINO_GSA60_BS.jpg?height=1200&pad_color=ffffff&v=1793727461&width=1200",
+   "th": "812b7b31e00507d5.webp",
+   "thimg": "https://www.disantomusica.it/cdn/shop/files/1532597081_1024x1024.jpg?v=1772192463",
+   "price": 244.0,
+   "store": "Woodbrass",
+   "stores": 5,
+   "median": 249.0,
+   "max": 255.0,
+   "next": 249.0,
+   "rows": [
+    [
+     "Woodbrass",
+     244.0
+    ],
+    [
+     "Di Santo Musica",
+     249.0
+    ],
+    [
+     "Direzione Musica",
+     249.0
+    ],
+    [
+     "Stralù",
+     249.0
+    ],
+    [
+     "Your Music Online",
+     255.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}
