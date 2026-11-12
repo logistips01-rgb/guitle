@@ -1,0 +1,172 @@
+{
+ "date": "2026-11-12",
+ "fecha": "12 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "ibanez-aeg50-ibh-sfumato-blu-indaco-4549763230942",
+   "name": "Ibanez AEG50-IBH Sfumato blu indaco",
+   "brand": "Ibanez",
+   "kind": "acustica",
+   "img": "https://woodbrass.it/cdn/shop/files/91ea71c1d333a18ea9a8ad7f4eb26e564701ac2e_HOSHINO_AEG50_IBH.jpg?height=1200&pad_color=ffffff&v=1794385908&width=1200",
+   "th": "cbd52fea692584f9.webp",
+   "thimg": null,
+   "price": 259.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 296.45,
+   "max": 299.0,
+   "next": 293.9,
+   "rows": [
+    [
+     "Woodbrass",
+     259.0
+    ],
+    [
+     "Direzione Musica",
+     293.9
+    ],
+    [
+     "Di Santo Musica",
+     299.0
+    ]
+   ],
+   "pvp": null,
+   "why": "34,90 € in meno che negli altri negozi",
+   "pct": 12,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Offerta del giorno: Ibanez AEG50-IBH Sfumato blu indaco\n💶 259 € da Woodbrass, confrontata in 3 negozi.\n📉 34,90 € in meno che negli altri negozi.\n\n🔎 Confronta il prezzo su guitle.com/it (tutte le offerte di oggi nel link in bio 👆).\nPrezzo del 12 novembre; può cambiare.\n\n#chitarra #chitarrista #offerte #sconti #chitarraacustica #ibanez"
+ },
+ "stories": [
+  {
+   "slug": "martin-lx1re-little-martin-ttlemartin",
+   "name": "Martin LX1RE Little Martin",
+   "brand": "Martin",
+   "kind": "acustica",
+   "img": "https://www.centrodellamusica.net/cdn/shop/files/lx1re20230711_181228_edit_345793129777965.jpg?v=1759162774&width=1920",
+   "th": "51a297ba223886cf.webp",
+   "thimg": "https://woodbrass.it/cdn/shop/files/d21e40ea6c9a797c6f65717ef7fe2b255d027caa_GMA_LX1RE.png?height=1200&pad_color=ffffff&v=1793958450&width=1200",
+   "price": 649.0,
+   "store": "S&M Strumenti",
+   "stores": 3,
+   "median": 704.0,
+   "max": 719.0,
+   "next": 689.0,
+   "rows": [
+    [
+     "S&M Strumenti",
+     649.0
+    ],
+    [
+     "Woodbrass",
+     689.0
+    ],
+    [
+     "Cittadella della Musica",
+     719.0
+    ]
+   ],
+   "pvp": null,
+   "why": "40 € in meno che negli altri negozi",
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "fender-cd-60-sb-v3-dreadnought-ds-sb-wn-chitarra-acustica-raacustica",
+   "name": "Fender CD-60 SB V3 DREADNOUGHT DS SB WN - CHITARRA ACUSTICA",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://www.e-musicstore.it/wp-content/uploads/2021/03/1_5_281-1.webp",
+   "th": "3feed1d8c463d415.webp",
+   "thimg": "https://woodbrass.it/cdn/shop/files/4bd76f62d12211d6c1733443be33f2ba9892408d_FMIC_0970110532.jpg?height=1200&pad_color=ffffff&v=1794370419&width=1200",
+   "price": 150.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 158.5,
+   "max": 159.0,
+   "next": 158.0,
+   "rows": [
+    [
+     "Woodbrass",
+     150.0
+    ],
+    [
+     "Di Santo Musica",
+     158.0
+    ],
+    [
+     "Stralù",
+     159.0
+    ]
+   ],
+   "pvp": null,
+   "why": "8 € in meno che negli altri negozi",
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "squier-fender-squier-classic-vibe-60s-stratocaster-lrl-lake-placid-blue-placidblue",
+   "name": "Squier FENDER Squier Classic Vibe 60s Stratocaster LRL Lake Placid Blue",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://www.e-musicstore.it/wp-content/uploads/2021/06/preview-41-1.webp",
+   "th": "1a52d379834be9c1.webp",
+   "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/468417.jpg",
+   "price": 399.0,
+   "store": "Checcacci",
+   "stores": 4,
+   "median": 425.0,
+   "max": 429.0,
+   "next": 419.0,
+   "rows": [
+    [
+     "Checcacci",
+     399.0
+    ],
+    [
+     "Woodbrass",
+     419.0
+    ],
+    [
+     "Thomann",
+     425.0
+    ],
+    [
+     "S&M Strumenti",
+     429.0
+    ]
+   ],
+   "pvp": null,
+   "why": "20 € in meno che negli altri negozi",
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}
