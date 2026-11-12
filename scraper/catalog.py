@@ -5910,7 +5910,7 @@ def _curated_offers():
 
 def _products(kind, offers, history, curated, sku_by_ean, curated_info):
     """Productos de una categoría: agrupa las fichas por EAN (o nombre) y les añade tiendas de seguimiento."""
-    from .thumbs import existing, slenderness  # import aquí: thumbs importa este módulo
+    from .thumbs import existing, name_for, slenderness  # import aquí: thumbs importa este módulo
     groups = {}
     # Un EAN que una misma tienda pone en varias fichas distintas (The Guitar Store: un código para todos los colores
     # de un modelo) no identifica el producto: en esa tienda se ignora y sus fichas se emparejan por el nombre.
@@ -6030,6 +6030,12 @@ def _products(kind, offers, history, curated, sku_by_ean, curated_info):
             best = max(thumbs, key=slenderness) if thumbs else None
             if best and slenderness(best) >= MIN_SLENDERNESS:
                 prod["th"] = best
+        # La foto grande de la que sale la miniatura, si no es la de "img" (redes la usa en alta resolución).
+        if prod.get("th"):
+            src = next((o["image"] for o in group if o.get("image")
+                        and existing(o["image"], pack=kind in PACK_KINDS) == prod["th"]), None)
+            if src and (src != prod["img"] or name_for(src, pack=kind in PACK_KINDS) != prod["th"]):
+                prod["thimg"] = src
         if ean in sku_by_ean:
             prod["sku"] = sku_by_ean[ean]
         products.append(prod)

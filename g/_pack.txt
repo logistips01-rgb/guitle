@@ -87,6 +87,7 @@ harley-benton-extreme-76-bk-classic-bundle-ndlesethtm
 harley-benton-extreme-76lh-bk-bundle-ndlesethtm
 harley-benton-fusion-iii-hh-eb-bk-bundle-ebundlehtm
 harley-benton-fusion-iii-hh-eb-bk-bundle-ndlesethtm
+harley-benton-fusion-iii-hh-eb-oct-bundle-ebundlehtm
 harley-benton-fusion-t-hh-lh-roasted-bundle-dbundlehtm
 harley-benton-hb-35-bk-vintage-series-bundle-sbundlehtm
 harley-benton-hb-35-ch-vintage-series-bundle-packagehtm
@@ -312,8 +313,8 @@ squier-sonic-strat-lrl-ultravi-bundle-ibundlehtm
 squier-sonic-strat-lrl-ultravi-bundle-ndlesethtm
 squier-sonic-strat-mn-2tsb-bundle-bbundlehtm
 squier-sonic-strat-mn-2tsb-bundle-ndlesethtm
-squier-sonic-stratocaster-pack-mn-negra-717669816483
 squier-stratocaster-mustang-affinity-micro-pack-lrl-717669525767
+squier-stratocaster-sonic-pack-mn-negro-717669816483
 squier-stratocaster-sonic-pack-mn-sunburst-de-2-colores-717669816537
 sx-se1-candy-apple-red-pack-6971047512068
 sx-se1-pack-3-4-3t-sunburst-6971047511993

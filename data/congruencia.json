@@ -1,43 +1,77 @@
 {
- "actualizado": "2026-11-11T23:41",
- "total": 263,
- "ok": 248,
- "distinto": 3,
- "sin_comprobar": 12,
+ "actualizado": "2026-11-12T09:32",
+ "total": 266,
+ "ok": 246,
+ "distinto": 7,
+ "sin_comprobar": 13,
  "distintos": [
   {
    "pais": "at",
    "tienda": "musikpaul",
-   "url": "https://musikpaul.at/produkt/fender-vintera-ii-60s-tele-thnl-mn-3ts-402118/",
-   "precio": 1299,
+   "url": "https://musikpaul.at/produkt/hanika-58efn-konzertgitarre-101004/",
+   "precio": 3400,
    "moneda": "EUR",
-   "leido": "2026-11-11T19:36",
-   "nombre": "Fender Vintera II 60S Tele THNL MN 3TS",
+   "leido": "2026-11-11T19:37",
+   "nombre": "Hanika 58EF-N Konzertgitarre",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "1.199,00 €",
+    "2.790,00 €",
     "129,00 €",
-    "2.249,00 €",
-    "89,00 €",
-    "32,50 €",
-    "689,00 €"
+    "85,00 €",
+    "539,00 €",
+    "539,00 €",
+    "429,00 €"
    ]
   },
   {
-   "pais": "be",
-   "tienda": "musicallin",
-   "url": "https://musicallin.nl/products/cuenca-50r-klassieke-gotaar",
-   "precio": 550,
-   "moneda": "EUR",
-   "leido": "2026-11-11T01:12",
-   "nombre": "Cuenca 50R Klassieke Gotaar",
+   "pais": "br",
+   "tienda": "ajoiamusical",
+   "url": "https://www.ajoiamusical.com.br/violao-aco-strinberg-sd301hcr-galaxy-mgs",
+   "precio": 1999,
+   "moneda": "BRL",
+   "leido": "2026-11-11T19:27",
+   "nombre": "Strinberg SD301HCR Galaxy MGS",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": []
+  },
+  {
+   "pais": "br",
+   "tienda": "mundomax",
+   "url": "https://www.mundomax.com.br/violao-eletroacustico-giannini-perform-ggc-plus-aco-walnut-satin",
+   "precio": 1169.1,
+   "moneda": "BRL",
+   "leido": "2026-11-11T20:02",
+   "nombre": "Giannini Perform GGC Plus Eletroacústico Aço Walnut Satin",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "€ 10",
-    "€ 10",
-    "€ 75."
+    "R$ 949,00 10",
+    "R$ 94,90",
+    "R$ 819,00 10",
+    "R$ 81,90",
+    "R$ 2.150,00 12",
+    "R$ 179,17"
+   ]
+  },
+  {
+   "pais": "hu",
+   "tienda": "kytary",
+   "url": "https://kytary.hu/gibson-custom-1959-les-paul-standard-reissue-vos-washed-cherry-sunburst-942864/HN216209/",
+   "precio": 2346700,
+   "moneda": "HUF",
+   "leido": "2026-11-11T17:52",
+   "nombre": "Gibson 1959 Les Paul Standard Reissue VOS Washed Cherry Sunburst #942864",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "30 000 Ft",
+    "2 355 480 Ft",
+    "30 000 Ft",
+    "2 355 480 Ft",
+    "30 000 Ft",
+    "2 669 780 Ft"
    ]
   },
   {
@@ -51,6 +85,41 @@
    "http": 200,
    "estado": "distinto",
    "visibles": []
+  },
+  {
+   "pais": "nl",
+   "tienda": "musicallin",
+   "url": "https://musicallin.nl/products/prs-se-custom-vintage-sunburst",
+   "precio": 450,
+   "moneda": "EUR",
+   "leido": "2026-11-11T21:08",
+   "nombre": "PRS SE Custom Vintage Sunburst",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "€ 10",
+    "€ 10",
+    "€ 75."
+   ]
+  },
+  {
+   "pais": "se",
+   "tienda": "soundstorexl",
+   "url": "https://www.soundstorexl.se/products/vgs-basic-elakustisk-klassisk-guitar-sort",
+   "precio": 1475,
+   "moneda": "SEK",
+   "leido": "2026-11-11T12:46",
+   "nombre": "Gewa VGS Basic elakustisk klassisk gitarr, svart",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "2499 kr",
+    "2499 kr",
+    "2499 kr",
+    "2499 kr",
+    "1 476 kr",
+    "69 kr"
+   ]
   }
  ],
  "sin_comprobar_tiendas": [
@@ -59,11 +128,12 @@
   "br·supersom",
   "fr·azemamusique",
   "fr·cultura",
+  "ie·musicoutlet",
+  "ie·soundshop",
   "it·emusicstore",
   "it·fireflyaudio",
   "uk·absolutemusic",
   "uk·andertons",
-  "pt·guitarcustom",
   "uk·richtone",
   "pt·cdgo"
  ]
