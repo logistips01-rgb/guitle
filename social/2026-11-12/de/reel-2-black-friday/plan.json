@@ -1,0 +1,94 @@
+{
+ "fecha": "12. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "bf",
+  "days": 15,
+  "deal": {
+   "slug": "la-mancha-rubi-cm-konzertgitarre-4250771306054",
+   "name": "La Mancha Rubi CM Konzertgitarre",
+   "brand": "La Mancha",
+   "kind": "clasica",
+   "img": "https://media.zoundhouse.de/media/86/46/c2/1700209939/0056728.jpg?ts=1749707771",
+   "th": "057c0fa535ba9cfc.webp",
+   "thimg": "https://cdn.shopify.com/s/files/1/0063/3559/4578/files/260111_01_lm_rubi_cm_front.jpg?v=1772202818",
+   "price": 239.0,
+   "store": "Musik Ebert",
+   "stores": 7,
+   "median": 269.0,
+   "max": 308.0,
+   "next": 259.0,
+   "rows": [
+    [
+     "Musik Ebert",
+     239.0
+    ],
+    [
+     "Musikhaus Korn",
+     259.0
+    ],
+    [
+     "Music Town",
+     259.0
+    ],
+    [
+     "Soundland",
+     269.0
+    ],
+    [
+     "Musikhaus Zölch",
+     269.0
+    ],
+    [
+     "Musik Beck",
+     279.0
+    ],
+    [
+     "Shop2Rock",
+     308.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}
