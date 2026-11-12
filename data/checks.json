@@ -693,18 +693,6 @@
   "median": 186.275
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Epiphone Casino USA Vintage Burst Original",
-  "slug": "epiphone-casino-usa-vintage-burst-original-711106030975"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Jet JT300-CAR P90 Candy Red",
-  "slug": "jet-jt300-car-p90-candy-red-90candyred"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
@@ -1164,12 +1152,6 @@
   "median": 877.895
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Martin 000-28-L Modern Deluxe Lh",
-  "slug": "martin-000-28-l-modern-deluxe-lh-156812542051"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "partitura",
@@ -1279,42 +1261,12 @@
  },
  {
   "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Lâg Bluewave 1 TNBW1TE Viaje Nylon",
-  "slug": "lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143"
- },
- {
-  "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "session",
   "name": "Ortega R122SN-L",
   "slug": "ortega-r122sn-l-842960180374",
   "price": 189.0,
   "median": 269.37
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Caballero by MR Europa 4/4 abeto y caoba mate",
-  "slug": "caballero-by-mr-europa-4-4-abeto-y-caoba-mate-4046662299457"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Caballero by MR Europa 4/4 cedro y caoba mate",
-  "slug": "caballero-by-mr-europa-4-4-cedro-y-caoba-mate-4046662299440"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Gewa Pro Natura Silver 1/2 semibrillante",
-  "slug": "gewa-pro-natura-silver-1-2-semibrillante-4046662036229"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Gewa electroacústica GEWA Student 4/4 negra",
-  "slug": "gewa-electroacustica-gewa-student-4-4-negra-4046662252483"
  },
  {
   "kind": "teclado",
