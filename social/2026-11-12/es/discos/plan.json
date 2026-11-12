@@ -1,0 +1,70 @@
+{
+ "tipo": "same",
+ "cab": "Mismo disco, 20,96 € más barato",
+ "fmt": "vinilo",
+ "disco": {
+  "ean": "0081227811532",
+  "fmt": "vinilo",
+  "img": "https://egebotiga.com/wp-content/uploads/2025/03/Prince-Live-At-Glam-Slam-Yellow-3LP-RSD-2025-comprar-vinolp-lp-online.webp",
+  "items": [
+   {
+    "p": 47.59,
+    "s": "cdgo",
+    "st": true,
+    "u": "https://cdgo.com/detalhe/0081227811532/x"
+   },
+   {
+    "p": 48.99,
+    "s": "ebay",
+    "st": true,
+    "u": "https://www.ebay.es/itm/358504731451?hash=item53788c133b%3Ag%3Ao34AAeSwX8Rp84kk&mkevt=1&mkcid=1&mkrid=1185-53479-19255-0&campid=5339241544&customid=guitle-es&toolid=10049"
+   },
+   {
+    "p": 69.95,
+    "s": "ega",
+    "st": true,
+    "u": "https://discosega.es/inicio/17894-prince-the-new-power-generation-live-at-glam-slam-3lp-vinilo-color-amarillo-0081227811532.html"
+   },
+   {
+    "p": 55.0,
+    "s": "supersonic",
+    "st": false,
+    "u": "https://discossupersonicsantander.com/products/prince-live-at-glam-slam"
+   },
+   {
+    "p": 68.0,
+    "s": "ege",
+    "st": false,
+    "u": "https://egebotiga.com/tienda/genero/pop-rock-internacional/prince-live-at-glam-slam-yellow-%f0%9f%9f%a1-3lp/"
+   }
+  ],
+  "name": "Prince - Live At Glam Slam",
+  "slug": "prince-live-at-glam-slam-vinilo-0081227811532",
+  "artist": "Prince",
+  "title": "Live At Glam Slam",
+  "lo": 48.99,
+  "hi": 69.95,
+  "ahorro": 20.96,
+  "tienda": "eBay",
+  "tiendas": 2,
+  "url": "https://guitle.com/discos/prince-live-at-glam-slam-vinilo-0081227811532.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-12",
+ "cc": "es",
+ "t": {
+  "cab_same": "Mismo disco, 20,96 € más barato",
+  "cab_semana": "El chollo de vinilo de la semana",
+  "pill_post": "💿 Chollo de disco",
+  "pill_post_semana": "🏆 Chollo de la semana",
+  "pill_story": "💿 Mismo disco, más barato",
+  "pill_story_semana": "🏆 Vinilo de la semana",
+  "cheapest": "Lo más barato hoy",
+  "at": "en",
+  "others": "Otras tiendas de discos",
+  "upto": "hasta",
+  "footer": "Comparamos precios de tiendas de discos de España · guitle.com/discos",
+  "elsewhere": "Hasta 69,95 € en otras tiendas · ahorras 20,96 €",
+  "story_footer": "Precios y stock: enlace en la bio · guitle.com/discos"
+ }
+}
