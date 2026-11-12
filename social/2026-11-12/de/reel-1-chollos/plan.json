@@ -1,0 +1,204 @@
+{
+ "fecha": "12. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "ibanez-af75-bs-e-gitarre-4515110215276",
+    "name": "Ibanez AF75-BS E-Gitarre",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/134590/lg/ibanez-af75-bs-e-gitarre.jpg",
+    "th": "60546c0040e01711.webp",
+    "thimg": null,
+    "price": 449.0,
+    "store": "IMM Professional",
+    "stores": 6,
+    "median": 548.0,
+    "max": 559.0,
+    "next": 516.0,
+    "rows": [
+     [
+      "IMM Professional",
+      449.0
+     ],
+     [
+      "Woodbrass",
+      516.0
+     ],
+     [
+      "Music Town",
+      529.0
+     ],
+     [
+      "Shop2Rock",
+      548.0
+     ],
+     [
+      "Musikhaus Lange",
+      559.0
+     ],
+     [
+      "Musik Beck",
+      559.0
+     ]
+    ],
+    "pvp": null,
+    "why": "67 € günstiger als in allen anderen Shops",
+    "pct": 13,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "schecter-diamond-omen-extreme-7-bch-7-string-e-gitarre-839212001372",
+    "name": "Schecter Diamond Omen Extreme 7 BCH 7-String E-Gitarre",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://cdn.korn.eu/pictures/product/400/247703.jpg",
+    "th": "31a19cc6b80c84ff.webp",
+    "thimg": "https://www.shop2rock.de/shop/images/products/main/schecter_sc2008.jpg",
+    "price": 569.0,
+    "store": "Musikhaus Korn",
+    "stores": 4,
+    "median": 699.0,
+    "max": 712.0,
+    "next": 659.0,
+    "rows": [
+     [
+      "Musikhaus Korn",
+      569.0
+     ],
+     [
+      "Musikhaus Zölch",
+      659.0
+     ],
+     [
+      "Shop2Rock",
+      699.0
+     ],
+     [
+      "Woodbrass",
+      712.0
+     ]
+    ],
+    "pvp": null,
+    "why": "90 € günstiger als in allen anderen Shops",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "takamine-gn37ce-pw-nex-cutaway-perlmuttwei-190262044680",
+    "name": "Takamine GN37CE PW Nex Cutaway Perlmuttweiß",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://woodbrass.de/cdn/shop/files/3f5bb1545cebc612ee8ef15865209d7857d0bf1e_GTA_GN37CE_PW.jpg?height=1200&pad_color=ffffff&v=1794218594&width=1200",
+    "th": "07684cb53b0f9c8c.webp",
+    "thimg": null,
+    "price": 628.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 788.0,
+    "max": 819.0,
+    "next": 757.0,
+    "rows": [
+     [
+      "Woodbrass",
+      628.0
+     ],
+     [
+      "Shop2Rock",
+      757.0
+     ],
+     [
+      "Music Town",
+      819.0
+     ]
+    ],
+    "pvp": null,
+    "why": "129 € günstiger als in allen anderen Shops",
+    "pct": 17,
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-r20gsnrg-konzertgitarre-842960187090",
+    "name": "Ortega R20GSNRG Konzertgitarre",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://media.zoundhouse.de/media/92/00/76/1768315684/1041551 (1).webp?ts=1768576043",
+    "th": "629beea66ed99277.webp",
+    "thimg": "https://music-town.de/media/d3/8a/9b/1768387888/Ortega R20GSNRG.1.jpg",
+    "price": 571.0,
+    "store": "Zoundhouse",
+    "stores": 6,
+    "median": 669.0,
+    "max": 679.0,
+    "next": 669.0,
+    "rows": [
+     [
+      "Zoundhouse",
+      571.0
+     ],
+     [
+      "Session",
+      669.0
+     ],
+     [
+      "Music Town",
+      669.0
+     ],
+     [
+      "Thomann",
+      669.0
+     ],
+     [
+      "Musik Beck",
+      669.9
+     ],
+     [
+      "Shop2Rock",
+      679.0
+     ]
+    ],
+    "pvp": null,
+    "why": "98 € günstiger als in allen anderen Shops",
+    "pct": 15,
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}
