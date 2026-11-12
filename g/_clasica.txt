@@ -2056,7 +2056,6 @@ gewa-electroacustica-gewa-pro-natura-silver-samba-4-4-4046662243498
 gewa-electroacustica-gewa-student-4-4-natural-4046662252438
 gewa-electroacustica-gewa-student-4-4-negra-4046662252483
 gewa-electroacustica-gewa-student-cedar-4-4-negra-4046662273846
-gewa-guitarra-clasica-student-natural-tamano-7-8-natural-4046662265117
 gewa-pro-arte-gc-100-a-7-8-alto-brillo-4046662243726
 gewa-pro-arte-gc-130-a-4-4-alto-brillo-4046662243733
 gewa-pro-arte-gc-210-a-4-4-alto-brillo-4046662243740
@@ -2374,11 +2373,9 @@ korg-kronos-3-88-workstation-88-teclas-4959112244450
 la-bella-750n-dtb-50-105-black-nylon-wound-p33803html
 la-bella-750t-dtb-50-105-white-nylon-wound-65629508863
 lag-auditorium-lag-black-brown-3700166371910
-lag-bluewave-1-nailon-de-viaje-marron-3700166374973
 lag-bluewave-1-tnbw1te-brw-travel-nylon-n27197html
-lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143
 lag-bluewave-2-cbw2e-classical-4-4-3700166373105
-lag-bluewave-tnbw1te-brw-travel-nylon-ravelnylon
+lag-bluewave-tnbw1te-nylon-bw1tenylon
 lag-cutaway-auditorium-slim-lag-tramontane-170natural-3700166312302
 lag-electroacustica-lag-escapade-natural-3700166373198
 lag-espanola-amplificada-auditorium-lag-occitania-170-natural-maenatural
@@ -2398,8 +2395,11 @@ lag-tramontane-oc170ce-classical-cutaway-4-4-lcutaway44
 lag-tramontane-oc88-classical-4-4-lassical44
 lag-tramontane-tn70a-b-b-nylon-auditorium-negro-y-marron-rron366868
 lag-tramontane-tn70a-natural-3700166371866
+lag-travel-lag-blue-wave-1-black-natural-3700166373143
+lag-travel-nylon-a-e-blue-wave-1-marron-3700166374973
 lakewood-a-31-cp-crossover-cedar-custom-444410036987
 lakewood-a-36-cp-crossover-4260381430520
+lakewood-m-32-cp-classic-crossover-deluxe-4262405530100
 lp-cencerro-lp-lp008-n-rock-nylon-731201483582
 ltd-tl-6n-nylon-natural-799493247855
 luna-art-vintage-nylon-solid-top-a-e-distressed-810036855624
@@ -2500,7 +2500,6 @@ martinez-crossover-mp14-zi-zn-gigbag-6973106760564
 martinez-de-cipres-mfg-as-con-funda-ipresmfgas
 martinez-edicion-especial-espana-es-08-rtinezes08
 martinez-es-08s-ce-fishman-psy-301-psy301html
-martinez-es-12c-tinezes12c
 martinez-es08sce-blanca-nezes08sce
 martinez-espanola-amplificada-de-escenario-martinez-hispania-azul-enarioazul
 martinez-espanola-amplificada-de-escenario-martinez-hispania-blanco-arioblanco
@@ -3481,7 +3480,7 @@ valencia-vc203csb-3-4-classic-sb-8997032891251
 valencia-vc203hcsb-3-4-hybrid-csb-89970
 valencia-vc203tbu-3-4-trans-blue-8997032891299
 valencia-vc203twr-3-4-twr-8997032891275
-valencia-vc204-8997032890773
+valencia-vc204-c204p11775
 valencia-vc204-tbu-4tbup15835
 valencia-vc204csb-clasic-sunburst-8997032890858
 valencia-vc204csbt-sunburst-8997032894146
