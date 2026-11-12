@@ -1,0 +1,179 @@
+{
+ "date": "2026-11-12",
+ "fecha": "12 novembre",
+ "post": {
+  "type": "chollo",
+  "deal": {
+   "slug": "yamaha-pacifica-112jl-black-ucherblack",
+   "name": "Yamaha Pacifica 112jl Black",
+   "brand": "Yamaha",
+   "kind": "electrica",
+   "img": "https://paul-beuscher.com/cdn/shop/files/Guitare_Electrique_Gaucher_Yamaha_Pacifica_112jl_Black_4a595b5b-ea5c-402b-ba83-f92083aa1fe9.jpg?v=1781865828&width=1200",
+   "th": "0cfee1c3170b87d6.webp",
+   "thimg": "https://audiosystem.fr/67831-product_zoom/yamaha-pacifica-gaucher.jpg",
+   "price": 219.0,
+   "store": "Paul Beuscher",
+   "stores": 3,
+   "median": 284.0,
+   "max": 289.0,
+   "next": 279.0,
+   "rows": [
+    [
+     "Paul Beuscher",
+     219.0
+    ],
+    [
+     "Sévénéant Musique",
+     279.0
+    ],
+    [
+     "Audio System",
+     289.0
+    ]
+   ],
+   "pvp": null,
+   "why": "60 € de moins que dans les autres magasins",
+   "pct": 22,
+   "photo": "chollo-1.webp"
+  },
+  "caption": "🔥 Bon plan du jour : Yamaha Pacifica 112jl Black\n💶 219 € chez Paul Beuscher, comparée dans 3 magasins.\n📉 60 € de moins que dans les autres magasins.\n\n🔎 Compare son prix sur guitle.com/fr (tous les bons plans du jour via le lien en bio 👆).\nPrix du 12 novembre ; il peut changer.\n\n#guitare #guitariste #bonplan #promo #guitareelectrique #yamaha"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-sa260fm-tgb-transparent-gray-burst-sabre-4515110489868",
+   "name": "Ibanez SA260FM-TGB Transparent Gray Burst Sabre",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/2d72558cb5940d640b81d27415db189e4f092670_HOSHINO_SA260FM_TGB.jpg?height=1200&pad_color=ffffff&v=1794424952&width=1200",
+   "th": "05f05e38cb10d7f3.webp",
+   "thimg": "https://maccamusic.com/5674-home_default/ibanez-sa260fm-tgb.jpg",
+   "price": 320.0,
+   "store": "Woodbrass",
+   "stores": 4,
+   "median": 419.0,
+   "max": 449.0,
+   "next": 399.0,
+   "rows": [
+    [
+     "Woodbrass",
+     320.0
+    ],
+    [
+     "Stars Music",
+     399.0
+    ],
+    [
+     "Music Privilege",
+     419.0
+    ],
+    [
+     "Music & Co",
+     449.0
+    ]
+   ],
+   "pvp": null,
+   "why": "79 € de moins que dans les autres magasins",
+   "pct": 20,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "mooer-guitare-mooer-gtrs-p801-dark-night-6971889220466",
+   "name": "Mooer Guitare Mooer Gtrs-P801 Dark Night",
+   "brand": "Mooer",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/f7f38647b9e06e53585fecc04134cd4c7079c186_MUSICO_GTRS_P801DN.jpg?height=1200&pad_color=ffffff&v=1794370574&width=1200",
+   "th": "7dd6ab88b27249a7.webp",
+   "thimg": null,
+   "price": 599.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 753.0,
+   "max": 757.0,
+   "next": 749.0,
+   "rows": [
+    [
+     "Woodbrass",
+     599.0
+    ],
+    [
+     "Cultura",
+     749.0
+    ],
+    [
+     "Michenaud",
+     757.0
+    ]
+   ],
+   "pvp": null,
+   "why": "150 € de moins que dans les autres magasins",
+   "pct": 20,
+   "photo": "chollo-3.webp"
+  },
+  {
+   "slug": "epiphone-ibg-j-45-studio-vintage-sunburst-711106174006",
+   "name": "Epiphone IBG J-45 Studio - vintage sunburst",
+   "brand": "Epiphone",
+   "kind": "acustica",
+   "img": "https://www.stars-music.fr/medias/epiphone/j45-studio-ibg-dreadnought-epicea-rw-hd-231717.webp",
+   "th": "85aedaf1c9667cea.webp",
+   "thimg": "https://woodbrass.com/cdn/shop/files/f94b67f2548dda094183f667919f5f922ea60490_GBI_EAS45VSNH1.jpg?height=1200&pad_color=ffffff&v=1792249844&width=1200",
+   "price": 370.0,
+   "store": "Stars Music",
+   "stores": 4,
+   "median": 449.0,
+   "max": 479.0,
+   "next": 449.0,
+   "rows": [
+    [
+     "Stars Music",
+     370.0
+    ],
+    [
+     "Woodbrass",
+     449.0
+    ],
+    [
+     "Michenaud",
+     449.0
+    ],
+    [
+     "Azema Musique",
+     479.0
+    ]
+   ],
+   "pvp": null,
+   "why": "79 € de moins que dans les autres magasins",
+   "pct": 18,
+   "photo": "chollo-4.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

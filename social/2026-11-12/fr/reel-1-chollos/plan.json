@@ -1,0 +1,154 @@
+{
+ "fecha": "12 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "squier-classic-vibe-50s-stratocaster-ht-mn-ppg-shell-pink-885978674244",
+    "name": "Squier Classic Vibe '50s Stratocaster HT MN PPG Shell Pink",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/746ba0fda6e355cc6a5e69d308d2a7dee75cf1d9_FMIC_0374008556.jpg?height=1200&pad_color=ffffff&v=1793727346&width=1200",
+    "th": "ec6215b6d8176d3a.webp",
+    "thimg": "https://hurricanemusic.fr/182821-home_default/squier-classic-vibe-50s-stratocaster-ht-shp.webp",
+    "price": 369.0,
+    "store": "Woodbrass",
+    "stores": 3,
+    "median": 462.0,
+    "max": 475.0,
+    "next": 449.0,
+    "rows": [
+     [
+      "Woodbrass",
+      369.0
+     ],
+     [
+      "Michenaud",
+      449.0
+     ],
+     [
+      "Hurricane Music",
+      475.0
+     ]
+    ],
+    "pvp": null,
+    "why": "80 € de moins que dans les autres magasins",
+    "pct": 18,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "sire-larry-carlton-q7-metallic-gold-810187570919",
+    "name": "Sire Larry Carlton Q7 - metallic gold",
+    "brand": "Sire",
+    "kind": "electrica",
+    "img": "https://www.stars-music.fr/medias/sire/larry-carlton-q7-2h-trem-eb-hd-227665.webp",
+    "th": "f99a7ac83896bf67.webp",
+    "thimg": "https://woodbrass.com/cdn/shop/files/09cb4cf77ec0166da1854e93726c89c1730236a9_IMS_Q7_MGO.jpg?height=1200&pad_color=ffffff&v=1794377909&width=1200",
+    "price": 499.0,
+    "store": "Stars Music",
+    "stores": 3,
+    "median": 599.0,
+    "max": 599.0,
+    "next": 599.0,
+    "rows": [
+     [
+      "Stars Music",
+      499.0
+     ],
+     [
+      "Woodbrass",
+      599.0
+     ],
+     [
+      "Music 3000",
+      599.0
+     ]
+    ],
+    "pvp": null,
+    "why": "100 € de moins que dans les autres magasins",
+    "pct": 17,
+    "photo": "g1-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "lag-lag-guitare-electro-acoustique-tramontane-118-dreadnought-pan-coupe-t118dce-3700166363120",
+    "name": "LAG Lâg - Guitare Electro Acoustique Tramontane 118 Dreadnought Pan coupé - T118DCE",
+    "brand": "LAG",
+    "kind": "acustica",
+    "img": "https://scottomusique.com/25003-home_default/lag-guitare-electro-acoustique-tramontane-118-dreadnought-t118dce.jpg",
+    "th": "462a58117dd372a3.webp",
+    "thimg": "https://ubico-musique.com/12742-home_default/lâg-t118dce-dreadnought-cutaway-electro.jpg",
+    "price": 459.0,
+    "store": "Scotto Musique",
+    "stores": 6,
+    "median": 549.0,
+    "max": 549.99,
+    "next": 539.0,
+    "rows": [
+     [
+      "Scotto Musique",
+      459.0
+     ],
+     [
+      "Audio System",
+      539.0
+     ],
+     [
+      "Woodbrass",
+      549.0
+     ],
+     [
+      "Stars Music",
+      549.0
+     ],
+     [
+      "Music 3000",
+      549.0
+     ],
+     [
+      "Cultura",
+      549.99
+     ]
+    ],
+    "pvp": null,
+    "why": "80 € de moins que dans les autres magasins",
+    "pct": 15,
+    "photo": "g2-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
