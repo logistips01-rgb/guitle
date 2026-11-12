@@ -68,7 +68,7 @@
  "sk": {
   "country": "Slovensko",
   "path": "/sk/",
-  "guitars": 19663,
+  "guitars": 19659,
   "stores": 2
  },
  "hu": {
@@ -80,13 +80,13 @@
  "ro": {
   "country": "România",
   "path": "/ro/",
-  "guitars": 14386,
+  "guitars": 14400,
   "stores": 2
  },
  "bg": {
   "country": "България",
   "path": "/bg/",
-  "guitars": 7173,
+  "guitars": 7172,
   "stores": 1
  },
  "gr": {
@@ -140,7 +140,7 @@
  "ch": {
   "country": "Schweiz",
   "path": "/ch/",
-  "guitars": 21230,
+  "guitars": 21242,
   "stores": 5
  },
  "be": {

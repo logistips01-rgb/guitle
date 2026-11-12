@@ -1,106 +1,76 @@
 {
- "actualizado": "2026-11-12T09:32",
- "total": 266,
- "ok": 246,
- "distinto": 7,
- "sin_comprobar": 13,
+ "actualizado": "2026-11-12T17:50",
+ "total": 268,
+ "ok": 244,
+ "distinto": 5,
+ "sin_comprobar": 19,
  "distintos": [
   {
-   "pais": "at",
-   "tienda": "musikpaul",
-   "url": "https://musikpaul.at/produkt/hanika-58efn-konzertgitarre-101004/",
-   "precio": 3400,
+   "pais": "es",
+   "tienda": "musicalsanfrancisco",
+   "url": "https://musicalsanfrancisco.es/guitarra-espanola-amplificada-walden-natura-500-wan550ew-con-funda/",
+   "precio": 519.01,
    "moneda": "EUR",
-   "leido": "2026-11-11T19:37",
-   "nombre": "Hanika 58EF-N Konzertgitarre",
+   "leido": "2026-11-12T04:26",
+   "nombre": "Walden española amplificada Walden Natura 500 WAN550EW con funda",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "2.790,00 €",
-    "129,00 €",
-    "85,00 €",
-    "539,00 €",
-    "539,00 €",
-    "429,00 €"
+    "99 €",
+    "486,55 €",
+    "346 €",
+    "6 257 €",
+    "149 €",
+    "6 270 €"
    ]
   },
   {
    "pais": "br",
-   "tienda": "ajoiamusical",
-   "url": "https://www.ajoiamusical.com.br/violao-aco-strinberg-sd301hcr-galaxy-mgs",
-   "precio": 1999,
+   "tienda": "fenderbr",
+   "url": "https://www.fender.com.br/produto/10173353/guitarras/guitarra-fender-1963-telecaster-journeyman-relic-923-1016-473-red-sparkle",
+   "precio": 37990,
    "moneda": "BRL",
-   "leido": "2026-11-11T19:27",
-   "nombre": "Strinberg SD301HCR Galaxy MGS",
+   "leido": "2026-11-11T19:26",
+   "nombre": "Fender 1963 Telecaster Journeyman Relic RED Sparkle",
    "http": 200,
    "estado": "distinto",
-   "visibles": []
+   "visibles": [
+    "R$ 150",
+    "R$ 21",
+    "R$ 265",
+    "R$ 121,5",
+    "R$ 310",
+    "R$ 100"
+   ]
   },
   {
    "pais": "br",
-   "tienda": "mundomax",
-   "url": "https://www.mundomax.com.br/violao-eletroacustico-giannini-perform-ggc-plus-aco-walnut-satin",
-   "precio": 1169.1,
+   "tienda": "x5music",
+   "url": "https://www.x5music.com.br/guitarra-tagima-tg-525-owh-olympic-white/p",
+   "precio": 1063.81,
    "moneda": "BRL",
-   "leido": "2026-11-11T20:02",
-   "nombre": "Giannini Perform GGC Plus Eletroacústico Aço Walnut Satin",
+   "leido": "2026-11-11T19:40",
+   "nombre": "Tagima TG-525 OWH Olympic White",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 949,00 10",
-    "R$ 94,90",
-    "R$ 819,00 10",
-    "R$ 81,90",
-    "R$ 2.150,00 12",
-    "R$ 179,17"
+    "R$ 1.511,09",
+    "R$ 1.208,87",
+    "R$ 1.373,72",
+    "R$ 76,31"
    ]
   },
   {
-   "pais": "hu",
-   "tienda": "kytary",
-   "url": "https://kytary.hu/gibson-custom-1959-les-paul-standard-reissue-vos-washed-cherry-sunburst-942864/HN216209/",
-   "precio": 2346700,
-   "moneda": "HUF",
-   "leido": "2026-11-11T17:52",
-   "nombre": "Gibson 1959 Les Paul Standard Reissue VOS Washed Cherry Sunburst #942864",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "30 000 Ft",
-    "2 355 480 Ft",
-    "30 000 Ft",
-    "2 355 480 Ft",
-    "30 000 Ft",
-    "2 669 780 Ft"
-   ]
-  },
-  {
-   "pais": "it",
-   "tienda": "musicis",
-   "url": "https://www.musicis.it/traveler-chitarra-elettrica-eg-1-standard-nero-opaco.1.0.6917.gp.168302.uw",
-   "precio": 519,
+   "pais": "fr",
+   "tienda": "hurricanemusic",
+   "url": "https://hurricanemusic.fr/400567-prs-guitars-custom-24-antique-white.html",
+   "precio": 5647,
    "moneda": "EUR",
-   "leido": "2026-11-11T15:49",
-   "nombre": "Traveler Chitarra Elettrica EG-1 Standard Nero Opaco",
+   "leido": "2026-11-12T11:23",
+   "nombre": "PRS Custom 24 Antique White",
    "http": 200,
    "estado": "distinto",
    "visibles": []
-  },
-  {
-   "pais": "nl",
-   "tienda": "musicallin",
-   "url": "https://musicallin.nl/products/prs-se-custom-vintage-sunburst",
-   "precio": 450,
-   "moneda": "EUR",
-   "leido": "2026-11-11T21:08",
-   "nombre": "PRS SE Custom Vintage Sunburst",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "€ 10",
-    "€ 10",
-    "€ 75."
-   ]
   },
   {
    "pais": "se",
@@ -117,13 +87,17 @@
     "2499 kr",
     "2499 kr",
     "2499 kr",
-    "1 476 kr",
+    "1 481 kr",
     "69 kr"
    ]
   }
  ],
  "sin_comprobar_tiendas": [
   "es·alteisa",
+  "es·mat",
+  "at·musikpaul",
+  "es·musicopolix",
+  "br·ajoiamusical",
   "br·multisom",
   "br·supersom",
   "fr·azemamusique",
@@ -134,7 +108,9 @@
   "it·fireflyaudio",
   "uk·absolutemusic",
   "uk·andertons",
+  "pt·guitarcustom",
   "uk·richtone",
+  "uk·modernmusic",
   "pt·cdgo"
  ]
 }
