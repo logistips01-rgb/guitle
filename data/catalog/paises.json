@@ -44,13 +44,13 @@
  "at": {
   "country": "Österreich",
   "path": "/at/",
-  "guitars": 14876,
+  "guitars": 14873,
   "stores": 8
  },
  "nl": {
   "country": "Nederland",
   "path": "/nl/",
-  "guitars": 31198,
+  "guitars": 31556,
   "stores": 13
  },
  "pl": {
@@ -74,7 +74,7 @@
  "hu": {
   "country": "Magyarország",
   "path": "/hu/",
-  "guitars": 20449,
+  "guitars": 20437,
   "stores": 2
  },
  "ro": {
@@ -92,7 +92,7 @@
  "gr": {
   "country": "Ελλάδα",
   "path": "/gr/",
-  "guitars": 15471,
+  "guitars": 15337,
   "stores": 2
  },
  "mx": {
@@ -110,13 +110,13 @@
  "fi": {
   "country": "Suomi",
   "path": "/fi/",
-  "guitars": 6285,
+  "guitars": 6202,
   "stores": 1
  },
  "lu": {
   "country": "Luxembourg",
   "path": "/lu/",
-  "guitars": 5043,
+  "guitars": 5021,
   "stores": 1
  },
  "se": {
@@ -140,13 +140,13 @@
  "ch": {
   "country": "Schweiz",
   "path": "/ch/",
-  "guitars": 21242,
+  "guitars": 20917,
   "stores": 5
  },
  "be": {
   "country": "België",
   "path": "/be/",
-  "guitars": 29347,
+  "guitars": 29071,
   "stores": 9
  },
  "uk": {
