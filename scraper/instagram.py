@@ -329,10 +329,13 @@ def foto_src(p):
     ficha (img) o, si la web eligió la foto de otra tienda, la de esa tienda (thimg). None si no hay ninguna."""
     from .thumbs import name_for
     th = p.get("th")
-    for url in (p.get("img"), p.get("thimg")):
-        if th and url and name_for(url) == th:
-            return url
-    return None
+    if not th:
+        return None
+    if p.get("img") and name_for(p["img"]) == th:
+        return p["img"]
+    # thimg: la foto grande de la que sale la miniatura (otra tienda); si la miniatura se rehízo
+    # (data/fotos-rehechas.json) su nombre ya no es el sha1 de thimg, pero sigue siendo la misma foto
+    return p.get("thimg") or None
 
 
 def foto_revisada(p):
