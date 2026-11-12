@@ -1,0 +1,77 @@
+{
+ "fecha": "12 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Aponta este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai mesmo baixar na Black Friday?",
+  "bfDecimos": "A 27 de novembro dizemos-te, com o histórico de preços.",
+  "bfGuarda": "Guarda 📌"
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/",
+ "post": {
+  "type": "bf",
+  "days": 15,
+  "deal": {
+   "slug": "ibanez-af55-tf-af55tf7570",
+   "name": "Ibanez AF55 TF",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://musifex.pt/web/image/product.template/7570/image_1024?unique=eb4de26",
+   "th": "fbbc09ff5f5dac36.webp",
+   "price": 339.0,
+   "store": "Musifex",
+   "stores": 3,
+   "median": 346.5,
+   "max": 354.0,
+   "next": 339.0,
+   "rows": [
+    [
+     "Musifex",
+     339.0
+    ],
+    [
+     "Thomann",
+     339.0
+    ],
+    [
+     "Egitana",
+     354.0
+    ]
+   ],
+   "pvp": null,
+   "photo": "g1.webp"
+  }
+ }
+}

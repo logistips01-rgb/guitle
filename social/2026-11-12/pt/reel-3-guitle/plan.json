@@ -1,0 +1,74 @@
+{
+ "fecha": "12 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Aponta este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai mesmo baixar na Black Friday?",
+  "bfDecimos": "A 27 de novembro dizemos-te, com o histórico de preços.",
+  "bfGuarda": "Guarda 📌"
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/",
+ "post": {
+  "type": "guitle",
+  "topic": "que",
+  "slides": [
+   {
+    "hook": "guitle",
+    "title": "O que é o guitle?",
+    "sub": "O comparador de preços de guitarras",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "17.541 guitarras em 9 lojas",
+    "sub": "Verificamos todos os preços, todos os dias",
+    "size": 120
+   },
+   {
+    "title": "Mostramos-te onde está mais barata",
+    "sub": "Grátis e sem registo",
+    "size": 120
+   }
+  ]
+ }
+}
