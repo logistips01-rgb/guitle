@@ -693,24 +693,6 @@
   "median": 362.0
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Gibson 1954 Les Paul Reissue VOS Double Gold",
-  "slug": "gibson-1954-les-paul-reissue-vos-double-gold-711106926445"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Gibson 1959 Les Paul Standard Reissue Murphy Lab Heavy Aged Golden Poppy Burst #952594",
-  "slug": "gibson-1959-les-paul-standard-reissue-murphy-lab-heavy-aged-golden-poppy-burst-9-711106050409"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Schecter para Zurdos Schecter Nick Johnston Traditional 2020 Atomic Green",
-  "slug": "schecter-para-zurdos-schecter-nick-johnston-traditional-2020-atomic-green-815447028179"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
@@ -1123,12 +1105,6 @@
   "slug": "yamaha-tas1e-ultra-marine-4957812722322",
   "price": 643.0,
   "median": 877.895
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Gibson SJ-200 Western Classic VS",
-  "slug": "gibson-sj-200-western-classic-vs-711106056333"
  },
  {
   "kind": "clasica",
