@@ -1530,8 +1530,8 @@ epiphone-j-200-studio-natural-711106174099
 epiphone-j-200-studio-vintage-sunburst-711106174082
 epiphone-j-220-studio-vintage-sunburst-711106325644
 epiphone-j-45-aged-viper-blue-711106140421
-epiphone-j-45-ec-aged-vintage-sunburst-ibgcs-711106045511
 epiphone-j-45-ec-ebony-711106327440
+epiphone-j-45-ec-ig-aged-vintage-sunburst-711106045511
 epiphone-j-45-ec-studio-nat-711106325699
 epiphone-j-45-ec-studio-vs-711106325651
 epiphone-j-45-standard-ec-honey-burst-ibg-711106166476
@@ -2036,7 +2036,6 @@ gibson-dove-original-vintage-cherry-sunburst-711106037042
 gibson-dove-signature-elvis-ebony-cs-711106056371
 gibson-dove-signature-elvis-ebony-cs-mc-21773019-3019425285
 gibson-doves-in-flight-antique-natural-711106044231
-gibson-doves-in-flight-antique-natural-cs-mc-csmc411835
 gibson-elvis-sj-200-ebony-711106056388
 gibson-everly-brothers-j-180-22994072-711106139456
 gibson-g-45-natural-lh-711106056449
@@ -2065,7 +2064,6 @@ gibson-hummingbird-studio-walnut-satin-natural-711106139333
 gibson-j-160e-original-vintage-sunburst-711106174419
 gibson-j-185-1952-antique-natural-cs-hrc-shrc411826
 gibson-j-185-1952-antique-natural-cshr-711106037417
-gibson-j-185-1952-vintage-sunburst-cshr-711106037400
 gibson-j-185-century-12-fret-an-711106233536
 gibson-j-185-century-12f-ebony-original-711106233512
 gibson-j-185-century-12f-vintage-sunburst-original-711106233499
@@ -2104,7 +2102,6 @@ gibson-j-45-studio-walnut-burst-711106037158
 gibson-j-45-studio-walnut-burst-711106170237
 gibson-j-45-studio-walnut-natural-711106170213
 gibson-j-45-studio-walnut-satin-natural-711106139296
-gibson-jumbo-1934-vintage-sunburst-cs-hrc-21273039-3039405059
 gibson-jumbo-1934-vintage-sunburst-cshr-711106037325
 gibson-l-00-century-12-fret-antique-711106233413
 gibson-l-00-century-12-fret-ebony-711106233390
@@ -2136,7 +2133,6 @@ gibson-sj-200-elegant-koa-lh-burst-miel-modern-711106233581
 gibson-sj-200-firma-elvis-ebano-cs-mc-csmc411825
 gibson-sj-200-firma-orianthi-cereza-cs-711106056364
 gibson-sj-200-original-left-handed-711106037608
-gibson-sj-200-original-natural-antiguo-711106037080
 gibson-sj-200-original-vintage-sunburst-711106037097
 gibson-sj-200-palisandro-de-preguerra-murphy-lab-envejecido-ligero-vintage-sunbu-rido403728
 gibson-sj-200-palisandro-de-preguerra-vintage-sunburst-cshr-711106037448
@@ -2727,7 +2723,6 @@ ibanez-pc12mh-opn-open-pore-natural-4515276639374
 ibanez-pc12mhce-opn-open-pore-natural-4515276967422
 ibanez-pc14mhce-wk-weathered-black-open-pore-4549763266330
 ibanez-pc34ce-nt-natural-high-gloss-4549763367723
-ibanez-pc34mhce-nt-4549763367730
 ibanez-pf12mhce-opn-open-pore-natural-4515276967439
 ibanez-pf14jr-opn-4549763349361
 ibanez-pf15-bk-black-high-gloss-4515110851139
@@ -2744,7 +2739,6 @@ ibanez-pf16mwce-opn-open-pore-natural-4549763349385
 ibanez-pf16mwce-wk-weathered-black-open-pore-4549763349392
 ibanez-pf16wce-nt-natural-high-gloss-4549763349408
 ibanez-pf16wce-wk-weathered-black-349392html
-ibanez-pf34mhe-nt-4549763367747
 ibanez-pft2-nt-mini-dreadnought-4515276694069
 ibanez-pj50e-oah-open-pore-vintage-amber-sunburst-top-4549763366085
 ibanez-tcm50-gbo-galaxy-black-open-pore-4549763175588
@@ -2973,7 +2967,6 @@ lagdreadnought-cutaway-natural-glat70dce-0dcep27015
 lagdreadnought-sauvage-vagep35828
 lagglat170dce-0dcep27019
 lagtramontane-177-a-e-cutaway-natural-uralp27020
-lakewood-a-14-cp-63-natural-4260381430957
 lakewood-a-15-edition-2022-444410026987
 lakewood-a-15-edition-2024-444410032480
 lakewood-a-24-custom-35250-444410031078
@@ -4728,7 +4721,7 @@ takamine-en20-190262010487
 takamine-fn15ar-fn15arhtml
 takamine-folk-cutaway-electro-sunburst-gf15cebsb-5cebsbhtml
 takamine-fsf40-santa-fe-e-a-electrificada-nex-cutway-para-zurdos-natural-con-fun-190262012634
-takamine-fsf40c-santa-fe-nex-cutway-natural-190262012573
+takamine-fsf40c-natural-190262012573
 takamine-ft340bs-dreadnought-natural-190262011583
 takamine-fx-natural-e-a-cutaway-d65c-dn65c-con-estuche-stuchehtml
 takamine-fxcfolk-gf30-e-a-brown-sunburst-nbursthtml
@@ -5199,6 +5192,7 @@ taylor-212ce-grand-concert-887766126447
 taylor-212ce-lh-887766126454
 taylor-212ce-plus-887766126508
 taylor-214ce-blk-plus-gran-auditorio-negra-887766126546
+taylor-214ce-dlx-special-edition-blacktop-887766149910
 taylor-214ce-gran-auditorio-887766102830
 taylor-214ce-k-dlx-hawaiian-koa-887766135623
 taylor-214ce-k-dlx-special-edition-honeyburst-887766145417
@@ -5300,7 +5294,6 @@ taylor-builder-s-edition-514ce-kona-burst-next-generatio-887766144861
 taylor-builder-s-edition-514ce-natural-next-generation-887766144854
 taylor-builder-s-edition-524ce-next-generation-887766144878
 taylor-builder-s-edition-814ce-blacktop-next-generation-887766144106
-taylor-builder-s-edition-814ce-honduran-rosewood-redwood-887766135722
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-adirondack-shad-887766144205
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-sinker-redwood-887766144083
 taylor-builder-s-edition-814ce-next-generation-indian-rosewood-adirondack-natura-887766144090
@@ -5345,7 +5338,7 @@ taylor-gs-mini-e-koa-lefty-zurdos-887766055372
 taylor-gs-mini-e-koa-lh-887766111771
 taylor-gs-mini-e-koa-plus-887766105428
 taylor-gs-mini-e-koa-plus-lh-para-zurdos-887766105701
-taylor-gs-mini-e-ltd-olive-887766146285
+taylor-gs-mini-e-ltd-oliva-887766146285
 taylor-gs-mini-e-mahogany-887766069775
 taylor-gs-mini-e-mahogany-887766111825
 taylor-gs-mini-e-rosewood-plus-887766118381

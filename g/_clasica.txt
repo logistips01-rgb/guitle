@@ -1095,7 +1095,6 @@ alhambra-zurda-4-p-lh-azurda4plh
 alhambra-zurda-5-p-lh-azurda5plh
 alhambra-zurda-9-p-lh-azurda9plh
 almeria-1-4-aalmeria14
-almeria-totalmente-maciza-europe-tamano-4-4-4046662180106
 altamira-basico-45645680
 altamira-basico-cadete-3-4-4564568034
 altamira-basico-cadete-3-4-cocadete34
@@ -1908,7 +1907,6 @@ eko-nxt-n100ce-natural-8056734496468
 eko-one-s150e-nylon-silenciosa-8056734499278
 eko-silent-one-s150e-folk-es150efolk
 eko-silent-one-s150e-nylon-s150enylon
-eko-vibra-300-4-4-natural-8056734496338
 eko-vibra100-8056734495324
 eko-vibra150cw-8056734495331
 encore-godin-multiac-encore-nylon-7-with-bag-623501041374
@@ -2054,7 +2052,6 @@ gc12s-artesanal-4957812517294
 gc22c-grand-concert-rt5416html
 gewa-3-4-basic-class-basicclass
 gewa-basic-class-basicclass
-gewa-basic-e-natural-4046662269399
 gewa-electroacustica-gewa-pro-natura-silver-samba-4-4-4046662243498
 gewa-electroacustica-gewa-student-4-4-natural-4046662252438
 gewa-electroacustica-gewa-student-4-4-negra-4046662252483
@@ -2403,7 +2400,6 @@ lag-tramontane-tn70a-b-b-nylon-auditorium-negro-y-marron-rron366868
 lag-tramontane-tn70a-natural-3700166371866
 lakewood-a-31-cp-crossover-cedar-custom-444410036987
 lakewood-a-36-cp-crossover-4260381430520
-lakewood-m-32-cp-classic-crossover-deluxe-4262405530100
 lp-cencerro-lp-lp008-n-rock-nylon-731201483582
 ltd-tl-6n-nylon-natural-799493247855
 luna-art-vintage-nylon-solid-top-a-e-distressed-810036855624

@@ -87,7 +87,6 @@ harley-benton-extreme-76-bk-classic-bundle-ndlesethtm
 harley-benton-extreme-76lh-bk-bundle-ndlesethtm
 harley-benton-fusion-iii-hh-eb-bk-bundle-ebundlehtm
 harley-benton-fusion-iii-hh-eb-bk-bundle-ndlesethtm
-harley-benton-fusion-iii-hh-eb-oct-bundle-ebundlehtm
 harley-benton-fusion-t-hh-lh-roasted-bundle-dbundlehtm
 harley-benton-hb-35-bk-vintage-series-bundle-sbundlehtm
 harley-benton-hb-35-ch-vintage-series-bundle-packagehtm
@@ -97,6 +96,7 @@ harley-benton-hb-35-vb-vintage-series-bundle-sbundlehtm
 harley-benton-hb-35plus-black-bundle-kbundlehtm
 harley-benton-hb-35plus-lh-cherry-bundle-ybundlehtm
 harley-benton-hb-35plus-metallic-blue-bundle-ebundlehtm
+harley-benton-hb-35plus-metallic-gree-bundle-ebundlehtm
 harley-benton-hb-35plus-metallic-plum-bundle-mbundlehtm
 harley-benton-hb-35plus-vintage-burst-bundle-ndlesethtm
 harley-benton-hwy-25bks-progressive-s-bundle-sbundlehtm
@@ -204,6 +204,7 @@ harley-benton-st-62bk-hot-rod-bundle-dbundlehtm
 harley-benton-st-62bk-hot-rod-set-ndlesethtm
 harley-benton-st-62cc-mn-lh-seafoam-g-bundle-gbundlehtm
 harley-benton-st-62cc-mn-seafoam-gree-bundle-ebundlehtm
+harley-benton-st-62cc-mn-shell-pink-bundle-ndlesethtm
 harley-benton-st-62cc-rw-lpb-blue-bundle-ebundlehtm
 harley-benton-st-62dlx-ow-vintage-bundle-ebundlehtm
 harley-benton-st-62dlx-ow-vintage-bundle-ndlesethtm
