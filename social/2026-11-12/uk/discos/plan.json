@@ -1,0 +1,48 @@
+{
+ "tipo": "same",
+ "cab": "Same record, £21.51 cheaper",
+ "fmt": "vinyl",
+ "disco": {
+  "ean": "5051961151053",
+  "fmt": "vinilo",
+  "img": "https://cdn.shopify.com/s/files/1/1565/5653/files/b752a0ca-090f-49b8-aa8f-115e0525aeb6_013098b6-1a99-42df-9b5d-688333c6f4a4.jpg?v=1769628763",
+  "items": [
+   {
+    "p": 57.49,
+    "s": "ebay",
+    "st": true,
+    "u": "https://www.ebay.co.uk/itm/800719921036?hash=itemba6ea05f8c%3Ag%3AmnUAAeSwETZq8SAh&mkevt=1&mkcid=1&mkrid=710-53481-19255-0&campid=5339241544&customid=guitle-uk&toolid=10049"
+   },
+   {
+    "p": 59.99,
+    "s": "assai",
+    "st": true,
+    "u": "https://www.assai.co.uk/products/oasis-whats-the-story-morning-glory-vinyl-lp-30th-anniversary-deluxe-edition-due-out-03-10-25"
+   },
+   {
+    "p": 78.99,
+    "s": "recordstore",
+    "st": true,
+    "u": "https://www.recordstore.co.uk/products/whats-the-story-morning-glory-30th-anniversary-deluxe-edition-vinyl-3lp"
+   },
+   {
+    "p": 79.0,
+    "s": "sisterray",
+    "st": true,
+    "u": "https://www.sisterray.co.uk/products/whats-the-story-morning-glory-30th-anniversary-deluxe-edition"
+   }
+  ],
+  "name": "Oasis - (What's The Story) Morning Glory? (30th Anniversary)",
+  "slug": "oasis-what-s-the-story-morning-glory-30th-anniversary-vinyl-5051961151053",
+  "artist": "Oasis",
+  "title": "(What's The Story) Morning Glory? (30th Anniversary)",
+  "lo": 57.49,
+  "hi": 79.0,
+  "ahorro": 21.51,
+  "tienda": "eBay",
+  "tiendas": 4,
+  "url": "https://guitle.com/uk/records/oasis-what-s-the-story-morning-glory-30th-anniversary-vinyl-5051961151053.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-12"
+}
