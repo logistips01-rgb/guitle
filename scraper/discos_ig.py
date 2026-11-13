@@ -261,6 +261,11 @@ def reel(folder, day, cc):
                     ":d=1:s=1080x1920:fps=30,fade=t=in:st=0:d=0.3,format=yuv420p",
                     "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-movflags", "+faststart", str(video)], check=True)
     credito = musica_libre.poner(video, day.toordinal() + sorted(PAIS).index(cc))
+    # Volumen parejo entre temas (algunos salen muy bajos): normalizado a -14 LUFS, el nivel de Instagram
+    tmp = video.with_name("reel-norm.mp4")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(video), "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
+                    "-ar", "44100", "-c:a", "aac", "-b:a", "160k", "-movflags", "+faststart", str(tmp)], check=True)
+    tmp.replace(video)
     texto = (folder / "texto.txt").read_text(encoding="utf-8").strip()
     (folder / "texto.txt").write_text(f"{texto}\n\n{credito}\n", encoding="utf-8")
 
