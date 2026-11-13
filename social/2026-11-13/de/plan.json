@@ -1,0 +1,369 @@
+{
+ "date": "2026-11-13",
+ "fecha": "13. November",
+ "post": {
+  "type": "top",
+  "title": "5 E-Gitarren von 300 € bis 500 €",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "epiphone-sg-tribute-plus-vintage-sunburst-e-gitarre-711106175331",
+    "name": "Epiphone SG Tribute Plus Vintage Sunburst E-Gitarre",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://media.zoundhouse.de/media/d3/ab/f1/1778163265/1043443.png?ts=1778163265",
+    "th": "a027df1912d69f9b.webp",
+    "thimg": "https://woodbrass.de/cdn/shop/files/5f261b32f098d76dee46f3f127c86b39cd004dc2_GBI_E1SGTPVSNH1.jpg?height=1200&pad_color=ffffff&v=1794457097&width=1200",
+    "price": 309.0,
+    "store": "Zoundhouse",
+    "stores": 4,
+    "median": 333.0,
+    "max": 349.0,
+    "next": 333.0,
+    "rows": [
+     [
+      "Zoundhouse",
+      309.0
+     ],
+     [
+      "Session",
+      333.0
+     ],
+     [
+      "Thomann",
+      333.0
+     ],
+     [
+      "Woodbrass",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "mooer-gtrs-guitars-standard-800-intelligent-guitar-s800-gold-6971889220589",
+    "name": "Mooer GTRS Guitars Standard 800 Intelligent Guitar (S800) - Gold",
+    "brand": "Mooer",
+    "kind": "electrica",
+    "img": "https://media.zoundhouse.de/media/30/d9/df/1702688244/1016110.jpg?ts=1749707856",
+    "th": "2dca7c6dd6806ac6.webp",
+    "thimg": "https://woodbrass.de/cdn/shop/files/cd2ea7479e43f16e3ff893de983886923180038c_MUSICO_GTRS_S800GD.jpg?height=1200&pad_color=ffffff&v=1794377806&width=1200",
+    "price": 315.0,
+    "store": "Zoundhouse",
+    "stores": 4,
+    "median": 330.0,
+    "max": 345.0,
+    "next": 329.0,
+    "rows": [
+     [
+      "Zoundhouse",
+      315.0
+     ],
+     [
+      "Musikhaus Zölch",
+      329.0
+     ],
+     [
+      "Shop2Rock",
+      330.0
+     ],
+     [
+      "Woodbrass",
+      345.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "ibanez-rg421ex-bkf-e-gitarre-4515276693581",
+    "name": "Ibanez RG421EX-BKF E-Gitarre",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://imm-professional.de/media/image/product/132293/lg/ibanez-rg421ex-bkf.jpg",
+    "th": "2c453d56a6957c02.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/356049.jpg",
+    "price": 375.0,
+    "store": "IMM Professional",
+    "stores": 11,
+    "median": 410.5,
+    "max": 449.0,
+    "next": 393.0,
+    "rows": [
+     [
+      "IMM Professional",
+      375.0
+     ],
+     [
+      "Session",
+      393.0
+     ],
+     [
+      "Musikhaus Markstein",
+      393.0
+     ],
+     [
+      "Thomann",
+      393.0
+     ],
+     [
+      "Soundland",
+      399.0
+     ],
+     [
+      "Music Town",
+      409.0
+     ],
+     [
+      "Woodbrass",
+      412.0
+     ],
+     [
+      "Shop2Rock",
+      441.0
+     ],
+     [
+      "Musikhaus Lange",
+      449.0
+     ],
+     [
+      "Musik Dressler",
+      449.0
+     ],
+     [
+      "Sound of Music",
+      449.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "yamaha-pacifica-311h-vw-vintage-white-4957812500104",
+    "name": "Yamaha Pacifica 311H VW Vintage White",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://media.zoundhouse.de/media/fe/d2/bb/1702710115/1005731.jpg?ts=1749707879",
+    "th": "c316e3020ae14512.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/263948.jpg",
+    "price": 415.0,
+    "store": "Zoundhouse",
+    "stores": 6,
+    "median": 419.0,
+    "max": 446.0,
+    "next": 419.0,
+    "rows": [
+     [
+      "Zoundhouse",
+      415.0
+     ],
+     [
+      "Session",
+      419.0
+     ],
+     [
+      "Musikhaus Zölch",
+      419.0
+     ],
+     [
+      "Thomann",
+      419.0
+     ],
+     [
+      "Woodbrass",
+      439.0
+     ],
+     [
+      "Shop2Rock",
+      446.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "squier-classic-vibe-stratocaster-70s-hss-mn-blk-885978064335",
+    "name": "Squier Classic Vibe Stratocaster 70s HSS MN BLK",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://www.session.de/media/3e/ea/5c/1662542208/squier_by_fender_-_squier_by_fender_classic_vibe_stratocaster_70s_hss_mn_blk_-_0.jpg?ts=1741896224",
+    "th": "19e5cde7111f538e.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/457243.jpg",
+    "price": 419.0,
+    "store": "Session",
+    "stores": 5,
+    "median": 424.0,
+    "max": 439.0,
+    "next": 419.0,
+    "rows": [
+     [
+      "Session",
+      419.0
+     ],
+     [
+      "Musikhaus Markstein",
+      419.0
+     ],
+     [
+      "Thomann",
+      419.0
+     ],
+     [
+      "Musikhaus am Dornbusch",
+      429.0
+     ],
+     [
+      "Woodbrass",
+      439.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   }
+  ],
+  "caption": "🎸 5 E-Gitarren von 300 € bis 500 €: die meistverkauften in den Shops, mit dem besten Preis von heute 👇\n\n1️⃣ Epiphone SG Tribute Plus Vintage Sunburst E-Gitarre: 309 € bei Zoundhouse\n2️⃣ Mooer GTRS Guitars Standard 800 Intelligent Guitar (S800) - Gold: 315 € bei Zoundhouse\n3️⃣ Ibanez RG421EX-BKF E-Gitarre: 375 € bei IMM Professional\n4️⃣ Yamaha Pacifica 311H VW Vintage White: 415 € bei Zoundhouse\n5️⃣ Squier Classic Vibe Stratocaster 70s HSS MN BLK: 419 € bei Session\n\nWelche nimmst du? Schreib es in die Kommentare 💬\n🔎 Preise vergleichen auf guitle.com/de (alle Deals von heute über den Link in der Bio 👆). Preise vom 13. November.\n\n#gitarre #gitarrist #angebote #deals #egitarre #epiphone #mooer #ibanez #yamaha #squier"
+ },
+ "stories": [
+  {
+   "slug": "lag-hyvibe-1-serie-30-dreadnought-ctw-3700166366411",
+   "name": "Lâg HyVibe 1 Serie 30 Dreadnought Ctw",
+   "brand": "Lâg",
+   "kind": "acustica",
+   "img": "https://woodbrass.de/cdn/shop/files/9c74c473071d9d98705401303738f94fdd1337d1_GLH_THV30DCE.png?height=1200&pad_color=ffffff&v=1794449543&width=1200",
+   "th": "7e68bf18ddfb5f63.webp",
+   "thimg": "https://www.shop2rock.de/shop/images/products/main/lag_thv30dce.jpg",
+   "price": 749.0,
+   "store": "Woodbrass",
+   "stores": 3,
+   "median": 1059.0,
+   "max": 1169.0,
+   "next": 949.0,
+   "rows": [
+    [
+     "Woodbrass",
+     749.0
+    ],
+    [
+     "Shop2Rock",
+     949.0
+    ],
+    [
+     "Music Town",
+     1169.0
+    ]
+   ],
+   "pvp": null,
+   "why": "200 € günstiger als in allen anderen Shops",
+   "pct": 21,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "ibanez-af55-tf-e-gitarre-4515110777088",
+   "name": "Ibanez AF55- TF E-Gitarre",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://media.zoundhouse.de/media/5a/ea/7c/1702640135/0015172.jpg?ts=1749707793",
+   "th": "6919bfd984c40b92.webp",
+   "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/331687.jpg",
+   "price": 319.0,
+   "store": "Zoundhouse",
+   "stores": 6,
+   "median": 399.0,
+   "max": 429.0,
+   "next": 374.0,
+   "rows": [
+    [
+     "Zoundhouse",
+     319.0
+    ],
+    [
+     "Thomann",
+     374.0
+    ],
+    [
+     "Woodbrass",
+     392.0
+    ],
+    [
+     "Music Town",
+     399.0
+    ],
+    [
+     "Shop2Rock",
+     422.0
+    ],
+    [
+     "Musikhaus Lange",
+     429.0
+    ]
+   ],
+   "pvp": null,
+   "why": "55 € günstiger als in allen anderen Shops",
+   "pct": 15,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "ortega-rtpg-ls2-tourplayer-konzertgitarre-indigo-blue-graphic-842960187359",
+   "name": "Ortega RTPG-LS2 Tourplayer Konzertgitarre - Indigo Blue Graphic",
+   "brand": "Ortega",
+   "kind": "clasica",
+   "img": "https://media.zoundhouse.de/media/2f/78/5c/1768236963/1041534 (1).webp?ts=1771860797",
+   "th": "4a0ef23447718762.webp",
+   "thimg": "https://music-town.de/media/a9/f5/c0/1770887499/Ortega RTPG-LS2.1.jpg",
+   "price": 566.0,
+   "store": "Zoundhouse",
+   "stores": 3,
+   "median": 701.5,
+   "max": 719.0,
+   "next": 684.0,
+   "rows": [
+    [
+     "Zoundhouse",
+     566.0
+    ],
+    [
+     "Music Town",
+     684.0
+    ],
+    [
+     "Woodbrass",
+     719.0
+    ]
+   ],
+   "pvp": null,
+   "why": "118 € günstiger als in allen anderen Shops",
+   "pct": 17,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}

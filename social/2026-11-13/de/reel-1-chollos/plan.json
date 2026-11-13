@@ -1,0 +1,204 @@
+{
+ "fecha": "13. November",
+ "post": {
+  "type": "top",
+  "title": "deals von heute",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "ibanez-af75-bs-e-gitarre-semiakustik-in-brown-sunburst-4515110215276",
+    "name": "Ibanez AF75-BS E-Gitarre semiakustik in Brown Sunburst",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://media.zoundhouse.de/media/2f/d0/df/1702671489/0078321.jpg?ts=1749707836",
+    "th": "60546c0040e01711.webp",
+    "thimg": "https://imm-professional.de/media/image/product/134590/lg/ibanez-af75-bs-e-gitarre.jpg",
+    "price": 449.0,
+    "store": "IMM Professional",
+    "stores": 6,
+    "median": 548.0,
+    "max": 559.0,
+    "next": 516.0,
+    "rows": [
+     [
+      "IMM Professional",
+      449.0
+     ],
+     [
+      "Woodbrass",
+      516.0
+     ],
+     [
+      "Music Town",
+      529.0
+     ],
+     [
+      "Shop2Rock",
+      548.0
+     ],
+     [
+      "Musikhaus Lange",
+      559.0
+     ],
+     [
+      "Musik Beck",
+      559.0
+     ]
+    ],
+    "pvp": null,
+    "why": "67 € günstiger als in allen anderen Shops",
+    "pct": 13,
+    "photo": "g0-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "fender-standard-telecaster-3-color-sunburst-885978118151",
+    "name": "Fender Standard Telecaster 3-Color Sunburst",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://media.zoundhouse.de/media/a4/37/26/1738074977/1035627.png?ts=1757222555",
+    "th": "1d67a714c8a93f81.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/608518.jpg",
+    "price": 516.0,
+    "store": "Zoundhouse",
+    "stores": 5,
+    "median": 594.0,
+    "max": 622.0,
+    "next": 589.0,
+    "rows": [
+     [
+      "Zoundhouse",
+      516.0
+     ],
+     [
+      "Session",
+      589.0
+     ],
+     [
+      "Thomann",
+      589.0
+     ],
+     [
+      "Musikhaus Korn",
+      599.0
+     ],
+     [
+      "Woodbrass",
+      622.0
+     ]
+    ],
+    "pvp": null,
+    "why": "73 € günstiger als in allen anderen Shops",
+    "pct": 12,
+    "photo": "g1-1.webp",
+    "label": "E-Gitarre"
+   },
+   {
+    "slug": "lag-sauvage-te-westerngitarre-3700166373075",
+    "name": "LAG Sauvage TE Westerngitarre",
+    "brand": "LAG",
+    "kind": "acustica",
+    "img": "https://imm-professional.de/media/image/product/133354/lg/lag-sauvage-te.jpg",
+    "th": "3220641fe61f2b7a.webp",
+    "thimg": "https://www.shop2rock.de/shop/images/products/main/lag_sate_1.jpg",
+    "price": 419.0,
+    "store": "IMM Professional",
+    "stores": 3,
+    "median": 524.0,
+    "max": 549.0,
+    "next": 499.0,
+    "rows": [
+     [
+      "IMM Professional",
+      419.0
+     ],
+     [
+      "Shop2Rock",
+      499.0
+     ],
+     [
+      "Woodbrass",
+      549.0
+     ]
+    ],
+    "pvp": null,
+    "why": "80 € günstiger als in allen anderen Shops",
+    "pct": 16,
+    "photo": "g2-1.webp",
+    "label": "Westerngitarre"
+   },
+   {
+    "slug": "ortega-r20gsnwn-konzertgitarre-842960187069",
+    "name": "Ortega R20GSNWN Konzertgitarre",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://media.zoundhouse.de/media/cf/aa/0d/1768315697/1041552 (1).webp?ts=1768576055",
+    "th": "736f9cec891803e1.webp",
+    "thimg": "https://www.session.de/media/35/b4/9a/1783441344/ortega-r20gsnwn.jpg?ts=1783441344",
+    "price": 571.0,
+    "store": "Zoundhouse",
+    "stores": 5,
+    "median": 669.45,
+    "max": 679.0,
+    "next": 659.0,
+    "rows": [
+     [
+      "Zoundhouse",
+      571.0
+     ],
+     [
+      "Thomann",
+      659.0
+     ],
+     [
+      "Musikhaus am Dornbusch",
+      669.0
+     ],
+     [
+      "Musik Beck",
+      669.9
+     ],
+     [
+      "Shop2Rock",
+      679.0
+     ]
+    ],
+    "pvp": null,
+    "why": "88 € günstiger als in allen anderen Shops",
+    "pct": 13,
+    "photo": "g3-1.webp",
+    "label": "Konzertgitarre"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  }
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/"
+}
