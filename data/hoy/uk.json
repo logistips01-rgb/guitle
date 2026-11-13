@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-12",
+ "fecha": "2026-11-13",
  "pais": "uk",
  "items": [
   {
-   "slug": "tanglewood-trs1e-smart-rosewood-solid-cedar-mini-folk-acoustic-guitar-819907025159",
-   "name": "Tanglewood TRS1E Smart Rosewood Solid Cedar Mini Folk Acoustic Guitar",
-   "brand": "Tanglewood",
-   "price": "£399",
-   "store": "Sutton Music",
-   "kind": "acustica",
-   "img": "19f771067c15ff23.webp",
-   "why": "£100 less than any other shop"
-  },
-  {
-   "slug": "gretsch-streamliner-cvt-olive-drab-tolivedrab",
-   "name": "Gretsch Streamliner CVT Olive Drab",
-   "brand": "Gretsch",
-   "price": "£249",
-   "store": "Guitars Pedals Amps & Stuff",
-   "kind": "electrica",
-   "img": "6f0318362d2936da.webp",
-   "why": "£50 less than any other shop"
-  },
-  {
-   "slug": "takamine-gc1ce-nat-c1cenathtm",
-   "name": "Takamine GC1CE-Nat",
-   "brand": "Takamine",
-   "price": "£233",
+   "slug": "ibanez-sa260fm-tgb-60fmtgbhtm",
+   "name": "Ibanez SA260FM-TGB",
+   "brand": "Ibanez",
+   "price": "£270",
    "store": "Thomann",
-   "kind": "clasica",
-   "img": "04b8ac6f614decbe.webp",
-   "why": "£46 less than any other shop"
+   "kind": "electrica",
+   "img": "cc1cf4866d655c15.webp",
+   "why": "£89 less than any other shop"
+  },
+  {
+   "slug": "tanglewood-te4-cebl-elemental-guitar-819907024619",
+   "name": "Tanglewood TE4 CEBL Elemental Guitar",
+   "brand": "Tanglewood",
+   "price": "£284",
+   "store": "Project Music",
+   "kind": "acustica",
+   "img": "a4c47cd1762cd855.webp",
+   "why": "£65 less than any other shop"
+  },
+  {
+   "slug": "fender-cd-60s-dreadnought-natural-885978875757",
+   "name": "Fender CD-60S Dreadnought Natural",
+   "brand": "Fender",
+   "price": "£154",
+   "store": "Reidys",
+   "kind": "acustica",
+   "img": "453f46856f9e84cb.webp",
+   "why": "£35 less than any other shop"
+  },
+  {
+   "slug": "epiphone-sg-tribute-plus-laurel-vintage-sunburst-711106175331",
+   "name": "Epiphone SG Tribute Plus - Laurel - Vintage Sunburst",
+   "brand": "Epiphone",
+   "price": "£279",
+   "store": "Peach Guitars",
+   "kind": "electrica",
+   "img": "835b3677549fd1f3.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-rg421s-sem-421ssemhtm",
+   "name": "Ibanez RG421S-SEM",
+   "brand": "Ibanez",
+   "price": "£311",
+   "store": "Thomann",
+   "kind": "electrica",
+   "img": "c010de309535afd3.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-classic-vibe-50s-strat-fiesta-red-mn-885978063932",
+   "name": "Squier Classic Vibe 50s Strat Fiesta Red MN",
+   "brand": "Squier",
+   "price": "£369",
+   "store": "Reidys",
+   "kind": "electrica",
+   "img": "fe6ca80dc0aaff41.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-revstar-element-rse20-vintage-white-4957812675178",
+   "name": "Yamaha Revstar Element RSE20 Vintage White",
+   "brand": "Yamaha",
+   "price": "£399",
+   "store": "Reidys",
+   "kind": "electrica",
+   "img": "976dd8f6a9b19243.webp",
+   "why": ""
+  },
+  {
+   "slug": "fender-special-offer-fender-standard-series-telecaster-maple-neck-white-pg-in-aq-885978118113",
+   "name": "Fender [Special Offer] Fender Standard Series Telecaster Maple Neck White PG in Aqua Marine Metallic",
+   "brand": "Fender",
+   "price": "£420",
+   "store": "The Guitar Store",
+   "kind": "electrica",
+   "img": "113da889cf574b72.webp",
+   "why": ""
   }
  ]
 }

@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-12",
+ "fecha": "2026-11-13",
  "pais": "br",
  "items": [
   {
-   "slug": "squier-fender-squier-sonic-telecaster-lr-torino-red-717669815943",
-   "name": "Squier Fender Squier Sonic Telecaster LR - Torino RED",
+   "slug": "squier-telecaster-affinity-thinline-sunburst-885978135462",
+   "name": "Squier Telecaster Affinity Thinline Sunburst",
    "brand": "Squier",
-   "price": "R$ 1.726,09",
-   "store": "Fender Brasil (Pride Music)",
-   "kind": "electrica",
-   "img": "https://www.fender.com.br/imgs/produtos/gra/fender_10490698.jpg",
-   "why": "R$ 563,79 a menos que em qualquer outra loja"
-  },
-  {
-   "slug": "jackson-series-dinky-js12-metallic-red-885978976799",
-   "name": "Jackson Series Dinky JS12 Metallic Red",
-   "brand": "Jackson",
-   "price": "R$ 1.889,10",
+   "price": "R$ 2.519,10",
    "store": "Mundomax",
    "kind": "electrica",
-   "img": "1e42736b9927f79e.webp",
-   "why": "R$ 500,90 a menos que em qualquer outra loja"
+   "img": "3dc4397d3b213d5d.webp",
+   "why": "R$ 699,06 a menos que em qualquer outra loja"
   },
   {
-   "slug": "tagima-ws30-jumbo-aco-eletroacustico-natural-7898651946333",
-   "name": "Tagima WS30 Jumbo Aço Eletroacústico Natural",
-   "brand": "Tagima",
-   "price": "R$ 989,91",
-   "store": "Luggi",
+   "slug": "strinberg-sd200c-ns-lh-black-series-folk-de-aco-c-afinador-natural-fosco-canhoto-7899854521334",
+   "name": "Strinberg SD200C NS LH Black Series Folk de Aço C/ Afinador Natural Fosco Canhoto",
+   "brand": "Strinberg",
+   "price": "R$ 890,10",
+   "store": "Akustica Musical",
    "kind": "acustica",
-   "img": "1c0783c2cb04303e.webp",
-   "why": "R$ 259,58 a menos que em qualquer outra loja"
+   "img": "c3a3c60d7d6a9669.webp",
+   "why": "R$ 212,06 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "tagima-tg-530-woodstock-sunburst-7898563970723",
+   "name": "Tagima TG-530 Woodstock Sunburst",
+   "brand": "Tagima",
+   "price": "R$ 1.043,10",
+   "store": "Mundomax",
+   "kind": "electrica",
+   "img": "17f8e1b977f5317a.webp",
+   "why": "R$ 216,81 a menos que em qualquer outra loja"
+  },
+  {
+   "slug": "squier-stratocaster-affinity-series-3-color-sunburst-0378000500-squier-by-fender-885978722464",
+   "name": "Squier Stratocaster Affinity Series 3-Color Sunburst 0378000500 - Squier By Fender",
+   "brand": "Squier",
+   "price": "R$ 2.207,08",
+   "store": "Ninja Som",
+   "kind": "electrica",
+   "img": "860b47a8b1e0d25e.webp",
+   "why": ""
+  },
+  {
+   "slug": "benson-stratocaster-hardy-series-901-black-gold-com-bag-7899701569793",
+   "name": "Benson Stratocaster Hardy Series 901 Black Gold Com Bag",
+   "brand": "Benson",
+   "price": "R$ 2.241,00",
+   "store": "Akustica Musical",
+   "kind": "electrica",
+   "img": "22b2e5b4335526a1.webp",
+   "why": ""
+  },
+  {
+   "slug": "tagima-signature-edu-ardanuy-road-striker-org-super-strato-7898569453848",
+   "name": "Tagima Signature Edu Ardanuy Road Striker ORG Super Strato",
+   "brand": "Tagima",
+   "price": "R$ 2.331,00",
+   "store": "Akustica Musical",
+   "kind": "electrica",
+   "img": "9c7780a54157b6f4.webp",
+   "why": ""
+  },
+  {
+   "slug": "seizi-vintage-budokan-hss-reinaldo-meirelles-satin-black-7898512905899",
+   "name": "Seizi Vintage Budokan HSS Reinaldo Meirelles Satin Black",
+   "brand": "Seizi",
+   "price": "R$ 2.677,49",
+   "store": "RCK Audio",
+   "kind": "electrica",
+   "img": "f72ee7cd6c6fd10a.webp",
+   "why": ""
+  },
+  {
+   "slug": "strinberg-shn6-next-headless-multiscale-hh-azul-7899854525530",
+   "name": "Strinberg SHN6 Next Headless Multiscale HH Azul",
+   "brand": "Strinberg",
+   "price": "R$ 2.790,00",
+   "store": "Duetto Musical",
+   "kind": "electrica",
+   "img": "8040d3ee8bb91db9.webp",
+   "why": ""
   }
  ]
 }

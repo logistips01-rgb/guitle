@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-12",
+ "fecha": "2026-11-13",
  "pais": "es",
  "items": [
   {
-   "slug": "esp-ltd-mt-130-red-0redp40087",
-   "name": "ESP LTD MT-130 Red",
+   "slug": "sx-stl50-2-tone-sunburst-6971047511320",
+   "name": "Sx STL50 2 Tone Sunburst",
+   "brand": "Sx",
+   "price": "189 €",
+   "store": "Musicopolix",
+   "kind": "electrica",
+   "img": "9571f8413a586d2f.webp",
+   "why": "Mínimo histórico: 25 % por debajo de su media"
+  },
+  {
+   "slug": "takamine-cutaway-takamine-auditorium-gn75-transparent-black-190262043164",
+   "name": "Takamine Cutaway Takamine Auditorium GN75 Transparent Black",
+   "brand": "Takamine",
+   "price": "561,88 €",
+   "store": "Musical San Francisco",
+   "kind": "acustica",
+   "img": "3a475064472886e2.webp",
+   "why": "Mínimo histórico: 10 % por debajo de su media"
+  },
+  {
+   "slug": "lag-bluewave-1-travel-marron-3700166374966",
+   "name": "Lâg Bluewave 1 Travel Marrón",
+   "brand": "Lâg",
+   "price": "399 €",
+   "store": "Woodbrass",
+   "kind": "acustica",
+   "img": "426ccdb72f4223a9.webp",
+   "why": "Mínimo histórico: 8 % por debajo de su media"
+  },
+  {
+   "slug": "schecter-c-6-deluxe-sbk-81544708201",
+   "name": "Schecter C-6 Deluxe Sbk",
+   "brand": "Schecter",
+   "price": "333,15 €",
+   "store": "Musicopolix",
+   "kind": "electrica",
+   "img": "a95095600fd8cead.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-classic-vibe-50s-stratocaster-mn-white-blonde-885978064205",
+   "name": "Squier Classic Vibe 50s Stratocaster MN White Blonde",
+   "brand": "Squier",
+   "price": "385 €",
+   "store": "Musical San Francisco",
+   "kind": "electrica",
+   "img": "443937ae5b4c6fb4.webp",
+   "why": ""
+  },
+  {
+   "slug": "sire-s5-hss-dark-navy-810187570827",
+   "name": "Sire S5 HSS Dark Navy",
+   "brand": "Sire",
+   "price": "418 €",
+   "store": "Drunkat",
+   "kind": "electrica",
+   "img": "e2fc58ac7e635946.webp",
+   "why": ""
+  },
+  {
+   "slug": "ltd-ec-200dx-blue-burst-limited-edition-719710627208",
+   "name": "LTD EC-200DX Blue Burst Limited Edition",
    "brand": "LTD",
-   "price": "222 €",
-   "store": "Egitana",
+   "price": "427 €",
+   "store": "Drunkat",
    "kind": "electrica",
-   "img": "5d40e5fe46f271de.webp",
-   "why": "Mínimo histórico: 17 % por debajo de su media"
+   "img": "fe6957ca6b84530e.webp",
+   "why": ""
   },
   {
-   "slug": "mooer-gtrs-s800-white-6971889220121",
-   "name": "Mooer GTRS S800 White",
-   "brand": "Mooer",
-   "price": "253 €",
-   "store": "Nume Music",
+   "slug": "ibanez-az24s1f-tks-transparent-black-sunburst-4549763363527",
+   "name": "Ibanez AZ24S1F-TKS Transparent Black Sunburst",
+   "brand": "Ibanez",
+   "price": "437 €",
+   "store": "Alteisa",
    "kind": "electrica",
-   "img": "1571a6dce1cf8454.webp",
-   "why": "Mínimo histórico: 17 % por debajo de su media"
-  },
-  {
-   "slug": "jackson-x-series-soloist-slx-dx-lrl-gold-bullion-885978052189",
-   "name": "Jackson X Series Soloist SLX DX LRL Gold Bullion",
-   "brand": "Jackson",
-   "price": "639 €",
-   "store": "Session",
-   "kind": "electrica",
-   "img": "f911108946977a33.webp",
-   "why": "Mínimo histórico: 18 % por debajo de su media"
+   "img": "05bb9f451db00a85.webp",
+   "why": ""
   }
  ]
 }
