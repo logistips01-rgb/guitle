@@ -124,6 +124,7 @@ PAIS = {
                  "cheapest": "Lo más barato hoy", "at": "en", "others": "Otras tiendas de discos", "upto": "hasta",
                  "footer": "Comparamos precios de tiendas de discos de España · guitle.com/discos",
                  "elsewhere": "Hasta {hi} en otras tiendas · ahorras {x}",
+                 "save": "Ahorras {x}",
                  "story_footer": "Precios y stock: enlace en la bio · guitle.com/discos"},
            "cap": ("{head}\n\n{artist} – {title} ({fmt})\n✅ {lo} en {tienda}\n🔁 Hasta {hi} en otras tiendas de discos: "
                    "ahorras {x}\n\nComparamos los precios de las tiendas de discos de España para que no tengas que hacerlo tú.\n"
@@ -139,6 +140,7 @@ PAIS = {
                  "cheapest": "Il più economico oggi", "at": "da", "others": "Altri negozi", "upto": "fino a",
                  "footer": "Confrontiamo i prezzi dei negozi di musica in Italia · guitle.com/it/dischi",
                  "elsewhere": "Fino a {hi} altrove · risparmi {x}",
+                 "save": "Risparmi {x}",
                  "story_footer": "Prezzi e disponibilità: link in bio · guitle.com/it/dischi"},
            "cap": ("{head}\n\n{artist} – {title} ({fmt})\n✅ {lo} da {tienda}\n🔁 Fino a {hi} negli altri negozi: "
                    "risparmi {x}\n\nConfrontiamo i prezzi dei negozi di musica in Italia, così non devi farlo tu.\n"
@@ -154,6 +156,7 @@ PAIS = {
                  "cheapest": "Le moins cher aujourd’hui", "at": "chez", "others": "Ailleurs", "upto": "jusqu’à",
                  "footer": "On compare les prix des disques en France · guitle.com/fr/disques",
                  "elsewhere": "Jusqu’à {hi} ailleurs · {x} d’économie",
+                 "save": "{x} d’économie",
                  "story_footer": "Prix et stock : lien en bio · guitle.com/fr/disques"},
            "cap": ("{head}\n\n{artist} – {title} ({fmt})\n✅ {lo} chez {tienda}\n🔁 Jusqu’à {hi} ailleurs : "
                    "{x} d’économie\n\nOn compare les prix des disques en France pour vous.\n"
@@ -300,7 +303,7 @@ def reel(folder, day, cc):
     video = folder / "reel.mp4"
     zoom = "if(lte(on,90),1.3-0.3*on/90,1)"  # 3 s de zoom sobre la portada y luego quieto
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-loop", "1", "-framerate", "30", "-t", "9", "-i", str(folder / "story.jpg"),
-                    "-vf", f"scale=2160:3840,zoompan=z='{zoom}':x='iw/2-(iw/zoom/2)':y='max(0,min(ih-ih/zoom,ih*0.27-ih/zoom/2))'"
+                    "-vf", f"scale=2160:3840,zoompan=z='{zoom}':x='iw/2-(iw/zoom/2)':y='max(0,min(ih-ih/zoom,ih*0.31-ih/zoom/2))'"
                     ":d=1:s=1080x1920:fps=30,fade=t=in:st=0:d=0.3,format=yuv420p",
                     "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-movflags", "+faststart", str(video)], check=True)
     credito = musica_libre.poner(video, day.toordinal() + sorted(PAIS).index(cc))

@@ -23,7 +23,7 @@ const T = Object.assign({ cab_same: `Same record, ${gbp(d.ahorro)} cheaper`, cab
   pill_post: "💿 Record deal", pill_post_semana: "🏆 Deal of the week", pill_story: "💿 Same record, cheaper",
   pill_story_semana: "🏆 Vinyl deal of the week", cheapest: "Cheapest today", at: "at", others: "Other UK record shops",
   upto: "up to", footer: "We compare prices across UK record shops · guitle.com/uk/records",
-  elsewhere: `Up to ${gbp(d.hi)} elsewhere · save ${gbp(d.ahorro)}`,
+  elsewhere: `Up to ${gbp(d.hi)} elsewhere · save ${gbp(d.ahorro)}`, save: `You save ${gbp(d.ahorro)}`,
   story_footer: "Prices & stock: link in bio · guitle.com/uk/records" }, plan.t || {});
 const mime = d.photo.endsWith(".png") ? "image/png" : "image/jpeg";
 const cover = `data:${mime};base64,${b64(path.join(DIR, d.photo))}`;
@@ -44,7 +44,8 @@ const post = `<div style="width:1080px;height:1350px;background:${SURFACE};paddi
         <p class="d" style="font-size:${gbp(d.lo).length > 8 ? 64 : gbp(d.lo).length > 6 ? 76 : 96}px;line-height:1;color:${GREEN};margin-top:6px;white-space:nowrap">${gbp(d.lo)}</p>
         <p style="font-size:30px;color:${INK};margin-top:8px">${T.at} ${esc(d.tienda)}</p></div>
       <div style="padding:0 30px"><p style="font-size:26px;color:${MUTED}">${T.others}</p>
-        <p class="d" style="font-size:56px;line-height:1.1;color:${MUTED}">${T.upto} ${gbp(d.hi)}</p></div></div></div>
+        <p class="d" style="font-size:56px;line-height:1.1;color:${INK}">${T.upto} <span style="text-decoration:line-through;text-decoration-color:#e03131;text-decoration-thickness:6px">${gbp(d.hi)}</span></p>
+        <div style="margin-top:22px">${pill(T.save, YELLOW, INK, 34)}</div></div></div></div>
   <p style="font-size:30px;color:${MUTED};text-transform:uppercase;letter-spacing:.06em;margin-top:44px">${esc(d.artist)} · ${esc(plan.fmt)}</p>
   <p class="d" style="font-size:${size(d.title, 58)}px;line-height:1.06;color:${INK};margin-top:8px">${esc(d.title)}</p>
   <div style="flex:1"></div>
@@ -53,12 +54,21 @@ const post = `<div style="width:1080px;height:1350px;background:${SURFACE};paddi
 const story = `<div style="width:1080px;height:1920px;background:${BLUE};color:#fff;padding:120px 80px 110px;display:flex;flex-direction:column;align-items:center;text-align:center">
   ${svg("logo-blanco-sin-lema.svg", "width:360px;height:auto;flex:none")}
   <div style="margin-top:44px">${pill(semana ? T.pill_story_semana : T.pill_story, semana ? YELLOW : "#fff", semana ? INK : BLUE, 38)}</div>
-  <img src="${cover}" style="width:780px;height:780px;object-fit:cover;border-radius:32px;margin-top:56px;box-shadow:0 30px 80px rgba(0,0,0,.25)">
-  <p style="font-size:32px;text-transform:uppercase;letter-spacing:.06em;opacity:.85;margin-top:48px">${esc(d.artist)} · ${esc(plan.fmt)}</p>
-  <p class="d" style="font-size:${size(d.title, 62)}px;line-height:1.06;margin-top:10px">${esc(d.title)}</p>
-  <p class="d" style="font-size:140px;line-height:1;margin-top:34px">${gbp(d.lo)}</p>
-  <p style="font-size:38px;margin-top:10px">${T.at} ${esc(d.tienda)}</p>
-  <p style="font-size:34px;margin-top:26px;background:rgba(255,255,255,.16);padding:14px 30px;border-radius:20px">${T.elsewhere}</p>
+  <img src="${cover}" style="width:640px;height:640px;object-fit:cover;border-radius:32px;margin-top:44px;box-shadow:0 30px 80px rgba(0,0,0,.25)">
+  <p style="font-size:30px;text-transform:uppercase;letter-spacing:.06em;opacity:.85;margin-top:36px">${esc(d.artist)} · ${esc(plan.fmt)}</p>
+  <p class="d" style="font-size:${size(d.title, 56)}px;line-height:1.06;margin-top:8px">${esc(d.title)}</p>
+  <!-- Comparación bien visible (Manuel, 13-11): el más barato frente al precio de las otras tiendas, tachado, y el ahorro -->
+  <div style="display:flex;gap:24px;margin-top:36px;width:100%">
+    <div style="flex:1.25;background:#fff;border-radius:28px;padding:26px 20px">
+      <p style="font-size:30px;color:${GREEN}">${T.cheapest}</p>
+      <p class="d" style="font-size:${gbp(d.lo).length > 8 ? 78 : 96}px;line-height:1;color:${GREEN};margin-top:8px;white-space:nowrap">${gbp(d.lo)}</p>
+      <p style="font-size:32px;color:${INK};margin-top:8px">${T.at} ${esc(d.tienda)}</p></div>
+    <div style="flex:1;background:rgba(0,0,0,.22);border-radius:28px;padding:26px 20px">
+      <p style="font-size:30px">${T.others}</p>
+      <p style="font-size:30px;margin-top:6px">${T.upto}</p>
+      <p class="d" style="font-size:${gbp(d.hi).length > 8 ? 62 : 74}px;line-height:1;margin-top:6px;white-space:nowrap;text-decoration:line-through;text-decoration-color:#ff5a5a;text-decoration-thickness:7px">${gbp(d.hi)}</p></div>
+  </div>
+  <div style="margin-top:34px">${pill(T.save, YELLOW, INK, 62)}</div>
   <div style="flex:1"></div>
   <p style="font-size:30px;opacity:.9">${T.story_footer}</p></div>`;
 
