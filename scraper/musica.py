@@ -98,6 +98,21 @@ NOT_MUSIC = re.compile(r"(?i)t-?shirt|\btee\b|hoodie|sweat|badge|tote|\bbag\b|sl
                        r"gift card|voucher|cleaning|sleeve[s]? pack|inner sleeves|outer sleeves|mug\b|\bhat\b|cap\b|book\b|"
                        r"\blivre\b|platine|tourne-?disque|partition|\bdvd\b|blu-?ray|carte cadeau|affiche|sac\b|"
                        r"\blibro\b|camiseta|sudadera|tocadiscos|tarjeta regalo|\bbolsa\b|\bp[óo]ster\b|\btaza\b")
+EBAY_JUNK = re.compile(r"(?i)\s*(?:\b(?:neuf|neu|new|nuevo|nuovo|novo|sealed|scell[ée]e?|sigillato|precintado|"
+                       r"mint|ovp|original|import|eu|uk|us|used|dvd|180\s?g(?:r|ram)?\.?|\d?lp|33\s?t(?:ours)?|33t|"
+                       r"vinyl|vinyle|vinile|vinilo|disco|record)\b|\b(?:19|20)\d\d(?:-\d\d)?\b|[|/].*$)")
+
+
+def _ebay_name(n):
+    """Título de un anuncio de eBay como nombre de disco: sin "nuevo", años, gramajes ni lo que va tras | o /."""
+    n = EBAY_JUNK.sub(" ", n)
+    n = re.sub(r"\(\s*\)|\[\s*\]", " ", n)
+    if n.count("(") != n.count(")"):  # paréntesis cortados por el límite de caracteres del anuncio
+        n = re.sub(r"\s*\([^)]*$", "", n).replace(")", "") if n.count("(") > n.count(")") else n.replace(")", "")
+    n = re.sub(r"\s*(?:-\s*)+$", "", re.sub(r"(?:\s*-\s*){2,}", " - ", re.sub(r"\s{2,}", " ", n))).strip(" -–:,*")
+    return n
+
+
 CLEAN = re.compile(r"(?i)\s*[\(\[]?(?:\*?pre-?order\*?|due out[^\)\]]*|signed|indie exclusive|limited edition|"
                    r"vinyl lp|vinyl|\blp\b|\b2lp\b|\bcd\b|cassette|\btape\b)[\)\]]?\s*")
 
@@ -845,8 +860,9 @@ def build_data(pais):
     # Tiendas que solo se suman a discos de otras (ONLY_MATCH): fuera los que solo tienen ellas
     by = {e: d for e, d in by.items() if any(i["s"] not in ONLY_MATCH for i in d["items"])}
     for d in by.values():  # el formato y el nombre, de las otras tiendas
-        own = [n for n, i in zip(d["names"], d["items"]) if i["s"] not in ONLY_MATCH]
-        d["names"] = own or d["names"]
+        own = [n for n, i in zip(d["names"], d["items"]) if i["s"] not in ONLY_MATCH and i["s"] != "ebay"]
+        # El título de un anuncio de eBay solo si no hay otro, y limpio (13/11: "… - 2024 - EU - Original)", "NEUF")
+        d["names"] = own or [_ebay_name(n) if i["s"] == "ebay" else n for n, i in zip(d["names"], d["items"])] or d["names"]
     if src in WOO_NAME:
         _match_names(src, catalog, by)
     out = []
