@@ -1,9 +1,9 @@
 {
- "actualizado": "2026-11-13T09:32",
+ "actualizado": "2026-11-13T17:27",
  "total": 278,
- "ok": 258,
- "distinto": 5,
- "sin_comprobar": 15,
+ "ok": 242,
+ "distinto": 6,
+ "sin_comprobar": 30,
  "distintos": [
   {
    "pais": "be",
@@ -75,13 +75,25 @@
    ]
   },
   {
+   "pais": "it",
+   "tienda": "musicis",
+   "url": "https://www.musicis.it/ortega-ogpst36-088-plettro.1.0.1190.gp.45635.uw",
+   "precio": 1,
+   "moneda": "EUR",
+   "leido": "2026-11-13T12:23",
+   "nombre": "Ortega OGPST36-088 plettro",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": []
+  },
+  {
    "pais": "se",
    "tienda": "soundstorexl",
-   "url": "https://www.soundstorexl.se/products/tenson-nylon-strenge-til-klassisk-guitar-normal-tension",
-   "precio": 221,
+   "url": "https://www.soundstorexl.se/products/vgs-basicplus-klassisk-guitar-4-4-sort",
+   "precio": 1253,
    "moneda": "SEK",
-   "leido": "2026-11-13T04:52",
-   "nombre": "Gewa Tenson nylonsträngar till klassisk gitarr, Normal Tension",
+   "leido": "2026-11-13T04:55",
+   "nombre": "Gewa VGS BasicPlus klassisk gitarr 4/4, svart",
    "http": 200,
    "estado": "distinto",
    "visibles": [
@@ -89,7 +101,7 @@
     "2499 kr",
     "2499 kr",
     "2499 kr",
-    "... 222 kr",
+    "1 257 kr",
     "69 kr"
    ]
   }
@@ -97,7 +109,21 @@
  "sin_comprobar_tiendas": [
   "es·alteisa",
   "es·mat",
+  "es·pronorte",
+  "br·carneiromusic",
+  "br·casadamusica",
+  "br·cheirodemusica",
+  "br·destroyer",
+  "br·elomusical",
+  "br·luggi",
+  "br·megasom",
   "br·multisom",
+  "br·musicacenter",
+  "br·pontodomusico",
+  "br·rckaudio",
+  "br·royalmusic",
+  "br·socomusic",
+  "br·sosom",
   "br·supersom",
   "fr·azemamusique",
   "fr·cultura",
@@ -105,6 +131,7 @@
   "ie·soundshop",
   "it·emusicstore",
   "it·fireflyaudio",
+  "ie·waltons",
   "uk·absolutemusic",
   "uk·andertons",
   "pt·guitarcustom",
