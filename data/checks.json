@@ -100,12 +100,6 @@
  },
  {
   "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Cort Space G6TR SGLG w/bag",
-  "slug": "cort-space-g6tr-sglg-w-bag-8809817986970"
- },
- {
-  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "partitura",
   "name": "Jackson JS1X DINKY MINION BLACK",
@@ -744,24 +738,6 @@
   "median": 193.625
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Bacchus Global Duke-Std A-Red",
-  "slug": "bacchus-global-duke-std-a-red-4571470400226"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Gretsch G5622T CB Electromatic LRL Zafiro de medianoche",
-  "slug": "gretsch-g5622t-cb-electromatic-lrl-zafiro-de-medianoche-717669887230"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ovation Pro Series Sunburst Viper IV-1-G",
-  "slug": "ovation-pro-series-sunburst-viper-iv-1-g-4046662340814"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
@@ -1219,24 +1195,6 @@
   "slug": "yamaha-tas1e-ultra-marine-4957812722322",
   "price": 643.0,
   "median": 877.895
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Applause Wood Classics AAS96-1 Dreadnought Slope Shoulder Sunburst",
-  "slug": "applause-wood-classics-aas96-1-dreadnought-slope-shoulder-sunburst-4046662295251"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Azul Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-azul-sunburst-8033675650104"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Eko Dreadnought Eko Ranger 6 Rojo Sunburst",
-  "slug": "eko-dreadnought-eko-ranger-6-rojo-sunburst-8033675650098"
  },
  {
   "kind": "clasica",
