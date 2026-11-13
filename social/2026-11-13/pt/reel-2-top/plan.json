@@ -1,0 +1,205 @@
+{
+ "fecha": "13 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Aponta este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai mesmo baixar na Black Friday?",
+  "bfDecimos": "A 27 de novembro dizemos-te, com o histórico de preços.",
+  "bfGuarda": "Guarda 📌"
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/",
+ "post": {
+  "type": "top",
+  "title": "5 guitarras elétricas de 500 € a 750 €",
+  "hook": "Top do dia",
+  "picks": [
+   {
+    "slug": "esp-ltd-kh-202-blk-kirk-hammett-840248009829",
+    "name": "ESP LTD KH-202 Blk Kirk Hammett",
+    "brand": "LTD",
+    "kind": "electrica",
+    "img": "https://detalhes.egitana.pt/esp-ltd-kh-202-blk-kirk-hammett_6093c97555cae.jpg",
+    "th": "b39e9e5269fad377.webp",
+    "thimg": "https://musifex.pt/web/image/product.template/11211/image_1024?unique=f0a7fa9",
+    "price": 572.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 585.0,
+    "max": 598.0,
+    "next": 572.0,
+    "rows": [
+     [
+      "Egitana",
+      572.0
+     ],
+     [
+      "Musifex",
+      572.0
+     ],
+     [
+      "Thomann",
+      598.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1.webp"
+   },
+   {
+    "slug": "schecter-omen-extreme-6-stblk-e6stblk709",
+    "name": "Schecter Omen Extreme-6 STBLK",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://musifex.pt/web/image/product.image/9363/image_1024/Schecter%20Omen%20Extreme-6%20STBLK?unique=314e4b5",
+    "th": "1b00562e2f8c5823.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/398535.jpg",
+    "price": 585.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 589.5,
+    "max": 594.0,
+    "next": 585.0,
+    "rows": [
+     [
+      "Musifex",
+      585.0
+     ],
+     [
+      "Thomann",
+      585.0
+     ],
+     [
+      "Egitana",
+      594.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2.webp"
+   },
+   {
+    "slug": "ibanez-as93fm-vls-3fmvls2167",
+    "name": "Ibanez AS93FM-VLS",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://musifex.pt/web/image/product.template/2167/image_1024?unique=f0a7fa9",
+    "th": "d9e901cfe7077fa6.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/428924.jpg",
+    "price": 630.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 635.0,
+    "max": 635.0,
+    "next": 635.0,
+    "rows": [
+     [
+      "Musifex",
+      630.0
+     ],
+     [
+      "Egitana",
+      635.0
+     ],
+     [
+      "Thomann",
+      635.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3.webp"
+   },
+   {
+    "slug": "prs-se-custom-24-bg-825362072096",
+    "name": "PRS SE Custom 24 BG",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://detalhes.egitana.pt/prs-se-custom-24-bg_60892831c6f64.jpg",
+    "th": "73168901543a0eaf.webp",
+    "thimg": "https://guitarcustom.pt/wp-content/uploads/2022/12/647577-scaled.jpg",
+    "price": 655.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 724.5,
+    "max": 725.0,
+    "next": 724.0,
+    "rows": [
+     [
+      "Egitana",
+      655.0
+     ],
+     [
+      "Musifex",
+      724.0
+     ],
+     [
+      "Thomann",
+      725.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5.webp"
+   },
+   {
+    "slug": "fender-player-ii-stratocaster-maple-fingerboard-aquatone-blue-885978109319",
+    "name": "Fender Player II Stratocaster Maple Fingerboard Aquatone Blue",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://detalhes.egitana.pt/fender-player-ii-stratocaster-maple-fingerboard-aquatone-blue_668ea7aed573f.jpg",
+    "th": "e52f142b9daeb84d.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/595251.jpg",
+    "price": 729.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 729.0,
+    "max": 729.0,
+    "next": 729.0,
+    "rows": [
+     [
+      "Egitana",
+      729.0
+     ],
+     [
+      "Thomann",
+      729.0
+     ],
+     [
+      "Musifex",
+      729.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4.webp"
+   }
+  ]
+ }
+}

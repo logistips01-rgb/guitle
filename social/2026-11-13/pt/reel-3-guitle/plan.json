@@ -1,0 +1,102 @@
+{
+ "fecha": "13 de novembro",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  },
+  "bfFaltan": "Faltam",
+  "bfDia": "dia",
+  "bfDias": "dias",
+  "bfApunta": "Aponta este preço",
+  "bfHoy": "Hoje, {fecha}",
+  "bfOtras": "Nas outras {n} lojas:",
+  "bfRango": "de {a} a {b}",
+  "bfBajara": "Vai mesmo baixar na Black Friday?",
+  "bfDecimos": "A 27 de novembro dizemos-te, com o histórico de preços.",
+  "bfGuarda": "Guarda 📌"
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/",
+ "post": {
+  "type": "guitle",
+  "topic": "inflados",
+  "slides": [
+   {
+    "hook": "Cuidado na Black Friday",
+    "title": "Há descontos que são mentira",
+    "visual": {
+     "type": "guitars",
+     "photos": [
+      "g1.webp",
+      "g2.webp",
+      "g3.webp",
+      "g4.webp",
+      "g5.webp"
+     ]
+    }
+   },
+   {
+    "title": "Sobem o preço… e depois “baixam”",
+    "sub": "Exemplo",
+    "size": 96,
+    "visual": {
+     "type": "chart",
+     "points": [
+      899,
+      899,
+      899,
+      999,
+      999,
+      999,
+      899,
+      899
+     ],
+     "marks": [
+      [
+       1,
+       "899 €",
+       "#1f9d55"
+      ],
+      [
+       4,
+       "999 €",
+       "#d64545"
+      ],
+      [
+       7,
+       "«−10%»",
+       "#d64545"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "O guitle deteta-o com o histórico de preços",
+    "sub": "Confirma antes de comprar em guitle.com/pt"
+   }
+  ]
+ }
+}
