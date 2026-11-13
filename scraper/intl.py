@@ -1309,8 +1309,12 @@ ICON_KIND = {"electrica": "guitarra", "acustica": "acustica", "clasica": "clasic
 
 def _music_nav(code):
     from .musica import TXT as MUSIC
-    return (f' <a class="navlink" style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none" href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>'
-            if code in MUSIC and (ROOT / "data" / "musica" / code / "discos.json").exists() else "")
+    from .discos_amazon import section
+    sty = 'style="background:var(--accent);color:#fff;padding:6px 14px;border-radius:999px;font-weight:600;text-decoration:none"'
+    if code in MUSIC and (ROOT / "data" / "musica" / code / "discos.json").exists():
+        return f' <a class="navlink" {sty} href="/{code}/{MUSIC[code]["dir"]}/">♪ {esc(MUSIC[code]["home"])}</a>'
+    sec = section(code)  # países con la sección de discos solo de Amazon (scraper/discos_amazon.py)
+    return f' <a class="navlink" {sty} href="/{code}/{sec[0]}/">♪ {esc(sec[1])}</a>' if sec else ""
 
 
 def _vinyl_row(code):
