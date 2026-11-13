@@ -2522,14 +2522,10 @@ flanger-fc03r-cejillas-para-y-electrica-bronce-6936257800411
 flanger-fc09b-cejillas-para-y-acustica-negro-710619782111
 floyd-rose-frtnftc-non-fine-tuner-tremolo-system-chrome-835580011333
 framus-0549450-cuerdas-4033685002942
-franklin-strap-aztec-graphic-strap-blue-red-2-69593017444
 franklin-strap-blue-distressed-denim-cocnac-leather-end-2-69593018113
 franklin-strap-caramel-glove-leather-gold-stiching-2-5-69593010209
 franklin-strap-chocolate-gold-reversible-leather-natural-stich-69593017185
 franklin-strap-cognac-jackson-hole-leather-contrast-stich-69593017130
-franklin-strap-oxblood-glove-leather-natural-stiching-2-5-69593018861
-franklin-strap-snake-skin-glove-black-2-69593017758
-franklin-strap-snake-skin-glove-cognac-2-69593017765
 g7th-c31020-cejilla-para-negra-5060079200126
 g7th-capo-g7th-performance-3-art-black-para-guitarra-acustica-eletrica-ricap36156
 g7th-nashville-capo-fur-western-und-e-gitarre-5060079200058
@@ -3317,7 +3313,9 @@ mono-the-dolittle-correa-guitarra-gris-649241887621
 mono-the-dolittle-correa-guitarra-negra-649241887591
 mooer-baby-tuner-6943206790846
 mooer-ct01-clip-tuner-afinador-6971889220213
+music-man-grover-locking-tuner-fur-music-man-gitarren-444412006238
 music-man-knob-black-bongo-pu-balance-bass-mid-treble-444412007797
+music-man-pickguard-bongo-5-hs-shell-444412007399
 music-man-pickguard-music-man-bongo-6-hh-black-444412007398
 music-man-pickguard-music-man-stingray-5-white-444412007414
 music-man-pickguard-sterling-4-hh-black-444412007400

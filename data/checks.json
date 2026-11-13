@@ -1562,7 +1562,7 @@
   "store": "drunkat",
   "name": "Orange Crush 12 BK",
   "slug": "orange-crush-12-bk-5060299175006",
-  "price": 67.36,
+  "price": 61.0,
   "median": 111.005
  },
  {
@@ -1571,7 +1571,7 @@
   "store": "drunkat",
   "name": "Orange Crush Acoustic 30 BLK",
   "slug": "orange-crush-acoustic-30-blk-5060299177673",
-  "price": 233.87,
+  "price": 210.49,
   "median": 356.005
  },
  {
@@ -1707,7 +1707,7 @@
   "name": "Daddario EJ15 - Phosphor Bronze Extra Light [10-47]",
   "slug": "daddario-ej15-phosphor-bronze-extra-light-10-47-19954121136",
   "price": 6.23,
-  "median": 10.17
+  "median": 10.2
  },
  {
   "kind": "varios",
@@ -1942,6 +1942,15 @@
   "slug": "fender-gitarrengurt-weighless-2-monogrammed-strap-white-brown-yellow-885978381906",
   "price": 17.5,
   "median": 23.64
+ },
+ {
+  "kind": "varios",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Neon Monogrammed Strap Green/Orange",
+  "slug": "fender-neon-monogrammed-strap-green-orange-885978895434",
+  "price": 14.42,
+  "median": 19.549999999999997
  },
  {
   "kind": "varios",

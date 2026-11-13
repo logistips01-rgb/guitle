@@ -1444,6 +1444,7 @@ sx-amplificador-de-bajo-10w-6971047519609
 sx-ba1565-amplificador-bajo-15w-6971047519616
 synergy-bman-preamp-module-763815130101
 synergy-bogner-ecstasy-preamp-module-763815131573
+synergy-bogner-uberschall-preamp-module-763815131566
 synergy-diezel-herbert-preamp-module-763815132921
 synergy-diezel-vh-4-preamp-module-763815130118
 synergy-drect-preamp-module-763815134222
