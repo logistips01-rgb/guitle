@@ -443,7 +443,8 @@ def rehacer_reel_chollos(cc, day, recent, token=None):
         user = ig.api("GET", "me", fields="user_id")["user_id"]
         rel = folder.relative_to(ROOT).as_posix()
         ig.git("add", rel)
-        ig.git("commit", "-q", "-m", f"social: Reel de chollos {cc} {day.isoformat()}")
+        if ig.git("diff", "--cached", "--name-only"):
+            ig.git("commit", "-q", "-m", f"social: Reel de chollos {cc} {day.isoformat()}")
         branch = ig.git("rev-parse", "--abbrev-ref", "HEAD")
         ig.git("push", "-q", "origin", f"HEAD:{branch}")
         base = f"{ig.REPO_RAW}/{ig.git('rev-parse', 'HEAD')}/{rel}/"
@@ -472,7 +473,8 @@ def publicar(cc, day, folder, data, token):
         user = ig.api("GET", "me", fields="user_id")["user_id"]
         rel = folder.relative_to(ROOT).as_posix()
         ig.git("add", rel)
-        ig.git("commit", "-q", "-m", f"social: publicación de Instagram {cc} {day.isoformat()}")
+        if ig.git("diff", "--cached", "--name-only"):  # al retomar puede no haber nada nuevo
+            ig.git("commit", "-q", "-m", f"social: publicación de Instagram {cc} {day.isoformat()}")
         branch = ig.git("rev-parse", "--abbrev-ref", "HEAD")
         ig.git("push", "-q", "origin", f"HEAD:{branch}")
         base = f"{ig.REPO_RAW}/{ig.git('rev-parse', 'HEAD')}/{rel}/"
