@@ -952,7 +952,10 @@ def main(argv=None):
         folder, data = plan_pais(cc, day, recent)
         out[cc] = {"post": data["post"]["type"], "stories": [s["name"] for s in data["stories"]]}
         if args.publish:
-            out[cc] = publicar(cc, day, folder, data, token)
+            try:
+                out[cc] = publicar(cc, day, folder, data, token)
+            except Exception as exc:  # un fallo de Instagram en un país no para a los demás
+                out[cc] = f"error: {exc}"
     print(json.dumps(out, ensure_ascii=False, indent=1))
     if any(v == "sin token" for v in out.values()):
         sys.exit(1)
