@@ -1,0 +1,48 @@
+{
+ "tipo": "semana",
+ "cab": "Vinyl deal of the week",
+ "fmt": "vinyl",
+ "disco": {
+  "ean": "0602475650409",
+  "fmt": "vinilo",
+  "img": "https://cdn.shopify.com/s/files/1/1565/5653/files/696194f9-f9c8-4c23-b710-3058c09b8475.jpg?v=1742490226",
+  "items": [
+   {
+    "p": 117.82,
+    "s": "ebay",
+    "st": true,
+    "u": "https://www.ebay.co.uk/itm/257652895799?hash=item3bfd4f3037%3Ag%3AUzkAAeSwwzRqbK4t&mkevt=1&mkcid=1&mkrid=710-53481-19255-0&campid=5339241544&customid=guitle-uk&toolid=10049"
+   },
+   {
+    "p": 149.99,
+    "s": "recordstore",
+    "st": true,
+    "u": "https://www.recordstore.co.uk/products/brothers-in-arms-40th-anniversary-5lp-deluxe-box-set"
+   },
+   {
+    "p": 119.99,
+    "s": "crash",
+    "st": false,
+    "u": "https://www.crashrecords.co.uk/products/dire-straits-brother-in-arms-40th-anniversary-pre-order"
+   },
+   {
+    "p": 133.99,
+    "s": "assai",
+    "st": false,
+    "u": "https://www.assai.co.uk/products/dire-straits-brothers-in-arms-vinyl-lp-40th-anniversary-box-set-due-out-16-05-25"
+   }
+  ],
+  "name": "Dire Straits - Brother in Arms (40th Anniversary)",
+  "slug": "dire-straits-brother-in-arms-40th-anniversary-vinyl-0602475650409",
+  "artist": "Dire Straits",
+  "title": "Brother in Arms (40th Anniversary)",
+  "lo": 117.82,
+  "hi": 149.99,
+  "ahorro": 32.17,
+  "tienda": "eBay",
+  "tiendas": 2,
+  "url": "https://guitle.com/uk/records/dire-straits-brother-in-arms-40th-anniversary-vinyl-0602475650409.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-13"
+}
