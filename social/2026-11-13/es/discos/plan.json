@@ -1,0 +1,70 @@
+{
+ "tipo": "semana",
+ "cab": "El chollo de vinilo de la semana",
+ "fmt": "vinilo",
+ "disco": {
+  "ean": "5021732511706",
+  "fmt": "vinilo",
+  "img": "https://egebotiga.com/wp-content/uploads/2025/12/Dua-Lipa-Future-Nostalgia-special-edition-3lp.jpg",
+  "items": [
+   {
+    "p": 45.68,
+    "s": "ebay",
+    "st": true,
+    "u": "https://www.ebay.es/itm/237164060916?hash=item37381460f4%3Ag%3AOx4AAeSwja9qhwci&mkevt=1&mkcid=1&mkrid=1185-53479-19255-0&campid=5339241544&customid=guitle-es&toolid=10049"
+   },
+   {
+    "p": 45.84,
+    "s": "cdgo",
+    "st": true,
+    "u": "https://cdgo.com/detalhe/5021732511706/x"
+   },
+   {
+    "p": 49.95,
+    "s": "ega",
+    "st": true,
+    "u": "https://discosega.es/electronica/11768-dua-lipa-future-nostalgia-5th-aniversario-3lp-vinilo--5021732511706.html"
+   },
+   {
+    "p": 55.0,
+    "s": "ege",
+    "st": true,
+    "u": "https://egebotiga.com/tienda/genero/pop-rock-internacional/dua-lipa-future-nostalgia-5o-aniversario-deluxe-3lp/"
+   },
+   {
+    "p": 64.0,
+    "s": "supersonic",
+    "st": true,
+    "u": "https://discossupersonicsantander.com/products/dua-lipa-future-nostalgia-5th-anniversary-edition-3lp"
+   }
+  ],
+  "name": "Dua Lipa - Future Nostalgia",
+  "slug": "dua-lipa-future-nostalgia-vinilo-5021732511706",
+  "artist": "Dua Lipa",
+  "title": "Future Nostalgia",
+  "lo": 45.68,
+  "hi": 64.0,
+  "ahorro": 18.32,
+  "tienda": "eBay",
+  "tiendas": 4,
+  "url": "https://guitle.com/discos/dua-lipa-future-nostalgia-vinilo-5021732511706.html",
+  "photo": "portada.jpg"
+ },
+ "fecha": "2026-11-13",
+ "cc": "es",
+ "t": {
+  "cab_same": "Mismo disco, 18,32 € más barato",
+  "cab_semana": "El chollo de vinilo de la semana",
+  "pill_post": "💿 Chollo de disco",
+  "pill_post_semana": "🏆 Chollo de la semana",
+  "pill_story": "💿 Mismo disco, más barato",
+  "pill_story_semana": "🏆 Vinilo de la semana",
+  "cheapest": "Lo más barato hoy",
+  "at": "en",
+  "others": "Otras tiendas de discos",
+  "upto": "hasta",
+  "footer": "Comparamos precios de tiendas de discos de España · guitle.com/discos",
+  "elsewhere": "Hasta 64 € en otras tiendas · ahorras 18,32 €",
+  "story_footer": "Precios y stock: enlace en la bio · guitle.com/discos"
+ }
+}
