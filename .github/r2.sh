@@ -181,7 +181,7 @@ carpeta() {
 estatica() {
   rclone_ready
   URLS="$RUNNER_TEMP/r2-urls.txt"; : > "$URLS"
-  for d in "$@"; do up copy "$d" "$d" --include "*.html"; done
+  for d in "$@"; do up copy "$d" "$d" --include "*.html" --include "*.json" --include "*.xml"; done
   servidor
   python -m scraper.indexnow --files "$URLS" || true
 }

@@ -53,7 +53,8 @@ TXT = {
            "ph": "Artist eller album", "go": "Søk på Amazon", "popular": "Populære album på vinyl"},
 }
 # Países con sección solo de Amazon: los de Amazon.de (código guitle0f-21) sin tiendas de discos leídas todavía
-STARTER = ["de", "at", "ch", "cz", "sk", "hu", "ro", "bg", "gr", "fi", "dk", "no"]
+# (Alemania ya tiene las suyas desde el 13/11/2026: scraper/musica.py)
+STARTER = ["at", "ch", "cz", "sk", "hu", "ro", "bg", "gr", "fi", "dk", "no"]
 N_POPULAR = 48
 
 
