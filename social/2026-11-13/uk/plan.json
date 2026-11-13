@@ -1,0 +1,385 @@
+{
+ "date": "2026-11-13",
+ "fecha": "13 November",
+ "post": {
+  "type": "top",
+  "title": "5 electric guitars from £250 to £450",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "epiphone-sg-tribute-plus-laurel-vintage-sunburst-711106175331",
+    "name": "Epiphone SG Tribute Plus - Laurel - Vintage Sunburst",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://images.platform2d.com/?uuid=ce1b825f-5b67-43b4-88b3-1953667ecc8b&database=mow_1066&width=600&height=895&format=webp&canvas=1&background=000000&watermark=&noimage=wood&signature=f8602268e21506da23c53f0d8dc3d05f",
+    "th": "835b3677549fd1f3.webp",
+    "thimg": "https://images.guitarguitar.co.uk/cdn/large/170/250626444507008f.jpg",
+    "price": 279.0,
+    "store": "Peach Guitars",
+    "stores": 6,
+    "median": 319.0,
+    "max": 349.0,
+    "next": 279.0,
+    "rows": [
+     [
+      "Peach Guitars",
+      279.0
+     ],
+     [
+      "Thomann",
+      279.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      279.0
+     ],
+     [
+      "guitarguitar",
+      319.0
+     ],
+     [
+      "Project Music",
+      329.0
+     ],
+     [
+      "A Strings",
+      349.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "ibanez-rg421s-sem-421ssemhtm",
+    "name": "Ibanez RG421S-SEM",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/582063.jpg",
+    "th": "c010de309535afd3.webp",
+    "thimg": null,
+    "price": 311.0,
+    "store": "Thomann",
+    "stores": 6,
+    "median": 349.0,
+    "max": 369.0,
+    "next": 349.0,
+    "rows": [
+     [
+      "Thomann",
+      311.0
+     ],
+     [
+      "Absolute Music",
+      349.0
+     ],
+     [
+      "The Music Bank",
+      349.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      349.0
+     ],
+     [
+      "Rockem Music",
+      352.99
+     ],
+     [
+      "Sutton Music",
+      369.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "squier-classic-vibe-50s-strat-fiesta-red-mn-885978063932",
+    "name": "Squier Classic Vibe 50s Strat Fiesta Red MN",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/7xqmorfn.png?v=1716384308",
+    "th": "fe6ca80dc0aaff41.webp",
+    "thimg": "https://www.dawsons.co.uk/cdn/shop/files/products_2FF03-037-4005-540_2FF03-037-4005-540_1581326871880_1200x1200.jpg?v=1705030913",
+    "price": 369.0,
+    "store": "Reidys",
+    "stores": 11,
+    "median": 399.0,
+    "max": 429.0,
+    "next": 369.0,
+    "rows": [
+     [
+      "Reidys",
+      369.0
+     ],
+     [
+      "Dawsons",
+      369.0
+     ],
+     [
+      "A Strings",
+      379.0
+     ],
+     [
+      "Promenade Music",
+      379.0
+     ],
+     [
+      "guitarguitar",
+      399.0
+     ],
+     [
+      "Andertons",
+      399.0
+     ],
+     [
+      "Fair Deal Music",
+      399.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      399.0
+     ],
+     [
+      "Wunjo Guitars",
+      399.0
+     ],
+     [
+      "Music Street",
+      419.0
+     ],
+     [
+      "Bonners Music",
+      429.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "yamaha-revstar-element-rse20-vintage-white-4957812675178",
+    "name": "Yamaha Revstar Element RSE20 Vintage White",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/RSE20_vintagewhite_f_0001_tcm117-1630230.jpg?v=1762950925",
+    "th": "72a6845475334a3a.webp",
+    "thimg": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/RSE20_vintagewhite_f_0001_tcm117-1630230.jpg?v=1760697614",
+    "price": 399.0,
+    "store": "Reidys",
+    "stores": 7,
+    "median": 423.5,
+    "max": 439.0,
+    "next": 399.0,
+    "rows": [
+     [
+      "Reidys",
+      399.0
+     ],
+     [
+      "Music Street",
+      399.0
+     ],
+     [
+      "A Strings",
+      399.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      412.0
+     ],
+     [
+      "R Guitars",
+      435.0
+     ],
+     [
+      "guitarguitar",
+      439.0
+     ],
+     [
+      "Fair Deal Music",
+      439.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   },
+   {
+    "slug": "fender-special-offer-fender-standard-series-telecaster-maple-neck-white-pg-in-aq-885978118113",
+    "name": "Fender [Special Offer] Fender Standard Series Telecaster Maple Neck White PG in Aqua Marine Metallic",
+    "brand": "Fender",
+    "kind": "electrica",
+    "img": "https://cdn.shopify.com/s/files/1/0550/7556/9815/files/0266020560_fen_ins_fbd_1_nr.png?v=1761145487",
+    "th": "113da889cf574b72.webp",
+    "thimg": "https://cdn.shopify.com/s/files/1/0441/6457/9484/files/0266020560_fen_ins_frt_1_rr.png?v=1737564133",
+    "price": 420.0,
+    "store": "The Guitar Store",
+    "stores": 7,
+    "median": 499.0,
+    "max": 539.0,
+    "next": 469.0,
+    "rows": [
+     [
+      "The Guitar Store",
+      420.0
+     ],
+     [
+      "Fair Deal Music",
+      469.0
+     ],
+     [
+      "Reidys",
+      499.0
+     ],
+     [
+      "A Strings",
+      499.0
+     ],
+     [
+      "Dawsons",
+      499.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      499.0
+     ],
+     [
+      "Guitarbitz",
+      539.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   }
+  ],
+  "caption": "🎸 5 electric guitars from £250 to £450: the best sellers in UK shops, with today’s best price 👇\n\n1️⃣ Epiphone SG Tribute Plus - Laurel - Vintage Sunburst: £279 at Peach Guitars\n2️⃣ Ibanez RG421S-SEM: £311 at Thomann\n3️⃣ Squier Classic Vibe 50s Strat Fiesta Red MN: £369 at Reidys\n4️⃣ Yamaha Revstar Element RSE20 Vintage White: £399 at Reidys\n5️⃣ Fender [Special Offer] Fender Standard Series Telecaster Maple Neck White PG in Aqua Marine Metallic: £420 at The Guitar Store\n\nWhich one would you pick? Tell us in the comments 💬\n🔎 Compare prices on guitle.com/uk (all today’s deals via the link in bio 👆). Prices on 13 November.\n\n#guitar #guitarist #guitardeals #ukguitar #electricguitar #epiphone #ibanez #squier #yamaha #fender"
+ },
+ "stories": [
+  {
+   "slug": "ibanez-sa260fm-tgb-60fmtgbhtm",
+   "name": "Ibanez SA260FM-TGB",
+   "brand": "Ibanez",
+   "kind": "electrica",
+   "img": "https://www.thomann.de/thumb/opengraph/pics/prod/430447.jpg",
+   "th": "cc1cf4866d655c15.webp",
+   "thimg": null,
+   "price": 270.0,
+   "store": "Thomann",
+   "stores": 3,
+   "median": 394.0,
+   "max": 429.0,
+   "next": 359.0,
+   "rows": [
+    [
+     "Thomann",
+     270.0
+    ],
+    [
+     "Guitars Pedals Amps & Stuff",
+     359.0
+    ],
+    [
+     "Sutton Music",
+     429.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£89 less than any other shop",
+   "pct": 25,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "tanglewood-te4-cebl-elemental-guitar-819907024619",
+   "name": "Tanglewood TE4 CEBL Elemental Guitar",
+   "brand": "Tanglewood",
+   "kind": "acustica",
+   "img": "https://files.ekmcdn.com/projectmusic/images/tanglewood-te4-cebl-elemental-guitar-47548-p.jpg",
+   "th": "a4c47cd1762cd855.webp",
+   "thimg": "https://cdn.shopify.com/s/files/1/0570/0730/8961/files/TE4CEBL_1.jpg?v=1732880681",
+   "price": 284.0,
+   "store": "Project Music",
+   "stores": 3,
+   "median": 349.0,
+   "max": 349.0,
+   "next": 349.0,
+   "rows": [
+    [
+     "Project Music",
+     284.0
+    ],
+    [
+     "Sutton Music",
+     349.0
+    ],
+    [
+     "Ness Music",
+     349.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£65 less than any other shop",
+   "pct": 19,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "fender-cd-60s-dreadnought-natural-885978875757",
+   "name": "Fender CD-60S Dreadnought Natural",
+   "brand": "Fender",
+   "kind": "acustica",
+   "img": "https://cdn.shopify.com/s/files/1/0813/1982/1655/files/7axx44zi.png?v=1715680039",
+   "th": "453f46856f9e84cb.webp",
+   "thimg": null,
+   "price": 154.0,
+   "store": "Reidys",
+   "stores": 3,
+   "median": 194.0,
+   "max": 199.0,
+   "next": 189.0,
+   "rows": [
+    [
+     "Reidys",
+     154.0
+    ],
+    [
+     "A Strings",
+     189.0
+    ],
+    [
+     "guitarguitar",
+     199.0
+    ]
+   ],
+   "pvp": null,
+   "why": "£35 less than any other shop",
+   "pct": 19,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}

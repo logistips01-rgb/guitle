@@ -1,0 +1,150 @@
+{
+ "fecha": "13 November",
+ "post": {
+  "type": "top",
+  "title": "today’s deals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "ibanez-grx40-ca-grx40cahtm",
+    "name": "Ibanez GRX40-CA",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/484467.jpg",
+    "th": "bd5448444277666c.webp",
+    "thimg": null,
+    "price": 160.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 195.495,
+    "max": 199.0,
+    "next": 191.99,
+    "rows": [
+     [
+      "Thomann",
+      160.0
+     ],
+     [
+      "Rockem Music",
+      191.99
+     ],
+     [
+      "The Guitar Store",
+      199.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£31.99 less than any other shop",
+    "pct": 17,
+    "photo": "g0-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "epiphone-sheraton-laurel-natural-711106128962",
+    "name": "Epiphone Sheraton - Laurel - Natural",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://images.platform2d.com/?uuid=e19a7c93-39ef-42f2-ad11-3fd221929a5a&database=mow_1066&width=600&height=895&format=webp&canvas=1&background=000000&watermark=&noimage=wood&signature=5346593c3d8e09b96dcba98fded5e330",
+    "th": "8bd93e773586eefe.webp",
+    "thimg": "https://cdn.shopify.com/s/files/1/0285/3460/3810/files/EOSHNAGH1_3_Front_png.webp?v=1780317825",
+    "price": 599.0,
+    "store": "Peach Guitars",
+    "stores": 5,
+    "median": 757.0,
+    "max": 899.0,
+    "next": 699.0,
+    "rows": [
+     [
+      "Peach Guitars",
+      599.0
+     ],
+     [
+      "The Guitar Store",
+      699.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      699.0
+     ],
+     [
+      "A Strings",
+      815.0
+     ],
+     [
+      "The Music Bank",
+      899.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£100 less than any other shop",
+    "pct": 14,
+    "photo": "g1-1.webp",
+    "label": "Electric"
+   },
+   {
+    "slug": "tanglewood-tw4cer-819907020277",
+    "name": "Tanglewood TW4CER",
+    "brand": "Tanglewood",
+    "kind": "acustica",
+    "img": "https://files.ekmcdn.com/projectmusic/images/tanglewood-tw4cer-47414-p.png",
+    "th": "5e52cfdb451772c8.webp",
+    "thimg": "https://cdn.shopify.com/s/files/1/0285/3460/3810/files/TW4CER-scaled.jpg?v=1769080835",
+    "price": 349.0,
+    "store": "Project Music",
+    "stores": 3,
+    "median": 424.0,
+    "max": 449.0,
+    "next": 399.0,
+    "rows": [
+     [
+      "Project Music",
+      349.0
+     ],
+     [
+      "The Music Bank",
+      399.0
+     ],
+     [
+      "Guitarbitz",
+      449.0
+     ]
+    ],
+    "pvp": null,
+    "why": "£50 less than any other shop",
+    "pct": 13,
+    "photo": "g2-1.webp",
+    "label": "Acoustic"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  }
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/"
+}
