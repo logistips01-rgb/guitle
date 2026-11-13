@@ -126,6 +126,7 @@
       <div class="card"><h2>Clics a tiendas</h2><div class="bars" id="stores"></div></div>
       <div class="card"><h2>De dónde llegan</h2><div class="bars" id="refs"></div></div>
     </div>
+    <div class="card"><h2>Campañas (enlaces con utm_campaign)</h2><div id="camps"></div></div>
     <div class="card" id="espejo"><h2>guitle.es (copia para los cortes del fútbol)</h2>
       <p class="empty" style="margin:0 0 10px">Visitas a la copia de emergencia y personas a las que guitle.com no les cargaba (corte de LaLiga) y su navegador llevó solas a guitle.es. Quien entra por primera vez durante un corte no se puede contar.</p>
       <div class="tiles" id="espejotiles"></div>
@@ -341,7 +342,7 @@ async function loadHistory() {
     const o = live[r.day] ||= { fecha: r.day, visitas: 0, clics: 0, google: 0, instagram: 0, directo: 0, otros_origenes: 0, provisional: true };
     if (r.kind === "v") o.visitas += r.n;
     else if (r.kind === "t") o.clics += r.n;
-    else if (r.kind === "r") {
+    else if (r.kind === "r" && !r.key.startsWith("camp~")) {
       if (r.key === "directo") o.directo += r.n;
       else if (r.key.includes("google")) o.google += r.n;
       else if (r.key.includes("instagram")) o.instagram += r.n;
@@ -377,7 +378,8 @@ function render() {
   const perDay = Object.fromEntries(list.map(d => [d, 0]));
   for (const r of sel) if (r.kind === "v") perDay[r.day] += r.n;
   const total = Object.values(perDay).reduce((a, b) => a + b, 0);
-  const clicksBy = sum("t"), refs = sum("r"), all = sum("p");
+  const clicksBy = sum("t"), all = sum("p");
+  const refs = Object.fromEntries(Object.entries(sum("r")).filter(([k]) => !k.startsWith("camp~")));  // las campañas, aparte
   const stores = {};  // clics por tienda (la clave lleva "~<país>" desde el 2/11/2026)
   for (const [k, n] of Object.entries(clicksBy)) { const st = k.split("~")[0]; stores[st] = (stores[st] || 0) + n; }
   const pages = Object.fromEntries(Object.entries(all).filter(([k]) => !k.startsWith("buscar~")));
@@ -398,6 +400,22 @@ function render() {
   bars("refs", refs, k => k === "directo" ? "Directo (sin origen)" : k, "Aún no hay llegadas en este periodo.");
   bars("searches", searches, k => k.replace(/-/g, " "), "Aún no hay búsquedas en este periodo.", 15);
   bars("pages", pages, k => k === "inicio" ? "Portada" : "/" + k.replace(/~/g, "/"), "Aún no hay páginas vistas.", 15);
+
+  // Campañas (c.js): x_<campaña>~llegada / ~pagina / ~clic, por día
+  const camp = {};
+  for (const r of sel) if (r.kind === "r" && r.key.startsWith("camp~")) {
+    const [, c, what] = r.key.split("~");
+    const d = ((camp[c] ||= {})[r.day] ||= { llegada: 0, pagina: 0, clic: 0 });
+    if (what in d) d[what] += r.n;
+  }
+  $("camps").innerHTML = Object.keys(camp).length ? Object.entries(camp).map(([c, byDay]) => {
+    const ds = Object.keys(byDay).sort();
+    const tot = ds.reduce((a, d) => ["llegada", "pagina", "clic"].map((k, i) => a[i] + byDay[d][k]), [0, 0, 0]);
+    return `<h3 style="margin:8px 0">${c}: ${fmt(tot[0])} llegadas, ${fmt(tot[1])} páginas, ${fmt(tot[2])} clics a tiendas</h3>`
+      + `<table style="width:100%;border-collapse:collapse;font-size:.9rem"><tr><th style="text-align:left">Día</th><th>Llegadas</th><th>Páginas</th><th>Clics a tiendas</th></tr>`
+      + ds.map(d => `<tr><td>${d}</td><td style="text-align:center">${fmt(byDay[d].llegada)}</td><td style="text-align:center">${fmt(byDay[d].pagina)}</td><td style="text-align:center">${fmt(byDay[d].clic)}</td></tr>`).join("")
+      + "</table>";
+  }).join("") : '<p class="empty">Aún no hay visitas de campañas en este periodo.</p>';
 
   // guitle.es: sus páginas llevan "guitle.es~" delante; las rescatadas de un corte llegan con ?ref=corte (sw.js)
   const esDay = Object.fromEntries(list.map(d => [d, [0, 0]]));

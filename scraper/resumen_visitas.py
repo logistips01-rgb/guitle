@@ -46,6 +46,8 @@ def summary(docs, day):
             out["visitas"] += n
         elif key.startswith("t_"):
             out["clics"] += n
+        elif key.startswith("r_camp~"):  # campañas (c.js): no son orígenes, se ven aparte en stats.html
+            continue
         elif key.startswith("r_"):
             ref = key[2:]
             if ref == "directo":
