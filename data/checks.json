@@ -56,15 +56,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "ESP LTD JM-I QM Deep Blood Moon",
-  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
-  "price": 1421.0,
-  "median": 1895.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -106,6 +97,12 @@
   "slug": "cort-space-g6tr-sglg-w-bag-8809817986970",
   "price": 517.3,
   "median": 695.9300000000001
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Cort Space G6TR SGLG w/bag",
+  "slug": "cort-space-g6tr-sglg-w-bag-8809817986970"
  },
  {
   "kind": "electrica",
@@ -232,15 +229,6 @@
   "slug": "prs-se-custom-24-semi-hollow-piezo-vintage-sunburst-825362244172",
   "price": 1189.0,
   "median": 1795.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Schecter Sun Valley SS FR-S R.blue",
-  "slug": "schecter-sun-valley-ss-fr-s-r-blue-815447024461",
-  "price": 799.0,
-  "median": 1149.5
  },
  {
   "kind": "electrica",
@@ -398,11 +386,38 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender J Mascis Telecaster MN SPK BL",
+  "slug": "fender-j-mascis-telecaster-mn-spk-bl-885978487233",
+  "price": 1231.0,
+  "median": 1664.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Jeff Beck Stratocaster RW Olympic White",
+  "slug": "fender-jeff-beck-stratocaster-rw-olympic-white-717669140748",
+  "price": 2180.0,
+  "median": 2945.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
   "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
   "price": 2459.0,
   "median": 3359.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Susan Tedeschi Telecaster RW Aged Caribbean Mist",
+  "slug": "fender-susan-tedeschi-telecaster-rw-aged-caribbean-mist-717669632168",
+  "price": 1688.0,
+  "median": 2299.0
  },
  {
   "kind": "electrica",
@@ -538,6 +553,15 @@
   "slug": "fender-ltd-american-vintage-ii-51-telecaster-negra-885978795239",
   "price": 2038.4,
   "median": 2805.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Made in Japan Traditional '50s Telecaster Limited Run Texas Special MN Sonic Blue",
+  "slug": "fender-made-in-japan-traditional-50s-telecaster-limited-run-texas-special-mn-son-717669760441",
+  "price": 1100.0,
+  "median": 1599.0
  },
  {
   "kind": "electrica",
@@ -691,6 +715,51 @@
   "slug": "sx-ed1-white-6971047510965",
   "price": 125.4,
   "median": 186.275
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Sx SEM13TS 3 Tone Sb",
+  "slug": "sx-sem13ts-3-tone-sb-6940651407671",
+  "price": 129.0,
+  "median": 192.075
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Sx SEM2BF Burning Fire",
+  "slug": "sx-sem2bf-burning-fire-6940651406780",
+  "price": 129.0,
+  "median": 193.625
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Sx SEM2BG Blue Glow",
+  "slug": "sx-sem2bg-blue-glow-6940651406773",
+  "price": 129.0,
+  "median": 193.625
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Bacchus Global Duke-Std A-Red",
+  "slug": "bacchus-global-duke-std-a-red-4571470400226"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Gretsch G5622T CB Electromatic LRL Zafiro de medianoche",
+  "slug": "gretsch-g5622t-cb-electromatic-lrl-zafiro-de-medianoche-717669887230"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Ovation Pro Series Sunburst Viper IV-1-G",
+  "slug": "ovation-pro-series-sunburst-viper-iv-1-g-4046662340814"
  },
  {
   "kind": "acustica",
@@ -1150,6 +1219,24 @@
   "slug": "yamaha-tas1e-ultra-marine-4957812722322",
   "price": 643.0,
   "median": 877.895
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Applause Wood Classics AAS96-1 Dreadnought Slope Shoulder Sunburst",
+  "slug": "applause-wood-classics-aas96-1-dreadnought-slope-shoulder-sunburst-4046662295251"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Eko Dreadnought Eko Ranger 6 Azul Sunburst",
+  "slug": "eko-dreadnought-eko-ranger-6-azul-sunburst-8033675650104"
+ },
+ {
+  "kind": "acustica",
+  "type": "foto_perdida",
+  "name": "Eko Dreadnought Eko Ranger 6 Rojo Sunburst",
+  "slug": "eko-dreadnought-eko-ranger-6-rojo-sunburst-8033675650098"
  },
  {
   "kind": "clasica",

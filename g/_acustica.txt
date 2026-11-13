@@ -638,6 +638,7 @@ bromo-baa2ce-cutaway-natural-serie-appalachia-8997032896324
 bromo-baa2ce-romobaa2ce
 bromo-baa4c-natural-satinado-8997032897178
 bromo-baa4ce-hillside-auditorium-cutaway-serie-appalachia-8997032897185
+bromo-baa8s-jumbo-natural-8997032898335
 bromo-bab1-natural-satinado-8997032897208
 bromo-ban2v-vintage-tone-grand-auditorium-natural-8719147589966
 bromo-ban8-evs-omoban8evs
@@ -683,7 +684,6 @@ bromo-dreadnought-bromo-bat1-tahoma-8997032896300
 bromo-dreadnought-bromo-bat9mebk-roundshoulder-tahoma-8997032898199
 bromo-grand-auditorium-bromo-ban2v-denali-vintage-alivintage
 bromo-jumbo-bromo-ban7e-denali-8997032898601
-bromo-mini-jumbo-bromo-baa8s-appalachia-8997032898335
 bromo-mini-jumbo-bromo-ban8e-denali-sunburst-8997032898533
 bromo-mini-jumbo-bromo-bat8me-tahoma-8997032898465
 bromo-parlor-bromo-bar6e-rocky-8997032898106
@@ -717,6 +717,7 @@ charlesville-charl-gav-sem-grand-auditorium-cutaway-utawayhtml
 cole-clark-an2ec-blbl-hss-case-9348890016338
 cole-clark-studio-san1ec-9348890016543
 cole-clark-studio-sran-deluxe-9348890017021
+columna-acustica-jbl-col-800-blanca-691991039294
 cort-abstract-delta-nat-w-case-8809817981142
 cort-abstract-delta-natural-8809817081149
 cort-ad-mini-m-mini-dreadnought-8809383834118
@@ -1721,7 +1722,7 @@ fender-highway-dreadnought-all-mahogany-097-2512-122-512122html
 fender-highway-series-dreadnought-rosewood-fingerboard-natural-uralp33478
 fender-highway-series-dreadnought-rw-all-mahogany-717669537609
 fender-highway-series-dreadnought-rw-natural-717669923259
-fender-highway-series-parlor-rosewood-fingerboard-natural-uralp33491
+fender-highway-series-parlor-rosewood-fingerboard-natural-uralp33490
 fender-highway-series-parlor-rw-all-mahogany-717669539009
 fender-highway-series-parlor-rw-natural-717669538781
 fender-joe-strummer-campfire-wn-matte-black-885978598465
@@ -5589,6 +5590,7 @@ vox-vga3ps-tk-4959112183551
 vox-vga3ps-tr-4959112183568
 walden-cutaway-walden-natura-600-wag630cew-con-funda-810035440074
 walden-hawthorne-200-ct-2023-d255ce-810035440968
+walden-hawthorne-200-d255-dreadnought-natural-satinada-alsatinada
 walden-hawthorne-200-dr-2023-810035440951
 walden-natura-700-ga-2023-810035440913
 walden-wad450w-standard-400-810035440326
@@ -6247,7 +6249,7 @@ yamaha-storia-iii-chocolate-brown-rownp16071
 yamaha-storia-iii-d2330nuevo
 yamaha-tag1-c-natural-4957812712279
 yamaha-tag1-c-natural-uralp44148
-yamaha-tag1-c-sand-burst-urstp44149
+yamaha-tag1-c-sand-burst-4957812712286
 yamaha-tag1-e-natural-uralp44091
 yamaha-tag1-e-negro-translucido-cidop44302
 yamaha-tag1-e-sand-burst-urstp44153

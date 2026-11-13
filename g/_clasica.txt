@@ -1981,6 +1981,7 @@ espanola-manuel-rodriguez-cedro-satinado-3-4-4046662337357
 espanola-manuel-rodriguez-cedro-satinado-4-4-4046662337425
 espanola-manuel-rodriguez-cedro-satinado-7-8-4046662337388
 espanola-manuel-rodriguez-ecologia-clasico-1-2-4046662337722
+espanola-manuel-rodriguez-ecologia-clasico-1-4-4046662337715
 espanola-manuel-rodriguez-ecologia-clasico-3-4-4046662337739
 espanola-manuel-rodriguez-ecologia-clasico-4-4-4046662337753
 espanola-manuel-rodriguez-ecologia-clasico-7-8-4046662337746
@@ -1995,6 +1996,7 @@ espanola-manuel-rodriguez-senior-maestro-signature-legacy-abeto-aleman-macizo-pa
 espanola-manuel-rodriguez-senior-maestro-signature-legacy-cedro-macizo-palosanto-madagascar
 espanola-manuel-rodriguez-superior-aniversario-120-j-sbe-2025-abeto-y-arce-ojo-d-4046662318325
 espanola-manuel-rodriguez-tradicion-clasico-1-2-4046662337784
+espanola-manuel-rodriguez-tradicion-clasico-1-4-4046662337777
 espanola-manuel-rodriguez-tradicion-clasico-3-4-4046662337791
 espanola-manuel-rodriguez-tradicion-clasico-4-4-4046662337821
 espanola-manuel-rodriguez-tradicion-clasico-7-8-4046662337814
@@ -2207,7 +2209,8 @@ ibanez-ga5mhtce-opn-open-pore-natural-4549763350329
 ibanez-ga5mhtce-wk-weathered-black-open-pore-4549763350336
 ibanez-ga5tce-am-amber-high-gloss-4515110153073
 ibanez-ga5tce3q-am-amber-high-gloss-4549763350534
-ibanez-ga621-bot-guitarra-espanola-electrificada-black-out-4549763377838
+ibanez-ga621-bot-ezga621bot
+ibanez-ga621bot-black-out-koutp43103
 ibanez-ga6ce-am-amber-high-gloss-4515110153097
 ibanez-iab724-bk-24bkp26270
 ibanez-para-zurdos-ibanez-tod10nl-tkf-tim-henson-s-signature-transparent-black-4549763358813

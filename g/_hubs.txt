@@ -244,6 +244,7 @@ marca/cleartone.html
 marca/cnb.html
 marca/cole-clark.html
 marca/coles.html
+marca/columna.html
 marca/comodoro-pedales.html
 marca/con.html
 marca/coppersound-pedals.html
