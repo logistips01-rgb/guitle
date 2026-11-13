@@ -1,0 +1,369 @@
+{
+ "date": "2026-11-13",
+ "fecha": "13 novembre",
+ "post": {
+  "type": "top",
+  "title": "5 guitares électriques de 300 € à 500 €",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "ibanez-azes40l-prb-guitare-electrique-gaucher-purist-blue-stbluehtml",
+    "name": "Ibanez AZES40L-PRB Guitare Electrique Gaucher Purist Blue",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.music-privilege.fr/img/600/744/contains/catalog/product/p/_/p_region_azes40_prb_1p_01_1.png",
+    "th": "1ea4dfe421139b5f.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/571772.jpg",
+    "price": 329.0,
+    "store": "Music Privilege",
+    "stores": 5,
+    "median": 349.0,
+    "max": 349.99,
+    "next": 349.0,
+    "rows": [
+     [
+      "Music Privilege",
+      329.0
+     ],
+     [
+      "Woodbrass",
+      349.0
+     ],
+     [
+      "Stars Music",
+      349.0
+     ],
+     [
+      "Thomann",
+      349.0
+     ],
+     [
+      "Cultura",
+      349.99
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "epiphone-sg-tribute-plus-ebony-burst-711106175324",
+    "name": "Epiphone SG Tribute Plus Ebony Burst",
+    "brand": "Epiphone",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/ce01db8ed9ad0255a1f4dd6888b31ae651a76dc4_GBI_E1SGTPEBBNH1.jpg?height=1200&pad_color=ffffff&v=1794322346&width=1200",
+    "th": "5888c9b17574e8d2.webp",
+    "thimg": null,
+    "price": 369.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 369.0,
+    "max": 369.0,
+    "next": 369.0,
+    "rows": [
+     [
+      "Woodbrass",
+      369.0
+     ],
+     [
+      "Stars Music",
+      369.0
+     ],
+     [
+      "Guitar Legend",
+      369.0
+     ],
+     [
+      "Thomann",
+      369.0
+     ],
+     [
+      "Michenaud",
+      369.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "squier-stratocaster-70s-hss-classic-vibe-lrl-walnut-885978064342",
+    "name": "Squier Stratocaster 70S Hss Classic Vibe Lrl Walnut",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/191c3be1873a253e253ea0bb2c72a9643bb80e60_FMIC_0374024592.jpg?height=1200&pad_color=ffffff&v=1794433859&width=1200",
+    "th": "87533e25209ff35c.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/457244.jpg",
+    "price": 419.0,
+    "store": "Woodbrass",
+    "stores": 8,
+    "median": 443.0,
+    "max": 529.0,
+    "next": 419.0,
+    "rows": [
+     [
+      "Woodbrass",
+      419.0
+     ],
+     [
+      "Thomann",
+      419.0
+     ],
+     [
+      "Ubico Musique",
+      439.0
+     ],
+     [
+      "Stars Music",
+      443.0
+     ],
+     [
+      "Guitar Legend",
+      443.0
+     ],
+     [
+      "Cultura",
+      449.89
+     ],
+     [
+      "Hurricane Music",
+      475.0
+     ],
+     [
+      "Scotto Musique",
+      529.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "yamaha-revstar-element-rse20-swift-blue-4957812675154",
+    "name": "Yamaha Revstar Element Rse20 Swift Blue",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/bf5b45aeaadd77a1f10baa2ac55123b03f1a933f_YAMAHA_GRSE20SWB.jpg?height=1200&pad_color=ffffff&v=1794393267&width=1200",
+    "th": "fd1a755cca718d12.webp",
+    "thimg": null,
+    "price": 464.0,
+    "store": "Woodbrass",
+    "stores": 5,
+    "median": 471.5,
+    "max": 479.99,
+    "next": 464.0,
+    "rows": [
+     [
+      "Woodbrass",
+      464.0
+     ],
+     [
+      "Stars Music",
+      464.0
+     ],
+     [
+      "Thomann",
+      464.0
+     ],
+     [
+      "Audio System",
+      479.0
+     ],
+     [
+      "Cultura",
+      479.99
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "prs-ce24-se-standard-satin-vintage-cherry-825362244134",
+    "name": "PRS CE24 SE Standard Satin Vintage Cherry",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/5127718803a981761159c1acd0d0b2df95c8bebe_ADAGIO_1006591.jpg?height=1200&pad_color=ffffff&v=1794330596&width=1200",
+    "th": "28e50241831203d9.webp",
+    "thimg": null,
+    "price": 477.0,
+    "store": "Woodbrass",
+    "stores": 7,
+    "median": 519.0,
+    "max": 599.0,
+    "next": 477.0,
+    "rows": [
+     [
+      "Woodbrass",
+      477.0
+     ],
+     [
+      "Stars Music",
+      477.0
+     ],
+     [
+      "Hurricane Music",
+      477.0
+     ],
+     [
+      "Ferré Musique",
+      499.0
+     ],
+     [
+      "Scotto Musique",
+      539.0
+     ],
+     [
+      "Music Privilege",
+      599.0
+     ],
+     [
+      "Paul Beuscher",
+      599.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   }
+  ],
+  "caption": "🎸 5 guitares électriques de 300 € à 500 € : les plus vendues en magasin, avec leur meilleur prix du jour 👇\n\n1️⃣ Ibanez AZES40L-PRB Guitare Electrique Gaucher Purist Blue : 329 € chez Music Privilege\n2️⃣ Epiphone SG Tribute Plus Ebony Burst : 369 € chez Woodbrass\n3️⃣ Squier Stratocaster 70S Hss Classic Vibe Lrl Walnut : 419 € chez Woodbrass\n4️⃣ Yamaha Revstar Element Rse20 Swift Blue : 464 € chez Woodbrass\n5️⃣ PRS CE24 SE Standard Satin Vintage Cherry : 477 € chez Woodbrass\n\nLaquelle tu choisis ? Dis-le-nous en commentaire 💬\n🔎 Compare les prix sur guitle.com/fr (tous les bons plans du jour via le lien en bio 👆). Prix du 13 novembre.\n\n#guitare #guitariste #bonplan #promo #guitareelectrique #ibanez #epiphone #squier #yamaha #prs"
+ },
+ "stories": [
+  {
+   "slug": "cort-space-g6ms-semi-gloss-turquoise-8809817986994",
+   "name": "Cort Space G6MS - semi gloss turquoise",
+   "brand": "Cort",
+   "kind": "electrica",
+   "img": "https://www.stars-music.fr/medias/cort/space-g6ms-multiscale-2h-ht-mn-hd-237566.webp",
+   "th": "bf7c4fcaea38abfd.webp",
+   "thimg": "https://woodbrass.com/cdn/shop/files/3a2048ac35bc52ac454273e4e7e29de70df621ca_SAICO_SPG6MS_SGTQ.jpg?height=1200&pad_color=ffffff&v=1794464842&width=1200",
+   "price": 577.0,
+   "store": "Stars Music",
+   "stores": 3,
+   "median": 787.0,
+   "max": 829.0,
+   "next": 745.0,
+   "rows": [
+    [
+     "Stars Music",
+     577.0
+    ],
+    [
+     "Cultura",
+     745.0
+    ],
+    [
+     "Woodbrass",
+     829.0
+    ]
+   ],
+   "pvp": null,
+   "why": "168 € de moins que dans les autres magasins",
+   "pct": 23,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "takamine-gn20-ns-guitare-folk-acoustique-nex-naturelle-satinee-atineehtml",
+   "name": "Takamine GN20-NS Guitare Folk Acoustique Nex Naturelle Satinee",
+   "brand": "Takamine",
+   "kind": "acustica",
+   "img": "https://www.music-privilege.fr/img/600/744/contains/catalog/product/g/d/gd20-ns_banner_0.jpg",
+   "th": "71a02e744872e4a8.webp",
+   "thimg": "https://woodbrass.com/cdn/shop/files/3c0a26479793b709e6d7cb327e68dd04dd53d0b0_GTA_GN20NS.png?height=1200&pad_color=ffffff&v=1794330612&width=1200",
+   "price": 299.0,
+   "store": "Music Privilege",
+   "stores": 5,
+   "median": 369.0,
+   "max": 389.0,
+   "next": 369.0,
+   "rows": [
+    [
+     "Music Privilege",
+     299.0
+    ],
+    [
+     "Woodbrass",
+     369.0
+    ],
+    [
+     "Stars Music",
+     369.0
+    ],
+    [
+     "Michenaud",
+     369.0
+    ],
+    [
+     "Music 3000",
+     389.0
+    ]
+   ],
+   "pvp": null,
+   "why": "70 € de moins que dans les autres magasins",
+   "pct": 19,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "squier-starcaster-affinity-dlx-mn-sienna-sunburst-885978136308",
+   "name": "Squier Starcaster Affinity Dlx Mn Sienna Sunburst",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://woodbrass.com/cdn/shop/files/7f877864509835811c8f8e53db205dc19391e1c3_FMIC_0378452547.jpg?height=1200&pad_color=ffffff&v=1794400740&width=1200",
+   "th": "75275e25b3962a23.webp",
+   "thimg": "https://cdn.cultura.com/media/pim/0885978136308.png",
+   "price": 259.0,
+   "store": "Woodbrass",
+   "stores": 4,
+   "median": 309.0,
+   "max": 319.99,
+   "next": 309.0,
+   "rows": [
+    [
+     "Woodbrass",
+     259.0
+    ],
+    [
+     "Stars Music",
+     309.0
+    ],
+    [
+     "Guitar Legend",
+     309.0
+    ],
+    [
+     "Cultura",
+     319.99
+    ]
+   ],
+   "pvp": null,
+   "why": "50 € de moins que dans les autres magasins",
+   "pct": 16,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}

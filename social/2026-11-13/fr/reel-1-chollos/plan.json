@@ -1,0 +1,192 @@
+{
+ "fecha": "13 novembre",
+ "post": {
+  "type": "top",
+  "title": "bons plans du jour",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "mooer-gtrs-pro-800-dark-night-6971889220404",
+    "name": "Mooer Gtrs Pro 800 Dark Night",
+    "brand": "Mooer",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/25a72ce7a379795e02ebb8ee2e42e86b12656c9b_MUSICO_GTRS_P800DN.jpg?height=1200&pad_color=ffffff&v=1794472509&width=1200",
+    "th": "69607fc1ccd457e7.webp",
+    "thimg": null,
+    "price": 599.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 824.0,
+    "max": 879.0,
+    "next": 699.0,
+    "rows": [
+     [
+      "Woodbrass",
+      599.0
+     ],
+     [
+      "Cultura",
+      699.0
+     ],
+     [
+      "Stars Music",
+      824.0
+     ],
+     [
+      "Michenaud",
+      879.0
+     ]
+    ],
+    "pvp": null,
+    "why": "100 € de moins que dans les autres magasins",
+    "pct": 14,
+    "photo": "g0-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "squier-starcaster-affinity-dlx-mn-sienna-sunburst-885978136308",
+    "name": "Squier Starcaster Affinity Dlx Mn Sienna Sunburst",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://woodbrass.com/cdn/shop/files/7f877864509835811c8f8e53db205dc19391e1c3_FMIC_0378452547.jpg?height=1200&pad_color=ffffff&v=1794400740&width=1200",
+    "th": "75275e25b3962a23.webp",
+    "thimg": "https://cdn.cultura.com/media/pim/0885978136308.png",
+    "price": 259.0,
+    "store": "Woodbrass",
+    "stores": 4,
+    "median": 309.0,
+    "max": 319.99,
+    "next": 309.0,
+    "rows": [
+     [
+      "Woodbrass",
+      259.0
+     ],
+     [
+      "Stars Music",
+      309.0
+     ],
+     [
+      "Guitar Legend",
+      309.0
+     ],
+     [
+      "Cultura",
+      319.99
+     ]
+    ],
+    "pvp": null,
+    "why": "50 € de moins que dans les autres magasins",
+    "pct": 16,
+    "photo": "g2-1.webp",
+    "label": "Électrique"
+   },
+   {
+    "slug": "cort-ga5f-fmh-open-pore-penporephp",
+    "name": "Cort GA5F-FMH Open Pore",
+    "brand": "Cort",
+    "kind": "acustica",
+    "img": "https://www.michenaud.com/upDATA/p/58500/58116/img1712222798-1oLQ8JFH/500medium.jpg",
+    "th": "fdf459f6a53bfb04.webp",
+    "thimg": "https://audiosystem.fr/68494-product_zoom/cort-ga5f-acajou-flamme.jpg",
+    "price": 479.0,
+    "store": "Michenaud",
+    "stores": 3,
+    "median": 599.0,
+    "max": 619.0,
+    "next": 579.0,
+    "rows": [
+     [
+      "Michenaud",
+      479.0
+     ],
+     [
+      "Stars Music",
+      579.0
+     ],
+     [
+      "Audio System",
+      619.0
+     ]
+    ],
+    "pvp": null,
+    "why": "100 € de moins que dans les autres magasins",
+    "pct": 17,
+    "photo": "g1-1.webp",
+    "label": "Folk"
+   },
+   {
+    "slug": "takamine-gn20-ns-guitare-folk-acoustique-nex-naturelle-satinee-atineehtml",
+    "name": "Takamine GN20-NS Guitare Folk Acoustique Nex Naturelle Satinee",
+    "brand": "Takamine",
+    "kind": "acustica",
+    "img": "https://www.music-privilege.fr/img/600/744/contains/catalog/product/g/d/gd20-ns_banner_0.jpg",
+    "th": "71a02e744872e4a8.webp",
+    "thimg": "https://woodbrass.com/cdn/shop/files/3c0a26479793b709e6d7cb327e68dd04dd53d0b0_GTA_GN20NS.png?height=1200&pad_color=ffffff&v=1794330612&width=1200",
+    "price": 299.0,
+    "store": "Music Privilege",
+    "stores": 5,
+    "median": 369.0,
+    "max": 389.0,
+    "next": 369.0,
+    "rows": [
+     [
+      "Music Privilege",
+      299.0
+     ],
+     [
+      "Woodbrass",
+      369.0
+     ],
+     [
+      "Stars Music",
+      369.0
+     ],
+     [
+      "Michenaud",
+      369.0
+     ],
+     [
+      "Music 3000",
+      389.0
+     ]
+    ],
+    "pvp": null,
+    "why": "70 € de moins que dans les autres magasins",
+    "pct": 19,
+    "photo": "g3-1.webp",
+    "label": "Folk"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  }
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/"
+}
