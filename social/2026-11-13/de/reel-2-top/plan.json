@@ -1,0 +1,211 @@
+{
+ "fecha": "13. November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal des Tages",
+  "cholloDia": "Deal des Tages",
+  "en": "bei",
+  "precioDel": "Preis vom",
+  "comparadoEn": "verglichen in",
+  "tiendas": "Shops",
+  "enlaceBio": "Link in der Bio",
+  "masVendidas": "Die meistverkauften in den Shops, mit dem besten Preis von heute.",
+  "desliza": "Wischen →",
+  "laVenden": "Erhältlich in",
+  "conCual": "Welche nimmst du?",
+  "cuentanos": "Schreib es in die Kommentare und speichere den Post für deinen nächsten Kauf.",
+  "comparaEn": "Preise vergleichen auf",
+  "comparaAntes": "Erst vergleichen, dann kaufen",
+  "siguenos": "Folge uns für mehr Deals",
+  "web": "guitle.com/de",
+  "kinds": {
+   "electrica": "E-Gitarre",
+   "acustica": "Westerngitarre",
+   "clasica": "Konzertgitarre"
+  },
+  "bfFaltan": "Noch",
+  "bfDia": "Tag",
+  "bfDias": "Tage",
+  "bfApunta": "Merk dir diesen Preis",
+  "bfHoy": "Heute, {fecha}",
+  "bfOtras": "In den anderen {n} Shops:",
+  "bfRango": "von {a} bis {b}",
+  "bfBajara": "Wird sie am Black Friday wirklich günstiger?",
+  "bfDecimos": "Am 27. November sagen wir es dir – mit dem Preisverlauf.",
+  "bfGuarda": "Speichern 📌"
+ },
+ "money": {
+  "locale": "de-DE",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "de/",
+ "post": {
+  "type": "top",
+  "title": "5 Deals: Effektpedale",
+  "hook": "Deals von heute",
+  "picks": [
+   {
+    "slug": "digitech-dod-badder-monkey-overdrive-pedal-810147520121",
+    "name": "DigiTech DOD Badder Monkey Overdrive Pedal",
+    "brand": "DigiTech",
+    "kind": "pedales",
+    "img": "https://www.session.de/media/48/77/46/1764595543/digitech-dod-badder-monkey-overdrive-pedal-01.webp?ts=1764595543",
+    "th": "8425fa55bf0bc947.webp",
+    "thimg": null,
+    "price": 111.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 149.0,
+    "max": 149.0,
+    "next": 149.0,
+    "rows": [
+     [
+      "Session",
+      111.0
+     ],
+     [
+      "Shop2Rock",
+      149.0
+     ],
+     [
+      "Musik Beck",
+      149.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "38 € günstiger als anderswo"
+   },
+   {
+    "slug": "dunlop-mxr-m303-clone-looper-710137111868",
+    "name": "Dunlop MXR M303 Clone Looper",
+    "brand": "Dunlop",
+    "kind": "pedales",
+    "img": "https://www.markstein.de/media/b1/48/02/1661957916/0bcc483836fe8550339553463ce11854.jpg",
+    "th": "8ebb8813cf9c7b92.webp",
+    "thimg": null,
+    "price": 155.0,
+    "store": "Musikhaus Markstein",
+    "stores": 3,
+    "median": 216.5,
+    "max": 224.0,
+    "next": 209.0,
+    "rows": [
+     [
+      "Musikhaus Markstein",
+      155.0
+     ],
+     [
+      "Music Town",
+      209.0
+     ],
+     [
+      "Shop2Rock",
+      224.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "54 € günstiger als anderswo"
+   },
+   {
+    "slug": "nux-ampacademy-amp-modeler-6936257208439",
+    "name": "NUX AmpAcademy Amp Modeler",
+    "brand": "NUX",
+    "kind": "pedales",
+    "img": "https://media.zoundhouse.de/media/ae/a4/87/1727439031/1029982.jpg?ts=1749707876",
+    "th": "06f3bb21696c9dd8.webp",
+    "thimg": "https://www.session.de/media/4a/9f/16/1662624217/nux_-_nux_ngs-6_amp_academy_-_0.jpg?ts=1741945609",
+    "price": 159.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 196.0,
+    "max": 199.0,
+    "next": 193.0,
+    "rows": [
+     [
+      "Session",
+      159.0
+     ],
+     [
+      "Shop2Rock",
+      193.0
+     ],
+     [
+      "Music Town",
+      199.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "34 € günstiger als anderswo"
+   },
+   {
+    "slug": "boss-gt-1b-bass-effektprozessor-4957054511678",
+    "name": "Boss GT-1B Bass-Effektprozessor",
+    "brand": "Boss",
+    "kind": "pedales",
+    "img": "https://media.zoundhouse.de/media/4e/34/5d/1700568568/0054259.jpg?ts=1749707783",
+    "th": "2d654b78d00e255d.webp",
+    "thimg": "https://www.markstein.de/media/ed/15/09/1788430629/boss_gt_1b_multieffektgeraet_fuer_e_bass_00035213_1.jpg",
+    "price": 189.0,
+    "store": "Zoundhouse",
+    "stores": 3,
+    "median": 240.0,
+    "max": 245.0,
+    "next": 235.0,
+    "rows": [
+     [
+      "Zoundhouse",
+      189.0
+     ],
+     [
+      "Musikhaus Zölch",
+      235.0
+     ],
+     [
+      "Musikhaus Markstein",
+      245.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "46 € günstiger als anderswo"
+   },
+   {
+    "slug": "mxr-m-292-carbon-copy-deluxe-analog-delay-delay-pedal-710137095601",
+    "name": "MXR M 292 Carbon Copy Deluxe Analog Delay - Delay Pedal",
+    "brand": "MXR",
+    "kind": "pedales",
+    "img": "https://media.zoundhouse.de/media/8e/46/12/1702695570/0054758.jpg?ts=1749707863",
+    "th": "1edbd8435ceadf57.webp",
+    "thimg": "https://www.session.de/media/e0/ba/4a/1662677499/mxr_-_mxr_m292_carbon_copy_deluxe_analog_delay_-_0.jpg?ts=1741954949",
+    "price": 219.0,
+    "store": "Session",
+    "stores": 3,
+    "median": 296.5,
+    "max": 299.0,
+    "next": 294.0,
+    "rows": [
+     [
+      "Session",
+      219.0
+     ],
+     [
+      "Shop2Rock",
+      294.0
+     ],
+     [
+      "Music Town",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "75 € günstiger als anderswo"
+   }
+  ],
+  "rama": "pedales"
+ }
+}
