@@ -172,7 +172,7 @@ def _render(product, kind, store_names, colors):
       <div id="price" class="big">{eur(best['p'])}</div>
       <div id="where" class="muted">{esc(where)}</div>
       <div id="verdict" class="verdict hidden"></div>
-      {f'<div class="muted small">EAN {esc(product["ean"])}</div>' if product.get('ean') else ''}
+      {f'<div class="muted small">EAN {esc(product["ean"])}</div>' if product.get('ean') else ''}{mercados.top("es", name, f"https://www.amazon.es/s?k={{q}}&tag={AMAZON_TAG}")}
     </div>
   </article>
   <section><h3>Tiendas</h3><div class="table-wrap"><table id="stores">{_rows(product, store_names, colors)}</table></div>

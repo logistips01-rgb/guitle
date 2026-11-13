@@ -120,7 +120,7 @@ SITES = {
            "kinds": _LANG_KINDS("fi", GUITARS_ONLY), "amazon": None},
     # Luxemburgo: en francés, con los textos de Francia.
     "lu": {"country": "Luxembourg", "lang": "fr-LU", "t": "fr", "cur": "EUR", "catalog": "lu", "extra_catalogs": [],
-           "kinds": {"electrica": "electriques", "acustica": "folk", "clasica": "classiques"}, "amazon": None,
+           "kinds": {"electrica": "electriques", "acustica": "folk", "clasica": "classiques"}, "amazon": "https://www.amazon.fr/s?k={q}&tag=guitle00-21",  # Amazon.fr envía a Luxemburgo
            "t_over": {"homeDesc": "guitle compare les prix des guitares : électriques, folk et classiques dans les magasins qui "
                                   "vendent au Luxembourg, avec l'historique de prix de chaque modèle.",
                       "steps": ["Chaque jour, nous vérifions le prix, le stock et la photo de chaque guitare dans les magasins qui vendent au Luxembourg.",
@@ -1214,7 +1214,7 @@ def _product(code, kind, product, names, alternates):
       <div id="price" class="big">{money(best['p'], code)}</div>
       <div id="where" class="muted">{esc(where)}</div>
       <div id="verdict" class="verdict hidden"></div>
-      {f'<div class="muted small">EAN {esc(product["ean"])}</div>' if product.get('ean') else ''}
+      {f'<div class="muted small">EAN {esc(product["ean"])}</div>' if product.get('ean') else ''}{mercados.top(s["t"], name, s.get("amazon"))}
     </div>
   </article>
   <section><h3>{esc(t['storesH3'])}</h3><div class="table-wrap"><table id="stores">{_rows(product, names, colors, code, t)}</table></div>{amazon}</section>
