@@ -151,7 +151,7 @@ SITES = {
            "kinds": {"electrica": "elektrische-gitaren", "acustica": "akoestische-gitaren", "clasica": "klassieke-gitaren",
                      "bajo": "basgitaren", "ampli": "versterkers", "pedal": "effectpedalen", "teclado": "keyboards",
                      "micro": "microfoons", "estuche": "koffers-tassen", "varios": "accessoires"},
-           "amazon": None,
+           "amazon": "https://www.amazon.fr/s?k={q}&tag=guitle00-21",  # Amazon.fr envía a Bélgica (hasta tener código de amazon.com.be)
            "t_over": {"homeDesc": "guitle vergelijkt gitaarprijzen: elektrische, akoestische en klassieke gitaren in de winkels "
                                   "die in België verkopen, met de prijsgeschiedenis van elk model.",
                       "steps": ["Elke dag controleren we de prijs, voorraad en foto van elke gitaar in de winkels die in België verkopen.",
