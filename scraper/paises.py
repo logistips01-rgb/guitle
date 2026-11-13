@@ -400,10 +400,21 @@ def reel_chollos(cc, day, folder, deals, prods, recent, post, stories, fetcher, 
                     elegir(sin_post, [k])
             if len(picks) == antes:
                 break
+    if len(picks) < 3:  # catálogo pequeño (Portugal): pueden volver guitarras de otros días, con el precio de hoy
+        deals = deals + extras_baratas(cfg, prods, "", {p["slug"] for p in deals})
+        for _ in range(4 - len(picks)):
+            antes = len(picks)
+            for k in ("electrica", "acustica", "clasica"):
+                if len(picks) < 4:
+                    elegir(sin_post, [k])
+            if len(picks) == antes:
+                break
     orden = {"electrica": 0, "acustica": 1, "clasica": 2}
     picks.sort(key=lambda p: orden[next(k for k, v in cfg["kinds"].items() if v == p["label"])])
     if len(picks) >= 3:
-        icons = ["🎸", "⚡", "🪵", "🎼"]
+        tipo = {v: k for k, v in cfg["kinds"].items()}
+        iconos = {"electrica": ["🎸", "⚡", "🔥", "🎸"], "acustica": ["🪵", "🪵"], "clasica": ["🎼", "🎼"]}
+        icons = [iconos[tipo[p["label"]]][[q["label"] for q in picks[:i]].count(p["label"])] for i, p in enumerate(picks)]
         lines = "\n".join(cfg["linea_reel"].format(icon=icons[i], kind=p["label"], name=p["name"], price=money(p["price"]),
                                                    store=p["store"], why=(p["why"][0].lower() if p["why"][1:2].islower() else p["why"][0]) + p["why"][1:]) for i, p in enumerate(picks))
         caption = cfg["cap_reel"].format(lines=lines, web=cfg["web"], fecha=fecha,
