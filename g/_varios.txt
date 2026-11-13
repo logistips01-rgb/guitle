@@ -2522,10 +2522,14 @@ flanger-fc03r-cejillas-para-y-electrica-bronce-6936257800411
 flanger-fc09b-cejillas-para-y-acustica-negro-710619782111
 floyd-rose-frtnftc-non-fine-tuner-tremolo-system-chrome-835580011333
 framus-0549450-cuerdas-4033685002942
+franklin-strap-aztec-graphic-strap-blue-red-2-69593017444
 franklin-strap-blue-distressed-denim-cocnac-leather-end-2-69593018113
 franklin-strap-caramel-glove-leather-gold-stiching-2-5-69593010209
 franklin-strap-chocolate-gold-reversible-leather-natural-stich-69593017185
 franklin-strap-cognac-jackson-hole-leather-contrast-stich-69593017130
+franklin-strap-oxblood-glove-leather-natural-stiching-2-5-69593018861
+franklin-strap-snake-skin-glove-black-2-69593017758
+franklin-strap-snake-skin-glove-cognac-2-69593017765
 g7th-c31020-cejilla-para-negra-5060079200126
 g7th-capo-g7th-performance-3-art-black-para-guitarra-acustica-eletrica-ricap36156
 g7th-nashville-capo-fur-western-und-e-gitarre-5060079200058
@@ -4127,6 +4131,8 @@ snark-stimmgerat-snark-clt-1-crazy-little-thing-akku-clip-on-tuner-611820002947
 snark-stimmgerat-snark-sil-1-guitar-clip-on-chromatic-all-instrument-tuner-611820002282
 snark-stimmgerat-snark-sn-5gx-clip-on-tuner-guitar-bass-tuner-611820002053
 snark-stimmgerat-snark-sn-re-akku-tuner-chromatischer-akku-clip-on-tuner-611820002398
+snark-stimmgerat-snark-super-tight-st-2-clip-on-chromatic-all-instrument-tuner-611820002152
+snark-stimmgerat-snark-super-tight-st-8t-titanium-clip-on-tuner-super-tight-rech-611820002244
 soundboks-carrier-strap-para-go-5714300004043
 soundsation-electric-bass-guitar-string-set-medium-diump40501
 soundsation-encordoamento-p-baixo-electrico-sb608-5-45-130-5130p40503

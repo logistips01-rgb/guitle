@@ -142,7 +142,6 @@ bam-estuche-de-guitarra-grand-concert-hightech-8009xl-carbon-3760277053570
 bam-estuche-de-guitarra-grand-concert-hightech-8009xl-tweed-3760277053587
 bam-estuche-de-guitarra-manouche-tipo-selmer-hightech-8005xl-carbon-3760277053495
 bam-estuche-de-guitarra-manouche-tipo-selmer-hightech-8005xl-tweed-3760277053501
-bam-estuche-de-guitarra-manouche-tipo-selmer-panther-hightech-pant8005xl-gray-gr-3760277057677
 bam-estuche-de-hightech-8002xl-carbon-3760277053365
 bam-estuche-de-hightech-8002xl-silver-carbon-3760277053396
 bam-estuche-de-hightech-8002xl-tweed-3760277053402
