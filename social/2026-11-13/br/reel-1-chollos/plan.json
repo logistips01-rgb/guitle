@@ -1,0 +1,184 @@
+{
+ "fecha": "13 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "strinberg-lps230-sb-les-paul-strinberg-8050p20648",
+    "name": "Strinberg LPS230 SB Les Paul Strinberg",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://d3inm8bow7n5hy.cloudfront.net/Custom/Content/Products/20/64/20648_guitarra-strinberg-lps230-sb-ps-12815-8050_l1_638678685634900568.webp",
+    "th": "f5a8ad29871fcb1e.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1175919/guitarra_strinberg_les_paul_lps230_sunburst_25911_1_9a2baaa6ff7a16e535de835a140575d6.jpeg",
+    "price": 1230.0,
+    "store": "China Som",
+    "stores": 4,
+    "median": 1544.48,
+    "max": 1559.0,
+    "next": 1439.91,
+    "rows": [
+     [
+      "China Som",
+      1230.0
+     ],
+     [
+      "Luggi",
+      1439.91
+     ],
+     [
+      "Ponto do Músico",
+      1544.48
+     ],
+     [
+      "Casa da Música",
+      1559.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 209,91 a menos que em qualquer outra loja",
+    "pct": 15,
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "jackson-js-dinky-js11-metallic-blue-885978976744",
+    "name": "Jackson JS Dinky JS11 Metallic Blue",
+    "brand": "Jackson",
+    "kind": "electrica",
+    "img": "https://static.mundomax.com.br/produtos/85866/1200/5.jpg",
+    "th": "af6702fa3813a906.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1402804/guitarra_jackson_js11_dinky_2910121527_metallic_blue_557_1_a59e513a799125665135cf0d0fe34f78.png",
+    "price": 1493.1,
+    "store": "Mundomax",
+    "stores": 4,
+    "median": 1999.0,
+    "max": 2105.88,
+    "next": 1674.0,
+    "rows": [
+     [
+      "Mundomax",
+      1493.1
+     ],
+     [
+      "Carneiro Music",
+      1674.0
+     ],
+     [
+      "Cheiro de Música",
+      1999.0
+     ],
+     [
+      "Ninja Som",
+      2105.88
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 180,90 a menos que em qualquer outra loja",
+    "pct": 11,
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "tagima-andes-eletroacustico-folk-aco-natural-amber-satin-ambersatin",
+    "name": "Tagima Andes Eletroacústico Folk Aço Natural Amber Satin",
+    "brand": "Tagima",
+    "kind": "acustica",
+    "img": "https://static.mundomax.com.br/produtos/82103/1200/6.jpg",
+    "th": "5422ba93d9250278.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1139574/violao_tagima_andes_folk_com_afinador_natural_28231_1_691c257790480bd3aa9844f9a5de7968.jpg",
+    "price": 989.1,
+    "store": "Mundomax",
+    "stores": 3,
+    "median": 1229.45,
+    "max": 1259.0,
+    "next": 1199.9,
+    "rows": [
+     [
+      "Mundomax",
+      989.1
+     ],
+     [
+      "Megasom",
+      1199.9
+     ],
+     [
+      "Casa da Música",
+      1259.0
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 210,80 a menos que em qualquer outra loja",
+    "pct": 18,
+    "photo": "g2-1.webp",
+    "label": "Violão"
+   },
+   {
+    "slug": "takamine-gc5ce-natural-classico-nylon-nylonsrp14",
+    "name": "Takamine Gc5ce Natural Classico Nylon",
+    "brand": "Takamine",
+    "kind": "clasica",
+    "img": "https://acdn-us.mitiendanube.com/assets/stores/img/no-photo-480-0.webp",
+    "th": "e7639d5704995973.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1139574/violao_takamine_gc5ce_nylon_com_afinador_natural_23351_1_288c41f5700e87fc7c217f5724840dbb.jpg",
+    "price": 4049.0,
+    "store": "Estação Musical",
+    "stores": 3,
+    "median": 4799.45,
+    "max": 4799.9,
+    "next": 4799.0,
+    "rows": [
+     [
+      "Estação Musical",
+      4049.0
+     ],
+     [
+      "Casa da Música",
+      4799.0
+     ],
+     [
+      "Megasom",
+      4799.9
+     ]
+    ],
+    "pvp": null,
+    "why": "R$ 750 a menos que em qualquer outra loja",
+    "pct": 16,
+    "photo": "g3-1.webp",
+    "label": "Violão de nylon"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}

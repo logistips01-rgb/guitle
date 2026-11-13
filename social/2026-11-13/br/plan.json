@@ -1,0 +1,317 @@
+{
+ "date": "2026-11-13",
+ "fecha": "13 de novembro",
+ "post": {
+  "type": "top",
+  "title": "5 guitarras elétricas de R$ 2.000 a R$ 4.500",
+  "kind": "electrica",
+  "picks": [
+   {
+    "slug": "squier-stratocaster-affinity-series-3-color-sunburst-0378000500-squier-by-fender-885978722464",
+    "name": "Squier Stratocaster Affinity Series 3-Color Sunburst 0378000500 - Squier By Fender",
+    "brand": "Squier",
+    "kind": "electrica",
+    "img": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/185614/Guitarra-Affinity-Series-Stratocaster-LRL-WPG-3TS---Fender.png?v=638183072915500000",
+    "th": "860b47a8b1e0d25e.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1315379/guitarra_eletrica_squier_by_fender_aff_strato_lrl_wpg_3ts_4175_1_654af716a29049ffd0891e9e1c5348b7.jpg",
+    "price": 2207.08,
+    "store": "Ninja Som",
+    "stores": 4,
+    "median": 3490.0,
+    "max": 3490.0,
+    "next": 2398.5,
+    "rows": [
+     [
+      "Ninja Som",
+      2207.08
+     ],
+     [
+      "Mundomax",
+      2398.5
+     ],
+     [
+      "Cheiro de Música",
+      3490.0
+     ],
+     [
+      "Carneiro Music",
+      3490.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-1.webp"
+   },
+   {
+    "slug": "benson-stratocaster-hardy-series-901-black-gold-com-bag-7899701569793",
+    "name": "Benson Stratocaster Hardy Series 901 Black Gold Com Bag",
+    "brand": "Benson",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-benson-stratocaster-hardy-series-901-black-gold-com-bag-1132754/1353401.jpg?w=1000&h=1000&v=202508070557&qs=ignore",
+    "th": "7649d75c0757071f.webp",
+    "thimg": "https://duettomusical.com.br/compartilhar/produto/7b6475dc-bcd5-4f8d-9ec9-d3645e78fbe8/foto/b6e44598db9f.jpg",
+    "price": 2241.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 2649.05,
+    "max": 2699.1,
+    "next": 2599.0,
+    "rows": [
+     [
+      "Akustica Musical",
+      2241.0
+     ],
+     [
+      "Duetto Musical",
+      2599.0
+     ],
+     [
+      "Mundomax",
+      2699.1
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-3.webp"
+   },
+   {
+    "slug": "tagima-signature-edu-ardanuy-road-striker-org-super-strato-7898569453848",
+    "name": "Tagima Signature Edu Ardanuy Road Striker ORG Super Strato",
+    "brand": "Tagima",
+    "kind": "electrica",
+    "img": "https://akusticamusical.fbitsstatic.net/img/p/guitarra-tagima-signature-edu-ardanuy-road-striker-org-super-strato-1134188/1354932-6.jpg?w=1000&h=1000&v=202606200918&qs=ignore",
+    "th": "9c7780a54157b6f4.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1440292/guitarra_tagima_edu_ardanuy_road_striker_org_2s_1_20261006155215_438b24d58a30.png",
+    "price": 2331.0,
+    "store": "Akustica Musical",
+    "stores": 3,
+    "median": 2514.5,
+    "max": 2590.0,
+    "next": 2439.0,
+    "rows": [
+     [
+      "Akustica Musical",
+      2331.0
+     ],
+     [
+      "Destroyer",
+      2439.0
+     ],
+     [
+      "Elo Musical",
+      2590.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-4.webp"
+   },
+   {
+    "slug": "seizi-vintage-budokan-hss-reinaldo-meirelles-satin-black-7898512905899",
+    "name": "Seizi Vintage Budokan HSS Reinaldo Meirelles Satin Black",
+    "brand": "Seizi",
+    "kind": "electrica",
+    "img": "https://images.tcdn.com.br/img/img_prod/414764/180_guitarra_seizi_vintage_budokan_hss_reinaldo_meirelles_satin_black_11051_1_d527b1e5fad11cd8e3f42b122e9710a6_20250721135740.jpg",
+    "th": "f72ee7cd6c6fd10a.webp",
+    "thimg": "https://images.tcdn.com.br/img/img_prod/1389761/guitarra_elet_seizi_vintage_budokan_hss_reinaldo_meirelles_mp_satin_black_gold_mat_headstock_667_1_4f5dad2cb760ea521c8290b0846783b6.jpg",
+    "price": 2677.49,
+    "store": "RCK Audio",
+    "stores": 3,
+    "median": 3369.5,
+    "max": 3449.0,
+    "next": 3290.0,
+    "rows": [
+     [
+      "RCK Audio",
+      2677.49
+     ],
+     [
+      "Soco Music",
+      3290.0
+     ],
+     [
+      "Royal Music",
+      3449.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-5.webp"
+   },
+   {
+    "slug": "strinberg-shn6-next-headless-multiscale-hh-azul-7899854525530",
+    "name": "Strinberg SHN6 Next Headless Multiscale HH Azul",
+    "brand": "Strinberg",
+    "kind": "electrica",
+    "img": "https://duettomusical.com.br/compartilhar/produto/d156818e-fd7f-41e2-a822-af0b82242651/foto/55e37329c062.jpg",
+    "th": "8040d3ee8bb91db9.webp",
+    "thimg": null,
+    "price": 2790.0,
+    "store": "Duetto Musical",
+    "stores": 4,
+    "median": 3190.0,
+    "max": 3199.0,
+    "next": 3131.0,
+    "rows": [
+     [
+      "Duetto Musical",
+      2790.0
+     ],
+     [
+      "Cheiro de Música",
+      3131.0
+     ],
+     [
+      "Só Som",
+      3190.0
+     ],
+     [
+      "Casa da Música",
+      3199.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "top-2.webp"
+   }
+  ],
+  "caption": "🎸 5 guitarras elétricas de R$ 2.000 a R$ 4.500: as mais vendidas nas lojas, com o melhor preço de hoje 👇\n\n1️⃣ Squier Stratocaster Affinity Series 3-Color Sunburst 0378000500 - Squier By Fender: R$ 2.207,08 em Ninja Som\n2️⃣ Benson Stratocaster Hardy Series 901 Black Gold Com Bag: R$ 2.241 em Akustica Musical\n3️⃣ Tagima Signature Edu Ardanuy Road Striker ORG Super Strato: R$ 2.331 em Akustica Musical\n4️⃣ Seizi Vintage Budokan HSS Reinaldo Meirelles Satin Black: R$ 2.677,49 em RCK Audio\n5️⃣ Strinberg SHN6 Next Headless Multiscale HH Azul: R$ 2.790 em Duetto Musical\n\nCom qual você fica? Conta pra gente nos comentários 💬\n🔎 Compare preços em guitle.com/br (todas as promoções de hoje no link da bio 👆). Preços de 13 de novembro.\n\n#guitarra #guitarrista #promoção #ofertas #guitarraeletrica #squier #benson #tagima #seizi #strinberg"
+ },
+ "stories": [
+  {
+   "slug": "squier-telecaster-affinity-thinline-sunburst-885978135462",
+   "name": "Squier Telecaster Affinity Thinline Sunburst",
+   "brand": "Squier",
+   "kind": "electrica",
+   "img": "https://static.mundomax.com.br/produtos/84511/1200/6.jpg",
+   "th": "3dc4397d3b213d5d.webp",
+   "thimg": "https://ninjasomfaststore.vtexassets.com/arquivos/ids/226221/Guitarra-Telecaster-Thinline-da-Serie-Affinity-Sunburst-de-3-Cores-0378272500---Squier-By-Fender.jpg?v=639300983403900000",
+   "price": 2519.1,
+   "store": "Mundomax",
+   "stores": 3,
+   "median": 3559.0699999999997,
+   "max": 3899.98,
+   "next": 3218.16,
+   "rows": [
+    [
+     "Mundomax",
+     2519.1
+    ],
+    [
+     "Ninja Som",
+     3218.16
+    ],
+    [
+     "RCK Audio",
+     3899.98
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 699,06 a menos que em qualquer outra loja",
+   "pct": 22,
+   "photo": "chollo-1.webp"
+  },
+  {
+   "slug": "strinberg-sd200c-ns-lh-black-series-folk-de-aco-c-afinador-natural-fosco-canhoto-7899854521334",
+   "name": "Strinberg SD200C NS LH Black Series Folk de Aço C/ Afinador Natural Fosco Canhoto",
+   "brand": "Strinberg",
+   "kind": "acustica",
+   "img": "https://akusticamusical.fbitsstatic.net/img/p/violao-strinberg-sd200c-ns-lh-black-series-folk-de-aco-c-afinador-natural-fosco-canhoto-81091/268585.jpg?w=1000&h=1000&v=202508070702&qs=ignore",
+   "th": "e0f14efd659de858.webp",
+   "thimg": "https://images.tcdn.com.br/img/img_prod/1175919/violao_eletrico_strinberg_sd200c_folk_natural_fosco_canhoto_25669_1_e57f1206bf6a592e2ddfe4d9de7dd117.jpeg",
+   "price": 890.1,
+   "store": "Akustica Musical",
+   "stores": 5,
+   "median": 1185.95,
+   "max": 1424.9,
+   "next": 1102.16,
+   "rows": [
+    [
+     "Akustica Musical",
+     890.1
+    ],
+    [
+     "Ninja Som",
+     1102.16
+    ],
+    [
+     "Cheiro de Música",
+     1112.0
+    ],
+    [
+     "Megasom",
+     1259.9
+    ],
+    [
+     "Casa da Música",
+     1424.9
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 212,06 a menos que em qualquer outra loja",
+   "pct": 19,
+   "photo": "chollo-2.webp"
+  },
+  {
+   "slug": "tagima-tg-530-woodstock-sunburst-7898563970723",
+   "name": "Tagima TG-530 Woodstock Sunburst",
+   "brand": "Tagima",
+   "kind": "electrica",
+   "img": "https://static.mundomax.com.br/produtos/79222/1200/4.jpg",
+   "th": "17f8e1b977f5317a.webp",
+   "thimg": "https://acdn-us.mitiendanube.com/stores/006/644/674/products/07b357c50ad0dc0e0509d88d6afd3d4d-93b598ae7a860f482d17900860036701-480-0.webp",
+   "price": 1043.1,
+   "store": "Mundomax",
+   "stores": 4,
+   "median": 1335.0,
+   "max": 1490.0,
+   "next": 1259.91,
+   "rows": [
+    [
+     "Mundomax",
+     1043.1
+    ],
+    [
+     "Luggi",
+     1259.91
+    ],
+    [
+     "A Joia Musical",
+     1335.0
+    ],
+    [
+     "Duetto Musical",
+     1490.0
+    ]
+   ],
+   "pvp": null,
+   "why": "R$ 216,81 a menos que em qualquer outra loja",
+   "pct": 17,
+   "photo": "chollo-3.webp"
+  }
+ ],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "em",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Arraste →",
+  "laVenden": "Vendida em",
+  "conCual": "Com qual você fica?",
+  "cuentanos": "Conta pra gente nos comentários e salve este post pra quando for comprar.",
+  "comparaEn": "Compare preços em",
+  "comparaAntes": "Compare antes de comprar",
+  "siguenos": "Siga a gente pra mais promoções",
+  "web": "guitle.com/br",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Violão",
+   "clasica": "Violão de nylon"
+  }
+ },
+ "money": {
+  "locale": "pt-BR",
+  "prefix": "R$ ",
+  "suffix": ""
+ },
+ "logo": "br/"
+}
