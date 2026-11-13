@@ -1,36 +1,76 @@
 {
- "fecha": "2026-11-12",
+ "fecha": "2026-11-13",
  "pais": "it",
  "items": [
   {
-   "slug": "martin-lx1re-little-martin-ttlemartin",
-   "name": "Martin LX1RE Little Martin",
-   "brand": "Martin",
-   "price": "649 €",
-   "store": "S&M Strumenti",
-   "kind": "acustica",
-   "img": "fd26b766bbf3c10c.webp",
+   "slug": "eko-fire-400-aurora-flamed-grey-burst-chitarra-elettrica-a-22-tasti-8056734499254",
+   "name": "Eko FIRE 400 AURORA FLAMED GREY BURST Chitarra Elettrica a 22 Tasti",
+   "brand": "Eko",
+   "price": "299 €",
+   "store": "Global Net Shop",
+   "kind": "electrica",
+   "img": "f4d32b1484660cf7.webp",
    "why": "40 € in meno che negli altri negozi"
   },
   {
-   "slug": "fender-cd-60-sb-v3-dreadnought-ds-sb-wn-chitarra-acustica-raacustica",
-   "name": "Fender CD-60 SB V3 DREADNOUGHT DS SB WN - CHITARRA ACUSTICA",
-   "brand": "Fender",
-   "price": "150 €",
-   "store": "Woodbrass",
+   "slug": "ibanez-pf15ece-nt-atanatural",
+   "name": "Ibanez PF15ECE-NT",
+   "brand": "Ibanez",
+   "price": "236,55 €",
+   "store": "Centro della Musica",
    "kind": "acustica",
-   "img": "3feed1d8c463d415.webp",
-   "why": "8 € in meno che negli altri negozi"
+   "img": "1220ee4885957483.webp",
+   "why": "8,45 € in meno che negli altri negozi"
   },
   {
-   "slug": "squier-fender-squier-classic-vibe-60s-stratocaster-lrl-lake-placid-blue-placidblue",
-   "name": "Squier FENDER Squier Classic Vibe 60s Stratocaster LRL Lake Placid Blue",
+   "slug": "yamaha-pacifica-112vm-rm-red-metallic-chitarra-elettrica-rossa-4957812464963",
+   "name": "Yamaha Pacifica 112VM RM Red Metallic Chitarra Elettrica Rossa",
+   "brand": "Yamaha",
+   "price": "289 €",
+   "store": "Suono Store",
+   "kind": "electrica",
+   "img": "9e1b830e9826cd79.webp",
+   "why": "10 € in meno che negli altri negozi"
+  },
+  {
+   "slug": "ibanez-rg421ex-bkf-black-flat-chitarra-elettrica-nera-4515276693581",
+   "name": "Ibanez RG421EX BKF Black Flat Chitarra elettrica nera",
+   "brand": "Ibanez",
+   "price": "385 €",
+   "store": "Di Santo Musica",
+   "kind": "electrica",
+   "img": "2c453d56a6957c02.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-cv-60s-strat-car-tratcarhtm",
+   "name": "Squier CV 60s Strat CAR",
    "brand": "Squier",
    "price": "399 €",
-   "store": "Checcacci",
+   "store": "Thomann",
    "kind": "electrica",
-   "img": "1a52d379834be9c1.webp",
-   "why": "20 € in meno che negli altri negozi"
+   "img": "22a2bd69f1720a7a.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-revstar-element-rse20-swift-blue-chitarra-elettrica-4957812675154",
+   "name": "Yamaha Revstar Element RSE20 Swift Blue chitarra elettrica",
+   "brand": "Yamaha",
+   "price": "449 €",
+   "store": "Di Santo Musica",
+   "kind": "electrica",
+   "img": "aea14bf43936d6a2.webp",
+   "why": ""
+  },
+  {
+   "slug": "fender-standard-stratocaster-mn-battipenna-bianco-candy-cola-885978117871",
+   "name": "Fender Standard Stratocaster MN Battipenna Bianco Candy Cola",
+   "brand": "Fender",
+   "price": "489 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "3f93977c5f96a4a6.webp",
+   "why": ""
   }
  ]
 }
