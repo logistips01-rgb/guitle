@@ -400,6 +400,7 @@ marca/finnish.html
 marca/fire-stone.html
 marca/fishman.html
 marca/flanger.html
+marca/floyd-rose.html
 marca/folk.html
 marca/fonestar.html
 marca/formula-b.html
@@ -682,7 +683,6 @@ marca/maybach.html
 marca/mayones.html
 marca/mayson.html
 marca/medeli.html
-marca/meinl-sonic-energy.html
 marca/meinl.html
 marca/memphis.html
 marca/mesa-boogie.html

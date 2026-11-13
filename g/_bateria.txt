@@ -913,7 +913,6 @@ medeli-mz528-bateria-electronica-8719147484551
 medeli-mz725-bateria-electronica-8719147552793
 medeli-mz725-digital-mesh-drumset-6950474317255
 meinl-caj-drumset-840553084795
-meinl-sonic-energy-sd15lbcha-15-35-spirit-drum-set-7-chakra-gemstones-842960115154
 memphis-bateria-infantil-5-cuerpos-negro-8434418005593
 memphis-ft900bbk-5pcs-bateria-acustica-negra-complet-8434418002257
 memphis-ft900wr-5pcs-bateria-acustica-roja-completa-8434418056335
@@ -1071,7 +1070,6 @@ pearl-decade-m-studio-shells-s-bk-ellssbkhtm
 pearl-decade-maple-20-5pc-set-884-cset884htm
 pearl-decade-maple-20-ultramarine-velvet-rinevelvet
 pearl-decade-maple-22-5pc-set-884-cset884htm
-pearl-decade-maple-22-ice-mint-drumset-4549312841254
 pearl-decade-maple-22-satin-slate-black-drumset-4515295495012
 pearl-decade-maple-22-ultramarine-velvet-drumset-vetdrumset
 pearl-decade-maple-6pc-satin-black-inblackhtm
@@ -1326,6 +1324,7 @@ slingerland-22-studio-king-3pc-kit-vts-ckitvtshtm
 slingerland-22-studio-king-4pc-w-sn-rcr-cwsnrcrhtm
 slingerland-studio-king-4-piece-shell-pack-del-norte-black-lacquer-lackp44178
 sonor-150th-craftsmen-s-set-afm-ssetafmhtm
+sonor-150th-lite-shell-set-sbi-4044661745418
 sonor-aq1-20-studio-drumset-caribbean-blue-4044661742127
 sonor-aq2-14-aqua-silver-burst-martini-drumset-4044661503377
 sonor-aq2-20-brown-fade-studio-drumset-4044661503285
@@ -1721,6 +1720,7 @@ tama-starcl-performer-5pcs-dcf-5pcsdcfhtm
 tama-starcl-performer-5pcs-dro-5pcsdrohtm
 tama-starcl-performer-5pcs-fbk-5pcsfbkhtm
 tama-starcl-performer-5pcs-msl-5pcsmslhtm
+tama-starcl-performer-5pcs-pbk-5pcspbkhtm
 tama-starcl-performer-5pcs-sgr-5pcssgrhtm
 tama-starcl-performer-5pcs-ska-5pcsskahtm
 tama-starcl-walnut-birch-20-cco-ch20ccohtm

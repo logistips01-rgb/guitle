@@ -797,6 +797,8 @@ gewa-es335-semi-acustica-4046662027715
 gewa-estojo-110-black-lackp33614
 gewa-estojo-rigido-112-a112p33196
 gewa-estuche-para-bajo-acustico-gewa-523116-flat-top-negro-egrop44703
+gewa-funda-para-gewa-4-4-premium-20-azul-azulp46035
+gewa-funda-para-gewa-premium-20-um20p46034
 gibson-as335case-mdr-r72854html
 gibson-as339case-mdr-r72853html
 gibson-as339case-org-g72836html
@@ -1494,6 +1496,7 @@ tobago-funda-acolchada-para-3700166322349
 tobago-htoagb30j-funda-jumbo-3700166373570
 tobago-htoesb-n-3700166311367
 tontrager-tg-10-ch-gb-konzertgitarrentasche-1-2-grau-schwarz-4250771300007
+tontrager-tg25c-gb-konzertgitarren-tasche-grau-4250771303787
 turbosound-ip1000-tb-4033653104111
 turbosound-ip2000-tb-4033653104135
 turbosound-ip3000-pc-4033653107136
