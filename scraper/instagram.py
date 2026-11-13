@@ -217,13 +217,18 @@ def container(user, tries=40, **params):
         # Portada: el fotograma de 1,5 s (la primera escena ya entera, con su guitarra), no el primero, que sale casi vacío
         params.setdefault("thumb_offset", "1500")
     cid = api("POST", f"{user}/media", **params)["id"]
-    for _ in range(tries):
+    # Los vídeos tardan en procesarse: se pregunta cada 10 s (y no cada 3) para no gastar el límite de llamadas de
+    # la app, que comparten todas las cuentas ("Application request limit reached", 13-11)
+    video = "video_url" in params
+    if video:
+        time.sleep(20)
+    for _ in range(tries if not video else max(12, tries // 3)):
         status = api("GET", cid, fields="status_code").get("status_code")
         if status == "FINISHED":
             return cid
         if status in ("ERROR", "EXPIRED"):
             raise RuntimeError(f"contenedor {cid}: {status}")
-        time.sleep(3)
+        time.sleep(10 if video else 3)
     raise RuntimeError(f"contenedor {cid}: no termina")
 
 

@@ -949,7 +949,12 @@ def main(argv=None):
                 continue
             out[cc] = publicar_tarde(cc, day, names, token) if args.publish else names
             continue
-        folder, data = plan_pais(cc, day, recent)
+        if (folder / "plan.json").exists() and (folder / "post-1.jpg").exists():
+            # Publicación a medias (p. ej. límite de llamadas): se retoma con el mismo plan, sin elegir guitarras nuevas;
+            # publicar() no repite lo que ya está en Instagram
+            data = load(folder / "plan.json", {})
+        else:
+            folder, data = plan_pais(cc, day, recent)
         out[cc] = {"post": data["post"]["type"], "stories": [s["name"] for s in data["stories"]]}
         if args.publish:
             try:
