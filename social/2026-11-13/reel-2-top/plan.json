@@ -1,0 +1,180 @@
+{
+ "fecha": "13 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "5 chollos en pedales",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "mxr-m77-custom-badass-modified-od-710137053571",
+    "name": "MXR M77 Custom Badass Modified OD",
+    "brand": "MXR",
+    "kind": "pedales",
+    "img": "https://www.numemusic.es/media/catalog/product/0/1/015001_92c2.jpg?store=nume_es&image-type=image",
+    "th": "98fa82cc878da757.webp",
+    "thimg": null,
+    "price": 88.9,
+    "store": "Drunkat",
+    "stores": 4,
+    "median": 113.05,
+    "max": 113.05,
+    "next": 113.0,
+    "rows": [
+     [
+      "Drunkat",
+      88.9
+     ],
+     [
+      "MAT Guitars",
+      113.0
+     ],
+     [
+      "Nume Music",
+      113.05
+     ],
+     [
+      "Alfasoni",
+      113.05
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "24,10 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "electro-harmonix-mainframe-683274012315",
+    "name": "Electro-Harmonix Mainframe",
+    "brand": "Electro-Harmonix",
+    "kind": "pedales",
+    "img": "https://www.numemusic.es/media/catalog/product/6/5/650360_1_cc4d.jpg?store=nume_es&image-type=image",
+    "th": "682d2dd054153129.webp",
+    "thimg": null,
+    "price": 169.0,
+    "store": "Alfasoni",
+    "stores": 3,
+    "median": 220.385,
+    "max": 227.77,
+    "next": 213.0,
+    "rows": [
+     [
+      "Alfasoni",
+      169.0
+     ],
+     [
+      "Drunkat",
+      213.0
+     ],
+     [
+      "Nume Music",
+      227.77
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "44 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "kernom-ridge-overdrive-rivep39473",
+    "name": "Kernom Ridge Overdrive",
+    "brand": "Kernom",
+    "kind": "pedales",
+    "img": "https://detalhes.egitana.es/kernom-ridge-overdrive_67e6adf5022d7.jpg",
+    "th": "454d9d0b466a8c11.webp",
+    "thimg": null,
+    "price": 194.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 245.0,
+    "max": 245.0,
+    "next": 245.0,
+    "rows": [
+     [
+      "Egitana",
+      194.0
+     ],
+     [
+      "MAT Guitars",
+      245.0
+     ],
+     [
+      "Pronorte",
+      245.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "51 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "dunlop-jb95-pedal-cry-baby-joe-bonamassa-signature-710137053977",
+    "name": "Dunlop JB95 Pedal Cry Baby Joe Bonamassa Signature",
+    "brand": "Dunlop",
+    "kind": "pedales",
+    "img": "https://musicopolix.com/68899-large_default/pedal-dunlop-jb95-cry-baby-joe-bonamassa-signature.jpg",
+    "th": "dffd35df30c05b70.webp",
+    "thimg": null,
+    "price": 209.0,
+    "store": "Musicopolix",
+    "stores": 3,
+    "median": 269.0,
+    "max": 269.0,
+    "next": 269.0,
+    "rows": [
+     [
+      "Musicopolix",
+      209.0
+     ],
+     [
+      "MAT Guitars",
+      269.0
+     ],
+     [
+      "Alfasoni",
+      269.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "60 € menos que en cualquier otra tienda"
+   },
+   {
+    "slug": "fender-reflecting-pool-delay-reverb-885978054732",
+    "name": "Fender Reflecting Pool Delay/Reverb",
+    "brand": "Fender",
+    "kind": "pedales",
+    "img": "https://www.numemusic.es/media/catalog/product/6/3/636965_9bfa.jpg?store=nume_es&image-type=image",
+    "th": "7231187f68787cf8.webp",
+    "thimg": null,
+    "price": 243.32,
+    "store": "Musicopolix",
+    "stores": 4,
+    "median": 325.0,
+    "max": 341.0,
+    "next": 315.0,
+    "rows": [
+     [
+      "Musicopolix",
+      243.32
+     ],
+     [
+      "Nume Music",
+      315.0
+     ],
+     [
+      "Alfasoni",
+      325.0
+     ],
+     [
+      "MAT Guitars",
+      341.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "71,68 € menos que en cualquier otra tienda"
+   }
+  ],
+  "rama": "pedales"
+ },
+ "stories": []
+}

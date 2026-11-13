@@ -1,0 +1,163 @@
+{
+ "fecha": "13 de noviembre",
+ "post": {
+  "type": "top",
+  "title": "chollos de 150 a 750 €",
+  "hook": "Chollos de hoy",
+  "picks": [
+   {
+    "slug": "sx-stl50-butterscotch-6971047511375",
+    "name": "Sx STL50 Butterscotch",
+    "brand": "Sx",
+    "kind": "electrica",
+    "img": "https://musicopolix.com/200641-large_default/stl50bsb.jpg",
+    "th": "92552267ced820a5.webp",
+    "thimg": "https://alteisa.com/74165-large_default/guitarra-electrica-sx-stl50-butterscotch.jpg",
+    "price": 189.0,
+    "store": "Musicopolix",
+    "stores": 3,
+    "median": 251.64999999999998,
+    "max": 261.9,
+    "next": 241.4,
+    "rows": [
+     [
+      "Musicopolix",
+      189.0
+     ],
+     [
+      "Musical San Francisco",
+      241.4
+     ],
+     [
+      "Alteisa",
+      261.9
+     ]
+    ],
+    "pvp": null,
+    "why": "Mínimo histórico: 25 % por debajo de su media",
+    "pct": 25,
+    "photo": "g0-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "cort-g290fat-ii-avb-8809625369569",
+    "name": "Cort G290FAT II AVB",
+    "brand": "Cort",
+    "kind": "electrica",
+    "img": "https://musicopolix.com/265196-large_default/g290fat-ii-avb.jpg",
+    "th": "174aa73f5521c957.webp",
+    "thimg": "https://alteisa.com/104461-large_default/guitarra-electrica-cort-g290fat-ii-avb-antique-violin-burst.jpg",
+    "price": 528.0,
+    "store": "Musicopolix",
+    "stores": 4,
+    "median": 609.0,
+    "max": 719.0,
+    "next": 529.0,
+    "rows": [
+     [
+      "Musicopolix",
+      528.0
+     ],
+     [
+      "Auvisa",
+      529.0
+     ],
+     [
+      "Musicsales",
+      609.0
+     ],
+     [
+      "Alteisa",
+      719.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 191 € menos que ayer",
+    "pct": 27,
+    "photo": "g1-1.webp",
+    "label": "Eléctrica"
+   },
+   {
+    "slug": "ibanez-tcy10pa-bkb-series-talman-transparent-brown-black-burst-high-gloss-4549763377005",
+    "name": "Ibanez TCY10PA BKB Series Talman Transparent Brown Black Burst High Gloss",
+    "brand": "Ibanez",
+    "kind": "acustica",
+    "img": "https://alteisa.com/181751-large_default/ibanez-tcy10pa-bkb-series-talman-transparent-brown-black-burst-high-gloss-guitarra-electroacustica.jpg",
+    "th": "f8d0694c19795fdd.webp",
+    "thimg": "https://auvisa.com/cdn/shop/files/96420.jpg?v=1767896795&width=2000",
+    "price": 211.0,
+    "store": "Alteisa",
+    "stores": 6,
+    "median": 239.0,
+    "max": 299.0,
+    "next": 211.0,
+    "rows": [
+     [
+      "Alteisa",
+      211.0
+     ],
+     [
+      "Egitana",
+      211.0
+     ],
+     [
+      "Auvisa",
+      224.0
+     ],
+     [
+      "MAT Guitars",
+      239.0
+     ],
+     [
+      "Musicopolix",
+      253.9
+     ],
+     [
+      "Pronorte",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "why": "Rebajada hoy: 11 € menos que ayer",
+    "pct": 5,
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   },
+   {
+    "slug": "ortega-flametal-two-840553027976",
+    "name": "Ortega FLAMETAL-TWO",
+    "brand": "Ortega",
+    "kind": "clasica",
+    "img": "https://www.numemusic.es/media/catalog/product/6/1/619810_e3bc.jpg?store=nume_es&image-type=image",
+    "th": "419b6ed86905ec03.webp",
+    "thimg": null,
+    "price": 748.0,
+    "store": "Egitana",
+    "stores": 3,
+    "median": 936.75,
+    "max": 936.75,
+    "next": 936.75,
+    "rows": [
+     [
+      "Egitana",
+      748.0
+     ],
+     [
+      "Nume Music",
+      936.75
+     ],
+     [
+      "Alteisa",
+      936.75
+     ]
+    ],
+    "pvp": null,
+    "why": "188,75 € menos que en cualquier otra tienda",
+    "pct": 20,
+    "photo": "g3-1.webp",
+    "label": "Clásica"
+   }
+  ]
+ },
+ "stories": []
+}
