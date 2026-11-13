@@ -1,0 +1,59 @@
+name: awin-estado
+
+# Estado de los programas de Awin de guitle (aceptados, pendientes, rechazados), solo lectura, una vez al día. El
+# resultado NO se guarda aquí (repo público): va por correo a comercial@guitle.com, de donde lo recoge la sesión
+# comercial en su repo privado. En el registro solo sale cuántos programas hay. Pedido por Manuel (13-11-2026).
+on:
+  schedule:
+    - cron: "41 6 * * *"
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/workflows/awin-estado.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  awin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Leer Awin y mandar a comercial@guitle.com
+        env:
+          AWIN_API_TOKEN: ${{ secrets.AWIN_API_TOKEN }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        shell: python
+        run: |
+          import json, os, smtplib, ssl, urllib.request
+          from datetime import date
+          from email.message import EmailMessage
+          tok = (os.environ.get("AWIN_API_TOKEN") or "").strip()
+          if not tok:
+              raise SystemExit("[awin] sin AWIN_API_TOKEN")
+          out = {}
+          for rel in ("joined", "pending", "rejected", "suspended"):
+              req = urllib.request.Request(f"https://api.awin.com/publishers/3136285/programmes?relationship={rel}",
+                                           headers={"Authorization": f"Bearer {tok}"})
+              with urllib.request.urlopen(req, timeout=60) as r:
+                  rows = json.load(r)
+              for p in rows or []:
+                  out[str(p.get("id"))] = {"nombre": p.get("name"), "estado": rel,
+                                           "pais": (p.get("primaryRegion") or {}).get("countryCode") or "",
+                                           "web": p.get("displayUrl") or ""}
+          msg = EmailMessage()
+          msg["From"], msg["To"] = os.environ["SMTP_USER"], "comercial@guitle.com"
+          msg["Subject"] = f"guitle: estado de Awin {date.today()}"
+          msg.set_content("AWIN-ESTADO-JSON\n" + json.dumps(out, ensure_ascii=False, sort_keys=True) + "\nFIN\n")
+          port = int(os.environ.get("SMTP_PORT") or 465)
+          ctx = ssl.create_default_context()
+          s = smtplib.SMTP_SSL(os.environ["SMTP_HOST"], port, context=ctx, timeout=30) if port == 465 else smtplib.SMTP(os.environ["SMTP_HOST"], port, timeout=30)
+          if port != 465:
+              s.starttls(context=ctx)
+          s.login(os.environ["SMTP_USER"], os.environ["SMTP_PASS"])
+          s.send_message(msg)
+          s.quit()
+          print(f"[awin] {len(out)} programas; enviado a la sesión comercial", flush=True)

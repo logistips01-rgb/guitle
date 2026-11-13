@@ -62,6 +62,15 @@
   // Promociones: un enlace con ?utm_source=… (o ?ref=…) cuenta con ese origen ("r_promo-navidad-fr"), venga de donde venga
   let promo = "";
   try { const q = new URLSearchParams(location.search); promo = q.get("utm_source") || q.get("ref") || ""; } catch (e) {}
+  // Campañas (?utm_campaign=bf2026): x_<campaña>~llegada al entrar; x_<campaña>~pagina por cada página vista y
+  // x_<campaña>~clic por cada clic a tienda en esa misma visita (se recuerda solo en la pestaña, sessionStorage).
+  let camp = "";
+  try {
+    const c = new URLSearchParams(location.search).get("utm_campaign");
+    if (c) { camp = c.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").slice(0, 40); sessionStorage.setItem("guitle_camp", camp); keys.push("r_camp~" + camp + "~llegada"); }
+    else camp = sessionStorage.getItem("guitle_camp") || "";
+  } catch (e) {}
+  if (camp) keys.push("r_camp~" + camp + "~pagina");
   if (promo) keys.push("r_promo-" + promo.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").slice(0, 50));
   else if (from !== location.hostname) keys.push("r_" + (from ? clean(from) : "directo"));
   // Solo cuentan las personas: la visita se suma cuando la página lleva 3 s visible y ha habido un gesto (ratón,
@@ -91,7 +100,7 @@
       // Con el país de la web desde la que se pincha (guitle.com/pt/… → pt; la raíz, España): t_<tienda>~<país>.
       const seg = location.pathname.split("/")[1] || "";
       const country = /^[a-z]{2}$/.test(seg) ? seg : "es";
-      add(["t_" + clean(host.replace(/^(es|m)\./, "")) + "~" + country]);
+      add(["t_" + clean(host.replace(/^(es|m)\./, "")) + "~" + country].concat(camp ? ["r_camp~" + camp + "~clic"] : []));
     } catch (err) {}
   }, true);
 })();

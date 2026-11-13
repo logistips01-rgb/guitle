@@ -1,0 +1,41 @@
+name: discos-amazon
+
+# Sección de discos solo con Amazon (y eBay) de los países sin tiendas de discos leídas todavía (scraper/discos_amazon.py):
+# Alemania, Austria, Suiza, Chequia, Eslovaquia, Hungría, Rumanía, Bulgaria, Grecia, Finlandia, Dinamarca y Noruega.
+# Una vez por semana (los discos populares cambian poco) y al cambiar el código.
+on:
+  schedule:
+    - cron: "23 4 * * 1"
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: ["scraper/discos_amazon.py", ".github/workflows/discos-amazon.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: discos-amazon
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_ACCOUNT: ${{ secrets.R2_ACCOUNT_ID }}
+      SERVIDOR_SSH_KEY: ${{ secrets.SERVIDOR_SSH_KEY }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: claude/friendly-fermat-yycain
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Generar y publicar
+        run: |
+          dirs=$(python -m scraper.discos_amazon | tee /dev/stderr | sed -n 's/^discos (solo Amazon): \(.*\) · .*/\1/p')
+          bash .github/r2.sh estatica $dirs

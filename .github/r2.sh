@@ -177,9 +177,19 @@ carpeta() {
   python -m scraper.indexnow --files "$URLS" || true
 }
 
+# Sube páginas sueltas (p. ej. de/schallplatten de scraper/discos_amazon.py) a R2 y al servidor, sin borrar nada.
+estatica() {
+  rclone_ready
+  URLS="$RUNNER_TEMP/r2-urls.txt"; : > "$URLS"
+  for d in "$@"; do up copy "$d" "$d" --include "*.html" --include "*.json" --include "*.xml"; done
+  servidor
+  python -m scraper.indexnow --files "$URLS" || true
+}
+
 case "${1:-}" in
   git-add) shift; git_add "$@" ;;
   carpeta) carpeta "$2" ;;
+  estatica) shift; estatica "$@" ;;
   publicar) publicar ;;
   reparar) reparar ;;
   *) echo "uso: $0 git-add RUTAS… | publicar | reparar" >&2; exit 2 ;;

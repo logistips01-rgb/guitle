@@ -34,3 +34,4 @@ Sitemap: https://guitle.com/sitemap-lu.xml
 Sitemap: https://guitle.com/uk/records/sitemap.xml
 Sitemap: https://guitle.com/it/dischi/sitemap.xml
 Sitemap: https://guitle.com/discos/sitemap.xml
+Sitemap: https://guitle.com/de/schallplatten/sitemap.xml

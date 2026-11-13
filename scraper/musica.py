@@ -76,19 +76,30 @@ SHARED_LOOKUP = {"es": {"cdgo": "pt"}}
 # barato; el enlace es el de afiliado de eBay Partner Network (campid de Manuel). La API da 5.000 consultas al día para
 # todo: cada país usa como mucho EBAY_DAILY.
 EBAY = {"es": ("EBAY_ES", "https://www.ebay.es"), "fr": ("EBAY_FR", "https://www.ebay.fr"),
-        "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk")}
+        "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk"), "de": ("EBAY_DE", "https://www.ebay.de")}
 EBAY_CAMPID = "5339241544"
 # Consultas al día por país (4 países). La clave de eBay es la misma que la de mootle y el cupo (5.000/día) es de las
 # dos webs: guitle discos 4 × 900 + guitle guitarras (~200) + mootle 800 ≤ 5.000. Se cambia sin tocar código con la
 # variable de GitHub EBAY_MAX_CALLS (Settings → Secrets and variables → Actions → Variables).
+EBAY_DAILY_BY = {"de": 400}  # Alemania, la quinta: 4 × 900 + 400 + guitarras (~200) + mootle (800) ≤ 5.000
 EBAY_DAILY = int(__import__("os").environ.get("EBAY_MAX_CALLS") or 900)  # 900 mientras mootle hace su primera pasada (a 800/día, ~2 semanas desde el 6-11-2026); luego 1.000
 for _c, (_m, _base) in EBAY.items():
-    STORES[_c]["ebay"] = ("eBay", _base)
+    STORES.setdefault(_c, {})["ebay"] = ("eBay", _base)
 # Tiendas que no dan su catálogo pero se consultan disco a disco por su código de barras (la dirección redirige a la
 # ficha; precio, stock, foto y artista del JSON-LD). Probadas a mano; robots.txt las permite.
 LOOKUP = {"it": {"ibs": "https://www.ibs.it/x/e/{ean}", "feltrinelli": "https://www.lafeltrinelli.it/x/e/{ean}",
                  "mondadori": "https://www.mondadoristore.it/x/p/{ean}", "laziale": "https://www.discotecalaziale.com/{ean}_x"}}
 LOOKUP["pt"] = {"cdgo": "https://cdgo.com/detalhe/{ean}/x"}  # CDGO: la dirección vale con cualquier nombre tras el EAN
+# Alemania (estudio del 13/11/2026: JPC e Hugendubel se leen bien; Thalia, MediaMarkt/Saturn, HHV y bücher.de bloquean
+# a los robots): Impericon y Bravado (la tienda de Universal Music) en Shopify, con el código de barras en la ficha; JPC
+# consultada disco a disco por su código de barras (la búsqueda redirige a la ficha, con JSON-LD); eBay.de.
+STORES["de"] = {"impericon": ("Impericon", "https://www.impericon.com/de"),
+                "bravado": ("Bravado", "https://www.bravado.de"),
+                "jpc": ("jpc", "https://www.jpc.de")} | STORES["de"]  # y eBay, de arriba
+LOOKUP["de"] = {"jpc": "https://www.jpc.de/s/{ean}"}
+# Discos de otros países (los comparados, en git) que también se buscan en las tiendas por EAN: Impericon y Bravado
+# venden sobre todo metal y su sello, y así JPC se consulta también con los discos más conocidos.
+SEED = {"de": ("uk", "es", "fr", "it")}
 # Anunciantes de Awin de cada país: id de tienda → texto que lleva su nombre en Awin (en minúsculas).
 AWIN = {"fr": {"cultura": "cultura", "fnac": "fnac", "zavvi": "zavvi"}}
 # Formato por el título, el tipo o la variante; lo demás (camisetas, chapas, bolsas, tocadiscos…) no entra.
@@ -98,6 +109,21 @@ NOT_MUSIC = re.compile(r"(?i)t-?shirt|\btee\b|hoodie|sweat|badge|tote|\bbag\b|sl
                        r"gift card|voucher|cleaning|sleeve[s]? pack|inner sleeves|outer sleeves|mug\b|\bhat\b|cap\b|book\b|"
                        r"\blivre\b|platine|tourne-?disque|partition|\bdvd\b|blu-?ray|carte cadeau|affiche|sac\b|"
                        r"\blibro\b|camiseta|sudadera|tocadiscos|tarjeta regalo|\bbolsa\b|\bp[óo]ster\b|\btaza\b")
+EBAY_JUNK = re.compile(r"(?i)\s*(?:\b(?:neuf|neu|new|nuevo|nuovo|novo|sealed|scell[ée]e?|sigillato|precintado|"
+                       r"mint|ovp|original|import|eu|uk|us|used|dvd|180\s?g(?:r|ram)?\.?|\d?lp|33\s?t(?:ours)?|33t|"
+                       r"vinyl|vinyle|vinile|vinilo|disco|record)\b|\b(?:19|20)\d\d(?:-\d\d)?\b|[|/].*$)")
+
+
+def _ebay_name(n):
+    """Título de un anuncio de eBay como nombre de disco: sin "nuevo", años, gramajes ni lo que va tras | o /."""
+    n = EBAY_JUNK.sub(" ", n)
+    n = re.sub(r"\(\s*\)|\[\s*\]", " ", n)
+    if n.count("(") != n.count(")"):  # paréntesis cortados por el límite de caracteres del anuncio
+        n = re.sub(r"\s*\([^)]*$", "", n).replace(")", "") if n.count("(") > n.count(")") else n.replace(")", "")
+    n = re.sub(r"\s*(?:-\s*)+$", "", re.sub(r"(?:\s*-\s*){2,}", " - ", re.sub(r"\s{2,}", " ", n))).strip(" -–:,*")
+    return n
+
+
 CLEAN = re.compile(r"(?i)\s*[\(\[]?(?:\*?pre-?order\*?|due out[^\)\]]*|signed|indie exclusive|limited edition|"
                    r"vinyl lp|vinyl|\blp\b|\b2lp\b|\bcd\b|cassette|\btape\b)[\)\]]?\s*")
 
@@ -251,7 +277,7 @@ def read(pais, minutes):
             for p in prods:
                 v = (p.get("variants") or [{}])[0]
                 f = _fmt(p.get("title"), p.get("product_type"), " ".join(p.get("tags") or []), v.get("title"))
-                if not f or NOT_MUSIC.search(p.get("title", "")):
+                if not f or NOT_MUSIC.search(p.get("title", "")) or NOT_MUSIC.search(p.get("product_type") or ""):  # "CD + T-Shirt"
                     continue
                 try:
                     price = float(v.get("price"))
@@ -321,6 +347,10 @@ def read(pais, minutes):
     _save(folder / "codigos.json", codes)
     print(f"códigos nuevos: {count[0]}", flush=True)
     if pais in LOOKUP:
+        if pais in SEED:  # también los discos comparados de otros países (solo para buscarlos, no son una tienda)
+            seeds = {d["ean"]: {"f": d["fmt"]} for c in SEED[pais] for d in _load(DATA / c / "discos.json", [])}
+            catalog = catalog | {"_seed": seeds}
+            codes = codes | {"_seed": {e: e for e in seeds}}
         _lookup(pais, end, catalog, codes)
     if pais in SITEMAP:
         _sitemap_stores(pais, end, catalog, codes)
@@ -594,6 +624,13 @@ def _ld_disc(html_text):
     return out
 
 
+def _ebay_ship(it, cur):
+    """Envío más barato del anuncio de eBay (None si la API no lo da o no es en la moneda del país)."""
+    costs = [float(o["shippingCost"]["value"]) for o in it.get("shippingOptions") or []
+             if (o.get("shippingCost") or {}).get("currency") == cur and o["shippingCost"].get("value") is not None]
+    return min(costs) if costs else None
+
+
 def _ebay(pais, end):
     """eBay por código de barras: hasta EBAY_DAILY discos al día, primero los ya comparados en varias tiendas, luego
     los vinilos, y los más antiguos. Se guarda en consultas.json como las tiendas de LOOKUP:
@@ -627,7 +664,7 @@ def _ebay(pais, end):
     headers = {"Authorization": f"Bearer {token}", "X-EBAY-C-MARKETPLACE-ID": market,
                "X-EBAY-C-ENDUSERCTX": f"affiliateCampaignId={EBAY_CAMPID},affiliateReferenceId=guitle-{pais}"}
     n = found = 0
-    for e in todo[:EBAY_DAILY]:
+    for e in todo[:EBAY_DAILY_BY.get(pais, EBAY_DAILY)]:
         if time.time() > end:
             break
         try:
@@ -647,7 +684,7 @@ def _ebay(pais, end):
         if items:
             it = min(items, key=lambda i: float(i["price"]["value"]))
             done[e] = [today, float(it["price"]["value"]), True, it.get("itemAffiliateWebUrl") or it.get("itemWebUrl"),
-                       it.get("title") or "", "", ((it.get("image") or {}).get("imageUrl") or "")]
+                       it.get("title") or "", "", ((it.get("image") or {}).get("imageUrl") or ""), _ebay_ship(it, cur)]
             found += 1
         else:
             done[e] = [today]
@@ -802,7 +839,7 @@ def build_data(pais):
         for e, row in _load(folder / "consultas.json", {}).get("ebay", {}).items():
             if len(row) >= 7 and e in fmt_of:
                 catalog.setdefault("ebay", {})[e] = {"t": row[4], "v": "", "ty": "", "f": fmt_of[e], "p": row[1],
-                                                     "st": row[2], "img": row[6], "u": row[3]}
+                                                     "st": row[2], "img": row[6], "u": row[3], "e": row[7] if len(row) > 7 else None}
                 codes.setdefault("ebay", {})[e] = e
     catalog = {k: v for k, v in catalog.items() if k in STORES[pais]}  # Portugal: solo las tiendas que envían allí
     if src in SITEMAP:  # tiendas leídas por su mapa del sitio: todos sus discos con formato (también los que solo tienen ellas)
@@ -824,8 +861,11 @@ def build_data(pais):
             ean = ean.zfill(13)
             d = by.setdefault(ean, {"ean": ean, "names": [], "fmt": it["f"], "img": None, "items": []})
             artist = {"recordstore": it["v"], "sisterray": it["ty"], "cultura": it["v"], "fnac": it["v"],
-                      "zavvi": it["v"], "ibs": it["v"], "feltrinelli": it["v"]}.get(sid, "")
+                      "zavvi": it["v"], "ibs": it["v"], "feltrinelli": it["v"], "impericon": it["v"],
+                      "bravado": it["v"]}.get(sid, "")
             title = it["t"]
+            if sid == "impericon":  # "From A Distance Ltd. Bone w/ Black/Red - Splattered Vinyl": el título, sin la edición
+                title = re.sub(r"\s+Ltd\..*$", "", title.split(" - ")[0]).strip() or title
             if not artist and " - " not in title and mb.get(ean.zfill(13), [0, ""])[1]:
                 artist = mb[ean.zfill(13)][1]
             if artist and " - " not in title and not title.lower().startswith(artist.lower()):
@@ -833,16 +873,20 @@ def build_data(pais):
             d["names"].append(title)
             d["fmt"] = d["fmt"] or it["f"]  # las de ONLY_MATCH no saben el formato: el de las demás
             d["img"] = d["img"] or it.get("img")
-            d["items"].append({"s": sid, "p": it["p"], "u": it.get("u") or f"{base}/products/{h}", "st": it["st"]})
+            d["items"].append({"s": sid, "p": it["p"], "u": it.get("u") or f"{base}/products/{h}", "st": it["st"]}
+                              | ({"e": it["e"]} if it.get("e") is not None else {}))
     # Tiendas que solo se suman a discos de otras (ONLY_MATCH): fuera los que solo tienen ellas
     by = {e: d for e, d in by.items() if any(i["s"] not in ONLY_MATCH for i in d["items"])}
     for d in by.values():  # el formato y el nombre, de las otras tiendas
-        own = [n for n, i in zip(d["names"], d["items"]) if i["s"] not in ONLY_MATCH]
-        d["names"] = own or d["names"]
+        own = [n for n, i in zip(d["names"], d["items"]) if i["s"] not in ONLY_MATCH and i["s"] != "ebay"]
+        # El título de un anuncio de eBay solo si no hay otro, y limpio (13/11: "… - 2024 - EU - Original)", "NEUF")
+        d["names"] = own or [_ebay_name(n) if i["s"] == "ebay" else n for n, i in zip(d["names"], d["items"])] or d["names"]
     if src in WOO_NAME:
         _match_names(src, catalog, by)
     out = []
     for d in by.values():
+        if d["fmt"] not in ("vinilo", "cd", "casete"):  # sin formato conocido (13/11: uno así tumbó la de España)
+            continue
         # El nombre más limpio: con "Artista - Título" y sin coletillas de formato o reserva
         names = sorted(d.pop("names"), key=lambda n: (" - " not in n, len(n)))
         name = re.sub(r"\s{2,}", " ", CLEAN.sub(" ", names[0])).strip(" -–:*")
@@ -1027,6 +1071,31 @@ TXT["pt"] = {
     "deals_desc": "Os discos com maior diferença de preço entre lojas hoje (só com stock).",
     "guitars": "Pechinchas de guitarras de hoje", "guitars_more": "Todas as pechinchas de guitarras",
 }
+TXT["de"] = {
+    "dir": "schallplatten", "one": "Platte", "home": "Schallplatten", "promo": "Neu: Preise für Vinyl, CDs und Kassetten vergleichen",
+    "tile": "Vinyl, CDs und Kassetten", "sfx": {"vinilo": "vinyl", "cd": "cd", "casete": "kassette"},
+    "fmts": {"vinilo": ("Vinyl", "vinyl"), "cd": ("CDs", "cds"), "casete": ("Kassetten", "kassetten")},
+    "fmt1": {"vinilo": "Vinyl", "cd": "CD", "casete": "Kassette"},
+    "title": "{n} auf {f}: Preisvergleich",
+    "desc": "Vergleiche den Preis von {n} auf {f} in {k} Online-Plattenläden in Deutschland: heutiger Preis, Verfügbarkeit und der günstigste Shop.",
+    "desc1": "{n} auf {f}: der heutige Preis bei {s} und wo du es sonst kaufen kannst, auch bei Amazon.", "where1": "bei {s}",
+    "h_index": "Schallplatten: Preise für Vinyl, CDs und Kassetten vergleichen",
+    "d_index": "Vergleiche jeden Tag die Preise für Vinyl, CDs und Kassetten in Online-Plattenläden in Deutschland.",
+    "in_stock": "Verfügbar", "out": "Ausverkauft", "shops": "Shops", "buy": "Zum Shop", "cheapest": "Heute am günstigsten",
+    "more": "Am meisten verglichen", "note": "Preise inkl. MwSt.; die Versandkosten hängen vom Shop ab.",
+    "amazon": "https://www.amazon.de/s?k={ean}&tag=guitle0f-21", "amazon_btn": "Diese Platte bei Amazon suchen",
+    "amazon_big": "Bei Amazon ansehen", "amazon_none": "Nicht dabei? Bei Amazon suchen", "amazon_more": "Keine davon? Bei Amazon suchen",
+    "amazon_txt": "Lieber bei Amazon kaufen?",
+    "search_ph": "Suche: Künstler oder Album…", "search_res": "{n} Platten gefunden", "search_none": "Keine Platte gefunden",
+    "f_artist": "Künstler oder Band", "f_format": "Format", "f_all": "Alle Formate", "f_sort": "Sortieren",
+    "s_price": "Günstigste zuerst", "s_shops": "Am meisten verglichen", "s_az": "A–Z",
+    "artist_t": "{a}: Preise für Vinyl, CDs und Kassetten",
+    "artist_d": "Vergleiche den Preis von {n} Platten von {a} auf Vinyl, CD und Kassette in Online-Plattenläden in Deutschland.",
+    "artist_all": "Alle Platten",
+    "deals": "Vinyl- und CD-Angebote", "deals_file": "angebote", "save": "{m} günstiger als der teuerste",
+    "deals_desc": "Die Platten mit dem größten Preisunterschied zwischen den Shops heute (nur verfügbare).",
+    "guitars": "Die Gitarren-Angebote von heute", "guitars_more": "Alle Gitarren-Angebote",
+}
 
 def _pre(pais):
     """Ruta de la web del país: España está en la raíz (guitle.com/discos/), los demás en su carpeta (/uk/records/)."""
@@ -1040,6 +1109,55 @@ def _img(u, w):
     if "cdn.shopify.com" in u or "/cdn/shop/" in u:
         return f'{u}{"&" if "?" in u else "?"}width={w}'
     return u
+
+
+# Envío a domicilio de un disco a la península (lo más barato estándar) y desde qué importe es gratis. Comprobado en
+# la página de envíos y con un carrito de prueba de cada tienda el 13/11/2026. None: sin confirmar (se avisa en la ficha).
+# BCore: gratis solo con 60 € en ediciones de su sello (no aplica a un disco suelto). Revolver: 1 disco; más pesa más.
+SHIP = {"es": {"revolver": (11.68, 100), "ege": (5.00, None), "marilians": (6.00, 80), "altafidelidad": (6.00, 100),
+               "supersonic": (6.00, 80), "borabora": (5.95, None), "maxvinilos": (5.90, 75), "bcore": (6.00, None),
+               "ega": None, "cdgo": None}}
+
+
+def _total(pais, i):
+    """(envío, total) de una oferta; envío None si no se sabe (eBay: el del anuncio, si la API lo dio)."""
+    if i["s"] == "ebay":
+        e = i.get("e")
+        return (e, i["p"] + e) if e is not None else (None, i["p"])
+    sh = SHIP.get(pais, {}).get(i["s"])
+    if not sh:
+        return None, i["p"]
+    e = 0.0 if sh[1] and i["p"] >= sh[1] else sh[0]
+    return e, round(i["p"] + e, 2)
+
+
+def _ship_line(pais, i):
+    e, _ = _total(pais, i)
+    from . import intl
+    return ("envío incluido (gratis)" if e == 0 else f"envío incluido ({intl.money(i['p'], pais)} + {intl.money(e, pais)})"
+            if e is not None else "sin el envío, que se ve en la tienda")
+
+
+def _disc_rows(pais, items, names, colors, t):
+    """Tabla de tiendas con el envío sumado: total en grande y debajo "precio + envío" (España)."""
+    from . import intl
+    m = lambda v: intl.money(v, pais)
+    out = []
+    for n, i in enumerate(items):
+        e, tot = _total(pais, i)
+        go = f'href="{_e(i["u"])}" target="_blank" rel="sponsored noopener"' if i.get("u") else ""
+        store = _e(names.get(i["s"], i["s"]))
+        name = f'<a class="store-link" {go}>{store}</a>' if go else store
+        stock = (f'<span class="tag">{_e(t["inStock"])}</span>' if i.get("st") is True
+                 else f'<span class="tag warn">{_e(t["noStock"])}</span>' if i.get("st") is False else "")
+        sub = ("envío gratis" if e == 0 else f"{m(i['p'])} + {m(e)} envío" if e is not None else "+ envío (ver tienda)")
+        price = m(tot) if e is not None else m(i["p"])
+        button = (f'<a class="go" {go}><span class="go-long">{_e(t["goLong"])}</span><span class="go-short">{_e(t["goShort"])}</span></a>'
+                  if go else "")
+        out.append(f'<tr class="{"best-row" if n == 0 else ""}"><td><span class="swatch" style="background:var({colors.get(i["s"], "--reference")})"></span>{name}<div style="margin-top:2px">{stock}</div></td>'
+                   f'<td class="num"><strong>{price}</strong><div class="muted" style="font-size:.72rem;line-height:1.2">{_e(sub)}</div></td>'
+                   f'<td class="num">{button}</td></tr>')
+    return "\n".join(out)
 
 
 def _e(v):
@@ -1179,7 +1297,7 @@ def write_pages(pais, discs=None):
     fmts = "".join(f'<option value="{_e(T["fmt1"][k])}">{_e(v[0])}</option>' for k, v in T["fmts"].items())
     field = ('padding:10px 14px;border-radius:999px;border:1px solid var(--border);font:inherit;'
              'background:var(--surface-1);color:var(--text-primary)')
-    search = (f'  <form class="search" role="search" onsubmit="return false" style="margin:14px 0 4px;display:flex;flex-wrap:wrap;gap:8px">'
+    search = (f'  <form class="search" role="search" onsubmit="return false" style="margin:14px 0 4px;display:flex;flex-wrap:wrap;gap:8px;border:0;background:none;padding:0;border-radius:0;box-shadow:none;height:auto;width:auto">'
               f'<input id="q" type="search" placeholder="{_e(T["search_ph"])}" autocomplete="off" aria-label="{_e(T["search_ph"])}" '
               f'style="flex:2 1 260px;{field}">'
               f'<input id="fa" list="artists" placeholder="{_e(T["f_artist"])}" aria-label="{_e(T["f_artist"])}" style="flex:1 1 180px;{field}">'
@@ -1256,10 +1374,14 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
     """Página de un disco con las mismas piezas que la ficha de una guitarra (intl._product): cabecera, migas, foto y
     precio, tabla de tiendas con su botón y Amazon debajo. Sin gráfica de precios (aún no hay historial de discos)."""
     from . import intl, pages
-    items = sorted(d["items"], key=lambda i: (not i["st"], i["p"]))  # la mejor: la más barata con stock
+    ship = pais in SHIP  # con envío: se ordena por precio + envío (lo que de verdad paga quien compra un disco)
+    # Con envío: primero las de envío conocido por total; las de envío sin confirmar después (no se puede decir que
+    # salgan más baratas); las agotadas al final. Sin envío: la más barata con stock.
+    items = sorted(d["items"], key=lambda i: (not i["st"], ship and _total(pais, i)[0] is None,
+                                              _total(pais, i)[1] if ship else i["p"]))
     best = items[0]
     colors = {st: pages.PALETTE[n % len(pages.PALETTE)] for n, st in enumerate(sorted({i["s"] for i in items}))}
-    n, prices = len(items), [i["p"] for i in items]
+    n, prices = len(items), [_total(pais, i)[1] if ship else i["p"] for i in items]
     title = T["title"].format(n=d["name"], f=f1)
     desc = T["desc"].format(n=d["name"], f=f1, k=n) if n > 1 else T.get("desc1", T["desc"]).format(
         n=d["name"], f=f1, k=n, s=names.get(best["s"], best["s"]))
@@ -1268,8 +1390,8 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
         t["whereDiff"].format(d=intl.money(round(max(prices) - min(prices)), pais)) if max(prices) - min(prices) >= 1 else "")
     ld = {"@context": "https://schema.org", "@type": "Product", "name": f"{d['name']} ({f1})", "gtin13": d["ean"],
           "image": d.get("img"), "url": f"https://guitle.com{url}",
-          "offers": {"@type": "AggregateOffer", "priceCurrency": (intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR"), "lowPrice": min(prices),
-                     "highPrice": max(prices), "offerCount": n}}
+          "offers": {"@type": "AggregateOffer", "priceCurrency": (intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR"), "lowPrice": min(i["p"] for i in items),
+                     "highPrice": max(i["p"] for i in items), "offerCount": n}}
     # Amazon siempre en grande (Manuel, 13/11: "lo importante es que pinchen"): arriba junto al precio y debajo de la
     # tabla. Se busca por artista, título y formato, que casi siempre da resultados (por EAN a menudo sale vacío).
     amazon = amz_top = ""
@@ -1281,7 +1403,8 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
                f'background:#FF9900;color:#111;font-weight:700;font-size:1.15rem;text-align:center;text-decoration:none">'
                f'{_e(T.get("amazon_big", T["amazon_btn"]))} →</a>')
         amz_top = "\n      " + btn
-        amazon = f'\n    <p class="muted small" style="margin:18px 0 0">{_e(T["amazon_txt"])}</p>{btn}'
+        prime = " Con Prime, el envío es gratis en los artículos Prime." if ship and pais == "es" else ""
+        amazon = f'\n    <p class="muted small" style="margin:18px 0 0">{_e(T["amazon_txt"] + prime)}</p>{btn}'
     img = f'<div class="pimg"><img src="{_e(_img(d["img"], 600))}" alt="{_e(d["name"])}"></div>' if d.get("img") else ""
     head = intl._head(pais, f"{title} · guitle", desc, url,
                       f'<meta property="og:title" content="{_e(title)}">\n<meta property="og:description" content="{_e(desc)}">\n'
@@ -1304,12 +1427,12 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
     <div class="pinfo">
       <div class="muted">{_e(f1.capitalize() if f1.islower() else f1)}{alink}</div>
       <h2 class="pname">{_e(d['name'])}</h2>
-      <div id="price" class="big">{intl.money(best['p'], pais)}</div>
+      <div id="price" class="big">{intl.money(prices[0], pais)}</div>{f'<div class="muted small">{_e(_ship_line(pais, best))}</div>' if ship else ''}
       <div id="where" class="muted">{_e(where)}</div>
       <div class="muted small">EAN {d['ean']} · {_e(T['note'])}</div>{amz_top}
     </div>
   </article>
-  <section><h3>{_e(t['storesH3'])}</h3><div class="table-wrap"><table id="stores">{intl._rows({'items': items}, names, colors, pais, t)}</table></div>{amazon}</section>
+  <section><h3>{_e(t['storesH3'])}</h3><div class="table-wrap"><table id="stores">{_disc_rows(pais, items, names, colors, t) if ship else intl._rows({'items': items}, names, colors, pais, t)}</table></div>{amazon}</section>
 {guitar_box}
   {intl._foot(pais, t)}
 </main>
