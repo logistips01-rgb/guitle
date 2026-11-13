@@ -1,0 +1,172 @@
+{
+ "fecha": "13 de novembro",
+ "post": {
+  "type": "top",
+  "title": "promoções de hoje",
+  "hook": "Promoções de hoje",
+  "picks": [
+   {
+    "slug": "ibanez-gsa60-wnf-gio-wnfgio6931",
+    "name": "Ibanez GSA60-WNF Gio",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://musifex.pt/web/image/product.template/6931/image_1024?unique=91b50d7",
+    "th": "927463277c72c859.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/421706.jpg",
+    "price": 208.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 216.0,
+    "max": 216.0,
+    "next": 216.0,
+    "rows": [
+     [
+      "Musifex",
+      208.0
+     ],
+     [
+      "Egitana",
+      216.0
+     ],
+     [
+      "Thomann",
+      216.0
+     ]
+    ],
+    "pvp": null,
+    "why": "8 € a menos do que em qualquer outra loja",
+    "photo": "g0-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "prs-se-silver-sky-trad-blue-lh-dbluelhhtm",
+    "name": "PRS SE Silver Sky Trad Blue LH",
+    "brand": "PRS",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/653097.jpg",
+    "th": "774efeb6e05c5e15.webp",
+    "thimg": "https://guitarcustom.pt/wp-content/uploads/2025/12/738376.jpg",
+    "price": 666.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 915.24,
+    "max": 949.0,
+    "next": 881.48,
+    "rows": [
+     [
+      "Thomann",
+      666.0
+     ],
+     [
+      "Guitar Custom",
+      881.48
+     ],
+     [
+      "Egitana",
+      949.0
+     ]
+    ],
+    "pvp": null,
+    "why": "215,48 € a menos do que em qualquer outra loja",
+    "photo": "g1-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "schecter-omen-extreme-6-bch-remebchhtm",
+    "name": "Schecter Omen Extreme 6 BCH",
+    "brand": "Schecter",
+    "kind": "electrica",
+    "img": "https://www.thomann.de/thumb/opengraph/pics/prod/109717.jpg",
+    "th": "76288cdccde0451e.webp",
+    "thimg": "https://musifex.pt/web/image/product.template/5791/image_1024?unique=70af23c",
+    "price": 555.0,
+    "store": "Thomann",
+    "stores": 3,
+    "median": 585.0,
+    "max": 585.0,
+    "next": 585.0,
+    "rows": [
+     [
+      "Thomann",
+      555.0
+     ],
+     [
+      "Egitana",
+      585.0
+     ],
+     [
+      "Musifex",
+      585.0
+     ]
+    ],
+    "pvp": null,
+    "why": "30 € a menos do que em qualquer outra loja",
+    "photo": "g3-1.webp",
+    "label": "Elétrica"
+   },
+   {
+    "slug": "fender-cc-60s-concert-all-mahogany-hogany6920",
+    "name": "Fender CC-60S Concert All Mahogany",
+    "brand": "Fender",
+    "kind": "acustica",
+    "img": "https://musifex.pt/web/image/product.template/6920/image_1024?unique=934db72",
+    "th": "3533b20109bd4962.webp",
+    "thimg": null,
+    "price": 184.0,
+    "store": "Musifex",
+    "stores": 3,
+    "median": 205.0,
+    "max": 205.0,
+    "next": 205.0,
+    "rows": [
+     [
+      "Musifex",
+      184.0
+     ],
+     [
+      "Egitana",
+      205.0
+     ],
+     [
+      "Thomann",
+      205.0
+     ]
+    ],
+    "pvp": null,
+    "why": "21 € a menos do que em qualquer outra loja",
+    "photo": "g2-1.webp",
+    "label": "Acústica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Promoção do dia",
+  "cholloDia": "Promoção do dia",
+  "en": "na",
+  "precioDel": "Preço de",
+  "comparadoEn": "comparada em",
+  "tiendas": "lojas",
+  "enlaceBio": "Link na bio",
+  "masVendidas": "As mais vendidas nas lojas, com o melhor preço de hoje.",
+  "desliza": "Desliza →",
+  "laVenden": "À venda em",
+  "conCual": "Com qual ficas?",
+  "cuentanos": "Diz-nos nos comentários e guarda este post para quando fores comprar.",
+  "comparaEn": "Compara preços em",
+  "comparaAntes": "Compara antes de comprar",
+  "siguenos": "Segue-nos para mais promoções",
+  "web": "guitle.com/pt",
+  "kinds": {
+   "electrica": "Elétrica",
+   "acustica": "Acústica",
+   "clasica": "Clássica"
+  }
+ },
+ "money": {
+  "locale": "pt-PT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "pt/"
+}
