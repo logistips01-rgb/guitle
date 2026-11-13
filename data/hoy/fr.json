@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-12",
+ "fecha": "2026-11-13",
  "pais": "fr",
  "items": [
   {
-   "slug": "ibanez-sa260fm-tgb-transparent-gray-burst-sabre-4515110489868",
-   "name": "Ibanez SA260FM-TGB Transparent Gray Burst Sabre",
-   "brand": "Ibanez",
-   "price": "320 €",
-   "store": "Woodbrass",
-   "kind": "electrica",
-   "img": "05f05e38cb10d7f3.webp",
-   "why": "79 € de moins que dans les autres magasins"
-  },
-  {
-   "slug": "mooer-guitare-mooer-gtrs-p801-dark-night-6971889220466",
-   "name": "Mooer Guitare Mooer Gtrs-P801 Dark Night",
-   "brand": "Mooer",
-   "price": "599 €",
-   "store": "Woodbrass",
-   "kind": "electrica",
-   "img": "d943ea0752893e5e.webp",
-   "why": "150 € de moins que dans les autres magasins"
-  },
-  {
-   "slug": "epiphone-ibg-j-45-studio-vintage-sunburst-711106174006",
-   "name": "Epiphone IBG J-45 Studio - vintage sunburst",
-   "brand": "Epiphone",
-   "price": "370 €",
+   "slug": "cort-space-g6ms-semi-gloss-turquoise-8809817986994",
+   "name": "Cort Space G6MS - semi gloss turquoise",
+   "brand": "Cort",
+   "price": "577 €",
    "store": "Stars Music",
+   "kind": "electrica",
+   "img": "c8428e9df7ebda7f.webp",
+   "why": "168 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "takamine-gn20-ns-guitare-folk-acoustique-nex-naturelle-satinee-atineehtml",
+   "name": "Takamine GN20-NS Guitare Folk Acoustique Nex Naturelle Satinee",
+   "brand": "Takamine",
+   "price": "299 €",
+   "store": "Music Privilege",
    "kind": "acustica",
-   "img": "01bb9262d23bc53b.webp",
-   "why": "79 € de moins que dans les autres magasins"
+   "img": "f3a9ef6d1a1dd57b.webp",
+   "why": "70 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "squier-starcaster-affinity-dlx-mn-sienna-sunburst-885978136308",
+   "name": "Squier Starcaster Affinity Dlx Mn Sienna Sunburst",
+   "brand": "Squier",
+   "price": "259 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "c7496b97135dddf2.webp",
+   "why": "50 € de moins que dans les autres magasins"
+  },
+  {
+   "slug": "ibanez-azes40l-prb-guitare-electrique-gaucher-purist-blue-stbluehtml",
+   "name": "Ibanez AZES40L-PRB Guitare Electrique Gaucher Purist Blue",
+   "brand": "Ibanez",
+   "price": "329 €",
+   "store": "Music Privilege",
+   "kind": "electrica",
+   "img": "1ea4dfe421139b5f.webp",
+   "why": ""
+  },
+  {
+   "slug": "epiphone-sg-tribute-plus-ebony-burst-711106175324",
+   "name": "Epiphone SG Tribute Plus Ebony Burst",
+   "brand": "Epiphone",
+   "price": "369 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "9181b6713d297707.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-stratocaster-70s-hss-classic-vibe-lrl-walnut-885978064342",
+   "name": "Squier Stratocaster 70S Hss Classic Vibe Lrl Walnut",
+   "brand": "Squier",
+   "price": "419 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "87533e25209ff35c.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-revstar-element-rse20-swift-blue-4957812675154",
+   "name": "Yamaha Revstar Element Rse20 Swift Blue",
+   "brand": "Yamaha",
+   "price": "464 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "e37d9eca8bf9073c.webp",
+   "why": ""
+  },
+  {
+   "slug": "prs-ce24-se-standard-satin-vintage-cherry-825362244134",
+   "name": "PRS CE24 SE Standard Satin Vintage Cherry",
+   "brand": "PRS",
+   "price": "477 €",
+   "store": "Woodbrass",
+   "kind": "electrica",
+   "img": "a0b0e6952e8f7f63.webp",
+   "why": ""
   }
  ]
 }

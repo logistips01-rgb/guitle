@@ -1,36 +1,86 @@
 {
- "fecha": "2026-11-12",
+ "fecha": "2026-11-13",
  "pais": "de",
  "items": [
   {
-   "slug": "ortega-r221bk-7-8-840553070019",
-   "name": "Ortega R221BK-7/8",
-   "brand": "Ortega",
-   "price": "239 €",
-   "store": "Session",
-   "kind": "clasica",
-   "img": "d26af8154790b324.webp",
-   "why": "60 € günstiger als in allen anderen Shops"
-  },
-  {
-   "slug": "manuel-rodriguez-academia-ac40-s-zebrano-fichte-konzert-gitarre-4-4-501-182-4046662287935",
-   "name": "Manuel Rodriguez Academia AC40-S Zebrano/Fichte Konzert-Gitarre 4/4 (501.182)",
-   "brand": "Manuel Rodriguez",
-   "price": "396,66 €",
-   "store": "Shop2Rock",
-   "kind": "clasica",
-   "img": "7c6f902cab2f882d.webp",
-   "why": "98,34 € günstiger als in allen anderen Shops"
-  },
-  {
-   "slug": "ibanez-ae170-tbk-westerngitarre-4549763365958",
-   "name": "Ibanez AE170-TBK Westerngitarre",
-   "brand": "Ibanez",
-   "price": "397 €",
-   "store": "Zoundhouse",
+   "slug": "lag-hyvibe-1-serie-30-dreadnought-ctw-3700166366411",
+   "name": "Lâg HyVibe 1 Serie 30 Dreadnought Ctw",
+   "brand": "Lâg",
+   "price": "749 €",
+   "store": "Woodbrass",
    "kind": "acustica",
-   "img": "659e62b911d38506.webp",
-   "why": "88 € günstiger als in allen anderen Shops"
+   "img": "6eb45fc7eb843999.webp",
+   "why": "200 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "ibanez-af55-tf-e-gitarre-4515110777088",
+   "name": "Ibanez AF55- TF E-Gitarre",
+   "brand": "Ibanez",
+   "price": "319 €",
+   "store": "Zoundhouse",
+   "kind": "electrica",
+   "img": "6919bfd984c40b92.webp",
+   "why": "55 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "ortega-rtpg-ls2-tourplayer-konzertgitarre-indigo-blue-graphic-842960187359",
+   "name": "Ortega RTPG-LS2 Tourplayer Konzertgitarre - Indigo Blue Graphic",
+   "brand": "Ortega",
+   "price": "566 €",
+   "store": "Zoundhouse",
+   "kind": "clasica",
+   "img": "4a0ef23447718762.webp",
+   "why": "118 € günstiger als in allen anderen Shops"
+  },
+  {
+   "slug": "epiphone-sg-tribute-plus-vintage-sunburst-e-gitarre-711106175331",
+   "name": "Epiphone SG Tribute Plus Vintage Sunburst E-Gitarre",
+   "brand": "Epiphone",
+   "price": "309 €",
+   "store": "Zoundhouse",
+   "kind": "electrica",
+   "img": "a027df1912d69f9b.webp",
+   "why": ""
+  },
+  {
+   "slug": "mooer-gtrs-guitars-standard-800-intelligent-guitar-s800-gold-6971889220589",
+   "name": "Mooer GTRS Guitars Standard 800 Intelligent Guitar (S800) - Gold",
+   "brand": "Mooer",
+   "price": "315 €",
+   "store": "Zoundhouse",
+   "kind": "electrica",
+   "img": "2dca7c6dd6806ac6.webp",
+   "why": ""
+  },
+  {
+   "slug": "ibanez-rg421ex-bkf-e-gitarre-4515276693581",
+   "name": "Ibanez RG421EX-BKF E-Gitarre",
+   "brand": "Ibanez",
+   "price": "375 €",
+   "store": "IMM Professional",
+   "kind": "electrica",
+   "img": "2c453d56a6957c02.webp",
+   "why": ""
+  },
+  {
+   "slug": "yamaha-pacifica-311h-vw-vintage-white-4957812500104",
+   "name": "Yamaha Pacifica 311H VW Vintage White",
+   "brand": "Yamaha",
+   "price": "415 €",
+   "store": "Zoundhouse",
+   "kind": "electrica",
+   "img": "c316e3020ae14512.webp",
+   "why": ""
+  },
+  {
+   "slug": "squier-classic-vibe-stratocaster-70s-hss-mn-blk-885978064335",
+   "name": "Squier Classic Vibe Stratocaster 70s HSS MN BLK",
+   "brand": "Squier",
+   "price": "419 €",
+   "store": "Session",
+   "kind": "electrica",
+   "img": "19e5cde7111f538e.webp",
+   "why": ""
   }
  ]
 }

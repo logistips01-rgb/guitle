@@ -74,13 +74,13 @@
  "hu": {
   "country": "Magyarország",
   "path": "/hu/",
-  "guitars": 20391,
+  "guitars": 20374,
   "stores": 2
  },
  "ro": {
   "country": "România",
   "path": "/ro/",
-  "guitars": 14401,
+  "guitars": 14380,
   "stores": 2
  },
  "bg": {
@@ -92,7 +92,7 @@
  "gr": {
   "country": "Ελλάδα",
   "path": "/gr/",
-  "guitars": 15337,
+  "guitars": 15339,
   "stores": 2
  },
  "mx": {
@@ -110,13 +110,13 @@
  "fi": {
   "country": "Suomi",
   "path": "/fi/",
-  "guitars": 6202,
+  "guitars": 6258,
   "stores": 1
  },
  "lu": {
   "country": "Luxembourg",
   "path": "/lu/",
-  "guitars": 5021,
+  "guitars": 5030,
   "stores": 1
  },
  "se": {
