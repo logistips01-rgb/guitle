@@ -1,85 +1,87 @@
 {
- "actualizado": "2026-11-12T17:50",
- "total": 268,
- "ok": 244,
+ "actualizado": "2026-11-13T09:32",
+ "total": 278,
+ "ok": 258,
  "distinto": 5,
- "sin_comprobar": 19,
+ "sin_comprobar": 15,
  "distintos": [
   {
-   "pais": "es",
-   "tienda": "musicalsanfrancisco",
-   "url": "https://musicalsanfrancisco.es/guitarra-espanola-amplificada-walden-natura-500-wan550ew-con-funda/",
-   "precio": 519.01,
+   "pais": "be",
+   "tienda": "johdeheer",
+   "url": "https://www.johdeheer.nl/artikel/alhambra-7pa-klassieke-gitaar.html",
+   "precio": 1079,
    "moneda": "EUR",
-   "leido": "2026-11-12T04:26",
-   "nombre": "Walden española amplificada Walden Natura 500 WAN550EW con funda",
+   "leido": "2026-11-12T14:25",
+   "nombre": "Alhambra 7PA Klassieke Gitaar",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "99 €",
-    "486,55 €",
-    "346 €",
-    "6 257 €",
-    "149 €",
-    "6 270 €"
+    "€ 250,",
+    "€ 1.329,00",
+    "€ 1.249,00",
+    "€ 1.249,00",
+    "€ 39,95",
+    "€ 24,95"
    ]
   },
   {
    "pais": "br",
-   "tienda": "fenderbr",
-   "url": "https://www.fender.com.br/produto/10173353/guitarras/guitarra-fender-1963-telecaster-journeyman-relic-923-1016-473-red-sparkle",
-   "precio": 37990,
+   "tienda": "mundomax",
+   "url": "https://www.mundomax.com.br/guitarra-squier-stratocaster-affinity-olympic-white",
+   "precio": 2339.1,
    "moneda": "BRL",
-   "leido": "2026-11-11T19:26",
-   "nombre": "Fender 1963 Telecaster Journeyman Relic RED Sparkle",
+   "leido": "2026-11-12T19:40",
+   "nombre": "Squier Stratocaster Affinity Series Olympic White",
    "http": 200,
    "estado": "distinto",
    "visibles": [
-    "R$ 150",
-    "R$ 21",
-    "R$ 265",
-    "R$ 121,5",
-    "R$ 310",
-    "R$ 100"
+    "R$ 2.579,00 12",
+    "R$ 214,92",
+    "R$ 3.331,00",
+    "R$ 2.665,00 12",
+    "R$ 222,08",
+    "R$ 3.199,00 12"
    ]
   },
   {
    "pais": "br",
-   "tienda": "x5music",
-   "url": "https://www.x5music.com.br/guitarra-tagima-tg-525-owh-olympic-white/p",
-   "precio": 1063.81,
+   "tienda": "ninjasom",
+   "url": "https://www.ninjasom.com.br/guitarra-fun-katana-musashi-hss-space-grey-sparkle-escudo-preto---seizi-14568632/p",
+   "precio": 1185.88,
    "moneda": "BRL",
-   "leido": "2026-11-11T19:40",
-   "nombre": "Tagima TG-525 OWH Olympic White",
-   "http": 200,
-   "estado": "distinto",
-   "visibles": [
-    "R$ 1.511,09",
-    "R$ 1.208,87",
-    "R$ 1.373,72",
-    "R$ 76,31"
-   ]
-  },
-  {
-   "pais": "fr",
-   "tienda": "hurricanemusic",
-   "url": "https://hurricanemusic.fr/400567-prs-guitars-custom-24-antique-white.html",
-   "precio": 5647,
-   "moneda": "EUR",
-   "leido": "2026-11-12T11:23",
-   "nombre": "PRS Custom 24 Antique White",
+   "leido": "2026-11-12T19:20",
+   "nombre": "Seizi Fun Katana Musashi HSS Space Grey Sparkle (Escudo Preto) - Seizi",
    "http": 200,
    "estado": "distinto",
    "visibles": []
   },
   {
+   "pais": "br",
+   "tienda": "tunermusic",
+   "url": "https://www.tunermusic.com.br/produtos/guitarra-eletrica-metallic-gold-yellow-tagima-tg-500-mgy/",
+   "precio": 1090.33,
+   "moneda": "BRL",
+   "leido": "2026-11-12T19:24",
+   "nombre": "Tagima Metallic Gold Yellow Tagima TG-500 Mgy",
+   "http": 200,
+   "estado": "distinto",
+   "visibles": [
+    "R$1.200,00 6",
+    "R$200,00",
+    "R$950,00 6",
+    "R$158,33",
+    "R$2.799,00 6",
+    "R$466,50"
+   ]
+  },
+  {
    "pais": "se",
    "tienda": "soundstorexl",
-   "url": "https://www.soundstorexl.se/products/vgs-basic-elakustisk-klassisk-guitar-sort",
-   "precio": 1475,
+   "url": "https://www.soundstorexl.se/products/tenson-nylon-strenge-til-klassisk-guitar-normal-tension",
+   "precio": 221,
    "moneda": "SEK",
-   "leido": "2026-11-11T12:46",
-   "nombre": "Gewa VGS Basic elakustisk klassisk gitarr, svart",
+   "leido": "2026-11-13T04:52",
+   "nombre": "Gewa Tenson nylonsträngar till klassisk gitarr, Normal Tension",
    "http": 200,
    "estado": "distinto",
    "visibles": [
@@ -87,7 +89,7 @@
     "2499 kr",
     "2499 kr",
     "2499 kr",
-    "1 481 kr",
+    "... 222 kr",
     "69 kr"
    ]
   }
@@ -95,9 +97,6 @@
  "sin_comprobar_tiendas": [
   "es·alteisa",
   "es·mat",
-  "at·musikpaul",
-  "es·musicopolix",
-  "br·ajoiamusical",
   "br·multisom",
   "br·supersom",
   "fr·azemamusique",
@@ -110,7 +109,6 @@
   "uk·andertons",
   "pt·guitarcustom",
   "uk·richtone",
-  "uk·modernmusic",
   "pt·cdgo"
  ]
 }
