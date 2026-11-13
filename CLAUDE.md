@@ -22,10 +22,10 @@
 - **Ciclo de categorías** (Manuel, 9-11): el Reel de las 17:37 de los días sin cuenta atrás va rotando por guitarras,
   amplis, bajos, teclados, baterías, pedales y micrófonos (`scraper/equipo.py`), con las ofertas del día de esa rama (pedales
   desde 80 €). Si una rama no tiene 3 ofertas buenas, sale el top de guitarras. Baterías: catálogo añadido el 9-11 (kits completos).
-- **Amazon** (afiliados en Reino Unido y Francia; en la web, botón de Amazon en cada disco) se puede nombrar en redes, con
+- **Amazon** (afiliados en Reino Unido, Francia y Alemania —Manuel, 13-11—; la web enlaza también a Amazon.es e Amazon.it; en la web, botón de Amazon en cada disco) se puede nombrar en redes, con
   sus normas: 1) avisar de la afiliación en la publicación («Como afiliado de Amazon, obtenemos ingresos por las compras
   que cumplen los requisitos» / «En tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les
-  conditions requises» / «As an Amazon Associate we earn from qualifying purchases»); 2) nunca precios de Amazon en
+  conditions requises» / «As an Amazon Associate we earn from qualifying purchases» / «Als Amazon-Partner verdienen wir an qualifizierten Verkäufen»); 2) nunca precios de Amazon en
   imágenes ni textos (un post no se actualiza): solo «también en Amazon»; 3) nunca el logo de Amazon, solo el nombre.
 - **Nunca nombres de tiendas reales en las publicaciones de presentación** ("¿Cómo funciona guitle?", "¿Qué es guitle?",
   promoción, Reels sobre guitle): "Tienda A, B, C…" y "25 tiendas" sin lista. En los chollos y tops del día sí se dice

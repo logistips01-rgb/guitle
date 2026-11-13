@@ -42,6 +42,7 @@ AMAZON = {
     "uk": "🛒 Prefer Amazon? Search this record on Amazon from its page on guitle.\nAs an Amazon Associate we earn from qualifying purchases.",
     "es": "🛒 ¿Prefieres Amazon? Desde la página del disco en guitle lo buscas en Amazon.\nComo afiliado de Amazon, obtenemos ingresos por las compras que cumplen los requisitos.",
     "it": "🛒 Preferisci Amazon? Dalla pagina del disco su guitle lo cerchi su Amazon.\nIn qualità di Affiliato Amazon, guitle riceve un guadagno dagli acquisti idonei.",
+    "de": "🛒 Lieber bei Amazon? Auf der Seite der Platte bei guitle findest du sie auf Amazon.\nAls Amazon-Partner verdienen wir an qualifizierten Verkäufen.",
     "fr": "🛒 Vous préférez Amazon ? Depuis la page du disque sur guitle, cherchez-le sur Amazon.\nEn tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises.",
 }
 
