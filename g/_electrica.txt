@@ -653,7 +653,6 @@ cort-g280-select-tcp-8809817980947
 cort-g280-select-tcp-trans-chameleon-purple-8809817080944
 cort-g290-fat-antique-vio-8809625364212
 cort-g290-fat-bright-blue-burst-8809625364229
-cort-g290-fat-ii-avb-antique-violin-burst-8809625369569
 cort-g290-fat-ii-bbb-bright-blue-burst-8809625369552
 cort-g290-modern-drs-derndrshtm
 cort-g290-modern-grafito-palido-8809817987007
@@ -661,6 +660,7 @@ cort-g290-modern-mbg-dernmbghtm
 cort-g290-modern-pgr-dernpgrhtm
 cort-g290-modern-rosa-empolvado-8809817987014
 cort-g290-trans-burst-negro-167820318484
+cort-g290fat-ii-avb-8809625369569
 cort-g290fat-ii-tbb-trans-burst-black-8809625369545
 cort-g300-glam-pimb-8809817080913
 cort-g300-pro-bk-8809625368036
@@ -1853,7 +1853,6 @@ epiphone-lp-custom-1979-adam-jones-amjoneshtm
 epiphone-ltd-billie-joe-armstrong-les-paul-junior-rd-711106234366
 epiphone-lzzy-hale-explorer-custom-bdhs-tombdhshtm
 epiphone-lzzy-hale-explorer-custom-black-diamond-holographic-sparkle-711106234335
-epiphone-marty-schwartz-es-335-sc-es335schtm
 epiphone-masterbilt-gem-archer-sheraton-cherry-red-711106178325
 epiphone-matt-heafy-les-paul-custom-origins-eb-711106060767
 epiphone-matt-heafy-lp-custom-originseb-iginsebhtm
@@ -1988,6 +1987,7 @@ esp-e-ii-arrow-nt-snow-white-con-estuche-stuchehtml
 esp-e-ii-arrow-nt-sw-snow-white-799493265071
 esp-e-ii-arrow-sw-arrowswhtm
 esp-e-ii-arrow-wht-799493265040
+esp-e-ii-eclipse-7-evertune-blks-uneblkshtm
 esp-e-ii-eclipse-bb-black-satin-799493254839
 esp-e-ii-eclipse-bb-blks-ebbblkshtm
 esp-e-ii-eclipse-black-natural-burst-799493265118
@@ -2217,6 +2217,7 @@ esp-ltd-alexi-ripped-sawtooth-con-estuche-799493273328
 esp-ltd-alr-ii-qm-stp-andy-laroque-laroquehtm
 esp-ltd-alr-ii-qm-stp-andy-laroque-oquep41480
 esp-ltd-arrow-1000-candy-apple-red-719710627727
+esp-ltd-arrow-1000-candy-apple-red-eredp39642
 esp-ltd-arrow-1000-evertune-black-eblackhtml
 esp-ltd-arrow-1000-pw-00pwp44332
 esp-ltd-arrow-1000-pw-w1000pwhtm
@@ -2254,11 +2255,14 @@ esp-ltd-ec-01-ft-charcoal-burst-satin-719710627734
 esp-ltd-ec-01-ft-olympic-white-cwhitehtml
 esp-ltd-ec-01-ft-vintage-burst-ebursthtml
 esp-ltd-ec-10-black-con-funda-nfundahtml
+esp-ltd-ec-10-blk-0blkp14517
+esp-ltd-ec-10-blk-ec10blkhtm
 esp-ltd-ec-1000-baritone-chms-onechmshtm
 esp-ltd-ec-1000-black-0blackhtml
 esp-ltd-ec-1000-black-0blackhtml
 esp-ltd-ec-1000-black-lackp11584
 esp-ltd-ec-1000-blue-natural-fade-alfadehtml
+esp-ltd-ec-1000-cars-000carshtm
 esp-ltd-ec-1000-evertune-bb-black-satin-ksatinhtml
 esp-ltd-ec-1000-evertune-bb-blks-blksp41710
 esp-ltd-ec-1000-evertune-bb-blks-ebbblkshtm
@@ -2283,6 +2287,7 @@ esp-ltd-ec-1000t-qm-charcoal-burst-719710614420
 esp-ltd-ec-1000vb-duncan-bduncanhtm
 esp-ltd-ec-1000vb-duncan-ncanp14518
 esp-ltd-ec-1007b-evertune-black-eblackhtml
+esp-ltd-ec-1007b-evertune-black-neblackhtm
 esp-ltd-ec-200dx-blb-00dxblbhtm
 esp-ltd-ec-200dx-blb-xblbp37667
 esp-ltd-ec-200dx-charcoal-burst-lbursthtml
@@ -2309,8 +2314,6 @@ esp-ltd-ec-256fm-dbsb-dbsbp12702
 esp-ltd-ec-400-qm-stbsb-qmstbsbhtm
 esp-ltd-ec-400-qm-transparente-negro-sunburst-urstp44337
 esp-ltd-ec-400-qm-vb-400qmvbhtm
-esp-ltd-ec-400-qm-vb-dec400qmvb
-esp-ltd-ec-400-qm-vintage-burst-ntageburst
 esp-ltd-ec-400-qm-vintage-burst-urstp44338
 esp-ltd-ec-401-black-lackp15070
 esp-ltd-ec-401qm-see-thru-black-satin-atinp35126
@@ -2338,11 +2341,15 @@ esp-ltd-gh-200-blk-gary-holt-signature-799493249040
 esp-ltd-gh-600-black-con-estuche-stuchehtml
 esp-ltd-gh-600-blk-h600blkhtm
 esp-ltd-gh-sv-200-black-0blackhtml
+esp-ltd-gh-sv-200-blk-0blkp36415
+esp-ltd-gh-sv-200-blk-v200blkhtm
 esp-ltd-gh-sv-blk-gary-holt-signature-719710619876
+esp-ltd-gl-200k-black-0kblackhtm
 esp-ltd-gl-desert-eagle-george-lynch-signature-con-estuche-stuchehtml
 esp-ltd-h-1000-evertune-qm-see-thru-purple-sunburst-nbursthtml
 esp-ltd-h-1001-qm-see-thru-black-ublackhtml
 esp-ltd-h-1001-violet-andromeda-satin-asatinhtml
+esp-ltd-h-1001-violet-andromeda-satin-atinp39693
 esp-ltd-h-1001fr-black-natural-burst-lbursthtml
 esp-ltd-h-1001fr-blknb-799493268065
 esp-ltd-h-200fm-dark-brown-sb-wnsbp11585
@@ -2365,6 +2372,7 @@ esp-ltd-james-hetfield-vulture-ow-ltureowhtm
 esp-ltd-jd-i-joe-duplantier-ssb-tierssbhtm
 esp-ltd-jeff-hanneman-jh-600ctm-bk-00ctmbkhtm
 esp-ltd-jl-600-black-satin-con-estuche-stuchehtml
+esp-ltd-jm-i-deep-blood-moon-josh-middleton-signature-con-estuche-719710627451
 esp-ltd-jm-i-qm-deep-blood-moon-moonp39649
 esp-ltd-jm-ii-josh-middleton-bsb-etonbsbhtm
 esp-ltd-kh-202-blk-kirk-hammett-hammetthtm
@@ -2428,14 +2436,15 @@ esp-ltd-mh1000-nt-fm-charcoal-coalp38084
 esp-ltd-mh1000-nt-fm-charcoal-harcoalhtm
 esp-ltd-mirage-deluxe-87-pearl-pink-rlpinkhtml
 esp-ltd-mirage-deluxe-87-turq-turquoise-799493270549
-esp-ltd-mirage-deluxe-87-turquoise-quoisehtml
 esp-ltd-mk-600-mille-petrozza-signature-black-satin-con-estuche-stuchehtml
 esp-ltd-mk-ec-fr-mille-petrozza-signature-black-satin-con-estuche-stuchehtml
 esp-ltd-msv-1-black-con-estuche-719710627420
 esp-ltd-msv-1-blk-mike-schleibaum-baump39648
 esp-ltd-msv-1-blk-mike-schleibaum-leibaumhtm
+esp-ltd-mt-130-azul-cielo-ielop44439
 esp-ltd-mt-130-grey-superstrato-840248022392
 esp-ltd-mt-130-red-0redp40087
+esp-ltd-mt-130-sky-blue-skybluehtm
 esp-ltd-mt-130-snow-white-hitep40088
 esp-ltd-mt-i-mick-thomson-blks-msonsightm
 esp-ltd-mt-i-mick-thomson-obsm-sonobsmhtm
@@ -2493,6 +2502,8 @@ esp-ltd-th-1000-et-fm-stbsb-fmstbsbhtm
 esp-ltd-th-400-cm-th400cmhtm
 esp-ltd-th-400-sm-th400smhtm
 esp-ltd-viper-1000-baritone-black-satin-ksatinhtml
+esp-ltd-viper-1000-black-cherry-erryp31682
+esp-ltd-viper-1000-black-cherry-kcherryhtm
 esp-ltd-viper-1000-mahogany-see-thru-black-cherry-cherryhtml
 esp-ltd-viper-1000-see-thru-purple-sunburst-nbursthtml
 esp-ltd-viper-1000-tiger-eye-sunburst-nbursthtml
@@ -3249,7 +3260,6 @@ fender-custom-shop-1960-relic-tahitian-coral-oralp37451
 fender-custom-shop-1960-stratocaster-heavy-relic-rosewood-fingerboard-aged-black-urstp38502
 fender-custom-shop-1960-stratocaster-jrn-3tsb-mbah-masterbuilt-andy-hicks-2-444410037192
 fender-custom-shop-1960-stratocaster-nos-3ts-r145341-444410029083
-fender-custom-shop-1960-stratocaster-relic-rw-hss-fr-olw-r145267-444410032961
 fender-custom-shop-1961-stratocaster-super-heavy-relic-3a-rosewood-fingerboard-a-urstp44108
 fender-custom-shop-1961-stratocaster-super-heavy-relic-3a-rw-aged-olympic-white-3tsbp45257
 fender-custom-shop-1961-stratocaster-super-heavy-relic-rw-aged-surf-green-3tsb-urstp44704
@@ -3532,8 +3542,6 @@ fender-ltd-70th-54-strat-jmr-ab-atjmrabhtm
 fender-ltd-am-pro-ii-cabronita-rw-crt-tarwcrthtm
 fender-ltd-am-pro-ii-strat-hss-agn-sagnp39223
 fender-ltd-am-pro-ii-strat-hss-smk-ssmkp39219
-fender-ltd-am-pro-ii-stratocaster-rw-bmm-mhc-885978146789
-fender-ltd-am-pro-ii-stratocaster-rw-sfg-mhc-errwsfgmhc
 fender-ltd-am-pro-ii-tele-hh-agn-hagnp39273
 fender-ltd-am-ultra-strat-nat-hss-tnathsshtm
 fender-ltd-am-ultra-strat-nat-tratnathtm
@@ -3645,7 +3653,6 @@ fender-michael-landau-coma-stratocaster-rw-coma-red-717669535087
 fender-michael-landau-signature-1963-stratocaster-fiesta-red-over-3-color-sunbur-717669620875
 fender-michael-landau-signature-1968-round-laminated-rosewood-bleached-3-color-s-urstp37445
 fender-michael-landau-signature-1968-stratocaster-round-laminated-rosewood-black-lackp38776
-fender-mij-act-modern-strat-hss-2ts-thss2tshtm
 fender-mij-act-modern-strat-hss-blk-thssblkhtm
 fender-mij-act-modern-strat-rw-2ts-atrw2tshtm
 fender-mij-act-modern-strat-rw-blk-atrwblkhtm
@@ -3752,7 +3759,7 @@ fender-player-ii-stratocaster-hss-rw-transparent-cherry-burst-885978230273
 fender-player-ii-stratocaster-hss-rw-white-blonde-885978109739
 fender-player-ii-stratocaster-left-hand-rw-3-color-sunburst-885978098569
 fender-player-ii-stratocaster-lh-mn-aquatone-blue-885978109418
-fender-player-ii-stratocaster-lh-rw-pwt-885978109395
+fender-player-ii-stratocaster-lh-rw-polar-white-885978109395
 fender-player-ii-stratocaster-ltd-fiesta-red-885978784158
 fender-player-ii-stratocaster-mn-aged-cherry-burst-885978109364
 fender-player-ii-stratocaster-mn-aquatone-blue-885978109319
@@ -3910,7 +3917,6 @@ fender-squier-sonic-telecaster-california-blue-717669815929
 fender-squier-sonic-telecaster-lrl-amarillo-canario-ariop44348
 fender-squier-stratocaster-affinity-hss-charcoal-frost-metallic-llicp25047
 fender-stamp-collection-tele-macedon-macedonhtm
-fender-standard-strat-hss-lrl-wpg-cnd-lwpgcndhtm
 fender-standard-stratocaster-hss-lr-black-885978118090
 fender-standard-stratocaster-hss-lr-candy-cola-885978118076
 fender-standard-stratocaster-hss-mn-aqua-marine-metallic-885978118052
@@ -4308,6 +4314,7 @@ gibson-1960-les-paul-standard-reissue-vos-tngerine-burst-711106926407
 gibson-1961-es-335-reissue-60s-ch-ha-60schhahtm
 gibson-1961-es-335-reissue-60s-ch-ula-0schulahtm
 gibson-1961-es-335-reissue-60s-ch-vos-0schvoshtm
+gibson-1961-es-335-reissue-murphy-lab-heavy-aged-sixties-cherry-122185-erry122185
 gibson-1961-es-335-reissue-vb-vos-uevbvoshtm
 gibson-1961-es-335-reissue-vos-vintage-burst-150691-711106024578
 gibson-1961-es-335-silver-stinger-csh-ngercshhtm
@@ -4433,7 +4440,6 @@ gibson-kirk-hammett-signature-les-paul-standard-greeny-burst-711106118185
 gibson-les-paul-54-goldtop-heavy-aged-avyagedhtm
 gibson-les-paul-54-goldtop-vos-dtopvoshtm
 gibson-les-paul-54-goldtop-vos-lh-opvoslhhtm
-gibson-les-paul-56-goldtop-ula-dtopulahtm
 gibson-les-paul-56-goldtop-vos-dtopvoshtm
 gibson-les-paul-56-goldtop-vos-lh-h612120htm
 gibson-les-paul-57-goldtop-db-la-topdblahtm
@@ -5575,7 +5581,6 @@ harley-benton-fusion-iii-hh-eb-oct-hhebocthtm
 harley-benton-fusion-iii-hh-eb-oct-w-bag-tbundlehtm
 harley-benton-fusion-iii-hh-eb-oct-w-case-ndlesethtm
 harley-benton-fusion-iii-hh-fr-eb-fbb-frebfbbhtm
-harley-benton-fusion-iii-hh-fr-eb-fbb-w-bag-bbundlehtm
 harley-benton-fusion-iii-hh-fr-eb-fbb-w-case-bbwcasehtm
 harley-benton-fusion-iii-hh-fr-eb-fblb-rebfblbhtm
 harley-benton-fusion-iii-hsh-eb-fblb-hebfblbhtm
@@ -5852,6 +5857,7 @@ harley-benton-st-62mn-sb-vint-series-w-bag-ndlesethtm
 harley-benton-st-62mn-sb-vintage-series-eserieshtm
 harley-benton-st-62mn-vw-vintage-series-eserieshtm
 harley-benton-st-70-black-paisley-paisleyhtm
+harley-benton-st-70rw-deluxe-series-eserieshtm
 harley-benton-st-80fr-asb-80frasbhtm
 harley-benton-st-80fr-esb-80fresbhtm
 harley-benton-st-80fr-hh-asb-frhhasbhtm
@@ -5899,6 +5905,7 @@ harley-benton-st-modern-plus-hh-purple-mt-urplemthtm
 harley-benton-st-modern-plus-hh-rbm-plusrbmhtm
 harley-benton-st-modern-plus-hh-rr-hplusrrhtm
 harley-benton-st-modern-plus-hh-tg-lushhtghtm
+harley-benton-st-modern-plus-hh-vt-mm-m613676htm
 harley-benton-st-modern-plus-hh-vt-rm-lusvtrmhtm
 harley-benton-st-modern-plus-hss-bk-ushssbkhtm
 harley-benton-st-modern-plus-hss-fblb-hssfblbhtm
@@ -6009,8 +6016,10 @@ heritage-custom-shop-h-150-artisan-aged-tsb-885015400531
 heritage-custom-shop-h-150-plain-top-dlb-8885015405994
 heritage-eagle-classic-an-assicanhtm
 heritage-eagle-classic-osb-ssicosbhtm
+heritage-h-150-custom-core-dcsb-oredcsbhtm
 heritage-h-150-custom-core-gold-top-goldtophtm
 heritage-h-150-custom-core-lb-coredlbhtm
+heritage-h-150-custom-core-tsb-coretsbhtm
 heritage-h-150-ebony-50ebonyhtm
 heritage-h-150-standard-dlb-h150dlbhtm
 heritage-h-535-osb-h535osbhtm
@@ -6331,10 +6340,10 @@ ibanez-gb10sefm-srr-msrrp27600
 ibanez-genesis-540piiihh-bk-black-4549763397935
 ibanez-gio-grx70qa-tvt-violeta-transparente-con-efecto-relampago-pagop45291
 ibanez-grg120qasp-bgd-blue-gradation-4549763280886
-ibanez-grg120qasp-bkg-black-gradation-4549763376855
+ibanez-grg120qasp-bkg-gio-series-grg-black-gradation-4549763376855
 ibanez-grg120qasp-bkg-pbkgp42639
 ibanez-grg120qasp-bkg-qaspbkghtm
-ibanez-grg120qaspbkg-degradado-negro-gio-ogio428151
+ibanez-grg120qaspbkg-120qaspbkg
 ibanez-grg121dx-bkf-black-flat-4515276693444
 ibanez-grg121dx-bkn-black-flat-693444html
 ibanez-grg121dx-mgs-metallic-gray-sunburst-4549763229960
@@ -6951,7 +6960,7 @@ jackson-adrian-smith-sdx-mn-trans-green-885978776542
 jackson-adrian-smith-usa-sel-sd-tg-selsdtghtm
 jackson-adrian-smith-usa-sig-sdm-snow-white-885978486953
 jackson-american-series-rhoads-rr24-eb-sblk-885978725977
-jackson-american-series-rhoads-rr24-ht-ebo-negro-satinado-885978726486
+jackson-american-series-rhoads-rr24-ht-eb-satin-black-885978726486
 jackson-american-series-rhodes-rr24-eb-matte-army-drab-885978936373
 jackson-american-series-rhodes-rr24-ebo-blanco-nieve-885978936441
 jackson-american-series-soloist-sl2-dx-ebo-blanco-nieve-885978385850
@@ -7117,9 +7126,9 @@ jackson-js32t-warrior-natural-oil-885978976973
 jackson-js32t-warrior-no-ah-iornoahhtm
 jackson-kelly-js32-am-swt-885978977062
 jackson-kex-kelly-lrl-deep-purple-metallic-717669998936
+jackson-king-v-x-series-kvxmg-stn-blk-885978427789
 jackson-kv2-king-v-bk-usa-kingvbkhtm
 jackson-kv2-king-v-sw-usa-gvswusahtm
-jackson-kvxmg-x-stn-blk-885978427789
 jackson-limited-legend-series-randy-rhoads-cd1-885978527144
 jackson-ltd-50th-adrian-smith-pro-sw-thproswhtm
 jackson-ltd-legend-rhoads-cd1-vwht-cd1vwhthtm
@@ -7288,12 +7297,9 @@ jazpole-vw-maybach-maybach-tipo-jazzmaster-vintage-white-ntagewhite
 jbm10fx-pwm-jake-bowen-signature-4549763331304
 jet-7-cuerdas-jet-js407-mbkr-matt-black-3831120923033
 jet-7-cuerdas-jet-js507-stygian-satin-black-3831120924689
-jet-jj300-p90-bk-black-5306905
 jet-jj300-p90-black-3831120937108
 jet-jj300-p90-ow-white-3831120937085
-jet-jj300-p90-ow-white-5306903
 jet-jj300-p90-sfg-sea-green-3831120937092
-jet-jj300-p90-sfg-sea-green-5306904
 jet-jj350-baritone-moonburst-silver-burst-3831120923491
 jet-jj350-bk-black-3831120912082
 jet-jj350-grr-green-3831120917674
@@ -7533,13 +7539,13 @@ larry-carlton-s5-black-s5blackhtm
 larry-carlton-s5-hss-3ts-5hss3tshtm
 larry-carlton-s5-hss-car-5hsscarhtm
 larry-carlton-s5-hss-dark-navy-s5hssdnhtm
-larry-carlton-s5-hss-ow-s5hssowhtm
 larry-carlton-s5-hss-sgm-5hsssfghtm
 larry-carlton-s5-olympic-white-icwhitehtm
 larry-carlton-s7-3ts-new-gen-lh-ewgenlhhtm
 larry-carlton-s7-ash-top-amber-burst-erbursthtm
 larry-carlton-s7-ash-top-natural-naturalhtm
 larry-carlton-s7-bk-new-gen-knewgenhtm
+larry-carlton-s7-fm-natural-satin-new-gen-snewgenhtm
 larry-carlton-s7-fm-see-thru-red-new-gen-snewgenhtm
 larry-carlton-s7-fm-see-trans-blue-new-gen-snewgenhtm
 larry-carlton-s7-fm-trans-black-new-gen-snewgenhtm
@@ -7636,6 +7642,7 @@ ltd-arrow-1000-violet-andromeda-154826037297
 ltd-arrow-1000nt-charcoal-metallic-satin-allicsatin
 ltd-arrow-1007-baritone-evertune-black-rtuneblack
 ltd-arrow-200-black-799493260922
+ltd-arrow-400-charcoal-metallic-719710629028
 ltd-arrow-metal-negro-negro-rojo-degradado-satinado-719710629059
 ltd-arrow-qm-dark-brown-burst-brownburst
 ltd-arrowhead-signature-alexi-laiho-20-anni-anni429121
@@ -7659,6 +7666,7 @@ ltd-ec-1000-duncan-vintage-black-799493261837
 ltd-ec-1000-emg-blk-8402480075974
 ltd-ec-1000-evertune-bb-799493273298
 ltd-ec-1000-evertune-bb-black-satin-blacksatin
+ltd-ec-1000-lh-vintage-black-ntageblack
 ltd-ec-1000-piezo-799493259254
 ltd-ec-1000-piezo-see-thru-black-ethrublack
 ltd-ec-1000-qm-see-thru-black-cherry-719710620230
@@ -7694,7 +7702,6 @@ ltd-ec-256-vintage-natural-799493262360
 ltd-ec-256-vn-c256vnhtml
 ltd-ec-256fm-dark-brown-sunburst-799493256321
 ltd-ec-256fm-stpsb-799493258042
-ltd-ec-400qm-vintage-burst-719710629073
 ltd-ec-401-blk-840248021890
 ltd-ec-401-olympic-white-840248021906
 ltd-ec-model-10-ec-10kit-blue-799493258271
@@ -7705,7 +7712,6 @@ ltd-eclipse-ec-400-qm-sunburst-negro-translucido-cido431202
 ltd-esp-ltd-alexi200-blk-negra-840248016964
 ltd-esp-ltd-alr-ii-andy-larocque-stp-see-thru-purple-719710627468
 ltd-esp-ltd-arrow1000-pw-pearl-white-719710629042
-ltd-esp-ltd-arrow400-cm-charcoal-metallic-719710629028
 ltd-esp-ltd-arrow400-sm-scarlet-metallic-719710629035
 ltd-esp-ltd-arrowhead-se-alexi-laiho-negra-con-rayas-amarillas-719710629363
 ltd-esp-ltd-bb600-stblks-ben-burnley-see-thru-black-sunburst-satin-burstsatin
@@ -7749,7 +7755,6 @@ ltd-esp-ltd-mh200qm-ht-dbs-dark-brown-sunburst-719710629189
 ltd-esp-ltd-mh400-sw-snow-white-719710629202
 ltd-esp-ltd-mh400ht-qm-stbs-see-thru-black-sunburst-719710629196
 ltd-esp-ltd-mirage-deluxe-87-sw-snow-white-1100000336112
-ltd-esp-ltd-mt-i-blks-mick-thomson-black-satin-719710628151
 ltd-esp-ltd-mt-i-om-mick-thomson-obsidian-metallic-719710628144
 ltd-esp-ltd-mt130-bl-azul-ctricaazul
 ltd-esp-ltd-mt130-gr-gris-1100000552673
@@ -7757,21 +7762,17 @@ ltd-esp-ltd-mt130-rd-roja-1100000552826
 ltd-esp-ltd-mv1000-pw-pearl-white-719710629226
 ltd-esp-ltd-nv1000-blk-negra-719710629240
 ltd-esp-ltd-phoenix-1000-stbs-see-thru-black-sunburst-719710614635
-ltd-esp-ltd-phoenix-1001-qm-tbs-tobacco-sunburst-719710620315
 ltd-esp-ltd-phoenix-200dx-rb-red-burst-719710628939
 ltd-esp-ltd-phoenix-7b-black-metal-ii-black-red-burst-satin-tsatinhtml
 ltd-esp-ltd-phoenix201-blk-negra-tricanegra
-ltd-esp-ltd-rs1000-pw-pearl-white-719710629264
 ltd-esp-ltd-sawtooth-se-alexi-laiho-negra-con-rayas-blancas-719710629370
 ltd-esp-ltd-sn-1000-ev-koa-ns-evertune-koa-natural-satin-719710620322
 ltd-esp-ltd-sn1000fr-sw-snow-white-asnowwhite
-ltd-esp-ltd-sn1000ht-dbs-dark-brown-sunburst-719710629455
 ltd-esp-ltd-sn1000ht-fb-fire-blast-1100000274162
 ltd-esp-ltd-te201-blk-negra-719710627703
 ltd-esp-ltd-th1000-et-fm-stbs-see-through-black-sunburst-719710629318
 ltd-esp-ltd-th1000-sw-snow-white-719710629301
 ltd-esp-ltd-th400-cm-charcoal-metallic-719710629288
-ltd-esp-ltd-th400-sm-scarlet-metallic-719710629295
 ltd-esp-ltd-tl-6-qm-charcoal-burst-719710620353
 ltd-esp-ltd-viper-256-owh-olympic-white-719710620377
 ltd-esp-ltd-viper1001-et-cms-charcoal-metallic-satin-719710629325
@@ -7828,7 +7829,6 @@ ltd-m-201-baritone-ht-black-719710627673
 ltd-m-201-baritono-negro-egro404638
 ltd-m-400-ht-carbon-metalizado-zado431204
 ltd-m-400-ht-escarlata-metalizado-zado431205
-ltd-m-400ht-scarlet-metallic-tallichtml
 ltd-m-6-evertune-negro-metalizado-negro-rojo-burst-satinado-719710629165
 ltd-m-7-baritono-ht-negro-metalizado-red-burst-satinado-719710629172
 ltd-m-7ht-baritone-black-metal-blackmetal
@@ -7841,6 +7841,7 @@ ltd-mh-1000-nt-binding-marcado-negro-satinado-nado404639
 ltd-mh-1000-qm-black-ocean-719710614604
 ltd-mh-1000nt-bb-719710627758
 ltd-mh-1000nt-bold-bind-black-satin-000ntnuevo
+ltd-mh-1000nt-charcoal-burst-rcoalburst
 ltd-mh-1000nt-fm-719710620308
 ltd-mh-17-799493261899
 ltd-mh-200-ht-qm-sunburst-marron-oscuro-curo431206
@@ -7853,9 +7854,13 @@ ltd-mirage-deluxe-87sw-snow-white-wwhitehtml
 ltd-mk-ec-fr-719710619913
 ltd-mt-130-black-0blackhtml
 ltd-mt-130-blue-30bluehtml
+ltd-mt-130-blue-799493263305
+ltd-mt-130-blue-t1300nuevo
 ltd-mt-130-neon-green-ngreenhtml
 ltd-mt-130-orange-799493263299
 ltd-mt-130-sky-blue-719710627550
+ltd-mt-i-mick-thomson-signature-black-satin-con-estuche-719710628151
+ltd-mt-i-signature-mick-thomson-black-satinin-inin429134
 ltd-nv-1000-emg-negro-egro429135
 ltd-phoenix-1000-see-thru-black-cherry-799493268140
 ltd-phoenix-1000-vintage-white-799493268157
@@ -7866,6 +7871,7 @@ ltd-phoenix-black-metal-black-satin-799493270341
 ltd-phx-7-baritono-metal-negro-degradado-rojo-saten-719710629257
 ltd-royal-shiva-silver-sunburst-ersunburst
 ltd-royal-shiva-silver-sunburst-signature-bill-kelliher-719710619937
+ltd-rs-1000-pearl-white-719710629264
 ltd-rzk-iii-719710619951
 ltd-rzk-iii-signature-ltd-richard-kruspe-olympic-white-hite404642
 ltd-sawtooth-signature-alexi-laiho-20-anni-anni429118
@@ -7879,6 +7885,7 @@ ltd-sn-1-ht-baritone-719710620346
 ltd-sn-1-ht-black-bast-ckbasthtml
 ltd-sn-1-ht-black-blast-719710627765
 ltd-sn-1-ht-black-blast-799493273380
+ltd-sn-1000-ht-dark-brown-sunburst-719710629455
 ltd-sn-1000fr-719710614802
 ltd-sn-1000fr-candy-apple-red-satin-719710629271
 ltd-sn-1000ht-fire-blast-719710614659
@@ -7898,6 +7905,7 @@ ltd-te-200dx-blue-burst-limited-edition-719710627246
 ltd-te-200dx-purple-burst-limited-edition-719710627239
 ltd-te-401-799493254679
 ltd-ted-ec-719710618589
+ltd-th-400-scarlet-metallic-719710629295
 ltd-viper-10-black-c-funda-840248028516
 ltd-viper-1000-black-719710620360
 ltd-viper-1000-evertune-qm-negro-cereza-translucido-sunburst-urst429140
@@ -7912,6 +7920,7 @@ ltd-vulture-black-satin-799493256420
 ltd-vulture-olympic-white-ympicwhite
 ltd-vulture-white-719710616806
 ltd-xj-1-ht-black-blast-blackblast
+ltd-xj-2ht-fishman-snow-white-hite429144
 ltd-zurdo-snakebyte-lh-wh-white-840248026086
 luke-lk100-blb-flame-maple-blueberry-burs-a20130html
 luke-lk100-hzb-flame-maple-hazel-burst-a20132html
@@ -8419,7 +8428,6 @@ mooer-msc11-pro-black-6971889222439
 mooer-msc11-pro-polar-white-6971889222422
 mooer-msc12-pro-iron-silver-6971889222675
 mooer-msc18-pro-dark-aurora-6971889222644
-mooer-msc18-pro-dark-aurora-satin-rasatinhtm
 mooer-msc18-pro-ii-dark-aurora-kaurorahtm
 mooer-msc20-pro-amber-brown-6971889222477
 mooer-msc20-pro-black-burst-6971889222484
@@ -8637,11 +8645,13 @@ phoenix-1000-vintage-white-a20721html
 power-stage-170-120v-previo-guitarra-800315041459
 prodipe-junior-negra-rnegrahtml
 prodipe-junior-roja-orrojahtml
+prodipe-junior-verde-3760010257784
 prodipe-lp02-bk-8436032366647
 prodipe-lp02-sb-8436032366630
 prodipe-negra-376001055671
 prodipe-negra-junior-prodipe-iorprodipe
 prodipe-serie-st80-ma-stratocaster-sonic-blue-rsonicblue
+prodipe-serie-st83-ra-stratocaster-fresno-sterfresno
 prodipe-serie-st83-ra-stratocaster-negra-3760010255841
 prodipe-serie-st83-ra-stratocaster-roja-errojahtml
 prodipe-sg300-br-sg-brown-3760010255094
@@ -8663,7 +8673,6 @@ prodipe-st80-ma-stratocaster-surf-green-fgreenhtml
 prodipe-st80bk-stratocaster-black-3760010255872
 prodipe-st80bl-3760010256206
 prodipe-st83-ash-stratocaster-fresno-3760010256473
-prodipe-st83-ra-ash-ratocaster
 prodipe-st83-ra-rd-3760010255834
 prodipe-st83-ra-sb-3760010255827
 prodipe-st83-ra-stratocaster-fresno-fresnohtml
@@ -8677,7 +8686,6 @@ prodipe-tc80-ma-telecaster-butterscotch-scotchhtml
 prodipe-tc80-ma-telecaster-negra-rnegrahtml
 prodipe-tc80-ma-telecaster-sunburst-nbursthtml
 prodipe-tc80bs-butterscotch-3760010256213
-prs-40th-anni-mccarty-sc56-ms-56msp41551
 prs-40th-anniv-custom-24-ltd-87-sz-ltd87szhtm
 prs-40th-anniv-custom-24-suz-2-m24suz2htm
 prs-40th-anniv-custom-24-suz-om24suzhtm
@@ -10361,7 +10369,6 @@ schecter-pt-special-pbp-810051470697
 schecter-pt-standard-black-fade-burst-burl-810051476163
 schecter-pt-standard-purpura-burst-madera-de-nudos-810051476170
 schecter-pt-van-nuys-g-nat-ash-gna-810051470864
-schecter-ravendark-v-fr-gbsps-815447023761
 schecter-reaper-6-cb-815447026304
 schecter-reaper-6-custom-g-blk-810051472615
 schecter-reaper-6-custom-g-wht-810051472622
@@ -11192,7 +11199,6 @@ squier-sonic-strat-ht-h-black-thblackhtm
 squier-sonic-strat-ht-h-flash-pink-ashpinkhtm
 squier-sonic-strat-ht-h-mn-snb-thmnsnbhtm
 squier-sonic-strat-ht-mn-sfmg-tmnsfmghtm
-squier-sonic-strat-ht-torino-red-rinoredhtm
 squier-sonic-strat-lrl-california-bl-orniablhtm
 squier-sonic-strat-lrl-ultraviolet-aviolethtm
 squier-sonic-strat-lrl-wpg-ssb-lwpgssbhtm
@@ -11221,6 +11227,7 @@ squier-starcaster-affinity-dlx-mn-sienna-sunburst-885978136308
 squier-stratocaster-hss-mn-wpg-tco-037-3202-511-717669815707
 squier-stratocaster-hss-sonic-mn-negro-717669815691
 squier-tele-custom-baritone-bk-itonebkhtm
+squier-telecaster-60-classic-vibe-aztec-gold-lim-885978765706
 squier-telecaster-sonic-lrl-rojo-torino-717669815943
 st-vincent-blue-stv60-vbl-ctricahtml
 st-vincent-goldie-cashmere-signature-naturehtml
@@ -11381,7 +11388,6 @@ sterling-jason-richardson-cosmic-purple-satin-810002951664
 sterling-jason-richardson-dark-scarlet-burst-satin-810002951671
 sterling-jason-richardson-kokiri-forest-810002954412
 sterling-jason-richardson-poplar-burl-burst-810002951244
-sterling-john-petrucci-jp150-dqm-cerulean-paradise-810002951787
 sterling-john-petrucci-jp150d-fm-e-purple-nebula-810002953002
 sterling-john-petrucci-jp157d-rm-e-7st-cerulean-paradise-aelectrica
 sterling-john-petrucci-jp157d-rm-e-7st-purple-nebula-810002953019
@@ -11395,12 +11401,13 @@ sterling-john-petrucci-jp70-mdr-jp70mdrhtm
 sterling-john-petrucci-jp70-sbk-jp70sbkhtm
 sterling-john-petrucci-jp70nb-signature-stealth-black-856205001935
 sterling-john-petrucci-maj170x-adr-170xadrhtm
-sterling-john-petrucci-majesty-maj200x-qm-e-cerulean-paradise-810002951190
 sterling-john-petrucci-majesty-maj270x-fm-e-7st-royal-red-810002950797
 sterling-john-petrucci-majesty-signature-maj200x-fm-e-blood-orange-burst-con-fun-810002951831
 sterling-john-petrucci-majesty-signature-maj200x-fm-e-blood-orange-burst-con-fun-810002953026
 sterling-john-petrucci-majesty-signature-maj200x-fm-e-tiger-eye-con-funda-nfundahtml
+sterling-john-petrucci-majesty-signature-maj200x-qm-e-cerulean-paradise-con-fund-810002951190
 sterling-john-petrucci-majesty-signature-maj270x-fm-e-tiger-eye-de-7-cuerdas-con-810002953033
+sterling-john-petrucci-signature-jp150-dqm-cerulean-paradise-con-funda-810002951787
 sterling-john-petrucci-signature-jp157d-rm-e-blood-orange-burst-de-7-cuerdas-con-810002951800
 sterling-jp-signature-in-mystic-dream-ream264181
 sterling-jp150-dimarzio-arce-acolchado-paraiso-ceruleo-uleo371311
@@ -11809,13 +11816,13 @@ sx-sel6fotrd-semicaja-transparent-red-6940651412989
 sx-sel6gbu-semicaja-glitter-blue-6940651412996
 sx-sel6trd-semicaja-transparent-red-6940651413009
 sx-sel6vs-semicaja-vintage-sunbust-6940651413016
-sx-sem13ts-3-tones-sunburst-6940651407671
+sx-sem13ts-3-tone-sb-6940651407671
 sx-sem1bf-burning-fire-6940651407077
 sx-sem1bg-sx-sem1bg-blue-glow-6940651407060
 sx-sem1pt-pink-twilight-6940651407084
 sx-sem23ts-sx-sem23ts-3-tone-sb-6940651406803
-sx-sem2bf-sx-sem2bf-burning-fire-6940651406780
-sx-sem2bg-sx-sem2bg-blue-glow-6940651406773
+sx-sem2bf-burning-fire-6940651406780
+sx-sem2bg-blue-glow-6940651406773
 sx-sem2pt-sx-sem2pt-pink-twilight-6940651406797
 sx-sg-pirate-negra-6971047511924
 sx-sst3ts-sx-sst-3-tonos-sb-6971047510798

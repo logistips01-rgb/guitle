@@ -56,15 +56,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "ESP LTD JM-I QM Deep Blood Moon",
-  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
-  "price": 1421.0,
-  "median": 1895.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -122,7 +113,7 @@
   "store": "woodbrass",
   "name": "PRS SE Silver Sky Maple LH Summit Purple",
   "slug": "prs-se-silver-sky-maple-lh-summit-purple-825362248477",
-  "price": 597.0,
+  "price": 596.0,
   "median": 960.2
  },
  {
@@ -232,15 +223,6 @@
   "slug": "prs-se-custom-24-semi-hollow-piezo-vintage-sunburst-825362244172",
   "price": 1189.0,
   "median": 1795.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Schecter Sun Valley SS FR-S R.blue",
-  "slug": "schecter-sun-valley-ss-fr-s-r-blue-815447024461",
-  "price": 799.0,
-  "median": 1149.5
  },
  {
   "kind": "electrica",
@@ -398,11 +380,38 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender J Mascis Telecaster MN SPK BL",
+  "slug": "fender-j-mascis-telecaster-mn-spk-bl-885978487233",
+  "price": 1231.0,
+  "median": 1664.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Jeff Beck Stratocaster RW Olympic White",
+  "slug": "fender-jeff-beck-stratocaster-rw-olympic-white-717669140748",
+  "price": 2180.0,
+  "median": 2945.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Fender Jimmy Page Mirror Telecaster RW White Blonde",
   "slug": "fender-jimmy-page-mirror-telecaster-rw-white-blonde-885978075638",
   "price": 2459.0,
   "median": 3359.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Susan Tedeschi Telecaster RW Aged Caribbean Mist",
+  "slug": "fender-susan-tedeschi-telecaster-rw-aged-caribbean-mist-717669632168",
+  "price": 1688.0,
+  "median": 2299.0
  },
  {
   "kind": "electrica",
@@ -538,6 +547,15 @@
   "slug": "fender-ltd-american-vintage-ii-51-telecaster-negra-885978795239",
   "price": 2038.4,
   "median": 2805.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
+  "name": "Fender Made in Japan Traditional '50s Telecaster Limited Run Texas Special MN Sonic Blue",
+  "slug": "fender-made-in-japan-traditional-50s-telecaster-limited-run-texas-special-mn-son-717669760441",
+  "price": 1100.0,
+  "median": 1599.0
  },
  {
   "kind": "electrica",
@@ -691,6 +709,33 @@
   "slug": "sx-ed1-white-6971047510965",
   "price": 125.4,
   "median": 186.275
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Sx SEM13TS 3 Tone Sb",
+  "slug": "sx-sem13ts-3-tone-sb-6940651407671",
+  "price": 129.0,
+  "median": 192.075
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Sx SEM2BF Burning Fire",
+  "slug": "sx-sem2bf-burning-fire-6940651406780",
+  "price": 129.0,
+  "median": 193.625
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "musicopolix",
+  "name": "Sx SEM2BG Blue Glow",
+  "slug": "sx-sem2bg-blue-glow-6940651406773",
+  "price": 129.0,
+  "median": 193.625
  },
  {
   "kind": "acustica",
@@ -1605,9 +1650,18 @@
   "kind": "micro",
   "type": "fuera_de_lugar",
   "store": "drunkat",
+  "name": "Rode NT1 Signature Black",
+  "slug": "rode-nt1-signature-black-698813013982",
+  "price": 118.0,
+  "median": 161.85500000000002
+ },
+ {
+  "kind": "micro",
+  "type": "fuera_de_lugar",
+  "store": "drunkat",
   "name": "Rode NT1 Signature Blue",
   "slug": "rode-nt1-signature-blue-698813014040",
-  "price": 125.0,
+  "price": 118.0,
   "median": 185.245
  },
  {
@@ -1762,15 +1816,6 @@
   "slug": "daddario-nyxl0838-extra-super-light-08-38-19954911690",
   "price": 13.9,
   "median": 19.45
- },
- {
-  "kind": "varios",
-  "type": "fuera_de_lugar",
-  "store": "numemusic",
-  "name": "Daddario NYXL45105 Long Scale [45-105]",
-  "slug": "daddario-nyxl45105-long-scale-45-105-19954176846",
-  "price": 30.0,
-  "median": 41.105000000000004
  },
  {
   "kind": "varios",

@@ -2,61 +2,61 @@
  "es": {
   "country": "España",
   "path": "/",
-  "guitars": 22753,
+  "guitars": 22763,
   "stores": 25
  },
  "pt": {
   "country": "Portugal",
   "path": "/pt/",
-  "guitars": 17566,
+  "guitars": 17568,
   "stores": 9
  },
  "fr": {
   "country": "France",
   "path": "/fr/",
-  "guitars": 53984,
+  "guitars": 53988,
   "stores": 28
  },
  "it": {
   "country": "Italia",
   "path": "/it/",
-  "guitars": 67587,
+  "guitars": 68706,
   "stores": 26
  },
  "de": {
   "country": "Deutschland",
   "path": "/de/",
-  "guitars": 49821,
+  "guitars": 49805,
   "stores": 23
  },
  "br": {
   "country": "Brasil",
   "path": "/br/",
-  "guitars": 35847,
+  "guitars": 35721,
   "stores": 52
  },
  "ie": {
   "country": "Ireland",
   "path": "/ie/",
-  "guitars": 23881,
+  "guitars": 23669,
   "stores": 11
  },
  "at": {
   "country": "Österreich",
   "path": "/at/",
-  "guitars": 14873,
+  "guitars": 14638,
   "stores": 8
  },
  "nl": {
   "country": "Nederland",
   "path": "/nl/",
-  "guitars": 31556,
+  "guitars": 31982,
   "stores": 13
  },
  "pl": {
   "country": "Polska",
   "path": "/pl/",
-  "guitars": 39682,
+  "guitars": 39026,
   "stores": 5
  },
  "cz": {
@@ -98,7 +98,7 @@
  "mx": {
   "country": "México",
   "path": "/mx/",
-  "guitars": 2437,
+  "guitars": 2424,
   "stores": 6
  },
  "ar": {
@@ -122,37 +122,37 @@
  "se": {
   "country": "Sverige",
   "path": "/se/",
-  "guitars": 20612,
+  "guitars": 20647,
   "stores": 4
  },
  "no": {
   "country": "Norge",
   "path": "/no/",
-  "guitars": 26792,
+  "guitars": 26797,
   "stores": 4
  },
  "dk": {
   "country": "Danmark",
   "path": "/dk/",
-  "guitars": 12757,
+  "guitars": 12409,
   "stores": 4
  },
  "ch": {
   "country": "Schweiz",
   "path": "/ch/",
-  "guitars": 20917,
+  "guitars": 20867,
   "stores": 5
  },
  "be": {
   "country": "België",
   "path": "/be/",
-  "guitars": 29071,
+  "guitars": 29013,
   "stores": 9
  },
  "uk": {
   "country": "United Kingdom",
   "path": "/uk/",
-  "guitars": 64550,
+  "guitars": 64466,
   "stores": 34
  }
 }

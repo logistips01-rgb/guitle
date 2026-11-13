@@ -638,6 +638,7 @@ bromo-baa2ce-cutaway-natural-serie-appalachia-8997032896324
 bromo-baa2ce-romobaa2ce
 bromo-baa4c-natural-satinado-8997032897178
 bromo-baa4ce-hillside-auditorium-cutaway-serie-appalachia-8997032897185
+bromo-baa8s-jumbo-natural-8997032898335
 bromo-bab1-natural-satinado-8997032897208
 bromo-ban2v-vintage-tone-grand-auditorium-natural-8719147589966
 bromo-ban8-evs-omoban8evs
@@ -683,7 +684,6 @@ bromo-dreadnought-bromo-bat1-tahoma-8997032896300
 bromo-dreadnought-bromo-bat9mebk-roundshoulder-tahoma-8997032898199
 bromo-grand-auditorium-bromo-ban2v-denali-vintage-alivintage
 bromo-jumbo-bromo-ban7e-denali-8997032898601
-bromo-mini-jumbo-bromo-baa8s-appalachia-8997032898335
 bromo-mini-jumbo-bromo-ban8e-denali-sunburst-8997032898533
 bromo-mini-jumbo-bromo-bat8me-tahoma-8997032898465
 bromo-parlor-bromo-bar6e-rocky-8997032898106
@@ -717,6 +717,7 @@ charlesville-charl-gav-sem-grand-auditorium-cutaway-utawayhtml
 cole-clark-an2ec-blbl-hss-case-9348890016338
 cole-clark-studio-san1ec-9348890016543
 cole-clark-studio-sran-deluxe-9348890017021
+columna-acustica-jbl-col-800-blanca-691991039294
 cort-abstract-delta-nat-w-case-8809817981142
 cort-abstract-delta-natural-8809817081149
 cort-ad-mini-m-mini-dreadnought-8809383834118
@@ -1721,7 +1722,7 @@ fender-highway-dreadnought-all-mahogany-097-2512-122-512122html
 fender-highway-series-dreadnought-rosewood-fingerboard-natural-uralp33478
 fender-highway-series-dreadnought-rw-all-mahogany-717669537609
 fender-highway-series-dreadnought-rw-natural-717669923259
-fender-highway-series-parlor-rosewood-fingerboard-natural-uralp33491
+fender-highway-series-parlor-rosewood-fingerboard-natural-uralp33490
 fender-highway-series-parlor-rw-all-mahogany-717669539009
 fender-highway-series-parlor-rw-natural-717669538781
 fender-joe-strummer-campfire-wn-matte-black-885978598465
@@ -1777,8 +1778,6 @@ fg800m-nt-dreadnought-4013175232127
 fgx3ii-dreadnought-t17413html
 finnish-folksongs-5-01031nuevo
 folk-serie-strada-819907024183
-folk-songs-berio-13717nuevo
-folk-voiceworks-30-traditional-songs-55736nuevo
 framus-vintage-hootenanny-12-natural-vintage-satinado-4033685230246
 framus-vintage-hootenanny-12-sunburst-vintage-alto-brillo-4033685230277
 framus-vintage-hootenanny-12-sunburst-vintage-nitro-alto-brillo-4033685230291
@@ -2714,6 +2713,7 @@ ibanez-pc12mh-opn-open-pore-natural-4515276639374
 ibanez-pc12mhce-opn-open-pore-natural-4515276967422
 ibanez-pc14mhce-wk-weathered-black-open-pore-4549763266330
 ibanez-pc34ce-nt-natural-high-gloss-4549763367723
+ibanez-pc34mhce-nt-4549763367730
 ibanez-pf12mhce-opn-open-pore-natural-4515276967439
 ibanez-pf14jr-opn-4549763349361
 ibanez-pf15-bk-black-high-gloss-4515110851139
@@ -2730,6 +2730,7 @@ ibanez-pf16mwce-opn-open-pore-natural-4549763349385
 ibanez-pf16mwce-wk-weathered-black-open-pore-4549763349392
 ibanez-pf16wce-nt-natural-high-gloss-4549763349408
 ibanez-pf16wce-wk-weathered-black-349392html
+ibanez-pf34mhe-nt-4549763367747
 ibanez-pft2-nt-mini-dreadnought-4515276694069
 ibanez-pj50e-oah-open-pore-vintage-amber-sunburst-top-4549763366085
 ibanez-tcm50-gbo-galaxy-black-open-pore-4549763175588
@@ -2956,6 +2957,7 @@ lagdreadnought-cutaway-natural-glat70dce-0dcep27015
 lagdreadnought-sauvage-vagep35828
 lagglat170dce-0dcep27019
 lagtramontane-177-a-e-cutaway-natural-uralp27020
+lakewood-a-14-cp-63-natural-4260381430957
 lakewood-a-15-edition-2022-444410026987
 lakewood-a-15-edition-2024-444410032480
 lakewood-a-24-custom-35250-444410031078
@@ -5179,7 +5181,6 @@ taylor-212ce-grand-concert-887766126447
 taylor-212ce-lh-887766126454
 taylor-212ce-plus-887766126508
 taylor-214ce-blk-plus-gran-auditorio-negra-887766126546
-taylor-214ce-dlx-special-edition-blacktop-887766149910
 taylor-214ce-gran-auditorio-887766102830
 taylor-214ce-k-dlx-hawaiian-koa-887766135623
 taylor-214ce-k-dlx-special-edition-honeyburst-887766145417
@@ -5324,7 +5325,7 @@ taylor-gs-mini-e-koa-lefty-zurdos-887766055372
 taylor-gs-mini-e-koa-lh-887766111771
 taylor-gs-mini-e-koa-plus-887766105428
 taylor-gs-mini-e-koa-plus-lh-para-zurdos-887766105701
-taylor-gs-mini-e-ltd-oliva-887766146285
+taylor-gs-mini-e-ltd-olive-887766146285
 taylor-gs-mini-e-mahogany-887766069775
 taylor-gs-mini-e-mahogany-887766111825
 taylor-gs-mini-e-rosewood-plus-887766118381
@@ -5430,9 +5431,6 @@ twot2e-super-folk-auld-trinity-rinityhtml
 twot4vce-super-folk-auld-trinity-y23445html
 ultimo-ud22ceqbk-negra-knegrahtml
 ultimo-ud22ceqntm-natural-aturalhtml
-una-cosa-rara-vicente-martin-y-soler-n3109nuevo
-una-cosa-rara-vicente-martin-y-soler-n3109nuevo
-una-cosa-rara-vicente-martin-y-soler-n3109nuevo
 veelah-acustica-veelah-togo-serie-m-con-funda-incluida-togoseriem
 veelah-acustica-veelah-togo-serie-m-seriemhtml
 veelah-acustica-veelah-togo-serie-s-con-funda-incluida-togoseries
@@ -5589,6 +5587,7 @@ vox-vga3ps-tk-4959112183551
 vox-vga3ps-tr-4959112183568
 walden-cutaway-walden-natura-600-wag630cew-con-funda-810035440074
 walden-hawthorne-200-ct-2023-d255ce-810035440968
+walden-hawthorne-200-d255-dreadnought-natural-satinada-alsatinada
 walden-hawthorne-200-dr-2023-810035440951
 walden-natura-700-ga-2023-810035440913
 walden-wad450w-standard-400-810035440326
@@ -5667,10 +5666,10 @@ yamaha-ac1m-ii-tobacco-brown-sumburst-c1m00nuevo
 yamaha-ac1m-ii-tobacco-brown-sunburst-nbursthtml
 yamaha-ac1m-ii-vintage-natural-aturalhtml
 yamaha-ac1m-ii-vn-4957812614771
+yamaha-ac1r-2017-vintage-natural-agenatural
 yamaha-ac1r-ii-tobaccco-brown-sunburst-nbursthtml
 yamaha-ac1r-ii-tobacco-brown-sumburst-c1r00nuevo
 yamaha-ac1r-ii-tobacco-brown-sunburst-4957812614801
-yamaha-ac1r-ii-vintage-natural-aturalhtml
 yamaha-ac1r-ii-vintage-natural-aturalhtml
 yamaha-ac3m-are-tbs-4957812614825
 yamaha-ac3m-are-tobacco-brown-sumburst-c3m00nuevo
@@ -6247,7 +6246,7 @@ yamaha-storia-iii-chocolate-brown-rownp16071
 yamaha-storia-iii-d2330nuevo
 yamaha-tag1-c-natural-4957812712279
 yamaha-tag1-c-natural-uralp44148
-yamaha-tag1-c-sand-burst-urstp44149
+yamaha-tag1-c-sand-burst-4957812712286
 yamaha-tag1-e-natural-uralp44091
 yamaha-tag1-e-negro-translucido-cidop44302
 yamaha-tag1-e-sand-burst-urstp44153

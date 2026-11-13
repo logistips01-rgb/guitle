@@ -129,7 +129,6 @@ harley-benton-rb-612bk-classic-series-bundle-sbundlehtm
 harley-benton-rb-612cs-classic-series-bundle-sbundlehtm
 harley-benton-rg-junior-bk-lh-jampack-bundle-kbundlehtm
 harley-benton-rg-junior-bk-rock-serie-bundle-ebundlehtm
-harley-benton-s-620-tb-rock-series-bundle-ebundlehtm
 harley-benton-s-620-tb-rock-series-bundle-ndlesethtm
 harley-benton-sc-1000-sbk-dnafx-amp20-set-mp20sethtm
 harley-benton-sc-1000-sbk-progressive-bundle-ebundlehtm
@@ -204,7 +203,6 @@ harley-benton-st-62bk-hot-rod-bundle-dbundlehtm
 harley-benton-st-62bk-hot-rod-set-ndlesethtm
 harley-benton-st-62cc-mn-lh-seafoam-g-bundle-gbundlehtm
 harley-benton-st-62cc-mn-seafoam-gree-bundle-ebundlehtm
-harley-benton-st-62cc-mn-shell-pink-bundle-ndlesethtm
 harley-benton-st-62cc-rw-lpb-blue-bundle-ebundlehtm
 harley-benton-st-62dlx-ow-vintage-bundle-ebundlehtm
 harley-benton-st-62dlx-ow-vintage-bundle-ndlesethtm
@@ -307,7 +305,6 @@ squier-mini-strat-v2-bk-il-bundle-lbundlehtm
 squier-mini-stratocaster-il-dr-bundle-rbundlehtm
 squier-sonic-strat-hss-black-bundle-kbundlehtm
 squier-sonic-strat-hss-black-bundle-ndlesethtm
-squier-sonic-strat-ht-torino-r-bundle-ndlesethtm
 squier-sonic-strat-lrl-ultravi-bundle-ibundlehtm
 squier-sonic-strat-lrl-ultravi-bundle-ndlesethtm
 squier-sonic-strat-mn-2tsb-bundle-bbundlehtm

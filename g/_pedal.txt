@@ -355,7 +355,6 @@ boss-ve-8-851934html
 boss-ve500-4957054512354
 boss-ve8-acoustic-singer-4957054508821
 boss-vo-1-vocoder-4957054508661
-boss-vo-1-vocoder-compacto-multi-aplicacoes-portatil-mic-xlr-input-orvozp5146
 boss-wl60-sistema-inalambrico-4957054514655
 boss-xs-1-poly-shifter-4957054519339
 boss-xs-100-poly-shifter-4957054520694
@@ -2349,6 +2348,7 @@ trace-elliot-dual-band-compressor-compressor
 trace-elliot-multipedal-transit-a-14367655582
 trace-elliot-multipedal-transit-b-14367655155
 trace-elliot-overdrive-toverdrive
+trickfish-overdrive-preamp-851092006353
 truetone-v2-route-808-overdrive-pedal-guitarra-694336000225
 two-notes-le-clean-dual-channel-preamp-p60620html
 two-notes-revolt-bass-3700673800415

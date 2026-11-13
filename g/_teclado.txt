@@ -702,7 +702,6 @@ oqan-qp88sw-8435017328892
 oqan-qp88sw-piano-digital-italp39155
 pirate-midi-polar-max-v2-controlador-midi-con-pantalla-tactil-para-tonex-one-gp5-egp5p45956
 pirate-midi-polar-plus-v2-controlador-midi-con-pantalla-para-tonex-one-gp5-egp5p45955
-pirate-midi-scribble-black-pantalla-compacta-y-controlador-midi-color-negro-egrop45962
 pirate-midi-scribble-white-pantalla-y-controlador-midi-compacto-de-color-blanco-ancop45961
 proel-volumen-stereo-2-in-2-out-gf14-8032496417675
 prokeys-k-125-rd-piano-digital-rojo-8434418050340
@@ -830,6 +829,7 @@ roland-lx6pe-negro-pulido-piano-digital-4957054519605
 roland-lx708-pw-4957054513689
 roland-lx9ch-charcoal-black-piano-digital-4957054521325
 roland-lx9pe-negro-pulido-piano-digital-4957054519599
+roland-piano-digital-roland-fp-40-bk-negro-con-piano-sphere-wi-fi-integrado-prod-dardp45662
 roland-rd-08-stage-piano-4957054520274
 roland-rd-2000-ex-stage-piano-4957054522049
 roland-rd88-ex-piano-de-escenario-4957054522032
