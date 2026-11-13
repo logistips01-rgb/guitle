@@ -1778,8 +1778,6 @@ fg800m-nt-dreadnought-4013175232127
 fgx3ii-dreadnought-t17413html
 finnish-folksongs-5-01031nuevo
 folk-serie-strada-819907024183
-folk-songs-berio-13717nuevo
-folk-voiceworks-30-traditional-songs-55736nuevo
 framus-vintage-hootenanny-12-natural-vintage-satinado-4033685230246
 framus-vintage-hootenanny-12-sunburst-vintage-alto-brillo-4033685230277
 framus-vintage-hootenanny-12-sunburst-vintage-nitro-alto-brillo-4033685230291
@@ -2715,6 +2713,7 @@ ibanez-pc12mh-opn-open-pore-natural-4515276639374
 ibanez-pc12mhce-opn-open-pore-natural-4515276967422
 ibanez-pc14mhce-wk-weathered-black-open-pore-4549763266330
 ibanez-pc34ce-nt-natural-high-gloss-4549763367723
+ibanez-pc34mhce-nt-4549763367730
 ibanez-pf12mhce-opn-open-pore-natural-4515276967439
 ibanez-pf14jr-opn-4549763349361
 ibanez-pf15-bk-black-high-gloss-4515110851139
@@ -2731,6 +2730,7 @@ ibanez-pf16mwce-opn-open-pore-natural-4549763349385
 ibanez-pf16mwce-wk-weathered-black-open-pore-4549763349392
 ibanez-pf16wce-nt-natural-high-gloss-4549763349408
 ibanez-pf16wce-wk-weathered-black-349392html
+ibanez-pf34mhe-nt-4549763367747
 ibanez-pft2-nt-mini-dreadnought-4515276694069
 ibanez-pj50e-oah-open-pore-vintage-amber-sunburst-top-4549763366085
 ibanez-tcm50-gbo-galaxy-black-open-pore-4549763175588
@@ -2957,6 +2957,7 @@ lagdreadnought-cutaway-natural-glat70dce-0dcep27015
 lagdreadnought-sauvage-vagep35828
 lagglat170dce-0dcep27019
 lagtramontane-177-a-e-cutaway-natural-uralp27020
+lakewood-a-14-cp-63-natural-4260381430957
 lakewood-a-15-edition-2022-444410026987
 lakewood-a-15-edition-2024-444410032480
 lakewood-a-24-custom-35250-444410031078
@@ -5180,7 +5181,6 @@ taylor-212ce-grand-concert-887766126447
 taylor-212ce-lh-887766126454
 taylor-212ce-plus-887766126508
 taylor-214ce-blk-plus-gran-auditorio-negra-887766126546
-taylor-214ce-dlx-special-edition-blacktop-887766149910
 taylor-214ce-gran-auditorio-887766102830
 taylor-214ce-k-dlx-hawaiian-koa-887766135623
 taylor-214ce-k-dlx-special-edition-honeyburst-887766145417
@@ -5325,7 +5325,7 @@ taylor-gs-mini-e-koa-lefty-zurdos-887766055372
 taylor-gs-mini-e-koa-lh-887766111771
 taylor-gs-mini-e-koa-plus-887766105428
 taylor-gs-mini-e-koa-plus-lh-para-zurdos-887766105701
-taylor-gs-mini-e-ltd-oliva-887766146285
+taylor-gs-mini-e-ltd-olive-887766146285
 taylor-gs-mini-e-mahogany-887766069775
 taylor-gs-mini-e-mahogany-887766111825
 taylor-gs-mini-e-rosewood-plus-887766118381
@@ -5431,9 +5431,6 @@ twot2e-super-folk-auld-trinity-rinityhtml
 twot4vce-super-folk-auld-trinity-y23445html
 ultimo-ud22ceqbk-negra-knegrahtml
 ultimo-ud22ceqntm-natural-aturalhtml
-una-cosa-rara-vicente-martin-y-soler-n3109nuevo
-una-cosa-rara-vicente-martin-y-soler-n3109nuevo
-una-cosa-rara-vicente-martin-y-soler-n3109nuevo
 veelah-acustica-veelah-togo-serie-m-con-funda-incluida-togoseriem
 veelah-acustica-veelah-togo-serie-m-seriemhtml
 veelah-acustica-veelah-togo-serie-s-con-funda-incluida-togoseries
@@ -5669,10 +5666,10 @@ yamaha-ac1m-ii-tobacco-brown-sumburst-c1m00nuevo
 yamaha-ac1m-ii-tobacco-brown-sunburst-nbursthtml
 yamaha-ac1m-ii-vintage-natural-aturalhtml
 yamaha-ac1m-ii-vn-4957812614771
+yamaha-ac1r-2017-vintage-natural-agenatural
 yamaha-ac1r-ii-tobaccco-brown-sunburst-nbursthtml
 yamaha-ac1r-ii-tobacco-brown-sumburst-c1r00nuevo
 yamaha-ac1r-ii-tobacco-brown-sunburst-4957812614801
-yamaha-ac1r-ii-vintage-natural-aturalhtml
 yamaha-ac1r-ii-vintage-natural-aturalhtml
 yamaha-ac3m-are-tbs-4957812614825
 yamaha-ac3m-are-tobacco-brown-sumburst-c3m00nuevo
