@@ -1,0 +1,215 @@
+{
+ "fecha": "13 November",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Deal of the day",
+  "cholloDia": "Deal of the day",
+  "en": "at",
+  "precioDel": "Price on",
+  "comparadoEn": "compared across",
+  "tiendas": "shops",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "The best sellers in UK shops, with today’s best price.",
+  "desliza": "Swipe →",
+  "laVenden": "Sold in",
+  "conCual": "Which one would you pick?",
+  "cuentanos": "Tell us in the comments and save this post for your next purchase.",
+  "comparaEn": "Compare prices on",
+  "comparaAntes": "Compare before you buy",
+  "siguenos": "Follow us for more deals",
+  "web": "guitle.com/uk",
+  "kinds": {
+   "electrica": "Electric",
+   "acustica": "Acoustic",
+   "clasica": "Classical"
+  },
+  "bfFaltan": "Only",
+  "bfDia": "day left",
+  "bfDias": "days left",
+  "bfApunta": "Note this price",
+  "bfHoy": "Today, {fecha}",
+  "bfOtras": "In the other {n} shops:",
+  "bfRango": "from {a} to {b}",
+  "bfBajara": "Will it really drop on Black Friday?",
+  "bfDecimos": "On 27 November we’ll tell you, with its price history.",
+  "bfGuarda": "Save it 📌"
+ },
+ "money": {
+  "locale": "en-GB",
+  "prefix": "£",
+  "suffix": ""
+ },
+ "logo": "uk/",
+ "post": {
+  "type": "top",
+  "title": "5 deals on pedals",
+  "hook": "Today’s deals",
+  "picks": [
+   {
+    "slug": "dod-gunslinger-mosfet-distortion-pedal-new-691991001369",
+    "name": "DOD Gunslinger MOSFET Distortion Pedal – New",
+    "brand": "DOD",
+    "kind": "pedales",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/products/DOD-Gunslinger-Guitar-Pedal-Top-1200x1200-1.jpg?v=1676324670",
+    "th": "f44eed4c2c064207.webp",
+    "thimg": null,
+    "price": 75.0,
+    "store": "Fair Deal Music",
+    "stores": 4,
+    "median": 99.0,
+    "max": 99.0,
+    "next": 99.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      75.0
+     ],
+     [
+      "Absolute Music",
+      99.0
+     ],
+     [
+      "A Strings",
+      99.0
+     ],
+     [
+      "The Music Bank",
+      99.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "£24 less than anywhere else"
+   },
+   {
+    "slug": "dod-digitech-dod-compressor-280-effects-pedal-691991202858",
+    "name": "Dod DigiTech DOD Compressor 280 Effects Pedal",
+    "brand": "Dod",
+    "kind": "pedales",
+    "img": "https://cdn11.bigcommerce.com/s-hvzya2q3vy/images/stencil/1280x1280/products/51625/144835/dgtdod280__62727.1711031602.jpg?c=1",
+    "th": "9d143f1f5bb78847.webp",
+    "thimg": null,
+    "price": 79.0,
+    "store": "Fair Deal Music",
+    "stores": 3,
+    "median": 105.0,
+    "max": 105.0,
+    "next": 105.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      79.0
+     ],
+     [
+      "Project Music",
+      105.0
+     ],
+     [
+      "A Strings",
+      105.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "£26 less than anywhere else"
+   },
+   {
+    "slug": "walrus-audio-fundamental-series-ambient-reverb-effects-pedal-810424035812",
+    "name": "Walrus Audio Fundamental Series Ambient Reverb Effects Pedal",
+    "brand": "Walrus Audio",
+    "kind": "pedales",
+    "img": "https://cdn11.bigcommerce.com/s-hvzya2q3vy/images/stencil/1280x1280/products/57829/176240/waa65752__96294.1785764855.jpg?c=1",
+    "th": "165093c45057e535.webp",
+    "thimg": null,
+    "price": 95.0,
+    "store": "Absolute Music",
+    "stores": 3,
+    "median": 125.0,
+    "max": 125.0,
+    "next": 125.0,
+    "rows": [
+     [
+      "Absolute Music",
+      95.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      125.0
+     ],
+     [
+      "Andertons",
+      125.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "£30 less than anywhere else"
+   },
+   {
+    "slug": "marshall-bluesbreaker-pedal-reissue-5030463584965",
+    "name": "Marshall BluesBreaker Pedal Reissue",
+    "brand": "Marshall",
+    "kind": "pedales",
+    "img": "https://cdn.shopify.com/s/files/1/0441/6457/9484/products/M2010.746_Bluesbreakerpedal_01.png?v=1675077533",
+    "th": "f7739d948edc6392.webp",
+    "thimg": null,
+    "price": 99.0,
+    "store": "Fair Deal Music",
+    "stores": 3,
+    "median": 129.0,
+    "max": 129.0,
+    "next": 129.0,
+    "rows": [
+     [
+      "Fair Deal Music",
+      99.0
+     ],
+     [
+      "Guitars Pedals Amps & Stuff",
+      129.0
+     ],
+     [
+      "Andertons",
+      129.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "£30 less than anywhere else"
+   },
+   {
+    "slug": "morley-20-20-power-fuzz-wah-pedal-werfuzzwah",
+    "name": "Morley 20-20 Power Fuzz Wah Pedal",
+    "brand": "Morley",
+    "kind": "pedales",
+    "img": "https://cdn11.bigcommerce.com/s-4hc0jwsnnq/images/stencil/1280x1280/products/15005/54693/406168-1599476226228__90924.1715114506.jpg?c=1",
+    "th": "d5e75cf393a4255b.webp",
+    "thimg": null,
+    "price": 159.0,
+    "store": "Andertons",
+    "stores": 3,
+    "median": 209.0,
+    "max": 209.0,
+    "next": 209.0,
+    "rows": [
+     [
+      "Andertons",
+      159.0
+     ],
+     [
+      "Project Music",
+      209.0
+     ],
+     [
+      "guitarguitar",
+      209.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "£50 less than anywhere else"
+   }
+  ],
+  "rama": "pedales"
+ }
+}
