@@ -843,6 +843,8 @@ def build_data(pais):
         _match_names(src, catalog, by)
     out = []
     for d in by.values():
+        if d["fmt"] not in ("vinilo", "cd", "casete"):  # sin formato conocido (13/11: uno así tumbó la de España)
+            continue
         # El nombre más limpio: con "Artista - Título" y sin coletillas de formato o reserva
         names = sorted(d.pop("names"), key=lambda n: (" - " not in n, len(n)))
         name = re.sub(r"\s{2,}", " ", CLEAN.sub(" ", names[0])).strip(" -–:*")
