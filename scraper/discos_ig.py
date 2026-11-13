@@ -92,6 +92,14 @@ Platero y Tu; Marea; Barricada; Rosendo; Miguel Rios; Ana Belen; Victor Manuel; 
 El Canto del Loco; Pereza; Supersubmarina; Izal; Sidonie; Lori Meyers; Dorian; Russian Red; Rocio Marquez; Silvia Perez Cruz;
 Bad Gyal; Lola Indigo; Nathy Peluso; Rels B; Morat; Sabina; Antonio Vega; Mclan; Triana; Medina Azahara; Mago de Oz;
 Baron Rojo; Obus; Siniestro Total; Los Suaves; Sopa de Cabra; Els Pets; Manel; Txarango; Estrella Morente; Enrique Morente""",
+    "de": """Rammstein; Die Toten Hosen; Die Aerzte; Herbert Groenemeyer; Udo Lindenberg; Kraftwerk; Scorpions; Helene Fischer;
+Peter Fox; Seeed; Cro; Sido; Bushido; Kontra K; Apache 207; Capital Bra; RAF Camora; Casper; Marteria; Kraftklub; AnnenMayKantereit;
+Tokio Hotel; Element of Crime; Wir sind Helden; Juli; Silbermond; Revolverheld; Sportfreunde Stiller; Beatsteaks; Broilers;
+Boehse Onkelz; Feine Sahne Fischfilet; In Extremo; Subway to Sally; Saltatio Mortis; Powerwolf; Accept; Helloween;
+Blind Guardian; Kreator; Sodom; Heaven Shall Burn; Electric Callboy; Nena; Falco; Nina Hagen; Marius Mueller-Westernhagen;
+Westernhagen; Peter Maffay; Reinhard Mey; Klaus Lage; BAP; Fettes Brot; Die Fantastischen Vier; Deichkind; Clueso;
+Mark Forster; Max Giesinger; Lea; Zartmann; Paula Hartmann; Ski Aggu; Nina Chuba; Provinz; Annett Louisan; Can; Neu!;
+Tangerine Dream; Einstuerzende Neubauten; Modeselektor; Paul Kalkbrenner; Scooter; Boney M.; Modern Talking; Alphaville""",
     "fr": """Johnny Hallyday; Mylene Farmer; Indochine; Jean-Jacques Goldman; Francis Cabrel; Renaud; Serge Gainsbourg;
 Jacques Brel; Edith Piaf; Charles Aznavour; Georges Brassens; Michel Sardou; Daniel Balavoine; Alain Souchon;
 Laurent Voulzy; Alain Bashung; Noir Desir; Telephone; Louise Attaque; Stromae; Angele; Orelsan; Nekfeu; PNL; Jul;
@@ -163,6 +171,22 @@ PAIS = {
                    "🔎 Prix et stock de ce disque : lien en bio → guitle.com/fr/disques\nPrix du {fecha} ; "
                    "ils peuvent changer.\n\n{tags}"),
            "head": ("💿 Même disque, {x} de moins", "🏆 Le bon plan vinyle de la semaine")},
+    "de": {"token": "INSTAGRAM_TOKEN_DE", "cuenta": "@guitle.de", "web": "https://guitle.com/de/schallplatten", "lang": "de",
+           "fmt": {"vinilo": "Vinyl", "cd": "CD", "casete": "Kassette"}, "tope": (60, 150),
+           "tags": "#vinyl #schallplatte #schallplatten #vinylsammlung #plattensammlung #musik #angebot",
+           "t": {"cab_same": "Gleiche Platte, {x} günstiger", "cab_semana": "Der Vinyl-Deal der Woche",
+                 "pill_post": "💿 Platten-Deal", "pill_post_semana": "🏆 Deal der Woche",
+                 "pill_story": "💿 Gleiche Platte, günstiger", "pill_story_semana": "🏆 Vinyl der Woche",
+                 "cheapest": "Heute am günstigsten", "at": "bei", "others": "Andere Shops", "upto": "bis zu",
+                 "footer": "Wir vergleichen Plattenpreise in Deutschland · guitle.com/de/schallplatten",
+                 "elsewhere": "Bis zu {hi} woanders · {x} gespart",
+                 "save": "Du sparst {x}",
+                 "story_footer": "Preise & Verfügbarkeit: Link in Bio · guitle.com/de/schallplatten"},
+           "cap": ("{head}\n\n{artist} – {title} ({fmt})\n✅ {lo} bei {tienda}\n🔁 Bis zu {hi} in anderen Shops: "
+                   "du sparst {x}\n\nWir vergleichen die Plattenpreise in Deutschland, damit du es nicht musst.\n"
+                   "🔎 Preise und Verfügbarkeit: Link in Bio → guitle.com/de/schallplatten\nPreise vom {fecha}; "
+                   "sie können sich ändern.\n\n{tags}"),
+           "head": ("💿 Gleiche Platte, {x} günstiger", "🏆 Der Vinyl-Deal der Woche")},
 }
 
 
@@ -188,7 +212,8 @@ def gbp(v):
 
 
 RUIDO = re.compile(r"\b(dvd|neuf|new|sealed|scell[ée]|nuovo|sigillato|nuevo|precintado|original\)|bootleg|unofficial|"
-                   r"rouge|bleu|vert|blanc|rosso|blu|verde|bianco|import|\d+\s*lp|lp\s*\d+)\b|\b(19|20)\d\d\b|[|/]", re.I)
+                   r"rouge|bleu|vert|blanc|rosso|blu|verde|bianco|red|blue|green|yellow|white|translucent|clear|splatter|marbled|"
+                   r"gelb|rot|blau|grün|weiß|transparent|farbig|coloured|colored|limited|ltd|import|\d+\s*lp|lp\s*\d+)\b|\b(19|20)\d\d\b|[|/]", re.I)
 
 
 def titulo_limpio(t):
@@ -265,7 +290,7 @@ def generar(day, tipo=None, cc="uk"):
             cab = t["cab_semana"] if tipo == "semana" else t["cab_same"]
             caption = cfg["cap"].format(head=cfg["head"][tipo == "semana"].format(x=money(d["ahorro"])), artist=d["artist"],
                                         title=d["title"], fmt=fmt, lo=money(d["lo"]), hi=money(d["hi"]), x=money(d["ahorro"]),
-                                        tienda=d["tienda"], fecha=(f"{day.day} {MESES[cc][day.month - 1]}" if cc in MESES else f"{day.day} de {['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][day.month - 1]}"),
+                                        tienda=d["tienda"], fecha=(f"{day.day}{'.' if cc == 'de' else ''} {MESES[cc][day.month - 1]}" if cc in MESES else f"{day.day} de {['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][day.month - 1]}"),
                                         tags=cfg["tags"])
             if cc in AMAZON:
                 caption = caption.replace(f"\n\n{cfg['tags']}", f"\n\n{AMAZON[cc]}\n\n{cfg['tags']}")
@@ -364,7 +389,7 @@ def main(argv=None):
     ap.add_argument("--publish", action="store_true")
     ap.add_argument("--tipo", choices=["same", "semana"])
     ap.add_argument("--date")
-    ap.add_argument("--pais", default="uk", choices=sorted(PAIS), help="cuenta (uk, es, it, fr); por defecto uk")
+    ap.add_argument("--pais", default="uk", choices=sorted(PAIS), help="cuenta (uk, es, it, fr, de); por defecto uk")
     a = ap.parse_args(argv)
     if a.pais in EN_ESPERA:
         print(f"{a.pais}: discos en espera hasta que Manuel lo diga (EN_ESPERA en scraper/discos_ig.py); no se genera nada")

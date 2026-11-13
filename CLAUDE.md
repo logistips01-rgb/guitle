@@ -40,10 +40,9 @@
 
 ## Discos en @guitle.uk (guitle.com/uk/records)
 
-- **Cuentas con discos (Manuel, 13-11):** UK, ES, IT (activada el 13-11) y FR. Cada texto lleva la línea de Amazon
+- **Cuentas con discos (Manuel, 13-11):** UK, ES, IT (activada el 13-11), FR y DE (guitle.com/de/schallplatten, desde el 13-11). Cada texto lleva la línea de Amazon
   (solo el nombre, sin precio, «búscalo en Amazon desde la página del disco») con su aviso de afiliado. Portugal espera a
-  tener tiendas de discos portuguesas + eBay + Amazon, y Alemania a tener su sección de discos (las monta la sesión de la
-  web). Solo títulos limpios de ficha (`titulo_limpio`): nada de títulos de anuncio con años, colores, «neuf», DVD…
+  tener tiendas de discos portuguesas + eBay + Amazon (las monta la sesión de la web). Solo títulos limpios de ficha (`titulo_limpio`): nada de títulos de anuncio con años, colores, «neuf», DVD…
 - `scraper/discos_ig.py` + `brand/discos.js`: martes y jueves «Same record, £X cheaper», viernes «Vinyl deal of the
   week» (post y story, tarea de las 18:52). Solo artistas conocidos (lista FAMOSOS), discos con stock en 2+ tiendas y
   diferencias creíbles (el caro ≤ 1,45 × el barato). Etiquetas: #vinyl #vinylrecords #vinylcollection #recordcollector
