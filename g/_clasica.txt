@@ -2217,10 +2217,10 @@ ibanez-para-zurdos-ibanez-tod10nl-tkf-tim-henson-s-signature-transparent-black-4
 ibanez-sign-tim-henson-tod10nl-lh-nllhp39497
 ibanez-signature-tim-henson-tod10n-d10np32343
 ibanez-tcm50fm-odb-4549763357564
+ibanez-tim-henson-tod10n-smf-nsmfp45847
 ibanez-tod100fmn-tmm-4549763398826
 ibanez-tod100n-nt-4549763398833
 ibanez-tod10n-paf-tim-henson-electrificada-pearl-pink-flat-4549763398963
-ibanez-tod10n-smf-4549763398970
 ibanez-tod10n-tkf-tim-henson-transparent-black-flat-4549763334558
 ibanez-tod10ntkf-nylon-334558html
 ibanez-tod20fmn-bfl-4549763398987
@@ -2278,7 +2278,7 @@ jose-gomez-f90rs-eq-amplificada-cutaway-jose-gomez-palosanto-tapa-solida-modelo-
 jose-gomez-f90rs-palosanto-modelo-2021-tapa-solida-8434418041836
 jose-gomez-f90rs-zf90rshtml
 jose-gomez-f90rseq-amplificada-natur-lo2021html
-jose-gomez-jose-gomez-f80-ceq-roja-flamenca-amencahtml
+jose-gomez-jose-gomez-f80-ceq-roja-flamenca-8412345149009
 jose-gomez-jose-gomez-f80eq-flamenca-041867html
 jose-gomez-jose-gomez-f80r-flamenca-8412345148996
 jose-gomez-jose-gomez-f90r-eq-flamenca-amencahtml
@@ -3490,12 +3490,12 @@ valencia-vc204hlt-zurdos-antique-natural-8997032896065
 valencia-vc204ht-antique-natural-8997032893767
 valencia-vc204l-4-4-natural-vintage-lh-8997032890797
 valencia-vc204t-natural-8997032894122
-valencia-vc204t-valencia-4-4-modelo-mate-8997032896492
+valencia-vc204t-valencia-4-4-modelo-mate-modelomate
 valencia-vc204tbut-transparent-blue-8997032895303
 valencia-vc204twr-transparent-wine-r-8997032890629
 valencia-vc204twrt-transparent-wine-red-8997032895297
 valencia-vc213-3-4-antique-natural-8997032896539
-valencia-vc214-antique-natural-aturalhtml
+valencia-vc214-antique-natural-8997032896492
 valencia-vc214csb-valencia-vintage-sunburst-mate-8997032896508
 valencia-vc214tbu-valencia-blue-mate-8997032896515
 valencia-vc214twr-valencia-vintage-wine-red-mate-8997032896522

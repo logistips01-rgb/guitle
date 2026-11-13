@@ -56,15 +56,6 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "egitana",
-  "name": "ESP LTD JM-I QM Deep Blood Moon",
-  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
-  "price": 1421.0,
-  "median": 1895.0
- },
- {
-  "kind": "electrica",
-  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -389,11 +380,11 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
-  "store": "drunkat",
-  "name": "Fender J Mascis Telecaster MN SPK BL",
-  "slug": "fender-j-mascis-telecaster-mn-spk-bl-885978487233",
-  "price": 1231.0,
-  "median": 1664.0
+  "store": "alteisa",
+  "name": "Fender J Mascis Signature Telecaster",
+  "slug": "fender-j-mascis-signature-telecaster-885978487233",
+  "price": 1185.59,
+  "median": 1599.0
  },
  {
   "kind": "electrica",
@@ -601,6 +592,15 @@
   "slug": "ltd-ec-256-vintage-gold-satin-719710620155",
   "price": 349.0,
   "median": 564.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "LTD EC-256 Vintage Natural",
+  "slug": "ltd-ec-256-vintage-natural-799493262360",
+  "price": 352.72,
+  "median": 486.5
  },
  {
   "kind": "electrica",
@@ -830,6 +830,15 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Bromo BAR4GCE All Solid Rocky Series",
+  "slug": "bromo-bar4gce-all-solid-rocky-series-8997032898595",
+  "price": 467.18,
+  "median": 639.75
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "microfusa",
   "name": "Cort EARTH70 BR",
   "slug": "cort-earth70-br-8809383832749",
@@ -862,6 +871,51 @@
   "slug": "ibanez-aad400ce-lgs-4549763283306",
   "price": 1499.0,
   "median": 2064.1
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez AAD51CE DVS Series AAD Dark Violin Sunburst High Gloss",
+  "slug": "ibanez-aad51ce-dvs-series-aad-dark-violin-sunburst-high-gloss-4549763376916",
+  "price": 203.55,
+  "median": 290.5
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez AE170 TBK Series AE Transparent Black High Gloss",
+  "slug": "ibanez-ae170-tbk-series-ae-transparent-black-high-gloss-4549763365958",
+  "price": 282.93,
+  "median": 443.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez AEWC16QA TKH Series AEWC Transparent Black Sunburst High Gloss",
+  "slug": "ibanez-aewc16qa-tkh-series-aewc-transparent-black-sunburst-high-gloss-4549763377036",
+  "price": 226.23,
+  "median": 327.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez ALT50FA RDB Series ALT Red Doom Burst High Gloss",
+  "slug": "ibanez-alt50fa-rdb-series-alt-red-doom-burst-high-gloss-4549763378446",
+  "price": 180.87,
+  "median": 306.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez ALT50FA TVT Series ALT Transparent Violet Sunburst High Gloss",
+  "slug": "ibanez-alt50fa-tvt-series-alt-transparent-violet-sunburst-high-gloss-4549763378453",
+  "price": 214.94,
+  "median": 306.0
  },
  {
   "kind": "acustica",
@@ -920,11 +974,38 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Alvarez MF60CEHFSHB Masterworks",
+  "slug": "alvarez-mf60cehfshb-masterworks-677523002349",
+  "price": 672.81,
+  "median": 995.64
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "woodbrass",
   "name": "Art Luthier ART & LUTHIER Americana Natural EQ",
   "slug": "art-luthier-art-luthier-americana-natural-eq-623501050703",
   "price": 317.0,
   "median": 466.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Bromo BAR1H-HS Dreadnought All Solid Historic Sunburst Rocky Series con Funda Dura",
+  "slug": "bromo-bar1h-hs-dreadnought-all-solid-historic-sunburst-rocky-series-con-funda-du-8997032898496",
+  "price": 278.51,
+  "median": 394.5
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Bromo BAR1HM All Solid Rocky Series con Funda Dura",
+  "slug": "bromo-bar1hm-all-solid-rocky-series-con-funda-dura-8997032897598",
+  "price": 262.93,
+  "median": 394.5
  },
  {
   "kind": "acustica",
@@ -1208,6 +1289,15 @@
  {
   "kind": "clasica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Admira Alegría",
+  "slug": "admira-alegria-8435732402327",
+  "price": 256.07,
+  "median": 347.0
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
   "store": "partitura",
   "name": "Alhambra 5FP OP PIÑANA",
   "slug": "alhambra-5fp-op-pinana-pinanahtml",
@@ -1238,7 +1328,7 @@
   "store": "alteisa",
   "name": "Ibanez GA360TCE TBK Transparent Black Electrificada de Cuerpo Estrecho",
   "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
-  "price": 460.0,
+  "price": 396.33,
   "median": 647.5
  },
  {
@@ -1497,6 +1587,15 @@
   "kind": "pedal",
   "type": "fuera_de_lugar",
   "store": "numemusic",
+  "name": "Mooer Looper X2",
+  "slug": "mooer-looper-x2-6971889221272",
+  "price": 69.76,
+  "median": 94.5
+ },
+ {
+  "kind": "pedal",
+  "type": "fuera_de_lugar",
+  "store": "numemusic",
   "name": "PRS Mary Cries Optical Compressor",
   "slug": "prs-mary-cries-optical-compressor-825362083528",
   "price": 164.75,
@@ -1510,15 +1609,6 @@
   "slug": "prs-wind-through-the-trees-dual-flanger-825362083511",
   "price": 250.0,
   "median": 354.0
- },
- {
-  "kind": "pedal",
-  "type": "fuera_de_lugar",
-  "store": "pronorte",
-  "name": "Sheeran Looper +",
-  "slug": "sheeran-looper-694318025888",
-  "price": 233.0,
-  "median": 314.005
  },
  {
   "kind": "pedal",
