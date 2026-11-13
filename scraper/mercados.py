@@ -72,3 +72,15 @@ def buttons(code, lang, query, amazon_tpl):
         links.append(f'<a class="amz" href="{esc(amazon_tpl.format(q=quote_plus(query)))}" target="_blank" rel="sponsored noopener">{esc(a)} →</a>')
     links.append(f'<a class="eby" href="{esc(ebay_url(code, query))}" target="_blank" rel="sponsored noopener">{esc(e)} →</a>')
     return f'<style>{CSS}</style><div class="mkt">{"".join(links)}</div><p class="mkt-note">{esc(note)}</p>'
+
+
+def top(lang, query, amazon_tpl):
+    """Botón grande de Amazon junto al precio, sin tener que bajar (Manuel, 13/11: "lo importante es que pinchen";
+    lo que compren en Amazon en las 24 h siguientes cuenta para guitle). Vacío si el país no tiene código de Amazon."""
+    if not (ACTIVO and amazon_tpl):
+        return ""
+    a = TXT.get(lang, TXT["en"])[0]
+    href = html.escape(amazon_tpl.format(q=quote_plus(query)), quote=True)
+    return (f'<a class="amz-top" href="{href}" target="_blank" rel="sponsored noopener" style="display:block;box-sizing:border-box;'
+            f'width:100%;max-width:420px;margin:14px 0 0;padding:14px 18px;border-radius:12px;background:#FF9900;color:#111;'
+            f'font-weight:700;font-size:1.15rem;text-align:center;text-decoration:none">{html.escape(a)} →</a>')

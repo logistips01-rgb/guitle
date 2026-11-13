@@ -870,7 +870,7 @@ TXT = {"uk": {"dir": "records", "one": "record", "home": "Records", "promo": "Ne
               "h_index": "Records: compare vinyl, CD and cassette prices", "d_index": "Compare the price of vinyl records, CDs and cassettes in UK record shops, every day.",
               "in_stock": "In stock", "out": "Out of stock", "shops": "shops", "buy": "Go to shop", "cheapest": "Cheapest today",
               "more": "Most compared", "note": "Prices include VAT; delivery may vary by shop.",
-              "amazon": "https://www.amazon.co.uk/s?k={ean}&tag=guitle08-21", "amazon_btn": "Search this record on Amazon",
+              "amazon": "https://www.amazon.co.uk/s?k={ean}&tag=guitle08-21", "amazon_btn": "Search this record on Amazon", "amazon_big": "View on Amazon",
               "amazon_txt": "Prefer to buy on Amazon?",
               "desc1": "{n} on {f}: today's price at {s} and where else to buy it, including Amazon.", "where1": "at {s}",
               "search_ph": "Search records: artist or album…", "search_res": "{n} records found", "search_none": "No records found",
@@ -914,7 +914,7 @@ TXT["fr"] = {
     "d_index": "Comparez chaque jour le prix des vinyles, CD et cassettes chez les disquaires en ligne en France.",
     "in_stock": "En stock", "out": "Épuisé", "shops": "magasins", "buy": "Voir en magasin", "cheapest": "Le moins cher aujourd'hui",
     "more": "Les plus comparés", "note": "Prix TTC ; les frais de port peuvent varier selon le magasin.",
-    "amazon": "https://www.amazon.fr/s?k={ean}&tag=guitle00-21", "amazon_btn": "Chercher ce disque sur Amazon",
+    "amazon": "https://www.amazon.fr/s?k={ean}&tag=guitle00-21", "amazon_btn": "Chercher ce disque sur Amazon", "amazon_big": "Voir sur Amazon",
     "amazon_txt": "Vous préférez Amazon ?",
     "search_ph": "Rechercher : artiste ou album…", "search_res": "{n} disques trouvés", "search_none": "Aucun disque trouvé",
     "f_artist": "Artiste ou groupe", "f_format": "Format", "f_all": "Tous les formats", "f_sort": "Trier",
@@ -940,7 +940,7 @@ TXT["it"] = {
     "d_index": "Confronta ogni giorno il prezzo di vinili, CD e cassette nei negozi di dischi online in Italia.",
     "in_stock": "Disponibile", "out": "Esaurito", "shops": "negozi", "buy": "Vai al negozio", "cheapest": "Il più economico oggi",
     "more": "I più confrontati", "note": "Prezzi IVA inclusa; le spese di spedizione possono variare.",
-    "amazon": "https://www.amazon.it/s?k={ean}&tag=guitle0e-21", "amazon_btn": "Cerca questo disco su Amazon", "amazon_txt": "Preferisci Amazon?",
+    "amazon": "https://www.amazon.it/s?k={ean}&tag=guitle0e-21", "amazon_btn": "Cerca questo disco su Amazon", "amazon_big": "Vedi su Amazon", "amazon_txt": "Preferisci Amazon?",
     "search_ph": "Cerca: artista o album…", "search_res": "{n} dischi trovati", "search_none": "Nessun disco trovato",
     "f_artist": "Artista o gruppo", "f_format": "Formato", "f_all": "Tutti i formati", "f_sort": "Ordina",
     "s_price": "Prima i più economici", "s_shops": "I più confrontati", "s_az": "A–Z",
@@ -966,7 +966,7 @@ TXT["es"] = {
     "d_index": "Compara cada día el precio de vinilos, CD y casetes en tiendas de discos de España.",
     "in_stock": "Disponible", "out": "Agotado", "shops": "tiendas", "buy": "Ver en la tienda", "cheapest": "El más barato hoy",
     "more": "Los más comparados", "note": "Precios con IVA; los gastos de envío dependen de cada tienda.",
-    "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Buscar este disco en Amazon",
+    "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Buscar este disco en Amazon", "amazon_big": "Ver en Amazon",
     "amazon_none": "¿No lo tenemos? Búscalo en Amazon", "amazon_more": "¿No es ninguno? Búscalo en Amazon",
     "amazon_txt": "¿Prefieres comprarlo en Amazon?",
     "search_ph": "Busca un disco: artista o álbum…", "search_res": "{n} discos encontrados", "search_none": "No hay discos con esa búsqueda",
@@ -1014,7 +1014,7 @@ TXT["pt"] = {
     "d_index": "Compare todos os dias o preço de vinis, CD e cassetes em lojas de discos com envio para Portugal.",
     "in_stock": "Disponível", "out": "Esgotado", "shops": "lojas", "buy": "Ver na loja", "cheapest": "O mais barato hoje",
     "more": "Os mais comparados", "note": "Preços com IVA; os portes dependem de cada loja (as lojas espanholas enviam para Portugal).",
-    "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Procurar este disco na Amazon",
+    "amazon": "https://www.amazon.es/s?k={ean}&tag=guitle-21", "amazon_btn": "Procurar este disco na Amazon", "amazon_big": "Ver na Amazon",
     "amazon_none": "Não o temos? Procure na Amazon", "amazon_more": "Nenhum destes? Procure na Amazon",
     "amazon_txt": "Prefere comprar na Amazon?",
     "search_ph": "Procure um disco: artista ou álbum…", "search_res": "{n} discos encontrados", "search_none": "Nenhum disco encontrado",
@@ -1270,16 +1270,18 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
           "image": d.get("img"), "url": f"https://guitle.com{url}",
           "offers": {"@type": "AggregateOffer", "priceCurrency": (intl.SITES[pais]["cur"] if pais in intl.SITES else "EUR"), "lowPrice": min(prices),
                      "highPrice": max(prices), "offerCount": n}}
-    if not T.get("amazon"):
-        amazon = ""
-    elif len(d["items"]) == 1:  # una sola tienda: Amazon como segunda opción bien visible (botón)
-        amazon = (f'\n    <p style="margin:14px 0 0">{_e(T["amazon_txt"])} <a class="btn-amz" href="{_e(T["amazon"].format(ean=d["ean"]))}" '
-                  f'target="_blank" rel="sponsored noopener" style="display:inline-block;margin-left:8px;padding:8px 16px;'
-                  f'border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);font-weight:600;text-decoration:none">'
-                  f'{_e(T["amazon_btn"])} →</a></p>')
-    else:
-        amazon = (f'\n    <p class="muted small amazon">{_e(T["amazon_txt"])} <a href="{_e(T["amazon"].format(ean=d["ean"]))}" '
-                  f'target="_blank" rel="sponsored noopener">{_e(T["amazon_btn"])}</a></p>')
+    # Amazon siempre en grande (Manuel, 13/11: "lo importante es que pinchen"): arriba junto al precio y debajo de la
+    # tabla. Se busca por artista, título y formato, que casi siempre da resultados (por EAN a menudo sale vacío).
+    amazon = amz_top = ""
+    if T.get("amazon"):
+        from urllib.parse import quote_plus
+        href = _e(T["amazon"].replace("{ean}", quote_plus(f'{d["name"].replace(" - ", " ")} {TXT["es"]["fmt1"][d["fmt"]] if "amazon.es" in T["amazon"] else f1}')))
+        btn = (f'<a class="btn-amz" href="{href}" target="_blank" rel="sponsored noopener" style="display:block;'
+               f'box-sizing:border-box;width:100%;max-width:420px;margin:14px 0 0;padding:14px 18px;border-radius:12px;'
+               f'background:#FF9900;color:#111;font-weight:700;font-size:1.15rem;text-align:center;text-decoration:none">'
+               f'{_e(T.get("amazon_big", T["amazon_btn"]))} →</a>')
+        amz_top = "\n      " + btn
+        amazon = f'\n    <p class="muted small" style="margin:18px 0 0">{_e(T["amazon_txt"])}</p>{btn}'
     img = f'<div class="pimg"><img src="{_e(_img(d["img"], 600))}" alt="{_e(d["name"])}"></div>' if d.get("img") else ""
     head = intl._head(pais, f"{title} · guitle", desc, url,
                       f'<meta property="og:title" content="{_e(title)}">\n<meta property="og:description" content="{_e(desc)}">\n'
@@ -1304,7 +1306,7 @@ def _disc_page(pais, d, f1, url, names, T, t, guitar_box, alink=""):
       <h2 class="pname">{_e(d['name'])}</h2>
       <div id="price" class="big">{intl.money(best['p'], pais)}</div>
       <div id="where" class="muted">{_e(where)}</div>
-      <div class="muted small">EAN {d['ean']} · {_e(T['note'])}</div>
+      <div class="muted small">EAN {d['ean']} · {_e(T['note'])}</div>{amz_top}
     </div>
   </article>
   <section><h3>{_e(t['storesH3'])}</h3><div class="table-wrap"><table id="stores">{intl._rows({'items': items}, names, colors, pais, t)}</table></div>{amazon}</section>

@@ -15,13 +15,14 @@ Estados: **activo** · **solicitado** · **rechazado** · **por pedir** · **bor
 | Programa | País / web | Idioma | Estado | Fecha | ID público | Próximo paso | Fecha próximo paso |
 |---|---|---|---|---|---|---|---|
 | Amazon Afiliados | ES (y PT, que enlaza a amazon.es) | es | activo | (?) | `guitle-21` | Informe de ventas a mano en stats.html (panel de afiliados) | 01-12-2026 (noviembre entero) |
-| Amazon Afiliados | FR | fr | activo | (?) | `guitle00-21` | Igual: informe mensual | 01-12-2026 |
+| Amazon Afiliados | FR (y LU) | fr | activo | (?) | `guitle00-21` | Igual: informe mensual | 01-12-2026 |
 | Amazon Afiliados | IT | it | activo | (?) | `guitle0e-21` | Igual: informe mensual | 01-12-2026 |
 | Amazon Afiliados | UK e IE | en | activo | (?) | `guitle08-21` | Igual: informe mensual | 01-12-2026 |
 | Amazon Afiliados | mootle | es | activo | (?) | `mootle-21` | Se separa en el mismo informe | 01-12-2026 |
-| Amazon Afiliados | DE (amazon.de) | de | por pedir | — | — | Valorar alta: Alemania ya tiene web y es el mayor mercado | Tras Black Friday |
-| Amazon Associados | BR | pt-BR | por pedir | — | — | Alta (anotado en tiendas-bloqueadas.md) | Diciembre |
-| Amazon | NL, PL, SE, BE (marketplaces propios) | nl/pl/sv/fr | por pedir | — | — | Valorar según visitas de cada país | Enero 2027 |
+| Amazon Afiliados | DE (amazon.de): DE, AT, CH y botón en CZ, SK, HU, RO, BG, GR, FI, DK, NO | de | por pedir (prioritario) | — | — | Alta de Manuel siguiendo amazon-altas.md | Semana del 16-11 |
+| Amazon Associados | BR | pt-BR | por pedir | — | — | Parece exigir CPF/CNPJ y banco brasileño: confirmar si es viable | 2027 |
+| Amazon | NL, PL, SE, BE (marketplaces propios) | nl/pl/sv/fr | por pedir | — | — | Una a una según visitas (regla de 3 ventas en 180 días por cuenta) | Enero 2027 |
+| Amazon | MX (amazon.com.mx), AR (amazon.com) | es-LA | por pedir | — | — | Requisitos para extranjeros por confirmar | 2027 |
 | eBay Partner Network | Todos los eBay (guitle) | en | activo | (?) | campid `5339241544` | Hito del 20/11 (detalle (?)); ganancias por API en afiliados.yml si están las claves EPN_* | 20-11-2026 |
 | Awin (cuenta de editor) | guitle y mootle | — | activo | 27-10-2026 (solicitud) | Publisher ID `3136285` | Revisar solicitudes pendientes dentro de Awin | 17-11-2026 |
 | Awin → Cultura | FR | fr | activo | (?) | (anunciante en Awin) | Ya en web: catálogo de instrumentos y discos por su fichero; prioridad en la guía de Navidad | Seguimiento semanal |

@@ -1660,7 +1660,7 @@ shure-sm57-lc-42406071819
 shure-sm57lce-e19268html
 shure-sm58-km-som-bndl-42406613446
 shure-sm58-lc-42406071826
-shure-sm58-se-nterruptor
+shure-sm58-se-e28402html
 shure-sm58lce-e19264html
 shure-sm58s-42406071833
 shure-sm58se-microfono-dinamico-con-interruptor-m58lcehtml

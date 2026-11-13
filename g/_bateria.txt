@@ -374,7 +374,6 @@ gewa-sps-e-drum-gigbag-gbagp40550
 gretsch-bateria-energy-grey-steel-19239449740
 gretsch-bateria-energy-rojo-19239449719
 gretsch-catalina-club-18-satin-walnut-glaze-drumset-19239393050
-gretsch-catalina-club-22-sahara-sparkle-drumset-4046662320441
 gretsch-catalina-club-24-satin-antique-fade-drumset-4046662320533
 gretsch-catalina-club-rock-gloss-crimson-burst-647139391359
 gretsch-catalina-maple-22-satin-deep-cherry-burst-7-pcs-shellset-4046662317120
@@ -670,6 +669,7 @@ ludwig-classic-oak-studio-22-green-b-2greenbhtm
 ludwig-continental-4pc-24-set-b-c24setbhtm
 ludwig-continental-4pc-26-set-s-c26setshtm
 ludwig-continental-5pc-26-set-b-c26setbhtm
+ludwig-continental-club-22-blue-spkl-luespklhtm
 ludwig-continental-club-22-white-marine-pearl-shell-set-648023174539
 ludwig-evolution-20-atlantic-sparkle-sparklehtm
 ludwig-evolution-20-caramel-sparkle-sparklehtm
@@ -746,7 +746,6 @@ mapex-armory-fusion-set-et-onsetethtm
 mapex-armory-fusion-set-jo-onsetjohtm
 mapex-armory-fusion-set-nj-onsetnjhtm
 mapex-armory-stage-ii-set-jo-iisetjohtm
-mapex-armory-stage-ii-set-nj-iisetnjhtm
 mapex-armory-stage-set-et-gesetethtm
 mapex-armory-stage-set-jg-gesetjghtm
 mapex-armory-stage-set-jo-gesetjohtm
@@ -1070,6 +1069,7 @@ pearl-decade-m-studio-shells-s-bk-ellssbkhtm
 pearl-decade-maple-20-5pc-set-884-cset884htm
 pearl-decade-maple-20-ultramarine-velvet-rinevelvet
 pearl-decade-maple-22-5pc-set-884-cset884htm
+pearl-decade-maple-22-ice-mint-drumset-4549312841254
 pearl-decade-maple-22-satin-slate-black-drumset-4515295495012
 pearl-decade-maple-22-ultramarine-velvet-drumset-vetdrumset
 pearl-decade-maple-6pc-satin-black-inblackhtm
@@ -1107,7 +1107,6 @@ pearl-dmp925s-c227-decade-set-satin-brown-burst-brownburst
 pearl-dmp925s-c227-decade-set-satin-slate-black-4515295491830
 pearl-dmp925s-c260-067564html
 pearl-dmp925s-c262-267369html
-pearl-eroadshow-complete-electronic-drum-set-4549312897435
 pearl-eroadshow-electronic-drum-kit-mkitp43660
 pearl-export-20-graphite-silver-twist-complete-drumset-studio-version-4515295496552
 pearl-export-20-jet-black-complete-drumset-studio-version-4515295492547
@@ -1124,7 +1123,6 @@ pearl-export-22-rock-g-silver-gsilverhtm
 pearl-export-22-rock-jet-black-etblackhtm
 pearl-export-22-rock-m-amethyst-methysthtm
 pearl-export-22-rock-mid-blue-midbluehtm
-pearl-export-22-rock-s-white-kswhitehtm
 pearl-export-22-rock-sat-scarlet-scarlethtm
 pearl-export-22-slipstream-white-complete-drumset-fusion-version-4549312881120
 pearl-export-22-slipstream-white-complete-drumset-standard-version-4549312881090
@@ -1271,7 +1269,6 @@ roland-td-07kv-landtd07kv
 roland-td-07kv2-bateria-electronica-4957054524364
 roland-td-07kv2-e-drum-set-bundle-tbundlehtm
 roland-td-07kv2-v-drum-set-drumsethtm
-roland-td-2k-e-drums-pack-roland-dap-2x-auriculares-roland-rh-5-p2xbp39679
 roland-td-50kv-v-drums-kit-4957054509170
 roland-td-513-4957054521066
 roland-td-516-4957054521073
@@ -1470,6 +1467,7 @@ sonor-sq2-24-birch-black-sparkle-sparklehtm
 sonor-sq2-2up2down-turquoise-burst-sebursthtm
 sonor-sq2-beech-cobalt-blue-18-tblue18htm
 sonor-sq2-beech-walnut-brown-burst-wnbursthtm
+sonor-sq2-birch-ebony-white-stripes-stripeshtm
 sonor-sq2-birch-red-sparkle-sparklehtm
 sonor-sq2-bubinga-replica-replicahtm
 sonor-sq2-jazz-maple-rosewood-osewoodhtm
@@ -1607,6 +1605,7 @@ tama-imperialstar-22-5pcs-hbk-shbkp12449
 tama-imperialstar-22-5pcs-hlb-b575863htm
 tama-imperialstar-22-5pcs-slm-5pcsslmhtm
 tama-imperialstar-22-6-piezas-brm-sbrmp45074
+tama-imperialstar-22-6pcs-brm-m576001htm
 tama-imperialstar-22-6pcs-hbk-k575862htm
 tama-imperialstar-22-6pcs-hlb-b575864htm
 tama-imperialstar-22-burlp41053
