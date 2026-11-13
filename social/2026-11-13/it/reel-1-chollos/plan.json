@@ -1,0 +1,143 @@
+{
+ "fecha": "13 novembre",
+ "post": {
+  "type": "top",
+  "title": "offerte di oggi",
+  "hook": "Offerte di oggi",
+  "picks": [
+   {
+    "slug": "yamaha-pacifica-112vm-ib-ice-blue-chitarra-elettrica-blu-4957812660129",
+    "name": "Yamaha Pacifica 112VM IB Ice Blue Chitarra Elettrica Blu",
+    "brand": "Yamaha",
+    "kind": "electrica",
+    "img": "https://shop.suonostore.com/wp-content/uploads/2026/09/YAMAHA-PACIFICA-112VM-IB-ICE-BLUE-CHITARRA-ELETTRICA-BLU-1.jpg",
+    "th": "645cd51dd24e9c04.webp",
+    "thimg": "https://www.globalnetshop.it/cdn/shop/files/01-PAC112VM-ICB_2f3c935d-8163-45a2-88e4-1d9229293fe0_1024x.jpg?v=1749579010",
+    "price": 289.0,
+    "store": "Suono Store",
+    "stores": 3,
+    "median": 303.0,
+    "max": 310.0,
+    "next": 296.0,
+    "rows": [
+     [
+      "Suono Store",
+      289.0
+     ],
+     [
+      "Di Santo Musica",
+      296.0
+     ],
+     [
+      "Woodbrass",
+      310.0
+     ]
+    ],
+    "pvp": null,
+    "why": "7 € in meno che negli altri negozi",
+    "photo": "g0-1.webp",
+    "label": "Elettrica"
+   },
+   {
+    "slug": "ibanez-rg421pb-chf-caribbean-shoreline-flat-chitarra-elettrica-4549763265319",
+    "name": "Ibanez RG421PB CHF Caribbean Shoreline Flat Chitarra elettrica",
+    "brand": "Ibanez",
+    "kind": "electrica",
+    "img": "https://www.disantomusica.it/cdn/shop/files/4750-ibanez-rg421pb-chf-caribbean-shoreline-flat-chitarra-elettrica_1024x1024.jpg?v=1772275727",
+    "th": "5387fdad1cee7151.webp",
+    "thimg": "https://www.thomann.de/thumb/opengraph/pics/prod/499401.jpg",
+    "price": 389.99,
+    "store": "Di Santo Musica",
+    "stores": 3,
+    "median": 403.5,
+    "max": 408.0,
+    "next": 399.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      389.99
+     ],
+     [
+      "Thomann",
+      399.0
+     ],
+     [
+      "Woodbrass",
+      408.0
+     ]
+    ],
+    "pvp": null,
+    "why": "9,01 € in meno che negli altri negozi",
+    "photo": "g1-1.webp",
+    "label": "Elettrica"
+   },
+   {
+    "slug": "eko-nxt-a100ce-natural-chitarra-acustica-elettrificata-colore-naturale-8056734496536",
+    "name": "EKO Nxt A100CE Natural Chitarra Acustica Elettrificata Colore Naturale",
+    "brand": "EKO",
+    "kind": "acustica",
+    "img": "https://shop.suonostore.com/wp-content/uploads/2017/02/EKO-RANGER-NXT018-CW-EQ-NATURAL-CHITARRA-ACUSTICA-ELETTRIFICATA-COLORE-NATURAL_0.jpg",
+    "th": "67cf49c94db3dc6e.webp",
+    "thimg": "https://www.disantomusica.it/cdn/shop/files/1606317439_1024x1024.jpg?v=1772275972",
+    "price": 154.0,
+    "store": "Suono Store",
+    "stores": 4,
+    "median": 169.0,
+    "max": 174.0,
+    "next": 159.0,
+    "rows": [
+     [
+      "Suono Store",
+      154.0
+     ],
+     [
+      "Direzione Musica",
+      159.0
+     ],
+     [
+      "Woodbrass",
+      169.0
+     ],
+     [
+      "Di Santo Musica",
+      174.0
+     ]
+    ],
+    "pvp": null,
+    "why": "5 € in meno che negli altri negozi",
+    "photo": "g2-1.webp",
+    "label": "Acustica"
+   }
+  ]
+ },
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  }
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/"
+}
