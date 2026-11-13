@@ -1,0 +1,231 @@
+{
+ "fecha": "13 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Bon plan du jour",
+  "cholloDia": "Bon plan du jour",
+  "en": "chez",
+  "precioDel": "Prix du",
+  "comparadoEn": "comparée dans",
+  "tiendas": "magasins",
+  "enlaceBio": "Lien en bio",
+  "masVendidas": "Les plus vendues en magasin, avec leur meilleur prix du jour.",
+  "desliza": "Fais glisser →",
+  "laVenden": "Vendue dans",
+  "conCual": "Laquelle tu choisis ?",
+  "cuentanos": "Dis-le-nous en commentaire et garde ce post pour ton prochain achat.",
+  "comparaEn": "Compare les prix sur",
+  "comparaAntes": "Compare avant d’acheter",
+  "siguenos": "Abonne-toi pour plus de bons plans",
+  "web": "guitle.com/fr",
+  "kinds": {
+   "electrica": "Électrique",
+   "acustica": "Folk",
+   "clasica": "Classique"
+  },
+  "bfFaltan": "Plus que",
+  "bfDia": "jour",
+  "bfDias": "jours",
+  "bfApunta": "Note ce prix",
+  "bfHoy": "Aujourd’hui, {fecha}",
+  "bfOtras": "Dans les {n} autres magasins :",
+  "bfRango": "de {a} à {b}",
+  "bfBajara": "Va-t-il vraiment baisser au Black Friday ?",
+  "bfDecimos": "Le 27 novembre, on te le dit, historique des prix à l’appui.",
+  "bfGuarda": "Enregistre-le 📌"
+ },
+ "money": {
+  "locale": "fr-FR",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "fr/",
+ "post": {
+  "type": "top",
+  "title": "5 bons plans pédales d'effet",
+  "hook": "Bons plans du jour",
+  "picks": [
+   {
+    "slug": "boss-pedale-d-effet-boss-os-2-overdrive-distortion-4957054018290",
+    "name": "Boss Pedale D'effet Boss OS-2 Overdrive /distortion",
+    "brand": "Boss",
+    "kind": "pedales",
+    "img": "https://ubico-musique.com/5976-home_default/pedale-d-effet-boss-os-2-overdrive-distortion.jpg",
+    "th": "fdb90444100ddbfe.webp",
+    "thimg": null,
+    "price": 89.0,
+    "store": "Ubico Musique",
+    "stores": 5,
+    "median": 119.0,
+    "max": 119.0,
+    "next": 113.0,
+    "rows": [
+     [
+      "Ubico Musique",
+      89.0
+     ],
+     [
+      "Stars Music",
+      113.0
+     ],
+     [
+      "Hurricane Music",
+      119.0
+     ],
+     [
+      "Scotto Musique",
+      119.0
+     ],
+     [
+      "Michenaud",
+      119.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "24 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "electro-harmonix-canyon-683274011882",
+    "name": "Electro Harmonix Canyon",
+    "brand": "Electro",
+    "kind": "pedales",
+    "img": "https://guitarmaniac.com/33130-large_default/electro-harmonix-canyon.jpg",
+    "th": "8e2194a52b8157be.webp",
+    "thimg": null,
+    "price": 129.0,
+    "store": "Guitar Maniac",
+    "stores": 3,
+    "median": 176.5,
+    "max": 179.0,
+    "next": 174.0,
+    "rows": [
+     [
+      "Guitar Maniac",
+      129.0
+     ],
+     [
+      "Hurricane Music",
+      174.0
+     ],
+     [
+      "Stars Music",
+      179.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "45 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "jim-dunlop-jb95-joe-bonamassa-signature-cry-baby-wah-710137053977",
+    "name": "Jim dunlop JB95 Joe Bonamassa Signature Cry Baby Wah",
+    "brand": "Jim dunlop",
+    "kind": "pedales",
+    "img": "https://www.stars-music.fr/medias/jimdunlop/jb95-joe-bonamassa-signature-cry-baby-wah-hd-0dd.webp",
+    "th": "353b9351eedeaf5b.webp",
+    "thimg": null,
+    "price": 199.0,
+    "store": "Stars Music",
+    "stores": 5,
+    "median": 269.0,
+    "max": 285.0,
+    "next": 259.0,
+    "rows": [
+     [
+      "Stars Music",
+      199.0
+     ],
+     [
+      "Audio System",
+      259.0
+     ],
+     [
+      "Music 3000",
+      269.0
+     ],
+     [
+      "Cultura",
+      269.0
+     ],
+     [
+      "Hurricane Music",
+      285.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "60 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "vox-pedale-wah-v863-ca-4959112237537",
+    "name": "VOX Pedale Wah V863-CA",
+    "brand": "VOX",
+    "kind": "pedales",
+    "img": "https://hurricanemusic.fr/170888-home_default/vox-pedale-wah-v863-ca.webp",
+    "th": "6bbfda041c23e814.webp",
+    "thimg": null,
+    "price": 213.0,
+    "store": "Hurricane Music",
+    "stores": 4,
+    "median": 299.0,
+    "max": 299.0,
+    "next": 272.0,
+    "rows": [
+     [
+      "Hurricane Music",
+      213.0
+     ],
+     [
+      "Stars Music",
+      272.0
+     ],
+     [
+      "Audio System",
+      299.0
+     ],
+     [
+      "Michenaud",
+      299.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "59 € de moins qu'ailleurs"
+   },
+   {
+    "slug": "prs-wind-through-the-trees-dual-flanger-825362083511",
+    "name": "PRS Wind Through The Trees Dual Flanger",
+    "brand": "PRS",
+    "kind": "pedales",
+    "img": "https://hurricanemusic.fr/116573-home_default/prs-guitars-wind-through-the-trees-dual-flanger.jpg",
+    "th": "13f9a861dd8ce1af.webp",
+    "thimg": null,
+    "price": 251.0,
+    "store": "Hurricane Music",
+    "stores": 3,
+    "median": 335.5,
+    "max": 355.0,
+    "next": 316.0,
+    "rows": [
+     [
+      "Hurricane Music",
+      251.0
+     ],
+     [
+      "Music 3000",
+      316.0
+     ],
+     [
+      "Stars Music",
+      355.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g5-1.webp",
+    "why": "65 € de moins qu'ailleurs"
+   }
+  ],
+  "rama": "pedales"
+ }
+}
