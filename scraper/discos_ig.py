@@ -15,6 +15,7 @@ un artista conocido). Los demás días no hace nada.
 import argparse
 import json
 import os
+import re
 import subprocess
 import unicodedata
 from datetime import date
@@ -33,8 +34,16 @@ TIENDAS = {"recordstore": "Recordstore", "assai": "Assai Records", "sisterray": 
 FORMATO = {"vinilo": "vinyl", "cd": "CD", "casete": "cassette"}
 TAGS = "#vinyl #vinylrecords #vinylcollection #recordcollector #vinyldeals #ukvinyl"
 DIAS = {1: "same", 3: "same", 4: "semana"}  # martes, jueves, viernes
-# Cuentas cuyos discos aún no se publican (Italia: Manuel quiere probar antes guitle.com/it/dischi/)
-EN_ESPERA = {"it"}
+# Cuentas cuyos discos aún no se publican (Italia, activada por Manuel el 13-11)
+EN_ESPERA = set()
+# Amazon (Manuel cobra comisión): cada disco tiene en la web su botón de Amazon. En el texto solo se nombra, nunca su
+# precio ni su logo, y siempre con el aviso de afiliado (normas de Amazon, CLAUDE.md).
+AMAZON = {
+    "uk": "🛒 Prefer Amazon? Search this record on Amazon from its page on guitle.\nAs an Amazon Associate we earn from qualifying purchases.",
+    "es": "🛒 ¿Prefieres Amazon? Desde la página del disco en guitle lo buscas en Amazon.\nComo afiliado de Amazon, obtenemos ingresos por las compras que cumplen los requisitos.",
+    "it": "🛒 Preferisci Amazon? Dalla pagina del disco su guitle lo cerchi su Amazon.\nIn qualità di Affiliato Amazon, guitle riceve un guadagno dagli acquisti idonei.",
+    "fr": "🛒 Vous préférez Amazon ? Depuis la page du disque sur guitle, cherchez-le sur Amazon.\nEn tant que Partenaire Amazon, nous réalisons un bénéfice sur les achats remplissant les conditions requises.",
+}
 
 # Artistas conocidos (grandes, clásicos y actuales con público amplio en Reino Unido). Se compara sin acentos ni
 # mayúsculas con lo que va antes de " - " en el nombre del disco.
@@ -82,6 +91,14 @@ Platero y Tu; Marea; Barricada; Rosendo; Miguel Rios; Ana Belen; Victor Manuel; 
 El Canto del Loco; Pereza; Supersubmarina; Izal; Sidonie; Lori Meyers; Dorian; Russian Red; Rocio Marquez; Silvia Perez Cruz;
 Bad Gyal; Lola Indigo; Nathy Peluso; Rels B; Morat; Sabina; Antonio Vega; Mclan; Triana; Medina Azahara; Mago de Oz;
 Baron Rojo; Obus; Siniestro Total; Los Suaves; Sopa de Cabra; Els Pets; Manel; Txarango; Estrella Morente; Enrique Morente""",
+    "fr": """Johnny Hallyday; Mylene Farmer; Indochine; Jean-Jacques Goldman; Francis Cabrel; Renaud; Serge Gainsbourg;
+Jacques Brel; Edith Piaf; Charles Aznavour; Georges Brassens; Michel Sardou; Daniel Balavoine; Alain Souchon;
+Laurent Voulzy; Alain Bashung; Noir Desir; Telephone; Louise Attaque; Stromae; Angele; Orelsan; Nekfeu; PNL; Jul;
+Booba; IAM; NTM; MC Solaar; Aya Nakamura; Christine and the Queens; Zaz; Vianney; Calogero; Julien Dore; Clara Luciani;
+Juliette Armanet; Air; Justice; M83; Phoenix; Gojira; Etienne Daho; Vanessa Paradis; Francoise Hardy; Sylvie Vartan;
+Claude Francois; Dalida; Michel Polnareff; Michel Berger; France Gall; Veronique Sanson; Jean-Michel Jarre; -M-; M;
+Matthieu Chedid; Benjamin Biolay; Bigflo & Oli; Soprano; Gims; Maitre Gims; Damso; SCH; Ninho; Gazo; Lomepal; Eddy de Pretto;
+Pomme; Zaho de Sagazan; Feu! Chatterton; Les Rita Mitsouko; Trust; Kyo; Superbus; Dionysos; Saez; Higelin; Thiefaine""",
     "it": """Vasco Rossi; Ligabue; Maneskin; Lucio Battisti; Fabrizio De Andre; Mina; Adriano Celentano; Zucchero; Pino Daniele;
 Franco Battiato; Lucio Dalla; Eros Ramazzotti; Laura Pausini; Jovanotti; Ultimo; Tiziano Ferro; Cesare Cremonini;
 Marco Mengoni; Elodie; Annalisa; Sfera Ebbasta; Lazza; Geolier; Negramaro; Subsonica; Afterhours; CCCP Fedeli Alla Linea;
@@ -127,6 +144,21 @@ PAIS = {
                    "🔎 Prezzi e disponibilità di questo disco: link in bio → guitle.com/it/dischi\nPrezzi del {fecha}; "
                    "possono cambiare.\n\n{tags}"),
            "head": ("💿 Stesso disco, {x} in meno", "🏆 L’affare vinile della settimana")},
+    "fr": {"token": "INSTAGRAM_TOKEN_FR", "cuenta": "@guitle.fr", "web": "https://guitle.com/fr/disques", "lang": "fr",
+           "fmt": {"vinilo": "vinyle", "cd": "CD", "casete": "cassette"}, "tope": (60, 150),
+           "tags": "#vinyle #vinyles #disques #collectionneur #collectionvinyle #musique #bonplan",
+           "t": {"cab_same": "Même disque, {x} de moins", "cab_semana": "Le bon plan vinyle de la semaine",
+                 "pill_post": "💿 Bon plan disque", "pill_post_semana": "🏆 Bon plan de la semaine",
+                 "pill_story": "💿 Même disque, moins cher", "pill_story_semana": "🏆 Vinyle de la semaine",
+                 "cheapest": "Le moins cher aujourd’hui", "at": "chez", "others": "Ailleurs", "upto": "jusqu’à",
+                 "footer": "On compare les prix des disques en France · guitle.com/fr/disques",
+                 "elsewhere": "Jusqu’à {hi} ailleurs · {x} d’économie",
+                 "story_footer": "Prix et stock : lien en bio · guitle.com/fr/disques"},
+           "cap": ("{head}\n\n{artist} – {title} ({fmt})\n✅ {lo} chez {tienda}\n🔁 Jusqu’à {hi} ailleurs : "
+                   "{x} d’économie\n\nOn compare les prix des disques en France pour vous.\n"
+                   "🔎 Prix et stock de ce disque : lien en bio → guitle.com/fr/disques\nPrix du {fecha} ; "
+                   "ils peuvent changer.\n\n{tags}"),
+           "head": ("💿 Même disque, {x} de moins", "🏆 Le bon plan vinyle de la semaine")},
 }
 
 
@@ -151,6 +183,15 @@ def gbp(v):
     return f"£{v:,.2f}".replace(".00", "")
 
 
+RUIDO = re.compile(r"\b(dvd|neuf|new|sealed|scell[ée]|nuovo|sigillato|nuevo|precintado|original\)|bootleg|unofficial|"
+                   r"rouge|bleu|vert|blanc|rosso|blu|verde|bianco|import|\d+\s*lp|lp\s*\d+)\b|\b(19|20)\d\d\b|[|/]", re.I)
+
+
+def titulo_limpio(t):
+    """Títulos de ficha, no de anuncio: sin años sueltos, colores, «neuf», «DVD»… y con paréntesis equilibrados."""
+    return len(t) <= 45 and t.count("(") == t.count(")") and not RUIDO.search(t)
+
+
 def candidatos(recent, cc="uk"):
     """Discos de artistas conocidos con 2+ tiendas en stock y una diferencia creíble, de más a menos ahorro."""
     from .musica import STORES
@@ -169,6 +210,8 @@ def candidatos(recent, cc="uk"):
         ahorro = round(hi["p"] - lo["p"], 2)
         # Diferencias absurdas suelen ser ediciones distintas con el mismo código: fuera
         if ahorro < 3 or hi["p"] > 1.45 * lo["p"] or _norm(artista(d["name"])) not in famosos or d["ean"] in recent:
+            continue
+        if not titulo_limpio(d["name"].split(" - ", 1)[1].strip()):
             continue
         out.append({**d, "artist": artista(d["name"]), "title": d["name"].split(" - ", 1)[1].strip(),
                     "lo": lo["p"], "hi": hi["p"], "ahorro": ahorro, "tienda": tiendas.get(lo["s"], lo["s"]),
@@ -218,11 +261,10 @@ def generar(day, tipo=None, cc="uk"):
             cab = t["cab_semana"] if tipo == "semana" else t["cab_same"]
             caption = cfg["cap"].format(head=cfg["head"][tipo == "semana"].format(x=money(d["ahorro"])), artist=d["artist"],
                                         title=d["title"], fmt=fmt, lo=money(d["lo"]), hi=money(d["hi"]), x=money(d["ahorro"]),
-                                        tienda=d["tienda"], fecha=f"{day.day} de {MESES['it' if cc == 'it' else 'pt'][day.month - 1]}"
-                                        if cc == "it" else f"{day.day} de {['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][day.month - 1]}",
+                                        tienda=d["tienda"], fecha=(f"{day.day} {MESES[cc][day.month - 1]}" if cc in MESES else f"{day.day} de {['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'][day.month - 1]}"),
                                         tags=cfg["tags"])
-            if cc == "it":
-                caption = caption.replace(f"Prezzi del {day.day} de ", f"Prezzi del {day.day} ")
+            if cc in AMAZON:
+                caption = caption.replace(f"\n\n{cfg['tags']}", f"\n\n{AMAZON[cc]}\n\n{cfg['tags']}")
             plan = {"tipo": tipo, "cab": cab, "fmt": fmt, "disco": d, "fecha": day.isoformat(), "cc": cc, "t": t}
             (folder / "plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
             (folder / "texto.txt").write_text(caption + "\n", encoding="utf-8")
@@ -238,7 +280,7 @@ def generar(day, tipo=None, cc="uk"):
                    f"We compare prices across UK record shops, so you don’t have to.\n"
                    f"🔎 Prices and stock for this record: link in bio → guitle.com/uk/records\n"
                    f"Prices on {day.day} {MESES['en'][day.month - 1]}; "
-                   f"they may change.\n\n{TAGS}")
+                   f"they may change.\n\n{AMAZON['uk']}\n\n{TAGS}")
         plan = {"tipo": tipo, "cab": cab, "fmt": fmt, "disco": d, "fecha": day.isoformat()}
         (folder / "plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         (folder / "texto.txt").write_text(caption + "\n", encoding="utf-8")
@@ -318,7 +360,7 @@ def main(argv=None):
     ap.add_argument("--publish", action="store_true")
     ap.add_argument("--tipo", choices=["same", "semana"])
     ap.add_argument("--date")
-    ap.add_argument("--pais", default="uk", choices=sorted(PAIS), help="cuenta (uk, es, it); por defecto uk")
+    ap.add_argument("--pais", default="uk", choices=sorted(PAIS), help="cuenta (uk, es, it, fr); por defecto uk")
     a = ap.parse_args(argv)
     if a.pais in EN_ESPERA:
         print(f"{a.pais}: discos en espera hasta que Manuel lo diga (EN_ESPERA en scraper/discos_ig.py); no se genera nada")
