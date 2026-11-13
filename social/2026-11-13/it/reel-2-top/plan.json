@@ -1,0 +1,179 @@
+{
+ "fecha": "13 novembre",
+ "stories": [],
+ "t": {
+  "cholloHoy": "Offerta del giorno",
+  "cholloDia": "Offerta del giorno",
+  "en": "da",
+  "precioDel": "Prezzo del",
+  "comparadoEn": "confrontata in",
+  "tiendas": "negozi",
+  "enlaceBio": "Link in bio",
+  "masVendidas": "Le più vendute nei negozi, con il miglior prezzo di oggi.",
+  "desliza": "Scorri →",
+  "laVenden": "Venduta in",
+  "conCual": "Quale scegli?",
+  "cuentanos": "Diccelo nei commenti e salva questo post per quando comprerai.",
+  "comparaEn": "Confronta i prezzi su",
+  "comparaAntes": "Confronta prima di comprare",
+  "siguenos": "Seguici per altre offerte",
+  "web": "guitle.com/it",
+  "kinds": {
+   "electrica": "Elettrica",
+   "acustica": "Acustica",
+   "clasica": "Classica"
+  },
+  "bfFaltan": "Mancano",
+  "bfDia": "giorno",
+  "bfDias": "giorni",
+  "bfApunta": "Segnati questo prezzo",
+  "bfHoy": "Oggi, {fecha}",
+  "bfOtras": "Negli altri {n} negozi:",
+  "bfRango": "da {a} a {b}",
+  "bfBajara": "Scenderà davvero al Black Friday?",
+  "bfDecimos": "Il 27 novembre te lo diciamo, con lo storico dei prezzi.",
+  "bfGuarda": "Salvalo 📌"
+ },
+ "money": {
+  "locale": "it-IT",
+  "prefix": "",
+  "suffix": " €"
+ },
+ "logo": "it/",
+ "post": {
+  "type": "top",
+  "title": "4 offerte: pedali",
+  "hook": "Offerte di oggi",
+  "picks": [
+   {
+    "slug": "ibanez-csmini-chorus-4515276838074",
+    "name": "Ibanez Csmini Chorus",
+    "brand": "Ibanez",
+    "kind": "pedales",
+    "img": "https://www.direzionemusica.it/files/Archivio_Files/Foto/134108_2.PNG",
+    "th": "5cefaa9710be8d48.webp",
+    "thimg": null,
+    "price": 82.5,
+    "store": "Lenzotti",
+    "stores": 3,
+    "median": 89.0,
+    "max": 89.0,
+    "next": 89.0,
+    "rows": [
+     [
+      "Lenzotti",
+      82.5
+     ],
+     [
+      "Di Santo Musica",
+      89.0
+     ],
+     [
+      "S&M Strumenti",
+      89.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g1-1.webp",
+    "why": "6,50 € in meno che altrove"
+   },
+   {
+    "slug": "fender-hammertone-delay-effetto-per-chitarra-885978885633",
+    "name": "Fender Hammertone Delay Effetto per chitarra",
+    "brand": "Fender",
+    "kind": "pedales",
+    "img": "https://www.disantomusica.it/cdn/shop/files/0234572000_fen_pdl_frt_01_nr_1024x1024.png?v=1772326165",
+    "th": "6f5dce31c36ad0c0.webp",
+    "thimg": null,
+    "price": 85.9,
+    "store": "Di Santo Musica",
+    "stores": 3,
+    "median": 94.0,
+    "max": 99.0,
+    "next": 89.0,
+    "rows": [
+     [
+      "Di Santo Musica",
+      85.9
+     ],
+     [
+      "Global Net Shop",
+      89.0
+     ],
+     [
+      "Stralù",
+      99.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g3-1.webp",
+    "why": "3,10 € in meno che altrove"
+   },
+   {
+    "slug": "boss-tr-2-tremolo-tr2tremolo",
+    "name": "Boss TR-2 Tremolo",
+    "brand": "Boss",
+    "kind": "pedales",
+    "img": "https://www.centrodellamusica.net/cdn/shop/files/boss_tr-2_tremolo.jpg?v=1759159842&width=1920",
+    "th": "ce42006b7e2c38fa.webp",
+    "thimg": null,
+    "price": 105.45,
+    "store": "Centro della Musica",
+    "stores": 3,
+    "median": 109.0,
+    "max": 109.0,
+    "next": 109.0,
+    "rows": [
+     [
+      "Centro della Musica",
+      105.45
+     ],
+     [
+      "Di Santo Musica",
+      109.0
+     ],
+     [
+      "E-Musicstore",
+      109.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g4-1.webp",
+    "why": "3,55 € in meno che altrove"
+   },
+   {
+    "slug": "digitech-the-drop-echthedrop",
+    "name": "Digitech The Drop",
+    "brand": "Digitech",
+    "kind": "pedales",
+    "img": "https://www.checcacci.it/WP/wp-content/uploads/2025/11/51SubSiuL._AC_UF10001000_QL80_.jpg",
+    "th": "8b1f7d6a9e3d6d6f.webp",
+    "thimg": null,
+    "price": 135.0,
+    "store": "Checcacci",
+    "stores": 3,
+    "median": 152.0,
+    "max": 159.0,
+    "next": 145.0,
+    "rows": [
+     [
+      "Checcacci",
+      135.0
+     ],
+     [
+      "Cittadella della Musica",
+      145.0
+     ],
+     [
+      "Guitar Shop",
+      159.0
+     ]
+    ],
+    "pvp": null,
+    "photo": "g2-1.webp",
+    "why": "10 € in meno che altrove"
+   }
+  ],
+  "rama": "pedales"
+ }
+}
