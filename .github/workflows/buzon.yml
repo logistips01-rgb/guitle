@@ -1,0 +1,32 @@
+name: buzon
+
+# Vigilancia diaria de hola@guitle.com (scraper/buzon.py): correos de la OEPM y posibles cobros falsos por la marca.
+# En el registro solo salen cuántos hay; los detalles van por correo a hola@guitle.com.
+on:
+  schedule:
+    - cron: "37 7 * * *"
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: ["scraper/buzon.py", ".github/workflows/buzon.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  buzon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: claude/friendly-fermat-yycain
+          sparse-checkout: scraper/buzon.py
+          sparse-checkout-cone-mode: false
+      - name: Revisar el buzón
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          IMAP_HOST: ${{ secrets.IMAP_HOST }}
+        run: python scraper/buzon.py
