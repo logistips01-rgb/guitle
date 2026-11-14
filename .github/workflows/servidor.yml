@@ -85,7 +85,7 @@ jobs:
                 printf '[r2]\ntype = s3\nprovider = Cloudflare\naccess_key_id = %s\nsecret_access_key = %s\nendpoint = https://%s.r2.cloudflarestorage.com\nno_check_bucket = true\n' \
                   "$R2_KEY" "$R2_SECRET" "${R2_ACCOUNT,,}" | ssh -o BatchMode=yes root@"$HOST" 'mkdir -p /root/.config/rclone && umask 077 && cat > /root/.config/rclone/rclone.conf'
               fi
-              if [ "$paso" = reloj ]; then
+              if [ "$paso" = reloj ] || [ "$paso" = consultas ]; then
                 # Token de GitHub para lanzar tareas (solo Actions y Contents de guitle; solo root lo puede leer)
                 [ -n "$GH_RELOJ_TOKEN" ] || { echo "::error::falta el secreto GH_RELOJ_TOKEN"; exit 1; }
                 printf '%s' "$GH_RELOJ_TOKEN" | ssh -o BatchMode=yes root@"$HOST" 'mkdir -p /root/.config/guitle && umask 077 && cat > /root/.config/guitle/gh-token'

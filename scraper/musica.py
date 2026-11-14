@@ -804,7 +804,7 @@ def _cdgo_disc(text):
     return out
 
 
-def _lookup(pais, end, catalog, codes):
+def _lookup(pais, end, catalog, codes, fichero="consultas.json", sin=()):
     """Tiendas sin catálogo (LOOKUP): cada disco de los catálogos con código se busca por su EAN en cada una, primero
     los nunca consultados y luego los más antiguos. Lo encontrado (y lo no encontrado, para no repetir) se guarda en
     consultas.json (en git): {tienda: {ean: [fecha, precio, stock, url, nombre, artista, foto] o [fecha]}}."""
@@ -812,7 +812,7 @@ def _lookup(pais, end, catalog, codes):
     from datetime import date, timedelta
     from .fetch import Fetcher
     folder = DATA / pais
-    seen = _load(folder / "consultas.json", {})
+    seen = _load(folder / fichero, {})
     fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
     n_of = {}
     for s_, hs in codes.items():
@@ -841,8 +841,10 @@ def _lookup(pais, end, catalog, codes):
         todo = [e for e in sorted(eans, key=prio) if prio(e)[0] < 3]
         n = 0
         for e in todo:
-            if time.time() > end or done.get(e, [""])[0] == today:
+            if time.time() > end:
                 break
+            if done.get(e, [""])[0] == today:  # ya consultado hoy: al siguiente (antes paraba aquí y no llegaba a los nuevos)
+                continue
             spec = LOOKUP[pais][sid]
             try:
                 if spec.startswith("shopify:"):  # tienda Shopify: buscador de la tienda por el código y su ficha
@@ -867,9 +869,10 @@ def _lookup(pais, end, catalog, codes):
             n += 1
         print(f"[{sid}] {n} discos consultados", flush=True)
 
-    with ThreadPoolExecutor(len(LOOKUP[pais])) as ex:
-        list(ex.map(one_store, LOOKUP[pais]))
-    _save(folder / "consultas.json", seen)
+    stores = [k for k in LOOKUP[pais] if k not in sin]
+    with ThreadPoolExecutor(len(stores) or 1) as ex:
+        list(ex.map(one_store, stores))
+    _save(folder / fichero, seen)
 
 
 _ED_WORDS = (r"colou?r|clear|transparent|marble|splatter|indie|limitad|limited|firmad|signed|deluxe|picture|especial|"
@@ -1592,12 +1595,35 @@ def home_deals(pais, n=4):
     return sorted(out, key=lambda x: -x[1])[:n]
 
 
+def consultas_servidor(pais, minutes):
+    """Solo las consultas por código (LOOKUP), para el servidor de IONOS: los códigos salen de codigos.json y de los
+    discos comparados (en git, no hace falta el catálogo del día). En prueba (noviembre de 2026) se guardan aparte, en
+    consultas-servidor.json, para compararlas con las de GitHub; CDGO bloquea al servidor y se salta."""
+    import shutil
+    src = SRC.get(pais, pais)
+    folder = DATA / pais
+    codes = _load(DATA / src / "codigos.json", {})
+    fmt = {d["ean"]: d["fmt"] for c in {pais, src} | set(SEED.get(pais, ())) for d in _load(DATA / c / "discos.json", [])}
+    catalog = {s: {h: {"f": fmt.get(e, "")} for h, e in hs.items() if e} for s, hs in codes.items()}
+    for c in SEED.get(pais, ()):
+        seeds = {d["ean"]: {"f": d["fmt"]} for d in _load(DATA / c / "discos.json", [])}
+        catalog.setdefault("_seed", {}).update(seeds)
+        codes.setdefault("_seed", {}).update({e: e for e in seeds})
+    if not (folder / "consultas-servidor.json").exists() and (folder / "consultas.json").exists():
+        shutil.copy(folder / "consultas.json", folder / "consultas-servidor.json")  # la prueba empieza igual
+    _lookup(pais, time.time() + minutes * 60, catalog, codes, "consultas-servidor.json", sin={"cdgo"})
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--pais", default="uk")
     ap.add_argument("--minutes", type=float, default=60)
     ap.add_argument("--build", action="store_true")
+    ap.add_argument("--consultas", action="store_true", help="solo las consultas por código (servidor de IONOS)")
     a = ap.parse_args(argv)
+    if a.consultas:
+        consultas_servidor(a.pais, a.minutes)
+        return 0
     if not a.build:
         read(a.pais, a.minutes)
     if a.pais in SRC and not (DATA / SRC[a.pais] / "tiendas.json").exists():
