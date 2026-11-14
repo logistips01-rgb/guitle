@@ -846,18 +846,6 @@
   "median": 183.57
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Bacchus JT Tactics24-QM RSM/M BLKS",
-  "slug": "bacchus-jt-tactics24-qm-rsm-m-blks-4571470404989"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Eko ST 300 Fiesta Red",
-  "slug": "eko-st-300-fiesta-red-8056734498387"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
