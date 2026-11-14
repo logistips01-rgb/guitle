@@ -683,7 +683,6 @@ marca/maybach.html
 marca/mayones.html
 marca/mayson.html
 marca/medeli.html
-marca/meinl-sonic-energy.html
 marca/meinl.html
 marca/memphis.html
 marca/mesa-boogie.html
@@ -818,7 +817,6 @@ marca/prudencio.html
 marca/ps60-gsl.html
 marca/pt.html
 marca/pure-gewa.html
-marca/pyramid.html
 marca/q52pb-abs.html
 marca/q547-bmm.html
 marca/qsc.html
