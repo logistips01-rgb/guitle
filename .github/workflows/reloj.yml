@@ -6,14 +6,10 @@ name: reloj
 # lanzado ya desde su hora (por GitHub o por un reloj anterior): nada se duplica. Las programaciones de cada tarea se
 # quedan de reserva. GitHub no deja vivir un trabajo más de 6 horas: a las 5 h 45 min se relanza a sí mismo, y la
 # programación de abajo (cada hora) lo vuelve a encender si algo lo parara (espera en la cola "reloj").
-# Más adelante el reloj puede pasar al servidor propio (necesita un permiso de GitHub para lanzar tareas).
+# Desde el 14/11/2026 el reloj va en el servidor de IONOS (servidor/reloj.py, cada minuto, con GH_RELOJ_TOKEN): este
+# trabajo ya no se enciende solo; queda de reserva por si el servidor fallara (lanzarlo a mano).
 on:
-  schedule:
-    - cron: "11 * * * *"
   workflow_dispatch:
-  push:  # tocar .github/reloj.txt lo arranca en el momento (la programación de GitHub puede tardar horas)
-    branches: [claude/friendly-fermat-yycain]
-    paths: [".github/reloj.txt"]
 
 permissions:
   actions: write
@@ -89,6 +85,5 @@ jobs:
                   except Exception as e:  # noqa: BLE001 - la API falló: se reintenta en la próxima vuelta
                       print(f"{ahora:%H:%M:%S} {wf}: {e}", flush=True)
               time.sleep(30)
-          print("5 h 45 min: el reloj se relanza", flush=True)
-          gh("workflow", "run", "reloj.yml", "--repo", REPO, "--ref", RAMA)
+          print("5 h 45 min: fin (reloj de reserva; el de verdad está en el servidor)", flush=True)
           PY
