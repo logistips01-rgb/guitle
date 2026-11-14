@@ -47,6 +47,7 @@ jobs:
               ("04:13", "papelera.yml", {}, None),
               ("09:23", "congruencia.yml", {}, None),
               ("15:41", "musica.yml", {}, None),
+              ("07:37", "buzon.yml", {}, None),
           ] + [(f"{h:02d}:43", "catalog-respaldo.yml", {}, None) for h in range(0, 24, 4)]
           VENTANA = timedelta(hours=3)  # pasada su hora, se lanza si aún no se ha hecho en estas 3 horas
 

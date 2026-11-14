@@ -8,6 +8,7 @@ on:
   push:
     branches: [claude/friendly-fermat-yycain]
     paths: ["scraper/buzon.py", ".github/workflows/buzon.yml"]
+  workflow_dispatch:  # lo lanza también el reloj (reloj.yml), por si GitHub retrasa el cron
 
 permissions:
   contents: read
