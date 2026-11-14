@@ -435,9 +435,8 @@ apc-tr-200-koa-koa-travel-guitar-5600918901021
 applause-aad96-m-acajou-wood-classics-naturel-mat-4046662295206
 applause-ab24-2s-ruby-red-satin-4046662281063
 applause-ab24-4s-natural-mate-4046662281056
-applause-ab24-5s-black-satin-4046662281070
 applause-ab2412ii-mid-cutaway-12-cuerdas-negro-satinado-4046662281117
-applause-ab24ii-cs-mid-cutaway-negro-satinado-rosatinado
+applause-ab24ii-cs-mid-cutaway-black-satin-ab24-5s-4046662281070
 applause-ab24ii-cs-mid-cutaway-rojo-rubi-satinado-bisatinado
 applause-ab28-5s-black-satin-4046662281087
 applause-ae44-4s-natural-mate-4046662281124
@@ -748,13 +747,11 @@ cort-ad850-natural-open-pores-8809383830073
 cort-ad880-ns-8809383838314
 cort-ad880-ns-w-bag-8809383838345
 cort-ad880-satinado-natural-8809292922067
-cort-ad880-zurdos-natural-elhnathtml
 cort-ad880c-natural-0cenathtml
 cort-ad880ce-bk-8809292922142
 cort-ad880ce-bk-8809383838383
 cort-ad880ce-bk-w-bag-8809383838413
 cort-ad880ce-lh-nat-8809383834002
-cort-ad880ce-lh-ns-8809292924306
 cort-ad880ce-nat-8809292922128
 cort-ad880ce-nat-8809383838369
 cort-ad880ce-nat-enatp11019
@@ -809,6 +806,7 @@ cort-cut-craft-lmited-nat-w-case-8809625364328
 cort-dreadnought-cort-earth100ssf-sb-sunburst-nbursthtml
 cort-dreadnought-cort-gold-dc6-nat-natural-con-funda-8809817081101
 cort-dreadnought-cort-l450c-ns-natural-satin-8809383839373
+cort-dreadnought-para-zurdos-cort-ad880ce-lh-ns-natural-satin-8809292924306
 cort-e70op-earth-70-natural-poros-abiertos-rtos210296
 cort-eart60m-ce-op-8809817984457
 cort-earth-100ssf-8809625363857
@@ -890,6 +888,7 @@ cort-ga5fbw-natural-049152html
 cort-gapf-bv-natural-fbvnatural
 cort-gold-a10-nat-w-case-8809817984044
 cort-gold-a6-bocote-nat-w-case-8809625369798
+cort-gold-a6-lh-natural-brillante-8809383831506
 cort-gold-a6-nat-8809383830806
 cort-gold-a6-nat-8809625360818
 cort-gold-a8-black-gloss-top-8809625363130
@@ -1303,7 +1302,7 @@ eastman-ac122-2ce-dlx-sb-846940061493
 eastman-ac122l-1ce-846940000676
 eastman-ac222ce-cla-gran-auditorio-classic-846940000119
 eastman-ac222ce-dlx-846940061509
-eastman-ac222ce-dlx-gb-846940061516
+eastman-ac222ce-dlx-gb-deluxe-grand-auditorium-gold-burst-846940061516
 eastman-ac222ce-nat-gran-auditorio-846940008887
 eastman-ac222lce-846940000683
 eastman-ac222lce-nat-gran-auditorio-para-zurdos-1100000275930
@@ -1506,7 +1505,6 @@ epiphone-hummingbird-signature-eric-church-cobra-burst-oscuro-ibg-711106237671
 epiphone-hummingbird-standard-cherry-sunburst-711106166407
 epiphone-hummingbird-standard-ec-natural-711106166438
 epiphone-hummingbird-studio-ec-heritage-cherry-sunburst-711106173962
-epiphone-hummingbird-studio-ec-lh-herritage-cherry-711106173986
 epiphone-hummingbird-studio-ec-natural-711106173979
 epiphone-hummingbird-studio-heritage-cherry-sunburst-711106173924
 epiphone-hummingbird-studio-lh-herritage-cherry-711106173948
@@ -2039,7 +2037,6 @@ gibson-elvis-sj-200-ebony-711106056388
 gibson-everly-brothers-j-180-22994072-711106139456
 gibson-g-45-natural-lh-711106056449
 gibson-hummingbird-anni-edicion-limitada-cremona-burst-modern-711106233673
-gibson-hummingbird-custom-22513019-711106135236
 gibson-hummingbird-custom-koa-natural-antiguo-csm-711106044224
 gibson-hummingbird-elegante-koa-sunburst-miel-moderno-711106233550
 gibson-hummingbird-especial-satinado-rojo-vino-moderna-erna403688
@@ -2929,11 +2926,9 @@ lag-t98ace-tramontane-98-auditorium-cutaway-natural-3700166363403
 lag-t98d-tramontane-98-dreadnought-natural-3700166363427
 lag-t98dce-tramontane-98-dreadnought-cutaway-natural-3700166363106
 lag-tl70a-nat-tramontane-auditorium-lh-natural-3700166376335
-lag-tl70ace-nat-tramontane-auditorium-zurda-cutaway-electro-natural-3700166376342
 lag-tn70a-nat-nylon-auditorio-natural-3700166371866
 lag-tramontane-118-lh-tl118d-3700166363243
 lag-tramontane-118-ltd-auditorium-bevel-ctw-shadow-adow403407
-lag-tramontane-118-t118dce-blk-3700166363205
 lag-tramontane-170-t170ace-auditorium-3700166311893
 lag-tramontane-218-auditorium-electro-cutaway-3700166378223
 lag-tramontane-218-dreadnought-electro-cutaway-3700166378230
@@ -2941,6 +2936,7 @@ lag-tramontane-70-travel-natural-satinado-3700166376953
 lag-tramontane-98-t98pe-3700166363397
 lag-tramontane-special-t-blue-ace-auditorium-3700166372603
 lag-tramontane-t118abce-blk-auditorium-bevel-3700166375772
+lag-tramontane-t118dce-blk-dreadnought-3700166363205
 lag-tramontane-t177jce-jumbo-3700166370241
 lag-tramontane-t177pe-natural-3700166370265
 lag-tramontane-tl118dce-dreadnought-left-handed-3700166363250
@@ -2954,6 +2950,7 @@ lag-travel-spe-371156html
 lag-travelspe-natural-satinado-3700166371156
 lag-vianney-sgnature-limited-edition-0021-3700166370388
 lag-wings-of-gold-dreadnought-black-3700166369290
+lag-zurda-lag-tramontane-70-a-e-auditorium-cutaway-3700166376342
 lagauditorium-118-asce-blk-eblkp18407
 lagauditorium-cutway-a-e-sauvage-vagep35827
 lagauditorium-sauvage-vagep35826
@@ -2966,7 +2963,6 @@ lagtramontane-177-a-e-cutaway-natural-uralp27020
 lakewood-a-14-cp-63-natural-4260381430957
 lakewood-a-15-edition-2022-444410026987
 lakewood-a-15-edition-2024-444410032480
-lakewood-a-24-custom-35250-444410031078
 lakewood-black-sheep-4260381430735
 lakewood-d-14-cp-4260220610069
 lakewood-d-14-p-natural-4260381430964
@@ -3649,7 +3645,7 @@ maton-ebg808c-te-tsb-tommy-emmanuel-tobacco-sunburst-1100000647317
 maton-ebg808c-te-tsb-tommy-emmanuel-w-case-anuelwcase
 maton-ebg808cmicfix-michael-fix-808-bluegrass-1000000703283
 maton-ebg808te-tommy-emmanuel-808-bluegrass-1000000703276
-maton-ebg808te-tommy-emmanuel-w-case-anuelwcase
+maton-ebg808te-tommy-emmanuel-w-case-748601
 maton-ebg808te-w-case-conestuche
 maton-ebg808tec-tommy-emmanuel-w-case-748602
 maton-ebw-808-444410019215
@@ -3880,6 +3876,7 @@ ortega-tourplayer-dlx-ny-lh-842960186130
 ortega-tourplayer-rtpdlx-fma-blue-842960184945
 ortega-tourplayer-std-lh-842960186147
 ortega-tourplayer-std-ny-lh-842960184969
+ovation-1868tx-5-g-elite-tx-super-shallow-4046662281476
 ovation-ce44-1-sb-736021414198
 ovation-ce44-4-nt-717070414179
 ovation-ce44-5-bk-736021414167
@@ -3894,6 +3891,7 @@ ovation-ce44p-tge-dark-tiger-eye-4046662281018
 ovation-ce48-rr-ruby-red-d78507html
 ovation-ce48p-koab-647139324432
 ovation-ce48p-rg-elite-plus-647139324425
+ovation-ce48p-rg-g-celebrity-elite-plus-super-shallow-4046662285375
 ovation-celebrity-ce44-5-e445p23794
 ovation-celebrity-ce48p-tge-elite-plus-plusp21473
 ovation-celebrity-deluxe-cdx40-5-g-bls-gblsp40494
@@ -3923,11 +3921,10 @@ ovation-celebrity-elite-plus-mid-cutaway-quilt-azul-transparente-4046662285351
 ovation-celebrity-elite-plus-mid-cutaway-ruby-burst-para-zurdos-4046662281001
 ovation-celebrity-elite-plus-mid-cutaway-spalted-maple-natural-4046662285337
 ovation-celebrity-elite-plus-super-shallow-koa-burst-4046662285399
-ovation-celebrity-elite-plus-super-shallow-regal-to-natural-4046662285375
 ovation-celebrity-elite-super-shallow-cutaway-rojo-rubi-4046662280974
 ovation-celebrity-elite-super-shallow-cutaway-sunburst-4046662280967
 ovation-celebrity-standard-plus-mid-cutaway-blackwood-burst-cs24p-ablkw-g-4046662292274
-ovation-celebrity-standard-plus-mid-cutaway-cognac-burst-brillo-4046662280950
+ovation-celebrity-standard-plus-mid-cutaway-cognac-burst-gloss-cs24x-7c-g-4046662280950
 ovation-celebrity-standard-plus-mid-cutaway-nutmeg-burled-maple-4046662285191
 ovation-celebrity-standard-plus-super-shallow-koa-burst-4046662285245
 ovation-celebrity-traditional-mid-cutaway-natural-4046662285122
@@ -3949,7 +3946,6 @@ ovation-cs28p-koab-647139324494
 ovation-elite-tx-deep-contour-cutaway-12-cuerdas-negro-texturizado-4046662281483
 ovation-elite-tx-deep-contour-cutaway-negro-texturizado-4046662281445
 ovation-elite-tx-mid-cutaway-negro-texturizado-4046662281452
-ovation-elite-tx-super-shallow-negro-texturizado-4046662281476
 ovation-guitarra-clasica-electroacustica-celebrity-cs-standard-mid-cutaway-4046662280943
 ovation-guitarra-clasica-electroacustica-classic-nylon-legend-mid-cutaway-natura-4046662281551
 ovation-guitarra-electro-acustica-celebrity-elite-mid-cutaway-negro-egro274812
@@ -4598,10 +4594,7 @@ stonewood-gccetsb-tsb-9357909000961
 stonewood-omntm-natural-9357909000930
 stonewood-omtsb-tsb-9357909000923
 super-folk-zurda-serie-azure-819907024213
-sx-color-azul-6940651407299
-sx-color-marron-6940651407305
-sx-color-rojo-6940651407312
-sx-dreadnought-negro-sd104bk-asxsd104bk
+sx-color-marron-olormarron
 sx-format-000-4-4-natural-153718258024
 sx-om170rds-red-burst-910807072096
 sx-sa1-sk-vs-3-tone-sunburst-910807073148
@@ -4610,12 +4603,15 @@ sx-sag4w-natural-6940651408395
 sx-sd104-azul-acabado-brillo-6940651406711
 sx-sd104-marron-acabado-brillo-6940651406728
 sx-sd104-natural-6940651407275
-sx-sd104-negra-6940651407282
 sx-sd104-negra-acabado-brillo-6940651406957
+sx-sd104-negra-sd104negra
 sx-sd104-roja-104rdshtml
 sx-sd104-roja-acabado-brillo-6940651406735
-sx-sd104br-marron-marronhtml
+sx-sd104bk-negro-6940651407282
+sx-sd104br-marron-6940651407305
+sx-sd104bus-azul-6940651407299
 sx-sd104g-natural-6940651406940
+sx-sd104rds-rojo-6940651407312
 sx-sd203-cadete-natural-6971047517964
 sx-sd204-natural-6940651406551
 sx-sd204ce-natural-6940651406599
@@ -4652,12 +4648,10 @@ takamine-cutaway-auditorium-takamine-gn51ce-brown-sunburst-190262041597
 takamine-cutaway-auditorium-takamine-p5-natural-190262012108
 takamine-cutaway-auditorium-zurdos-takamine-p3-natural-190262012023
 takamine-cutaway-dreadnought-takamine-ef381-negra-12-cuerdas-190262011781
-takamine-cutaway-dreadnought-takamine-gd20-natural-satin-tinnatural
 takamine-cutaway-dreadnought-takamine-gd30-negra-tawaynegra
 takamine-cutaway-dreadnought-takamine-gd38-negra-12-cuerdas-190262041252
 takamine-cutaway-dreadnought-takamine-gd51-natural-waynatural
 takamine-cutaway-dreadnought-takamine-gd71-brown-sunburst-wnsunburst
-takamine-cutaway-dreadnought-takamine-gd71-natural-waynatural
 takamine-cutaway-dreadnought-takamine-p7-natural-ayelectro6
 takamine-cutaway-dreadnought-takamine-thermal-top-ef400-natural-12-cuerdas-190262011804
 takamine-cutaway-dreadnought-zurdos-takamine-ef341sc-legacy-negra-190262011712
@@ -4672,6 +4666,7 @@ takamine-dn65c-aminedn65c
 takamine-dn65c-natural-fx-folk-1100000053422
 takamine-dreadnought-cp5dco-ad-con-estuche-stuchehtml
 takamine-dreadnought-cutaway-electro-natural-p3dc-lh-zurdos-con-estuche-799493250718
+takamine-dreadnought-cutaway-electro-noire-ef341sc-lh-con-estuche-zurdos-799493250404
 takamine-dreadnought-cutaway-electro-p10dc-10dc430670
 takamine-dreadnought-cutaway-electro-p1dc-lh-con-estuche-zurdos-799493250602
 takamine-dreadnought-cutaway-electro-p3dc-190262011934
@@ -4733,6 +4728,7 @@ takamine-gd11mns-dreadnought-799493251364
 takamine-gd15ce-blk-799493251388
 takamine-gd15cenat-natural-717070413288
 takamine-gd20-ce-dreadnought-cut-natural-717070413295
+takamine-gd20-e-a-dreadnought-cutaway-satin-natural-gd20cens-20censhtml
 takamine-gd20-ns-20nsp17364
 takamine-gd20-ns-799493251418
 takamine-gd20ce-n-0cenp21338
@@ -4767,8 +4763,8 @@ takamine-gd51ce-nat-t41082html
 takamine-gd51cenat-190262041528
 takamine-gd51lh-nat-799493251616
 takamine-gd51nat-dreadnought-799493251623
+takamine-gd71-e-a-dreadnought-cutaway-natural-gd71cenat-190262041542
 takamine-gd71ce-bsb-190262040903
-takamine-gd71ce-nat-190262041542
 takamine-gd71ce-nat-4582270040130
 takamine-gd71cebsb-dreadnought-799493251647
 takamine-gd71cenat-dreadnought-799493251654
@@ -4887,7 +4883,6 @@ takamine-japan-e-p3ny-new-yorker-4582270030421
 takamine-japan-ec-p3fcn-fcx-cutaway-nylon-799493250725
 takamine-japan-ef508kc-loss195401
 takamine-japan-lh-handed-ec-p3nc-nex-cutaway-inlh225735
-takamine-japan-lh-handed-ef341sc-lh-799493250404
 takamine-japan-natural-ctro304557
 takamine-japan-p6n-nex-brown-sunburst-799493250855
 takamine-jj325src-roja-325srcroja
@@ -5015,6 +5010,7 @@ tanglewood-tb4ce-blackbird-super-folk-acustica-electroacustica-smokestack-negro-
 tanglewood-tc2-de-viaje-6666666666200
 tanglewood-tc2-guitarra-de-viaje-eviajehtml
 tanglewood-tm4ce-eletroacustica-metropolitan-super-folk-koa-kkoap43968
+tanglewood-tp5se-810944013383
 tanglewood-tr2e-viaje-819907020574
 tanglewood-tr4-12ce-12cep38056
 tanglewood-trd-hr-ewoodtrdhr
@@ -5152,10 +5148,10 @@ tanglewood-twx5cek-819907020321
 tanglewood-winterleaf-tw4bla-leaftw4bla
 tanglewood-zurda-amplificada-dreadnought-cutaway-tanglewood-tw10lh-810944019194
 tanglewood-zurdos-orchestra-folk-tanglewood-dbtfeblh-810944013901
-tasman-ta100-dreadnought-acoustic-with-case-9356790024193
+tasman-ta100-ce-dreadnought-9356790024216
+tasman-ta100-dreadnought-9356790024193
 tasman-ta100-os1-ticatasman
-tasman-ta100ce-dreadnought-natura-9356790024216
-tasman-ta100m-e-mini-jumbo-with-case-9356790027842
+tasman-ta100m-e-mini-jumbo-9356790027842
 tasman-ta100p-e-parlour-with-case-9356790024223
 tasman-ta150o-e-om-50oeomhtml
 tasman-ta200d-e-dreadnought-9356790024254
@@ -5187,7 +5183,6 @@ taylor-212ce-grand-concert-887766126447
 taylor-212ce-lh-887766126454
 taylor-212ce-plus-887766126508
 taylor-214ce-blk-plus-gran-auditorio-negra-887766126546
-taylor-214ce-dlx-special-edition-blacktop-887766149910
 taylor-214ce-gran-auditorio-887766102830
 taylor-214ce-k-dlx-hawaiian-koa-887766135623
 taylor-214ce-k-dlx-special-edition-honeyburst-887766145417
@@ -5288,14 +5283,12 @@ taylor-builder-s-edition-514ce-kona-burst-next-generatio-887766144861
 taylor-builder-s-edition-514ce-natural-next-generation-887766144854
 taylor-builder-s-edition-524ce-next-generation-887766144878
 taylor-builder-s-edition-814ce-blacktop-next-generation-887766144106
-taylor-builder-s-edition-814ce-honduran-rosewood-redwood-887766135722
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-adirondack-shad-887766144205
 taylor-builder-s-edition-814ce-next-generation-honduran-rosewood-sinker-redwood-887766144083
 taylor-builder-s-edition-814ce-next-generation-indian-rosewood-adirondack-natura-887766144090
 taylor-builder-s-edition-914ce-next-generation-887766144885
 taylor-builder-s-edition-k24ce-next-generation-887766144908
 taylor-builders-edition-517e-whb-v-class-887766093848
-taylor-builders-edition-717e-whb-887766093862
 taylor-builders-edition-912ce-whb-887766105794
 taylor-builders-edition-k14ce-887766085775
 taylor-collins-bugle-taylor-collins-tcbg-015-lacado-en-sib-acadoensib
@@ -5352,6 +5345,7 @@ taylor-jacob-collier-signature-model-academy-22e-de-5-cuerdas-natural-grand-conc
 taylor-jacob-collier-signature-model-jcsm-de-5-cuerdas-natural-grand-concert-887766135302
 taylor-k14ce-builder-s-edition-887766102946
 taylor-k14ce-builder-s-edition-koa-grand-auditorium-1206184060-4060408875
+taylor-k24ce-builder-s-edition-koa-grand-auditorium-887766102182
 taylor-k24ce-grand-auditorium-887766094784
 taylor-k24ce-special-edition-887766146414
 taylor-legacy-514ce-887766135111
@@ -5598,7 +5592,6 @@ vox-vga3ps-tk-4959112183551
 vox-vga3ps-tr-4959112183568
 walden-cutaway-walden-natura-600-wag630cew-con-funda-810035440074
 walden-hawthorne-200-ct-2023-d255ce-810035440968
-walden-hawthorne-200-d255-dreadnought-natural-satinada-alsatinada
 walden-hawthorne-200-dr-2023-810035440951
 walden-natura-700-ga-2023-810035440913
 walden-wad450w-standard-400-810035440326
@@ -5835,7 +5828,6 @@ yamaha-f370bl-negro-negro22862
 yamaha-f400-dreadnought-natural-satin-4957812710015
 yamaha-f400-natural-satin-atinp41446
 yamaha-f400-natural-satin-q0260nuevo
-yamaha-f400-natural-satin-turalsatin
 yamaha-f400-ns-dreadnought-natural-4957812676212
 yamaha-f400-smoky-black-lackp41447
 yamaha-f400-smoky-burst-4957812676229
@@ -5943,7 +5935,6 @@ yamaha-fs3-s6560nuevo
 yamaha-fs400-natural-satin-4957812676236
 yamaha-fs400-natural-satin-atinp41448
 yamaha-fs400-natural-satin-e7820nuevo
-yamaha-fs400-natural-satin-turalsatin
 yamaha-fs400-ns-concierto-natural-4957812717861
 yamaha-fs400-smoky-black-lackp41449
 yamaha-fs400-smoky-burst-4957812676243
@@ -6011,7 +6002,7 @@ yamaha-fsx315c-natural-uralp20608
 yamaha-fsx315c-tbs-4957812609043
 yamaha-fsx315c-tobacco-brown-sunburst-nbursthtml
 yamaha-fsx400-natural-satin-atinp41450
-yamaha-fsx400-natural-satin-turalsatin
+yamaha-fsx400-natural-satin-mahafsx400
 yamaha-fsx400-ns-4957812693950
 yamaha-fsx400-ns-concierto-natural-4957812718462
 yamaha-fsx400-sblk-4957812693981
@@ -6059,15 +6050,13 @@ yamaha-fx370c-tobacco-brown-sunburst-98010nuevo
 yamaha-fx370cbl-negro-egro185252
 yamaha-fx400-natural-satin-atinp41452
 yamaha-fx400-natural-satin-e7860nuevo
-yamaha-fx400-natural-satin-turalsatin
-yamaha-fx400-negro-ahumado-4957812639374
 yamaha-fx400-ns-4957812693967
 yamaha-fx400-ns-dreadnought-natural-4957812717977
 yamaha-fx400-smb-dreadnought-smoky-black-4957812717984
 yamaha-fx400-smoky-black-4957812693974
+yamaha-fx400-smoky-black-amahafx400
 yamaha-fx400-smoky-black-e7870nuevo
 yamaha-fx400-smoky-black-lackp41453
-yamaha-fx400-smoky-black-smokyblack
 yamaha-jr-1-fg-junior-natural-con-funda-nfundahtml
 yamaha-jr-1-hajr1p7504
 yamaha-jr1-4960693145821
