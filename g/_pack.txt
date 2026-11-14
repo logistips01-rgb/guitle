@@ -51,6 +51,7 @@ harley-benton-cst-24t-p90-ocean-flame-bundle-ndlesethtm
 harley-benton-cst-24t-paradise-flame-bundle-ndlesethtm
 harley-benton-cst-24t-purple-burst-bundle-tbundlehtm
 harley-benton-dc-200-bk-student-serie-bundle-bundle2htm
+harley-benton-dc-200-bk-student-serie-bundle-ebundlehtm
 harley-benton-dc-200-bk-student-serie-bundle-ndlesethtm
 harley-benton-dc-200-ch-student-serie-bundle-bundle2htm
 harley-benton-dc-200-ch-student-serie-bundle-ebundlehtm
@@ -98,6 +99,7 @@ harley-benton-hb-35plus-metallic-blue-bundle-ebundlehtm
 harley-benton-hb-35plus-metallic-gree-bundle-ebundlehtm
 harley-benton-hb-35plus-metallic-plum-bundle-mbundlehtm
 harley-benton-hb-35plus-vintage-burst-bundle-ndlesethtm
+harley-benton-hwy-25bks-progressive-s-bundle-sbundlehtm
 harley-benton-ja-60cc-lh-lake-placid-bundle-dbundlehtm
 harley-benton-ja-60lh-ow-bundle-wbundlehtm
 harley-benton-ja-60lh-sb-vintage-seri-bundle-ibundlehtm
@@ -300,6 +302,7 @@ squier-cv-60s-strat-car-bundle-rbundlehtm
 squier-cv-60s-strat-lpb-bundle-bbundlehtm
 squier-cv-60s-strat-lpb-bundle-ndlesethtm
 squier-cv-70s-strat-hss-mn-blk-bundle-kbundlehtm
+squier-cv-70s-strat-hss-mn-blk-bundle-ndlesethtm
 squier-mini-strat-v2-bk-il-bundle-lbundlehtm
 squier-mini-stratocaster-il-dr-bundle-rbundlehtm
 squier-sonic-strat-hss-black-bundle-kbundlehtm

@@ -469,7 +469,6 @@ audix-vx5-687471201060
 austrian-audio-cc8-9120097810205
 austrian-audio-cc8-stereo-set-9120097810311
 austrian-audio-oc16-810019100352
-austrian-audio-oc16-studio-set-mit-allround-mikrofon-kopfhorer-kopfhoerer
 austrian-audio-oc18-dual-set-plus-9120097810298
 austrian-audio-oc18-live-set-stereo-pair-9120097810052
 austrian-audio-oc18-studio-set-9120097810045

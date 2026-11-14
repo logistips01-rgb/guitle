@@ -142,7 +142,6 @@ bam-estuche-de-guitarra-grand-concert-hightech-8009xl-carbon-3760277053570
 bam-estuche-de-guitarra-grand-concert-hightech-8009xl-tweed-3760277053587
 bam-estuche-de-guitarra-manouche-tipo-selmer-hightech-8005xl-carbon-3760277053495
 bam-estuche-de-guitarra-manouche-tipo-selmer-hightech-8005xl-tweed-3760277053501
-bam-estuche-de-guitarra-manouche-tipo-selmer-panther-hightech-pant8005xl-gray-gr-3760277057677
 bam-estuche-de-hightech-8002xl-carbon-3760277053365
 bam-estuche-de-hightech-8002xl-silver-carbon-3760277053396
 bam-estuche-de-hightech-8002xl-tweed-3760277053402
@@ -487,7 +486,6 @@ esp-f-bass-series-840248021265
 esp-for-ex-guitar-form-fit-case-840248021319
 esp-ltd-cvff-v-alexi-laiho-arrow-form-fit-estuche-para-840248018739
 esp-ltd-phoenix-bass-case-blk-asscaseblk
-esp-mh-xl-guitar-ff-case-840248027892
 estuche-rainbow-rm-les-paul-espaulhtml
 eve-audio-sc203-transport-soft-case-4250626314062
 evh-case-evh-wolfgang-cn-skb-885978083756

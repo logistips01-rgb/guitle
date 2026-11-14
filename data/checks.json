@@ -3,6 +3,15 @@
   "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
+  "name": "Ibanez RGT1270PB-DTF Deep Twilight Flat",
+  "slug": "ibanez-rgt1270pb-dtf-deep-twilight-flat-4549763308832",
+  "price": 1010.04,
+  "median": 1490.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
   "name": "Yamaha PACS+12 Pacifica Standard Plus Shell White",
   "slug": "yamaha-pacs-12-pacifica-standard-plus-shell-white-4957812697675",
   "price": 733.0,
@@ -101,11 +110,29 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort X700 Duality II LVB w/bag",
+  "slug": "cort-x700-duality-ii-lvb-w-bag-8809625369668",
+  "price": 743.38,
+  "median": 1205.575
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "partitura",
   "name": "Jackson JS1X DINKY MINION BLACK",
   "slug": "jackson-js1x-dinky-minion-black-nblackhtml",
   "price": 133.6,
   "median": 186.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Jet JS300-OW-SSS Olympic White",
+  "slug": "jet-js300-ow-sss-olympic-white-3831120907750",
+  "price": 151.76,
+  "median": 214.0
  },
  {
   "kind": "electrica",
@@ -245,6 +272,24 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort G290FAT II AVB Antique Violin Burst",
+  "slug": "cort-g290fat-ii-avb-antique-violin-burst-8809625369569",
+  "price": 410.69,
+  "median": 569.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort X100 Opbk",
+  "slug": "cort-x100-opbk-8809625362157",
+  "price": 131.22,
+  "median": 198.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "microfusa",
   "name": "Godin Stadium HT Trans White RN with Bag",
   "slug": "godin-stadium-ht-trans-white-rn-with-bag-623501049349",
@@ -349,6 +394,15 @@
   "slug": "cort-g260cs-bk-negra-8809625363802",
   "price": 359.0,
   "median": 537.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort KX100 IO",
+  "slug": "cort-kx100-io-8809625361983",
+  "price": 170.99,
+  "median": 236.0
  },
  {
   "kind": "electrica",
@@ -478,6 +532,15 @@
  },
  {
   "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Jet JS450-OBL Ocean Blue",
+  "slug": "jet-js450-obl-ocean-blue-3831120912716",
+  "price": 255.02,
+  "median": 368.0
+ },
+ {
+  "kind": "electrica",
   "type": "sin_iva",
   "store": "musicalsanfrancisco",
   "name": "Schecter Nick Johnston PT A. Frost",
@@ -520,6 +583,15 @@
   "slug": "austin-as6progt-super-6-gold-top-812309025482",
   "price": 261.0,
   "median": 358.5
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Cort CR100CRS",
+  "slug": "cort-cr100crs-8809383837577",
+  "price": 200.95,
+  "median": 275.0
  },
  {
   "kind": "electrica",
@@ -583,6 +655,15 @@
   "slug": "gretsch-streamliner-cvt-lrl-olive-drab-197955147949",
   "price": 289.0,
   "median": 389.45
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Ibanez Tamaño 3/4 Ibanez PGMM21-MGN Metallic Light Paul Gilbert Signature Mikro Series",
+  "slug": "ibanez-tamano-3-4-ibanez-pgmm21-mgn-metallic-light-paul-gilbert-signature-mikro-4549763175120",
+  "price": 158.36,
+  "median": 217.6
  },
  {
   "kind": "electrica",
@@ -694,6 +775,15 @@
  },
  {
   "kind": "electrica",
+  "type": "sin_iva",
+  "store": "alteisa",
+  "name": "SX SST 3 Tonos SB",
+  "slug": "sx-sst-3-tonos-sb-6971047510798",
+  "price": 195.03,
+  "median": 234.375
+ },
+ {
+  "kind": "electrica",
   "type": "fuera_de_lugar",
   "store": "numemusic",
   "name": "Schecter C-8 Deluxe Sbk",
@@ -717,7 +807,7 @@
   "name": "Sx ED1 White",
   "slug": "sx-ed1-white-6971047510965",
   "price": 125.4,
-  "median": 186.275
+  "median": 176.53
  },
  {
   "kind": "electrica",
@@ -735,7 +825,7 @@
   "name": "Sx SEM2BF Burning Fire",
   "slug": "sx-sem2bf-burning-fire-6940651406780",
   "price": 129.0,
-  "median": 193.625
+  "median": 183.57
  },
  {
   "kind": "electrica",
@@ -744,7 +834,7 @@
   "name": "Sx SEM2BG Blue Glow",
   "slug": "sx-sem2bg-blue-glow-6940651406773",
   "price": 129.0,
-  "median": 193.625
+  "median": 183.57
  },
  {
   "kind": "acustica",
@@ -1055,15 +1145,6 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
-  "store": "musicopolix",
-  "name": "Martin D-18 Dreadnought Satin Amberburst",
-  "slug": "martin-d-18-dreadnought-satin-amberburst-729789648233",
-  "price": 1966.4,
-  "median": 2959.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
   "store": "drunkat",
   "name": "Seagull Artist Mosaic Anthem EQ",
   "slug": "seagull-artist-mosaic-anthem-eq-623501050536",
@@ -1114,15 +1195,6 @@
   "slug": "sigma-jm-sg45-jmsg45html",
   "price": 566.0,
   "median": 775.0
- },
- {
-  "kind": "acustica",
-  "type": "fuera_de_lugar",
-  "store": "auvisa",
-  "name": "Yamaha FSX400 Smb Concierto Smoky Black",
-  "slug": "yamaha-fsx400-smb-concierto-smoky-black-4957812718547",
-  "price": 205.0,
-  "median": 280.0
  },
  {
   "kind": "acustica",
@@ -1262,11 +1334,29 @@
  {
   "kind": "acustica",
   "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "Tasman TA100 Dreadnought",
+  "slug": "tasman-ta100-dreadnought-9356790024193",
+  "price": 399.0,
+  "median": 653.9
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
   "store": "musicsales",
   "name": "Yamaha FS820II RR",
   "slug": "yamaha-fs820ii-rr-4957812668705",
   "price": 315.24,
   "median": 482.0
+ },
+ {
+  "kind": "acustica",
+  "type": "fuera_de_lugar",
+  "store": "auvisa",
+  "name": "Yamaha FSX400 Smb Concierto Smoky Black",
+  "slug": "yamaha-fsx400-smb-concierto-smoky-black-4957812718547",
+  "price": 205.0,
+  "median": 280.0
  },
  {
   "kind": "acustica",
@@ -1330,6 +1420,24 @@
   "slug": "ibanez-ga360tce-tbk-transparent-black-electrificada-de-cuerpo-estrecho-4549763378279",
   "price": 396.33,
   "median": 647.5
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "José Gómez C40 Sapelly Modelo 2021 EQ Amplificada Cutaway",
+  "slug": "jose-gomez-c40-sapelly-modelo-2021-eq-amplificada-cutaway-8434418041904",
+  "price": 181.02,
+  "median": 254.15
+ },
+ {
+  "kind": "clasica",
+  "type": "fuera_de_lugar",
+  "store": "alteisa",
+  "name": "José Gómez F90 Sicomoro Modelo 2021Tapa Sólida",
+  "slug": "jose-gomez-f90-sicomoro-modelo-2021tapa-solida-8434418041850",
+  "price": 216.0,
+  "median": 303.0
  },
  {
   "kind": "clasica",
