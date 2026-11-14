@@ -1,0 +1,8 @@
+{"fecha": "2026-11-14",
+ "cifra": "Más de 22.000 guitarras en 25 tiendas de España, con su histórico de precios",
+ "cifra_corta": "+22.000 guitarras · 25 tiendas",
+ "guitarras": [
+  {"tipo": "minimo", "nombre": "Admira Luna Electrificada", "precio": 221, "media": 270.15, "foto": "g1.webp"},
+  {"tipo": "bajada", "nombre": "Ibanez GA621BOT Black Out", "precio": 285, "media": 366.5, "vs_media": -22.2, "foto": "g2.webp"},
+  {"tipo": "inflado", "nombre": "Fender Standard Telecaster", "antes": 508, "subida": 539, "ahora": 508, "foto": "g3.webp"}
+ ]}
