@@ -1505,6 +1505,7 @@ epiphone-hummingbird-signature-eric-church-cobra-burst-oscuro-ibg-711106237671
 epiphone-hummingbird-standard-cherry-sunburst-711106166407
 epiphone-hummingbird-standard-ec-natural-711106166438
 epiphone-hummingbird-studio-ec-heritage-cherry-sunburst-711106173962
+epiphone-hummingbird-studio-ec-lh-herritage-cherry-711106173986
 epiphone-hummingbird-studio-ec-natural-711106173979
 epiphone-hummingbird-studio-heritage-cherry-sunburst-711106173924
 epiphone-hummingbird-studio-lh-herritage-cherry-711106173948
@@ -2015,7 +2016,7 @@ gibson-1942-banner-j-45-vintage-sunburst-711106037318
 gibson-1942-banner-lg-2-vintage-sunburst-711106037301
 gibson-1942-banner-southern-jumbo-vintage-sunburst-711106037370
 gibson-1960-hummingbird-fixed-bridge-heritage-cherry-sunburst-711106037394
-gibson-1960-hummingbird-murphy-lab-heavy-aged-1-711106157719
+gibson-1960-hummingbird-murphy-lab-heavy-aged-21825048-711106157719
 gibson-1960-hummingbird-murphy-lab-light-aged-22754008-711106129525
 gibson-1963-country-western-murphy-lab-heavy-aged-20715032-711106157726
 gibson-50-s-j-45-original-ebony-711106036953
@@ -2037,6 +2038,7 @@ gibson-elvis-sj-200-ebony-711106056388
 gibson-everly-brothers-j-180-22994072-711106139456
 gibson-g-45-natural-lh-711106056449
 gibson-hummingbird-anni-edicion-limitada-cremona-burst-modern-711106233673
+gibson-hummingbird-custom-22513019-711106135236
 gibson-hummingbird-custom-koa-natural-antiguo-csm-711106044224
 gibson-hummingbird-elegante-koa-sunburst-miel-moderno-711106233550
 gibson-hummingbird-especial-satinado-rojo-vino-moderna-erna403688
@@ -2963,6 +2965,7 @@ lagtramontane-177-a-e-cutaway-natural-uralp27020
 lakewood-a-14-cp-63-natural-4260381430957
 lakewood-a-15-edition-2022-444410026987
 lakewood-a-15-edition-2024-444410032480
+lakewood-a-24-custom-35250-444410031078
 lakewood-black-sheep-4260381430735
 lakewood-d-14-cp-4260220610069
 lakewood-d-14-p-natural-4260381430964
@@ -5183,6 +5186,7 @@ taylor-212ce-grand-concert-887766126447
 taylor-212ce-lh-887766126454
 taylor-212ce-plus-887766126508
 taylor-214ce-blk-plus-gran-auditorio-negra-887766126546
+taylor-214ce-dlx-special-edition-blacktop-887766149910
 taylor-214ce-gran-auditorio-887766102830
 taylor-214ce-k-dlx-hawaiian-koa-887766135623
 taylor-214ce-k-dlx-special-edition-honeyburst-887766145417
@@ -5289,6 +5293,7 @@ taylor-builder-s-edition-814ce-next-generation-indian-rosewood-adirondack-natura
 taylor-builder-s-edition-914ce-next-generation-887766144885
 taylor-builder-s-edition-k24ce-next-generation-887766144908
 taylor-builders-edition-517e-whb-v-class-887766093848
+taylor-builders-edition-717e-whb-887766093862
 taylor-builders-edition-912ce-whb-887766105794
 taylor-builders-edition-k14ce-887766085775
 taylor-collins-bugle-taylor-collins-tcbg-015-lacado-en-sib-acadoensib
@@ -5816,7 +5821,7 @@ yamaha-f310-folk-tobacco-brown-sunburst-4957812668224
 yamaha-f310-natural-310natural
 yamaha-f310-natural-e4640nuevo
 yamaha-f310-nt-ii-folk-natural-4957812306775
-yamaha-f310-tbs-10tbsp7717
+yamaha-f310-tbs-4957812306799
 yamaha-f310-tobacco-brown-sunburst-31000nuevo
 yamaha-f310tbsii-sombreada-da3824html
 yamaha-f370-folk-4957812314701

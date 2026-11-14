@@ -116,7 +116,6 @@ harley-benton-multiscale-8-qeb-bundle-bbundlehtm
 harley-benton-r-446-blood-metallic-bundle-cbundlehtm
 harley-benton-r-446-blue-metallic-bundle-cbundlehtm
 harley-benton-r-446-flip-flop-blue-bundle-ebundlehtm
-harley-benton-r-446-graphite-metallic-bundle-cbundlehtm
 harley-benton-r-446-green-metallic-bundle-cbundlehtm
 harley-benton-r-446-plum-metallic-bundle-cbundlehtm
 harley-benton-r-446lh-graphite-metal-bundle-lbundlehtm

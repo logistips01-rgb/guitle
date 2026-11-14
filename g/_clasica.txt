@@ -3127,7 +3127,7 @@ rocio-10-amarilla-8435732404802
 rocio-10-azul-8436032350844
 rocio-10-blanca-8436032350851
 rocio-10-natural-8436032350837
-rocio-10-negra-8436032350868
+rocio-10-negro-8436032350868
 rocio-10-roja-8435732404826
 rocio-10-rosa-8436032350875
 rocio-20-icarocio20
@@ -3324,10 +3324,10 @@ sulayr-lattice-pino-sl-100sp-inosl100sp
 takamine-classique-cutaway-electro-gc5cenat-5cenathtml
 takamine-classique-natural-gc1nat-190262041481
 takamine-e-a-cutaway-gc1celh-nat-zurdos-190262042174
-takamine-eh5-classic-hirade-cutaway-natural-aturalhtml
+takamine-eh5-classic-hirade-cutaway-natural-190262012603
 takamine-electroacustica-takamine-dh90-190262012566
 takamine-electroacustica-takamine-ec132sc-190262012597
-takamine-electroacustica-takamine-eh5c-190262012603
+takamine-electroacustica-takamine-eh5c-kamineeh5c
 takamine-electroacustica-takamine-gc2ce-negra-190262041214
 takamine-espanola-amplificada-cutaway-takamine-gc1-natural-ayelectro2
 takamine-espanola-amplificada-cutaway-takamine-gc3-natural-wayelectro

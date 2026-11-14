@@ -287,6 +287,7 @@ boss-rc-5-loop-station-4957054516741
 boss-rc-5-loop-station-57-patterns-ritmos-usb-lcd-tmosp19825
 boss-rc-500-loop-station-2-pistas-stereo-patterns-ritmos-usb-xlr-mic-input-tmosp19826
 boss-rc-505mkii-looper-beatbox-workstation-tmosp25527
+boss-rc-600-loop-station-4957054516765
 boss-rc-600-loop-station-6-pistas-200-ritmos-2-entradas-microfone-xlr-hmboxp4275
 boss-rc-600-loop-station-6-pistas-200-ritmos-2-entradas-microfone-xlr-tmosp25696
 boss-rc10r-rhythm-loop-station-pedal-looper-5rc10rhtml

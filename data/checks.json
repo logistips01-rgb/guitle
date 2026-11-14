@@ -65,6 +65,15 @@
  {
   "kind": "electrica",
   "type": "fuera_de_lugar",
+  "store": "egitana",
+  "name": "ESP LTD JM-I QM Deep Blood Moon",
+  "slug": "esp-ltd-jm-i-qm-deep-blood-moon-moonp39649",
+  "price": 1421.0,
+  "median": 1895.0
+ },
+ {
+  "kind": "electrica",
+  "type": "fuera_de_lugar",
   "store": "session",
   "name": "LTD SN-200HT Charcoal Metallic Satin",
   "slug": "ltd-sn-200ht-charcoal-metallic-satin-799493274141",
@@ -114,7 +123,7 @@
   "name": "Cort X700 Duality II LVB w/bag",
   "slug": "cort-x700-duality-ii-lvb-w-bag-8809625369668",
   "price": 743.38,
-  "median": 1205.575
+  "median": 1211.075
  },
  {
   "kind": "electrica",
@@ -140,7 +149,7 @@
   "store": "woodbrass",
   "name": "PRS SE Silver Sky Maple LH Summit Purple",
   "slug": "prs-se-silver-sky-maple-lh-summit-purple-825362248477",
-  "price": 596.0,
+  "price": 597.0,
   "median": 960.2
  },
  {
@@ -835,6 +844,18 @@
   "slug": "sx-sem2bg-blue-glow-6940651406773",
   "price": 129.0,
   "median": 183.57
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Bacchus JT Tactics24-QM RSM/M BLKS",
+  "slug": "bacchus-jt-tactics24-qm-rsm-m-blks-4571470404989"
+ },
+ {
+  "kind": "electrica",
+  "type": "foto_perdida",
+  "name": "Eko ST 300 Fiesta Red",
+  "slug": "eko-st-300-fiesta-red-8056734498387"
  },
  {
   "kind": "acustica",
