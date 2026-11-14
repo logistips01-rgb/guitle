@@ -1,0 +1,43 @@
+name: marca
+
+# Temporal (14/11/2026): ¿está libre «guitle» como marca? Búsqueda en TMview (España y UE) desde GitHub, porque
+# TMview bloquea las consultas desde el servidor de la sesión. Se borra después.
+on:
+  push:
+    branches: [claude/friendly-fermat-yycain]
+    paths: [".github/workflows/marca.yml"]
+
+permissions:
+  contents: read
+
+jobs:
+  buscar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: TMview
+        shell: python
+        run: |
+          import json, urllib.request
+          for q in ("guitle", "guittle", "guitel", "gitle", "guitl"):
+              body = json.dumps({"page": "1", "pageSize": "50", "criteria": "F", "basicSearch": q,
+                                 "fOffices": ["ES", "EM", "WO"], "fields": ["tmName", "tmOffice", "applicationNumber",
+                                 "applicationDate", "tradeMarkStatus", "niceClass", "applicantName"]}).encode()
+              req = urllib.request.Request("https://www.tmdn.org/tmview/api/search/results?translate=true", data=body,
+                                           headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0",
+                                                    "Accept": "application/json"})
+              try:
+                  with urllib.request.urlopen(req, timeout=60) as r:
+                      txt = r.read().decode("utf-8", "replace")
+              except Exception as e:
+                  print(q, "ERROR", e); continue
+              try:
+                  d = json.loads(txt)
+              except ValueError:
+                  print(q, "NO JSON:", txt[:300]); continue
+              rows = d.get("tradeMarks") or d.get("results") or []
+              print(f"== {q}: {d.get('totalResults', len(rows))} resultados")
+              for t in rows[:50]:
+                  print("  ", t.get("tmName"), "|", t.get("tmOffice"), "|", t.get("applicationNumber"), "|",
+                        t.get("applicationDate"), "|", t.get("tradeMarkStatus"), "| clases", t.get("niceClass"), "|",
+                        t.get("applicantName"))
