@@ -12,7 +12,7 @@ if [ ! -d "$D/.git" ]; then
 fi
 cd "$D"
 git remote set-url origin "https://x-access-token:$T@github.com/logistips01-rgb/guitle.git"
-git sparse-checkout set scraper data/musica requirements.txt servidor
+git sparse-checkout set --no-cone /scraper/ /data/musica/ /requirements.txt /servidor/
 git config user.name "guitle-servidor"; git config user.email "servidor@guitle.com"
 chmod 700 "$D/.git"
 [ -x /srv/guitle-consultas-venv/bin/python ] || python3 -m venv /srv/guitle-consultas-venv
