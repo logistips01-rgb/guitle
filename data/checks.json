@@ -837,30 +837,6 @@
   "median": 183.57
  },
  {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Ibanez AR625FMSP-CML",
-  "slug": "ibanez-ar625fmsp-cml-625fmspcml"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Schecter Reaper 7 Ms Sky Burst",
-  "slug": "schecter-reaper-7-ms-sky-burst-815447026403"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Yamaha Pacifica611Vfm Negro translúcido",
-  "slug": "yamaha-pacifica611vfm-negro-translucido-cido158067"
- },
- {
-  "kind": "electrica",
-  "type": "foto_perdida",
-  "name": "Yamaha Revstar RSP20B 60 Años Edición LTD Degradado Negro Noble",
-  "slug": "yamaha-revstar-rsp20b-60-anos-edicion-ltd-degradado-negro-noble-4957812711715"
- },
- {
   "kind": "acustica",
   "type": "fuera_de_lugar",
   "store": "musicalsanfrancisco",
@@ -1401,36 +1377,6 @@
   "median": 877.895
  },
  {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Takamine Cutaway Dreadnought Takamine EF381 Negra, 12 Cuerdas",
-  "slug": "takamine-cutaway-dreadnought-takamine-ef381-negra-12-cuerdas-190262011781"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Epiphone Bluebird Signature Miranda Lambert Bluebonnet",
-  "slug": "epiphone-bluebird-signature-miranda-lambert-bluebonnet-711106137520"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Epiphone J-45 Standard EC Honey Burst IBG",
-  "slug": "epiphone-j-45-standard-ec-honey-burst-ibg-711106166476"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Gibson J-45 Standard LH Vintage Sunburst Moderno",
-  "slug": "gibson-j-45-standard-lh-vintage-sunburst-moderno-711106111063"
- },
- {
-  "kind": "acustica",
-  "type": "foto_perdida",
-  "name": "Gibson SJ-200 Studio Walnut Natural Modern",
-  "slug": "gibson-sj-200-studio-walnut-natural-modern-711106170329"
- },
- {
   "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "alteisa",
@@ -1567,36 +1513,12 @@
  },
  {
   "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Lâg Bluewave 1 TNBW1TE Viaje Nylon",
-  "slug": "lag-bluewave-1-tnbw1te-viaje-nylon-3700166373143"
- },
- {
-  "kind": "clasica",
   "type": "fuera_de_lugar",
   "store": "session",
   "name": "Ortega R122SN-L",
   "slug": "ortega-r122sn-l-842960180374",
   "price": 189.0,
   "median": 269.37
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Manuel Rodríguez Superior Flamenco Gipsy Kings GK-RO-R roja",
-  "slug": "manuel-rodriguez-superior-flamenco-gipsy-kings-gk-ro-r-roja-4046662338279"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "Manuel Rodríguez Superior Flamenco Gipsy Kings GK-RO-Y amarilla",
-  "slug": "manuel-rodriguez-superior-flamenco-gipsy-kings-gk-ro-y-amarilla-4046662338286"
- },
- {
-  "kind": "clasica",
-  "type": "foto_perdida",
-  "name": "amplificada Manuel Rodríguez Superior Flamenco Gipsy Kings GK-RO-RCE cutaway roja",
-  "slug": "amplificada-manuel-rodriguez-superior-flamenco-gipsy-kings-gk-ro-rce-cutaway-roj-4046662339979"
  },
  {
   "kind": "teclado",
