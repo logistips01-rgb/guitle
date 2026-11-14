@@ -97,6 +97,7 @@ STORES["de"] = {"impericon": ("Impericon", "https://www.impericon.com/de"),
                 "bravado": ("Bravado", "https://www.bravado.de"),
                 "jpc": ("jpc", "https://www.jpc.de")} | STORES["de"]  # y eBay, de arriba
 LOOKUP["de"] = {"jpc": "https://www.jpc.de/s/{ean}"}
+COOKIES = {}  # {tienda: {cookie: valor}} para las consultas por código (Shopify: localization=IE → precios en euros)
 # Discos de otros países (los comparados, en git) que también se buscan en las tiendas por EAN: Impericon y Bravado
 # venden sobre todo metal y su sello, y así JPC se consulta también con los discos más conocidos.
 SEED = {"de": ("uk", "es", "fr", "it")}
@@ -595,6 +596,65 @@ def _read_woo(fetcher, base, end, codes, need_ean=True):
     return items
 
 
+class _Stop(Exception):
+    """robots.txt no deja consultar esa tienda."""
+
+
+def _shopify_ean(f, base, ean):
+    """Disco de una tienda Shopify por su código de barras: el buscador de la tienda (search/suggest.json) da las
+    fichas candidatas y la de la ficha (.js) confirma el código, el precio y el stock. ({p, st, t, v, img}, url)."""
+    url = f"{base}/search/suggest.json?q={ean}&resources%5Btype%5D=product&resources%5Blimit%5D=3"
+    if not f.allowed(url)[0]:
+        raise _Stop()
+    r = f.get(url)
+    prods = ((r.json().get("resources") or {}).get("results") or {}).get("products") or [] if r.status_code == 200 else []
+    for p in prods:
+        h = p.get("handle")
+        if not h:
+            continue
+        r2 = f.get(f"{base}/products/{h}.js")
+        if r2.status_code != 200:
+            continue
+        j = r2.json()
+        for v in j.get("variants") or []:
+            code = re.sub(r"\D", "", str(v.get("barcode") or v.get("sku") or "")).lstrip("0")
+            if code and code.zfill(13) == ean.zfill(13):
+                img = j.get("featured_image") or ""
+                return ({"p": v["price"] / 100, "st": bool(v.get("available")), "t": j.get("title") or "",
+                         "v": j.get("vendor") or "", "img": ("https:" + img) if img.startswith("//") else img},
+                        f"{base}/products/{h}")
+    return {}, url
+
+
+def _search_ean(f, spec, ean):
+    """Buscador de la tienda por el código ("url con {ean}|expresión del enlace a la ficha"), la primera ficha que
+    sale y su JSON-LD; vale solo si la ficha lleva ese código (en el JSON-LD o en la dirección)."""
+    tpl, link = spec.split("|", 1)
+    url = tpl.format(ean=ean)
+    if not f.allowed(url)[0]:
+        raise _Stop()
+    r = f.get(url)
+    if r.status_code != 200:
+        return {}, url
+    if r.url != url and _ld_disc(r.text).get("p"):  # el buscador ya llevó a la ficha
+        page, final = r.text, r.url
+    else:
+        m = re.search(link, r.text)
+        if not m:
+            return {}, url
+        from urllib.parse import urljoin
+        final = urljoin(r.url, html.unescape(m.group(0) if not m.groups() else m.group(1)))
+        if not f.allowed(final)[0]:
+            raise _Stop()
+        r2 = f.get(final)
+        if r2.status_code != 200:
+            return {}, final
+        page, final = r2.text, r2.url
+    if ean.lstrip("0") not in page and ean.lstrip("0") not in final:  # que sea ese disco y no otro parecido
+        return {}, final
+    return _ld_disc(page), final
+
+
 def _ld_disc(html_text):
     """Precio, stock, nombre, artista y foto del JSON-LD de una ficha (Product o MusicAlbum, también dentro de @graph)."""
     out = {}
@@ -731,6 +791,8 @@ def _lookup(pais, end, catalog, codes):
 
     def one_store(sid):
         f = Fetcher(delay=(1.0, 2.0))
+        for k, v in COOKIES.get(sid, {}).items():  # Shopify: país y moneda ("localization=IE" → euros)
+            f.session.cookies.set(k, v)
         done = seen.setdefault(sid, {})
         # Primero se revisan los que la tienda tiene (los que salen en la web: su precio cambia, Back to Black en CDGO
         # subió de 29,88 a 36,78 € en un día), del más antiguo al más nuevo; luego los nunca consultados, y los que la
@@ -748,17 +810,26 @@ def _lookup(pais, end, catalog, codes):
         for e in todo:
             if time.time() > end or done.get(e, [""])[0] == today:
                 break
-            url = LOOKUP[pais][sid].format(ean=e)
-            ok, why = f.allowed(url)
-            if not ok:
-                print(f"[{sid}] no se puede consultar ({why}): se para", flush=True)
-                return
+            spec = LOOKUP[pais][sid]
             try:
-                r = f.get(url)
-                d = (_cdgo_disc(r.text) if sid == "cdgo" else _ld_disc(r.text)) if r.status_code == 200 else {}
+                if spec.startswith("shopify:"):  # tienda Shopify: buscador de la tienda por el código y su ficha
+                    d, final = _shopify_ean(f, spec[8:], e)
+                elif spec.startswith("search:"):  # buscador → primer enlace a una ficha → JSON-LD
+                    d, final = _search_ean(f, spec[7:], e)
+                else:
+                    url = spec.format(ean=e)
+                    if not f.allowed(url)[0]:
+                        print(f"[{sid}] no se puede consultar (robots.txt): se para", flush=True)
+                        return
+                    r = f.get(url)
+                    d = (_cdgo_disc(r.text) if sid == "cdgo" else _ld_disc(r.text)) if r.status_code == 200 else {}
+                    final = r.url
+            except _Stop:
+                print(f"[{sid}] no se puede consultar (robots.txt): se para", flush=True)
+                return
             except Exception:  # noqa: BLE001
                 continue
-            done[e] = ([today, d["p"], d.get("st", True), r.url, d.get("t") or "", d.get("v") or "", d.get("img") or ""]
+            done[e] = ([today, d["p"], d.get("st", True), final, d.get("t") or "", d.get("v") or "", d.get("img") or ""]
                        if d.get("p") else [today])
             n += 1
         print(f"[{sid}] {n} discos consultados", flush=True)
