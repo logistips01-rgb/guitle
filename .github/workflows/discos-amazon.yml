@@ -2,7 +2,8 @@ name: discos-amazon
 
 # Sección de discos solo con Amazon (y eBay) de los países sin tiendas de discos leídas todavía (scraper/discos_amazon.py):
 # Alemania, Austria, Suiza, Chequia, Eslovaquia, Hungría, Rumanía, Bulgaria, Grecia, Finlandia, Dinamarca y Noruega.
-# Una vez por semana (los discos populares cambian poco) y al cambiar el código.
+# Una vez por semana (los discos populares cambian poco) y al cambiar el código. Las lecturas del catálogo de cada país
+# ya no la borran (r2.sh, 14/11/2026).
 on:
   schedule:
     - cron: "23 4 * * 1"
