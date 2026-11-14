@@ -76,12 +76,13 @@ SHARED_LOOKUP = {"es": {"cdgo": "pt"}}
 # barato; el enlace es el de afiliado de eBay Partner Network (campid de Manuel). La API da 5.000 consultas al día para
 # todo: cada país usa como mucho EBAY_DAILY.
 EBAY = {"es": ("EBAY_ES", "https://www.ebay.es"), "fr": ("EBAY_FR", "https://www.ebay.fr"),
-        "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk"), "de": ("EBAY_DE", "https://www.ebay.de")}
+        "it": ("EBAY_IT", "https://www.ebay.it"), "uk": ("EBAY_GB", "https://www.ebay.co.uk"), "de": ("EBAY_DE", "https://www.ebay.de"),
+        "nl": ("EBAY_NL", "https://www.ebay.nl"), "ie": ("EBAY_IE", "https://www.ebay.ie")}
 EBAY_CAMPID = "5339241544"
 # Consultas al día por país (4 países). La clave de eBay es la misma que la de mootle y el cupo (5.000/día) es de las
 # dos webs: guitle discos 4 × 900 + guitle guitarras (~200) + mootle 800 ≤ 5.000. Se cambia sin tocar código con la
 # variable de GitHub EBAY_MAX_CALLS (Settings → Secrets and variables → Actions → Variables).
-EBAY_DAILY_BY = {"de": 400}  # Alemania, la quinta: 4 × 900 + 400 + guitarras (~200) + mootle (800) ≤ 5.000
+EBAY_DAILY_BY = {"de": 400, "nl": 300, "ie": 300}  # Alemania, la quinta: 4 × 900 + 400 + guitarras (~200) + mootle (800) ≤ 5.000
 EBAY_DAILY = int(__import__("os").environ.get("EBAY_MAX_CALLS") or 900)  # 900 mientras mootle hace su primera pasada (a 800/día, ~2 semanas desde el 6-11-2026); luego 1.000
 for _c, (_m, _base) in EBAY.items():
     STORES.setdefault(_c, {})["ebay"] = ("eBay", _base)
@@ -101,6 +102,31 @@ COOKIES = {}  # {tienda: {cookie: valor}} para las consultas por código (Shopif
 # Discos de otros países (los comparados, en git) que también se buscan en las tiendas por EAN: Impericon y Bravado
 # venden sobre todo metal y su sello, y así JPC se consulta también con los discos más conocidos.
 SEED = {"de": ("uk", "es", "fr", "it")}
+# Países Bajos (estudio del 14/11/2026): Platenzaak (Shopify, la referencia es el código), Velvet, Records on Vinyl y
+# 3345 (Shopify, catálogos enormes: se consultan por código); eBay.nl. Sounds Venlo: su robots.txt no deja buscar.
+# Platomania (Plato, Concerto, De Waterput) se lee, pero su buscador no deja ver bien la ficha: más adelante.
+STORES["nl"] = {"platenzaak": ("Platenzaak", "https://www.platenzaak.nl"),
+                "velvet": ("Velvet Music", "https://www.velvetmusic.nl"),
+                "recordsonvinyl": ("Records on Vinyl", "https://recordsonvinyl.nl"),
+                "3345": ("3345 Records", "https://3345.nl"),
+                "ebay": ("eBay", "https://www.ebay.nl")}
+LOOKUP["nl"] = {"velvet": "shopify:https://www.velvetmusic.nl", "recordsonvinyl": "shopify:https://recordsonvinyl.nl",
+                "3345": "shopify:https://3345.nl"}
+# Irlanda: The Record Hub (Shopify, la referencia es el código), Tower Records Dublin, Golden Discs, Spindizzy y
+# Freebird (Shopify, por código; Golden Discs da dólares sin la cookie de país); eBay.ie; Amazon.co.uk.
+STORES["ie"] = {"therecordhub": ("The Record Hub", "https://www.therecordhub.com"),
+                "tower": ("Tower Records Dublin", "https://towerrecords.ie"),
+                "goldendiscs": ("Golden Discs", "https://goldendiscs.ie"),
+                "spindizzy": ("Spindizzy", "https://spindizzyrecords.com"),
+                "freebird": ("Freebird", "https://freebirdrecords.com"),
+                "ebay": ("eBay", "https://www.ebay.ie")}
+LOOKUP["ie"] = {k: "shopify:" + STORES["ie"][k][1] for k in ("tower", "goldendiscs", "spindizzy", "freebird")}
+COOKIES |= {"goldendiscs": {"localization": "IE"}, "tower": {"localization": "IE"},
+            "spindizzy": {"localization": "IE"}, "freebird": {"localization": "IE"}}
+# Portugal: también Flur (Lisboa) e Impericon (/pt), por código
+STORES["pt"] |= {"flur": ("Flur", "https://www.flur.pt"), "impericon": ("Impericon", "https://www.impericon.com/pt")}
+LOOKUP["pt"] |= {"flur": "shopify:https://www.flur.pt", "impericon": "shopify:https://www.impericon.com/pt"}
+SEED |= {"nl": ("uk", "es", "fr", "it", "de"), "ie": ("uk", "es", "fr", "it", "de")}
 # Anunciantes de Awin de cada país: id de tienda → texto que lleva su nombre en Awin (en minúsculas).
 AWIN = {"fr": {"cultura": "cultura", "fnac": "fnac", "zavvi": "zavvi"}}
 # Formato por el título, el tipo o la variante; lo demás (camisetas, chapas, bolsas, tocadiscos…) no entra.
@@ -289,7 +315,10 @@ def read(pais, minutes):
                 sku = re.sub(r"\D", "", str(v.get("sku") or v.get("barcode") or "")).lstrip("0")
                 if 11 <= len(sku) <= 13 and p["handle"] not in codes.get(sid, {}):
                     codes.setdefault(sid, {})[p["handle"]] = sku.zfill(13)
-                items[p["handle"]] = {"t": p.get("title", ""), "v": p.get("vendor", ""), "ty": p.get("product_type", ""),
+                vendor = p.get("vendor", "")
+                if vendor.lower() == name.lower():  # Platenzaak: el artista va en una etiqueta "Artista | Título"
+                    vendor = next((t.split(" | ")[0] for t in p.get("tags") or [] if " | " in t), "")
+                items[p["handle"]] = {"t": p.get("title", ""), "v": vendor, "ty": p.get("product_type", ""),
                                       "f": f, "p": price, "st": bool(v.get("available")), "img": img}
             page += 1
         if items:
@@ -603,11 +632,15 @@ class _Stop(Exception):
 def _shopify_ean(f, base, ean):
     """Disco de una tienda Shopify por su código de barras: el buscador de la tienda (search/suggest.json) da las
     fichas candidatas y la de la ficha (.js) confirma el código, el precio y el stock. ({p, st, t, v, img}, url)."""
-    url = f"{base}/search/suggest.json?q={ean}&resources%5Btype%5D=product&resources%5Blimit%5D=3"
-    if not f.allowed(url)[0]:
-        raise _Stop()
-    r = f.get(url)
-    prods = ((r.json().get("resources") or {}).get("results") or {}).get("products") or [] if r.status_code == 200 else []
+    prods = []
+    for q in dict.fromkeys([ean, ean.lstrip("0")]):  # Accord guarda el UPC de 12 cifras: "0887…" no lo encuentra
+        url = f"{base}/search/suggest.json?q={q}&resources%5Btype%5D=product&resources%5Blimit%5D=3"
+        if not f.allowed(url)[0]:
+            raise _Stop()
+        r = f.get(url)
+        prods = ((r.json().get("resources") or {}).get("results") or {}).get("products") or [] if r.status_code == 200 else []
+        if prods:
+            break
     for p in prods:
         h = p.get("handle")
         if not h:
@@ -630,7 +663,7 @@ def _search_ean(f, spec, ean):
     """Buscador de la tienda por el código ("url con {ean}|expresión del enlace a la ficha"), la primera ficha que
     sale y su JSON-LD; vale solo si la ficha lleva ese código (en el JSON-LD o en la dirección)."""
     tpl, link = spec.split("|", 1)
-    url = tpl.format(ean=ean)
+    url, link = tpl.format(ean=ean), link.replace("{ean}", ean)
     if not f.allowed(url)[0]:
         raise _Stop()
     r = f.get(url)
@@ -892,6 +925,9 @@ def build_data(pais):
     fresh = (date.today() - timedelta(days=3)).isoformat()
     if pais in LOOKUP:  # lo encontrado en las tiendas que se consultan por EAN, como si fuera su catálogo
         fmt_of = {codes[s][h]: it["f"] for s, its in catalog.items() for h, it in its.items() if codes.get(s, {}).get(h)}
+        for c in SEED.get(pais, ()):  # también los discos de otros países que se buscaron aquí (SEED)
+            for d in _load(DATA / c / "discos.json", []):
+                fmt_of.setdefault(d["ean"], d["fmt"])
         for sid, found in _load(folder / "consultas.json", {}).items():
             for e, row in found.items():
                 if len(row) >= 7 and e in fmt_of and row[0] >= fresh:
@@ -933,8 +969,10 @@ def build_data(pais):
             d = by.setdefault(ean, {"ean": ean, "names": [], "fmt": it["f"], "img": None, "items": []})
             artist = {"recordstore": it["v"], "sisterray": it["ty"], "cultura": it["v"], "fnac": it["v"],
                       "zavvi": it["v"], "ibs": it["v"], "feltrinelli": it["v"], "impericon": it["v"],
-                      "bravado": it["v"]}.get(sid, "")
+                      "bravado": it["v"], "platenzaak": it["v"]}.get(sid, "")
             title = it["t"]
+            if sid == "therecordhub":  # "[Pre-Order [09/04] Kingfishr : Weight Of The Feather (CD)"
+                title = re.sub(r"^\[?pre-?order\s*\[[^\]]*\]\s*", "", title, flags=re.I).replace(" : ", " - ", 1)
             if sid == "impericon":  # "From A Distance Ltd. Bone w/ Black/Red - Splattered Vinyl": el título, sin la edición
                 title = re.sub(r"\s+Ltd\..*$", "", title.split(" - ")[0]).strip() or title
             if not artist and " - " not in title and mb.get(ean.zfill(13), [0, ""])[1]:
@@ -1166,6 +1204,36 @@ TXT["de"] = {
     "deals": "Vinyl- und CD-Angebote", "deals_file": "angebote", "save": "{m} günstiger als der teuerste",
     "deals_desc": "Die Platten mit dem größten Preisunterschied zwischen den Shops heute (nur verfügbare).",
     "guitars": "Die Gitarren-Angebote von heute", "guitars_more": "Alle Gitarren-Angebote",
+}
+TXT["ie"] = {k: v for k, v in TXT["uk"].items() if not k.startswith(("guide", "faqs"))} | {
+    "dir": "music", "home": "Records",
+    "desc": "Compare the price of {n} on {f} in {k} Irish record shops: today's price, stock and the cheapest shop.",
+    "d_index": "Compare the price of vinyl records, CDs and cassettes in Irish record shops, every day.",
+    "artist_d": "Compare the price of {n} {a} records on vinyl, CD and cassette in Irish record shops.",
+    "deals_desc": "The records with the biggest price difference between Irish shops today (in stock only).",
+    "save": "save {m} vs the dearest shop",
+}
+TXT["nl"] = {
+    "dir": "platen", "one": "plaat", "home": "Platen", "promo": "Nieuw: vergelijk prijzen van vinyl, cd's en cassettes",
+    "tile": "Vinyl, cd's en cassettes", "sfx": {"vinilo": "vinyl", "cd": "cd", "casete": "cassette"},
+    "fmts": {"vinilo": ("Vinyl", "vinyl"), "cd": ("Cd's", "cds"), "casete": ("Cassettes", "cassettes")},
+    "fmt1": {"vinilo": "vinyl", "cd": "cd", "casete": "cassette"},
+    "title": "{n} op {f}: prijsvergelijking",
+    "desc": "Vergelijk de prijs van {n} op {f} in {k} online platenzaken in Nederland: prijs van vandaag, voorraad en de goedkoopste winkel.",
+    "desc1": "{n} op {f}: de prijs van vandaag bij {s} en waar je hem nog meer kunt kopen.", "where1": "bij {s}",
+    "h_index": "Platen: vergelijk prijzen van vinyl, cd's en cassettes",
+    "d_index": "Vergelijk elke dag de prijzen van vinyl, cd's en cassettes in online platenzaken in Nederland.",
+    "in_stock": "Op voorraad", "out": "Uitverkocht", "shops": "winkels", "buy": "Naar de winkel", "cheapest": "Vandaag het goedkoopst",
+    "more": "Meest vergeleken", "note": "Prijzen incl. btw; verzendkosten verschillen per winkel.",
+    "search_ph": "Zoek: artiest of album…", "search_res": "{n} platen gevonden", "search_none": "Geen platen gevonden",
+    "f_artist": "Artiest of band", "f_format": "Formaat", "f_all": "Alle formaten", "f_sort": "Sorteren",
+    "s_price": "Goedkoopste eerst", "s_shops": "Meest vergeleken", "s_az": "A–Z",
+    "artist_t": "{a}: prijzen van vinyl, cd's en cassettes",
+    "artist_d": "Vergelijk de prijs van {n} platen van {a} op vinyl, cd en cassette in online platenzaken in Nederland.",
+    "artist_all": "Al hun platen",
+    "deals": "Vinyl- en cd-aanbiedingen", "deals_file": "aanbiedingen", "save": "{m} goedkoper dan de duurste",
+    "deals_desc": "De platen met het grootste prijsverschil tussen winkels vandaag (alleen op voorraad).",
+    "guitars": "Gitaaraanbiedingen van vandaag", "guitars_more": "Alle gitaaraanbiedingen",
 }
 
 def _pre(pais):

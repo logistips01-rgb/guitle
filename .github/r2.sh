@@ -91,7 +91,7 @@ publicar() {
     local excl=(--exclude "/records/**" --exclude "/disques/**" --exclude "/dischi/**" --exclude "/discos/**" --exclude "/_r/**")
     # Discos de Alemania (musica.yml) y la sección solo de Amazon de otros países (discos-amazon.yml): tampoco
     # (14/11: la lectura del catálogo de Alemania borraba de/schallplatten nada más publicarse).
-    for d in schallplatten desky platne lemezek viniluri plochi diskoi levyt plader plater; do excl+=(--exclude "/$d/**"); done
+    for d in schallplatten platen music desky platne lemezek viniluri plochi diskoi levyt plader plater; do excl+=(--exclude "/$d/**"); done
     if [ "$(date -u +%d)" != "01" ] && [ "${GUIAS:-0}" != "1" ]; then excl+=(--exclude "/guias/**"); fi
     if in_cajas "$s" && compgen -G "$s/_g/*.json.gz" >/dev/null; then
       # Las fichas sueltas se quedan en R2 como están (respaldo del Worker), sin subirlas ni borrarlas.
